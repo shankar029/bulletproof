@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8" /><title>Sign up</title></head>
+<body>
+  <form id="form">
+    <input id="email" type="email" placeholder="Email" />
+    <input id="password" type="password" placeholder="Password" />
+    <input id="confirm" type="password" placeholder="Confirm password" />
+    <button id="submit" type="submit">Create account</button>
+  </form>
+  <p id="error"></p>
+  <p id="success"></p>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    $('form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = $('email').value;
+      const password = $('password').value;
+      if (!email || !password) {
+        $('error').textContent = 'All fields required';
+        return;
+      }
+      $('success').textContent = 'Account created for ' + email;
+    });
+  </script>
+</body>
+</html>
