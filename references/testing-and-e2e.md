@@ -1,7 +1,9 @@
 # Reference: Testing & End-to-End Verification
 
-Every unit of behavior ships with a real test. If the project has no test setup, establish
-one using the ecosystem's most standard tooling before writing feature code.
+Every unit of behavior ships with a real test. **Right-size the setup:** reuse the project's
+existing test tooling; if there is none, add only what the task needs — prefer a zero-install
+built-in runner (e.g. `node --test`) over scaffolding a framework + coverage + dependencies for a
+small or single-file deliverable.
 
 ## Setting up test infra (only if missing)
 
@@ -18,6 +20,9 @@ Detect the ecosystem and install the standard runner + coverage via the repo's p
 
 Rules:
 - **Match what the repo already uses.** Only introduce a runner when there is none.
+- **Don't over-scaffold.** For a micro/single-file task, or a project with no build system, a
+  built-in runner (`node --test`, `go test`, `pytest`) is enough — do not `npm install` a
+  framework, coverage-HTML reporter, or config files the task doesn't require.
 - Put tests where the project puts them (or the ecosystem default: `__tests__`, `tests/`,
   `*_test.go`, `*.spec.ts`, etc.). Mirror existing naming.
 - Wire test/coverage/lint commands into the project's scripts (e.g. `package.json`,
@@ -36,6 +41,11 @@ Rules:
 ## End-to-end verification — act like a human (Phase 4)
 
 Prove the feature the way a real user or client would exercise it. These tests live in the repo.
+
+**Right-size the depth to the surface.** Use the heavy tools only where the surface calls for them:
+a UI → a browser, a service → real HTTP. A pure library or CLI's end-to-end proof is a real
+invocation of its public API/command — don't stand up servers, browsers, or coverage dashboards it
+doesn't need.
 
 **Map first, then fill the gaps:** list the scenarios implied by the acceptance criteria, check
 which already have E2E coverage, and add tests only for the uncovered ones — extending the existing

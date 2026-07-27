@@ -27,6 +27,16 @@ All notable changes to this project are documented here. The format is based on
   shows a strong base model ceilings on 3 of 4; the skill's measurable win is `uid` (33%→100%
   clean), at a 4–6× latency cost. Recorded in [`evals/agent/README.md`](evals/agent/README.md).
 
+### Changed
+- **Skill: right-size the effort.** SKILL.md + `references/testing-and-e2e.md` now direct the agent
+  to reuse the project's existing tooling and prefer a zero-install built-in runner (e.g.
+  `node --test`) instead of scaffolding a framework + coverage + `npm install`, and to match E2E
+  depth to the surface (a pure lib/CLI's E2E is a real invocation, not a browser/server). Surfaced
+  by the eval: on a one-function task the bulletproof arm was installing ~89 packages
+  (vitest/coverage/tsc) and generating a coverage dashboard. After the fix, the same task produced
+  just `index.ts` + `index.test.ts` (run via `node --test`), no `node_modules` — ~6 min → 3 min,
+  same 1.00 score.
+
 ### Planned
 - Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 

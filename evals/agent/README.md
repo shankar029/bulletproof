@@ -69,7 +69,9 @@ Y" hints withheld), so the skill — not the prompt — is the only difference b
 "traps" mostly don't trap a strong modern model. The skill's one measurable win is `uid` (weak-RNG /
 needless-dep), where baseline is right only ~⅓ of the time and the skill makes it reliable. On every
 task the bulletproof arm is **4–6× slower** and over-engineers (scaffolds vitest + coverage +
-`npm install`) — see the skill's "right-size the effort" guidance. `k` is small; treat as directional.
+`npm install`) — now addressed by the skill's "right-size the effort" guidance (a follow-up run of
+`map-limit` produced just `index.ts` + `index.test.ts` via `node --test`, no `node_modules`,
+~6 min → 3 min, same 1.00). `k` is small; treat as directional.
 
 ## Status & honest limitations (prototype)
 
