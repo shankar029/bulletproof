@@ -7,10 +7,11 @@
   "functional": { "kind": "logic", "oracle": "oracle/oracle.test.ts", "armEntry": "index.ts" },
   "quality": {
     "src": "index.ts",
+    "mutate": true,
     "reuse": [["tokenize", "from ['\"]\\.\\./shared/tokenize"]],
     "forbidden": ["\\beval\\(", "new Function"]
   },
-  "weights": { "accuracy": 0.7, "reuse": 0.15, "scope": 0.15 },
+  "weights": { "accuracy": 0.7, "reuse": 0.15, "scope": 0.15, "testQuality": 0.25 },
   "agent": {
     "requirement": "Implement `evaluate(src: string): number` that evaluates an arithmetic expression string. Support binary + - * / with correct precedence (* and / bind tighter than + and -) and left-associativity, parentheses including nesting, unary minus/plus including right after an operator (e.g. 3*-2 === -6), decimal numbers, and arbitrary whitespace. Throw on division by zero, malformed input (e.g. '2+'), and invalid characters (e.g. '2#3').",
     "seed": ["shared"],

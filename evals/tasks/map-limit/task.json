@@ -5,8 +5,8 @@
   "project": "benchmark/projects/map-limit",
   "arms": ["baseline", "bulletproof"],
   "functional": { "kind": "logic", "oracle": "oracle/oracle.test.ts", "armEntry": "index.ts" },
-  "quality": { "src": "index.ts" },
-  "weights": { "accuracy": 1.0 },
+  "quality": { "src": "index.ts", "mutate": true },
+  "weights": { "accuracy": 1.0, "testQuality": 0.25 },
   "agent": {
     "requirement": "Implement `mapLimit<T, R>(items: T[], limit: number, worker: (item: T, index: number) => Promise<R>): Promise<R[]>` that runs the async worker over items with at most `limit` workers running concurrently, and actually uses that budget when there is enough work. Return results in input order regardless of completion order. Empty input returns []; limit may exceed items.length. If a worker rejects, the returned promise rejects (never hang). If limit is not a positive integer, reject or throw.",
     "seed": [],

@@ -7,10 +7,11 @@
   "functional": { "kind": "logic", "oracle": "oracle/oracle.test.ts", "armEntry": "index.ts" },
   "quality": {
     "src": "index.ts",
+    "mutate": true,
     "reuse": [["round", "from ['\"]\\.\\./shared/round"]],
     "duplication": ["Math\\.round\\("],
     "extensionOracle": "oracle/extension.test.ts",
     "extensionArm": "index.ts"
   },
-  "weights": { "accuracy": 0.4, "reuse": 0.15, "extensibility": 0.3, "duplication": 0.15 }
+  "weights": { "accuracy": 0.4, "reuse": 0.15, "extensibility": 0.3, "duplication": 0.15, "testQuality": 0.25 }
 }

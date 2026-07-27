@@ -7,9 +7,10 @@
   "functional": { "kind": "logic", "oracle": "oracle/oracle.test.ts", "armEntry": "index.ts" },
   "quality": {
     "src": "index.ts",
+    "mutate": true,
     "reuse": [["clamp", "from ['\"]\\.\\./shared/clamp"]]
   },
-  "weights": { "accuracy": 0.7, "reuse": 0.3 },
+  "weights": { "accuracy": 0.7, "reuse": 0.3, "testQuality": 0.25 },
   "agent": {
     "prompt": "SPEC.md",
     "seed": ["shared"],
