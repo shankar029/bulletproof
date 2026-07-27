@@ -10,10 +10,13 @@ All notable changes to this project are documented here. The format is based on
 - **Eval harness v1** (`evals/`): config-driven `evals/tasks/<id>/task.json` schema + a single
   runner (`evals/run.mjs`) that scores every arm on a weighted composite (accuracy + reuse +
   duplication + extensibility + **scope**), writes `report.md`, and exits non-zero on any
-  bulletproof regression. Corpus of **6 tasks** across greenfield/**bugfix**/**refactor**/**trap**
-  and api/cli/ui/library surfaces; adding a task is drop-in (no runner changes).
+  bulletproof regression. Corpus of **8 tasks** across greenfield/**bugfix**/**refactor**/**trap**/
+  **test-backfill** and api/cli/ui/library surfaces (incl. a **gnarly** recursive-descent evaluator);
+  adding a task is drop-in (no runner changes).
 - **Scope/guardrail dimension**: a `forbidden`-pattern probe that catches *trap* tasks where an arm
   is 100% accurate yet wrong (e.g. `uid` baseline passes uniqueness but uses `Math.random()`).
+- **Mutation-scored test-backfill** (`median-backfill`): the deliverable is a test suite, graded by
+  how many planted mutants it kills — a shallow suite scores 33%, a thorough one 100%.
 
 ### Planned
 - Grow the eval corpus toward 8–12 tasks (more stacks, test-backfill, harder difficulties) and add

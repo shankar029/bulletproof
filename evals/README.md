@@ -67,6 +67,19 @@ set to the arm entry module.
 
 No runner code changes — the harness is fully config-driven.
 
+## Oracle patterns
+
+Most oracles import the arm module and assert (`ARM_PATH` for logic, `ARM_DIR` for UI). Two richer
+patterns are in use and need no special harness support — the oracle is just a `node --test` file:
+
+- **Extension oracle** (`extensionOracle`): imports the arm and registers a *new* case; passing
+  proves the design is open/closed.
+- **Mutation oracle** (`median-backfill`): the arm's deliverable is a *test suite*. The oracle
+  `spawnSync`s the arm's tests against the correct subject (must pass) and against each planted
+  mutant in `mutants/*` (must fail = killed), injecting the subject via `SUBJECT_PATH`. Accuracy is
+  the mutation kill-rate. (Note: such an oracle must `delete env.NODE_TEST_CONTEXT` before spawning,
+  or the nested runner exits 0 even on failing tests.)
+
 ## Why JSON, not YAML
 
 To stay **dependency-free** (Node has no built-in YAML parser). `EVAL-PLAN.md` sketches `meta.yaml`;

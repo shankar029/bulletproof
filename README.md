@@ -81,8 +81,9 @@ without touching the core function). Full findings in [`benchmark/RESULTS.md`](b
 
 A config-driven **eval harness** in [`evals/`](evals/) formalizes this into a task corpus with a
 single runner and a weighted composite scorecard (`node evals/run.mjs` → [`evals/report.md`](evals/report.md)),
-doubling as a regression gate. It currently spans **6 tasks** — greenfield, **bugfix**, **refactor**,
-and a **trap** (where an arm can be 100% accurate yet wrong, caught by a scope/guardrail dimension).
+doubling as a regression gate. It currently spans **8 tasks** — greenfield, **bugfix**, **refactor**,
+a **trap** (an arm can be 100% accurate yet wrong, caught by a scope/guardrail dimension), a
+**test-backfill** graded by mutation kill-rate, and a **gnarly** recursive-descent evaluator.
 Roadmap in [`EVAL-PLAN.md`](EVAL-PLAN.md).
 
 ## Design notes

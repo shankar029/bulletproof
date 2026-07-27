@@ -1,0 +1,14 @@
+{
+  "id": "expr-eval",
+  "title": "Arithmetic expression evaluator (precedence, parens, unary minus)",
+  "dimensions": { "changeType": "greenfield", "surface": "library", "stack": "ts-node", "difficulty": "gnarly" },
+  "project": "benchmark/projects/expr-eval",
+  "arms": ["baseline", "bulletproof"],
+  "functional": { "kind": "logic", "oracle": "oracle/oracle.test.ts", "armEntry": "index.ts" },
+  "quality": {
+    "src": "index.ts",
+    "reuse": [["tokenize", "from ['\"]\\.\\./shared/tokenize"]],
+    "forbidden": ["\\beval\\(", "new Function"]
+  },
+  "weights": { "accuracy": 0.7, "reuse": 0.15, "scope": 0.15 }
+}

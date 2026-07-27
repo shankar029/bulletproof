@@ -1,0 +1,13 @@
+{
+  "id": "median-backfill",
+  "title": "Median (backfill a regression suite; graded by mutation kill-rate)",
+  "dimensions": { "changeType": "test-backfill", "surface": "library", "stack": "ts-node", "difficulty": "standard" },
+  "project": "benchmark/projects/median-backfill",
+  "arms": ["baseline", "bulletproof"],
+  "functional": { "kind": "logic", "oracle": "oracle/oracle.test.ts", "armEntry": "tests.ts" },
+  "quality": {
+    "src": "tests.ts",
+    "forbidden": ["\\.skip\\(", "\\.only\\("]
+  },
+  "weights": { "accuracy": 0.8, "scope": 0.2 }
+}
