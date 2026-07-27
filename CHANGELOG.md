@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Planned
+- Grow the eval corpus toward 12 tasks and add `pass@k` once agent-in-the-loop runs land (v2) —
+  see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+
+## [0.2.0] — 2026-07-27
+
 ### Added
 - **One-command installers** (`install.sh` for macOS/Linux/Git-Bash, `install.ps1` for Windows
   PowerShell): `curl -fsSL .../install.sh | sh -s -- <pi|claude|copilot>` downloads the repo and
@@ -23,10 +29,6 @@ All notable changes to this project are documented here. The format is based on
   is 100% accurate yet wrong (e.g. `uid` baseline passes uniqueness but uses `Math.random()`).
 - **Mutation-scored test-backfill** (`median-backfill`): the deliverable is a test suite, graded by
   how many planted mutants it kills — a shallow suite scores 33%, a thorough one 100%.
-
-### Planned
-- Grow the eval corpus toward 8–12 tasks (more stacks, test-backfill, harder difficulties) and add
-  `pass@k` once agent-in-the-loop runs land (see [`EVAL-PLAN.md`](EVAL-PLAN.md)).
 
 ## [0.1.0] — 2026-07-26
 
@@ -48,5 +50,6 @@ Initial release: a portable `/bulletproof` skill plus an objective benchmark pro
   and **extensibility** (open/closed) beyond functional correctness, across all three projects.
 - **Docs**: `README.md`, `EVAL-PLAN.md`, `docs/architecture.md`, `CONTRIBUTING.md`, `LICENSE` (MIT).
 
-[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/shankar029/bulletproof/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/shankar029/bulletproof/releases/tag/v0.1.0
