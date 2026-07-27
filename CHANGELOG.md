@@ -12,6 +12,13 @@ All notable changes to this project are documented here. The format is based on
   `parseTap()` seam from the spawn-bound `tap()` with zero behavior change.
 
 ### Changed
+- **Skill fidelity audit** (all five phases reviewed for "delivers exactly what was asked"): Phase 1
+  now requires acceptance criteria (each with a stable id) whose union covers the *whole* request —
+  every sub-deliverable of a multi-part ask plus implied non-functional needs — with a Gate 1
+  re-read to confirm nothing is dropped or invented; Phase 4 maps each scenario to existing E2E
+  coverage and adds tests only for the uncovered ones (extend, never duplicate); and the
+  convergence scope-fidelity check re-verifies the acceptance criteria against the original request
+  so a dropped requirement is caught even when every listed criterion passes.
 - **Skill portability fixes** (from a live dogfood run): the plan may live in a task-scoped file or
   the PR description when the repo already owns `PLAN.md` (no stray plan docs); the Phase 5 quality
   gate now runs *whichever* of format/lint/type-check the repo actually configures (tests always)

@@ -41,7 +41,9 @@ Score honestly and specifically — cite the file/line that justifies each score
 
 - **Scope fidelity:** diff only touches files the task implies; no new dependency unless required
   and justified; no features nobody asked for. Compare the change against the acceptance criteria —
-  anything extra is scope creep, anything missing is a gap.
+  anything extra is scope creep, anything missing is a gap. **Then re-check the acceptance criteria
+  themselves against the original request** — a dropped or misread requirement is a gap even when
+  every listed criterion passes.
 - **Reuse & DRY:** before writing a helper, grep the repo for one that exists. If you wrote logic
   that duplicates an existing utility (rounding, validation, HTTP responses, date handling), that's
   a ≤2 — replace it with the existing one.

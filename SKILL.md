@@ -41,9 +41,14 @@ to an issue/PR. If it points to a file or URL, read it fully first.
   layout, architecture patterns, and commit/PR/branch conventions. Read `AGENTS.md`,
   `README`, `CONTRIBUTING`, ADRs, and neighbors of the code you'll touch.
 - **Classify the change:** UI / API / library / CLI / infra (may be several).
-- **Restate the requirement** as explicit, testable **acceptance criteria**.
-- **GATE 1:** You can state the project profile in a few lines and list acceptance
-  criteria. Ambiguities are either resolved or asked (with recommendations).
+- **Restate the requirement** as explicit, testable **acceptance criteria**, each with a stable id
+  (AC1, AC2, …). Cover the request *in full*: every explicit ask, **each sub-deliverable of a
+  multi-part request**, and the implied non-functional needs it carries (performance, security,
+  accessibility, backward-compatibility). Capture exactly what was asked — never drop a part, never
+  invent scope that wasn't requested.
+- **GATE 1:** You can state the project profile in a few lines and list acceptance criteria whose
+  union covers the whole request — re-read the ask and confirm nothing is missing or added.
+  Ambiguities are either resolved or asked (with recommendations).
 
 ### Phase 2 — Plan (design-first)
 - Design the solution grounded in **SOLID, DRY, YAGNI, KISS, separation of concerns**
@@ -90,6 +95,9 @@ to an issue/PR. If it points to a file or URL, read it fully first.
 ### Phase 4 — End-to-End Verification (act like a human)
 Prove the feature works the way a person would check it. See
 `references/testing-and-e2e.md`.
+- **Map scenarios to existing coverage first.** For each acceptance-criterion scenario, check
+  whether an E2E test already covers it; add tests only for the **uncovered** scenarios and
+  **extend the existing suite/file rather than duplicating it**.
 - **UI change →** drive the real flow with **Playwright**: navigate, interact, assert
   on rendered results; capture screenshots/traces.
 - **API change →** hit the running service with real **HTTP/REST** calls; assert status,
