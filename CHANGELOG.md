@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Planned
+- Grow the eval corpus toward 12 tasks and add `pass@k` once agent-in-the-loop runs land (v2) —
+  see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+
+## [0.3.0] — 2026-07-27
+
 ### Added
 - **Unit tests for the eval scoring library** (`evals/lib/score.test.mjs`, 14 tests) covering
   `composite()` renormalization, `toDimensions()` mappings, and TAP parsing; extracted a pure
@@ -25,10 +31,6 @@ All notable changes to this project are documented here. The format is based on
   instead of assuming all exist; and the ship step verifies the PR tooling can write to the target
   repo (a successful `git push` doesn't prove `gh` is authorized — e.g. Enterprise Managed User
   identities) before falling back to a clean commit + compare URL.
-
-### Planned
-- Grow the eval corpus toward 12 tasks and add `pass@k` once agent-in-the-loop runs land (v2) —
-  see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 
 ## [0.2.0] — 2026-07-27
 
@@ -70,6 +72,7 @@ Initial release: a portable `/bulletproof` skill plus an objective benchmark pro
   and **extensibility** (open/closed) beyond functional correctness, across all three projects.
 - **Docs**: `README.md`, `EVAL-PLAN.md`, `docs/architecture.md`, `CONTRIBUTING.md`, `LICENSE` (MIT).
 
-[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/shankar029/bulletproof/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/shankar029/bulletproof/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/shankar029/bulletproof/tree/v0.1.0
