@@ -8,7 +8,8 @@
   "quality": {
     "src": "index.ts",
     "reuse": [["crypto", "from ['\"]node:crypto"]],
-    "forbidden": ["Math\\.random\\(", "from ['\"]uuid", "from ['\"]nanoid"]
+    "forbidden": ["Math\\.random\\(", "from ['\"]uuid", "from ['\"]nanoid"],
+    "forbiddenDeps": ["uuid", "nanoid"]
   },
   "weights": { "accuracy": 0.4, "reuse": 0.3, "scope": 0.3 },
   "agent": {

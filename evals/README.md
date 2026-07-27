@@ -22,7 +22,7 @@ Per task, per arm, normalized to 0..1 and combined into a weighted **composite**
 | **reuse** | source grep | fraction of seeded shared utilities actually imported |
 | **duplication** | source grep | `1` if no inlined reimplementation of a shared helper, else `0` |
 | **extensibility** | held-out extension oracle | `1` if a new case is addable without editing the core, else `0` (`n/a` when not probed) |
-| **scope** | source grep (`forbidden`) | `1` if no forbidden pattern is present (weak RNG, needless dependency, out-of-scope API), else `0` |
+| **scope** | source grep (`forbidden`) + direct-dep check (`forbiddenDeps`) | `1` if no forbidden source pattern is present AND no forbidden package is a direct dependency (weak RNG, needless dependency, out-of-scope API), else `0` |
 
 `n/a` dimensions are dropped and the remaining weights renormalized. The **scope** dimension is what
 catches *trap* tasks, where an arm can be 100% accurate yet still wrong (e.g. `uid`: both arms pass
@@ -46,7 +46,8 @@ the uniqueness oracle, but the baseline uses `Math.random()` → `scope = 0`).
     "src": "index.ts",                               // arm source file to grep
     "reuse": [["money", "from ['\"]\\.\\./shared/money"]],   // [name, regex] the arm should import
     "duplication": ["Math\\.round\\("],              // regexes that indicate an inlined reimplementation
-    "forbidden": ["Math\\.random\\(", "from ['\"]uuid"], // patterns that must be ABSENT (trap/scope)
+    "forbidden": ["Math\\.random\\(", "from ['\"]uuid"], // source patterns that must be ABSENT (trap/scope)
+    "forbiddenDeps": ["uuid", "nanoid"],           // package names that must NOT be DIRECT deps in the arm's package.json (transitive tooling deps ignored)
     "extensionOracle": "oracle/extension.test.ts",   // or null when not probed
     "extensionArm": "index.ts"
   },

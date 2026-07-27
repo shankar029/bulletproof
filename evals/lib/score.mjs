@@ -1,13 +1,24 @@
 // Scoring primitives for the eval harness. Dependency-free: shells out to `node --test`
 // and greps arm source. Reused by run.mjs across all tasks (config-driven, no per-project code).
 import { spawnSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 
 /** Parse pass/fail/tests counts from `node --test` TAP output. Returns zeros if absent. */
 export function parseTap(output) {
   const num = (re) => { const m = output.match(re); return m ? Number(m[1]) : 0; };
   return { pass: num(/# pass (\d+)/), fail: num(/# fail (\d+)/), tests: num(/# tests (\d+)/) };
+}
+
+/** True if any forbidden package name appears among a package.json's DIRECT declared dependencies.
+ *  Direct-only by design: a forbidden package pulled in transitively by test/build tooling (under
+ *  node_modules) is not the deliverable adding a needless dependency, so it must not fail scope. */
+export function hasForbiddenDep(pkg, names) {
+  if (!pkg || !names || !names.length) return false;
+  const deps = {
+    ...pkg.dependencies, ...pkg.devDependencies, ...pkg.peerDependencies, ...pkg.optionalDependencies,
+  };
+  return names.some((n) => Object.prototype.hasOwnProperty.call(deps, n));
 }
 
 /** Run a node:test file (TAP) and return its pass/fail/tests counts. */
@@ -39,6 +50,14 @@ export function runQuality(task, projectAbs, armDirAbs, repoRoot) {
   const dup = dupPatterns.some((pat) => new RegExp(pat).test(src));
   const forbidden = q.forbidden || [];
   const forbiddenHit = forbidden.some((pat) => new RegExp(pat).test(src));
+  const forbiddenDeps = q.forbiddenDeps || [];
+  let depHit = false;
+  if (forbiddenDeps.length) {
+    const pkgPath = path.join(armDirAbs, 'package.json');
+    if (existsSync(pkgPath)) {
+      try { depHit = hasForbiddenDep(JSON.parse(readFileSync(pkgPath, 'utf8')), forbiddenDeps); } catch { /* unreadable package.json → no dep hit */ }
+    }
+  }
   let ext = null;
   if (q.extensionOracle) {
     const t = tap(path.join(projectAbs, q.extensionOracle), { ARM_PATH: path.join(armDirAbs, q.extensionArm) }, repoRoot);
@@ -47,7 +66,7 @@ export function runQuality(task, projectAbs, armDirAbs, repoRoot) {
   return {
     reuse, reuseTotal,
     dupChecked: dupPatterns.length > 0, dup,
-    scopeChecked: forbidden.length > 0, forbiddenHit,
+    scopeChecked: forbidden.length > 0 || forbiddenDeps.length > 0, forbiddenHit: forbiddenHit || depHit,
     ext,
   };
 }

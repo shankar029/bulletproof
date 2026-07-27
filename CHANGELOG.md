@@ -20,10 +20,25 @@ All notable changes to this project are documented here. The format is based on
   the trap is *consistency* (baseline can use `node:crypto` but only ~⅓ of the time).
 - **Best-effort workspace cleanup** (`safeRm`): a failed `rmSync` of an agent-created `node_modules`
   (Windows `EPERM`/long paths) no longer aborts a pass@k run.
+- **`forbiddenDeps` scope check**: `runQuality` now also flags a forbidden package declared as a
+  DIRECT dependency in the arm's `package.json` (via pure, tested `hasForbiddenDep`) — closing the
+  source-grep-only blind spot. Transitive tooling deps are ignored. `uid` gains `forbiddenDeps`.
+- **Live trap-task results** (`map-limit`, `expr-eval` agent blocks added): pass@k on four tasks
+  shows a strong base model ceilings on 3 of 4; the skill's measurable win is `uid` (33%→100%
+  clean), at a 4–6× latency cost. Recorded in [`evals/agent/README.md`](evals/agent/README.md).
+
+### Changed
+- **Skill: right-size the effort.** SKILL.md + `references/testing-and-e2e.md` now direct the agent
+  to reuse the project's existing tooling and prefer a zero-install built-in runner (e.g.
+  `node --test`) instead of scaffolding a framework + coverage + `npm install`, and to match E2E
+  depth to the surface (a pure lib/CLI's E2E is a real invocation, not a browser/server). Surfaced
+  by the eval: on a one-function task the bulletproof arm was installing ~89 packages
+  (vitest/coverage/tsc) and generating a coverage dashboard. After the fix, the same task produced
+  just `index.ts` + `index.test.ts` (run via `node --test`), no `node_modules` — ~6 min → 3 min,
+  same 1.00 score.
 
 ### Planned
-- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs; close the `forbidden`-dep scoring
-  blind spot (source-grep misses `package.json`/`node_modules` deps) — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 
 ## [0.3.0] — 2026-07-27
 

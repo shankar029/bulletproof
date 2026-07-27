@@ -55,31 +55,36 @@ A task opts into v2 by adding an `agent` block to its `task.json`:
 
 ## Results so far
 
-**`uid` trap task, pass@k (k=3, pi host).** With a terse, guardrail-free requirement (the SPEC's
-"use `node:crypto`, no `Math.random`, no deps" hints withheld), so the skill — not the prompt — is
-the only difference:
+Live pass@k on the pi host, with terse guardrail-free requirements (the SPECs' "use X / don't use
+Y" hints withheld), so the skill — not the prompt — is the only difference between arms:
 
-| arm | mean composite | clean-rate | spread |
-|---|---|---|---|
-| baseline | 0.80 ± 0.14 | 33% (1/3) | 0.70 – 1.00 |
-| bulletproof | 1.00 ± 0.00 | 100% (3/3) | 1.00 – 1.00 |
+| task | difficulty | baseline | bulletproof | skill delta |
+|---|---|---|---|---|
+| paginator | standard | 1.00 (k=1) | 1.00 (k=1) | none (ceiling) |
+| map-limit | gnarly | 1.00, 100% clean (k=3) | 1.00 (k=1, ~6 min, timed out) | none (tie, far slower) |
+| expr-eval | gnarly | 1.00, 100% clean (k=3) | 1.00 (k=1, ~4 min) | none (tie, far slower) |
+| **uid** | **trap** | **0.80 ± 0.14, 33% clean (k=3)** | **1.00 ± 0.00, 100% clean (k=3)** | **+0.20, consistency** |
 
-Both arms always pass the functional oracle; the gap is entirely in reuse/scope (weak-RNG /
-needless-dep traps). The skill's value here is **consistency**: baseline *can* reach for
-`node:crypto` but only ~⅓ of the time. `paginator` (standard difficulty) ties at 1.00 for both —
-the skill doesn't help where a capable model already succeeds. `k=3` is a small sample; treat as
-directional.
+**Honest headline:** a capable base model already ceilings on 3 of 4 tasks — the hand-authored
+"traps" mostly don't trap a strong modern model. The skill's one measurable win is `uid` (weak-RNG /
+needless-dep), where baseline is right only ~⅓ of the time and the skill makes it reliable. On every
+task the bulletproof arm is **4–6× slower** and over-engineers (scaffolds vitest + coverage +
+`npm install`) — now addressed by the skill's "right-size the effort" guidance (a follow-up run of
+`map-limit` produced just `index.ts` + `index.test.ts` via `node --test`, no `node_modules`,
+~6 min → 3 min, same 1.00). `k` is small; treat as directional.
 
 ## Status & honest limitations (prototype)
 
-- **Small `k`, two tasks (`paginator`, `uid`), one host (pi).** Directional, not a benchmark.
+- **Small `k`, four tasks (`paginator`, `map-limit`, `expr-eval`, `uid`), one host (pi).**
+  Directional, not a benchmark.
 - **pass@k / variance:** implemented (`--runs k` → `mean ± stddev` + clean-rate). Larger `k` and
   proper CIs still wanted.
 - **Cost & latency:** the bulletproof arm does far more work (plans, writes tests, sometimes
   `npm install`s a full harness) — 183–360s+ per `uid` run vs ~30–45s for baseline, and it can hit
   the wall-clock cap. Bounded per-run via `--timeout`. Use `--dry-run` for CI plumbing checks.
-- **Scoring blind spot:** the `forbidden` check greps the arm *source* only — it will not catch a
-  dependency added to `package.json`/`node_modules` (only a direct `import`). Follow-up.
+- **Scoring:** the `forbidden` source-grep is now paired with a `forbiddenDeps` direct-dependency
+  check (`package.json`), so adding a needless runtime dep fails `scope` even when the source looks
+  clean. Transitive tooling deps (e.g. `nanoid` pulled in by vitest) are intentionally ignored.
 - **Sandbox:** runs use the local FS with tools enabled. Hardening (container, network allowlist,
   secret scrub) is deferred — run only against trusted fixture tasks. See `../../EVAL-PLAN.md` §5.
 - Not wired into `evals/run.mjs` (which stays fast + dependency-free); this is an opt-in tool.

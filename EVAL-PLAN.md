@@ -133,9 +133,13 @@ evals/run.mjs
   - [x] `pass@k` / variance: `--runs k` → per-run composite + `mean ± stddev` + clean-rate
     (`stats.mjs`). First trap result (`uid`, k=3): baseline 0.80±0.14 / 33% clean vs bulletproof
     1.00±0.00 / 100% clean — the skill's trap value is consistency. Larger `k` + CIs still wanted.
-  - [~] Run the **trap/gnarly** tasks live — `uid` done (skill moves reuse+scope, not accuracy);
-    `map-limit` / `expr-eval` / `order-fsm` next.
-  - [ ] Close the `forbidden`-dep scoring blind spot: grep `package.json` deps, not just arm source.
+  - [x] Run the **trap/gnarly** tasks live — `uid` (skill moves reuse+scope: 33%→100% clean),
+    `map-limit` + `expr-eval` (gnarly) both tie at 1.00 (baseline already ceilings). Meta-finding:
+    a strong base model ceilings on most hand-authored traps; the skill's measurable win is the one
+    genuine trap (`uid`), at a 4–6× latency + over-engineering cost. `order-fsm` (refactor) needs
+    seed-the-starting-code support — deferred.
+  - [x] Close the `forbidden`-dep scoring blind spot: check `package.json` direct deps
+    (`hasForbiddenDep`), not just arm source. Transitive tooling deps ignored.
   - [ ] Claude Code + Copilot adapters → cross-agent matrix; sandbox hardening + budgets.
 - [ ] **v3 — judge + guardrails.** LLM-judge with validation; policy hard-fails; ablation arms.
 - [ ] **v4 — CI gating + trend dashboard.** Block skill regressions; nightly cross-agent matrix.

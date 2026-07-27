@@ -23,6 +23,10 @@ to an issue/PR. If it points to a file or URL, read it fully first.
 1. **Honor the project.** Match its architecture, conventions, style, and tooling.
    Never introduce a pattern that fights how the project is built. When in doubt,
    copy the project's existing patterns over your personal preference.
+   **Right-size the effort:** scale rigor to the task's size and surface, and reuse existing
+   tooling — do **not** introduce a test framework, coverage tooling, build config, or
+   dependencies the project doesn't already use. In a bare or single-file task, prefer the
+   platform's zero-install runner (e.g. `node --test`) over scaffolding + `npm install`.
 2. **No tech debt.** Reject shortcuts that create debt. No dead code, no TODOs left
    behind, no commented-out blocks, no "temporary" hacks, no copy-paste duplication.
 3. **No fakes.** Never write stub/placeholder implementations, tests that assert
@@ -75,9 +79,10 @@ to an issue/PR. If it points to a file or URL, read it fully first.
   sign-off before Phase 3.
 
 ### Phase 3 — Implement + Test
-- **Set up test infra if missing.** Detect the ecosystem's standard runner and install
-  it + coverage tooling via the project's package manager. See
-  `references/testing-and-e2e.md`.
+- **Use the project's test setup; add the minimum if missing.** Reuse the runner the repo already
+  uses. Only if there is none, pick the ecosystem's **lowest-friction** option — prefer a built-in,
+  zero-install runner (e.g. `node --test`) over scaffolding a framework + coverage + `npm install`
+  for a small task. Add only tooling the task actually needs. See `references/testing-and-e2e.md`.
 - Work in **small, test-backed increments**: write the unit/integration test, then the
   implementation that satisfies it (or code-then-test per repo norms) — but every new
   unit of behavior ships with a real test.
@@ -95,6 +100,9 @@ to an issue/PR. If it points to a file or URL, read it fully first.
 ### Phase 4 — End-to-End Verification (act like a human)
 Prove the feature works the way a person would check it. See
 `references/testing-and-e2e.md`.
+- **Right-size the proof to the surface.** Match E2E depth to the change: a UI needs a real browser
+  flow, a service needs real HTTP — but a pure library/CLI's "end to end" is invoking its real
+  public API/command (no servers, browsers, or coverage dashboards it doesn't need).
 - **Map scenarios to existing coverage first.** For each acceptance-criterion scenario, check
   whether an E2E test already covers it; add tests only for the **uncovered** scenarios and
   **extend the existing suite/file rather than duplicating it**.
