@@ -4,14 +4,18 @@ import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 
+/** Parse pass/fail/tests counts from `node --test` TAP output. Returns zeros if absent. */
+export function parseTap(output) {
+  const num = (re) => { const m = output.match(re); return m ? Number(m[1]) : 0; };
+  return { pass: num(/# pass (\d+)/), fail: num(/# fail (\d+)/), tests: num(/# tests (\d+)/) };
+}
+
 /** Run a node:test file (TAP) and return its pass/fail/tests counts. */
 function tap(oracleAbs, env, cwd) {
   const r = spawnSync(process.execPath, ['--test', '--test-reporter=tap', oracleAbs], {
     cwd, encoding: 'utf8', env: { ...process.env, ...env },
   });
-  const out = `${r.stdout}\n${r.stderr}`;
-  const num = (re) => { const m = out.match(re); return m ? Number(m[1]) : 0; };
-  return { pass: num(/# pass (\d+)/), fail: num(/# fail (\d+)/), tests: num(/# tests (\d+)/) };
+  return parseTap(`${r.stdout}\n${r.stderr}`);
 }
 
 /** Functional accuracy: run the held-out oracle against one arm. */
