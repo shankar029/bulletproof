@@ -10,5 +10,11 @@
     "reuse": [["crypto", "from ['\"]node:crypto"]],
     "forbidden": ["Math\\.random\\(", "from ['\"]uuid", "from ['\"]nanoid"]
   },
-  "weights": { "accuracy": 0.4, "reuse": 0.3, "scope": 0.3 }
+  "weights": { "accuracy": 0.4, "reuse": 0.3, "scope": 0.3 },
+  "agent": {
+    "requirement": "Provide a function `newId()` that returns a unique identifier string. IDs must be unique and collision-resistant across very many calls.",
+    "seed": [],
+    "armFile": "arm/index.ts",
+    "reference": "bulletproof/index.ts"
+  }
 }

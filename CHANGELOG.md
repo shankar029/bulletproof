@@ -6,6 +6,15 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+- **Agent-in-the-loop harness** (EVAL-PLAN v2, prototype) in `evals/agent/`: a pi adapter that
+  invokes pi **headless** to *produce* an arm in an isolated workspace, then scores it with the
+  existing v1 harness (`evals/lib/score.mjs`) — baseline vs bulletproof differ only by `--skill`.
+  Includes a deterministic `--dry-run` (copies the reference solution to prove the plumbing without
+  a model), 7 unit tests, an opt-in `agent` block on `task.json`, and a live A/B on `paginator`.
+  First live result: both arms 6/6 on this *standard* task, but the bulletproof arm additionally
+  wrote a test suite and committed on a `fix/` branch — evidence the skill actually engages.
+
 ### Planned
 - Grow the eval corpus toward 12 tasks and add `pass@k` once agent-in-the-loop runs land (v2) —
   see [`EVAL-PLAN.md`](EVAL-PLAN.md).
