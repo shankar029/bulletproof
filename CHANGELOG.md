@@ -20,10 +20,12 @@ All notable changes to this project are documented here. The format is based on
   the trap is *consistency* (baseline can use `node:crypto` but only ~⅓ of the time).
 - **Best-effort workspace cleanup** (`safeRm`): a failed `rmSync` of an agent-created `node_modules`
   (Windows `EPERM`/long paths) no longer aborts a pass@k run.
+- **`forbiddenDeps` scope check**: `runQuality` now also flags a forbidden package declared as a
+  DIRECT dependency in the arm's `package.json` (via pure, tested `hasForbiddenDep`) — closing the
+  source-grep-only blind spot. Transitive tooling deps are ignored. `uid` gains `forbiddenDeps`.
 
 ### Planned
-- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs; close the `forbidden`-dep scoring
-  blind spot (source-grep misses `package.json`/`node_modules` deps) — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 
 ## [0.3.0] — 2026-07-27
 

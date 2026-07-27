@@ -78,8 +78,9 @@ directional.
 - **Cost & latency:** the bulletproof arm does far more work (plans, writes tests, sometimes
   `npm install`s a full harness) — 183–360s+ per `uid` run vs ~30–45s for baseline, and it can hit
   the wall-clock cap. Bounded per-run via `--timeout`. Use `--dry-run` for CI plumbing checks.
-- **Scoring blind spot:** the `forbidden` check greps the arm *source* only — it will not catch a
-  dependency added to `package.json`/`node_modules` (only a direct `import`). Follow-up.
+- **Scoring:** the `forbidden` source-grep is now paired with a `forbiddenDeps` direct-dependency
+  check (`package.json`), so adding a needless runtime dep fails `scope` even when the source looks
+  clean. Transitive tooling deps (e.g. `nanoid` pulled in by vitest) are intentionally ignored.
 - **Sandbox:** runs use the local FS with tools enabled. Hardening (container, network allowlist,
   secret scrub) is deferred — run only against trusted fixture tasks. See `../../EVAL-PLAN.md` §5.
 - Not wired into `evals/run.mjs` (which stays fast + dependency-free); this is an opt-in tool.

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseTap, toDimensions, composite } from './score.mjs';
+import { parseTap, toDimensions, composite, hasForbiddenDep } from './score.mjs';
 
 const close = (a, b, eps = 1e-9) => assert.ok(Math.abs(a - b) <= eps, `${a} !~= ${b}`);
 
@@ -68,4 +68,17 @@ test('composite is 0 when every dimension is n/a', () => {
 test('composite ignores a present dimension absent from weights (pins a config footgun)', () => {
   // scope is present but has no weight -> silently dropped. Pinned so any future fix is deliberate.
   assert.equal(composite({ accuracy: 1, scope: 0 }, { accuracy: 1 }), 1);
+});
+
+// ---- hasForbiddenDep (direct-dependency trap; transitive tooling deps ignored) ----
+test('hasForbiddenDep flags a forbidden name in dependencies or devDependencies', () => {
+  assert.equal(hasForbiddenDep({ dependencies: { uuid: '^9' } }, ['uuid', 'nanoid']), true);
+  assert.equal(hasForbiddenDep({ devDependencies: { nanoid: '^5' } }, ['uuid', 'nanoid']), true);
+});
+test('hasForbiddenDep is false when no forbidden dep is declared directly', () => {
+  assert.equal(hasForbiddenDep({ dependencies: { vitest: '^2' } }, ['uuid', 'nanoid']), false);
+});
+test('hasForbiddenDep ignores absent manifest / empty name list', () => {
+  assert.equal(hasForbiddenDep(null, ['uuid']), false);
+  assert.equal(hasForbiddenDep({ dependencies: { uuid: '^9' } }, []), false);
 });

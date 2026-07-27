@@ -135,7 +135,8 @@ evals/run.mjs
     1.00±0.00 / 100% clean — the skill's trap value is consistency. Larger `k` + CIs still wanted.
   - [~] Run the **trap/gnarly** tasks live — `uid` done (skill moves reuse+scope, not accuracy);
     `map-limit` / `expr-eval` / `order-fsm` next.
-  - [ ] Close the `forbidden`-dep scoring blind spot: grep `package.json` deps, not just arm source.
+  - [x] Close the `forbidden`-dep scoring blind spot: check `package.json` direct deps
+    (`hasForbiddenDep`), not just arm source. Transitive tooling deps ignored.
   - [ ] Claude Code + Copilot adapters → cross-agent matrix; sandbox hardening + budgets.
 - [ ] **v3 — judge + guardrails.** LLM-judge with validation; policy hard-fails; ablation arms.
 - [ ] **v4 — CI gating + trend dashboard.** Block skill regressions; nightly cross-agent matrix.
