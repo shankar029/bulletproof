@@ -20,21 +20,26 @@ export function prepWorkspace({ projectAbs, agent }) {
   for (const rel of agent.seed || []) {
     cpSync(path.join(projectAbs, rel), path.join(ws, rel), { recursive: true });
   }
-  // Copy the requirement to a stable name at the workspace root.
-  writeFileSync(path.join(ws, 'SPEC.md'), readFileSync(path.join(projectAbs, agent.prompt), 'utf8'));
+  // The requirement shown to the agent: an inline terse ask (preferred, so trap guardrails aren't
+  // leaked) or the project's SPEC file. Written to a stable name at the workspace root.
+  const requirement = agent.requirement != null
+    ? agent.requirement
+    : readFileSync(path.join(projectAbs, agent.prompt), 'utf8');
+  writeFileSync(path.join(ws, 'SPEC.md'), requirement);
   return { ws, armDir };
 }
 
-/** The requirement prompt handed to pi. Only the trailing directive differs per arm. */
+/** The requirement prompt handed to pi. Deliberately NEUTRAL: it must not hint at reuse, tool
+ *  choice, dependencies, or rigor — those disciplines must come from the skill alone, so the only
+ *  variable between arms is `/bulletproof`. Only the trailing directive differs per arm. */
 export function buildPrompt({ arm, armFile }) {
+  const outside = path.dirname(armFile) === '.' ? 'the deliverable file' : `\`${path.dirname(armFile)}/\``;
   const core = [
     'You are in an isolated, throwaway workspace (no CI, no remote).',
-    'The requirement is in `SPEC.md`. Read it fully.',
-    `Deliver a TypeScript module at \`${armFile}\` (relative to the workspace root) that satisfies it.`,
-    'Reuse the utilities under `shared/` instead of re-implementing them; import them with an',
-    "explicit `.ts` extension, e.g. `import { clamp } from '../shared/clamp.ts'`.",
-    `Do not edit anything outside \`${path.dirname(armFile) === '.' ? 'the deliverable file' : path.dirname(armFile) + '/'}\`.`,
-    'Export exactly the surface `SPEC.md` specifies.',
+    'The requirement is in `SPEC.md`. Read it fully, then deliver a TypeScript module at',
+    `\`${armFile}\` (relative to the workspace root) that satisfies it.`,
+    'Import any local files with an explicit `.ts` extension (e.g. `../shared/x.ts`).',
+    `Do not edit anything outside ${outside}. Export exactly the surface \`SPEC.md\` specifies.`,
   ].join(' ');
   const directive = arm === 'bulletproof'
     ? ' Use the bulletproof delivery workflow (your loaded skill) to deliver this at top-1% quality; there is no git remote, so stop at a clean local commit.'

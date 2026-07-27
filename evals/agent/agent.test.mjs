@@ -28,13 +28,19 @@ test('unknown arm throws', () => {
   assert.throws(() => buildPiArgs({ arm: 'nope' }), /unknown arm/);
 });
 
-// ---- buildPrompt: same task, arm-specific directive ----
-test('both prompts point at the deliverable, SPEC, and shared reuse', () => {
+// ---- buildPrompt: same task, arm-specific directive; NEUTRAL (no reuse/tool/dep hints) ----
+test('both prompts point at the deliverable, SPEC, and .ts imports', () => {
   for (const arm of ['baseline', 'bulletproof']) {
     const pr = buildPrompt({ arm, armFile: agent.armFile });
     assert.match(pr, /SPEC\.md/);
     assert.match(pr, /arm\/index\.ts/);
-    assert.match(pr, /shared/);
+    assert.match(pr, /\.ts` extension/);
+  }
+});
+test('prompts stay neutral: no reuse/dependency/tool-choice hints that would leak trap guardrails', () => {
+  for (const arm of ['baseline', 'bulletproof']) {
+    const pr = buildPrompt({ arm, armFile: agent.armFile });
+    assert.doesNotMatch(pr, /dependenc|node:crypto|Math\.random|standard.library|reinvent/i);
   }
 });
 test('only the bulletproof prompt invokes the workflow', () => {
