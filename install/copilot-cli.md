@@ -3,7 +3,20 @@
 Copilot CLI does **not** support custom slash commands (upstream issues #618, #1004), so
 `/bulletproof` isn't available. Instead, install a **custom agent** that embodies the workflow.
 
-## 1. Install the playbook + custom agent
+## Quick install (one command)
+```bash
+curl -fsSL https://raw.githubusercontent.com/shankar029/bulletproof/main/install.sh | sh -s -- copilot
+```
+Windows PowerShell:
+```powershell
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/shankar029/bulletproof/main/install.ps1))) copilot
+```
+That drops the playbook in `~/.copilot/bulletproof/` and the agent in `~/.copilot/agents/`.
+Prefer to do it manually? Steps below.
+
+## Manual install
+
+### 1. Install the playbook + custom agent
 ```bash
 # playbook the agent references
 mkdir -p ~/.copilot/bulletproof

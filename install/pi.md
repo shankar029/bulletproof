@@ -1,5 +1,18 @@
 # Install for pi
 
+## Quick install (one command)
+```bash
+curl -fsSL https://raw.githubusercontent.com/shankar029/bulletproof/main/install.sh | sh -s -- pi
+```
+Windows PowerShell:
+```powershell
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/shankar029/bulletproof/main/install.ps1))) pi
+```
+That drops the skill in `~/.agents/skills/bulletproof/` and the prompt template in
+`~/.pi/agent/prompts/`. Prefer to do it manually? Steps below.
+
+## Manual install
+
 Two files: the skill (the brain) + a prompt template (the `/bulletproof` command).
 
 ## 1. Install the skill

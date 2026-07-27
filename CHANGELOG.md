@@ -7,6 +7,11 @@ All notable changes to this project are documented here. The format is based on
 ## [Unreleased]
 
 ### Added
+- **One-command installers** (`install.sh` for macOS/Linux/Git-Bash, `install.ps1` for Windows
+  PowerShell): `curl -fsSL .../install.sh | sh -s -- <pi|claude|copilot>` downloads the repo and
+  drops the skill + launcher into the right per-agent directories. `BULLETPROOF_REF` pins a
+  release; `BULLETPROOF_SRC` installs from a local checkout. README + each `install/*.md` updated
+  with the one-liner (manual steps kept as fallback).
 - **Eval harness v1** (`evals/`): config-driven `evals/tasks/<id>/task.json` schema + a single
   runner (`evals/run.mjs`) that scores every arm on a weighted composite (accuracy + reuse +
   duplication + extensibility + **scope**), writes `report.md`, and exits non-zero on any

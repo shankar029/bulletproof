@@ -53,9 +53,26 @@ bulletproof/
     ├── pi.md
     ├── claude-code.md
     └── copilot-cli.md
+├── install.sh                   # one-command installer (macOS/Linux/Git-Bash)
+└── install.ps1                  # one-command installer (Windows PowerShell)
 ```
 
 ## Install
+
+**One command** (downloads from GitHub, installs the skill + launcher for your agent):
+
+```bash
+# macOS / Linux / Git-Bash — pick one: pi | claude | copilot
+curl -fsSL https://raw.githubusercontent.com/shankar029/bulletproof/main/install.sh | sh -s -- pi
+```
+
+```powershell
+# Windows PowerShell
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/shankar029/bulletproof/main/install.ps1))) pi
+```
+
+Install a specific release with `BULLETPROOF_REF=v0.1.0`. Prefer to do it by hand? Per-agent manual
+steps:
 
 - **pi** → [`install/pi.md`](install/pi.md) — skill + `/bulletproof` prompt template
 - **Claude Code** → [`install/claude-code.md`](install/claude-code.md) — skill + `/bulletproof` command

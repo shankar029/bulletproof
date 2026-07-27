@@ -1,5 +1,18 @@
 # Install for Claude Code
 
+## Quick install (one command)
+```bash
+curl -fsSL https://raw.githubusercontent.com/shankar029/bulletproof/main/install.sh | sh -s -- claude
+```
+Windows PowerShell:
+```powershell
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/shankar029/bulletproof/main/install.ps1))) claude
+```
+That drops the skill in `~/.claude/skills/bulletproof/` and the command in `~/.claude/commands/`.
+Prefer to do it manually? Steps below.
+
+## Manual install
+
 Two files: the skill + the `/bulletproof` slash command.
 
 ## 1. Install the skill
