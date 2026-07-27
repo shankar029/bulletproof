@@ -45,10 +45,10 @@ const lines = [];
 lines.push('# Eval Report', '');
 lines.push(`_Generated ${new Date().toISOString().slice(0, 10)} · ${tasks.length} tasks · dependency-free (\`node evals/run.mjs\`)._`, '');
 lines.push('## Scorecard', '');
-lines.push('| Task | Surface | Arm | Accuracy | Reuse | Dup-free | Extensible | Composite |');
-lines.push('|---|---|---|---|---|---|---|---|');
+lines.push('| Task | Surface | Arm | Accuracy | Reuse | Dup-free | Extensible | Scope | Composite |');
+lines.push('|---|---|---|---|---|---|---|---|---|');
 for (const r of results) {
-  lines.push(`| ${r.task} | ${r.dimensions.surface} | ${r.arm} | ${pct(r.dims.accuracy)} (${r.fn.pass}/${r.fn.tests}) | ${cell(r.dims.reuse)} | ${cell(r.dims.duplication)} | ${cell(r.dims.extensibility)} | **${r.composite.toFixed(2)}** |`);
+  lines.push(`| ${r.task} | ${r.dimensions.surface} | ${r.arm} | ${pct(r.dims.accuracy)} (${r.fn.pass}/${r.fn.tests}) | ${cell(r.dims.reuse)} | ${cell(r.dims.duplication)} | ${cell(r.dims.extensibility)} | ${cell(r.dims.scope)} | **${r.composite.toFixed(2)}** |`);
 }
 lines.push('');
 

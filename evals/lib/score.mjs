@@ -33,12 +33,19 @@ export function runQuality(task, projectAbs, armDirAbs, repoRoot) {
   const reuse = (q.reuse || []).filter(([, pat]) => new RegExp(pat).test(src)).length;
   const dupPatterns = q.duplication || [];
   const dup = dupPatterns.some((pat) => new RegExp(pat).test(src));
+  const forbidden = q.forbidden || [];
+  const forbiddenHit = forbidden.some((pat) => new RegExp(pat).test(src));
   let ext = null;
   if (q.extensionOracle) {
     const t = tap(path.join(projectAbs, q.extensionOracle), { ARM_PATH: path.join(armDirAbs, q.extensionArm) }, repoRoot);
     ext = t.pass > 0 && t.fail === 0;
   }
-  return { reuse, reuseTotal, dupChecked: dupPatterns.length > 0, dup, ext };
+  return {
+    reuse, reuseTotal,
+    dupChecked: dupPatterns.length > 0, dup,
+    scopeChecked: forbidden.length > 0, forbiddenHit,
+    ext,
+  };
 }
 
 /** Normalize raw probe results into 0..1 dimension scores (null = not applicable). */
@@ -48,6 +55,7 @@ export function toDimensions(fn, q) {
     reuse: q.reuseTotal ? q.reuse / q.reuseTotal : null,
     duplication: q.dupChecked ? (q.dup ? 0 : 1) : null,
     extensibility: q.ext === null ? null : (q.ext ? 1 : 0),
+    scope: q.scopeChecked ? (q.forbiddenHit ? 0 : 1) : null,
   };
 }
 

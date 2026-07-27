@@ -1,0 +1,16 @@
+{
+  "id": "shape-area",
+  "title": "Shape area (refactor to open/closed, preserve behavior)",
+  "dimensions": { "changeType": "refactor", "surface": "library", "stack": "ts-node", "difficulty": "standard" },
+  "project": "benchmark/projects/shape-area",
+  "arms": ["baseline", "bulletproof"],
+  "functional": { "kind": "logic", "oracle": "oracle/oracle.test.ts", "armEntry": "index.ts" },
+  "quality": {
+    "src": "index.ts",
+    "reuse": [["round", "from ['\"]\\.\\./shared/round"]],
+    "duplication": ["Math\\.round\\("],
+    "extensionOracle": "oracle/extension.test.ts",
+    "extensionArm": "index.ts"
+  },
+  "weights": { "accuracy": 0.4, "reuse": 0.15, "extensibility": 0.3, "duplication": 0.15 }
+}

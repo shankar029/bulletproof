@@ -1,0 +1,13 @@
+{
+  "id": "paginator",
+  "title": "Paginator (fix off-by-one / clamping bugs)",
+  "dimensions": { "changeType": "bugfix", "surface": "library", "stack": "ts-node", "difficulty": "standard" },
+  "project": "benchmark/projects/paginator",
+  "arms": ["baseline", "bulletproof"],
+  "functional": { "kind": "logic", "oracle": "oracle/oracle.test.ts", "armEntry": "index.ts" },
+  "quality": {
+    "src": "index.ts",
+    "reuse": [["clamp", "from ['\"]\\.\\./shared/clamp"]]
+  },
+  "weights": { "accuracy": 0.7, "reuse": 0.3 }
+}

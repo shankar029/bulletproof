@@ -1,0 +1,14 @@
+{
+  "id": "uid",
+  "title": "Unique ID (trap: avoid weak RNG / needless dependency)",
+  "dimensions": { "changeType": "greenfield", "surface": "library", "stack": "ts-node", "difficulty": "trap" },
+  "project": "benchmark/projects/uid",
+  "arms": ["baseline", "bulletproof"],
+  "functional": { "kind": "logic", "oracle": "oracle/oracle.test.ts", "armEntry": "index.ts" },
+  "quality": {
+    "src": "index.ts",
+    "reuse": [["crypto", "from ['\"]node:crypto"]],
+    "forbidden": ["Math\\.random\\(", "from ['\"]uuid", "from ['\"]nanoid"]
+  },
+  "weights": { "accuracy": 0.4, "reuse": 0.3, "scope": 0.3 }
+}

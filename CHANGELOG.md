@@ -9,12 +9,15 @@ All notable changes to this project are documented here. The format is based on
 ### Added
 - **Eval harness v1** (`evals/`): config-driven `evals/tasks/<id>/task.json` schema + a single
   runner (`evals/run.mjs`) that scores every arm on a weighted composite (accuracy + reuse +
-  duplication + extensibility), writes `report.md`, and exits non-zero on any bulletproof
-  regression. Seeded with the three v0 projects; adding a task is drop-in (no runner changes).
+  duplication + extensibility + **scope**), writes `report.md`, and exits non-zero on any
+  bulletproof regression. Corpus of **6 tasks** across greenfield/**bugfix**/**refactor**/**trap**
+  and api/cli/ui/library surfaces; adding a task is drop-in (no runner changes).
+- **Scope/guardrail dimension**: a `forbidden`-pattern probe that catches *trap* tasks where an arm
+  is 100% accurate yet wrong (e.g. `uid` baseline passes uniqueness but uses `Math.random()`).
 
 ### Planned
-- Grow the eval corpus to 8–12 tasks (bugfix/refactor/trap tasks, more stacks) and add `pass@k`
-  once agent-in-the-loop runs land (see [`EVAL-PLAN.md`](EVAL-PLAN.md)).
+- Grow the eval corpus toward 8–12 tasks (more stacks, test-backfill, harder difficulties) and add
+  `pass@k` once agent-in-the-loop runs land (see [`EVAL-PLAN.md`](EVAL-PLAN.md)).
 
 ## [0.1.0] — 2026-07-26
 

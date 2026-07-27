@@ -119,7 +119,9 @@ evals/run.mjs
   - [x] `evals/tasks/<id>/task.json` schema + config-driven runner (`evals/run.mjs`, `evals/lib/score.mjs`)
   - [x] Composite scoring (accuracy + reuse + duplication + extensibility, weighted/renormalized)
   - [x] `report.md` scorecard + deltas + coverage matrix; regression-gate exit; seeded with the 3 v0 tasks
-  - [ ] Grow corpus to 8–12 tasks (bugfix / refactor / test-backfill; more stacks; trap tasks)
+  - [x] Corpus grown to 6 tasks incl. **bugfix** (`paginator`), **refactor** (`shape-area`), **trap** (`uid`)
+  - [x] Added a **scope/guardrail** dimension (forbidden-pattern probe) — catches traps that pass on accuracy
+  - [ ] Grow corpus toward 8–12 (more stacks; test-backfill; harder difficulties)
   - [ ] `pass@k` / variance (blocked on v2 agent-in-the-loop; arms are fixed artifacts today)
 - [ ] **v2 — real agent-in-the-loop.** Adapters that actually invoke pi/Claude/Copilot headless on
   the tasks (v0 hand-builds arms; v1.5+ lets the agent build them). Sandbox + budgets.
