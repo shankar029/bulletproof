@@ -23,6 +23,7 @@ Per task, per arm, normalized to 0..1 and combined into a weighted **composite**
 | **duplication** | source grep | `1` if no inlined reimplementation of a shared helper, else `0` |
 | **extensibility** | held-out extension oracle | `1` if a new case is addable without editing the core, else `0` (`n/a` when not probed) |
 | **scope** | source grep (`forbidden`) + direct-dep check (`forbiddenDeps`) | `1` if no forbidden source pattern is present AND no forbidden package is a direct dependency (weak RNG, needless dependency, out-of-scope API), else `0` |
+| **e2e** | arm test grep (`e2e` patterns) | `1` if the arm ships a **surface-appropriate** end-to-end test (cli → real process spawn; api → booted server + real HTTP; ui → browser driving), else `0`. `n/a` for library tasks (their E2E is public-API invocation, already covered by the oracle + testQuality). |
 | **testQuality** | mutation kill-rate | `killed / (killed+survived)` — mutate the arm's *own* impl and re-run the arm's *own* tests. No tests, or tests that fail on the arm's own code → `0`. `n/a` when the task doesn't opt in (`quality.mutate`) or the impl yields no mutable operators. |
 
 `n/a` dimensions are dropped and the remaining weights renormalized. The **scope** dimension is what

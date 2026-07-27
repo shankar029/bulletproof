@@ -8,10 +8,11 @@
   "quality": {
     "src": "cli.ts",
     "mutate": true,
+    "e2e": ["child_process", "spawn", "execFile", "fork\\("],
     "reuse": [["num", "from ['\"]\\.\\./shared/num"]],
     "duplication": ["Math\\.round\\("],
     "extensionOracle": "oracle/extension.test.ts",
     "extensionArm": "cli.ts"
   },
-  "weights": { "accuracy": 0.5, "reuse": 0.2, "extensibility": 0.2, "duplication": 0.1, "testQuality": 0.25 }
+  "weights": { "accuracy": 0.5, "reuse": 0.2, "extensibility": 0.2, "duplication": 0.1, "testQuality": 0.25, "e2e": 0.2 }
 }

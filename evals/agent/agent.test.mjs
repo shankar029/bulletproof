@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { buildPiArgs } from './pi.mjs';
 import { prepWorkspace, buildPrompt } from './workspace.mjs';
 import { summarize, passRate } from './stats.mjs';
+import { isConventionalCommit, scoreProcess } from './process.mjs';
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const paginator = path.join(REPO, 'benchmark', 'projects', 'paginator');
@@ -78,4 +79,27 @@ test('passRate is the fraction of runs at/above the bar', () => {
   assert.equal(passRate([0.4], 1), 0);
   assert.equal(passRate([], 1), 0);
   assert.equal(passRate([0.9, 1], 0.8), 1);
+});
+
+// ---- process adherence (git hygiene of a produced workspace) ----
+test('isConventionalCommit accepts type(scope)!: subject, rejects freeform', () => {
+  assert.equal(isConventionalCommit('feat(paginator): add clamped pagination'), true);
+  assert.equal(isConventionalCommit('fix: guard non-integer total'), true);
+  assert.equal(isConventionalCommit('feat!: drop legacy flag'), true);
+  assert.equal(isConventionalCommit('updated stuff'), false);
+  assert.equal(isConventionalCommit(''), false);
+});
+test('scoreProcess: feature branch + conventional commit scores 1.0', () => {
+  const { score, checks } = scoreProcess({ committed: true, branchedOffMain: true, conventionalCommit: true, committedToMain: false });
+  assert.equal(score, 1);
+  assert.equal(checks.committedToMain, false);
+});
+test('scoreProcess: committing to main is a hard zero regardless of message', () => {
+  assert.equal(scoreProcess({ committed: true, branchedOffMain: false, conventionalCommit: true, committedToMain: true }).score, 0);
+});
+test('scoreProcess: no commits at all scores 0 (no process followed)', () => {
+  assert.equal(scoreProcess({ committed: false, branchedOffMain: false, conventionalCommit: false, committedToMain: false }).score, 0);
+});
+test('scoreProcess: branched but non-conventional message scores partial', () => {
+  assert.ok(Math.abs(scoreProcess({ committed: true, branchedOffMain: true, conventionalCommit: false, committedToMain: false }).score - 2 / 3) < 1e-9);
 });

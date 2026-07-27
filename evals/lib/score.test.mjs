@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseTap, toDimensions, composite, hasForbiddenDep, runTestQuality, testQualityScore } from './score.mjs';
+import { parseTap, toDimensions, composite, hasForbiddenDep, hasE2E, runTestQuality, testQualityScore } from './score.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -23,7 +23,7 @@ test('toDimensions maps a fully-probed arm to all-1s', () => {
   const dims = toDimensions({ pass: 20, tests: 20 }, {
     reuse: 1, reuseTotal: 1, dupChecked: true, dup: false, scopeChecked: true, forbiddenHit: false, ext: true,
   });
-  assert.deepEqual(dims, { accuracy: 1, reuse: 1, duplication: 1, extensibility: 1, scope: 1, testQuality: null });
+  assert.deepEqual(dims, { accuracy: 1, reuse: 1, duplication: 1, extensibility: 1, scope: 1, e2e: null, testQuality: null });
 });
 test('toDimensions returns null for unprobed dimensions', () => {
   const dims = toDimensions({ pass: 5, tests: 7 }, {
@@ -84,6 +84,24 @@ test('hasForbiddenDep is false when no forbidden dep is declared directly', () =
 test('hasForbiddenDep ignores absent manifest / empty name list', () => {
   assert.equal(hasForbiddenDep(null, ['uuid']), false);
   assert.equal(hasForbiddenDep({ dependencies: { uuid: '^9' } }, []), false);
+});
+
+// ---- hasE2E (surface-appropriate end-to-end verification in the arm's own tests) ----
+test('hasE2E detects real CLI spawn / HTTP / browser driving', () => {
+  assert.equal(hasE2E("import { spawn } from 'node:child_process';", ['child_process', 'spawn']), true);
+  assert.equal(hasE2E('const s = createServer(); await fetch(base);', ['createServer', 'fetch\\(']), true);
+  assert.equal(hasE2E('await page.goto(base);', ['page\\.goto', 'chromium']), true);
+});
+test('hasE2E is false for unit-only tests, empty sources, or no patterns', () => {
+  assert.equal(hasE2E("assert.equal(applyDiscount(x), y);", ['createServer', 'fetch\\(']), false);
+  assert.equal(hasE2E('', ['spawn']), false);
+  assert.equal(hasE2E('spawn(x)', []), false);
+});
+test('toDimensions surfaces e2e (1 when a matching test ships, 0 when checked but absent)', () => {
+  const base = { reuseTotal: 0, dupChecked: false, scopeChecked: false, ext: null };
+  assert.equal(toDimensions({ pass: 1, tests: 1 }, { ...base, e2eChecked: true, e2eHit: true }).e2e, 1);
+  assert.equal(toDimensions({ pass: 1, tests: 1 }, { ...base, e2eChecked: true, e2eHit: false }).e2e, 0);
+  assert.equal(toDimensions({ pass: 1, tests: 1 }, { ...base, e2eChecked: false }).e2e, null);
 });
 
 // ---- testQualityScore (mutation kill-rate → 0..1 dimension) ----

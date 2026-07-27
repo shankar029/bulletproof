@@ -17,6 +17,7 @@ import { runFunctional, runQuality, runTestQuality, toDimensions, composite } fr
 import { buildPiArgs, invokePi } from './pi.mjs';
 import { prepWorkspace, buildPrompt } from './workspace.mjs';
 import { summarize, passRate } from './stats.mjs';
+import { isConventionalCommit, scoreProcess } from './process.mjs';
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const SKILL = path.join(REPO, 'SKILL.md');
@@ -49,6 +50,28 @@ function git(cwd, ...a) {
   spawnSync('git', ['-c', 'user.email=eval@bulletproof', '-c', 'user.name=eval', ...a], { cwd, encoding: 'utf8' });
 }
 
+/** git that returns trimmed stdout (for read-only introspection). */
+function gitOut(cwd, ...a) {
+  const r = spawnSync('git', a, { cwd, encoding: 'utf8' });
+  return (r.stdout || '').trim();
+}
+
+/** Observe process adherence of a produced workspace: did the arm commit its work on a feature
+ *  branch (not the seed/default branch) with a Conventional Commit message? */
+function observeProcess(ws, seedBranch, seedSha) {
+  const headBranch = gitOut(ws, 'rev-parse', '--abbrev-ref', 'HEAD');
+  const afterCount = Number(gitOut(ws, 'rev-list', '--count', `${seedSha}..HEAD`) || '0');
+  const seedNow = gitOut(ws, 'rev-parse', seedBranch);
+  const committed = afterCount > 0;
+  const latestMsg = committed ? gitOut(ws, 'log', '-1', '--format=%s') : '';
+  return scoreProcess({
+    committed,
+    branchedOffMain: committed && headBranch !== seedBranch,
+    conventionalCommit: committed && isConventionalCommit(latestMsg),
+    committedToMain: seedNow !== seedSha, // seed/default branch advanced past the seed commit
+  });
+}
+
 /** Best-effort recursive delete. Agent runs can create locked/long-path node_modules that Windows
  *  refuses to remove (EPERM); a failed cleanup must never abort the eval — just leave the temp dir. */
 function safeRm(p) {
@@ -77,6 +100,8 @@ const skillBundle = (!opts.dryRun && opts.arms.includes('bulletproof')) ? stageS
 function runOnce(arm) {
   const { ws, armDir } = prepWorkspace({ projectAbs, agent: task.agent });
   git(ws, 'init', '-q'); git(ws, 'add', '-A'); git(ws, 'commit', '-qm', 'seed');
+  const seedBranch = gitOut(ws, 'rev-parse', '--abbrev-ref', 'HEAD');
+  const seedSha = gitOut(ws, 'rev-parse', 'HEAD');
   let run = { ms: 0, timedOut: false };
   if (opts.dryRun) {
     cpSync(path.join(projectAbs, task.agent.reference), path.join(ws, task.agent.armFile));
@@ -94,10 +119,11 @@ function runOnce(arm) {
   const produced = existsSync(path.join(ws, task.agent.armFile));
   const s = produced ? scoreArm(task, projectAbs, armDir)
     : { fn: { pass: 0, tests: 0 }, tq: { applicable: false }, dims: { accuracy: 0, testQuality: null }, composite: 0 };
+  const proc = opts.dryRun ? null : observeProcess(ws, seedBranch, seedSha);
   if (opts.keep) console.log(`   · workspace: ${ws}`);
   else safeRm(ws);
   const tqScore = s.dims.testQuality;
-  return { produced, composite: s.composite, accuracy: s.dims.accuracy ?? 0, testQuality: tqScore, timedOut: run.timedOut, ms: run.ms };
+  return { produced, composite: s.composite, accuracy: s.dims.accuracy ?? 0, testQuality: tqScore, process: proc, timedOut: run.timedOut, ms: run.ms };
 }
 
 const label = opts.runs > 1 ? ` ×${opts.runs}` : '';
@@ -109,7 +135,7 @@ for (const arm of opts.arms) {
   for (let i = 0; i < opts.runs; i++) {
     const r = runOnce(arm);
     runs.push(r);
-    console.log(`- run ${i + 1}/${opts.runs}: composite ${r.composite.toFixed(2)} · acc ${r.accuracy.toFixed(2)}${r.testQuality === null || r.testQuality === undefined ? '' : ` · test-real ${r.testQuality.toFixed(2)}`} · ${(r.ms / 1000).toFixed(0)}s${r.timedOut ? ' (TIMED OUT)' : ''}${r.produced ? '' : ' (NO ARM)'}`);
+    console.log(`- run ${i + 1}/${opts.runs}: composite ${r.composite.toFixed(2)} · acc ${r.accuracy.toFixed(2)}${r.testQuality === null || r.testQuality === undefined ? '' : ` · test-real ${r.testQuality.toFixed(2)}`}${r.process ? ` · process ${r.process.score.toFixed(2)}${r.process.checks.committedToMain ? ' ⚠main!' : ''}` : ''} · ${(r.ms / 1000).toFixed(0)}s${r.timedOut ? ' (TIMED OUT)' : ''}${r.produced ? '' : ' (NO ARM)'}`);
   }
   const comps = runs.map((r) => r.composite);
   const st = summarize(comps);

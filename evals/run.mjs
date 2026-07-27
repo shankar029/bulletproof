@@ -36,7 +36,7 @@ for (const task of tasks) {
     // Regression gate: a bulletproof arm must be perfect on every exact dimension, and clear the
     // test-realness bar (mutation kill-rate; equivalent mutants make an exact 1.0 unsound).
     const TQ_BAR = 0.9;
-    const exact = [dims.accuracy, dims.reuse, dims.duplication, dims.extensibility, dims.scope];
+    const exact = [dims.accuracy, dims.reuse, dims.duplication, dims.extensibility, dims.scope, dims.e2e];
     const failed = arm === 'bulletproof' && (
       exact.some((v) => v !== null && v < 1) ||
       (dims.testQuality !== null && dims.testQuality < TQ_BAR)
@@ -52,14 +52,14 @@ const lines = [];
 lines.push('# Eval Report', '');
 lines.push(`_Generated ${new Date().toISOString().slice(0, 10)} · ${tasks.length} tasks · dependency-free (\`node evals/run.mjs\`)._`, '');
 lines.push('## Scorecard', '');
-lines.push('| Task | Surface | Arm | Accuracy | Reuse | Dup-free | Extensible | Scope | Test-real | Composite |');
-lines.push('|---|---|---|---|---|---|---|---|---|---|');
+lines.push('| Task | Surface | Arm | Accuracy | Reuse | Dup-free | Extensible | Scope | E2E | Test-real | Composite |');
+lines.push('|---|---|---|---|---|---|---|---|---|---|---|');
 for (const r of results) {
   const tr = r.dims.testQuality === null ? 'n/a'
     : r.tq.testsPresent === false ? '0.00 (no tests)'
     : r.tq.greenBaseline === false ? '0.00 (tests fail on own code)'
     : `${cell(r.dims.testQuality)} (${r.tq.killed}/${r.tq.killed + r.tq.survived})`;
-  lines.push(`| ${r.task} | ${r.dimensions.surface} | ${r.arm} | ${pct(r.dims.accuracy)} (${r.fn.pass}/${r.fn.tests}) | ${cell(r.dims.reuse)} | ${cell(r.dims.duplication)} | ${cell(r.dims.extensibility)} | ${cell(r.dims.scope)} | ${tr} | **${r.composite.toFixed(2)}** |`);
+  lines.push(`| ${r.task} | ${r.dimensions.surface} | ${r.arm} | ${pct(r.dims.accuracy)} (${r.fn.pass}/${r.fn.tests}) | ${cell(r.dims.reuse)} | ${cell(r.dims.duplication)} | ${cell(r.dims.extensibility)} | ${cell(r.dims.scope)} | ${cell(r.dims.e2e)} | ${tr} | **${r.composite.toFixed(2)}** |`);
 }
 lines.push('');
 

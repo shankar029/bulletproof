@@ -8,10 +8,11 @@
   "quality": {
     "src": "index.ts",
     "mutate": true,
+    "e2e": ["createServer", "\\.listen\\(", "fetch\\(", "supertest", "http\\.request"],
     "reuse": [["money", "from ['\"]\\.\\./shared/money"], ["http", "from ['\"]\\.\\./shared/http"]],
     "duplication": ["res\\.writeHead\\(", "Math\\.round\\("],
     "extensionOracle": "oracle/extension.test.ts",
     "extensionArm": "index.ts"
   },
-  "weights": { "accuracy": 0.5, "reuse": 0.2, "extensibility": 0.2, "duplication": 0.1, "testQuality": 0.25 }
+  "weights": { "accuracy": 0.5, "reuse": 0.2, "extensibility": 0.2, "duplication": 0.1, "testQuality": 0.25, "e2e": 0.2 }
 }

@@ -49,6 +49,14 @@ export function runFunctional(task, projectAbs, armDirAbs, repoRoot) {
   return { pass: t.pass, tests: t.tests };
 }
 
+/** True if any arm test source matches a surface-appropriate end-to-end pattern (real CLI spawn,
+ *  real HTTP against a booted server, real browser driving). Pure. `sources` = concatenated test
+ *  file contents; `patterns` = regexes for the task's surface. */
+export function hasE2E(sources, patterns) {
+  if (!patterns || !patterns.length || !sources) return false;
+  return patterns.some((p) => new RegExp(p).test(sources));
+}
+
 /** Engineering-quality probes: reuse of shared utils, duplication, and extensibility. */
 export function runQuality(task, projectAbs, armDirAbs, repoRoot) {
   const q = task.quality;
@@ -72,11 +80,23 @@ export function runQuality(task, projectAbs, armDirAbs, repoRoot) {
     const t = tap(path.join(projectAbs, q.extensionOracle), { ARM_PATH: path.join(armDirAbs, q.extensionArm) }, repoRoot);
     ext = t.pass > 0 && t.fail === 0;
   }
+  // E2E-verification: does the arm ship an end-to-end test appropriate to its surface?
+  const e2ePatterns = q.e2e || [];
+  const e2eChecked = e2ePatterns.length > 0;
+  let e2eHit = false;
+  if (e2eChecked) {
+    const testSrc = readdirSync(armDirAbs)
+      .filter((f) => f.includes('.test.'))
+      .map((f) => { try { return readFileSync(path.join(armDirAbs, f), 'utf8'); } catch { return ''; } })
+      .join('\n');
+    e2eHit = hasE2E(testSrc, e2ePatterns);
+  }
   return {
     reuse, reuseTotal,
     dupChecked: dupPatterns.length > 0, dup,
     scopeChecked: forbidden.length > 0 || forbiddenDeps.length > 0, forbiddenHit: forbiddenHit || depHit,
     ext,
+    e2eChecked, e2eHit,
   };
 }
 
@@ -136,6 +156,7 @@ export function toDimensions(fn, q, tq) {
     duplication: q.dupChecked ? (q.dup ? 0 : 1) : null,
     extensibility: q.ext === null ? null : (q.ext ? 1 : 0),
     scope: q.scopeChecked ? (q.forbiddenHit ? 0 : 1) : null,
+    e2e: q.e2eChecked ? (q.e2eHit ? 1 : 0) : null,
     testQuality: testQualityScore(tq),
   };
 }
