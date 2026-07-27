@@ -50,6 +50,13 @@ All notable changes to this project are documented here. The format is based on
   clean), at a 4–6× latency cost. Recorded in [`evals/agent/README.md`](evals/agent/README.md).
 
 ### Changed
+- **Skill: interactive Phase 1 clarification.** Phase 1 (Understand) now makes clarification a
+  first-class, gated step: the agent lists genuine unknowns, resolves what it can from code/docs, and
+  for anything material that remains **asks the user (batched, with recommended defaults) and waits
+  for the answers before planning** when a user is present — or, in a headless/one-shot run,
+  defaults-and-records the assumptions instead of blocking. GATE 1 now requires every material
+  ambiguity to be resolved or clarified before Phase 2. (SKILL.md prime directive #5 + Phase 1;
+  copilot launcher synced.)
 - **Skill: right-size the effort.** SKILL.md + `references/testing-and-e2e.md` now direct the agent
   to reuse the project's existing tooling and prefer a zero-install built-in runner (e.g.
   `node --test`) instead of scaffolding a framework + coverage + `npm install`, and to match E2E

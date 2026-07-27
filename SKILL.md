@@ -34,8 +34,12 @@ to an issue/PR. If it points to a file or URL, read it fully first.
    Never suppress a lint/type error without a written, justified reason.
 4. **Prove everything.** A change is not done until tests pass, coverage holds, and
    the feature is demonstrated working end to end with captured evidence.
-5. **Ask only real questions.** If acceptance criteria are genuinely ambiguous, ask
-   (batched, each with a recommended default). Otherwise proceed.
+5. **Ask only real questions — but ask them early.** Surface genuine ambiguity in **Phase 1,
+   before planning**, batched, each with a recommended default and its tradeoff. When a user is
+   present, **pause and wait** for the answers before designing. When no answer is available (a
+   headless/one-shot run), proceed on the recommended defaults and record them as explicit
+   assumptions to confirm. Never invent scope; never ask about anything you can resolve yourself
+   from the code, docs, issue, or conventions.
 
 ## The Loop
 
@@ -50,9 +54,22 @@ to an issue/PR. If it points to a file or URL, read it fully first.
   multi-part request**, and the implied non-functional needs it carries (performance, security,
   accessibility, backward-compatibility). Capture exactly what was asked — never drop a part, never
   invent scope that wasn't requested.
+- **Clarify before planning — interactively when possible.** List the genuine unknowns implied by
+  the acceptance criteria: ambiguous scope, conflicting or missing requirements, undecided behavior
+  or API/UX shape, and acceptance thresholds you cannot derive. **Resolve each from the code, docs,
+  issue, and conventions first.** For anything material that still remains:
+  - **A user is present to answer →** *stop and ask now.* Batch the questions (2–4), each with a
+    recommended default and the tradeoff, and **do not enter Phase 2 until the answers land.** It is
+    correct to pause here — a wrong assumption is far more expensive than a question. Fold the
+    answers back into the acceptance criteria.
+  - **No answer is available this run** (headless/CI/one-shot) → **do not block.** Take the
+    recommended default for each open question, **record it as an explicit assumption** in the plan,
+    proceed, and surface those assumptions in the PR for confirmation.
 - **GATE 1:** You can state the project profile in a few lines and list acceptance criteria whose
-  union covers the whole request — re-read the ask and confirm nothing is missing or added.
-  Ambiguities are either resolved or asked (with recommendations).
+  union covers the whole request — re-read the ask and confirm nothing is missing or added. **Every
+  material ambiguity is resolved** (from code/docs) **or clarified** — answered by the user when
+  interactive, or defaulted-and-recorded when not. No open unknown remains that could change the
+  plan.
 
 ### Phase 2 — Plan (design-first)
 - Design the solution grounded in **SOLID, DRY, YAGNI, KISS, separation of concerns**
