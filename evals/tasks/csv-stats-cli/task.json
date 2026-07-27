@@ -1,0 +1,16 @@
+{
+  "id": "csv-stats-cli",
+  "title": "CSV column-statistics CLI",
+  "dimensions": { "changeType": "greenfield", "surface": "cli", "stack": "ts-node", "difficulty": "standard" },
+  "project": "benchmark/projects/csv-stats-cli",
+  "arms": ["baseline", "bulletproof"],
+  "functional": { "kind": "logic", "oracle": "oracle/oracle.test.ts", "armEntry": "cli.ts" },
+  "quality": {
+    "src": "cli.ts",
+    "reuse": [["num", "from ['\"]\\.\\./shared/num"]],
+    "duplication": ["Math\\.round\\("],
+    "extensionOracle": "oracle/extension.test.ts",
+    "extensionArm": "cli.ts"
+  },
+  "weights": { "accuracy": 0.5, "reuse": 0.2, "extensibility": 0.2, "duplication": 0.1 }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "signup-form",
+  "title": "Client-side validated signup form",
+  "dimensions": { "changeType": "greenfield", "surface": "ui", "stack": "web", "difficulty": "standard" },
+  "project": "benchmark/projects/signup-form",
+  "arms": ["baseline", "bulletproof"],
+  "functional": { "kind": "ui", "oracle": "oracle/oracle.mjs" },
+  "quality": {
+    "src": "index.html",
+    "reuse": [["validators", "from ['\"]/?(\\.\\./)?shared/validators"]],
+    "duplication": ["EMAIL_RE\\s*=\\s*/", "pw\\.length\\s*<\\s*8"],
+    "extensionOracle": null
+  },
+  "weights": { "accuracy": 0.5, "reuse": 0.2, "extensibility": 0.2, "duplication": 0.1 }
+}

@@ -114,8 +114,13 @@ evals/run.mjs
 ## 8. Phased rollout
 
 - [x] **v0 — seed.** Oracle A/B on 3 projects (API/CLI/UI), reproducible runner. *(done in `benchmark/`)*
-- [ ] **v1 — corpus + scoring.** Formalize `evals/tasks/` schema; add 8–12 tasks across the matrix;
+- [~] **v1 — corpus + scoring.** Formalize `evals/tasks/` schema; add 8–12 tasks across the matrix;
   programmatic quality metrics; variance runs (`pass@k`).
+  - [x] `evals/tasks/<id>/task.json` schema + config-driven runner (`evals/run.mjs`, `evals/lib/score.mjs`)
+  - [x] Composite scoring (accuracy + reuse + duplication + extensibility, weighted/renormalized)
+  - [x] `report.md` scorecard + deltas + coverage matrix; regression-gate exit; seeded with the 3 v0 tasks
+  - [ ] Grow corpus to 8–12 tasks (bugfix / refactor / test-backfill; more stacks; trap tasks)
+  - [ ] `pass@k` / variance (blocked on v2 agent-in-the-loop; arms are fixed artifacts today)
 - [ ] **v2 — real agent-in-the-loop.** Adapters that actually invoke pi/Claude/Copilot headless on
   the tasks (v0 hand-builds arms; v1.5+ lets the agent build them). Sandbox + budgets.
 - [ ] **v3 — judge + guardrails.** LLM-judge with validation; policy hard-fails; ablation arms.

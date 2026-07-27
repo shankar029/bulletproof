@@ -79,6 +79,10 @@ utilities and can't be extended without editing core**, while every bulletproof 
 shared helpers, adds no duplication, and is open/closed** (a held-out oracle adds a brand-new case
 without touching the core function). Full findings in [`benchmark/RESULTS.md`](benchmark/RESULTS.md).
 
+A config-driven **eval harness** in [`evals/`](evals/) formalizes this into a task corpus with a
+single runner and a weighted composite scorecard (`node evals/run.mjs` → [`evals/report.md`](evals/report.md)),
+doubling as a regression gate. Roadmap in [`EVAL-PLAN.md`](EVAL-PLAN.md).
+
 ## Design notes
 
 - **Single source of truth:** the loop lives once in `SKILL.md`; launchers are thin wrappers, so

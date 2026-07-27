@@ -1,0 +1,16 @@
+{
+  "id": "discount-api",
+  "title": "Discount-code pricing API",
+  "dimensions": { "changeType": "greenfield", "surface": "api", "stack": "ts-node", "difficulty": "standard" },
+  "project": "benchmark/projects/discount-api",
+  "arms": ["baseline", "bulletproof"],
+  "functional": { "kind": "logic", "oracle": "oracle/oracle.test.ts", "armEntry": "index.ts" },
+  "quality": {
+    "src": "index.ts",
+    "reuse": [["money", "from ['\"]\\.\\./shared/money"], ["http", "from ['\"]\\.\\./shared/http"]],
+    "duplication": ["res\\.writeHead\\(", "Math\\.round\\("],
+    "extensionOracle": "oracle/extension.test.ts",
+    "extensionArm": "index.ts"
+  },
+  "weights": { "accuracy": 0.5, "reuse": 0.2, "extensibility": 0.2, "duplication": 0.1 }
+}

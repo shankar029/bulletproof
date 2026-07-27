@@ -6,9 +6,15 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+- **Eval harness v1** (`evals/`): config-driven `evals/tasks/<id>/task.json` schema + a single
+  runner (`evals/run.mjs`) that scores every arm on a weighted composite (accuracy + reuse +
+  duplication + extensibility), writes `report.md`, and exits non-zero on any bulletproof
+  regression. Seeded with the three v0 projects; adding a task is drop-in (no runner changes).
+
 ### Planned
-- **EVAL-PLAN v1** — formalize the `evals/tasks/` fixture schema and grow the corpus across
-  change types, surfaces, and stacks (see [`EVAL-PLAN.md`](EVAL-PLAN.md)).
+- Grow the eval corpus to 8–12 tasks (bugfix/refactor/trap tasks, more stacks) and add `pass@k`
+  once agent-in-the-loop runs land (see [`EVAL-PLAN.md`](EVAL-PLAN.md)).
 
 ## [0.1.0] — 2026-07-26
 
