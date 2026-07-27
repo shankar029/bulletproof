@@ -23,6 +23,9 @@ All notable changes to this project are documented here. The format is based on
 - **`forbiddenDeps` scope check**: `runQuality` now also flags a forbidden package declared as a
   DIRECT dependency in the arm's `package.json` (via pure, tested `hasForbiddenDep`) — closing the
   source-grep-only blind spot. Transitive tooling deps are ignored. `uid` gains `forbiddenDeps`.
+- **Live trap-task results** (`map-limit`, `expr-eval` agent blocks added): pass@k on four tasks
+  shows a strong base model ceilings on 3 of 4; the skill's measurable win is `uid` (33%→100%
+  clean), at a 4–6× latency cost. Recorded in [`evals/agent/README.md`](evals/agent/README.md).
 
 ### Planned
 - Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
