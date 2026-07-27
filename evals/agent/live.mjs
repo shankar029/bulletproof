@@ -49,6 +49,16 @@ function git(cwd, ...a) {
   spawnSync('git', ['-c', 'user.email=eval@bulletproof', '-c', 'user.name=eval', ...a], { cwd, encoding: 'utf8' });
 }
 
+/** Best-effort recursive delete. Agent runs can create locked/long-path node_modules that Windows
+ *  refuses to remove (EPERM); a failed cleanup must never abort the eval — just leave the temp dir. */
+function safeRm(p) {
+  try {
+    rmSync(p, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+  } catch (e) {
+    console.log(`   · (cleanup skipped: ${e.code || e.message})`);
+  }
+}
+
 function scoreArm(task, projectAbs, armDir) {
   const fn = runFunctional(task, projectAbs, armDir, REPO);
   const q = runQuality(task, projectAbs, armDir, REPO);
@@ -78,7 +88,7 @@ function runOnce(arm) {
   const s = produced ? scoreArm(task, projectAbs, armDir)
     : { fn: { pass: 0, tests: 0 }, dims: { accuracy: 0 }, composite: 0 };
   if (opts.keep) console.log(`   · workspace: ${ws}`);
-  else rmSync(ws, { recursive: true, force: true });
+  else safeRm(ws);
   return { produced, composite: s.composite, accuracy: s.dims.accuracy ?? 0, timedOut: run.timedOut, ms: run.ms };
 }
 
@@ -109,4 +119,4 @@ if (b && p) {
   const d = p.st.mean - b.st.mean;
   console.log(`Δ bulletproof − baseline (mean composite): ${d >= 0 ? '+' : ''}${d.toFixed(2)}  ·  clean-rate ${(b.clean * 100).toFixed(0)}% → ${(p.clean * 100).toFixed(0)}%`);
 }
-if (skillBundle) rmSync(skillBundle, { recursive: true, force: true });
+if (skillBundle) safeRm(skillBundle);
