@@ -50,10 +50,12 @@ else
   command -v tar  >/dev/null 2>&1 || die "tar is required"
   TMP="$(mktemp -d)"
   echo "-> downloading $REPO@$REF ..."
-  curl -fsSL "https://github.com/$REPO/archive/refs/heads/$REF.tar.gz" | tar -xz -C "$TMP" \
+  # Generic archive form resolves a branch, tag, or commit SHA (refs/heads is branch-only).
+  curl -fsSL "https://github.com/$REPO/archive/$REF.tar.gz" | tar -xz -C "$TMP" \
     || die "download/extract failed for ref '$REF'"
-  SRC="$TMP/bulletproof-$REF"
-  [ -f "$SRC/SKILL.md" ] || die "SKILL.md missing in archive (bad ref '$REF'?)"
+  # GitHub strips a leading 'v' from tag dir names, so find the extracted dir rather than guess.
+  SRC="$(find "$TMP" -mindepth 1 -maxdepth 1 -type d | head -n 1)"
+  [ -n "$SRC" ] && [ -f "$SRC/SKILL.md" ] || die "SKILL.md missing in archive (bad ref '$REF'?)"
 fi
 
 install_skill() { # $1 = skills root; installs <root>/bulletproof/{SKILL.md,references/}

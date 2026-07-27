@@ -34,10 +34,12 @@ try {
     New-Item -ItemType Directory -Force -Path $tmp | Out-Null
     $zip = Join-Path $tmp 'src.zip'
     Write-Host "-> downloading $Repo@$Ref ..."
-    Invoke-WebRequest -Uri "https://github.com/$Repo/archive/refs/heads/$Ref.zip" -OutFile $zip
+    # Generic archive form resolves a branch, tag, or commit SHA (refs/heads is branch-only).
+    Invoke-WebRequest -Uri "https://github.com/$Repo/archive/$Ref.zip" -OutFile $zip
     Expand-Archive -Path $zip -DestinationPath $tmp -Force
-    $src = Join-Path $tmp "bulletproof-$Ref"
-    if (-not (Test-Path (Join-Path $src 'SKILL.md'))) { throw "SKILL.md missing in archive (bad ref '$Ref'?)" }
+    # GitHub strips a leading 'v' from tag dir names, so take the extracted dir rather than guess.
+    $src = (Get-ChildItem -Path $tmp -Directory | Select-Object -First 1).FullName
+    if (-not $src -or -not (Test-Path (Join-Path $src 'SKILL.md'))) { throw "SKILL.md missing in archive (bad ref '$Ref'?)" }
   }
 
   function Install-Skill($skillsRoot) {

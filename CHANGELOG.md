@@ -52,4 +52,4 @@ Initial release: a portable `/bulletproof` skill plus an objective benchmark pro
 
 [Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.2.0...HEAD
 [0.2.0]: https://github.com/shankar029/bulletproof/compare/v0.1.0...v0.2.0
-[0.1.0]: https://github.com/shankar029/bulletproof/releases/tag/v0.1.0
+[0.1.0]: https://github.com/shankar029/bulletproof/tree/v0.1.0
