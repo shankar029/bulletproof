@@ -122,7 +122,8 @@ evals/run.mjs
   - [x] Corpus grown to 6 tasks incl. **bugfix** (`paginator`), **refactor** (`shape-area`), **trap** (`uid`)
   - [x] Added a **scope/guardrail** dimension (forbidden-pattern probe) — catches traps that pass on accuracy
   - [x] Corpus at **8 tasks**: added **test-backfill** (`median-backfill`, graded by mutation kill-rate) and a **gnarly** recursive-descent evaluator (`expr-eval`)
-  - [ ] Grow corpus toward 12 (more stacks; harder difficulties)
+  - [x] Corpus at **10 tasks**: added **async concurrency** (`map-limit`, gnarly) and a **stateful refactor** (`order-fsm`)
+  - [ ] Grow toward 12 (a non-Node **stack** — needs a runtime/container, ties into v2 sandbox)
   - [ ] `pass@k` / variance (blocked on v2 agent-in-the-loop; arms are fixed artifacts today)
 - [ ] **v2 — real agent-in-the-loop.** Adapters that actually invoke pi/Claude/Copilot headless on
   the tasks (v0 hand-builds arms; v1.5+ lets the agent build them). Sandbox + budgets.

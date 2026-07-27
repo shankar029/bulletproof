@@ -1,0 +1,10 @@
+{
+  "id": "map-limit",
+  "title": "Bounded-concurrency async map (order-preserving)",
+  "dimensions": { "changeType": "greenfield", "surface": "library", "stack": "ts-node", "difficulty": "gnarly" },
+  "project": "benchmark/projects/map-limit",
+  "arms": ["baseline", "bulletproof"],
+  "functional": { "kind": "logic", "oracle": "oracle/oracle.test.ts", "armEntry": "index.ts" },
+  "quality": { "src": "index.ts" },
+  "weights": { "accuracy": 1.0 }
+}

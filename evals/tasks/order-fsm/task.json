@@ -1,0 +1,14 @@
+{
+  "id": "order-fsm",
+  "title": "Order state machine (refactor to open/closed transition table)",
+  "dimensions": { "changeType": "refactor", "surface": "library", "stack": "ts-node", "difficulty": "standard" },
+  "project": "benchmark/projects/order-fsm",
+  "arms": ["baseline", "bulletproof"],
+  "functional": { "kind": "logic", "oracle": "oracle/oracle.test.ts", "armEntry": "index.ts" },
+  "quality": {
+    "src": "index.ts",
+    "extensionOracle": "oracle/extension.test.ts",
+    "extensionArm": "index.ts"
+  },
+  "weights": { "accuracy": 0.6, "extensibility": 0.4 }
+}

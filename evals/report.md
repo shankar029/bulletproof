@@ -1,6 +1,6 @@
 # Eval Report
 
-_Generated 2026-07-27 · 8 tasks · dependency-free (`node evals/run.mjs`)._
+_Generated 2026-07-27 · 10 tasks · dependency-free (`node evals/run.mjs`)._
 
 ## Scorecard
 
@@ -12,8 +12,12 @@ _Generated 2026-07-27 · 8 tasks · dependency-free (`node evals/run.mjs`)._
 | discount-api | api | bulletproof |  100% (20/20) | 1.00 | 1.00 | 1.00 | n/a | **1.00** |
 | expr-eval | library | baseline |   38% (5/13) | 0.00 | n/a | n/a | 1.00 | **0.42** |
 | expr-eval | library | bulletproof |  100% (13/13) | 1.00 | n/a | n/a | 1.00 | **1.00** |
+| map-limit | library | baseline |   71% (5/7) | n/a | n/a | n/a | n/a | **0.71** |
+| map-limit | library | bulletproof |  100% (7/7) | n/a | n/a | n/a | n/a | **1.00** |
 | median-backfill | library | baseline |   33% (2/6) | n/a | n/a | n/a | 1.00 | **0.47** |
 | median-backfill | library | bulletproof |  100% (6/6) | n/a | n/a | n/a | 1.00 | **1.00** |
+| order-fsm | library | baseline |   50% (3/6) | n/a | n/a | 0.00 | n/a | **0.30** |
+| order-fsm | library | bulletproof |  100% (6/6) | n/a | n/a | 1.00 | n/a | **1.00** |
 | paginator | library | baseline |   33% (2/6) | 0.00 | n/a | n/a | n/a | **0.23** |
 | paginator | library | bulletproof |  100% (6/6) | 1.00 | n/a | n/a | n/a | **1.00** |
 | shape-area | library | baseline |   75% (3/4) | 0.00 | 0.00 | 0.00 | n/a | **0.30** |
@@ -30,12 +34,14 @@ _Generated 2026-07-27 · 8 tasks · dependency-free (`node evals/run.mjs`)._
 | csv-stats-cli | +100 pts | +0.90 |
 | discount-api | +45 pts | +0.72 |
 | expr-eval | +62 pts | +0.58 |
+| map-limit | +29 pts | +0.29 |
 | median-backfill | +67 pts | +0.53 |
+| order-fsm | +50 pts | +0.70 |
 | paginator | +67 pts | +0.77 |
 | shape-area | +25 pts | +0.70 |
 | signup-form | +57 pts | +0.61 |
 | uid | +0 pts | +0.60 |
-| **average** | **+53 pts** | **+0.68** |
+| **average** | **+50 pts** | **+0.64** |
 
 ## Coverage matrix
 
@@ -44,7 +50,9 @@ _Generated 2026-07-27 · 8 tasks · dependency-free (`node evals/run.mjs`)._
 | csv-stats-cli | greenfield | cli | ts-node | standard |
 | discount-api | greenfield | api | ts-node | standard |
 | expr-eval | greenfield | library | ts-node | gnarly |
+| map-limit | greenfield | library | ts-node | gnarly |
 | median-backfill | test-backfill | library | ts-node | standard |
+| order-fsm | refactor | library | ts-node | standard |
 | paginator | bugfix | library | ts-node | standard |
 | shape-area | refactor | library | ts-node | standard |
 | signup-form | greenfield | ui | web | standard |
