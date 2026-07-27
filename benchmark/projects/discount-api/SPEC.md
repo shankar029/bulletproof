@@ -26,6 +26,17 @@ Rules:
 - `400 { error }` on any validation/rule failure
 - other routes → `404`
 
+## Project context (reuse these)
+The repo ships shared utilities in `shared/`:
+- `roundMoney(n)` — money rounding to 2 decimals.
+- `sendJson(res, status, payload)` — HTTP JSON responses.
+
+Reuse them; do **not** reimplement rounding or hand-roll `res.writeHead(...)`.
+
+## Extensibility
+New discount codes must be addable **without editing `applyDiscount`**. Expose
+`registerCode(name, def)` so codes are added by data (open/closed).
+
 ## Acceptance
 All rules above must hold, including boundaries (min exactly met), rounding, the zero-floor,
 expiry, and input validation.

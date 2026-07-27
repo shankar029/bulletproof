@@ -35,6 +35,14 @@
 - [x] Result: oracle accuracy 40.0% (baseline) -> 100% (bulletproof) across API+CLI+UI, +60 pts
 - [x] `EVAL-PLAN.md` — plan to grow the benchmark into a continuous, CI-gated eval harness
 
+## Convergence loop + engineering-quality eval (added)
+- [x] `references/quality-bar.md` — 8-dimension top-1% rubric + convergence protocol (iterate until ≥4/5)
+- [x] `SKILL.md` reframed as a convergence loop (scope fidelity, reuse, design, extensibility scored)
+- [x] Seeded `discount-api/shared/` utils + `registerCode` extension point + `oracle/extension.test.ts`
+- [x] `benchmark/score-quality.mjs` — measures reuse / duplication / extensibility objectively
+- [x] Result: baseline 0/2 reuse, duplicates, not extensible — bulletproof 2/2, no dup, open/closed
+- [x] Functional oracle unaffected by refactor (bulletproof still 20/20, 21 own tests)
+
 ## Decisions log
 - 2026-07-26 — command name `/bulletproof` (matches repo, memorable).
 - 2026-07-26 — Copilot CLI gets a custom agent, not a slash command (upstream gap, issues #618/#1004).

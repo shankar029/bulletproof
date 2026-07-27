@@ -62,6 +62,26 @@ first failing rule, and was verified in a **real Chromium browser** (see
 The bulletproof arm handles every one of these because the loop forced: enumerating edge cases
 in the plan, writing tests for them, and verifying behavior end-to-end before declaring done.
 
+## Engineering quality (beyond passing tests)
+
+The functional oracle only proves *behavior*. This layer probes what actually separates a top-1%
+engineer: does the code **reuse** what already exists, avoid **duplication**, and stay **open for
+extension**? Measured objectively by `score-quality.mjs` on `discount-api`, which seeds two shared
+utilities (`shared/money.roundMoney`, `shared/http.sendJson`) and requires a `registerCode`
+extension point.
+
+| Arm | Reuse (money/http) | Duplicates shared logic? | Extensible (open/closed)? |
+|---|---|---|---|
+| baseline | 0/2 | YES (inline rounding + `res.writeHead`) | no (`registerCode` absent) |
+| bulletproof | 2/2 | no | YES |
+
+The baseline reimplements rounding and HTTP plumbing inline and hardcodes the code table, so adding
+a discount type means editing the engine. The bulletproof arm imports the shared helpers and drives
+codes from a registry, so the held-out `extension.test.ts` adds a new code (`WELCOME15`) **without
+touching `applyDiscount`**. These map to the Scope / Reuse / Design / Extensibility dimensions in
+`../references/quality-bar.md`, which the `/bulletproof` **convergence loop** iterates on until each
+scores ≥ 4/5.
+
 ## Interpretation
 
 - **Accuracy:** identical specs, objective third-party tests → **+60 points**. The gap is
@@ -71,6 +91,8 @@ in the plan, writing tests for them, and verifying behavior end-to-end before de
   the repo and pass; both baselines ship one shallow test and no E2E.
 - **Quality:** typed errors, extracted pure functions, and input validation make the bulletproof
   code both more correct *and* more maintainable/testable.
+- **Engineering craft:** beyond tests, the bulletproof arm reuses existing utilities (2/2 vs 0/2),
+  adds zero duplication, and is open/closed — the traits the convergence loop's rubric enforces.
 
 ## Caveats
 Illustrative (single-session A/B) and baseline is naive-by-construction. The UI arm **is** now

@@ -1,7 +1,7 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import type { AddressInfo } from 'node:net';
-import { applyDiscount, DiscountError, createServer } from './index.ts';
+import { applyDiscount, DiscountError, createServer, registerCode } from './index.ts';
 
 // --- unit: happy paths ---
 test('FLAT5 subtracts a flat amount', () =>
@@ -34,6 +34,10 @@ test('rejects expired code', () =>
   assert.throws(() => applyDiscount({ subtotal: 100, code: 'SAVE10' }, new Date('2100-01-01')), (e) => (e as DiscountError).code === 'EXPIRED'));
 test('accepts code before expiry', () =>
   assert.deepEqual(applyDiscount({ subtotal: 100, code: 'SAVE10' }, new Date('2025-06-01')), { finalTotal: 90, discountApplied: 10 }));
+test('registerCode adds a new code without touching the engine', () => {
+  registerCode('WELCOME15', { type: 'pct', value: 15, minOrder: 0, expires: null });
+  assert.deepEqual(applyDiscount({ subtotal: 100, code: 'WELCOME15' }), { finalTotal: 85, discountApplied: 15 });
+});
 
 // --- integration: real HTTP ---
 let server: http.Server, base: string;

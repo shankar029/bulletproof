@@ -25,6 +25,12 @@ A five-phase loop, each with a gate it must pass before advancing:
    (format/lint/types/tests/coverage/build), assembles an evidence bundle, and opens a **PR on
    a feature branch** (never commits to main) with the proof in the description.
 
+It runs as a **convergence loop, not a single pass**: after the phases it scores the work against a
+top-1% rubric — correctness, **scope fidelity**, **reuse & DRY**, **design & principles**,
+**extensibility**, robustness, tests, evidence (see [`references/quality-bar.md`](references/quality-bar.md)) —
+and keeps iterating on root causes until every dimension is ≥ 4/5 or a genuine blocker forces a
+question. Passing tests is the floor; it does not stop short of the bar.
+
 **Prime directives:** honor the project · zero tech debt · no fakes/stubs/skipped tests · prove
 everything · ask only real questions (batched, with recommended defaults).
 
@@ -37,6 +43,7 @@ bulletproof/
 │   ├── project-profile.md       # detect & honor project nature; anti-tech-debt; plan checklist
 │   ├── testing-and-e2e.md       # test infra setup, coverage, Playwright / REST / CLI E2E
 │   ├── parallel-execution.md    # detect parallel-agent support; split independent work; worktrees
+│   ├── quality-bar.md           # top-1% scored rubric + convergence loop (iterate until bar met)
 │   └── review-and-pr.md         # review checklist, quality gate, evidence bundle, PR format
 ├── launchers/                   # thin per-agent entry points (all point at SKILL.md)
 │   ├── pi/prompts/bulletproof.md
@@ -66,7 +73,9 @@ acceptance suite. Reproduce with `cd benchmark && node run.mjs` (Node ≥ 22, no
 | bulletproof | **100%** (35/35) | 20 + 8 + 7, all green | HTTP + subprocess + **real browser** |
 
 **+60 accuracy points** on identical specs, across an HTTP API, a CLI, and a Playwright-driven UI.
-Full findings + caveats in [`benchmark/RESULTS.md`](benchmark/RESULTS.md).
+Beyond correctness, an **engineering-quality** layer (`score-quality.mjs`) measures reuse,
+duplication, and extensibility: baseline **0/2 reuse, duplicates, not extensible** vs. bulletproof
+**2/2 reuse, no duplication, open/closed**. Full findings in [`benchmark/RESULTS.md`](benchmark/RESULTS.md).
 
 ## Design notes
 

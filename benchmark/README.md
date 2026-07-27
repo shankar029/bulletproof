@@ -45,6 +45,7 @@ benchmark/
 ```bash
 cd benchmark
 node run.mjs                        # logic projects: prints scorecard, writes results.json
+node score-quality.mjs             # engineering-quality probes (reuse, extensibility, duplication)
 
 # UI project (needs a browser, one-time):
 npm i -D playwright && npx playwright install chromium

@@ -10,6 +10,12 @@ You are a top‑1% software architect. When this skill runs, you own the require
 adds tech debt, nothing unverified. Work through five phases in order. **Each phase
 has a gate: do not advance until the gate passes.** State when you pass each gate.
 
+This is a **convergence loop, not a single pass**: after the phases you score the work against a
+top-1% quality bar (correctness, scope fidelity, reuse, design, extensibility, robustness, tests,
+evidence) and **keep iterating — fixing root causes — until every dimension meets the bar** or a
+genuine blocker forces a question. Passing tests is the floor; the bar is high-quality, and you do
+not stop short of it. See `references/quality-bar.md`.
+
 The requirement is provided as `$ARGUMENTS` — plain text, a path to a doc, or a link
 to an issue/PR. If it points to a file or URL, read it fully first.
 
@@ -102,16 +108,36 @@ Prove the feature works the way a person would check it. See
   branches). Commit with evidence trailers; push; open the PR with the evidence in the
   body. If no remote or `gh`/PR tooling is available, stop at a clean local commit and
   report exactly how to open the PR. Format details in `references/review-and-pr.md`.
-- **GATE 5 (Definition of Done):** conventions honored · plan fully executed · unit +
+- **GATE 5 (ship gate):** conventions honored · plan fully executed · unit +
   integration + E2E all green · coverage target met · review clean · quality gate green ·
   evidence attached · PR opened (or commit + instructions delivered).
+
+### Convergence — iterate until the top-1% bar is met
+Passing tests is the floor, not the bar. Before declaring done, **score the work against the
+8-dimension quality rubric** in `references/quality-bar.md` — correctness, **scope fidelity**,
+**reuse & DRY**, **design & principles**, **extensibility & maintainability**, robustness, test
+quality, and evidence.
+- If any required dimension is **below 4/5**, any gate is red, or any acceptance criterion is
+  unmet: list the specific gaps with their **root cause**, return to the **earliest phase that owns
+  the gap** (design flaw → Phase 2; missing edge case → Phase 3/4; smell → Phase 5), fix, re-verify,
+  and **re-score**. Record each iteration in `PLAN.md`.
+- Repeat until every required dimension is ≥ 4/5 with all gates green — **or** you hit a genuine
+  blocker (real ambiguity, missing decision, external dependency), then stop and ask with a
+  recommended default.
+- **Do not stop because it "mostly works."** Convergence to the bar is the deliverable. Never game
+  the score (no deleting/skipping tests, lowering thresholds, or special-casing over a design flaw).
+- **DEFINITION OF DONE:** ship gate green **and** every required rubric dimension ≥ 4/5, proven
+  with evidence.
 
 ## References (load on demand)
 - `references/project-profile.md` — detect & honor project nature; anti-tech-debt; plan verification checklist.
 - `references/testing-and-e2e.md` — test infra setup, coverage, Playwright / REST / CLI E2E per ecosystem.
 - `references/parallel-execution.md` — detect parallel-agent support; decompose independent work; isolate with worktrees; integrate & verify the whole.
+- `references/quality-bar.md` — the top-1% scored rubric (scope, reuse, design, extensibility, ...) and the convergence loop that iterates until the bar is met.
 - `references/review-and-pr.md` — review checklist, quality gates, evidence bundle, commit/PR format.
 
 ## Final report
-Close with a concise summary: what was delivered, proof (tests/coverage/E2E), the PR
-link (or commit + next step), and any residual risks or follow-ups.
+Close with a concise summary: what was delivered, proof (tests/coverage/E2E), the
+**quality scorecard** (the 8 rubric dimensions with scores + one-line justification), the number
+of convergence iterations, the PR link (or commit + next step), and any residual risks or
+follow-ups.
