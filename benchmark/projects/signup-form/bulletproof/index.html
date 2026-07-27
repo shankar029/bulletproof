@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8" /><title>Sign up</title></head>
+<body>
+  <form id="form" novalidate>
+    <input id="email" type="email" placeholder="Email" autocomplete="email" />
+    <input id="password" type="password" placeholder="Password" autocomplete="new-password" />
+    <input id="confirm" type="password" placeholder="Confirm password" autocomplete="new-password" />
+    <button id="submit" type="submit" disabled>Create account</button>
+  </form>
+  <p id="error" role="alert" aria-live="polite"></p>
+  <p id="success" role="status"></p>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let touched = false;
+
+    /** Returns the first failing rule's message, or '' when the form is valid. */
+    function validate() {
+      const email = $('email').value.trim();
+      const pw = $('password').value;
+      const confirm = $('confirm').value;
+      if (!EMAIL_RE.test(email)) return 'Enter a valid email address';
+      if (pw.length < 8) return 'Password must be at least 8 characters';
+      if (!/[A-Za-z]/.test(pw) || !/\d/.test(pw)) return 'Password needs a letter and a number';
+      if (confirm !== pw) return 'Passwords do not match';
+      return '';
+    }
+
+    function refresh() {
+      const err = validate();
+      $('submit').disabled = err !== '';
+      $('error').textContent = touched ? err : '';
+    }
+
+    for (const id of ['email', 'password', 'confirm']) {
+      $(id).addEventListener('input', () => { touched = true; refresh(); });
+    }
+
+    $('form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      touched = true;
+      refresh();
+      if (validate() === '') {
+        $('success').textContent = 'Account created for ' + $('email').value.trim();
+      }
+    });
+
+    refresh();
+  </script>
+</body>
+</html>
