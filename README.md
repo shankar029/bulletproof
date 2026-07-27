@@ -91,3 +91,16 @@ without touching the core function). Full findings in [`benchmark/RESULTS.md`](b
   it splits file-disjoint, dependency-free work across parallel agents in isolated git worktrees,
   then integrates and verifies the whole. Unsupported agents (e.g. Copilot CLI) run sequentially.
 - **Rename:** don't like `/bulletproof`? Rename the launcher file (e.g. `ship.md` → `/ship`).
+
+More on the design and how to extend it: [`docs/architecture.md`](docs/architecture.md).
+
+## Contributing
+
+Contributions welcome — see [`CONTRIBUTING.md`](CONTRIBUTING.md). The project **dogfoods its own
+skill**: substantive changes are planned, tested, verified, and shipped as a PR with proof. Keep
+every benchmark runner green (`run.mjs`, `run-ui.mjs`, `score-quality.mjs`). Changes are tracked in
+[`CHANGELOG.md`](CHANGELOG.md).
+
+## License
+
+[MIT](LICENSE) © 2026 shankar029.

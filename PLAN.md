@@ -45,6 +45,10 @@
 - [x] Extended quality probes to all 3 projects: CLI (`shared/num` + `registerMetric`), UI (`shared/validators`)
 - [x] Generalized `score-quality.mjs` — per-project probe config; every bulletproof arm passes the bar
 
+## Documentation (added)
+- [x] `LICENSE` (MIT), `CONTRIBUTING.md`, `CHANGELOG.md`, `docs/architecture.md`
+- [x] README linked to Contributing / License / architecture; repo published to GitHub
+
 ## Decisions log
 - 2026-07-26 — command name `/bulletproof` (matches repo, memorable).
 - 2026-07-26 — Copilot CLI gets a custom agent, not a slash command (upstream gap, issues #618/#1004).
