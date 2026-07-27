@@ -6,6 +6,11 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+- **Unit tests for the eval scoring library** (`evals/lib/score.test.mjs`, 14 tests) covering
+  `composite()` renormalization, `toDimensions()` mappings, and TAP parsing; extracted a pure
+  `parseTap()` seam from the spawn-bound `tap()` with zero behavior change.
+
 ### Changed
 - **Skill portability fixes** (from a live dogfood run): the plan may live in a task-scoped file or
   the PR description when the repo already owns `PLAN.md` (no stray plan docs); the Phase 5 quality
