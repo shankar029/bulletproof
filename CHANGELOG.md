@@ -14,10 +14,16 @@ All notable changes to this project are documented here. The format is based on
   a model), 7 unit tests, an opt-in `agent` block on `task.json`, and a live A/B on `paginator`.
   First live result: both arms 6/6 on this *standard* task, but the bulletproof arm additionally
   wrote a test suite and committed on a `fix/` branch — evidence the skill actually engages.
+- **pass@k** in the agent-in-the-loop harness (`--runs k`, new `stats.mjs`): per-run composite plus
+  `mean ± stddev` and clean-rate. First trap result (`uid`, k=3): baseline **0.80 ± 0.14**,
+  clean-rate **33%** (1/3) vs bulletproof **1.00 ± 0.00**, **100%** (3/3) — the skill's value on
+  the trap is *consistency* (baseline can use `node:crypto` but only ~⅓ of the time).
+- **Best-effort workspace cleanup** (`safeRm`): a failed `rmSync` of an agent-created `node_modules`
+  (Windows `EPERM`/long paths) no longer aborts a pass@k run.
 
 ### Planned
-- Grow the eval corpus toward 12 tasks and add `pass@k` once agent-in-the-loop runs land (v2) —
-  see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs; close the `forbidden`-dep scoring
+  blind spot (source-grep misses `package.json`/`node_modules` deps) — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 
 ## [0.3.0] — 2026-07-27
 

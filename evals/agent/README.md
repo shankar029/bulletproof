@@ -53,14 +53,33 @@ A task opts into v2 by adding an `agent` block to its `task.json`:
 }
 ```
 
+## Results so far
+
+**`uid` trap task, pass@k (k=3, pi host).** With a terse, guardrail-free requirement (the SPEC's
+"use `node:crypto`, no `Math.random`, no deps" hints withheld), so the skill — not the prompt — is
+the only difference:
+
+| arm | mean composite | clean-rate | spread |
+|---|---|---|---|
+| baseline | 0.80 ± 0.14 | 33% (1/3) | 0.70 – 1.00 |
+| bulletproof | 1.00 ± 0.00 | 100% (3/3) | 1.00 – 1.00 |
+
+Both arms always pass the functional oracle; the gap is entirely in reuse/scope (weak-RNG /
+needless-dep traps). The skill's value here is **consistency**: baseline *can* reach for
+`node:crypto` but only ~⅓ of the time. `paginator` (standard difficulty) ties at 1.00 for both —
+the skill doesn't help where a capable model already succeeds. `k=3` is a small sample; treat as
+directional.
+
 ## Status & honest limitations (prototype)
 
-- **N=1, one task (`paginator`), one host (pi).** This proves the *pipeline*, not a statistic.
-- **pass@k / variance:** the next step — run each arm `k` times and report `mean ± CI` + `pass@k`.
-  The plumbing (fresh workspace per run) already supports it; only the loop + aggregation remain.
-- **Cost:** each live run spends real tokens and wall-clock; the bulletproof arm does far more work
-  (tests, E2E, review) than baseline, so it is slower by design. Use `--dry-run` for CI plumbing
-  checks; keep live runs deliberate.
+- **Small `k`, two tasks (`paginator`, `uid`), one host (pi).** Directional, not a benchmark.
+- **pass@k / variance:** implemented (`--runs k` → `mean ± stddev` + clean-rate). Larger `k` and
+  proper CIs still wanted.
+- **Cost & latency:** the bulletproof arm does far more work (plans, writes tests, sometimes
+  `npm install`s a full harness) — 183–360s+ per `uid` run vs ~30–45s for baseline, and it can hit
+  the wall-clock cap. Bounded per-run via `--timeout`. Use `--dry-run` for CI plumbing checks.
+- **Scoring blind spot:** the `forbidden` check greps the arm *source* only — it will not catch a
+  dependency added to `package.json`/`node_modules` (only a direct `import`). Follow-up.
 - **Sandbox:** runs use the local FS with tools enabled. Hardening (container, network allowlist,
   secret scrub) is deferred — run only against trusted fixture tasks. See `../../EVAL-PLAN.md` §5.
 - Not wired into `evals/run.mjs` (which stays fast + dependency-free); this is an opt-in tool.
