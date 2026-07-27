@@ -7,6 +7,17 @@ All notable changes to this project are documented here. The format is based on
 ## [Unreleased]
 
 ### Added
+- **E2E-verification dimension** (`e2e`) — scores whether the arm ships its *own*
+  surface-appropriate end-to-end verification: cli → real process spawn, api → booted server + real
+  HTTP, ui → browser driving (pure, tested `hasE2E`). The held-out oracle already proves delivery
+  E2E from the grader's side (discount-api boots the real server + `fetch`; signup-form boots HTTP +
+  Chromium); this measures the agent's own proof. `discount-api`: bulletproof ships real HTTP E2E
+  (1.00) vs baseline none (0.00). Library tasks are `n/a` (public-API invocation, already covered).
+- **Process-adherence dimension** (v2 agent harness, `evals/agent/process.mjs`) — observes the
+  produced git workspace: did the arm **commit** its work on a **feature branch** with a
+  **Conventional Commit** message? Committing to `main`/`master` is a hard **0**. Live-validated on
+  `map-limit`: baseline `process 0.00` (never committed) vs bulletproof `process 1.00` (`feat/…`
+  branch, `master` untouched, Conventional Commit) — confirmed against real git state.
 - **Test-realness dimension** (`testQuality`) — the eval now scores whether an arm's *own* tests are
   real, not just whether the held-out oracle passes. A new pure mutation engine (`evals/lib/mutate.mjs`,
   unit-tested) makes single-site mutants of the arm's implementation; `runTestQuality` re-runs the

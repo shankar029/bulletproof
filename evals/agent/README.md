@@ -13,6 +13,7 @@ for arm in [baseline, bulletproof]:
   git init ws                                                   # so bulletproof can commit
   arm/index.ts = pi(prompt, cwd=ws, skill? = arm==bulletproof) # the agent writes the deliverable
   score = runFunctional + runQuality + runTestQuality(task, project, ws/arm)   # same v1 scoring lib
+  process = observe git of ws: feature branch? conventional commit? main untouched?
 ```
 
 The only variable between arms is the skill: **baseline** runs pi with no skill; **bulletproof**
@@ -22,7 +23,17 @@ prompt-templates, and skill discovery (`-nc -ne -np -ns`), so any delta is attri
 
 The workspace mirrors the fixture layout (`arm/` next to `shared/`) so the produced module resolves
 `../shared/*.ts` and the existing oracle/quality/test-realness probes score it with the same scoring
-lib as v1 (per-run output shows `composite`, `acc`, and `test-real` when applicable).
+lib as v1 (per-run output shows `composite`, `acc`, `test-real`, and `process` when applicable).
+
+### Process adherence (v2-only)
+Because the agent runs in a real git workspace, the harness observes whether it followed the skill's
+process rules (`evals/agent/process.mjs`, unit-tested): **committed** its work, on a **feature
+branch** (not the seed/default branch), with a **Conventional Commit** message. Committing to the
+seed branch (`main`/`master`) is a hard **0** (mirrors "never commit to a protected branch").
+Live-validated on `map-limit`: **baseline `process 0.00`** (wrote the file, never committed) vs
+**bulletproof `process 1.00`** — confirmed against real git state (`feat/map-limit` branch checked
+out, `master` still at the seed commit, commit `feat(arm): …`). This is exactly the "quality &
+discipline, not just correctness" gap the oracle-only score was blind to.
 
 ## Usage
 

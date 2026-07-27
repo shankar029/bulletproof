@@ -27,7 +27,7 @@ Three comparison arms per task:
 |---|---|---|
 | **Accuracy** | Held-out oracle pass-rate; `pass@1`, `pass@k` | oracle suites (like `benchmark/`) |
 | **Regression** | Pre-existing tests still green; no new failures | fixture repo's own suite |
-| **Process adherence** | Produced `PLAN.md`? gates logged? unit+integration+e2e present? evidence bundle? PR on non-main branch? | transcript + workspace scan |
+| **Process adherence** | Committed on a non-main branch + Conventional Commit (implemented: `process`, v2); `PLAN.md`/evidence bundle (later) | git introspection (`evals/agent/process.mjs`) + workspace scan |
 | **Test quality** | Mutation score (implemented: `testQuality`); coverage delta; assertion density; no skipped/empty tests | mutation engine (`evals/lib/mutate.mjs`) + AST checks |
 | **Code quality** | Lint/type/build clean; cyclomatic complexity; duplication; public-API docs | project tooling + static analysis |
 | **Tech-debt** | New deps justified; no TODO/dead code/commented blocks; honors existing patterns | detectors + LLM-judge |
@@ -144,6 +144,10 @@ evals/run.mjs
     tests, score kill-rate (`evals/lib/mutate.mjs` + `runTestQuality`). Wired into v1 gate (0.9 bar)
     and v2 harness. Exposed that **baseline ships no tests on 6/10 tasks**; found+fixed real gaps in
     two committed bulletproof suites. Closes the biggest "quality, not just correctness" blind spot.
+  - [x] **E2E-verification dimension** (`e2e`): does the arm ship surface-appropriate E2E (cli spawn
+    / real HTTP / browser)? `discount-api` bulletproof 1.00 vs baseline 0.00. Library tasks n/a.
+  - [x] **Process-adherence dimension** (`process`, v2): feature branch + Conventional Commit; commit
+    to main = hard 0. Live: baseline 0.00 vs bulletproof 1.00 on `map-limit` (git-verified).
   - [ ] Claude Code + Copilot adapters → cross-agent matrix; sandbox hardening + budgets.
 - [ ] **v3 — judge + guardrails.** LLM-judge with validation; policy hard-fails; ablation arms.
 - [ ] **v4 — CI gating + trend dashboard.** Block skill regressions; nightly cross-agent matrix.
