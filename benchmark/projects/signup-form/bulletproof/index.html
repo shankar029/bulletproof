@@ -10,9 +10,9 @@
   </form>
   <p id="error" role="alert" aria-live="polite"></p>
   <p id="success" role="status"></p>
-  <script>
+  <script type="module">
+    import { isValidEmail, passwordProblem } from '/shared/validators.js';
     const $ = (id) => document.getElementById(id);
-    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     let touched = false;
 
     /** Returns the first failing rule's message, or '' when the form is valid. */
@@ -20,9 +20,9 @@
       const email = $('email').value.trim();
       const pw = $('password').value;
       const confirm = $('confirm').value;
-      if (!EMAIL_RE.test(email)) return 'Enter a valid email address';
-      if (pw.length < 8) return 'Password must be at least 8 characters';
-      if (!/[A-Za-z]/.test(pw) || !/\d/.test(pw)) return 'Password needs a letter and a number';
+      if (!isValidEmail(email)) return 'Enter a valid email address';
+      const pwProblem = passwordProblem(pw);
+      if (pwProblem) return pwProblem;
       if (confirm !== pw) return 'Passwords do not match';
       return '';
     }

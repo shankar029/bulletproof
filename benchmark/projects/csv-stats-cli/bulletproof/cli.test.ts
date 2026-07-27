@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
-import { parseCsv, computeStats } from './cli.ts';
+import { parseCsv, computeStats, registerMetric } from './cli.ts';
 
 // --- unit: parser ---
 test('parseCsv keeps quoted commas in one field', () => {
@@ -35,4 +35,10 @@ test('missing file exits 1 with clean stderr', () => {
   assert.equal(r.status, 1);
   assert.match(r.stderr, /cannot read file/);
   assert.doesNotMatch(r.stderr, /\n\s+at\s/);
+});
+
+// --- extensibility (kept last: registering a metric mutates module state) ---
+test('registerMetric adds a metric without touching computeStats', () => {
+  registerMetric('range', (nums) => (nums.length ? Math.max(...nums) - Math.min(...nums) : null));
+  assert.equal(computeStats(CSV).columns.age.range, 5);
 });

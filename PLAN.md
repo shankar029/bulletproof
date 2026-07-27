@@ -42,6 +42,8 @@
 - [x] `benchmark/score-quality.mjs` — measures reuse / duplication / extensibility objectively
 - [x] Result: baseline 0/2 reuse, duplicates, not extensible — bulletproof 2/2, no dup, open/closed
 - [x] Functional oracle unaffected by refactor (bulletproof still 20/20, 21 own tests)
+- [x] Extended quality probes to all 3 projects: CLI (`shared/num` + `registerMetric`), UI (`shared/validators`)
+- [x] Generalized `score-quality.mjs` — per-project probe config; every bulletproof arm passes the bar
 
 ## Decisions log
 - 2026-07-26 — command name `/bulletproof` (matches repo, memorable).

@@ -10,12 +10,17 @@ const ARM_DIR = process.env.ARM_DIR;
 if (!ARM_DIR) throw new Error('ARM_DIR env var required');
 
 let server, browser, base;
+const CONTENT_TYPE = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css' };
 before(async () => {
   server = http.createServer((req, res) => {
-    const rel = req.url === '/' ? 'index.html' : req.url.slice(1);
-    fs.readFile(path.join(ARM_DIR, rel), (err, data) => {
+    const url = req.url === '/' ? '/index.html' : req.url;
+    // `/shared/...` resolves to the project root so arms can reuse shared modules.
+    const abs = url.startsWith('/shared/')
+      ? path.join(ARM_DIR, '..', url)
+      : path.join(ARM_DIR, url.slice(1));
+    fs.readFile(abs, (err, data) => {
       if (err) { res.writeHead(404); res.end(); return; }
-      res.writeHead(200, { 'content-type': 'text/html' });
+      res.writeHead(200, { 'content-type': CONTENT_TYPE[path.extname(abs)] || 'application/octet-stream' });
       res.end(data);
     });
   });

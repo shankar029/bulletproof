@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import { pathToFileURL } from 'node:url';
+import { roundTo } from '../shared/num.ts';
 
 export interface ColStat {
   count: number;
@@ -8,10 +9,23 @@ export interface ColStat {
   min: number | null;
   max: number | null;
   sum: number;
+  [metric: string]: number | null;
 }
 export interface Stats {
   rows: number;
   columns: Record<string, ColStat>;
+}
+
+/** A metric computed over a column's numeric values. */
+export type Metric = (nums: number[]) => number | null;
+
+// Extra metrics live in a registry so new stats are added by data (open/closed) —
+// not by editing computeStats.
+const METRICS: Record<string, Metric> = {};
+
+/** Register (or override) an extra per-column metric without changing computeStats. */
+export function registerMetric(name: string, fn: Metric): void {
+  METRICS[name] = fn;
 }
 
 /** RFC4180-style parser: handles quoted fields, escaped quotes, and CRLF. */
@@ -34,8 +48,6 @@ export function parseCsv(text: string): string[][] {
   if (field !== '' || row.length > 0) { row.push(field); rows.push(row); }
   return rows;
 }
-
-const round4 = (n: number): number => Math.round((n + Number.EPSILON) * 1e4) / 1e4;
 
 export function computeStats(text: string, only?: string): Stats {
   const table = parseCsv(text);
@@ -62,14 +74,18 @@ export function computeStats(text: string, only?: string): Stats {
     }
     const count = nums.length;
     const sum = nums.reduce((a, b) => a + b, 0);
-    columns[name] = {
+    const col: ColStat = {
       count,
       nulls,
-      mean: count ? round4(sum / count) : null,
+      mean: count ? roundTo(sum / count, 4) : null, // reuse shared rounding
       min: count ? Math.min(...nums) : null,
       max: count ? Math.max(...nums) : null,
       sum,
     };
+    for (const [metricName, fn] of Object.entries(METRICS)) {
+      col[metricName] = fn(nums);
+    }
+    columns[name] = col;
   }
   return { rows: dataRows.length, columns };
 }

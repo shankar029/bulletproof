@@ -12,6 +12,11 @@ A client-side signup form (static HTML+JS). Same DOM contract for both arms so t
 - On a valid submit, `#success` shows `Account created for <email>`; the page does not navigate.
 - Invalid input must **never** produce a success message.
 
+## Project context (reuse these)
+The repo ships `shared/validators.js` with `isValidEmail(email)` and `passwordProblem(pw)`. Reuse
+these rules; do not re-inline the email regex or password checks. Keep it dependency-free (no CDN
+`<script src>`).
+
 ## Acceptance (verified by Playwright in `oracle/`)
 Disabled-until-valid, invalid-email rejection, short-password rejection, missing-digit rejection,
 confirm-mismatch rejection, clean initial state, and a successful happy-path submit.

@@ -66,21 +66,30 @@ in the plan, writing tests for them, and verifying behavior end-to-end before de
 
 The functional oracle only proves *behavior*. This layer probes what actually separates a top-1%
 engineer: does the code **reuse** what already exists, avoid **duplication**, and stay **open for
-extension**? Measured objectively by `score-quality.mjs` on `discount-api`, which seeds two shared
-utilities (`shared/money.roundMoney`, `shared/http.sendJson`) and requires a `registerCode`
-extension point.
+extension**? `score-quality.mjs` seeds each project with shared utilities the arm should reuse and
+(where a module boundary exists) a held-out extension oracle that adds a new case:
 
-| Arm | Reuse (money/http) | Duplicates shared logic? | Extensible (open/closed)? |
-|---|---|---|---|
-| baseline | 0/2 | YES (inline rounding + `res.writeHead`) | no (`registerCode` absent) |
-| bulletproof | 2/2 | no | YES |
+| Project | Seeded to reuse | Extension probe |
+|---|---|---|
+| discount-api | `shared/money.roundMoney`, `shared/http.sendJson` | add code `WELCOME15` via `registerCode` |
+| csv-stats-cli | `shared/num.roundTo` | add metric `median` via `registerMetric` |
+| signup-form | `shared/validators.{isValidEmail,passwordProblem}` | n/a (static page) |
 
-The baseline reimplements rounding and HTTP plumbing inline and hardcodes the code table, so adding
-a discount type means editing the engine. The bulletproof arm imports the shared helpers and drives
-codes from a registry, so the held-out `extension.test.ts` adds a new code (`WELCOME15`) **without
-touching `applyDiscount`**. These map to the Scope / Reuse / Design / Extensibility dimensions in
-`../references/quality-bar.md`, which the `/bulletproof` **convergence loop** iterates on until each
-scores ≥ 4/5.
+| Project | Arm | Reuse | Duplicates shared logic? | Extensible (open/closed)? |
+|---|---|---|---|---|
+| discount-api | baseline | 0/2 | YES (inline rounding + `res.writeHead`) | no |
+| discount-api | **bulletproof** | **2/2** | no | **YES** |
+| csv-stats-cli | baseline | 0/1 | no | no (top-level script, no exports) |
+| csv-stats-cli | **bulletproof** | **1/1** | no | **YES** |
+| signup-form | baseline | 0/1 | no | n/a |
+| signup-form | **bulletproof** | **1/1** | no | n/a |
+
+Each baseline reimplements or omits logic and hardcodes its cases, so extending means editing the
+core. Each bulletproof arm imports the shared helpers and drives cases from a registry, so the
+held-out extension oracle adds a brand-new case **without touching the core function**
+(`applyDiscount` / `computeStats`). These map to the Scope / Reuse / Design / Extensibility
+dimensions in `../references/quality-bar.md`, which the `/bulletproof` **convergence loop** iterates
+on until each scores ≥ 4/5.
 
 ## Interpretation
 

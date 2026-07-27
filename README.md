@@ -74,8 +74,10 @@ acceptance suite. Reproduce with `cd benchmark && node run.mjs` (Node ≥ 22, no
 
 **+60 accuracy points** on identical specs, across an HTTP API, a CLI, and a Playwright-driven UI.
 Beyond correctness, an **engineering-quality** layer (`score-quality.mjs`) measures reuse,
-duplication, and extensibility: baseline **0/2 reuse, duplicates, not extensible** vs. bulletproof
-**2/2 reuse, no duplication, open/closed**. Full findings in [`benchmark/RESULTS.md`](benchmark/RESULTS.md).
+duplication, and extensibility across all three projects: every baseline **fails to reuse seeded
+utilities and can't be extended without editing core**, while every bulletproof arm **reuses the
+shared helpers, adds no duplication, and is open/closed** (a held-out oracle adds a brand-new case
+without touching the core function). Full findings in [`benchmark/RESULTS.md`](benchmark/RESULTS.md).
 
 ## Design notes
 

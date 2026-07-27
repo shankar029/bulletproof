@@ -18,3 +18,11 @@
 - `--column NAME` limits output to one column; unknown column → exit 1.
 - Missing/unreadable file → exit 1 with a **clean one-line stderr message** (no stack trace).
 - Tolerate a trailing newline / header-only file (→ `rows: 0`).
+
+## Project context (reuse these)
+The repo ships `shared/num.ts` with `roundTo(n, dp)`. Reuse it for rounding; do not reimplement it.
+
+## Extensibility
+Extra per-column metrics must be addable **without editing `computeStats`**. Expose
+`registerMetric(name, fn)` so new stats (e.g. `median`) are added by data (open/closed) and appear
+alongside the base fields in each column.
