@@ -6,6 +6,14 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Changed
+- **Skill portability fixes** (from a live dogfood run): the plan may live in a task-scoped file or
+  the PR description when the repo already owns `PLAN.md` (no stray plan docs); the Phase 5 quality
+  gate now runs *whichever* of format/lint/type-check the repo actually configures (tests always)
+  instead of assuming all exist; and the ship step verifies the PR tooling can write to the target
+  repo (a successful `git push` doesn't prove `gh` is authorized — e.g. Enterprise Managed User
+  identities) before falling back to a clean commit + compare URL.
+
 ### Planned
 - Grow the eval corpus toward 12 tasks and add `pass@k` once agent-in-the-loop runs land (v2) —
   see [`EVAL-PLAN.md`](EVAL-PLAN.md).

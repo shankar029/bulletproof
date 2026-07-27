@@ -27,7 +27,9 @@ Review your own change as if you'd reject it in someone else's PR. Fix everythin
 
 ## Quality gate (run before shipping)
 
-Run the project's real commands and make them all pass:
+Run **whichever of these the repo actually configures** (check package scripts, pre-commit, CI) and
+make them all pass. If the repo has no formatter/linter/type-checker, say so explicitly rather than
+inventing one — but the test suite must still pass:
 1. Format (e.g. `prettier`/`black`/`gofmt`)
 2. Lint (e.g. `eslint`/`ruff`/`golangci-lint`)
 3. Type-check (e.g. `tsc --noEmit`/`mypy`)
@@ -71,10 +73,14 @@ Acceptance: AC1 ✅ AC2 ✅ AC3 ✅
 ```
 
 **Open the PR** (`gh pr create` or the repo's tooling) with the full evidence bundle in the
-description and a clear title. Link the requirement/issue if one was provided.
+description and a clear title. Link the requirement/issue if one was provided. **First confirm the
+tooling can write to the target repo** — a successful `git push` does not prove `gh` is authorized
+(e.g. an Enterprise Managed User identity often cannot open PRs on a personal repo).
 
-**If no remote / no PR tooling:** stop at a clean local commit on the feature branch and report
-the exact commands the user should run to push and open the PR.
+**If no remote / no PR tooling / unauthorized identity:** stop at a clean local commit on the
+feature branch and report the exact commands the user should run to push and open the PR — or, if the
+branch is already pushed, the `https://github.com/<owner>/<repo>/compare/<base>...<branch>?expand=1`
+URL.
 
 ## Definition of Done (all must be true)
 Conventions honored · plan fully executed · unit + integration + E2E green · coverage met ·

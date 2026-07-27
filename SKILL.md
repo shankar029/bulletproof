@@ -58,12 +58,14 @@ to an issue/PR. If it points to a file or URL, read it fully first.
   parallel subagents, build a dependency graph of the tasks and mark which are file-disjoint
   and dependency-free (parallel candidates) vs. which must be serialized (shared schema, types,
   interfaces, config). Record the split in `PLAN.md`. If unsupported, plan sequentially.
-- Write the plan to `PLAN.md` (checkbox-trackable). **Self-verify it** against the
-  checklist in `references/project-profile.md` (§Plan verification): does it honor the
+- Write the plan to `PLAN.md` — or a **task-scoped file** (e.g. `<task>-plan.md`) if the repo already
+  owns a `PLAN.md`, or **inline in the PR description** for a small change (don't leave a stray plan
+  doc in the tree). Keep it checkbox-trackable. **Self-verify it** against the checklist in
+  `references/project-profile.md` (§Plan verification): does it honor the
   project? Any gap, unhandled edge case, missing migration, or breaking change? Resolve
   every gap now — not during coding.
-- **GATE 2:** `PLAN.md` exists, passes self-verification with zero open gaps, and its
-  test strategy covers every acceptance criterion. For risky/wide-reaching plans
+- **GATE 2:** the plan (committed file or PR-body) exists, passes self-verification with zero open
+  gaps, and its test strategy covers every acceptance criterion. For risky/wide-reaching plans
   (destructive, >10 files, irreversible, cross-cutting), present the plan and get
   sign-off before Phase 3.
 
@@ -100,14 +102,20 @@ Prove the feature works the way a person would check it. See
 - **Self-review as a demanding staff reviewer** (see `references/review-and-pr.md`):
   correctness, readability, maintainability, design principles, security, performance,
   error handling, test quality, no leftovers. Fix everything you'd flag in someone else.
-- Run the **full quality gate**: format, lint, type-check, full test suite, coverage,
-  build. Fix all issues (no suppressions).
+- Run the **full quality gate**: **whichever of** format, lint, type-check, coverage, and build the
+  repo actually configures (check package scripts, pre-commit, CI) — **plus the full test suite,
+  always**. If a tool is genuinely absent, state that rather than inventing one. Fix all issues (no
+  suppressions).
 - Assemble the **evidence bundle**: requirement → acceptance criteria met, files changed,
   test counts, coverage %, E2E results/artifacts, review notes, risks & follow-ups.
 - **Ship as a PR** on a feature branch (never commit to `main`/`master`/protected
   branches). Commit with evidence trailers; push; open the PR with the evidence in the
-  body. If no remote or `gh`/PR tooling is available, stop at a clean local commit and
-  report exactly how to open the PR. Format details in `references/review-and-pr.md`.
+  body. **First confirm your PR tooling can write to the target repo** — e.g. the `gh`
+  auth identity has access (Enterprise Managed User accounts often *cannot* open PRs on
+  personal repos, and `git push` succeeding does not prove `gh` can). If the remote or PR
+  tooling is unavailable **or unauthorized**, stop at a clean local commit on the feature
+  branch and report the exact push + PR commands (or the `…/compare/…` URL). Format details
+  in `references/review-and-pr.md`.
 - **GATE 5 (ship gate):** conventions honored · plan fully executed · unit +
   integration + E2E all green · coverage target met · review clean · quality gate green ·
   evidence attached · PR opened (or commit + instructions delivered).
