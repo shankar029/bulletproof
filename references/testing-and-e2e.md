@@ -37,6 +37,10 @@ Rules:
 
 Prove the feature the way a real user or client would exercise it. These tests live in the repo.
 
+**Map first, then fill the gaps:** list the scenarios implied by the acceptance criteria, check
+which already have E2E coverage, and add tests only for the uncovered ones — extending the existing
+suite/file, never creating a parallel duplicate.
+
 ### UI changes → Playwright
 - Install/reuse Playwright; start (or point at) the running app.
 - Script the actual user flow: navigate, fill forms, click, wait for real UI state.
