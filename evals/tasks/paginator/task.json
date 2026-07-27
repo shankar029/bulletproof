@@ -9,5 +9,11 @@
     "src": "index.ts",
     "reuse": [["clamp", "from ['\"]\\.\\./shared/clamp"]]
   },
-  "weights": { "accuracy": 0.7, "reuse": 0.3 }
+  "weights": { "accuracy": 0.7, "reuse": 0.3 },
+  "agent": {
+    "prompt": "SPEC.md",
+    "seed": ["shared"],
+    "armFile": "arm/index.ts",
+    "reference": "bulletproof/index.ts"
+  }
 }

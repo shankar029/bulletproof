@@ -125,8 +125,14 @@ evals/run.mjs
   - [x] Corpus at **10 tasks**: added **async concurrency** (`map-limit`, gnarly) and a **stateful refactor** (`order-fsm`)
   - [ ] Grow toward 12 (a non-Node **stack** — needs a runtime/container, ties into v2 sandbox)
   - [ ] `pass@k` / variance (blocked on v2 agent-in-the-loop; arms are fixed artifacts today)
-- [ ] **v2 — real agent-in-the-loop.** Adapters that actually invoke pi/Claude/Copilot headless on
+- [~] **v2 — real agent-in-the-loop.** Adapters that actually invoke pi/Claude/Copilot headless on
   the tasks (v0 hand-builds arms; v1.5+ lets the agent build them). Sandbox + budgets.
+  - [x] **pi adapter (prototype)** — `evals/agent/` invokes pi headless to produce an arm in an
+    isolated workspace, scored by the existing v1 harness; deterministic `--dry-run`, unit tests,
+    live A/B on `paginator` (proves the pipeline + that the skill engages: tests + `fix/` branch).
+  - [ ] `pass@k` / variance: run each arm `k` times → `mean ± CI` + `pass@k` (plumbing ready).
+  - [ ] Run the **trap/gnarly** tasks live (where the skill should move accuracy, not just process).
+  - [ ] Claude Code + Copilot adapters → cross-agent matrix; sandbox hardening + budgets.
 - [ ] **v3 — judge + guardrails.** LLM-judge with validation; policy hard-fails; ablation arms.
 - [ ] **v4 — CI gating + trend dashboard.** Block skill regressions; nightly cross-agent matrix.
 
