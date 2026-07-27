@@ -16,6 +16,7 @@ import { fileURLToPath } from 'node:url';
 import { runFunctional, runQuality, toDimensions, composite } from '../lib/score.mjs';
 import { buildPiArgs, invokePi } from './pi.mjs';
 import { prepWorkspace, buildPrompt } from './workspace.mjs';
+import { summarize, passRate } from './stats.mjs';
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const SKILL = path.join(REPO, 'SKILL.md');
@@ -30,16 +31,17 @@ function stageSkillBundle() {
 }
 
 function parseArgs(argv) {
-  const o = { arms: ['baseline', 'bulletproof'], dryRun: false, timeout: 300_000, keep: false };
+  const o = { arms: ['baseline', 'bulletproof'], dryRun: false, timeout: 300_000, keep: false, runs: 1 };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--task') o.task = argv[++i];
     else if (a === '--arms') o.arms = argv[++i].split(',').map((s) => s.trim());
     else if (a === '--dry-run') o.dryRun = true;
     else if (a === '--timeout') o.timeout = Number(argv[++i]);
+    else if (a === '--runs') o.runs = Number(argv[++i]);
     else if (a === '--keep') o.keep = true;
   }
-  if (!o.task) throw new Error('usage: node evals/agent/live.mjs --task <id> [--arms a,b] [--dry-run] [--timeout ms] [--keep]');
+  if (!o.task) throw new Error('usage: node evals/agent/live.mjs --task <id> [--arms a,b] [--runs k] [--dry-run] [--timeout ms] [--keep]');
   return o;
 }
 
@@ -60,13 +62,11 @@ if (!task.agent) throw new Error(`task "${opts.task}" has no "agent" block (need
 const projectAbs = path.join(REPO, task.project);
 const skillBundle = (!opts.dryRun && opts.arms.includes('bulletproof')) ? stageSkillBundle() : null;
 
-console.log(`# Agent-in-the-loop — ${task.id} ${opts.dryRun ? '(dry-run)' : '(live pi)'}\n`);
-const rows = [];
-for (const arm of opts.arms) {
+/** One end-to-end sample for an arm: prep → produce (or dry-run copy) → score → clean up. */
+function runOnce(arm) {
   const { ws, armDir } = prepWorkspace({ projectAbs, agent: task.agent });
   git(ws, 'init', '-q'); git(ws, 'add', '-A'); git(ws, 'commit', '-qm', 'seed');
-
-  let run = { ms: 0, timedOut: false, status: 0 };
+  let run = { ms: 0, timedOut: false };
   if (opts.dryRun) {
     cpSync(path.join(projectAbs, task.agent.reference), path.join(ws, task.agent.armFile));
   } else {
@@ -74,25 +74,39 @@ for (const arm of opts.arms) {
     const prompt = buildPrompt({ arm, armFile: task.agent.armFile });
     run = invokePi({ args, prompt, cwd: ws, timeoutMs: opts.timeout });
   }
-
   const produced = existsSync(path.join(ws, task.agent.armFile));
-  const s = produced
-    ? scoreArm(task, projectAbs, armDir)
+  const s = produced ? scoreArm(task, projectAbs, armDir)
     : { fn: { pass: 0, tests: 0 }, dims: { accuracy: 0 }, composite: 0 };
-  rows.push({ arm, produced, ...s, ms: run.ms, timedOut: run.timedOut });
-
-  console.log(`## ${arm}`);
-  console.log(`- produced arm/${path.basename(task.agent.armFile)}: ${produced ? 'yes' : 'NO'}${run.timedOut ? ' (TIMED OUT)' : ''}`);
-  console.log(`- accuracy: ${s.fn.pass}/${s.fn.tests}  ·  composite: ${s.composite.toFixed(2)}  ·  ${(run.ms / 1000).toFixed(1)}s`);
-  if (opts.keep) console.log(`- workspace kept: ${ws}`);
-  console.log('');
-  if (!opts.keep) rmSync(ws, { recursive: true, force: true });
+  if (opts.keep) console.log(`   · workspace: ${ws}`);
+  else rmSync(ws, { recursive: true, force: true });
+  return { produced, composite: s.composite, accuracy: s.dims.accuracy ?? 0, timedOut: run.timedOut, ms: run.ms };
 }
 
-const b = rows.find((r) => r.arm === 'baseline');
-const p = rows.find((r) => r.arm === 'bulletproof');
+const label = opts.runs > 1 ? ` ×${opts.runs}` : '';
+console.log(`# Agent-in-the-loop — ${task.id}${label} ${opts.dryRun ? '(dry-run)' : '(live pi)'}\n`);
+const summary = {};
+for (const arm of opts.arms) {
+  console.log(`## ${arm}`);
+  const runs = [];
+  for (let i = 0; i < opts.runs; i++) {
+    const r = runOnce(arm);
+    runs.push(r);
+    console.log(`- run ${i + 1}/${opts.runs}: composite ${r.composite.toFixed(2)} · acc ${r.accuracy.toFixed(2)} · ${(r.ms / 1000).toFixed(0)}s${r.timedOut ? ' (TIMED OUT)' : ''}${r.produced ? '' : ' (NO ARM)'}`);
+  }
+  const comps = runs.map((r) => r.composite);
+  const st = summarize(comps);
+  const cleanN = comps.filter((v) => v >= 1 - 1e-9).length;
+  summary[arm] = { st, clean: passRate(comps, 1), cleanN };
+  if (opts.runs > 1) {
+    console.log(`- composite: mean ${st.mean.toFixed(2)} ± ${st.stddev.toFixed(2)} (min ${st.min.toFixed(2)}, max ${st.max.toFixed(2)})  ·  clean-rate ${(summary[arm].clean * 100).toFixed(0)}% (${cleanN}/${st.n})`);
+  }
+  console.log('');
+}
+
+const b = summary.baseline;
+const p = summary.bulletproof;
 if (b && p) {
-  const dA = ((p.dims.accuracy || 0) - (b.dims.accuracy || 0)) * 100;
-  console.log(`Δ bulletproof − baseline:  accuracy ${dA >= 0 ? '+' : ''}${dA.toFixed(0)} pts  ·  composite ${(p.composite - b.composite >= 0 ? '+' : '')}${(p.composite - b.composite).toFixed(2)}`);
+  const d = p.st.mean - b.st.mean;
+  console.log(`Δ bulletproof − baseline (mean composite): ${d >= 0 ? '+' : ''}${d.toFixed(2)}  ·  clean-rate ${(b.clean * 100).toFixed(0)}% → ${(p.clean * 100).toFixed(0)}%`);
 }
 if (skillBundle) rmSync(skillBundle, { recursive: true, force: true });

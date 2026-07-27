@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildPiArgs } from './pi.mjs';
 import { prepWorkspace, buildPrompt } from './workspace.mjs';
+import { summarize, passRate } from './stats.mjs';
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const paginator = path.join(REPO, 'benchmark', 'projects', 'paginator');
@@ -59,4 +60,22 @@ test('prepWorkspace seeds shared + SPEC and never copies the held-out oracle', (
   } finally {
     rmSync(ws, { recursive: true, force: true });
   }
+});
+
+// ---- stats: pass@k aggregation ----
+test('summarize handles empty and computes mean/stddev/min/max', () => {
+  assert.deepEqual(summarize([]), { n: 0, mean: 0, stddev: 0, min: 0, max: 0 });
+  assert.deepEqual(summarize([1, 1, 1]), { n: 3, mean: 1, stddev: 0, min: 1, max: 1 });
+  const s = summarize([0.4, 1, 1]);
+  assert.equal(s.n, 3);
+  assert.ok(Math.abs(s.mean - 0.8) < 1e-9);
+  assert.equal(s.min, 0.4);
+  assert.equal(s.max, 1);
+  assert.ok(s.stddev > 0);
+});
+test('passRate is the fraction of runs at/above the bar', () => {
+  assert.ok(Math.abs(passRate([1, 1, 0.4], 1) - 2 / 3) < 1e-9);
+  assert.equal(passRate([0.4], 1), 0);
+  assert.equal(passRate([], 1), 0);
+  assert.equal(passRate([0.9, 1], 0.8), 1);
 });
