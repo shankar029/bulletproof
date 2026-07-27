@@ -1,6 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseTap, toDimensions, composite, hasForbiddenDep } from './score.mjs';
+import { parseTap, toDimensions, composite, hasForbiddenDep, runTestQuality, testQualityScore } from './score.mjs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 
 const close = (a, b, eps = 1e-9) => assert.ok(Math.abs(a - b) <= eps, `${a} !~= ${b}`);
 
@@ -20,7 +23,7 @@ test('toDimensions maps a fully-probed arm to all-1s', () => {
   const dims = toDimensions({ pass: 20, tests: 20 }, {
     reuse: 1, reuseTotal: 1, dupChecked: true, dup: false, scopeChecked: true, forbiddenHit: false, ext: true,
   });
-  assert.deepEqual(dims, { accuracy: 1, reuse: 1, duplication: 1, extensibility: 1, scope: 1 });
+  assert.deepEqual(dims, { accuracy: 1, reuse: 1, duplication: 1, extensibility: 1, scope: 1, testQuality: null });
 });
 test('toDimensions returns null for unprobed dimensions', () => {
   const dims = toDimensions({ pass: 5, tests: 7 }, {
@@ -81,4 +84,39 @@ test('hasForbiddenDep is false when no forbidden dep is declared directly', () =
 test('hasForbiddenDep ignores absent manifest / empty name list', () => {
   assert.equal(hasForbiddenDep(null, ['uuid']), false);
   assert.equal(hasForbiddenDep({ dependencies: { uuid: '^9' } }, []), false);
+});
+
+// ---- testQualityScore (mutation kill-rate → 0..1 dimension) ----
+test('testQualityScore: absent or broken arm tests are a real 0, not null', () => {
+  assert.equal(testQualityScore({ applicable: true, testsPresent: false }), 0);
+  assert.equal(testQualityScore({ applicable: true, testsPresent: true, greenBaseline: false }), 0);
+});
+test('testQualityScore: kill-rate over graded mutants; skipped excluded', () => {
+  close(testQualityScore({ applicable: true, testsPresent: true, greenBaseline: true, killed: 12, survived: 1, skipped: 3 }), 12 / 13);
+});
+test('testQualityScore: not applicable, or no valid mutants, is null', () => {
+  assert.equal(testQualityScore({ applicable: false }), null);
+  assert.equal(testQualityScore(undefined), null);
+  assert.equal(testQualityScore({ applicable: true, testsPresent: true, greenBaseline: true, killed: 0, survived: 0, skipped: 4 }), null);
+});
+test('toDimensions surfaces testQuality from the probe', () => {
+  const dims = toDimensions({ pass: 1, tests: 1 }, { reuseTotal: 0, dupChecked: false, scopeChecked: false, ext: null }, { applicable: true, testsPresent: false });
+  assert.equal(dims.testQuality, 0);
+});
+
+// ---- runTestQuality (integration against committed fixtures) ----
+test('runTestQuality: bulletproof paginator kills every mutant; baseline ships no tests', () => {
+  const task = { quality: { src: 'index.ts', mutate: true } };
+  const proj = path.join(REPO, 'benchmark/projects/paginator');
+  const bp = runTestQuality(task, proj, path.join(proj, 'bulletproof'));
+  assert.equal(bp.testsPresent, true);
+  assert.equal(bp.greenBaseline, true);
+  assert.ok(bp.killed > 0 && bp.survived === 0, `expected all killed, got ${bp.killed}/${bp.killed + bp.survived}`);
+  const base = runTestQuality(task, proj, path.join(proj, 'baseline'));
+  assert.equal(base.testsPresent, false);
+  assert.equal(testQualityScore(base), 0);
+});
+test('runTestQuality: not applicable when the task does not opt in via quality.mutate', () => {
+  const proj = path.join(REPO, 'benchmark/projects/paginator');
+  assert.equal(runTestQuality({ quality: { src: 'index.ts' } }, proj, path.join(proj, 'bulletproof')).applicable, false);
 });

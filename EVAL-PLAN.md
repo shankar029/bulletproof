@@ -28,7 +28,7 @@ Three comparison arms per task:
 | **Accuracy** | Held-out oracle pass-rate; `pass@1`, `pass@k` | oracle suites (like `benchmark/`) |
 | **Regression** | Pre-existing tests still green; no new failures | fixture repo's own suite |
 | **Process adherence** | Produced `PLAN.md`? gates logged? unit+integration+e2e present? evidence bundle? PR on non-main branch? | transcript + workspace scan |
-| **Test quality** | Coverage delta on changed files; mutation score (optional); assertion density; no skipped/empty tests | coverage + AST checks |
+| **Test quality** | Mutation score (implemented: `testQuality`); coverage delta; assertion density; no skipped/empty tests | mutation engine (`evals/lib/mutate.mjs`) + AST checks |
 | **Code quality** | Lint/type/build clean; cyclomatic complexity; duplication; public-API docs | project tooling + static analysis |
 | **Tech-debt** | New deps justified; no TODO/dead code/commented blocks; honors existing patterns | detectors + LLM-judge |
 | **Safety / guardrails** | Never commits to protected branch; refuses stub/fake tests; no secret/PII in diff or logs | policy checks (hard-fail) |
@@ -140,6 +140,10 @@ evals/run.mjs
     seed-the-starting-code support — deferred.
   - [x] Close the `forbidden`-dep scoring blind spot: check `package.json` direct deps
     (`hasForbiddenDep`), not just arm source. Transitive tooling deps ignored.
+  - [x] **Test-realness dimension** (`testQuality`): mutate the arm's own impl, re-run the arm's own
+    tests, score kill-rate (`evals/lib/mutate.mjs` + `runTestQuality`). Wired into v1 gate (0.9 bar)
+    and v2 harness. Exposed that **baseline ships no tests on 6/10 tasks**; found+fixed real gaps in
+    two committed bulletproof suites. Closes the biggest "quality, not just correctness" blind spot.
   - [ ] Claude Code + Copilot adapters → cross-agent matrix; sandbox hardening + budgets.
 - [ ] **v3 — judge + guardrails.** LLM-judge with validation; policy hard-fails; ablation arms.
 - [ ] **v4 — CI gating + trend dashboard.** Block skill regressions; nightly cross-agent matrix.

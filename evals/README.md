@@ -23,10 +23,14 @@ Per task, per arm, normalized to 0..1 and combined into a weighted **composite**
 | **duplication** | source grep | `1` if no inlined reimplementation of a shared helper, else `0` |
 | **extensibility** | held-out extension oracle | `1` if a new case is addable without editing the core, else `0` (`n/a` when not probed) |
 | **scope** | source grep (`forbidden`) + direct-dep check (`forbiddenDeps`) | `1` if no forbidden source pattern is present AND no forbidden package is a direct dependency (weak RNG, needless dependency, out-of-scope API), else `0` |
+| **testQuality** | mutation kill-rate | `killed / (killed+survived)` — mutate the arm's *own* impl and re-run the arm's *own* tests. No tests, or tests that fail on the arm's own code → `0`. `n/a` when the task doesn't opt in (`quality.mutate`) or the impl yields no mutable operators. |
 
 `n/a` dimensions are dropped and the remaining weights renormalized. The **scope** dimension is what
 catches *trap* tasks, where an arm can be 100% accurate yet still wrong (e.g. `uid`: both arms pass
-the uniqueness oracle, but the baseline uses `Math.random()` → `scope = 0`).
+the uniqueness oracle, but the baseline uses `Math.random()` → `scope = 0`). The **testQuality**
+dimension catches the arm that ships *no real tests*: it mutates the arm's implementation and checks
+whether the arm's own tests notice. Textual mutation → equivalent mutants can survive (e.g.
+`len > 0`→`len < 0`), so the regression gate uses a **0.9** kill-rate bar rather than an exact 1.0.
 
 ## Task schema (`evals/tasks/<id>/task.json`)
 
@@ -44,6 +48,7 @@ the uniqueness oracle, but the baseline uses `Math.random()` → `scope = 0`).
   },
   "quality": {
     "src": "index.ts",                               // arm source file to grep
+    "mutate": true,                                  // opt in to the test-realness (mutation) probe; mutate `src`
     "reuse": [["money", "from ['\"]\\.\\./shared/money"]],   // [name, regex] the arm should import
     "duplication": ["Math\\.round\\("],              // regexes that indicate an inlined reimplementation
     "forbidden": ["Math\\.random\\(", "from ['\"]uuid"], // source patterns that must be ABSENT (trap/scope)
@@ -51,7 +56,7 @@ the uniqueness oracle, but the baseline uses `Math.random()` → `scope = 0`).
     "extensionOracle": "oracle/extension.test.ts",   // or null when not probed
     "extensionArm": "index.ts"
   },
-  "weights": { "accuracy": 0.5, "reuse": 0.2, "extensibility": 0.2, "duplication": 0.1 }
+  "weights": { "accuracy": 0.5, "reuse": 0.2, "extensibility": 0.2, "duplication": 0.1, "testQuality": 0.25 }
 }
 ```
 

@@ -7,6 +7,17 @@ All notable changes to this project are documented here. The format is based on
 ## [Unreleased]
 
 ### Added
+- **Test-realness dimension** (`testQuality`) — the eval now scores whether an arm's *own* tests are
+  real, not just whether the held-out oracle passes. A new pure mutation engine (`evals/lib/mutate.mjs`,
+  unit-tested) makes single-site mutants of the arm's implementation; `runTestQuality` re-runs the
+  arm's *own* tests against each on a safe temp copy and scores `killed / (killed+survived)`. An arm
+  that ships **no tests**, or whose tests pass on its own broken code, scores **0**. This exposed
+  what the oracle-only score was blind to: across the corpus, **baseline ships no tests on 6/10
+  tasks** (and a suite that kills only 1/6 mutants on another), while bulletproof kills nearly all.
+  It also found — and drove fixes for — *real* gaps in two committed bulletproof suites (no binary
+  subtraction / unary-plus test in `expr-eval`; no non-integer-`total` test in `paginator`). Wired
+  into both the v1 gate (0.9 kill-rate bar; equivalent mutants make an exact 1.0 unsound) and the
+  v2 agent harness. `uid`/`order-fsm` yield no mutable operators → `n/a` (honest engine limit).
 - **Agent-in-the-loop harness** (EVAL-PLAN v2, prototype) in `evals/agent/`: a pi adapter that
   invokes pi **headless** to *produce* an arm in an isolated workspace, then scores it with the
   existing v1 harness (`evals/lib/score.mjs`) — baseline vs bulletproof differ only by `--skill`.

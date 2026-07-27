@@ -7,8 +7,9 @@
   "functional": { "kind": "logic", "oracle": "oracle/oracle.test.ts", "armEntry": "index.ts" },
   "quality": {
     "src": "index.ts",
+    "mutate": true,
     "extensionOracle": "oracle/extension.test.ts",
     "extensionArm": "index.ts"
   },
-  "weights": { "accuracy": 0.6, "extensibility": 0.4 }
+  "weights": { "accuracy": 0.6, "extensibility": 0.4, "testQuality": 0.25 }
 }

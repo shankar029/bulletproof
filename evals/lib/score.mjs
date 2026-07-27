@@ -1,8 +1,10 @@
 // Scoring primitives for the eval harness. Dependency-free: shells out to `node --test`
 // and greps arm source. Reused by run.mjs across all tasks (config-driven, no per-project code).
 import { spawnSync } from 'node:child_process';
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync, writeFileSync, mkdtempSync, rmSync, cpSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import path from 'node:path';
+import { generateMutants } from './mutate.mjs';
 
 /** Parse pass/fail/tests counts from `node --test` TAP output. Returns zeros if absent. */
 export function parseTap(output) {
@@ -21,10 +23,17 @@ export function hasForbiddenDep(pkg, names) {
   return names.some((n) => Object.prototype.hasOwnProperty.call(deps, n));
 }
 
+/** process.env minus the test-runner handshake var, so a nested `node --test` we spawn emits
+ *  standalone TAP instead of managed-subtest output (only matters when score runs under node --test). */
+function childEnv(extra) {
+  const { NODE_TEST_CONTEXT, ...rest } = process.env;
+  return { ...rest, ...extra };
+}
+
 /** Run a node:test file (TAP) and return its pass/fail/tests counts. */
 function tap(oracleAbs, env, cwd) {
   const r = spawnSync(process.execPath, ['--test', '--test-reporter=tap', oracleAbs], {
-    cwd, encoding: 'utf8', env: { ...process.env, ...env },
+    cwd, encoding: 'utf8', env: childEnv(env),
   });
   return parseTap(`${r.stdout}\n${r.stderr}`);
 }
@@ -71,15 +80,75 @@ export function runQuality(task, projectAbs, armDirAbs, repoRoot) {
   };
 }
 
+/** Test-realness: mutate the arm's OWN implementation and re-run the arm's OWN tests. A real suite
+ *  kills mutants; a shallow/fake/absent one lets them survive. Applies only when the task opts in
+ *  via `quality.mutate` (true → mutate `quality.src`, or a filename to mutate). Runs on a temp copy
+ *  so committed fixtures are never touched. Mutants that fail to load (tests==0) are skipped
+ *  (compile error ≠ kill) so the kill-rate is never inflated. */
+export function runTestQuality(task, projectAbs, armDirAbs) {
+  const q = task.quality || {};
+  if (!q.mutate) return { applicable: false };
+  const implName = typeof q.mutate === 'string' ? q.mutate : q.src;
+  const testFiles = readdirSync(armDirAbs).filter((f) => f.includes('.test.'));
+  if (!testFiles.length) return { applicable: true, testsPresent: false };
+
+  const tmp = mkdtempSync(path.join(tmpdir(), 'bp-mut-'));
+  try {
+    const armTmp = path.join(tmp, 'arm');
+    const skip = (src) => /(^|[\\/])(node_modules|\.git|coverage)([\\/]|$)/.test(src);
+    cpSync(armDirAbs, armTmp, { recursive: true, filter: (s) => !skip(s) });
+    const sharedSrc = path.join(projectAbs, 'shared');
+    if (existsSync(sharedSrc)) cpSync(sharedSrc, path.join(tmp, 'shared'), { recursive: true, filter: (s) => !skip(s) });
+
+    const implPath = path.join(armTmp, implName);
+    const original = readFileSync(implPath, 'utf8');
+    const runArmTests = () => {
+      const r = spawnSync(process.execPath, ['--test', '--test-reporter=tap', ...testFiles], {
+        cwd: armTmp, encoding: 'utf8', env: childEnv(),
+      });
+      return parseTap(`${r.stdout}\n${r.stderr}`);
+    };
+
+    const base = runArmTests();
+    if (!(base.tests > 0 && base.pass > 0 && base.fail === 0)) {
+      return { applicable: true, testsPresent: true, greenBaseline: false };
+    }
+    const mutants = generateMutants(original, { max: 16 });
+    let killed = 0, survived = 0, skipped = 0;
+    for (const m of mutants) {
+      writeFileSync(implPath, m.mutated);
+      const r = runArmTests();
+      if (r.tests === 0) skipped++;
+      else if (r.fail > 0) killed++;
+      else survived++;
+    }
+    return { applicable: true, testsPresent: true, greenBaseline: true, killed, survived, skipped, total: mutants.length };
+  } finally {
+    rmSync(tmp, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+  }
+}
+
 /** Normalize raw probe results into 0..1 dimension scores (null = not applicable). */
-export function toDimensions(fn, q) {
+export function toDimensions(fn, q, tq) {
   return {
     accuracy: fn.tests ? fn.pass / fn.tests : 0,
     reuse: q.reuseTotal ? q.reuse / q.reuseTotal : null,
     duplication: q.dupChecked ? (q.dup ? 0 : 1) : null,
     extensibility: q.ext === null ? null : (q.ext ? 1 : 0),
     scope: q.scopeChecked ? (q.forbiddenHit ? 0 : 1) : null,
+    testQuality: testQualityScore(tq),
   };
+}
+
+/** Map a runTestQuality probe to a 0..1 score (or null when not applicable/unmeasurable).
+ *  Absent or broken arm tests are a real 0 (not null): writing real tests is the promise. */
+export function testQualityScore(tq) {
+  if (!tq || tq.applicable === false) return null;
+  if (tq.testsPresent === false) return 0;      // arm shipped no tests
+  if (tq.greenBaseline === false) return 0;     // arm's tests don't pass on its own code
+  const graded = tq.killed + tq.survived;
+  if (graded === 0) return null;                // no syntactically-valid mutants → unmeasurable
+  return tq.killed / graded;
 }
 
 /** Weighted composite over the applicable (non-null) dimensions, renormalized. */

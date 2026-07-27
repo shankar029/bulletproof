@@ -20,3 +20,5 @@ test('empty total yields zero pages and no overflow', () => {
 });
 test('rejects a non-positive pageSize', () =>
   assert.throws(() => paginate({ total: 10, pageSize: 0, page: 1 }), /pageSize/));
+test('rejects a non-integer total', () =>
+  assert.throws(() => paginate({ total: 1.5, pageSize: 5, page: 1 }), /total/));

@@ -12,7 +12,7 @@ for arm in [baseline, bulletproof]:
   ws = fresh temp workspace   { SPEC.md, shared/…, arm/ }      # held-out oracle NEVER copied
   git init ws                                                   # so bulletproof can commit
   arm/index.ts = pi(prompt, cwd=ws, skill? = arm==bulletproof) # the agent writes the deliverable
-  score = runFunctional + runQuality(task, project, ws/arm)    # UNCHANGED v1 scoring
+  score = runFunctional + runQuality + runTestQuality(task, project, ws/arm)   # same v1 scoring lib
 ```
 
 The only variable between arms is the skill: **baseline** runs pi with no skill; **bulletproof**
@@ -21,7 +21,8 @@ prompt-templates, and skill discovery (`-nc -ne -np -ns`), so any delta is attri
 `/bulletproof` alone.
 
 The workspace mirrors the fixture layout (`arm/` next to `shared/`) so the produced module resolves
-`../shared/*.ts` and the existing oracle/quality probes score it with **no scoring changes**.
+`../shared/*.ts` and the existing oracle/quality/test-realness probes score it with the same scoring
+lib as v1 (per-run output shows `composite`, `acc`, and `test-real` when applicable).
 
 ## Usage
 

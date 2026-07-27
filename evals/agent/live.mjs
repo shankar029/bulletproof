@@ -9,11 +9,11 @@
 //   node evals/agent/live.mjs --task paginator                      # baseline + bulletproof, live
 // Flags: --arms a,b · --dry-run · --timeout <ms> · --keep (don't delete workspaces)
 import { spawnSync } from 'node:child_process';
-import { cpSync, existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { cpSync, existsSync, mkdtempSync, readFileSync, readdirSync, rmSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { runFunctional, runQuality, toDimensions, composite } from '../lib/score.mjs';
+import { runFunctional, runQuality, runTestQuality, toDimensions, composite } from '../lib/score.mjs';
 import { buildPiArgs, invokePi } from './pi.mjs';
 import { prepWorkspace, buildPrompt } from './workspace.mjs';
 import { summarize, passRate } from './stats.mjs';
@@ -62,8 +62,9 @@ function safeRm(p) {
 function scoreArm(task, projectAbs, armDir) {
   const fn = runFunctional(task, projectAbs, armDir, REPO);
   const q = runQuality(task, projectAbs, armDir, REPO);
-  const dims = toDimensions(fn, q);
-  return { fn, dims, composite: composite(dims, task.weights) };
+  const tq = runTestQuality(task, projectAbs, armDir);
+  const dims = toDimensions(fn, q, tq);
+  return { fn, tq, dims, composite: composite(dims, task.weights) };
 }
 
 const opts = parseArgs(process.argv.slice(2));
@@ -79,6 +80,12 @@ function runOnce(arm) {
   let run = { ms: 0, timedOut: false };
   if (opts.dryRun) {
     cpSync(path.join(projectAbs, task.agent.reference), path.join(ws, task.agent.armFile));
+    // Also copy the reference's own tests so the dry-run exercises the full pipeline (incl. test-realness).
+    const refDir = path.join(projectAbs, path.dirname(task.agent.reference));
+    const armDirAbs = path.dirname(path.join(ws, task.agent.armFile));
+    for (const f of readdirSync(refDir).filter((x) => x.includes('.test.'))) {
+      cpSync(path.join(refDir, f), path.join(armDirAbs, f));
+    }
   } else {
     const args = buildPiArgs({ arm, skillPath: skillBundle });
     const prompt = buildPrompt({ arm, armFile: task.agent.armFile });
@@ -86,10 +93,11 @@ function runOnce(arm) {
   }
   const produced = existsSync(path.join(ws, task.agent.armFile));
   const s = produced ? scoreArm(task, projectAbs, armDir)
-    : { fn: { pass: 0, tests: 0 }, dims: { accuracy: 0 }, composite: 0 };
+    : { fn: { pass: 0, tests: 0 }, tq: { applicable: false }, dims: { accuracy: 0, testQuality: null }, composite: 0 };
   if (opts.keep) console.log(`   · workspace: ${ws}`);
   else safeRm(ws);
-  return { produced, composite: s.composite, accuracy: s.dims.accuracy ?? 0, timedOut: run.timedOut, ms: run.ms };
+  const tqScore = s.dims.testQuality;
+  return { produced, composite: s.composite, accuracy: s.dims.accuracy ?? 0, testQuality: tqScore, timedOut: run.timedOut, ms: run.ms };
 }
 
 const label = opts.runs > 1 ? ` ×${opts.runs}` : '';
@@ -101,7 +109,7 @@ for (const arm of opts.arms) {
   for (let i = 0; i < opts.runs; i++) {
     const r = runOnce(arm);
     runs.push(r);
-    console.log(`- run ${i + 1}/${opts.runs}: composite ${r.composite.toFixed(2)} · acc ${r.accuracy.toFixed(2)} · ${(r.ms / 1000).toFixed(0)}s${r.timedOut ? ' (TIMED OUT)' : ''}${r.produced ? '' : ' (NO ARM)'}`);
+    console.log(`- run ${i + 1}/${opts.runs}: composite ${r.composite.toFixed(2)} · acc ${r.accuracy.toFixed(2)}${r.testQuality === null || r.testQuality === undefined ? '' : ` · test-real ${r.testQuality.toFixed(2)}`} · ${(r.ms / 1000).toFixed(0)}s${r.timedOut ? ' (TIMED OUT)' : ''}${r.produced ? '' : ' (NO ARM)'}`);
   }
   const comps = runs.map((r) => r.composite);
   const st = summarize(comps);
