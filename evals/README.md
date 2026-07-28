@@ -57,7 +57,7 @@ whether the arm's own tests notice. Textual mutation → equivalent mutants can 
     "extensionOracle": "oracle/extension.test.ts",   // or null when not probed
     "extensionArm": "index.ts"
   },
-  "weights": { "accuracy": 0.5, "reuse": 0.2, "extensibility": 0.2, "duplication": 0.1, "testQuality": 0.25 }
+  "weights": { "accuracy": 0.5, "reuse": 0.2, "extensibility": 0.2, "duplication": 0.1, "testQuality": 0.25, "e2e": 0.2 }
 }
 ```
 
@@ -92,7 +92,16 @@ patterns are in use and need no special harness support — the oracle is just a
 To stay **dependency-free** (Node has no built-in YAML parser). `EVAL-PLAN.md` sketches `meta.yaml`;
 v1 uses `task.json` for the same purpose without adding a parser dependency.
 
+## v2 — agent-in-the-loop
+
+The arms here are **fixed artifacts** (hand-authored), which makes v1 a fast, deterministic
+regression gate but can't measure what a *live* agent does. The **v2 harness**
+([`agent/`](agent/)) invokes the host agent headless to actually **produce** the arm, reusing this
+same scoring library. It adds a **`process`** dimension (feature branch? Conventional Commit?
+committing to `main` **hard-zeroes** the run), **pass@k** variance, and non-library (cli/api) live
+tasks. See [`agent/README.md`](agent/README.md).
+
 ## Deferred (later phases)
 
-- **pass@k / variance** — needs real agent-in-the-loop runs (v2). Arms here are fixed artifacts (N=1).
-- **Process adherence, LLM-judge, guardrail policy, cost, cross-agent matrix** — v2/v3.
+- **LLM-judge, guardrail policy, cost/telemetry, cross-agent matrix** — v3.
+- **Seeded-starting-code tasks** (refactor/bugfix on an existing tree) for the v2 harness.

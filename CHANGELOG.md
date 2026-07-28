@@ -66,6 +66,14 @@ All notable changes to this project are documented here. The format is based on
   clean), at a 4–6× latency cost. Recorded in [`evals/agent/README.md`](evals/agent/README.md).
 
 ### Changed
+- **Docs refreshed around "complete + proven delivery."** Rewrote `README.md` to lead with the
+  thesis (finish the job: deliver exactly what was asked, completely, and prove it), reframed the
+  eval as a self-critical **instrument** measuring completion/proof across dimensions (accuracy,
+  testQuality, e2e, scope, reuse/dup/extensibility, process), and replaced the stale A/B "+60 pts"
+  headline. Updated `docs/architecture.md` (three eval layers incl. the v2 hard-cap), `CONTRIBUTING.md`
+  (eval gate + unit tests, add-a-task flow), `evals/README.md` (v2 pointer, corrected weights,
+  refreshed "deferred"), `benchmark/README.md` (now marked the original illustrative A/B), and the
+  `EVAL-PLAN.md` status (v1+v2 shipped).
 - **Skill: branch-first discipline is now unmissable.** SKILL.md Phase 5 leads with an explicit
   *"branch first — before your first commit"* step (create/switch to a `feat/…` branch, verify
   `git rev-parse --abbrev-ref HEAD` is not a protected branch, even with no remote), GATE 5 now

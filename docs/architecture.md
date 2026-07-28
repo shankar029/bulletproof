@@ -54,30 +54,44 @@ foundational/shared work runs first in the main context. The final gate always r
 **integrated** result, never on isolated‑worker green. Unsupported hosts (e.g. Copilot CLI) run
 sequentially. Details in [`references/parallel-execution.md`](../references/parallel-execution.md).
 
-## The benchmark & eval architecture
+## The eval architecture
 
-The benchmark exists to make the skill's value **objective and reproducible**, not self‑asserted.
+The eval exists to make the skill's value **objective, reproducible, and self-critical** — it is an
+instrument for finding the skill's defects, not a scoreboard for flattering it. It comes in three
+layers of increasing fidelity.
 
-### Arms
-Every project ships two implementations of one `SPEC.md`:
-- **baseline** — what a raw agent produces without the skill.
-- **bulletproof** — skill‑quality: real unit + integration tests, E2E, reuse, extensibility.
+### Held-out oracle grading (the shared foundation)
+Correctness is scored by an **oracle** acceptance suite the solution does **not** import at authoring
+time. Oracles run each arm via `ARM_PATH` (logic) or `ARM_DIR` (UI), so the same suite grades every
+arm identically. This prevents "teaching to the test."
 
-### Held‑out oracle grading
-Correctness is scored by an **oracle** acceptance suite that the arms do **not** import at authoring
-time. Oracles run each arm via `ARM_PATH` (logic) or `ARM_DIR` (UI), so the same suite grades both
-arms identically. This prevents "teaching to the test."
+### Layer 1 — `benchmark/` (original illustrative A/B)
+Three projects, each shipping a `baseline` and a `bulletproof` implementation of one `SPEC.md`, graded
+by a held-out oracle across HTTP / subprocess / real-browser E2E, plus an engineering-quality probe
+(`score-quality.mjs`) for reuse, duplication, and open/closed extensibility. Illustrative (N=1, one
+session), kept as the seed of the idea.
 
-### Two scoring layers
-1. **Functional** (`run.mjs`, `run-ui.mjs`) — does it meet the spec? HTTP/subprocess/real‑browser E2E.
-2. **Engineering quality** (`score-quality.mjs`) — does it *reuse* seeded utilities, avoid
-   *duplication*, and stay *open/closed*? Each project seeds `shared/` helpers the arm should reuse
-   and (where a module boundary exists) a held‑out `extension.test.ts` that adds a brand‑new case
-   without editing the core function.
+### Layer 2 — `evals/` (config-driven regression gate, v1)
+Generalizes the benchmark into a **task corpus** (`evals/tasks/<id>/task.json`) driven by one runner
+(`evals/run.mjs`) and a pure scoring library (`evals/lib/`, unit-tested). Each task scores a weighted
+**composite** over independent 0..1 dimensions: `accuracy` (held-out oracle), `reuse`, `duplication`,
+`extensibility`, `scope` (forbidden source patterns + forbidden direct deps — catches *trap* tasks),
+`e2e` (surface-appropriate end-to-end test present), and `testQuality` (**mutation kill-rate of the
+arm's own tests** — a fake/absent/unrunnable suite scores 0). The runner **exits non-zero if any
+`bulletproof` arm regresses**, so it is the CI gate.
 
-### Runners as regression gates
-Each runner exits non‑zero if any `bulletproof` arm regresses — the seed of the CI gate described in
-[`EVAL-PLAN.md`](../EVAL-PLAN.md).
+### Layer 3 — `evals/agent/` (agent-in-the-loop, v2)
+The host agent is actually invoked **headless to produce the arm**; the only difference between arms
+is whether the skill is loaded (`--skill`), with everything else isolated (`-nc -ne -np -ns`). It
+reuses the same scoring library, adds a **`process`** dimension observed from the real git workspace
+(committed on a feature branch? Conventional Commit? — and committing to `main`/`master`
+**hard-zeroes the composite** via `cappedComposite`), and supports **pass@k** to measure run-to-run
+variance. This is where the skill's real behavior (not a hand-authored proxy) is measured.
+
+### Why this matters
+The eval has repeatedly caught the skill's *own* defects — over-engineering a trivial task, and
+committing to a protected branch — which drove concrete fixes to `SKILL.md`, each then verified live.
+That feedback loop, not any single headline number, is the point.
 
 ## Repository layout
 
@@ -87,7 +101,8 @@ Each runner exits non‑zero if any `bulletproof` arm regresses — the seed of 
 | `references/` | On‑demand depth for each phase. |
 | `launchers/` | Thin per‑agent entry points. |
 | `install/` | Per‑agent install steps. |
-| `benchmark/` | Objective A/B benchmark + oracles + runners. |
+| `evals/` | Config‑driven eval harness (v1 gate) + `evals/agent/` (v2 agent‑in‑the‑loop). |
+| `benchmark/` | Original illustrative A/B benchmark + oracles + runners. |
 | `EVAL-PLAN.md` | Roadmap to a continuous, CI‑gated eval harness. |
 | `docs/architecture.md` | This document. |
 

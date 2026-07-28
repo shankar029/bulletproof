@@ -10,7 +10,8 @@ would — planned, tested, verified, and shipped as a PR with proof.
 2. **Zero tech debt.** No dead code, TODOs, commented-out blocks, or copy‑paste duplication.
 3. **No fakes.** No stub implementations, empty/`skip`ped tests, or unjustified lint/type
    suppression to go green.
-4. **Prove everything.** Changes to the benchmark or scorers must leave every runner green.
+4. **Prove everything.** Changes to the skill, benchmark, or scorers must leave the eval gate
+   (`node evals/run.mjs`) and all unit tests green.
 5. **Never commit to `master`/`main`.** Work on a feature branch and open a PR with evidence.
 
 ## Dev environment
@@ -27,20 +28,25 @@ would — planned, tested, verified, and shipped as a PR with proof.
 > Note: native TS strip‑only mode does **not** support TS "parameter properties"
 > (`constructor(private x)`). Declare class fields explicitly — see the arms for the pattern.
 
-## Running the benchmark
+## Running the eval
 
-From `benchmark/`:
+The eval is how we know the skill delivers. Keep it green.
 
 ```bash
-node run.mjs            # logic projects (discount-api, csv-stats-cli) — functional oracle A/B
-node run-ui.mjs         # signup-form — real Chromium (Playwright) UI oracle A/B
-node score-quality.mjs  # engineering-quality probes: reuse, duplication, extensibility
+node evals/run.mjs                       # v1: config-driven corpus + composite scorecard (regression gate)
+node --test evals/lib/*.test.mjs \
+            evals/agent/agent.test.mjs   # unit tests for the scoring library + agent harness
+node evals/agent/live.mjs --task <id> --dry-run   # v2: agent-in-the-loop plumbing (no model)
 ```
 
-Each runner **exits non‑zero if any `bulletproof` arm fails**, so they double as regression gates.
-`run.mjs` writes `results.json` (gitignored).
+`evals/run.mjs` **exits non-zero if any `bulletproof` arm regresses**, so it doubles as the CI gate;
+it writes `evals/report.md` (committed snapshot) and `evals/report.json` (gitignored). The original
+illustrative A/B still lives in `benchmark/` (`run.mjs`, `run-ui.mjs`, `score-quality.mjs`) and its
+runners likewise exit non-zero on a bulletproof regression. See
+[`evals/README.md`](evals/README.md), [`evals/agent/README.md`](evals/agent/README.md), and
+[`benchmark/README.md`](benchmark/README.md).
 
-## Adding a benchmark project
+## Adding an eval task
 
 A project is an A/B fixture with a **held‑out oracle** the arms never import at authoring time:
 
@@ -56,14 +62,15 @@ benchmark/projects/<name>/
 ```
 
 Then:
-1. Wire it into the matching runner (`run.mjs` for logic, `run-ui.mjs` for UI) and, for the quality
-   layer, add a probe entry to `score-quality.mjs` (reuse patterns, duplication patterns, extension
-   oracle path).
-2. Run all three runners; confirm the `bulletproof` arm is green and the `baseline` visibly weaker.
-3. Update `benchmark/RESULTS.md` and the headline table in `README.md`.
+1. Drop a `task.json` under `evals/tasks/<id>/` pointing at the project (see
+   [`evals/README.md`](evals/README.md) for the schema — the harness is fully config-driven, no
+   runner code changes). For a live v2 run, add an optional `agent` block.
+2. Run `node evals/run.mjs`; confirm the `bulletproof` arm is perfect on every applicable dimension
+   and the `baseline` is visibly weaker.
+3. If you also touched the illustrative benchmark, keep `benchmark/RESULTS.md` in sync.
 
-See `benchmark/README.md` for the design and `EVAL-PLAN.md` for where this is heading (a
-config‑driven `evals/tasks/` schema).
+See `benchmark/README.md` for the illustrative A/B design and
+[`evals/README.md`](evals/README.md) for the config-driven task schema this generalizes into.
 
 ## Editing the skill
 
