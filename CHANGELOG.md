@@ -6,6 +6,11 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Planned
+- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+
+## [0.4.0] — 2026-07-27
+
 ### Added
 - **Committing to a protected branch hard-zeroes the composite** (v2 agent harness,
   `cappedComposite`). A correct-but-on-`main`/`master` delivery is not a valid delivery — it would be
@@ -96,9 +101,6 @@ All notable changes to this project are documented here. The format is based on
   just `index.ts` + `index.test.ts` (run via `node --test`), no `node_modules` — ~6 min → 3 min,
   same 1.00 score.
 
-### Planned
-- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
-
 ## [0.3.0] — 2026-07-27
 
 ### Added
@@ -161,7 +163,8 @@ Initial release: a portable `/bulletproof` skill plus an objective benchmark pro
   and **extensibility** (open/closed) beyond functional correctness, across all three projects.
 - **Docs**: `README.md`, `EVAL-PLAN.md`, `docs/architecture.md`, `CONTRIBUTING.md`, `LICENSE` (MIT).
 
-[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/shankar029/bulletproof/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/shankar029/bulletproof/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/shankar029/bulletproof/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/shankar029/bulletproof/tree/v0.1.0
