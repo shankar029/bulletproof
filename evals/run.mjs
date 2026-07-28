@@ -57,6 +57,7 @@ lines.push('|---|---|---|---|---|---|---|---|---|---|---|');
 for (const r of results) {
   const tr = r.dims.testQuality === null ? 'n/a'
     : r.tq.testsPresent === false ? '0.00 (no tests)'
+    : r.tq.runnable === false ? '0.00 (tests not runnable by node --test)'
     : r.tq.greenBaseline === false ? '0.00 (tests fail on own code)'
     : `${cell(r.dims.testQuality)} (${r.tq.killed}/${r.tq.killed + r.tq.survived})`;
   lines.push(`| ${r.task} | ${r.dimensions.surface} | ${r.arm} | ${pct(r.dims.accuracy)} (${r.fn.pass}/${r.fn.tests}) | ${cell(r.dims.reuse)} | ${cell(r.dims.duplication)} | ${cell(r.dims.extensibility)} | ${cell(r.dims.scope)} | ${cell(r.dims.e2e)} | ${tr} | **${r.composite.toFixed(2)}** |`);
