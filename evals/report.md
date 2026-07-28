@@ -1,6 +1,6 @@
 # Eval Report
 
-_Generated 2026-07-27 · 10 tasks · dependency-free (`node evals/run.mjs`)._
+_Generated 2026-07-28 · 10 tasks · dependency-free (`node evals/run.mjs`)._
 
 ## Scorecard
 

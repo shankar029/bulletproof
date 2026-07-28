@@ -123,7 +123,12 @@ function runOnce(arm) {
   if (opts.keep) console.log(`   · workspace: ${ws}`);
   else safeRm(ws);
   const tqScore = s.dims.testQuality;
-  return { produced, composite: s.composite, accuracy: s.dims.accuracy ?? 0, testQuality: tqScore, process: proc, timedOut: run.timedOut, ms: run.ms };
+  const tqReason = !produced ? null
+    : s.tq?.testsPresent === false ? 'no tests'
+    : s.tq?.runnable === false ? 'tests not runnable'
+    : s.tq?.greenBaseline === false ? 'tests fail on own code'
+    : null;
+  return { produced, composite: s.composite, accuracy: s.dims.accuracy ?? 0, testQuality: tqScore, tqReason, process: proc, timedOut: run.timedOut, ms: run.ms };
 }
 
 const label = opts.runs > 1 ? ` ×${opts.runs}` : '';
@@ -135,7 +140,7 @@ for (const arm of opts.arms) {
   for (let i = 0; i < opts.runs; i++) {
     const r = runOnce(arm);
     runs.push(r);
-    console.log(`- run ${i + 1}/${opts.runs}: composite ${r.composite.toFixed(2)} · acc ${r.accuracy.toFixed(2)}${r.testQuality === null || r.testQuality === undefined ? '' : ` · test-real ${r.testQuality.toFixed(2)}`}${r.process ? ` · process ${r.process.score.toFixed(2)}${r.process.checks.committedToMain ? ' ⚠main!' : ''}` : ''} · ${(r.ms / 1000).toFixed(0)}s${r.timedOut ? ' (TIMED OUT)' : ''}${r.produced ? '' : ' (NO ARM)'}`);
+    console.log(`- run ${i + 1}/${opts.runs}: composite ${r.composite.toFixed(2)} · acc ${r.accuracy.toFixed(2)}${r.testQuality === null || r.testQuality === undefined ? '' : ` · test-real ${r.testQuality.toFixed(2)}${r.tqReason ? ` (${r.tqReason})` : ''}`}${r.process ? ` · process ${r.process.score.toFixed(2)}${r.process.checks.committedToMain ? ' ⚠main!' : ''}` : ''} · ${(r.ms / 1000).toFixed(0)}s${r.timedOut ? ' (TIMED OUT)' : ''}${r.produced ? '' : ' (NO ARM)'}`);
   }
   const comps = runs.map((r) => r.composite);
   const st = summarize(comps);

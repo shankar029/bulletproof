@@ -107,7 +107,10 @@ test('toDimensions surfaces e2e (1 when a matching test ships, 0 when checked bu
 // ---- testQualityScore (mutation kill-rate → 0..1 dimension) ----
 test('testQualityScore: absent or broken arm tests are a real 0, not null', () => {
   assert.equal(testQualityScore({ applicable: true, testsPresent: false }), 0);
-  assert.equal(testQualityScore({ applicable: true, testsPresent: true, greenBaseline: false }), 0);
+  assert.equal(testQualityScore({ applicable: true, testsPresent: true, runnable: true, greenBaseline: false }), 0);
+});
+test('testQualityScore: tests present but not runnable by the runner → 0 (distinct from no-tests)', () => {
+  assert.equal(testQualityScore({ applicable: true, testsPresent: true, runnable: false }), 0);
 });
 test('testQualityScore: kill-rate over graded mutants; skipped excluded', () => {
   close(testQualityScore({ applicable: true, testsPresent: true, greenBaseline: true, killed: 12, survived: 1, skipped: 3 }), 12 / 13);

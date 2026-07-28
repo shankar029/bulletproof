@@ -7,6 +7,17 @@ All notable changes to this project are documented here. The format is based on
 ## [Unreleased]
 
 ### Added
+- **Explicit "tests not runnable" test-realness state.** `runTestQuality` now distinguishes three
+  zero cases — **no tests**, **tests present but the runner discovered/ran zero** (e.g. written for a
+  framework `node --test` can't execute), and **tests fail on the arm's own code** — instead of
+  lumping the last two together. Surfaced in the v1 report and the v2 per-run line (`test-real 0.00
+  (tests not runnable)`). A test the platform runner can't run is not a real test.
+- **Non-library agent tasks.** `csv-stats-cli` (cli) and `discount-api` (api) now carry v2 `agent`
+  blocks, so E2E + process adherence are exercised live on real CLI/API surfaces — not just
+  libraries. First live CLI run (`csv-stats-cli`): baseline works but ships **zero tests / no E2E /
+  no process**; bulletproof ships a `node:test` suite that spawns the real CLI (`e2e 1.00`) but the
+  eval caught it **committing to `master`** (`process 0.00`) and **weakly guarding its impl under
+  mutation** (`test-real 0.06`) — two genuine defects on a realistic task.
 - **E2E-verification dimension** (`e2e`) — scores whether the arm ships its *own*
   surface-appropriate end-to-end verification: cli → real process spawn, api → booted server + real
   HTTP, ui → browser driving (pure, tested `hasE2E`). The held-out oracle already proves delivery

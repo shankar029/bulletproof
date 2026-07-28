@@ -130,8 +130,14 @@ export function runTestQuality(task, projectAbs, armDirAbs) {
     };
 
     const base = runArmTests();
-    if (!(base.tests > 0 && base.pass > 0 && base.fail === 0)) {
-      return { applicable: true, testsPresent: true, greenBaseline: false };
+    if (base.tests === 0) {
+      // Test file(s) present but the platform runner discovered/ran ZERO tests — e.g. written for a
+      // framework `node --test` can't execute (vitest/jest `describe`/`expect`), or a compile error.
+      // A test the runner can't run is not a real test, so this is distinct from "no tests".
+      return { applicable: true, testsPresent: true, runnable: false };
+    }
+    if (!(base.pass > 0 && base.fail === 0)) {
+      return { applicable: true, testsPresent: true, runnable: true, greenBaseline: false };
     }
     const mutants = generateMutants(original, { max: 16 });
     let killed = 0, survived = 0, skipped = 0;
@@ -142,7 +148,7 @@ export function runTestQuality(task, projectAbs, armDirAbs) {
       else if (r.fail > 0) killed++;
       else survived++;
     }
-    return { applicable: true, testsPresent: true, greenBaseline: true, killed, survived, skipped, total: mutants.length };
+    return { applicable: true, testsPresent: true, runnable: true, greenBaseline: true, killed, survived, skipped, total: mutants.length };
   } finally {
     rmSync(tmp, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
   }
@@ -166,6 +172,7 @@ export function toDimensions(fn, q, tq) {
 export function testQualityScore(tq) {
   if (!tq || tq.applicable === false) return null;
   if (tq.testsPresent === false) return 0;      // arm shipped no tests
+  if (tq.runnable === false) return 0;          // tests present but the runner can't execute them
   if (tq.greenBaseline === false) return 0;     // arm's tests don't pass on its own code
   const graded = tq.killed + tq.survived;
   if (graded === 0) return null;                // no syntactically-valid mutants → unmeasurable

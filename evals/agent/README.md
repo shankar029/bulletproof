@@ -76,6 +76,17 @@ Y" hints withheld), so the skill — not the prompt — is the only difference b
 | map-limit | gnarly | 1.00, 100% clean (k=3) | 1.00 (k=1, ~6 min, timed out) | none (tie, far slower) |
 | expr-eval | gnarly | 1.00, 100% clean (k=3) | 1.00 (k=1, ~4 min) | none (tie, far slower) |
 | **uid** | **trap** | **0.80 ± 0.14, 33% clean (k=3)** | **1.00 ± 0.00, 100% clean (k=3)** | **+0.20, consistency** |
+| **csv-stats-cli** | **cli / real** | **acc 1.00, test-real 0 (no tests), e2e 0, process 0 (k=1)** | **acc 1.00, e2e 1.00, test-real 0.06, process 0.00 ⚠committed to main (k=1)** | **e2e+tests present; but 2 real defects caught** |
+
+**Non-library surface (`csv-stats-cli`, cli):** the first live agent run on a realistic multi-rule
+CLI. Baseline gets it **working (acc 1.00)** but ships **zero tests**, no CLI-spawn E2E, and no git
+process. Bulletproof ships a `node:test` suite that unit-tests `computeStats` **and** spawns the real
+CLI (`e2e 1.00`) — but the eval caught **two genuine defects**: it **committed to `master`** instead
+of a feature branch (`process 0.00 ⚠main!` — inconsistent with `map-limit`/`truncate`, where it
+*did* branch), and its green 18-test suite **weakly guards `cli.ts` under mutation** (`test-real 0.06`
+— partly shallow assertions on I/O plumbing, partly the textual engine's limit on CLI-heavy files).
+Exactly the eval's job: surfacing the skill's own quality/discipline gaps on a real deliverable, not
+flattering it.
 
 **Honest headline:** a capable base model already ceilings on 3 of 4 tasks — the hand-authored
 "traps" mostly don't trap a strong modern model. The skill's one measurable win is `uid` (weak-RNG /
