@@ -54,8 +54,12 @@ Assemble the proof that what was asked was delivered:
 
 ## Ship as a PR
 
-**Branch safety:** never commit to `main`/`master` or any protected/default branch. Create a
-feature branch following the repo's convention (e.g. `feat/…`, `fix/…`).
+**Branch safety:** never commit to `main`/`master` or any protected/default branch. **Create the
+feature branch *before your first commit*** (e.g. `feat/…`, `fix/…`, per the repo's convention) —
+even in a throwaway workspace and even when there is no remote: "stop at a local commit" means commit
+*on the feature branch*. Before each commit, run `git rev-parse --abbrev-ref HEAD` and confirm you are
+not on a protected branch; if you are, branch first. In the agent eval this is enforced — committing
+to `main`/`master` hard-zeroes the run's composite score regardless of code quality.
 
 **Commit** using the repo's convention (e.g. Conventional Commits). Put the evidence summary in
 the body and machine-readable trailers, e.g.:

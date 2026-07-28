@@ -7,6 +7,11 @@ All notable changes to this project are documented here. The format is based on
 ## [Unreleased]
 
 ### Added
+- **Committing to a protected branch hard-zeroes the composite** (v2 agent harness,
+  `cappedComposite`). A correct-but-on-`main`/`master` delivery is not a valid delivery — it would be
+  reverted in a real team — so it scores `0.00` regardless of code quality, surfaced as
+  `composite 0.00 (capped: committed to main)`. Other process shortcomings only lower the reported
+  `process` signal. +3 unit tests.
 - **Explicit "tests not runnable" test-realness state.** `runTestQuality` now distinguishes three
   zero cases — **no tests**, **tests present but the runner discovered/ran zero** (e.g. written for a
   framework `node --test` can't execute), and **tests fail on the arm's own code** — instead of
@@ -61,6 +66,12 @@ All notable changes to this project are documented here. The format is based on
   clean), at a 4–6× latency cost. Recorded in [`evals/agent/README.md`](evals/agent/README.md).
 
 ### Changed
+- **Skill: branch-first discipline is now unmissable.** SKILL.md Phase 5 leads with an explicit
+  *"branch first — before your first commit"* step (create/switch to a `feat/…` branch, verify
+  `git rev-parse --abbrev-ref HEAD` is not a protected branch, even with no remote), GATE 5 now
+  requires "work committed on a feature branch (never `main`/`master`)", and `references/review-and-pr.md`
+  spells out that "stop at a local commit" means *on the feature branch*. Surfaced by the eval: a live
+  `csv-stats-cli` bulletproof run committed straight to `master`.
 - **Skill: interactive Phase 1 clarification.** Phase 1 (Understand) now makes clarification a
   first-class, gated step: the agent lists genuine unknowns, resolves what it can from code/docs, and
   for anything material that remains **asks the user (batched, with recommended defaults) and waits

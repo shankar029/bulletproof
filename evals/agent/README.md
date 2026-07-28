@@ -30,6 +30,9 @@ Because the agent runs in a real git workspace, the harness observes whether it 
 process rules (`evals/agent/process.mjs`, unit-tested): **committed** its work, on a **feature
 branch** (not the seed/default branch), with a **Conventional Commit** message. Committing to the
 seed branch (`main`/`master`) is a hard **0** (mirrors "never commit to a protected branch").
+the `process` signal. Committing to a **protected branch** (`main`/`master`) is a hard safety
+violation: it **zeroes the run's composite** (`cappedComposite`) regardless of code quality — a
+correct-but-on-`main` delivery would be reverted in a real team, so it is not a valid delivery.
 Live-validated on `map-limit`: **baseline `process 0.00`** (wrote the file, never committed) vs
 **bulletproof `process 1.00`** — confirmed against real git state (`feat/map-limit` branch checked
 out, `master` still at the seed commit, commit `feat(arm): …`). This is exactly the "quality &

@@ -141,17 +141,23 @@ Prove the feature works the way a person would check it. See
   suppressions).
 - Assemble the **evidence bundle**: requirement → acceptance criteria met, files changed,
   test counts, coverage %, E2E results/artifacts, review notes, risks & follow-ups.
-- **Ship as a PR** on a feature branch (never commit to `main`/`master`/protected
-  branches). Commit with evidence trailers; push; open the PR with the evidence in the
-  body. **First confirm your PR tooling can write to the target repo** — e.g. the `gh`
-  auth identity has access (Enterprise Managed User accounts often *cannot* open PRs on
+- **Branch first — before your first commit.** Create and switch to a feature branch (`feat/…`,
+  `fix/…`, per the repo's convention). **Never commit on `main`/`master`/a protected or default
+  branch — even in a throwaway workspace, even with no remote.** "Stop at a local commit" means
+  commit *on the feature branch*, never on whatever branch you happened to start on. Before every
+  commit, verify with `git rev-parse --abbrev-ref HEAD` that you are **not** on a protected branch;
+  if you are, create the branch first. Committing to `main` is an automatic failure, not a style nit.
+- **Ship as a PR.** Commit with evidence trailers (Conventional Commit message); push; open the PR
+  with the evidence in the body. **First confirm your PR tooling can write to the target repo** —
+  e.g. the `gh` auth identity has access (Enterprise Managed User accounts often *cannot* open PRs on
   personal repos, and `git push` succeeding does not prove `gh` can). If the remote or PR
   tooling is unavailable **or unauthorized**, stop at a clean local commit on the feature
   branch and report the exact push + PR commands (or the `…/compare/…` URL). Format details
   in `references/review-and-pr.md`.
 - **GATE 5 (ship gate):** conventions honored · plan fully executed · unit +
   integration + E2E all green · coverage target met · review clean · quality gate green ·
-  evidence attached · PR opened (or commit + instructions delivered).
+  evidence attached · **work committed on a feature branch (never `main`/`master`)** ·
+  PR opened (or commit + instructions delivered).
 
 ### Convergence — iterate until the top-1% bar is met
 Passing tests is the floor, not the bar. Before declaring done, **score the work against the

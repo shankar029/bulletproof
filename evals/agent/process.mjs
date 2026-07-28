@@ -20,3 +20,13 @@ export function scoreProcess({ committed, branchedOffMain, conventionalCommit, c
   const score = positives.reduce((a, b) => a + (b ? 1 : 0), 0) / positives.length;
   return { score, checks };
 }
+
+/**
+ * Hard safety cap on the composite: committing to a protected branch (main/master) is a
+ * non-negotiable violation of the skill's rules — a correct-but-on-`main` delivery would be
+ * rejected/reverted in a real team, so it is not a valid delivery at any code quality. Zero it.
+ * All other process shortcomings only lower the reported `process` signal, not the composite.
+ */
+export function cappedComposite(composite, proc) {
+  return proc && proc.checks && proc.checks.committedToMain ? 0 : composite;
+}
