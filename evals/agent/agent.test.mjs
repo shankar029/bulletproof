@@ -6,8 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { buildPiArgs } from './pi.mjs';
 import { prepWorkspace, buildPrompt } from './workspace.mjs';
 import { summarize, passRate } from './stats.mjs';
-import { isConventionalCommit, scoreProcess } from './process.mjs';
-
+import { isConventionalCommit, scoreProcess, cappedComposite } from './process.mjs';
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const paginator = path.join(REPO, 'benchmark', 'projects', 'paginator');
 const agent = { prompt: 'SPEC.md', seed: ['shared'], armFile: 'arm/index.ts', reference: 'bulletproof/index.ts' };
@@ -102,4 +101,17 @@ test('scoreProcess: no commits at all scores 0 (no process followed)', () => {
 });
 test('scoreProcess: branched but non-conventional message scores partial', () => {
   assert.ok(Math.abs(scoreProcess({ committed: true, branchedOffMain: true, conventionalCommit: false, committedToMain: false }).score - 2 / 3) < 1e-9);
+});
+
+// ---- cappedComposite (committing to a protected branch is a hard composite zero) ----
+test('cappedComposite: committing to main zeroes an otherwise-perfect composite', () => {
+  const proc = scoreProcess({ committed: true, branchedOffMain: false, conventionalCommit: true, committedToMain: true });
+  assert.equal(cappedComposite(1.0, proc), 0);
+});
+test('cappedComposite: leaves the composite untouched when main was not committed to', () => {
+  const proc = scoreProcess({ committed: true, branchedOffMain: true, conventionalCommit: true, committedToMain: false });
+  assert.equal(cappedComposite(0.84, proc), 0.84);
+});
+test('cappedComposite: no process observation (dry-run) never caps', () => {
+  assert.equal(cappedComposite(0.99, null), 0.99);
 });
