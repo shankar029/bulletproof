@@ -1,5 +1,10 @@
 # Bulletproof Benchmark
 
+> **This is the original, illustrative A/B** (N=1, one agent session). It has since been generalized
+> into the config-driven, multi-dimension eval in [`../evals/`](../evals/) (v1 regression gate) and
+> the agent-in-the-loop harness in [`../evals/agent/`](../evals/agent/) (v2). Start there for the
+> current picture; this directory remains as the seed of the idea and as fixtures the eval reuses.
+
 Measures the **quality, accuracy, and effectiveness** the `/bulletproof` workflow adds, by
 comparing two implementations of the *same spec* on real, runnable projects.
 

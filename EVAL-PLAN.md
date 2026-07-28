@@ -4,7 +4,8 @@
 measures whether the `/bulletproof` workflow makes coding agents deliver at top-1% quality — and
 that **gates changes to the skill** so it never regresses.
 
-**Status:** proposed
+**Status:** v1 (config-driven regression gate) and v2 (agent-in-the-loop, pass@k, `process`) shipped
+in [`../evals/`](../evals/); extending dimensions and task coverage.
 **Seed:** `benchmark/` already implements the core idea (held-out oracle, baseline vs bulletproof
 A/B, reproducible runner) for 3 projects. This plan generalizes it.
 
