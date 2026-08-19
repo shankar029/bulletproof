@@ -57,6 +57,8 @@ Before leaving Phase 2, confirm every item. Any "no" is a gap to resolve now:
 - [ ] Security considerations addressed (input validation, authz, secrets, injection).
 - [ ] Performance implications considered (N+1, allocations, blocking calls, payload size).
 - [ ] Backward compatibility preserved, or a migration + rollback path is defined.
+- [ ] If shipping to production is in scope, the plan has a **Production Readiness** section covering
+  every applicable item in `production-readiness.md` (or marked N/A with a reason).
 - [ ] The test strategy names concrete unit, integration, and E2E tests.
 - [ ] No new tech debt is introduced (see anti-tech-debt rules).
 - [ ] Blast radius understood; risky/wide changes flagged for sign-off.

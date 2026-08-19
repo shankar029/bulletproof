@@ -100,6 +100,12 @@ loop directly.
   (§UX & visual design).
 - Enumerate: files to add/change, data flow, public interfaces, edge cases, failure
   modes, security, performance, backward compatibility, migrations, rollout/rollback.
+- **If the requirement includes going to production (deploy/ship/release), the plan MUST include a
+  "Production Readiness" section** — build/release, config & secrets, environments,
+  data/migrations/backups, CI/CD, observability, security hardening, performance/scaling,
+  reliability/rollback/DR, networking/TLS, privacy/compliance, cost, ops docs (plus app-store
+  release when mobile) — each a trackable item, or marked **N/A with a reason**. See
+  `references/production-readiness.md`.
 - Define the **test strategy up front**: which unit, integration, and E2E tests, and
   the coverage target (default: meet or exceed the repo's existing bar; if none, aim
   for meaningful coverage of all new branches).
@@ -209,6 +215,7 @@ quality, and evidence.
 - `references/testing-and-e2e.md` — test infra setup, coverage, Playwright / REST / CLI E2E per ecosystem.
 - `references/parallel-execution.md` — detect parallel-agent support; decompose independent work; isolate with worktrees; integrate & verify the whole.
 - `references/app-scale-delivery.md` — deliver an entire app in one session: milestone decomposition, walking skeleton, single-branch/one-PR ceremony, context checkpointing, path to production.
+- `references/production-readiness.md` — the full build-to-production checklist (build/release, config/secrets, data/backups, CI/CD, observability, security, scaling, reliability/DR, mobile store release) the plan must cover when shipping is in scope.
 - `references/quality-bar.md` — the top-1% scored rubric (scope, reuse, design, extensibility, ...) and the convergence loop that iterates until the bar is met.
 - `references/ux-design.md` — UX design principles & standards, the design-first approval gate (approve before building UI), and optional `clarity` web rendering.
 - `references/review-and-pr.md` — review checklist, quality gates, evidence bundle, commit/PR format.

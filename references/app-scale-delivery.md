@@ -97,24 +97,15 @@ The real constraint at app scale is context, not capability. Manage it deliberat
 
 ## Path to production (when the ask includes shipping, not just building)
 
-"To production" is more than a merged PR. When the requirement includes going live, treat it as the
-final milestone(s) and cover — **right-sized to the stack, skip what genuinely doesn't apply**:
-- **Config & secrets:** externalized config, environment separation (dev/staging/prod), secrets via
-  env/secret-manager (never committed), documented required vars.
-- **Data:** migrations that run forward cleanly with a rollback path; seed/fixture strategy.
-- **CI/CD:** the repo's pipeline runs lint + type + test + build + E2E on the PR; a deploy/release
-  path (or its config) exists. Reuse the project's existing CI; don't invent a parallel one.
-- **Observability:** health check, structured logging, error reporting, and the key metrics a human
-  would watch after deploy.
-- **Security hardening:** authz on every protected route, input validation at boundaries, rate
-  limiting/CORS/headers as the surface needs, dependency-audit clean.
-- **Release safety:** rollout/rollback plan; feature flags for risky changes; a smoke test that runs
-  against the deployed environment.
-- **Ops docs:** a short "run/deploy/operate" section in the README so the app is handoverable.
-
-Only include what the platform actually needs (a static web app has no migrations; a CLI has no
-CORS). Absent a real deploy target this run, deliver the **production-readiness artifacts** (Docker/
-CI/env config, migrations, health checks, docs) and state what remains to actually go live.
+"To production" is more than a merged PR. When going live is in scope, treat it as the **final
+milestone(s)** and work the full **`references/production-readiness.md`** checklist — build/release,
+config & secrets, environments, data/migrations/backups, CI/CD, observability, security hardening,
+performance/scaling, reliability/rollback/DR, networking/TLS, privacy/compliance, cost, ops docs
+(and mobile app-store release when mobile). **Capture each item in the plan as a trackable checkbox**
+(addressed, or N/A with a reason). Right-size to the stack — skip what genuinely doesn't apply (a
+static site has no migrations; a CLI has no CORS), but say so. Absent a real deploy target this run,
+deliver the **production-readiness artifacts** (Dockerfile/CI/env config, migrations, health checks,
+runbook) and state exactly what remains to actually go live.
 
 ## Whole-app E2E cadence
 
@@ -136,5 +127,5 @@ Everything in the normal ship gate, **plus**:
   integrated result (not just per-milestone green).
 - The union of delivered milestones covers the app's acceptance criteria — anything deferred is an
   explicit, listed follow-up, never smuggled debt.
-- If "to production" was asked: the production-readiness artifacts above exist and are verified as
-  far as the environment allows.
+- If "to production" was asked: the production-readiness artifacts in
+  `references/production-readiness.md` exist and are verified as far as the environment allows.

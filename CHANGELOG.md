@@ -7,6 +7,13 @@ All notable changes to this project are documented here. The format is based on
 ## [Unreleased]
 
 ### Added
+- **Build-to-production checklist + plan requirement.** New `references/production-readiness.md`
+  packs the full path to production — build/release, config & secrets, environments,
+  data/migrations/backups, CI/CD, observability, security hardening, performance & scaling,
+  reliability/rollback/DR, networking/TLS, privacy/compliance, cost, ops docs/runbook, and mobile
+  app-store release. Phase 2 now **requires the plan to include a "Production Readiness" section**
+  (each item addressed or N/A-with-reason) whenever shipping is in scope, enforced by the plan
+  verification checklist.
 - **UX design-first approval gate.** New `references/ux-design.md` and a Phase 2 gate: for
   user-facing (web/mobile) surfaces, bulletproof now **designs a high-quality UX first** — IA, user
   flows, per-screen layout + all states, design system, responsive behavior — held to explicit UX
