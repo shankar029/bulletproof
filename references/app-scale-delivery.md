@@ -33,7 +33,9 @@ does not repeal the model's context ceiling. When context runs low, **checkpoint
 2. **M0 — Walking skeleton first.** Deliver **one thin end-to-end vertical slice** that actually
    runs: the smallest path through every layer (data → domain → API → one screen/route → one real
    test → one E2E). This proves the architecture, wiring, build, and E2E harness **before** volume
-   is added. Never build all of one layer horizontally first.
+   is added. Never build all of one layer horizontally first. **For a UI app, get the UX design
+   approved first** (see `references/ux-design.md`) — approve the navigation shell, design system,
+   and the M0 flow once here, not screen-by-screen later.
 3. **M1..Mn — Thicken by vertical slice.** Each milestone adds one coherent, independently-valuable
    feature end-to-end (its own UI + API + data + tests + E2E), building on the skeleton.
 4. **Between milestones — keep it green.** The app builds and the full suite passes at **every**

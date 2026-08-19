@@ -58,7 +58,8 @@ Score honestly and specifically — cite the file/line that justifies each score
   **responsive** across the target viewports/devices, is **accessible** (WCAG AA: semantics,
   contrast, keyboard/screen-reader, focus, touch targets), and follows the platform's conventions
   (web vs iOS vs Android). Ad-hoc inline styles, a missing empty/error state, or an inaccessible
-  control is a ≤3 — fix the seam, don't ship a rough surface.
+  control is a ≤3 — fix the seam, don't ship a rough surface. Design & approve the UX **first**, to a
+  high bar, per `references/ux-design.md`.
 
 ## Anti-gaming rules (non-negotiable)
 

@@ -88,10 +88,16 @@ loop directly.
 - Design the solution grounded in **SOLID, DRY, YAGNI, KISS, separation of concerns**
   and, above all, the project's existing patterns. Choose the approach that a staff
   engineer on this codebase would choose.
-- **For user-facing surfaces (web/mobile UI):** design the experience, not just the code — reuse or
-  establish a **design system** (tokens, spacing, typography, components), handle every state
-  (loading, empty, error, success), make it responsive and **accessible** (WCAG AA, keyboard/screen
-  reader), and follow platform conventions. See `references/quality-bar.md` (§UX & visual design).
+- **For user-facing surfaces (web/mobile UI): design the UX first, to a high bar, and get approval
+  before building it.** Produce a UX spec (information architecture, user flows, per-screen layout +
+  **all states**, design system, responsive/adaptive behavior) that honors UX principles and
+  standards (Nielsen heuristics, visual hierarchy, low cognitive load, clear feedback, **WCAG 2.2
+  AA**, platform conventions). **When a user is present, present the design and pause for
+  accept/reject/modify approval before implementing any UI**; fold feedback back in. **Headless/
+  one-shot →** record the UX proposal as an explicit assumption, proceed, and surface it in the PR.
+  **If the `clarity` skill is available, render the design in its web portal for approval** (else
+  present in the terminal/plan). See `references/ux-design.md` and `references/quality-bar.md`
+  (§UX & visual design).
 - Enumerate: files to add/change, data flow, public interfaces, edge cases, failure
   modes, security, performance, backward compatibility, migrations, rollout/rollback.
 - Define the **test strategy up front**: which unit, integration, and E2E tests, and
@@ -110,7 +116,9 @@ loop directly.
 - **GATE 2:** the plan (committed file or PR-body) exists, passes self-verification with zero open
   gaps, and its test strategy covers every acceptance criterion. For risky/wide-reaching plans
   (destructive, >10 files, irreversible, cross-cutting), present the plan and get
-  sign-off before Phase 3.
+  sign-off before Phase 3. **For UI/mobile surfaces, the UX design is approved** (or
+  defaulted-and-recorded when headless) **before any UI is implemented** — see
+  `references/ux-design.md`.
 
 ### Phase 3 — Implement + Test
 - **Use the project's test setup; add the minimum if missing.** Reuse the runner the repo already
@@ -202,6 +210,7 @@ quality, and evidence.
 - `references/parallel-execution.md` — detect parallel-agent support; decompose independent work; isolate with worktrees; integrate & verify the whole.
 - `references/app-scale-delivery.md` — deliver an entire app in one session: milestone decomposition, walking skeleton, single-branch/one-PR ceremony, context checkpointing, path to production.
 - `references/quality-bar.md` — the top-1% scored rubric (scope, reuse, design, extensibility, ...) and the convergence loop that iterates until the bar is met.
+- `references/ux-design.md` — UX design principles & standards, the design-first approval gate (approve before building UI), and optional `clarity` web rendering.
 - `references/review-and-pr.md` — review checklist, quality gates, evidence bundle, commit/PR format.
 
 ## Final report

@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format is based on
 ## [Unreleased]
 
 ### Added
+- **UX design-first approval gate.** New `references/ux-design.md` and a Phase 2 gate: for
+  user-facing (web/mobile) surfaces, bulletproof now **designs a high-quality UX first** — IA, user
+  flows, per-screen layout + all states, design system, responsive behavior — held to explicit UX
+  **principles & standards** (Nielsen heuristics, visual hierarchy, cognitive-load rules, WCAG 2.2
+  AA, platform HIG/Material conventions), and **pauses for accept/reject/modify approval before
+  implementing any UI** (headless runs record the proposal as an assumption). Optionally renders the
+  design in the **`clarity`** web portal when available. GATE 2 and the app-scale walking-skeleton
+  milestone enforce approval-before-build.
 - **App-scale delivery mode.** New `references/app-scale-delivery.md` and a lean `SKILL.md` section
   add an outer loop that delivers an *entire app* (web or mobile) in one session: decompose into
   dependency-ordered **vertical-slice milestones**, ship a **walking skeleton first**, then thicken
