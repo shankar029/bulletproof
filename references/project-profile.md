@@ -15,6 +15,10 @@ Detect and note (keep it to a few lines — this is context, not an essay):
   **Always use the one already in the repo.**
 - **Frameworks & architecture** — web/UI framework, backend framework, ORM, DI, module
   boundaries, layering (hexagonal/clean/MVC/feature-sliced), monorepo vs single package.
+- **Mobile stack (if mobile)** — React Native/Expo, Flutter, or native iOS (Swift/SwiftUI) /
+  Android (Kotlin/Jetpack Compose); the device runner, emulator/simulator setup, and build/release
+  tooling (Xcode, Gradle, EAS/Fastlane). Detect from `app.json`/`app.config.*`, `pubspec.yaml`,
+  `*.xcodeproj`/`Podfile`, `build.gradle`.
 - **Test setup** — runner(s), test file naming/location, fixtures, existing coverage config
   and threshold. Mirror the existing style exactly.
 - **Quality tooling** — formatter (Prettier/Black/gofmt/rustfmt), linter (ESLint/Ruff/

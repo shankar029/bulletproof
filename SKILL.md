@@ -41,6 +41,19 @@ to an issue/PR. If it points to a file or URL, read it fully first.
    assumptions to confirm. Never invent scope; never ask about anything you can resolve yourself
    from the code, docs, issue, or conventions.
 
+## Scaling to an entire app (multi-feature / greenfield requirements)
+
+When the requirement is a whole app (web or mobile) or several independently-valuable features —
+not a single screen, endpoint, or fix — wrap the five phases in the **app-scale outer loop** (see
+`references/app-scale-delivery.md`): decompose the app into dependency-ordered **vertical-slice
+milestones**, deliver a thin **walking skeleton first**, then **thicken** one feature at a time.
+Each milestone runs the full loop below at right-sized rigor and lands as **one commit** on a
+**single feature branch**; the whole increment ships as **one PR**. This is the lightweight,
+single-session alternative to `epic-feature-workflow` — same decomposition discipline, minimal git
+ceremony. It maximizes what one session delivers; when context runs low, **checkpoint cleanly** and
+report where to resume rather than degrading quality. For a single feature, skip this and run the
+loop directly.
+
 ## The Loop
 
 ### Phase 1 — Understand (project + requirement)
@@ -48,7 +61,7 @@ to an issue/PR. If it points to a file or URL, read it fully first.
   build tool, package manager, test runner(s), lint/format/type config, CI, directory
   layout, architecture patterns, and commit/PR/branch conventions. Read `AGENTS.md`,
   `README`, `CONTRIBUTING`, ADRs, and neighbors of the code you'll touch.
-- **Classify the change:** UI / API / library / CLI / infra (may be several).
+- **Classify the change:** UI / API / library / CLI / mobile / infra (may be several).
 - **Restate the requirement** as explicit, testable **acceptance criteria**, each with a stable id
   (AC1, AC2, …). Cover the request *in full*: every explicit ask, **each sub-deliverable of a
   multi-part request**, and the implied non-functional needs it carries (performance, security,
@@ -75,6 +88,10 @@ to an issue/PR. If it points to a file or URL, read it fully first.
 - Design the solution grounded in **SOLID, DRY, YAGNI, KISS, separation of concerns**
   and, above all, the project's existing patterns. Choose the approach that a staff
   engineer on this codebase would choose.
+- **For user-facing surfaces (web/mobile UI):** design the experience, not just the code — reuse or
+  establish a **design system** (tokens, spacing, typography, components), handle every state
+  (loading, empty, error, success), make it responsive and **accessible** (WCAG AA, keyboard/screen
+  reader), and follow platform conventions. See `references/quality-bar.md` (§UX & visual design).
 - Enumerate: files to add/change, data flow, public interfaces, edge cases, failure
   modes, security, performance, backward compatibility, migrations, rollout/rollback.
 - Define the **test strategy up front**: which unit, integration, and E2E tests, and
@@ -128,6 +145,9 @@ Prove the feature works the way a person would check it. See
 - **API change →** hit the running service with real **HTTP/REST** calls; assert status,
   response schema, and side effects (DB rows, events, files).
 - **CLI / library →** invoke the real command / public API and assert observable output.
+- **Mobile →** drive the real app on a simulator/emulator with the platform runner
+  (**Detox / Maestro / Appium**, XCUITest / Espresso): launch, navigate, tap/type, assert on
+  rendered screens; capture screenshots. See `references/testing-and-e2e.md`.
 - **Persist these E2E tests in the repo** and capture evidence (logs, outputs, images).
 - **GATE 4:** Every acceptance criterion is demonstrated met, with captured evidence.
 
@@ -180,6 +200,7 @@ quality, and evidence.
 - `references/project-profile.md` — detect & honor project nature; anti-tech-debt; plan verification checklist.
 - `references/testing-and-e2e.md` — test infra setup, coverage, Playwright / REST / CLI E2E per ecosystem.
 - `references/parallel-execution.md` — detect parallel-agent support; decompose independent work; isolate with worktrees; integrate & verify the whole.
+- `references/app-scale-delivery.md` — deliver an entire app in one session: milestone decomposition, walking skeleton, single-branch/one-PR ceremony, context checkpointing, path to production.
 - `references/quality-bar.md` — the top-1% scored rubric (scope, reuse, design, extensibility, ...) and the convergence loop that iterates until the bar is met.
 - `references/review-and-pr.md` — review checklist, quality gates, evidence bundle, commit/PR format.
 

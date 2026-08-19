@@ -52,6 +52,13 @@ Score honestly and specifically — cite the file/line that justifies each score
 - **Extensibility:** ask "what's the next obvious change, and how invasive is it?" If adding a new
   case means editing a big `switch`/`if` chain in the core algorithm, that's a ≤3 — prefer a
   data/registry/strategy seam so new cases are additive (open/closed).
+- **UX & visual design (user-facing web/mobile surfaces only):** judge the experience, not just the
+  code. A "5" uses a consistent **design system** (spacing, typography, color tokens, reused
+  components — not ad-hoc styles), handles **every state** (loading, empty, error, success), is
+  **responsive** across the target viewports/devices, is **accessible** (WCAG AA: semantics,
+  contrast, keyboard/screen-reader, focus, touch targets), and follows the platform's conventions
+  (web vs iOS vs Android). Ad-hoc inline styles, a missing empty/error state, or an inaccessible
+  control is a ≤3 — fix the seam, don't ship a rough surface.
 
 ## Anti-gaming rules (non-negotiable)
 

@@ -17,6 +17,10 @@ Detect the ecosystem and install the standard runner + coverage via the repo's p
 | Rust | `cargo test` | llvm-cov / tarpaulin | Playwright (external) | reqwest |
 | Java/Kotlin | JUnit | JaCoCo | Playwright/Selenium | RestAssured |
 | .NET | xUnit/NUnit | coverlet | Playwright .NET | HttpClient |
+| React Native / Expo | Jest (RN preset) | built-in / c8 | Detox or Maestro (simulator/emulator) | supertest / real HTTP |
+| Flutter | `flutter test` | `flutter test --coverage` | `integration_test` + `flutter drive`, or Maestro | Dart `http` / `dio` |
+| Native iOS (Swift) | XCTest | Xcode coverage | XCUITest (simulator) | `URLSession` tests |
+| Native Android (Kotlin) | JUnit / Robolectric | JaCoCo | Espresso / UI Automator (emulator) | Retrofit/OkHttp (MockWebServer) |
 
 Rules:
 - **Match what the repo already uses.** Only introduce a runner when there is none.
@@ -67,6 +71,17 @@ suite/file, never creating a parallel duplicate.
 ### CLI / library changes → real invocation
 - Run the actual CLI command or call the public API surface as a consumer would.
 - Assert exit codes, stdout/stderr, generated files, and observable side effects.
+
+### Mobile changes → simulator/emulator automation
+- Build and run the **real app** on a simulator/emulator (or device) — asserting on components in
+  isolation is not end-to-end proof.
+- Drive the actual user flow with the platform's UI runner: **Detox** or **Maestro** (React
+  Native/Expo), **`integration_test` + `flutter drive`** or **Maestro** (Flutter), **XCUITest**
+  (native iOS), **Espresso / UI Automator** (native Android); **Appium** where a cross-platform
+  driver fits the repo.
+- Assert on rendered screens and navigation, not internal widget state; cover permissions, deep
+  links, offline/error states, and back-navigation.
+- Capture screenshots (and video/trace where the runner supports it) as evidence.
 
 ### Evidence to capture
 - Commands run and their output, screenshots/traces (UI), request/response transcripts (API),

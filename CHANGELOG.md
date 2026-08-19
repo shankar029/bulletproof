@@ -6,6 +6,21 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+- **App-scale delivery mode.** New `references/app-scale-delivery.md` and a lean `SKILL.md` section
+  add an outer loop that delivers an *entire app* (web or mobile) in one session: decompose into
+  dependency-ordered **vertical-slice milestones**, ship a **walking skeleton first**, then thicken
+  one feature at a time — all on a **single feature branch** with **one commit per milestone** and
+  **one PR**. A lightweight, single-session alternative to `epic-feature-workflow`, with explicit
+  context **checkpoint/resume** and a **path-to-production** readiness checklist.
+- **Mobile ecosystems.** `references/testing-and-e2e.md` and `references/project-profile.md` now
+  cover React Native/Expo, Flutter, and native iOS/Android — build/test runners, coverage, and
+  **simulator/emulator E2E** (Detox, Maestro, Appium, XCUITest, Espresso). `SKILL.md` classifies
+  `mobile` as a change type with its own E2E path.
+- **UX & visual-design quality dimension.** `references/quality-bar.md` adds a conditional judgment
+  for user-facing surfaces (design system, all states, responsive, WCAG AA accessibility, platform
+  conventions); `SKILL.md` Phase 2 designs the experience for UI surfaces, not just the code.
+
 ### Planned
 - Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 
