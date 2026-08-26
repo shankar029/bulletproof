@@ -6,6 +6,11 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Planned
+- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+
+## [0.5.0] — 2026-08-26
+
 ### Added
 - **Build-to-production checklist + plan requirement.** New `references/production-readiness.md`
   packs the full path to production — build/release, config & secrets, environments,
@@ -35,9 +40,6 @@ All notable changes to this project are documented here. The format is based on
 - **UX & visual-design quality dimension.** `references/quality-bar.md` adds a conditional judgment
   for user-facing surfaces (design system, all states, responsive, WCAG AA accessibility, platform
   conventions); `SKILL.md` Phase 2 designs the experience for UI surfaces, not just the code.
-
-### Planned
-- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 
 ## [0.4.0] — 2026-07-27
 
@@ -193,7 +195,8 @@ Initial release: a portable `/bulletproof` skill plus an objective benchmark pro
   and **extensibility** (open/closed) beyond functional correctness, across all three projects.
 - **Docs**: `README.md`, `EVAL-PLAN.md`, `docs/architecture.md`, `CONTRIBUTING.md`, `LICENSE` (MIT).
 
-[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/shankar029/bulletproof/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/shankar029/bulletproof/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/shankar029/bulletproof/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/shankar029/bulletproof/compare/v0.1.0...v0.2.0
