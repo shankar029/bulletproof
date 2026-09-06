@@ -9,6 +9,72 @@ All notable changes to this project are documented here. The format is based on
 ### Planned
 - Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 
+## [0.6.0] — 2026-09-06
+
+A substantial rewrite of the loop plus the tooling that makes its claims checkable. The loop grows
+from five phases to six by making **program design a gated phase of its own**, and the quality bar
+becomes evidence-bound rather than self-asserted.
+
+### Added
+- **Phase 2 — Program design.** Classes, interfaces, public method signatures, collaborators and
+  critical-flow sequence diagrams are designed **before** implementation, as a 3-page HTML document
+  ([`references/design-doc.md`](references/design-doc.md)). Gate 2 asks for user sign-off on
+  anything non-trivial.
+- **Durable `.ai/<slug>/` workspace** ([`references/workspace.md`](references/workspace.md)) —
+  `state.md` resume contract (gate row, increments, next action), clarifications, design, plan,
+  review, metrics and evidence. A run reads `state.md` first and **resumes** instead of restarting,
+  so long work survives a crash, a restart or a context limit.
+- **Session-sized increments.** Phase 3 splits work into vertical slices that each fit one context
+  window, deliver observable behaviour, and end at a green, reviewed commit.
+- **Shared HTML artifact theme** (`assets/artifact.css`, `assets/artifact.js`) — reading-app
+  typography with light/dark, adjustable size/typeface/width, plus an in-document review layer:
+  highlight, comment, notes, and an **Approve / Approve-with-comments / Request-changes** verdict
+  exported as `review.json`. Documents are written as plain semantic HTML; the theme supplies the
+  rest ([`references/html-theme.md`](references/html-theme.md)).
+- **Deterministic quality probe** (`scripts/probe.py`) — measures duplication, cyclomatic
+  complexity, dependency cycles, dead code, static findings and diff size against the **merge-base
+  in a throwaway worktree**, writing `.ai/<slug>/metrics.json`. Delta-based gating (absolute
+  thresholds invite metric-gaming), with **greenfield** baselines and **front-end** projects
+  detected and judged appropriately ([`references/quality-metrics.md`](references/quality-metrics.md)).
+- **Mutation engine with zero project wiring** (`scripts/mutate.py`) — mutates only the changed
+  lines of production code (operator swaps + statement deletion), runs the project's own test
+  command per mutant, and reports each survivor with file, line and exact edit. Never mutates tests
+  or fixtures; refuses a dirty tree or a red suite.
+- **agent-browser for all browser/front-end verification**
+  ([`references/e2e-agent-browser.md`](references/e2e-agent-browser.md)) — snapshot-driven flows,
+  an assertion table, console/error checks, committed flow scripts, and an artifact self-check for
+  generated HTML.
+- **Independent review in a separate session** — preference order: different model + fresh context
+  → same model + fresh context → cold self re-read. The reviewer sees the requirement, design,
+  metrics and diff but **not** the author's reasoning, and never writes code; on scoring
+  disagreement the lower score wins.
+- **Working rules** in `SKILL.md`: never block your own shell (dev servers and watchers run
+  detached), test runners run non-interactively, retries are bounded, finishing beats polishing.
+
+### Changed
+- **Quality bar is now 9 dimensions** and evidence-bound: **grounding** and **design fidelity**
+  join the rubric, and *where a metric exists for a dimension, a score of ≥4 must cite it*.
+  Correctness, grounding and test-quality/evidence are hard gates.
+- **Grounding is prime directive #1** — nothing may be referenced that has not been opened and
+  read, including the environment (check `git remote -v` rather than trusting the task statement).
+- **Root cause, never a band-aid** is now an explicit directive, and the reviewer checks for it.
+- **Convergence is bounded**: after three honest iterations a stubborn gap ships as a named
+  follow-up rather than being hidden.
+- **Trivial-change fast path** so small work isn't buried in ceremony, and an
+  **environment-blocked** route for end-to-end proof that names the blocker instead of weakening
+  the gate.
+- `install.sh` / `install.ps1` now install `scripts/` and `assets/` alongside `SKILL.md` and
+  `references/` — previously the probe, mutation engine and artifact theme would not have shipped.
+- `SKILL.md` trimmed and de-duplicated (branch-safety, convergence, right-sizing and the definition
+  of done were each stated three to six times); references reorganised around the six phases.
+- `README.md` and `docs/architecture.md` rewritten for the six-phase loop and the new tooling.
+
+### Retained
+- [`references/ux-design.md`](references/ux-design.md) (UX design-first approval gate),
+  [`references/production-readiness.md`](references/production-readiness.md) and
+  [`references/app-scale-delivery.md`](references/app-scale-delivery.md) are unchanged and now hook
+  into Phase 2, Phase 3 and the ship gate respectively.
+
 ## [0.5.0] — 2026-08-26
 
 ### Added

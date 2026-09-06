@@ -1,64 +1,55 @@
-# Reference: Understand & Honor the Project
+# Reference: Profile & Honor the Project
 
-The #1 thing that separates a top-1% engineer from an average one is that they make
-changes that look like they were written by the team that owns the code. Do this before
-planning.
+Make changes that look like the team that owns the code wrote them. Do this before planning.
 
-## Build a project profile
+## Build a project profile (a few lines, not an essay)
 
-Detect and note (keep it to a few lines — this is context, not an essay):
-
-- **Languages & runtimes** — from source files, `.tool-versions`, `go.mod`, `pyproject.toml`,
-  `package.json` (`engines`), `*.csproj`, `pom.xml`, `Cargo.toml`, `Gemfile`, etc.
-- **Package manager** — lockfiles: `package-lock.json`/`pnpm-lock.yaml`/`yarn.lock`/`bun.lockb`,
-  `poetry.lock`/`uv.lock`, `Cargo.lock`, `go.sum`, `Gemfile.lock`, `packages.lock.json`.
-  **Always use the one already in the repo.**
-- **Frameworks & architecture** — web/UI framework, backend framework, ORM, DI, module
-  boundaries, layering (hexagonal/clean/MVC/feature-sliced), monorepo vs single package.
-- **Mobile stack (if mobile)** — React Native/Expo, Flutter, or native iOS (Swift/SwiftUI) /
-  Android (Kotlin/Jetpack Compose); the device runner, emulator/simulator setup, and build/release
-  tooling (Xcode, Gradle, EAS/Fastlane). Detect from `app.json`/`app.config.*`, `pubspec.yaml`,
-  `*.xcodeproj`/`Podfile`, `build.gradle`.
-- **Test setup** — runner(s), test file naming/location, fixtures, existing coverage config
-  and threshold. Mirror the existing style exactly.
-- **Quality tooling** — formatter (Prettier/Black/gofmt/rustfmt), linter (ESLint/Ruff/
-  golangci-lint/Clippy), type checker (tsc/mypy/pyright), and how they run (scripts, pre-commit,
-  CI). Read `.editorconfig`, lint configs, and CI workflows.
-- **Conventions** — read `AGENTS.md`, `CLAUDE.md`, `README`, `CONTRIBUTING`, `docs/`, ADRs.
-  Note branch naming, commit style (e.g. Conventional Commits), and PR expectations.
-- **Neighbors** — read the files next to the code you'll change. Copy their patterns for
+- **Languages, runtimes, and versions** — from source files and the ecosystem's manifest.
+- **Package/dependency manager** — from the lockfile present. Always use the one already there.
+- **Frameworks & architecture** — module boundaries, layering, monorepo vs single package.
+- **Test setup** — runner(s), test file location and naming, fixtures, coverage config and
+  threshold. Mirror the existing style exactly.
+- **Quality tooling** — formatter, linter, type checker, and how they run (scripts, hooks, CI).
+- **Conventions** — agent/contributor docs, README, ADRs; branch naming, commit style, PR
+  expectations.
+- **Neighbors** — read the files next to the code you'll change and copy their patterns for
   errors, logging, validation, naming, imports, and tests.
 
-If any of the above is genuinely absent (e.g. no test setup at all), that's a signal you may
-need to *establish* it — do so following the ecosystem's most standard, least-surprising choice.
+If something is genuinely absent (e.g. no test setup at all), establish the minimum the task
+needs, using the ecosystem's least-surprising, lowest-friction option. Note what you added.
 
-## Anti-tech-debt rules
+## Anti-debt rules
 
-Reject an approach (and pick another) if it would:
+Reject an approach if it would:
 - Introduce a second way to do something the project already does one way.
 - Bypass an existing abstraction, layer, or boundary instead of extending it.
 - Duplicate logic that already exists (search first; reuse or refactor).
-- Add a dependency when the repo already has one that does the job, or when a few lines suffice.
-- Widen a public interface or break backward compatibility without a migration + note.
-- Leave TODOs, dead code, commented-out code, debug prints, or "temporary" hacks.
-- Require a follow-up "cleanup later" to be acceptable. Do it right the first time.
+- Add a **repository** dependency it can already satisfy, or that a few lines would. (Analysis
+  tooling is skill-owned and global — it never enters the repo; see `quality-metrics.md`.)
+- Widen a public interface or break compatibility without a migration and a note.
+- Leave TODOs, dead code, commented-out code, debug output, or "temporary" hacks.
+- Require a later "cleanup" pass to be acceptable.
 
-If the *correct* fix is large but the requirement is small, implement the small correct change
-and record the larger refactor as an explicit follow-up in the PR — never smuggle in debt.
+## Design verification checklist
 
-## Plan verification checklist
+Before leaving Phase 2, confirm every item; any "no" is a gap to resolve now:
 
-Before leaving Phase 2, confirm every item. Any "no" is a gap to resolve now:
-
+- [ ] Every existing type, function, or interface named in the design was **read in the
+      source**, not assumed — signatures and behavior verified.
 - [ ] The design matches the project's architecture and existing patterns.
-- [ ] It reuses existing abstractions/utilities instead of reinventing them.
-- [ ] Every acceptance criterion maps to specific code changes **and** specific tests.
+- [ ] It reuses existing abstractions and utilities instead of reinventing them.
+- [ ] Each new class/module has **one** responsibility, a minimal public interface, and an
+      explicit set of collaborators; dependencies point in one sensible direction.
+- [ ] The chosen pattern fits the problem and this codebase; the next likely change is
+      additive rather than surgery on the core.
+- [ ] For a defect: the **root cause** is named, and the design fixes it rather than masking
+      its symptoms.
+- [ ] Every acceptance criterion maps to a named component/method **and** to specific tests.
 - [ ] Edge cases, error paths, and failure modes are enumerated and handled.
-- [ ] Security considerations addressed (input validation, authz, secrets, injection).
-- [ ] Performance implications considered (N+1, allocations, blocking calls, payload size).
-- [ ] Backward compatibility preserved, or a migration + rollback path is defined.
-- [ ] If shipping to production is in scope, the plan has a **Production Readiness** section covering
-  every applicable item in `production-readiness.md` (or marked N/A with a reason).
-- [ ] The test strategy names concrete unit, integration, and E2E tests.
-- [ ] No new tech debt is introduced (see anti-tech-debt rules).
-- [ ] Blast radius understood; risky/wide changes flagged for sign-off.
+- [ ] Security considered (input validation, authorization, secrets, injection).
+- [ ] Performance considered (repeated queries, hot paths, payload size, blocking work).
+- [ ] Backward compatibility preserved, or a migration and rollback path is defined.
+- [ ] The test strategy names concrete unit, integration, and end-to-end tests.
+- [ ] No new tech debt (see anti-debt rules).
+- [ ] Blast radius understood; risky or wide changes flagged for sign-off.
+- [ ] The document fits in 3 pages and can be understood in five minutes.

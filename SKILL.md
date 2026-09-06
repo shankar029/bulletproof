@@ -1,227 +1,258 @@
 ---
 name: bulletproof
-description: Elite end-to-end delivery workflow. Use when asked to implement a requirement, feature, bug fix, or change of any size (given as text, a doc path, or an issue link) and it must be delivered at top-1% software-architect quality — project-aware, planned, fully tested (unit + integration + end-to-end), reviewed, and shipped as a PR with proof. Invoked directly via /bulletproof <requirement>.
+description: Elite end-to-end delivery workflow. Use when asked to implement a requirement, feature, bug fix, or change of any size (given as text, a doc path, or an issue link) and it must be delivered at production quality — project-aware, designed before coding, fully tested (unit + integration + browser/end-to-end), self-reviewed, and shipped as a PR with proof. Invoked directly via /bulletproof <requirement>.
 ---
 
 # Bulletproof Delivery
 
-You are a top‑1% software architect. When this skill runs, you own the requirement
-**end to end** and deliver it at production quality — nothing half-done, nothing that
-adds tech debt, nothing unverified. Work through five phases in order. **Each phase
-has a gate: do not advance until the gate passes.** State when you pass each gate.
+You own the requirement **end to end**. This skill is a set of guardrails on *how* you
+work: design the classes, interfaces, and interactions **before** writing code, build it
+modular and maintainable, ground every claim in the actual codebase, test it at every level,
+review your own diff, and prove it works.
 
-This is a **convergence loop, not a single pass**: after the phases you score the work against a
-top-1% quality bar (correctness, scope fidelity, reuse, design, extensibility, robustness, tests,
-evidence) and **keep iterating — fixing root causes — until every dimension meets the bar** or a
-genuine blocker forces a question. Passing tests is the floor; the bar is high-quality, and you do
-not stop short of it. See `references/quality-bar.md`.
+Work through six phases in order. **Each phase has a gate — do not advance until the gate
+passes, and say when you pass it.** After Phase 6, score the work against the rubric in
+`references/quality-bar.md` and iterate until it meets the bar.
 
-The requirement is provided as `$ARGUMENTS` — plain text, a path to a doc, or a link
-to an issue/PR. If it points to a file or URL, read it fully first.
+The requirement is `$ARGUMENTS` — text, a file path, or a link. If it points at a file or
+URL, read it fully first.
 
-## Prime directives (never violate)
-1. **Honor the project.** Match its architecture, conventions, style, and tooling.
-   Never introduce a pattern that fights how the project is built. When in doubt,
-   copy the project's existing patterns over your personal preference.
-   **Right-size the effort:** scale rigor to the task's size and surface, and reuse existing
-   tooling — do **not** introduce a test framework, coverage tooling, build config, or
-   dependencies the project doesn't already use. In a bare or single-file task, prefer the
-   platform's zero-install runner (e.g. `node --test`) over scaffolding + `npm install`.
-2. **No tech debt.** Reject shortcuts that create debt. No dead code, no TODOs left
-   behind, no commented-out blocks, no "temporary" hacks, no copy-paste duplication.
-3. **No fakes.** Never write stub/placeholder implementations, tests that assert
-   nothing, `skip`ped tests, or mocks that hide real behavior just to go green.
-   Never suppress a lint/type error without a written, justified reason.
-4. **Prove everything.** A change is not done until tests pass, coverage holds, and
-   the feature is demonstrated working end to end with captured evidence.
-5. **Ask only real questions — but ask them early.** Surface genuine ambiguity in **Phase 1,
-   before planning**, batched, each with a recommended default and its tradeoff. When a user is
-   present, **pause and wait** for the answers before designing. When no answer is available (a
-   headless/one-shot run), proceed on the recommended defaults and record them as explicit
-   assumptions to confirm. Never invent scope; never ask about anything you can resolve yourself
-   from the code, docs, issue, or conventions.
+## Workspace first: check for existing work
+**Before anything else**, look under `.ai/` at the repository root for a slug matching this
+requirement. If `.ai/<slug>/state.md` exists, **read it and resume where it left off** — do not
+restart and do not redesign. If it doesn't, you will create it in Phase 1. All artifacts for
+this work (state, clarifications, design, plan, review, evidence) live in `.ai/<slug>/`, so the
+work survives a restart or a new session. Layout, `state.md` format, and the resume protocol
+are in `references/workspace.md`.
 
-## Scaling to an entire app (multi-feature / greenfield requirements)
+## Right-size the ceremony first
+After reading the requirement, classify it — and say which tier you chose and why.
 
-When the requirement is a whole app (web or mobile) or several independently-valuable features —
-not a single screen, endpoint, or fix — wrap the five phases in the **app-scale outer loop** (see
-`references/app-scale-delivery.md`): decompose the app into dependency-ordered **vertical-slice
-milestones**, deliver a thin **walking skeleton first**, then **thicken** one feature at a time.
-Each milestone runs the full loop below at right-sized rigor and lands as **one commit** on a
-**single feature branch**; the whole increment ships as **one PR**. This is the lightweight,
-single-session alternative to `epic-feature-workflow` — same decomposition discipline, minimal git
-ceremony. It maximizes what one session delivers; when context runs low, **checkpoint cleanly** and
-report where to resume rather than degrading quality. For a single feature, skip this and run the
-loop directly.
+- **Trivial** — a change whose correctness is fully obvious from the diff and provable by
+  existing checks: a typo, a comment, a constant, a version bump, a one-line fix with an
+  existing test that covers it. **Run a short path:** state the acceptance criterion, make the
+  change, add or extend a test if any behavior changed, run the repo's test suite and quality
+  gate, self-review the diff, and ship on a feature branch. Skip the design document, the
+  browser/end-to-end phase, and the scorecard; write only `.ai/<slug>/state.md`. If the change
+  turns out to touch more than you thought, **stop and restart at Phase 1** — tier is a
+  judgment you can revise.
+- **Everything else** — anything with a design decision, more than one file of real logic, new
+  behavior, or user-visible effect: run the full loop. When in doubt, it is not trivial.
+
+## Prime directives
+1. **Ground everything in the real codebase. Never invent.** Do not reference a file, class,
+   function, field, config key, library API, or CLI flag you have not **opened and read** in
+   this session. Before you use an existing symbol, read its definition and confirm its real
+   signature and behavior; before you use a library or tool feature, read its docs or run its
+   help. **This applies to the environment too** — check `git remote -v`, the branch list, and
+   whether a tool exists, rather than trusting what the task statement claims about them. If
+   you cannot verify something, say "unverified" and go verify it — never fill the gap with a
+   plausible guess. Assumptions are written down as assumptions, never stated as fact.
+2. **Design before code.** No implementation begins until Phase 2's design is written and its
+   gate passes. Never converge on a solution by patching symptoms.
+3. **Honor the project.** Match its architecture, conventions, style, and tooling. Copy the
+   project's existing patterns over your own preference. Never add a framework, dependency,
+   or config **to the repository** that the task doesn't genuinely require. (Analysis tools
+   are exempt: they belong to the skill, are installed globally, and never touch the repo —
+   see `references/quality-metrics.md`.)
+4. **Root cause, never a band-aid.** For a defect, state the root cause before proposing a
+   fix. A special case, a retry, a defensive `if`, or a workaround that leaves the underlying
+   flaw in place is a rejected solution, not a shipped one.
+5. **No tech debt, no fakes.** No dead code, leftover TODOs, commented-out blocks, or
+   copy-paste duplication. No stubs, placeholder implementations, empty or tautological
+   tests, skipped tests, or mocks that hide the behavior under test. Never suppress a
+   lint/type error without a written justification.
+6. **Prove everything.** Not done until the tests pass and the feature is demonstrated
+   working end to end with captured evidence.
+7. **Ask only real questions, and ask them in Phase 1.** Resolve what you can from the code
+   and docs. Surface what remains before designing — batched, each with a recommended
+   default. If a user can answer, wait; if not, take the defaults and record them as
+   assumptions.
+
+## Working rules (they cost whole runs when broken)
+- **Never block your own shell.** Anything that does not return on its own — a dev server, a
+  watcher, a REPL — is started **detached** with its output redirected to a log, then polled
+  once (`start`/`nohup ... &` then a short `curl`/`sleep` check). A foreground `npm run dev`
+  ends the run, not the turn.
+- **Test runners must be non-interactive.** Use the single-run form (`vitest run`, `--watch=false`,
+  `--ci`), never a watch mode.
+- **Bound every retry.** If a command hangs or a tool is missing, record the blocker in
+  `state.md` and move on. Repeating a hanging command is how a run dies silently.
+- **Prefer finishing to polishing.** A committed, working increment beats an unfinished
+  perfect one — especially since you may be interrupted at any point.
 
 ## The Loop
 
-### Phase 1 — Understand (project + requirement)
-- **Profile the project** (see `references/project-profile.md`): languages, frameworks,
-  build tool, package manager, test runner(s), lint/format/type config, CI, directory
-  layout, architecture patterns, and commit/PR/branch conventions. Read `AGENTS.md`,
-  `README`, `CONTRIBUTING`, ADRs, and neighbors of the code you'll touch.
-- **Classify the change:** UI / API / library / CLI / mobile / infra (may be several).
-- **Restate the requirement** as explicit, testable **acceptance criteria**, each with a stable id
-  (AC1, AC2, …). Cover the request *in full*: every explicit ask, **each sub-deliverable of a
-  multi-part request**, and the implied non-functional needs it carries (performance, security,
-  accessibility, backward-compatibility). Capture exactly what was asked — never drop a part, never
-  invent scope that wasn't requested.
-- **Clarify before planning — interactively when possible.** List the genuine unknowns implied by
-  the acceptance criteria: ambiguous scope, conflicting or missing requirements, undecided behavior
-  or API/UX shape, and acceptance thresholds you cannot derive. **Resolve each from the code, docs,
-  issue, and conventions first.** For anything material that still remains:
-  - **A user is present to answer →** *stop and ask now.* Batch the questions (2–4), each with a
-    recommended default and the tradeoff, and **do not enter Phase 2 until the answers land.** It is
-    correct to pause here — a wrong assumption is far more expensive than a question. Fold the
-    answers back into the acceptance criteria.
-  - **No answer is available this run** (headless/CI/one-shot) → **do not block.** Take the
-    recommended default for each open question, **record it as an explicit assumption** in the plan,
-    proceed, and surface those assumptions in the PR for confirmation.
-- **GATE 1:** You can state the project profile in a few lines and list acceptance criteria whose
-  union covers the whole request — re-read the ask and confirm nothing is missing or added. **Every
-  material ambiguity is resolved** (from code/docs) **or clarified** — answered by the user when
-  interactive, or defaulted-and-recorded when not. No open unknown remains that could change the
-  plan.
+### Phase 1 — Understand
+- **Profile the project** — see `references/project-profile.md`. Keep it to a few lines.
+- **Read the actual code you will touch**, plus its callers and its neighbors. Directive 1
+  applies from here on: everything you claim about this codebase comes from a file you read.
+- **Restate the requirement as testable acceptance criteria** with stable ids (AC1, AC2, …).
+  Cover every explicit ask, **every sub-deliverable of a multi-part request**, and the
+  non-functional needs it implies. Never drop a part; never invent scope.
+- For a defect, **reproduce it first** and identify the root cause in real code.
+- **Clarify** the material unknowns per prime directive 7. Record every question, answer, and
+  assumption in `.ai/<slug>/clarifications.md`.
+- **Create the workspace:** `.ai/<slug>/` with `state.md` (requirement, tier, acceptance
+  criteria, next action) per `references/workspace.md`.
+- **GATE 1:** the profile is stated, the criteria cover the whole request, the relevant code
+  has actually been read (name the files), the workspace exists, and no open unknown could
+  still change the design.
 
-### Phase 2 — Plan (design-first)
-- Design the solution grounded in **SOLID, DRY, YAGNI, KISS, separation of concerns**
-  and, above all, the project's existing patterns. Choose the approach that a staff
-  engineer on this codebase would choose.
-- **For user-facing surfaces (web/mobile UI): design the UX first, to a high bar, and get approval
-  before building it.** Produce a UX spec (information architecture, user flows, per-screen layout +
-  **all states**, design system, responsive/adaptive behavior) that honors UX principles and
-  standards (Nielsen heuristics, visual hierarchy, low cognitive load, clear feedback, **WCAG 2.2
-  AA**, platform conventions). **When a user is present, present the design and pause for
-  accept/reject/modify approval before implementing any UI**; fold feedback back in. **Headless/
-  one-shot →** record the UX proposal as an explicit assumption, proceed, and surface it in the PR.
-  **If the `clarity` skill is available, render the design in its web portal for approval** (else
-  present in the terminal/plan). See `references/ux-design.md` and `references/quality-bar.md`
-  (§UX & visual design).
-- Enumerate: files to add/change, data flow, public interfaces, edge cases, failure
-  modes, security, performance, backward compatibility, migrations, rollout/rollback.
-- **If the requirement includes going to production (deploy/ship/release), the plan MUST include a
-  "Production Readiness" section** — build/release, config & secrets, environments,
-  data/migrations/backups, CI/CD, observability, security hardening, performance/scaling,
-  reliability/rollback/DR, networking/TLS, privacy/compliance, cost, ops docs (plus app-store
-  release when mobile) — each a trackable item, or marked **N/A with a reason**. See
-  `references/production-readiness.md`.
-- Define the **test strategy up front**: which unit, integration, and E2E tests, and
-  the coverage target (default: meet or exceed the repo's existing bar; if none, aim
-  for meaningful coverage of all new branches).
-- **Plan for parallelism** (see `references/parallel-execution.md`): if this agent supports
-  parallel subagents, build a dependency graph of the tasks and mark which are file-disjoint
-  and dependency-free (parallel candidates) vs. which must be serialized (shared schema, types,
-  interfaces, config). Record the split in `PLAN.md`. If unsupported, plan sequentially.
-- Write the plan to `PLAN.md` — or a **task-scoped file** (e.g. `<task>-plan.md`) if the repo already
-  owns a `PLAN.md`, or **inline in the PR description** for a small change (don't leave a stray plan
-  doc in the tree). Keep it checkbox-trackable. **Self-verify it** against the checklist in
-  `references/project-profile.md` (§Plan verification): does it honor the
-  project? Any gap, unhandled edge case, missing migration, or breaking change? Resolve
-  every gap now — not during coding.
-- **GATE 2:** the plan (committed file or PR-body) exists, passes self-verification with zero open
-  gaps, and its test strategy covers every acceptance criterion. For risky/wide-reaching plans
-  (destructive, >10 files, irreversible, cross-cutting), present the plan and get
-  sign-off before Phase 3. **For UI/mobile surfaces, the UX design is approved** (or
-  defaulted-and-recorded when headless) **before any UI is implemented** — see
-  `references/ux-design.md`.
+### Phase 2 — Program design (before any implementation)
+Design the solution on paper first, at the depth the change warrants. Produce a **single HTML
+document with simple diagrams, capped at 3 printed pages** — built to be skimmed in a few
+minutes, not read like a spec. Write plain semantic HTML only: the shared theme in
+`.ai/assets/` supplies all styling, light/dark, reading controls, and the comment/approval
+layer. Structure and diagram rules are in `references/design-doc.md`; wiring, handoff, and the
+verdict protocol are in `references/html-theme.md`.
 
-### Phase 3 — Implement + Test
-- **Use the project's test setup; add the minimum if missing.** Reuse the runner the repo already
-  uses. Only if there is none, pick the ecosystem's **lowest-friction** option — prefer a built-in,
-  zero-install runner (e.g. `node --test`) over scaffolding a framework + coverage + `npm install`
-  for a small task. Add only tooling the task actually needs. See `references/testing-and-e2e.md`.
-- Work in **small, test-backed increments**: write the unit/integration test, then the
-  implementation that satisfies it (or code-then-test per repo norms) — but every new
-  unit of behavior ships with a real test.
-- Install any packages needed for any step (test runner, Playwright, HTTP client, etc.)
-  using the project's package manager; record them.
-- Keep changes cohesive and minimal. Name things well. Document only what needs it.
-- **Dispatch parallel work when planned and supported** (see `references/parallel-execution.md`):
-  do shared/foundational work first in the main context, then fan out file-disjoint tasks to
-  parallel subagents — each in its own git worktree, each with a scoped brief and the same bar
-  (real unit + integration tests, left green). Then merge the worktrees back before the gate.
-  Isolated worker green is not proof; the gate below runs on the **integrated** result.
-- **GATE 3:** All unit + integration tests pass; coverage meets the target; the build
-  compiles/type-checks clean.
+**If the change has a user-facing surface**, the UX is designed and approved *before* any UI
+code — see `references/ux-design.md`. Skip it entirely for library / CLI / API-only work.
 
-### Phase 4 — End-to-End Verification (act like a human)
-Prove the feature works the way a person would check it. See
+- **`.ai/<slug>/architecture.html`** — **only** for large requirements (new service,
+  cross-cutting change, new major subsystem): components, responsibilities, and how they talk.
+  One simple diagram. Omit this file entirely for contained work.
+- **`.ai/<slug>/design.html`** — always: the **classes/modules, interfaces, and public method
+  signatures** you will add or change, each with its single responsibility and its
+  collaborators; plus the **key interactions** (the critical flows, as a sequence diagram).
+- **Data & contracts** — schemas, payloads, persisted shapes, migrations, compatibility.
+- **Design decisions** — each with the alternatives rejected and why, in a table.
+- **Failure modes & edge cases** — what can go wrong and what the design does about it.
+- Design for **modularity and change**: single responsibility, high cohesion, low coupling,
+  clear boundaries, DRY/YAGNI/KISS, and the pattern that fits *this* codebase. The next likely
+  change should be additive, not surgery on the core.
+- Every existing type, function, or interface named in the document must be one you have read.
+- **GATE 2:** the design document exists (≤3 pages, simple diagrams), every acceptance
+  criterion maps to a named component/method, every referenced existing symbol has been
+  verified in the source, and the design passes the checklist in
+  `references/project-profile.md`. **Hand it to the user and get sign-off before Phase 3
+  whenever the change is non-trivial, risky, or wide-reaching** — self-check that it renders,
+  open it in their default browser, print the `file://` path, then **stop and end the turn**
+  rather than polling (protocol in `references/html-theme.md`). Record the verdict in
+  `state.md`.
+
+### Phase 3 — Plan & split into increments
+Write `.ai/<slug>/plan.html` (same format rules, ≤3 pages).
+- **Split the work into increments sized to the model's context window** — see
+  `references/workspace.md`. Each increment is a **vertical slice** that delivers observable
+  behavior, maps to at least one acceptance criterion, can be tested and reviewed on its own,
+  and **fits comfortably in a single session** with room for its tests and review. Small work
+  is one increment; large work is several, ordered by dependency.
+- **Every increment runs Phases 4–6 at production quality** and ends at a green, reviewed
+  commit on the feature branch — never a half-finished state for the next session to
+  reconstruct.
+- For each increment: the tasks, the files to add/change, and the **test strategy** (which
+  unit, integration, and browser/end-to-end tests prove which criterion) plus the coverage
+  expectation.
+- If this agent can run parallel subagents, split the work per
+  `references/parallel-execution.md`; otherwise plan sequentially.
+- **Whole apps, not single requirements:** when the ask implies many independently-valuable
+  features or a greenfield app, switch to the outer loop in
+  `references/app-scale-delivery.md` — a walking skeleton first, then vertical slices, each
+  slice still an increment held to this same bar.
+- **Going live is part of the plan:** if deploying / releasing is in scope, the plan carries a
+  **Production Readiness** section per `references/production-readiness.md`, every item either
+  addressed or marked N/A with a reason.
+- Keep the increments and tasks checkbox-trackable, and mirror the increment list in `state.md`.
+- **GATE 3:** every design element is covered by a task, every criterion by a test, and every
+  increment is session-sized and independently verifiable.
+
+### Phase 4 — Implement + test
+- **Re-read `design.html` before starting each increment.** The design, not your
+  recollection, is the contract — this is the main defense against drift on long work.
+- **Implement the approved design.** If reality contradicts the design, stop, update the
+  design document (and re-check the gate) — do not silently improvise a different shape.
+- Work in **small, test-backed increments**. Every new unit of behavior ships with a real
+  test that would fail if the behavior broke.
+- Write **unit** tests for new functions, branches, boundaries, and error paths, and
+  **integration** tests that exercise real collaborators across module seams. See
+  `references/testing-and-e2e.md`.
+- Keep changes cohesive and minimal; name things well; document only what is non-obvious.
+- Dispatch and then reintegrate parallel work if planned. Isolated workers being green is
+  not proof — the gate runs on the integrated result.
+- **GATE 4:** unit + integration tests pass on the integrated result, coverage meets the
+  target, the build/type-check is clean, and the code matches the design document. Update
+  `state.md`.
+
+### Phase 5 — End-to-end verification
+Prove the feature the way a real user or client would exercise it, and commit those tests.
+**All browser and front-end verification uses `agent-browser`** — see
+`references/e2e-agent-browser.md`. Non-browser surfaces (service, CLI, library) are covered in
 `references/testing-and-e2e.md`.
-- **Right-size the proof to the surface.** Match E2E depth to the change: a UI needs a real browser
-  flow, a service needs real HTTP — but a pure library/CLI's "end to end" is invoking its real
-  public API/command (no servers, browsers, or coverage dashboards it doesn't need).
-- **Map scenarios to existing coverage first.** For each acceptance-criterion scenario, check
-  whether an E2E test already covers it; add tests only for the **uncovered** scenarios and
-  **extend the existing suite/file rather than duplicating it**.
-- **UI change →** drive the real flow with **Playwright**: navigate, interact, assert
-  on rendered results; capture screenshots/traces.
-- **API change →** hit the running service with real **HTTP/REST** calls; assert status,
-  response schema, and side effects (DB rows, events, files).
-- **CLI / library →** invoke the real command / public API and assert observable output.
-- **Mobile →** drive the real app on a simulator/emulator with the platform runner
-  (**Detox / Maestro / Appium**, XCUITest / Espresso): launch, navigate, tap/type, assert on
-  rendered screens; capture screenshots. See `references/testing-and-e2e.md`.
-- **Persist these E2E tests in the repo** and capture evidence (logs, outputs, images).
-- **GATE 4:** Every acceptance criterion is demonstrated met, with captured evidence.
+- Map each acceptance-criterion scenario to existing coverage first; add tests only for the
+  uncovered ones, extending the existing suite rather than duplicating it.
+- Capture the evidence into `.ai/<slug>/evidence/`: commands run, output, screenshots,
+  console/error output, artifacts, and one pass/fail line per criterion.
+- **If the environment makes real end-to-end proof impossible** (no network, no credentials,
+  no runnable host), do not weaken the gate and do not pretend. Verify at the deepest level
+  the environment allows, **name the blocker**, list which criteria remain
+  environment-unverified, and give the exact command a human can run to finish the proof.
+- **GATE 5:** every acceptance criterion is demonstrated met with captured evidence — or is
+  listed as environment-blocked with the blocker and the finishing command stated.
 
-### Phase 5 — Review, Prove, and Ship
-- **Self-review as a demanding staff reviewer** (see `references/review-and-pr.md`):
-  correctness, readability, maintainability, design principles, security, performance,
-  error handling, test quality, no leftovers. Fix everything you'd flag in someone else.
-- Run the **full quality gate**: **whichever of** format, lint, type-check, coverage, and build the
-  repo actually configures (check package scripts, pre-commit, CI) — **plus the full test suite,
-  always**. If a tool is genuinely absent, state that rather than inventing one. Fix all issues (no
-  suppressions).
-- Assemble the **evidence bundle**: requirement → acceptance criteria met, files changed,
-  test counts, coverage %, E2E results/artifacts, review notes, risks & follow-ups.
-- **Branch first — before your first commit.** Create and switch to a feature branch (`feat/…`,
-  `fix/…`, per the repo's convention). **Never commit on `main`/`master`/a protected or default
-  branch — even in a throwaway workspace, even with no remote.** "Stop at a local commit" means
-  commit *on the feature branch*, never on whatever branch you happened to start on. Before every
-  commit, verify with `git rev-parse --abbrev-ref HEAD` that you are **not** on a protected branch;
-  if you are, create the branch first. Committing to `main` is an automatic failure, not a style nit.
-- **Ship as a PR.** Commit with evidence trailers (Conventional Commit message); push; open the PR
-  with the evidence in the body. **First confirm your PR tooling can write to the target repo** —
-  e.g. the `gh` auth identity has access (Enterprise Managed User accounts often *cannot* open PRs on
-  personal repos, and `git push` succeeding does not prove `gh` can). If the remote or PR
-  tooling is unavailable **or unauthorized**, stop at a clean local commit on the feature
-  branch and report the exact push + PR commands (or the `…/compare/…` URL). Format details
-  in `references/review-and-pr.md`.
-- **GATE 5 (ship gate):** conventions honored · plan fully executed · unit +
-  integration + E2E all green · coverage target met · review clean · quality gate green ·
-  evidence attached · **work committed on a feature branch (never `main`/`master`)** ·
-  PR opened (or commit + instructions delivered).
+### Phase 6 — Review, prove, ship
+- **Review your own diff as a demanding staff reviewer** — correctness, bugs and edge cases,
+  maintainability, design principles and patterns, fidelity to the design document, security,
+  performance, error handling, test quality, leftovers. Fix everything you would flag in
+  someone else's PR. Checklist in `references/review-and-pr.md`.
+- **Get an independent review — in a separate session, never in this context.** Hand the
+  requirement, the design document, **`metrics.json`**, and the diff to a **read-only reviewer
+  subagent with fresh context**, and prefer **a different model** from the one that wrote the
+  code. Preference order: (1) different model, fresh context; (2) same model, fresh context;
+  (3) only if subagents are unavailable, re-read the diff cold yourself. The reviewer never
+  writes code. Record findings and their dispositions in `.ai/<slug>/review.md` and address
+  each on its merits.
+- Run the **quality gate**: whichever of format, lint, type-check, coverage, and build the
+  repo actually configures, **plus the full test suite, always**. Fix every failure; never
+  suppress and never lower a threshold.
+- **Run the deterministic quality probe** before the review, so the reviewer sees numbers, not
+  adjectives: `python <skill>/scripts/probe.py --slug <slug> --base <base>`. It measures
+  duplication, complexity, cycles, dead code, static findings and diff coverage against the
+  merge-base, and runs **mutation testing on the changed lines** (`scripts/mutate.py` — no
+  project wiring needed), writing `.ai/<slug>/metrics.json`. A **regression against the
+  baseline, a new dependency cycle, or a mutation score under the floor fails the gate** — see
+  `references/quality-metrics.md`. **Every surviving mutant is killed with a real assertion or
+  justified as equivalent in `review.md`.** Re-run the probe after any rework.
+- Assemble the **evidence bundle** (including the design document) and ship per
+  `references/review-and-pr.md`.
+- **Create the feature branch before your first commit; never commit to a protected or
+  default branch.** If pushing or PR creation is unavailable or unauthorized, stop at a clean
+  local commit on the feature branch and report the exact commands to finish.
+- **GATE 6 (ship gate):** conventions honored · design executed · unit + integration +
+  end-to-end green · coverage met · **probe green (no metric regression, no new cycle, no
+  unjustified surviving mutant)** · review clean · quality gate green · evidence attached ·
+  committed on a feature branch · `state.md` current · **production-readiness items closed when
+  going live is in scope** · PR opened (or commit + instructions delivered). For
+  multi-increment work, this gate runs **per increment**; the PR opens when the whole
+  requirement is complete.
 
-### Convergence — iterate until the top-1% bar is met
-Passing tests is the floor, not the bar. Before declaring done, **score the work against the
-8-dimension quality rubric** in `references/quality-bar.md` — correctness, **scope fidelity**,
-**reuse & DRY**, **design & principles**, **extensibility & maintainability**, robustness, test
-quality, and evidence.
-- If any required dimension is **below 4/5**, any gate is red, or any acceptance criterion is
-  unmet: list the specific gaps with their **root cause**, return to the **earliest phase that owns
-  the gap** (design flaw → Phase 2; missing edge case → Phase 3/4; smell → Phase 5), fix, re-verify,
-  and **re-score**. Record each iteration in `PLAN.md`.
-- Repeat until every required dimension is ≥ 4/5 with all gates green — **or** you hit a genuine
-  blocker (real ambiguity, missing decision, external dependency), then stop and ask with a
-  recommended default.
-- **Do not stop because it "mostly works."** Convergence to the bar is the deliverable. Never game
-  the score (no deleting/skipping tests, lowering thresholds, or special-casing over a design flaw).
-- **DEFINITION OF DONE:** ship gate green **and** every required rubric dimension ≥ 4/5, proven
-  with evidence.
+### Convergence
+Passing tests is the floor, not the bar. Score the work against the 9-dimension rubric in
+`references/quality-bar.md`, return to the **earliest phase that owns each gap**, fix the
+root cause, and re-score. **Done = ship gate green and every required dimension at or above
+the bar**, proven with evidence — or a genuine blocker, which you raise with a recommended
+default. If a dimension is still below the bar after three honest iterations, stop churning:
+ship what is green and record the remaining gap, its root cause, and the proposed fix as an
+explicit follow-up. Never close the gap by lowering the bar.
 
 ## References (load on demand)
-- `references/project-profile.md` — detect & honor project nature; anti-tech-debt; plan verification checklist.
-- `references/testing-and-e2e.md` — test infra setup, coverage, Playwright / REST / CLI E2E per ecosystem.
-- `references/parallel-execution.md` — detect parallel-agent support; decompose independent work; isolate with worktrees; integrate & verify the whole.
-- `references/app-scale-delivery.md` — deliver an entire app in one session: milestone decomposition, walking skeleton, single-branch/one-PR ceremony, context checkpointing, path to production.
-- `references/production-readiness.md` — the full build-to-production checklist (build/release, config/secrets, data/backups, CI/CD, observability, security, scaling, reliability/DR, mobile store release) the plan must cover when shipping is in scope.
-- `references/quality-bar.md` — the top-1% scored rubric (scope, reuse, design, extensibility, ...) and the convergence loop that iterates until the bar is met.
-- `references/ux-design.md` — UX design principles & standards, the design-first approval gate (approve before building UI), and optional `clarity` web rendering.
-- `references/review-and-pr.md` — review checklist, quality gates, evidence bundle, commit/PR format.
+- `references/workspace.md` — the `.ai/<slug>/` workspace, `state.md`, resume protocol, increment sizing.
+- `references/project-profile.md` — profile the project; anti-debt rules; design verification checklist.
+- `references/design-doc.md` — the 3-page documents: structure, simple diagrams, skeleton.
+- `references/html-theme.md` — shared HTML theme, reading controls, comment/approval handoff.
+- `references/ux-design.md` — UX spec and the design-first approval gate for user-facing surfaces.
+- `references/testing-and-e2e.md` — unit, integration, and non-browser end-to-end expectations.
+- `references/e2e-agent-browser.md` — agent-browser for all browser/front-end verification.
+- `references/quality-bar.md` — the scored rubric and the convergence loop.
+- `references/quality-metrics.md` — the deterministic probe: tools, baseline comparison, gate, `metrics.json`.
+- `references/review-and-pr.md` — self-review checklist, quality gate, evidence bundle, commit/PR.
+- `references/production-readiness.md` — the checklist that takes an app from building to live.
+- `references/app-scale-delivery.md` — outer loop for delivering an entire app in vertical slices.
+- `references/parallel-execution.md` — when and how to split work across subagents.
 
 ## Final report
-Close with a concise summary: what was delivered, proof (tests/coverage/E2E), the
-**quality scorecard** (the 8 rubric dimensions with scores + one-line justification), the number
-of convergence iterations, the PR link (or commit + next step), and any residual risks or
-follow-ups.
+Close with: what was delivered, the `.ai/<slug>/` path and design document, proof (tests,
+coverage, browser/end-to-end results, **metrics deltas**), the quality scorecard (9 dimensions,
+score + one-line justification, citing metrics where they exist), the number of convergence
+iterations, the PR link (or commit + next step), and residual risks or follow-ups.

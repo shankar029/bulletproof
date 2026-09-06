@@ -46,9 +46,14 @@ try {
     $dest = Join-Path $skillsRoot 'bulletproof'
     New-Item -ItemType Directory -Force -Path $dest | Out-Null
     Copy-Item (Join-Path $src 'SKILL.md') (Join-Path $dest 'SKILL.md') -Force
-    $refDest = Join-Path $dest 'references'
-    if (Test-Path $refDest) { Remove-Item $refDest -Recurse -Force }
-    Copy-Item (Join-Path $src 'references') $refDest -Recurse -Force
+    foreach ($part in @('references', 'scripts', 'assets')) {
+      $from = Join-Path $src $part
+      if (Test-Path $from) {
+        $to = Join-Path $dest $part
+        if (Test-Path $to) { Remove-Item $to -Recurse -Force }
+        Copy-Item $from $to -Recurse -Force
+      }
+    }
     Write-Host "  - skill    -> $dest"
   }
   function Install-File($from, $to) {

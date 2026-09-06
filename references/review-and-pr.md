@@ -1,91 +1,115 @@
 # Reference: Review, Prove & Ship
 
-## Self-review — read the diff as a demanding staff engineer
+## Self-review — read your own diff as a demanding staff engineer
 
-Review your own change as if you'd reject it in someone else's PR. Fix everything you'd flag.
+Review the full diff as if you would reject it in someone else's PR. Fix everything you flag.
 
-**Correctness**
-- [ ] Does what the acceptance criteria require — all of them, nothing extra.
-- [ ] Edge cases, empty/null, concurrency, and error paths handled.
-- [ ] No off-by-one, no swallowed errors, no unhandled promise/goroutine/exception.
+**Correctness & bugs**
+- [ ] Satisfies every acceptance criterion, and nothing extra.
+- [ ] **Every referenced symbol, API, config key, and flag actually exists** — verified by
+      reading it, not recalled. No invented behavior anywhere in the diff or the docs.
+- [ ] Edge cases, empty/absent values, concurrency, and error paths handled.
+- [ ] No off-by-one, no swallowed errors, no unhandled failure or rejection.
+- [ ] Resources released; no leaked handles, connections, or listeners.
 
-**Design & maintainability**
-- [ ] Follows project architecture and existing patterns (not a new dialect).
-- [ ] SOLID / DRY / KISS / separation of concerns respected; no duplication.
-- [ ] Names are clear; functions are small and cohesive; no needless abstraction.
-- [ ] Public interfaces are minimal and documented where non-obvious.
+**Design, patterns & maintainability**
+- [ ] **Matches the approved design document** — same types, same responsibilities, same
+      interactions; any divergence was folded back into the document.
+- [ ] Follows the project's architecture and existing patterns — not a new dialect.
+- [ ] Single responsibility, high cohesion, low coupling, correct dependency direction.
+- [ ] The abstraction fits the domain; no speculative or clever indirection.
+- [ ] Adding the next obvious case is additive, not surgery on the core.
+- [ ] No duplicated logic; existing utilities reused.
+- [ ] **No band-aids** — no defensive conditional, retry, or special case standing in for a
+      real fix; the root cause is addressed.
+- [ ] Names are clear, functions are small, public interfaces are minimal and documented
+      where non-obvious.
 
 **Security & performance**
-- [ ] Input validated; authz enforced; no secrets in code/logs; no injection.
-- [ ] No N+1, no accidental O(n²), no blocking on hot paths, sensible payloads.
+- [ ] Input validated, authorization enforced, no secrets in code or logs, no injection.
+- [ ] No repeated-query or quadratic blowups, no blocking work on hot paths, sane payloads.
 
 **Tests & hygiene**
-- [ ] Unit + integration + E2E all present, meaningful, and green.
-- [ ] Coverage meets target; new branches covered.
-- [ ] No dead code, TODOs, debug prints, commented-out blocks, or stray files.
-- [ ] Lint/format/type-check clean with **no suppressions** (or each suppression justified).
+- [ ] Unit + integration + end-to-end present, meaningful, and green.
+- [ ] Coverage meets target; new branches covered; no skipped or empty tests.
+- [ ] **Every surviving mutant is killed or justified** — a green suite that lets mutants live
+      is not a tested change.
+- [ ] No dead code, TODOs, debug output, commented-out blocks, or stray files.
+- [ ] Format/lint/type-check clean with no suppressions (or each one justified in writing).
 
-## Quality gate (run before shipping)
+## Independent review — separate session, different model when possible
 
-Run **whichever of these the repo actually configures** (check package scripts, pre-commit, CI) and
-make them all pass. If the repo has no formatter/linter/type-checker, say so explicitly rather than
-inventing one — but the test suite must still pass:
-1. Format (e.g. `prettier`/`black`/`gofmt`)
-2. Lint (e.g. `eslint`/`ruff`/`golangci-lint`)
-3. Type-check (e.g. `tsc --noEmit`/`mypy`)
-4. Full test suite + coverage
-5. Build / compile
+Your own review is necessary but not sufficient: you cannot un-see the reasoning that made
+the shortcut feel acceptable. Always get a second pass from a **read-only reviewer subagent in
+a fresh session**, in this preference order:
 
-Fix every failure. Never ship red. Never lower a threshold to pass.
+1. **Different model, fresh context** — best. A fresh session removes rationalization; a
+   different model removes correlated blind spots.
+2. **Same model, fresh context** — still most of the value; use when no second model is
+   configured.
+3. **Cold self-review in this session** — last resort only, when subagents are unavailable.
+
+Give the reviewer the **requirement, the acceptance criteria, the design document,
+`metrics.json`, and the diff** — and none of your reasoning. Ask it to judge correctness,
+adherence to the design, maintainability, and test quality; to flag band-aids and
+unverified/invented APIs; and to check whether any metric improvement was achieved by gaming
+(arbitrary function splitting, narrowed tool scope, weakened assertions) rather than by better
+design. The reviewer **never writes code**. Record every finding and its disposition (fixed /
+rejected, with the reason) in `.ai/<slug>/review.md`.
+
+For multi-increment work, review **each increment** before moving on — not once at the end.
+
+## Quality gate (before shipping)
+
+Run whichever of format, lint, type-check, coverage, and build the repo actually configures
+(check its scripts, hooks, and CI), **plus the full test suite, always**. If the repo has no
+formatter/linter/type-checker, say so rather than inventing one. Fix every failure. Never
+ship red; never lower a threshold or weaken an assertion to pass.
 
 ## Evidence bundle
 
-Assemble the proof that what was asked was delivered:
-
-- **Requirement** — the original ask (or link).
+- **Requirement** — the original ask or link.
+- **Workspace** — `.ai/<slug>/` (design, plan, clarifications, review, evidence).
+- **Design** — path to the HTML design document, and a one-line note of any divergence.
 - **Acceptance criteria** — each with ✅ and how it was verified.
-- **Changes** — files added/changed and why (one line each).
-- **Tests** — counts (unit/integration/E2E) and what they cover.
-- **Coverage** — before → after %, or new-code coverage.
-- **E2E proof** — Playwright screenshots/trace paths, or API request/response transcripts,
-  or CLI output.
-- **Quality gate** — format/lint/type/build/test all green.
-- **Risks & follow-ups** — anything intentionally deferred (never smuggled debt).
+- **Changes** — files added/changed, one line of why each.
+- **Tests** — counts (unit/integration/end-to-end) and what they cover.
+- **Coverage** — before → after, or new-code coverage.
+- **End-to-end proof** — artifact paths, transcripts, or command output; plus any criterion
+  that is environment-blocked, with the blocker and the command to finish the proof.
+- **Quality gate** — which checks ran and that they are green.
+- **Metrics** — `metrics.json` deltas vs the merge-base (duplication, complexity, cycles,
+  dead code, static findings, diff coverage, mutation score), and anything `unavailable`.
+  **Regenerate every number at the final commit — never copy a figure from an earlier run.**
+  A stale count in the evidence discredits the evidence that is correct.
+- **Risks & follow-ups** — anything intentionally deferred.
 
-## Ship as a PR
+## Ship
 
-**Branch safety:** never commit to `main`/`master` or any protected/default branch. **Create the
-feature branch *before your first commit*** (e.g. `feat/…`, `fix/…`, per the repo's convention) —
-even in a throwaway workspace and even when there is no remote: "stop at a local commit" means commit
-*on the feature branch*. Before each commit, run `git rev-parse --abbrev-ref HEAD` and confirm you are
-not on a protected branch; if you are, branch first. In the agent eval this is enforced — committing
-to `main`/`master` hard-zeroes the run's composite score regardless of code quality.
+**Branch safety:** create the feature branch *before your first commit*, named per the repo's
+convention. Never commit to a protected or default branch — even in a throwaway workspace,
+even with no remote. "Stop at a local commit" means commit *on the feature branch*. Verify
+the current branch before each commit.
 
-**Commit** using the repo's convention (e.g. Conventional Commits). Put the evidence summary in
-the body and machine-readable trailers, e.g.:
+**Commit** using the repo's message convention, with the evidence summary in the body and
+machine-readable trailers, e.g.:
 
 ```
-feat(cart): apply percentage discount codes at checkout
+<type>(<scope>): <what changed>
 
 <what & why, 1-3 lines>
 
 Tests: 14 unit, 5 integration, 3 e2e (all green)
 Coverage: 82% -> 87% (new code 100%)
-E2E: playwright checkout flow ✅ (artifacts/e2e/checkout/*.png)
+Design: .ai/<slug>/design.html
+Metrics: dup -0.1% | cx max +0 | cycles 0 | mutation 78% (+7)
+E2E: <surface> verified ✅ (<artifact path>)
 Quality-Gate: format+lint+types+build ✅
 Acceptance: AC1 ✅ AC2 ✅ AC3 ✅
 ```
 
-**Open the PR** (`gh pr create` or the repo's tooling) with the full evidence bundle in the
-description and a clear title. Link the requirement/issue if one was provided. **First confirm the
-tooling can write to the target repo** — a successful `git push` does not prove `gh` is authorized
-(e.g. an Enterprise Managed User identity often cannot open PRs on a personal repo).
-
-**If no remote / no PR tooling / unauthorized identity:** stop at a clean local commit on the
-feature branch and report the exact commands the user should run to push and open the PR — or, if the
-branch is already pushed, the `https://github.com/<owner>/<repo>/compare/<base>...<branch>?expand=1`
-URL.
-
-## Definition of Done (all must be true)
-Conventions honored · plan fully executed · unit + integration + E2E green · coverage met ·
-review clean · quality gate green · evidence attached · PR opened (or commit + instructions).
+**Open the PR** with the evidence bundle in the description and the requirement linked.
+First confirm your tooling is authorized to open a PR on the target repo — a successful push
+does not prove it. If the remote or PR tooling is unavailable or unauthorized, stop at a
+clean local commit on the feature branch and report the exact commands to push and open the
+PR (or the compare URL if the branch is already pushed).
