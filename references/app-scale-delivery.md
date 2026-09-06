@@ -1,6 +1,6 @@
 # Reference: Delivering an Entire App (App-Scale Mode)
 
-The five-phase loop delivers **one requirement** and ships **one PR**. An entire app (web or
+The six-phase loop delivers **one requirement** and ships **one PR**. An entire app (web or
 mobile) is *many* requirements. This reference adds a thin **outer loop** that decomposes the app
 into an ordered sequence of vertical slices and delivers them **incrementally in one session, on
 one branch, in one PR** — with each slice held to the same quality bar. It is the lightweight
@@ -28,8 +28,9 @@ does not repeal the model's context ceiling. When context runs low, **checkpoint
 
 1. **Phase 0 — Decompose (once, up front).** Turn the app into a **milestone list**: `M0` = a
    walking skeleton, `M1..Mn` = feature increments in dependency order. Record it in the plan doc
-   as a checkbox list with per-milestone acceptance criteria. This *is* Phase 1+2 for the app as a
-   whole; individual milestones still get their own focused Phase 1/2 when you reach them.
+   as a checkbox list with per-milestone acceptance criteria. This *is* Phase 1–3 for the app as a
+   whole; individual milestones still get their own focused understand/design/plan pass when you
+   reach them.
 2. **M0 — Walking skeleton first.** Deliver **one thin end-to-end vertical slice** that actually
    runs: the smallest path through every layer (data → domain → API → one screen/route → one real
    test → one E2E). This proves the architecture, wiring, build, and E2E harness **before** volume
@@ -58,12 +59,12 @@ does not repeal the model's context ceiling. When context runs low, **checkpoint
 
 ## Per-milestone execution — the inner loop
 
-For **each** milestone, run the normal five phases at **right-sized** rigor:
+For **each** milestone, run the normal six phases at **right-sized** rigor:
 - **Understand/Plan** the milestone against the app profile you already built (don't re-profile the
   project every time — reuse it).
-- **Implement + Test** the slice: real unit + integration tests, left green (Phase 3 gate).
-- **E2E** the slice like a human (Phase 4) — see E2E cadence below.
-- **Review** the slice (Phase 5 self-review) and **commit it** (see ceremony).
+- **Implement + Test** the slice: real unit + integration tests, left green (Phase 4 gate).
+- **E2E** the slice like a human (Phase 5) — see E2E cadence below.
+- **Review** the slice (Phase 6 self-review) and **commit it** (see ceremony).
 - **Score** the slice against the quality rubric; converge it to ≥4/5 before moving on. Do **not**
   carry a below-bar milestone forward hoping to fix it later — that compounds into debt.
 

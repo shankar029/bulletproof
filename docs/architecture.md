@@ -9,7 +9,8 @@ for the eval roadmap see [`EVAL-PLAN.md`](../EVAL-PLAN.md).
 requirement ──▶ launcher (per agent) ──▶ SKILL.md (the loop) ──▶ references/*.md (loaded on demand)
                                                 │
                                                 ▼
-                                    convergence loop: run phases,
+                                    convergence loop: run 6 phases,
+                                    measure (probe + mutation), review,
                                     self-score vs quality bar, iterate
                                                 │
                                                 ▼
@@ -19,9 +20,12 @@ requirement ──▶ launcher (per agent) ──▶ SKILL.md (the loop) ──�
 - **`SKILL.md` is the single source of truth.** The whole operating loop lives here once.
 - **Launchers are thin.** Each agent has a tiny entry file that points at `SKILL.md`, so behavior
   is identical everywhere and there's only one place to change.
-- **References are progressive disclosure.** `SKILL.md` stays lean; depth (test setup, review
-  checklist, quality rubric, parallelism rules) sits in `references/*.md` and is pulled in only when
-  a phase needs it.
+- **References are progressive disclosure.** `SKILL.md` stays lean; depth (workspace/resume, design
+  documents, test setup, review checklist, quality rubric, metrics, parallelism) sits in
+  `references/*.md` and is pulled in only when a phase needs it.
+- **Scripts and assets ship with the skill.** `scripts/` (probe, mutation) and `assets/` (artifact
+  theme) are installed alongside `SKILL.md`; they run from outside the target project and never add
+  dependencies or config to it.
 
 ## Key design decisions
 
@@ -36,12 +40,30 @@ Copilot CLI has **no custom slash‑command support** upstream
 real `/bulletproof` commands.
 
 ### 3. The loop is a convergence loop, not a single pass
-Passing tests is the *floor*. After the five phases, the agent scores the work against the 8‑dimension
-bar in [`references/quality-bar.md`](../references/quality-bar.md) — correctness, **scope fidelity**,
-**reuse & DRY**, **design & principles**, **extensibility**, robustness, test quality, evidence — and
-loops back to the earliest phase that owns any gap, fixing **root causes**, until every required
-dimension is ≥ 4/5 or a genuine blocker forces a question. Anti‑gaming rules forbid lowering the bar
-or deleting tests to "pass."
+Passing tests is the *floor*. After the six phases, the agent scores the work against the 9‑dimension
+bar in [`references/quality-bar.md`](../references/quality-bar.md) — correctness, **grounding**,
+**design fidelity**, scope fidelity, reuse & DRY, design & modularity, extensibility, robustness,
+test quality & evidence — and loops back to the earliest phase that owns any gap, fixing **root
+causes**, until every required dimension is ≥ 4/5 or a genuine blocker forces a question.
+Anti‑gaming rules forbid lowering the bar or deleting tests to "pass", and where a deterministic
+metric exists for a dimension the score **must cite it**.
+
+### 3a. Design precedes code, and the design is a reviewable artifact
+Phase 2 produces a 3‑page HTML design document (classes, interfaces, interactions) before any
+implementation, styled by a shared theme in `assets/` that also provides an in‑document
+highlight/comment/approve layer. The verdict returns as `review.json`, so approval is
+machine‑readable and the run can stop and resume around a human.
+
+### 3b. Work is durable across sessions
+Every non‑trivial task owns `.ai/<slug>/` — `state.md` (gate row, increments, next action), the
+design and plan, review findings, metrics and evidence. The loop reads `state.md` first and resumes
+rather than restarting, which is what makes multi‑increment work survive a crash or a context limit.
+
+### 3c. Quality is measured, not asserted
+`scripts/probe.py` compares HEAD against the merge‑base in a throwaway worktree (duplication,
+complexity, cycles, dead code, static findings); `scripts/mutate.py` mutates only the changed lines
+and runs the project's own tests to prove the tests assert something. Gates are delta‑based to avoid
+Goodhart effects, with greenfield and front‑end projects detected and judged appropriately.
 
 ### 4. Safe by default
 Feature branches only; PR‑only; **never** commit to `main`/`master`/protected branches. The skill

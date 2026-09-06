@@ -1,88 +1,57 @@
 # Reference: Testing & End-to-End Verification
 
-Every unit of behavior ships with a real test. **Right-size the setup:** reuse the project's
-existing test tooling; if there is none, add only what the task needs — prefer a zero-install
-built-in runner (e.g. `node --test`) over scaffolding a framework + coverage + dependencies for a
-small or single-file deliverable.
+Every unit of behavior ships with a real test. **Use the project's existing test tooling.**
+Only if there is none, add the minimum the task needs, choosing the ecosystem's
+lowest-friction standard option — never scaffold a framework, coverage reporter, or config
+files a small task doesn't require.
 
-## Setting up test infra (only if missing)
+Put tests where the project puts them and mirror its naming. Wire the test, coverage, and
+lint commands into the project's own script/task runner so they are reproducible.
 
-Detect the ecosystem and install the standard runner + coverage via the repo's package manager:
+## Unit tests (Phase 4)
+- Cover every new function, branch, boundary, and error path — happy path, invalid input,
+  and failure modes.
+- Each test must be able to fail: assert on real behavior, no empty or tautological tests,
+  no skips.
+- Mock only what you must (nondeterminism, external systems). Never mock away the behavior
+  under test.
 
-| Ecosystem | Unit/Integration runner | Coverage | E2E (UI) | E2E (API) |
-|---|---|---|---|---|
-| Node/TS | Vitest or Jest (match repo) | built-in `--coverage` / c8 | Playwright | supertest / real HTTP |
-| Python | pytest | pytest-cov | Playwright (python) | httpx / requests |
-| Go | `go test` | `go test -cover` | Playwright or rod | `net/http` tests |
-| Rust | `cargo test` | llvm-cov / tarpaulin | Playwright (external) | reqwest |
-| Java/Kotlin | JUnit | JaCoCo | Playwright/Selenium | RestAssured |
-| .NET | xUnit/NUnit | coverlet | Playwright .NET | HttpClient |
-| React Native / Expo | Jest (RN preset) | built-in / c8 | Detox or Maestro (simulator/emulator) | supertest / real HTTP |
-| Flutter | `flutter test` | `flutter test --coverage` | `integration_test` + `flutter drive`, or Maestro | Dart `http` / `dio` |
-| Native iOS (Swift) | XCTest | Xcode coverage | XCUITest (simulator) | `URLSession` tests |
-| Native Android (Kotlin) | JUnit / Robolectric | JaCoCo | Espresso / UI Automator (emulator) | Retrofit/OkHttp (MockWebServer) |
+## Integration tests (Phase 4)
+- Exercise real collaborators across module seams — storage, filesystem, transport layer,
+  adjacent modules — instead of mocking everything.
+- Use the project's existing fixtures and factories.
+- Cover the contract between components as designed in Phase 2: data shape, ordering,
+  transactions/rollback, and error propagation.
 
-Rules:
-- **Match what the repo already uses.** Only introduce a runner when there is none.
-- **Don't over-scaffold.** For a micro/single-file task, or a project with no build system, a
-  built-in runner (`node --test`, `go test`, `pytest`) is enough — do not `npm install` a
-  framework, coverage-HTML reporter, or config files the task doesn't require.
-- Put tests where the project puts them (or the ecosystem default: `__tests__`, `tests/`,
-  `*_test.go`, `*.spec.ts`, etc.). Mirror existing naming.
-- Wire test/coverage/lint commands into the project's scripts (e.g. `package.json`,
-  `Makefile`, `pyproject.toml`) so they're reproducible and CI-ready.
+- **Coverage:** meet or exceed the repo's threshold. If none exists, cover all new branches
+  meaningfully — chase behavior, not a number. A failing or flaky test is a blocker, never a
+  "known issue".
+- **Coverage is the floor, mutation is the bar.** A test that runs a line without asserting
+  its behavior is worthless; the probe will find it (`quality-metrics.md`). Write the
+  assertion you would need in order to catch the boundary being wrong.
+- **Run the suite non-interactively** — `vitest run`, `--watch=false`, `--ci`. A watch-mode
+  runner never returns and will hang the whole run.
 
-## Unit + integration tests (Phase 3)
+## End-to-end verification (Phase 5)
+Exercise the feature the way a real user or client would, through its real public surface,
+with the system actually running. Match the depth to the surface:
+- **User interface / front end** → **`agent-browser`**, per `e2e-agent-browser.md`. This is the
+  designated tool for all browser work in this workflow.
+- **Service or API** → issue real requests against the running service; assert status,
+  response shape, headers, **and side effects** (persisted records, emitted events, files),
+  including authorization failures and validation errors.
+- **CLI or library** → invoke the real command or public API as a consumer would; assert
+  exit codes, output, generated files, and observable side effects.
 
-- **Unit:** every new function/branch/edge case. Cover happy path, error paths, boundaries,
-  and invalid input. No test that asserts nothing.
-- **Integration:** exercise real collaborators (DB, filesystem, HTTP layer, module seams) —
-  not everything mocked. Use the project's fixtures/factories.
-- **Coverage:** meet or exceed the repo's threshold; if none exists, cover all new branches
-  meaningfully (chase behavior, not a vanity number).
-- Run the suite; iterate until green. A failing/flaky test is a blocker, never a "known issue."
+Do not stand up infrastructure the surface doesn't need — a library's end-to-end proof is a
+real call to its public API, not a server or a browser.
 
-## End-to-end verification — act like a human (Phase 4)
+**Map first, then fill gaps:** list the scenarios implied by the acceptance criteria, check
+which already have end-to-end coverage, and add only the uncovered ones — extending the
+existing suite, never creating a parallel duplicate.
 
-Prove the feature the way a real user or client would exercise it. These tests live in the repo.
+These tests are committed to the repo.
 
-**Right-size the depth to the surface.** Use the heavy tools only where the surface calls for them:
-a UI → a browser, a service → real HTTP. A pure library or CLI's end-to-end proof is a real
-invocation of its public API/command — don't stand up servers, browsers, or coverage dashboards it
-doesn't need.
-
-**Map first, then fill the gaps:** list the scenarios implied by the acceptance criteria, check
-which already have E2E coverage, and add tests only for the uncovered ones — extending the existing
-suite/file, never creating a parallel duplicate.
-
-### UI changes → Playwright
-- Install/reuse Playwright; start (or point at) the running app.
-- Script the actual user flow: navigate, fill forms, click, wait for real UI state.
-- Assert on rendered/observable results, not internals.
-- Capture **screenshots and traces** as evidence; save under the repo's test artifacts dir.
-
-### API changes → real HTTP/REST
-- Start the service (or use the test server) and issue real requests (test HTTP client,
-  `curl`, or an httpfile/REST-client file committed to the repo).
-- Assert **status codes, response schema/body, headers**, and **side effects**: DB rows
-  written, events emitted, files created, idempotency, authz enforced.
-- Cover auth failures, validation errors, and edge inputs — not just the happy path.
-
-### CLI / library changes → real invocation
-- Run the actual CLI command or call the public API surface as a consumer would.
-- Assert exit codes, stdout/stderr, generated files, and observable side effects.
-
-### Mobile changes → simulator/emulator automation
-- Build and run the **real app** on a simulator/emulator (or device) — asserting on components in
-  isolation is not end-to-end proof.
-- Drive the actual user flow with the platform's UI runner: **Detox** or **Maestro** (React
-  Native/Expo), **`integration_test` + `flutter drive`** or **Maestro** (Flutter), **XCUITest**
-  (native iOS), **Espresso / UI Automator** (native Android); **Appium** where a cross-platform
-  driver fits the repo.
-- Assert on rendered screens and navigation, not internal widget state; cover permissions, deep
-  links, offline/error states, and back-navigation.
-- Capture screenshots (and video/trace where the runner supports it) as evidence.
-
-### Evidence to capture
-- Commands run and their output, screenshots/traces (UI), request/response transcripts (API),
-  and a one-line pass/fail per acceptance criterion. This feeds the PR evidence bundle.
+## Evidence to capture
+Commands run and their output, UI artifacts or request/response transcripts, and one
+pass/fail line per acceptance criterion. This feeds the PR evidence bundle.

@@ -58,12 +58,15 @@ else
   [ -n "$SRC" ] && [ -f "$SRC/SKILL.md" ] || die "SKILL.md missing in archive (bad ref '$REF'?)"
 fi
 
-install_skill() { # $1 = skills root; installs <root>/bulletproof/{SKILL.md,references/}
+install_skill() { # $1 = skills root; installs <root>/bulletproof/{SKILL.md,references/,scripts/,assets/}
   dest="$1/bulletproof"
   mkdir -p "$dest"
   cp "$SRC/SKILL.md" "$dest/SKILL.md"
   rm -rf "$dest/references"
   cp -R "$SRC/references" "$dest/references"
+  rm -rf "$dest/scripts" "$dest/assets"
+  [ -d "$SRC/scripts" ] && cp -R "$SRC/scripts" "$dest/scripts"
+  [ -d "$SRC/assets" ]  && cp -R "$SRC/assets"  "$dest/assets"
   echo "  - skill    -> $dest"
 }
 install_file() { # $1 = src file, $2 = dest file
