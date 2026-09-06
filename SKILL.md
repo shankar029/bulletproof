@@ -74,12 +74,18 @@ After reading the requirement, classify it — and say which tier you chose and 
   watcher, a REPL — is started **detached** with its output redirected to a log, then polled
   once (`start`/`nohup ... &` then a short `curl`/`sleep` check). A foreground `npm run dev`
   ends the run, not the turn.
+- **Put a timeout on every external command.** A tool that normally returns in a second can
+  hang forever on a contended daemon, a stalled browser, or a lost lock — and a hang is worse
+  than a failure, because nothing tells you it happened. Wrap them: `timeout 60 <cmd>` (or the
+  platform equivalent). Exit code 124 means it hung; record that and move on.
 - **Test runners must be non-interactive.** Use the single-run form (`vitest run`, `--watch=false`,
   `--ci`), never a watch mode.
 - **Bound every retry.** If a command hangs or a tool is missing, record the blocker in
   `state.md` and move on. Repeating a hanging command is how a run dies silently.
 - **Prefer finishing to polishing.** A committed, working increment beats an unfinished
   perfect one — especially since you may be interrupted at any point.
+- **Commit each increment as it goes green.** Uncommitted work is lost work if the session
+  ends; a run that is interrupted mid-phase should still leave the repo better than it found it.
 
 ## The Loop
 
