@@ -125,13 +125,21 @@ over — fix it first.
 
 ## Practical notes
 
-- **Verify the command exists before relying on it.** This CLI moves fast and builds differ:
-  run `agent-browser --help` / `agent-browser <cmd> --help` first. An unrecognised command may
-  return an error payload that is easy to misread as a clean result — if a check reports zero
-  problems, confirm it actually ran.
+- **Always wrap agent-browser in a timeout** — `timeout 60 agent-browser <cmd>`. The browser
+  runs behind a shared daemon; a contended or wedged daemon makes an ordinarily instant command
+  hang **forever**, which silently consumes the entire run. Exit code 124 means it hung: record
+  the blocker, drop browser verification to what you can prove, and continue.
+- **Verify the command and its flags exist before relying on them.** This CLI moves fast and
+  builds differ: run `agent-browser --help` / `agent-browser <cmd> --help` first. Unknown flags
+  are not always rejected — `screenshot --full-page` is parsed as a *selector* and returns
+  `Element not found`, so a wrong flag reads like a page problem rather than your mistake. The
+  full-page flag is `--full`.
+- An unrecognised command may return an error payload that is easy to misread as a clean
+  result — if a check reports zero problems, confirm it actually ran.
 - Refs from `snapshot` are only valid for that snapshot: **re-snapshot after any DOM change**,
   and never reuse a ref across an interaction that re-renders the page.
 - Viewport changes go through `agent-browser set viewport <w> <h>`.
+- Close the browser when Phase 5 is done, and never leave a dev server running.
 
 - Chain with `&&` when you don't need intermediate output; use `batch` to avoid per-command
   startup; run separately when you must parse a snapshot before acting.
