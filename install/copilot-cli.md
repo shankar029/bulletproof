@@ -20,7 +20,7 @@ Prefer to do it manually? Steps below.
 ```bash
 # playbook the agent references
 mkdir -p ~/.copilot/bulletproof
-cp -r SKILL.md references ~/.copilot/bulletproof/
+cp -r SKILL.md references scripts assets ~/.copilot/bulletproof/
 
 # custom agent
 mkdir -p ~/.copilot/agents

@@ -132,5 +132,9 @@ That feedback loop, not any single headline number, is the point.
 
 - **Node ≥ 22** for native TS type‑stripping (`node --test`). Strip‑only mode rejects TS
   "parameter properties" — declare class fields explicitly.
-- **Playwright** (Chromium headless) is confirmed working on ARM64 Windows; it's only needed for the
-  UI benchmark arm.
+- **agent-browser** drives all browser/front-end verification (Phase 5) and the artifact
+  self-check for generated HTML; it is optional and reported as `unavailable` when absent.
+  Playwright/Chromium remains only a dependency of the UI benchmark arm.
+- **Optional analysis tools** (`jscpd`, `lizard`, `madge`, `semgrep`) are installed globally and
+  never enter the target project; `scripts/probe.py` reports any missing tool as `unavailable`
+  rather than as a pass. `scripts/mutate.py` needs nothing beyond the project's own test command.
