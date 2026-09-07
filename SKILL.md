@@ -88,13 +88,32 @@ After reading the requirement, classify it — and say which tier you chose and 
   perfect one — especially since you may be interrupted at any point.
 - **Commit each increment as it goes green.** Uncommitted work is lost work if the session
   ends; a run that is interrupted mid-phase should still leave the repo better than it found it.
+- **Context pressure is a signal to finish, not to summarize.** When the window gets tight,
+  drive the current increment to a green commit and stop — the next increment starts in a
+  **fresh session**, resuming from the workspace. Do not compact the conversation to squeeze in
+  more work: compaction is lossy summarization by the model that is already degrading, and the
+  first thing it drops is the citations, signatures and exact names this skill runs on. The
+  trigger is behavioural, not a percentage: *if you are re-reading files you already read, or
+  cannot recall a decision without scrolling back, close the increment.*
+- **If the session is compacted anyway, re-anchor from disk.** Re-read `state.md`, `research.md`
+  and the design, and **re-open a file before editing it**. Never act on a summary of code.
+  Needing to compact mid-increment means the increment was sized wrong — record that in
+  `state.md` so the next split is better.
 
 ## The Loop
 
-### Phase 1 — Understand
+### Phase 1 — Understand & research
+**Delegate this phase to a subagent with fresh context when the harness supports it** — it is the
+most token-expensive phase in the run, and its output is two pages. See
+`references/delegation.md` for the brief, the fallback ladder, and the spot-check.
 - **Profile the project** — see `references/project-profile.md`. Keep it to a few lines.
 - **Read the actual code you will touch**, plus its callers and its neighbors. Directive 1
   applies from here on: everything you claim about this codebase comes from a file you read.
+- **Write `.ai/<slug>/research.md` — the ground truth for the run**: what the codebase does
+  today, what it does **not** do, the constraints and conventions that bind the design, the
+  tests already covering the area, and the seams the new work attaches to. **Every claim carries
+  `path:line` and its snippet; every "not implemented" carries the search that proves absence.**
+  Structure and rules: `references/research.md`.
 - **Restate the requirement as testable acceptance criteria** with stable ids (AC1, AC2, …).
   Cover every explicit ask, **every sub-deliverable of a multi-part request**, and the
   non-functional needs it implies. Never drop a part; never invent scope.
@@ -103,12 +122,15 @@ After reading the requirement, classify it — and say which tier you chose and 
   assumption in `.ai/<slug>/clarifications.md`.
 - **Create the workspace:** `.ai/<slug>/` with `state.md` (requirement, tier, acceptance
   criteria, next action) per `references/workspace.md`.
-- **GATE 1:** the profile is stated, the criteria cover the whole request, the relevant code
-  has actually been read (name the files), the workspace exists, and no open unknown could
-  still change the design.
+- **GATE 1:** the profile is stated, the criteria cover the whole request, **`research.md`
+  exists and every claim in it is cited**, the workspace exists, and no open unknown could
+  still change the design. **Spot-check three citations at random and resolve them against the
+  source** — any miss and the document is rejected and rewritten.
 
 ### Phase 2 — Program design (before any implementation)
-Design the solution on paper first, at the depth the change warrants. Produce a **single HTML
+Design the solution on paper first, at the depth the change warrants. **Delegate this phase to a
+subagent with fresh context when available** (`references/delegation.md`); the parent still owns
+the sign-off. Produce a **single HTML
 document with simple diagrams, capped at 3 printed pages** — built to be skimmed in a few
 minutes, not read like a spec. Write plain semantic HTML only: the shared theme in
 `.ai/assets/` supplies all styling, light/dark, reading controls, and the comment/approval
@@ -124,13 +146,17 @@ code — see `references/ux-design.md`. Skip it entirely for library / CLI / API
 - **`.ai/<slug>/design.html`** — always: the **classes/modules, interfaces, and public method
   signatures** you will add or change, each with its single responsibility and its
   collaborators; plus the **key interactions** (the critical flows, as a sequence diagram).
+- **As-is → to-be** — for every symbol you change, its **current** behaviour *citing
+  `research.md`* and what it **becomes**. This is what makes a brownfield change reviewable:
+  the reader sees the delta, not just the destination.
 - **Data & contracts** — schemas, payloads, persisted shapes, migrations, compatibility.
 - **Design decisions** — each with the alternatives rejected and why, in a table.
 - **Failure modes & edge cases** — what can go wrong and what the design does about it.
 - Design for **modularity and change**: single responsibility, high cohesion, low coupling,
   clear boundaries, DRY/YAGNI/KISS, and the pattern that fits *this* codebase. The next likely
   change should be additive, not surgery on the core.
-- Every existing type, function, or interface named in the document must be one you have read.
+- Every existing type, function, or interface named in the document must appear in
+  `research.md` or be one you have opened and read yourself.
 - **GATE 2 — the design is signed off before any code.** The design document exists (≤3 pages,
   simple diagrams), every acceptance criterion maps to a named component/method, every
   referenced existing symbol has been verified in the source, and the design passes the
@@ -149,7 +175,9 @@ code — see `references/ux-design.md`. Skip it entirely for library / CLI / API
   Protocol and verdict handling: `references/html-theme.md`. Record the outcome in `state.md`.
 
 ### Phase 3 — Plan & split into increments
-Write `.ai/<slug>/plan.html` (same format rules, ≤3 pages).
+Write `.ai/<slug>/plan.html` (same format rules, ≤3 pages). The plan **cites `research.md` and
+`design.html` and introduces no new facts of its own**: research says what is, design says what
+will be, the plan says only **in what order**.
 - **Split the work into increments sized to the model's context window** — see
   `references/workspace.md`. Each increment is a **vertical slice** that delivers observable
   behavior, maps to at least one acceptance criterion, can be tested and reviewed on its own,
@@ -256,6 +284,8 @@ explicit follow-up. Never close the gap by lowering the bar.
 
 ## References (load on demand)
 - `references/workspace.md` — the `.ai/<slug>/` workspace, `state.md`, resume protocol, increment sizing.
+- `references/research.md` — the ground-truth research document: citations, absence evidence, scope.
+- `references/delegation.md` — running research, design and review in subagents; briefs and spot-check.
 - `references/project-profile.md` — profile the project; anti-debt rules; design verification checklist.
 - `references/design-doc.md` — the 3-page documents: structure, simple diagrams, skeleton.
 - `references/html-theme.md` — shared HTML theme, reading controls, comment/approval handoff.

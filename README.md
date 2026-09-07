@@ -19,10 +19,13 @@ the result with real tools, gets an independent review, and opens a PR with the 
 
 Six phases, each with a gate it must pass before advancing.
 
-1. **Understand the whole ask.** Profiles the project (stack, tests, conventions), **reads the code
-   it will touch**, and restates the requirement as testable **acceptance criteria that cover every
-   part** of it. Material ambiguity is **clarified before designing** — asked in one batch with a
-   recommended default when you're present, recorded as explicit assumptions when headless.
+1. **Understand, then research the code — and write it down.** Produces `research.md`: the ground
+   truth for the run. What the codebase does today, what it does **not** do, the constraints and
+   conventions that bind the design, the tests already covering the area, and the seams the new
+   work attaches to — **every claim carrying `path:line` and its snippet, every "not implemented"
+   carrying the search that proves absence**. Grounding stops being a promise and becomes something
+   you can check: Gate 1 spot-checks three citations at random and rejects the document if one
+   misses.
 2. **Design the program before writing it — then wait for your sign-off.** Produces a **3-page
    HTML design document**: the classes/modules, interfaces and public method signatures, each with
    its single responsibility and collaborators, plus sequence diagrams for the critical flows, data
@@ -142,6 +145,24 @@ the 9-dimension scorecard citing those numbers, unconfirmed assumptions, follow-
 still pending — each with the exact command to finish it**. It is written even when a run is cut
 short, so an interrupted session still leaves you something worth reading.
 
+### Phases run in subagents, so the context goes where the work is
+
+Research and design run in **subagents with fresh context** where the harness supports it (with an
+inline fallback everywhere else). Research is the most token-expensive phase in a run — it reads
+dozens of files to produce two pages — and doing it in the main context burns the window on raw
+file contents *before implementation starts*. Delegated, the main agent gets the two pages instead
+of the fifty files. The parent still spot-checks citations, still owns the design sign-off, and
+implementation still re-opens a file before changing it: the document is an index into the code,
+never a replacement for it.
+
+### Increments end in commits, not compaction
+
+When context gets tight the rule is to **finish the increment, commit it green, and start the next
+one in a fresh session** — never to compact the conversation and push on. Compaction is lossy
+summarization by the model that is already degrading, and the first thing it drops is the
+citations, signatures and exact names the whole loop rests on. The durable workspace is what makes
+the fresh session cheap: it re-reads ground truth instead of inheriting a paraphrase.
+
 ### Evidence-bound scoring
 
 > Where a metric exists for a dimension, a score of ≥4 **must cite it**. No number, no score.
@@ -213,6 +234,8 @@ bulletproof/
 │   ├── e2e-agent-browser.md     #   agent-browser: flows, assertions, artifact self-check
 │   ├── quality-metrics.md       #   the probe: toolchain, baselines, gate rules, metrics.json
 │   ├── quality-bar.md           #   the 9-dimension rubric + convergence loop
+│   ├── research.md              #   the ground-truth research document: citations, absence evidence
+│   ├── delegation.md            #   running research/design/review in subagents; briefs, spot-check
 │   ├── review-and-pr.md         #   review checklist, quality gate, evidence bundle, PR format
 │   ├── final-report.md          #   the end-of-run report: gates, measurements, what's pending
 │   ├── production-readiness.md  #   building → running safely in production

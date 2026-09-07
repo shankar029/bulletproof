@@ -6,6 +6,34 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+- **`research.md` — a cited ground-truth document, and Gate 1 now has teeth.** Phase 1 previously
+  produced nothing durable: grounding was a claim from memory ("name the files you read") that
+  nobody could check, and every long run had to re-derive its understanding after losing context.
+  Phase 1 now writes `.ai/<slug>/research.md` — what exists today, what does **not**, the
+  constraints, the covering tests, the seams — where **every claim carries `path:line` plus its
+  snippet** and **every absence carries the search that proves it**. Gate 1 spot-checks three
+  citations at random and rejects the document on any miss. See `references/research.md`.
+- **Phase delegation to subagents** (`references/delegation.md`). Research and design run in fresh
+  contexts where the harness supports it, with an inline fallback ladder everywhere else. The
+  motive is context economy as much as quality: research reads dozens of files to produce two
+  pages, and doing that in the main context spends the window before implementation starts.
+  Includes the briefs, the artifacts-to-disk rule, path resolution before trusting a summary,
+  the spot-check, and the reminder that the
+  document is an index into the code rather than a replacement for reading it.
+
+### Changed
+- **Design records the delta, not just the destination.** `design.html` gains an **as-is → to-be**
+  section: for every symbol changed, its current behaviour *citing research* and what it becomes.
+- **The plan cites and adds nothing.** Research says what is, design says what will be, the plan
+  says only in what order — it introduces no new facts. `app-scale-delivery.md` names the one
+  altitude where the order inverts (coarse slicing precedes per-slice design).
+- **Context pressure ends the increment instead of compacting the session.** When the window gets
+  tight, drive to a green commit and resume in a fresh session; compaction is lossy summarization
+  by the model that is already degrading, and it drops the citations and signatures the loop runs
+  on. The trigger is behavioural, not a percentage. If a harness compacts anyway, re-anchor from
+  disk and re-open files before editing them.
+
 ### Planned
 - Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 

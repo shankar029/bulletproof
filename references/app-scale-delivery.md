@@ -130,3 +130,12 @@ Everything in the normal ship gate, **plus**:
   explicit, listed follow-up, never smuggled debt.
 - If "to production" was asked: the production-readiness artifacts in
   `references/production-readiness.md` exist and are verified as far as the environment allows.
+
+## A note on ordering
+
+Inside a single requirement the order is fixed: **research -> design -> plan**. At app scale the
+outer loop inverts once, and only once: the coarse split into slices happens *first*, because no
+one can design a whole product up front. **Each slice then runs the normal order** - its own
+research, its own design and sign-off, its own plan - at the same bar. "Plan" therefore means two
+different things at two altitudes: out here it is which slices and in what sequence; inside a
+slice it is which session-sized increments.
