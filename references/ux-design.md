@@ -11,9 +11,11 @@ build the wrong experience and redo it.
 2. **Present it and, when a user is present, pause for approval.** Offer **accept / reject / modify**;
    fold the feedback back in; re-present if the changes are material. Do **not** implement UI until
    the design is approved.
-3. **Headless / one-shot (no user to answer)** → do **not** block: record the UX proposal as an
-   explicit assumption, proceed, and surface it in the PR for confirmation. (Mirrors the Phase 1
-   clarify rule.)
+3. **Waiting is the default.** Present the UX and **stop — end the turn**; do not start UI code.
+   Proceed unapproved **only** when the invocation explicitly authorises it (no user available,
+   headless/unattended/CI/one-shot, or "don't wait"): then record the UX proposal as an explicit
+   unconfirmed assumption and surface it in the final report and the PR. Never infer that nobody
+   is there because a reply is slow. (Mirrors the Phase 1 clarify rule.)
 4. Build only against the **approved** (or headless-defaulted) design.
 5. **App-scale mode:** run this gate **once at the walking-skeleton milestone** — approve the
    navigation shell, the design system, and the M0 flow together — and re-check only when a later
