@@ -14,6 +14,7 @@ The slug is short kebab-case derived from the requirement (`checkout-discount-co
   assets/              # shared theme, copied once per repo: artifact.css, artifact.js
   <slug>/
     state.md            # source of truth for resume — always present, always current
+    research.md         # ground truth: what exists today, cited path:line; what does not
     clarifications.md   # questions asked, answers received, assumptions taken
     architecture.html   # ONLY for large work (new service/subsystem, cross-cutting)
     design.html         # program design: classes, interfaces, interactions (Phase 2)
