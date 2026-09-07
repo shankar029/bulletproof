@@ -6,22 +6,6 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
-### Added
-- **Final report artifact.** Every run now writes `.ai/<slug>/report.html` (shared theme, so it
-  carries the same highlight/comment/approve layer) and summarises it in chat: delivered vs not
-  delivered, each acceptance criterion with how it was proven, the G1–G6 gate row with reasons,
-  measured numbers, the scorecard citing them, unconfirmed assumptions, follow-ups, and what is
-  pending with the exact command to finish it. Written even when a run is cut short.
-  See `references/final-report.md`.
-
-### Changed
-- **Design sign-off now waits by default.** Gate 2 hands the design over and *stops the turn*;
-  Phase 3 does not begin without approval. Proceeding unapproved requires the invocation to
-  explicitly authorise it (no user available / headless / one-shot / "don't wait"), and is then
-  recorded as an unconfirmed assumption and surfaced in the report and PR. The same rule now
-  governs the UX approval gate. Prime directive 7 adds: slowness or an unanswered message is
-  **not** authorisation — never infer that nobody is there.
-
 ### Planned
 - Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 
@@ -66,6 +50,12 @@ becomes evidence-bound rather than self-asserted.
   disagreement the lower score wins.
 - **Working rules** in `SKILL.md`: never block your own shell (dev servers and watchers run
   detached), test runners run non-interactively, retries are bounded, finishing beats polishing.
+- **Final report artifact.** Every run now writes `.ai/<slug>/report.html` (shared theme, so it
+  carries the same highlight/comment/approve layer) and summarises it in chat: delivered vs not
+  delivered, each acceptance criterion with how it was proven, the G1–G6 gate row with reasons,
+  measured numbers, the scorecard citing them, unconfirmed assumptions, follow-ups, and what is
+  pending with the exact command to finish it. Written even when a run is cut short.
+  See `references/final-report.md`.
 
 ### Changed
 - **Quality bar is now 9 dimensions** and evidence-bound: **grounding** and **design fidelity**
@@ -84,6 +74,22 @@ becomes evidence-bound rather than self-asserted.
 - `SKILL.md` trimmed and de-duplicated (branch-safety, convergence, right-sizing and the definition
   of done were each stated three to six times); references reorganised around the six phases.
 - `README.md` and `docs/architecture.md` rewritten for the six-phase loop and the new tooling.
+- **Entry points and manual installs corrected for the new loop.** Every launcher (pi prompt,
+  Claude command, Copilot agent) still described the five-phase loop and would have instructed
+  the agent to skip Program design entirely; `install/{pi,claude-code,copilot-cli}.md` copied
+  only `SKILL.md` + `references/`, silently omitting the probe, mutation engine and theme.
+- **External commands are bounded.** A run was lost to an `agent-browser` call that never
+  returned, so the working rules now require a timeout on every external command (exit 124 =
+  hung: record it and move on) and committing each increment as it goes green, so an interrupted
+  run still leaves the repo better than it found it. `e2e-agent-browser.md` documents the shared
+  daemon as the hazard, and that unknown flags are not always rejected (`screenshot --full-page`
+  is parsed as a *selector*; the flag is `--full`).
+- **Design sign-off now waits by default.** Gate 2 hands the design over and *stops the turn*;
+  Phase 3 does not begin without approval. Proceeding unapproved requires the invocation to
+  explicitly authorise it (no user available / headless / one-shot / "don't wait"), and is then
+  recorded as an unconfirmed assumption and surfaced in the report and PR. The same rule now
+  governs the UX approval gate. Prime directive 7 adds: slowness or an unanswered message is
+  **not** authorisation — never infer that nobody is there.
 
 ### Retained
 - [`references/ux-design.md`](references/ux-design.md) (UX design-first approval gate),
