@@ -7,3 +7,6 @@ evals/report.json
 
 # Local scratch/dogfood workspaces
 .tmp-*/
+
+# subagent run artifacts (local only)
+.pi-subagents/

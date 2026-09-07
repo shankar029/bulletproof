@@ -1,7 +1,0 @@
-Path: `/tmp/shopcart/.ai/promo-stacking/research.md` (headed with commit `38635ae32272f5629090e385e199a077d48a7fa5`)
-
-1. Pricing accepts exactly one promo code: `cart.promoCode` is a scalar resolved once — `src/pricing/pricingService.js:74`, via `promoDiscount`/`resolvePromo` (`:32-38`, `:13-25`).
-2. A combined-discount cap already exists and already spans two discount sources (tier + promo), but as a hard-coded constant `MAX_DISCOUNT_PERCENT = 30` — `src/pricing/pricingService.js:10,75`, exported at `:115` and read by a test at `test/pricingService.test.js:163`.
-3. Absent, with the empty searches recorded: plural/array codes (`grep -rn 'promoCodes' src/ test/` → 0; `Array.isArray` → 0), duplicate handling (→ 0), promo-to-promo exclusivity (only a JSDoc hit), and any config mechanism at all (`process\.env|require\(.*config` → 0; `ls src/*config*` → no such file).
-4. Hardest constraints: the `Price` response shape is pinned field-for-field (`test/pricingService.test.js:7-12,70-73`, `test/e2e.pricing.test.js:98-102`), redemption is one single-key CAS per applied code (`src/pricing/pricingService.js:99-111`, `src/repo/memoryRepo.js:22-28`), plus AGENTS.md layering/purity/cents/DomainError rules (`AGENTS.md:5-8`).
-5. 59 tests pass at this sha; nothing covers multiple codes, partial failure across codes, multi-code redemption atomicity, or any cap value other than 30 — those gaps and the cap-source/units question are flagged as clarifications, not answered. No source file was edited; no solution proposed.
