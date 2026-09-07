@@ -66,8 +66,10 @@ After reading the requirement, classify it — and say which tier you chose and 
    working end to end with captured evidence.
 7. **Ask only real questions, and ask them in Phase 1.** Resolve what you can from the code
    and docs. Surface what remains before designing — batched, each with a recommended
-   default. If a user can answer, wait; if not, take the defaults and record them as
-   assumptions.
+   default. **Waiting is the default.** Only proceed without an answer when the invocation
+   explicitly authorises it (it says no user is available, or headless/unattended/CI/one-shot,
+   or tells you not to wait). Slowness, a long-running session, or an unanswered message is
+   **not** authorisation — never infer that nobody is there.
 
 ## Working rules (they cost whole runs when broken)
 - **Never block your own shell.** Anything that does not return on its own — a dev server, a
@@ -129,14 +131,22 @@ code — see `references/ux-design.md`. Skip it entirely for library / CLI / API
   clear boundaries, DRY/YAGNI/KISS, and the pattern that fits *this* codebase. The next likely
   change should be additive, not surgery on the core.
 - Every existing type, function, or interface named in the document must be one you have read.
-- **GATE 2:** the design document exists (≤3 pages, simple diagrams), every acceptance
-  criterion maps to a named component/method, every referenced existing symbol has been
-  verified in the source, and the design passes the checklist in
-  `references/project-profile.md`. **Hand it to the user and get sign-off before Phase 3
-  whenever the change is non-trivial, risky, or wide-reaching** — self-check that it renders,
-  open it in their default browser, print the `file://` path, then **stop and end the turn**
-  rather than polling (protocol in `references/html-theme.md`). Record the verdict in
-  `state.md`.
+- **GATE 2 — the design is signed off before any code.** The design document exists (≤3 pages,
+  simple diagrams), every acceptance criterion maps to a named component/method, every
+  referenced existing symbol has been verified in the source, and the design passes the
+  checklist in `references/project-profile.md`.
+
+  **Then hand it over and wait.** Self-check that it renders, open it in the user's default
+  browser, print the `file://` path, say what you need back (approve / approve with comments /
+  request changes), record `Blocked on: design sign-off` in `state.md`, and **stop — end the
+  turn.** Do not poll, and do not start Phase 3.
+
+  **Waiting is the default for any non-trivial change.** Skip the wait only when the invocation
+  explicitly authorises it (no user available, headless/unattended/CI/one-shot, or "don't wait");
+  then take the design as proposed, record it as an unconfirmed assumption, and flag it in the
+  final report and PR. A trivial-tier change needs no design and no sign-off.
+
+  Protocol and verdict handling: `references/html-theme.md`. Record the outcome in `state.md`.
 
 ### Phase 3 — Plan & split into increments
 Write `.ai/<slug>/plan.html` (same format rules, ≤3 pages).
@@ -222,14 +232,16 @@ Prove the feature the way a real user or client would exercise it, and commit th
   justified as equivalent in `review.md`.** Re-run the probe after any rework.
 - Assemble the **evidence bundle** (including the design document) and ship per
   `references/review-and-pr.md`.
+- **Write the final report** to `.ai/<slug>/report.html` per `references/final-report.md`, and
+  summarise it in the chat. Write it even if the run is being cut short.
 - **Create the feature branch before your first commit; never commit to a protected or
   default branch.** If pushing or PR creation is unavailable or unauthorized, stop at a clean
   local commit on the feature branch and report the exact commands to finish.
 - **GATE 6 (ship gate):** conventions honored · design executed · unit + integration +
   end-to-end green · coverage met · **probe green (no metric regression, no new cycle, no
   unjustified surviving mutant)** · review clean · quality gate green · evidence attached ·
-  committed on a feature branch · `state.md` current · **production-readiness items closed when
-  going live is in scope** · PR opened (or commit + instructions delivered). For
+  committed on a feature branch · `state.md` current · **`report.html` written** ·
+  **production-readiness items closed when going live is in scope** · PR opened (or commit + instructions delivered). For
   multi-increment work, this gate runs **per increment**; the PR opens when the whole
   requirement is complete.
 
@@ -253,12 +265,22 @@ explicit follow-up. Never close the gap by lowering the bar.
 - `references/quality-bar.md` — the scored rubric and the convergence loop.
 - `references/quality-metrics.md` — the deterministic probe: tools, baseline comparison, gate, `metrics.json`.
 - `references/review-and-pr.md` — self-review checklist, quality gate, evidence bundle, commit/PR.
+- `references/final-report.md` — the end-of-run report: structure, gate row, metrics, what's pending.
 - `references/production-readiness.md` — the checklist that takes an app from building to live.
 - `references/app-scale-delivery.md` — outer loop for delivering an entire app in vertical slices.
 - `references/parallel-execution.md` — when and how to split work across subagents.
 
 ## Final report
-Close with: what was delivered, the `.ai/<slug>/` path and design document, proof (tests,
-coverage, browser/end-to-end results, **metrics deltas**), the quality scorecard (9 dimensions,
-score + one-line justification, citing metrics where they exist), the number of convergence
-iterations, the PR link (or commit + next step), and residual risks or follow-ups.
+Every run ends with a report — **written to `.ai/<slug>/report.html`** using the shared theme,
+and summarised in the chat. It is the one artifact a person reads to know what happened, so it
+states what is true, not what was hoped. Structure and template: `references/final-report.md`.
+
+It covers: what was **delivered** (and what was not) · each acceptance criterion with how it was
+proven · **the gate row, G1–G6, with pass/blocked and the reason** · the measured numbers (tests,
+coverage, probe deltas, mutation score, and anything `unavailable`) · the 9-dimension scorecard
+citing those numbers · convergence iterations · **what is pending, unproven or
+environment-blocked, with the exact command to finish it** · assumptions still unconfirmed ·
+follow-ups · and the PR link or the commit plus next step.
+
+Write it even when the run is cut short: a partial report that names the blocker is worth far
+more than none.

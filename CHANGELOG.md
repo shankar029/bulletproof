@@ -6,6 +6,22 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+- **Final report artifact.** Every run now writes `.ai/<slug>/report.html` (shared theme, so it
+  carries the same highlight/comment/approve layer) and summarises it in chat: delivered vs not
+  delivered, each acceptance criterion with how it was proven, the G1–G6 gate row with reasons,
+  measured numbers, the scorecard citing them, unconfirmed assumptions, follow-ups, and what is
+  pending with the exact command to finish it. Written even when a run is cut short.
+  See `references/final-report.md`.
+
+### Changed
+- **Design sign-off now waits by default.** Gate 2 hands the design over and *stops the turn*;
+  Phase 3 does not begin without approval. Proceeding unapproved requires the invocation to
+  explicitly authorise it (no user available / headless / one-shot / "don't wait"), and is then
+  recorded as an unconfirmed assumption and surfaced in the report and PR. The same rule now
+  governs the UX approval gate. Prime directive 7 adds: slowness or an unanswered message is
+  **not** authorisation — never infer that nobody is there.
+
 ### Planned
 - Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 

@@ -21,6 +21,7 @@ The slug is short kebab-case derived from the requirement (`checkout-discount-co
     review.json         # reader's comments + verdict, exported from the document
     review.md           # independent-reviewer findings and their dispositions
     metrics.json        # deterministic quality probe: HEAD vs merge-base
+    report.html         # the final report: outcome, gates, measurements, what's pending
     evidence/           # screenshots, console output, transcripts, traces, command logs
 ```
 
@@ -88,7 +89,8 @@ day of design is not.
 **Waiting for a human is a stop, not a loop.** When a document is out for review, record
 `Blocked on: <doc> sign-off` with the next action and **end the turn** — never poll, sleep, or
 re-check for a file in a loop. The answer can arrive in a later session; the workspace is what
-makes that safe.
+makes that safe. **Write `report.html` before you stop**, so the person reading knows exactly
+where the work stands.
 
 **Before starting any increment**, re-read `design.html` (or its relevant section). This is the
 main defense against drift on a long task: the design, not your recollection, is the contract.

@@ -23,12 +23,14 @@ Six phases, each with a gate it must pass before advancing.
    it will touch**, and restates the requirement as testable **acceptance criteria that cover every
    part** of it. Material ambiguity is **clarified before designing** — asked in one batch with a
    recommended default when you're present, recorded as explicit assumptions when headless.
-2. **Design the program before writing it.** Produces a **3-page HTML design document**: the
-   classes/modules, interfaces and public method signatures, each with its single responsibility and
-   collaborators, plus sequence diagrams for the critical flows, data contracts, decisions with
-   rejected alternatives, and failure modes. Architecture diagrams only for genuinely large work; a
-   **UX approval gate** ([`ux-design.md`](references/ux-design.md)) whenever there's a user-facing
-   surface. **This is the gate that kills ad-hoc, unmaintainable code.**
+2. **Design the program before writing it — then wait for your sign-off.** Produces a **3-page
+   HTML design document**: the classes/modules, interfaces and public method signatures, each with
+   its single responsibility and collaborators, plus sequence diagrams for the critical flows, data
+   contracts, decisions with rejected alternatives, and failure modes. Architecture diagrams only
+   for genuinely large work; a **UX approval gate** ([`ux-design.md`](references/ux-design.md))
+   whenever there's a user-facing surface. **It hands the document over and stops** — no code until
+   you approve, unless you explicitly told it to run unattended. **This is the gate that kills
+   ad-hoc, unmaintainable code.**
 3. **Plan into session-sized increments.** Vertical slices that each deliver observable behaviour,
    are testable and reviewable alone, and **fit in one context window** — so long work survives
    restarts. Production-readiness items are planned here when going live is in scope.
@@ -130,6 +132,16 @@ the requirement, criteria, design, `metrics.json` and the diff — **and none of
 and never writes code. Preference order: different model + fresh context → same model + fresh
 context → cold self re-read. On scoring disagreement, **the lower score wins**.
 
+### A final report you can actually act on
+
+Every run ends by writing `.ai/<slug>/report.html` (same readable theme, same comment/approve
+layer) and summarising it in chat: what was delivered **and what wasn't**, each acceptance
+criterion with *how it was proven*, the **G1–G6 gate row** with reasons for anything not green,
+the measured numbers (tests, coverage, probe deltas, mutation score, and anything `unavailable`),
+the 9-dimension scorecard citing those numbers, unconfirmed assumptions, follow-ups, and **what is
+still pending — each with the exact command to finish it**. It is written even when a run is cut
+short, so an interrupted session still leaves you something worth reading.
+
 ### Evidence-bound scoring
 
 > Where a metric exists for a dimension, a score of ≥4 **must cite it**. No number, no score.
@@ -202,6 +214,7 @@ bulletproof/
 │   ├── quality-metrics.md       #   the probe: toolchain, baselines, gate rules, metrics.json
 │   ├── quality-bar.md           #   the 9-dimension rubric + convergence loop
 │   ├── review-and-pr.md         #   review checklist, quality gate, evidence bundle, PR format
+│   ├── final-report.md          #   the end-of-run report: gates, measurements, what's pending
 │   ├── production-readiness.md  #   building → running safely in production
 │   ├── app-scale-delivery.md    #   outer loop for delivering an entire app
 │   └── parallel-execution.md    #   split disjoint work across subagents; worktrees
