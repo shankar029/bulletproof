@@ -29,8 +29,10 @@ lint commands into the project's own script/task runner so they are reproducible
 - **Coverage is the floor, mutation is the bar.** A test that runs a line without asserting
   its behavior is worthless; the probe will find it (`quality-metrics.md`). Write the
   assertion you would need in order to catch the boundary being wrong.
-- **Run the suite non-interactively** — `vitest run`, `--watch=false`, `--ci`. A watch-mode
-  runner never returns and will hang the whole run.
+- **Run the suite non-interactively, under an idle timeout** — `vitest run`, `--watch=false`,
+  `--ci`, all wrapped: `python <skill>/scripts/run.py --idle 120 -- <test cmd>`. A watch-mode
+  runner never returns and will hang the whole run; a stalled suite goes silent and `run.py`
+  kills it (exit 124) instead of stealing hours. On 124, recover per the SKILL working rules.
 
 ## End-to-end verification (Phase 5)
 Exercise the feature the way a real user or client would, through its real public surface,

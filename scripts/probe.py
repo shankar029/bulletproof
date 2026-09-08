@@ -37,17 +37,30 @@ PY_MODULE = {"lizard": "lizard", "vulture": "vulture", "semgrep": "semgrep",
 
 # ---------------------------------------------------------------- helpers
 def run(cmd, cwd=None, timeout=900):
-    """Run a command, returning (rc, stdout, stderr). Never raises."""
+    """Run a command, returning (rc, stdout, stderr). Never raises.
+
+    `timeout` is the absolute ceiling; the command is also killed (whole tree) if
+    it goes silent for `idle` seconds — so a hung child dies in minutes instead of
+    stalling out the full ceiling, and no orphaned test/mutation process keeps a
+    lock. rc 124 = idle or ceiling kill, matching GNU `timeout`.
+    """
     try:
-        p = subprocess.run(cmd, cwd=cwd, timeout=timeout, shell=False,
-                           stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        return p.returncode, p.stdout.decode("utf-8", "replace"), p.stderr.decode("utf-8", "replace")
-    except FileNotFoundError:
-        return 127, "", "not found"
-    except subprocess.TimeoutExpired:
-        return 124, "", "timeout"
-    except Exception as exc:                                   # noqa: BLE001
-        return 125, "", str(exc)
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from run import run_capture
+    except Exception:  # noqa: BLE001 — fall back to a total-timeout run
+        try:
+            p = subprocess.run(cmd, cwd=cwd, timeout=timeout, shell=False,
+                               stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            return (p.returncode, p.stdout.decode("utf-8", "replace"),
+                    p.stderr.decode("utf-8", "replace"))
+        except FileNotFoundError:
+            return 127, "", "not found"
+        except subprocess.TimeoutExpired:
+            return 124, "", "timeout"
+        except Exception as exc:                              # noqa: BLE001
+            return 125, "", str(exc)
+    idle = min(300.0, float(timeout)) if timeout else 300.0
+    return run_capture(cmd, cwd=cwd, idle=idle, max_total=float(timeout or 0))
 
 
 def argv(tool):

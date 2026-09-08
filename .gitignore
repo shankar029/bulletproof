@@ -10,3 +10,7 @@ evals/report.json
 
 # subagent run artifacts (local only)
 .pi-subagents/
+
+# Python
+__pycache__/
+*.pyc

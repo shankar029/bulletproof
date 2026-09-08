@@ -125,10 +125,12 @@ over — fix it first.
 
 ## Practical notes
 
-- **Always wrap agent-browser in a timeout** — `timeout 60 agent-browser <cmd>`. The browser
-  runs behind a shared daemon; a contended or wedged daemon makes an ordinarily instant command
-  hang **forever**, which silently consumes the entire run. Exit code 124 means it hung: record
-  the blocker, drop browser verification to what you can prove, and continue.
+- **Always wrap agent-browser in an idle timeout** — `python <skill>/scripts/run.py --idle 60 --
+  agent-browser <cmd>`. The browser runs behind a shared daemon; a contended or wedged daemon
+  makes an ordinarily instant command hang **forever**, which silently consumes the entire run.
+  `run.py` kills the whole tree after 60s of no output and exits 124: on that, kill any stray
+  browser (`taskkill //F //IM chrome.exe`), record the blocker, drop browser verification to what
+  you can prove, and continue.
 - **Verify the command and its flags exist before relying on them.** This CLI moves fast and
   builds differ: run `agent-browser --help` / `agent-browser <cmd> --help` first. Unknown flags
   are not always rejected — `screenshot --full-page` is parsed as a *selector* and returns

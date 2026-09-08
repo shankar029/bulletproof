@@ -76,14 +76,31 @@ After reading the requirement, classify it — and say which tier you chose and 
   watcher, a REPL — is started **detached** with its output redirected to a log, then polled
   once (`start`/`nohup ... &` then a short `curl`/`sleep` check). A foreground `npm run dev`
   ends the run, not the turn.
-- **Put a timeout on every external command.** A tool that normally returns in a second can
-  hang forever on a contended daemon, a stalled browser, or a lost lock — and a hang is worse
-  than a failure, because nothing tells you it happened. Wrap them: `timeout 60 <cmd>` (or the
-  platform equivalent). Exit code 124 means it hung; record that and move on.
+- **Run every external command under an *idle* timeout, and recover when it fires.** A tool that
+  normally returns in a second can hang forever on a contended daemon, a stalled browser, or a
+  lost lock — and a hang is worse than a failure, because nothing tells you it happened. A plain
+  total `timeout` is not enough: set it low and it kills healthy long jobs (installs, renders,
+  full test suites); set it high and a real hang still burns hours before anything notices. Watch
+  **progress, not wall-clock** — kill only when the command goes *silent*. Wrap them:
+  `python <skill>/scripts/run.py --idle 60 -- <cmd>` (default 60s of no output; pass `--idle 120`
+  for renders/e2e, `--idle 30` for light commands, and `--max <s>` for an absolute ceiling). The
+  runner resets its timer on every byte of output and, on silence past the window, **kills the
+  whole process tree** (no orphaned browser/daemon holding a lock) and exits **124** (idle) or
+  **125** (max). Never leave a raw command un-wrapped, and never sit waiting on one yourself.
+- **An idle kill is a recover-and-continue event, not a dead end.** When you see exit 124/125 or
+  the `[run] idle-timeout …` / `[run] max-timeout …` marker: (1) record the hung command, its
+  exit code, and the phase in `state.md`; (2) confirm the tree is dead (`taskkill //F //IM
+  chrome.exe` for a stalled browser; kill any saved PID) so no lock lingers; (3) apply the
+  obvious unstick — non-interactive/`--ci` flags, kill a stale lock/daemon, smaller scope — and
+  relaunch **once** under `run.py`; (4) if it hangs again, treat it as a blocker: log it and route
+  around it (skip, or take a different path to the same proof). Two idle kills of the same command
+  is a blocker, not a third attempt.
 - **Test runners must be non-interactive.** Use the single-run form (`vitest run`, `--watch=false`,
   `--ci`), never a watch mode.
 - **Bound every retry.** If a command hangs or a tool is missing, record the blocker in
-  `state.md` and move on. Repeating a hanging command is how a run dies silently.
+  `state.md` and move on. Repeating a hanging command is how a run dies silently. A hang gets **one**
+  recover-and-relaunch under `run.py` (per the rule above); a second idle kill is a blocker, never a
+  loop.
 - **Prefer finishing to polishing.** A committed, working increment beats an unfinished
   perfect one — especially since you may be interrupted at any point.
 - **Commit each increment as it goes green.** Uncommitted work is lost work if the session
