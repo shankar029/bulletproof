@@ -4,6 +4,12 @@ Make changes that look like the team that owns the code wrote them. Do this befo
 
 ## Build a project profile (a few lines, not an essay)
 
+- **Repository agent instructions — read these first and obey them.** Look for `AGENTS.md`,
+  `CLAUDE.md`, `.github/copilot-instructions.md`, `.cursor/rules` / `.cursorrules`, and any
+  **path-specific** instruction files scoped to the directories you will touch. These often
+  state the build/test/convention rules verbatim — the highest-signal, lowest-cost context you
+  can get. Honor them as project law; cite them; where one contradicts the code's actual
+  behaviour, note the conflict and treat the observed code as truth.
 - **Languages, runtimes, and versions** — from source files and the ecosystem's manifest.
 - **Package/dependency manager** — from the lockfile present. Always use the one already there.
 - **Frameworks & architecture** — module boundaries, layering, monorepo vs single package.

@@ -32,7 +32,7 @@ the report itself.
 |---|---|
 | **1. Outcome** | One paragraph: what now works that did not before, and the headline caveat if there is one. State the branch and whether a PR exists. |
 | **2. Delivered / not delivered** | Two short lists. Anything asked for but not built belongs in the second one, with why. |
-| **3. Acceptance criteria** | Table: AC · met? · **how it was proven** (which test, which transcript, which artifact). An AC with no proof is not met. |
+| **3. Acceptance criteria** | Table: AC · verdict (VERIFIED / VERIFIED-WITH-LIMITATIONS / NOT-VERIFIED / BLOCKED, from `traceability.md`) · **how it was proven** (which test, which transcript, which artifact). An AC with no proof is not VERIFIED. |
 | **4. Gates** | The G1–G6 row with `✅ / ⛔ / ⬜` and a reason for anything not green. This is the fastest read of run health. |
 | **5. Measurements** | Tests (count, pass/fail), coverage, probe deltas vs the merge-base, mutation score with survivors, and everything reported `unavailable` — listed, not hidden. |
 | **6. Scorecard** | The 9 rubric dimensions, each with a score and a one-line justification **citing a number** where one exists (`quality-bar.md`). Include the convergence iteration count. |
@@ -64,8 +64,8 @@ the report itself.
 
 <h2>3. Acceptance criteria</h2>
 <table>
-  <tr><th>AC</th><th>Met</th><th>Proven by</th></tr>
-  <tr><td>AC1 …</td><td>✅</td><td>test/x.test.ts:12 · evidence/e2e.txt</td></tr>
+  <tr><th>AC</th><th>Verdict</th><th>Proven by</th></tr>
+  <tr><td>AC1 …</td><td>VERIFIED</td><td>test/x.test.ts:12 · evidence/e2e.txt</td></tr>
 </table>
 
 <h2>4. Gates</h2>

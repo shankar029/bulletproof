@@ -15,6 +15,7 @@ The slug is short kebab-case derived from the requirement (`checkout-discount-co
   <slug>/
     state.md            # source of truth for resume — always present, always current
     research.md         # ground truth: what exists today, cited path:line; what does not
+    traceability.md     # living matrix: AC -> design -> task -> test -> evidence -> verdict
     clarifications.md   # questions asked, answers received, assumptions taken
     architecture.html   # ONLY for large work (new service/subsystem, cross-cutting)
     design.html         # program design: classes, interfaces, interactions (Phase 2)
@@ -49,6 +50,7 @@ Requirement: <one line, or path/link to the source>
 Tier: trivial | standard
 Branch: feat/<slug>
 Design: design.html · Plan: plan.html · Architecture: n/a
+Traceability: traceability.md
 
 Current phase: 4 — Implement (increment I2 of 4)
 Gates: G1 ✅ | G2 ✅ (signed off) | G3 ✅ | G4 ⬜ | G5 ⬜ | G6 ⬜
@@ -95,6 +97,33 @@ where the work stands.
 
 **Before starting any increment**, re-read `design.html` (or its relevant section). This is the
 main defense against drift on a long task: the design, not your recollection, is the contract.
+
+## `traceability.md` — the requirement matrix that ties the gates together
+
+One table, seeded in Phase 1 from the acceptance criteria and filled in as the work moves
+through the gates. It is the single place that answers "did we actually deliver every part of
+the ask?", and it is what the independent reviewer reconciles against in Phase 6. One row per
+acceptance criterion:
+
+```markdown
+# Traceability — <slug>
+
+| AC  | Requirement            | Design (component/method) | Task | Test / check          | Evidence                 | Verdict |
+|-----|------------------------|---------------------------|------|-----------------------|--------------------------|---------|
+| AC1 | Apply promo at checkout| PricingService.applyPromo | I1   | pricing.test.ts:42    | evidence/e2e-promo.txt   | VERIFIED |
+| AC2 | Reject expired codes   | PromoValidator.check      | I2   | promo.test.ts:88      | —                        | NOT-VERIFIED |
+```
+
+- **Phase 1** seeds the `AC` and `Requirement` columns — every explicit ask and sub-deliverable.
+- **Phases 2–3** fill `Design` and `Task` as each AC maps to a component and an increment.
+- **Phases 4–5** fill `Test` and `Evidence` as behaviour is built and proven.
+- **Phase 6** sets `Verdict` per AC — **VERIFIED / VERIFIED-WITH-LIMITATIONS / NOT-VERIFIED /
+  BLOCKED** — written by the independent reviewer from the final tree, not from the
+  implementer's narrative. A `NOT-VERIFIED` row reopens the phase that owns it; the ship gate
+  requires every row VERIFIED (or VERIFIED-WITH-LIMITATIONS with the limitation named).
+
+Keep it in sync with `state.md`'s acceptance-criteria checklist — the checklist is the quick
+read, the matrix is the proof. Trivial-tier work skips it.
 
 **Never leave state stale.** A `state.md` that says "Phase 4" while the branch is already
 reviewed and pushed is worse than no state at all.

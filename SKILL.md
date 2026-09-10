@@ -48,6 +48,13 @@ After reading the requirement, classify it — and say which tier you chose and 
    whether a tool exists, rather than trusting what the task statement claims about them. If
    you cannot verify something, say "unverified" and go verify it — never fill the gap with a
    plausible guess. Assumptions are written down as assumptions, never stated as fact.
+   **Label every material claim by its epistemic state — FACT (observed, cited), INFERENCE
+   (derived from cited facts), HYPOTHESIS (plausible, unverified), or UNKNOWN (not established)
+   — and never implement on a HYPOTHESIS or UNKNOWN: verify it into a FACT or mark it blocked.**
+   **Evidence goes stale when code changes — including your own edits.** A `path:line` citation
+   is only valid against the tree it was taken from; re-anchor any citation you rely on after
+   the file has been edited, and re-query a fact after a mutation rather than trusting an
+   earlier read.
 2. **Design before code.** No implementation begins until Phase 2's design is written and its
    gate passes. Never converge on a solution by patching symptoms.
 3. **Honor the project.** Match its architecture, conventions, style, and tooling. Copy the
@@ -70,6 +77,13 @@ After reading the requirement, classify it — and say which tier you chose and 
    explicitly authorises it (it says no user is available, or headless/unattended/CI/one-shot,
    or tells you not to wait). Slowness, a long-running session, or an unanswered message is
    **not** authorisation — never infer that nobody is there.
+8. **Stop the line — do not paper over a blocker.** Halt, record it in `state.md`, and report
+   rather than push through when: a fact a decision depends on cannot be established (mark it
+   UNKNOWN); a repository rule is unclear; the plan rests on an unverified assumption; tests
+   cannot run (never claim a pass you did not observe); files changed that you did not intend;
+   or verification contradicts an implementation claim (reopen implementation, do not explain
+   it away). A stop with a named blocker and a recommended default is a success; a silent
+   guess that keeps going is the failure this skill exists to prevent.
 
 ## Working rules (they cost whole runs when broken)
 - **Never block your own shell.** Anything that does not return on its own — a dev server, a
@@ -124,25 +138,36 @@ After reading the requirement, classify it — and say which tier you chose and 
 most token-expensive phase in the run, and its output is two pages. See
 `references/delegation.md` for the brief, the fallback ladder, and the spot-check.
 - **Profile the project** — see `references/project-profile.md`. Keep it to a few lines.
+- **Read the repository's own agent instructions first and obey them** — any `AGENTS.md`,
+  `CLAUDE.md`, `.github/copilot-instructions.md`, `.cursor/rules`/`.cursorrules`,
+  `CONTRIBUTING.md`, and any path-specific instruction files covering the code you will touch.
+  They usually state the exact build/test/convention rules this skill would otherwise
+  reverse-engineer. Cite them in `research.md`; where one contradicts what the code actually
+  does, note the conflict and treat the observed code as truth.
 - **Read the actual code you will touch**, plus its callers and its neighbors. Directive 1
   applies from here on: everything you claim about this codebase comes from a file you read.
 - **Write `.ai/<slug>/research.md` — the ground truth for the run**: what the codebase does
   today, what it does **not** do, the constraints and conventions that bind the design, the
   tests already covering the area, and the seams the new work attaches to. **Every claim carries
-  `path:line` and its snippet; every "not implemented" carries the search that proves absence.**
-  Structure and rules: `references/research.md`.
+  `path:line` and its snippet, is typed FACT/INFERENCE/HYPOTHESIS/UNKNOWN, and every "not
+  implemented" carries the search that proves absence.** Understand the **blast radius** before
+  designing. Structure and rules: `references/research.md`.
 - **Restate the requirement as testable acceptance criteria** with stable ids (AC1, AC2, …).
   Cover every explicit ask, **every sub-deliverable of a multi-part request**, and the
-  non-functional needs it implies. Never drop a part; never invent scope.
+  non-functional needs it implies. Never drop a part; never invent scope. **Seed
+  `.ai/<slug>/traceability.md`** — one row per AC — and carry it through every phase
+  (`references/workspace.md`).
 - For a defect, **reproduce it first** and identify the root cause in real code.
 - **Clarify** the material unknowns per prime directive 7. Record every question, answer, and
   assumption in `.ai/<slug>/clarifications.md`.
 - **Create the workspace:** `.ai/<slug>/` with `state.md` (requirement, tier, acceptance
   criteria, next action) per `references/workspace.md`.
-- **GATE 1:** the profile is stated, the criteria cover the whole request, **`research.md`
-  exists and every claim in it is cited**, the workspace exists, and no open unknown could
+- **GATE 1:** the profile is stated, the repository's own agent instructions are read and
+  honored, the criteria cover the whole request, **`research.md` exists and every claim in it is
+  cited and typed**, `traceability.md` is seeded, the workspace exists, and no open unknown could
   still change the design. **Spot-check three citations at random and resolve them against the
-  source** — any miss and the document is rejected and rewritten.
+  source** — any miss, or any HYPOTHESIS/UNKNOWN presented as a fact, and the document is
+  rejected and rewritten.
 
 ### Phase 2 — Program design (before any implementation)
 Design the solution on paper first, at the depth the change warrants. **Delegate this phase to a
@@ -257,13 +282,22 @@ Prove the feature the way a real user or client would exercise it, and commit th
   maintainability, design principles and patterns, fidelity to the design document, security,
   performance, error handling, test quality, leftovers. Fix everything you would flag in
   someone else's PR. Checklist in `references/review-and-pr.md`.
-- **Get an independent review — in a separate session, never in this context.** Hand the
-  requirement, the design document, **`metrics.json`**, and the diff to a **read-only reviewer
-  subagent with fresh context**, and prefer **a different model** from the one that wrote the
-  code. Preference order: (1) different model, fresh context; (2) same model, fresh context;
-  (3) only if subagents are unavailable, re-read the diff cold yourself. The reviewer never
-  writes code. Record findings and their dispositions in `.ai/<slug>/review.md` and address
-  each on its merits.
+- **Re-anchor before you rely on it.** Line numbers cited in `research.md`/`design.html` rot as
+  Phase 4 edits the files. Before the review and the report reuse any citation, resolve it
+  against the current tree and fix the ones that moved — stale evidence discredits the rest.
+- **Get an independent review *and* an independent verification — in a separate session, never
+  in this context.** Hand the requirement, the acceptance criteria, the design document,
+  `traceability.md`, **`metrics.json`**, and the diff to a **read-only reviewer subagent with
+  fresh context** (tools scoped to read/execute, never write), and prefer **a different model**
+  from the one that wrote the code. Preference order: (1) different model, fresh context; (2)
+  same model, fresh context; (3) only if subagents are unavailable, re-read the diff cold
+  yourself. It does two jobs: **review** the diff (correctness, design fidelity,
+  maintainability, test quality, band-aids, gamed metrics) **and independently reconcile every
+  requirement** against the final code and test evidence — re-derived from the tree, not from
+  your narrative — returning a per-AC verdict (**VERIFIED / VERIFIED-WITH-LIMITATIONS /
+  NOT-VERIFIED / BLOCKED**). The reviewer never writes code. Record findings and dispositions in
+  `.ai/<slug>/review.md`, close out `traceability.md`, and address each on its merits. A
+  NOT-VERIFIED requirement reopens the phase that owns it — it is never argued away.
 - Run the **quality gate**: whichever of format, lint, type-check, coverage, and build the
   repo actually configures, **plus the full test suite, always**. Fix every failure; never
   suppress and never lower a threshold.
@@ -284,9 +318,11 @@ Prove the feature the way a real user or client would exercise it, and commit th
   local commit on the feature branch and report the exact commands to finish.
 - **GATE 6 (ship gate):** conventions honored · design executed · unit + integration +
   end-to-end green · coverage met · **probe green (no metric regression, no new cycle, no
-  unjustified surviving mutant)** · review clean · quality gate green · evidence attached ·
-  committed on a feature branch · `state.md` current · **`report.html` written** ·
-  **production-readiness items closed when going live is in scope** · PR opened (or commit + instructions delivered). For
+  unjustified surviving mutant)** · review clean · **every acceptance criterion VERIFIED (or
+  VERIFIED-WITH-LIMITATIONS with the limitation named) in `traceability.md`** · quality gate
+  green · evidence attached · committed on a feature branch · `state.md` current ·
+  **`report.html` written** · **production-readiness items closed when going live is in scope** ·
+  PR opened (or commit + instructions delivered). For
   multi-increment work, this gate runs **per increment**; the PR opens when the whole
   requirement is complete.
 
@@ -300,7 +336,7 @@ ship what is green and record the remaining gap, its root cause, and the propose
 explicit follow-up. Never close the gap by lowering the bar.
 
 ## References (load on demand)
-- `references/workspace.md` — the `.ai/<slug>/` workspace, `state.md`, resume protocol, increment sizing.
+- `references/workspace.md` — the `.ai/<slug>/` workspace, `state.md`, `traceability.md`, resume protocol, increment sizing.
 - `references/research.md` — the ground-truth research document: citations, absence evidence, scope.
 - `references/delegation.md` — running research, design and review in subagents; briefs and spot-check.
 - `references/project-profile.md` — profile the project; anti-debt rules; design verification checklist.

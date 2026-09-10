@@ -8,7 +8,7 @@ It exists because grounding was previously unverifiable. Gate 1 used to ask the 
 the files it read", which is a claim from memory that nobody can check. A cited document is
 falsifiable: any line can be resolved against the source in seconds.
 
-## The two rules that make it ground truth
+## The rules that make it ground truth
 
 **1. No citation, no claim.** Every statement about the codebase carries `path:line` and the
 snippet it rests on. A line you cannot cite is a guess — delete it.
@@ -28,6 +28,29 @@ No tier/loyalty concept exists anywhere in the source.
 ```
 
 An uncited absence is an assumption. Put it in `clarifications.md`, not here.
+
+**3. Type every material claim.** Label each by its epistemic state so uncertainty is visible
+instead of buried in confident prose:
+
+| State | Meaning | Rule |
+|---|---|---|
+| **FACT** | Directly observed in source or tool output, cited | The only kind you may build on |
+| **INFERENCE** | Derived from cited FACTs | State the facts it rests on |
+| **HYPOTHESIS** | Plausible but not established | Verify it into a FACT, or send it to `clarifications.md` |
+| **UNKNOWN** | Not established with the evidence to hand | Never implement on it — mark it blocked |
+
+Never infer runtime behaviour from a name. A HYPOTHESIS or UNKNOWN presented as a FACT is the
+exact failure Gate 1 rejects.
+
+**4. Search broad, then narrow — and confirm blast radius.** Do not stop at the first plausible
+file. For anything with meaningful blast radius, confirm the behaviour from more than one source
+and enumerate what a change here can reach: callers and consumers, shared abstractions and
+types, persistence and migrations, API/contract compatibility, concurrency, retries, caching,
+security boundaries. An unlisted caller is a regression waiting to ship.
+
+**5. Evidence has a freshness boundary.** Every citation is valid only against the commit it was
+taken at. Head the file with the sha; when the code changes — including your own later edits —
+re-anchor any citation you still rely on.
 
 ## Scope: an index into the code, not a tour of it
 
@@ -53,7 +76,11 @@ research document is a signal you researched the codebase instead of the require
 | **4. Constraints & conventions** | Contracts, shared types, patterns, error/logging style, persistence shapes, config, feature flags — cited. Say what a change here must not break. |
 | **5. Existing tests** | What covers this area today, what it asserts, and what is unprotected. |
 | **6. Seams** | Where the new code attaches: the specific files, functions and boundaries. |
-| **7. Risks & unknowns** | What is unclear, surprising, or looks fragile. Genuine unknowns go to `clarifications.md`. |
+| **7. Blast radius** | What a change to the touched code can reach — callers/consumers, shared types, persistence/migrations, contract compatibility, concurrency, security — each cited. |
+| **8. Risks & unknowns** | Typed HYPOTHESIS/UNKNOWN items: what is unclear, surprising, or fragile. Genuine unknowns go to `clarifications.md`. |
+
+Where a claim is not a plain FACT, tag it inline — `[INFERENCE]`, `[HYPOTHESIS]`, `[UNKNOWN]` —
+so a reader sees the epistemic state without re-deriving it.
 
 Head the file with the **commit sha** the research was taken at — citations are line numbers,
 and line numbers rot.
@@ -61,9 +88,10 @@ and line numbers rot.
 ## Verifying it (Gate 1)
 
 Whoever accepts the document — the parent agent when research was delegated — **spot-checks
-three citations at random** and resolves them against the source. If any one is wrong, the
-document is rejected and rewritten. A confident citation to a line that does not exist is
-invisible otherwise, and it poisons every phase downstream.
+three citations at random** and resolves them against the source. If any one is wrong, or a
+HYPOTHESIS/UNKNOWN is dressed up as a FACT, the document is rejected and rewritten. A confident
+citation to a line that does not exist is invisible otherwise, and it poisons every phase
+downstream.
 
 ## What research does not do
 

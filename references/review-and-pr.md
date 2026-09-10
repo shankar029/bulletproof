@@ -37,7 +37,7 @@ Review the full diff as if you would reject it in someone else's PR. Fix everyth
 - [ ] No dead code, TODOs, debug output, commented-out blocks, or stray files.
 - [ ] Format/lint/type-check clean with no suppressions (or each one justified in writing).
 
-## Independent review — separate session, different model when possible
+## Independent verification & review — separate session, different model when possible
 
 Your own review is necessary but not sufficient: you cannot un-see the reasoning that made
 the shortcut feel acceptable. Always get a second pass from a **read-only reviewer subagent in
@@ -50,12 +50,37 @@ a fresh session**, in this preference order:
 3. **Cold self-review in this session** — last resort only, when subagents are unavailable.
 
 Give the reviewer the **requirement, the acceptance criteria, the design document,
-`metrics.json`, and the diff** — and none of your reasoning. Ask it to judge correctness,
-adherence to the design, maintainability, and test quality; to flag band-aids and
-unverified/invented APIs; and to check whether any metric improvement was achieved by gaming
-(arbitrary function splitting, narrowed tool scope, weakened assertions) rather than by better
-design. The reviewer **never writes code**. Record every finding and its disposition (fixed /
-rejected, with the reason) in `.ai/<slug>/review.md`.
+`traceability.md`, `metrics.json`, and the diff** — and none of your reasoning. It does two
+jobs in one pass: a demanding code review **and** an independent requirement reconciliation.
+Use this brief:
+
+> **ROLE.** You are the Verification & Review Agent, an independent reviewer — not the
+> implementer's advocate. You are **read-only**: read, search and run tests/checks, but never
+> write or edit code. Do not trust the implementer's narrative; re-derive every conclusion from
+> the final repository state and executable evidence.
+>
+> **INPUTS.** The original requirement and acceptance criteria, `design.html`, `traceability.md`,
+> `metrics.json`, and the final diff.
+>
+> **PROCESS.**
+> 1. **Review the diff** — correctness and edge cases, fidelity to the design, maintainability,
+>    test quality; flag band-aids, dead code, and unverified/invented APIs; check whether any
+>    metric gain was *gamed* (arbitrary function splitting, narrowed tool scope, weakened
+>    assertions) rather than earned.
+> 2. **Reconcile every requirement** — for each AC, verify it against the actual code and test
+>    evidence, inspect the final `git diff`/`status`, and confirm the cited tests exist and
+>    pass. Distinguish PASS / FAIL / NOT-RUN / INCONCLUSIVE; never accept "passed" without an
+>    observed result.
+>
+> **OUTPUT CONTRACT.** Write findings and their evidence to `.ai/<slug>/review.md`, and set a
+> per-AC verdict in `traceability.md`: **VERIFIED / VERIFIED-WITH-LIMITATIONS / NOT-VERIFIED /
+> BLOCKED** (never VERIFIED when a material requirement lacks evidence). End with an overall
+> verdict of the same enum. The reviewer **never writes code**.
+
+Record every finding and its disposition (fixed / rejected, with the reason) in
+`.ai/<slug>/review.md`. A `NOT-VERIFIED` AC reopens the phase that owns it — it is never argued
+away. When the harness can scope subagent tools, launch this reviewer with **write/edit tools
+withheld** so its independence is enforced, not merely requested.
 
 For multi-increment work, review **each increment** before moving on — not once at the end.
 
@@ -69,7 +94,7 @@ ship red; never lower a threshold or weaken an assertion to pass.
 ## Evidence bundle
 
 - **Requirement** — the original ask or link.
-- **Workspace** — `.ai/<slug>/` (design, plan, clarifications, review, evidence).
+- **Workspace** — `.ai/<slug>/` (design, plan, traceability, clarifications, review, evidence).
 - **Design** — path to the HTML design document, and a one-line note of any divergence.
 - **Acceptance criteria** — each with ✅ and how it was verified.
 - **Changes** — files added/changed, one line of why each.
