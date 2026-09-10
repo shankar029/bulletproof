@@ -136,7 +136,10 @@ gracefully:
 > under-structure (a god-object, a missing seam); **interface quality** (minimal, clear, correct
 > signatures); **error/edge/failure handling**; **testability**; **security & performance**;
 > and **grounding** — every existing symbol the design names must be real (cite research or the
-> source). Check that each component's `Why (AC)` and `Principle` tags actually hold.
+> source). Check that each component's `Why (AC)` and `Principle` tags actually hold. Also judge
+> **readability**: plain language a newcomer can follow, diagrams that carry the structure, and
+> the whole thing skimmable in five minutes — flag dense prose, undefined jargon, or a missing
+> required diagram.
 >
 > **OUTPUT CONTRACT.** Write `.ai/<slug>/design-review.md`: a findings table (finding · severity
 > · which principle/AC · suggested direction) and a one-word verdict — **APPROVE / REVISE /

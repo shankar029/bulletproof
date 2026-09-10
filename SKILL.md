@@ -175,7 +175,8 @@ the spot-check.
 Design the solution on paper first, at the depth the change warrants. **Delegate this phase to a
 subagent with fresh context when available** (`references/delegation.md`); the parent still owns
 the sign-off. Produce a **single HTML
-document with simple diagrams, capped at 3 printed pages** — built to be skimmed in a few
+document with simple diagrams and plain language, capped at 3 printed pages** — built to be
+skimmed in a few
 minutes, not read like a spec. Write plain semantic HTML only: the shared theme in
 `.ai/assets/` supplies all styling, light/dark, reading controls, and the comment/approval
 layer. Structure and diagram rules are in `references/design-doc.md`; wiring, handoff, and the
@@ -216,8 +217,9 @@ code — see `references/ux-design.md`. Skip it entirely for library / CLI / API
   (read-only, prefer a different model; `references/delegation.md`). It grades the design against
   the rubric — **requirement coverage** (every AC → a component), **SOLID / cohesion / coupling**,
   **right-sized pattern** (flags both over-engineering and missing structure), **interface
-  quality**, **error/edge/failure handling**, **testability**, **security & performance**, and
-  **grounding** (every named existing symbol is real) — and writes `.ai/<slug>/design-review.md`
+  quality**, **error/edge/failure handling**, **testability**, **security & performance**,
+  **grounding** (every named existing symbol is real), and **readability** (plain language,
+  diagrams carry the structure, skimmable in five minutes) — and writes `.ai/<slug>/design-review.md`
   with findings and a verdict: **APPROVE / REVISE / REJECT**. The main agent adjudicates each
   finding on its merits and revises the design; re-review after a REJECT. Bounded to **2 rounds**,
   then proceed with any residual findings recorded as risks. This is the cheapest defect-catch in

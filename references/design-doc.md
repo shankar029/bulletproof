@@ -19,11 +19,19 @@ in `.ai/<slug>/` — see `workspace.md`.
 - **Maximum 3 printed pages** (~1,500 words including diagrams). If it doesn't fit, your
   design is being explained at the wrong altitude — cut prose, not content: convert
   paragraphs into tables and diagrams. Check the length by printing to PDF, not by guessing.
-- **Diagrams carry the structure; text only carries what a diagram can't.** At minimum: one
-  class/module diagram and one sequence diagram for the critical flow.
+- **Diagrams carry the structure; text only carries what a diagram can't.** Every design has at
+  minimum one class/module diagram and one sequence diagram for the critical flow; every plan
+  has a build-order/dependency diagram (see `plan.html` below). A reader should understand the
+  shape from the pictures before reading a word.
+- **Write in plain language a competent newcomer can follow.** Short sentences, one idea per
+  bullet, active voice. Prefer the everyday word to the fancy one; spell out an acronym the
+  first time; explain any term specific to this change. Assume the reader knows software but
+  **not** this codebase or your reasoning — the document must teach it, not gesture at it. If a
+  sentence needs a second read, rewrite it.
 - **Every existing symbol named in the document must be one you have read in the source.**
   Mark anything unverified with `class="unverified"` — never present a guess as an existing API.
-- **No essays, no restating the requirement, no boilerplate.** Bullets, tables, signatures.
+- **No essays, no restating the requirement, no boilerplate, no jargon for its own sake.**
+  Bullets, tables, signatures, diagrams.
 
 ## Structure (in order, with page budget)
 
@@ -171,5 +179,25 @@ set of facts. It contains:
 </table>
 ```
 
-A diagram is required only if increment dependencies genuinely need one; the build-order table
-usually carries the sequencing on its own.
+A **build-order/dependency diagram is required**: boxes are increments, arrows are "depends on",
+read left-to-right in build order. It lets a reader grasp the sequence in one glance — keep it to
+the same limits as every diagram (≤7 boxes, one level, plain rectangles and arrows). Use a
+second diagram only if one genuinely can't hold the shape.
+
+```html
+<figure>
+  <svg viewBox="0 0 640 120" role="img" aria-label="Build order">
+    <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3"
+      orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker></defs>
+    <rect x="20"  y="40" width="150" height="48" rx="6" class="b"/>
+    <text x="95"  y="68" class="t">1 · Contracts</text>
+    <line x1="170" y1="64" x2="240" y2="64" class="a" marker-end="url(#ar)"/>
+    <rect x="240" y="40" width="150" height="48" rx="6" class="b"/>
+    <text x="315" y="68" class="t">2 · Order core</text>
+    <line x1="390" y1="64" x2="460" y2="64" class="a" marker-end="url(#ar)"/>
+    <rect x="460" y="40" width="160" height="48" rx="6" class="b"/>
+    <text x="540" y="68" class="t">3 · Checkout + E2E</text>
+  </svg>
+  <figcaption>Fig — increments in build order; an arrow means "needs the previous one first".</figcaption>
+</figure>
+```
