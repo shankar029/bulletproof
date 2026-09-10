@@ -236,23 +236,35 @@ code — see `references/ux-design.md`. Skip it entirely for library / CLI / API
 
   Protocol and verdict handling: `references/html-theme.md`. Record the outcome in `state.md`.
 
-### Phase 3 — Plan & split into increments
-Write `.ai/<slug>/plan.html` (same format rules, ≤3 pages). The plan **cites `research.md` and
-`design.html` and introduces no new facts of its own**: research says what is, design says what
-will be, the plan says only **in what order**.
-- **Split the work into increments sized to the model's context window** — see
-  `references/workspace.md`. Each increment is a **vertical slice** that delivers observable
-  behavior, maps to at least one acceptance criterion, can be tested and reviewed on its own,
-  and **fits comfortably in a single session** with room for its tests and review. Small work
-  is one increment; large work is several, ordered by dependency.
+### Phase 3 — Plan the execution of the design
+Write `.ai/<slug>/plan.html` (same format rules, ≤3 pages): the **executable projection of the
+design**. It cites `research.md` and `design.html` and **introduces no new facts of its own** —
+research says what is, design says what will be, the plan says **how it gets built: in what
+grouping, what order, and proven by what tests.**
+- **Derive the build order from the design's dependencies**, not from convenience. Sequence so
+  each step produces something the next can build on and validate: **contracts/types/interfaces
+  → core behavior → integration & wiring → end-to-end → observability/docs**. A component is
+  scheduled only after the components it depends on.
+- **Group the design's components into increments.** Each increment is a **cohesive vertical
+  slice** — related components that together deliver observable behavior — mapping to specific
+  **design components** and at least one **acceptance criterion**, testable and reviewable on
+  its own. Context-window size is a **constraint** on the grouping, not its purpose: a slice
+  must also **fit comfortably in a single session** with room for its tests and review
+  (`references/workspace.md`). Small work is one increment; large work is several.
+- **Build-order table — the heart of the plan.** One row per increment: **order · increment ·
+  design components it builds · ACs it satisfies · depends-on (what must exist first) · files to
+  add/change · the tests that prove it.** Every design component appears in exactly one row;
+  every AC appears in at least one. This is what feeds `traceability.md`.
+- **Testing plan, per increment and overall.** For each increment name the **unit** (functions,
+  branches, boundaries, error paths), **integration** (module seams), and **browser/end-to-end**
+  tests that prove its criteria, plus the coverage expectation and the **regression scope** it
+  must not break. State **when the full end-to-end verification runs** (Phase 5, per increment)
+  and what the final regression pass covers.
 - **Every increment runs Phases 4–6 at production quality** and ends at a green, reviewed
-  commit on the feature branch — never a half-finished state for the next session to
-  reconstruct.
-- For each increment: the tasks, the files to add/change, and the **test strategy** (which
-  unit, integration, and browser/end-to-end tests prove which criterion) plus the coverage
-  expectation.
-- If this agent can run parallel subagents, split the work per
-  `references/parallel-execution.md`; otherwise plan sequentially.
+  commit on the feature branch — never a half-finished state for the next session to reconstruct.
+- If this agent can run parallel subagents, identify the **safe parallelization boundaries**
+  from the dependency order and split per `references/parallel-execution.md`; otherwise plan
+  sequentially.
 - **Whole apps, not single requirements:** when the ask implies many independently-valuable
   features or a greenfield app, switch to the outer loop in
   `references/app-scale-delivery.md` — a walking skeleton first, then vertical slices, each
@@ -261,8 +273,10 @@ will be, the plan says only **in what order**.
   **Production Readiness** section per `references/production-readiness.md`, every item either
   addressed or marked N/A with a reason.
 - Keep the increments and tasks checkbox-trackable, and mirror the increment list in `state.md`.
-- **GATE 3:** every design element is covered by a task, every criterion by a test, and every
-  increment is session-sized and independently verifiable.
+- **GATE 3:** every design component is assigned to exactly one increment and placed after its
+  dependencies; every acceptance criterion maps to an increment and to a test; the testing plan
+  (per-increment + regression + when E2E runs) is stated; and every increment is session-sized
+  and independently verifiable.
 
 ### Phase 4 — Implement + test
 - **Re-read `design.html` before starting each increment.** The design, not your

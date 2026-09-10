@@ -146,6 +146,30 @@ document is exactly when it creeps past three pages — measure by printing to P
 content (merge table rows, delete what a signature already says). Never shrink the type.
 
 ## `plan.html`
-Same shell, same caps, different body: the increment list (each with its scope, acceptance
-criteria, and session-sized justification), the task checkboxes per increment, and the test
-strategy table. No diagram is required unless increment dependencies genuinely need one.
+Same shell, same caps, different body — the **executable projection of the design**, not a fresh
+set of facts. It contains:
+
+- **Build-order table** (the heart): one row per increment — `Order` · `Increment` ·
+  `Design components` (from the design table) · `ACs` · `Depends on` · `Files` · `Tests`.
+  Ordered by dependency — contracts/types → core → integration → end-to-end → docs — so every
+  increment is built only after the ones it needs. Every design component appears in exactly one
+  row; every AC in at least one.
+- **Per-increment detail:** scope, the acceptance criteria it satisfies, and its
+  session-sized justification.
+- **Testing plan:** per increment, the unit / integration / end-to-end tests that prove it, the
+  coverage expectation, and the regression scope it must not break; plus when full E2E
+  verification runs and what the final regression pass covers.
+- Task checkboxes per increment.
+
+```html
+<h2>1. Build order</h2>
+<table>
+  <tr><th>#</th><th>Increment</th><th>Design components</th><th>ACs</th><th>Depends on</th><th>Files</th><th>Tests</th></tr>
+  <tr><td>1</td><td>Pricing contracts &amp; types</td><td><code>PricingPolicy</code>, <code>Receipt</code></td><td>AC1</td><td>—</td><td>src/pricing/*.ts</td><td>unit: policy math</td></tr>
+  <tr><td>2</td><td>Order placement core</td><td><code>OrderService.place</code></td><td>AC1, AC3</td><td>1</td><td>src/order/*.ts</td><td>unit + integration (repo seam)</td></tr>
+  <tr><td>3</td><td>Checkout wiring &amp; E2E</td><td><code>CheckoutController</code></td><td>AC2</td><td>2</td><td>src/http/*.ts</td><td>e2e: place → receipt</td></tr>
+</table>
+```
+
+A diagram is required only if increment dependencies genuinely need one; the build-order table
+usually carries the sequencing on its own.
