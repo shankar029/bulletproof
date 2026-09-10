@@ -40,14 +40,17 @@ Review the full diff as if you would reject it in someone else's PR. Fix everyth
 ## Independent verification & review — separate session, different model when possible
 
 Your own review is necessary but not sufficient: you cannot un-see the reasoning that made
-the shortcut feel acceptable. Always get a second pass from a **read-only reviewer subagent in
-a fresh session**, in this preference order:
+the shortcut feel acceptable. This pass is **always run by a read-only reviewer subagent in a
+fresh session** — never in the implementer's context — in this preference order:
 
 1. **Different model, fresh context** — best. A fresh session removes rationalization; a
    different model removes correlated blind spots.
 2. **Same model, fresh context** — still most of the value; use when no second model is
    configured.
-3. **Cold self-review in this session** — last resort only, when subagents are unavailable.
+
+**There is no in-session self-review fallback.** If the harness genuinely cannot spawn a
+subagent, this is a blocker: record it in `state.md` and stop (prime directive 8) rather than
+grading your own work in the context that wrote it.
 
 Give the reviewer the **requirement, the acceptance criteria, the design document,
 `traceability.md`, `metrics.json`, and the diff** — and none of your reasoning. It does two

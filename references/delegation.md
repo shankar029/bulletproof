@@ -1,10 +1,11 @@
 # Reference: Delegating Phases to Subagents
 
-Research and design are delegated to subagents **when the harness supports them**. Two reasons,
-and the second is the decisive one:
+**Research, verification and review always run in a subagent; design and parallel implementation
+are delegated when the harness supports them.** Two reasons, and both are decisive for the
+mandatory three:
 
-1. **Quality** — a dedicated agent with one sharply-scoped job, fresh context, no accumulated
-   drift.
+1. **Independence** — a dedicated agent with one sharply-scoped job, fresh context, no accumulated
+   drift. A reviewer or verifier that shares the implementer's context inherits its blind spots.
 2. **Context economy** — research is the most token-expensive phase in the run: it reads dozens
    of files to produce two pages. Done in the main context, it burns the window on raw file
    contents *before implementation starts* — the phase that actually needs the room. Delegated,
@@ -14,7 +15,15 @@ and the second is the decisive one:
 
 ## Capability ladder
 
-Never hard-require subagents; the skill must work on harnesses without them.
+**Research, verification (Phase 5) and review (Phase 6) are always run in a subagent — no
+inline fallback.** Their whole value is independence and a fresh context: a research agent that
+shares the implementer's context inherits its blind spots, and a reviewer that grades in the
+same session cannot un-see the reasoning it is meant to catch. If the harness genuinely cannot
+spawn a subagent, that is a **blocker** — record it in `state.md` and stop per prime directive 8;
+do not silently fold these phases into the main context.
+
+For the **other** delegated phases (design, and any parallel implementation), degrade
+gracefully:
 
 1. Subagent with **fresh context** (preferred).
 2. No subagent support → do the phase **inline**, in the main context, to the same standard and
@@ -47,11 +56,12 @@ Never hard-require subagents; the skill must work on harnesses without them.
 
 | Phase | Delegate | Why |
 |---|---|---|
-| **1 — Research** | **Yes, by default** | Biggest context win; read-heavy, output small. |
-| **2 — Design** | **Yes, by default** | Quality-critical artifact; benefits from fresh eyes and a single job. |
+| **1 — Research** | **Required — always a subagent** | Independence + biggest context win; read-heavy, output small. Read-only. |
+| **2 — Design** | **Yes, by default** (inline fallback allowed) | Quality-critical artifact; benefits from fresh eyes and a single job. |
 | **3 — Plan** | Optional | Short, derived entirely from the design, and the main agent must own execution ordering anyway. Inline is fine. |
 | **4 — Implement** | Only for genuinely parallel work | See `parallel-execution.md`. |
-| **6 — Review** | **Yes** | Independence is the point; prefer a different model, tools scoped read-only. See `review-and-pr.md`. |
+| **5 — Verify (E2E)** | **Required — always a subagent** | Independent proof; the agent that exercises the feature is not the one that built it. Read + execute + test-authoring. See below. |
+| **6 — Review** | **Required — always a subagent** | Independence is the point; prefer a different model, tools scoped read-only. See `review-and-pr.md`. |
 
 ## Brief: research
 
@@ -109,6 +119,33 @@ Never hard-require subagents; the skill must work on harnesses without them.
 > than inventing behaviour. Plain semantic HTML only, ≤3 printed pages, simple diagrams (≤7
 > boxes, one level). Do not write implementation code. Reply with a five-line summary and the
 > path.
+
+## Brief: verify (Phase 5 end-to-end)
+
+> **ROLE.** You are the Verification Agent, running in a **fresh context** — you did not build
+> this feature. Your job is to prove it works the way a real user or client would exercise it,
+> and to leave that proof behind as committed tests and captured evidence. You may read,
+> search, run the system and its tests, and **author end-to-end/integration tests** — but you do
+> not modify production code; if a test can only pass by changing product behaviour, that is a
+> finding, not a fix.
+>
+> **INPUTS.** The requirement and acceptance criteria, `design.html`, `traceability.md`, and the
+> current working tree (implementation already complete).
+>
+> **PROCESS.** Map each acceptance-criterion scenario to existing coverage first; add tests only
+> for the uncovered ones, extending the existing suite. Exercise the real public surface with the
+> system actually running — **all browser/front-end verification uses `agent-browser`** (see
+> `references/e2e-agent-browser.md`); non-browser surfaces per `references/testing-and-e2e.md`.
+> Record exact commands, exit codes and results.
+>
+> **OUTPUT CONTRACT.** Capture evidence into `.ai/<slug>/evidence/` (commands, output,
+> screenshots, console/errors, one pass/fail line per criterion) and fill the `Test` and
+> `Evidence` columns of `traceability.md`. Reply with a five-line summary and the paths.
+>
+> **STOP CONDITIONS.** If the environment makes real end-to-end proof impossible (no network,
+> credentials or runnable host), do **not** weaken the gate or fake a pass: verify at the deepest
+> level the environment allows, name the blocker, list the criteria left environment-unverified,
+> and give the exact command a human can run to finish the proof.
 
 ## Handoff back
 

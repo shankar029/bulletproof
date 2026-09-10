@@ -134,9 +134,11 @@ After reading the requirement, classify it — and say which tier you chose and 
 ## The Loop
 
 ### Phase 1 — Understand & research
-**Delegate this phase to a subagent with fresh context when the harness supports it** — it is the
-most token-expensive phase in the run, and its output is two pages. See
-`references/delegation.md` for the brief, the fallback ladder, and the spot-check.
+**Always run this phase in a fresh-context subagent** (research is mandatory-delegated, read-only)
+— it is the most token-expensive phase in the run, its output is two pages, and its independence
+is the point. If the harness cannot spawn a subagent, that is a blocker (prime directive 8), not
+a licence to research inline. See `references/delegation.md` for the brief, the tool scoping, and
+the spot-check.
 - **Profile the project** — see `references/project-profile.md`. Keep it to a few lines.
 - **Read the repository's own agent instructions first and obey them** — any `AGENTS.md`,
   `CLAUDE.md`, `.github/copilot-instructions.md`, `.cursor/rules`/`.cursorrules`,
@@ -262,8 +264,11 @@ will be, the plan says only **in what order**.
   `state.md`.
 
 ### Phase 5 — End-to-end verification
-Prove the feature the way a real user or client would exercise it, and commit those tests.
-**All browser and front-end verification uses `agent-browser`** — see
+**Always run this phase in a fresh-context verification subagent** — the agent that proves the
+feature is never the one that built it (`references/delegation.md`). It may author tests and
+capture evidence but not touch production code. Prove the feature the way a real user or client
+would exercise it, and commit those tests. **All browser and front-end verification uses
+`agent-browser`** — see
 `references/e2e-agent-browser.md`. Non-browser surfaces (service, CLI, library) are covered in
 `references/testing-and-e2e.md`.
 - Map each acceptance-criterion scenario to existing coverage first; add tests only for the
@@ -290,8 +295,9 @@ Prove the feature the way a real user or client would exercise it, and commit th
   `traceability.md`, **`metrics.json`**, and the diff to a **read-only reviewer subagent with
   fresh context** (tools scoped to read/execute, never write), and prefer **a different model**
   from the one that wrote the code. Preference order: (1) different model, fresh context; (2)
-  same model, fresh context; (3) only if subagents are unavailable, re-read the diff cold
-  yourself. It does two jobs: **review** the diff (correctness, design fidelity,
+  same model, fresh context. **Review is mandatory-delegated — there is no in-session
+  self-review fallback**; if no subagent can be spawned, stop and record the blocker (prime
+  directive 8). It does two jobs: **review** the diff (correctness, design fidelity,
   maintainability, test quality, band-aids, gamed metrics) **and independently reconcile every
   requirement** against the final code and test evidence — re-derived from the tree, not from
   your narrative — returning a per-AC verdict (**VERIFIED / VERIFIED-WITH-LIMITATIONS /
