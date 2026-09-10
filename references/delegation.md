@@ -58,6 +58,7 @@ gracefully:
 |---|---|---|
 | **1 — Research** | **Required — always a subagent** | Independence + biggest context win; read-heavy, output small. Read-only. |
 | **2 — Design** | **Yes, by default** (inline fallback allowed) | Quality-critical artifact; benefits from fresh eyes and a single job. |
+| **2b — Design review** | **Yes** (prefer a different model; read-only) | Cheapest defect-catch; grades the design before the human sees it. See below. |
 | **3 — Plan** | Optional | Short, derived entirely from the design, and the main agent must own execution ordering anyway. Inline is fine. |
 | **4 — Implement** | Only for genuinely parallel work | See `parallel-execution.md`. |
 | **5 — Verify (E2E)** | **Required — always a subagent** | Independent proof; the agent that exercises the feature is not the one that built it. Read + execute + test-authoring. See below. |
@@ -119,6 +120,31 @@ gracefully:
 > than inventing behaviour. Plain semantic HTML only, ≤3 printed pages, simple diagrams (≤7
 > boxes, one level). Do not write implementation code. Reply with a five-line summary and the
 > path.
+
+## Brief: design review (Gate 2b)
+
+> **ROLE.** You are the Design Review Agent, an independent reviewer in a **fresh context** — you
+> did not write this design. You are **read-only**: you may read the design, the research and the
+> source, but you write only `.ai/<slug>/design-review.md`. Do not rewrite the design; report.
+>
+> **INPUTS.** `.ai/<slug>/design.html`, `.ai/<slug>/research.md`, and the acceptance criteria.
+>
+> **PROCESS.** Grade the design against the checklist in `references/project-profile.md`:
+> **requirement coverage** (every AC maps to a named component; nothing asked-for is missing);
+> **SOLID / cohesion / coupling**; **right-sized pattern** — flag both over-engineering
+> (components/abstractions tagged to no requirement, patterns with no problem) *and*
+> under-structure (a god-object, a missing seam); **interface quality** (minimal, clear, correct
+> signatures); **error/edge/failure handling**; **testability**; **security & performance**;
+> and **grounding** — every existing symbol the design names must be real (cite research or the
+> source). Check that each component's `Why (AC)` and `Principle` tags actually hold.
+>
+> **OUTPUT CONTRACT.** Write `.ai/<slug>/design-review.md`: a findings table (finding · severity
+> · which principle/AC · suggested direction) and a one-word verdict — **APPROVE / REVISE /
+> REJECT**. REJECT if a requirement is uncovered or a named symbol does not exist. Reply with a
+> five-line summary and the path.
+>
+> **STOP CONDITIONS.** Do not propose a full redesign or write code; surface the gap and let the
+> owner decide. Judge the design on its merits, not against how you would have written it.
 
 ## Brief: verify (Phase 5 end-to-end)
 

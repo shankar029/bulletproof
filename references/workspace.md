@@ -19,6 +19,7 @@ The slug is short kebab-case derived from the requirement (`checkout-discount-co
     clarifications.md   # questions asked, answers received, assumptions taken
     architecture.html   # ONLY for large work (new service/subsystem, cross-cutting)
     design.html         # program design: classes, interfaces, interactions (Phase 2)
+    design-review.md    # independent design-review findings + verdict (Gate 2b)
     plan.html           # increments, tasks, test strategy (Phase 3)
     review.json         # reader's comments + verdict, exported from the document
     review.md           # independent-reviewer findings and their dispositions

@@ -31,7 +31,7 @@ in `.ai/<slug>/` — see `workspace.md`.
 |---|---|---|
 | **1. Problem & scope** | 3–5 bullets: what changes, which acceptance criteria (by id), what is explicitly out of scope. | ⅕ page |
 | **2. Architecture** *(large work only, in `architecture.html`)* | One simple component diagram: the pieces, their responsibilities, and how they communicate. Omit entirely for contained changes. | ½ page |
-| **3. Program design** | The class/module diagram, then a table: each new or changed type with its **single responsibility**, **public method signatures**, and **collaborators**. This is the heart of the document. | 1 page |
+| **3. Program design** | The class/module diagram, then a table: each new or changed type with its **single responsibility**, **public method signatures**, **collaborators**, the **acceptance criterion it serves** (`Why`), and the **design principle/pattern** it embodies (`Principle`). This is the heart of the document. A row with no `Why` is unnecessary — cut it. | 1 page |
 | **4. Key interactions** | Sequence diagram of the 1–2 critical flows (including the main failure path). | ½ page |
 | **5. Data & contracts** | Schemas, payloads, persisted shapes, migration and compatibility notes. Table or code block. | ¼ page |
 | **6. Decisions & trade-offs** | Table: decision · alternatives rejected · why. Include the pattern choices. | ¼ page |
@@ -106,10 +106,11 @@ Head per `html-theme.md`, then plain HTML. No styling anywhere in the document.
   <figcaption>Fig 1 — types, ownership, and dependency direction.</figcaption>
 </figure>
 <table>
-  <tr><th>Type</th><th>Responsibility</th><th>Public API</th><th>Collaborators</th></tr>
+  <tr><th>Type</th><th>Responsibility</th><th>Public API</th><th>Collaborators</th><th>Why (AC)</th><th>Principle</th></tr>
   <tr><td><code>OrderService</code> <em>(new)</em></td><td>One sentence.</td>
       <td class="sig">place(Order): Receipt<br>cancel(id): void</td>
-      <td><code>OrderRepo</code>, <code>PricingPolicy</code></td></tr>
+      <td><code>OrderRepo</code>, <code>PricingPolicy</code></td>
+      <td>AC1, AC3</td><td>SRP; Strategy for pricing</td></tr>
 </table>
 
 <h2>3. Key interactions</h2>
@@ -132,6 +133,13 @@ Head per `html-theme.md`, then plain HTML. No styling anywhere in the document.
 ## Keeping it honest
 The document is a commitment, not decoration. Phase 4 implements *this* design; if the code
 must diverge, update the document and re-check Gate 2 rather than letting the two drift.
+
+**It passes an independent design review (Gate 2b) before the human sees it.** A fresh-context
+review subagent grades it against the `project-profile.md` checklist — requirement coverage,
+SOLID/cohesion/coupling, right-sized pattern (over- *and* under-engineering), interface quality,
+failure handling, testability, security/performance, and grounding — and returns
+APPROVE / REVISE / REJECT in `design-review.md`. The `Why (AC)` and `Principle` columns exist so
+that review is fast and concrete: coverage and YAGNI are checkable at a glance.
 
 **Re-check the page count after every revision.** Folding review findings back into the
 document is exactly when it creeps past three pages — measure by printing to PDF, then trim

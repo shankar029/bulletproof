@@ -190,6 +190,12 @@ code — see `references/ux-design.md`. Skip it entirely for library / CLI / API
 - **`.ai/<slug>/design.html`** — always: the **classes/modules, interfaces, and public method
   signatures** you will add or change, each with its single responsibility and its
   collaborators; plus the **key interactions** (the critical flows, as a sequence diagram).
+- **Justify every component — why, what, how.** Each type/module in the design table is tagged
+  to the **acceptance criterion it serves** (why it exists), states its **responsibility and
+  interface** (what it is), names its **collaborators/interactions** (how it fits), and cites
+  the **design principle or pattern** it embodies and why that one. A component tagged to no
+  requirement is unnecessary — cut it (YAGNI). This rationale is what the design review grades
+  against, and the main agent must be able to defend every row — not defer to the author.
 - **As-is → to-be** — for every symbol you change, its **current** behaviour *citing
   `research.md`* and what it **becomes**. This is what makes a brownfield change reviewable:
   the reader sees the delta, not just the destination.
@@ -201,12 +207,24 @@ code — see `references/ux-design.md`. Skip it entirely for library / CLI / API
   change should be additive, not surgery on the core.
 - Every existing type, function, or interface named in the document must appear in
   `research.md` or be one you have opened and read yourself.
-- **GATE 2 — the design is signed off before any code.** The design document exists (≤3 pages,
-  simple diagrams), every acceptance criterion maps to a named component/method, every
-  referenced existing symbol has been verified in the source, and the design passes the
-  checklist in `references/project-profile.md`.
+- **GATE 2a — self-check.** The design document exists (≤3 pages, simple diagrams), every
+  acceptance criterion maps to a named component/method, every component carries its
+  why/what/how rationale, every referenced existing symbol has been verified in the source, and
+  the design passes the checklist in `references/project-profile.md`.
+- **GATE 2b — independent design review, before the human sees it.** Hand `design.html`,
+  `research.md`, and the acceptance criteria to a **fresh-context design-review subagent**
+  (read-only, prefer a different model; `references/delegation.md`). It grades the design against
+  the rubric — **requirement coverage** (every AC → a component), **SOLID / cohesion / coupling**,
+  **right-sized pattern** (flags both over-engineering and missing structure), **interface
+  quality**, **error/edge/failure handling**, **testability**, **security & performance**, and
+  **grounding** (every named existing symbol is real) — and writes `.ai/<slug>/design-review.md`
+  with findings and a verdict: **APPROVE / REVISE / REJECT**. The main agent adjudicates each
+  finding on its merits and revises the design; re-review after a REJECT. Bounded to **2 rounds**,
+  then proceed with any residual findings recorded as risks. This is the cheapest defect-catch in
+  the run — a missed component costs a table row here, a re-architecture in Phase 4.
 
-  **Then hand it over and wait.** Self-check that it renders, open it in the user's default
+  **Then hand it over and wait — GATE 2 (human sign-off).** Self-check that it renders, open it in
+  the user's default
   browser, print the `file://` path, say what you need back (approve / approve with comments /
   request changes), record `Blocked on: design sign-off` in `state.md`, and **stop — end the
   turn.** Do not poll, and do not start Phase 3.
