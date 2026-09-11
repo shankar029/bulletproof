@@ -269,7 +269,7 @@ curl -fsSL https://raw.githubusercontent.com/shankar029/bulletproof/main/install
 & ([scriptblock]::Create((irm https://raw.githubusercontent.com/shankar029/bulletproof/main/install.ps1))) pi
 ```
 
-Install a specific release with `BULLETPROOF_REF=v0.6.0`. Prefer to do it by hand? Per-agent manual
+Install a specific release with `BULLETPROOF_REF=v0.7.0`. Prefer to do it by hand? Per-agent manual
 steps:
 
 - **pi** → [`install/pi.md`](install/pi.md) — skill + `/bulletproof` prompt template

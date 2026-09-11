@@ -6,6 +6,22 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Planned
+- Move gate invariants from prose to a deterministic `scripts/check.py` (citations resolve,
+  absence-proofs re-run, artifact schema, traceability completeness, diff hygiene, Gate-4 runs the
+  tests) and ship **read-only agent definitions** so delegation isolation is enforced by config,
+  not by instructions.
+- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+
+## [0.7.0] — 2026-09-08
+
+A reliability release: the loop stops trusting its own memory and starts proving itself against the
+code and the running system. Phase 1 gains a durable, cited `research.md`; the phases that must stay
+independent (research, end-to-end verification, review) become **mandatory fresh-context
+subagents**; design gains an **independent review gate**; a new **idle-timeout runner** kills silent
+hangs instead of stalling a run for hours; and a batch of prompt- and context-engineering hardening
+lands across the loop.
+
 ### Added
 - **`research.md` — a cited ground-truth document, and Gate 1 now has teeth.** Phase 1 previously
   produced nothing durable: grounding was a claim from memory ("name the files you read") that
@@ -21,6 +37,22 @@ All notable changes to this project are documented here. The format is based on
   Includes the briefs, the artifacts-to-disk rule, path resolution before trusting a summary,
   the spot-check, and the reminder that the
   document is an index into the code rather than a replacement for reading it.
+- **Idle-timeout command runner** (`scripts/run.py`). A command going *silent* is the real hang
+  signal, not a command that runs long. `run.py --idle <seconds>` streams output and kills the whole
+  process tree after N seconds of **silence** (exit 124), never touching a job that is still
+  producing output; the quality probes and mutation testing route through its reusable
+  `run_capture()`, and the working rules now wrap fallible commands in it. See
+  [`references/testing-and-e2e.md`](references/testing-and-e2e.md).
+- **Mandatory fresh-context subagents for the independent phases.** Research (Phase 1), end-to-end
+  verification (Phase 5) and review (Phase 6) now **require** a subagent — the generator, the prover
+  and the judge must not share a context. On a harness without subagent support these phases stop as
+  a blocker rather than silently degrading to self-review. Verification gains its own brief in
+  [`references/delegation.md`](references/delegation.md).
+- **Independent design review — Gate 2b.** Before sign-off, a separate reviewer grades `design.html`
+  against a rubric (AC coverage, SOLID, right-sized pattern, grounding that every named symbol is
+  real, readability) and returns an explicit **APPROVE / REVISE / REJECT** verdict written to
+  `design-review.md`. See [`references/delegation.md`](references/delegation.md) and
+  [`references/project-profile.md`](references/project-profile.md).
 
 ### Changed
 - **Design records the delta, not just the destination.** `design.html` gains an **as-is → to-be**
@@ -33,6 +65,19 @@ All notable changes to this project are documented here. The format is based on
   by the model that is already degrading, and it drops the citations and signatures the loop runs
   on. The trigger is behavioural, not a percentage. If a harness compacts anyway, re-anchor from
   disk and re-open files before editing them.
+- **Prompt- and context-engineering hardening across the loop.** A repository instruction layer
+  (`AGENTS.md` / `CLAUDE.md` / …) is read and honored before research; every material claim carries
+  a typed epistemic tag (**FACT / INFERENCE / HYPOTHESIS / UNKNOWN**); a `traceability.md` matrix
+  threads each acceptance criterion from research → design → increment → evidence → verdict;
+  delegation is least-privilege; prime directive 8 adds an explicit **stop-the-line**; and each phase
+  re-anchors from disk rather than trusting a stale summary.
+- **Phase 3 is now an executable plan, not a restatement.** The plan derives a **build-order table**
+  from the design's dependencies (which increment blocks which), groups the work, and states when
+  the full end-to-end verification runs — with a required build-order / dependency diagram.
+- **Design and plan must read plainly.** Both documents require plain language a newcomer can follow
+  and diagrams that carry the structure; per-component rationale is captured as compact
+  **Why (AC) / Principle** tags rather than prose, protecting the page budget. Readability is now
+  part of the Gate 2b rubric.
 
 ### Planned
 - Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
@@ -311,7 +356,9 @@ Initial release: a portable `/bulletproof` skill plus an objective benchmark pro
   and **extensibility** (open/closed) beyond functional correctness, across all three projects.
 - **Docs**: `README.md`, `EVAL-PLAN.md`, `docs/architecture.md`, `CONTRIBUTING.md`, `LICENSE` (MIT).
 
-[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/shankar029/bulletproof/compare/v0.6.0...v0.7.0
+[0.6.0]: https://github.com/shankar029/bulletproof/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/shankar029/bulletproof/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/shankar029/bulletproof/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/shankar029/bulletproof/compare/v0.2.0...v0.3.0
