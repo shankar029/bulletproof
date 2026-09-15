@@ -67,6 +67,14 @@ loop directly.
   multi-part request**, and the implied non-functional needs it carries (performance, security,
   accessibility, backward-compatibility). Capture exactly what was asked — never drop a part, never
   invent scope that wasn't requested.
+- **Research the affected behavior** using `references/research.md`: map every acceptance
+  criterion to current code/contracts, callers and side effects, reuse candidates, existing
+  tests, and explicit gaps, with source evidence. Keep facts separate from inference and design.
+  Work directly by default; delegate only substantial independent questions when supported.
+  **The reference is the reusable prompt, not the output.** Persist task-specific findings in
+  the existing task workspace or plan before handing them to another agent; include the
+  requirement, ACs, snapshot, citations, coverage, and unresolved questions so it needs no chat
+  history. Never overwrite the prompt with task findings.
 - **Clarify before planning — interactively when possible.** List the genuine unknowns implied by
   the acceptance criteria: ambiguous scope, conflicting or missing requirements, undecided behavior
   or API/UX shape, and acceptance thresholds you cannot derive. **Resolve each from the code, docs,
@@ -82,9 +90,15 @@ loop directly.
   union covers the whole request — re-read the ask and confirm nothing is missing or added. **Every
   material ambiguity is resolved** (from code/docs) **or clarified** — answered by the user when
   interactive, or defaulted-and-recorded when not. No open unknown remains that could change the
-  plan.
+  plan. **The research handoff covers every AC**, its material claims are supported and
+  spot-checked against source, scoped not-found results and limitations are explicit, and any
+  delegated findings have been reconciled. A defaulted requirement is not proof of unknown code
+  behavior. A handoff to another agent is persisted at a confirmed accessible location.
 
 ### Phase 2 — Plan (design-first)
+- **Consume the Phase 1 research handoff first.** Ground the design in its cited behavior,
+  contracts, reuse candidates, and tests; revalidate affected facts if the tree has changed.
+  Return missing design-critical facts to research rather than inventing them.
 - Design the solution grounded in **SOLID, DRY, YAGNI, KISS, separation of concerns**
   and, above all, the project's existing patterns. Choose the approach that a staff
   engineer on this codebase would choose.
@@ -211,6 +225,7 @@ quality, and evidence.
   with evidence.
 
 ## References (load on demand)
+- `references/research.md` — reusable codebase-research prompt; evidence, requirement coverage, task-specific handoff, and parent acceptance.
 - `references/project-profile.md` — detect & honor project nature; anti-tech-debt; plan verification checklist.
 - `references/testing-and-e2e.md` — test infra setup, coverage, Playwright / REST / CLI E2E per ecosystem.
 - `references/parallel-execution.md` — detect parallel-agent support; decompose independent work; isolate with worktrees; integrate & verify the whole.

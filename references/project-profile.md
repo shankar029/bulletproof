@@ -32,6 +32,11 @@ Detect and note (keep it to a few lines — this is context, not an essay):
 If any of the above is genuinely absent (e.g. no test setup at all), that's a signal you may
 need to *establish* it — do so following the ecosystem's most standard, least-surprising choice.
 
+The profile establishes project-wide context; `research.md` supplies the **task-specific
+investigation and handoff contract**. After profiling, follow that procedure to trace the affected
+behavior, callers, contracts, reuse candidates, and existing tests against every acceptance
+criterion. Store findings in the task's report or plan, never in the reusable reference itself.
+
 ## Anti-tech-debt rules
 
 Reject an approach (and pick another) if it would:
@@ -51,6 +56,8 @@ and record the larger refactor as an explicit follow-up in the PR — never smug
 Before leaving Phase 2, confirm every item. Any "no" is a gap to resolve now:
 
 - [ ] The design matches the project's architecture and existing patterns.
+- [ ] Phase 1 research covers every acceptance criterion with current evidence or an explicit,
+      scoped gap; material unknowns are resolved and the plan distinguishes facts from choices.
 - [ ] It reuses existing abstractions/utilities instead of reinventing them.
 - [ ] Every acceptance criterion maps to specific code changes **and** specific tests.
 - [ ] Edge cases, error paths, and failure modes are enumerated and handled.

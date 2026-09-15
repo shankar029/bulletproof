@@ -10,8 +10,10 @@ repo, or the copy installed at `~/.copilot/bulletproof/`). Run all five phases i
 pass each gate before advancing:
 
 1. **Understand** — profile the project (languages, frameworks, test setup, conventions);
-   restate the requirement as testable acceptance criteria; **clarify genuine ambiguity before
-   planning** — if a user is present, ask (batched, with recommended defaults) and wait for the
+   restate the requirement as testable acceptance criteria; follow `references/research.md`
+   for source-backed, task-specific findings and a durable handoff before another agent plans;
+   **clarify genuine ambiguity before planning** — if a user is present, ask (batched, with
+   recommended defaults) and wait for the
    answers; if headless, default-and-record the assumptions.
 2. **Plan** — design-first (SOLID/DRY/KISS + the project's own patterns); write `PLAN.md`;
    self-verify and close every gap before coding.

@@ -13,7 +13,28 @@ Detect capability before planning any fan-out. If unsupported, **fall back to se
 |---|---|---|
 | **pi** | `subagent` tool, parallel mode: `{ tasks: [{agent, task}], concurrency, worktree: true }`; agents like `worker`, `scout`, `reviewer` | `worktree: true` gives each task its own git worktree |
 | **Claude Code** | multiple `Task` subagent calls in one turn run concurrently; subagents in `.claude/agents/` | instruct workers to use separate paths / `git worktree` |
-| **Copilot CLI** | no reliable subagent parallelism | — → run sequentially |
+| **Copilot CLI** | use exposed subagent tools when available; otherwise run sequentially | isolate implementation workers with separate worktrees |
+
+## Read-only research (Phase 1)
+
+Research is direct by default, even when subagents exist. For substantial independent questions,
+use the input/output contract in `research.md`; verify actual host capability rather than assuming
+every installation exposes the mechanisms above.
+
+- Delegate bounded questions, not automatic locator/analyzer/pattern-finder roles. Do not split
+  a single continuous call trace across agents or duplicate discovery in the parent.
+- Read-only researchers may inspect overlapping files when necessary; **file-disjoint edits and
+  worktrees are implementation safeguards**, not requirements for read-only investigation.
+  Use a stable source snapshot and separate assigned output locations; the parent alone merges
+  the final handoff. No source edits, recursive delegation, or unapproved state-changing commands.
+- Supply the complete requirement, ACs, scope, known context, accessible research procedure,
+  and output destination. Scope tools to inspection plus assigned artifact writing if supported;
+  otherwise have the parent persist returned findings.
+- Gather all required results before accepting Gate 1. Reconcile contradictions and coverage,
+  check representative citations, and name incomplete scopes or failed workers. Do not treat
+  a worker's completion as proof that the whole requirement is researched.
+- If delegation is unavailable or not worthwhile, research directly with the same evidence and
+  handoff contract. The parent owns clarification, design decisions, and the overall gate.
 
 ## Step 2 — Find the parallelizable work (during Phase 2 planning)
 

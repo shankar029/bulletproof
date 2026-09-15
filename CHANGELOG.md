@@ -6,6 +6,15 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+- **Requirement-scoped research and durable agent handoff.** New `references/research.md`
+  defines a reusable read-only research procedure, separate from task findings: AC coverage,
+  source-backed behavior and failure-path traces, contracts/callers, reuse and test examples,
+  historical/version context, scoped absence evidence, and explicit unknowns. Phase 1 accepts
+  the evidence before Phase 2 designs from it; subsequent agents receive a persisted report with
+  source freshness and complete requirement context. Optional bounded research delegation and
+  app-scale checkpoints use the same contract without adding a phase or mandatory agent fan-out.
+
 ### Planned
 - Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 

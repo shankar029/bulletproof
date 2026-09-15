@@ -23,7 +23,10 @@ and *proven*, not merely *attempted*:
    requirement as testable **acceptance criteria that cover every part** of it. If anything material
    is ambiguous it **clarifies before planning** — asking you (batched, each with a recommended
    default) when you're present, or recording explicit assumptions when running headless. It never
-   silently guesses and never invents scope you didn't ask for.
+   silently guesses and never invents scope you didn't ask for. Requirement-scoped research
+   traces behavior, contracts, callers, reuse candidates, and existing tests with source evidence.
+   Before another agent takes over, it persists a self-contained handoff with AC coverage,
+   snapshot, citations, and unresolved questions.
 2. **Plan (design-first).** SOLID/DRY/KISS *and the project's own patterns*; writes `PLAN.md`;
    self-verifies and closes every gap **before** writing code.
 3. **Implement + test.** Real unit + integration tests for all new behavior — never stubs, empty
@@ -94,6 +97,7 @@ bulletproof/
 ├── SKILL.md                     # the operating loop (single source of truth)
 ├── references/                  # on-demand depth per phase (progressive disclosure)
 │   ├── project-profile.md       #   detect & honor project nature; anti-tech-debt; plan checklist
+│   ├── research.md              #   reusable research prompt; source-backed, task-specific handoff
 │   ├── testing-and-e2e.md       #   test infra, coverage, Playwright / REST / CLI E2E; right-sizing
 │   ├── parallel-execution.md    #   detect parallel-agent support; split disjoint work; worktrees
 │   ├── quality-bar.md           #   top-1% scored rubric + convergence loop
@@ -140,12 +144,18 @@ steps:
   behavior stays identical across agents.
 - **Lean by design:** `SKILL.md` stays tight; deep detail sits in `references/` and loads only when
   a phase needs it (progressive disclosure).
+- **Research before design:** [`references/research.md`](references/research.md) is a reusable
+  procedure, not a place to write task findings. Use it directly or give it to a bounded
+  read-only subagent; the parent accepts the evidence and passes a separate durable report to
+  the next agent. Small tasks can keep findings in their existing plan/context.
 - **Safe by default:** feature branches only, PR-only, no protected-branch commits; refuses stubs,
   empty tests, and unjustified lint/type suppression — and the eval enforces it (a commit to `main`
   hard-zeroes the run).
 - **Parallel when it's safe:** if the agent supports subagents (pi `subagent`, Claude `Task`), it
   splits file-disjoint, dependency-free work across parallel agents in isolated git worktrees, then
-  integrates and verifies the whole. Unsupported agents (e.g. Copilot CLI) run sequentially.
+  integrates and verifies the whole. Check the current host's exposed capabilities; unsupported
+  hosts run sequentially. Read-only research uses the separate, lighter rules in
+  `references/parallel-execution.md`.
 - **Rename:** don't like `/bulletproof`? Rename the launcher file (e.g. `ship.md` → `/ship`).
 
 More on the design: [`docs/architecture.md`](docs/architecture.md).
