@@ -1,0 +1,210 @@
+{
+  "kind": "Observed pre-fix counterexamples, not passing new-feature tests",
+  "sourceHashes": {
+    "probe.py": "82ac3d20824cf0d40d85edbc3acae02bc278285b4f25a78f29c279164a57bfe9",
+    "mutate.py": "0f051437d1019afa0218b8d49c48928db7b5df19b0f3ae560fc6c620cff9f7cb",
+    "run.py": "d47399517c0d995cb5b25b4779ddc12448a554dcbc271d9b4ed32e1cc3d498f8"
+  },
+  "missingExtensions": {
+    "changedTargets": {
+      "src/value.js": [
+        2
+      ]
+    },
+    "requiredButAbsent": [
+      ".mjs",
+      ".cjs"
+    ]
+  },
+  "syntaxCountedAsKill": {
+    "slug": "invalid-kill",
+    "base": "dd348159d96e",
+    "head": "7a447d1",
+    "generated": "2026-09-16T17:15:13+00:00",
+    "test_cmd": "node.EXE --test --test-reporter=tap test/check.test.mjs",
+    "score_pct": 100.0,
+    "killed": 1,
+    "survived": 0,
+    "total": 1,
+    "timeouts": 0,
+    "survivors": []
+  },
+  "incompleteReportedPass": {
+    "slug": "incomplete-pass",
+    "base": "HEAD",
+    "merge_base": "7a447d14b401",
+    "head": "7a447d1",
+    "generated": "2026-09-16T17:15:20+00:00",
+    "project": "general",
+    "baseline": "greenfield",
+    "verdict": "pass",
+    "worst_status": "ok",
+    "metrics": {
+      "diff_files": {
+        "head": 0
+      },
+      "diff_lines": {
+        "head": 0
+      }
+    },
+    "unavailable": [
+      "duplication_pct",
+      "complexity_max",
+      "complexity_avg",
+      "cycles",
+      "dead_exports",
+      "static_findings",
+      "mutation_score_pct"
+    ],
+    "tools": {}
+  },
+  "staleReportAcceptedAfterDirtyRunFailure": {
+    "head": 100,
+    "threshold": 60.0,
+    "status": "ok",
+    "survivors": 0,
+    "detail": ".ai/stale/mutation.json"
+  },
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-reliability\\p0-reproduction-49qw2mjq\\project",
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "config",
+        "user.name",
+        "Owned test fixture"
+      ],
+      "cwd": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-reliability\\p0-reproduction-49qw2mjq\\project",
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "config",
+        "user.email",
+        "fixture@example.invalid"
+      ],
+      "cwd": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-reliability\\p0-reproduction-49qw2mjq\\project",
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "add",
+        "."
+      ],
+      "cwd": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-reliability\\p0-reproduction-49qw2mjq\\project",
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "commit",
+        "--quiet",
+        "-m",
+        "Seed fixture"
+      ],
+      "cwd": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-reliability\\p0-reproduction-49qw2mjq\\project",
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-reliability\\p0-reproduction-49qw2mjq\\project",
+      "code": 0,
+      "stdout": "dd348159d96e5ec20a1136f7d9d9de8f730bb522\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "add",
+        "."
+      ],
+      "cwd": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-reliability\\p0-reproduction-49qw2mjq\\project",
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "commit",
+        "--quiet",
+        "-m",
+        "Add executable changes"
+      ],
+      "cwd": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-reliability\\p0-reproduction-49qw2mjq\\project",
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "node",
+        "--check",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-reliability\\p0-reproduction-49qw2mjq\\invalid.mjs"
+      ],
+      "cwd": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-reliability\\p0-reproduction-49qw2mjq\\project",
+      "code": 1,
+      "stdout": "",
+      "stderr": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-reliability\\p0-reproduction-49qw2mjq\\invalid.mjs:2\nexport const positive = x =< x > 0;\n                           ^\n\nSyntaxError: Unexpected token '<'\n    at checkSyntax (node:internal/main/check_syntax:72:5)\n\nNode.js v24.11.1\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\mutate.py",
+        "--repo",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-reliability\\p0-reproduction-49qw2mjq\\project",
+        "--base",
+        "dd348159d96e5ec20a1136f7d9d9de8f730bb522",
+        "--slug",
+        "invalid-kill",
+        "--max-mutants",
+        "1",
+        "--test-cmd",
+        "node --test --test-reporter=tap test/check.test.mjs"
+      ],
+      "cwd": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-reliability\\p0-reproduction-49qw2mjq\\project",
+      "code": 0,
+      "stdout": "{\n  \"slug\": \"invalid-kill\",\n  \"base\": \"dd348159d96e\",\n  \"head\": \"7a447d1\",\n  \"generated\": \"2026-09-16T17:15:13+00:00\",\n  \"test_cmd\": \"node.EXE --test --test-reporter=tap test/check.test.mjs\",\n  \"score_pct\": 100.0,\n  \"killed\": 1,\n  \"survived\": 0,\n  \"total\": 1,\n  \"timeouts\": 0,\n  \"survivors\": []\n}\n",
+      "stderr": "mutate: verifying the suite is green ...\nmutate: 1 mutants across 1 files (~1s each)\nmutate: [1/1] src/value.js:2 comparison > -> < -> killed\n\nmutate: wrote C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/p0-reproduction-49qw2mjq/project\\.ai\\invalid-kill\\mutation.json\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\probe.py",
+        "--base",
+        "HEAD",
+        "--slug",
+        "incomplete-pass",
+        "--skip-mutation"
+      ],
+      "cwd": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-reliability\\p0-reproduction-49qw2mjq\\project",
+      "code": 0,
+      "stdout": "{\n  \"slug\": \"incomplete-pass\",\n  \"base\": \"HEAD\",\n  \"merge_base\": \"7a447d14b401\",\n  \"head\": \"7a447d1\",\n  \"generated\": \"2026-09-16T17:15:20+00:00\",\n  \"project\": \"general\",\n  \"baseline\": \"greenfield\",\n  \"verdict\": \"pass\",\n  \"worst_status\": \"ok\",\n  \"metrics\": {\n    \"diff_files\": {\n      \"head\": 0\n    },\n    \"diff_lines\": {\n      \"head\": 0\n    }\n  },\n  \"unavailable\": [\n    \"duplication_pct\",\n    \"complexity_max\",\n    \"complexity_avg\",\n    \"cycles\",\n    \"dead_exports\",\n    \"static_findings\",\n    \"mutation_score_pct\"\n  ],\n  \"tools\": {}\n}\n",
+      "stderr": "probe: measuring working tree ...\nprobe: measuring baseline 7a447d14 ...\nprobe: baseline has no meaningful code (1 files) \u2014 judging greenfield work against absolute limits, not deltas\n\nprobe: wrote C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/p0-reproduction-49qw2mjq/project\\.ai\\incomplete-pass\\metrics.json\nprobe: unavailable (install the tool or report honestly): duplication_pct, complexity_max, complexity_avg, cycles, dead_exports, static_findings, mutation_score_pct\n"
+    }
+  ]
+}
