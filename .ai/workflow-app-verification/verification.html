@@ -1,0 +1,2055 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Independent app verification</title><style>
+body{font:16px/1.55 system-ui,sans-serif;color:#182434;background:#f4f6f9;max-width:1120px;margin:auto;padding:24px}h1{font-size:30px}a{color:#174da0}section,details{background:white;border:1px solid #c4ccd8;padding:18px;border-radius:8px;margin:18px 0}table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #c4ccd8;padding:12px;text-align:left;vertical-align:top}code{overflow-wrap:anywhere}.warning{border-left:6px solid #a84400}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.gallery img{width:100%;max-height:520px;object-fit:contain;object-position:top}pre{white-space:pre-wrap;overflow-wrap:anywhere}summary{cursor:pointer;font-weight:bold}@media(max-width:700px){body{padding:12px}table{font-size:14px}}
+</style><header><h1>Independent Phase5 app verification</h1><p>2026-09-16T12:33:59.795Z · actual Team planner · implementation <code>3b776d1</code></p><p><a href="verification.json">Detailed AC ledger</a> · <a href="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/report.json">Latest raw report</a> · <a href="verification-evidence/native-tests.log">Native execution log</a></p></header>
+<section class="warning"><h2>Verified with explicit limitations</h2><p>All four actual browser journeys completed. Latest replay: 126 verified checks, 0 unverified checks. Native 37/37 tests passed separately. No production source was changed by this verifier.</p><p><strong>Both parent accessibility fixes independently verified:</strong> exact announcements/preserved save success and named Pagination navigation landmark pass. Tested axe pages have zero violations and zero incomplete findings. Human approval/full WCAG and parent-owned diagnosis/metrics/final release gates are not certified.</p></section>
+<section><h2>Reproduce</h2><pre>npm install --prefix benchmark
+node benchmark\node_modules\playwright\cli.js install chromium
+npm exec --yes --package=agent-browser@0.37.1 -- agent-browser --version
+node examples\team-planner\scripts\e2e.mjs --flow all</pre><p>Supports base, graph, query, migration, all. Unique data directories and port 0 per run/flow, same directory preserved only across genuine new-PID restarts. Playwright launches Chromium only; agent-browser 0.37.1 performs all browser actions over explicit IPv4 HTTP CDP. Successful all-flow runs across source revisions: 7; on the exact latest source: 1. Historical runs do not certify later patches. Run evidence retains command outputs, HTTP responses, images, snapshots and axe results.</p></section>
+<section><h2>Acceptance reconciliation</h2><table><thead><tr><th>AC</th><th>Verdict</th><th>Evidence conclusion</th></tr></thead><tbody><tr><td>AC01</td><td>VERIFIED</td><td>Fresh schema2/revision0 HTTP and browser empty state; native actual CLI occupied-lock/port and graceful-close cases. Nine owned real app processes exit zero in each all-flow replay.</td></tr><tr><td>AC02</td><td>VERIFIED</td><td>Keyboard-created Launch and Draft; UI Review creation, title/description edits, invalid input retention, refresh and full new-PID restart. HTTP exact negative errors and unchanged bytes.</td></tr><tr><td>AC03</td><td>VERIFIED</td><td>Real simultaneous same-ETag HTTP writes give one success/one conflict; UI stale draft retained. Native independent execution covers atomic candidate/byte rollback, IO queue recovery, read isolation, corrupt state, lock ownership, and actual process termination before/after replacement.</td></tr><tr><td>AC04</td><td>VERIFIED</td><td>Actual UI adds dependency, rejects starting blocked Review, completes Draft then Review, rejects reopening predecessor, reopens reverse order and restarts. HTTP graph negatives; native atomic status+edges/property order/no-op assertions.</td></tr><tr><td>AC05</td><td>VERIFIED</td><td>Independent F-query IDs B,D then E,F; real browser pageSize2 plus thirteen records at default pageSize10, no omissions/duplicates. Filter reset, AND, no-results/clear, browser Back, reload and full process-restart deep link.</td></tr><tr><td>AC06</td><td>VERIFIED</td><td>Independent Alpha totals 6/4/1/1/1/16; global includes Beta; empty project zeros; browser search/pages do not affect summary; completion and restart totals verified.</td></tr><tr><td>AC07</td><td>VERIFIED_WITH_LIMITATIONS</td><td>J1–J4 browser journeys, keyboard-only create/cancel/navigation, visible focus, labels and 390/1280px &gt;=44px effective hit targets/no overflow verified. Parent R1 announcement fix and semantic Pagination nav fix independently replayed. Exact empty/loaded/dashboard/save notices pass; accessibility snapshots expose named Pagination navigation landmark. Tested editor/list pages have axe zero violations AND zero unresolved incomplete checks. No human approval or full WCAG/screen-reader claim.</td></tr><tr><td>AC08</td><td>VERIFIED</td><td>Malformed/oversize/media/revision/route/method/Host/Origin/static boundaries; safe script-like title text; focused alert, conflict draft/reload, offline failure and read recovery. PID/session-scoped lifecycle and captured browser errors.</td></tr><tr><td>AC09</td><td>VERIFIED_WITH_LIMITATIONS</td><td>Genuine captured v1 SHA checked; browser read-only before offline migration, exact backup, all fields/nextId/order preserved, revision+1, repeat no-op; real UI priority edit/filter/restart. Native malformed/lock/precommit/rollback cases independently executed. Historical expand writer timing and fresh-context planner resumption remain parent-owned chronology limitations.</td></tr><tr><td>AC10</td><td>PARENT_PENDING</td><td>Controlled diagnosis belongs to parent; not duplicated or certified by this browser verifier.</td></tr><tr><td>AC11</td><td>PARENT_PENDING</td><td>29-item workflow observation reconciliation, approval/phase sequencing and metrics belong to parent.</td></tr><tr><td>AC12</td><td>PARENT_PENDING</td><td>Verifier delivers rerunnable script, prerequisites, source hashes and archived evidence. Repository regressions, complete integrated final review, metrics and PR are parent-owned.</td></tr></tbody></table></section>
+<section><h2>Final findings and historical disposition</h2><p>Latest unresolved findings: 0. Axe 4.12.1: zero automated violations and zero incomplete checks in tested editor and task-list views. Historical missing-announcement and serious incomplete aria-prohibited-attr findings remain in earlier run evidence and the JSON historicalFindings ledger; both parent fixes were independently replayed. No broad accessibility conformance claim.</p></section>
+<section><h2>Independent review disposition</h2><h3>R1: PARENT_FIXED_INDEPENDENTLY_VERIFIED</h3><p>Parent changed render() to return meaningful loaded/empty/dashboard messages and reload() to announce them, while save() preserves its final success notice. Full replay on the changed source strictly asserts #notice initial no projects, selected project no tasks after reload, unmatched filters no results/recovery, dashboard and loaded totals, and project/task save success. Source hashes were stable during replay; historical pre-fix results remain archived.</p><h3>R2: ADDRESSED_AND_REPLAYED</h3><p>audit() asserts bundled axe version, violations=[] and incomplete=[], and both counts must be present/zero. Every flow fails for nonempty/unavailable browser errors. Every flow fails for unexpected/unavailable console messages. Only named negative-resource 400/409 messages in base/graph and explicit offline network errors in base are classified separately; latest replay has no console messages or browser errors at all. Arbitrary audit payloads cannot pass.</p><h3>V-PAGINATION-ROLE: PARENT_FIXED_INDEPENDENTLY_VERIFIED</h3><p>Parent replaced generic labeled div with semantic nav. All four flows replayed once on final source; browser accessibility snapshots confirm named Pagination navigation landmark, and tested editor/task-list axe payloads have zero violations and zero incomplete results. Historical serious aria-prohibited-attr observations remain archived rather than erased.</p></section>
+<section><h2>Browser evidence</h2><div class="gallery"><figure><a href="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/base-layout-390.png"><img loading="lazy" src="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/base-layout-390.png" alt="base-layout-390.png"></a><figcaption>base-layout-390.png</figcaption></figure><figure><a href="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/base-layout-1280.png"><img loading="lazy" src="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/base-layout-1280.png" alt="base-layout-1280.png"></a><figcaption>base-layout-1280.png</figcaption></figure><figure><a href="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/base-conflict.png"><img loading="lazy" src="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/base-conflict.png" alt="base-conflict.png"></a><figcaption>base-conflict.png</figcaption></figure><figure><a href="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/graph-blocked-transition.png"><img loading="lazy" src="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/graph-blocked-transition.png" alt="graph-blocked-transition.png"></a><figcaption>graph-blocked-transition.png</figcaption></figure><figure><a href="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/graph-reopen-conflict.png"><img loading="lazy" src="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/graph-reopen-conflict.png" alt="graph-reopen-conflict.png"></a><figcaption>graph-reopen-conflict.png</figcaption></figure><figure><a href="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/query-filtered-page2.png"><img loading="lazy" src="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/query-filtered-page2.png" alt="query-filtered-page2.png"></a><figcaption>query-filtered-page2.png</figcaption></figure><figure><a href="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/query-default-page2.png"><img loading="lazy" src="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/query-default-page2.png" alt="query-default-page2.png"></a><figcaption>query-default-page2.png</figcaption></figure><figure><a href="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/migration-legacy.png"><img loading="lazy" src="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/migration-legacy.png" alt="migration-legacy.png"></a><figcaption>migration-legacy.png</figcaption></figure><figure><a href="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/migration-priority-restart.png"><img loading="lazy" src="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/migration-priority-restart.png" alt="migration-priority-restart.png"></a><figcaption>migration-priority-restart.png</figcaption></figure></div></section>
+<section><h2>Lifecycle, console and isolation</h2><pre>{
+  &quot;isolation&quot;: {
+    &quot;allRunsHaveUniqueOutput&quot;: true,
+    &quot;successfulRunsOwnDisjointDataDirectories&quot;: true,
+    &quot;everyLatestAppChildExitedZero&quot;: true,
+    &quot;latestNewPidRestartCount&quot;: 5,
+    &quot;latestSourceDrift&quot;: [],
+    &quot;concurrentBaseRun&quot;: &quot;e2e-2026-09-16T12-09-29-818Z-09553c58&quot;
+  },
+  &quot;console&quot;: [
+    {
+      &quot;flow&quot;: &quot;base&quot;,
+      &quot;messages&quot;: [],
+      &quot;errors&quot;: []
+    },
+    {
+      &quot;flow&quot;: &quot;graph&quot;,
+      &quot;messages&quot;: [],
+      &quot;errors&quot;: []
+    },
+    {
+      &quot;flow&quot;: &quot;query&quot;,
+      &quot;messages&quot;: [],
+      &quot;errors&quot;: []
+    },
+    {
+      &quot;flow&quot;: &quot;migration&quot;,
+      &quot;messages&quot;: [],
+      &quot;errors&quot;: []
+    }
+  ]
+}</pre><p>All latest owned app processes exited zero, old endpoints were unreachable before each restart, locks were released, browser profiles were removed. Native Windows Ctrl+C key delivery is not claimed.</p></section>
+<section><h2>Replay history (including failures)</h2><ul><li><a href="verification-evidence/e2e-2026-09-16T12-01-02-279Z-52fa1db7/report.json">e2e-2026-09-16T12-01-02-279Z-52fa1db7</a> — FAILED</li><li><a href="verification-evidence/e2e-2026-09-16T12-01-17-903Z-1f39f47f/report.json">e2e-2026-09-16T12-01-17-903Z-1f39f47f</a> — FAILED</li><li><a href="verification-evidence/e2e-2026-09-16T12-03-48-575Z-69f92316/report.json">e2e-2026-09-16T12-03-48-575Z-69f92316</a> — FAILED</li><li><a href="verification-evidence/e2e-2026-09-16T12-05-19-594Z-13689abc/report.json">e2e-2026-09-16T12-05-19-594Z-13689abc</a> — VERIFIED_WITH_LIMITATIONS</li><li><a href="verification-evidence/e2e-2026-09-16T12-07-50-784Z-eb6afdb8/report.json">e2e-2026-09-16T12-07-50-784Z-eb6afdb8</a> — VERIFIED_WITH_LIMITATIONS</li><li><a href="verification-evidence/e2e-2026-09-16T12-09-29-772Z-91dbce80/report.json">e2e-2026-09-16T12-09-29-772Z-91dbce80</a> — VERIFIED_WITH_LIMITATIONS</li><li><a href="verification-evidence/e2e-2026-09-16T12-09-29-818Z-09553c58/report.json">e2e-2026-09-16T12-09-29-818Z-09553c58</a> — VERIFIED_WITH_LIMITATIONS</li><li><a href="verification-evidence/e2e-2026-09-16T12-12-30-176Z-3fc52b70/report.json">e2e-2026-09-16T12-12-30-176Z-3fc52b70</a> — VERIFIED_WITH_LIMITATIONS</li><li><a href="verification-evidence/e2e-2026-09-16T12-15-02-426Z-7531f4ae/report.json">e2e-2026-09-16T12-15-02-426Z-7531f4ae</a> — VERIFIED_WITH_LIMITATIONS</li><li><a href="verification-evidence/e2e-2026-09-16T12-21-58-479Z-4a0c45ce/report.json">e2e-2026-09-16T12-21-58-479Z-4a0c45ce</a> — VERIFIED_WITH_LIMITATIONS</li><li><a href="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/report.json">e2e-2026-09-16T12-32-11-166Z-1a695f7c</a> — VERIFIED_WITH_LIMITATIONS</li></ul><p>Initial failures are retained: unavailable arm64 CLI candidate; daemon-inherited pipe close wait despite successful command; offscreen click and unsupported text-selector harness mistakes. They are not production app failures. Explicit scroll/native semantic locators and owned-PID exit waiting fixed the runner.</p></section>
+<details><summary>AC01: exact browser/HTTP assertions</summary><pre>[
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Fresh HTTP health&quot;,
+    &quot;ac&quot;: [
+      &quot;AC01&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: {
+      &quot;status&quot;: &quot;ok&quot;,
+      &quot;schemaVersion&quot;: 2,
+      &quot;revision&quot;: 0
+    }
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Fresh browser empty state&quot;,
+    &quot;ac&quot;: [
+      &quot;AC01&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;No projects yet. Create your first project.&quot;
+  }
+]</pre></details><details><summary>AC02: exact browser/HTTP assertions</summary><pre>[
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Project save success overrides loaded empty status&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Project created&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Invalid title retains editor and blank input&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Title survives browser refresh&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Draft revisedtodoPriority: normalEdited descriptionEdit&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Description survives full process restart&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Draft revisedtodoPriority: normalEdited descriptionEdit&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP full restart title/description&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      [
+        &quot;Draft revised&quot;,
+        &quot;Edited description&quot;
+      ],
+      [
+        &quot;Review&quot;,
+        &quot;Review description&quot;
+      ]
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Cancelled draft never persisted&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: 3
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP missing revision&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      428,
+      &quot;PRECONDITION_REQUIRED&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP malformed revision&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      400,
+      &quot;INVALID_REVISION&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP malformed JSON&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      400,
+      &quot;BAD_JSON&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP wrong media type&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      415,
+      &quot;UNSUPPORTED_MEDIA_TYPE&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP oversized body&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      413,
+      &quot;BODY_TOO_LARGE&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP duplicate project&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      409,
+      &quot;DUPLICATE_PROJECT&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP blank name&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      400,
+      &quot;INVALID_INPUT&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP oversize title&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      400,
+      &quot;INVALID_INPUT&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP wrong title type&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      400,
+      &quot;INVALID_INPUT&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP unknown field&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      400,
+      &quot;INVALID_INPUT&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP unknown task&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      404,
+      &quot;NOT_FOUND&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP unknown route&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      404,
+      &quot;NOT_FOUND&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP wrong method&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      405,
+      &quot;METHOD_NOT_ALLOWED&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP foreign Origin&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      403,
+      &quot;FORBIDDEN_ORIGIN&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP non-allowlisted data path&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      404,
+      &quot;NOT_FOUND&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP encoded traversal&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      404,
+      &quot;NOT_FOUND&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;All invalid HTTP writes leave exact bytes unchanged&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC03&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;{\n  \&quot;schemaVersion\&quot;: 2,\n  \&quot;revision\&quot;: 6,\n  \&quot;nextId\&quot;: 5,\n  \&quot;projects\&quot;: [\n    {\n      \&quot;id\&quot;: \&quot;p-1\&quot;,\n      \&quot;createdOrder\&quot;: 1,\n      \&quot;name\&quot;: \&quot;Launch\&quot;\n    }\n  ],\n  \&quot;tasks\&quot;: [\n    {\n      \&quot;id\&quot;: \&quot;t-2\&quot;,\n      \&quot;createdOrder\&quot;: 2,\n      \&quot;projectId\&quot;: \&quot;p-1\&quot;,\n      \&quot;title\&quot;: \&quot;Draft revised\&quot;,\n      \&quot;description\&quot;: \&quot;Edited description\&quot;,\n      \&quot;status\&quot;: \&quot;todo\&quot;,\n      \&quot;dependencyIds\&quot;: [],\n      \&quot;priority\&quot;: \&quot;normal\&quot;\n    },\n    {\n      \&quot;id\&quot;: \&quot;t-3\&quot;,\n      \&quot;createdOrder\&quot;: 3,\n      \&quot;projectId\&quot;: \&quot;p-1\&quot;,\n      \&quot;title\&quot;: \&quot;Review\&quot;,\n      \&quot;description\&quot;: \&quot;Concurrent owner write\&quot;,\n      \&quot;status\&quot;: \&quot;todo\&quot;,\n      \&quot;dependencyIds\&quot;: [],\n      \&quot;priority\&quot;: \&quot;normal\&quot;\n    },\n    {\n      \&quot;id\&quot;: \&quot;t-4\&quot;,\n      \&quot;createdOrder\&quot;: 4,\n      \&quot;projectId\&quot;: \&quot;p-1\&quot;,\n      \&quot;title\&quot;: \&quot;&lt;script&gt;window.__plannerInjected = true&lt;/script&gt;\&quot;,\n      \&quot;description\&quot;: \&quot;\&quot;,\n      \&quot;status\&quot;: \&quot;todo\&quot;,\n      \&quot;dependencyIds\&quot;: [],\n      \&quot;priority\&quot;: \&quot;normal\&quot;\n    }\n  ]\n}\n&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  }
+]</pre></details><details><summary>AC03: exact browser/HTTP assertions</summary><pre>[
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Conflict offers explicit reload&quot;,
+    &quot;ac&quot;: [
+      &quot;AC03&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Tasks changed. Reload before saving.&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Rejected conflict preserves bytes&quot;,
+    &quot;ac&quot;: [
+      &quot;AC03&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;{\n  \&quot;schemaVersion\&quot;: 2,\n  \&quot;revision\&quot;: 5,\n  \&quot;nextId\&quot;: 4,\n  \&quot;projects\&quot;: [\n    {\n      \&quot;id\&quot;: \&quot;p-1\&quot;,\n      \&quot;createdOrder\&quot;: 1,\n      \&quot;name\&quot;: \&quot;Launch\&quot;\n    }\n  ],\n  \&quot;tasks\&quot;: [\n    {\n      \&quot;id\&quot;: \&quot;t-2\&quot;,\n      \&quot;createdOrder\&quot;: 2,\n      \&quot;projectId\&quot;: \&quot;p-1\&quot;,\n      \&quot;title\&quot;: \&quot;Draft revised\&quot;,\n      \&quot;description\&quot;: \&quot;Edited description\&quot;,\n      \&quot;status\&quot;: \&quot;todo\&quot;,\n      \&quot;dependencyIds\&quot;: [],\n      \&quot;priority\&quot;: \&quot;normal\&quot;\n    },\n    {\n      \&quot;id\&quot;: \&quot;t-3\&quot;,\n      \&quot;createdOrder\&quot;: 3,\n      \&quot;projectId\&quot;: \&quot;p-1\&quot;,\n      \&quot;title\&quot;: \&quot;Review\&quot;,\n      \&quot;description\&quot;: \&quot;Concurrent owner write\&quot;,\n      \&quot;status\&quot;: \&quot;todo\&quot;,\n      \&quot;dependencyIds\&quot;: [],\n      \&quot;priority\&quot;: \&quot;normal\&quot;\n    }\n  ]\n}\n&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;All invalid HTTP writes leave exact bytes unchanged&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC03&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;{\n  \&quot;schemaVersion\&quot;: 2,\n  \&quot;revision\&quot;: 6,\n  \&quot;nextId\&quot;: 5,\n  \&quot;projects\&quot;: [\n    {\n      \&quot;id\&quot;: \&quot;p-1\&quot;,\n      \&quot;createdOrder\&quot;: 1,\n      \&quot;name\&quot;: \&quot;Launch\&quot;\n    }\n  ],\n  \&quot;tasks\&quot;: [\n    {\n      \&quot;id\&quot;: \&quot;t-2\&quot;,\n      \&quot;createdOrder\&quot;: 2,\n      \&quot;projectId\&quot;: \&quot;p-1\&quot;,\n      \&quot;title\&quot;: \&quot;Draft revised\&quot;,\n      \&quot;description\&quot;: \&quot;Edited description\&quot;,\n      \&quot;status\&quot;: \&quot;todo\&quot;,\n      \&quot;dependencyIds\&quot;: [],\n      \&quot;priority\&quot;: \&quot;normal\&quot;\n    },\n    {\n      \&quot;id\&quot;: \&quot;t-3\&quot;,\n      \&quot;createdOrder\&quot;: 3,\n      \&quot;projectId\&quot;: \&quot;p-1\&quot;,\n      \&quot;title\&quot;: \&quot;Review\&quot;,\n      \&quot;description\&quot;: \&quot;Concurrent owner write\&quot;,\n      \&quot;status\&quot;: \&quot;todo\&quot;,\n      \&quot;dependencyIds\&quot;: [],\n      \&quot;priority\&quot;: \&quot;normal\&quot;\n    },\n    {\n      \&quot;id\&quot;: \&quot;t-4\&quot;,\n      \&quot;createdOrder\&quot;: 4,\n      \&quot;projectId\&quot;: \&quot;p-1\&quot;,\n      \&quot;title\&quot;: \&quot;&lt;script&gt;window.__plannerInjected = true&lt;/script&gt;\&quot;,\n      \&quot;description\&quot;: \&quot;\&quot;,\n      \&quot;status\&quot;: \&quot;todo\&quot;,\n      \&quot;dependencyIds\&quot;: [],\n      \&quot;priority\&quot;: \&quot;normal\&quot;\n    }\n  ]\n}\n&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Same-revision concurrent writes yield one success and one conflict&quot;,
+    &quot;ac&quot;: [
+      &quot;AC03&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      201,
+      409
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Concurrent write conflict is explicit&quot;,
+    &quot;ac&quot;: [
+      &quot;AC03&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;REVISION_CONFLICT&quot;
+  }
+]</pre></details><details><summary>AC04: exact browser/HTTP assertions</summary><pre>[
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Dependency renders blocked status&quot;,
+    &quot;ac&quot;: [
+      &quot;AC04&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Reviewblocked (todo)Priority: normalEdit&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Blocked transition explains required action&quot;,
+    &quot;ac&quot;: [
+      &quot;AC04&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;dependencyIds: Complete dependencies before starting or completing this task&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Rejected transition retains status draft&quot;,
+    &quot;ac&quot;: [
+      &quot;AC04&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;in_progress&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Completed dependency chain updates dashboard&quot;,
+    &quot;ac&quot;: [
+      &quot;AC04&quot;,
+      &quot;AC06&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Total: 2Todo: 0In progress: 0Done: 2Blocked: 0Completion %: 100&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Reopen predecessor rejected with actionable error&quot;,
+    &quot;ac&quot;: [
+      &quot;AC04&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;status: Reopen active dependent tasks first&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Rejected dependency [\&quot;t-2\&quot;]&quot;,
+    &quot;ac&quot;: [
+      &quot;AC04&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;INVALID_INPUT&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Rejected dependency [\&quot;t-999\&quot;]&quot;,
+    &quot;ac&quot;: [
+      &quot;AC04&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;INVALID_INPUT&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Rejected dependency [\&quot;t-3\&quot;,\&quot;t-3\&quot;]&quot;,
+    &quot;ac&quot;: [
+      &quot;AC04&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;INVALID_INPUT&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Rejected dependency [\&quot;t-5\&quot;]&quot;,
+    &quot;ac&quot;: [
+      &quot;AC04&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;INVALID_INPUT&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Rejected dependency [\&quot;t-3\&quot;]&quot;,
+    &quot;ac&quot;: [
+      &quot;AC04&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;DEPENDENCY_CYCLE&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Dependency survives restart&quot;,
+    &quot;ac&quot;: [
+      &quot;AC04&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Reviewblocked (todo)Priority: normalEdit&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Graph no illegal transition committed&quot;,
+    &quot;ac&quot;: [
+      &quot;AC04&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      [
+        &quot;Draft&quot;,
+        &quot;todo&quot;,
+        []
+      ],
+      [
+        &quot;Review&quot;,
+        &quot;todo&quot;,
+        [
+          &quot;t-2&quot;
+        ]
+      ]
+    ]
+  }
+]</pre></details><details><summary>AC05: exact browser/HTTP assertions</summary><pre>[
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Independent HTTP query status=todo&amp;page=1&amp;pageSize=2&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      [
+        &quot;t-4&quot;,
+        &quot;t-6&quot;
+      ],
+      4,
+      2
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Independent HTTP query status=todo&amp;page=2&amp;pageSize=2&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      [
+        &quot;t-7&quot;,
+        &quot;t-8&quot;
+      ],
+      4,
+      2
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Independent HTTP query status=todo&amp;q=%20LAUNCH%20&amp;page=1&amp;pageSize=2&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      [
+        &quot;t-6&quot;,
+        &quot;t-7&quot;
+      ],
+      3,
+      2
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Independent HTTP query status=todo&amp;q=launch&amp;page=2&amp;pageSize=2&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      [
+        &quot;t-8&quot;
+      ],
+      3,
+      2
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Independent HTTP query status=todo&amp;page=3&amp;pageSize=2&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      [],
+      4,
+      2
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Independent HTTP query q=unmatched&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      [],
+      0,
+      0
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Browser filtered first page B,D&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;t-4&quot;,
+      &quot;t-6&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Browser filtered second page E,F&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;t-7&quot;,
+      &quot;t-8&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Applying filters resets page to 1&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: null
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Browser AND-filter first page D,E&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;t-6&quot;,
+      &quot;t-7&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Browser Back restores filtered second page&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;t-7&quot;,
+      &quot;t-8&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Reload preserves actual deep link state&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;t-7&quot;,
+      &quot;t-8&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;No-result state rendered&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;AlphaTotal: 6Todo: 4In progress: 1Done: 1Blocked: 1Completion %: 16Search titlesFilter statusAll statusestodoin progressdoneFilter priorityAll prioritieslownormalhighApply filtersClear filtersAdd taskNo results. Clear filters or return to the previous page.PreviousPage 1 of 0 · 0 tasksNextTasks per page2102550&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Unmatched filter announces no results with recovery action&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;No results. Clear filters or return to the previous page.&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Clear filters restores first two records&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;t-3&quot;,
+      &quot;t-4&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Default pageSize=10 really paginates thirteen tasks&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: 10
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Next page contains remaining three tasks&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: 3
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;No duplicates or omissions across default-size pages&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: 13
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Deep linked second page survives process restart&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;t-14&quot;,
+      &quot;t-15&quot;,
+      &quot;t-16&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Browser high priority filter after real edit&quot;,
+    &quot;ac&quot;: [
+      &quot;AC09&quot;,
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;t-7&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Browser project/status/normalized title/priority all combine with AND&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;,
+      &quot;AC09&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;t-7&quot;
+    ]
+  }
+]</pre></details><details><summary>AC06: exact browser/HTTP assertions</summary><pre>[
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Completed dependency chain updates dashboard&quot;,
+    &quot;ac&quot;: [
+      &quot;AC04&quot;,
+      &quot;AC06&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Total: 2Todo: 0In progress: 0Done: 2Blocked: 0Completion %: 100&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Empty project dashboard is independently all zero&quot;,
+    &quot;ac&quot;: [
+      &quot;AC06&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: {
+      &quot;total&quot;: 0,
+      &quot;todo&quot;: 0,
+      &quot;inProgress&quot;: 0,
+      &quot;done&quot;: 0,
+      &quot;blocked&quot;: 0,
+      &quot;completionPercent&quot;: 0
+    }
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Independent F-query Alpha dashboard&quot;,
+    &quot;ac&quot;: [
+      &quot;AC06&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: {
+      &quot;total&quot;: 6,
+      &quot;todo&quot;: 4,
+      &quot;inProgress&quot;: 1,
+      &quot;done&quot;: 1,
+      &quot;blocked&quot;: 1,
+      &quot;completionPercent&quot;: 16
+    }
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Page change does not affect totals&quot;,
+    &quot;ac&quot;: [
+      &quot;AC06&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Total: 6Todo: 4In progress: 1Done: 1Blocked: 1Completion %: 16&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Dashboard project summary ignores filters/pages&quot;,
+    &quot;ac&quot;: [
+      &quot;AC06&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;Total: 6&quot;,
+      &quot;Todo: 4&quot;,
+      &quot;In progress: 1&quot;,
+      &quot;Done: 1&quot;,
+      &quot;Blocked: 1&quot;,
+      &quot;Completion %: 16&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Global dashboard includes other project&quot;,
+    &quot;ac&quot;: [
+      &quot;AC06&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Total: 7Todo: 5In progress: 1Done: 1Blocked: 1Completion %: 14&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Restart dashboard persists all thirteen tasks&quot;,
+    &quot;ac&quot;: [
+      &quot;AC06&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Total: 13Todo: 11In progress: 1Done: 1Blocked: 1Completion %: 7&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Migrated dashboard preserves independent counts&quot;,
+    &quot;ac&quot;: [
+      &quot;AC06&quot;,
+      &quot;AC09&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Total: 6Todo: 4In progress: 1Done: 1Blocked: 1Completion %: 16&quot;
+  }
+]</pre></details><details><summary>AC07: exact browser/HTTP assertions</summary><pre>[
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Fresh browser empty state&quot;,
+    &quot;ac&quot;: [
+      &quot;AC01&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;No projects yet. Create your first project.&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Initial empty Projects live announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;No projects yet. Create your first project.&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Loading completion uses the polite status region&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: {
+      &quot;live&quot;: &quot;polite&quot;,
+      &quot;role&quot;: &quot;status&quot;
+    }
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Project save success overrides loaded empty status&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Project created&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Selected empty project announces no tasks after reload&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;No tasks yet. Add your first task.&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Keyboard-only project creation and Add task navigation&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;editor-title&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Validation focuses announced alert&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: true
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Title survives browser refresh&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Draft revisedtodoPriority: normalEdited descriptionEdit&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Description survives full process restart&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Draft revisedtodoPriority: normalEdited descriptionEdit&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Editor receives keyboard focus&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;editor-title&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Tab reaches labeled description&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;editor-description&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Keyboard reaches Cancel&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Cancel&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Keyboard cancel restores Add task focus&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;add-task&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Cancelled draft never persisted&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: 3
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;390px no horizontal page overflow&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: true
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;390px labeled form controls&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: []
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;390px interactive targets at least 44px&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: []
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;1280px no horizontal page overflow&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: true
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;1280px labeled form controls&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: []
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;1280px interactive targets at least 44px&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: []
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;editor Pagination is a named navigation landmark&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: true
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;editor axe automated violations (not full WCAG or human approval)&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: []
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;editor axe has no unresolved incomplete checks on tested page&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: []
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Successful base journey has no uncaught browser exceptions&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: []
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Successful base journey CLI console is clean&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: []
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Dependency renders blocked status&quot;,
+    &quot;ac&quot;: [
+      &quot;AC04&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Reviewblocked (todo)Priority: normalEdit&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Blocked transition explains required action&quot;,
+    &quot;ac&quot;: [
+      &quot;AC04&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;dependencyIds: Complete dependencies before starting or completing this task&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;graph&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Browser filtered first page B,D&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;t-4&quot;,
+      &quot;t-6&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Browser filtered second page E,F&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;t-7&quot;,
+      &quot;t-8&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Browser Back restores filtered second page&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;t-7&quot;,
+      &quot;t-8&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Dashboard loaded status is announced&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Alpha dashboard loaded. 6 tasks.&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Unmatched filter announces no results with recovery action&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;No results. Clear filters or return to the previous page.&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;Clear filters announces loaded count and current page&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;6 tasks loaded. Page 1 of 3.&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;query Pagination is a named navigation landmark&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: true
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;query axe automated violations (not full WCAG or human approval)&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: []
+  },
+  {
+    &quot;flow&quot;: &quot;query&quot;,
+    &quot;name&quot;: &quot;query axe has no unresolved incomplete checks on tested page&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: []
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Task save success announcement&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC07&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Task saved&quot;
+  }
+]</pre></details><details><summary>AC08: exact browser/HTTP assertions</summary><pre>[
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Validation focuses announced alert&quot;,
+    &quot;ac&quot;: [
+      &quot;AC07&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: true
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Conflict offers explicit reload&quot;,
+    &quot;ac&quot;: [
+      &quot;AC03&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Tasks changed. Reload before saving.&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Conflict retains draft&quot;,
+    &quot;ac&quot;: [
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Retained conflict draft&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Explicit reload discards draft&quot;,
+    &quot;ac&quot;: [
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: true
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Explicit reload restores committed text&quot;,
+    &quot;ac&quot;: [
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Draft revisedtodoPriority: normalEdited descriptionEdit&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Script-like title is text, never executable&quot;,
+    &quot;ac&quot;: [
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: {
+      &quot;injected&quot;: false,
+      &quot;scripts&quot;: 0,
+      &quot;text&quot;: [
+        &quot;Draft revised&quot;,
+        &quot;Review&quot;,
+        &quot;&lt;script&gt;window.__plannerInjected = true&lt;/script&gt;&quot;
+      ]
+    }
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP missing revision&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      428,
+      &quot;PRECONDITION_REQUIRED&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP malformed revision&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      400,
+      &quot;INVALID_REVISION&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP malformed JSON&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      400,
+      &quot;BAD_JSON&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP wrong media type&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      415,
+      &quot;UNSUPPORTED_MEDIA_TYPE&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP oversized body&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      413,
+      &quot;BODY_TOO_LARGE&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP duplicate project&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      409,
+      &quot;DUPLICATE_PROJECT&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP blank name&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      400,
+      &quot;INVALID_INPUT&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP oversize title&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      400,
+      &quot;INVALID_INPUT&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP wrong title type&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      400,
+      &quot;INVALID_INPUT&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP unknown field&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      400,
+      &quot;INVALID_INPUT&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP unknown task&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      404,
+      &quot;NOT_FOUND&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP unknown route&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      404,
+      &quot;NOT_FOUND&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP wrong method&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      405,
+      &quot;METHOD_NOT_ALLOWED&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP foreign Origin&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      403,
+      &quot;FORBIDDEN_ORIGIN&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP non-allowlisted data path&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      404,
+      &quot;NOT_FOUND&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;HTTP encoded traversal&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      404,
+      &quot;NOT_FOUND&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Foreign Host is rejected&quot;,
+    &quot;ac&quot;: [
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      403,
+      &quot;FORBIDDEN_ORIGIN&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;All invalid HTTP writes leave exact bytes unchanged&quot;,
+    &quot;ac&quot;: [
+      &quot;AC02&quot;,
+      &quot;AC03&quot;,
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;{\n  \&quot;schemaVersion\&quot;: 2,\n  \&quot;revision\&quot;: 6,\n  \&quot;nextId\&quot;: 5,\n  \&quot;projects\&quot;: [\n    {\n      \&quot;id\&quot;: \&quot;p-1\&quot;,\n      \&quot;createdOrder\&quot;: 1,\n      \&quot;name\&quot;: \&quot;Launch\&quot;\n    }\n  ],\n  \&quot;tasks\&quot;: [\n    {\n      \&quot;id\&quot;: \&quot;t-2\&quot;,\n      \&quot;createdOrder\&quot;: 2,\n      \&quot;projectId\&quot;: \&quot;p-1\&quot;,\n      \&quot;title\&quot;: \&quot;Draft revised\&quot;,\n      \&quot;description\&quot;: \&quot;Edited description\&quot;,\n      \&quot;status\&quot;: \&quot;todo\&quot;,\n      \&quot;dependencyIds\&quot;: [],\n      \&quot;priority\&quot;: \&quot;normal\&quot;\n    },\n    {\n      \&quot;id\&quot;: \&quot;t-3\&quot;,\n      \&quot;createdOrder\&quot;: 3,\n      \&quot;projectId\&quot;: \&quot;p-1\&quot;,\n      \&quot;title\&quot;: \&quot;Review\&quot;,\n      \&quot;description\&quot;: \&quot;Concurrent owner write\&quot;,\n      \&quot;status\&quot;: \&quot;todo\&quot;,\n      \&quot;dependencyIds\&quot;: [],\n      \&quot;priority\&quot;: \&quot;normal\&quot;\n    },\n    {\n      \&quot;id\&quot;: \&quot;t-4\&quot;,\n      \&quot;createdOrder\&quot;: 4,\n      \&quot;projectId\&quot;: \&quot;p-1\&quot;,\n      \&quot;title\&quot;: \&quot;&lt;script&gt;window.__plannerInjected = true&lt;/script&gt;\&quot;,\n      \&quot;description\&quot;: \&quot;\&quot;,\n      \&quot;status\&quot;: \&quot;todo\&quot;,\n      \&quot;dependencyIds\&quot;: [],\n      \&quot;priority\&quot;: \&quot;normal\&quot;\n    }\n  ]\n}\n&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Network failure offers read recovery&quot;,
+    &quot;ac&quot;: [
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Request failed; saving may be uncertain. Use Reload latest to read committed data before another action.&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;Network failure is not success-shaped&quot;,
+    &quot;ac&quot;: [
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;base&quot;,
+    &quot;name&quot;: &quot;UI recovers after network failure&quot;,
+    &quot;ac&quot;: [
+      &quot;AC08&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;LaunchTotal: 4Todo: 4In progress: 0Done: 0Blocked: 0Completion %: 0Search titlesFilter statusAll statusestodoin progressdoneFilter priorityAll prioritieslownormalhighApply filtersClear filtersAdd taskDraft revisedtodoPriority: normalEdited descriptionEditReviewtodoPriority: normalConcurrent owner writeEdit&lt;script&gt;window.__plannerInjected = true&lt;/script&gt;todoPriority: normalEditConcurrent AtodoPriority: normalEditPreviousPage 1 of 1 · 4 tasksNextTasks per page2102550&quot;
+  }
+]</pre></details><details><summary>AC09: exact browser/HTTP assertions</summary><pre>[
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Actual v1 fixture loads in browser read-only&quot;,
+    &quot;ac&quot;: [
+      &quot;AC09&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Legacy data is read-only. Stop the server and run node src\\migrate.mjs --data-dir &lt;your directory&gt;, then restart and Reload latest.AlphaTotal: 6Todo: 4In progress: 1Done: 1Blocked: 1Completion %: 16Search titlesFilter statusAll statusestodoin progressdoneFilter priorityAll prioritieslownormalhighApply filtersClear filtersAdd taskArchive briefdonePriority: normalFixture AEditBuild outlinetodoPriority: normalFixture BEditCheck linksin progressPriority: normalFixture CEditDraft launchtodoPriority: normalFixture DEditEdit launchblocked (todo)Priority: normalFixture EEditFinalize launchtodoPriority: normalFixture FEditPreviousPage 1 of 1 · 6 tasksNextTasks per page2102550&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Legacy browser disables edits&quot;,
+    &quot;ac&quot;: [
+      &quot;AC09&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: true
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Genuine I3 fixture SHA-256&quot;,
+    &quot;ac&quot;: [
+      &quot;AC09&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;ad7845486864bb4fef3f938eac02ef4ba213f8d3e20da4e4fa1b1c8b61df4450&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Legacy API refuses writes&quot;,
+    &quot;ac&quot;: [
+      &quot;AC09&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;MIGRATION_REQUIRED&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Offline migration increments revision exactly once&quot;,
+    &quot;ac&quot;: [
+      &quot;AC09&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: {
+      &quot;schemaVersion&quot;: 2,
+      &quot;revision&quot;: 12,
+      &quot;changed&quot;: true
+    }
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Migration preserves exact IDs/text/edges/order/nextId/status&quot;,
+    &quot;ac&quot;: [
+      &quot;AC09&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: {
+      &quot;schemaVersion&quot;: 2,
+      &quot;revision&quot;: 12,
+      &quot;nextId&quot;: 10,
+      &quot;projects&quot;: [
+        {
+          &quot;id&quot;: &quot;p-1&quot;,
+          &quot;createdOrder&quot;: 1,
+          &quot;name&quot;: &quot;Alpha&quot;
+        },
+        {
+          &quot;id&quot;: &quot;p-2&quot;,
+          &quot;createdOrder&quot;: 2,
+          &quot;name&quot;: &quot;Beta&quot;
+        }
+      ],
+      &quot;tasks&quot;: [
+        {
+          &quot;id&quot;: &quot;t-3&quot;,
+          &quot;createdOrder&quot;: 3,
+          &quot;projectId&quot;: &quot;p-1&quot;,
+          &quot;title&quot;: &quot;Archive brief&quot;,
+          &quot;description&quot;: &quot;Fixture A&quot;,
+          &quot;dependencyIds&quot;: [],
+          &quot;status&quot;: &quot;done&quot;,
+          &quot;priority&quot;: &quot;normal&quot;
+        },
+        {
+          &quot;id&quot;: &quot;t-4&quot;,
+          &quot;createdOrder&quot;: 4,
+          &quot;projectId&quot;: &quot;p-1&quot;,
+          &quot;title&quot;: &quot;Build outline&quot;,
+          &quot;description&quot;: &quot;Fixture B&quot;,
+          &quot;dependencyIds&quot;: [],
+          &quot;status&quot;: &quot;todo&quot;,
+          &quot;priority&quot;: &quot;normal&quot;
+        },
+        {
+          &quot;id&quot;: &quot;t-5&quot;,
+          &quot;createdOrder&quot;: 5,
+          &quot;projectId&quot;: &quot;p-1&quot;,
+          &quot;title&quot;: &quot;Check links&quot;,
+          &quot;description&quot;: &quot;Fixture C&quot;,
+          &quot;dependencyIds&quot;: [],
+          &quot;status&quot;: &quot;in_progress&quot;,
+          &quot;priority&quot;: &quot;normal&quot;
+        },
+        {
+          &quot;id&quot;: &quot;t-6&quot;,
+          &quot;createdOrder&quot;: 6,
+          &quot;projectId&quot;: &quot;p-1&quot;,
+          &quot;title&quot;: &quot;Draft launch&quot;,
+          &quot;description&quot;: &quot;Fixture D&quot;,
+          &quot;dependencyIds&quot;: [],
+          &quot;status&quot;: &quot;todo&quot;,
+          &quot;priority&quot;: &quot;normal&quot;
+        },
+        {
+          &quot;id&quot;: &quot;t-7&quot;,
+          &quot;createdOrder&quot;: 7,
+          &quot;projectId&quot;: &quot;p-1&quot;,
+          &quot;title&quot;: &quot;Edit launch&quot;,
+          &quot;description&quot;: &quot;Fixture E&quot;,
+          &quot;dependencyIds&quot;: [
+            &quot;t-4&quot;
+          ],
+          &quot;status&quot;: &quot;todo&quot;,
+          &quot;priority&quot;: &quot;normal&quot;
+        },
+        {
+          &quot;id&quot;: &quot;t-8&quot;,
+          &quot;createdOrder&quot;: 8,
+          &quot;projectId&quot;: &quot;p-1&quot;,
+          &quot;title&quot;: &quot;Finalize launch&quot;,
+          &quot;description&quot;: &quot;Fixture F&quot;,
+          &quot;dependencyIds&quot;: [],
+          &quot;status&quot;: &quot;todo&quot;,
+          &quot;priority&quot;: &quot;normal&quot;
+        },
+        {
+          &quot;id&quot;: &quot;t-9&quot;,
+          &quot;createdOrder&quot;: 9,
+          &quot;projectId&quot;: &quot;p-2&quot;,
+          &quot;title&quot;: &quot;Gather launch&quot;,
+          &quot;description&quot;: &quot;Fixture G&quot;,
+          &quot;dependencyIds&quot;: [],
+          &quot;status&quot;: &quot;todo&quot;,
+          &quot;priority&quot;: &quot;normal&quot;
+        }
+      ]
+    }
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Migration exact-byte original backup&quot;,
+    &quot;ac&quot;: [
+      &quot;AC09&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: true
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Repeated offline migration no-op&quot;,
+    &quot;ac&quot;: [
+      &quot;AC09&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: {
+      &quot;schemaVersion&quot;: 2,
+      &quot;revision&quot;: 12,
+      &quot;changed&quot;: false
+    }
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Repeated migration preserves exact bytes&quot;,
+    &quot;ac&quot;: [
+      &quot;AC09&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: true
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Browser high priority filter after real edit&quot;,
+    &quot;ac&quot;: [
+      &quot;AC09&quot;,
+      &quot;AC05&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;t-7&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Browser project/status/normalized title/priority all combine with AND&quot;,
+    &quot;ac&quot;: [
+      &quot;AC05&quot;,
+      &quot;AC09&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;t-7&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;High priority filter survives full process restart&quot;,
+    &quot;ac&quot;: [
+      &quot;AC09&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: [
+      &quot;t-7&quot;
+    ]
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Migrated browser priority survives restart&quot;,
+    &quot;ac&quot;: [
+      &quot;AC09&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Edit launchblocked (todo)Priority: highFixture EEdit&quot;
+  },
+  {
+    &quot;flow&quot;: &quot;migration&quot;,
+    &quot;name&quot;: &quot;Migrated dashboard preserves independent counts&quot;,
+    &quot;ac&quot;: [
+      &quot;AC06&quot;,
+      &quot;AC09&quot;
+    ],
+    &quot;status&quot;: &quot;VERIFIED&quot;,
+    &quot;actual&quot;: &quot;Total: 6Todo: 4In progress: 1Done: 1Blocked: 1Completion %: 16&quot;
+  }
+]</pre></details>
+</html>

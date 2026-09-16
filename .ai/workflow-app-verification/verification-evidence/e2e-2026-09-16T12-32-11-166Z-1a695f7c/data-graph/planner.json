@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 2,
+  "revision": 11,
+  "nextId": 6,
+  "projects": [
+    {
+      "id": "p-1",
+      "createdOrder": 1,
+      "name": "Launch"
+    },
+    {
+      "id": "p-4",
+      "createdOrder": 4,
+      "name": "Other"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t-2",
+      "createdOrder": 2,
+      "projectId": "p-1",
+      "title": "Draft",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-3",
+      "createdOrder": 3,
+      "projectId": "p-1",
+      "title": "Review",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [
+        "t-2"
+      ],
+      "priority": "normal"
+    },
+    {
+      "id": "t-5",
+      "createdOrder": 5,
+      "projectId": "p-4",
+      "title": "Other project task",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    }
+  ]
+}

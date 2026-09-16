@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Team planner verification report</title><link rel="stylesheet" href="../../assets/artifact.css">
+<script src="../../assets/artifact.js" defer data-doc="report.html" data-slug="workflow-app-verification"></script>
+<h1>Team planner: last-five-PR verification</h1>
+<p class="meta">16 September 2026 · Branch shbs-microsoft-workflow-app-verification · PR publication pending · <a href="design.html">Design</a> · <a href="plan.html">Plan</a></p>
+<h2>1. Outcome</h2>
+<p><strong>FACT: a working medium-complexity app and a complete 29-item assessment, not an all-workflow-features-pass result.</strong> Projects/tasks, dependency transitions, filtering/pagination, dashboards, transactional persistence and genuine v1-to-v2 migration work in native tests and real browser journeys. Independent review led to fixes for missing empty-state announcements, pagination semantics, unenforced browser audit results and insufficient diagnosis probes.</p>
+<p>Delivered: <a href="../../examples/team-planner/README.md">app and replay instructions</a>, real red-to-green/migration records, <a href="features.html">all 29 feature observations</a>, <a href="verification.html">browser evidence</a>, <a href="review.html">independent review</a>. Not delivered: hosted/multi-user deployment (out of scope), causal A/B effectiveness proof, or retroactive historical gate passes.</p>
+<h2>2. Acceptance criteria</h2>
+<p>Independent verdicts are retained, including limitations. <a href="traceability.json">Full evidence references and feature ledger</a>. Release packaging below is subsequent to the review and does not alter historical findings.</p>
+<table><thead><tr><th>AC</th><th>Verdict</th><th>Observed proof / boundary</th></tr></thead><tbody><tr><td>AC01</td><td>VERIFIED</td><td>Fresh state, real CLI startup/lock/port/shutdown; browser base.</td></tr>
+<tr><td>AC02</td><td>VERIFIED</td><td>Create/edit/validation, refresh and real process restart.</td></tr>
+<tr><td>AC03</td><td>VERIFIED-WITH-LIMITATIONS</td><td>Serialized persistence, concurrent revision conflict, rollback/crash tests.</td></tr>
+<tr><td>AC04</td><td>VERIFIED</td><td>Dependency cycles/transitions, atomic edits and browser graph journey.</td></tr>
+<tr><td>AC05</td><td>VERIFIED</td><td>Independent filtered-page IDs, Back/deep links and restart.</td></tr>
+<tr><td>AC06</td><td>VERIFIED</td><td>Exact project/global totals, empty projects and browser dashboard.</td></tr>
+<tr><td>AC07</td><td>VERIFIED-WITH-LIMITATIONS</td><td>Keyboard, responsive layouts, live announcements, named navigation and axe.</td></tr>
+<tr><td>AC08</td><td>VERIFIED</td><td>HTTP boundaries, safe rendering, retained drafts and network recovery.</td></tr>
+<tr><td>AC09</td><td>NOT-VERIFIED</td><td>Functional migration passes; required browser-before-retirement/resume sequence was NOT MET.</td></tr>
+<tr><td>AC10</td><td>VERIFIED-WITH-LIMITATIONS</td><td>30 discriminating/reduction observations plus six red-green outcomes.</td></tr>
+<tr><td>AC11</td><td>VERIFIED-WITH-LIMITATIONS</td><td>29 source-backed workflow observations; historical and conditional gaps retained.</td></tr>
+<tr><td>AC12</td><td>VERIFIED-WITH-LIMITATIONS</td><td>Repository regressions, replay commands, source hashes and independent records.</td></tr></tbody></table>
+<h2>3. Gates</h2>
+<table><tr><th>G1 research</th><th>G2 design</th><th>G3 plan</th><th>G4 native</th><th>G5 E2E</th><th>G6 full workflow bar</th></tr>
+<tr><td>PASS after two research corrections</td><td>UNCONFIRMED human sign-off</td><td>PASS revised executable contracts; historical execution deviated</td><td>PASS final app</td><td>PASS final app; not per-slice chronology</td><td>NOT FULLY MET: historical sequencing and unavailable required metrics</td></tr></table>
+<h2>4. Measurements</h2>
+<table><tr><th>Measure</th><th>Observed final-source result</th><th>Evidence / scope</th></tr>
+<tr><td>Native tests</td><td>37/37; no failures, skips or cancellations</td><td><a href="final-coverage.log">Native source coverage run</a></td></tr>
+<tr><td>Coverage</td><td>99.33% lines; 96.92% branches; 96.63% functions</td><td>src only, not browser coverage or diff coverage</td></tr>
+<tr><td>Browser</td><td>126/126; four flows; zero violations/incomplete audits, browser errors or console entries</td><td><a href="verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/report.json">Final raw replay</a>; exact source/runner hashes checked during packaging</td></tr>
+<tr><td>Repository regression</td><td>51/51 native; 10 fixed tasks; 79/79 functional assertions</td><td><a href="final-existing-unit.log">Unit log</a>, <a href="final-existing-eval.log">fixed corpus</a>; not live model scoring</td></tr>
+<tr><td>Mutation</td><td>24/26 assertion kills = 92.31%; two survivors; zero ungraded</td><td><a href="mutation-final-raw.json">Raw backend ESM sample</a>; independently accepted capacity equivalence for valid inputs, denominator unchanged</td></tr>
+<tr><td>Controlled diagnosis</td><td>30 probe observations and six original/minimized red-green outcomes</td><td><a href="diagnosis.json">Known-cause isolated injection</a>, exact restoration; not blind diagnosis</td></tr>
+<tr><td>Duplication / cycles</td><td>Repository 1.75% to 1.46%; cycles 0 to 0. App: zero clones/cycles.</td><td><a href="metrics.json">Probe</a>, <a href="app-duplication/jscpd-report.json">explicit 11-source / 912-line ESM duplication</a>, <a href="esm-cycles.json">ESM cycles</a></td></tr></table>
+<p><strong>Unavailable:</strong> complexity (TLS-blocked tool installation), dead exports, static findings, automatic changed-line mutation and diff coverage. The Python probe omits .mjs/.cjs; its pass is not a complete app quality gate. Native mutation and ESM analysis are explicitly scoped supplements.</p>
+<h2>5. Nine-dimension scorecard</h2>
+<table><thead><tr><th>Dimension</th><th>Score / 5 or status</th><th>Independent basis</th></tr></thead><tbody><tr><td>Correctness</td><td>3</td><td>Final application functional proof is strong (37 native, 126 browser, 30+6 diagnosis), with no remaining known application defect. But the full AC09 includes browser-before-retirement and resume sequencing that did not occur; all specified scenarios therefore do not hold.</td></tr>
+<tr><td>Grounding</td><td>4</td><td>Actual source symbols/runner interfaces, command outputs and final hashes checked; historical unsupported research assumptions corrected, proposed text not counted as execution. Scope is an evidence-grounded case study, not an exhaustive audit of every external API implementation.</td></tr>
+<tr><td>Design fidelity &amp; depth</td><td>3</td><td>Design predates code with responsibilities/interactions/alternatives; implementation divergence is explained in checkpoint records and fixes address semantic root causes. Original design signature table is not fully folded back (encode(model,version), schema-owned errors/JSDoc), and historical independent/migration gate ordering departed from the plan.</td></tr>
+<tr><td>Scope fidelity</td><td>4</td><td>Changes remain in the medium example and its evidence/tooling; no benchmark oracle/threshold weakening or unrelated workflow rewrite. All 29 current-scope features reconciled, with conditional branches explicitly not exercised rather than silently removed. Publication packaging remains parent-owned.</td></tr>
+<tr><td>Reuse &amp; DRY</td><td>4</td><td>Native ESM/node:test/file/HTTP patterns reused; shared errors, graph decisions and transaction mechanics have coherent owners. Final ESM scan: 11 sources/912 lines/0 clones; repository probe duplication 1.75 to1.46 (-0.29), interpreted with scope limitation, not as app-only proof.</td></tr>
+<tr><td>Design &amp; modularity</td><td>UNAVAILABLE</td><td>Source review supports cohesive transport/domain/schema/storage/UI boundaries, useful transaction abstraction and zero ESM cycles. Required complexity maximum/average unavailable; quality-bar metrics rule prevents a numeric &gt;=4 certification.</td></tr>
+<tr><td>Extensibility &amp; maintainability</td><td>4</td><td>Next likely domain/query/storage changes have clear responsibility owners. State publication, errors and cleanup are traceable; necessary comments explain current constraints, not incident history. Browser reload still coordinates multiple consistency-checked requests, a concrete maintenance surface rather than a hidden generic framework.</td></tr>
+<tr><td>Robustness</td><td>UNAVAILABLE</td><td>Real conflict/atomicity/corruption/crash/origin/input/network/cleanup tests pass; power-loss limitations explicit. Required static-findings measurement unavailable, with rare backup/OS branches unexecuted. Do not convert absent findings into a measured zero.</td></tr>
+<tr><td>Test quality &amp; evidence</td><td>3</td><td>Meaningful real native/browser/controlled tests and independently reconciled evidence; 37 pass, 126 browser checks, 99.33/96.92/96.63 src coverage, 24/26 mutation with two justified survivors retained. Full changed-line/public diff coverage is not measured, some failure branches lack execution, not every behavior has pre-change red, and historical independent gates were skipped.</td></tr></tbody></table>
+<p>Three corrective rounds: assertion/mutation strengthening; review-driven announcements/audit enforcement/diagnosis reductions; pagination landmark and final replay. Remaining unverified dimensions were not raised to the required bar of 4 by assertion.</p>
+<h2>6. Pending, assumptions and follow-ups</h2>
+<p><strong>Historical and non-repairable in this run:</strong> independent verification/review was not performed before each increment; browser proof followed writer retirement; design and planning shared an agent; checkpoint resumption was not a fresh-agent resume. A new evidence-first run must execute those gates in order; no command can retroactively prove them.</p>
+<p><strong>Unconfirmed:</strong> autonomous choice of local single-user planner and design/UX, human approval, screen-reader/full WCAG conformance. Seek human review of design and final UI for those claims. Seven real test-first cycles and four communication samples are selected observations, not exhaustive adherence.</p>
+<p>To complete unavailable metrics, first add and test ESM support in the probe and provide approved analysis tooling; then run <code>python scripts\probe.py --slug workflow-app-verification --base cfe5734b4f28817e6236d121a3b206a51606879d</code>. This is a follow-up, not a passing result here. Broader model-effectiveness claims need repeated controlled live runs.</p>
+<h2>7. Replay and publication</h2>
+<pre>cd examples\team-planner
+node scripts\check.mjs coverage
+node scripts\e2e.mjs --flow all
+node scripts\diagnose.mjs
+node scripts\mutation.mjs
+node src\main.mjs --data-dir data --port 4317</pre>
+<p>Browser test prerequisites are in the app README. Final measurements refer to the pinned application bytes; report-only commits do not change tested code. Historical observer reports retain their original snapshot identifiers. Next: commit the evidence bundle, push the branch and create the PR through the app.</p>
+</html>

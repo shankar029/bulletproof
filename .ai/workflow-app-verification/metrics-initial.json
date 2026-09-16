@@ -2,8 +2,8 @@
   "slug": "workflow-app-verification",
   "base": "cfe5734b4f28817e6236d121a3b206a51606879d",
   "merge_base": "cfe5734b4f28",
-  "head": "3ef47ac",
-  "generated": "2026-09-16T12:35:47+00:00",
+  "head": "3b776d1",
+  "generated": "2026-09-16T11:57:31+00:00",
   "project": "general",
   "baseline": "compared",
   "verdict": "pass",
@@ -11,8 +11,8 @@
   "metrics": {
     "duplication_pct": {
       "base": 1.75,
-      "head": 1.46,
-      "delta": -0.29,
+      "head": 1.51,
+      "delta": -0.24,
       "status": "ok"
     },
     "cycles": {
@@ -22,10 +22,10 @@
       "status": "ok"
     },
     "diff_files": {
-      "head": 94
+      "head": 29
     },
     "diff_lines": {
-      "head": 9027
+      "head": 2032
     }
   },
   "unavailable": [

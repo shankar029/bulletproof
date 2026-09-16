@@ -1,0 +1,493 @@
+{
+  "generated": "2026-09-16T12:47:44.118Z",
+  "scope": [
+    "#6",
+    "#7",
+    "#8",
+    "#9",
+    "#10"
+  ],
+  "assessment": "All 29 inventoried features assessed; not an all-features-passed claim.",
+  "app": "examples/team-planner",
+  "sourceHashes": {
+    "src/errors.mjs": "241e92aa4d6634e11cf4b718226f8402367275e1e352eb90b03e60d844a1943f",
+    "src/main.mjs": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+    "src/migrate.mjs": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+    "src/planner.mjs": "065521acaa41fae1ed35644a808958557fadd4fda171d36293977edfb3507baa",
+    "src/rules.mjs": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+    "src/schema.mjs": "62c51ef36808133f66ea3a9d7900aaba5cbf4647c2e6428488aa718de1ed9bcd",
+    "src/server.mjs": "53755877ea4ae7a41c2fea3e8aea4387431e17b5dca39b1bd2ff8ec755f0d4a1",
+    "src/store.mjs": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+    "public/app.mjs": "e8613a1fc1a5d620cd174e99345ad8cf36941b591b6024f8b9e68f59665950f2",
+    "public/index.html": "7013db1640d0ec1de837c4943e4fa205fcdacc60bb13a80fa9f45e5d32e0f176",
+    "public/styles.css": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92"
+  },
+  "perAC": [
+    {
+      "id": "AC01",
+      "status": "VERIFIED",
+      "result": "PASS",
+      "observed": "Fresh-directory native/CLI health, explicit occupied-port/lock failure, install-free app plus actual initial browser surface and scoped lifecycle.",
+      "evidence": [
+        "api.test.mjs",
+        "lifecycle.test.mjs",
+        "browserFinal:base"
+      ]
+    },
+    {
+      "id": "AC02",
+      "status": "VERIFIED",
+      "result": "PASS",
+      "observed": "Create/edit and exact input errors; Unicode boundaries; title/description survive real process restart; browser invalid/conflicting input retained and success only after commit.",
+      "evidence": [
+        "store.test.mjs",
+        "schema.test.mjs",
+        "browserFinal:base"
+      ]
+    },
+    {
+      "id": "AC03",
+      "status": "VERIFIED-WITH-LIMITATIONS",
+      "result": "PASS_WITH_DECLARED_PLATFORM_LIMITS",
+      "observed": "Concurrency gives one commit/one conflict; exact bytes/memory/IDs preserved on rejection/IO failure; queue recovery, no-op and isolated reads; real before/after-commit process termination.",
+      "limitations": "Process-crash guarantee only, not power loss/network filesystem. Graceful signal handler via IPC bridge, not native Windows Ctrl+C.",
+      "evidence": [
+        "store.test.mjs",
+        "lifecycle.test.mjs",
+        "browserFinal:base",
+        "P0-sharing-boundary-green.json"
+      ]
+    },
+    {
+      "id": "AC04",
+      "status": "VERIFIED",
+      "result": "PASS",
+      "observed": "All graph/status/cycle/missing/self/duplicate/cross-project/reopen/combined-PATCH scenarios pass; browser exercises blocked and reverse-reopen journey with persisted graph.",
+      "evidence": [
+        "rules.test.mjs",
+        "api.test.mjs",
+        "browserFinal:graph"
+      ]
+    },
+    {
+      "id": "AC05",
+      "status": "VERIFIED",
+      "result": "PASS",
+      "observed": "Independent fixture IDs/totals; AND filters, normalized search, bounds, unsorted valid persistence; browser reset/Back/deep links/clear and default-page consecutive sets without omission/duplication.",
+      "evidence": [
+        "query.test.mjs",
+        "browserFinal:query",
+        "browserFinal:migration"
+      ]
+    },
+    {
+      "id": "AC06",
+      "status": "VERIFIED",
+      "result": "PASS",
+      "observed": "Exact Alpha/global/empty summaries; filtering/pages do not change dashboard; browser status updates and restart totals correct.",
+      "evidence": [
+        "query.test.mjs",
+        "migration.test.mjs",
+        "browserFinal:graph/query/migration"
+      ]
+    },
+    {
+      "id": "AC07",
+      "status": "VERIFIED-WITH-LIMITATIONS",
+      "result": "PASS_WITH_ACCESSIBILITY_SCOPE_LIMITS",
+      "observed": "J1-J4 pass; positive empty/loaded/saved/error announcements; keyboard project/add/cancel and focus; 390/1280px labels/targets/no overflow; semantic Pagination landmark; two axe pages zero violations/incomplete; final console/errors empty.",
+      "limitations": "Automated checks do not certify all WCAG/screen-reader behavior or human UX/design approval. Final-source all-flow replay count is one, not every historical run on this exact source.",
+      "evidence": [
+        "verification.json",
+        "browserFinal",
+        "R1",
+        "R2",
+        "V-PAGINATION-ROLE"
+      ]
+    },
+    {
+      "id": "AC08",
+      "status": "VERIFIED",
+      "result": "PASS",
+      "observed": "Strict HTTP JSON/media/revision/body/route/method/Host/Origin/static/path boundaries; actual script-like text inert; conflict draft and explicit reload; network failure/recovery and PID-scoped lifecycle.",
+      "evidence": [
+        "api.test.mjs",
+        "browserFinal:base",
+        "scripts\\e2e.mjs"
+      ]
+    },
+    {
+      "id": "AC09",
+      "status": "NOT-VERIFIED",
+      "result": "FINAL_FUNCTIONAL_PASS_HISTORICAL_SEQUENCE_NOT_MET",
+      "observed": "Genuine v1 baseline and expand writer; exact offline backup/conversion/idempotence/failure preservation; final v1 reading/write rejection; browser priority/edit/filter/restart; explicit lossy rollback.",
+      "limitations": "Full AC contains temporal workflow requirements: browser-before-retirement and authoritative fresh-context resumed r2 plan are not evidenced. Final functional proof does not satisfy those historical scenarios.",
+      "evidence": [
+        "Git:d347226,83d2668,5d8df24,3b776d1",
+        "migration.test.mjs",
+        "browserFinal:migration",
+        "R4"
+      ]
+    },
+    {
+      "id": "AC10",
+      "status": "VERIFIED-WITH-LIMITATIONS",
+      "result": "PASS_CONTROLLED_CASE",
+      "observed": "Actual original-page failure, faithful one-factor reductions, size control, direct rules versus HTTP, exact restoration, six regression outcomes and independent original browser query replay verified; no release fault switch.",
+      "limitations": "Known-cause controlled exercise, not blind/general diagnostic effectiveness.",
+      "evidence": [
+        "diagnosisFinal",
+        "browserFinal:query",
+        "R5"
+      ]
+    },
+    {
+      "id": "AC11",
+      "status": "VERIFIED-WITH-LIMITATIONS",
+      "result": "PASS_RECONCILIATION_NOT_ALL_BRANCHES",
+      "observed": "All 29 inventory items have actual observations or explicit partial/deviated/conditional statuses; current local standards used, research corrections/human approval/combined context/metrics limits preserved.",
+      "limitations": "Mapping completeness is not 29 exercised successes; R4 is an observed deviation, not waived by app success.",
+      "evidence": [
+        "perFeature",
+        "communication-samples.json",
+        "R4",
+        "rubric"
+      ]
+    },
+    {
+      "id": "AC12",
+      "status": "VERIFIED-WITH-LIMITATIONS",
+      "result": "REVIEW_EVIDENCE_COMPLETE_PUBLICATION_PARENT_OWNED",
+      "observed": "Persistent replay tools/docs, full relevant dirty/untracked review, exact final browser source hashes, native/diagnosis/mutation/metric records and separate existing regressions; findings disposed honestly.",
+      "limitations": "Parent still must copy final review/browser outputs and generated report/traceability into the publication bundle, resolve final links and commit/open draft. This review does not claim those publication operations already occurred.",
+      "evidence": [
+        "snapshot",
+        "evidence.packaging",
+        "README.md",
+        "findings"
+      ]
+    }
+  ],
+  "perFeature": [
+    {
+      "id": "PR6-F1",
+      "status": "OBSERVED_WITH_LIMITATIONS",
+      "observed": "Fresh artifact-only researcher and fresh design consumer; no source edits/installs/nested delegation claimed by researcher.",
+      "limit": "Unavailable-delegation blocker/trivial branch not exercised; full tool-level permission transcript not independently reconstructed.",
+      "evidence": [
+        "research.html",
+        "parent-observations.json"
+      ]
+    },
+    {
+      "id": "PR6-F2",
+      "status": "OBSERVED",
+      "observed": "Actual eval/assertion/HTTP/browser seams traced; patterns reused without unrelated benchmark business imports; absence bounded to inspected repository.",
+      "limit": "No pre-existing app domain to reuse.",
+      "evidence": [
+        "research.html:E13-E21",
+        "feature-inventory.json"
+      ]
+    },
+    {
+      "id": "PR6-F3",
+      "status": "OBSERVED_WITH_CORRECTIONS",
+      "observed": "Typed claims/SHA/scope; parent corrected temporary-directory and machine-wide Python overreach; actual probe later ran.",
+      "limit": "Historical discovery remains historical, not current tool truth.",
+      "evidence": [
+        "research.html",
+        "parent-observations.json",
+        "metrics.json"
+      ]
+    },
+    {
+      "id": "PR6-F4",
+      "status": "OBSERVED_WITH_LIMITATIONS",
+      "observed": "Standalone research/inventory consumed in fresh context; three citation samples and dispositions recorded.",
+      "limit": "Later checkpoint was same-context, not a fresh resumed consumer.",
+      "evidence": [
+        "parent-observations.json",
+        "implementation.json:incomingHandoff"
+      ]
+    },
+    {
+      "id": "PR7-F1",
+      "status": "PARTIAL",
+      "observed": "Named accepted inputs and versioned readiness records.",
+      "limit": "Same agent designed/planned; human approval unconfirmed.",
+      "evidence": [
+        "plan.html",
+        "tasks.json",
+        "state.json"
+      ]
+    },
+    {
+      "id": "PR7-F2",
+      "status": "PARTIAL",
+      "observed": "Sequential vertical task ownership corresponds to six scoped commits.",
+      "limit": "Native-green slices did not receive required independent exit gates before proceeding.",
+      "evidence": [
+        "tasks.json:increments",
+        "Git:0e89d05..3b776d1",
+        "R4"
+      ]
+    },
+    {
+      "id": "PR7-F3",
+      "status": "OBSERVED_WITH_LIMITATIONS",
+      "observed": "Stable IDs/prerequisites/recovery/due scenarios; state.json explicitly amends actual diagnosis CLI and invalidates old command strings; README replay instructions checked.",
+      "limit": "Historical proposed task records are not themselves execution proof.",
+      "evidence": [
+        "tasks.json",
+        "state.json",
+        "README.md",
+        "R3"
+      ]
+    },
+    {
+      "id": "PR7-F4",
+      "status": "OBSERVED_WITH_LIMITATIONS",
+      "observed": "Readiness R1-R3 dispositions and incoming first-task/failure-boundary confirmation; parent measured three-page design/plan.",
+      "limit": "Page measurements parent-observed, not reviewer-reprinted; no extra approval inferred.",
+      "evidence": [
+        "parent-observations.json:designAndPlanning",
+        "implementation.json:consumerReadiness"
+      ]
+    },
+    {
+      "id": "PR7-F5",
+      "status": "DEVIATED",
+      "observed": "Final independent verifier/reviewer completed actual final proof.",
+      "limit": "Per-slice independent verification/review were NOT RUN; later gates cannot backfill them.",
+      "evidence": [
+        "implementation.json:slices",
+        "verification.json",
+        "R4"
+      ]
+    },
+    {
+      "id": "PR7-F6",
+      "status": "PARTIAL",
+      "observed": "Real I3 data/source hashes, consumer trace, affected tasks and stale-proof invalidation; current command amendment durable.",
+      "limit": "Same-context checkpoint/compaction re-anchoring, not fresh-context planner resume or new consumer acceptance; historical coordinated r2 progression not fully performed.",
+      "evidence": [
+        "implementation.json:sourceAwareRevision",
+        "state.json:resumeNote",
+        "R4"
+      ]
+    },
+    {
+      "id": "PR8-F1",
+      "status": "OBSERVED_SELECTED_SAMPLES",
+      "observed": "Four supplied verbatim parent messages lead with concrete scope/outcome and name next prerequisite/pending proof; result counts agree with available evidence.",
+      "limit": "Parent-selected samples, not exhaustive extraction or all illustrative communication scenarios.",
+      "evidence": [
+        "communication-samples.json"
+      ]
+    },
+    {
+      "id": "PR8-F2",
+      "status": "OBSERVED_WITH_LIMITATIONS",
+      "observed": "Actual concise samples and detailed handoffs retain material failures/uncertainty/pending work.",
+      "limit": "Not exhaustive transcript-to-artifact audit, clinical claim or general communication-effectiveness measurement.",
+      "evidence": [
+        "communication-samples.json",
+        "research.html",
+        "implementation.json"
+      ]
+    },
+    {
+      "id": "PR8-F3",
+      "status": "PARTIAL",
+      "observed": "Actual failed setup/recovery and uncertain ownership distinguished; final result acknowledges partial workflow rather than false all-pass; human approval not fabricated.",
+      "limit": "Actual human decision, blind ambiguous-cause and all clean-stop scenarios not exercised.",
+      "evidence": [
+        "communication-samples.json",
+        "parent-observations.json",
+        "state.json"
+      ]
+    },
+    {
+      "id": "PR9-F1",
+      "status": "OBSERVED",
+      "observed": "Transport→Planner candidate→rules→serialized validate/persist/publish; UI drafts/revision have clear ownership.",
+      "limit": "Not every rare IO branch executed.",
+      "evidence": [
+        "src\\server.mjs",
+        "src\\planner.mjs",
+        "src\\rules.mjs",
+        "src\\store.mjs",
+        "public\\app.mjs"
+      ]
+    },
+    {
+      "id": "PR9-F2",
+      "status": "OBSERVED",
+      "observed": "Domain names, explicit coded failure paths, sufficient transaction abstraction and narrow cycle-breaking errors module; UI fixes address root semantic/announcement behavior.",
+      "limit": "Readability evidence does not fill missing static/complexity metrics.",
+      "evidence": [
+        "src\\errors.mjs",
+        "src\\schema.mjs",
+        "src\\store.mjs",
+        "public\\app.mjs"
+      ]
+    },
+    {
+      "id": "PR9-F3",
+      "status": "OBSERVED_WITH_CONDITIONAL_NA",
+      "observed": "Comments explain current scheduling/owned lock or daemon-pipe invariants, not incident journals.",
+      "limit": "Workflow runtime prompts/tool descriptions were not edited, so that preservation branch is N/A.",
+      "evidence": [
+        "src\\store.mjs",
+        "test\\lifecycle.test.mjs",
+        "scripts\\e2e.mjs",
+        "git scope"
+      ]
+    },
+    {
+      "id": "PR9-F4",
+      "status": "OBSERVED",
+      "observed": "Concrete categorized findings and independently verified fixes, no arbitrary size/comment quota or metric-only acceptance.",
+      "limit": "Required unavailable measures remain unverified.",
+      "evidence": [
+        "findings",
+        "rubric",
+        "metrics"
+      ]
+    },
+    {
+      "id": "PR10-F1",
+      "status": "OBSERVED_CONTROLLED",
+      "observed": "Original public HTTP page2 defect directly reproduced with explicit source hashes/expected wrong IDs and total.",
+      "limit": "Known injected cause, not a natural report or blind discovery.",
+      "evidence": [
+        "diagnosisFinal",
+        "scripts\\diagnose.mjs"
+      ]
+    },
+    {
+      "id": "PR10-F2",
+      "status": "OBSERVED_CONTROLLED",
+      "observed": "Actual one-factor reductions retain symptom; same-data size2 control passes; HTTP/direct-rule agreement and fixed expected signatures verified across 30 observations.",
+      "limit": "Does not establish blind diagnosis capability; no artificial hypothesis count.",
+      "evidence": [
+        "scripts\\diagnosis-probes.mjs",
+        "diagnosisFinal",
+        "R5"
+      ]
+    },
+    {
+      "id": "PR10-F3",
+      "status": "OBSERVED_WITH_WORKFLOW_LIMITATIONS",
+      "observed": "Original/minimal behavioral red, exact-restored green, persistent regression, final independent browser original query and owned-copy cleanup verified.",
+      "limit": "Initial per-increment normal gate sequence was not followed; performance/intermittent diagnosis branches not exercised.",
+      "evidence": [
+        "diagnosisFinal",
+        "browserFinal:query",
+        "R4"
+      ]
+    },
+    {
+      "id": "PR10-F4",
+      "status": "PARTIAL",
+      "observed": "Seven real timestamped red/green cycles; test-harness/setup failures excluded from behavioral-red credit.",
+      "limit": "Not every initial seam/additional boundary has pre-change red; cannot reconstruct it retroactively.",
+      "evidence": [
+        "implementation-runs",
+        "implementation.json:testFirstLimit"
+      ]
+    },
+    {
+      "id": "PR10-F5",
+      "status": "OBSERVED_WITH_LIMITATIONS",
+      "observed": "Hand-reviewed oracle; real HTTP/files/restarts/process failure; exact bytes/backup; 37 native tests, 126 browser checks and strengthened mutation assertions.",
+      "limit": "Rare backup/OS failure branches and full changed-line/browser mutation coverage absent.",
+      "evidence": [
+        "test\\fixtures\\planner-v1.expected.json",
+        "test\\store.test.mjs",
+        "test\\lifecycle.test.mjs",
+        "browserFinal",
+        "mutation"
+      ]
+    },
+    {
+      "id": "PR10-F6",
+      "status": "OBSERVED_WITH_LIMITATIONS",
+      "observed": "P0 prerequisite experiments and readiness corrections before implementation; durable current decision/command state.",
+      "limit": "Headless human approval unconfirmed, historical sequencing limits unchanged.",
+      "evidence": [
+        "tasks.json:readiness",
+        "P0-sharing-boundary-green.json",
+        "state.json"
+      ]
+    },
+    {
+      "id": "PR10-F7",
+      "status": "PARTIAL",
+      "observed": "Real v1 writer/data→dual formats→offline backup migration→legacy writer retirement; final native/browser compatibility and rollback-loss proof.",
+      "limit": "Browser-before-retirement not observed; deployment/distributed coexistence outside local-example scope.",
+      "evidence": [
+        "Git:83d2668,5d8df24,3b776d1",
+        "migration.test.mjs",
+        "browserFinal:migration",
+        "R4"
+      ]
+    },
+    {
+      "id": "PR10-F8",
+      "status": "OBSERVED_WITH_LIMITATIONS",
+      "observed": "Canonical statuses versus derived blocked, graph invariants and realistic revision caller; store hides meaningful atomicity burden.",
+      "limit": "Implementation notes explain interface changes, but original design signature table remains historical; not full document-foldback proof.",
+      "evidence": [
+        "acceptance.json:contracts",
+        "design.html",
+        "implementation.json:sourceAwareRevision",
+        "src\\planner.mjs"
+      ]
+    },
+    {
+      "id": "PR10-F9",
+      "status": "OBSERVED_WITH_LIMITATIONS",
+      "observed": "Snapshot/SQLite, global/per-task revision and plain DOM/SPA alternatives compared in existing design.",
+      "limit": "Autonomous recommendation, not human-approved; no artificial ADR or fan-out.",
+      "evidence": [
+        "design.html:decisions",
+        "parent-observations.json"
+      ]
+    },
+    {
+      "id": "PR10-F10",
+      "status": "OBSERVED_WITH_LIMITATIONS",
+      "observed": "Bounded isolated replacement question tested before storage wiring; 20 replacements/200 reads, held-reader EPERM preserved bytes, probe removed.",
+      "limit": "Prototype source retained in transcript rather than release; no power-loss or successful-held-reader guarantee.",
+      "evidence": [
+        "implementation-runs\\P0-sharing-boundary-green.json",
+        "implementation.json:designClarifications"
+      ]
+    },
+    {
+      "id": "PR10-F11",
+      "status": "OBSERVED",
+      "observed": "Complete initial tree review and bounded final revisions; base/head/dirty/untracked coverage, source hash alignment, categorized dispositions, exact nine-dimension rubric and per-AC outcome.",
+      "limit": "Parent final packaging/commit/PR after review must preserve source/evidence identity; not yet claimed executed.",
+      "evidence": [
+        "snapshot",
+        "findings",
+        "perAC",
+        "rubric"
+      ]
+    },
+    {
+      "id": "PR10-F12",
+      "status": "NOT_APPLICABLE",
+      "observed": "Current local procedures consumed; no workflow-prompt implementation edits in scope.",
+      "limit": "Consumption is not a test of editing canonical triggers/progressive disclosure; no phrase-presence or word-count pass.",
+      "evidence": [
+        "git scope",
+        "research.html",
+        "implementation.json:consumerReadiness"
+      ]
+    }
+  ],
+  "provenance": "Independent reviewer verdicts retained verbatim. Report/state record subsequent packaging and PR delivery; those do not repair historical execution order."
+}

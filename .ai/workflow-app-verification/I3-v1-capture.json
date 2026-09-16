@@ -1,0 +1,271 @@
+{
+  "timestamp": "2026-09-16T10:15:01.785Z",
+  "source": "Real HTTP writes against I3 source, not a hand-authored v1 model",
+  "url": "http://127.0.0.1:62026",
+  "health": {
+    "status": "ok",
+    "schemaVersion": 1,
+    "revision": 11
+  },
+  "labels": {
+    "A": "t-3",
+    "B": "t-4",
+    "C": "t-5",
+    "D": "t-6",
+    "E": "t-7",
+    "F": "t-8",
+    "G": "t-9"
+  },
+  "fixtureSha256": "ad7845486864bb4fef3f938eac02ef4ba213f8d3e20da4e4fa1b1c8b61df4450",
+  "requests": [
+    {
+      "path": "/api/projects",
+      "method": "POST",
+      "body": {
+        "name": "Alpha"
+      },
+      "status": 201,
+      "result": {
+        "project": {
+          "id": "p-1",
+          "createdOrder": 1,
+          "name": "Alpha"
+        },
+        "revision": 1
+      }
+    },
+    {
+      "path": "/api/projects",
+      "method": "POST",
+      "body": {
+        "name": "Beta"
+      },
+      "status": 201,
+      "result": {
+        "project": {
+          "id": "p-2",
+          "createdOrder": 2,
+          "name": "Beta"
+        },
+        "revision": 2
+      }
+    },
+    {
+      "path": "/api/tasks",
+      "method": "POST",
+      "body": {
+        "projectId": "p-1",
+        "title": "Archive brief",
+        "description": "Fixture A"
+      },
+      "status": 201,
+      "result": {
+        "task": {
+          "id": "t-3",
+          "createdOrder": 3,
+          "projectId": "p-1",
+          "title": "Archive brief",
+          "description": "Fixture A",
+          "status": "todo",
+          "dependencyIds": [],
+          "priority": "normal",
+          "blocked": false
+        },
+        "revision": 3
+      }
+    },
+    {
+      "path": "/api/tasks/t-3",
+      "method": "PATCH",
+      "body": {
+        "status": "done"
+      },
+      "status": 200,
+      "result": {
+        "task": {
+          "id": "t-3",
+          "createdOrder": 3,
+          "projectId": "p-1",
+          "title": "Archive brief",
+          "description": "Fixture A",
+          "status": "done",
+          "dependencyIds": [],
+          "priority": "normal",
+          "blocked": false
+        },
+        "revision": 4
+      }
+    },
+    {
+      "path": "/api/tasks",
+      "method": "POST",
+      "body": {
+        "projectId": "p-1",
+        "title": "Build outline",
+        "description": "Fixture B"
+      },
+      "status": 201,
+      "result": {
+        "task": {
+          "id": "t-4",
+          "createdOrder": 4,
+          "projectId": "p-1",
+          "title": "Build outline",
+          "description": "Fixture B",
+          "status": "todo",
+          "dependencyIds": [],
+          "priority": "normal",
+          "blocked": false
+        },
+        "revision": 5
+      }
+    },
+    {
+      "path": "/api/tasks",
+      "method": "POST",
+      "body": {
+        "projectId": "p-1",
+        "title": "Check links",
+        "description": "Fixture C"
+      },
+      "status": 201,
+      "result": {
+        "task": {
+          "id": "t-5",
+          "createdOrder": 5,
+          "projectId": "p-1",
+          "title": "Check links",
+          "description": "Fixture C",
+          "status": "todo",
+          "dependencyIds": [],
+          "priority": "normal",
+          "blocked": false
+        },
+        "revision": 6
+      }
+    },
+    {
+      "path": "/api/tasks/t-5",
+      "method": "PATCH",
+      "body": {
+        "status": "in_progress"
+      },
+      "status": 200,
+      "result": {
+        "task": {
+          "id": "t-5",
+          "createdOrder": 5,
+          "projectId": "p-1",
+          "title": "Check links",
+          "description": "Fixture C",
+          "status": "in_progress",
+          "dependencyIds": [],
+          "priority": "normal",
+          "blocked": false
+        },
+        "revision": 7
+      }
+    },
+    {
+      "path": "/api/tasks",
+      "method": "POST",
+      "body": {
+        "projectId": "p-1",
+        "title": "Draft launch",
+        "description": "Fixture D"
+      },
+      "status": 201,
+      "result": {
+        "task": {
+          "id": "t-6",
+          "createdOrder": 6,
+          "projectId": "p-1",
+          "title": "Draft launch",
+          "description": "Fixture D",
+          "status": "todo",
+          "dependencyIds": [],
+          "priority": "normal",
+          "blocked": false
+        },
+        "revision": 8
+      }
+    },
+    {
+      "path": "/api/tasks",
+      "method": "POST",
+      "body": {
+        "projectId": "p-1",
+        "title": "Edit launch",
+        "description": "Fixture E",
+        "dependencyIds": [
+          "t-4"
+        ]
+      },
+      "status": 201,
+      "result": {
+        "task": {
+          "id": "t-7",
+          "createdOrder": 7,
+          "projectId": "p-1",
+          "title": "Edit launch",
+          "description": "Fixture E",
+          "status": "todo",
+          "dependencyIds": [
+            "t-4"
+          ],
+          "priority": "normal",
+          "blocked": true
+        },
+        "revision": 9
+      }
+    },
+    {
+      "path": "/api/tasks",
+      "method": "POST",
+      "body": {
+        "projectId": "p-1",
+        "title": "Finalize launch",
+        "description": "Fixture F"
+      },
+      "status": 201,
+      "result": {
+        "task": {
+          "id": "t-8",
+          "createdOrder": 8,
+          "projectId": "p-1",
+          "title": "Finalize launch",
+          "description": "Fixture F",
+          "status": "todo",
+          "dependencyIds": [],
+          "priority": "normal",
+          "blocked": false
+        },
+        "revision": 10
+      }
+    },
+    {
+      "path": "/api/tasks",
+      "method": "POST",
+      "body": {
+        "projectId": "p-2",
+        "title": "Gather launch",
+        "description": "Fixture G"
+      },
+      "status": 201,
+      "result": {
+        "task": {
+          "id": "t-9",
+          "createdOrder": 9,
+          "projectId": "p-2",
+          "title": "Gather launch",
+          "description": "Fixture G",
+          "status": "todo",
+          "dependencyIds": [],
+          "priority": "normal",
+          "blocked": false
+        },
+        "revision": 11
+      }
+    }
+  ]
+}

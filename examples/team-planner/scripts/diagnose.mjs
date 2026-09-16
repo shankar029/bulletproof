@@ -20,6 +20,8 @@ const report = {
 const hash = text => createHash('sha256').update(text).digest('hex');
 try {
   for (const path of ['src', 'public', 'test']) await cp(join(appRoot, path), join(copy, path), { recursive: true });
+  await mkdir(join(copy, 'scripts'), { recursive: true });
+  for (const file of ['command.mjs', 'diagnosis-probes.mjs']) await cp(join(import.meta.dirname, file), join(copy, 'scripts', file));
   const rulesPath = join(copy, 'src', 'rules.mjs');
   const source = await readFile(rulesPath, 'utf8');
   const filter = 'const matches = model.tasks.filter(task =>';
@@ -33,6 +35,24 @@ try {
   report.injection = { filter, page, change: 'Move only pagination ahead of the existing filters; no parser or fixture changes.' };
   for (const [phase, code] of [['baseline', source], ['controlled-fault', faulty], ['restored', source]]) {
     await writeFile(rulesPath, code);
+    const probe = await runNode(['scripts/diagnosis-probes.mjs'], { cwd: copy, timeout: 45000 });
+    assert.equal(probe.timedOut, false, 'Probe setup timeout is not diagnosis evidence');
+    assert.equal(probe.code, 0, probe.stdout + probe.stderr);
+    const observations = JSON.parse(probe.stdout);
+    assert.equal(observations.length, 10);
+    for (const observation of observations) {
+      const faulted = phase === 'controlled-fault' && observation.label !== 'same two tasks, page size two control';
+      let expected = observation.expected;
+      if (faulted) {
+        expected = { ids: [], total: 0 };
+        if (observation.label === 'original second page') expected = { ids: ['t-6'], total: 1 };
+        else if (observation.label === 'same seven tasks, first page') expected = { ids: ['t-4'], total: 1 };
+      }
+      assert.deepEqual(observation.http, expected, `${phase}: ${observation.label}`);
+      assert.deepEqual(observation.direct, expected, `${phase}: rules versus HTTP comparison`);
+    }
+    report.results.push({ phase, scenario: 'one-factor reduction and parsing discriminator', observations, ...probe });
+    console.log(`${phase}/probes: ten observed cases; HTTP and direct rules agree, same-data page-size control verified`);
     for (const [scenario, file] of [['original', 'query.test.mjs'], ['minimized', 'diagnosis.test.mjs']]) {
       const result = await runNode(['--test', '--test-timeout=15000', '--test-reporter=tap', join('test', file)], { cwd: copy, timeout: 45000 });
       report.results.push({ phase, scenario, ...result });

@@ -132,7 +132,8 @@ function navigate(changes) {
 function render() {
   const projects = $('#projects');
   projects.replaceChildren();
-  if (!state.projects.length) projects.append(element('li', 'No projects yet. Create your first project.'));
+  const noProjects = 'No projects yet. Create your first project.';
+  if (!state.projects.length) projects.append(element('li', noProjects));
   for (const project of state.projects) {
     const item = element('li');
     const link = element('a', project.name, { href: `/?projectId=${encodeURIComponent(project.id)}` });
@@ -150,9 +151,12 @@ function render() {
     main.append(element('h2', project ? `${project.name} dashboard` : 'Global dashboard'));
     main.append(button('All projects', () => navigate({ projectId: null })));
     renderSummary(main);
-    return;
+    return `${project ? project.name : 'Global'} dashboard loaded. ${state.summary.total} tasks.`;
   }
-  if (!project) { main.append(element('h2', 'Choose a project'), element('p', 'Create or select a project to plan your team’s work.')); return; }
+  if (!project) {
+    main.append(element('h2', 'Choose a project'), element('p', 'Create or select a project to plan your team’s work.'));
+    return state.projects.length ? 'Projects loaded. Choose a project.' : noProjects;
+  }
   main.append(element('h2', project.name));
   renderSummary(main);
   const filters = element('form', undefined, { class: 'filters', 'aria-label': 'Task filters' });
@@ -173,7 +177,8 @@ function render() {
   add.disabled = legacy;
   main.append(add);
   const tasks = state.result.items;
-  if (!tasks.length) main.append(element('p', state.tasks.length ? 'No results. Clear filters or return to the previous page.' : 'No tasks yet. Add your first task.'));
+  const emptyMessage = state.tasks.length ? 'No results. Clear filters or return to the previous page.' : 'No tasks yet. Add your first task.';
+  if (!tasks.length) main.append(element('p', emptyMessage));
   for (const task of tasks) {
     const card = element('article', undefined, { 'aria-label': task.title, 'data-task-id': task.id });
     const editButton = button('Edit', () => edit(task));
@@ -181,7 +186,7 @@ function render() {
     card.append(element('h3', task.title), element('span', task.blocked ? 'blocked (todo)' : task.status.replaceAll('_', ' '), { class: 'badge' }), element('p', `Priority: ${task.priority}`), element('p', task.description), editButton);
     main.append(card);
   }
-  const pages = element('div', undefined, { class: 'actions', 'aria-label': 'Pagination' });
+  const pages = element('nav', undefined, { class: 'actions', 'aria-label': 'Pagination' });
   const previous = button('Previous', () => navigate({ page: state.result.page - 1 }));
   previous.disabled = state.result.page <= 1;
   const next = button('Next', () => navigate({ page: state.result.page + 1 }));
@@ -190,6 +195,7 @@ function render() {
   const pageSize = select(pages, 'pageSize', 'Tasks per page', ['2', '10', '25', '50'], String(state.result.pageSize));
   pageSize.addEventListener('change', () => navigate({ pageSize: pageSize.value, page: null }));
   main.append(pages);
+  return tasks.length ? `${state.result.total} tasks loaded. Page ${state.result.page} of ${state.result.totalPages}.` : emptyMessage;
 }
 function renderSummary(main) {
   if (!state.summary) return;
@@ -233,8 +239,7 @@ async function reload() {
     state.summary = summary;
     state.schemaVersion = health.schemaVersion;
     state.revision = tasks.revision;
-    render();
-    announce('');
+    announce(render());
   } catch (error) {
     if (sequence === loadSequence) { $('#main').setAttribute('aria-busy', 'false'); announce(''); }
     throw error;

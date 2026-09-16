@@ -1,0 +1,3057 @@
+{
+  "revision": "r1",
+  "generated": "2026-09-16T12:33:59.795Z",
+  "producer": "Independent Phase5 verifier; did not implement production app",
+  "status": "VERIFIED_WITH_LIMITATIONS",
+  "implementationHead": "3b776d11a58d1f85b673c628f6889e9d79594a5e",
+  "sourceRevision": "Implementation baseline plus parent-owned public/app.mjs R1 announcement and semantic Pagination nav fixes. Exact latest source hashes are authoritative; prior browser replays remain historical rather than proving the new source.",
+  "inputArtifacts": [
+    "acceptance.json (12 ACs)",
+    "tasks.json r1.1 dueScenarios",
+    "design.html",
+    "implementation.json",
+    "implementation.html",
+    "I3-v1-capture.json"
+  ],
+  "scope": "Current actual app browser/HTTP/restart/migration replay only; no production source/public modifications, no nested agents, no commits.",
+  "sourceHashes": {
+    "src/errors.mjs": "241e92aa4d6634e11cf4b718226f8402367275e1e352eb90b03e60d844a1943f",
+    "src/main.mjs": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+    "src/migrate.mjs": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+    "src/planner.mjs": "065521acaa41fae1ed35644a808958557fadd4fda171d36293977edfb3507baa",
+    "src/rules.mjs": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+    "src/schema.mjs": "62c51ef36808133f66ea3a9d7900aaba5cbf4647c2e6428488aa718de1ed9bcd",
+    "src/server.mjs": "53755877ea4ae7a41c2fea3e8aea4387431e17b5dca39b1bd2ff8ec755f0d4a1",
+    "src/store.mjs": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+    "public/app.mjs": "e8613a1fc1a5d620cd174e99345ad8cf36941b591b6024f8b9e68f59665950f2",
+    "public/index.html": "7013db1640d0ec1de837c4943e4fa205fcdacc60bb13a80fa9f45e5d32e0f176",
+    "public/styles.css": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92"
+  },
+  "runnerSha256": "52c7a84ec971d7f1ecc4ec26290e41b1d093f3bf902a29885fbd1ba3c5154f0e",
+  "latest": {
+    "runId": "e2e-2026-09-16T12-32-11-166Z-1a695f7c",
+    "evidence": "verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/report.json",
+    "checks": 126,
+    "verifiedChecks": 126,
+    "notVerifiedChecks": [],
+    "started": "2026-09-16T12:32:11.170Z",
+    "finished": "2026-09-16T12:33:09.083Z"
+  },
+  "runs": [
+    {
+      "runId": "e2e-2026-09-16T12-01-02-279Z-52fa1db7",
+      "status": "FAILED",
+      "started": "2026-09-16T12:01:02.284Z",
+      "finished": "2026-09-16T12:01:02.301Z",
+      "flows": [],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-01-02-279Z-52fa1db7/report.json"
+    },
+    {
+      "runId": "e2e-2026-09-16T12-01-17-903Z-1f39f47f",
+      "status": "FAILED",
+      "started": "2026-09-16T12:01:17.905Z",
+      "finished": "2026-09-16T12:02:17.898Z",
+      "flows": [
+        {
+          "name": "base",
+          "status": "FAILED",
+          "error": "AbortError: The operation was aborted\n    at AbortSignal.abortListener (node:events:995:14)\n    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:845:20)\n    at AbortSignal.dispatchEvent (node:internal/event_target:778:26)\n    at runAbort (node:internal/abort_controller:488:10)\n    at abortSignal (node:internal/abort_controller:459:3)\n    at Timeout._onTimeout (node:internal/abort_controller:152:7)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)"
+        },
+        {
+          "name": "graph",
+          "status": "FAILED",
+          "error": "AssertionError [ERR_ASSERTION]: --session e2e-2026-09-16T12-01-17-903Z-1f39f47f --cdp http://127.0.0.1:56578 --json wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden\n\n{\"success\":false,\"data\":null,\"error\":\"Wait timed out after 12000ms\"}\n\n\n1 !== 0\n\n    at command (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:49:12)\n    at async browser (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:70:16)\n    at async saved (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:106:3)\n    at async addTask (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:121:3)\n    at async Object.graph (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:348:3)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:529:7"
+        },
+        {
+          "name": "query",
+          "status": "FAILED",
+          "error": "AssertionError [ERR_ASSERTION]: --session e2e-2026-09-16T12-01-17-903Z-1f39f47f --cdp http://127.0.0.1:56578 --json click button:text-is(\"Next\")\n\n{\"success\":false,\"data\":null,\"error\":\"Element not found: button:text-is(\\\"Next\\\"). Verify the selector, role, or name is correct and the element exists in the DOM.\"}\n\n\n1 !== 0\n\n    at command (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:49:12)\n    at async browser (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:70:16)\n    at async click (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:86:34)\n    at async Object.query (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:421:3)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:529:7"
+        },
+        {
+          "name": "migration",
+          "status": "VERIFIED"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-01-17-903Z-1f39f47f/report.json"
+    },
+    {
+      "runId": "e2e-2026-09-16T12-03-48-575Z-69f92316",
+      "status": "FAILED",
+      "started": "2026-09-16T12:03:48.578Z",
+      "finished": "2026-09-16T12:04:55.084Z",
+      "flows": [
+        {
+          "name": "base",
+          "status": "FAILED",
+          "error": "AbortError: The operation was aborted\n    at AbortSignal.abortListener (node:events:995:14)\n    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:845:20)\n    at AbortSignal.dispatchEvent (node:internal/event_target:778:26)\n    at runAbort (node:internal/abort_controller:488:10)\n    at abortSignal (node:internal/abort_controller:459:3)\n    at Timeout._onTimeout (node:internal/abort_controller:152:7)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-03-48-575Z-69f92316/report.json"
+    },
+    {
+      "runId": "e2e-2026-09-16T12-05-19-594Z-13689abc",
+      "status": "VERIFIED_WITH_LIMITATIONS",
+      "started": "2026-09-16T12:05:19.600Z",
+      "finished": "2026-09-16T12:06:12.515Z",
+      "flows": [
+        {
+          "name": "base",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "graph",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "query",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "migration",
+          "status": "VERIFIED"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-05-19-594Z-13689abc/report.json"
+    },
+    {
+      "runId": "e2e-2026-09-16T12-07-50-784Z-eb6afdb8",
+      "status": "VERIFIED_WITH_LIMITATIONS",
+      "started": "2026-09-16T12:07:50.787Z",
+      "finished": "2026-09-16T12:08:48.648Z",
+      "flows": [
+        {
+          "name": "base",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "graph",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "query",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "migration",
+          "status": "VERIFIED"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-07-50-784Z-eb6afdb8/report.json"
+    },
+    {
+      "runId": "e2e-2026-09-16T12-09-29-772Z-91dbce80",
+      "status": "VERIFIED_WITH_LIMITATIONS",
+      "started": "2026-09-16T12:09:29.775Z",
+      "finished": "2026-09-16T12:10:25.291Z",
+      "flows": [
+        {
+          "name": "base",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "graph",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "query",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "migration",
+          "status": "VERIFIED"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-09-29-772Z-91dbce80/report.json",
+      "runnerSha256": "b58208fba18986fec8debe3739742c74e136f939fef75c835973da58d4d6f307"
+    },
+    {
+      "runId": "e2e-2026-09-16T12-09-29-818Z-09553c58",
+      "status": "VERIFIED_WITH_LIMITATIONS",
+      "started": "2026-09-16T12:09:29.821Z",
+      "finished": "2026-09-16T12:09:53.079Z",
+      "flows": [
+        {
+          "name": "base",
+          "status": "VERIFIED"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-09-29-818Z-09553c58/report.json",
+      "runnerSha256": "b58208fba18986fec8debe3739742c74e136f939fef75c835973da58d4d6f307"
+    },
+    {
+      "runId": "e2e-2026-09-16T12-12-30-176Z-3fc52b70",
+      "status": "VERIFIED_WITH_LIMITATIONS",
+      "started": "2026-09-16T12:12:30.181Z",
+      "finished": "2026-09-16T12:13:27.112Z",
+      "flows": [
+        {
+          "name": "base",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "graph",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "query",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "migration",
+          "status": "VERIFIED"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-12-30-176Z-3fc52b70/report.json",
+      "runnerSha256": "106c3cf0b92621d902a529c6b205de7dbde0ba2fd77695bc81fb56a92dca2d2b"
+    },
+    {
+      "runId": "e2e-2026-09-16T12-15-02-426Z-7531f4ae",
+      "status": "VERIFIED_WITH_LIMITATIONS",
+      "started": "2026-09-16T12:15:02.428Z",
+      "finished": "2026-09-16T12:15:58.701Z",
+      "flows": [
+        {
+          "name": "base",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "graph",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "query",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "migration",
+          "status": "VERIFIED"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-15-02-426Z-7531f4ae/report.json",
+      "runnerSha256": "03b225b65fc2809ad2b2715b69c2f256cb711362bba8234662e4bda1ac35b3b0"
+    },
+    {
+      "runId": "e2e-2026-09-16T12-21-58-479Z-4a0c45ce",
+      "status": "VERIFIED_WITH_LIMITATIONS",
+      "started": "2026-09-16T12:21:58.482Z",
+      "finished": "2026-09-16T12:22:56.613Z",
+      "flows": [
+        {
+          "name": "base",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "graph",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "query",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "migration",
+          "status": "VERIFIED"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-21-58-479Z-4a0c45ce/report.json",
+      "runnerSha256": "dabc66d034da35e7e0e41a16e559d3a66e85461905c56debb04a95f22369ee63"
+    },
+    {
+      "runId": "e2e-2026-09-16T12-32-11-166Z-1a695f7c",
+      "status": "VERIFIED_WITH_LIMITATIONS",
+      "started": "2026-09-16T12:32:11.170Z",
+      "finished": "2026-09-16T12:33:09.083Z",
+      "flows": [
+        {
+          "name": "base",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "graph",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "query",
+          "status": "VERIFIED"
+        },
+        {
+          "name": "migration",
+          "status": "VERIFIED"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/report.json",
+      "runnerSha256": "52c7a84ec971d7f1ecc4ec26290e41b1d093f3bf902a29885fbd1ba3c5154f0e"
+    }
+  ],
+  "repeatedAllRuns": 7,
+  "latestSourceAllRuns": 1,
+  "isolation": {
+    "allRunsHaveUniqueOutput": true,
+    "successfulRunsOwnDisjointDataDirectories": true,
+    "everyLatestAppChildExitedZero": true,
+    "latestNewPidRestartCount": 5,
+    "latestSourceDrift": [],
+    "concurrentBaseRun": "e2e-2026-09-16T12-09-29-818Z-09553c58"
+  },
+  "browser": {
+    "transport": "Playwright launch only; all browser actions/assertions agent-browser 0.37.1 explicit IPv4 HTTP CDP",
+    "version": "HeadlessChrome/153.0.8010.12",
+    "tool": "agent-browser 0.37.1",
+    "assertions": "All DOM inspection and actions via pinned agent-browser CLI; Playwright launch/close only",
+    "console": [
+      {
+        "flow": "base",
+        "messages": [],
+        "errors": []
+      },
+      {
+        "flow": "graph",
+        "messages": [],
+        "errors": []
+      },
+      {
+        "flow": "query",
+        "messages": [],
+        "errors": []
+      },
+      {
+        "flow": "migration",
+        "messages": [],
+        "errors": []
+      }
+    ],
+    "audits": [
+      {
+        "evidence": "verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/base-editor-a11y.json",
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 52,
+          "incomplete": 0,
+          "passes": 37,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": []
+      },
+      {
+        "evidence": "verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/query-query-a11y.json",
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 52,
+          "incomplete": 0,
+          "passes": 37,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": []
+      }
+    ],
+    "screenshots": [
+      "verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/base-layout-390.png",
+      "verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/base-layout-1280.png",
+      "verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/base-conflict.png",
+      "verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/graph-blocked-transition.png",
+      "verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/graph-reopen-conflict.png",
+      "verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/query-filtered-page2.png",
+      "verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/query-default-page2.png",
+      "verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/migration-legacy.png",
+      "verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/migration-priority-restart.png"
+    ]
+  },
+  "findings": [],
+  "historicalFindings": [
+    {
+      "runId": "e2e-2026-09-16T12-05-19-594Z-13689abc",
+      "sourceHashes": {
+        "src/errors.mjs": "241e92aa4d6634e11cf4b718226f8402367275e1e352eb90b03e60d844a1943f",
+        "src/main.mjs": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+        "src/migrate.mjs": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+        "src/planner.mjs": "065521acaa41fae1ed35644a808958557fadd4fda171d36293977edfb3507baa",
+        "src/rules.mjs": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+        "src/schema.mjs": "62c51ef36808133f66ea3a9d7900aaba5cbf4647c2e6428488aa718de1ed9bcd",
+        "src/server.mjs": "53755877ea4ae7a41c2fea3e8aea4387431e17b5dca39b1bd2ff8ec755f0d4a1",
+        "src/store.mjs": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+        "public/app.mjs": "b24a765893ad981fc834697372122303f4b99ff47805d4dc1b017c6df86e377b",
+        "public/index.html": "7013db1640d0ec1de837c4943e4fa205fcdacc60bb13a80fa9f45e5d32e0f176",
+        "public/styles.css": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92"
+      },
+      "findings": [
+        {
+          "id": "V-EMPTY-ANNOUNCEMENT",
+          "flow": "base",
+          "ac": [
+            "AC07"
+          ],
+          "severity": "accessibility",
+          "detail": "Empty Projects/tasks/results render outside a live region; reload clears Loading… without announcing completion/empty result. Actual initial empty DOM captured; no screen-reader certification."
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-05-19-594Z-13689abc/report.json",
+      "disposition": "Historical only; latest source has parent fixes and independent replay."
+    },
+    {
+      "runId": "e2e-2026-09-16T12-07-50-784Z-eb6afdb8",
+      "sourceHashes": {
+        "src/errors.mjs": "241e92aa4d6634e11cf4b718226f8402367275e1e352eb90b03e60d844a1943f",
+        "src/main.mjs": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+        "src/migrate.mjs": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+        "src/planner.mjs": "065521acaa41fae1ed35644a808958557fadd4fda171d36293977edfb3507baa",
+        "src/rules.mjs": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+        "src/schema.mjs": "62c51ef36808133f66ea3a9d7900aaba5cbf4647c2e6428488aa718de1ed9bcd",
+        "src/server.mjs": "53755877ea4ae7a41c2fea3e8aea4387431e17b5dca39b1bd2ff8ec755f0d4a1",
+        "src/store.mjs": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+        "public/app.mjs": "b24a765893ad981fc834697372122303f4b99ff47805d4dc1b017c6df86e377b",
+        "public/index.html": "7013db1640d0ec1de837c4943e4fa205fcdacc60bb13a80fa9f45e5d32e0f176",
+        "public/styles.css": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92"
+      },
+      "findings": [
+        {
+          "id": "V-EMPTY-ANNOUNCEMENT",
+          "flow": "base",
+          "ac": [
+            "AC07"
+          ],
+          "severity": "accessibility",
+          "detail": "Empty Projects/tasks/results render outside a live region; reload clears Loading… without announcing completion/empty result. Actual initial empty DOM captured; no screen-reader certification."
+        },
+        {
+          "id": "AXE-aria-prohibited-attr",
+          "ac": [
+            "AC07"
+          ],
+          "flow": "base",
+          "severity": "manual-review",
+          "detail": {
+            "help": "Elements must only use permitted ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-prohibited-attr?application=axeAPI",
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a div with no valid role attribute.",
+                "html": "<div class=\"actions\" aria-label=\"Pagination\">",
+                "target": [
+                  "div[aria-label=\"Pagination\"]"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.aria",
+              "wcag2a",
+              "wcag412",
+              "EN-301-549",
+              "EN-9.4.1.2",
+              "RGAAv4",
+              "RGAA-7.1.1"
+            ]
+          },
+          "evidence": "base-editor-a11y.json"
+        },
+        {
+          "id": "AXE-aria-prohibited-attr",
+          "ac": [
+            "AC07"
+          ],
+          "flow": "query",
+          "severity": "manual-review",
+          "detail": {
+            "help": "Elements must only use permitted ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-prohibited-attr?application=axeAPI",
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a div with no valid role attribute.",
+                "html": "<div class=\"actions\" aria-label=\"Pagination\">",
+                "target": [
+                  ".actions"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.aria",
+              "wcag2a",
+              "wcag412",
+              "EN-301-549",
+              "EN-9.4.1.2",
+              "RGAAv4",
+              "RGAA-7.1.1"
+            ]
+          },
+          "evidence": "query-query-a11y.json"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-07-50-784Z-eb6afdb8/report.json",
+      "disposition": "Historical only; latest source has parent fixes and independent replay."
+    },
+    {
+      "runId": "e2e-2026-09-16T12-09-29-772Z-91dbce80",
+      "sourceHashes": {
+        "src/errors.mjs": "241e92aa4d6634e11cf4b718226f8402367275e1e352eb90b03e60d844a1943f",
+        "src/main.mjs": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+        "src/migrate.mjs": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+        "src/planner.mjs": "065521acaa41fae1ed35644a808958557fadd4fda171d36293977edfb3507baa",
+        "src/rules.mjs": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+        "src/schema.mjs": "62c51ef36808133f66ea3a9d7900aaba5cbf4647c2e6428488aa718de1ed9bcd",
+        "src/server.mjs": "53755877ea4ae7a41c2fea3e8aea4387431e17b5dca39b1bd2ff8ec755f0d4a1",
+        "src/store.mjs": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+        "public/app.mjs": "b24a765893ad981fc834697372122303f4b99ff47805d4dc1b017c6df86e377b",
+        "public/index.html": "7013db1640d0ec1de837c4943e4fa205fcdacc60bb13a80fa9f45e5d32e0f176",
+        "public/styles.css": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92"
+      },
+      "findings": [
+        {
+          "id": "V-EMPTY-ANNOUNCEMENT",
+          "flow": "base",
+          "ac": [
+            "AC07"
+          ],
+          "severity": "accessibility",
+          "detail": "Empty Projects/tasks/results render outside a live region; reload clears Loading… without announcing completion/empty result. Actual initial empty DOM captured; no screen-reader certification."
+        },
+        {
+          "id": "AXE-aria-prohibited-attr",
+          "ac": [
+            "AC07"
+          ],
+          "flow": "base",
+          "severity": "manual-review",
+          "detail": {
+            "help": "Elements must only use permitted ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-prohibited-attr?application=axeAPI",
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a div with no valid role attribute.",
+                "html": "<div class=\"actions\" aria-label=\"Pagination\">",
+                "target": [
+                  "div[aria-label=\"Pagination\"]"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.aria",
+              "wcag2a",
+              "wcag412",
+              "EN-301-549",
+              "EN-9.4.1.2",
+              "RGAAv4",
+              "RGAA-7.1.1"
+            ]
+          },
+          "evidence": "base-editor-a11y.json"
+        },
+        {
+          "id": "AXE-aria-prohibited-attr",
+          "ac": [
+            "AC07"
+          ],
+          "flow": "query",
+          "severity": "manual-review",
+          "detail": {
+            "help": "Elements must only use permitted ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-prohibited-attr?application=axeAPI",
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a div with no valid role attribute.",
+                "html": "<div class=\"actions\" aria-label=\"Pagination\">",
+                "target": [
+                  ".actions"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.aria",
+              "wcag2a",
+              "wcag412",
+              "EN-301-549",
+              "EN-9.4.1.2",
+              "RGAAv4",
+              "RGAA-7.1.1"
+            ]
+          },
+          "evidence": "query-query-a11y.json"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-09-29-772Z-91dbce80/report.json",
+      "disposition": "Historical only; latest source has parent fixes and independent replay."
+    },
+    {
+      "runId": "e2e-2026-09-16T12-09-29-818Z-09553c58",
+      "sourceHashes": {
+        "src/errors.mjs": "241e92aa4d6634e11cf4b718226f8402367275e1e352eb90b03e60d844a1943f",
+        "src/main.mjs": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+        "src/migrate.mjs": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+        "src/planner.mjs": "065521acaa41fae1ed35644a808958557fadd4fda171d36293977edfb3507baa",
+        "src/rules.mjs": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+        "src/schema.mjs": "62c51ef36808133f66ea3a9d7900aaba5cbf4647c2e6428488aa718de1ed9bcd",
+        "src/server.mjs": "53755877ea4ae7a41c2fea3e8aea4387431e17b5dca39b1bd2ff8ec755f0d4a1",
+        "src/store.mjs": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+        "public/app.mjs": "b24a765893ad981fc834697372122303f4b99ff47805d4dc1b017c6df86e377b",
+        "public/index.html": "7013db1640d0ec1de837c4943e4fa205fcdacc60bb13a80fa9f45e5d32e0f176",
+        "public/styles.css": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92"
+      },
+      "findings": [
+        {
+          "id": "V-EMPTY-ANNOUNCEMENT",
+          "flow": "base",
+          "ac": [
+            "AC07"
+          ],
+          "severity": "accessibility",
+          "detail": "Empty Projects/tasks/results render outside a live region; reload clears Loading… without announcing completion/empty result. Actual initial empty DOM captured; no screen-reader certification."
+        },
+        {
+          "id": "AXE-aria-prohibited-attr",
+          "ac": [
+            "AC07"
+          ],
+          "flow": "base",
+          "severity": "manual-review",
+          "detail": {
+            "help": "Elements must only use permitted ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-prohibited-attr?application=axeAPI",
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a div with no valid role attribute.",
+                "html": "<div class=\"actions\" aria-label=\"Pagination\">",
+                "target": [
+                  "div[aria-label=\"Pagination\"]"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.aria",
+              "wcag2a",
+              "wcag412",
+              "EN-301-549",
+              "EN-9.4.1.2",
+              "RGAAv4",
+              "RGAA-7.1.1"
+            ]
+          },
+          "evidence": "base-editor-a11y.json"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-09-29-818Z-09553c58/report.json",
+      "disposition": "Historical only; latest source has parent fixes and independent replay."
+    },
+    {
+      "runId": "e2e-2026-09-16T12-12-30-176Z-3fc52b70",
+      "sourceHashes": {
+        "src/errors.mjs": "241e92aa4d6634e11cf4b718226f8402367275e1e352eb90b03e60d844a1943f",
+        "src/main.mjs": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+        "src/migrate.mjs": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+        "src/planner.mjs": "065521acaa41fae1ed35644a808958557fadd4fda171d36293977edfb3507baa",
+        "src/rules.mjs": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+        "src/schema.mjs": "62c51ef36808133f66ea3a9d7900aaba5cbf4647c2e6428488aa718de1ed9bcd",
+        "src/server.mjs": "53755877ea4ae7a41c2fea3e8aea4387431e17b5dca39b1bd2ff8ec755f0d4a1",
+        "src/store.mjs": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+        "public/app.mjs": "b24a765893ad981fc834697372122303f4b99ff47805d4dc1b017c6df86e377b",
+        "public/index.html": "7013db1640d0ec1de837c4943e4fa205fcdacc60bb13a80fa9f45e5d32e0f176",
+        "public/styles.css": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92"
+      },
+      "findings": [
+        {
+          "id": "V-EMPTY-ANNOUNCEMENT",
+          "flow": "base",
+          "ac": [
+            "AC07"
+          ],
+          "severity": "accessibility",
+          "detail": "Empty Projects/tasks/results render outside a live region; reload clears Loading… without announcing completion/empty result. Actual initial empty DOM captured; no screen-reader certification."
+        },
+        {
+          "id": "AXE-aria-prohibited-attr",
+          "ac": [
+            "AC07"
+          ],
+          "flow": "base",
+          "severity": "manual-review",
+          "detail": {
+            "help": "Elements must only use permitted ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-prohibited-attr?application=axeAPI",
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a div with no valid role attribute.",
+                "html": "<div class=\"actions\" aria-label=\"Pagination\">",
+                "target": [
+                  "div[aria-label=\"Pagination\"]"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.aria",
+              "wcag2a",
+              "wcag412",
+              "EN-301-549",
+              "EN-9.4.1.2",
+              "RGAAv4",
+              "RGAA-7.1.1"
+            ]
+          },
+          "evidence": "base-editor-a11y.json"
+        },
+        {
+          "id": "AXE-aria-prohibited-attr",
+          "ac": [
+            "AC07"
+          ],
+          "flow": "query",
+          "severity": "manual-review",
+          "detail": {
+            "help": "Elements must only use permitted ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-prohibited-attr?application=axeAPI",
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a div with no valid role attribute.",
+                "html": "<div class=\"actions\" aria-label=\"Pagination\">",
+                "target": [
+                  ".actions"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.aria",
+              "wcag2a",
+              "wcag412",
+              "EN-301-549",
+              "EN-9.4.1.2",
+              "RGAAv4",
+              "RGAA-7.1.1"
+            ]
+          },
+          "evidence": "query-query-a11y.json"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-12-30-176Z-3fc52b70/report.json",
+      "disposition": "Historical only; latest source has parent fixes and independent replay."
+    },
+    {
+      "runId": "e2e-2026-09-16T12-15-02-426Z-7531f4ae",
+      "sourceHashes": {
+        "src/errors.mjs": "241e92aa4d6634e11cf4b718226f8402367275e1e352eb90b03e60d844a1943f",
+        "src/main.mjs": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+        "src/migrate.mjs": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+        "src/planner.mjs": "065521acaa41fae1ed35644a808958557fadd4fda171d36293977edfb3507baa",
+        "src/rules.mjs": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+        "src/schema.mjs": "62c51ef36808133f66ea3a9d7900aaba5cbf4647c2e6428488aa718de1ed9bcd",
+        "src/server.mjs": "53755877ea4ae7a41c2fea3e8aea4387431e17b5dca39b1bd2ff8ec755f0d4a1",
+        "src/store.mjs": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+        "public/app.mjs": "b24a765893ad981fc834697372122303f4b99ff47805d4dc1b017c6df86e377b",
+        "public/index.html": "7013db1640d0ec1de837c4943e4fa205fcdacc60bb13a80fa9f45e5d32e0f176",
+        "public/styles.css": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92"
+      },
+      "findings": [
+        {
+          "id": "V-EMPTY-ANNOUNCEMENT",
+          "flow": "base",
+          "ac": [
+            "AC07"
+          ],
+          "severity": "accessibility",
+          "detail": "Empty Projects/tasks/results render outside a live region; reload clears Loading… without announcing completion/empty result. Actual initial empty DOM captured; no screen-reader certification."
+        },
+        {
+          "id": "AXE-aria-prohibited-attr",
+          "ac": [
+            "AC07"
+          ],
+          "flow": "base",
+          "severity": "manual-review",
+          "detail": {
+            "help": "Elements must only use permitted ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-prohibited-attr?application=axeAPI",
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a div with no valid role attribute.",
+                "html": "<div class=\"actions\" aria-label=\"Pagination\">",
+                "target": [
+                  "div[aria-label=\"Pagination\"]"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.aria",
+              "wcag2a",
+              "wcag412",
+              "EN-301-549",
+              "EN-9.4.1.2",
+              "RGAAv4",
+              "RGAA-7.1.1"
+            ]
+          },
+          "evidence": "base-editor-a11y.json"
+        },
+        {
+          "id": "AXE-aria-prohibited-attr",
+          "ac": [
+            "AC07"
+          ],
+          "flow": "query",
+          "severity": "manual-review",
+          "detail": {
+            "help": "Elements must only use permitted ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-prohibited-attr?application=axeAPI",
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a div with no valid role attribute.",
+                "html": "<div class=\"actions\" aria-label=\"Pagination\">",
+                "target": [
+                  ".actions"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.aria",
+              "wcag2a",
+              "wcag412",
+              "EN-301-549",
+              "EN-9.4.1.2",
+              "RGAAv4",
+              "RGAA-7.1.1"
+            ]
+          },
+          "evidence": "query-query-a11y.json"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-15-02-426Z-7531f4ae/report.json",
+      "disposition": "Historical only; latest source has parent fixes and independent replay."
+    },
+    {
+      "runId": "e2e-2026-09-16T12-21-58-479Z-4a0c45ce",
+      "sourceHashes": {
+        "src/errors.mjs": "241e92aa4d6634e11cf4b718226f8402367275e1e352eb90b03e60d844a1943f",
+        "src/main.mjs": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+        "src/migrate.mjs": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+        "src/planner.mjs": "065521acaa41fae1ed35644a808958557fadd4fda171d36293977edfb3507baa",
+        "src/rules.mjs": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+        "src/schema.mjs": "62c51ef36808133f66ea3a9d7900aaba5cbf4647c2e6428488aa718de1ed9bcd",
+        "src/server.mjs": "53755877ea4ae7a41c2fea3e8aea4387431e17b5dca39b1bd2ff8ec755f0d4a1",
+        "src/store.mjs": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+        "public/app.mjs": "f758eb48f42d7e4357a70ab268ad5d4221f48904460f504d155abe2aa5bdb4f6",
+        "public/index.html": "7013db1640d0ec1de837c4943e4fa205fcdacc60bb13a80fa9f45e5d32e0f176",
+        "public/styles.css": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92"
+      },
+      "findings": [
+        {
+          "id": "AXE-aria-prohibited-attr",
+          "ac": [
+            "AC07"
+          ],
+          "flow": "base",
+          "severity": "manual-review",
+          "detail": {
+            "help": "Elements must only use permitted ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-prohibited-attr?application=axeAPI",
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a div with no valid role attribute.",
+                "html": "<div class=\"actions\" aria-label=\"Pagination\">",
+                "target": [
+                  "div[aria-label=\"Pagination\"]"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.aria",
+              "wcag2a",
+              "wcag412",
+              "EN-301-549",
+              "EN-9.4.1.2",
+              "RGAAv4",
+              "RGAA-7.1.1"
+            ]
+          },
+          "evidence": "base-editor-a11y.json"
+        },
+        {
+          "id": "AXE-aria-prohibited-attr",
+          "ac": [
+            "AC07"
+          ],
+          "flow": "query",
+          "severity": "manual-review",
+          "detail": {
+            "help": "Elements must only use permitted ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-prohibited-attr?application=axeAPI",
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a div with no valid role attribute.",
+                "html": "<div class=\"actions\" aria-label=\"Pagination\">",
+                "target": [
+                  ".actions"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.aria",
+              "wcag2a",
+              "wcag412",
+              "EN-301-549",
+              "EN-9.4.1.2",
+              "RGAAv4",
+              "RGAA-7.1.1"
+            ]
+          },
+          "evidence": "query-query-a11y.json"
+        }
+      ],
+      "evidence": "verification-evidence/e2e-2026-09-16T12-21-58-479Z-4a0c45ce/report.json",
+      "disposition": "Historical only; latest source has parent fixes and independent replay."
+    }
+  ],
+  "reviewDispositions": [
+    {
+      "id": "R1",
+      "status": "PARENT_FIXED_INDEPENDENTLY_VERIFIED",
+      "outcome": "Parent changed render() to return meaningful loaded/empty/dashboard messages and reload() to announce them, while save() preserves its final success notice. Full replay on the changed source strictly asserts #notice initial no projects, selected project no tasks after reload, unmatched filters no results/recovery, dashboard and loaded totals, and project/task save success. Source hashes were stable during replay; historical pre-fix results remain archived."
+    },
+    {
+      "id": "R2",
+      "status": "ADDRESSED_AND_REPLAYED",
+      "outcome": "audit() asserts bundled axe version, violations=[] and incomplete=[], and both counts must be present/zero. Every flow fails for nonempty/unavailable browser errors. Every flow fails for unexpected/unavailable console messages. Only named negative-resource 400/409 messages in base/graph and explicit offline network errors in base are classified separately; latest replay has no console messages or browser errors at all. Arbitrary audit payloads cannot pass."
+    },
+    {
+      "id": "V-PAGINATION-ROLE",
+      "status": "PARENT_FIXED_INDEPENDENTLY_VERIFIED",
+      "outcome": "Parent replaced generic labeled div with semantic nav. All four flows replayed once on final source; browser accessibility snapshots confirm named Pagination navigation landmark, and tested editor/task-list axe payloads have zero violations and zero incomplete results. Historical serious aria-prohibited-attr observations remain archived rather than erased."
+    }
+  ],
+  "criteria": [
+    {
+      "id": "AC01",
+      "status": "VERIFIED",
+      "conclusion": "Fresh schema2/revision0 HTTP and browser empty state; native actual CLI occupied-lock/port and graceful-close cases. Nine owned real app processes exit zero in each all-flow replay.",
+      "browserChecks": [
+        {
+          "flow": "base",
+          "name": "Fresh HTTP health",
+          "ac": [
+            "AC01"
+          ],
+          "status": "VERIFIED",
+          "actual": {
+            "status": "ok",
+            "schemaVersion": 2,
+            "revision": 0
+          }
+        },
+        {
+          "flow": "base",
+          "name": "Fresh browser empty state",
+          "ac": [
+            "AC01",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "No projects yet. Create your first project."
+        }
+      ],
+      "supportingNativeEvidence": "verification-evidence/native-tests.log"
+    },
+    {
+      "id": "AC02",
+      "status": "VERIFIED",
+      "conclusion": "Keyboard-created Launch and Draft; UI Review creation, title/description edits, invalid input retention, refresh and full new-PID restart. HTTP exact negative errors and unchanged bytes.",
+      "browserChecks": [
+        {
+          "flow": "base",
+          "name": "Project save success overrides loaded empty status",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Project created"
+        },
+        {
+          "flow": "base",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "base",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "base",
+          "name": "Invalid title retains editor and blank input",
+          "ac": [
+            "AC02"
+          ],
+          "status": "VERIFIED",
+          "actual": ""
+        },
+        {
+          "flow": "base",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "base",
+          "name": "Title survives browser refresh",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Draft revisedtodoPriority: normalEdited descriptionEdit"
+        },
+        {
+          "flow": "base",
+          "name": "Description survives full process restart",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Draft revisedtodoPriority: normalEdited descriptionEdit"
+        },
+        {
+          "flow": "base",
+          "name": "HTTP full restart title/description",
+          "ac": [
+            "AC02"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            [
+              "Draft revised",
+              "Edited description"
+            ],
+            [
+              "Review",
+              "Review description"
+            ]
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "base",
+          "name": "Cancelled draft never persisted",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": 3
+        },
+        {
+          "flow": "base",
+          "name": "HTTP missing revision",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            428,
+            "PRECONDITION_REQUIRED"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP malformed revision",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            400,
+            "INVALID_REVISION"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP malformed JSON",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            400,
+            "BAD_JSON"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP wrong media type",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            415,
+            "UNSUPPORTED_MEDIA_TYPE"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP oversized body",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            413,
+            "BODY_TOO_LARGE"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP duplicate project",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            409,
+            "DUPLICATE_PROJECT"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP blank name",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            400,
+            "INVALID_INPUT"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP oversize title",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            400,
+            "INVALID_INPUT"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP wrong title type",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            400,
+            "INVALID_INPUT"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP unknown field",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            400,
+            "INVALID_INPUT"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP unknown task",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            404,
+            "NOT_FOUND"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP unknown route",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            404,
+            "NOT_FOUND"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP wrong method",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            405,
+            "METHOD_NOT_ALLOWED"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP foreign Origin",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            403,
+            "FORBIDDEN_ORIGIN"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP non-allowlisted data path",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            404,
+            "NOT_FOUND"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP encoded traversal",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            404,
+            "NOT_FOUND"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "All invalid HTTP writes leave exact bytes unchanged",
+          "ac": [
+            "AC02",
+            "AC03",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": "{\n  \"schemaVersion\": 2,\n  \"revision\": 6,\n  \"nextId\": 5,\n  \"projects\": [\n    {\n      \"id\": \"p-1\",\n      \"createdOrder\": 1,\n      \"name\": \"Launch\"\n    }\n  ],\n  \"tasks\": [\n    {\n      \"id\": \"t-2\",\n      \"createdOrder\": 2,\n      \"projectId\": \"p-1\",\n      \"title\": \"Draft revised\",\n      \"description\": \"Edited description\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    },\n    {\n      \"id\": \"t-3\",\n      \"createdOrder\": 3,\n      \"projectId\": \"p-1\",\n      \"title\": \"Review\",\n      \"description\": \"Concurrent owner write\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    },\n    {\n      \"id\": \"t-4\",\n      \"createdOrder\": 4,\n      \"projectId\": \"p-1\",\n      \"title\": \"<script>window.__plannerInjected = true</script>\",\n      \"description\": \"\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    }\n  ]\n}\n"
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "migration",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        }
+      ],
+      "supportingNativeEvidence": "verification-evidence/native-tests.log"
+    },
+    {
+      "id": "AC03",
+      "status": "VERIFIED",
+      "conclusion": "Real simultaneous same-ETag HTTP writes give one success/one conflict; UI stale draft retained. Native independent execution covers atomic candidate/byte rollback, IO queue recovery, read isolation, corrupt state, lock ownership, and actual process termination before/after replacement.",
+      "browserChecks": [
+        {
+          "flow": "base",
+          "name": "Conflict offers explicit reload",
+          "ac": [
+            "AC03",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": "Tasks changed. Reload before saving."
+        },
+        {
+          "flow": "base",
+          "name": "Rejected conflict preserves bytes",
+          "ac": [
+            "AC03"
+          ],
+          "status": "VERIFIED",
+          "actual": "{\n  \"schemaVersion\": 2,\n  \"revision\": 5,\n  \"nextId\": 4,\n  \"projects\": [\n    {\n      \"id\": \"p-1\",\n      \"createdOrder\": 1,\n      \"name\": \"Launch\"\n    }\n  ],\n  \"tasks\": [\n    {\n      \"id\": \"t-2\",\n      \"createdOrder\": 2,\n      \"projectId\": \"p-1\",\n      \"title\": \"Draft revised\",\n      \"description\": \"Edited description\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    },\n    {\n      \"id\": \"t-3\",\n      \"createdOrder\": 3,\n      \"projectId\": \"p-1\",\n      \"title\": \"Review\",\n      \"description\": \"Concurrent owner write\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    }\n  ]\n}\n"
+        },
+        {
+          "flow": "base",
+          "name": "All invalid HTTP writes leave exact bytes unchanged",
+          "ac": [
+            "AC02",
+            "AC03",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": "{\n  \"schemaVersion\": 2,\n  \"revision\": 6,\n  \"nextId\": 5,\n  \"projects\": [\n    {\n      \"id\": \"p-1\",\n      \"createdOrder\": 1,\n      \"name\": \"Launch\"\n    }\n  ],\n  \"tasks\": [\n    {\n      \"id\": \"t-2\",\n      \"createdOrder\": 2,\n      \"projectId\": \"p-1\",\n      \"title\": \"Draft revised\",\n      \"description\": \"Edited description\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    },\n    {\n      \"id\": \"t-3\",\n      \"createdOrder\": 3,\n      \"projectId\": \"p-1\",\n      \"title\": \"Review\",\n      \"description\": \"Concurrent owner write\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    },\n    {\n      \"id\": \"t-4\",\n      \"createdOrder\": 4,\n      \"projectId\": \"p-1\",\n      \"title\": \"<script>window.__plannerInjected = true</script>\",\n      \"description\": \"\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    }\n  ]\n}\n"
+        },
+        {
+          "flow": "base",
+          "name": "Same-revision concurrent writes yield one success and one conflict",
+          "ac": [
+            "AC03"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            201,
+            409
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "Concurrent write conflict is explicit",
+          "ac": [
+            "AC03"
+          ],
+          "status": "VERIFIED",
+          "actual": "REVISION_CONFLICT"
+        }
+      ],
+      "supportingNativeEvidence": "verification-evidence/native-tests.log"
+    },
+    {
+      "id": "AC04",
+      "status": "VERIFIED",
+      "conclusion": "Actual UI adds dependency, rejects starting blocked Review, completes Draft then Review, rejects reopening predecessor, reopens reverse order and restarts. HTTP graph negatives; native atomic status+edges/property order/no-op assertions.",
+      "browserChecks": [
+        {
+          "flow": "graph",
+          "name": "Dependency renders blocked status",
+          "ac": [
+            "AC04",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Reviewblocked (todo)Priority: normalEdit"
+        },
+        {
+          "flow": "graph",
+          "name": "Blocked transition explains required action",
+          "ac": [
+            "AC04",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "dependencyIds: Complete dependencies before starting or completing this task"
+        },
+        {
+          "flow": "graph",
+          "name": "Rejected transition retains status draft",
+          "ac": [
+            "AC04"
+          ],
+          "status": "VERIFIED",
+          "actual": "in_progress"
+        },
+        {
+          "flow": "graph",
+          "name": "Completed dependency chain updates dashboard",
+          "ac": [
+            "AC04",
+            "AC06"
+          ],
+          "status": "VERIFIED",
+          "actual": "Total: 2Todo: 0In progress: 0Done: 2Blocked: 0Completion %: 100"
+        },
+        {
+          "flow": "graph",
+          "name": "Reopen predecessor rejected with actionable error",
+          "ac": [
+            "AC04"
+          ],
+          "status": "VERIFIED",
+          "actual": "status: Reopen active dependent tasks first"
+        },
+        {
+          "flow": "graph",
+          "name": "Rejected dependency [\"t-2\"]",
+          "ac": [
+            "AC04"
+          ],
+          "status": "VERIFIED",
+          "actual": "INVALID_INPUT"
+        },
+        {
+          "flow": "graph",
+          "name": "Rejected dependency [\"t-999\"]",
+          "ac": [
+            "AC04"
+          ],
+          "status": "VERIFIED",
+          "actual": "INVALID_INPUT"
+        },
+        {
+          "flow": "graph",
+          "name": "Rejected dependency [\"t-3\",\"t-3\"]",
+          "ac": [
+            "AC04"
+          ],
+          "status": "VERIFIED",
+          "actual": "INVALID_INPUT"
+        },
+        {
+          "flow": "graph",
+          "name": "Rejected dependency [\"t-5\"]",
+          "ac": [
+            "AC04"
+          ],
+          "status": "VERIFIED",
+          "actual": "INVALID_INPUT"
+        },
+        {
+          "flow": "graph",
+          "name": "Rejected dependency [\"t-3\"]",
+          "ac": [
+            "AC04"
+          ],
+          "status": "VERIFIED",
+          "actual": "DEPENDENCY_CYCLE"
+        },
+        {
+          "flow": "graph",
+          "name": "Dependency survives restart",
+          "ac": [
+            "AC04"
+          ],
+          "status": "VERIFIED",
+          "actual": "Reviewblocked (todo)Priority: normalEdit"
+        },
+        {
+          "flow": "graph",
+          "name": "Graph no illegal transition committed",
+          "ac": [
+            "AC04"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            [
+              "Draft",
+              "todo",
+              []
+            ],
+            [
+              "Review",
+              "todo",
+              [
+                "t-2"
+              ]
+            ]
+          ]
+        }
+      ],
+      "supportingNativeEvidence": "verification-evidence/native-tests.log"
+    },
+    {
+      "id": "AC05",
+      "status": "VERIFIED",
+      "conclusion": "Independent F-query IDs B,D then E,F; real browser pageSize2 plus thirteen records at default pageSize10, no omissions/duplicates. Filter reset, AND, no-results/clear, browser Back, reload and full process-restart deep link.",
+      "browserChecks": [
+        {
+          "flow": "query",
+          "name": "Independent HTTP query status=todo&page=1&pageSize=2",
+          "ac": [
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            [
+              "t-4",
+              "t-6"
+            ],
+            4,
+            2
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "Independent HTTP query status=todo&page=2&pageSize=2",
+          "ac": [
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            [
+              "t-7",
+              "t-8"
+            ],
+            4,
+            2
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "Independent HTTP query status=todo&q=%20LAUNCH%20&page=1&pageSize=2",
+          "ac": [
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            [
+              "t-6",
+              "t-7"
+            ],
+            3,
+            2
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "Independent HTTP query status=todo&q=launch&page=2&pageSize=2",
+          "ac": [
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            [
+              "t-8"
+            ],
+            3,
+            2
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "Independent HTTP query status=todo&page=3&pageSize=2",
+          "ac": [
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            [],
+            4,
+            2
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "Independent HTTP query q=unmatched",
+          "ac": [
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            [],
+            0,
+            0
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "Browser filtered first page B,D",
+          "ac": [
+            "AC05",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "t-4",
+            "t-6"
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "Browser filtered second page E,F",
+          "ac": [
+            "AC05",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "t-7",
+            "t-8"
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "Applying filters resets page to 1",
+          "ac": [
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": null
+        },
+        {
+          "flow": "query",
+          "name": "Browser AND-filter first page D,E",
+          "ac": [
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "t-6",
+            "t-7"
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "Browser Back restores filtered second page",
+          "ac": [
+            "AC05",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "t-7",
+            "t-8"
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "Reload preserves actual deep link state",
+          "ac": [
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "t-7",
+            "t-8"
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "No-result state rendered",
+          "ac": [
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": "AlphaTotal: 6Todo: 4In progress: 1Done: 1Blocked: 1Completion %: 16Search titlesFilter statusAll statusestodoin progressdoneFilter priorityAll prioritieslownormalhighApply filtersClear filtersAdd taskNo results. Clear filters or return to the previous page.PreviousPage 1 of 0 · 0 tasksNextTasks per page2102550"
+        },
+        {
+          "flow": "query",
+          "name": "Unmatched filter announces no results with recovery action",
+          "ac": [
+            "AC05",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "No results. Clear filters or return to the previous page."
+        },
+        {
+          "flow": "query",
+          "name": "Clear filters restores first two records",
+          "ac": [
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "t-3",
+            "t-4"
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "Default pageSize=10 really paginates thirteen tasks",
+          "ac": [
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": 10
+        },
+        {
+          "flow": "query",
+          "name": "Next page contains remaining three tasks",
+          "ac": [
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": 3
+        },
+        {
+          "flow": "query",
+          "name": "No duplicates or omissions across default-size pages",
+          "ac": [
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": 13
+        },
+        {
+          "flow": "query",
+          "name": "Deep linked second page survives process restart",
+          "ac": [
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "t-14",
+            "t-15",
+            "t-16"
+          ]
+        },
+        {
+          "flow": "migration",
+          "name": "Browser high priority filter after real edit",
+          "ac": [
+            "AC09",
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "t-7"
+          ]
+        },
+        {
+          "flow": "migration",
+          "name": "Browser project/status/normalized title/priority all combine with AND",
+          "ac": [
+            "AC05",
+            "AC09"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "t-7"
+          ]
+        }
+      ],
+      "supportingNativeEvidence": "verification-evidence/native-tests.log"
+    },
+    {
+      "id": "AC06",
+      "status": "VERIFIED",
+      "conclusion": "Independent Alpha totals 6/4/1/1/1/16; global includes Beta; empty project zeros; browser search/pages do not affect summary; completion and restart totals verified.",
+      "browserChecks": [
+        {
+          "flow": "graph",
+          "name": "Completed dependency chain updates dashboard",
+          "ac": [
+            "AC04",
+            "AC06"
+          ],
+          "status": "VERIFIED",
+          "actual": "Total: 2Todo: 0In progress: 0Done: 2Blocked: 0Completion %: 100"
+        },
+        {
+          "flow": "query",
+          "name": "Empty project dashboard is independently all zero",
+          "ac": [
+            "AC06"
+          ],
+          "status": "VERIFIED",
+          "actual": {
+            "total": 0,
+            "todo": 0,
+            "inProgress": 0,
+            "done": 0,
+            "blocked": 0,
+            "completionPercent": 0
+          }
+        },
+        {
+          "flow": "query",
+          "name": "Independent F-query Alpha dashboard",
+          "ac": [
+            "AC06"
+          ],
+          "status": "VERIFIED",
+          "actual": {
+            "total": 6,
+            "todo": 4,
+            "inProgress": 1,
+            "done": 1,
+            "blocked": 1,
+            "completionPercent": 16
+          }
+        },
+        {
+          "flow": "query",
+          "name": "Page change does not affect totals",
+          "ac": [
+            "AC06"
+          ],
+          "status": "VERIFIED",
+          "actual": "Total: 6Todo: 4In progress: 1Done: 1Blocked: 1Completion %: 16"
+        },
+        {
+          "flow": "query",
+          "name": "Dashboard project summary ignores filters/pages",
+          "ac": [
+            "AC06"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "Total: 6",
+            "Todo: 4",
+            "In progress: 1",
+            "Done: 1",
+            "Blocked: 1",
+            "Completion %: 16"
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "Global dashboard includes other project",
+          "ac": [
+            "AC06"
+          ],
+          "status": "VERIFIED",
+          "actual": "Total: 7Todo: 5In progress: 1Done: 1Blocked: 1Completion %: 14"
+        },
+        {
+          "flow": "query",
+          "name": "Restart dashboard persists all thirteen tasks",
+          "ac": [
+            "AC06"
+          ],
+          "status": "VERIFIED",
+          "actual": "Total: 13Todo: 11In progress: 1Done: 1Blocked: 1Completion %: 7"
+        },
+        {
+          "flow": "migration",
+          "name": "Migrated dashboard preserves independent counts",
+          "ac": [
+            "AC06",
+            "AC09"
+          ],
+          "status": "VERIFIED",
+          "actual": "Total: 6Todo: 4In progress: 1Done: 1Blocked: 1Completion %: 16"
+        }
+      ],
+      "supportingNativeEvidence": "verification-evidence/native-tests.log"
+    },
+    {
+      "id": "AC07",
+      "status": "VERIFIED_WITH_LIMITATIONS",
+      "conclusion": "J1–J4 browser journeys, keyboard-only create/cancel/navigation, visible focus, labels and 390/1280px >=44px effective hit targets/no overflow verified. Parent R1 announcement fix and semantic Pagination nav fix independently replayed. Exact empty/loaded/dashboard/save notices pass; accessibility snapshots expose named Pagination navigation landmark. Tested editor/list pages have axe zero violations AND zero unresolved incomplete checks. No human approval or full WCAG/screen-reader claim.",
+      "browserChecks": [
+        {
+          "flow": "base",
+          "name": "Fresh browser empty state",
+          "ac": [
+            "AC01",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "No projects yet. Create your first project."
+        },
+        {
+          "flow": "base",
+          "name": "Initial empty Projects live announcement",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "No projects yet. Create your first project."
+        },
+        {
+          "flow": "base",
+          "name": "Loading completion uses the polite status region",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": {
+            "live": "polite",
+            "role": "status"
+          }
+        },
+        {
+          "flow": "base",
+          "name": "Project save success overrides loaded empty status",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Project created"
+        },
+        {
+          "flow": "base",
+          "name": "Selected empty project announces no tasks after reload",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "No tasks yet. Add your first task."
+        },
+        {
+          "flow": "base",
+          "name": "Keyboard-only project creation and Add task navigation",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "editor-title"
+        },
+        {
+          "flow": "base",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "base",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "base",
+          "name": "Validation focuses announced alert",
+          "ac": [
+            "AC07",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": true
+        },
+        {
+          "flow": "base",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "base",
+          "name": "Title survives browser refresh",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Draft revisedtodoPriority: normalEdited descriptionEdit"
+        },
+        {
+          "flow": "base",
+          "name": "Description survives full process restart",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Draft revisedtodoPriority: normalEdited descriptionEdit"
+        },
+        {
+          "flow": "base",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "base",
+          "name": "Editor receives keyboard focus",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "editor-title"
+        },
+        {
+          "flow": "base",
+          "name": "Tab reaches labeled description",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "editor-description"
+        },
+        {
+          "flow": "base",
+          "name": "Keyboard reaches Cancel",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Cancel"
+        },
+        {
+          "flow": "base",
+          "name": "Keyboard cancel restores Add task focus",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "add-task"
+        },
+        {
+          "flow": "base",
+          "name": "Cancelled draft never persisted",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": 3
+        },
+        {
+          "flow": "base",
+          "name": "390px no horizontal page overflow",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": true
+        },
+        {
+          "flow": "base",
+          "name": "390px labeled form controls",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": []
+        },
+        {
+          "flow": "base",
+          "name": "390px interactive targets at least 44px",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": []
+        },
+        {
+          "flow": "base",
+          "name": "1280px no horizontal page overflow",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": true
+        },
+        {
+          "flow": "base",
+          "name": "1280px labeled form controls",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": []
+        },
+        {
+          "flow": "base",
+          "name": "1280px interactive targets at least 44px",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": []
+        },
+        {
+          "flow": "base",
+          "name": "editor Pagination is a named navigation landmark",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": true
+        },
+        {
+          "flow": "base",
+          "name": "editor axe automated violations (not full WCAG or human approval)",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": []
+        },
+        {
+          "flow": "base",
+          "name": "editor axe has no unresolved incomplete checks on tested page",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": []
+        },
+        {
+          "flow": "base",
+          "name": "Successful base journey has no uncaught browser exceptions",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": []
+        },
+        {
+          "flow": "base",
+          "name": "Successful base journey CLI console is clean",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": []
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "graph",
+          "name": "Dependency renders blocked status",
+          "ac": [
+            "AC04",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Reviewblocked (todo)Priority: normalEdit"
+        },
+        {
+          "flow": "graph",
+          "name": "Blocked transition explains required action",
+          "ac": [
+            "AC04",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "dependencyIds: Complete dependencies before starting or completing this task"
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "graph",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        },
+        {
+          "flow": "query",
+          "name": "Browser filtered first page B,D",
+          "ac": [
+            "AC05",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "t-4",
+            "t-6"
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "Browser filtered second page E,F",
+          "ac": [
+            "AC05",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "t-7",
+            "t-8"
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "Browser Back restores filtered second page",
+          "ac": [
+            "AC05",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "t-7",
+            "t-8"
+          ]
+        },
+        {
+          "flow": "query",
+          "name": "Dashboard loaded status is announced",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Alpha dashboard loaded. 6 tasks."
+        },
+        {
+          "flow": "query",
+          "name": "Unmatched filter announces no results with recovery action",
+          "ac": [
+            "AC05",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "No results. Clear filters or return to the previous page."
+        },
+        {
+          "flow": "query",
+          "name": "Clear filters announces loaded count and current page",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "6 tasks loaded. Page 1 of 3."
+        },
+        {
+          "flow": "query",
+          "name": "query Pagination is a named navigation landmark",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": true
+        },
+        {
+          "flow": "query",
+          "name": "query axe automated violations (not full WCAG or human approval)",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": []
+        },
+        {
+          "flow": "query",
+          "name": "query axe has no unresolved incomplete checks on tested page",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": []
+        },
+        {
+          "flow": "migration",
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED",
+          "actual": "Task saved"
+        }
+      ]
+    },
+    {
+      "id": "AC08",
+      "status": "VERIFIED",
+      "conclusion": "Malformed/oversize/media/revision/route/method/Host/Origin/static boundaries; safe script-like title text; focused alert, conflict draft/reload, offline failure and read recovery. PID/session-scoped lifecycle and captured browser errors.",
+      "browserChecks": [
+        {
+          "flow": "base",
+          "name": "Validation focuses announced alert",
+          "ac": [
+            "AC07",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": true
+        },
+        {
+          "flow": "base",
+          "name": "Conflict offers explicit reload",
+          "ac": [
+            "AC03",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": "Tasks changed. Reload before saving."
+        },
+        {
+          "flow": "base",
+          "name": "Conflict retains draft",
+          "ac": [
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": "Retained conflict draft"
+        },
+        {
+          "flow": "base",
+          "name": "Explicit reload discards draft",
+          "ac": [
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": true
+        },
+        {
+          "flow": "base",
+          "name": "Explicit reload restores committed text",
+          "ac": [
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": "Draft revisedtodoPriority: normalEdited descriptionEdit"
+        },
+        {
+          "flow": "base",
+          "name": "Script-like title is text, never executable",
+          "ac": [
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": {
+            "injected": false,
+            "scripts": 0,
+            "text": [
+              "Draft revised",
+              "Review",
+              "<script>window.__plannerInjected = true</script>"
+            ]
+          }
+        },
+        {
+          "flow": "base",
+          "name": "HTTP missing revision",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            428,
+            "PRECONDITION_REQUIRED"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP malformed revision",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            400,
+            "INVALID_REVISION"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP malformed JSON",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            400,
+            "BAD_JSON"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP wrong media type",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            415,
+            "UNSUPPORTED_MEDIA_TYPE"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP oversized body",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            413,
+            "BODY_TOO_LARGE"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP duplicate project",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            409,
+            "DUPLICATE_PROJECT"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP blank name",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            400,
+            "INVALID_INPUT"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP oversize title",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            400,
+            "INVALID_INPUT"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP wrong title type",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            400,
+            "INVALID_INPUT"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP unknown field",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            400,
+            "INVALID_INPUT"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP unknown task",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            404,
+            "NOT_FOUND"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP unknown route",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            404,
+            "NOT_FOUND"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP wrong method",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            405,
+            "METHOD_NOT_ALLOWED"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP foreign Origin",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            403,
+            "FORBIDDEN_ORIGIN"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP non-allowlisted data path",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            404,
+            "NOT_FOUND"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "HTTP encoded traversal",
+          "ac": [
+            "AC02",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            404,
+            "NOT_FOUND"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "Foreign Host is rejected",
+          "ac": [
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            403,
+            "FORBIDDEN_ORIGIN"
+          ]
+        },
+        {
+          "flow": "base",
+          "name": "All invalid HTTP writes leave exact bytes unchanged",
+          "ac": [
+            "AC02",
+            "AC03",
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": "{\n  \"schemaVersion\": 2,\n  \"revision\": 6,\n  \"nextId\": 5,\n  \"projects\": [\n    {\n      \"id\": \"p-1\",\n      \"createdOrder\": 1,\n      \"name\": \"Launch\"\n    }\n  ],\n  \"tasks\": [\n    {\n      \"id\": \"t-2\",\n      \"createdOrder\": 2,\n      \"projectId\": \"p-1\",\n      \"title\": \"Draft revised\",\n      \"description\": \"Edited description\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    },\n    {\n      \"id\": \"t-3\",\n      \"createdOrder\": 3,\n      \"projectId\": \"p-1\",\n      \"title\": \"Review\",\n      \"description\": \"Concurrent owner write\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    },\n    {\n      \"id\": \"t-4\",\n      \"createdOrder\": 4,\n      \"projectId\": \"p-1\",\n      \"title\": \"<script>window.__plannerInjected = true</script>\",\n      \"description\": \"\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    }\n  ]\n}\n"
+        },
+        {
+          "flow": "base",
+          "name": "Network failure offers read recovery",
+          "ac": [
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": "Request failed; saving may be uncertain. Use Reload latest to read committed data before another action."
+        },
+        {
+          "flow": "base",
+          "name": "Network failure is not success-shaped",
+          "ac": [
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": ""
+        },
+        {
+          "flow": "base",
+          "name": "UI recovers after network failure",
+          "ac": [
+            "AC08"
+          ],
+          "status": "VERIFIED",
+          "actual": "LaunchTotal: 4Todo: 4In progress: 0Done: 0Blocked: 0Completion %: 0Search titlesFilter statusAll statusestodoin progressdoneFilter priorityAll prioritieslownormalhighApply filtersClear filtersAdd taskDraft revisedtodoPriority: normalEdited descriptionEditReviewtodoPriority: normalConcurrent owner writeEdit<script>window.__plannerInjected = true</script>todoPriority: normalEditConcurrent AtodoPriority: normalEditPreviousPage 1 of 1 · 4 tasksNextTasks per page2102550"
+        }
+      ],
+      "supportingNativeEvidence": "verification-evidence/native-tests.log"
+    },
+    {
+      "id": "AC09",
+      "status": "VERIFIED_WITH_LIMITATIONS",
+      "conclusion": "Genuine captured v1 SHA checked; browser read-only before offline migration, exact backup, all fields/nextId/order preserved, revision+1, repeat no-op; real UI priority edit/filter/restart. Native malformed/lock/precommit/rollback cases independently executed. Historical expand writer timing and fresh-context planner resumption remain parent-owned chronology limitations.",
+      "browserChecks": [
+        {
+          "flow": "migration",
+          "name": "Actual v1 fixture loads in browser read-only",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED",
+          "actual": "Legacy data is read-only. Stop the server and run node src\\migrate.mjs --data-dir <your directory>, then restart and Reload latest.AlphaTotal: 6Todo: 4In progress: 1Done: 1Blocked: 1Completion %: 16Search titlesFilter statusAll statusestodoin progressdoneFilter priorityAll prioritieslownormalhighApply filtersClear filtersAdd taskArchive briefdonePriority: normalFixture AEditBuild outlinetodoPriority: normalFixture BEditCheck linksin progressPriority: normalFixture CEditDraft launchtodoPriority: normalFixture DEditEdit launchblocked (todo)Priority: normalFixture EEditFinalize launchtodoPriority: normalFixture FEditPreviousPage 1 of 1 · 6 tasksNextTasks per page2102550"
+        },
+        {
+          "flow": "migration",
+          "name": "Legacy browser disables edits",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED",
+          "actual": true
+        },
+        {
+          "flow": "migration",
+          "name": "Genuine I3 fixture SHA-256",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED",
+          "actual": "ad7845486864bb4fef3f938eac02ef4ba213f8d3e20da4e4fa1b1c8b61df4450"
+        },
+        {
+          "flow": "migration",
+          "name": "Legacy API refuses writes",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED",
+          "actual": "MIGRATION_REQUIRED"
+        },
+        {
+          "flow": "migration",
+          "name": "Offline migration increments revision exactly once",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED",
+          "actual": {
+            "schemaVersion": 2,
+            "revision": 12,
+            "changed": true
+          }
+        },
+        {
+          "flow": "migration",
+          "name": "Migration preserves exact IDs/text/edges/order/nextId/status",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED",
+          "actual": {
+            "schemaVersion": 2,
+            "revision": 12,
+            "nextId": 10,
+            "projects": [
+              {
+                "id": "p-1",
+                "createdOrder": 1,
+                "name": "Alpha"
+              },
+              {
+                "id": "p-2",
+                "createdOrder": 2,
+                "name": "Beta"
+              }
+            ],
+            "tasks": [
+              {
+                "id": "t-3",
+                "createdOrder": 3,
+                "projectId": "p-1",
+                "title": "Archive brief",
+                "description": "Fixture A",
+                "dependencyIds": [],
+                "status": "done",
+                "priority": "normal"
+              },
+              {
+                "id": "t-4",
+                "createdOrder": 4,
+                "projectId": "p-1",
+                "title": "Build outline",
+                "description": "Fixture B",
+                "dependencyIds": [],
+                "status": "todo",
+                "priority": "normal"
+              },
+              {
+                "id": "t-5",
+                "createdOrder": 5,
+                "projectId": "p-1",
+                "title": "Check links",
+                "description": "Fixture C",
+                "dependencyIds": [],
+                "status": "in_progress",
+                "priority": "normal"
+              },
+              {
+                "id": "t-6",
+                "createdOrder": 6,
+                "projectId": "p-1",
+                "title": "Draft launch",
+                "description": "Fixture D",
+                "dependencyIds": [],
+                "status": "todo",
+                "priority": "normal"
+              },
+              {
+                "id": "t-7",
+                "createdOrder": 7,
+                "projectId": "p-1",
+                "title": "Edit launch",
+                "description": "Fixture E",
+                "dependencyIds": [
+                  "t-4"
+                ],
+                "status": "todo",
+                "priority": "normal"
+              },
+              {
+                "id": "t-8",
+                "createdOrder": 8,
+                "projectId": "p-1",
+                "title": "Finalize launch",
+                "description": "Fixture F",
+                "dependencyIds": [],
+                "status": "todo",
+                "priority": "normal"
+              },
+              {
+                "id": "t-9",
+                "createdOrder": 9,
+                "projectId": "p-2",
+                "title": "Gather launch",
+                "description": "Fixture G",
+                "dependencyIds": [],
+                "status": "todo",
+                "priority": "normal"
+              }
+            ]
+          }
+        },
+        {
+          "flow": "migration",
+          "name": "Migration exact-byte original backup",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED",
+          "actual": true
+        },
+        {
+          "flow": "migration",
+          "name": "Repeated offline migration no-op",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED",
+          "actual": {
+            "schemaVersion": 2,
+            "revision": 12,
+            "changed": false
+          }
+        },
+        {
+          "flow": "migration",
+          "name": "Repeated migration preserves exact bytes",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED",
+          "actual": true
+        },
+        {
+          "flow": "migration",
+          "name": "Browser high priority filter after real edit",
+          "ac": [
+            "AC09",
+            "AC05"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "t-7"
+          ]
+        },
+        {
+          "flow": "migration",
+          "name": "Browser project/status/normalized title/priority all combine with AND",
+          "ac": [
+            "AC05",
+            "AC09"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "t-7"
+          ]
+        },
+        {
+          "flow": "migration",
+          "name": "High priority filter survives full process restart",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED",
+          "actual": [
+            "t-7"
+          ]
+        },
+        {
+          "flow": "migration",
+          "name": "Migrated browser priority survives restart",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED",
+          "actual": "Edit launchblocked (todo)Priority: highFixture EEdit"
+        },
+        {
+          "flow": "migration",
+          "name": "Migrated dashboard preserves independent counts",
+          "ac": [
+            "AC06",
+            "AC09"
+          ],
+          "status": "VERIFIED",
+          "actual": "Total: 6Todo: 4In progress: 1Done: 1Blocked: 1Completion %: 16"
+        }
+      ],
+      "supportingNativeEvidence": "verification-evidence/native-tests.log"
+    },
+    {
+      "id": "AC10",
+      "status": "PARENT_PENDING",
+      "conclusion": "Controlled diagnosis belongs to parent; not duplicated or certified by this browser verifier.",
+      "browserChecks": []
+    },
+    {
+      "id": "AC11",
+      "status": "PARENT_PENDING",
+      "conclusion": "29-item workflow observation reconciliation, approval/phase sequencing and metrics belong to parent.",
+      "browserChecks": []
+    },
+    {
+      "id": "AC12",
+      "status": "PARENT_PENDING",
+      "conclusion": "Verifier delivers rerunnable script, prerequisites, source hashes and archived evidence. Repository regressions, complete integrated final review, metrics and PR are parent-owned.",
+      "browserChecks": []
+    }
+  ],
+  "nativeResult": {
+    "command": "node examples\\team-planner\\scripts\\check.mjs all",
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+    "tests": 37,
+    "pass": 37,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "evidence": "verification-evidence/native-tests.log",
+    "scope": "Independent execution of existing assertions; includes parent-added command/diagnosis/query tests present at execution. These are NOT counted as browser proof or as the parent-controlled I5 experiment."
+  },
+  "limitations": [
+    "AC07 announcement and semantic-pagination findings are fixed and independently verified on final parent-patched source. Tested axe pages have no unresolved findings, but this is not full WCAG or an all-AC green verdict.",
+    "Human design approval and full WCAG/screen-reader behavior were not verified.",
+    "Native Windows Ctrl+C was not sent: test-only IPC emits the actual CLI SIGTERM handler; real PID termination/restart and lock release were verified.",
+    "Final integrated tree, parent diagnosis, ESM metrics/probe interpretation, fixed evaluation and PR remain parent-owned.",
+    "Initial failures are retained: unavailable arm64 CLI candidate; daemon-inherited pipe close wait despite successful command; offscreen click and unsupported text-selector harness mistakes. They are not production app failures. Explicit scroll/native semantic locators and owned-PID exit waiting fixed the runner.",
+    "Native current suite had 37 tests because parent work added tests after implementation baseline of 32. No test count is used as UI proof."
+  ]
+}

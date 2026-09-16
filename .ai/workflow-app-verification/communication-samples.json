@@ -1,0 +1,27 @@
+{
+  "scope": "Verbatim samples of actual parent messages from this run, selected for independent communication review. Not a complete transcript or a model-effectiveness benchmark.",
+  "samples": [
+    {
+      "phase": "scope",
+      "message": "I’ll use the five latest merged PRs (#6–#10) as the test scope and build a medium-complexity app to exercise their workflow changes. This needs a full end-to-end run—not just the existing fixture tests—with evidence for each feature and explicit limits on what one run can prove."
+    },
+    {
+      "phase": "research and design",
+      "message": "The inventory covers 29 workflow features across #6–#10. The app will be a local team planner with dependency-aware tasks, filtering, pagination, a dashboard, persistent storage, and a v1→v2 migration.\n\nResearch is accepted with one correction: temporary test directories are allowed. The design review found three execution-plan gaps; I’ve addressed their scope, browser isolation, and timeout contracts. Implementation will start after the storage prerequisite passes. Browser tooling is installed; Python-based metrics remain blocked.",
+      "laterCorrection": "Python was later found through uv. The initial PATH-only result and recovered managed interpreter are recorded in parent-observations.json; this sample is historical, not the final tool status."
+    },
+    {
+      "phase": "implementation waiting",
+      "message": "The app implementation is running through its test-backed increments. The existing 51 tests and all 10 regression tasks pass after restoring the missing browser-test dependency.\n\nLive app verification, the migration/diagnosis exercises, and the final per-feature results are still pending."
+    },
+    {
+      "phase": "independent verification waiting",
+      "message": "The planner and native verification are complete: **37 tests pass**. Both controlled bug scenarios fail with the injected defect and pass after restoration. Mutation testing exposed additional test gaps; after strengthening assertions, **24 of 26 mutants are killed**, with two capacity-check survivors awaiting review.\n\nIndependent browser verification and the final workflow review are still running. No “all features passed” claim yet."
+    }
+  ],
+  "notExercised": [
+    "Human design approval interaction (autopilot; no approval is claimed).",
+    "Clinical or communication-effectiveness measurement.",
+    "Exhaustive checking of every assistant/tool message or all six illustrative communication scenarios."
+  ]
+}

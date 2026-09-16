@@ -1,0 +1,187 @@
+{
+  "lifecycle": {
+    "effectiveLaunch": {
+      "browserLaunched": true,
+      "engine": "chrome",
+      "launchHash": 18102353468594970000
+    },
+    "launched": false,
+    "relaunchedBrowser": false,
+    "restartedBackground": false,
+    "restoreStatus": "not_configured",
+    "reused": true,
+    "saveStatus": "not_attempted"
+  },
+  "origin": "http://127.0.0.1:55545/?projectId=p-1",
+  "refs": {
+    "e1": {
+      "name": "Reload latest",
+      "role": "button"
+    },
+    "e10": {
+      "name": "<script>window.__plannerInjected = true</script>",
+      "role": "article"
+    },
+    "e11": {
+      "name": "Pagination",
+      "role": "navigation"
+    },
+    "e12": {
+      "name": "Projects",
+      "role": "link"
+    },
+    "e13": {
+      "name": "Dashboard",
+      "role": "link"
+    },
+    "e14": {
+      "name": "Project name",
+      "role": "textbox"
+    },
+    "e15": {
+      "name": "Create project",
+      "role": "button"
+    },
+    "e16": {
+      "name": "Search titles",
+      "role": "textbox"
+    },
+    "e17": {
+      "name": "Filter status",
+      "role": "combobox"
+    },
+    "e18": {
+      "name": "Filter priority",
+      "role": "combobox"
+    },
+    "e19": {
+      "name": "Apply filters",
+      "role": "button"
+    },
+    "e2": {
+      "name": "Team planner",
+      "role": "heading"
+    },
+    "e20": {
+      "name": "Clear filters",
+      "role": "button"
+    },
+    "e21": {
+      "name": "Draft revised",
+      "role": "heading"
+    },
+    "e22": {
+      "name": "Edit",
+      "role": "button"
+    },
+    "e23": {
+      "name": "Review",
+      "role": "heading"
+    },
+    "e24": {
+      "name": "Edit",
+      "role": "button"
+    },
+    "e25": {
+      "name": "<script>window.__plannerInjected = true</script>",
+      "role": "heading"
+    },
+    "e26": {
+      "name": "Edit",
+      "role": "button"
+    },
+    "e27": {
+      "name": "Previous",
+      "role": "button"
+    },
+    "e28": {
+      "name": "Next",
+      "role": "button"
+    },
+    "e29": {
+      "name": "Tasks per page",
+      "role": "combobox"
+    },
+    "e3": {
+      "name": "Main",
+      "role": "navigation"
+    },
+    "e30": {
+      "name": "Launch",
+      "role": "link"
+    },
+    "e31": {
+      "name": "All statuses",
+      "role": "option"
+    },
+    "e32": {
+      "name": "todo",
+      "role": "option"
+    },
+    "e33": {
+      "name": "in progress",
+      "role": "option"
+    },
+    "e34": {
+      "name": "done",
+      "role": "option"
+    },
+    "e35": {
+      "name": "All priorities",
+      "role": "option"
+    },
+    "e36": {
+      "name": "low",
+      "role": "option"
+    },
+    "e37": {
+      "name": "normal",
+      "role": "option"
+    },
+    "e38": {
+      "name": "high",
+      "role": "option"
+    },
+    "e39": {
+      "name": "2",
+      "role": "option"
+    },
+    "e4": {
+      "name": "Projects",
+      "role": "heading"
+    },
+    "e40": {
+      "name": "10",
+      "role": "option"
+    },
+    "e41": {
+      "name": "25",
+      "role": "option"
+    },
+    "e42": {
+      "name": "50",
+      "role": "option"
+    },
+    "e5": {
+      "name": "Launch",
+      "role": "heading"
+    },
+    "e6": {
+      "name": "Project totals",
+      "role": "region"
+    },
+    "e7": {
+      "name": "Add task",
+      "role": "button"
+    },
+    "e8": {
+      "name": "Draft revised",
+      "role": "article"
+    },
+    "e9": {
+      "name": "Review",
+      "role": "article"
+    }
+  },
+  "snapshot": "- banner\n  - heading \"Team planner\" [level=1, ref=e2]\n  - navigation \"Main\" [ref=e3]\n    - link \"Projects\" [ref=e12]\n    - link \"Dashboard\" [ref=e13]\n- status\n- alert\n  - StaticText \"Request failed; saving may be uncertain. Use Reload latest to read committed data before another action.\"\n- button \"Reload latest\" [ref=e1]\n- complementary \"Projects\"\n  - heading \"Projects\" [level=2, ref=e4]\n  - form\n    - LabelText\n      - StaticText \"Project name\"\n    - textbox \"Project name\" [required, ref=e14]\n    - button \"Create project\" [ref=e15]\n  - list\n    - listitem [level=1]\n      - ListMarker \"• \"\n      - link \"Launch\" [ref=e30]\n- main\n  - heading \"Launch\" [level=2, ref=e5]\n  - region \"Project totals\" [ref=e6]\n    - paragraph\n      - StaticText \"Total: 3\"\n    - paragraph\n      - StaticText \"Todo: 3\"\n    - paragraph\n      - StaticText \"In progress: 0\"\n    - paragraph\n      - StaticText \"Done: 0\"\n    - paragraph\n      - StaticText \"Blocked: 0\"\n    - paragraph\n      - StaticText \"Completion %: 0\"\n  - form \"Task filters\"\n    - LabelText\n      - StaticText \"Search titles\"\n    - textbox \"Search titles\" [ref=e16]\n    - LabelText\n      - StaticText \"Filter status\"\n    - combobox \"Filter status\" [expanded=false, ref=e17]: All statuses\n      - MenuListPopup\n        - option \"All statuses\" [selected, ref=e31]\n        - option \"todo\" [ref=e32]\n        - option \"in progress\" [ref=e33]\n        - option \"done\" [ref=e34]\n    - LabelText\n      - StaticText \"Filter priority\"\n    - combobox \"Filter priority\" [expanded=false, ref=e18]: All priorities\n      - MenuListPopup\n        - option \"All priorities\" [selected, ref=e35]\n        - option \"low\" [ref=e36]\n        - option \"normal\" [ref=e37]\n        - option \"high\" [ref=e38]\n    - button \"Apply filters\" [ref=e19]\n    - button \"Clear filters\" [ref=e20]\n  - button \"Add task\" [ref=e7]\n  - article \"Draft revised\" [ref=e8]\n    - heading \"Draft revised\" [level=3, ref=e21]\n    - StaticText \"todo\"\n    - paragraph\n      - StaticText \"Priority: normal\"\n    - paragraph\n      - StaticText \"Edited description\"\n    - button \"Edit\" [ref=e22]\n  - article \"Review\" [ref=e9]\n    - heading \"Review\" [level=3, ref=e23]\n    - StaticText \"todo\"\n    - paragraph\n      - StaticText \"Priority: normal\"\n    - paragraph\n      - StaticText \"Concurrent owner write\"\n    - button \"Edit\" [ref=e24]\n  - article \"<script>window.__plannerInjected = true</script>\" [ref=e10]\n    - heading \"<script>window.__plannerInjected = true</script>\" [level=3, ref=e25]\n    - StaticText \"todo\"\n    - paragraph\n      - StaticText \"Priority: normal\"\n    - button \"Edit\" [ref=e26]\n  - navigation \"Pagination\" [ref=e11]\n    - button \"Previous\" [disabled, ref=e27]\n    - StaticText \"Page 1 of 1 · 3 tasks\"\n    - button \"Next\" [disabled, ref=e28]\n    - LabelText\n      - StaticText \"Tasks per page\"\n    - combobox \"Tasks per page\" [expanded=false, ref=e29]: 10\n      - MenuListPopup\n        - option \"2\" [ref=e39]\n        - option \"10\" [selected, ref=e40]\n        - option \"25\" [ref=e41]\n        - option \"50\" [ref=e42]"
+}
