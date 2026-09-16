@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { start } from '../src/main.mjs';
-import { directory } from './helpers.mjs';
+import { directory, cleanup } from './helpers.mjs';
 import { seedQuery } from './query-fixture.mjs';
 
 test('worked F-query filters before paging and dashboard ignores page filters', async t => {
   const path = await directory(t);
   const app = await start({ directory: path, port: 0 });
-  t.after(() => app.close());
+  cleanup(t, () => app.close());
   const { alpha, labels } = await seedQuery(app.url);
   async function get(path) {
     const response = await fetch(`${app.url}${path}`, { signal: AbortSignal.timeout(5000) });
@@ -40,7 +40,7 @@ test('worked F-query filters before paging and dashboard ignores page filters', 
 
 test('strict query rejects duplicate keys invalid enums and unsafe pagination', async t => {
   const app = await start({ directory: await directory(t), port: 0 });
-  t.after(() => app.close());
+  cleanup(t, () => app.close());
   for (const query of ['page=0', 'page=-1', 'page=1.5', 'page=NaN', 'page=9007199254740992', 'pageSize=0', 'pageSize=51', 'pageSize=1e1', 'status=blocked', 'priority=urgent', 'unknown=x', 'q=x&q=y', 'projectId=', `q=${'x'.repeat(161)}`]) {
     const response = await fetch(`${app.url}/api/tasks?${query}`, { signal: AbortSignal.timeout(5000) });
     assert.equal(response.status, 400, query);

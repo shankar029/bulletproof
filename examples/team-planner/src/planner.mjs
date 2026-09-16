@@ -1,4 +1,4 @@
-import { AppError, object, text, choice, statuses } from './schema.mjs';
+import { AppError, invalid, object, text, choice, statuses, priorities } from './schema.mjs';
 import { taskView, transition, validateDependencies, validateGraph, selectTasks, summarize } from './rules.mjs';
 
 export function findTask(model, id) {
@@ -45,12 +45,14 @@ export class Planner {
   }
   async createTask(input, revision) {
     const result = await this.store.transact(revision, model => {
-      object(input, ['projectId', 'title', 'description', 'dependencyIds'], ['projectId', 'title']);
+      object(input, ['projectId', 'title', 'description', 'dependencyIds', 'priority'], ['projectId', 'title']);
+      if (typeof input.projectId !== 'string') invalid('Project ID must be text', 'projectId');
       findProject(model, input.projectId);
       const title = text(input.title, 'title', 160);
       const description = text(Object.hasOwn(input, 'description') ? input.description : '', 'description', 2000, false);
       if (model.tasks.length >= 2000) throw new AppError('CAPACITY_EXCEEDED', 'Task limit reached', 409);
-      const task = { ...allocate(model, 't'), projectId: input.projectId, title, description, status: 'todo', dependencyIds: Object.hasOwn(input, 'dependencyIds') ? structuredClone(input.dependencyIds) : [], priority: 'normal' };
+      const priority = Object.hasOwn(input, 'priority') ? choice(input.priority, priorities, 'priority') : 'normal';
+      const task = { ...allocate(model, 't'), projectId: input.projectId, title, description, status: 'todo', dependencyIds: Object.hasOwn(input, 'dependencyIds') ? structuredClone(input.dependencyIds) : [], priority };
       model.tasks.push(task);
       validateGraph(model);
       return taskView(model, task);
@@ -59,13 +61,14 @@ export class Planner {
   }
   async updateTask(id, input, revision) {
     const result = await this.store.transact(revision, model => {
-      object(input, ['title', 'description', 'status', 'dependencyIds']);
+      object(input, ['title', 'description', 'status', 'dependencyIds', 'priority']);
       if (!Object.keys(input).length) throw new AppError('INVALID_INPUT', 'Supply at least one change');
       const task = findTask(model, id);
       const oldStatus = task.status;
       if (Object.hasOwn(input, 'title')) task.title = text(input.title, 'title', 160);
       if (Object.hasOwn(input, 'description')) task.description = text(input.description, 'description', 2000, false);
       if (Object.hasOwn(input, 'status')) task.status = choice(input.status, statuses, 'status');
+      if (Object.hasOwn(input, 'priority')) task.priority = choice(input.priority, priorities, 'priority');
       if (Object.hasOwn(input, 'dependencyIds')) task.dependencyIds = structuredClone(input.dependencyIds);
       validateDependencies(model, id, task.dependencyIds);
       transition(model, id, oldStatus);

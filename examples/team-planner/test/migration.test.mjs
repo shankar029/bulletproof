@@ -8,7 +8,8 @@ import { join } from 'node:path';
 import { decode, encode } from '../src/schema.mjs';
 import { JsonStore } from '../src/store.mjs';
 import { Planner } from '../src/planner.mjs';
-import { directory, root, code } from './helpers.mjs';
+import { start } from '../src/main.mjs';
+import { directory, root, code, cleanup } from './helpers.mjs';
 
 const legacyBytes = await readFile(join(root, 'test', 'fixtures', 'planner-v1.json'));
 const expected = JSON.parse(await readFile(join(root, 'test', 'fixtures', 'planner-v1.expected.json')));
@@ -29,19 +30,21 @@ test('expand decodes real v1 and strict v2 without changing API spelling', () =>
   ]) assert.throws(() => decode(JSON.stringify(raw)));
 });
 
-test('expand retains genuine v1 writer before cutover', async t => {
+test('contract retains v1 reading but rejects all old writes without touching bytes', async t => {
   const path = await directory(t);
   await writeFile(join(path, 'planner.json'), legacyBytes);
   const store = await JsonStore.open({ directory: path });
-  t.after(() => store.close());
+  cleanup(t, () => store.close());
   const planner = new Planner(store);
-  await planner.updateTask('t-7', { title: 'Expanded edit' }, 11);
-  const raw = JSON.parse(await readFile(store.path));
-  assert.equal(raw.schemaVersion, 1);
-  assert.equal(raw.tasks[4].state, 'todo');
-  assert.equal(raw.tasks[4].title, 'Expanded edit');
-  assert.equal(Object.hasOwn(raw.tasks[4], 'status'), false);
-  assert.equal(Object.hasOwn(raw.tasks[4], 'priority'), false);
+  assert.equal(planner.listTasks().items[4].status, 'todo');
+  assert.equal(planner.listTasks().items[4].priority, 'normal');
+  for (const command of [
+    () => planner.updateTask('t-7', { title: 'Must migrate' }, 11),
+    () => planner.updateTask('t-7', { status: 'todo' }, 11),
+    () => planner.createProject({ name: 'Blocked' }, 11),
+    () => planner.createTask({ projectId: 'p-1', title: 'Blocked' }, 11),
+  ]) await assert.rejects(command(), code('MIGRATION_REQUIRED'));
+  assert.deepEqual(await readFile(store.path), legacyBytes);
 });
 
 async function legacyDirectory(t) {
@@ -87,7 +90,7 @@ test('migration after precommit failure accepts matching backup but rejects mism
     if (fail) throw new Error('precommit IO failure');
     await rename(...args);
   } });
-  t.after(() => store.close());
+  cleanup(t, () => store.close());
   await assert.rejects(store.migrateToV2(), code('STORAGE_UNAVAILABLE'));
   assert.deepEqual(await readFile(store.path), legacyBytes);
   assert.equal(store.read().revision, 11);
@@ -118,7 +121,7 @@ test('offline rollback explicitly loses post-migration writes while archiving v2
   await file.close();
   await rename(stage, join(path, 'planner.json'));
   const restored = await JsonStore.open({ directory: path });
-  t.after(() => restored.close());
+  cleanup(t, () => restored.close());
   assert.equal(restored.read().schemaVersion, 1);
   assert.equal(restored.read().tasks[4].title, 'Edit launch');
   assert.equal(JSON.parse(await readFile(join(path, 'planner.v2-archive.json'))).tasks[4].title, 'Post migration work');
@@ -128,7 +131,7 @@ test('offline rollback explicitly loses post-migration writes while archiving v2
 test('migration refuses locked corrupt unknown and mixed data without mutation', async t => {
   const path = await legacyDirectory(t);
   const store = await JsonStore.open({ directory: path });
-  t.after(() => store.close());
+  cleanup(t, () => store.close());
   assert.match((await migrateCli(path)).stderr, /STORE_LOCKED/);
   assert.deepEqual(await readFile(store.path), legacyBytes);
   for (const bytes of ['{', JSON.stringify({ ...JSON.parse(legacyBytes), schemaVersion: 99 }), JSON.stringify({ ...JSON.parse(legacyBytes), tasks: [{ ...JSON.parse(legacyBytes).tasks[0], status: 'done' }] })]) {
@@ -137,4 +140,38 @@ test('migration refuses locked corrupt unknown and mixed data without mutation',
     assert.equal((await migrateCli(corrupt)).exitCode, 1);
     assert.equal(await readFile(join(corrupt, 'planner.json'), 'utf8'), bytes);
   }
+});
+
+test('captured legacy HTTP reads then migration priority AND filtering and restart', async t => {
+  const path = await legacyDirectory(t);
+  const old = await start({ directory: path, port: 0 });
+  cleanup(t, () => old.close());
+  const oldTasks = await (await fetch(`${old.url}/api/tasks`, { signal: AbortSignal.timeout(5000) })).json();
+  assert.equal(oldTasks.items[4].status, 'todo');
+  assert.equal(oldTasks.items[4].priority, 'normal');
+  const denied = await fetch(`${old.url}/api/tasks/t-7`, { method: 'PATCH', headers: { 'Content-Type': 'application/json', 'If-Match': '"11"' }, body: '{"priority":"high"}', signal: AbortSignal.timeout(5000) });
+  assert.equal(denied.status, 409);
+  assert.equal((await denied.json()).error.code, 'MIGRATION_REQUIRED');
+  const filterDenied = await fetch(`${old.url}/api/tasks?priority=high`, { signal: AbortSignal.timeout(5000) });
+  assert.equal(filterDenied.status, 409);
+  assert.deepEqual(await readFile(old.store.path), legacyBytes);
+  await old.close();
+  assert.equal((await migrateCli(path)).exitCode, 0);
+  const app = await start({ directory: path, port: 0 });
+  cleanup(t, () => app.close());
+  for (const [id, priority, revision] of [['t-7', 'high', 12], ['t-8', 'low', 13]]) {
+    const response = await fetch(`${app.url}/api/tasks/${id}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json', 'If-Match': `"${revision}"` }, body: JSON.stringify({ priority }), signal: AbortSignal.timeout(5000) });
+    assert.equal(response.status, 200);
+    assert.equal((await response.json()).task.priority, priority);
+  }
+  await app.close();
+  const reopened = await start({ directory: path, port: 0 });
+  cleanup(t, () => reopened.close());
+  const filtered = await (await fetch(`${reopened.url}/api/tasks?projectId=p-1&status=todo&q=launch&priority=high`, { signal: AbortSignal.timeout(5000) })).json();
+  assert.deepEqual(filtered.items.map(task => task.id), ['t-7']);
+  assert.equal(filtered.total, 1);
+  assert.equal(filtered.revision, 14);
+  const summary = await (await fetch(`${reopened.url}/api/dashboard?projectId=p-1`, { signal: AbortSignal.timeout(5000) })).json();
+  assert.deepEqual(summary, { ...expected.alphaDashboard, revision: 14 });
+  assert.deepEqual(await readFile(join(path, 'planner.v1-backup.json')), legacyBytes);
 });

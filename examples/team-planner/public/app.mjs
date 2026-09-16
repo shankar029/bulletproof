@@ -1,5 +1,5 @@
 const $ = selector => document.querySelector(selector);
-const state = { projects: [], tasks: [], revision: 0, projectId: null, busy: false, result: null, summary: null, schemaVersion: 1 };
+const state = { projects: [], tasks: [], revision: 0, projectId: null, busy: false, result: null, summary: null, schemaVersion: null };
 let loadSequence = 0;
 function route() { return new URL(location.href).searchParams; }
 
@@ -92,6 +92,7 @@ function edit(task) {
   const title = field(form, 'title', 'Title', task?.title ?? '');
   field(form, 'description', 'Description', task?.description ?? '', true);
   if (task) select(form, 'status', 'Status', ['todo', 'in_progress', 'done'], task.status);
+  select(form, 'priority', 'Priority', ['low', 'normal', 'high'], task?.priority ?? 'normal');
   const dependencies = element('fieldset');
   dependencies.append(element('legend', 'Dependencies'), element('p', 'Complete dependencies before starting.'));
   for (const other of state.tasks.filter(other => other.projectId === state.projectId && other.id !== task?.id)) {
@@ -110,7 +111,7 @@ function edit(task) {
   form.addEventListener('submit', event => {
     event.preventDefault();
     const values = new FormData(form);
-    const input = { title: values.get('title'), description: values.get('description'), dependencyIds: values.getAll('dependencyIds') };
+    const input = { title: values.get('title'), description: values.get('description'), dependencyIds: values.getAll('dependencyIds'), priority: values.get('priority') };
     if (task) input.status = values.get('status');
     if (!task) input.projectId = state.projectId;
     void save(form, task ? `/api/tasks/${task.id}` : '/api/tasks', task ? 'PATCH' : 'POST', input, 'Task saved');
@@ -126,7 +127,7 @@ function navigate(changes) {
     else url.searchParams.set(key, value);
   }
   history.pushState(null, '', url);
-  void reload().catch(() => {});
+  void reload().catch(showError);
 }
 function render() {
   const projects = $('#projects');
@@ -141,6 +142,9 @@ function render() {
   const main = $('#main');
   main.replaceChildren();
   main.setAttribute('aria-busy', 'false');
+  const legacy = state.schemaVersion === 1;
+  $('#project-form').querySelectorAll('input, button').forEach(control => { control.disabled = legacy; });
+  if (legacy) main.append(element('p', 'Legacy data is read-only. Stop the server and run node src\\migrate.mjs --data-dir <your directory>, then restart and Reload latest.', { role: 'status' }));
   const project = state.projects.find(project => project.id === state.projectId);
   if (route().get('view') === 'dashboard') {
     main.append(element('h2', project ? `${project.name} dashboard` : 'Global dashboard'));
@@ -155,21 +159,26 @@ function render() {
   field(filters, 'q', 'Search titles', route().get('q') ?? '');
   select(filters, 'status', 'Filter status', ['', 'todo', 'in_progress', 'done'], route().get('status') ?? '');
   filters.querySelector('option').textContent = 'All statuses';
+  const priority = select(filters, 'priority', 'Filter priority', ['', 'low', 'normal', 'high'], route().get('priority') ?? '');
+  priority.querySelector('option').textContent = 'All priorities';
   filters.append(element('button', 'Apply filters', { type: 'submit' }), button('Clear filters', () => navigate({ q: null, status: null, priority: null, page: null })));
   filters.addEventListener('submit', event => {
     event.preventDefault();
     const values = new FormData(filters);
-    navigate({ q: values.get('q'), status: values.get('status'), page: null });
+    navigate({ q: values.get('q'), status: values.get('status'), priority: values.get('priority'), page: null });
   });
   main.append(filters);
   const add = button('Add task', () => edit());
   add.id = 'add-task';
+  add.disabled = legacy;
   main.append(add);
   const tasks = state.result.items;
   if (!tasks.length) main.append(element('p', state.tasks.length ? 'No results. Clear filters or return to the previous page.' : 'No tasks yet. Add your first task.'));
   for (const task of tasks) {
     const card = element('article', undefined, { 'aria-label': task.title, 'data-task-id': task.id });
-    card.append(element('h3', task.title), element('span', task.blocked ? 'blocked (todo)' : task.status.replaceAll('_', ' '), { class: 'badge' }), element('p', task.description), button('Edit', () => edit(task)));
+    const editButton = button('Edit', () => edit(task));
+    editButton.disabled = legacy;
+    card.append(element('h3', task.title), element('span', task.blocked ? 'blocked (todo)' : task.status.replaceAll('_', ' '), { class: 'badge' }), element('p', `Priority: ${task.priority}`), element('p', task.description), editButton);
     main.append(card);
   }
   const pages = element('div', undefined, { class: 'actions', 'aria-label': 'Pagination' });
@@ -227,7 +236,7 @@ async function reload() {
     render();
     announce('');
   } catch (error) {
-    if (sequence === loadSequence) { $('#main').setAttribute('aria-busy', 'false'); announce(''); showError(error); }
+    if (sequence === loadSequence) { $('#main').setAttribute('aria-busy', 'false'); announce(''); }
     throw error;
   }
 }
@@ -235,8 +244,8 @@ $('#project-form').addEventListener('submit', event => {
   event.preventDefault();
   void save(event.currentTarget, '/api/projects', 'POST', { name: $('#project-name').value }, 'Project created');
 });
-$('#reload').addEventListener('click', () => { if (!state.busy) void reload().catch(() => {}); });
+$('#reload').addEventListener('click', () => { if (!state.busy) void reload().catch(showError); });
 $('#nav-projects').addEventListener('click', event => { event.preventDefault(); navigate({ view: null }); });
 $('#nav-dashboard').addEventListener('click', event => { event.preventDefault(); navigate({ view: 'dashboard', q: null, status: null, priority: null, page: null }); });
-window.addEventListener('popstate', () => { void reload().catch(() => {}); });
-void reload().catch(() => {});
+window.addEventListener('popstate', () => { void reload().catch(showError); });
+void reload().catch(showError);

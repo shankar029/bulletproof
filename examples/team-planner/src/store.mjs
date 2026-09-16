@@ -73,6 +73,7 @@ export class JsonStore {
   transact(expectedRevision, change) {
     if (this.#closed) return Promise.reject(new AppError('STORE_CLOSED', 'Store is closed', 503));
     const operation = this.#queue.then(async () => {
+      if (this.#model.schemaVersion === 1) throw new AppError('MIGRATION_REQUIRED', 'Legacy data is read-only; stop the server and migrate it first', 409);
       if (expectedRevision !== this.#model.revision) throw new AppError('REVISION_CONFLICT', 'Tasks changed. Reload before saving.', 409);
       const next = structuredClone(this.#model);
       const value = change(next);
@@ -88,6 +89,7 @@ export class JsonStore {
       this.#model = next;
       return result;
     });
+    // Recover queue scheduling, not the caller's rejected operation.
     this.#queue = operation.catch(() => {});
     return operation;
   }

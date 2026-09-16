@@ -1,14 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile, writeFile, rename, readdir } from 'node:fs/promises';
+import { readFile, writeFile, rename, readdir, mkdir, rm } from 'node:fs/promises';
 import { join } from 'node:path';
 import { JsonStore } from '../src/store.mjs';
 import { Planner } from '../src/planner.mjs';
-import { fixture, directory, code } from './helpers.mjs';
+import { fixture, directory, code, cleanup } from './helpers.mjs';
 
 test('create edit restart and isolated snapshots', async t => {
   const { store, planner, directory } = await fixture(t);
-  assert.deepEqual(planner.health(), { status: 'ok', schemaVersion: 1, revision: 0 });
+  assert.deepEqual(planner.health(), { status: 'ok', schemaVersion: 2, revision: 0 });
   const { project } = await planner.createProject({ name: ' Launch ' }, 0);
   const { task } = await planner.createTask({ projectId: project.id, title: 'Draft', description: 'Details' }, 1);
   await planner.updateTask(task.id, { title: 'Final draft', description: 'Kept' }, 2);
@@ -17,10 +17,10 @@ test('create edit restart and isolated snapshots', async t => {
   assert.equal(store.read().tasks[0].title, 'Final draft');
   await store.close();
   const reopened = await JsonStore.open({ directory });
-  t.after(() => reopened.close());
+  cleanup(t, () => reopened.close());
   assert.equal(reopened.read().tasks[0].description, 'Kept');
   assert.equal(reopened.read().revision, 3);
-  assert.equal(JSON.parse(await readFile(reopened.path)).tasks[0].state, 'todo');
+  assert.equal(JSON.parse(await readFile(reopened.path)).tasks[0].status, 'todo');
 });
 
 test('Unicode code points not UTF16 units define title limits', async t => {
@@ -78,4 +78,32 @@ test('lock ownership corruption and unknown schema never overwrite files', async
     assert.equal(await readFile(join(corrupt, 'planner.json'), 'utf8'), bytes);
     assert.deepEqual(await readdir(corrupt), ['planner.json']);
   }
+});
+
+test('real incompatible rename destination preserves previous bytes and transaction queue', async t => {
+  const { store, planner } = await fixture(t);
+  await planner.createProject({ name: 'Launch' }, 0);
+  const bytes = await readFile(store.path);
+  const originalPath = join(store.directory, 'owned-original.json');
+  await rename(store.path, originalPath);
+  await mkdir(store.path);
+  await assert.rejects(planner.createProject({ name: 'Not saved' }, 1), code('STORAGE_UNAVAILABLE'));
+  assert.deepEqual(await readFile(originalPath), bytes);
+  assert.equal(store.read().revision, 1);
+  await rm(store.path, { recursive: true });
+  await rename(originalPath, store.path);
+  assert.equal((await planner.createProject({ name: 'Now saved' }, 1)).project.id, 'p-2');
+});
+
+test('closed store refuses callers and pending writes drain before lock release', async t => {
+  const { store, planner } = await fixture(t);
+  const pending = planner.createProject({ name: 'Drained' }, 0);
+  const closing = store.close();
+  assert.throws(() => store.read(), code('STORE_CLOSED'));
+  await assert.rejects(planner.createProject({ name: 'Closed' }, 0), code('STORE_CLOSED'));
+  await assert.rejects(store.migrateToV2(), code('STORE_CLOSED'));
+  assert.equal((await pending).revision, 1);
+  await closing;
+  assert.equal(JSON.parse(await readFile(store.path)).projects[0].name, 'Drained');
+  assert.ok(!(await readdir(store.directory)).includes('writer.lock'));
 });

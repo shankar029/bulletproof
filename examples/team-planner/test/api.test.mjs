@@ -1,14 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, rename } from 'node:fs/promises';
 import http from 'node:http';
 import { start } from '../src/main.mjs';
-import { directory } from './helpers.mjs';
+import { createServer } from '../src/server.mjs';
+import { directory, cleanup } from './helpers.mjs';
 
 async function api(t) {
   const path = await directory(t);
   const app = await start({ directory: path, port: 0 });
-  t.after(() => app.close());
+  cleanup(t, () => app.close());
   let revision = 0;
   async function request(route, method = 'GET', input, headers = {}) {
     const response = await fetch(`${app.url}${route}`, {
@@ -29,8 +30,9 @@ async function api(t) {
 
 test('real HTTP commits metadata with exact revision headers', async t => {
   const { app, request } = await api(t);
-  assert.deepEqual((await request('/api/health')).value, { status: 'ok', schemaVersion: 1, revision: 0 });
+  assert.deepEqual((await request('/api/health')).value, { status: 'ok', schemaVersion: 2, revision: 0 });
   const project = (await request('/api/projects', 'POST', { name: 'Launch' })).value.project;
+  assert.deepEqual((await request('/api/projects')).value, { items: [project], revision: 1 });
   const created = await request('/api/tasks', 'POST', { projectId: project.id, title: 'Draft' });
   assert.equal(created.response.status, 201);
   const changed = await request(`/api/tasks/${created.value.task.id}`, 'PATCH', { title: 'Ready draft', description: '<script>alert(1)</script>' });
@@ -115,4 +117,68 @@ test('HTTP graph commands are atomic and no-op preserves revision and disk', asy
   const invalid = await request(`/api/tasks/${review.id}`, 'PATCH', { status: 'todo', dependencyIds: null });
   assert.equal(invalid.response.status, 400);
   assert.equal(invalid.value.error.field, 'dependencyIds');
+});
+
+test('v2 create edit priority and combined filter persist through reopen', async t => {
+  const { app, request } = await api(t);
+  const project = (await request('/api/projects', 'POST', { name: 'Launch' })).value.project;
+  const created = await request('/api/tasks', 'POST', { projectId: project.id, title: 'Launch work', priority: 'high' });
+  assert.equal(created.response.status, 201);
+  assert.equal(created.value.task.priority, 'high');
+  const query = await request(`/api/tasks?projectId=${project.id}&status=todo&q=LAUNCH&priority=high`);
+  assert.equal(query.value.total, 1);
+  const task = created.value.task;
+  assert.equal((await request(`/api/tasks/${task.id}`, 'PATCH', { priority: 'low' })).response.status, 200);
+  const path = app.store.directory;
+  await app.close();
+  const reopened = await start({ directory: path, port: 0 });
+  cleanup(t, () => reopened.close());
+  const response = await fetch(`${reopened.url}/api/tasks?priority=low`, { signal: AbortSignal.timeout(5000) });
+  const result = await response.json();
+  assert.equal(result.items[0].priority, 'low');
+  assert.equal(result.items[0].id, task.id);
+});
+
+test('streaming oversized body gets an actionable 413 not a reset socket', async t => {
+  const { app } = await api(t);
+  const result = await new Promise((resolve, reject) => {
+    const req = http.request(`${app.url}/api/projects`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json', 'If-Match': '"0"' }, timeout: 5000,
+    }, res => {
+      let bytes = '';
+      res.on('data', data => { bytes += data; });
+      res.on('end', () => { resolve({ status: res.statusCode, value: JSON.parse(bytes) }); req.destroy(); });
+    });
+    cleanup(t, () => req.destroy());
+    req.on('error', reject);
+    req.on('timeout', () => req.destroy(new Error('HTTP timeout')));
+    req.write('"' + 'x'.repeat(70000));
+  });
+  assert.equal(result.status, 413);
+  assert.equal(result.value.error.code, 'BODY_TOO_LARGE');
+  assert.equal(app.store.read().revision, 0);
+});
+
+test('storage failure is 503 and unexpected error is 500 without path or stack disclosure', async t => {
+  let fail = false;
+  const app = await start({ directory: await directory(t), port: 0, commitFile: async (...args) => {
+    if (fail) throw new Error('private-path-do-not-disclose');
+    return rename(...args);
+  } });
+  cleanup(t, () => app.close());
+  const before = await readFile(app.store.path);
+  fail = true;
+  const unavailable = await fetch(`${app.url}/api/projects`, { method: 'POST', headers: { 'Content-Type': 'application/json', 'If-Match': '"0"' }, body: '{"name":"Unavailable"}', signal: AbortSignal.timeout(5000) });
+  assert.equal(unavailable.status, 503);
+  assert.deepEqual((await unavailable.json()).error, { code: 'STORAGE_UNAVAILABLE', message: 'Could not save. Read current state before trying again.' });
+  assert.deepEqual(await readFile(app.store.path), before);
+  const observed = [];
+  const sentinel = new Error('private-path-do-not-disclose');
+  const boundary = createServer({ planner: { health() { throw sentinel; } }, onError: error => observed.push(error) });
+  await new Promise(resolve => boundary.listen(0, '127.0.0.1', resolve));
+  cleanup(t, () => new Promise((resolve, reject) => boundary.close(error => error ? reject(error) : resolve())));
+  const unexpected = await fetch(`http://127.0.0.1:${boundary.address().port}/api/health`, { signal: AbortSignal.timeout(5000) });
+  assert.equal(unexpected.status, 500);
+  assert.deepEqual(await unexpected.json(), { error: { code: 'INTERNAL_ERROR', message: 'Unexpected server error' } });
+  assert.deepEqual(observed, [sentinel]);
 });

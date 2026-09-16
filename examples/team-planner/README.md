@@ -22,8 +22,9 @@ Every API read and write returns a global revision and quoted ETag. POST/PATCH r
 that ETag in `If-Match`; stale writes receive `409 REVISION_CONFLICT`. Reload explicitly
 discards a draft; failed saves retain it. Never automatically replay an uncertain write.
 
-Initial disk format is v1 (`state`); API uses `status`. The offline migration converts
-saved data to v2 (`status`, `priority`). Limits: 100 projects, 2,000 tasks, 80-code-point project names,
+New stores use v2 (`status`, `priority`). Legacy v1 (`state`) remains readable, but
+every write, including a no-op, requires offline migration. No legacy encoder remains.
+Limits: 100 projects, 2,000 tasks, 80-code-point project names,
 160-code-point task titles, 2,000-code-point descriptions, 64 KiB request bodies.
 
 Tasks move todo → in progress → done, or directly todo → done, only when every direct
@@ -39,6 +40,7 @@ Status and dependencies in one PATCH are validated together; failed changes publ
 ascending creation order, total counting and slicing. Empty results have zero total pages;
 an out-of-range page returns no items without clamping. Unknown/duplicate keys are errors.
 Priority other than normal requires v2 migration.
+Tasks default to normal priority; create/edit accept low, normal or high.
 
 `GET /api/dashboard?projectId=p-1` summarizes the whole project, not visible search/page
 results. Omit projectId for global totals. Blocked is a subset of todo. Completion is the

@@ -26,7 +26,7 @@ export function safeInteger(value, minimum, field) {
 }
 
 export function emptyModel() {
-  return { schemaVersion: 1, revision: 0, nextId: 1, projects: [], tasks: [] };
+  return { schemaVersion: 2, revision: 0, nextId: 1, projects: [], tasks: [] };
 }
 
 export function validate(model) {
@@ -79,9 +79,8 @@ export function decode(bytes) {
 
 export function encode(model) {
   validate(model);
-  if (model.schemaVersion === 2) return `${JSON.stringify(model, null, 2)}\n`;
-  const tasks = model.tasks.map(({ status, priority, ...task }) => ({ ...task, state: status }));
-  return `${JSON.stringify({ ...model, tasks }, null, 2)}\n`;
+  if (model.schemaVersion !== 2) throw new AppError('MIGRATION_REQUIRED', 'Legacy data is read-only; stop the server and migrate it first', 409);
+  return `${JSON.stringify(model, null, 2)}\n`;
 }
 
 export function upgradeV1(bytes) {
