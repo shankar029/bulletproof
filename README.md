@@ -67,6 +67,14 @@ ask only real questions.
 
 ## The features that make it stick
 
+### Focused communication without lost evidence
+
+Human-facing updates lead with the outcome, blocker, or decision needed. Progress is reported
+at meaningful transitions; approvals include a recommendation and trade-off; unknown causes
+stay unknown. Short summaries link complete artifacts without hiding failures or unmet
+requirements. No medical assumption, extra plugin, always-on hook, or mandatory time estimate
+is involved. See [`communication.md`](references/communication.md).
+
 ### A durable workspace — work survives a restart
 
 Every non-trivial task gets a slug and a directory that is committed with the change:
@@ -237,6 +245,7 @@ Method and numbers: [`evals/README.md`](evals/README.md) (v1) ·
 bulletproof/
 ├── SKILL.md                     # the operating loop (single source of truth)
 ├── references/                  # on-demand depth per phase (progressive disclosure)
+│   ├── communication.md         #   focused human updates without losing uncertainty or evidence
 │   ├── workspace.md             #   .ai/<slug>/ workspace, state.md, resume, increment sizing
 │   ├── project-profile.md       #   detect & honor project nature; anti-debt; design checklist
 │   ├── design-doc.md            #   the 3-page design/plan documents; simple-diagram limits
