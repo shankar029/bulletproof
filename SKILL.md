@@ -222,6 +222,8 @@ code — see `references/ux-design.md`. Skip it entirely for library / CLI / API
 - Design for **modularity and change**: single responsibility, high cohesion, low coupling,
   clear boundaries, DRY/YAGNI/KISS, and the pattern that fits *this* codebase. The next likely
   change should be additive, not surgery on the core.
+- Apply `references/code-clarity.md`: make the main flow, responsibility boundaries, shared
+  contracts, and state ownership understandable without the author's narrative.
 - Every existing type, function, or interface named in the document must appear in
   `research.md` or be one you have opened and read yourself.
 - **GATE 2a — self-check.** The design document exists (≤3 pages, simple diagrams), every
@@ -339,6 +341,9 @@ At final ship, reconcile the **whole request** with no future work silently left
   **integration** tests that exercise real collaborators across module seams. See
   `references/testing-and-e2e.md`.
 - Keep changes cohesive and minimal; name things well; document only what is non-obvious.
+  Follow `references/code-clarity.md` for readable control flow, types, errors, and comments.
+  Source describes current behavior, not change history; update stale explanations and preserve
+  necessary invariants, required documentation, and runtime prompt/tool contracts.
 - Dispatch and then reintegrate parallel work if planned. Isolated workers being green is
   not proof — the gate runs on the integrated result.
 - **GATE 4:** unit + integration tests pass on the integrated result, coverage meets the
@@ -431,6 +436,7 @@ ship what is green and record the remaining gap, its root cause, and the propose
 explicit follow-up. Never close the gap by lowering the bar.
 
 ## References (load on demand)
+- `references/code-clarity.md` — human-readable code, responsibility boundaries, comment discipline, and concrete review acceptance.
 - `references/communication.md` — focused progress, approval, blocker and completion messages; concise presentation without lost evidence.
 - `references/workspace.md` — the `.ai/<slug>/` workspace, `state.md`, `traceability.md`, resume protocol, increment sizing.
 - `references/research.md` — reusable research procedure; AC coverage, source evidence, freshness, and task-specific handoff.

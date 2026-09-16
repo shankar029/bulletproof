@@ -22,11 +22,17 @@ Review the full diff as if you would reject it in someone else's PR. Fix everyth
 - [ ] Single responsibility, high cohesion, low coupling, correct dependency direction.
 - [ ] The abstraction fits the domain; no speculative or clever indirection.
 - [ ] Adding the next obvious case is additive, not surgery on the core.
-- [ ] No duplicated logic; existing utilities reused.
+- [ ] Shared business rules and integration mechanics are not duplicated; existing utilities
+      reused for the same responsibility and contract.
 - [ ] **No band-aids** — no defensive conditional, retry, or special case standing in for a
       real fix; the root cause is addressed.
-- [ ] Names are clear, functions are small, public interfaces are minimal and documented
-      where non-obvious.
+- [ ] **Human-readability contract (`code-clarity.md`) met:** the main flow, failure paths,
+      state ownership and side effects are traceable; names explain behavior; extractions
+      separate responsibilities rather than merely shortening functions.
+- [ ] Shared integration types and behavior are consistent; no repeated casts or fallback
+      chains substituting for a clear boundary.
+- [ ] Comments describe current behavior and necessary rationale, not dated change journals
+      or superseded rules. Required documentation and runtime prompt/tool contracts preserved.
 
 **Security & performance**
 - [ ] Input validated, authorization enforced, no secrets in code or logs, no injection.
@@ -56,7 +62,8 @@ subagent, this is a blocker: record it in `state.md` and stop (prime directive 8
 grading your own work in the context that wrote it.
 
 Give the reviewer the **requirement, the acceptance criteria, the design document,
-the plan and linked task/check records, `traceability.md`, `metrics.json`, and the diff** — and
+the plan and linked task/check records, `traceability.md`, `metrics.json`,
+`references/code-clarity.md`, and the diff** — and
 none of your reasoning. It does two
 jobs in one pass: a demanding code review **and** an independent requirement reconciliation.
 Use this brief:
@@ -67,13 +74,19 @@ Use this brief:
 > the final repository state and executable evidence.
 >
 > **INPUTS.** The original requirement and acceptance criteria, `design.html`, `traceability.md`,
-> `plan.html` and linked task/check records, `metrics.json`, and the final diff.
+> `plan.html` and linked task/check records, `metrics.json`, `references/code-clarity.md`,
+> and the final diff.
 >
 > **PROCESS.**
 > 1. **Review the diff** — correctness and edge cases, fidelity to the design, maintainability,
 >    test quality; flag band-aids, dead code, and unverified/invented APIs; check whether any
 >    metric gain was *gamed* (arbitrary function splitting, narrowed tool scope, weakened
 >    assertions) rather than earned.
+>    Apply `code-clarity.md`'s review acceptance to changed code and tightly coupled problems.
+>    Cite a location, concrete maintenance cost, and proportionate remedy for each readability
+>    finding. Check for stale comments and inline history as well as overloaded responsibilities
+>    and duplicated integration mechanics. Record findings here, not in a separate report;
+>    do not impose arbitrary size limits or launch unrelated cleanup.
 > 2. **Reconcile every requirement** — for each AC, verify it against the actual code and test
 >    evidence, inspect the final `git diff`/`status`, and confirm the cited tests exist and
 >    pass. Distinguish PASS / FAIL / NOT-RUN / INCONCLUSIVE; never accept "passed" without an

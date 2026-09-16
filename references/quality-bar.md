@@ -32,9 +32,9 @@ scores when they disagree, and reconcile only with evidence.
 | 2 | **Grounding** | Every symbol, API, config key, and flag used was read and verified in source or docs; nothing invented; assumptions labelled as assumptions. |
 | 3 | **Design fidelity & depth** | The design document defines classes, interfaces, and interactions before coding; the implementation matches it; divergences updated the document. Root causes fixed, not symptoms — no band-aids, no ad-hoc patches. |
 | 4 | **Scope fidelity** | Exactly what was asked — no gold-plating, no creep, no unrelated edits; larger refactors noted as follow-ups. |
-| 5 | **Reuse & DRY** | Searched before writing; reuses existing utilities and abstractions; zero duplicated logic. |
+| 5 | **Reuse & DRY** | Searched before writing; shared rules and integration mechanics reuse existing utilities; no duplicated implementation of the same responsibility or abstraction based only on similar syntax. |
 | 6 | **Design & modularity** | Single responsibility, high cohesion, low coupling, clear boundaries; the fitting pattern, not the cleverest; matches the codebase's architecture. |
-| 7 | **Extensibility & maintainability** | The next likely change is additive, not invasive; readable, well-named, documented where non-obvious. |
+| 7 | **Extensibility & maintainability** | The next likely change stays within clear responsibilities; main and failure flows, state ownership and contracts are understandable; names and necessary comments describe current behavior (`code-clarity.md`). |
 | 8 | **Robustness** | Input validation, error paths, concurrency, security, and performance considered and handled. |
 | 9 | **Test quality & evidence** | Meaningful unit + integration + end-to-end; covers branches and failure modes; no skipped, empty, or tautological tests; coverage met; evidence bundle assembled and environment-blocked proof named explicitly. |
 
@@ -47,6 +47,11 @@ Test quality. No number, no score: mark it unverified and go measure. If a metri
 `unavailable`, say so in the scorecard rather than implying a measurement you didn't take.
 Score specifically: cite the file or line justifying any score below 5.
 
+Metrics do not establish human readability. For dimensions 6 and 7, also apply
+`code-clarity.md`'s source-based review acceptance; a green metric cannot excuse a confusing
+flow, stale comment, or unnecessary abstraction. This adds no size/comment quota and does not
+relax existing configured gates.
+
 ## Judging the deeper dimensions
 - **Grounding:** for every non-obvious claim in the design, the code, or the report, can you
   name the file you read that supports it? An API used but never opened is a ≤2 — go read it.
@@ -56,11 +61,13 @@ Score specifically: cite the file or line justifying any score below 5.
 - **Scope fidelity:** the diff touches only what the task implies. Then re-check the
   acceptance criteria themselves against the original request — a dropped or misread
   requirement is a gap even when every listed criterion passes.
-- **Reuse:** logic that duplicates an existing utility is a ≤2; replace it with the existing one.
+- **Reuse:** logic that duplicates an existing utility with the same responsibility and contract
+  is a ≤2; reuse it. Similar-looking code serving distinct rules is not by itself duplication.
 - **Design:** would a senior engineer on *this* repo approve the shape — responsibilities,
   dependency direction, and whether the abstraction matches the domain?
-- **Extensibility:** if adding a new case means editing a growing conditional in the core,
-  that's a ≤3; prefer a seam that makes new cases additive.
+- **Extensibility:** if the next likely change requires edits across unrelated responsibilities,
+  that's a ≤3; prefer a cohesive seam. Adding a clear branch within one responsibility is not
+  by itself a reason to introduce a framework or extension point.
 
 ## Anti-gaming rules
 - Never lower a threshold, delete or skip a test, or weaken an assertion to pass.

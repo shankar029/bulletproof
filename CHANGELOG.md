@@ -7,6 +7,11 @@ All notable changes to this project are documented here. The format is based on
 ## [Unreleased]
 
 ### Added
+- **Human-readable code contract.** New `references/code-clarity.md` makes main flows,
+  responsibility boundaries, naming, state, integration types, errors, and comment discipline
+  explicit in design, implementation, independent review, and the quality rubric. Rejects
+  stale explanations and inline change journals while preserving useful rationale and runtime
+  contracts. Requires concrete review evidence, not extra reports or arbitrary size limits.
 - **Focused communication standard.** New `references/communication.md` guides progress,
   approval, blocker and completion messages: outcome first, bounded human actions, visible
   uncertainty and material limitations, and complete linked evidence. Shared skill, approval
