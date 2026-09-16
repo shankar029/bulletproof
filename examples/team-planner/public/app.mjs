@@ -1,5 +1,7 @@
 const $ = selector => document.querySelector(selector);
-const state = { projects: [], tasks: [], revision: 0, projectId: new URL(location.href).searchParams.get('projectId'), busy: false };
+const state = { projects: [], tasks: [], revision: 0, projectId: null, busy: false, result: null, summary: null, schemaVersion: 1 };
+let loadSequence = 0;
+function route() { return new URL(location.href).searchParams; }
 
 function element(tag, text, attributes = {}) {
   const node = document.createElement(tag);
@@ -13,7 +15,7 @@ function button(text, action) {
   return node;
 }
 function field(form, name, label, value = '', multiline = false) {
-  const id = `task-${name}`;
+  const id = `${form.id || 'filter'}-${name}`;
   form.append(element('label', label, { for: id }));
   const input = element(multiline ? 'textarea' : 'input', undefined, { id, name });
   input.value = value;
@@ -21,7 +23,7 @@ function field(form, name, label, value = '', multiline = false) {
   return input;
 }
 function select(form, name, label, values, selected) {
-  const id = `task-${name}`;
+  const id = `${form.id || 'filter'}-${name}`;
   form.append(element('label', label, { for: id }));
   const input = element('select', undefined, { id, name });
   for (const value of values) input.append(element('option', value.replaceAll('_', ' '), { value }));
@@ -69,7 +71,11 @@ async function save(form, path, method, input, success) {
   try {
     const result = await request(path, method, input);
     state.revision = result.revision;
-    if (result.project) state.projectId = result.project.id;
+    if (result.project) {
+      const url = new URL(location.href);
+      url.search = new URLSearchParams({ projectId: result.project.id }).toString();
+      history.pushState(null, '', url);
+    }
     if (form.id === 'project-form') form.reset();
     await reload();
     announce(success);
@@ -112,12 +118,15 @@ function edit(task) {
   $('#main').append(form);
   title.focus();
 }
-function navigate(projectId) {
-  state.projectId = projectId;
+function navigate(changes) {
+  if (state.busy) return;
   const url = new URL(location.href);
-  url.searchParams.set('projectId', projectId);
+  for (const [key, value] of Object.entries(changes)) {
+    if (value === null || value === '') url.searchParams.delete(key);
+    else url.searchParams.set(key, value);
+  }
   history.pushState(null, '', url);
-  render();
+  void reload().catch(() => {});
 }
 function render() {
   const projects = $('#projects');
@@ -126,46 +135,108 @@ function render() {
   for (const project of state.projects) {
     const item = element('li');
     const link = element('a', project.name, { href: `/?projectId=${encodeURIComponent(project.id)}` });
-    link.addEventListener('click', event => { event.preventDefault(); navigate(project.id); });
+    link.addEventListener('click', event => { event.preventDefault(); navigate({ projectId: project.id, page: null }); });
     item.append(link); projects.append(item);
   }
   const main = $('#main');
   main.replaceChildren();
   main.setAttribute('aria-busy', 'false');
   const project = state.projects.find(project => project.id === state.projectId);
+  if (route().get('view') === 'dashboard') {
+    main.append(element('h2', project ? `${project.name} dashboard` : 'Global dashboard'));
+    main.append(button('All projects', () => navigate({ projectId: null })));
+    renderSummary(main);
+    return;
+  }
   if (!project) { main.append(element('h2', 'Choose a project'), element('p', 'Create or select a project to plan your team’s work.')); return; }
   main.append(element('h2', project.name));
+  renderSummary(main);
+  const filters = element('form', undefined, { class: 'filters', 'aria-label': 'Task filters' });
+  field(filters, 'q', 'Search titles', route().get('q') ?? '');
+  select(filters, 'status', 'Filter status', ['', 'todo', 'in_progress', 'done'], route().get('status') ?? '');
+  filters.querySelector('option').textContent = 'All statuses';
+  filters.append(element('button', 'Apply filters', { type: 'submit' }), button('Clear filters', () => navigate({ q: null, status: null, priority: null, page: null })));
+  filters.addEventListener('submit', event => {
+    event.preventDefault();
+    const values = new FormData(filters);
+    navigate({ q: values.get('q'), status: values.get('status'), page: null });
+  });
+  main.append(filters);
   const add = button('Add task', () => edit());
   add.id = 'add-task';
   main.append(add);
-  const tasks = state.tasks.filter(task => task.projectId === project.id);
-  if (!tasks.length) main.append(element('p', 'No tasks yet. Add your first task.'));
+  const tasks = state.result.items;
+  if (!tasks.length) main.append(element('p', state.tasks.length ? 'No results. Clear filters or return to the previous page.' : 'No tasks yet. Add your first task.'));
   for (const task of tasks) {
     const card = element('article', undefined, { 'aria-label': task.title, 'data-task-id': task.id });
     card.append(element('h3', task.title), element('span', task.blocked ? 'blocked (todo)' : task.status.replaceAll('_', ' '), { class: 'badge' }), element('p', task.description), button('Edit', () => edit(task)));
     main.append(card);
   }
+  const pages = element('div', undefined, { class: 'actions', 'aria-label': 'Pagination' });
+  const previous = button('Previous', () => navigate({ page: state.result.page - 1 }));
+  previous.disabled = state.result.page <= 1;
+  const next = button('Next', () => navigate({ page: state.result.page + 1 }));
+  next.disabled = state.result.page >= state.result.totalPages;
+  pages.append(previous, element('span', `Page ${state.result.page} of ${state.result.totalPages} · ${state.result.total} tasks`), next);
+  const pageSize = select(pages, 'pageSize', 'Tasks per page', ['2', '10', '25', '50'], String(state.result.pageSize));
+  pageSize.addEventListener('change', () => navigate({ pageSize: pageSize.value, page: null }));
+  main.append(pages);
+}
+function renderSummary(main) {
+  if (!state.summary) return;
+  const summary = element('section', undefined, { class: 'summary', 'aria-label': 'Project totals' });
+  for (const [key, label] of [['total', 'Total'], ['todo', 'Todo'], ['inProgress', 'In progress'], ['done', 'Done'], ['blocked', 'Blocked'], ['completionPercent', 'Completion %']]) {
+    summary.append(element('p', `${label}: ${state.summary[key]}`));
+  }
+  main.append(summary);
 }
 async function reload() {
+  const sequence = ++loadSequence;
   clearError();
   $('#main').setAttribute('aria-busy', 'true');
   announce('Loading…');
   try {
     const projects = await request('/api/projects');
-    const tasks = await request('/api/tasks');
-    if (projects.revision !== tasks.revision) throw new Error('Data changed while loading. Use Reload latest.');
+    const params = route();
+    const projectId = params.get('projectId');
+    const query = new URLSearchParams();
+    for (const key of ['projectId', 'q', 'status', 'priority', 'page', 'pageSize']) if (params.has(key)) query.set(key, params.get(key));
+    const tasks = await request(`/api/tasks?${query}`);
+    const summary = await request(`/api/dashboard${projectId ? `?projectId=${encodeURIComponent(projectId)}` : ''}`);
+    const health = await request('/api/health');
+    const allTasks = [];
+    if (projectId) {
+      let page = 1, totalPages;
+      do {
+        const batch = await request(`/api/tasks?projectId=${encodeURIComponent(projectId)}&pageSize=50&page=${page}`);
+        if (batch.revision !== tasks.revision) throw new Error('Data changed while loading. Use Reload latest.');
+        allTasks.push(...batch.items);
+        totalPages = batch.totalPages;
+        page++;
+      } while (page <= totalPages);
+    }
+    if ([projects, summary, health].some(result => result.revision !== tasks.revision)) throw new Error('Data changed while loading. Use Reload latest.');
+    if (sequence !== loadSequence) return;
     state.projects = projects.items;
-    state.tasks = tasks.items;
+    state.projectId = projectId;
+    state.tasks = allTasks;
+    state.result = tasks;
+    state.summary = summary;
+    state.schemaVersion = health.schemaVersion;
     state.revision = tasks.revision;
-    if (!state.projectId && projects.items.length) state.projectId = projects.items[0].id;
     render();
     announce('');
-  } catch (error) { $('#main').setAttribute('aria-busy', 'false'); announce(''); showError(error); throw error; }
+  } catch (error) {
+    if (sequence === loadSequence) { $('#main').setAttribute('aria-busy', 'false'); announce(''); showError(error); }
+    throw error;
+  }
 }
 $('#project-form').addEventListener('submit', event => {
   event.preventDefault();
   void save(event.currentTarget, '/api/projects', 'POST', { name: $('#project-name').value }, 'Project created');
 });
 $('#reload').addEventListener('click', () => { if (!state.busy) void reload().catch(() => {}); });
-window.addEventListener('popstate', () => { state.projectId = new URL(location.href).searchParams.get('projectId'); render(); });
+$('#nav-projects').addEventListener('click', event => { event.preventDefault(); navigate({ view: null }); });
+$('#nav-dashboard').addEventListener('click', event => { event.preventDefault(); navigate({ view: 'dashboard', q: null, status: null, priority: null, page: null }); });
+window.addEventListener('popstate', () => { void reload().catch(() => {}); });
 void reload().catch(() => {});

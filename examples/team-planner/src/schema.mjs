@@ -1,9 +1,7 @@
 import { AppError, invalid } from './errors.mjs';
-import { validateGraph } from './rules.mjs';
+import { validateGraph, statuses, priorities } from './rules.mjs';
 export { AppError, invalid } from './errors.mjs';
-
-export const statuses = ['todo', 'in_progress', 'done'];
-export const priorities = ['low', 'normal', 'high'];
+export { statuses, priorities } from './rules.mjs';
 
 export function object(input, allowed, required = []) {
   if (!input || typeof input !== 'object' || Array.isArray(input)) invalid('Expected an object');

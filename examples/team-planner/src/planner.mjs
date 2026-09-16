@@ -1,5 +1,5 @@
 import { AppError, object, text, choice, statuses } from './schema.mjs';
-import { taskView, transition, validateDependencies, validateGraph } from './rules.mjs';
+import { taskView, transition, validateDependencies, validateGraph, selectTasks, summarize } from './rules.mjs';
 
 export function findTask(model, id) {
   const task = model.tasks.find(task => task.id === id);
@@ -29,10 +29,8 @@ export class Planner {
     const { projects, revision } = this.store.read();
     return { items: projects, revision };
   }
-  listTasks() {
-    const model = this.store.read();
-    return { items: model.tasks.map(task => taskView(model, task)), total: model.tasks.length, page: 1, pageSize: 10, totalPages: Math.ceil(model.tasks.length / 10), revision: model.revision };
-  }
+  listTasks(query) { return selectTasks(this.store.read(), query); }
+  dashboard(projectId) { return summarize(this.store.read(), projectId); }
   async createProject(input, revision) {
     const result = await this.store.transact(revision, model => {
       object(input, ['name'], ['name']);

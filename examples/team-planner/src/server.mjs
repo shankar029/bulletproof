@@ -69,17 +69,19 @@ export function createServer({ planner, onError = error => console.error(error) 
         return;
       }
       if (assets.has(url.pathname)) {
-        parseQuery(url.searchParams);
+        parseQuery(url.searchParams, url.pathname === '/' ? ['view', 'projectId', 'status', 'priority', 'q', 'page', 'pageSize'] : []);
         const [name, type] = assets.get(url.pathname);
         send(res, 200, await readFile(new URL(`../public/${name}`, import.meta.url)), { 'Content-Type': type });
         return;
       }
-      parseQuery(url.searchParams);
+      const allowedQuery = req.method === 'GET' && url.pathname === '/api/tasks' ? ['projectId', 'status', 'priority', 'q', 'page', 'pageSize'] :
+        req.method === 'GET' && url.pathname === '/api/dashboard' ? ['projectId'] : [];
+      const query = parseQuery(url.searchParams, allowedQuery);
       if (req.method === 'GET') {
         if (url.pathname === '/api/health') json(res, 200, planner.health());
         else if (url.pathname === '/api/projects') json(res, 200, planner.listProjects());
-        else if (url.pathname === '/api/tasks') json(res, 200, planner.listTasks());
-        else throw new AppError('NOT_FOUND', 'Route not found', 404);
+        else if (url.pathname === '/api/tasks') json(res, 200, planner.listTasks(query));
+        else json(res, 200, planner.dashboard(query.projectId));
         return;
       }
       const revision = expectedRevision(req);

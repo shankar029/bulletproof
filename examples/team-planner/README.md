@@ -32,6 +32,19 @@ Done → in progress is rejected. "Blocked" means todo with an unfinished depend
 not a fourth status. Dependencies must be distinct tasks in the same project and acyclic.
 Status and dependencies in one PATCH are validated together; failed changes publish nothing.
 
+## Queries and dashboard
+
+`GET /api/tasks` accepts `projectId`, `status`, `q` (case-insensitive title substring),
+`priority`, `page` and `pageSize` (1–50, default 10). Filters combine with AND before
+ascending creation order, total counting and slicing. Empty results have zero total pages;
+an out-of-range page returns no items without clamping. Unknown/duplicate keys are errors.
+Priority other than normal requires the planned v2 migration.
+
+`GET /api/dashboard?projectId=p-1` summarizes the whole project, not visible search/page
+results. Omit projectId for global totals. Blocked is a subset of todo. Completion is the
+integer floor of 100 × done / total, or zero for empty projects.
+Browser filters and page are URL state; Back restores them. Apply filters resets page 1.
+
 ## Storage safety
 
 One process holds `writer.lock` per data directory. Writes serialize, clone committed
