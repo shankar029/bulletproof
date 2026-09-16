@@ -56,6 +56,10 @@ does not repeal the model's context ceiling. When context runs low, **checkpoint
   the session, split it. Right-size to 30–90 minutes of focused work each.
 - **Map every milestone to app-level acceptance criteria.** The union of milestone ACs must cover
   the whole app request — nothing dropped, no scope invented.
+- **Keep milestone outcomes separate from internal tasks.** Use `planning.md` to assign
+  task/check IDs, exact changes, dependencies, owners and evidence within each slice. Later
+  milestones may extend the same component with a distinct change; do not create a milestone
+  for each horizontal layer or duplicate task ownership.
 
 ## Per-milestone execution — the inner loop
 
@@ -107,7 +111,8 @@ milestone(s)** and work the full **`references/production-readiness.md`** checkl
 config & secrets, environments, data/migrations/backups, CI/CD, observability, security hardening,
 performance/scaling, reliability/rollback/DR, networking/TLS, privacy/compliance, cost, ops docs
 (and mobile app-store release when mobile). **Capture each item in the plan as a trackable checkbox**
-(addressed, or N/A with a reason). Right-size to the stack — skip what genuinely doesn't apply (a
+(planned with an owning task/check, or N/A with a reason; checked complete only with evidence
+before the relevant release). Right-size to the stack — skip what genuinely doesn't apply (a
 static site has no migrations; a CLI has no CORS), but say so. Absent a real deploy target this run,
 deliver the **production-readiness artifacts** (Dockerfile/CI/env config, migrations, health checks,
 runbook) and state exactly what remains to actually go live.

@@ -27,8 +27,11 @@ build on them. Record the split in the plan.
 - Give each worker an isolated workspace (a separate worktree or checkout). Concurrent
   workers never share a working tree.
 - Give each a sharply-scoped brief: the project profile, **the design document**, its slice's
-  acceptance criteria, the files it owns, and the same quality bar — real unit and integration
-  tests, left green. Workers implement the design; they do not redesign.
+  acceptance criteria, and the plan's **assigned task/check records** per `planning.md`
+  (entry conditions, exact owned changes, preserved behavior, proof and stop conditions).
+  Keep the same quality bar — real unit and integration tests, left green.
+  Workers implement the design; they do not redesign. A shared component can recur in sequential
+  increments, but shared-file changes are never concurrently owned.
 - Keep concurrency modest (about 2–4) so failures stay debuggable.
 
 ## Integrate
@@ -39,4 +42,6 @@ parts ran in parallel.
 Read-only work (review angles, independent verification surfaces) is safe to parallelize even
 for small changes; merge the findings before shipping. **The Phase 6 review always runs in a
 separate, fresh-context, read-only session — preferably on a different model** (see
-`review-and-pr.md`). Reviewers never write to the tree — you apply the fixes.
+`review-and-pr.md`). Reviewers never edit implementation; assigned review artifacts may be
+written with scoped permission, otherwise the parent persists their returned findings unchanged.
+The parent applies fixes.

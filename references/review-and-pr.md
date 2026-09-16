@@ -5,7 +5,8 @@
 Review the full diff as if you would reject it in someone else's PR. Fix everything you flag.
 
 **Correctness & bugs**
-- [ ] Satisfies every acceptance criterion, and nothing extra.
+- [ ] Satisfies the current increment's due AC scenarios and affected prior regressions;
+      final ship satisfies every AC, and nothing extra.
 - [ ] **Every referenced symbol, API, config key, and flag actually exists** — verified by
       reading it, not recalled. No invented behavior anywhere in the diff or the docs.
 - [ ] Edge cases, empty/absent values, concurrency, and error paths handled.
@@ -15,6 +16,8 @@ Review the full diff as if you would reject it in someone else's PR. Fix everyth
 **Design, patterns & maintainability**
 - [ ] **Matches the approved design document** — same types, same responsibilities, same
       interactions; any divergence was folded back into the document.
+- [ ] Plan/task completion matches the actual changes and check evidence; deviations follow
+      `planning.md`'s revision protocol, including affected dependencies and approvals.
 - [ ] Follows the project's architecture and existing patterns — not a new dialect.
 - [ ] Single responsibility, high cohesion, low coupling, correct dependency direction.
 - [ ] The abstraction fits the domain; no speculative or clever indirection.
@@ -53,7 +56,8 @@ subagent, this is a blocker: record it in `state.md` and stop (prime directive 8
 grading your own work in the context that wrote it.
 
 Give the reviewer the **requirement, the acceptance criteria, the design document,
-`traceability.md`, `metrics.json`, and the diff** — and none of your reasoning. It does two
+the plan and linked task/check records, `traceability.md`, `metrics.json`, and the diff** — and
+none of your reasoning. It does two
 jobs in one pass: a demanding code review **and** an independent requirement reconciliation.
 Use this brief:
 
@@ -63,7 +67,7 @@ Use this brief:
 > the final repository state and executable evidence.
 >
 > **INPUTS.** The original requirement and acceptance criteria, `design.html`, `traceability.md`,
-> `metrics.json`, and the final diff.
+> `plan.html` and linked task/check records, `metrics.json`, and the final diff.
 >
 > **PROCESS.**
 > 1. **Review the diff** — correctness and edge cases, fidelity to the design, maintainability,
@@ -74,16 +78,27 @@ Use this brief:
 >    evidence, inspect the final `git diff`/`status`, and confirm the cited tests exist and
 >    pass. Distinguish PASS / FAIL / NOT-RUN / INCONCLUSIVE; never accept "passed" without an
 >    observed result.
+>    At intermediate reviews, judge due scenarios and affected previously delivered regressions;
+>    record future ACs as NOT-VERIFIED (planned), not failures of earlier slices. For spanning
+>    ACs, record task/check proof without a premature VERIFIED verdict. Final review covers all ACs.
+> 3. **Reconcile the execution plan** — compare owned changes, completion checkboxes and
+>    expected outcomes with the final tree and recorded results. Confirm deviations were
+>    reflected in affected tasks/ACs and approvals; human-owned checks require human confirmation.
 >
 > **OUTPUT CONTRACT.** Write findings and their evidence to `.ai/<slug>/review.md`, and set a
 > per-AC verdict in `traceability.md`: **VERIFIED / VERIFIED-WITH-LIMITATIONS / NOT-VERIFIED /
 > BLOCKED** (never VERIFIED when a material requirement lacks evidence). End with an overall
 > verdict of the same enum. The reviewer **never writes code**.
+> If artifact writes are withheld, return the complete report and exact verdict updates for the
+> parent to persist unchanged and verify; do not bypass tool restrictions through shell writes.
 
 Record every finding and its disposition (fixed / rejected, with the reason) in
-`.ai/<slug>/review.md`. A `NOT-VERIFIED` AC reopens the phase that owns it — it is never argued
-away. When the harness can scope subagent tools, launch this reviewer with **write/edit tools
-withheld** so its independence is enforced, not merely requested.
+`.ai/<slug>/review.md`. An unmet **due** AC/scenario reopens the phase that owns it — it is
+never argued away; future planned work does not deadlock the current increment.
+Keep implementation/source writes withheld. When path-scoped permissions exist, allow only the
+assigned review/traceability artifact writes; otherwise have the parent persist the full returned
+report and verdicts unchanged, verify their locations, and record dispositions separately.
+Persistence by the parent does not transfer the independent review judgment to the implementer.
 
 For multi-increment work, review **each increment** before moving on — not once at the end.
 

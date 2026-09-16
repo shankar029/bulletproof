@@ -247,14 +247,15 @@ code — see `references/ux-design.md`. Skip it entirely for library / CLI / API
   Protocol and verdict handling: `references/html-theme.md`. Record the outcome in `state.md`.
 
 ### Phase 3 — Plan the execution of the design
-Write `.ai/<slug>/plan.html` (same format rules, ≤3 pages): the **executable projection of the
-design**. It cites `research.md` and `design.html` and **introduces no new facts of its own** —
+Follow `references/planning.md` to write `.ai/<slug>/plan.html` (HTML overview, ≤3 pages),
+with linked `tasks.md` detail only when needed: the **executable projection of the design**.
+It cites `research.md` and `design.html` and **introduces no new facts of its own** —
 research says what is, design says what will be, the plan says **how it gets built: in what
 grouping, what order, and proven by what tests.**
 - **Derive the build order from the design's dependencies**, not from convenience. Sequence so
   each step produces something the next can build on and validate: **contracts/types/interfaces
-  → core behavior → integration & wiring → end-to-end → observability/docs**. A component is
-  scheduled only after the components it depends on.
+  → core behavior → integration & wiring → end-to-end → observability/docs** within each slice.
+  These are internal tasks, not automatically deliverable increments.
 - **Group the design's components into increments.** Each increment is a **cohesive vertical
   slice** — related components that together deliver observable behavior — mapping to specific
   **design components** and at least one **acceptance criterion**, testable and reviewable on
@@ -263,13 +264,21 @@ grouping, what order, and proven by what tests.**
   (`references/workspace.md`). Small work is one increment; large work is several.
 - **Build-order table — the heart of the plan.** One row per increment: **order · increment ·
   design components it builds · ACs it satisfies · depends-on (what must exist first) · files to
-  add/change · the tests that prove it.** Every design component appears in exactly one row;
-  every AC appears in at least one. This is what feeds `traceability.md`.
+  add/change · task/detail links · completion checks.** Every planned change has one owning task;
+  a component may recur across increments with distinct change responsibilities and explicit
+  prerequisites. Every AC maps to work and proof in `traceability.md`.
+- **Make each task executable:** stable task ID and parent increment, AC/design references,
+  dependencies/entry conditions, exact files/symbols and behavior delta, reuse pointers,
+  preserved behavior/exclusions, verification owner, and failure/recovery conditions. Start the
+  plan with the desired end state and binding scope boundaries; do not bury unresolved decisions.
 - **Testing plan, per increment and overall.** For each increment name the **unit** (functions,
   branches, boundaries, error paths), **integration** (module seams), and **browser/end-to-end**
   tests that prove its criteria, plus the coverage expectation and the **regression scope** it
   must not break. State **when the full end-to-end verification runs** (Phase 5, per increment)
-  and what the final regression pass covers.
+  and what the final regression pass covers. Each check specifies its command and working
+  directory/shell, prerequisites, expected observable result, owner/timing, and evidence path.
+  Cite researched tooling; planned tests are not run results. Reserve human acceptance for
+  genuine judgment/access needs; keep independent verification independent.
 - **Every increment runs Phases 4–6 at production quality** and ends at a green, reviewed
   commit on the feature branch — never a half-finished state for the next session to reconstruct.
 - If this agent can run parallel subagents, identify the **safe parallelization boundaries**
@@ -281,16 +290,32 @@ grouping, what order, and proven by what tests.**
   slice still an increment held to this same bar.
 - **Going live is part of the plan:** if deploying / releasing is in scope, the plan carries a
   **Production Readiness** section per `references/production-readiness.md`, every item either
-  addressed or marked N/A with a reason.
+  planned with an owning task/check and prerequisites, or marked N/A with a reason.
+  Planned is not complete; the applicable release gate requires captured completion evidence.
 - Keep the increments and tasks checkbox-trackable, and mirror the increment list in `state.md`.
-- **GATE 3:** every design component is assigned to exactly one increment and placed after its
-  dependencies; every acceptance criterion maps to an increment and to a test; the testing plan
-  (per-increment + regression + when E2E runs) is stated; and every increment is session-sized
-  and independently verifiable.
+- **Revise and resume using `references/planning.md`:** reconcile affected ACs, design,
+  dependencies, tasks, checks and completion evidence together. Reopen research/design for
+  missing facts or changed behavior; do not silently redesign or trust completed checkboxes.
+- **GATE 3:** every planned change has an owner and ordered prerequisites; every AC maps to
+  an increment, tasks and proof; checks have grounded commands, pass conditions, owners and
+  evidence destinations; and increments are session-sized, independently verifiable slices.
+  The bounded consumer-readiness check in `references/planning.md` is READY: a fresh implementer
+  can execute from the plan and linked artifacts without an unresolved product/architecture
+  decision. The parent reconciles full coverage; sampling is not proof of every task.
 
 ### Phase 4 — Implement + test
+**Increment gate scope (Phases 4–6):** before the final increment, verify the current slice's
+AC scenarios and affected previously delivered regressions. Future work stays explicitly
+planned/not-yet-verified and does not block an earlier slice. An AC spanning increments is not
+VERIFIED until all of its tasks/checks are satisfied; record partial proof by task/check.
+At final ship, reconcile the **whole request** with no future work silently left out.
+
 - **Re-read `design.html` before starting each increment.** The design, not your
   recollection, is the contract — this is the main defense against drift on long work.
+- **Read the plan and current task/check records too.** Confirm entry conditions and source
+  freshness, preserve the stated invariants, and attach change/check evidence before marking
+  a task complete. Use the planning revision protocol for mismatches; task completion does not
+  bypass the increment's independent verification and review.
 - **Implement the approved design.** If reality contradicts the design, stop, update the
   design document (and re-check the gate) — do not silently improvise a different shape.
 - Work in **small, test-backed increments**. Every new unit of behavior ships with a real
@@ -315,14 +340,17 @@ would exercise it, and commit those tests. **All browser and front-end verificat
 `references/testing-and-e2e.md`.
 - Map each acceptance-criterion scenario to existing coverage first; add tests only for the
   uncovered ones, extending the existing suite rather than duplicating it.
+- Consume the plan's check records as well as the design/ACs. Independently confirm expected
+  outcomes, capture the assigned evidence, and leave human-owned acceptance unconfirmed until
+  that human responds. A planned check or passing command with no relevant assertions is not proof.
 - Capture the evidence into `.ai/<slug>/evidence/`: commands run, output, screenshots,
   console/error output, artifacts, and one pass/fail line per criterion.
 - **If the environment makes real end-to-end proof impossible** (no network, no credentials,
   no runnable host), do not weaken the gate and do not pretend. Verify at the deepest level
   the environment allows, **name the blocker**, list which criteria remain
   environment-unverified, and give the exact command a human can run to finish the proof.
-- **GATE 5:** every acceptance criterion is demonstrated met with captured evidence — or is
-  listed as environment-blocked with the blocker and the finishing command stated.
+- **GATE 5:** every scenario in the increment gate scope is demonstrated met with captured
+  evidence — or is listed as environment-blocked with the blocker and the finishing command stated.
 
 ### Phase 6 — Review, prove, ship
 - **Review your own diff as a demanding staff reviewer** — correctness, bugs and edge cases,
@@ -334,9 +362,10 @@ would exercise it, and commit those tests. **All browser and front-end verificat
   against the current tree and fix the ones that moved — stale evidence discredits the rest.
 - **Get an independent review *and* an independent verification — in a separate session, never
   in this context.** Hand the requirement, the acceptance criteria, the design document,
-  `traceability.md`, **`metrics.json`**, and the diff to a **read-only reviewer subagent with
-  fresh context** (tools scoped to read/execute, never write), and prefer **a different model**
-  from the one that wrote the code. Preference order: (1) different model, fresh context; (2)
+  the plan and linked task/check records, `traceability.md`, **`metrics.json`**, and the diff to a
+  **read-only reviewer subagent with fresh context** (read/execute over source; artifact
+  persistence per `references/review-and-pr.md`), and prefer **a different model** from the one
+  that wrote the code. Preference order: (1) different model, fresh context; (2)
   same model, fresh context. **Review is mandatory-delegated — there is no in-session
   self-review fallback**; if no subagent can be spawned, stop and record the blocker (prime
   directive 8). It does two jobs: **review** the diff (correctness, design fidelity,
@@ -345,7 +374,8 @@ would exercise it, and commit those tests. **All browser and front-end verificat
   your narrative — returning a per-AC verdict (**VERIFIED / VERIFIED-WITH-LIMITATIONS /
   NOT-VERIFIED / BLOCKED**). The reviewer never writes code. Record findings and dispositions in
   `.ai/<slug>/review.md`, close out `traceability.md`, and address each on its merits. A
-  NOT-VERIFIED requirement reopens the phase that owns it — it is never argued away.
+  NOT-VERIFIED requirement due in this increment reopens the phase that owns it — it is never
+  argued away. Future planned work remains not-yet-verified; final ship includes every AC.
 - Run the **quality gate**: whichever of format, lint, type-check, coverage, and build the
   repo actually configures, **plus the full test suite, always**. Fix every failure; never
   suppress and never lower a threshold.
@@ -366,10 +396,12 @@ would exercise it, and commit those tests. **All browser and front-end verificat
   local commit on the feature branch and report the exact commands to finish.
 - **GATE 6 (ship gate):** conventions honored · design executed · unit + integration +
   end-to-end green · coverage met · **probe green (no metric regression, no new cycle, no
-  unjustified surviving mutant)** · review clean · **every acceptance criterion VERIFIED (or
-  VERIFIED-WITH-LIMITATIONS with the limitation named) in `traceability.md`** · quality gate
+  unjustified surviving mutant)** · review clean · **the increment's due scenarios and affected
+  regressions independently verified, with task/check evidence in `traceability.md`; at final
+  ship every AC VERIFIED (or VERIFIED-WITH-LIMITATIONS with the limitation named)** · quality gate
   green · evidence attached · committed on a feature branch · `state.md` current ·
-  **`report.html` written** · **production-readiness items closed when going live is in scope** ·
+  **`report.html` written** · **production-readiness items closed before the increment that
+  releases the relevant capability** ·
   PR opened (or commit + instructions delivered). For
   multi-increment work, this gate runs **per increment**; the PR opens when the whole
   requirement is complete.
@@ -386,6 +418,7 @@ explicit follow-up. Never close the gap by lowering the bar.
 ## References (load on demand)
 - `references/workspace.md` — the `.ai/<slug>/` workspace, `state.md`, `traceability.md`, resume protocol, increment sizing.
 - `references/research.md` — reusable research procedure; AC coverage, source evidence, freshness, and task-specific handoff.
+- `references/planning.md` — executable task/check contracts, vertical increments, consumer readiness, and controlled revision/resume.
 - `references/delegation.md` — running research, design and review in subagents; briefs and spot-check.
 - `references/project-profile.md` — profile the project; anti-debt rules; design verification checklist.
 - `references/design-doc.md` — the 3-page documents: structure, simple diagrams, skeleton.

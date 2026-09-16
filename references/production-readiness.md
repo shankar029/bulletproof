@@ -8,10 +8,13 @@ feature in isolation).
 ## Plan requirement (non-negotiable when production is in scope)
 
 When going to production is in scope, the **plan MUST contain a "Production Readiness" section** that
-lists every applicable item below as a **trackable checkbox** — each either **addressed** or marked
-**N/A with a one-line reason**. A plan that omits production concerns is an incomplete plan; do not
+lists every applicable item below as a **trackable checkbox** — each either **planned** with an
+owning task/check, prerequisites and release timing, or **N/A with a one-line reason**.
+Keep planned/pending items unchecked; reserve complete/addressed for captured implementation
+and verification evidence. Close applicable items before releasing the affected capability.
+A plan that omits production concerns is an incomplete plan; do not
 enter Phase 4 (implementation) for the release without it. Verify it against the checklist in
-`project-profile.md` (§Plan verification).
+`planning.md` (§Accept the handoff) and the design checklist in `project-profile.md`.
 
 **Right-size, don't pad.** A static site has no DB migrations; a CLI has no CORS; an internal tool
 may skip DR. Skip what genuinely doesn't apply — but **say so explicitly** (N/A + reason) rather than

@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format is based on
 ## [Unreleased]
 
 ### Added
+- **Executable planning and consumer-ready handoffs.** New `references/planning.md` defines
+  exact task/change ownership, prerequisites, reuse/preservation constraints, grounded verification
+  commands, expected outcomes, owners and evidence. Phase 3 distinguishes vertical increments
+  from internal tasks, allows explicit successive changes to shared components, and checks
+  consumer readiness. The three-page HTML overview can link optional task detail without
+  duplicating it. Implementation, verification, revision and resume use the same records;
+  completed checkboxes require actual change/check evidence.
+
 - **Requirement-scoped research and durable agent handoff.** Expanded `references/research.md`
   defines a reusable read-only research procedure, separate from task findings: AC coverage,
   source-backed behavior and failure-path traces, contracts/callers, reuse and test examples,
@@ -15,6 +23,12 @@ All notable changes to this project are documented here. The format is based on
   source freshness and complete requirement context. Bounded research assignments and
   app-scale checkpoints use the same contract without adding a phase or automatic agent fan-out.
   Integrated with v0.7.0's six phases, mandatory research delegation and `.ai/<slug>/` workspace.
+
+### Fixed
+- **Planning lifecycle gate conflicts.** Intermediate gates verify due scenarios and affected
+  regressions without falsely completing future ACs; final ship still reconciles the whole
+  requirement. Production readiness distinguishes planned work from completed proof. Restricted
+  reviewers can return complete findings for parent persistence without gaining source-write access.
 
 ### Planned
 - Move gate invariants from prose to a deterministic `scripts/check.py` (citations resolve,

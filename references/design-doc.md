@@ -1,7 +1,8 @@
 # Reference: The Design & Plan Documents (HTML, max 3 pages)
 
 These documents exist so a human can absorb the solution in **under five minutes** and approve
-or redirect it *before* code is written. They are decision aids, not specifications. They live
+or redirect it *before* code is written. They are decision aids; the plan also links the complete
+execution contract defined in `planning.md`. They live
 in `.ai/<slug>/` — see `workspace.md`.
 
 | File | When | Contains |
@@ -9,6 +10,7 @@ in `.ai/<slug>/` — see `workspace.md`.
 | `design.html` | always (non-trivial work) | program design: classes, interfaces, interactions |
 | `architecture.html` | large work only | components and how they talk |
 | `plan.html` | always (non-trivial work) | increments, tasks, test strategy |
+| `tasks.md` | only when execution detail does not fit the overview | task/check records linked from `plan.html`; no duplicate records |
 
 ## Hard rules
 
@@ -19,6 +21,8 @@ in `.ai/<slug>/` — see `workspace.md`.
 - **Maximum 3 printed pages** (~1,500 words including diagrams). If it doesn't fit, your
   design is being explained at the wrong altitude — cut prose, not content: convert
   paragraphs into tables and diagrams. Check the length by printing to PDF, not by guessing.
+  For the execution plan this caps the **HTML overview**: preserve necessary task/check details
+  in linked `tasks.md` rather than deleting prerequisites or proof to meet the page limit.
 - **Diagrams carry the structure; text only carries what a diagram can't.** Every design has at
   minimum one class/module diagram and one sequence diagram for the critical flow; every plan
   has a build-order/dependency diagram (see `plan.html` below). A reader should understand the
@@ -154,28 +158,34 @@ document is exactly when it creeps past three pages — measure by printing to P
 content (merge table rows, delete what a signature already says). Never shrink the type.
 
 ## `plan.html`
-Same shell, same caps, different body — the **executable projection of the design**, not a fresh
-set of facts. It contains:
+Same HTML shell and three-page overview, different body — the **executable projection of the
+design**, not a fresh set of facts. Follow `planning.md` for the full procedure and task/check
+contract. Keep detailed records here when they fit, otherwise link to `tasks.md`; do not duplicate.
 
-- **Build-order table** (the heart): one row per increment — `Order` · `Increment` ·
-  `Design components` (from the design table) · `ACs` · `Depends on` · `Files` · `Tests`.
-  Ordered by dependency — contracts/types → core → integration → end-to-end → docs — so every
-  increment is built only after the ones it needs. Every design component appears in exactly one
-  row; every AC in at least one.
-- **Per-increment detail:** scope, the acceptance criteria it satisfies, and its
-  session-sized justification.
-- **Testing plan:** per increment, the unit / integration / end-to-end tests that prove it, the
-  coverage expectation, and the regression scope it must not break; plus when full E2E
-  verification runs and what the final regression pass covers.
-- Task checkboxes per increment.
+- **Outcome & scope:** observable desired end state, linked ACs/design, exclusions and invariants.
+- **Build-order table:** each row is a vertical increment, with outcome, design references, ACs,
+  prerequisites, exact affected files, task/detail links and completion checks. The same component
+  can occur again with a distinct owned change. Every planned change has one task owner.
+- **Task/check records:** precise changes and dependencies, reuse/preservation, execution and
+  proof requirements, verification owners, stop/recovery conditions and evidence. Keep the
+  per-increment and final regression strategy, coverage expectation and E2E cadence visible.
+- **Progress & revisions:** stable IDs, status/evidence links and changed-task history per
+  `planning.md`; no completed checkbox without supporting change/check evidence.
+
+Illustrative structure only: these types, ACs, paths and checks are examples, not repository
+facts or a ready-to-run plan. I1 delivers order placement end to end; I2 extends it with
+cancellation. Inside each increment, tasks order contracts, core behavior, wiring and proof.
 
 ```html
 <h2>1. Build order</h2>
 <table>
-  <tr><th>#</th><th>Increment</th><th>Design components</th><th>ACs</th><th>Depends on</th><th>Files</th><th>Tests</th></tr>
-  <tr><td>1</td><td>Pricing contracts &amp; types</td><td><code>PricingPolicy</code>, <code>Receipt</code></td><td>AC1</td><td>—</td><td>src/pricing/*.ts</td><td>unit: policy math</td></tr>
-  <tr><td>2</td><td>Order placement core</td><td><code>OrderService.place</code></td><td>AC1, AC3</td><td>1</td><td>src/order/*.ts</td><td>unit + integration (repo seam)</td></tr>
-  <tr><td>3</td><td>Checkout wiring &amp; E2E</td><td><code>CheckoutController</code></td><td>AC2</td><td>2</td><td>src/http/*.ts</td><td>e2e: place → receipt</td></tr>
+  <tr><th>ID</th><th>Outcome / design change</th><th>ACs</th><th>Depends on</th><th>Files</th><th>Tasks / proof</th></tr>
+  <tr><td>I1</td><td>Place an order and receive a receipt: OrderService.place + OrderRoutes</td>
+      <td>AC1</td><td>Approved design</td><td>src/order.ts; src/routes.ts; test/order.test.ts</td>
+      <td>I1.T1 contracts; I1.T2 behavior/wiring; I1.T3 unit + integration + E2E proof</td></tr>
+  <tr><td>I2</td><td>Cancel an eligible order: extend OrderService + OrderRoutes</td>
+      <td>AC2</td><td>I1 complete</td><td>src/order.ts; src/routes.ts; test/order.test.ts</td>
+      <td>I2.T1 cancellation; I2.T2 unit + integration + E2E proof and placement regression</td></tr>
 </table>
 ```
 
@@ -190,13 +200,10 @@ second diagram only if one genuinely can't hold the shape.
     <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3"
       orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker></defs>
     <rect x="20"  y="40" width="150" height="48" rx="6" class="b"/>
-    <text x="95"  y="68" class="t">1 · Contracts</text>
+    <text x="95"  y="68" class="t">I1 · Place order</text>
     <line x1="170" y1="64" x2="240" y2="64" class="a" marker-end="url(#ar)"/>
     <rect x="240" y="40" width="150" height="48" rx="6" class="b"/>
-    <text x="315" y="68" class="t">2 · Order core</text>
-    <line x1="390" y1="64" x2="460" y2="64" class="a" marker-end="url(#ar)"/>
-    <rect x="460" y="40" width="160" height="48" rx="6" class="b"/>
-    <text x="540" y="68" class="t">3 · Checkout + E2E</text>
+    <text x="315" y="68" class="t">I2 · Cancel order</text>
   </svg>
   <figcaption>Fig — increments in build order; an arrow means "needs the previous one first".</figcaption>
 </figure>

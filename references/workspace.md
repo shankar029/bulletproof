@@ -21,6 +21,7 @@ The slug is short kebab-case derived from the requirement (`checkout-discount-co
     design.html         # program design: classes, interfaces, interactions (Phase 2)
     design-review.md    # independent design-review findings + verdict (Gate 2b)
     plan.html           # increments, tasks, test strategy (Phase 3)
+    tasks.md            # optional detailed task/check records linked from plan.html
     review.json         # reader's comments + verdict, exported from the document
     review.md           # independent-reviewer findings and their dispositions
     metrics.json        # deterministic quality probe: HEAD vs merge-base
@@ -98,6 +99,9 @@ where the work stands.
 
 **Before starting any increment**, re-read `design.html` (or its relevant section). This is the
 main defense against drift on a long task: the design, not your recollection, is the contract.
+Also read the plan and current task/check records (`tasks.md` only if present), confirm their
+prerequisites and source snapshot, and reconcile completion evidence with the tree. Use
+`planning.md` for revision and resume; do not treat a completed checkbox as proof.
 
 ## `traceability.md` — the requirement matrix that ties the gates together
 
@@ -111,17 +115,23 @@ acceptance criterion:
 
 | AC  | Requirement            | Design (component/method) | Task | Test / check          | Evidence                 | Verdict |
 |-----|------------------------|---------------------------|------|-----------------------|--------------------------|---------|
-| AC1 | Apply promo at checkout| PricingService.applyPromo | I1   | pricing.test.ts:42    | evidence/e2e-promo.txt   | VERIFIED |
-| AC2 | Reject expired codes   | PromoValidator.check      | I2   | promo.test.ts:88      | —                        | NOT-VERIFIED |
+| AC1 | Apply promo at checkout| PricingService.applyPromo | I1.T1, I1.T2 | C1: pricing.test.ts:42 | evidence/e2e-promo.txt | VERIFIED |
+| AC2 | Reject expired codes   | PromoValidator.check      | I2.T1, I2.T2 | C2: promo.test.ts:88   | —                     | NOT-VERIFIED |
 ```
 
 - **Phase 1** seeds the `AC` and `Requirement` columns — every explicit ask and sub-deliverable.
-- **Phases 2–3** fill `Design` and `Task` as each AC maps to a component and an increment.
+- **Phases 2–3** fill `Design` and `Task` as each AC maps to the specific task IDs within its
+  increment(s); link the planned check IDs. An AC can require several tasks/checks, not just one.
 - **Phases 4–5** fill `Test` and `Evidence` as behaviour is built and proven.
 - **Phase 6** sets `Verdict` per AC — **VERIFIED / VERIFIED-WITH-LIMITATIONS / NOT-VERIFIED /
-  BLOCKED** — written by the independent reviewer from the final tree, not from the
-  implementer's narrative. A `NOT-VERIFIED` row reopens the phase that owns it; the ship gate
-  requires every row VERIFIED (or VERIFIED-WITH-LIMITATIONS with the limitation named).
+  BLOCKED** — determined by the independent reviewer from the tree and evidence, not from the
+  implementer's narrative. The reviewer writes assigned artifacts if permitted; otherwise the
+  parent persists its full returned findings/verdicts unchanged per `review-and-pr.md`.
+  At an intermediate gate, reconcile the current increment's due scenarios and affected prior
+  regressions. Future ACs remain `NOT-VERIFIED` with an explicit "planned: I<n>" note; spanning
+  ACs retain partial task/check evidence but cannot be VERIFIED until fully satisfied. Only
+  unmet **due** work reopens an earlier phase. Final ship requires every row VERIFIED (or
+  VERIFIED-WITH-LIMITATIONS with the limitation named); future work is not silently deferred.
 
 Keep it in sync with `state.md`'s acceptance-criteria checklist — the checklist is the quick
 read, the matrix is the proof. Trivial-tier work skips it.
@@ -144,7 +154,13 @@ An increment is right-sized when:
   half-finished state that the next session has to reconstruct.
 
 If an increment turns out too big mid-flight, stop at the last green commit, split the
-remainder in `plan.html`, update `state.md`, and continue.
+remainder using `planning.md`'s revision protocol, update the plan/task records, `state.md` and
+`traceability.md`, and recheck Gate 3 before continuing. Preserve stable IDs and completion
+evidence for unaffected work; reopen results invalidated by the split or changed contract.
+
+Internal tasks can build contracts, logic and wiring in order without being separate increments.
+The same component may be extended by multiple increments when their owned changes and
+dependencies are explicit; every increment still delivers a complete, verifiable slice.
 
 **Every increment runs the full quality loop** — implement + test (Phase 4), verify (Phase 5),
 review (Phase 6) — at production quality. The PR opens when the whole requirement is complete,

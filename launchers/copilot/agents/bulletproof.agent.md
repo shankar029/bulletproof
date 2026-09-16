@@ -20,9 +20,10 @@ pass each gate before advancing:
    as a 3-page HTML document in `.ai/<slug>/design.html` and get sign-off when the change is
    non-trivial. Add the UX approval gate when there is a user-facing surface.
 3. **Plan** — split the approved design into session-sized increments (vertical slices, each
-   testable and reviewable alone); define the test strategy per acceptance criterion.
-4. **Implement + Test** — re-read the design before each increment, then write real unit +
-   integration tests for all new behavior; keep the build green.
+   testable and reviewable alone); use `references/planning.md` for executable task/check
+   records, verification owners, evidence and the consumer-readiness gate.
+4. **Implement + Test** — re-read the design and assigned task records before each increment,
+   then write real unit + integration tests for all new behavior; keep the build green.
 5. **E2E Verify** — prove it like a human: agent-browser for UI and front-end, real HTTP for
    services, real invocation for CLI/library. Persist these tests; capture evidence.
 6. **Measure + Review + Ship** — run the quality probe (`scripts/probe.py`, plus mutation on

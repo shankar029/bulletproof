@@ -31,9 +31,11 @@ gracefully:
 
 ## Rules that make delegation safe
 
-- **Artifacts to disk, never chat returns.** The subagent writes `.ai/<slug>/research.md` or
-  `design.html`; the parent then *reads the file*. A return value evaporates on restart; the
-  workspace survives. The subagent's reply should be a short summary plus the path.
+- **Artifacts must reach disk.** With scoped artifact-write permission, the subagent writes
+  its assigned output and the parent reads it. Otherwise return the complete artifact for the
+  parent to persist unchanged and verify before advancing; chat alone is not a durable handoff.
+  Keep review judgments separate from the parent's dispositions. Never bypass withheld writes
+  through a shell. When persistence is complete, the reply can be a short summary plus the path.
 - **Resolve the path before believing the summary.** A subagent can report a file it did not
   write where it says it did — sandboxes and shells resolve relative and `/tmp`-style paths
   differently, so the write lands somewhere else and the summary still reads as success. `ls`
@@ -43,12 +45,10 @@ gracefully:
   parent's context, so an invented citation is invisible unless it is checked.
 - **Grounding still binds the implementer.** The document is an index into the code, not a
   replacement for it. Re-open a file before editing it.
-- **One writer, least privilege.** Delegated research and design are read-only over the repo —
-  they create files only under `.ai/<slug>/` and never edit source. Enforce it, don't just ask
-  for it: when the harness supports scoping a subagent's tools, launch these agents with
-  **write/edit tools withheld** (read + search + shell for read-only inspection). A prompt that
-  says "do not edit source" is a request; a withheld tool is a guarantee, and it makes the
-  phase's output auditable.
+- **One writer, least privilege.** Research/design/planning/review agents never edit
+  implementation source. Scope writes to assigned `.ai/<slug>/` artifacts when supported;
+  otherwise withhold writes and use parent persistence above. Inspection commands must also be
+  read-only over source; do not treat a shell as a workaround for withheld edit tools.
 - **Bound it.** Give the subagent a timeout and a scope; if it fails or hangs, record the
   blocker rather than re-running it a third time. Inline fallback applies only to optional
   delegation; mandatory research, verification and review remain blocked.
@@ -60,7 +60,7 @@ gracefully:
 | **1 — Research** | **Required — always a subagent** | Independence + biggest context win; read-heavy, output small. Read-only. |
 | **2 — Design** | **Yes, by default** (inline fallback allowed) | Quality-critical artifact; benefits from fresh eyes and a single job. |
 | **2b — Design review** | **Yes** (prefer a different model; read-only) | Cheapest defect-catch; grades the design before the human sees it. See below. |
-| **3 — Plan** | Optional | Short, derived entirely from the design, and the main agent must own execution ordering anyway. Inline is fine. |
+| **3 — Plan** | Optional | Derive executable tasks/checks from the approved design per `planning.md`; parent owns ordering and Gate 3. |
 | **4 — Implement** | Only for genuinely parallel work | See `parallel-execution.md`. |
 | **5 — Verify (E2E)** | **Required — always a subagent** | Independent proof; the agent that exercises the feature is not the one that built it. Read + execute + test-authoring. See below. |
 | **6 — Review** | **Required — always a subagent** | Independence is the point; prefer a different model, tools scoped read-only. See `review-and-pr.md`. |
@@ -157,6 +157,19 @@ gracefully:
 > **STOP CONDITIONS.** Do not propose a full redesign or write code; surface the gap and let the
 > owner decide. Judge the design on its merits, not against how you would have written it.
 
+## Planning and consumer readiness (Phase 3)
+
+For delegated planning, supply `planning.md` and its filled-in brief with the accepted research,
+approved design, requirement/ACs, current workspace and explicit output paths. The planner writes
+only the assigned plan/task artifacts; it does not redesign or implement.
+
+Before Gate 3, run the bounded consumer-readiness check in `planning.md`, preferably in fresh
+context. The reader uses only the plan and accessible linked artifacts to walk a ready task and
+a relevant dependency/failure boundary. Return READY / REVISE / BLOCKED with specific missing
+inputs or instructions; do not fix holes verbally outside the artifact. The parent owns full
+coverage reconciliation and resolving findings. This is not another mandatory architecture review
+or a reason to repeat broad research.
+
 ## Brief: verify (Phase 5 end-to-end)
 
 > **ROLE.** You are the Verification Agent, running in a **fresh context** — you did not build
@@ -166,14 +179,18 @@ gracefully:
 > not modify production code; if a test can only pass by changing product behaviour, that is a
 > finding, not a fix.
 >
-> **INPUTS.** The requirement and acceptance criteria, `design.html`, `traceability.md`, and the
-> current working tree (implementation already complete).
+> **INPUTS.** The requirement and acceptance criteria, `design.html`, `plan.html` and its linked
+> task/check records, `traceability.md`, and the current working tree (implementation complete).
 >
 > **PROCESS.** Map each acceptance-criterion scenario to existing coverage first; add tests only
 > for the uncovered ones, extending the existing suite. Exercise the real public surface with the
 > system actually running — **all browser/front-end verification uses `agent-browser`** (see
 > `references/e2e-agent-browser.md`); non-browser surfaces per `references/testing-and-e2e.md`.
-> Record exact commands, exit codes and results.
+> Record exact commands, exit codes and results. Reconcile planned checks with the actual
+> scenarios they assert; use the assigned evidence paths. Do not confirm human-owned acceptance
+> on the human's behalf or treat planned/unexecuted checks as passing.
+> At an intermediate increment, verify its due scenarios and affected prior regressions, leaving
+> future tasks explicitly planned. At final ship, reconcile every AC, including spanning ACs.
 >
 > **OUTPUT CONTRACT.** Capture evidence into `.ai/<slug>/evidence/` (commands, output,
 > screenshots, console/errors, one pass/fail line per criterion) and fill the `Test` and

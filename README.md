@@ -39,7 +39,11 @@ Six phases, each with a gate it must pass before advancing.
    ad-hoc, unmaintainable code.**
 3. **Plan into session-sized increments.** Vertical slices that each deliver observable behaviour,
    are testable and reviewable alone, and **fit in one context window** — so long work survives
-   restarts. Production-readiness items are planned here when going live is in scope.
+   restarts. The [planning procedure](references/planning.md) turns each slice into exact owned
+   changes and checks: prerequisites, preserved behavior, commands, expected outcomes, verification
+   owners and evidence. A short HTML overview links optional task detail; a bounded handoff
+   check catches missing decisions before implementation. Production-readiness items are planned
+   here when going live is in scope.
 4. **Implement + test.** Re-reads the design before each increment ("the design, not your
    recollection, is the contract"), then real unit + integration tests for all new behaviour —
    never stubs, empty asserts, or `skip`ped tests.
@@ -73,6 +77,7 @@ Every non-trivial task gets a slug and a directory that is committed with the ch
   clarifications.md   # questions, answers, assumptions
   design.html         # program design  ·  architecture.html for large work
   plan.html           # increments, tasks, test strategy
+  tasks.md            # optional execution detail linked from plan.html; no duplicate records
   review.json         # your comments + verdict, exported from the document
   review.md           # independent-reviewer findings and their dispositions
   metrics.json        # deterministic quality measurements
@@ -239,6 +244,7 @@ bulletproof/
 │   ├── quality-metrics.md       #   the probe: toolchain, baselines, gate rules, metrics.json
 │   ├── quality-bar.md           #   the 9-dimension rubric + convergence loop
 │   ├── research.md              #   reusable research procedure; source-backed task handoff
+│   ├── planning.md              #   executable tasks/checks, consumer readiness, revision/resume
 │   ├── delegation.md            #   running research/design/review in subagents; briefs, spot-check
 │   ├── review-and-pr.md         #   review checklist, quality gate, evidence bundle, PR format
 │   ├── final-report.md          #   the end-of-run report: gates, measurements, what's pending
