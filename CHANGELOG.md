@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format is based on
 ## [Unreleased]
 
 ### Added
+- **Focused engineering techniques.** A new diagnosis procedure captures symptom-specific
+  reproduction, causal experiments and original-scenario verification. Existing references
+  gain small test-first cycles, caller-burden checks, domain vocabulary, bounded design
+  experiments, categorized review findings, decision prerequisites and expand–migrate–contract
+  planning. Selectively adapted from Matt Pocock's skills, preserving permissions, approval,
+  coverage, exact handoffs and green increments. Phase-specific loading and consolidated
+  research/planning/report guidance reduce repetition in `SKILL.md`; contributor guidance
+  keeps each detailed rule authoritative in one place.
 - **Human-readable code contract.** New `references/code-clarity.md` makes main flows,
   responsibility boundaries, naming, state, integration types, errors, and comment discipline
   explicit in design, implementation, independent review, and the quality rubric. Rejects

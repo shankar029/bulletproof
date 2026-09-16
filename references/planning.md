@@ -30,6 +30,19 @@ An authorized requirement assumption is not proof of an unknown API or tool capa
 
 ## 1. State the outcome and the boundaries
 
+For uncertain or large work, distinguish **questions that need decisions** from executable
+tasks. Keep each question in the existing clarification/design record with its owner, blocking
+prerequisites, affected ACs and resolution evidence; link it rather than duplicating it in tasks.
+Research factual questions; route product/architecture decisions to the parent and applicable
+approval. Ask only currently answerable material questions together, not downstream questions
+whose premises are still unsettled. Do not ask the human for facts the agent can safely inspect.
+
+A task is ready only when its decision and implementation prerequisites are resolved. Suspected
+later questions remain explicitly not yet specified, distinct from out-of-scope work; they are
+not completed tasks. This does not permit Gate 1/3 to pass with design/execution-critical
+unknowns. Reconcile readiness and coverage at the existing gates; no separate tracker,
+automatic issue creation, mandatory interview or additional approval round is required.
+
 Start the plan with the observable desired end state and the AC IDs it serves. Link the binding
 design, decisions, exclusions, and compatibility invariants rather than copying those documents.
 State what will **not** change, especially behavior that existing callers or data depend on.
@@ -62,6 +75,17 @@ until its entire contract is proven. The final ship gate covers the **whole requ
 just the final slice. Never mark future work verified to make an intermediate gate pass.
 
 ## 3. Write executable task records
+
+**Wide compatibility refactors:** when a rename, schema or shared-contract change cannot safely
+land by feature slice, plan expand, migrate, then contract. Add a compatible form first, migrate
+consumers in bounded dependency-ordered batches, and remove the old form only after scoped
+caller searches and compatibility/regression checks establish that migration is complete.
+Each batch records exact targets, preserved behavior and proof under the task contract below.
+For deployments, include old/new version coexistence and rollback limits.
+Every deliverable increment must still be green. If a batch cannot stand alone, treat it as an
+internal task of a session-sized integrated increment, not a completed but broken increment.
+If no safe grouping exists, stop and revise the migration design instead of promising green
+only at the end. This is compatibility scaffolding with planned removal, not indefinite duplication.
 
 Use the fields below for each task, compactly. Share common setup/check definitions by ID and link
 them rather than repeating them. Mark genuinely inapplicable fields N/A with a reason.

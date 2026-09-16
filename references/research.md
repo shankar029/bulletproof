@@ -40,6 +40,9 @@ criteria, user clarification, delegation, design, and the overall Phase 1 gate.
   contradictions with evidence; do not turn research into an unrelated code review or silently
   choose the implementation. For a bug, trace the causal path and distinguish a reproduced
   failure from an unverified root-cause hypothesis.
+- For defects and performance regressions, load `diagnosis.md` before proposing a cause.
+  Its reproduction/probe procedure respects this read-only assignment; return any needed
+  harness or instrumentation writes to the parent rather than expanding your permissions.
 - Use only safe, authorized inspection or reproduction commands. Report any needed execution
   that would mutate state, require unavailable tools, or exceed the assignment to the parent.
 

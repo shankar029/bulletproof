@@ -8,8 +8,8 @@ Make changes that look like the team that owns the code wrote them. Do this befo
   `CLAUDE.md`, `.github/copilot-instructions.md`, `.cursor/rules` / `.cursorrules`, and any
   **path-specific** instruction files scoped to the directories you will touch. These often
   state the build/test/convention rules verbatim — the highest-signal, lowest-cost context you
-  can get. Honor them as project law; cite them; where one contradicts the code's actual
-  behaviour, note the conflict and treat the observed code as truth.
+  can get. Cite them; distinguish observed implementation from binding rules and requested
+  behavior. Surface contradictions for resolution rather than silently overriding either.
 - **Languages, runtimes, and versions** — from source files and the ecosystem's manifest.
 - **Package/dependency manager** — from the lockfile present. Always use the one already there.
 - **Frameworks & architecture** — module boundaries, layering, monorepo vs single package.
@@ -18,6 +18,11 @@ Make changes that look like the team that owns the code wrote them. Do this befo
 - **Quality tooling** — formatter, linter, type checker, and how they run (scripts, hooks, CI).
 - **Conventions** — agent/contributor docs, README, ADRs; branch naming, commit style, PR
   expectations.
+- **Domain language** — read the existing glossary/context docs and relevant ADRs. Resolve
+  requirement-relevant ambiguities in terms, roles and states against actual code and concrete
+  scenarios; record proposed definitions and conflicts in research, not as silently chosen facts.
+  Reuse the project's terms in ACs, interfaces and tests. Do not invent a new architecture
+  vocabulary or create a glossary merely because none exists.
 - **Neighbors** — read the files next to the code you'll change and copy their patterns for
   errors, logging, validation, naming, imports, and tests.
 

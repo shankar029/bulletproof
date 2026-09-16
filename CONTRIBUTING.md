@@ -79,6 +79,16 @@ See `benchmark/README.md` for the illustrative A/B design and
   launcher.
 - Keep `SKILL.md` **lean** — push depth into `references/` (progressive disclosure).
 - If you add a reference file, link it from `SKILL.md`'s "References" list and `README.md`'s layout.
+- State **when to load** each required reference at the relevant phase/branch. A reference-list
+  entry alone is not a reliable trigger. Put shared invariants and ownership in `SKILL.md`,
+  detailed procedures in one authoritative reference, and link rather than restating them.
+- Keep ordered steps separate from supporting explanation; each step has an observable
+  completion condition. Pair necessary prohibitions with the intended action.
+- On changes, prune stale or duplicate guidance and keep related rules/caveats together.
+  Do not cache cheap manifest/help lookups in prose; do preserve exact verified commands in
+  task-specific execution records. Keep required handoff context accessible to fresh agents.
+- Validate the affected workflow branches, not just word count or token savings. Existing
+  regression checks do not establish that a prompt change improves model behavior.
 
 ## Commit & PR conventions
 

@@ -67,6 +67,21 @@ ask only real questions.
 
 ## The features that make it stick
 
+### Evidence-driven diagnosis and focused execution
+
+Defects use a [diagnosis procedure](references/diagnosis.md) that captures the exact symptom,
+tests explanations, and rechecks the original scenario after the fix. Implementation uses small
+test-first cycles with independent expected results and preserved side-effect coverage.
+Design checks caller burden and domain vocabulary; planning separates unresolved decisions
+from ready tasks and handles wide compatibility changes without broken increments.
+
+These are original, selective adaptations of techniques from
+[`mattpocock/skills`](https://github.com/mattpocock/skills/tree/959a8e9f1edc3adbe2f7e3054bb6fbefa6696260)
+(MIT): diagnosis, TDD, codebase design, domain modeling, review, planning and agent-document
+writing. Bulletproof retains its approval/delegation/evidence contracts; it does not bundle
+the upstream plugins, hooks, mandatory interviews or extra agent fan-out. Existing regression
+checks do not establish improved model effectiveness.
+
 ### Human-readable code, not inline change journals
 
 Design, implementation, and review follow a shared
@@ -254,6 +269,7 @@ Method and numbers: [`evals/README.md`](evals/README.md) (v1) ·
 bulletproof/
 ├── SKILL.md                     # the operating loop (single source of truth)
 ├── references/                  # on-demand depth per phase (progressive disclosure)
+│   ├── diagnosis.md             #   exact-symptom reproduction, causal probes, regression proof
 │   ├── code-clarity.md          #   readable code, cohesive responsibilities, comment discipline
 │   ├── communication.md         #   focused human updates without losing uncertainty or evidence
 │   ├── workspace.md             #   .ai/<slug>/ workspace, state.md, resume, increment sizing
