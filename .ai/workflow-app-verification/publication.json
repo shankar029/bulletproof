@@ -1,0 +1,20 @@
+{
+  "status": "BLOCKED",
+  "repository": "shankar029/bulletproof",
+  "branch": "shbs-microsoft-workflow-app-verification",
+  "testedApplicationCommit": "ef9f58a",
+  "pullRequest": null,
+  "attempts": [
+    {
+      "operation": "git push -u origin shbs-microsoft-workflow-app-verification",
+      "exitCode": 128,
+      "result": "Permission to shankar029/bulletproof.git denied to shbs_microsoft. HTTP 403."
+    },
+    {
+      "operation": "App create_pull_request, draft=true",
+      "result": "Failed to create fork for shankar029/bulletproof: GitHub API 403 Forbidden. Unauthorized: As an Enterprise Managed User, you cannot access this content."
+    }
+  ],
+  "disposition": "Stop publication attempts. No credential changes, alternative remotes, manual forks or enterprise-policy workarounds attempted.",
+  "requiredAction": "An administrator must provide an approved account/environment or destination with repository access. Then push the local branch and create the draft PR with the recorded workflow limitations."
+}

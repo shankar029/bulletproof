@@ -4,14 +4,14 @@
   "tier": "full end-to-end exercise",
   "application": "examples/team-planner",
   "sourceBase": "cfe5734b4f28817e6236d121a3b206a51606879d",
-  "status": "ASSESSED_WITH_LIMITATIONS_PUBLICATION_PENDING",
+  "status": "ASSESSED_WITH_LIMITATIONS_PUBLICATION_BLOCKED",
   "gates": {
     "G1": "Accepted with correction of unsupported temporary-directory prohibition and incomplete Python discovery.",
     "G2": "Parent accepted autonomously; independent review R1-R3 disposed; design and plan each rendered to three pages; human approval unconfirmed.",
     "G3": "Executable task revisions accepted; actual incoming handoff and storage prerequisite exercised. Design/planning not independent agents.",
     "G4": "Implementation and added regressions pass native tests. Historical six commits preserve v1 baseline, expansion, migration and contraction.",
     "G5": "Final-source independent browser replay passed all four flows and 126/126 checks, with zero axe violations/incomplete items, errors or console entries. Controlled diagnosis passed 30 observations and six original/minimized outcomes. Historical per-slice sequencing remains unverified.",
-    "G6": "Final independent reconciliation complete: no open application defects; R1/R2/R3/R5 and pagination semantics resolved; R4 retained. AC09 NOT-VERIFIED for required historical sequencing. Full workflow quality bar NOT MET; publication as a limited case study is pending."
+    "G6": "Final independent reconciliation complete: no open application defects; R1/R2/R3/R5 and pagination semantics resolved; R4 retained. AC09 NOT-VERIFIED for required historical sequencing. Full workflow quality bar NOT MET. App and evidence committed locally; GitHub publication BLOCKED by 403 and Enterprise Managed User restriction."
   },
   "evidenceIndex": {
     "initialContract": ["research.html", "feature-inventory.json", "acceptance.json", "design.html", "plan.html", "tasks.json"],
@@ -23,7 +23,8 @@
     "existingRegression": ["final-existing-unit.log", "final-existing-eval.log", "existing-live-dryrun.log"],
     "finalBrowser": ["verification.json", "verification.html", "verification-evidence/e2e-2026-09-16T12-32-11-166Z-1a695f7c/report.json"],
     "finalAssessment": ["report.html", "features.html", "traceability.json", "review.json", "review.html"],
-    "finalNative": "final-coverage.log"
+    "finalNative": "final-coverage.log",
+    "publication": "publication.json"
   },
   "actualCommandsFromExampleDirectory": [
     "node src/main.mjs --data-dir data --port 4317",
@@ -55,5 +56,13 @@
   "resumeNote": "Verification exceeded the intended context-sized increment and required compaction. Artifacts were re-anchored from disk; this is not proof of fresh-agent checkpoint resumption.",
   "evidenceFormatting": "Raw captured logs retain test-runner whitespace. Application source passes git diff --check; raw-log whitespace is not rewritten to manufacture a clean capture.",
   "parentRubricAdjudication": "Adopt the independent conservative nine-dimension assessment. Correctness, design fidelity and test quality score 3 for full workflow scope; unavailable modularity/robustness metrics remain unverified. Do not substitute application-only passes for these broader gates.",
-  "nextActions": ["Commit verified changes and evidence", "Open a draft PR with explicit workflow limitations"]
+  "publication": {
+    "testedApplicationCommit": "ef9f58a",
+    "branch": "shbs-microsoft-workflow-app-verification",
+    "status": "BLOCKED_GITHUB_AUTHORIZATION",
+    "pullRequest": null,
+    "reason": "Git push denied to shbs_microsoft (403); app PR action failed because the Enterprise Managed User cannot access this repository content.",
+    "recovery": "An administrator must provide an approved account/environment or destination with repository access. Then push this branch and create the draft PR; do not bypass enterprise policy."
+  },
+  "nextActions": ["Administrator-provided authorized publication path; then push the committed branch and create the draft case-study PR"]
 }

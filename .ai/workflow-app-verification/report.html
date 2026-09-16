@@ -3,7 +3,7 @@
 <title>Team planner verification report</title><link rel="stylesheet" href="../../assets/artifact.css">
 <script src="../../assets/artifact.js" defer data-doc="report.html" data-slug="workflow-app-verification"></script>
 <h1>Team planner: last-five-PR verification</h1>
-<p class="meta">16 September 2026 · Branch shbs-microsoft-workflow-app-verification · PR publication pending · <a href="design.html">Design</a> · <a href="plan.html">Plan</a></p>
+<p class="meta">16 September 2026 · Branch shbs-microsoft-workflow-app-verification · PUBLICATION BLOCKED: GitHub 403 / Enterprise Managed User restriction · <a href="design.html">Design</a> · <a href="plan.html">Plan</a></p>
 <h2>1. Outcome</h2>
 <p><strong>FACT: a working medium-complexity app and a complete 29-item assessment, not an all-workflow-features-pass result.</strong> Projects/tasks, dependency transitions, filtering/pagination, dashboards, transactional persistence and genuine v1-to-v2 migration work in native tests and real browser journeys. Independent review led to fixes for missing empty-state announcements, pagination semantics, unenforced browser audit results and insufficient diagnosis probes.</p>
 <p>Delivered: <a href="../../examples/team-planner/README.md">app and replay instructions</a>, real red-to-green/migration records, <a href="features.html">all 29 feature observations</a>, <a href="verification.html">browser evidence</a>, <a href="review.html">independent review</a>. Not delivered: hosted/multi-user deployment (out of scope), causal A/B effectiveness proof, or retroactive historical gate passes.</p>
@@ -56,5 +56,7 @@ node scripts\e2e.mjs --flow all
 node scripts\diagnose.mjs
 node scripts\mutation.mjs
 node src\main.mjs --data-dir data --port 4317</pre>
-<p>Browser test prerequisites are in the app README. Final measurements refer to the pinned application bytes; report-only commits do not change tested code. Historical observer reports retain their original snapshot identifiers. Next: commit the evidence bundle, push the branch and create the PR through the app.</p>
+<p>Browser test prerequisites are in the app README. Final measurements refer to the pinned application bytes; report-only commits do not change tested code. Historical observer reports retain their original snapshot identifiers.</p>
+<p><strong>Publication blocked:</strong> the app and evidence are committed locally. Git push was denied to shbs_microsoft (403); the app PR action also failed because the Enterprise Managed User cannot access this repository content. No PR exists. See <a href="publication.json">exact outcomes</a>. An administrator must provide an approved account/environment or destination with repository access before publication; no permission or enterprise-policy workaround was attempted.</p>
+<pre>git push -u origin shbs-microsoft-workflow-app-verification</pre><p>After authorized push succeeds, create the draft PR through the app. No additional app implementation is required to publish this limited case study.</p>
 </html>
