@@ -14,6 +14,9 @@ All notable changes to this project are documented here. The format is based on
   consumer readiness. The three-page HTML overview can link optional task detail without
   duplicating it. Implementation, verification, revision and resume use the same records;
   completed checkboxes require actual change/check evidence.
+- **Fresh-context planning by default.** Non-trivial planning uses a subagent, with an inline
+  fallback when unavailable. The parent owns readiness and Gate 3; implementers confirm task
+  handoffs before editing. Additional plan review is reserved for high-risk or complex plans.
 
 - **Requirement-scoped research and durable agent handoff.** Expanded `references/research.md`
   defines a reusable read-only research procedure, separate from task findings: AC coverage,

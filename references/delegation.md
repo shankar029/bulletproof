@@ -1,7 +1,8 @@
 # Reference: Delegating Phases to Subagents
 
-**Research, verification and review always run in a subagent; design and parallel implementation
-are delegated when the harness supports them.** Two reasons, and both are decisive for the
+**Research, verification and review always run in a subagent; non-trivial design and planning
+default to fresh-context subagents with an inline fallback when unavailable. Parallel implementation
+is capability- and independence-gated.** Two reasons, and both are decisive for the
 mandatory three:
 
 1. **Independence** — a dedicated agent with one sharply-scoped job, fresh context, no accumulated
@@ -22,7 +23,7 @@ same session cannot un-see the reasoning it is meant to catch. If the harness ge
 spawn a subagent, that is a **blocker** — record it in `state.md` and stop per prime directive 8;
 do not silently fold these phases into the main context.
 
-For the **other** delegated phases (design, and any parallel implementation), degrade
+For the **other** delegated phases (design, planning, and any parallel implementation), degrade
 gracefully:
 
 1. Subagent with **fresh context** (preferred).
@@ -60,7 +61,7 @@ gracefully:
 | **1 — Research** | **Required — always a subagent** | Independence + biggest context win; read-heavy, output small. Read-only. |
 | **2 — Design** | **Yes, by default** (inline fallback allowed) | Quality-critical artifact; benefits from fresh eyes and a single job. |
 | **2b — Design review** | **Yes** (prefer a different model; read-only) | Cheapest defect-catch; grades the design before the human sees it. See below. |
-| **3 — Plan** | Optional | Derive executable tasks/checks from the approved design per `planning.md`; parent owns ordering and Gate 3. |
+| **3 — Plan** | **Yes, by default** for non-trivial work (inline fallback when unavailable) | Fresh-context planner derives tasks/checks per `planning.md`; parent owns readiness, ordering and Gate 3. |
 | **4 — Implement** | Only for genuinely parallel work | See `parallel-execution.md`. |
 | **5 — Verify (E2E)** | **Required — always a subagent** | Independent proof; the agent that exercises the feature is not the one that built it. Read + execute + test-authoring. See below. |
 | **6 — Review** | **Required — always a subagent** | Independence is the point; prefer a different model, tools scoped read-only. See `review-and-pr.md`. |
@@ -159,16 +160,20 @@ gracefully:
 
 ## Planning and consumer readiness (Phase 3)
 
-For delegated planning, supply `planning.md` and its filled-in brief with the accepted research,
+Delegate non-trivial planning to a fresh-context subagent by default. Supply `planning.md`
+and its filled-in brief with the accepted research,
 approved design, requirement/ACs, current workspace and explicit output paths. The planner writes
 only the assigned plan/task artifacts; it does not redesign or implement.
 
-Before Gate 3, run the bounded consumer-readiness check in `planning.md`, preferably in fresh
-context. The reader uses only the plan and accessible linked artifacts to walk a ready task and
-a relevant dependency/failure boundary. Return READY / REVISE / BLOCKED with specific missing
-inputs or instructions; do not fix holes verbally outside the artifact. The parent owns full
-coverage reconciliation and resolving findings. This is not another mandatory architecture review
-or a reason to repeat broad research.
+Before Gate 3, the parent runs the bounded consumer-readiness check in `planning.md`, walking
+a ready task and a relevant dependency/failure boundary using the linked artifacts. Record
+READY / REVISE / BLOCKED with missing inputs/instructions; repair the artifacts, not just the
+conversation. The parent owns full coverage reconciliation and resolving findings.
+The incoming implementer confirms its task handoff before editing. Reserve an additional
+independent plan reviewer for high-risk work or complex dependencies, not every plan.
+If planning delegation is unavailable, record the inline fallback in `state.md`; trivial work
+keeps its short path. Existing mandatory research, design-review, verification and review
+requirements are unchanged.
 
 ## Brief: verify (Phase 5 end-to-end)
 

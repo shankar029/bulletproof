@@ -17,9 +17,12 @@ existing plan/task records. Confirm that the files are accessible and that the d
 and source snapshot still apply. Record the plan revision/date and the research/design versions
 or commits it consumes, including relevant uncommitted changes.
 
-The parent owns scope, ordering, Gate 3, and any user approval. Planning may run directly or in
-a bounded subagent per `delegation.md`; the planner may write only the assigned artifacts, not
-implementation code, and must not recursively delegate.
+The parent owns scope, ordering, Gate 3, and any user approval. **Non-trivial planning defaults
+to a bounded, fresh-context subagent** per `delegation.md`, given the accepted research, approved
+design, ACs/decisions and current workspace records. If delegation is unavailable, the parent
+plans inline to the same standard and records the fallback in `state.md`; trivial work keeps
+its short path. The planner may write only the assigned artifacts, not implementation code,
+and must not recursively delegate.
 
 Missing facts go back to **bounded research**; changes to behavior, interfaces, or architecture
 go back to **design and its approval gate**. Mark the affected work blocked until resolved.
@@ -124,12 +127,18 @@ alternative plans. Verify all artifact paths/anchors are reachable from a fresh 
 
 ## 6. Accept the handoff (Gate 3)
 
-Perform one bounded **consumer-readiness check**, using a fresh-context agent when available,
-otherwise the parent. It is not a second architecture review or another research phase.
-Give the reader the plan and linked inputs, not an explanation that fills holes in the plan.
-Ask it to walk the first ready task and a dependency/failure boundary (where applicable):
-can it locate the exact changes, prerequisite state, preserved behavior, commands, pass conditions,
+The **parent performs the bounded consumer-readiness check**; do not launch another reviewer
+for every plan. Use only the plan and linked inputs, not conversation knowledge that fills holes
+in the artifacts. Walk the first ready task and a dependency/failure boundary (where applicable):
+can an implementer locate the exact changes, prerequisite state, preserved behavior, commands, pass conditions,
 owners, and evidence paths without an unresolved product or architectural decision?
+
+Before editing, the incoming implementer also confirms its assigned task's prerequisites and
+instructions are actionable; report gaps to the parent and repair the artifacts instead of
+improvising. This check applies whether implementation is delegated or performed by the parent.
+Use an additional independent plan review only for high-risk work or complex dependency
+structures (for example destructive migrations or cross-service rollout ordering); it supplements,
+not replaces, parent acceptance. Mandatory design review and Phase 5/6 independence are unchanged.
 
 Record **READY / REVISE / BLOCKED**, specific gaps and dispositions in the existing task state
 or review record. A sample is not full coverage: the parent also reconciles **all** ACs and

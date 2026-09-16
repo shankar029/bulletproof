@@ -247,6 +247,11 @@ code — see `references/ux-design.md`. Skip it entirely for library / CLI / API
   Protocol and verdict handling: `references/html-theme.md`. Record the outcome in `state.md`.
 
 ### Phase 3 — Plan the execution of the design
+**Delegate non-trivial planning to a fresh-context subagent by default.** Supply accepted
+research, the approved design, ACs/decisions and current workspace records. If delegation is
+unavailable, plan inline to the same standard and record the fallback in `state.md`; trivial
+work keeps its short path. The parent owns readiness, ordering, scope and Gate 3.
+
 Follow `references/planning.md` to write `.ai/<slug>/plan.html` (HTML overview, ≤3 pages),
 with linked `tasks.md` detail only when needed: the **executable projection of the design**.
 It cites `research.md` and `design.html` and **introduces no new facts of its own** —
@@ -299,7 +304,7 @@ grouping, what order, and proven by what tests.**
 - **GATE 3:** every planned change has an owner and ordered prerequisites; every AC maps to
   an increment, tasks and proof; checks have grounded commands, pass conditions, owners and
   evidence destinations; and increments are session-sized, independently verifiable slices.
-  The bounded consumer-readiness check in `references/planning.md` is READY: a fresh implementer
+  The parent's bounded consumer-readiness check in `references/planning.md` is READY: a fresh implementer
   can execute from the plan and linked artifacts without an unresolved product/architecture
   decision. The parent reconciles full coverage; sampling is not proof of every task.
 
@@ -316,6 +321,8 @@ At final ship, reconcile the **whole request** with no future work silently left
   freshness, preserve the stated invariants, and attach change/check evidence before marking
   a task complete. Use the planning revision protocol for mismatches; task completion does not
   bypass the increment's independent verification and review.
+  Before editing, the incoming implementer confirms the assigned handoff is actionable and
+  returns gaps to the parent rather than improvising.
 - **Implement the approved design.** If reality contradicts the design, stop, update the
   design document (and re-check the gate) — do not silently improvise a different shape.
 - Work in **small, test-backed increments**. Every new unit of behavior ships with a real

@@ -156,7 +156,10 @@ short, so an interrupted session still leaves you something worth reading.
 ### Phases run in subagents, so the context goes where the work is
 
 Non-trivial research runs in a **subagent with fresh context**; unavailable delegation is a blocker.
-Design prefers fresh-context delegation with an inline fallback. Research is the most
+Non-trivial design and planning default to fresh-context delegation, with an inline fallback
+when unavailable. The parent accepts the plan and owns Gate 3; the incoming implementer checks
+its task handoff before editing. Additional plan review is reserved for high-risk or complex
+plans, not a mandatory extra agent for every task. Research is the most
 token-expensive phase in a run — it reads dozens of files to produce a concise evidence handoff —
 and doing it in the main context burns the window on raw file contents *before implementation
 starts*. Delegated, the main agent gets the relevant findings instead of the fifty files.
