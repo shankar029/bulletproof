@@ -1,0 +1,30 @@
+:root { color-scheme: light; font: 16px/1.5 system-ui, sans-serif; color: #182434; background: #f4f6f9; }
+* { box-sizing: border-box; }
+body { max-width: 1280px; padding: 24px; margin: auto; }
+header, nav, .actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+header { justify-content: space-between; border-bottom: 1px solid #c4ccd8; }
+h1 { font-size: 28px; } h2 { font-size: 22px; } h3 { font-size: 18px; }
+a { color: #174da0; padding: 10px 4px; display: inline-block; min-height: 44px; overflow-wrap: anywhere; }
+button, input, select, textarea { font: inherit; min-height: 44px; border: 1px solid #68788f; border-radius: 6px; padding: 10px 12px; max-width: 100%; }
+button { background: #174da0; color: white; cursor: pointer; }
+button:disabled { background: #5a6575; cursor: not-allowed; }
+input, select, textarea { background: white; color: #182434; width: 100%; }
+textarea { min-height: 100px; resize: vertical; }
+label { display: block; margin: 12px 0 4px; font-weight: 600; }
+input[type=checkbox] { width: 24px; min-height: 24px; margin-right: 12px; flex-shrink: 0; }
+.dependency { min-height: 44px; display: flex; align-items: center; font-weight: normal; overflow-wrap: anywhere; }
+:focus-visible { outline: 3px solid #a84400; outline-offset: 3px; }
+.layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 24px; margin-top: 24px; }
+aside, article, #editor, .summary { background: white; border: 1px solid #c4ccd8; border-radius: 8px; padding: 16px; min-width: 0; }
+main { min-width: 0; }
+article { margin: 16px 0; overflow-wrap: anywhere; }
+form > button { margin-top: 16px; }
+ul { padding-left: 20px; }
+#notice:not(:empty) { padding: 12px; background: #dceee3; color: #175330; margin: 12px 0; }
+#error { padding: 16px; border: 2px solid #a32424; color: #842020; background: #fff0f0; margin: 12px 0; overflow-wrap: anywhere; }
+.badge { font-weight: 600; display: inline-block; padding: 2px 8px; background: #e4eaf4; border-radius: 4px; }
+.filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+.summary { display: flex; flex-wrap: wrap; gap: 20px; }
+.summary p { margin: 0; }
+[hidden] { display: none !important; }
+@media (max-width: 719px) { body { padding: 16px; } .layout { grid-template-columns: minmax(0, 1fr); } }

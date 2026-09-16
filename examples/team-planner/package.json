@@ -1,0 +1,13 @@
+{
+  "name": "team-planner-example",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node src/main.mjs",
+    "test": "node scripts/check.mjs all",
+    "test:coverage": "node scripts/check.mjs coverage",
+    "test:e2e": "node scripts/e2e.mjs --flow all",
+    "migrate": "node src/migrate.mjs"
+  }
+}
