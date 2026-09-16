@@ -1,6 +1,6 @@
 # Reference: Delivering an Entire App (App-Scale Mode)
 
-The five-phase loop delivers **one requirement** and ships **one PR**. An entire app (web or
+The six-phase loop delivers **one requirement** and ships **one PR**. An entire app (web or
 mobile) is *many* requirements. This reference adds a thin **outer loop** that decomposes the app
 into an ordered sequence of vertical slices and delivers them **incrementally in one session, on
 one branch, in one PR** — with each slice held to the same quality bar. It is the lightweight
@@ -28,8 +28,9 @@ does not repeal the model's context ceiling. When context runs low, **checkpoint
 
 1. **Phase 0 — Decompose (once, up front).** Turn the app into a **milestone list**: `M0` = a
    walking skeleton, `M1..Mn` = feature increments in dependency order. Record it in the plan doc
-   as a checkbox list with per-milestone acceptance criteria. This *is* Phase 1+2 for the app as a
-   whole; individual milestones still get their own focused Phase 1/2 when you reach them.
+   as a checkbox list with per-milestone acceptance criteria. This *is* Phase 1–3 for the app as a
+   whole; individual milestones still get their own focused understand/design/plan pass when you
+   reach them.
 2. **M0 — Walking skeleton first.** Deliver **one thin end-to-end vertical slice** that actually
    runs: the smallest path through every layer (data → domain → API → one screen/route → one real
    test → one E2E). This proves the architecture, wiring, build, and E2E harness **before** volume
@@ -58,13 +59,13 @@ does not repeal the model's context ceiling. When context runs low, **checkpoint
 
 ## Per-milestone execution — the inner loop
 
-For **each** milestone, run the normal five phases at **right-sized** rigor:
+For **each** milestone, run the normal six phases at **right-sized** rigor:
 - **Understand/Plan** the milestone against the app profile you already built (don't re-profile the
-  project every time — reuse it). Apply `research.md` to the milestone's ACs; reuse still-current
-  findings and refresh evidence affected by earlier milestones rather than restarting discovery.
-- **Implement + Test** the slice: real unit + integration tests, left green (Phase 3 gate).
-- **E2E** the slice like a human (Phase 4) — see E2E cadence below.
-- **Review** the slice (Phase 5 self-review) and **commit it** (see ceremony).
+  project every time — reuse it). Apply `research.md` to the milestone's ACs, reusing current
+  findings and refreshing evidence affected by previous milestones rather than restarting discovery.
+- **Implement + Test** the slice: real unit + integration tests, left green (Phase 4 gate).
+- **E2E** the slice like a human (Phase 5) — see E2E cadence below.
+- **Review** the slice (Phase 6 self-review) and **commit it** (see ceremony).
 - **Score** the slice against the quality rubric; converge it to ≥4/5 before moving on. Do **not**
   carry a below-bar milestone forward hoping to fix it later — that compounds into debt.
 
@@ -91,12 +92,12 @@ The real constraint at app scale is context, not capability. Manage it deliberat
   session — resume with zero rework.
 - **Summarize, don't re-read.** Once a milestone is committed and summarized, rely on the summary +
   the commit, not on holding every file in context.
-- **Carry the research handoff.** Record its accessible location and source snapshot in the plan,
-  including unresolved questions and coverage for remaining milestones. A resumed agent checks
-  freshness and reads current definitions before editing; a summary is not proof of unchanged code.
 - **Checkpoint before you run out.** When context is getting tight, finish the **current** milestone
   to green, commit it, update the plan, and **stop cleanly** — report which milestones are done and
   exactly where to resume. A clean checkpoint beats a half-finished milestone every time.
+- **Carry the research handoff.** Record `.ai/<slug>/research.md` and its source snapshot in the
+  plan, with unresolved questions and remaining AC coverage. A resumed agent checks freshness
+  and reads current definitions before editing; a summary does not prove the source is unchanged.
 - **Offload disjoint slices to subagents** to keep the main context lean, then integrate.
 
 ## Path to production (when the ask includes shipping, not just building)
@@ -133,3 +134,12 @@ Everything in the normal ship gate, **plus**:
   explicit, listed follow-up, never smuggled debt.
 - If "to production" was asked: the production-readiness artifacts in
   `references/production-readiness.md` exist and are verified as far as the environment allows.
+
+## A note on ordering
+
+Inside a single requirement the order is fixed: **research -> design -> plan**. At app scale the
+outer loop inverts once, and only once: the coarse split into slices happens *first*, because no
+one can design a whole product up front. **Each slice then runs the normal order** - its own
+research, its own design and sign-off, its own plan - at the same bar. "Plan" therefore means two
+different things at two altitudes: out here it is which slices and in what sequence; inside a
+slice it is which session-sized increments.

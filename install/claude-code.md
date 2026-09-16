@@ -18,7 +18,7 @@ Two files: the skill + the `/bulletproof` slash command.
 ## 1. Install the skill
 ```bash
 mkdir -p ~/.claude/skills/bulletproof
-cp -r SKILL.md references ~/.claude/skills/bulletproof/
+cp -r SKILL.md references scripts assets ~/.claude/skills/bulletproof/
 ```
 
 Claude Code auto-discovers `~/.claude/skills/`. (Per project: `.claude/skills/bulletproof/`.)

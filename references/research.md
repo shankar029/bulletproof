@@ -1,9 +1,9 @@
 # Reference: Requirement-Scoped Codebase Research
 
-This file is the **reusable research prompt**, not the research output. The main agent can
-follow it directly or hand it to a research subagent with the brief below. Research establishes
-**what exists and what constrains the requirement**; Phase 2 decides what to change. Preserve
-Bulletproof's five-phase workflow.
+This file is the **reusable research prompt**, not the research output. The parent supplies it
+to the fresh-context research subagent per `delegation.md`. Research establishes **what exists
+and what constrains the requirement**; Phase 2 decides what to change. Preserve Bulletproof's
+six-phase workflow and its mandatory research delegation for non-trivial work.
 
 The deliverable is a source-backed handoff that a subsequent agent can use without repeating
 discovery or relying on the researcher's conversation history. Capture **all requirement-relevant
@@ -16,9 +16,9 @@ contracts, failure paths, test coverage, or unresolved questions.
   criteria with stable IDs, scope exclusions, and any clarified decisions or explicit assumptions.
 - **Assignment:** the question to answer, repository/worktree root, known project context and
   starting points, scope boundaries, and any investigation budget or access restrictions.
-- **Output:** an explicit task-scoped destination accessible to the next agent. Reuse the
-  project's existing task workspace or plan's research section; otherwise use a persistent
-  session artifact such as `<task-workspace>/research.md`. Never overwrite this reference, another
+- **Output:** `.ai/<slug>/research.md`, accessible to the next agent, per `workspace.md`.
+  Include accessible links to `state.md`, `clarifications.md`, and `traceability.md`; those remain
+  the authoritative requirement/decision/AC records. Never overwrite this reference, another
   task's report, or an existing project document without authorization.
 
 Read the requirement and directly referenced material before decomposing the work. Missing or
@@ -33,8 +33,9 @@ criteria, user clarification, delegation, design, and the overall Phase 1 gate.
 - Read applicable repository instructions first and obey them. Use
   `project-profile.md` for stack, tooling, and conventions; reuse a verified profile rather than
   researching the whole project again.
-- Do the work directly by default. Delegate only substantial, independent questions when
-  supported, per `parallel-execution.md`. A researcher must not recursively delegate.
+- Research runs in a fresh-context subagent per `delegation.md`; unavailable delegation is a
+  blocker, not an inline fallback. The parent may split substantial independent questions per
+  `parallel-execution.md`. A researcher must not recursively delegate.
 - Distinguish observations from recommendations. Record change-relevant defects, risks, and
   contradictions with evidence; do not turn research into an unrelated code review or silently
   choose the implementation. For a bug, trace the causal path and distinguish a reproduced
@@ -128,8 +129,8 @@ unknowns** under `SKILL.md`'s clarification rules.
 
 - Label material findings **FACT** (directly observed), **INFERENCE** (derived from cited facts),
   **HYPOTHESIS** (plausible, unverified), or **UNKNOWN** (not established). Cite the supporting
-  `path:line-range` and symbol for code facts; include a short excerpt when exact behavior or a
-  contract matters. Cite command/output evidence for runtime facts and links for external facts.
+  `path:line-range`, symbol, and supporting snippet for code facts. Cite command/output evidence
+  for runtime facts and links for external facts.
 - **Absence is scoped, not absolute.** Record the search terms/commands, directories/file filters,
   relevant exclusions, and result. An empty search means "not found in this scope," not "does not
   exist anywhere." Check naming variants, registrations/callers, and relevant tests before treating
@@ -163,18 +164,19 @@ inventing content. Shared evidence IDs can avoid repeating long citations in eve
 | **Risks & questions** | Typed uncertainties, their impact and affected ACs, which block planning, and the next verification/clarification action. No implicit defaults disguised as facts. |
 | **Handoff** | Recommended reading order of existing sources, report location, freshness caveats, and remaining parent actions. No proposed implementation plan. |
 
-For a small task handled in one context, these may be compact sections in the existing plan/task
-context rather than a new file. **Before handing research to a subsequent agent, persist it at the
-agreed destination and confirm that agent can access it.** If persistence fails, report the failure;
-do not claim the handoff is ready. Do not create repository documentation just for ceremony.
+The trivial tier follows `SKILL.md`'s short path and skips this report. Otherwise, **persist
+`.ai/<slug>/research.md` and confirm the next agent can access it** before handing off. If
+persistence fails, report the failure; do not claim the handoff is ready. Keep the summary short
+and move necessary detail below it instead of omitting evidence to hit a page count.
 
 ## Parent acceptance and downstream use
 
 1. Confirm the report exists at the agreed location and covers the **whole requirement**, not just
    the easiest path or one worker's scope. Reconcile the AC rows against the original request.
 2. Check that important behavior, contracts, reuse candidates, and test claims have resolvable
-   evidence. Spot-check representative citations, including a cross-component claim and a
-   not-found claim if present. Reject unsupported facts, stale references, and hidden unknowns.
+   evidence. Spot-check three citations at random as required by Gate 1, plus a cross-component
+   claim and a not-found claim if present and not sampled. Reject unsupported facts, stale
+   references, and hidden unknowns.
 3. Resolve design-changing unknowns under Phase 1's clarification rules. A headless default is a
    labeled requirement/design assumption, **not proof of unknown code behavior**; record any
    residual non-blocking limitations explicitly.

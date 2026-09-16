@@ -20,7 +20,7 @@ Copy the skill into a pi skills location (global shown; use `.pi/skills/` for a 
 
 ```bash
 mkdir -p ~/.agents/skills/bulletproof
-cp -r SKILL.md references ~/.agents/skills/bulletproof/
+cp -r SKILL.md references scripts assets ~/.agents/skills/bulletproof/
 ```
 
 pi discovers `~/.agents/skills/` automatically. Verify with `/skill:bulletproof` in a session.

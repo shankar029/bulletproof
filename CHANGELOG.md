@@ -7,16 +7,178 @@ All notable changes to this project are documented here. The format is based on
 ## [Unreleased]
 
 ### Added
-- **Requirement-scoped research and durable agent handoff.** New `references/research.md`
+- **Requirement-scoped research and durable agent handoff.** Expanded `references/research.md`
   defines a reusable read-only research procedure, separate from task findings: AC coverage,
   source-backed behavior and failure-path traces, contracts/callers, reuse and test examples,
   historical/version context, scoped absence evidence, and explicit unknowns. Phase 1 accepts
   the evidence before Phase 2 designs from it; subsequent agents receive a persisted report with
-  source freshness and complete requirement context. Optional bounded research delegation and
-  app-scale checkpoints use the same contract without adding a phase or mandatory agent fan-out.
+  source freshness and complete requirement context. Bounded research assignments and
+  app-scale checkpoints use the same contract without adding a phase or automatic agent fan-out.
+  Integrated with v0.7.0's six phases, mandatory research delegation and `.ai/<slug>/` workspace.
+
+### Planned
+- Move gate invariants from prose to a deterministic `scripts/check.py` (citations resolve,
+  absence-proofs re-run, artifact schema, traceability completeness, diff hygiene, Gate-4 runs the
+  tests) and ship **read-only agent definitions** so delegation isolation is enforced by config,
+  not by instructions.
+- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+
+## [0.7.0] — 2026-09-08
+
+A reliability release: the loop stops trusting its own memory and starts proving itself against the
+code and the running system. Phase 1 gains a durable, cited `research.md`; the phases that must stay
+independent (research, end-to-end verification, review) become **mandatory fresh-context
+subagents**; design gains an **independent review gate**; a new **idle-timeout runner** kills silent
+hangs instead of stalling a run for hours; and a batch of prompt- and context-engineering hardening
+lands across the loop.
+
+### Added
+- **`research.md` — a cited ground-truth document, and Gate 1 now has teeth.** Phase 1 previously
+  produced nothing durable: grounding was a claim from memory ("name the files you read") that
+  nobody could check, and every long run had to re-derive its understanding after losing context.
+  Phase 1 now writes `.ai/<slug>/research.md` — what exists today, what does **not**, the
+  constraints, the covering tests, the seams — where **every claim carries `path:line` plus its
+  snippet** and **every absence carries the search that proves it**. Gate 1 spot-checks three
+  citations at random and rejects the document on any miss. See `references/research.md`.
+- **Phase delegation to subagents** (`references/delegation.md`). Research and design run in fresh
+  contexts where the harness supports it, with an inline fallback ladder everywhere else. The
+  motive is context economy as much as quality: research reads dozens of files to produce two
+  pages, and doing that in the main context spends the window before implementation starts.
+  Includes the briefs, the artifacts-to-disk rule, path resolution before trusting a summary,
+  the spot-check, and the reminder that the
+  document is an index into the code rather than a replacement for reading it.
+- **Idle-timeout command runner** (`scripts/run.py`). A command going *silent* is the real hang
+  signal, not a command that runs long. `run.py --idle <seconds>` streams output and kills the whole
+  process tree after N seconds of **silence** (exit 124), never touching a job that is still
+  producing output; the quality probes and mutation testing route through its reusable
+  `run_capture()`, and the working rules now wrap fallible commands in it. See
+  [`references/testing-and-e2e.md`](references/testing-and-e2e.md).
+- **Mandatory fresh-context subagents for the independent phases.** Research (Phase 1), end-to-end
+  verification (Phase 5) and review (Phase 6) now **require** a subagent — the generator, the prover
+  and the judge must not share a context. On a harness without subagent support these phases stop as
+  a blocker rather than silently degrading to self-review. Verification gains its own brief in
+  [`references/delegation.md`](references/delegation.md).
+- **Independent design review — Gate 2b.** Before sign-off, a separate reviewer grades `design.html`
+  against a rubric (AC coverage, SOLID, right-sized pattern, grounding that every named symbol is
+  real, readability) and returns an explicit **APPROVE / REVISE / REJECT** verdict written to
+  `design-review.md`. See [`references/delegation.md`](references/delegation.md) and
+  [`references/project-profile.md`](references/project-profile.md).
+
+### Changed
+- **Design records the delta, not just the destination.** `design.html` gains an **as-is → to-be**
+  section: for every symbol changed, its current behaviour *citing research* and what it becomes.
+- **The plan cites and adds nothing.** Research says what is, design says what will be, the plan
+  says only in what order — it introduces no new facts. `app-scale-delivery.md` names the one
+  altitude where the order inverts (coarse slicing precedes per-slice design).
+- **Context pressure ends the increment instead of compacting the session.** When the window gets
+  tight, drive to a green commit and resume in a fresh session; compaction is lossy summarization
+  by the model that is already degrading, and it drops the citations and signatures the loop runs
+  on. The trigger is behavioural, not a percentage. If a harness compacts anyway, re-anchor from
+  disk and re-open files before editing them.
+- **Prompt- and context-engineering hardening across the loop.** A repository instruction layer
+  (`AGENTS.md` / `CLAUDE.md` / …) is read and honored before research; every material claim carries
+  a typed epistemic tag (**FACT / INFERENCE / HYPOTHESIS / UNKNOWN**); a `traceability.md` matrix
+  threads each acceptance criterion from research → design → increment → evidence → verdict;
+  delegation is least-privilege; prime directive 8 adds an explicit **stop-the-line**; and each phase
+  re-anchors from disk rather than trusting a stale summary.
+- **Phase 3 is now an executable plan, not a restatement.** The plan derives a **build-order table**
+  from the design's dependencies (which increment blocks which), groups the work, and states when
+  the full end-to-end verification runs — with a required build-order / dependency diagram.
+- **Design and plan must read plainly.** Both documents require plain language a newcomer can follow
+  and diagrams that carry the structure; per-component rationale is captured as compact
+  **Why (AC) / Principle** tags rather than prose, protecting the page budget. Readability is now
+  part of the Gate 2b rubric.
 
 ### Planned
 - Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+
+## [0.6.0] — 2026-09-06
+
+A substantial rewrite of the loop plus the tooling that makes its claims checkable. The loop grows
+from five phases to six by making **program design a gated phase of its own**, and the quality bar
+becomes evidence-bound rather than self-asserted.
+
+### Added
+- **Phase 2 — Program design.** Classes, interfaces, public method signatures, collaborators and
+  critical-flow sequence diagrams are designed **before** implementation, as a 3-page HTML document
+  ([`references/design-doc.md`](references/design-doc.md)). Gate 2 asks for user sign-off on
+  anything non-trivial.
+- **Durable `.ai/<slug>/` workspace** ([`references/workspace.md`](references/workspace.md)) —
+  `state.md` resume contract (gate row, increments, next action), clarifications, design, plan,
+  review, metrics and evidence. A run reads `state.md` first and **resumes** instead of restarting,
+  so long work survives a crash, a restart or a context limit.
+- **Session-sized increments.** Phase 3 splits work into vertical slices that each fit one context
+  window, deliver observable behaviour, and end at a green, reviewed commit.
+- **Shared HTML artifact theme** (`assets/artifact.css`, `assets/artifact.js`) — reading-app
+  typography with light/dark, adjustable size/typeface/width, plus an in-document review layer:
+  highlight, comment, notes, and an **Approve / Approve-with-comments / Request-changes** verdict
+  exported as `review.json`. Documents are written as plain semantic HTML; the theme supplies the
+  rest ([`references/html-theme.md`](references/html-theme.md)).
+- **Deterministic quality probe** (`scripts/probe.py`) — measures duplication, cyclomatic
+  complexity, dependency cycles, dead code, static findings and diff size against the **merge-base
+  in a throwaway worktree**, writing `.ai/<slug>/metrics.json`. Delta-based gating (absolute
+  thresholds invite metric-gaming), with **greenfield** baselines and **front-end** projects
+  detected and judged appropriately ([`references/quality-metrics.md`](references/quality-metrics.md)).
+- **Mutation engine with zero project wiring** (`scripts/mutate.py`) — mutates only the changed
+  lines of production code (operator swaps + statement deletion), runs the project's own test
+  command per mutant, and reports each survivor with file, line and exact edit. Never mutates tests
+  or fixtures; refuses a dirty tree or a red suite.
+- **agent-browser for all browser/front-end verification**
+  ([`references/e2e-agent-browser.md`](references/e2e-agent-browser.md)) — snapshot-driven flows,
+  an assertion table, console/error checks, committed flow scripts, and an artifact self-check for
+  generated HTML.
+- **Independent review in a separate session** — preference order: different model + fresh context
+  → same model + fresh context → cold self re-read. The reviewer sees the requirement, design,
+  metrics and diff but **not** the author's reasoning, and never writes code; on scoring
+  disagreement the lower score wins.
+- **Working rules** in `SKILL.md`: never block your own shell (dev servers and watchers run
+  detached), test runners run non-interactively, retries are bounded, finishing beats polishing.
+- **Final report artifact.** Every run now writes `.ai/<slug>/report.html` (shared theme, so it
+  carries the same highlight/comment/approve layer) and summarises it in chat: delivered vs not
+  delivered, each acceptance criterion with how it was proven, the G1–G6 gate row with reasons,
+  measured numbers, the scorecard citing them, unconfirmed assumptions, follow-ups, and what is
+  pending with the exact command to finish it. Written even when a run is cut short.
+  See `references/final-report.md`.
+
+### Changed
+- **Quality bar is now 9 dimensions** and evidence-bound: **grounding** and **design fidelity**
+  join the rubric, and *where a metric exists for a dimension, a score of ≥4 must cite it*.
+  Correctness, grounding and test-quality/evidence are hard gates.
+- **Grounding is prime directive #1** — nothing may be referenced that has not been opened and
+  read, including the environment (check `git remote -v` rather than trusting the task statement).
+- **Root cause, never a band-aid** is now an explicit directive, and the reviewer checks for it.
+- **Convergence is bounded**: after three honest iterations a stubborn gap ships as a named
+  follow-up rather than being hidden.
+- **Trivial-change fast path** so small work isn't buried in ceremony, and an
+  **environment-blocked** route for end-to-end proof that names the blocker instead of weakening
+  the gate.
+- `install.sh` / `install.ps1` now install `scripts/` and `assets/` alongside `SKILL.md` and
+  `references/` — previously the probe, mutation engine and artifact theme would not have shipped.
+- `SKILL.md` trimmed and de-duplicated (branch-safety, convergence, right-sizing and the definition
+  of done were each stated three to six times); references reorganised around the six phases.
+- `README.md` and `docs/architecture.md` rewritten for the six-phase loop and the new tooling.
+- **Entry points and manual installs corrected for the new loop.** Every launcher (pi prompt,
+  Claude command, Copilot agent) still described the five-phase loop and would have instructed
+  the agent to skip Program design entirely; `install/{pi,claude-code,copilot-cli}.md` copied
+  only `SKILL.md` + `references/`, silently omitting the probe, mutation engine and theme.
+- **External commands are bounded.** A run was lost to an `agent-browser` call that never
+  returned, so the working rules now require a timeout on every external command (exit 124 =
+  hung: record it and move on) and committing each increment as it goes green, so an interrupted
+  run still leaves the repo better than it found it. `e2e-agent-browser.md` documents the shared
+  daemon as the hazard, and that unknown flags are not always rejected (`screenshot --full-page`
+  is parsed as a *selector*; the flag is `--full`).
+- **Design sign-off now waits by default.** Gate 2 hands the design over and *stops the turn*;
+  Phase 3 does not begin without approval. Proceeding unapproved requires the invocation to
+  explicitly authorise it (no user available / headless / one-shot / "don't wait"), and is then
+  recorded as an unconfirmed assumption and surfaced in the report and PR. The same rule now
+  governs the UX approval gate. Prime directive 7 adds: slowness or an unanswered message is
+  **not** authorisation — never infer that nobody is there.
+
+### Retained
+- [`references/ux-design.md`](references/ux-design.md) (UX design-first approval gate),
+  [`references/production-readiness.md`](references/production-readiness.md) and
+  [`references/app-scale-delivery.md`](references/app-scale-delivery.md) are unchanged and now hook
+  into Phase 2, Phase 3 and the ship gate respectively.
 
 ## [0.5.0] — 2026-08-26
 
@@ -204,7 +366,9 @@ Initial release: a portable `/bulletproof` skill plus an objective benchmark pro
   and **extensibility** (open/closed) beyond functional correctness, across all three projects.
 - **Docs**: `README.md`, `EVAL-PLAN.md`, `docs/architecture.md`, `CONTRIBUTING.md`, `LICENSE` (MIT).
 
-[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/shankar029/bulletproof/compare/v0.6.0...v0.7.0
+[0.6.0]: https://github.com/shankar029/bulletproof/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/shankar029/bulletproof/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/shankar029/bulletproof/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/shankar029/bulletproof/compare/v0.2.0...v0.3.0
