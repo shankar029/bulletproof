@@ -67,6 +67,15 @@ ask only real questions.
 
 ## The features that make it stick
 
+### Human-readable code, not inline change journals
+
+Design, implementation, and review follow a shared
+[`code-clarity.md`](references/code-clarity.md) contract: visible main flows, cohesive
+responsibilities, clear names and state, shared typed boundaries, and explicit failures.
+Comments preserve current constraints and useful rationale, not incident timelines or agent
+progress. Readability findings need concrete evidence; shorter files and more abstractions are
+not proof. No extra report, arbitrary size limit, or unrelated cleanup is required.
+
 ### Focused communication without lost evidence
 
 Human-facing updates lead with the outcome, blocker, or decision needed. Progress is reported
@@ -245,6 +254,7 @@ Method and numbers: [`evals/README.md`](evals/README.md) (v1) ·
 bulletproof/
 ├── SKILL.md                     # the operating loop (single source of truth)
 ├── references/                  # on-demand depth per phase (progressive disclosure)
+│   ├── code-clarity.md          #   readable code, cohesive responsibilities, comment discipline
 │   ├── communication.md         #   focused human updates without losing uncertainty or evidence
 │   ├── workspace.md             #   .ai/<slug>/ workspace, state.md, resume, increment sizing
 │   ├── project-profile.md       #   detect & honor project nature; anti-debt; design checklist

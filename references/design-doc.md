@@ -14,6 +14,10 @@ in `.ai/<slug>/` — see `workspace.md`.
 
 ## Hard rules
 
+- **Design for a maintainer, not just an executor.** Apply `code-clarity.md` in the existing
+  responsibility table and interactions: visible main flow, shared contracts, explicit state
+  ownership, and boundaries that reduce understanding effort. Avoid speculative abstractions;
+  no additional document or section is required.
 - **Write plain semantic HTML and let the shared theme style it** — see `html-theme.md`. No
   `<style>` block, no inline styles, no colours. Documents link `../assets/artifact.css` and
   `../assets/artifact.js`, which also provide the reading controls and the comment/approval
