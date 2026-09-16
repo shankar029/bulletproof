@@ -1,19 +1,9 @@
-export class AppError extends Error {
-  constructor(code, message, status = 400, field) {
-    super(message);
-    this.name = 'AppError';
-    this.code = code;
-    this.status = status;
-    this.field = field;
-  }
-}
+import { AppError, invalid } from './errors.mjs';
+import { validateGraph } from './rules.mjs';
+export { AppError, invalid } from './errors.mjs';
 
 export const statuses = ['todo', 'in_progress', 'done'];
 export const priorities = ['low', 'normal', 'high'];
-
-export function invalid(message, field) {
-  throw new AppError('INVALID_INPUT', message, 400, field);
-}
 
 export function object(input, allowed, required = []) {
   if (!input || typeof input !== 'object' || Array.isArray(input)) invalid('Expected an object');
@@ -69,8 +59,8 @@ export function validate(model) {
     text(task.description, 'description', 2000, false);
     choice(task.status, statuses, 'status');
     choice(task.priority, priorities, 'priority');
-    if (!Array.isArray(task.dependencyIds) || task.dependencyIds.length) invalid('Dependencies not supported yet', 'dependencyIds');
   }
+  validateGraph(model);
   return model;
 }
 

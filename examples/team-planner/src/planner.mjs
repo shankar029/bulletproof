@@ -1,4 +1,5 @@
-import { AppError, object, text } from './schema.mjs';
+import { AppError, object, text, choice, statuses } from './schema.mjs';
+import { taskView, transition, validateDependencies, validateGraph } from './rules.mjs';
 
 export function findTask(model, id) {
   const task = model.tasks.find(task => task.id === id);
@@ -29,8 +30,8 @@ export class Planner {
     return { items: projects, revision };
   }
   listTasks() {
-    const { tasks, revision } = this.store.read();
-    return { items: tasks.map(task => ({ ...task, blocked: false })), total: tasks.length, page: 1, pageSize: 10, totalPages: Math.ceil(tasks.length / 10), revision };
+    const model = this.store.read();
+    return { items: model.tasks.map(task => taskView(model, task)), total: model.tasks.length, page: 1, pageSize: 10, totalPages: Math.ceil(model.tasks.length / 10), revision: model.revision };
   }
   async createProject(input, revision) {
     const result = await this.store.transact(revision, model => {
@@ -46,25 +47,32 @@ export class Planner {
   }
   async createTask(input, revision) {
     const result = await this.store.transact(revision, model => {
-      object(input, ['projectId', 'title', 'description'], ['projectId', 'title']);
+      object(input, ['projectId', 'title', 'description', 'dependencyIds'], ['projectId', 'title']);
       findProject(model, input.projectId);
       const title = text(input.title, 'title', 160);
       const description = text(Object.hasOwn(input, 'description') ? input.description : '', 'description', 2000, false);
       if (model.tasks.length >= 2000) throw new AppError('CAPACITY_EXCEEDED', 'Task limit reached', 409);
-      const task = { ...allocate(model, 't'), projectId: input.projectId, title, description, status: 'todo', dependencyIds: [], priority: 'normal' };
+      const task = { ...allocate(model, 't'), projectId: input.projectId, title, description, status: 'todo', dependencyIds: Object.hasOwn(input, 'dependencyIds') ? structuredClone(input.dependencyIds) : [], priority: 'normal' };
       model.tasks.push(task);
-      return { ...task, blocked: false };
+      validateGraph(model);
+      return taskView(model, task);
     });
     return { task: result.value, revision: result.revision };
   }
   async updateTask(id, input, revision) {
     const result = await this.store.transact(revision, model => {
-      object(input, ['title', 'description']);
+      object(input, ['title', 'description', 'status', 'dependencyIds']);
       if (!Object.keys(input).length) throw new AppError('INVALID_INPUT', 'Supply at least one change');
       const task = findTask(model, id);
+      const oldStatus = task.status;
       if (Object.hasOwn(input, 'title')) task.title = text(input.title, 'title', 160);
       if (Object.hasOwn(input, 'description')) task.description = text(input.description, 'description', 2000, false);
-      return { ...task, blocked: false };
+      if (Object.hasOwn(input, 'status')) task.status = choice(input.status, statuses, 'status');
+      if (Object.hasOwn(input, 'dependencyIds')) task.dependencyIds = structuredClone(input.dependencyIds);
+      validateDependencies(model, id, task.dependencyIds);
+      transition(model, id, oldStatus);
+      validateGraph(model);
+      return taskView(model, task);
     });
     return { task: result.value, revision: result.revision };
   }

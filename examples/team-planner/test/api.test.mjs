@@ -93,3 +93,26 @@ test('static allowlist and method boundary expose no data', async t => {
   assert.equal(wrongMethod.status, 405);
   assert.equal(wrongMethod.headers.get('allow'), 'GET, POST');
 });
+
+test('HTTP graph commands are atomic and no-op preserves revision and disk', async t => {
+  const { app, request } = await api(t);
+  const project = (await request('/api/projects', 'POST', { name: 'Launch' })).value.project;
+  const draft = (await request('/api/tasks', 'POST', { projectId: project.id, title: 'Draft' })).value.task;
+  const review = (await request('/api/tasks', 'POST', { projectId: project.id, title: 'Review', dependencyIds: [draft.id] })).value.task;
+  assert.equal(review.blocked, true);
+  const bytes = await readFile(app.store.path);
+  const rejected = await request(`/api/tasks/${review.id}`, 'PATCH', { status: 'done', title: 'Rejected' });
+  assert.equal(rejected.response.status, 409);
+  assert.equal(rejected.value.error.code, 'DEPENDENCIES_INCOMPLETE');
+  assert.deepEqual(await readFile(app.store.path), bytes);
+  const noOp = await request(`/api/tasks/${draft.id}`, 'PATCH', { status: 'todo' });
+  assert.equal(noOp.value.revision, 3);
+  assert.deepEqual(await readFile(app.store.path), bytes);
+  await request(`/api/tasks/${draft.id}`, 'PATCH', { status: 'in_progress' });
+  await request(`/api/tasks/${draft.id}`, 'PATCH', { status: 'todo' });
+  const done = await request(`/api/tasks/${review.id}`, 'PATCH', { status: 'done', dependencyIds: [] });
+  assert.equal(done.response.status, 200);
+  const invalid = await request(`/api/tasks/${review.id}`, 'PATCH', { status: 'todo', dependencyIds: null });
+  assert.equal(invalid.response.status, 400);
+  assert.equal(invalid.value.error.field, 'dependencyIds');
+});

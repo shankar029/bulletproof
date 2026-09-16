@@ -17,7 +17,7 @@ Open `http://127.0.0.1:4317`. Port `0` chooses an available port and logs the ac
 address. An occupied fixed port fails; the app never silently changes ports.
 The server checks its own health after listening. Ctrl+C gracefully closes it.
 
-Create projects, create tasks, and edit title/description. Saves persist before success.
+Create projects, create tasks, and edit title/description, status and dependencies. Saves persist before success.
 Every API read and write returns a global revision and quoted ETag. POST/PATCH require
 that ETag in `If-Match`; stale writes receive `409 REVISION_CONFLICT`. Reload explicitly
 discards a draft; failed saves retain it. Never automatically replay an uncertain write.
@@ -25,6 +25,12 @@ discards a draft; failed saves retain it. Never automatically replay an uncertai
 Initial disk format is v1 (`state`); API uses `status`. Migration will be added in the
 evolution slice. Limits: 100 projects, 2,000 tasks, 80-code-point project names,
 160-code-point task titles, 2,000-code-point descriptions, 64 KiB request bodies.
+
+Tasks move todo → in progress → done, or directly todo → done, only when every direct
+dependency is done. Reopen to todo only after reopening any active/done dependents.
+Done → in progress is rejected. "Blocked" means todo with an unfinished dependency,
+not a fourth status. Dependencies must be distinct tasks in the same project and acyclic.
+Status and dependencies in one PATCH are validated together; failed changes publish nothing.
 
 ## Storage safety
 

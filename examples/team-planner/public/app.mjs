@@ -20,6 +20,15 @@ function field(form, name, label, value = '', multiline = false) {
   form.append(input);
   return input;
 }
+function select(form, name, label, values, selected) {
+  const id = `task-${name}`;
+  form.append(element('label', label, { for: id }));
+  const input = element('select', undefined, { id, name });
+  for (const value of values) input.append(element('option', value.replaceAll('_', ' '), { value }));
+  input.value = selected;
+  form.append(input);
+  return input;
+}
 function announce(message) { $('#notice').textContent = message; }
 function clearError() { $('#error').hidden = true; $('#error').textContent = ''; }
 function showError(error) {
@@ -76,6 +85,17 @@ function edit(task) {
   form.append(element('h3', task ? 'Edit task' : 'Add task'));
   const title = field(form, 'title', 'Title', task?.title ?? '');
   field(form, 'description', 'Description', task?.description ?? '', true);
+  if (task) select(form, 'status', 'Status', ['todo', 'in_progress', 'done'], task.status);
+  const dependencies = element('fieldset');
+  dependencies.append(element('legend', 'Dependencies'), element('p', 'Complete dependencies before starting.'));
+  for (const other of state.tasks.filter(other => other.projectId === state.projectId && other.id !== task?.id)) {
+    const label = element('label', undefined, { class: 'dependency' });
+    const checkbox = element('input', undefined, { type: 'checkbox', name: 'dependencyIds', value: other.id });
+    checkbox.checked = task?.dependencyIds.includes(other.id) ?? false;
+    label.append(checkbox, document.createTextNode(other.title));
+    dependencies.append(label);
+  }
+  form.append(dependencies);
   const actions = element('div', undefined, { class: 'actions' });
   actions.append(element('button', 'Save task', { type: 'submit' }), button('Cancel', () => {
     form.remove(); clearError(); $('#add-task').focus();
@@ -84,7 +104,8 @@ function edit(task) {
   form.addEventListener('submit', event => {
     event.preventDefault();
     const values = new FormData(form);
-    const input = { title: values.get('title'), description: values.get('description') };
+    const input = { title: values.get('title'), description: values.get('description'), dependencyIds: values.getAll('dependencyIds') };
+    if (task) input.status = values.get('status');
     if (!task) input.projectId = state.projectId;
     void save(form, task ? `/api/tasks/${task.id}` : '/api/tasks', task ? 'PATCH' : 'POST', input, 'Task saved');
   });
@@ -121,7 +142,7 @@ function render() {
   if (!tasks.length) main.append(element('p', 'No tasks yet. Add your first task.'));
   for (const task of tasks) {
     const card = element('article', undefined, { 'aria-label': task.title, 'data-task-id': task.id });
-    card.append(element('h3', task.title), element('span', task.status, { class: 'badge' }), element('p', task.description), button('Edit', () => edit(task)));
+    card.append(element('h3', task.title), element('span', task.blocked ? 'blocked (todo)' : task.status.replaceAll('_', ' '), { class: 'badge' }), element('p', task.description), button('Edit', () => edit(task)));
     main.append(card);
   }
 }
