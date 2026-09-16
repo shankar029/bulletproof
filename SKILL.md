@@ -135,7 +135,7 @@ After reading the requirement, classify it — and say which tier you chose and 
 
 ### Phase 1 — Understand & research
 **Always run this phase in a fresh-context subagent** (research is mandatory-delegated, read-only)
-— it is the most token-expensive phase in the run, its output is two pages, and its independence
+— it is the most token-expensive phase in the run, its output is a concise evidence handoff, and its independence
 is the point. If the harness cannot spawn a subagent, that is a blocker (prime directive 8), not
 a licence to research inline. See `references/delegation.md` for the brief, the tool scoping, and
 the spot-check.
@@ -152,8 +152,12 @@ the spot-check.
   today, what it does **not** do, the constraints and conventions that bind the design, the
   tests already covering the area, and the seams the new work attaches to. **Every claim carries
   `path:line` and its snippet, is typed FACT/INFERENCE/HYPOTHESIS/UNKNOWN, and every "not
-  implemented" carries the search that proves absence.** Understand the **blast radius** before
-  designing. Structure and rules: `references/research.md`.
+  implemented" carries scoped search evidence, not a claim of global absence.** Understand
+  the **blast radius** before designing. `references/research.md` is the reusable procedure,
+  not the output: cover each AC with behavior/failure traces, contracts and consumers, reuse
+  candidates, actual test assertions, relevant history, and explicit unknowns. Include the
+  requirement, accessible workspace records, source snapshot and dirty-tree context so another
+  agent can use the handoff without chat history.
 - **Restate the requirement as testable acceptance criteria** with stable ids (AC1, AC2, …).
   Cover every explicit ask, **every sub-deliverable of a multi-part request**, and the
   non-functional needs it implies. Never drop a part; never invent scope. **Seed
@@ -169,9 +173,13 @@ the spot-check.
   cited and typed**, `traceability.md` is seeded, the workspace exists, and no open unknown could
   still change the design. **Spot-check three citations at random and resolve them against the
   source** — any miss, or any HYPOTHESIS/UNKNOWN presented as a fact, and the document is
-  rejected and rewritten.
+  rejected and rewritten. Reconcile every AC against the original request; check cross-component
+  and scoped not-found claims where present, and confirm downstream access to the report.
 
 ### Phase 2 — Program design (before any implementation)
+Consume the Phase 1 research handoff first. Revalidate affected facts when the tree has changed;
+return missing design-critical facts to research rather than inventing them.
+
 Design the solution on paper first, at the depth the change warrants. **Delegate this phase to a
 subagent with fresh context when available** (`references/delegation.md`); the parent still owns
 the sign-off. Produce a **single HTML
@@ -377,7 +385,7 @@ explicit follow-up. Never close the gap by lowering the bar.
 
 ## References (load on demand)
 - `references/workspace.md` — the `.ai/<slug>/` workspace, `state.md`, `traceability.md`, resume protocol, increment sizing.
-- `references/research.md` — the ground-truth research document: citations, absence evidence, scope.
+- `references/research.md` — reusable research procedure; AC coverage, source evidence, freshness, and task-specific handoff.
 - `references/delegation.md` — running research, design and review in subagents; briefs and spot-check.
 - `references/project-profile.md` — profile the project; anti-debt rules; design verification checklist.
 - `references/design-doc.md` — the 3-page documents: structure, simple diagrams, skeleton.

@@ -6,6 +6,16 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+- **Requirement-scoped research and durable agent handoff.** Expanded `references/research.md`
+  defines a reusable read-only research procedure, separate from task findings: AC coverage,
+  source-backed behavior and failure-path traces, contracts/callers, reuse and test examples,
+  historical/version context, scoped absence evidence, and explicit unknowns. Phase 1 accepts
+  the evidence before Phase 2 designs from it; subsequent agents receive a persisted report with
+  source freshness and complete requirement context. Bounded research assignments and
+  app-scale checkpoints use the same contract without adding a phase or automatic agent fan-out.
+  Integrated with v0.7.0's six phases, mandatory research delegation and `.ai/<slug>/` workspace.
+
 ### Planned
 - Move gate invariants from prose to a deterministic `scripts/check.py` (citations resolve,
   absence-proofs re-run, artifact schema, traceability completeness, diff hygiene, Gate-4 runs the

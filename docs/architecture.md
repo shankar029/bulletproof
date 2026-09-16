@@ -73,8 +73,27 @@ refuses stubs, empty/skipped tests, and unjustified lint/type suppression.
 If the host supports subagents (pi `subagent`, Claude `Task`), the plan builds a dependency graph
 and fans out only **file‑disjoint, dependency‑free** tasks, each in an isolated **git worktree**;
 foundational/shared work runs first in the main context. The final gate always runs on the
-**integrated** result, never on isolated‑worker green. Unsupported hosts (e.g. Copilot CLI) run
-sequentially. Details in [`references/parallel-execution.md`](../references/parallel-execution.md).
+**integrated** result, never on isolated‑worker green. Check the current host's exposed
+capabilities; unsupported hosts run sequentially. Details in
+[`references/parallel-execution.md`](../references/parallel-execution.md).
+
+### 6. Research is a contract, not another phase
+
+Phase 1 uses [`references/research.md`](../references/research.md) as a reusable procedure.
+Project profiling supplies shared context; requirement-scoped research maps each AC to actual
+behavior, contracts, callers, reusable implementations and tests, historical constraints, and
+explicit gaps. Phase 2 consumes those facts but owns the design decisions.
+
+The prompt and its output are deliberately separate. Before a subsequent agent takes over, the
+parent confirms task findings at `.ai/<slug>/research.md` with the requirement, ACs,
+source snapshot, citations, search boundaries, and unknowns. This avoids repeating discovery
+without pretending that a report replaces reading current code before editing.
+
+Research runs in a fresh-context subagent under the current delegation contract. Substantial
+independent questions may be split by the parent; no automatic fan-out or recursive delegation.
+Unlike implementation workers,
+read-only researchers need no worktree isolation, but they need consistent snapshots and distinct
+output destinations. The parent reconciles findings and owns Gate 1.
 
 ## The eval architecture
 

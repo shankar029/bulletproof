@@ -4,6 +4,15 @@ Split work across subagents only when this agent supports them **and** the work 
 independent. Otherwise run sequentially — correctness beats speed, and a small change isn't
 worth the coordination overhead.
 
+## Read-only research (Phase 1)
+The Decide/Dispatch rules below govern implementation workers. Phase 1 research is mandatory-delegated per
+`delegation.md`, using the reusable procedure and handoff contract in `research.md`.
+The parent may split substantial independent research questions, but never a single continuous
+call trace into artificial roles. Researchers do not recursively delegate or edit source.
+Read-only scopes may overlap and do not require worktrees; use a stable source snapshot and
+distinct output destinations. The parent reconciles all required findings, checks coverage and
+citations, and persists the combined `.ai/<slug>/research.md` before accepting Gate 1.
+
 ## Decide (Phase 3)
 A task is a parallel candidate only if it is **file-disjoint** from its siblings (no two
 concurrent tasks edit the same file) and has **no ordering dependency** on them (doesn't need

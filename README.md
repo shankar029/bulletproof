@@ -23,9 +23,12 @@ Six phases, each with a gate it must pass before advancing.
    truth for the run. What the codebase does today, what it does **not** do, the constraints and
    conventions that bind the design, the tests already covering the area, and the seams the new
    work attaches to — **every claim carrying `path:line` and its snippet, every "not implemented"
-   carrying the search that proves absence**. Grounding stops being a promise and becomes something
+   carrying scoped search evidence**. Grounding stops being a promise and becomes something
    you can check: Gate 1 spot-checks three citations at random and rejects the document if one
-   misses.
+   misses. The reusable [`research procedure`](references/research.md) maps every AC to behavior
+   and failure paths, contracts/callers, reuse candidates, and actual tests. Its separate task
+   report includes snapshot, citations, relevant history, and unresolved questions so the next
+   agent can use it without repeating discovery or relying on chat history.
 2. **Design the program before writing it — then wait for your sign-off.** Produces a **3-page
    HTML design document**: the classes/modules, interfaces and public method signatures, each with
    its single responsibility and collaborators, plus sequence diagrams for the critical flows, data
@@ -147,11 +150,12 @@ short, so an interrupted session still leaves you something worth reading.
 
 ### Phases run in subagents, so the context goes where the work is
 
-Research and design run in **subagents with fresh context** where the harness supports it (with an
-inline fallback everywhere else). Research is the most token-expensive phase in a run — it reads
-dozens of files to produce two pages — and doing it in the main context burns the window on raw
-file contents *before implementation starts*. Delegated, the main agent gets the two pages instead
-of the fifty files. The parent still spot-checks citations, still owns the design sign-off, and
+Non-trivial research runs in a **subagent with fresh context**; unavailable delegation is a blocker.
+Design prefers fresh-context delegation with an inline fallback. Research is the most
+token-expensive phase in a run — it reads dozens of files to produce a concise evidence handoff —
+and doing it in the main context burns the window on raw file contents *before implementation
+starts*. Delegated, the main agent gets the relevant findings instead of the fifty files.
+The parent still spot-checks citations, still owns the design sign-off, and
 implementation still re-opens a file before changing it: the document is an index into the code,
 never a replacement for it.
 
@@ -234,7 +238,7 @@ bulletproof/
 │   ├── e2e-agent-browser.md     #   agent-browser: flows, assertions, artifact self-check
 │   ├── quality-metrics.md       #   the probe: toolchain, baselines, gate rules, metrics.json
 │   ├── quality-bar.md           #   the 9-dimension rubric + convergence loop
-│   ├── research.md              #   the ground-truth research document: citations, absence evidence
+│   ├── research.md              #   reusable research procedure; source-backed task handoff
 │   ├── delegation.md            #   running research/design/review in subagents; briefs, spot-check
 │   ├── review-and-pr.md         #   review checklist, quality gate, evidence bundle, PR format
 │   ├── final-report.md          #   the end-of-run report: gates, measurements, what's pending

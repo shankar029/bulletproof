@@ -7,9 +7,9 @@ mandatory three:
 1. **Independence** — a dedicated agent with one sharply-scoped job, fresh context, no accumulated
    drift. A reviewer or verifier that shares the implementer's context inherits its blind spots.
 2. **Context economy** — research is the most token-expensive phase in the run: it reads dozens
-   of files to produce two pages. Done in the main context, it burns the window on raw file
+   of files to produce a concise evidence handoff. Done in the main context, it burns the window on raw file
    contents *before implementation starts* — the phase that actually needs the room. Delegated,
-   the main agent receives the two pages instead of the fifty files.
+   the main agent receives the relevant findings instead of the fifty files.
 
 **Spend the context where the work is.**
 
@@ -50,7 +50,8 @@ gracefully:
   says "do not edit source" is a request; a withheld tool is a guarantee, and it makes the
   phase's output auditable.
 - **Bound it.** Give the subagent a timeout and a scope; if it fails or hangs, record the
-  blocker and fall back to inline rather than re-running it a third time.
+  blocker rather than re-running it a third time. Inline fallback applies only to optional
+  delegation; mandatory research, verification and review remain blocked.
 
 ## Which phases
 
@@ -72,6 +73,10 @@ gracefully:
 > **OBJECTIVE.** Produce `.ai/<slug>/research.md` describing **what exists today** that bears on
 > this requirement: `<requirement>`.
 >
+> **INPUTS.** Supply the complete requirement, stable ACs, decisions/exclusions, bounded
+> assignment, repository/worktree, and accessible paths to the workspace records and
+> `references/research.md`. That reference is the procedure, never the task-output destination.
+>
 > **PROCESS.** Read the repository's own agent instructions first (`AGENTS.md`, `CLAUDE.md`,
 > `.github/copilot-instructions.md`, `.cursor/rules`, path-specific files) and honor them. Then
 > trace the code the requirement touches and its callers, the contracts and shared types it is
@@ -82,16 +87,19 @@ gracefully:
 > **EVIDENCE POLICY.** Every claim about the codebase carries `path:line` and the snippet it
 > rests on — **no citation, no claim**. Every "not implemented" carries the search that came up
 > empty, with its scope. **Type every material claim** FACT / INFERENCE / HYPOTHESIS / UNKNOWN;
-> never infer behaviour from a name. Head the file with the current commit sha.
+> never infer behaviour from a name. Head the file with the commit sha, branch, date,
+> dirty-tree context and scope. A zero-match search establishes only a scoped not-found result.
 >
 > **STOP CONDITIONS.** If a fact a decision will depend on cannot be established, mark it
 > **UNKNOWN** and record it — do **not** fill the gap with a plausible guess. Do **not** propose
 > a solution, an approach, or a file layout; that is the design's job. Do **not** edit source.
 >
-> **OUTPUT CONTRACT.** Write `.ai/<slug>/research.md` per `references/research.md`, with sections:
-> 1. Summary · 2. What is implemented · 3. What is not implemented (with absence searches) ·
-> 4. Constraints & conventions · 5. Existing tests · 6. Seams · 7. Blast radius ·
-> 8. Risks & unknowns (typed). Aim for two pages. Reply with a five-line summary and the path.
+> **OUTPUT CONTRACT.** Write `.ai/<slug>/research.md` using the full output contract in
+> `references/research.md`: AC coverage, behavior/failure traces, contracts/consumers, reuse
+> examples and actual tests, historical/version context, scoped gaps, and typed unknowns.
+> Keep the summary concise without dropping requirement-relevant evidence. If artifact writes
+> are withheld, return the full report for the parent to persist and verify before the gate.
+> Reply with a five-line summary, the output location, and unresolved parent actions.
 >
 > **COMPLETION GATE.** Every material requirement has at least one verified FACT or is explicitly
 > marked UNKNOWN; nothing unverified is stated as fact.

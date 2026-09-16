@@ -24,6 +24,11 @@ Make changes that look like the team that owns the code wrote them. Do this befo
 If something is genuinely absent (e.g. no test setup at all), establish the minimum the task
 needs, using the ecosystem's least-surprising, lowest-friction option. Note what you added.
 
+The profile supplies project-wide context; `research.md` defines the task-specific research
+procedure. Capture behavior, callers, contracts, reuse examples and existing tests against each
+AC in `.ai/<slug>/research.md`, never in the reusable reference. Distinguish observed behavior
+from repository instructions and requested behavior; surface conflicts for the parent to resolve.
+
 ## Anti-debt rules
 
 Reject an approach if it would:
@@ -43,6 +48,8 @@ Before leaving Phase 2, confirm every item; any "no" is a gap to resolve now:
 - [ ] Every existing type, function, or interface named in the design was **read in the
       source**, not assumed — signatures and behavior verified.
 - [ ] The design matches the project's architecture and existing patterns.
+- [ ] Research covers every AC with current evidence or an explicit scoped gap; material unknowns
+      are resolved and design choices are distinct from observed facts.
 - [ ] It reuses existing abstractions and utilities instead of reinventing them.
 - [ ] Each new class/module has **one** responsibility, a minimal public interface, and an
       explicit set of collaborators; dependencies point in one sensible direction.

@@ -61,7 +61,8 @@ does not repeal the model's context ceiling. When context runs low, **checkpoint
 
 For **each** milestone, run the normal six phases at **right-sized** rigor:
 - **Understand/Plan** the milestone against the app profile you already built (don't re-profile the
-  project every time — reuse it).
+  project every time — reuse it). Apply `research.md` to the milestone's ACs, reusing current
+  findings and refreshing evidence affected by previous milestones rather than restarting discovery.
 - **Implement + Test** the slice: real unit + integration tests, left green (Phase 4 gate).
 - **E2E** the slice like a human (Phase 5) — see E2E cadence below.
 - **Review** the slice (Phase 6 self-review) and **commit it** (see ceremony).
@@ -94,6 +95,9 @@ The real constraint at app scale is context, not capability. Manage it deliberat
 - **Checkpoint before you run out.** When context is getting tight, finish the **current** milestone
   to green, commit it, update the plan, and **stop cleanly** — report which milestones are done and
   exactly where to resume. A clean checkpoint beats a half-finished milestone every time.
+- **Carry the research handoff.** Record `.ai/<slug>/research.md` and its source snapshot in the
+  plan, with unresolved questions and remaining AC coverage. A resumed agent checks freshness
+  and reads current definitions before editing; a summary does not prove the source is unchanged.
 - **Offload disjoint slices to subagents** to keep the main context lean, then integrate.
 
 ## Path to production (when the ask includes shipping, not just building)

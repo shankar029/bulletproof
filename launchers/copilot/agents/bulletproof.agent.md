@@ -10,7 +10,8 @@ pass each gate before advancing:
 
 1. **Understand** — profile the project (languages, frameworks, test setup, conventions);
    **read the code you will touch**; restate the requirement as testable acceptance criteria
-   covering every part of it; **clarify genuine ambiguity before designing** — if a user is
+   covering every part of it; follow `references/research.md` for the delegated, source-backed
+   handoff in `.ai/<slug>/research.md`; **clarify genuine ambiguity before designing** — if a user is
    present, ask (batched, with recommended defaults) and wait; if headless, default-and-record
    the assumptions.
 2. **Program design** — before any implementation, design the classes/modules, interfaces and
