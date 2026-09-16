@@ -1,0 +1,107 @@
+{
+  "baseline": {
+    "complete": true,
+    "leaf_count": 1,
+    "logs": [],
+    "schema_version": 1,
+    "tests": [
+      {
+        "file": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 6z5ib8sl\\value.test.mjs",
+        "line": 1,
+        "name": "required",
+        "nesting": 0,
+        "outcome": "pass"
+      }
+    ]
+  },
+  "baseline_artifacts": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"schema_version\":1,\"complete\":true,\"tests\":[{\"file\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space 6z5ib8sl\\\\value.test.mjs\",\"line\":1,\"name\":\"required\",\"nesting\":0,\"outcome\":\"pass\"}],\"leaf_count\":1,\"logs\":[]}\n"
+  },
+  "complete": true,
+  "generated": "2026-09-16T20:58:32+00:00",
+  "killed": 1,
+  "reason": "Measurement completed",
+  "restored_sha256": "99b6d643a83110fdfb3356d02c68e218cfb72bb5055f1af7154a1bbe8703f392",
+  "results": [
+    {
+      "after_sha256": "198912ff5f8193b7a498061184a1680a20d1872792b0433c86233817b3fed1e7",
+      "artifacts": {
+        "execution": {
+          "returncode": 1,
+          "stderr": "",
+          "stdout": "{\"schema_version\":1,\"complete\":true,\"tests\":[{\"file\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space 6z5ib8sl\\\\value.test.mjs\",\"line\":1,\"name\":\"required\",\"nesting\":0,\"outcome\":\"assertion-fail\",\"error\":{\"name\":\"AssertionError\",\"code\":\"ERR_TEST_FAILURE\",\"cause_code\":\"ERR_ASSERTION\",\"message\":\"Expected values to be strictly equal:\\n\\nfalse !== true\\n\",\"assertion_stack\":\"AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\\n\\nfalse !== true\\n\\n    at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/evidence/i1-independent-fixture-space%206z5ib8sl/value.test.mjs:1:132)\\n    at Test.runInAsyncScope (node:async_hooks:214:14)\\n    at Test.run (node:internal/test_runner/test:1106:25)\\n    at Test.start (node:internal/test_runner/test:1003:17)\\n    at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)\",\"operator\":\"strictEqual\",\"expected\":\"true\",\"actual\":\"false\"}}],\"leaf_count\":1,\"logs\":[]}\n"
+        },
+        "native": {
+          "complete": true,
+          "leaf_count": 1,
+          "logs": [],
+          "schema_version": 1,
+          "tests": [
+            {
+              "error": {
+                "actual": "false",
+                "assertion_stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/evidence/i1-independent-fixture-space%206z5ib8sl/value.test.mjs:1:132)\n    at Test.runInAsyncScope (node:async_hooks:214:14)\n    at Test.run (node:internal/test_runner/test:1106:25)\n    at Test.start (node:internal/test_runner/test:1003:17)\n    at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)",
+                "cause_code": "ERR_ASSERTION",
+                "code": "ERR_TEST_FAILURE",
+                "expected": "true",
+                "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+                "name": "AssertionError",
+                "operator": "strictEqual"
+              },
+              "file": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 6z5ib8sl\\value.test.mjs",
+              "line": 1,
+              "name": "required",
+              "nesting": 0,
+              "outcome": "assertion-fail"
+            }
+          ]
+        },
+        "syntax": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ""
+        }
+      },
+      "before_sha256": "277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af",
+      "file": "value.mjs",
+      "line": 1,
+      "operator": "literal true -> false",
+      "outcome": "killed-assertion"
+    }
+  ],
+  "run_id": "schema-8e75ada7b0924e4892cdb25d53847c9b",
+  "schema_version": 2,
+  "score_pct": 100.0,
+  "source": true,
+  "survived": 0,
+  "test_run": {
+    "assertions": [],
+    "command": {
+      "argv": [
+        "C:\\Program Files\\nodejs\\node.EXE",
+        "--test-reporter=file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/native_result.mjs",
+        "--test",
+        "value.test.mjs"
+      ],
+      "cwd": ".",
+      "environment": {
+        "NODE_TEST_CONTEXT": null
+      },
+      "idle_seconds": 300,
+      "max_seconds": 300,
+      "runtime": {
+        "executable": "C:\\Program Files\\nodejs\\node.EXE",
+        "observed_version": "v24.11.1"
+      }
+    },
+    "runner": "node-native",
+    "test_files": [
+      "value.test.mjs"
+    ]
+  },
+  "total": 1,
+  "ungraded": 0,
+  "unsupported_scope": []
+}

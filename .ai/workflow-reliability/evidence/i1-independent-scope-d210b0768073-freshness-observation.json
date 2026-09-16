@@ -1,0 +1,23 @@
+{
+  "before": "231e00b4f07bff164b84e30964939800e3c07dcdc42d91407c04e44b3ceedccc",
+  "after": "231e00b4f07bff164b84e30964939800e3c07dcdc42d91407c04e44b3ceedccc",
+  "changed_path": ".ai/freshness/evidence/contract-note.json",
+  "excluded_outputs": [
+    {
+      "path": ".ai/freshness/evidence",
+      "reason": "Current producer output"
+    },
+    {
+      "path": ".ai/freshness/metrics.json",
+      "reason": "Current producer output"
+    },
+    {
+      "path": ".ai/freshness/mutation.json",
+      "reason": "Current producer output"
+    },
+    {
+      "path": ".git",
+      "reason": "Git metadata, not analyzer input"
+    }
+  ]
+}

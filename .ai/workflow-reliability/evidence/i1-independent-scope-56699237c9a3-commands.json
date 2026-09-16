@@ -1,0 +1,335 @@
+[
+  {
+    "argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+      "--idle",
+      "120",
+      "--max",
+      "900",
+      "--",
+      "git",
+      "init",
+      "--quiet"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space kcfegbg4",
+    "start_unix": 1789591590.5093858,
+    "duration": 1.0180151462554932,
+    "bounds": {
+      "idle": 120,
+      "max": 900
+    },
+    "environment_delta": {
+      "NODE_TEST_CONTEXT": null,
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+      "--idle",
+      "120",
+      "--max",
+      "900",
+      "--",
+      "git",
+      "config",
+      "user.name",
+      "Independent verification fixture"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space kcfegbg4",
+    "start_unix": 1789591591.5281112,
+    "duration": 1.0277693271636963,
+    "bounds": {
+      "idle": 120,
+      "max": 900
+    },
+    "environment_delta": {
+      "NODE_TEST_CONTEXT": null,
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+      "--idle",
+      "120",
+      "--max",
+      "900",
+      "--",
+      "git",
+      "config",
+      "user.email",
+      "verifier@example.invalid"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space kcfegbg4",
+    "start_unix": 1789591592.5564497,
+    "duration": 1.0256423950195312,
+    "bounds": {
+      "idle": 120,
+      "max": 900
+    },
+    "environment_delta": {
+      "NODE_TEST_CONTEXT": null,
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+      "--idle",
+      "120",
+      "--max",
+      "900",
+      "--",
+      "git",
+      "config",
+      "core.autocrlf",
+      "false"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space kcfegbg4",
+    "start_unix": 1789591593.5828757,
+    "duration": 1.0309600830078125,
+    "bounds": {
+      "idle": 120,
+      "max": 900
+    },
+    "environment_delta": {
+      "NODE_TEST_CONTEXT": null,
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+      "--idle",
+      "120",
+      "--max",
+      "900",
+      "--",
+      "git",
+      "add",
+      "--all"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space kcfegbg4",
+    "start_unix": 1789591594.6533465,
+    "duration": 1.0209708213806152,
+    "bounds": {
+      "idle": 120,
+      "max": 900
+    },
+    "environment_delta": {
+      "NODE_TEST_CONTEXT": null,
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+      "--idle",
+      "120",
+      "--max",
+      "900",
+      "--",
+      "git",
+      "commit",
+      "--quiet",
+      "-m",
+      "fixture: native discovery baseline"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space kcfegbg4",
+    "start_unix": 1789591595.6747882,
+    "duration": 1.0363168716430664,
+    "bounds": {
+      "idle": 120,
+      "max": 900
+    },
+    "environment_delta": {
+      "NODE_TEST_CONTEXT": null,
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+      "--idle",
+      "120",
+      "--max",
+      "900",
+      "--",
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space kcfegbg4",
+    "start_unix": 1789591596.7114956,
+    "duration": 1.0259594917297363,
+    "bounds": {
+      "idle": 120,
+      "max": 900
+    },
+    "environment_delta": {
+      "NODE_TEST_CONTEXT": null,
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "stdout": "4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+      "--idle",
+      "120",
+      "--max",
+      "900",
+      "--",
+      "git",
+      "add",
+      "--all"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space kcfegbg4",
+    "start_unix": 1789591597.742431,
+    "duration": 1.0211906433105469,
+    "bounds": {
+      "idle": 120,
+      "max": 900
+    },
+    "environment_delta": {
+      "NODE_TEST_CONTEXT": null,
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+      "--idle",
+      "120",
+      "--max",
+      "900",
+      "--",
+      "git",
+      "commit",
+      "--quiet",
+      "-m",
+      "fixture: native discovery change"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space kcfegbg4",
+    "start_unix": 1789591598.7639844,
+    "duration": 1.0318689346313477,
+    "bounds": {
+      "idle": 120,
+      "max": 900
+    },
+    "environment_delta": {
+      "NODE_TEST_CONTEXT": null,
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+      "--idle",
+      "120",
+      "--max",
+      "900",
+      "--",
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space kcfegbg4",
+    "start_unix": 1789591599.7966309,
+    "duration": 1.0252158641815186,
+    "bounds": {
+      "idle": 120,
+      "max": 900
+    },
+    "environment_delta": {
+      "NODE_TEST_CONTEXT": null,
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "stdout": "47ec88cabab7d8324f8bed6e67d4666695e455f5\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+      "--idle",
+      "120",
+      "--max",
+      "900",
+      "--",
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\probe.py",
+      "--slug",
+      "discovery",
+      "--base",
+      "4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7",
+      "--",
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "--test"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space kcfegbg4",
+    "start_unix": 1789591600.8345983,
+    "duration": 17.05661153793335,
+    "bounds": {
+      "idle": 120,
+      "max": 900
+    },
+    "environment_delta": {
+      "NODE_TEST_CONTEXT": null,
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 1,
+    "stdout": "probe: measuring working tree ...\nprobe: measuring baseline 4d1da04f ...\nprobe: baseline has no meaningful code (2 files) \ufffd judging greenfield work against absolute limits, not deltas\nprobe: running current-invocation native mutation ...\n\nprobe: wrote C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space kcfegbg4\\.ai\\discovery\\metrics.json\nprobe: unavailable (install the tool or report honestly): duplication_pct, complexity_max, complexity_avg, cycles, dead_exports, static_findings, architecture_rules, diff_coverage_pct\n{\n  \"schema_version\": 2,\n  \"run_id\": \"2ccb22c58cb849daa5e7930e16839374\",\n  \"source\": {\n    \"binding_mode\": \"standalone-source\",\n    \"base\": \"4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\",\n    \"head\": \"47ec88cabab7d8324f8bed6e67d4666695e455f5\",\n    \"scope\": {\n      \"files\": [],\n      \"directories\": [\n        \".\"\n      ],\n      \"excluded_outputs\": [\n        {\n          \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/metrics.json\",\n          \"reason\": \"Exact current measurement output\"\n        },\n        {\n          \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/mutation.json\",\n          \"reason\": \"Exact current measurement output\"\n        },\n        {\n          \"path\": \".ai/discovery/metrics.json\",\n          \"reason\": \"Exact current measurement output\"\n        },\n        {\n          \"path\": \".git\",\n          \"reason\": \"Git metadata, not analyzer input\"\n        }\n      ]\n    },\n    \"files\": {\n      \".gitignore\": {\n        \"sha256\": \"dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883\",\n        \"mode\": \"file\"\n      },\n      \"value.mjs\": {\n        \"sha256\": \"277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af\",\n        \"mode\": \"file\"\n      },\n      \"value.test.mjs\": {\n        \"sha256\": \"b84a8b3a235f0c1a2cc44b5d03c0cfcffd49d15515705d4a561378359a368623\",\n        \"mode\": \"file\"\n      }\n    },\n    \"scope_sha256\": \"137e6a56ea08b35427e547e9b85b8c103f7ec06c7dfa841c6e3f0dd0797baf1a\"\n  },\n  \"policy\": {\n    \"required\": [\n      \"architecture_rules\",\n      \"complexity_avg\",\n      \"complexity_max\",\n      \"cycles\",\n      \"dead_exports\",\n      \"diff_coverage_pct\",\n      \"duplication_pct\",\n      \"mutation_score_pct\",\n      \"static_findings\"\n    ],\n    \"rules\": {\n      \"mutation_score_pct\": {\n        \"threshold\": 60.0\n      },\n      \"greenfield\": {\n        \"duplication_pct\": [\n          5.0,\n          12.0\n        ],\n        \"complexity_max\": [\n          15,\n          25\n        ],\n        \"complexity_avg\": [\n          4.0,\n          8.0\n        ],\n        \"cycles\": [\n          0,\n          0\n        ],\n        \"dead_exports\": [\n          10,\n          40\n        ],\n        \"static_findings\": [\n          10,\n          40\n        ]\n      },\n      \"tolerance\": {\n        \"complexity_max\": 2,\n        \"complexity_avg\": 0.3,\n        \"duplication_pct\": 0.5\n      }\n    },\n    \"origins\": [\n      \"built-in quality metrics; required coverage and architecture proof\"\n    ]\n  },\n  \"policy_sha256\": \"d91cea2b28353ecd1b74d32d4b39b269521f1c65b4fd1323a844da07b3d2bbcb\",\n  \"commands\": [\n    {\n      \"argv\": [\n        \"git\",\n        \"rev-parse\",\n        \"--show-toplevel\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 300.0,\n      \"max_seconds\": 900,\n      \"code\": 0,\n      \"stdout\": \"C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/evidence/i1-independent-fixture-space kcfegbg4\\n\",\n      \"stderr\": \"\"\n    },\n    {\n      \"argv\": [\n        \"git\",\n        \"rev-parse\",\n        \"HEAD\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 300.0,\n      \"max_seconds\": 900,\n      \"code\": 0,\n      \"stdout\": \"47ec88cabab7d8324f8bed6e67d4666695e455f5\\n\",\n      \"stderr\": \"\"\n    },\n    {\n      \"argv\": [\n        \"git\",\n        \"merge-base\",\n        \"4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\",\n        \"HEAD\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 300.0,\n      \"max_seconds\": 900,\n      \"code\": 0,\n      \"stdout\": \"4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\\n\",\n      \"stderr\": \"\"\n    },\n    {\n      \"argv\": [\n        \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe\",\n        \"-m\",\n        \"lizard\",\n        \"--version\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 60.0,\n      \"max_seconds\": 60,\n      \"code\": 1,\n      \"stdout\": \"\",\n      \"stderr\": \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe: No module named lizard\\n\"\n    },\n    {\n      \"argv\": [\n        \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe\",\n        \"-m\",\n        \"vulture\",\n        \"--version\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 60.0,\n      \"max_seconds\": 60,\n      \"code\": 1,\n      \"stdout\": \"\",\n      \"stderr\": \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe: No module named vulture\\n\"\n    },\n    {\n      \"argv\": [\n        \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe\",\n        \"-m\",\n        \"semgrep\",\n        \"--version\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 60.0,\n      \"max_seconds\": 60,\n      \"code\": 1,\n      \"stdout\": \"\",\n      \"stderr\": \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe: No module named semgrep\\n\"\n    },\n    {\n      \"argv\": [\n        \"git\",\n        \"worktree\",\n        \"add\",\n        \"--detach\",\n        \"C:\\\\Users\\\\shbs\\\\AppData\\\\Local\\\\Temp\\\\tmprz5xfb_9\\\\base\",\n        \"4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 300.0,\n      \"max_seconds\": 900,\n      \"code\": 0,\n      \"stdout\": \"HEAD is now at 4d1da04 fixture: native discovery baseline\\n\",\n      \"stderr\": \"Preparing worktree (detached HEAD 4d1da04)\\n\"\n    },\n    {\n      \"argv\": [\n        \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe\",\n        \"-m\",\n        \"lizard\",\n        \"--version\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 60.0,\n      \"max_seconds\": 60,\n      \"code\": 1,\n      \"stdout\": \"\",\n      \"stderr\": \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe: No module named lizard\\n\"\n    },\n    {\n      \"argv\": [\n        \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe\",\n        \"-m\",\n        \"vulture\",\n        \"--version\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 60.0,\n      \"max_seconds\": 60,\n      \"code\": 1,\n      \"stdout\": \"\",\n      \"stderr\": \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe: No module named vulture\\n\"\n    },\n    {\n      \"argv\": [\n        \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe\",\n        \"-m\",\n        \"semgrep\",\n        \"--version\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 60.0,\n      \"max_seconds\": 60,\n      \"code\": 1,\n      \"stdout\": \"\",\n      \"stderr\": \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe: No module named semgrep\\n\"\n    },\n    {\n      \"argv\": [\n        \"git\",\n        \"worktree\",\n        \"remove\",\n        \"--force\",\n        \"C:\\\\Users\\\\shbs\\\\AppData\\\\Local\\\\Temp\\\\tmprz5xfb_9\\\\base\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 300.0,\n      \"max_seconds\": 900,\n      \"code\": 0,\n      \"stdout\": \"\",\n      \"stderr\": \"\"\n    },\n    {\n      \"argv\": [\n        \"git\",\n        \"diff\",\n        \"--numstat\",\n        \"4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 300.0,\n      \"max_seconds\": 900,\n      \"code\": 0,\n      \"stdout\": \"1\\t1\\tvalue.mjs\\n\",\n      \"stderr\": \"\"\n    },\n    {\n      \"argv\": [\n        \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe\",\n        \"-B\",\n        \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\scripts\\\\mutate.py\",\n        \"--slug\",\n        \"discovery\",\n        \"--base\",\n        \"4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\",\n        \"--repo\",\n        \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n        \"--run-id\",\n        \"2ccb22c58cb849daa5e7930e16839374\",\n        \"--test-cwd\",\n        \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n        \"--max-mutants\",\n        \"20\",\n        \"--\",\n        \"C:\\\\Program Files\\\\nodejs\\\\node.EXE\",\n        \"--test\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 300.0,\n      \"max_seconds\": 5400,\n      \"code\": 0,\n      \"stdout\": \"{\\n  \\\"schema_version\\\": 2,\\n  \\\"run_id\\\": \\\"2ccb22c58cb849daa5e7930e16839374\\\",\\n  \\\"source\\\": {\\n    \\\"binding_mode\\\": \\\"standalone-source\\\",\\n    \\\"base\\\": \\\"4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\\\",\\n    \\\"head\\\": \\\"47ec88cabab7d8324f8bed6e67d4666695e455f5\\\",\\n    \\\"scope\\\": {\\n      \\\"files\\\": [],\\n      \\\"directories\\\": [\\n        \\\".\\\"\\n      ],\\n      \\\"excluded_outputs\\\": [\\n        {\\n          \\\"path\\\": \\\".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/metrics.json\\\",\\n          \\\"reason\\\": \\\"Exact same-run metrics report published by the invoking probe\\\"\\n        },\\n        {\\n          \\\"path\\\": \\\".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/mutation.json\\\",\\n          \\\"reason\\\": \\\"Exact fresh invocation-owned mutation report\\\"\\n        },\\n        {\\n          \\\"path\\\": \\\".ai/discovery/metrics.json\\\",\\n          \\\"reason\\\": \\\"Generated metrics display alias owned by the invoking probe\\\"\\n        },\\n        {\\n          \\\"path\\\": \\\".git\\\",\\n          \\\"reason\\\": \\\"Git administrative metadata, not source inputs\\\"\\n        }\\n      ]\\n    },\\n    \\\"files\\\": {\\n      \\\".gitignore\\\": {\\n        \\\"sha256\\\": \\\"dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883\\\",\\n        \\\"mode\\\": \\\"file\\\"\\n      },\\n      \\\"value.mjs\\\": {\\n        \\\"sha256\\\": \\\"277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af\\\",\\n        \\\"mode\\\": \\\"file\\\"\\n      },\\n      \\\"value.test.mjs\\\": {\\n        \\\"sha256\\\": \\\"b84a8b3a235f0c1a2cc44b5d03c0cfcffd49d15515705d4a561378359a368623\\\",\\n        \\\"mode\\\": \\\"file\\\"\\n      }\\n    },\\n    \\\"scope_sha256\\\": \\\"705e5b8a1d6698dc0da19a9380257eec8ffd670e1bfc2400f30a3a12370dd5f2\\\"\\n  },\\n  \\\"test_run\\\": {\\n    \\\"command\\\": {\\n      \\\"argv\\\": [\\n        \\\"C:\\\\\\\\Program Files\\\\\\\\nodejs\\\\\\\\node.EXE\\\",\\n        \\\"--test-reporter=file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/native_result.mjs\\\",\\n        \\\"--test\\\",\\n        \\\"value.test.mjs\\\"\\n      ],\\n      \\\"cwd\\\": \\\".\\\",\\n      \\\"runtime\\\": {\\n        \\\"executable\\\": \\\"C:\\\\\\\\Program Files\\\\\\\\nodejs\\\\\\\\node.EXE\\\",\\n        \\\"observed_version\\\": \\\"v24.11.1\\\"\\n      },\\n      \\\"idle_seconds\\\": 300,\\n      \\\"max_seconds\\\": 300,\\n      \\\"environment\\\": {\\n        \\\"NODE_TEST_CONTEXT\\\": null\\n      }\\n    },\\n    \\\"runner\\\": \\\"node-native\\\",\\n    \\\"test_files\\\": [\\n      \\\"value.test.mjs\\\"\\n    ],\\n    \\\"assertions\\\": []\\n  },\\n  \\\"baseline\\\": {\\n    \\\"schema_version\\\": 1,\\n    \\\"complete\\\": true,\\n    \\\"tests\\\": [\\n      {\\n        \\\"file\\\": \\\"C:\\\\\\\\Users\\\\\\\\shbs\\\\\\\\.copilot\\\\\\\\repos\\\\\\\\copilot-worktrees\\\\\\\\bulletproof\\\\\\\\shbs-microsoft-crispy-system\\\\\\\\.ai\\\\\\\\workflow-reliability\\\\\\\\evidence\\\\\\\\i1-independent-fixture-space kcfegbg4\\\\\\\\value.test.mjs\\\",\\n        \\\"line\\\": 1,\\n        \\\"name\\\": \\\"flag\\\",\\n        \\\"nesting\\\": 0,\\n        \\\"outcome\\\": \\\"pass\\\"\\n      }\\n    ],\\n    \\\"leaf_count\\\": 1,\\n    \\\"logs\\\": []\\n  },\\n  \\\"results\\\": [\\n    {\\n      \\\"file\\\": \\\"value.mjs\\\",\\n      \\\"line\\\": 1,\\n      \\\"operator\\\": \\\"literal true -> false\\\",\\n      \\\"before_sha256\\\": \\\"277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af\\\",\\n      \\\"after_sha256\\\": \\\"198912ff5f8193b7a498061184a1680a20d1872792b0433c86233817b3fed1e7\\\",\\n      \\\"outcome\\\": \\\"killed-assertion\\\",\\n      \\\"artifacts\\\": {\\n        \\\"syntax\\\": {\\n          \\\"returncode\\\": 0,\\n          \\\"stdout\\\": \\\"\\\",\\n          \\\"stderr\\\": \\\"\\\"\\n        },\\n        \\\"execution\\\": {\\n          \\\"returncode\\\": 1,\\n          \\\"stdout\\\": \\\"{\\\\\\\"schema_version\\\\\\\":1,\\\\\\\"complete\\\\\\\":true,\\\\\\\"tests\\\\\\\":[{\\\\\\\"file\\\\\\\":\\\\\\\"C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\shbs\\\\\\\\\\\\\\\\.copilot\\\\\\\\\\\\\\\\repos\\\\\\\\\\\\\\\\copilot-worktrees\\\\\\\\\\\\\\\\bulletproof\\\\\\\\\\\\\\\\shbs-microsoft-crispy-system\\\\\\\\\\\\\\\\.ai\\\\\\\\\\\\\\\\workflow-reliability\\\\\\\\\\\\\\\\evidence\\\\\\\\\\\\\\\\i1-independent-fixture-space kcfegbg4\\\\\\\\\\\\\\\\value.test.mjs\\\\\\\",\\\\\\\"line\\\\\\\":1,\\\\\\\"name\\\\\\\":\\\\\\\"flag\\\\\\\",\\\\\\\"nesting\\\\\\\":0,\\\\\\\"outcome\\\\\\\":\\\\\\\"assertion-fail\\\\\\\",\\\\\\\"error\\\\\\\":{\\\\\\\"name\\\\\\\":\\\\\\\"AssertionError\\\\\\\",\\\\\\\"code\\\\\\\":\\\\\\\"ERR_TEST_FAILURE\\\\\\\",\\\\\\\"cause_code\\\\\\\":\\\\\\\"ERR_ASSERTION\\\\\\\",\\\\\\\"message\\\\\\\":\\\\\\\"Expected values to be strictly equal:\\\\\\\\n\\\\\\\\nfalse !== true\\\\\\\\n\\\\\\\",\\\\\\\"assertion_stack\\\\\\\":\\\\\\\"AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\\\\\\\\n\\\\\\\\nfalse !== true\\\\\\\\n\\\\\\\\n    at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/evidence/i1-independent-fixture-space%20kcfegbg4/value.test.mjs:1:128)\\\\\\\\n    at Test.runInAsyncScope (node:async_hooks:214:14)\\\\\\\\n    at Test.run (node:internal/test_runner/test:1106:25)\\\\\\\\n    at Test.start (node:internal/test_runner/test:1003:17)\\\\\\\\n    at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)\\\\\\\",\\\\\\\"operator\\\\\\\":\\\\\\\"strictEqual\\\\\\\",\\\\\\\"expected\\\\\\\":\\\\\\\"true\\\\\\\",\\\\\\\"actual\\\\\\\":\\\\\\\"false\\\\\\\"}}],\\\\\\\"leaf_count\\\\\\\":1,\\\\\\\"logs\\\\\\\":[]}\\\\n\\\",\\n          \\\"stderr\\\": \\\"\\\"\\n        },\\n        \\\"native\\\": {\\n          \\\"schema_version\\\": 1,\\n          \\\"complete\\\": true,\\n          \\\"tests\\\": [\\n            {\\n              \\\"file\\\": \\\"C:\\\\\\\\Users\\\\\\\\shbs\\\\\\\\.copilot\\\\\\\\repos\\\\\\\\copilot-worktrees\\\\\\\\bulletproof\\\\\\\\shbs-microsoft-crispy-system\\\\\\\\.ai\\\\\\\\workflow-reliability\\\\\\\\evidence\\\\\\\\i1-independent-fixture-space kcfegbg4\\\\\\\\value.test.mjs\\\",\\n              \\\"line\\\": 1,\\n              \\\"name\\\": \\\"flag\\\",\\n              \\\"nesting\\\": 0,\\n              \\\"outcome\\\": \\\"assertion-fail\\\",\\n              \\\"error\\\": {\\n                \\\"name\\\": \\\"AssertionError\\\",\\n                \\\"code\\\": \\\"ERR_TEST_FAILURE\\\",\\n                \\\"cause_code\\\": \\\"ERR_ASSERTION\\\",\\n                \\\"message\\\": \\\"Expected values to be strictly equal:\\\\n\\\\nfalse !== true\\\\n\\\",\\n                \\\"assertion_stack\\\": \\\"AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\\\\n\\\\nfalse !== true\\\\n\\\\n    at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/evidence/i1-independent-fixture-space%20kcfegbg4/value.test.mjs:1:128)\\\\n    at Test.runInAsyncScope (node:async_hooks:214:14)\\\\n    at Test.run (node:internal/test_runner/test:1106:25)\\\\n    at Test.start (node:internal/test_runner/test:1003:17)\\\\n    at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)\\\",\\n                \\\"operator\\\": \\\"strictEqual\\\",\\n                \\\"expected\\\": \\\"true\\\",\\n                \\\"actual\\\": \\\"false\\\"\\n              }\\n            }\\n          ],\\n          \\\"leaf_count\\\": 1,\\n          \\\"logs\\\": []\\n        }\\n      }\\n    }\\n  ],\\n  \\\"score_pct\\\": 100.0,\\n  \\\"complete\\\": true,\\n  \\\"reason\\\": \\\"Measurement completed\\\",\\n  \\\"restored_sha256\\\": \\\"705e5b8a1d6698dc0da19a9380257eec8ffd670e1bfc2400f30a3a12370dd5f2\\\",\\n  \\\"generated\\\": \\\"2026-09-16T20:46:47+00:00\\\",\\n  \\\"killed\\\": 1,\\n  \\\"survived\\\": 0,\\n  \\\"total\\\": 1,\\n  \\\"ungraded\\\": 0,\\n  \\\"unsupported_scope\\\": [],\\n  \\\"baseline_artifacts\\\": {\\n    \\\"returncode\\\": 0,\\n    \\\"stdout\\\": \\\"{\\\\\\\"schema_version\\\\\\\":1,\\\\\\\"complete\\\\\\\":true,\\\\\\\"tests\\\\\\\":[{\\\\\\\"file\\\\\\\":\\\\\\\"C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\shbs\\\\\\\\\\\\\\\\.copilot\\\\\\\\\\\\\\\\repos\\\\\\\\\\\\\\\\copilot-worktrees\\\\\\\\\\\\\\\\bulletproof\\\\\\\\\\\\\\\\shbs-microsoft-crispy-system\\\\\\\\\\\\\\\\.ai\\\\\\\\\\\\\\\\workflow-reliability\\\\\\\\\\\\\\\\evidence\\\\\\\\\\\\\\\\i1-independent-fixture-space kcfegbg4\\\\\\\\\\\\\\\\value.test.mjs\\\\\\\",\\\\\\\"line\\\\\\\":1,\\\\\\\"name\\\\\\\":\\\\\\\"flag\\\\\\\",\\\\\\\"nesting\\\\\\\":0,\\\\\\\"outcome\\\\\\\":\\\\\\\"pass\\\\\\\"}],\\\\\\\"leaf_count\\\\\\\":1,\\\\\\\"logs\\\\\\\":[]}\\\\n\\\",\\n    \\\"stderr\\\": \\\"\\\"\\n  }\\n}\\n\",\n      \"stderr\": \"mutate: value.mjs:1 -> killed-assertion\\nmutate: wrote C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\\\\.ai\\\\discovery\\\\evidence\\\\runs\\\\2ccb22c58cb849daa5e7930e16839374\\\\mutation.json\\n\"\n    },\n    {\n      \"argv\": [\n        \"git\",\n        \"rev-parse\",\n        \"HEAD\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 300.0,\n      \"max_seconds\": 900,\n      \"code\": 0,\n      \"stdout\": \"47ec88cabab7d8324f8bed6e67d4666695e455f5\\n\",\n      \"stderr\": \"\"\n    },\n    {\n      \"argv\": [\n        \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe\",\n        \"-m\",\n        \"lizard\",\n        \"--version\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 60.0,\n      \"max_seconds\": 60,\n      \"code\": 1,\n      \"stdout\": \"\",\n      \"stderr\": \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe: No module named lizard\\n\"\n    },\n    {\n      \"argv\": [\n        \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe\",\n        \"-m\",\n        \"semgrep\",\n        \"--version\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 60.0,\n      \"max_seconds\": 60,\n      \"code\": 1,\n      \"stdout\": \"\",\n      \"stderr\": \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe: No module named semgrep\\n\"\n    },\n    {\n      \"argv\": [\n        \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe\",\n        \"-m\",\n        \"vulture\",\n        \"--version\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space kcfegbg4\",\n      \"idle_seconds\": 60.0,\n      \"max_seconds\": 60,\n      \"code\": 1,\n      \"stdout\": \"\",\n      \"stderr\": \"C:\\\\Users\\\\shbs\\\\AppData\\\\Roaming\\\\uv\\\\python\\\\cpython-3.14.2-windows-x86_64-none\\\\python.exe: No module named vulture\\n\"\n    }\n  ],\n  \"slug\": \"discovery\",\n  \"base\": \"4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\",\n  \"merge_base\": \"4d1da04f5a87\",\n  \"head\": \"47ec88cabab7d8324f8bed6e67d4666695e455f5\",\n  \"generated\": \"2026-09-16T20:46:57+00:00\",\n  \"project\": \"general\",\n  \"baseline\": \"greenfield\",\n  \"measurement_status\": \"ok\",\n  \"completeness\": \"incomplete\",\n  \"missing_required\": [\n    {\n      \"metric\": \"architecture_rules\",\n      \"reason\": \"No supported collector implemented\",\n      \"prerequisite\": \"Produce a fresh complete supported measurement and comparison\"\n    },\n    {\n      \"metric\": \"complexity_avg\",\n      \"reason\": \"Collector unavailable, failed or malformed\",\n      \"prerequisite\": \"Produce a fresh complete supported measurement and comparison\"\n    },\n    {\n      \"metric\": \"complexity_max\",\n      \"reason\": \"Collector unavailable, failed or malformed\",\n      \"prerequisite\": \"Produce a fresh complete supported measurement and comparison\"\n    },\n    {\n      \"metric\": \"cycles\",\n      \"reason\": \"Collector unavailable, failed or malformed\",\n      \"prerequisite\": \"Produce a fresh complete supported measurement and comparison\"\n    },\n    {\n      \"metric\": \"dead_exports\",\n      \"reason\": \"Collector unavailable, failed or malformed\",\n      \"prerequisite\": \"Produce a fresh complete supported measurement and comparison\"\n    },\n    {\n      \"metric\": \"diff_coverage_pct\",\n      \"reason\": \"No supported collector implemented\",\n      \"prerequisite\": \"Produce a fresh complete supported measurement and comparison\"\n    },\n    {\n      \"metric\": \"duplication_pct\",\n      \"reason\": \"Collector unavailable, failed or malformed\",\n      \"prerequisite\": \"Produce a fresh complete supported measurement and comparison\"\n    },\n    {\n      \"metric\": \"static_findings\",\n      \"reason\": \"Collector unavailable, failed or malformed\",\n      \"prerequisite\": \"Produce a fresh complete supported measurement and comparison\"\n    }\n  ],\n  \"verdict\": \"fail\",\n  \"worst_status\": \"ok\",\n  \"metrics\": {\n    \"duplication_pct\": {\n      \"head\": null,\n      \"base\": null,\n      \"state\": \"unavailable\",\n      \"comparison\": \"unavailable\",\n      \"reason\": \"Collector unavailable, failed or malformed\",\n      \"scope_support\": {\n        \"measured_paths\": [],\n        \"unsupported_paths\": [\n          \"value.mjs\",\n          \"value.test.mjs\"\n        ]\n      },\n      \"run_id\": \"2ccb22c58cb849daa5e7930e16839374\",\n      \"source\": {\n        \"binding_mode\": \"standalone-source\",\n        \"base\": \"4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\",\n        \"head\": \"47ec88cabab7d8324f8bed6e67d4666695e455f5\",\n        \"scope\": {\n          \"files\": [],\n          \"directories\": [\n            \".\"\n          ],\n          \"excluded_outputs\": [\n            {\n              \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/metrics.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/mutation.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".ai/discovery/metrics.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".git\",\n              \"reason\": \"Git metadata, not analyzer input\"\n            }\n          ]\n        },\n        \"files\": {\n          \".gitignore\": {\n            \"sha256\": \"dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883\",\n            \"mode\": \"file\"\n          },\n          \"value.mjs\": {\n            \"sha256\": \"277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af\",\n            \"mode\": \"file\"\n          },\n          \"value.test.mjs\": {\n            \"sha256\": \"b84a8b3a235f0c1a2cc44b5d03c0cfcffd49d15515705d4a561378359a368623\",\n            \"mode\": \"file\"\n          }\n        },\n        \"scope_sha256\": \"137e6a56ea08b35427e547e9b85b8c103f7ec06c7dfa841c6e3f0dd0797baf1a\"\n      }\n    },\n    \"complexity_max\": {\n      \"head\": null,\n      \"base\": null,\n      \"state\": \"unavailable\",\n      \"comparison\": \"unavailable\",\n      \"reason\": \"Collector unavailable, failed or malformed\",\n      \"scope_support\": {\n        \"measured_paths\": [],\n        \"unsupported_paths\": [\n          \"value.mjs\",\n          \"value.test.mjs\"\n        ]\n      },\n      \"run_id\": \"2ccb22c58cb849daa5e7930e16839374\",\n      \"source\": {\n        \"binding_mode\": \"standalone-source\",\n        \"base\": \"4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\",\n        \"head\": \"47ec88cabab7d8324f8bed6e67d4666695e455f5\",\n        \"scope\": {\n          \"files\": [],\n          \"directories\": [\n            \".\"\n          ],\n          \"excluded_outputs\": [\n            {\n              \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/metrics.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/mutation.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".ai/discovery/metrics.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".git\",\n              \"reason\": \"Git metadata, not analyzer input\"\n            }\n          ]\n        },\n        \"files\": {\n          \".gitignore\": {\n            \"sha256\": \"dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883\",\n            \"mode\": \"file\"\n          },\n          \"value.mjs\": {\n            \"sha256\": \"277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af\",\n            \"mode\": \"file\"\n          },\n          \"value.test.mjs\": {\n            \"sha256\": \"b84a8b3a235f0c1a2cc44b5d03c0cfcffd49d15515705d4a561378359a368623\",\n            \"mode\": \"file\"\n          }\n        },\n        \"scope_sha256\": \"137e6a56ea08b35427e547e9b85b8c103f7ec06c7dfa841c6e3f0dd0797baf1a\"\n      }\n    },\n    \"complexity_avg\": {\n      \"head\": null,\n      \"base\": null,\n      \"state\": \"unavailable\",\n      \"comparison\": \"unavailable\",\n      \"reason\": \"Collector unavailable, failed or malformed\",\n      \"scope_support\": {\n        \"measured_paths\": [],\n        \"unsupported_paths\": [\n          \"value.mjs\",\n          \"value.test.mjs\"\n        ]\n      },\n      \"run_id\": \"2ccb22c58cb849daa5e7930e16839374\",\n      \"source\": {\n        \"binding_mode\": \"standalone-source\",\n        \"base\": \"4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\",\n        \"head\": \"47ec88cabab7d8324f8bed6e67d4666695e455f5\",\n        \"scope\": {\n          \"files\": [],\n          \"directories\": [\n            \".\"\n          ],\n          \"excluded_outputs\": [\n            {\n              \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/metrics.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/mutation.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".ai/discovery/metrics.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".git\",\n              \"reason\": \"Git metadata, not analyzer input\"\n            }\n          ]\n        },\n        \"files\": {\n          \".gitignore\": {\n            \"sha256\": \"dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883\",\n            \"mode\": \"file\"\n          },\n          \"value.mjs\": {\n            \"sha256\": \"277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af\",\n            \"mode\": \"file\"\n          },\n          \"value.test.mjs\": {\n            \"sha256\": \"b84a8b3a235f0c1a2cc44b5d03c0cfcffd49d15515705d4a561378359a368623\",\n            \"mode\": \"file\"\n          }\n        },\n        \"scope_sha256\": \"137e6a56ea08b35427e547e9b85b8c103f7ec06c7dfa841c6e3f0dd0797baf1a\"\n      }\n    },\n    \"cycles\": {\n      \"head\": null,\n      \"base\": null,\n      \"state\": \"unavailable\",\n      \"comparison\": \"unavailable\",\n      \"reason\": \"Collector unavailable, failed or malformed\",\n      \"scope_support\": {\n        \"measured_paths\": [\n          \"value.mjs\",\n          \"value.test.mjs\"\n        ],\n        \"unsupported_paths\": []\n      },\n      \"run_id\": \"2ccb22c58cb849daa5e7930e16839374\",\n      \"source\": {\n        \"binding_mode\": \"standalone-source\",\n        \"base\": \"4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\",\n        \"head\": \"47ec88cabab7d8324f8bed6e67d4666695e455f5\",\n        \"scope\": {\n          \"files\": [],\n          \"directories\": [\n            \".\"\n          ],\n          \"excluded_outputs\": [\n            {\n              \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/metrics.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/mutation.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".ai/discovery/metrics.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".git\",\n              \"reason\": \"Git metadata, not analyzer input\"\n            }\n          ]\n        },\n        \"files\": {\n          \".gitignore\": {\n            \"sha256\": \"dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883\",\n            \"mode\": \"file\"\n          },\n          \"value.mjs\": {\n            \"sha256\": \"277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af\",\n            \"mode\": \"file\"\n          },\n          \"value.test.mjs\": {\n            \"sha256\": \"b84a8b3a235f0c1a2cc44b5d03c0cfcffd49d15515705d4a561378359a368623\",\n            \"mode\": \"file\"\n          }\n        },\n        \"scope_sha256\": \"137e6a56ea08b35427e547e9b85b8c103f7ec06c7dfa841c6e3f0dd0797baf1a\"\n      }\n    },\n    \"dead_exports\": {\n      \"head\": null,\n      \"base\": null,\n      \"state\": \"unavailable\",\n      \"comparison\": \"unavailable\",\n      \"reason\": \"Collector unavailable, failed or malformed\",\n      \"scope_support\": {\n        \"measured_paths\": [],\n        \"unsupported_paths\": [\n          \"value.mjs\",\n          \"value.test.mjs\"\n        ]\n      },\n      \"run_id\": \"2ccb22c58cb849daa5e7930e16839374\",\n      \"source\": {\n        \"binding_mode\": \"standalone-source\",\n        \"base\": \"4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\",\n        \"head\": \"47ec88cabab7d8324f8bed6e67d4666695e455f5\",\n        \"scope\": {\n          \"files\": [],\n          \"directories\": [\n            \".\"\n          ],\n          \"excluded_outputs\": [\n            {\n              \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/metrics.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/mutation.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".ai/discovery/metrics.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".git\",\n              \"reason\": \"Git metadata, not analyzer input\"\n            }\n          ]\n        },\n        \"files\": {\n          \".gitignore\": {\n            \"sha256\": \"dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883\",\n            \"mode\": \"file\"\n          },\n          \"value.mjs\": {\n            \"sha256\": \"277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af\",\n            \"mode\": \"file\"\n          },\n          \"value.test.mjs\": {\n            \"sha256\": \"b84a8b3a235f0c1a2cc44b5d03c0cfcffd49d15515705d4a561378359a368623\",\n            \"mode\": \"file\"\n          }\n        },\n        \"scope_sha256\": \"137e6a56ea08b35427e547e9b85b8c103f7ec06c7dfa841c6e3f0dd0797baf1a\"\n      }\n    },\n    \"static_findings\": {\n      \"head\": null,\n      \"base\": null,\n      \"state\": \"unavailable\",\n      \"comparison\": \"unavailable\",\n      \"reason\": \"Collector unavailable, failed or malformed\",\n      \"scope_support\": {\n        \"measured_paths\": [],\n        \"unsupported_paths\": [\n          \"value.mjs\",\n          \"value.test.mjs\"\n        ]\n      },\n      \"run_id\": \"2ccb22c58cb849daa5e7930e16839374\",\n      \"source\": {\n        \"binding_mode\": \"standalone-source\",\n        \"base\": \"4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\",\n        \"head\": \"47ec88cabab7d8324f8bed6e67d4666695e455f5\",\n        \"scope\": {\n          \"files\": [],\n          \"directories\": [\n            \".\"\n          ],\n          \"excluded_outputs\": [\n            {\n              \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/metrics.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/mutation.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".ai/discovery/metrics.json\",\n              \"reason\": \"Exact current measurement output\"\n            },\n            {\n              \"path\": \".git\",\n              \"reason\": \"Git metadata, not analyzer input\"\n            }\n          ]\n        },\n        \"files\": {\n          \".gitignore\": {\n            \"sha256\": \"dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883\",\n            \"mode\": \"file\"\n          },\n          \"value.mjs\": {\n            \"sha256\": \"277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af\",\n            \"mode\": \"file\"\n          },\n          \"value.test.mjs\": {\n            \"sha256\": \"b84a8b3a235f0c1a2cc44b5d03c0cfcffd49d15515705d4a561378359a368623\",\n            \"mode\": \"file\"\n          }\n        },\n        \"scope_sha256\": \"137e6a56ea08b35427e547e9b85b8c103f7ec06c7dfa841c6e3f0dd0797baf1a\"\n      }\n    },\n    \"diff_files\": {\n      \"head\": 1\n    },\n    \"diff_lines\": {\n      \"head\": 2\n    },\n    \"mutation_score_pct\": {\n      \"state\": \"measured\",\n      \"head\": 100.0,\n      \"base\": null,\n      \"comparison\": \"ok\",\n      \"status\": \"ok\",\n      \"threshold\": 60.0,\n      \"run_id\": \"2ccb22c58cb849daa5e7930e16839374\",\n      \"source\": {\n        \"base\": \"4d1da04f5a87ccb3cb5e4381ac05006c89d8bde7\",\n        \"binding_mode\": \"standalone-source\",\n        \"files\": {\n          \".gitignore\": {\n            \"mode\": \"file\",\n            \"sha256\": \"dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883\"\n          },\n          \"value.mjs\": {\n            \"mode\": \"file\",\n            \"sha256\": \"277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af\"\n          },\n          \"value.test.mjs\": {\n            \"mode\": \"file\",\n            \"sha256\": \"b84a8b3a235f0c1a2cc44b5d03c0cfcffd49d15515705d4a561378359a368623\"\n          }\n        },\n        \"head\": \"47ec88cabab7d8324f8bed6e67d4666695e455f5\",\n        \"scope\": {\n          \"directories\": [\n            \".\"\n          ],\n          \"excluded_outputs\": [\n            {\n              \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/metrics.json\",\n              \"reason\": \"Exact same-run metrics report published by the invoking probe\"\n            },\n            {\n              \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/mutation.json\",\n              \"reason\": \"Exact fresh invocation-owned mutation report\"\n            },\n            {\n              \"path\": \".ai/discovery/metrics.json\",\n              \"reason\": \"Generated metrics display alias owned by the invoking probe\"\n            },\n            {\n              \"path\": \".git\",\n              \"reason\": \"Git administrative metadata, not source inputs\"\n            }\n          ],\n          \"files\": []\n        },\n        \"scope_sha256\": \"705e5b8a1d6698dc0da19a9380257eec8ffd670e1bfc2400f30a3a12370dd5f2\"\n      },\n      \"command\": {\n        \"argv\": [\n          \"C:\\\\Program Files\\\\nodejs\\\\node.EXE\",\n          \"--test-reporter=file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/native_result.mjs\",\n          \"--test\",\n          \"value.test.mjs\"\n        ],\n        \"cwd\": \".\",\n        \"environment\": {\n          \"NODE_TEST_CONTEXT\": null\n        },\n        \"idle_seconds\": 300,\n        \"max_seconds\": 300,\n        \"runtime\": {\n          \"executable\": \"C:\\\\Program Files\\\\nodejs\\\\node.EXE\",\n          \"observed_version\": \"v24.11.1\"\n        }\n      },\n      \"reason\": \"\",\n      \"survivors\": 0,\n      \"artifacts\": [\n        {\n          \"path\": \".ai/discovery/evidence/runs/2ccb22c58cb849daa5e7930e16839374/mutation.json\",\n          \"sha256\": \"de2558c1cb1fe3c21b4051a122acd1a6bd756095e1528529ba0439622f935be9\"\n        }\n      ],\n      \"scope_support\": {\n        \"measured_paths\": [\n          \".gitignore\",\n          \"value.mjs\",\n          \"value.test.mjs\"\n        ],\n        \"unsupported_paths\": []\n      }\n    },\n    \"architecture_rules\": {\n      \"state\": \"unavailable\",\n      \"head\": null,\n      \"comparison\": \"unavailable\",\n      \"reason\": \"No supported collector implemented\",\n      \"run_id\": \"2ccb22c58cb849daa5e7930e16839374\"\n    },\n    \"diff_coverage_pct\": {\n      \"state\": \"unavailable\",\n      \"head\": null,\n      \"comparison\": \"unavailable\",\n      \"reason\": \"No supported collector implemented\",\n      \"run_id\": \"2ccb22c58cb849daa5e7930e16839374\"\n    }\n  },\n  \"unavailable\": [\n    \"duplication_pct\",\n    \"complexity_max\",\n    \"complexity_avg\",\n    \"cycles\",\n    \"dead_exports\",\n    \"static_findings\",\n    \"architecture_rules\",\n    \"diff_coverage_pct\"\n  ],\n  \"tools\": {}\n}\n",
+    "stderr": ""
+  }
+]

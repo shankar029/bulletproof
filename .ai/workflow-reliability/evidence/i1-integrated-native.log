@@ -1,0 +1,15 @@
+Exception in thread Thread-1 (pump):
+Traceback (most recent call last):
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\run.py", line 195, in pump
+    sys.stdout.write(line)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2714' in position 0: character maps to <undefined>

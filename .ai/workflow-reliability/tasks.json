@@ -1,0 +1,615 @@
+{
+  "document": "Workflow reliability executable planning detail",
+  "revision": "planning-r1",
+  "date": "2026-09-16",
+  "status": "I1 functionally verified and independently approved for limited local preservation; I1.T4 quality blocked; I2/I3 pending",
+  "authority": {
+    "requirement": "state.md",
+    "research": "research.md",
+    "design": "design.html",
+    "contracts": "design-contracts.json",
+    "design_revision": "r2",
+    "design_sha256": "44d254d978c22a0be07313112295fc87ee34eb5843f3035e5ba8b52e1f3776e8",
+    "reviewed_contracts_sha256": "15045977c39ff49967eadc028e7f50d475802ebca3675509e41ef373e66097bb",
+    "contracts_sha256": "5b3eb1ac8f4ad0e8914965a783d97242da7ba9e8da00229b622a8360578335bf",
+    "contract_clarification": "Exact shared outputs plus R1/R2 producer-owned result reconciliation and canonical command selection. Original review hash retained; I1 re-review must include these corrections.",
+    "independent_approval": "design-review.md, Round 2: APPROVE",
+    "parent_acceptance": "state.md, Gate 2 acceptance; authorized autopilot, human approval unconfirmed",
+    "research_base": "bcc971d3b64559127dfc43eb0bfd4348c42803ca",
+    "planning_head": "dde2b491bf5981f86baac41473e7b73faa5ee363",
+    "snapshot_observation": "Bounded git status clean before writing these artifacts; base-to-HEAD diff contains only .ai assets/workflow-reliability artifacts. Existing implementation citations still apply.",
+    "planning_procedure": "references\\planning.md",
+    "delegation_procedure": "references\\delegation.md",
+    "single_authority_rule": "This file owns planning tasks, their forward depends_on edges and check execution definitions. It is NOT WorkflowContract, a runtime ledger or a second readiness evaluator. Increment membership derives from task.increment; build-order HTML and state/traceability are indexes. When the guard is adopted, workflow.json alone owns executable Action.requires and Increment.requires; bind registered commands to these accepted check definitions and thereafter derive replay/status from workflow.json, never maintain two writable command/edge copies. Runtime schemas and invariants are referenced from r2, not redefined here.",
+    "change_control": "Parent records Gate 3 READY/REVISE/BLOCKED in state.md after walking I1.T1 and the I1.T4 -> I2.T1 boundary. Source or contract disagreement stops affected work; missing facts return to bounded research, changed interfaces to design, scheduling detail to this plan. Preserve stable IDs and unaffected evidence."
+  },
+  "execution": {
+    "root": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+    "python": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "node": "C:\\Program Files\\nodejs\\node.exe",
+    "platform": "Windows / PowerShell; argv arrays, never shell command strings",
+    "versions": "Python 3.14.2 supplied/working in planning; Node 24.11.1 observed in accepted research. Recheck versions at execution and record. Python alias is unusable. Node 22+ is intended support, NOT an observed version test; team-planner still requires 24.",
+    "runner": {
+      "existing": true,
+      "source": "scripts\\run.py:143-219, read during planning",
+      "argv_prefix": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-B",
+        "scripts\\run.py"
+      ],
+      "expansion": "For a command ID: set cwd=root, apply its environment map, append ['--idle', str(idle_seconds), '--max', str(max_seconds), '--'] to argv_prefix, then append that command's argv. All concrete argv below are literal arguments, not shell globs. Capture fully expanded argv/cwd/environment delta with each run. This is the sole bounding definition; no new flags are assumed.",
+      "outcome": "Outer 124/125 means bounding timeout, never behavioral failure or mutant kill. Check outcomes depend on assertions below, not process status alone."
+    },
+    "test_environment": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "NODE_TEST_CONTEXT": null,
+      "BP_TEST_PYTHON": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe"
+    },
+    "environment_note": "BP_TEST_PYTHON is a PLANNED test-helper input for the new Node workflow fixtures only, not an existing product flag/API. Helpers resolve this explicit executable and record its version; Python subprocess fixtures use sys.executable. Apply test_environment to every test command. No secrets in logs.",
+    "fixtures": "Execution refinement: scripts/tests/helpers.py uses uniquely owned tempfile.TemporaryDirectory repositories, not the originally proposed .ai fixture directory. This follows r2's owned-scratch policy and avoids nesting mutable fixture repositories in analyzed source. Raw verification records preserve actual paths/commands/hashes. Cleanup removes only owned directories/handles, never unrelated processes or worktrees.",
+    "fixture_child_bounds": "Execution refinement: shared GitFixture.run defaults to idle=min(30, timeout), max_total=timeout, timeout=60 seconds. Probe CLI fixtures explicitly allow 180 seconds; mutation and deliberate timeout tests set their own smaller bounds. Actual argv and source tests are authoritative execution records; original proposed 15/45 and 30/90 bounds were not claimed as executed.",
+    "test_command_provenance": "Python unittest is standard-library test tooling approved in r2 verification.native_commands; new suite filenames are planned. Existing native/eval/dry-run commands are CONTRIBUTING.md:31-44 and research E24; exact native file list was inspected. No new framework or install is required by this plan.",
+    "proposed_cli_boundary": "mutate --test-cwd/--run-id/remainder argv, probe --test-cwd/remainder argv/--require-metric, all workflow verbs and run_capture env/observe are PROPOSED r2 behavior, not available at planning HEAD. Test suites must create them before invoking these forms. Existing run.py bounds, node --test, unittest, eval run and live --dry-run are existing interfaces.",
+    "evidence": {
+      "directory_rule": ".ai\\workflow-reliability\\evidence\\<increment>\\<check-id>\\<run-id>\\",
+      "required": ["fully expanded argv and cwd", "runtime and nonsecret environment deltas", "source and contract snapshot hashes", "start/end time and timeout bounds", "stdout/stderr and exit code", "actual test inventory and relevant assertions", "result classification and output artifact hashes", "side effects and restoration/cleanup findings", "producer role/context/model/host", "due AC scenario verdicts and remaining limitations"],
+      "independent_runs": "Implementer, verifier and reviewer evidence use different run IDs; do not overwrite or reattribute returned files. Keep raw independent findings and parent dispositions separate.",
+      "mutation": "Use the producer's immutable evidence\\runs\\ID\\mutation.json and matching invocation identity. Latest mutation.json/metrics.json aliases are display-only; never input to freshness proof.",
+      "baseline": "evidence\\baseline-native.log is historical 51/51 only. Derive new counts from actual runs; no 59-test or predicted-count claim."
+    }
+  },
+  "roles_and_gates": {
+    "parent": "Owns Gate 3, integration, shared contract confirmation, scope completeness, accepted findings, state/traceability indexes, commit decision and honest blocker report.",
+    "implementers": "Parent may implement all tasks sequentially. Optional I1 split uses parent and one file-disjoint implementer after I1.T1; the gate treats both as implementers.",
+    "verifier": "For EACH increment, a newly launched fresh-context verifier distinct from all that increment's implementers; reads/executes and may add missing tests, but cannot change production source. Replays due checks on integrated tree and independently asserts public outcomes.",
+    "reviewer": "For EACH increment, a second fresh-context read-only reviewer distinct from implementers and verifier. Receives current design, tasks, diff, actual metrics and raw evidence; reconciles due ACs from tree. Prefer different model when available, not a claimed capability.",
+    "ordering": "Implementation and targeted checks -> integrated due checks/actual probe -> fresh independent verification -> fresh independent review -> parent findings dispositions -> commit decision -> dependent increment. Both independent steps are mandatory before EACH commit/next increment, not final-only. Any source/test/contract correction after a verdict invalidates affected proof and reruns affected verification/review; no self-review substitution.",
+    "due_authority": "Only the three gate tasks' proof arrays declare due closure checks. Other task proof arrays name their local feedback checks, not duplicate runtime edges. Future checks do not block early actions; no gate may mark them verified. Checks referenced again mean rerun on current integrated snapshot, not reuse an old green label.",
+    "functional_vs_quality": "A task can have functional implementation VERIFIED when real fixtures correctly demonstrate unavailable/fail behavior. Actual increment quality is separately incomplete if required metrics are unavailable. C-PROBE never turns expected incomplete/fail into a quality pass. Required missing proof cannot be waived by an independent review, VERIFIED-WITH-LIMITATIONS, fixture metric, imported old receipt or parent checkbox. Report functional delivery and quality blockers separately.",
+    "advance_boundary": "Gate tasks finish successfully only with all due proof actually accepted. I2.T1 depends on I1.T4 and I3.T1 depends on I2.T4. If actual required metrics cannot be measured, leave the owning gate blocked and later increments pending; do not call an increment green/closed or silently advance. A parent-authorized limited local preservation commit may retain already independently verified/reviewed functional work, but is NOT gate completion or permission to dispatch dependents. This plan authorizes no waiver or redesign to remove the blocker.",
+    "guard_bootstrap": "I1 uses existing artifact-based independent gates and requires no workflow/adoption artifacts. I2 tests use isolated candidate contracts with real fixture proof to test the protocol; they cannot prove this project's missing metrics. Real adoption later requires ordinary source-bound independent DesignReview; it imports no historical execution. Standalone reports are rerun under admission, not relabeled.",
+    "commit": "Use the existing feature branch, never main/master. Parent checks snapshot/commit matches accepted proof and retains Co-authored-by trailer. No commit is executed by this planning task. Guard close checks an already-created matching commit, so precommit verification/review is mandatory; postcommit hashes must still match the proven source. Artifacts generated by proof are exact output exclusions, not a blanket .ai exclusion.",
+    "blocked_host": "If fresh verifier/reviewer cannot be launched later, record a genuine gate blocker; no inline fallback. Do not launch any agents during this planning assignment.",
+    "publication": "Known GitHub 403/Enterprise Managed User blocker. Do not retry publication or propose credential/remote workarounds. Deliver truthful local state and exact normal finishing instructions only if authorized access later changes."
+  },
+  "recovery": {
+    "R-SOURCE": "Stop affected work on snapshot, interface or prerequisite mismatch. Preserve raw evidence; identify changed IDs/claims and reverse dependency closure, reopen only affected tasks/checks, preserve unaffected receipt bytes/IDs, repair approved artifacts via parent and recheck readiness. Do not repair historical evidence into a pass.",
+    "R-MEASURE": "Lock only the measurement's owned scope; back up bytes before mutation. On timeout/setup/unclassified outcomes emit incomplete current report, never a kill. Verify original byte/membership hash and narrow cleanup. Intervening external edit -> recovery-required, do not overwrite it from backup. Missing analyzer/configuration -> named unavailable metric and prerequisite, not invented command or automatic install.",
+    "R-PROCESS": "Capture run/lock token and known process identity. Guard death, age, root PID absence, best-effort kill or direct-exited callback do not prove descendant death. Unknown spawn/tree -> exit 3, RECOVERY_UNVERIFIED, no unlock/replay/second child. Recover only with r2 RecoveryEvidence and independent validation of supported termination/reset observations; no reset API is assumed. Valid recovery records interruption, never success; due checks rerun.",
+    "R-RETRY": "On outer/inner 124/125 record exact command/outcome, inspect only owned process identities, perform concrete safe remedy and retry once with bounds. A second hang is a blocker. No global process-name kills; uncertain ownership follows R-PROCESS.",
+    "R-REVIEW": "Retain fresh verifier/reviewer return unchanged and dispositions separately. Functional contradictions reopen the implementation owner; design mismatch returns to Gate 2. Rerun affected tests and both independent acceptance roles before committing or advancing.",
+    "R-EXPERIMENT": "Leaked cause/oracle/history, shared-filesystem searches reaching withheld material, or insufficient access records -> blindness not-verified. Preserve evidence and scope the claim; never count fixed fixtures/dry-run as live effectiveness. Missing host/termination capability is a blocker, not permission to invent an API.",
+    "R-DOC": "Canonical guidance must agree with current interfaces, source and outcome evidence. Broken links, unsupported-version claims or misleading pass text block the owning task. Correct only assigned current consumers; preserve historical planner records."
+  },
+  "commands": {
+    "CMD-EVIDENCE": {
+      "argv": ["C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe", "-B", "-m", "unittest", "discover", "-s", "scripts\\tests", "-p", "test_evidence.py", "-v"],
+      "idle_seconds": 60, "max_seconds": 180, "availability": "PLANNED test file; existing stdlib runner"
+    },
+    "CMD-MUTATE": {
+      "argv": ["C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe", "-B", "-m", "unittest", "discover", "-s", "scripts\\tests", "-p", "test_mutate.py", "-v"],
+      "idle_seconds": 120, "max_seconds": 900, "availability": "PLANNED test file"
+    },
+    "CMD-RUN": {
+      "argv": ["C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe", "-B", "-m", "unittest", "discover", "-s", "scripts\\tests", "-p", "test_run.py", "-v"],
+      "idle_seconds": 60, "max_seconds": 240, "availability": "PLANNED test file, env tests I1; observer tests added I2"
+    },
+    "CMD-PROBE-TEST": {
+      "argv": ["C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe", "-B", "-m", "unittest", "discover", "-s", "scripts\\tests", "-p", "test_probe.py", "-v"],
+      "idle_seconds": 120, "max_seconds": 900, "availability": "PLANNED test file"
+    },
+    "CMD-NATIVE-RESULT": {
+      "argv": ["C:\\Program Files\\nodejs\\node.exe", "--test", "evals\\lib\\native_result.test.mjs", "evals\\lib\\score.test.mjs"],
+      "idle_seconds": 120, "max_seconds": 600, "availability": "PLANNED native_result test; existing scorer tests extended"
+    },
+    "CMD-NATIVE-BASE": {
+      "argv": ["C:\\Program Files\\nodejs\\node.exe", "--test", "evals\\lib\\mutate.test.mjs", "evals\\lib\\score.test.mjs", "evals\\agent\\agent.test.mjs"],
+      "idle_seconds": 120, "max_seconds": 600, "availability": "EXISTING exact expansion of CONTRIBUTING native command"
+    },
+    "CMD-EVAL": {
+      "argv": ["C:\\Program Files\\nodejs\\node.exe", "evals\\run.mjs"],
+      "idle_seconds": 120, "max_seconds": 1200, "availability": "EXISTING; Playwright/browser prerequisite for UI arm must be checked, not silently skipped"
+    },
+    "CMD-PROBE": {
+      "argv": ["C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe", "-B", "scripts\\probe.py", "--slug", "workflow-reliability", "--base", "bcc971d3b64559127dfc43eb0bfd4348c42803ca", "--test-cwd", ".", "--", "C:\\Program Files\\nodejs\\node.exe", "--test", "evals\\lib\\mutate.test.mjs", "evals\\lib\\score.test.mjs", "evals\\agent\\agent.test.mjs", "evals\\lib\\native_result.test.mjs"],
+      "idle_seconds": 120, "max_seconds": 1800, "availability": "DERIVED invocation requiring I1 new probe argv forwarding; not executable at planning HEAD",
+      "scope_limit": "Explicit supported native mutation route measures its actual JS-family coverage only. It is not Python mutation proof or an all-language quality pass. Unsupported changed Python/other scope and missing collectors remain reported unavailable. A later required broader measurement needs an actual supported collector, not invented runner parsing."
+    },
+    "CMD-WORKFLOW-PY": {
+      "argv": ["C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe", "-B", "-m", "unittest", "discover", "-s", "scripts\\tests", "-p", "test_workflow_*.py", "-v"],
+      "idle_seconds": 120, "max_seconds": 900, "availability": "PLANNED state/gate/CLI files; pattern interpreted by unittest, not shell"
+    },
+    "CMD-WORKFLOW-NODE": {
+      "argv": ["C:\\Program Files\\nodejs\\node.exe", "--test", "evals\\workflow\\failures.test.mjs"],
+      "idle_seconds": 120, "max_seconds": 900, "availability": "PLANNED public CLI behavioral evaluation"
+    },
+    "CMD-ALL-PY": {
+      "argv": ["C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe", "-B", "-m", "unittest", "discover", "-s", "scripts\\tests", "-v"],
+      "idle_seconds": 120, "max_seconds": 1800, "availability": "PLANNED suites; discovers only files existing at each increment"
+    },
+    "CMD-DRY-RUN": {
+      "argv": ["C:\\Program Files\\nodejs\\node.exe", "evals\\agent\\live.mjs", "--task", "paginator", "--dry-run"],
+      "idle_seconds": 120, "max_seconds": 600, "availability": "EXISTING; no model call; no fresh-agent evidence"
+    },
+    "CMD-DIFF-CHECK": {
+      "argv": ["git", "--no-pager", "diff", "--check", "bcc971d3b64559127dfc43eb0bfd4348c42803ca"],
+      "idle_seconds": 30, "max_seconds": 45, "availability": "EXISTING whitespace/conflict check; does not inspect untracked additions until tracked/staged"
+    }
+  },
+  "checks": {
+    "C-EVIDENCE": {
+      "commands": ["CMD-EVIDENCE"],
+      "acs": ["AC01", "AC02", "AC03", "AC09"],
+      "prerequisites": "I1.T1 new stdlib test fixture helper and evidence.py. No workflow files/modules allowed in fixture repository.",
+      "assertions": [
+        "Hash actual bytes, membership, missing/deleted files and executable mode; new/deleted relevant files alter hash, unrelated excluded generated report does not.",
+        "Reject traversal and symlink/reparse escapes for read scope; unavailable platform fixture is explicit rather than skipped success.",
+        "Concurrent exclusive lock attempts admit exactly one owner; stale age alone does not delete lock.",
+        "Atomic replacement readers see old or new valid JSON, never truncated output; injected write failure leaves prior bytes and cleans only owned staging.",
+        "Import and use evidence.py with workflow modules absent; return SourceSnapshot.binding_mode=standalone-source with no fake empty ContractBinding."
+      ],
+      "pass": "Positive discovered tests, zero failures, real filesystem/lock effects and byte hashes asserted; no installed dependencies or ledger bootstrap.",
+      "owner": "Implementer locally; fresh verifier repeats at due gate",
+      "recovery": ["R-SOURCE", "R-MEASURE"]
+    },
+    "C-NATIVE": {
+      "commands": ["CMD-NATIVE-RESULT", "CMD-RUN"],
+      "acs": ["AC01", "AC06", "AC09"],
+      "prerequisites": "I1.T2 reporter/scorer/env seam; real Node 24 native subprocesses.",
+      "assertions": [
+        "Nested leaf inventory and relevant Error/cause properties survive serialization; container/file pseudo-tests are not extra kills.",
+        "Real assertion failure has nonzero child status, matching baseline test identity and declared assertion stack/line/expected-actual symptom; stdout printing ERR_ASSERTION is quoted log data only.",
+        "Syntax/import/setup/empty/skipped/todo/cancelled/timeout/unknown events never become assertion kills; mixed setup plus assertion stays ungraded.",
+        "Positive green requires complete stream, rc=0 and actual non-skipped required tests. Wrong-reason baseline red does not qualify.",
+        "run_capture env passes explicit nonsecret value/removal, strips NODE_TEST_CONTEXT for nested native route, leaves parent environment unchanged; legacy callers retain three-tuple/exit/stream/bounds behavior.",
+        "parseTap count semantics, testQualityScore null/zero rules, composite normalization and TQ_BAR=0.9 remain; Node scorer uses native_result without importing Python."
+      ],
+      "pass": "Tests green with genuine child classifications/side effects; supported API documented 22+ but run evidence states actual 24.11.1 only.",
+      "owner": "I1.T2 implementer; fresh verifier at every due gate",
+      "recovery": ["R-MEASURE", "R-RETRY", "R-REVIEW"]
+    },
+    "C-MUTATION": {
+      "commands": ["CMD-MUTATE"],
+      "acs": ["AC01", "AC02", "AC09"],
+      "prerequisites": "I1.T1 and I1.T2; test harness creates fresh committed Git before/after fixture revisions and native tests, with no workflow.json/current-design.json/ledger.",
+      "assertions": [
+        "Exercise real mutate.py CLI on .mjs and .cjs changes, root with no package and nested package 'packages\\space name' with 'test\\math case.test.mjs'; retain Git root separately from test cwd. Record actual argv, never split a shell-quoted string.",
+        "Supported strict comparisons/arithmetic/boolean changes reach test execution; arrow/shift/partial operators are not selected; ambiguous regex/template/comment spans retain explicit exclusion reasons.",
+        "node --check invalid mutant gives invalid-syntax, never kill; setup, timeout and arbitrary process runner yield setup-error/timeout/unclassified as appropriate. Supported real assertion yields killed-assertion; unchanged relevant behavior yields survived.",
+        "Ambiguous legacy --test-cmd rejects with code 2 and argv guidance; simple legacy forms preserved; conflicting custom reporter rejects rather than guessing.",
+        "Native files are explicitly selected without wandering into benchmark arms or nested unrelated packages; default max-mutants remains 20, fixture cap 4 is explicit.",
+        "Dirty/untracked mutation inputs refuse safely; exact invocation output exclusions do not hide normative .ai inputs. Restore original bytes/hash on success and all failure paths; intervening external edit remains untouched/recovery-required.",
+        "Fresh unique run report exists even for incomplete attempts where reporting is possible; score denominator includes only killed/survived; no graded candidates gives null; ungraded candidate sets complete=false and process 2.",
+        "Before implementation, rerun the original ESM omission/wrong-reason counterexamples in owned fixture copies and capture symptom-specific red, not missing new module/import errors. After implementation replay same scenario and assert corrected classification."
+      ],
+      "pass": "Positive assertion-based fixture tests; mutation process 0 only for complete classified result, 2 for asserted incomplete cases; original source bytes restored. Independent from any future guard.",
+      "owner": "I1.T2 implementer; independent verifier reruns exact scenarios",
+      "recovery": ["R-MEASURE", "R-RETRY"]
+    },
+    "C-METRICS": {
+      "commands": ["CMD-PROBE-TEST"],
+      "acs": ["AC02", "AC09"],
+      "prerequisites": "I1.T3 and integrated I1.T2 producer. Test-only controlled collector outputs exercise policy, while separate real CLI tests use actually available/unavailable tools.",
+      "assertions": [
+        "assess_report evaluates measured status separately from required completeness: all unavailable -> measurement_status=unavailable, completeness=incomplete, verdict=fail; partial measured-ok never makes overall pass.",
+        "Measured regression fails; complete actual input policy case with no regression passes; missing baseline is unavailable, failed inventory is unknown, known <3-file successful inventory alone may be greenfield; greenfield cycle >0 fails.",
+        "Retain mutation 60% floor, comparison tolerances and legacy metrics/unavailable/worst_status/verdict fields; required unsupported diff_coverage_pct/architecture_rules explicitly missing, with owner/prerequisite not fabricated command.",
+        "Failed/empty/malformed/non-finite/partially unsupported analyzer results are not measured zeros. Additional --require-metric tightens only; --skip-mutation/UI skip never waives default required proof.",
+        "Plant a stale high-score latest mutation.json; make current mutation fail, mismatch run/input/command/policy hash or restoration. Current MetricVerdict fails incomplete with no stale score ingestion.",
+        "Run standalone probe CLI on fresh ESM/CJS Git fixture without guard artifacts: current source-only report written atomically to unique run, required-unavailable emits rc=1 immediately, no adoption prompt or import/exemption API.",
+        "Pre-change reproduced unavailable-pass/stale-reuse symptoms become post-change actual incomplete/fail and fresh identity assertions; fixture setup failure is not accepted as behavioral red."
+      ],
+      "pass": "Positive tests pass by asserting both valid pass and honest failure branches; real missing measurements are NOT thereby verified.",
+      "owner": "Parent/I1.T3; fresh verifier independent rerun",
+      "recovery": ["R-MEASURE", "R-SOURCE"]
+    },
+    "C-NATIVE-REGRESSION": {
+      "commands": ["CMD-NATIVE-BASE"],
+      "acs": ["AC09"],
+      "prerequisites": "Existing native/eval fixture prerequisites; no recursive benchmark test discovery.",
+      "assertions": ["All actually discovered existing library/agent tests pass with positive count and no required skip/cancel; compare observed results to historical 51/51 without assuming new total.", "Scorer absent/broken/unmeasurable behavior, fixture neutrality, seed oracle omission and Git hygiene semantics retained."],
+      "pass": "rc=0 plus complete positive native test inventory and assertion success, not a cached baseline.",
+      "owner": "Implementer/integrator and fresh verifier per increment",
+      "recovery": ["R-REVIEW", "R-RETRY"]
+    },
+    "C-EVAL": {
+      "commands": ["CMD-EVAL", "CMD-DRY-RUN"],
+      "acs": ["AC09"],
+      "prerequisites": "Existing fixed-corpus configuration; UI Playwright and browser availability must be observed. Missing prerequisite -> BLOCKED, no silent skip/install during planning.",
+      "assertions": ["All bulletproof applicable dimensions remain 1 and testQuality >=0.9 or the pre-existing legitimate null semantics; inspect actual per-task report rather than exit only.", "Dry-run creates seed workspace and evaluates copied paginator reference with expected accuracy/quality; it is not a model run or workflow adherence proof.", "Record generated evals\\report.md/report.json and exact owned scratch cleanup. Review tracked report changes before retaining; do not accidentally publish unrelated generated output."],
+      "pass": "rc=0 on both commands, positive task/test inventories and expected dimensions; no lowered threshold or setup-as-quality pass.",
+      "owner": "Integrator then independent verifier per increment",
+      "recovery": ["R-RETRY", "R-REVIEW"]
+    },
+    "C-PROBE": {
+      "commands": ["CMD-PROBE"],
+      "acs": ["AC02", "AC09"],
+      "prerequisites": "Integrated I1 producer/consumer; read actual dirty scope and available collectors. On source mutation, use authorized isolated committed candidate copy if needed; record its exact root/snapshot and command cwd override, never mutate somebody else's dirty work or fake a committed source hash.",
+      "assertions": [
+        "Actual report source/command/policy/run hashes match invocation and measurement support. No latest alias fallback; output writes do not self-invalidate source.",
+        "Report measured deltas, generic mutation floor and surviving mutant dispositions separately from required completeness.",
+        "Expected default behavior with missing collectors is rc=1, completeness=incomplete, verdict=fail, named missing_required. This proves correct failure handling but DOES NOT pass quality closure.",
+        "Only actual complete supported measurements with no failure permit rc=0/quality pass. Python/unsupported scope, dirty mutation input, no mutable targets and missing baseline stay unavailable where required."
+      ],
+      "pass": "Functional semantics may be correct at rc=1; quality PASS requires complete actual proof. No command exists here to synthesize missing diff coverage/architecture collectors; operator owns obtaining a supported collector/configuration through approved scope change or reporting BLOCKED.",
+      "owner": "Integrator collects; verifier confirms provenance; reviewer grades real metrics without substituting fixtures",
+      "recovery": ["R-MEASURE", "R-SOURCE"]
+    },
+    "C-STATE-GATE": {
+      "commands": ["CMD-WORKFLOW-PY"],
+      "acs": ["AC03", "AC05", "AC07", "AC08", "AC09"],
+      "prerequisites": "I2.T1; test_workflow_state.py and test_workflow_gate.py exist before CLI tests are added.",
+      "assertions": [
+        "Reject duplicate keys/IDs, unknown enums/versions/removed duplicate edge fields, cycles, orphan/duplicate check actions, non-finite values, malformed paths/hashes and missing mandatory closure checks.",
+        "Only Action.requires owns action admission and Increment.requires owns closure/prior increments; derive reverse membership/due/future/replay. Own closure review does not prevent running its review action.",
+        "SourceSnapshot stays independent; GuardSnapshot requires nonempty valid relevant ContractBinding; exact receipt artifacts, action/check/component/claim and prerequisite receipt hashes bound.",
+        "Verifier/reviewer context IDs differ from all implementers and each other; recorder cannot become producer. Self-declared identity remains explicitly unauthenticated.",
+        "File/contract/check/claim or prerequisite change reopens only dependent work; preserve unrelated receipt IDs/bytes. Exact generated-output exclusions do not invalidate proof; outside-scope edits are not falsely claimed detectable.",
+        "Current-design pointer/history/adoption hashes agree; new relevant component changes invalidate consumers, unchanged components preserve proof after accepted adoption.",
+        "Before-action proof has one consuming action and earlier accepted sequence; retain consumed historical proof after source change, require separate current green. Later/backdated compatibility or missing legacy presence cannot satisfy retirement.",
+        "Research correction uses a new scoped claim ID, explicit supersedes, correction/acceptance owners and accepted binding; status reflects same blockers, no independent green summary."
+      ],
+      "pass": "Positive unit/filesystem tests of ready and blocked outcomes plus unchanged unaffected hashes; no alternate edge authority accepted.",
+      "owner": "I2.T1 implementer; fresh verifier at I2 gate",
+      "recovery": ["R-SOURCE", "R-PROCESS"]
+    },
+    "C-CLI": {
+      "commands": ["CMD-WORKFLOW-PY", "CMD-RUN"],
+      "acs": ["AC03", "AC04", "AC05", "AC07", "AC09"],
+      "prerequisites": "I2.T2/I2.T3; test_workflow_cli.py invokes actual scripts\\workflow.py in fresh processes against owned Git fixture; no shell monkeypatch substitutes for admission/no-spawn.",
+      "assertions": [
+        "Exercise all six verbs using r2 flags only: status derives without proof writes; next accepts registered action only; record preserves admitted producer; close requires matching commit/current source; adopt requires candidate-bound independent review; recover validates evidence.",
+        "Blocked next returns structured blockers, next_command=null, spawned=no and no sentinel child file; rejected malformed/unknown input uses 2, lock/sequence/uncertain recovery 3, policy/proof 1.",
+        "Positive admitted child records admission and launch-intent before spawn and creates sentinel with registered cwd/env/argv. Capture child exit 7/124/125/127 and separate outcome; zero child plus invalid receipt -> wrapper 1, never task success.",
+        "Null-command check handoff returns awaiting-response/spawned=no, no fake agent; matching independent record accepted, unadmitted or altered receipt rejected; design adoption never imports old temporal proof.",
+        "Race two routed admissions; one lock owner/child only. Post-snapshot observed input mutation invalidates current check proof; declared_changes remains review guidance, not sandbox.",
+        "Observer sees real child PID while alive; callback persistence error attempts only owned best-effort cleanup and leaves unresolved outcome. Inject crash between Popen and durable observation: launch-intent remains spawned=unknown, no false no-spawn.",
+        "Start live owned child, persist spawned, terminate only guard PID. Second next and dead-guard/age/PID-only recover stay blocked while child lives; clean up exact test-owned handles after assertions.",
+        "Supported observed known-tree termination with independently reviewed raw evidence permits interrupted/recovered, not success or auto-replay. Unsupported coverage remains RECOVERY_UNVERIFIED/3. Environment-reset validator positives are protocol fixtures only, not a claimed live reset.",
+        "Fresh subprocess after one prerequisite edit reads only artifacts, reopens affected branch, preserves unaffected receipts and prohibits blocked dispatch."
+      ],
+      "pass": "Real child side effects/absence, event ordering, immutable proof, current hashes and conservative recovery assertions; zero exit alone insufficient.",
+      "owner": "I2.T2/T3 implementers; fresh verifier repeats live and fresh-process scenarios",
+      "recovery": ["R-PROCESS", "R-RETRY", "R-REVIEW"]
+    },
+    "C-WORKFLOW-EVAL": {
+      "commands": ["CMD-WORKFLOW-NODE"],
+      "acs": ["AC03", "AC04", "AC05", "AC06", "AC07", "AC08", "AC09"],
+      "prerequisites": "I2.T3 Node native failure evaluation and test helper; explicit BP_TEST_PYTHON; test-only fixture proof cannot satisfy project quality.",
+      "assertions": [
+        "For absent review, setup-as-red, stale evidence, unavailable required metric and premature compatibility retirement: run actual CLI, assert specific blocker/classification and sentinel absence; pair EACH with a valid actual execution/assertion case and expected sentinel/event.",
+        "Setup-as-red uses actual import/syntax failure or printed assertion phrase, rejected as behavioral-red. Positive pair uses real matching AssertionError with relevant assertion location and expected/actual symptom.",
+        "Premature retirement negative includes late compatibility/backdating/already absent legacy; positive observes old/new coexistence, caller/migration/rollback checks, earlier accepted consumption, real retirement and separate current green.",
+        "Fresh-process resume verifies changed-source/component/check/claim variants and preserves unrelated receipts; this deterministic coverage is not relabeled fresh-agent evidence.",
+        "Observed outside-scope write is explicitly documented as outside guarantee rather than expected rejection; negative tests exercise policy not a fabricated sandbox."
+      ],
+      "pass": "All positive/negative pairs have relevant assertions and real CLI effects, with positive inventory; deterministic fixed fixtures only.",
+      "owner": "I2.T3 implementer; fresh verifier/evaluator at gate",
+      "recovery": ["R-SOURCE", "R-PROCESS", "R-REVIEW"]
+    },
+    "C-DOCS": {
+      "commands": ["CMD-DIFF-CHECK"],
+      "acs": ["AC02", "AC04", "AC05", "AC07", "AC08", "AC09"],
+      "prerequisites": "Read only sections owned by currently due tasks; future I3 wiring is not required at I1/I2.",
+      "manual_steps": [
+        "Parent and fresh reviewer walk current entrypoint -> detailed reference -> exact command/schema consumer. Resolve every new link and compare flags/signatures to implemented help/source; no new flag is called existing.",
+        "I1: check all metric consumers in I1.T3 agree on schema v2, exit/freshness/required completeness, unsupported collectors, 60% floor, separate eval 0.9/null policy, actual Node version and no cold self-review fallback.",
+        "I2: walk workflow-gates CLI examples and all verbs; distinguish direct run.py diagnostics, immutable receipts, observer/recovery limits and actual supported termination evidence.",
+        "I3: resolve current-design pointer in SKILL/delegation/testing/resume briefs, route required red via before-action admission, preserve mandatory fresh roles; check research correction/supersession owners, earlier retirement proof, and readiness-derived communication/report.",
+        "Confirm no duplicated live commands/edges/status authority; no edits to historical workflow-app-verification or team-planner evidence; no framework/scratch-only changes."
+      ],
+      "pass": "All currently due consumers consistent, links resolve, whitespace check passes, and independent reviewer records per-branch observations. Rendered report/plan checks are separately recorded; no unrun page-count or unsupported-version claim.",
+      "owner": "Document-owning implementer plus fresh reviewer; parent dispositions separate",
+      "recovery": ["R-DOC", "R-REVIEW"]
+    },
+    "C-ALL-PY": {
+      "commands": ["CMD-ALL-PY"],
+      "acs": ["AC01", "AC02", "AC03", "AC04", "AC05", "AC07", "AC08", "AC09"],
+      "prerequisites": "All Python tests introduced so far; do not wait for future files at an earlier increment.",
+      "assertions": ["Positive inventory of all then-existing suites; no missing required scenarios disguised as empty discovery.", "Source restoration, schema validation, process cleanup and positive/negative public effects remain green together; no residual fixture lock/process/unintended tracked change."],
+      "pass": "rc=0 and all required discovered assertions pass. Coverage expectation is every specified changed branch/error path backed by an assertion, not a fabricated numeric coverage measurement.",
+      "owner": "Integrator and fresh verifier at every increment",
+      "recovery": ["R-SOURCE", "R-PROCESS", "R-REVIEW"]
+    },
+    "C-HOST-RESUME": {
+      "commands": [],
+      "acs": ["AC05", "AC09"],
+      "prerequisites": "I3.T1, accepted I2 deterministic behavior, actual parent host fresh-context capability; not a Python CLI subprocess substitute.",
+      "manual_steps": [
+        "Independent evaluator prepares an owned fixture with two branches of valid evidence, changes exactly one prerequisite, records private expected affected/unaffected sets.",
+        "Parent launches a fresh participant using available host tools with ONLY workspace path and neutral instruction 'Resume this workspace from its durable artifacts and report the next permitted work.' No changed-ID hint or earlier conversation.",
+        "Capture exact host request, participant/evaluator Producer IDs, input/history manifest with hashes, first derived status and subsequent actual command argv/cwd/output. Bound participant experiment to 900 seconds; stop with host's supported cancellation if available, otherwise record limitation rather than invent flag/API.",
+        "After participant completes, separate evaluator compares first readiness/reopened set and preserved receipt hashes with oracle, confirms no blocked sentinel dispatch and checks source/contract hashes.",
+        "Record schema from r2 verification.parent_host_experiments.record, transcript and available tool access records; require fresh context distinct from implementers."
+      ],
+      "pass": "Observed artifact-only fresh-agent resume reopens affected branch, preserves unrelated proof and obeys no-dispatch; self-declared context and shared filesystem limitations disclosed.",
+      "owner": "Parent dispatches; fresh participant acts; separate fresh evaluator grades; final verifier/reviewer reconcile",
+      "recovery": ["R-EXPERIMENT", "R-SOURCE"]
+    },
+    "C-HOST-DIAGNOSIS": {
+      "commands": [],
+      "acs": ["AC06", "AC09"],
+      "prerequisites": "Available fresh participant/evaluator contexts and accessible transcripts/tool records; not fixed failure fixtures, not disclosed planner defect.",
+      "manual_steps": [
+        "Freeze/hash neutral participant instructions first. A separate evaluator selects a new bounded defect and symptom oracle afterward; record selection time and keep cause/fix/oracle outside participant inputs in evaluator-owned unadvertised location.",
+        "Seed a separate owned participant directory with symptom/runtime/source only and neutral fresh Git history; hash every supplied input/history. Exclude injection diff, cause, solution, oracle and evaluator coordination messages.",
+        "Parent dispatches neutral prompt with seed path only; capture host invocation, declared context, transcript and available access logs. Bound exercise to 900 seconds using actual host support; no made-up CLI/host flags.",
+        "Do not release evaluator information until participant completion. Evaluator then runs its actual original symptom, minimized reproduction and regression oracle against returned source; preserve exact concrete grader argv/cwd/environment/bounds (idle 30/max 120 per grader command), assertion files/lines, red/green relations and raw outputs.",
+        "Evaluate supported causal diagnosis, real relevant pre-fix red, minimized reproduction, original-case post-fix green, regression green and scope. Publish withheld manifest to final reviewer only after grading.",
+        "Inspect manifests/history/access traces for exposure. Shared filesystem is NOT a sandbox; missing records or exposure -> blindness=not-verified even if fix passes. No aggregate/uncoached model-effectiveness claim."
+      ],
+      "pass": "One observed verified-bounded held-out exercise with independent post-run assertion-based grading and no observed exposure supported by sufficient records. Otherwise named failed/environment-blocked/unverified limitation, never fixed-fixture replacement.",
+      "owner": "Separate evaluator owns withheld oracle and grading, fresh participant diagnoses; parent coordinates without leaking; final independent verifier/reviewer reconcile",
+      "execution_note": "Exact grader argv cannot exist before evaluator selects held-out defect without preselecting/disclosing the exercise. The reproducible host steps are the executable check; evaluator must persist concrete grader commands before claiming its result. No invented future command marked existing.",
+      "recovery": ["R-EXPERIMENT", "R-REVIEW"]
+    }
+  },
+  "tasks": [
+    {
+      "id": "I1.T1", "increment": "I1", "status": "done",
+      "title": "Establish standalone evidence primitives and shared test contracts",
+      "acs": ["AC01", "AC02", "AC03", "AC09"],
+      "design_refs": ["interfaces: scripts\\evidence.py", "records: FileScope, SourceSnapshot", "procedures.persistence", "boundaries.measurement_first"],
+      "depends_on": [],
+      "entry": "Parent accepts Gate 3; incoming implementer reopens r2 and evidence sources, confirms reviewed hashes and implementation unchanged. No guard/adoption/metrics bootstrap prerequisite.",
+      "owner": "Parent/integrator",
+      "files": [
+        {"path": "scripts\\evidence.py", "change": "NEW source_snapshot, write_json_atomic, exclusive_lock only; no workflow imports or policy."},
+        {"path": "scripts\\tests\\test_evidence.py", "change": "NEW real filesystem/atomicity/lock/source-boundary tests."},
+        {"path": "scripts\\tests\\helpers.py", "change": "NEW minimal stdlib owned Git-fixture/argv/capture helper shared by Python tests; no product API or evaluation framework."}
+      ],
+      "reuse": "research E05/E19 and r2 S5 for hashing/capture precedents, stdlib json/hashlib/os/pathlib; read originals rather than copying example implementation.",
+      "preserve": "R2 primitive signatures and SourceSnapshot shape; independent measurement use without contract/ledger. Historical source/evidence excluded from edits.",
+      "work": "Confirm shared native/report/test-run interfaces from r2 with next owners; implement mechanisms with positive tests. Publish actual import/use example and hashes in task evidence before permitting concurrent consumers. A new-module ImportError is not behavioral red.",
+      "proof": ["C-EVIDENCE"],
+      "completion": "Primitive tests pass with actual byte/lock assertions; parent confirms common interface contract. This unblocks T2/T3 implementation, not increment close or commit.",
+      "failure": ["R-SOURCE", "R-MEASURE"],
+      "evidence_refs": ["evidence/i1-integrated-python-final.log"]
+    },
+    {
+      "id": "I1.T2", "increment": "I1", "status": "done",
+      "title": "Deliver classified native mutation and scorer integration",
+      "acs": ["AC01", "AC02", "AC06", "AC09"],
+      "design_refs": ["interfaces: scripts\\mutate.py, scripts\\native_result.mjs, scripts\\run.py env subset", "cli.mutation", "records: NativeResult, MutationReport, TestRun, AssertionTarget"],
+      "depends_on": ["I1.T1"],
+      "entry": "Confirmed primitives and shared report contracts; own files disjoint from T3. Read actual source before editing.",
+      "owner": "Single separate implementer if host supports safe split; otherwise parent sequentially",
+      "files": [
+        {"path": "scripts\\mutate.py", "change": "Existing discovery/operators/routing/main -> r2 ESM/CJS safe selection, exact argv/cwd, syntax/native classification, current-run report and safe restoration."},
+        {"path": "scripts\\native_result.mjs", "change": "NEW report/parseReport shared native protocol."},
+        {"path": "scripts\\run.py", "change": "I1 ONLY optional env plumbing in _popen/run_capture; observer deferred to I2.T2."},
+        {"path": "evals\\lib\\score.mjs", "change": "runTestQuality consumes native_result; preserve parseTap/normalization public behavior."},
+        {"path": "scripts\\tests\\test_mutate.py", "change": "NEW standalone Git/native subprocess tests and original counterexample regressions."},
+        {"path": "scripts\\tests\\test_run.py", "change": "NEW env/legacy bounded-capture regression tests; I2 extends later."},
+        {"path": "evals\\lib\\native_result.test.mjs", "change": "NEW native reporter/event/real subprocess classification tests."},
+        {"path": "evals\\lib\\score.test.mjs", "change": "Extend existing real scorer integration for assertion/setup distinction and normalization preservation."}
+      ],
+      "reuse": "research E01-E06/E11-E14/E19; retain existing mutation path and childEnv behavior, no second Python engine or Node Python dependency.",
+      "preserve": "Existing exclusions, deterministic default max=20, simple legacy commands, test cwd semantics as r2; no observer/guard implementation yet; thresholds unchanged.",
+      "work": "First record relevant pre-fix red using real fixture source/tests and existing CLI. Implement producer/scorer together, validate output protocol before parent integration; report unsupported native versions/runners honestly.",
+      "proof": ["C-NATIVE", "C-MUTATION", "C-NATIVE-REGRESSION"],
+      "completion": "Independent of workflow files, real .mjs/.cjs changes produce classified fresh reports and source restoration; local checks passed. Integrated proof is still due in T4.",
+      "failure": ["R-MEASURE", "R-RETRY", "R-REVIEW"],
+      "evidence_refs": ["evidence/i1-native-summary.md", "evidence/i1-integrated-python-final.log", "evidence/i1-integrated-native-final.log"]
+    },
+    {
+      "id": "I1.T3", "increment": "I1", "status": "done",
+      "title": "Deliver honest metric policy, freshness and directly coupled consumers",
+      "acs": ["AC02", "AC09"],
+      "design_refs": ["interfaces: scripts\\probe.py", "cli.probe", "records: MetricPolicy, Measurement, MetricVerdict", "document_bindings: metric consumers"],
+      "depends_on": ["I1.T1"],
+      "entry": "T1 primitives/report contract fixed. May implement policy in parallel with T2 but cannot claim mutation integration until T2 is integrated by T4.",
+      "owner": "Parent/integrator",
+      "files": [
+        {"path": "scripts\\probe.py", "change": "Existing collection/judge/mutation_entry/main -> explicit measured/completeness policy, baseline unknown, supported-scope validation, fresh run-bound producer and atomic report."},
+        {"path": "scripts\\tests\\test_probe.py", "change": "NEW pure policy boundaries, collector failures and real standalone CLI/stale report integration."},
+        {"path": "references\\quality-metrics.md", "change": "Metric v2, unsupported required proof, native selection, current-run freshness and honest exit semantics."},
+        {"path": "references\\quality-bar.md", "change": "Required missing proof cannot yield complete-quality claims; no threshold weakening."},
+        {"path": "SKILL.md", "change": "I1 metric/probe claims only; do not claim implemented diff coverage or unsupported architecture measurement."},
+        {"path": "references\\review-and-pr.md", "change": "I1 metric/review consumer sections only; require fresh report and retain blocked quality."},
+        {"path": "references\\final-report.md", "change": "I1 metric completeness presentation only, measured versus unavailable."},
+        {"path": "README.md", "change": "Metric/native outcomes and directly coupled cold-self-review contradiction; actual 24 test vs intended 22+ support."},
+        {"path": "docs\\architecture.md", "change": "Measurement-first independent evidence dependency and metric limitations."},
+        {"path": "evals\\README.md", "change": "Native assertion classification; preserve separate fixed-corpus/null/0.9 semantics."}
+      ],
+      "reuse": "research E07-E10/E25; preserve collector seams and judge policy constants, use evidence.py, consume T2 report rather than duplicate classification.",
+      "preserve": "Legacy fields retained with fail for incomplete; no --measurements/import/exemption machinery, no analyzer install/fabricated collector, no guard dependency. Shared docs later get distinct I3 sections sequentially.",
+      "work": "Reproduce stale/unavailable-pass before fix; policy tests may use controlled inputs but mark them fixture-only. Real unavailable CLI must fail honestly without workflow artifacts. Update directly coupled prose in same increment.",
+      "proof": ["C-METRICS", "C-DOCS"],
+      "completion": "Metric consumers agree and policy/CLI tests validate honest failure. Actual quality may remain incomplete; never complete T4 on that basis alone.",
+      "failure": ["R-MEASURE", "R-DOC", "R-SOURCE"],
+      "evidence_refs": ["evidence/i1-probe-red.log", "evidence/i1-integrated-python-final.log"]
+    },
+    {
+      "id": "I1.T4", "increment": "I1", "status": "blocked",
+      "title": "Integrate standalone P0 proof and independently gate I1",
+      "acs": ["AC01", "AC02", "AC09"],
+      "design_refs": ["boundaries.measurement_first", "verification.deterministic: standalone", "verification.final_proof"],
+      "depends_on": ["I1.T2", "I1.T3"],
+      "entry": "Integrated T2/T3 snapshot; parent resolves producer/consumer mismatch before invoking fresh verification and review.",
+      "owner": "Parent integrates; fresh verifier then distinct fresh reviewer own verdicts",
+      "files": [
+        {"path": ".ai\\workflow-reliability\\evidence\\I1", "change": "Future immutable execution/independent findings and separate dispositions."},
+        {"path": ".ai\\workflow-reliability\\state.md", "change": "Future index update: functional delivery, actual quality blocker/closure, next allowed action."},
+        {"path": ".ai\\workflow-reliability\\traceability.md", "change": "Future due AC verdict/evidence indexes; AC06 and all I2/I3 scenarios remain unverified."}
+      ],
+      "reuse": "Existing mandatory Phases 5/6 from references\\delegation.md and planning.md; future guard is not a prerequisite.",
+      "preserve": "No source ownership transfer to reviewer; isolated workers' green results alone do not suffice.",
+      "proof": ["C-EVIDENCE", "C-NATIVE", "C-MUTATION", "C-METRICS", "C-ALL-PY", "C-NATIVE-REGRESSION", "C-EVAL", "C-PROBE", "C-DOCS"],
+      "work": "Follow roles_and_gates ordering. Verifier independently runs standalone no-guard fixtures plus regressions; reviewer reconciles AC01/02 and I1 AC09 from tree/metrics. Record limitations distinctly before commit decision.",
+      "completion": "All due proof actually accepted, fresh verification and separate fresh review before commit/advance. Required unavailable metrics leave this gate blocked even when functional checks are verified. Do not build I2 out of order.",
+      "failure": ["R-REVIEW", "R-MEASURE", "R-SOURCE"],
+      "evidence_refs": ["evidence/i1-integrated-python-final.log", "evidence/i1-integrated-native-final.log", "evidence/i1-integrated-corpus-final.log", "metrics.json"]
+    },
+    {
+      "id": "I2.T1", "increment": "I2", "status": "pending",
+      "title": "Implement guarded state and pure readiness from one forward graph",
+      "acs": ["AC03", "AC05", "AC07", "AC08", "AC09"],
+      "design_refs": ["interfaces: scripts\\workflow_state.py, scripts\\workflow_gate.py", "records: WorkflowContract through Readiness", "procedures.edges_and_resume, temporal_proof, persistence"],
+      "depends_on": ["I1.T4"],
+      "entry": "I1 gate accepted, independent review/verification recorded and valid source-bound prerequisites; do not silently override incomplete metric blocker.",
+      "owner": "Parent or single increment implementer",
+      "files": [
+        {"path": "scripts\\workflow_state.py", "change": "NEW load_workspace/bind_inputs/append_event; strict guard records, relevant bindings and immutable persistence using evidence.py."},
+        {"path": "scripts\\workflow_gate.py", "change": "NEW pure evaluate; due/closure/roles/temporal/freshness decisions and derived status/replay/reopening."},
+        {"path": "scripts\\tests\\test_workflow_state.py", "change": "NEW validation, atomic ledger/sequence, current-design history and scope-binding tests."},
+        {"path": "scripts\\tests\\test_workflow_gate.py", "change": "NEW positive/negative forward-edge, role, metrics, temporal and research correction tests."}
+      ],
+      "reuse": "I1 evidence primitives; r2 defines runtime shapes, research E16-E18 for due/closure and scoped reopening.",
+      "preserve": "No reverse writable gate indexes, no receipt reattribution/authentication claim, no standalone measurement import of workflow state. Runtime current-design/research/retirement mechanics owned only here; I3 documents/wires consumers.",
+      "work": "Implement r2 records/validation before evaluating them. Keep evaluator free of I/O. Tests reject removed redundant fields and missing required closure checks, not just happy JSON snapshots.",
+      "proof": ["C-STATE-GATE"],
+      "completion": "Real persisted binding and pure decision tests pass; ready/future/blocked distinction correct; no dispatch exists until next task.",
+      "failure": ["R-SOURCE", "R-PROCESS", "R-REVIEW"],
+      "evidence_refs": []
+    },
+    {
+      "id": "I2.T2", "increment": "I2", "status": "pending",
+      "title": "Wire actual command admission and conservative observed recovery",
+      "acs": ["AC03", "AC04", "AC05", "AC07", "AC09"],
+      "design_refs": ["interfaces: scripts\\workflow.py, scripts\\run.py observer subset", "cli.workflow", "records: ProcessObservation, RecoveryEvidence, Event", "procedures.process_recovery"],
+      "depends_on": ["I2.T1"],
+      "entry": "Validated state/gate contracts exist and I1 env seam preserved. Read live process limitations before editing.",
+      "owner": "Single I2 implementer; no concurrent run.py edits",
+      "files": [
+        {"path": "scripts\\workflow.py", "change": "NEW six-verb main with visible load/lock/evaluate/admit/run/record; registered argv/cwd only, explicit outcome and no-spawn boundary."},
+        {"path": "scripts\\run.py", "change": "I2 optional synchronous observe callback with actual Popen lifecycle, persistence failure cleanup and unresolved error; retain tuple/env compatibility."},
+        {"path": "scripts\\tests\\test_run.py", "change": "Extend I1 tests with real lifecycle identity/ordering and observer error."},
+        {"path": "scripts\\tests\\test_workflow_cli.py", "change": "NEW actual CLI verb/no-spawn/lock/crash/recovery/commit fixtures; T3 may extend after this task."}
+      ],
+      "reuse": "Existing run_capture/_kill_tree from research E05, now evidence/state/gate. No supervisor/host adapter/reset service.",
+      "preserve": "Observer does not erase spawn-to-record gap or prove descendant death. Null command handoff does not create an agent. declared_changes is only reviewed scope guidance.",
+      "work": "Persist admission/intent before entering Popen, synchronously record actual spawned/direct-exited or launch-failed facts. Fail closed on malformed receipt, observer write failure and uncertain lifetime. Validate all six verbs with real side effects and child return codes.",
+      "proof": ["C-CLI", "C-NATIVE"],
+      "completion": "Actual bounded guard admits only ready registered work, no-spawn negatives proven; uncertain recovery remains blocked with no automatic replay.",
+      "failure": ["R-PROCESS", "R-RETRY", "R-REVIEW"],
+      "evidence_refs": []
+    },
+    {
+      "id": "I2.T3", "increment": "I2", "status": "pending",
+      "title": "Prove workflow failure pairs and artifact-only process resume",
+      "acs": ["AC03", "AC04", "AC05", "AC06", "AC07", "AC08", "AC09"],
+      "design_refs": ["verification.deterministic: guard/failure/resume", "document_bindings: workflow-gates detailed admission"],
+      "depends_on": ["I2.T2"],
+      "entry": "Runnable guard plus validated records; isolated fixtures own source/processes and independent fixture producer identities are explicitly test data.",
+      "owner": "I2 implementer; independent verifier repeats at T4",
+      "files": [
+        {"path": "evals\\workflow\\failures.test.mjs", "change": "NEW native public-CLI positive/negative behavioral pairs; not a live-model benchmark."},
+        {"path": "evals\\workflow\\helpers.mjs", "change": "NEW minimal owned fixture/capture helper using BP_TEST_PYTHON and native standard library."},
+        {"path": "scripts\\tests\\test_workflow_cli.py", "change": "Extend with artifact-only fresh-process resume, component/check/claim invalidation and temporal retirement sequences."},
+        {"path": "references\\workflow-gates.md", "change": "NEW canonical detailed CLI admission/record/adopt/recover/close guide, actual trust/recovery limits and minimal commands; I3 wires triggers."}
+      ],
+      "reuse": "Existing node:test evaluation conventions; E19/E23 owned capture and neutral input patterns, not example source modifications.",
+      "preserve": "A fixture's complete metric proof is not project proof. Fixed tests are not fresh-agent resume/held-out diagnosis. No imagined sandbox or host API.",
+      "work": "Pair all five named negative workflow cases with actual positive execution; assert no child side effect on block. Add fresh-process disk-only replay and historical-before/current-after retirement ordering. Document missing platform recovery observations honestly.",
+      "proof": ["C-CLI", "C-WORKFLOW-EVAL", "C-DOCS"],
+      "completion": "Public CLI failure pairs and changed-prerequisite process replay pass with positive assertions; new detailed guide matches actual help/interface.",
+      "failure": ["R-SOURCE", "R-PROCESS", "R-DOC"],
+      "evidence_refs": []
+    },
+    {
+      "id": "I2.T4", "increment": "I2", "status": "pending",
+      "title": "Independently verify and review integrated guard increment",
+      "acs": ["AC03", "AC04", "AC05", "AC06", "AC07", "AC08", "AC09"],
+      "design_refs": ["verification.final_proof", "boundaries.guard_later"],
+      "depends_on": ["I2.T3"],
+      "entry": "Integrated I2 snapshot plus I1 regression evidence; actual platform/process limits retained.",
+      "owner": "Parent; new fresh verifier and new separate fresh read-only reviewer",
+      "files": [
+        {"path": ".ai\\workflow-reliability\\evidence\\I2", "change": "Future raw independent live CLI/process proof, review findings and separate dispositions."},
+        {"path": ".ai\\workflow-reliability\\state.md", "change": "Future readiness/quality/next-action index, never optimistic separate status."},
+        {"path": ".ai\\workflow-reliability\\traceability.md", "change": "Future due runtime AC evidence; fresh-agent and remaining canonical consumer scenarios stay planned."}
+      ],
+      "reuse": "roles_and_gates; guard test admission cannot retroactively bind I1 runs.",
+      "preserve": "Fresh-process tests cannot complete parent-host AC05/06; future I3 remains unverified. Review must inspect actual observer failure/uncertain spawn, not merely static JSON.",
+      "proof": ["C-STATE-GATE", "C-CLI", "C-WORKFLOW-EVAL", "C-EVIDENCE", "C-NATIVE", "C-MUTATION", "C-METRICS", "C-ALL-PY", "C-NATIVE-REGRESSION", "C-EVAL", "C-PROBE", "C-DOCS"],
+      "work": "Replay due guard CLI/live-child/resume scenarios in fresh verification; fresh reviewer reconciles runtime AC coverage/limits from tree and unchanged I1 behaviors. Follow all precommit/advance gates.",
+      "completion": "Accepted due proof and both fresh roles before commit/I3. Required real metrics or unsupported necessary process proof remain blockers, never substituted by protocol fixtures.",
+      "failure": ["R-REVIEW", "R-PROCESS", "R-SOURCE"],
+      "evidence_refs": []
+    },
+    {
+      "id": "I3.T1", "increment": "I3", "status": "pending",
+      "title": "Wire remaining canonical contracts and truthful status consumers",
+      "acs": ["AC04", "AC05", "AC07", "AC08", "AC09"],
+      "design_refs": ["document_bindings: guard triggers and history/research/status consumers", "compatibility.packaging"],
+      "depends_on": ["I2.T4"],
+      "entry": "Accepted I2 gate; actual current-design/guard interfaces implemented. Earlier metric-owned edits complete before touching shared docs.",
+      "owner": "Single parent/increment implementer",
+      "files": [
+        {"path": "SKILL.md", "change": "Remaining gate-reference triggers at planning acceptance, registered action/check/handoff, resume and closure; current pointer and truthful status."},
+        {"path": "references\\planning.md", "change": "Project task plan to single runtime forward-edge registration, due/closure distinction, before-action compatibility; no duplicate command/status authority."},
+        {"path": "references\\workspace.md", "change": "Resolve current-design pointer/history on resume and index derived readiness; retain historical source-bound evidence."},
+        {"path": "references\\review-and-pr.md", "change": "Remaining guard/current-contract review and closure flow, preserve distinct independent roles."},
+        {"path": "references\\delegation.md", "change": "Briefs resolve current-design revision and admitted check/handoff identity; keep mandatory fresh verifier/reviewer."},
+        {"path": "references\\testing-and-e2e.md", "change": "Required red consumes before-action admission; green uses current check; direct run.py remains diagnostic/unbound."},
+        {"path": "references\\design-doc.md", "change": "Preserved revisions and explicit current contract; adoption review and temporal retirement link."},
+        {"path": "references\\research.md", "change": "Scoped claim correction/supersedes and correction/acceptance ownership, bounded absence statuses."},
+        {"path": "references\\communication.md", "change": "Messages derive from authoritative Readiness and raw evidence, no independent optimistic tracker."},
+        {"path": "references\\final-report.md", "change": "Remaining readiness/current-contract/partial AC outcome presentation; human approval/publication limitations."},
+        {"path": "README.md", "change": "Link new workflow-gates reference in layout and explain routing boundary; no duplicate detailed protocol."},
+        {"path": "evals\\agent\\live.mjs", "change": "CONDITIONAL: only if this existing harness invokes the guard, extend stageSkillBundle to scripts/assets as r2 requires; no temp-location refactor."},
+        {"path": "evals\\agent\\agent.test.mjs", "change": "CONDITIONAL accompanying real staging assertion if live harness guard use is added; otherwise record N/A/no modification, dry-run still runs."}
+      ],
+      "reuse": "research E16-E18/E21-E25; SKILL canonical ownership and existing installers' bundle layout; detailed admission procedures live only in workflow-gates.md.",
+      "preserve": "No changes to successful code-clarity guidance, historical case study, test thresholds, human acceptance or host sandbox claims.",
+      "work": "Walk actual canonical load triggers and current pointer at every operational brief. This task wires documentation to runtime implemented in I2; it does not redesign state or add orchestration. Record the live-harness conditional decision with actual use evidence.",
+      "proof": ["C-DOCS", "C-NATIVE-REGRESSION", "C-EVAL"],
+      "completion": "Every r2 document binding owned here or I1.T3/I2.T3 is consistent; current contracts and due status can be found from fresh artifacts without conversation knowledge.",
+      "failure": ["R-DOC", "R-SOURCE"],
+      "evidence_refs": []
+    },
+    {
+      "id": "I3.T2", "increment": "I3", "status": "pending",
+      "title": "Run separate parent-host resume and held-out diagnosis exercises",
+      "acs": ["AC05", "AC06", "AC09"],
+      "design_refs": ["verification.parent_host_experiments"],
+      "depends_on": ["I3.T1"],
+      "entry": "Host capability observed at execution; neutral manifests and independent evaluator ready. These experiments are NOT prerequisites for I1 measurement correctness.",
+      "owner": "Parent dispatch; separate fresh participants and independent evaluator",
+      "files": [
+        {"path": ".ai\\workflow-reliability\\evidence\\I3\\experiments", "change": "Future manifests/transcripts/source hashes/actual grader commands/results and access limits, per r2 experiment record."},
+        {"path": ".ai\\workflow-reliability\\evidence\\I3\\participant", "change": "Future uniquely owned neutral participant seed; no shared evaluator material in inputs/history."},
+        {"path": ".ai\\workflow-reliability\\evidence\\I3\\evaluator", "change": "Future evaluator-owned withheld cause/oracle; location not advertised to participant before completion; shared storage limitation disclosed."}
+      ],
+      "reuse": "Research E23 neutral seed/oracle separation and r2 bounded blindness procedure. Use actual available host tools, not a new adapter or fake pi run.",
+      "preserve": "No disclosed planner defect, fixed-case substitution, leaked coordination/history, authenticated isolation or repeated uncoached efficacy claim. Participant may edit only its assigned experimental seed, not project production source.",
+      "proof": ["C-HOST-RESUME", "C-HOST-DIAGNOSIS"],
+      "work": "Follow manual host check steps verbatim in intent; persist actual host calls, argv/cwd/timeouts and manifests. Grade only after completion using actual relevant assertions. Record exposure/access-record sufficiency independently.",
+      "completion": "Both bounded observed exercises verified with honest limits, or explicit environment/unverified blockers retained; deterministic suite cannot erase a missing live obligation.",
+      "failure": ["R-EXPERIMENT", "R-REVIEW"],
+      "evidence_refs": []
+    },
+    {
+      "id": "I3.T3", "increment": "I3", "status": "pending",
+      "title": "Reconcile all AC proof, independent final gates and local delivery",
+      "acs": ["AC01", "AC02", "AC03", "AC04", "AC05", "AC06", "AC07", "AC08", "AC09"],
+      "design_refs": ["verification.final_proof", "compatibility", "records: Readiness, FindingResult"],
+      "depends_on": ["I3.T2"],
+      "entry": "Integrated final docs/code/tests/experiments; if T2 blocked, report final blocker without inventing completion. Reread current design and source before final assertions.",
+      "owner": "Parent integrates; fresh final verifier and distinct fresh final reviewer",
+      "files": [
+        {"path": ".ai\\workflow-reliability\\evidence\\I3", "change": "Future full regression, independent reconciliation and preserved experimental proof."},
+        {"path": ".ai\\workflow-reliability\\report.html", "change": "Future final report with actual gates/metrics/AC verdicts, unsupported versions, recovery/host/quality/publication limitations."},
+        {"path": ".ai\\workflow-reliability\\state.md", "change": "Future final phase/next permitted action index."},
+        {"path": ".ai\\workflow-reliability\\traceability.md", "change": "Future independent per-AC verdict/evidence reconciliation, partial/unverified where required."}
+      ],
+      "reuse": "Existing final-report/review procedures and shared artifact theme; runtime Readiness supplies status, reviewer supplies AC verdicts.",
+      "preserve": "Historical 51/51 stays baseline only; do not claim all quality green with missing collectors, human approval confirmed, Node 22 tested, sandboxed blindness or publication success.",
+      "proof": ["C-EVIDENCE", "C-NATIVE", "C-MUTATION", "C-METRICS", "C-STATE-GATE", "C-CLI", "C-WORKFLOW-EVAL", "C-ALL-PY", "C-NATIVE-REGRESSION", "C-EVAL", "C-PROBE", "C-DOCS", "C-HOST-RESUME", "C-HOST-DIAGNOSIS"],
+      "work": "Run all final regressions; fresh verifier independently reconciles every AC including raw host experiment outputs and missing metrics. Separate fresh reviewer rederives coverage/findings from current tree, report and evidence. No prior gate substitutes for final rerun. Rework follows R-REVIEW before final commit.",
+      "completion": "All ACs and required quality proof actually verified for complete ship, otherwise deliver explicit functional/quality/environment blocker report without false close. Local commit only after both independent roles. Publication remains blocked with no retry.",
+      "failure": ["R-REVIEW", "R-EXPERIMENT", "R-MEASURE", "R-DOC"],
+      "evidence_refs": []
+    }
+  ],
+  "handoff": {
+    "first_ready_task": "I1.T1, subject to parent Gate 3 and incoming implementer prerequisite confirmation",
+    "parallel_boundary": "After I1.T1 contract confirmation only: I1.T2 and I1.T3 disjoint writers; parent integration at I1.T4 before success. Shared helper edits serialize through parent. No agents launched in planning.",
+    "failure_boundary": "I1.T4 -> I2.T1: missing independent verification/review, mismatched source/report or required unavailable metrics leaves gate blocked and I2 pending. I2 observer cannot be pulled forward merely to make I1 reports work.",
+    "parent_actions": ["Walk ready task and dependency/failure boundary using artifacts alone.", "Reconcile all ACs and r2 component/document ownership; derive reverse edges, do not add duplicate authorities.", "Verify new plan rendering/print length <=3 pages with existing supported tooling; no render result claimed by planner.", "Record Gate 3 result and next task indexes in state.md/traceability.md; planner was authorized to write only plan.html/tasks.json."],
+    "production_readiness": "N/A: no deployment/service rollout in scope. CLI distribution remains existing installer; conditional live bundle packaging is explicitly owned by I3.T1.",
+    "unavailable_finishing_prerequisites": ["Actual required diff-coverage and architecture collectors/configuration are not implemented in accepted scope; no fabricated finishing command.", "Actual independent fresh host contexts and sufficient experiment access records must be available at execution.", "Supported raw process-tree termination evidence may be unavailable; uncertain recovery stays blocked.", "Node 22 runtime test not available in this session; compatibility intent is not version proof.", "GitHub 403 EMU publication blocked; no retry/workaround."],
+    "planned_validation_status": "No implementation or feature checks executed during planning; JSON/ownership/link validation may be recorded in final planning reply only."
+  }
+}

@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { parseTap, toDimensions, composite, hasForbiddenDep, hasE2E, runTestQuality, testQualityScore } from './score.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 
 const close = (a, b, eps = 1e-9) => assert.ok(Math.abs(a - b) <= eps, `${a} !~= ${b}`);
@@ -140,4 +142,51 @@ test('runTestQuality: bulletproof paginator kills every mutant; baseline ships n
 test('runTestQuality: not applicable when the task does not opt in via quality.mutate', () => {
   const proj = path.join(REPO, 'benchmark/projects/paginator');
   assert.equal(runTestQuality({ quality: { src: 'index.ts' } }, proj, path.join(proj, 'bulletproof')).applicable, false);
+});
+
+function qualityFixture(body) {
+  const project = mkdtempSync(path.join(tmpdir(), 'score-native-'));
+  const arm = path.join(project, 'arm');
+  try {
+    mkdirSync(arm);
+    writeFileSync(path.join(arm, 'index.mjs'), 'export const flag = true;\n');
+    writeFileSync(path.join(arm, 'check.test.mjs'),
+      "import {test} from 'node:test';import assert from 'node:assert/strict';import {flag} from './index.mjs';\n" + body);
+    return runTestQuality({ quality: { src: 'index.mjs', mutate: true } }, project, arm);
+  } finally {
+    rmSync(project, { recursive: true, force: true });
+  }
+}
+
+test('runTestQuality: native assertions kill, shallow tests survive, logs do not kill', () => {
+  const killed = qualityFixture("test('required',()=>assert.equal(flag,true));");
+  assert.equal(killed.killed, 1);
+  assert.equal(testQualityScore(killed), 1);
+  const survived = qualityFixture("console.log('ERR_ASSERTION');test('required',()=>{});");
+  assert.equal(survived.survived, 1);
+  assert.equal(survived.killed, 0);
+  assert.equal(testQualityScore(survived), 0);
+});
+
+test('runTestQuality: setup, spoofed error, zero/missing inventory and skip are not fake kills', () => {
+  for (const body of [
+    "test('required',()=>{if(!flag)throw new Error('setup');});",
+    "test('required',()=>{if(!flag)throw new Error('ERR_ASSERTION');});",
+    "if(flag)test('required',()=>{});",
+    "if(flag)test('required',()=>{});else test('replacement',()=>assert.fail());",
+    "test('required',{skip:!flag},()=>{});",
+  ]) {
+    const result = qualityFixture(body);
+    assert.equal(result.greenBaseline, true, body);
+    assert.equal(result.killed, 0, body);
+    assert.equal(result.skipped, 1, body);
+    assert.equal(testQualityScore(result), null, body);
+  }
+});
+
+test('runTestQuality: file wrappers and broken/skipped baselines retain eval zero semantics', () => {
+  for (const body of ["console.log('ERR_ASSERTION');", "await import('./missing.mjs');",
+    "test.skip('required',()=>{});", "test('required',()=>assert.fail());"]) {
+    assert.equal(testQualityScore(qualityFixture(body)), 0, body);
+  }
 });

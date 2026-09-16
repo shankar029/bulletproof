@@ -1,0 +1,32 @@
+{
+  "name": "review-fixes-whitespace",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts/run.py",
+    "--idle",
+    "120",
+    "--max",
+    "1500",
+    "--",
+    "git",
+    "--no-pager",
+    "diff",
+    "--check",
+    "bcc971d3b64559127dfc43eb0bfd4348c42803ca"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "NODE_TEST_CONTEXT": null,
+    "BP_TEST_PYTHON": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe"
+  },
+  "started": "2026-09-16T20:57:41.589220+00:00",
+  "finished": "2026-09-16T20:57:42.753309+00:00",
+  "duration_seconds": 1.164,
+  "exit_code": 0,
+  "idle_seconds": 120,
+  "max_seconds": 1500,
+  "log": ".ai\\workflow-reliability\\evidence\\i1-independent-review-fixes-whitespace.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

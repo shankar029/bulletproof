@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts/tests",
+    "-p",
+    "test_mutate.py",
+    "-v"
+  ],
+  "result": [
+    1,
+    "",
+    "test_baseline_zero_import_syntax_and_skips_fail_before_mutation (test_mutate.MutationTests.test_baseline_zero_import_syntax_and_skips_fail_before_mutation) ... ok\r\ntest_competing_edit_preserved_with_recovery_bytes (test_mutate.MutationTests.test_competing_edit_preserved_with_recovery_bytes) ... ok\r\ntest_dirty_untracked_contract_rejected_but_owned_output_is_not (test_mutate.MutationTests.test_dirty_untracked_contract_rejected_but_owned_output_is_not) ... ok\r\ntest_discovery_diffs_safe_operators_and_ambiguous_scope (test_mutate.MutationTests.test_discovery_diffs_safe_operators_and_ambiguous_scope) ... FAIL\r\ntest_legacy_quoted_commands_fail_and_custom_runner_is_unclassified (test_mutate.MutationTests.test_legacy_quoted_commands_fail_and_custom_runner_is_unclassified) ... ok\r\ntest_nested_package_and_spaced_argv_preserve_test_cwd_and_parameters (test_mutate.MutationTests.test_nested_package_and_spaced_argv_preserve_test_cwd_and_parameters) ... ok\r\ntest_real_esm_and_cjs_kill_survivor_byte_restoration_and_nonce (test_mutate.MutationTests.test_real_esm_and_cjs_kill_survivor_byte_restoration_and_nonce) ... ok\r\ntest_setup_log_spoof_zero_missing_and_skipped_mutants_are_not_kills (test_mutate.MutationTests.test_setup_log_spoof_zero_missing_and_skipped_mutants_are_not_kills) ... ok\r\ntest_syntax_preflight_rejects_generated_typescript_generic_mutant (test_mutate.MutationTests.test_syntax_preflight_rejects_generated_typescript_generic_mutant) ... FAIL\r\ntest_timeout_is_ungraded_and_restores_bytes (test_mutate.MutationTests.test_timeout_is_ungraded_and_restores_bytes) ... ok\r\n\r\n======================================================================\r\nFAIL: test_discovery_diffs_safe_operators_and_ambiguous_scope (test_mutate.MutationTests.test_discovery_diffs_safe_operators_and_ambiguous_scope)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\test_mutate.py\", line 176, in test_discovery_diffs_safe_operators_and_ambiguous_scope\r\n    self.assertEqual([m[\"line\"] for m in mutants], [2, 3])\r\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError: Lists differ: [1, 2, 3, 4] != [2, 3]\r\n\r\nFirst differing element 0:\r\n1\r\n2\r\n\r\nFirst list contains 2 additional elements.\r\nFirst extra element 2:\r\n3\r\n\r\n- [1, 2, 3, 4]\r\n+ [2, 3]\r\n\r\n======================================================================\r\nFAIL: test_syntax_preflight_rejects_generated_typescript_generic_mutant (test_mutate.MutationTests.test_syntax_preflight_rejects_generated_typescript_generic_mutant)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\test_mutate.py\", line 132, in test_syntax_preflight_rejects_generated_typescript_generic_mutant\r\n    self.assertEqual(report[\"results\"][0][\"outcome\"], \"invalid-syntax\")\r\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError: 'unclassified' != 'invalid-syntax'\r\n- unclassified\r\n+ invalid-syntax\r\n\r\n\r\n----------------------------------------------------------------------\r\nRan 10 tests in 195.851s\r\n\r\nFAILED (failures=2)\r\n"
+  ]
+}

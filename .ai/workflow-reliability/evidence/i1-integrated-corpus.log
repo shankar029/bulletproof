@@ -1,0 +1,46 @@
+# Eval Report
+
+_Generated 2026-09-16 � 10 tasks � dependency-free (`node evals/run.mjs`)._
+
+## Scorecard
+
+| Task | Surface | Arm | Accuracy | Reuse | Dup-free | Extensible | Scope | E2E | Test-real | Composite |
+|---|---|---|---|---|---|---|---|---|---|---|
+| csv-stats-cli | cli | baseline |    0% (0/8) | 0.00 | 1.00 | 0.00 | n/a | 1.00 | 0.00 (tests fail on own code) | **0.21** |
+| csv-stats-cli | cli | bulletproof |  100% (8/8) | 1.00 | 1.00 | 1.00 | n/a | 1.00 | 0.89 (8/9) | **0.98** |
+| discount-api | api | baseline |   55% (11/20) | 0.00 | 0.00 | 0.00 | n/a | 0.00 | 0.17 (1/6) | **0.22** |
+| discount-api | api | bulletproof |  100% (20/20) | 1.00 | 1.00 | 1.00 | n/a | 1.00 | 1.00 (10/10) | **1.00** |
+| expr-eval | library | baseline |   38% (5/13) | 0.00 | n/a | n/a | 1.00 | n/a | 0.00 (no tests) | **0.34** |
+| expr-eval | library | bulletproof |  100% (13/13) | 1.00 | n/a | n/a | 1.00 | n/a | 1.00 (7/7) | **1.00** |
+| map-limit | library | baseline |   71% (5/7) | n/a | n/a | n/a | n/a | n/a | 0.00 (no tests) | **0.57** |
+| map-limit | library | bulletproof |  100% (7/7) | n/a | n/a | n/a | n/a | n/a | 1.00 (2/2) | **1.00** |
+| median-backfill | library | baseline |   33% (2/6) | n/a | n/a | n/a | 1.00 | n/a | n/a | **0.47** |
+| median-backfill | library | bulletproof |  100% (6/6) | n/a | n/a | n/a | 1.00 | n/a | n/a | **1.00** |
+| order-fsm | library | baseline |   50% (3/6) | n/a | n/a | 0.00 | n/a | n/a | 0.00 (no tests) | **0.24** |
+| order-fsm | library | bulletproof |  100% (6/6) | n/a | n/a | 1.00 | n/a | n/a | n/a | **1.00** |
+| paginator | library | baseline |   33% (2/6) | 0.00 | n/a | n/a | n/a | n/a | 0.00 (no tests) | **0.19** |
+| paginator | library | bulletproof |  100% (6/6) | 1.00 | n/a | n/a | n/a | n/a | 1.00 (11/11) | **1.00** |
+| shape-area | library | baseline |   75% (3/4) | 0.00 | 0.00 | 0.00 | n/a | n/a | 0.00 (no tests) | **0.24** |
+| shape-area | library | bulletproof |  100% (4/4) | 1.00 | 1.00 | 1.00 | n/a | n/a | 1.00 (5/5) | **1.00** |
+| signup-form | ui | baseline |   43% (3/7) | 0.00 | 1.00 | n/a | n/a | n/a | n/a | **0.39** |
+| signup-form | ui | bulletproof |  100% (7/7) | 1.00 | 1.00 | n/a | n/a | n/a | n/a | **1.00** |
+| uid | library | baseline |  100% (2/2) | 0.00 | n/a | n/a | 0.00 | n/a | 0.00 (no tests) | **0.32** |
+| uid | library | bulletproof |  100% (2/2) | 1.00 | n/a | n/a | 1.00 | n/a | n/a | **1.00** |
+
+## Bulletproof vs. baseline
+
+Exception in thread Thread-1 (pump):
+Traceback (most recent call last):
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\run.py", line 195, in pump
+    sys.stdout.write(line)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u0394' in position 18: character maps to <undefined>

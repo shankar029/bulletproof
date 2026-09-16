@@ -1,0 +1,37 @@
+{
+  "name": "review-fixes-boundary",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts/run.py",
+    "--idle",
+    "120",
+    "--max",
+    "1500",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts/tests",
+    "-p",
+    "test_measurement_e2e.py",
+    "-v"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "NODE_TEST_CONTEXT": null,
+    "BP_TEST_PYTHON": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe"
+  },
+  "started": "2026-09-16T20:57:40.289469+00:00",
+  "finished": "2026-09-16T21:03:39.391827+00:00",
+  "duration_seconds": 359.102,
+  "exit_code": 0,
+  "idle_seconds": 120,
+  "max_seconds": 1500,
+  "log": ".ai\\workflow-reliability\\evidence\\i1-independent-review-fixes-boundary.log",
+  "log_sha256": "1324f6a61b15534c674dd7b8a00ce56e44bd4fe2f094fffa80f47ed95df4ed63"
+}

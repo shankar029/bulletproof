@@ -1,0 +1,20 @@
+test_current_native_mutation_is_measured_even_when_other_proof_is_missing (test_probe.ProbeCliTests.test_current_native_mutation_is_measured_even_when_other_proof_is_missing) ... FAIL
+
+======================================================================
+FAIL: test_current_native_mutation_is_measured_even_when_other_proof_is_missing (test_probe.ProbeCliTests.test_current_native_mutation_is_measured_even_when_other_proof_is_missing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_probe.py", line 189, in test_current_native_mutation_is_measured_even_when_other_proof_is_missing
+    self.assertEqual(observed["scope_sha256"], mutation["source"]["scope_sha256"],
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     "Writing parent reports must not immediately stale child proof")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '4d97d22919bb057a34449a8daa6e8d862f4eec034b6d9ebc44f2806ed4d4f714' != '7bb1e556943a40eb2873b9e4d107f3e764de9ceb0b19019c74030ce9d1aa140f'
+- 4d97d22919bb057a34449a8daa6e8d862f4eec034b6d9ebc44f2806ed4d4f714
++ 7bb1e556943a40eb2873b9e4d107f3e764de9ceb0b19019c74030ce9d1aa140f
+ : Writing parent reports must not immediately stale child proof
+
+----------------------------------------------------------------------
+Ran 1 test in 21.055s
+
+FAILED (failures=1)

@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-m",
+    "unittest",
+    "-v",
+    "test_mutate.MutationTests.test_shared_metrics_publication_preserves_freshness_but_contracts_do_not",
+    "test_mutate.MutationTests.test_dirty_untracked_contract_rejected_but_owned_output_is_not",
+    "test_mutate.MutationTests.test_real_esm_and_cjs_kill_survivor_byte_restoration_and_nonce",
+    "test_mutate.MutationTests.test_competing_edit_preserved_with_recovery_bytes"
+  ],
+  "cwd": "scripts/tests",
+  "idle_seconds": 90,
+  "max_seconds": 240,
+  "source_sha256": {
+    "scripts/mutate.py": "32634d3b0a4ad2331f30d362f6b04c837b9458039882fb1cae72f7970da37fc3",
+    "scripts/tests/test_mutate.py": "88f868f1cbaa86cdf25da709fac3b09440cdcd09814862fd2c6e07d7d89e7a93"
+  },
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "test_shared_metrics_publication_preserves_freshness_but_contracts_do_not (test_mutate.MutationTests.test_shared_metrics_publication_preserves_freshness_but_contracts_do_not) ... ok\ntest_dirty_untracked_contract_rejected_but_owned_output_is_not (test_mutate.MutationTests.test_dirty_untracked_contract_rejected_but_owned_output_is_not) ... ok\ntest_real_esm_and_cjs_kill_survivor_byte_restoration_and_nonce (test_mutate.MutationTests.test_real_esm_and_cjs_kill_survivor_byte_restoration_and_nonce) ... ok\ntest_competing_edit_preserved_with_recovery_bytes (test_mutate.MutationTests.test_competing_edit_preserved_with_recovery_bytes) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 62.602s\n\nOK\n",
+  "source_unchanged": true
+}

@@ -1,0 +1,43 @@
+{
+  "name": "probe",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts/run.py",
+    "--idle",
+    "120",
+    "--max",
+    "900",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts/probe.py",
+    "--slug",
+    "workflow-reliability",
+    "--base",
+    "bcc971d3b64559127dfc43eb0bfd4348c42803ca",
+    "--test-cwd",
+    ".",
+    "--",
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--test",
+    "evals/lib/mutate.test.mjs",
+    "evals/lib/score.test.mjs",
+    "evals/agent/agent.test.mjs",
+    "evals/lib/native_result.test.mjs"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "NODE_TEST_CONTEXT": null,
+    "BP_TEST_PYTHON": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe"
+  },
+  "started": "2026-09-16T19:51:21.949285+00:00",
+  "finished": "2026-09-16T19:51:34.629619+00:00",
+  "duration_seconds": 12.68,
+  "exit_code": 1,
+  "idle_seconds": 120,
+  "max_seconds": 900,
+  "log": ".ai\\workflow-reliability\\evidence\\i1-independent-probe.log",
+  "log_sha256": "22419ce5ba64641f9c4ea4142de7886ec1c3fc23c8cf44e8481e49054c4f28c1"
+}

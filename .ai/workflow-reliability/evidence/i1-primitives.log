@@ -1,0 +1,27 @@
+test_atomic_write_preserves_old_bytes_on_replace_failure (test_evidence.EvidenceTests.test_atomic_write_preserves_old_bytes_on_replace_failure) ... ok
+test_generated_outputs_do_not_hide_contracts (test_evidence.EvidenceTests.test_generated_outputs_do_not_hide_contracts) ... ok
+test_invalid_json_does_not_touch_destination (test_evidence.EvidenceTests.test_invalid_json_does_not_touch_destination) ... ok
+test_lock_collision_does_not_remove_original_owner (test_evidence.EvidenceTests.test_lock_collision_does_not_remove_original_owner) ... ok
+test_lock_exception_releases_only_its_own_record (test_evidence.EvidenceTests.test_lock_exception_releases_only_its_own_record) ... ok
+test_owned_git_fixture_preserves_bytes_and_reports_commands (test_evidence.EvidenceTests.test_owned_git_fixture_preserves_bytes_and_reports_commands) ... C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\helpers.py:34: ResourceWarning: unclosed file <_io.TextIOWrapper name=4 encoding='cp1252'>
+  result = run_capture(list(argv), cwd=str(cwd or self.root),
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\helpers.py:34: ResourceWarning: unclosed file <_io.TextIOWrapper name=3 encoding='cp1252'>
+  result = run_capture(list(argv), cwd=str(cwd or self.root),
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_rejects_traversal_absolute_and_excluded_inputs (test_evidence.EvidenceTests.test_rejects_traversal_absolute_and_excluded_inputs) ... ok
+test_scope_is_canonical_and_preserves_missing_directory_state (test_evidence.EvidenceTests.test_scope_is_canonical_and_preserves_missing_directory_state) ... ok
+test_snapshot_binds_bytes_membership_and_missing_paths (test_evidence.EvidenceTests.test_snapshot_binds_bytes_membership_and_missing_paths) ... ok
+test_snapshot_rejects_directory_link_escape (test_evidence.EvidenceTests.test_snapshot_rejects_directory_link_escape) ... C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_evidence.py:143: ResourceWarning: unclosed file <_io.TextIOWrapper name=4 encoding='cp1252'>
+  result = run_capture(["powershell.exe", "-NoProfile", "-NonInteractive", "-Command", script],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_evidence.py:143: ResourceWarning: unclosed file <_io.TextIOWrapper name=3 encoding='cp1252'>
+  result = run_capture(["powershell.exe", "-NoProfile", "-NonInteractive", "-Command", script],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 5.913s
+
+OK

@@ -1,0 +1,23 @@
+{
+  "before": "77c02a3fb6c57ed63af8f214a61f27a4377ca806dd270896dcd717982e84ce20",
+  "after": "8b3a8692def74ef73287f0e584af185c8911ddd5d74e00f98aefac1367af77d3",
+  "changed_path": ".ai/freshness/evidence/contract-note.json",
+  "excluded_outputs": [
+    {
+      "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/metrics.json",
+      "reason": "Exact current measurement output"
+    },
+    {
+      "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/mutation.json",
+      "reason": "Exact current measurement output"
+    },
+    {
+      "path": ".ai/freshness/metrics.json",
+      "reason": "Exact current measurement output"
+    },
+    {
+      "path": ".git",
+      "reason": "Git metadata, not analyzer input"
+    }
+  ]
+}

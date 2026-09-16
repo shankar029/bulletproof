@@ -1,2 +1,5 @@
 # Keep recorded hashes and command evidence stable across checkout platforms.
-* -text
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Raw process transcripts preserve intentional whitespace; review their recorded hashes.
+evidence/*.log -diff
+evidence/i1-quality-stdout.json -diff

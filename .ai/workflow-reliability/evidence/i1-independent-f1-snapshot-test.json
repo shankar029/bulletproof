@@ -1,0 +1,39 @@
+{
+  "name": "f1-snapshot-test",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts/run.py",
+    "--idle",
+    "120",
+    "--max",
+    "900",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts/tests",
+    "-p",
+    "test_probe.py",
+    "-k",
+    "snapshot_ignores_own_output_but_not_other_contracts",
+    "-v"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "NODE_TEST_CONTEXT": null,
+    "BP_TEST_PYTHON": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe"
+  },
+  "started": "2026-09-16T20:30:19.327678+00:00",
+  "finished": "2026-09-16T20:30:20.533478+00:00",
+  "duration_seconds": 1.206,
+  "exit_code": 0,
+  "idle_seconds": 120,
+  "max_seconds": 900,
+  "log": ".ai\\workflow-reliability\\evidence\\i1-independent-f1-snapshot-test.log",
+  "log_sha256": "fe16299eb36457de30a00a9445e9ef873bf39ab633162ec5b77dbcbafe6f4c9e"
+}

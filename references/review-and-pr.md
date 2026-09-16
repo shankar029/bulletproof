@@ -154,6 +154,9 @@ ship red; never lower a threshold or weaken an assertion to pass.
 - **Metrics** — `metrics.json` deltas vs the merge-base (duplication, complexity, cycles,
   dead code, static findings, diff coverage, mutation score), and anything `unavailable`.
   **Regenerate every number at the final commit — never copy a figure from an earlier run.**
+  Read version-2 `measurement_status` and `completeness` separately. Required unavailable,
+  unsupported or stale proof blocks the gate; a latest alias or an `ok` partial observation
+  is not a complete pass. Cite the current run ID, source binding and missing prerequisites.
   A stale count in the evidence discredits the evidence that is correct.
 - **Risks & follow-ups** — anything intentionally deferred.
 

@@ -1,0 +1,177 @@
+{
+  "baseline": {
+    "complete": true,
+    "leaf_count": 1,
+    "logs": [],
+    "schema_version": 1,
+    "tests": [
+      {
+        "file": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-215anqxp\\math case.test.mjs",
+        "line": 2,
+        "name": "required with spaces",
+        "nesting": 0,
+        "outcome": "pass"
+      }
+    ]
+  },
+  "baseline_artifacts": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"schema_version\":1,\"complete\":true,\"tests\":[{\"file\":\"C:\\\\Users\\\\shbs\\\\AppData\\\\Local\\\\Temp\\\\bulletproof-git-215anqxp\\\\math case.test.mjs\",\"line\":2,\"name\":\"required with spaces\",\"nesting\":0,\"outcome\":\"pass\"}],\"leaf_count\":1,\"logs\":[]}\n"
+  },
+  "complete": true,
+  "generated": "2026-09-16T18:56:39+00:00",
+  "killed": 1,
+  "reason": "Measurement completed",
+  "restored_sha256": "4365045a8f1946352a4b7f94726a3c21dfca386fa2831d102422e56c78c02029",
+  "results": [
+    {
+      "after_sha256": "db098ff72274513a7a84d43bbf4c8070df5c050e66ef9e3aaf58afe7b95c27dc",
+      "artifacts": {
+        "execution": {
+          "returncode": 1,
+          "stderr": "",
+          "stdout": "{\"schema_version\":1,\"complete\":true,\"tests\":[{\"file\":\"C:\\\\Users\\\\shbs\\\\AppData\\\\Local\\\\Temp\\\\bulletproof-git-215anqxp\\\\math case.test.mjs\",\"line\":2,\"name\":\"required with spaces\",\"nesting\":0,\"outcome\":\"assertion-fail\",\"error\":{\"name\":\"AssertionError\",\"code\":\"ERR_TEST_FAILURE\",\"cause_code\":\"ERR_ASSERTION\",\"message\":\"Expected values to be strictly equal:\\n\\nfalse !== true\\n\",\"assertion_stack\":\"AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\\n\\nfalse !== true\\n\\n    at TestContext.<anonymous> (file:///C:/Users/shbs/AppData/Local/Temp/bulletproof-git-215anqxp/math%20case.test.mjs:2:40)\\n    at Test.runInAsyncScope (node:async_hooks:214:14)\\n    at Test.run (node:internal/test_runner/test:1106:25)\\n    at Test.start (node:internal/test_runner/test:1003:17)\\n    at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)\",\"operator\":\"strictEqual\",\"expected\":\"true\",\"actual\":\"false\"}}],\"leaf_count\":1,\"logs\":[]}\n"
+        },
+        "native": {
+          "complete": true,
+          "leaf_count": 1,
+          "logs": [],
+          "schema_version": 1,
+          "tests": [
+            {
+              "error": {
+                "actual": "false",
+                "assertion_stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at TestContext.<anonymous> (file:///C:/Users/shbs/AppData/Local/Temp/bulletproof-git-215anqxp/math%20case.test.mjs:2:40)\n    at Test.runInAsyncScope (node:async_hooks:214:14)\n    at Test.run (node:internal/test_runner/test:1106:25)\n    at Test.start (node:internal/test_runner/test:1003:17)\n    at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)",
+                "cause_code": "ERR_ASSERTION",
+                "code": "ERR_TEST_FAILURE",
+                "expected": "true",
+                "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+                "name": "AssertionError",
+                "operator": "strictEqual"
+              },
+              "file": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-215anqxp\\math case.test.mjs",
+              "line": 2,
+              "name": "required with spaces",
+              "nesting": 0,
+              "outcome": "assertion-fail"
+            }
+          ]
+        },
+        "syntax": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ""
+        }
+      },
+      "before_sha256": "23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056",
+      "file": "value.mjs",
+      "line": 1,
+      "operator": "literal true -> false",
+      "outcome": "killed-assertion"
+    },
+    {
+      "after_sha256": "1c634eb2aac076464d11ac9e9b02f91f0b27d4c129b25b47961f9e57dbdc28e0",
+      "artifacts": {
+        "execution": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "{\"schema_version\":1,\"complete\":true,\"tests\":[{\"file\":\"C:\\\\Users\\\\shbs\\\\AppData\\\\Local\\\\Temp\\\\bulletproof-git-215anqxp\\\\math case.test.mjs\",\"line\":2,\"name\":\"required with spaces\",\"nesting\":0,\"outcome\":\"pass\"}],\"leaf_count\":1,\"logs\":[]}\n"
+        },
+        "native": {
+          "complete": true,
+          "leaf_count": 1,
+          "logs": [],
+          "schema_version": 1,
+          "tests": [
+            {
+              "file": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-215anqxp\\math case.test.mjs",
+              "line": 2,
+              "name": "required with spaces",
+              "nesting": 0,
+              "outcome": "pass"
+            }
+          ]
+        },
+        "syntax": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ""
+        }
+      },
+      "before_sha256": "23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056",
+      "file": "value.mjs",
+      "line": 2,
+      "operator": "literal true -> false",
+      "outcome": "survived"
+    }
+  ],
+  "run_id": "00b8b5ccd440418a8a910bf3d70f804f",
+  "schema_version": 2,
+  "score_pct": 50.0,
+  "source": {
+    "base": "5bba61c01437d1a3202b1ab6425e6300036115d9",
+    "binding_mode": "standalone-source",
+    "files": {
+      ".gitignore": {
+        "mode": "file",
+        "sha256": "47f32ee61864fa0ca80fed87b117c2f36ed9e3e9b788fd0be86e461350826802"
+      },
+      "math case.test.mjs": {
+        "mode": "file",
+        "sha256": "89cfb0cd3ff26feab7ce9a430f2b191f998dee6c375bb4ee50e7c687a8196b45"
+      },
+      "value.mjs": {
+        "mode": "file",
+        "sha256": "23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056"
+      }
+    },
+    "head": "0064ba7028210df228d691eea5e8ac242b9374c6",
+    "scope": {
+      "directories": [
+        "."
+      ],
+      "excluded_outputs": [
+        {
+          "path": ".ai/fixture/evidence/runs/00b8b5ccd440418a8a910bf3d70f804f/mutation.json",
+          "reason": "Exact fresh invocation-owned mutation report"
+        },
+        {
+          "path": ".git",
+          "reason": "Git administrative metadata, not source inputs"
+        }
+      ],
+      "files": []
+    },
+    "scope_sha256": "4365045a8f1946352a4b7f94726a3c21dfca386fa2831d102422e56c78c02029"
+  },
+  "survived": 1,
+  "test_run": {
+    "assertions": [],
+    "command": {
+      "argv": [
+        "C:\\Program Files\\nodejs\\node.EXE",
+        "--test-reporter=file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/native_result.mjs",
+        "--test",
+        "math case.test.mjs"
+      ],
+      "cwd": ".",
+      "environment": {
+        "NODE_TEST_CONTEXT": null
+      },
+      "idle_seconds": 5,
+      "max_seconds": 5,
+      "runtime": {
+        "executable": "C:\\Program Files\\nodejs\\node.EXE",
+        "observed_version": "v24.11.1"
+      }
+    },
+    "runner": "node-native",
+    "test_files": [
+      "math case.test.mjs"
+    ]
+  },
+  "total": 2,
+  "ungraded": 0,
+  "unsupported_scope": []
+}

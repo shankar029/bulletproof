@@ -11,6 +11,8 @@ test('parseCsv keeps quoted commas in one field', () => {
 });
 test('parseCsv handles escaped quotes', () =>
   assert.deepEqual(parseCsv('a\n"he said ""hi"""\n'), [['a'], ['he said "hi"']]));
+test('preserves trailing empty field without final newline', () =>
+  assert.deepEqual(parseCsv('a,b\n1,'), [['a', 'b'], ['1', '']]));
 
 // --- unit: stats ---
 const CSV = 'name,age,score\nAlice,30,95.5\nBob,25,80\nCarol,,abc\n';

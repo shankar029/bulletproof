@@ -1,0 +1,37 @@
+{
+  "name": "measurement-frozen-suite",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts/run.py",
+    "--idle",
+    "120",
+    "--max",
+    "900",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts/tests",
+    "-p",
+    "test_measurement_e2e.py",
+    "-v"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "NODE_TEST_CONTEXT": null,
+    "BP_TEST_PYTHON": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe"
+  },
+  "started": "2026-09-16T20:02:36.640425+00:00",
+  "finished": "2026-09-16T20:05:52.933948+00:00",
+  "duration_seconds": 196.294,
+  "exit_code": 1,
+  "idle_seconds": 120,
+  "max_seconds": 900,
+  "log": ".ai\\workflow-reliability\\evidence\\i1-independent-measurement-frozen-suite.log",
+  "log_sha256": "3509390c1b10ce7f00d3e45f2675fdeef031a4b8855deab2073ecf6718d5e301"
+}

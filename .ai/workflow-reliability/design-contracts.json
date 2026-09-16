@@ -2,6 +2,10 @@
   "document": "Workflow reliability design contracts",
   "revision": "r2",
   "status": "PROPOSED; bounded revision for accepted DR1-DR7; not implementation or independent approval",
+  "implementation_clarifications": {
+    "shared_measurement_outputs": "Observed integration counterexample i1-child-freshness-red.log: publishing parent metrics immediately invalidated child source binding. The existing own-generated-output invariant includes the exact same-run metrics.json and slug metrics display alias, alongside the current mutation report. These explicit generated report paths are excluded by the shared invocation; other contracts and unrelated evidence stay observed. No new exclusion flag, exemption, identity or workflow dependency.",
+    "consumer_reconciliation": "Review R1/R2 require probe to reuse mutate.select_test_run, not duplicate native argv expansion, and call mutate.validate_mutation_results(report, repo). The producer-owned validator regenerates default-budget candidate identity/bytes, checks native/process evidence against baseline inventory, and reconciles outcomes/counters/score. This is structural validation, not authentication. No new CLI or workflow dependency; mutation producer completion precedes consumer integration."
+  },
   "base": "bcc971d3b64559127dfc43eb0bfd4348c42803ca",
   "overview": "design.html",
   "notation": "Typed design records, not a runtime DSL. Listed fields are required unless suffixed ?. Use ordinary standard-library validation; reject unknown versions/enums, duplicate JSON keys/IDs, malformed hashes and non-finite numbers. Arrays of record references are not executable expressions. The records below are the single definitions; procedures reference them rather than introducing alternative fields.",
@@ -59,7 +63,8 @@
         "select_test_run(repo_root: Path, test_cwd: Path, argv: list[str] | None) -> TestRun",
         "detect_test_cmd(repo: str) -> list[str] | None",
         "changed_lines(repo: str, base: str) -> dict[str, set[int]]",
-        "build_mutants(repo: str, targets: dict[str, set[int]], limit: int) -> list[dict]"
+        "build_mutants(repo: str, targets: dict[str, set[int]], limit: int) -> list[dict]",
+        "validate_mutation_results(report: dict, repo: Path) -> None (raises on inconsistent default-budget proof)"
       ],
       "responsibility": "Discover, mutate, execute and restore; emit current-run classified results.",
       "delta": "Add .mjs/.cjs to both discovery sets. Add strict equality and token-boundary guards so comparisons cannot select =>, shifts or partial operators. Skip lexically ambiguous regex/template/comment spans with reasons; no parser framework. node --check each generated JS-family mutant before native tests. Retain exclusions, deterministic spread and default max=20.",

@@ -1,0 +1,165 @@
+{
+  "baseline": {
+    "complete": true,
+    "leaf_count": 1,
+    "logs": [],
+    "schema_version": 1,
+    "tests": [
+      {
+        "file": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 9y74tcz4\\value.test.mjs",
+        "line": 1,
+        "name": "required",
+        "nesting": 0,
+        "outcome": "pass"
+      }
+    ]
+  },
+  "baseline_artifacts": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"schema_version\":1,\"complete\":true,\"tests\":[{\"file\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space 9y74tcz4\\\\value.test.mjs\",\"line\":1,\"name\":\"required\",\"nesting\":0,\"outcome\":\"pass\"}],\"leaf_count\":1,\"logs\":[]}\n"
+  },
+  "complete": true,
+  "generated": "2026-09-16T20:03:43+00:00",
+  "killed": 1,
+  "reason": "Measurement completed",
+  "restored_sha256": "40c030a80c46ff217b35e410054fb5656de8cf552dd33c1111c65dc22e86e163",
+  "results": [
+    {
+      "after_sha256": "198912ff5f8193b7a498061184a1680a20d1872792b0433c86233817b3fed1e7",
+      "artifacts": {
+        "execution": {
+          "returncode": 1,
+          "stderr": "",
+          "stdout": "{\"schema_version\":1,\"complete\":true,\"tests\":[{\"file\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space 9y74tcz4\\\\value.test.mjs\",\"line\":1,\"name\":\"required\",\"nesting\":0,\"outcome\":\"assertion-fail\",\"error\":{\"name\":\"AssertionError\",\"code\":\"ERR_TEST_FAILURE\",\"cause_code\":\"ERR_ASSERTION\",\"message\":\"Expected values to be strictly equal:\\n\\nfalse !== true\\n\",\"assertion_stack\":\"AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\\n\\nfalse !== true\\n\\n    at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/evidence/i1-independent-fixture-space%209y74tcz4/value.test.mjs:1:132)\\n    at Test.runInAsyncScope (node:async_hooks:214:14)\\n    at Test.run (node:internal/test_runner/test:1106:25)\\n    at Test.start (node:internal/test_runner/test:1003:17)\\n    at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)\",\"operator\":\"strictEqual\",\"expected\":\"true\",\"actual\":\"false\"}}],\"leaf_count\":1,\"logs\":[]}\n"
+        },
+        "native": {
+          "complete": true,
+          "leaf_count": 1,
+          "logs": [],
+          "schema_version": 1,
+          "tests": [
+            {
+              "error": {
+                "actual": "false",
+                "assertion_stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/evidence/i1-independent-fixture-space%209y74tcz4/value.test.mjs:1:132)\n    at Test.runInAsyncScope (node:async_hooks:214:14)\n    at Test.run (node:internal/test_runner/test:1106:25)\n    at Test.start (node:internal/test_runner/test:1003:17)\n    at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)",
+                "cause_code": "ERR_ASSERTION",
+                "code": "ERR_TEST_FAILURE",
+                "expected": "true",
+                "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+                "name": "AssertionError",
+                "operator": "strictEqual"
+              },
+              "file": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 9y74tcz4\\value.test.mjs",
+              "line": 1,
+              "name": "required",
+              "nesting": 0,
+              "outcome": "assertion-fail"
+            }
+          ]
+        },
+        "syntax": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ""
+        }
+      },
+      "before_sha256": "277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af",
+      "file": "value.mjs",
+      "line": 1,
+      "operator": "literal true -> false",
+      "outcome": "killed-assertion"
+    }
+  ],
+  "run_id": "schema-05dc13d7d83d4b7a9129cc933d9bbebd",
+  "schema_version": 2,
+  "score_pct": 100.0,
+  "source": {
+    "base": "77702646587eb82c20b6233a0140fe3294af4810",
+    "binding_mode": "standalone-source",
+    "files": {
+      ".ai/schema/evidence/runs/schema-00bfc2cb2e7b4cfa982e701c235e7cb5/mutation.json": {
+        "mode": "file",
+        "sha256": "05a31d51f32585f7586a4b35e4627dd050815b47ffe06876c5ba6670f78d9ae7"
+      },
+      ".ai/schema/evidence/runs/schema-0259524c6a5a406498c98d676203dc48/mutation.json": {
+        "mode": "file",
+        "sha256": "66f1d6e5b5a993f194632c22e1500797df79ef17da2975fd622f2afdb562d865"
+      },
+      ".ai/schema/evidence/runs/schema-1d3ba6c952a24b1080333450ff270edb/mutation.json": {
+        "mode": "file",
+        "sha256": "6b3321d717325790173e0b06061bbb29d52760dec17560f9bb55449f213389c7"
+      },
+      ".ai/schema/evidence/runs/schema-536f2a82411344149aba0ab56284adb8/mutation.json": {
+        "mode": "file",
+        "sha256": "199ebe8ddf77db5108f4bbae2b8ae2cd4651b27b5aadb504fe9349c8005029e4"
+      },
+      ".ai/schema/evidence/runs/schema-bf4a71e0179946ef9b417fd28b9bec24/mutation.json": {
+        "mode": "file",
+        "sha256": "5bbb3687a0b1339d6be83e3df32bbcf1c0229669be45f9c4c67781ce5cca1ac3"
+      },
+      ".ai/schema/evidence/runs/schema-c927dfea28e74dcba3fad986861cf1b6/mutation.json": {
+        "mode": "file",
+        "sha256": "2629487722889a20a6c8fb537bb45226e9049ee456a5ce6be0a232d8f1ccaf03"
+      },
+      ".ai/schema/evidence/runs/schema-d610223a9b69429b9ba2824cce34041d/mutation.json": {
+        "mode": "file",
+        "sha256": "d478e15ab77abd47847b0be1e300f43d2ba6f844af99ad0b60bad197a14c1ba6"
+      },
+      ".ai/schema/evidence/runs/schema-f4b0e4583f144843aef59734548a7a06/mutation.json": {
+        "mode": "file",
+        "sha256": "2537748cce6cd1b460fdfc34db0842d637f2aeb818c0255f2e7c842b278458ce"
+      },
+      ".gitignore": {
+        "mode": "file",
+        "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+      },
+      "value.mjs": {
+        "mode": "file",
+        "sha256": "277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af"
+      },
+      "value.test.mjs": {
+        "mode": "file",
+        "sha256": "7791b70d6444670106565b2c1e05b32b80d278cec63c2a899f664c6b83044017"
+      }
+    },
+    "head": "03b290335908a890e102b9e73d601c08041b9e6f",
+    "scope": {
+      "directories": [
+        "."
+      ],
+      "excluded_outputs": [
+        {
+          "path": ".ai/schema/evidence/runs/schema-05dc13d7d83d4b7a9129cc933d9bbebd/metrics.json",
+          "reason": "Exact same-run metrics report published by the invoking probe"
+        },
+        {
+          "path": ".ai/schema/evidence/runs/schema-05dc13d7d83d4b7a9129cc933d9bbebd/mutation.json",
+          "reason": "Exact fresh invocation-owned mutation report"
+        },
+        {
+          "path": ".ai/schema/metrics.json",
+          "reason": "Generated metrics display alias owned by the invoking probe"
+        },
+        {
+          "path": ".git",
+          "reason": "Git administrative metadata, not source inputs"
+        }
+      ],
+      "files": []
+    },
+    "scope_sha256": "40c030a80c46ff217b35e410054fb5656de8cf552dd33c1111c65dc22e86e163"
+  },
+  "survived": 0,
+  "test_run": {
+    "assertions": [],
+    "command": [],
+    "runner": "node-native",
+    "test_files": [
+      "value.test.mjs"
+    ]
+  },
+  "total": 1,
+  "ungraded": 0,
+  "unsupported_scope": []
+}

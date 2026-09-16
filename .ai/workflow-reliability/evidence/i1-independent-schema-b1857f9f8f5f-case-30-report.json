@@ -1,0 +1,270 @@
+{
+  "baseline": {
+    "complete": true,
+    "leaf_count": 1,
+    "logs": [],
+    "schema_version": 1,
+    "tests": [
+      {
+        "file": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 6z5ib8sl\\value.test.mjs",
+        "line": 1,
+        "name": "required",
+        "nesting": 0,
+        "outcome": "pass"
+      }
+    ]
+  },
+  "baseline_artifacts": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"schema_version\":1,\"complete\":true,\"tests\":[{\"file\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space 6z5ib8sl\\\\value.test.mjs\",\"line\":1,\"name\":\"required\",\"nesting\":0,\"outcome\":\"pass\"}],\"leaf_count\":1,\"logs\":[]}\n"
+  },
+  "complete": true,
+  "generated": "2026-09-16T21:01:59+00:00",
+  "killed": 1,
+  "reason": "Measurement completed",
+  "restored_sha256": "6ce8b6b06bd8e9c067d141a29b00cb62eacb6b20295bc918a6e12cba8f18a8ff",
+  "results": [
+    {
+      "after_sha256": "198912ff5f8193b7a498061184a1680a20d1872792b0433c86233817b3fed1e7",
+      "artifacts": {
+        "execution": {
+          "returncode": 1,
+          "stderr": "",
+          "stdout": "{\"schema_version\":1,\"complete\":true,\"tests\":[{\"file\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space 6z5ib8sl\\\\value.test.mjs\",\"line\":1,\"name\":\"required\",\"nesting\":0,\"outcome\":\"assertion-fail\",\"error\":{\"name\":\"AssertionError\",\"code\":\"ERR_TEST_FAILURE\",\"cause_code\":\"ERR_ASSERTION\",\"message\":\"Expected values to be strictly equal:\\n\\nfalse !== true\\n\",\"assertion_stack\":\"AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\\n\\nfalse !== true\\n\\n    at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/evidence/i1-independent-fixture-space%206z5ib8sl/value.test.mjs:1:132)\\n    at Test.runInAsyncScope (node:async_hooks:214:14)\\n    at Test.run (node:internal/test_runner/test:1106:25)\\n    at Test.start (node:internal/test_runner/test:1003:17)\\n    at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)\",\"operator\":\"strictEqual\",\"expected\":\"true\",\"actual\":\"false\"}}],\"leaf_count\":1,\"logs\":[]}\n"
+        },
+        "native": {
+          "complete": true,
+          "leaf_count": 1,
+          "logs": [],
+          "schema_version": 1,
+          "tests": [
+            {
+              "error": {
+                "actual": "false",
+                "assertion_stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/evidence/i1-independent-fixture-space%206z5ib8sl/value.test.mjs:1:132)\n    at Test.runInAsyncScope (node:async_hooks:214:14)\n    at Test.run (node:internal/test_runner/test:1106:25)\n    at Test.start (node:internal/test_runner/test:1003:17)\n    at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)",
+                "cause_code": "ERR_ASSERTION",
+                "code": "ERR_TEST_FAILURE",
+                "expected": "true",
+                "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+                "name": "AssertionError",
+                "operator": "strictEqual"
+              },
+              "file": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 6z5ib8sl\\value.test.mjs",
+              "line": 1,
+              "name": "required",
+              "nesting": 0,
+              "outcome": "assertion-fail"
+            }
+          ]
+        },
+        "syntax": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ""
+        }
+      },
+      "before_sha256": "277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af",
+      "file": "value.mjs",
+      "line": 1,
+      "operator": "literal true -> false",
+      "outcome": "killed-assertion"
+    }
+  ],
+  "run_id": "schema-70165bded28546dab293b62a32627cb9",
+  "schema_version": 2,
+  "score_pct": 100.0,
+  "source": {
+    "base": "b1cb8859cda3eb078d5ea98e1e166929d1c08676",
+    "binding_mode": "standalone-source",
+    "files": {
+      ".ai/schema/evidence/runs/schema-109ea7bba0bb42c48dd8627917205402/mutation.json": {
+        "mode": "file",
+        "sha256": "f240a2aca3cffea0d41bf3098c538646887f6075259350b14d8844b19aa71df4"
+      },
+      ".ai/schema/evidence/runs/schema-133347fbb3a64392b7d489c72278ac53/mutation.json": {
+        "mode": "file",
+        "sha256": "8148152e9dba2107923b68e1f53f1a2410eed5e8db2b184dbe551944a117aa07"
+      },
+      ".ai/schema/evidence/runs/schema-3183e093ad964f048f18f7be1a7d6e0d/mutation.json": {
+        "mode": "file",
+        "sha256": "eb0dca95fa4cc6040b45cfec927fbe39c30ebc26b43858518888d088bda3e5bc"
+      },
+      ".ai/schema/evidence/runs/schema-3433f984a0cb499ba2ba9256ddd423b2/mutation.json": {
+        "mode": "file",
+        "sha256": "cb79c930bfcbcf95c0a067357aed1b2a2903364fc6a31404ab59e6af52e69a13"
+      },
+      ".ai/schema/evidence/runs/schema-3e5f33b2b7dc4d3099b3ae89cf2ec0c7/mutation.json": {
+        "mode": "file",
+        "sha256": "5b978387294597b936eba83a8b330acf1ba43ac75da95730697fbf0559dce6c2"
+      },
+      ".ai/schema/evidence/runs/schema-52743f8ecc6e4dafae2548790df402fc/mutation.json": {
+        "mode": "file",
+        "sha256": "305cc108db82b299095250b2f62144a01b783d3fa6f55827089e6a88a6368b29"
+      },
+      ".ai/schema/evidence/runs/schema-532023b3516a4a4ab2c8d187f0c2e48d/mutation.json": {
+        "mode": "file",
+        "sha256": "5ea8aacb2edc985ad3e7c930435094f56f30f8fbcf5218f3043a8899deba7f49"
+      },
+      ".ai/schema/evidence/runs/schema-582037321a05436d87831ed5689aefec/mutation.json": {
+        "mode": "file",
+        "sha256": "0277e7ba98f1bc5c7ef834e414de1884b344a01ae48fc255a007c39b214f231a"
+      },
+      ".ai/schema/evidence/runs/schema-5a84ea7010134815a85322f154b2644b/mutation.json": {
+        "mode": "file",
+        "sha256": "b184e49037bae8f9056967e680d65daf7f5416f763e42fd34d071ac26e9cd2cf"
+      },
+      ".ai/schema/evidence/runs/schema-5cedb5ec7a85443abff5c103dbef1049/mutation.json": {
+        "mode": "file",
+        "sha256": "4e6e8e988aab2ce67db7a53db7a1a9cea4b024cbee142176676977ec0dc169b0"
+      },
+      ".ai/schema/evidence/runs/schema-68c2e63b4c68431781caaaef2cb9eb3a/mutation.json": {
+        "mode": "file",
+        "sha256": "510bd2dc3e7ca88a8694d906cd36f1625f5a84beb489c1b13a7972169f46fec4"
+      },
+      ".ai/schema/evidence/runs/schema-717509809b1442ad9b7119c25d989e15/mutation.json": {
+        "mode": "file",
+        "sha256": "88406386e37bfe5d658587d17ebdecc8dbaf0decdb7ebb3e38b1e9e9c43a866f"
+      },
+      ".ai/schema/evidence/runs/schema-7224c879dad24bcdbd5fbec2ae5fa08e/mutation.json": {
+        "mode": "file",
+        "sha256": "e70eee0dde9b773938c4d2ab825150fc3bcd2b6870e464ec6ce178ffab4a173d"
+      },
+      ".ai/schema/evidence/runs/schema-76a3a6be5d2d469e98300f4a7222d58c/mutation.json": {
+        "mode": "file",
+        "sha256": "b4ef839d26bde1b3ccd791d3b9e3f9690d8017bf678445ce4513820ab9f959e9"
+      },
+      ".ai/schema/evidence/runs/schema-7e43648953a544cf9f90a9b1d6ff94a3/mutation.json": {
+        "mode": "file",
+        "sha256": "921e536ffa50183fb772601b9b3ef41e76aa2fea094129aa5ee80e7aa08698c9"
+      },
+      ".ai/schema/evidence/runs/schema-8066fe9be4c94be3b09ec8ebbb60276f/mutation.json": {
+        "mode": "file",
+        "sha256": "01cd82bd332a654efb409c4709b80101a91f8b227bcfed1348612ce3e8ca69dc"
+      },
+      ".ai/schema/evidence/runs/schema-8e75ada7b0924e4892cdb25d53847c9b/mutation.json": {
+        "mode": "file",
+        "sha256": "20088d706a259e299b505d9321a7fe53b3fcc850825928b461a8c3bc4b460a38"
+      },
+      ".ai/schema/evidence/runs/schema-99e6c4f6311e42fdb69c65576ec08d87/mutation.json": {
+        "mode": "file",
+        "sha256": "12f40ecdab95c89666381e779598ee4100ab63c71cee666ba525db87a3e93af5"
+      },
+      ".ai/schema/evidence/runs/schema-9c0c054fd8a14e5db4bd7395624c2f7d/mutation.json": {
+        "mode": "file",
+        "sha256": "ec716ebb7d5b4fc1e92427bad01b92f71075eec7a40e415e9ef7be0b68725062"
+      },
+      ".ai/schema/evidence/runs/schema-ae85ba25cc5f4006acf5cd4d7d64e52d/mutation.json": {
+        "mode": "file",
+        "sha256": "b87bf7b7e8aec71a1d986397b78df7584f4a222e5d247283e5d9a410c5f3005a"
+      },
+      ".ai/schema/evidence/runs/schema-b60f73fd88d44883bf36439e6798f1e5/mutation.json": {
+        "mode": "file",
+        "sha256": "516f96eb09c8e3aee0aa455fb131c720f4ac03c58a009af854833439942fea7d"
+      },
+      ".ai/schema/evidence/runs/schema-bd753b40bd8d4150bc3fd1064d23d7d6/mutation.json": {
+        "mode": "file",
+        "sha256": "5b1b4a07f5d0f0e232b4473489f156ce549cfb4f04b638f8c2c9d011c154729f"
+      },
+      ".ai/schema/evidence/runs/schema-c3c4c1f16e454405999922f30c9cbad6/mutation.json": {
+        "mode": "file",
+        "sha256": "ff3b4a86686fd428ed8a5fba1f1e3cc6848dd35491e8084346466d317ac4412d"
+      },
+      ".ai/schema/evidence/runs/schema-cc7a672d3ae444cabe8be358eb80fb69/mutation.json": {
+        "mode": "file",
+        "sha256": "33006f66c429a691d454486a219df2d3e693d2f3bb74abfe7e27f55d569bc81a"
+      },
+      ".ai/schema/evidence/runs/schema-d27c8779699c402790ba19d01f62c08b/mutation.json": {
+        "mode": "file",
+        "sha256": "5e98d1582f79e44408fa97f748308356dfe6f8ce2f56da9bc0580111e26c8ab6"
+      },
+      ".ai/schema/evidence/runs/schema-d52e5e3726c6449cb987d618e592c9e1/mutation.json": {
+        "mode": "file",
+        "sha256": "4991e2a3202945d64bfc7601dd92fdcaf663609b5e6f8fbe908bb68cd1ad1b83"
+      },
+      ".ai/schema/evidence/runs/schema-e667610fcfb14c0b943bbf7dcf896aee/mutation.json": {
+        "mode": "file",
+        "sha256": "df4f5c7b2d38fdaa61fb0f68caec0e51d0f73ff445a0fe4ef973c7083ba2b9a1"
+      },
+      ".ai/schema/evidence/runs/schema-f089104e31174edbbdcfce974903a1d1/mutation.json": {
+        "mode": "file",
+        "sha256": "c9e438e666bf3f3feb3f15b087f2cf811adc678fec0f477c4f15772f3f230323"
+      },
+      ".ai/schema/evidence/runs/schema-f6b2278aa0114737ad3a54ea294ea846/mutation.json": {
+        "mode": "file",
+        "sha256": "6b40a191c564c73d33f7def2fa386b6fac783ab2fdf852aa5c156c7a88de74d6"
+      },
+      ".ai/schema/evidence/runs/schema-fbaf06b0c07441a590ec90d017fdc55b/mutation.json": {
+        "mode": "file",
+        "sha256": "7cbbe35e0e9c94895e78d244a97d29b06290453a676c2488deac20f05814208a"
+      },
+      ".gitignore": {
+        "mode": "file",
+        "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+      },
+      "value.mjs": {
+        "mode": "file",
+        "sha256": "277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af"
+      },
+      "value.test.mjs": {
+        "mode": "file",
+        "sha256": "7791b70d6444670106565b2c1e05b32b80d278cec63c2a899f664c6b83044017"
+      }
+    },
+    "head": "cff8842b6e6bdb87e8948e41ce06a9af8c8705f9",
+    "scope": {
+      "directories": [
+        "."
+      ],
+      "excluded_outputs": [
+        {
+          "path": ".ai/schema/evidence/runs/schema-70165bded28546dab293b62a32627cb9/metrics.json",
+          "reason": "Exact same-run metrics report published by the invoking probe"
+        },
+        {
+          "path": ".ai/schema/evidence/runs/schema-70165bded28546dab293b62a32627cb9/mutation.json",
+          "reason": "Exact fresh invocation-owned mutation report"
+        },
+        {
+          "path": ".ai/schema/metrics.json",
+          "reason": "Generated metrics display alias owned by the invoking probe"
+        },
+        {
+          "path": ".git",
+          "reason": "Git administrative metadata, not source inputs"
+        }
+      ],
+      "files": []
+    },
+    "scope_sha256": "6ce8b6b06bd8e9c067d141a29b00cb62eacb6b20295bc918a6e12cba8f18a8ff"
+  },
+  "survived": 0,
+  "test_run": {
+    "assertions": [],
+    "command": {
+      "argv": [
+        "C:\\Program Files\\nodejs\\node.EXE",
+        "--test-reporter=file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/native_result.mjs",
+        "--test",
+        "value.test.mjs"
+      ],
+      "cwd": ".",
+      "environment": {
+        "NODE_TEST_CONTEXT": null
+      },
+      "idle_seconds": 300,
+      "max_seconds": 300,
+      "runtime": {
+        "executable": "C:\\Program Files\\nodejs\\node.EXE",
+        "observed_version": "v24.11.1"
+      }
+    },
+    "runner": "node-native",
+    "test_files": [
+      "extra.test.mjs"
+    ]
+  },
+  "total": 1,
+  "ungraded": 0,
+  "unsupported_scope": []
+}

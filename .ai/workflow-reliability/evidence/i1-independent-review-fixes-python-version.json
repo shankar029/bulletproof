@@ -1,0 +1,29 @@
+{
+  "name": "review-fixes-python-version",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts/run.py",
+    "--idle",
+    "120",
+    "--max",
+    "1500",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "--version"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "NODE_TEST_CONTEXT": null,
+    "BP_TEST_PYTHON": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe"
+  },
+  "started": "2026-09-16T21:12:17.454386+00:00",
+  "finished": "2026-09-16T21:12:18.147373+00:00",
+  "duration_seconds": 0.693,
+  "exit_code": 0,
+  "idle_seconds": 120,
+  "max_seconds": 1500,
+  "log": ".ai\\workflow-reliability\\evidence\\i1-independent-review-fixes-python-version.log",
+  "log_sha256": "1d0ef696b42240b6e4da7d690c8425e32ebc3a130bfe762302b6dcd92d530efa"
+}

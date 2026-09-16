@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-m",
+    "unittest",
+    "-v",
+    "test_run.CaptureTests.test_cli_forwards_unicode_with_cp1252_parent_encoding"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "test_cli_forwards_unicode_with_cp1252_parent_encoding (test_run.CaptureTests.test_cli_forwards_unicode_with_cp1252_parent_encoding) ... FAIL\n\n======================================================================\nFAIL: test_cli_forwards_unicode_with_cp1252_parent_encoding (test_run.CaptureTests.test_cli_forwards_unicode_with_cp1252_parent_encoding)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\test_run.py\", line 39, in test_cli_forwards_unicode_with_cp1252_parent_encoding\n    self.assertEqual(out, \"\\u2713 \\u0394 \\u65e5\\u672c\\nfinished\\n\")\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: '' != '\\u2713 \\u0394 \\u65e5\\u672c\\nfinished\\n'\n+ \\u2713 \\u0394 \\u65e5\\u672c\n+ finished\n\n\n----------------------------------------------------------------------\nRan 1 test in 1.057s\n\nFAILED (failures=1)\n"
+}

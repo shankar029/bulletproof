@@ -60,10 +60,15 @@ design and plan, review findings, metrics and evidence. The loop reads `state.md
 rather than restarting, which is what makes multi‑increment work survive a crash or a context limit.
 
 ### 3c. Quality is measured, not asserted
-`scripts/probe.py` compares HEAD against the merge‑base in a throwaway worktree (duplication,
+`scripts/probe.py` compares the working tree against the merge‑base in a throwaway worktree (duplication,
 complexity, cycles, dead code, static findings); `scripts/mutate.py` mutates only the changed lines
 and runs the project's own tests to prove the tests assert something. Gates are delta‑based to avoid
 Goodhart effects, with greenfield and front‑end projects detected and judged appropriately.
+Standalone `evidence.py` supplies scoped hashes, atomic reports and an exclusive local lock.
+The shared `native_result.mjs` classifies actual Node test events; process errors are not
+assertion kills. Probe version 2 separates measured status from completeness and rejects stale
+mutation aliases. Required missing collectors (currently diff coverage and architecture rules)
+block the gate. These mechanisms neither initialize a workflow ledger nor authenticate actors.
 
 ### 4. Safe by default
 Feature branches only; PR‑only; **never** commit to `main`/`master`/protected branches. The skill
@@ -178,4 +183,5 @@ That feedback loop, not any single headline number, is the point.
   Playwright/Chromium remains only a dependency of the UI benchmark arm.
 - **Optional analysis tools** (`jscpd`, `lizard`, `madge`, `semgrep`) are installed globally and
   never enter the target project; `scripts/probe.py` reports any missing tool as `unavailable`
-  rather than as a pass. `scripts/mutate.py` needs nothing beyond the project's own test command.
+  rather than as a pass; required unavailable proof makes the gate incomplete/fail.
+  `scripts/mutate.py` classifies direct native Node tests; other runners remain unclassified.

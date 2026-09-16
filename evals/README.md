@@ -87,6 +87,14 @@ patterns are in use and need no special harness support — the oracle is just a
   the mutation kill-rate. (Note: such an oracle must `delete env.NODE_TEST_CONTEXT` before spawning,
   or the nested runner exits 0 even on failing tests.)
 
+The shared native-event reporter in `scripts/native_result.mjs` is used by `runTestQuality`
+and the standalone mutation engine. Assertion causes and baseline test identity establish
+kills, not text that happens to contain `ERR_ASSERTION`. Setup/load/syntax errors, empty
+suites, timeouts and incomplete native outcomes do not count as kills. This does not change
+`parseTap` for other consumers or the corpus's 0.9 threshold; the standalone probe has its
+own 60% threshold and required-proof completeness gate. Fixed fixtures still do not measure
+live-agent workflow compliance or causal model effectiveness.
+
 ## Why JSON, not YAML
 
 To stay **dependency-free** (Node has no built-in YAML parser). `EVAL-PLAN.md` sketches `meta.yaml`;

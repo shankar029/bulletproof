@@ -1,0 +1,185 @@
+{
+  "baseline": {
+    "complete": true,
+    "leaf_count": 1,
+    "logs": [],
+    "schema_version": 1,
+    "tests": [
+      {
+        "file": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space imb8sclu\\packages\\mjs space\\math case.test.mjs",
+        "line": 2,
+        "name": "required boundary",
+        "nesting": 0,
+        "outcome": "pass"
+      }
+    ]
+  },
+  "baseline_artifacts": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"schema_version\":1,\"complete\":true,\"tests\":[{\"file\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space imb8sclu\\\\packages\\\\mjs space\\\\math case.test.mjs\",\"line\":2,\"name\":\"required boundary\",\"nesting\":0,\"outcome\":\"pass\"}],\"leaf_count\":1,\"logs\":[]}\n"
+  },
+  "complete": true,
+  "generated": "2026-09-16T20:05:02+00:00",
+  "killed": 1,
+  "reason": "Measurement completed",
+  "restored_sha256": "134c5e9c74afb962aa54849f9633ed55332b53fe0251423fd5f70c456129ca24",
+  "results": [
+    {
+      "after_sha256": "db098ff72274513a7a84d43bbf4c8070df5c050e66ef9e3aaf58afe7b95c27dc",
+      "artifacts": {
+        "execution": {
+          "returncode": 1,
+          "stderr": "",
+          "stdout": "{\"schema_version\":1,\"complete\":true,\"tests\":[{\"file\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space imb8sclu\\\\packages\\\\mjs space\\\\math case.test.mjs\",\"line\":2,\"name\":\"required boundary\",\"nesting\":0,\"outcome\":\"assertion-fail\",\"error\":{\"name\":\"AssertionError\",\"code\":\"ERR_TEST_FAILURE\",\"cause_code\":\"ERR_ASSERTION\",\"message\":\"Expected values to be strictly equal:\\n\\nfalse !== true\\n\",\"assertion_stack\":\"AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\\n\\nfalse !== true\\n\\n    at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/evidence/i1-independent-fixture-space%20imb8sclu/packages/mjs%20space/math%20case.test.mjs:2:37)\\n    at Test.runInAsyncScope (node:async_hooks:214:14)\\n    at Test.run (node:internal/test_runner/test:1106:25)\\n    at Test.start (node:internal/test_runner/test:1003:17)\\n    at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)\",\"operator\":\"strictEqual\",\"expected\":\"true\",\"actual\":\"false\"}}],\"leaf_count\":1,\"logs\":[]}\n"
+        },
+        "native": {
+          "complete": true,
+          "leaf_count": 1,
+          "logs": [],
+          "schema_version": 1,
+          "tests": [
+            {
+              "error": {
+                "actual": "false",
+                "assertion_stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/evidence/i1-independent-fixture-space%20imb8sclu/packages/mjs%20space/math%20case.test.mjs:2:37)\n    at Test.runInAsyncScope (node:async_hooks:214:14)\n    at Test.run (node:internal/test_runner/test:1106:25)\n    at Test.start (node:internal/test_runner/test:1003:17)\n    at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)",
+                "cause_code": "ERR_ASSERTION",
+                "code": "ERR_TEST_FAILURE",
+                "expected": "true",
+                "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+                "name": "AssertionError",
+                "operator": "strictEqual"
+              },
+              "file": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space imb8sclu\\packages\\mjs space\\math case.test.mjs",
+              "line": 2,
+              "name": "required boundary",
+              "nesting": 0,
+              "outcome": "assertion-fail"
+            }
+          ]
+        },
+        "syntax": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ""
+        }
+      },
+      "before_sha256": "23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056",
+      "file": "packages/mjs space/value.mjs",
+      "line": 1,
+      "operator": "literal true -> false",
+      "outcome": "killed-assertion"
+    },
+    {
+      "after_sha256": "1c634eb2aac076464d11ac9e9b02f91f0b27d4c129b25b47961f9e57dbdc28e0",
+      "artifacts": {
+        "execution": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "{\"schema_version\":1,\"complete\":true,\"tests\":[{\"file\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space imb8sclu\\\\packages\\\\mjs space\\\\math case.test.mjs\",\"line\":2,\"name\":\"required boundary\",\"nesting\":0,\"outcome\":\"pass\"}],\"leaf_count\":1,\"logs\":[]}\n"
+        },
+        "native": {
+          "complete": true,
+          "leaf_count": 1,
+          "logs": [],
+          "schema_version": 1,
+          "tests": [
+            {
+              "file": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space imb8sclu\\packages\\mjs space\\math case.test.mjs",
+              "line": 2,
+              "name": "required boundary",
+              "nesting": 0,
+              "outcome": "pass"
+            }
+          ]
+        },
+        "syntax": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ""
+        }
+      },
+      "before_sha256": "23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056",
+      "file": "packages/mjs space/value.mjs",
+      "line": 2,
+      "operator": "literal true -> false",
+      "outcome": "survived"
+    }
+  ],
+  "run_id": "621b83e5c54749709638068235886f1d",
+  "schema_version": 2,
+  "score_pct": 50.0,
+  "source": {
+    "base": "bc9a4b76929c4d3603153ce228d7922023b9dd2a",
+    "binding_mode": "standalone-source",
+    "files": {
+      ".gitignore": {
+        "mode": "file",
+        "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+      },
+      "packages/mjs space/math case.test.mjs": {
+        "mode": "file",
+        "sha256": "8b0f0132e7f1128a7c5d5c2e9829b7d676f57e5bb951bad6b83a387afd45adfb"
+      },
+      "packages/mjs space/value.mjs": {
+        "mode": "file",
+        "sha256": "23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056"
+      }
+    },
+    "head": "018ee55f0e19545a405b20542980aecc27add87b",
+    "scope": {
+      "directories": [
+        "."
+      ],
+      "excluded_outputs": [
+        {
+          "path": ".ai/mjs/evidence/runs/621b83e5c54749709638068235886f1d/metrics.json",
+          "reason": "Exact same-run metrics report published by the invoking probe"
+        },
+        {
+          "path": ".ai/mjs/evidence/runs/621b83e5c54749709638068235886f1d/mutation.json",
+          "reason": "Exact fresh invocation-owned mutation report"
+        },
+        {
+          "path": ".ai/mjs/metrics.json",
+          "reason": "Generated metrics display alias owned by the invoking probe"
+        },
+        {
+          "path": ".git",
+          "reason": "Git administrative metadata, not source inputs"
+        }
+      ],
+      "files": []
+    },
+    "scope_sha256": "134c5e9c74afb962aa54849f9633ed55332b53fe0251423fd5f70c456129ca24"
+  },
+  "survived": 1,
+  "test_run": {
+    "assertions": [],
+    "command": {
+      "argv": [
+        "C:\\Program Files\\nodejs\\node.EXE",
+        "--test-reporter=file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/native_result.mjs",
+        "--test",
+        "math case.test.mjs"
+      ],
+      "cwd": "packages/mjs space",
+      "environment": {
+        "NODE_TEST_CONTEXT": null
+      },
+      "idle_seconds": 300,
+      "max_seconds": 300,
+      "runtime": {
+        "executable": "C:\\Program Files\\nodejs\\node.EXE",
+        "observed_version": "v24.11.1"
+      }
+    },
+    "runner": "node-native",
+    "test_files": [
+      "packages/mjs space/math case.test.mjs"
+    ]
+  },
+  "total": 2,
+  "ungraded": 0,
+  "unsupported_scope": []
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "Real pre-existing behavior red, original source executed; not an import-error red",
+  "base": "bcc971d3b64559127dfc43eb0bfd4348c42803ca",
+  "baseline_run_sha256": "a542e2a6bcc9e0499c33a0a3054cc0ffb3bc0b530e1e29ebb6c9dd81b1bcfdf3",
+  "command": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-c",
+    "import sys;sys.stdout.buffer.write(bytes.fromhex('c3a95fe697a5e69cac'));sys.stderr.buffer.write(b'error')"
+  ],
+  "result": [
+    0,
+    "Ã©_æ—¥æœ¬",
+    "error"
+  ],
+  "expected_stdout": "é_日本",
+  "utf8_matches": false,
+  "resource_warnings": [
+    "unclosed file <_io.TextIOWrapper name=4 encoding='cp1252'>",
+    "unclosed file <_io.TextIOWrapper name=3 encoding='cp1252'>"
+  ]
+}

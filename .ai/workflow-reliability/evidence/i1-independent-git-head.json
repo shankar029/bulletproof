@@ -1,0 +1,32 @@
+{
+  "name": "git-head",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts/run.py",
+    "--idle",
+    "120",
+    "--max",
+    "900",
+    "--",
+    "git",
+    "--no-pager",
+    "log",
+    "-1",
+    "--format=%H %D"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "NODE_TEST_CONTEXT": null,
+    "BP_TEST_PYTHON": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe"
+  },
+  "started": "2026-09-16T19:46:13.562162+00:00",
+  "finished": "2026-09-16T19:46:14.277131+00:00",
+  "duration_seconds": 0.715,
+  "exit_code": 0,
+  "idle_seconds": 120,
+  "max_seconds": 900,
+  "log": ".ai\\workflow-reliability\\evidence\\i1-independent-git-head.log",
+  "log_sha256": "7cebf79e53eb547575cbc246f7f7a6b63221ced0758b69261b5877e911824d57"
+}

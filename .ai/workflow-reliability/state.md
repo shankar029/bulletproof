@@ -5,7 +5,7 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: planning; research and revised design accepted, no implementation started.
+- Phase: I1 functional preservation approved; quality closure blocked; I2/I3 not started.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
 - Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
@@ -36,7 +36,84 @@
 - No repeated uncoached model-effectiveness study claimed by deterministic tests.
 
 ## Next action
-Separate fresh-context planning and consumer readiness; then independently verifiable P0 implementation.
+Preserve the independently verified/reviewed I1 source and evidence on the existing branch.
+The next implementation prerequisite is actual supported quality collection, including
+diff coverage and architecture rules, plus whole-change mutation proof. Only then can
+I1.T4 close and I2.T1 begin. Do not infer permission to waive these checks.
+
+## Implementation checkpoint
+- Compaction occurred during I1. Re-anchored from state, research, revised design and source;
+  this is not the planned fresh-agent resume experiment. The increment was too large for
+  one context and must not be represented as an uninterrupted execution.
+- Standalone evidence primitives and ten initial tests implemented.
+- Probe behavioral red: five existing-behavior tests produced seven assertion failures
+  before implementation (`evidence/i1-probe-red.log`).
+- First probe run after implementation: 13 tests pass (`evidence/i1-probe-tests.log`);
+  additional validation is still pending. Missing-new-API failures were not counted as red.
+- Native mutation/reporter lane is owned by a separate implementer. Integrated proof and
+  independent verification/review have not happened yet.
+- Required unsupported collectors remain an explicit advancement blocker, not an exception
+  granted by these functional test passes.
+- Integration found and corrected a shared-run-directory collision between probe and mutation.
+  The positive real-CLI test now measures a genuine 100% assertion kill while the overall
+  report correctly remains incomplete (`evidence/i1-probe-positive-integration.log`).
+- Full native/corpus runs exposed a Windows CLI stdout encoding error and a genuine corpus
+  threshold failure: csv-stats-cli scored 8/9, below 0.9. Both are under investigation;
+  neither run is a pass and the threshold has not been weakened.
+- Integrated Python run: 47/47 passed before additional command-binding/freshness checks.
+  The added post-publication check then showed parent metrics immediately stale the child
+  source hash (`evidence/i1-child-freshness-red.log`). Reopened output-ownership integration:
+  exact same-run generated report paths must be excluded, not arbitrary contracts. Recorded
+  the clarification in design-contracts.json; independent review must include this delta.
+- Actual probe run `66575942a94040d0b4d7c160f4107d5e` exited 1 with
+  measurement_status=unavailable, completeness=incomplete and verdict=fail. All nine required
+  metrics lacked complete proof; diff coverage and architecture have no implemented
+  collector. This observation is historical after subsequent edits, not final fresh proof.
+  No waiver or advancement to I2 was made.
+- Final local integration after the shared-output/encoding/CSV fixes: 49 Python tests,
+  62 native tests and all ten fixed tasks passed. CSV now has 9/9 graded kills with seven
+  ungraded, not an altered threshold. Independent verifier is running on the integrated
+  code; subsequent small malformed-report guards require its affected revalidation.
+- Planning execution details now explicitly record owned OS-temp fixtures and actual
+  30/60-second default child bounds (probe fixture max 180), rather than implying the
+  initially proposed scratch path and 15/45 bounds were used.
+- Independent verifier found F1: parent probe's broad evidence-directory exclusion hid
+  unrelated contract/evidence edits. Accepted and narrowed to exact current report paths;
+  the verifier's failing public CLI test was preserved. Its bounded revalidation is running.
+- Verifier resolved F2 after ordinary whitespace checks passed with explicit CR-at-EOL
+  handling for byte-preserved task artifacts; default whitespace checks remain enabled.
+  Raw findings/dispositions are indexed in review.md. Separate code review is still pending.
+- Independent F1 revalidation accepted: 53/53 Python tests and the 3/3 added public
+  measurement tests passed. All 21 source/test/contract hashes stayed unchanged.
+  Native 62/62 and ten-task/79-assertion corpus evidence remains valid for unchanged code.
+  The freshly observed actual probe was immediately source-fresh but still incomplete/fail
+  with nine missing required measurements. Copying archival evidence afterward is recorded
+  separately; it does not turn that observation into a final-tree quality pass.
+- Separate review returned REVISE with reproduced R1/R2, preserved in
+  `evidence/i1-code-review-r1.md`: missing/contradictory mutation results were accepted,
+  while valid `node --test` discovery expansion was rejected. Both findings accepted.
+  Shared producer-owned result reconciliation and canonical command selection replace
+  the weak consumer checks. Local 4/4 E2E and 19/19 probe tests pass, including 28
+  real-producer schema cases. Independent full revalidation is running; prior acceptance
+  is reopened for affected code and a separate re-review is still required.
+- Independent R1/R2 revalidation accepted: 54/54 full Python tests (704.748 seconds),
+  4/4 separate E2E tests, one accepted control and 30 rejected report corruptions in
+  both runs. All 98 final-manifest inputs rechecked unchanged; 85 Node/corpus inputs
+  preserve the 62-test / ten-task proof. Actual probe run
+  `72f1ccc1a361421999706176c4ab7dc4` was immediately fresh but remains incomplete/fail
+  with nine missing measurements. Separate reviewer has been asked for re-review.
+- Final separate review: APPROVE for limited local functional preservation
+  (`evidence/i1-code-review-r2.md`). R1/R2 resolved; packaging-only R3 was independently
+  re-anchored and staged whitespace checks passed. Preserve the qualified manifest:
+  97/98 inputs unchanged plus the separately reviewed .gitattributes hash, not "98 unchanged".
+- Parent accepts functional AC01/AC02 and the regression/review portion of AC09.
+  I1.T4 remains blocked by required actual quality proof. Guarded transitions, resume,
+  temporal contracts, held-out diagnosis and authoritative status integration are not
+  implemented. This is a partial preservation, not completion of the prioritized request.
+- Final report: `report.html`. A final read-only/source-fresh probe will update only its
+  exact generated reports before the preservation commit. Its expected incomplete/fail
+  outcome must be confirmed, not described as a green gate. Commit SHA is handed off in
+  the session response rather than inserted recursively into its own source-bound artifacts.
 
 ## Gate 1 acceptance
 - Research: `research.md`, inspected at the base snapshot; all nine ACs covered.
@@ -52,3 +129,10 @@ Separate fresh-context planning and consumer readiness; then independently verif
 - The design no longer invents a restriction on private owned temporary directories or an unavailable host isolation API.
 - Parent rendered r2 through agent-browser: three printed pages, two visible diagrams, zero browser errors/console messages (`evidence/document-rendering.json`).
 - Parent accepts the design under autopilot. Human design approval remains unconfirmed; no approval was inferred from silence.
+
+## Gate 3 consumer readiness
+- Separate fresh-context `plan.html` / `tasks.json` r1 received: 11 tasks, three ordered increments, explicit owners, argv, bounds and assertions.
+- Parent walked I1.T1: approved standalone interfaces and stdlib tests are sufficient; no future workflow files are needed.
+- Parent walked I1.T4 -> I2.T1: independent verification/review and required quality proof are prerequisites. Missing collectors and broader-language mutation remain a named advancement risk, not a waived check or an assumed future pass.
+- Final design and plan each render to three pages; all three diagrams are visible and browser errors/console messages are empty.
+- Planned commands are not execution evidence. New module import failures will not be counted as behavioral red.

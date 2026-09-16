@@ -31,6 +31,8 @@ Markers (always on their own line, easy to grep from a transcript):
     [run] max-timeout after Ns — killed "<label>" (exit 125)
 """
 import argparse
+import codecs
+import io
 import os
 import signal
 import subprocess
@@ -62,13 +64,13 @@ def _kill_tree(proc):
             pass
 
 
-def _popen(cmd, cwd=None, merge_stderr=True):
+def _popen(cmd, cwd=None, merge_stderr=True, *, env=None):
     kwargs = dict(
         cwd=cwd,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT if merge_stderr else subprocess.PIPE,
-        bufsize=1,
-        universal_newlines=True,
+        bufsize=0,
+        env=env,
     )
     if os.name == "nt":
         kwargs["creationflags"] = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
@@ -77,7 +79,7 @@ def _popen(cmd, cwd=None, merge_stderr=True):
     return subprocess.Popen(cmd, **kwargs)
 
 
-def run_capture(cmd, cwd=None, idle=300.0, max_total=0.0):
+def run_capture(cmd, cwd=None, idle=300.0, max_total=0.0, *, env=None):
     """Run `cmd`, capturing output, under an *idle* timeout that resets on every
     chunk of output. Kills the whole process tree on silence so no child holds a
     lock. Never raises. Returns (rc, stdout, stderr):
@@ -88,7 +90,7 @@ def run_capture(cmd, cwd=None, idle=300.0, max_total=0.0):
     Callers get an idle-hang as rc 124 exactly like GNU `timeout`.
     """
     try:
-        proc = _popen(cmd, cwd=cwd, merge_stderr=False)
+        proc = _popen(cmd, cwd=cwd, merge_stderr=False, env=env)
     except FileNotFoundError:
         return 127, "", "not found"
     except Exception as exc:  # noqa: BLE001
@@ -99,10 +101,16 @@ def run_capture(cmd, cwd=None, idle=300.0, max_total=0.0):
     lock = threading.Lock()
 
     def pump(stream, sink):
-        for line in stream:
-            with lock:
-                last[0] = time.monotonic()
-            sink.append(line)
+        decoder = io.IncrementalNewlineDecoder(
+            codecs.getincrementaldecoder("utf-8")(errors="replace"), translate=True)
+        try:
+            while chunk := stream.read(4096):
+                with lock:
+                    last[0] = time.monotonic()
+                sink.append(decoder.decode(chunk))
+            sink.append(decoder.decode(b"", final=True))
+        finally:
+            stream.close()
 
     threads = [
         threading.Thread(target=pump, args=(proc.stdout, out_chunks), daemon=True),
@@ -141,6 +149,11 @@ def run_capture(cmd, cwd=None, idle=300.0, max_total=0.0):
 
 
 def main() -> int:
+    # The child stream is UTF-8; forwarding through a redirected Windows
+    # cp1252 TextIOWrapper otherwise crashes the pump thread and loses logs.
+    # Configure the CLI's actual sinks, independent of inherited locale/env.
+    for stream in (sys.stdout, sys.stderr):
+        stream.reconfigure(encoding="utf-8", errors="backslashreplace")
     parser = argparse.ArgumentParser(add_help=True)
     parser.add_argument("--idle", type=float, default=60.0)
     parser.add_argument("--max", type=float, default=0.0)
@@ -162,6 +175,8 @@ def main() -> int:
         stderr=subprocess.STDOUT,
         bufsize=1,
         universal_newlines=True,
+        encoding="utf-8",
+        errors="replace",
     )
     if os.name == "nt":
         popen_kwargs["creationflags"] = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
@@ -178,11 +193,14 @@ def main() -> int:
     def pump():
         nonlocal last_output
         assert proc.stdout is not None
-        for line in proc.stdout:
-            with lock:
-                last_output = time.monotonic()
-            sys.stdout.write(line)
-            sys.stdout.flush()
+        try:
+            for line in proc.stdout:
+                with lock:
+                    last_output = time.monotonic()
+                sys.stdout.write(line)
+                sys.stdout.flush()
+        finally:
+            proc.stdout.close()
 
     pump_thread = threading.Thread(target=pump, daemon=True)
     pump_thread.start()

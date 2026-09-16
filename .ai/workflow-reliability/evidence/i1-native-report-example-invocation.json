@@ -1,0 +1,24 @@
+{
+  "kind": "Actual standalone CLI fixture result; owned temp repository cleaned after capture",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\mutate.py",
+    "--repo",
+    "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-215anqxp",
+    "--slug",
+    "fixture",
+    "--base",
+    "5bba61c01437d1a3202b1ab6425e6300036115d9",
+    "--run-id",
+    "00b8b5ccd440418a8a910bf3d70f804f",
+    "--timeout",
+    "5"
+  ],
+  "returncode": 0,
+  "original_report_path": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-215anqxp\\.ai\\fixture\\evidence\\runs\\00b8b5ccd440418a8a910bf3d70f804f\\mutation.json",
+  "copied_report": "i1-native-report-example.json",
+  "fixture_replay": "scripts/tests/test_mutate.py: MutationTests.prepare + MutationTests.cli",
+  "score_pct": 50.0,
+  "complete": true,
+  "restored": true
+}

@@ -1,0 +1,33 @@
+[
+  {
+    "command": [
+      "node",
+      "--test",
+      "evals/lib/native_result.test.mjs",
+      "evals/lib/score.test.mjs"
+    ],
+    "result": [
+      0,
+      "(node:40812) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ native reporter counts only real leaves and explicitly serializes assertion causes (215.7272ms)\n✔ test parents with nested subtests are containers, not duplicate leaves (229.7666ms)\n✔ stdout spoofing is quoted data, never assertion proof (422.1973ms)\n✔ zero tests, syntax errors and import failures cannot be kills (790.5106ms)\n✔ setup and hooks take precedence over mixed genuine assertion failures (865.7203ms)\n✔ skip/todo/cancellation and missing required baseline inventory are ungraded (1118.0663ms)\n✔ timeout and malformed/truncated reports fail closed (487.2402ms)\n✔ syntax preflight uses the native TS parser without executing product code (320.9529ms)\n(node:23272) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ parseTap reads counts from a green TAP summary (2.0504ms)\n✔ parseTap reads a failing summary (0.8083ms)\n✔ parseTap returns zeros when the runner crashed (no summary) (0.1021ms)\n✔ toDimensions maps a fully-probed arm to all-1s (0.1361ms)\n✔ toDimensions returns null for unprobed dimensions (0.105ms)\n✔ toDimensions scores accuracy 0 when no tests ran (0.0594ms)\n✔ toDimensions flips duplication/scope/extensibility to 0 on a hit/failure (0.0692ms)\n✔ toDimensions scores partial reuse as a fraction (0.1083ms)\n✔ composite of a single dimension equals that dimension (0.1941ms)\n✔ composite renormalizes over non-null dimensions — n/a never drags the score (0.1859ms)\n✔ composite blends present dimensions by renormalized weight (0.2614ms)\n✔ composite handles weights that do not sum to 1 (0.0889ms)\n✔ composite is 0 when every dimension is n/a (0.0807ms)\n✔ composite ignores a present dimension absent from weights (pins a config footgun) (0.0612ms)\n✔ hasForbiddenDep flags a forbidden name in dependencies or devDependencies (0.0978ms)\n✔ hasForbiddenDep is false when no forbidden dep is declared directly (0.0558ms)\n✔ hasForbiddenDep ignores absent manifest / empty name list (0.0559ms)\n✔ hasE2E detects real CLI spawn / HTTP / browser driving (0.0919ms)\n✔ hasE2E is false for unit-only tests, empty sources, or no patterns (0.0397ms)\n✔ toDimensions surfaces e2e (1 when a matching test ships, 0 when checked but absent) (0.0664ms)\n✔ testQualityScore: absent or broken arm tests are a real 0, not null (0.0397ms)\n✔ testQualityScore: tests present but not runnable by the runner → 0 (distinct from no-tests) (0.0408ms)\n✔ testQualityScore: kill-rate over graded mutants; skipped excluded (0.0436ms)\n✔ testQualityScore: not applicable, or no valid mutants, is null (0.0361ms)\n✔ toDimensions surfaces testQuality from the probe (0.0467ms)\n✔ runTestQuality: bulletproof paginator kills every mutant; baseline ships no tests (4887.3338ms)\n✔ runTestQuality: not applicable when the task does not opt in via quality.mutate (0.2017ms)\n✔ runTestQuality: native assertions kill, shallow tests survive, logs do not kill (1160.9016ms)\n✔ runTestQuality: setup, spoofed error, zero/missing inventory and skip are not fake kills (3031.3003ms)\n✔ runTestQuality: file wrappers and broken/skipped baselines retain eval zero semantics (1012.245ms)\nℹ tests 38\nℹ suites 0\nℹ pass 38\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 10260.9883\n",
+      ""
+    ]
+  },
+  {
+    "command": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts/tests",
+      "-p",
+      "test_run.py",
+      "-v"
+    ],
+    "result": [
+      1,
+      "",
+      "test_idle_and_total_timeouts (test_run.CaptureTests.test_idle_and_total_timeouts) ... ok\r\ntest_legacy_signature_and_missing_program (test_run.CaptureTests.test_legacy_signature_and_missing_program) ... FAIL\r\ntest_partial_lines_count_as_progress (test_run.CaptureTests.test_partial_lines_count_as_progress) ... ok\r\ntest_utf8_env_and_stream_cleanup (test_run.CaptureTests.test_utf8_env_and_stream_cleanup) ... ok\r\n\r\n======================================================================\r\nFAIL: test_legacy_signature_and_missing_program (test_run.CaptureTests.test_legacy_signature_and_missing_program)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\test_run.py\", line 27, in test_legacy_signature_and_missing_program\r\n    self.assertEqual(run_capture([sys.executable, \"-c\", \"print('ok')\"], None, 10, 15),\r\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n                     (0, \"ok\\n\", \"\"))\r\n                     ^^^^^^^^^^^^^^^^\r\nAssertionError: Tuples differ: (0, 'ok\\r\\n', '') != (0, 'ok\\n', '')\r\n\r\nFirst differing element 1:\r\n'ok\\r\\n'\r\n'ok\\n'\r\n\r\n- (0, 'ok\\r\\n', '')\r\n?         --\r\n\r\n+ (0, 'ok\\n', '')\r\n\r\n----------------------------------------------------------------------\r\nRan 4 tests in 4.726s\r\n\r\nFAILED (failures=1)\r\n"
+    ]
+  }
+]

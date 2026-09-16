@@ -1,0 +1,11 @@
+# Agent-in-the-loop — paginator (dry-run)
+
+## baseline
+- run 1/1: composite 1.00 · acc 1.00 · test-real 1.00 · 0s
+
+## bulletproof
+- run 1/1: composite 1.00 · acc 1.00 · test-real 1.00 · 0s
+
+Δ bulletproof − baseline (mean composite): +0.00  ·  clean-rate 100% → 100%
+(node:28484) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)

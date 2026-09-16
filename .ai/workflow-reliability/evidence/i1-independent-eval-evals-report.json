@@ -1,0 +1,637 @@
+{
+  "generated": "2026-09-16T19:49:44.838Z",
+  "results": [
+    {
+      "task": "csv-stats-cli",
+      "dimensions": {
+        "changeType": "greenfield",
+        "surface": "cli",
+        "stack": "ts-node",
+        "difficulty": "standard"
+      },
+      "arm": "baseline",
+      "fn": {
+        "pass": 0,
+        "tests": 8
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": true,
+        "runnable": true,
+        "greenBaseline": false
+      },
+      "dims": {
+        "accuracy": 0,
+        "reuse": 0,
+        "duplication": 1,
+        "extensibility": 0,
+        "scope": null,
+        "e2e": 1,
+        "testQuality": 0
+      },
+      "composite": 0.20689655172413796,
+      "failed": false
+    },
+    {
+      "task": "csv-stats-cli",
+      "dimensions": {
+        "changeType": "greenfield",
+        "surface": "cli",
+        "stack": "ts-node",
+        "difficulty": "standard"
+      },
+      "arm": "bulletproof",
+      "fn": {
+        "pass": 8,
+        "tests": 8
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": true,
+        "runnable": true,
+        "greenBaseline": true,
+        "killed": 9,
+        "survived": 0,
+        "skipped": 7,
+        "total": 16
+      },
+      "dims": {
+        "accuracy": 1,
+        "reuse": 1,
+        "duplication": 1,
+        "extensibility": 1,
+        "scope": null,
+        "e2e": 1,
+        "testQuality": 1
+      },
+      "composite": 1,
+      "failed": false
+    },
+    {
+      "task": "discount-api",
+      "dimensions": {
+        "changeType": "greenfield",
+        "surface": "api",
+        "stack": "ts-node",
+        "difficulty": "standard"
+      },
+      "arm": "baseline",
+      "fn": {
+        "pass": 11,
+        "tests": 20
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": true,
+        "runnable": true,
+        "greenBaseline": true,
+        "killed": 1,
+        "survived": 5,
+        "skipped": 0,
+        "total": 6
+      },
+      "dims": {
+        "accuracy": 0.55,
+        "reuse": 0,
+        "duplication": 0,
+        "extensibility": 0,
+        "scope": null,
+        "e2e": 0,
+        "testQuality": 0.16666666666666666
+      },
+      "composite": 0.2183908045977012,
+      "failed": false
+    },
+    {
+      "task": "discount-api",
+      "dimensions": {
+        "changeType": "greenfield",
+        "surface": "api",
+        "stack": "ts-node",
+        "difficulty": "standard"
+      },
+      "arm": "bulletproof",
+      "fn": {
+        "pass": 20,
+        "tests": 20
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": true,
+        "runnable": true,
+        "greenBaseline": true,
+        "killed": 10,
+        "survived": 0,
+        "skipped": 6,
+        "total": 16
+      },
+      "dims": {
+        "accuracy": 1,
+        "reuse": 1,
+        "duplication": 1,
+        "extensibility": 1,
+        "scope": null,
+        "e2e": 1,
+        "testQuality": 1
+      },
+      "composite": 1,
+      "failed": false
+    },
+    {
+      "task": "expr-eval",
+      "dimensions": {
+        "changeType": "greenfield",
+        "surface": "library",
+        "stack": "ts-node",
+        "difficulty": "gnarly"
+      },
+      "arm": "baseline",
+      "fn": {
+        "pass": 5,
+        "tests": 13
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": false
+      },
+      "dims": {
+        "accuracy": 0.38461538461538464,
+        "reuse": 0,
+        "duplication": null,
+        "extensibility": null,
+        "scope": 1,
+        "e2e": null,
+        "testQuality": 0
+      },
+      "composite": 0.33538461538461534,
+      "failed": false
+    },
+    {
+      "task": "expr-eval",
+      "dimensions": {
+        "changeType": "greenfield",
+        "surface": "library",
+        "stack": "ts-node",
+        "difficulty": "gnarly"
+      },
+      "arm": "bulletproof",
+      "fn": {
+        "pass": 13,
+        "tests": 13
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": true,
+        "runnable": true,
+        "greenBaseline": true,
+        "killed": 7,
+        "survived": 0,
+        "skipped": 9,
+        "total": 16
+      },
+      "dims": {
+        "accuracy": 1,
+        "reuse": 1,
+        "duplication": null,
+        "extensibility": null,
+        "scope": 1,
+        "e2e": null,
+        "testQuality": 1
+      },
+      "composite": 1,
+      "failed": false
+    },
+    {
+      "task": "map-limit",
+      "dimensions": {
+        "changeType": "greenfield",
+        "surface": "library",
+        "stack": "ts-node",
+        "difficulty": "gnarly"
+      },
+      "arm": "baseline",
+      "fn": {
+        "pass": 5,
+        "tests": 7
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": false
+      },
+      "dims": {
+        "accuracy": 0.7142857142857143,
+        "reuse": null,
+        "duplication": null,
+        "extensibility": null,
+        "scope": null,
+        "e2e": null,
+        "testQuality": 0
+      },
+      "composite": 0.5714285714285714,
+      "failed": false
+    },
+    {
+      "task": "map-limit",
+      "dimensions": {
+        "changeType": "greenfield",
+        "surface": "library",
+        "stack": "ts-node",
+        "difficulty": "gnarly"
+      },
+      "arm": "bulletproof",
+      "fn": {
+        "pass": 7,
+        "tests": 7
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": true,
+        "runnable": true,
+        "greenBaseline": true,
+        "killed": 2,
+        "survived": 0,
+        "skipped": 1,
+        "total": 3
+      },
+      "dims": {
+        "accuracy": 1,
+        "reuse": null,
+        "duplication": null,
+        "extensibility": null,
+        "scope": null,
+        "e2e": null,
+        "testQuality": 1
+      },
+      "composite": 1,
+      "failed": false
+    },
+    {
+      "task": "median-backfill",
+      "dimensions": {
+        "changeType": "test-backfill",
+        "surface": "library",
+        "stack": "ts-node",
+        "difficulty": "standard"
+      },
+      "arm": "baseline",
+      "fn": {
+        "pass": 2,
+        "tests": 6
+      },
+      "tq": {
+        "applicable": false
+      },
+      "dims": {
+        "accuracy": 0.3333333333333333,
+        "reuse": null,
+        "duplication": null,
+        "extensibility": null,
+        "scope": 1,
+        "e2e": null,
+        "testQuality": null
+      },
+      "composite": 0.4666666666666667,
+      "failed": false
+    },
+    {
+      "task": "median-backfill",
+      "dimensions": {
+        "changeType": "test-backfill",
+        "surface": "library",
+        "stack": "ts-node",
+        "difficulty": "standard"
+      },
+      "arm": "bulletproof",
+      "fn": {
+        "pass": 6,
+        "tests": 6
+      },
+      "tq": {
+        "applicable": false
+      },
+      "dims": {
+        "accuracy": 1,
+        "reuse": null,
+        "duplication": null,
+        "extensibility": null,
+        "scope": 1,
+        "e2e": null,
+        "testQuality": null
+      },
+      "composite": 1,
+      "failed": false
+    },
+    {
+      "task": "order-fsm",
+      "dimensions": {
+        "changeType": "refactor",
+        "surface": "library",
+        "stack": "ts-node",
+        "difficulty": "standard"
+      },
+      "arm": "baseline",
+      "fn": {
+        "pass": 3,
+        "tests": 6
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": false
+      },
+      "dims": {
+        "accuracy": 0.5,
+        "reuse": null,
+        "duplication": null,
+        "extensibility": 0,
+        "scope": null,
+        "e2e": null,
+        "testQuality": 0
+      },
+      "composite": 0.24,
+      "failed": false
+    },
+    {
+      "task": "order-fsm",
+      "dimensions": {
+        "changeType": "refactor",
+        "surface": "library",
+        "stack": "ts-node",
+        "difficulty": "standard"
+      },
+      "arm": "bulletproof",
+      "fn": {
+        "pass": 6,
+        "tests": 6
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": true,
+        "runnable": true,
+        "greenBaseline": true,
+        "killed": 0,
+        "survived": 0,
+        "skipped": 0,
+        "total": 0
+      },
+      "dims": {
+        "accuracy": 1,
+        "reuse": null,
+        "duplication": null,
+        "extensibility": 1,
+        "scope": null,
+        "e2e": null,
+        "testQuality": null
+      },
+      "composite": 1,
+      "failed": false
+    },
+    {
+      "task": "paginator",
+      "dimensions": {
+        "changeType": "bugfix",
+        "surface": "library",
+        "stack": "ts-node",
+        "difficulty": "standard"
+      },
+      "arm": "baseline",
+      "fn": {
+        "pass": 2,
+        "tests": 6
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": false
+      },
+      "dims": {
+        "accuracy": 0.3333333333333333,
+        "reuse": 0,
+        "duplication": null,
+        "extensibility": null,
+        "scope": null,
+        "e2e": null,
+        "testQuality": 0
+      },
+      "composite": 0.18666666666666665,
+      "failed": false
+    },
+    {
+      "task": "paginator",
+      "dimensions": {
+        "changeType": "bugfix",
+        "surface": "library",
+        "stack": "ts-node",
+        "difficulty": "standard"
+      },
+      "arm": "bulletproof",
+      "fn": {
+        "pass": 6,
+        "tests": 6
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": true,
+        "runnable": true,
+        "greenBaseline": true,
+        "killed": 11,
+        "survived": 0,
+        "skipped": 2,
+        "total": 13
+      },
+      "dims": {
+        "accuracy": 1,
+        "reuse": 1,
+        "duplication": null,
+        "extensibility": null,
+        "scope": null,
+        "e2e": null,
+        "testQuality": 1
+      },
+      "composite": 1,
+      "failed": false
+    },
+    {
+      "task": "shape-area",
+      "dimensions": {
+        "changeType": "refactor",
+        "surface": "library",
+        "stack": "ts-node",
+        "difficulty": "standard"
+      },
+      "arm": "baseline",
+      "fn": {
+        "pass": 3,
+        "tests": 4
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": false
+      },
+      "dims": {
+        "accuracy": 0.75,
+        "reuse": 0,
+        "duplication": 0,
+        "extensibility": 0,
+        "scope": null,
+        "e2e": null,
+        "testQuality": 0
+      },
+      "composite": 0.24000000000000005,
+      "failed": false
+    },
+    {
+      "task": "shape-area",
+      "dimensions": {
+        "changeType": "refactor",
+        "surface": "library",
+        "stack": "ts-node",
+        "difficulty": "standard"
+      },
+      "arm": "bulletproof",
+      "fn": {
+        "pass": 4,
+        "tests": 4
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": true,
+        "runnable": true,
+        "greenBaseline": true,
+        "killed": 5,
+        "survived": 0,
+        "skipped": 0,
+        "total": 5
+      },
+      "dims": {
+        "accuracy": 1,
+        "reuse": 1,
+        "duplication": 1,
+        "extensibility": 1,
+        "scope": null,
+        "e2e": null,
+        "testQuality": 1
+      },
+      "composite": 1,
+      "failed": false
+    },
+    {
+      "task": "signup-form",
+      "dimensions": {
+        "changeType": "greenfield",
+        "surface": "ui",
+        "stack": "web",
+        "difficulty": "standard"
+      },
+      "arm": "baseline",
+      "fn": {
+        "pass": 3,
+        "tests": 7
+      },
+      "tq": {
+        "applicable": false
+      },
+      "dims": {
+        "accuracy": 0.42857142857142855,
+        "reuse": 0,
+        "duplication": 1,
+        "extensibility": null,
+        "scope": null,
+        "e2e": null,
+        "testQuality": null
+      },
+      "composite": 0.3928571428571429,
+      "failed": false
+    },
+    {
+      "task": "signup-form",
+      "dimensions": {
+        "changeType": "greenfield",
+        "surface": "ui",
+        "stack": "web",
+        "difficulty": "standard"
+      },
+      "arm": "bulletproof",
+      "fn": {
+        "pass": 7,
+        "tests": 7
+      },
+      "tq": {
+        "applicable": false
+      },
+      "dims": {
+        "accuracy": 1,
+        "reuse": 1,
+        "duplication": 1,
+        "extensibility": null,
+        "scope": null,
+        "e2e": null,
+        "testQuality": null
+      },
+      "composite": 1,
+      "failed": false
+    },
+    {
+      "task": "uid",
+      "dimensions": {
+        "changeType": "greenfield",
+        "surface": "library",
+        "stack": "ts-node",
+        "difficulty": "trap"
+      },
+      "arm": "baseline",
+      "fn": {
+        "pass": 2,
+        "tests": 2
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": false
+      },
+      "dims": {
+        "accuracy": 1,
+        "reuse": 0,
+        "duplication": null,
+        "extensibility": null,
+        "scope": 0,
+        "e2e": null,
+        "testQuality": 0
+      },
+      "composite": 0.32,
+      "failed": false
+    },
+    {
+      "task": "uid",
+      "dimensions": {
+        "changeType": "greenfield",
+        "surface": "library",
+        "stack": "ts-node",
+        "difficulty": "trap"
+      },
+      "arm": "bulletproof",
+      "fn": {
+        "pass": 2,
+        "tests": 2
+      },
+      "tq": {
+        "applicable": true,
+        "testsPresent": true,
+        "runnable": true,
+        "greenBaseline": true,
+        "killed": 0,
+        "survived": 0,
+        "skipped": 0,
+        "total": 0
+      },
+      "dims": {
+        "accuracy": 1,
+        "reuse": 1,
+        "duplication": null,
+        "extensibility": null,
+        "scope": 1,
+        "e2e": null,
+        "testQuality": null
+      },
+      "composite": 1,
+      "failed": false
+    }
+  ]
+}

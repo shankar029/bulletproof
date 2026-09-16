@@ -1,0 +1,763 @@
+{
+  "base": "07c360aae271f63c17d9975c592b88e50c93d085",
+  "baseline": "greenfield",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "--show-toplevel"
+      ],
+      "code": 0,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 8th5n_1b",
+      "idle_seconds": 300.0,
+      "max_seconds": 900,
+      "stderr": "",
+      "stdout": "C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/evidence/i1-independent-fixture-space 8th5n_1b\n"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "code": 0,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 8th5n_1b",
+      "idle_seconds": 300.0,
+      "max_seconds": 900,
+      "stderr": "",
+      "stdout": "07c360aae271f63c17d9975c592b88e50c93d085\n"
+    },
+    {
+      "argv": [
+        "git",
+        "merge-base",
+        "07c360aae271f63c17d9975c592b88e50c93d085",
+        "HEAD"
+      ],
+      "code": 0,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 8th5n_1b",
+      "idle_seconds": 300.0,
+      "max_seconds": 900,
+      "stderr": "",
+      "stdout": "07c360aae271f63c17d9975c592b88e50c93d085\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "lizard",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 8th5n_1b",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named lizard\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "vulture",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 8th5n_1b",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named vulture\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "semgrep",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 8th5n_1b",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named semgrep\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "worktree",
+        "add",
+        "--detach",
+        "C:\\Users\\shbs\\AppData\\Local\\Temp\\tmpu0ziya_u\\base",
+        "07c360aae271f63c17d9975c592b88e50c93d085"
+      ],
+      "code": 0,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 8th5n_1b",
+      "idle_seconds": 300.0,
+      "max_seconds": 900,
+      "stderr": "Preparing worktree (detached HEAD 07c360a)\n",
+      "stdout": "HEAD is now at 07c360a fixture: independent source\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "lizard",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 8th5n_1b",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named lizard\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "vulture",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 8th5n_1b",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named vulture\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "semgrep",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 8th5n_1b",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named semgrep\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "worktree",
+        "remove",
+        "--force",
+        "C:\\Users\\shbs\\AppData\\Local\\Temp\\tmpu0ziya_u\\base"
+      ],
+      "code": 0,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 8th5n_1b",
+      "idle_seconds": 300.0,
+      "max_seconds": 900,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--numstat",
+        "07c360aae271f63c17d9975c592b88e50c93d085"
+      ],
+      "code": 0,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 8th5n_1b",
+      "idle_seconds": 300.0,
+      "max_seconds": 900,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "lizard",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 8th5n_1b",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named lizard\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "semgrep",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 8th5n_1b",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named semgrep\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "vulture",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space 8th5n_1b",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named vulture\n",
+      "stdout": ""
+    }
+  ],
+  "completeness": "incomplete",
+  "generated": "2026-09-16T20:20:47+00:00",
+  "head": "07c360aae271f63c17d9975c592b88e50c93d085",
+  "measurement_status": "unavailable",
+  "merge_base": "07c360aae271",
+  "metrics": {
+    "architecture_rules": {
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "No supported collector implemented",
+      "run_id": "3c68094dbd9843bbba9a5efd60df11a3",
+      "state": "unavailable"
+    },
+    "complexity_avg": {
+      "base": null,
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "Collector unavailable, failed or malformed",
+      "run_id": "3c68094dbd9843bbba9a5efd60df11a3",
+      "scope_support": {
+        "measured_paths": [],
+        "unsupported_paths": [
+          "value.mjs"
+        ]
+      },
+      "source": {
+        "base": "07c360aae271f63c17d9975c592b88e50c93d085",
+        "binding_mode": "standalone-source",
+        "files": {
+          ".ai/freshness/evidence/contract-note.json": {
+            "mode": "file",
+            "sha256": "e4db3fb0c39218c277912e6d1c18473276209bcdaaee19cc21a610b05c345b92"
+          },
+          ".gitignore": {
+            "mode": "file",
+            "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+          },
+          "value.mjs": {
+            "mode": "file",
+            "sha256": "c3e591e0522c4998cf1a916782834a9e4d26f4a9beda921eacd6186c565e9caf"
+          }
+        },
+        "head": "07c360aae271f63c17d9975c592b88e50c93d085",
+        "scope": {
+          "directories": [
+            "."
+          ],
+          "excluded_outputs": [
+            {
+              "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/mutation.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/freshness/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".git",
+              "reason": "Git metadata, not analyzer input"
+            }
+          ],
+          "files": []
+        },
+        "scope_sha256": "77c02a3fb6c57ed63af8f214a61f27a4377ca806dd270896dcd717982e84ce20"
+      },
+      "state": "unavailable"
+    },
+    "complexity_max": {
+      "base": null,
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "Collector unavailable, failed or malformed",
+      "run_id": "3c68094dbd9843bbba9a5efd60df11a3",
+      "scope_support": {
+        "measured_paths": [],
+        "unsupported_paths": [
+          "value.mjs"
+        ]
+      },
+      "source": {
+        "base": "07c360aae271f63c17d9975c592b88e50c93d085",
+        "binding_mode": "standalone-source",
+        "files": {
+          ".ai/freshness/evidence/contract-note.json": {
+            "mode": "file",
+            "sha256": "e4db3fb0c39218c277912e6d1c18473276209bcdaaee19cc21a610b05c345b92"
+          },
+          ".gitignore": {
+            "mode": "file",
+            "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+          },
+          "value.mjs": {
+            "mode": "file",
+            "sha256": "c3e591e0522c4998cf1a916782834a9e4d26f4a9beda921eacd6186c565e9caf"
+          }
+        },
+        "head": "07c360aae271f63c17d9975c592b88e50c93d085",
+        "scope": {
+          "directories": [
+            "."
+          ],
+          "excluded_outputs": [
+            {
+              "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/mutation.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/freshness/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".git",
+              "reason": "Git metadata, not analyzer input"
+            }
+          ],
+          "files": []
+        },
+        "scope_sha256": "77c02a3fb6c57ed63af8f214a61f27a4377ca806dd270896dcd717982e84ce20"
+      },
+      "state": "unavailable"
+    },
+    "cycles": {
+      "base": null,
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "Collector unavailable, failed or malformed",
+      "run_id": "3c68094dbd9843bbba9a5efd60df11a3",
+      "scope_support": {
+        "measured_paths": [
+          "value.mjs"
+        ],
+        "unsupported_paths": []
+      },
+      "source": {
+        "base": "07c360aae271f63c17d9975c592b88e50c93d085",
+        "binding_mode": "standalone-source",
+        "files": {
+          ".ai/freshness/evidence/contract-note.json": {
+            "mode": "file",
+            "sha256": "e4db3fb0c39218c277912e6d1c18473276209bcdaaee19cc21a610b05c345b92"
+          },
+          ".gitignore": {
+            "mode": "file",
+            "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+          },
+          "value.mjs": {
+            "mode": "file",
+            "sha256": "c3e591e0522c4998cf1a916782834a9e4d26f4a9beda921eacd6186c565e9caf"
+          }
+        },
+        "head": "07c360aae271f63c17d9975c592b88e50c93d085",
+        "scope": {
+          "directories": [
+            "."
+          ],
+          "excluded_outputs": [
+            {
+              "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/mutation.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/freshness/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".git",
+              "reason": "Git metadata, not analyzer input"
+            }
+          ],
+          "files": []
+        },
+        "scope_sha256": "77c02a3fb6c57ed63af8f214a61f27a4377ca806dd270896dcd717982e84ce20"
+      },
+      "state": "unavailable"
+    },
+    "dead_exports": {
+      "base": null,
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "Collector unavailable, failed or malformed",
+      "run_id": "3c68094dbd9843bbba9a5efd60df11a3",
+      "scope_support": {
+        "measured_paths": [],
+        "unsupported_paths": [
+          "value.mjs"
+        ]
+      },
+      "source": {
+        "base": "07c360aae271f63c17d9975c592b88e50c93d085",
+        "binding_mode": "standalone-source",
+        "files": {
+          ".ai/freshness/evidence/contract-note.json": {
+            "mode": "file",
+            "sha256": "e4db3fb0c39218c277912e6d1c18473276209bcdaaee19cc21a610b05c345b92"
+          },
+          ".gitignore": {
+            "mode": "file",
+            "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+          },
+          "value.mjs": {
+            "mode": "file",
+            "sha256": "c3e591e0522c4998cf1a916782834a9e4d26f4a9beda921eacd6186c565e9caf"
+          }
+        },
+        "head": "07c360aae271f63c17d9975c592b88e50c93d085",
+        "scope": {
+          "directories": [
+            "."
+          ],
+          "excluded_outputs": [
+            {
+              "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/mutation.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/freshness/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".git",
+              "reason": "Git metadata, not analyzer input"
+            }
+          ],
+          "files": []
+        },
+        "scope_sha256": "77c02a3fb6c57ed63af8f214a61f27a4377ca806dd270896dcd717982e84ce20"
+      },
+      "state": "unavailable"
+    },
+    "diff_coverage_pct": {
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "No supported collector implemented",
+      "run_id": "3c68094dbd9843bbba9a5efd60df11a3",
+      "state": "unavailable"
+    },
+    "diff_files": {
+      "head": 0
+    },
+    "diff_lines": {
+      "head": 0
+    },
+    "duplication_pct": {
+      "base": null,
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "Collector unavailable, failed or malformed",
+      "run_id": "3c68094dbd9843bbba9a5efd60df11a3",
+      "scope_support": {
+        "measured_paths": [],
+        "unsupported_paths": [
+          "value.mjs"
+        ]
+      },
+      "source": {
+        "base": "07c360aae271f63c17d9975c592b88e50c93d085",
+        "binding_mode": "standalone-source",
+        "files": {
+          ".ai/freshness/evidence/contract-note.json": {
+            "mode": "file",
+            "sha256": "e4db3fb0c39218c277912e6d1c18473276209bcdaaee19cc21a610b05c345b92"
+          },
+          ".gitignore": {
+            "mode": "file",
+            "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+          },
+          "value.mjs": {
+            "mode": "file",
+            "sha256": "c3e591e0522c4998cf1a916782834a9e4d26f4a9beda921eacd6186c565e9caf"
+          }
+        },
+        "head": "07c360aae271f63c17d9975c592b88e50c93d085",
+        "scope": {
+          "directories": [
+            "."
+          ],
+          "excluded_outputs": [
+            {
+              "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/mutation.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/freshness/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".git",
+              "reason": "Git metadata, not analyzer input"
+            }
+          ],
+          "files": []
+        },
+        "scope_sha256": "77c02a3fb6c57ed63af8f214a61f27a4377ca806dd270896dcd717982e84ce20"
+      },
+      "state": "unavailable"
+    },
+    "mutation_score_pct": {
+      "base": null,
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "Mutation was explicitly skipped; required proof is still missing",
+      "run_id": "3c68094dbd9843bbba9a5efd60df11a3",
+      "state": "unavailable",
+      "status": "unavailable"
+    },
+    "static_findings": {
+      "base": null,
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "Collector unavailable, failed or malformed",
+      "run_id": "3c68094dbd9843bbba9a5efd60df11a3",
+      "scope_support": {
+        "measured_paths": [],
+        "unsupported_paths": [
+          "value.mjs"
+        ]
+      },
+      "source": {
+        "base": "07c360aae271f63c17d9975c592b88e50c93d085",
+        "binding_mode": "standalone-source",
+        "files": {
+          ".ai/freshness/evidence/contract-note.json": {
+            "mode": "file",
+            "sha256": "e4db3fb0c39218c277912e6d1c18473276209bcdaaee19cc21a610b05c345b92"
+          },
+          ".gitignore": {
+            "mode": "file",
+            "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+          },
+          "value.mjs": {
+            "mode": "file",
+            "sha256": "c3e591e0522c4998cf1a916782834a9e4d26f4a9beda921eacd6186c565e9caf"
+          }
+        },
+        "head": "07c360aae271f63c17d9975c592b88e50c93d085",
+        "scope": {
+          "directories": [
+            "."
+          ],
+          "excluded_outputs": [
+            {
+              "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/mutation.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/freshness/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".git",
+              "reason": "Git metadata, not analyzer input"
+            }
+          ],
+          "files": []
+        },
+        "scope_sha256": "77c02a3fb6c57ed63af8f214a61f27a4377ca806dd270896dcd717982e84ce20"
+      },
+      "state": "unavailable"
+    }
+  },
+  "missing_required": [
+    {
+      "metric": "architecture_rules",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "No supported collector implemented"
+    },
+    {
+      "metric": "complexity_avg",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "Collector unavailable, failed or malformed"
+    },
+    {
+      "metric": "complexity_max",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "Collector unavailable, failed or malformed"
+    },
+    {
+      "metric": "cycles",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "Collector unavailable, failed or malformed"
+    },
+    {
+      "metric": "dead_exports",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "Collector unavailable, failed or malformed"
+    },
+    {
+      "metric": "diff_coverage_pct",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "No supported collector implemented"
+    },
+    {
+      "metric": "duplication_pct",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "Collector unavailable, failed or malformed"
+    },
+    {
+      "metric": "mutation_score_pct",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "Mutation was explicitly skipped; required proof is still missing"
+    },
+    {
+      "metric": "static_findings",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "Collector unavailable, failed or malformed"
+    }
+  ],
+  "policy": {
+    "origins": [
+      "built-in quality metrics; required coverage and architecture proof"
+    ],
+    "required": [
+      "architecture_rules",
+      "complexity_avg",
+      "complexity_max",
+      "cycles",
+      "dead_exports",
+      "diff_coverage_pct",
+      "duplication_pct",
+      "mutation_score_pct",
+      "static_findings"
+    ],
+    "rules": {
+      "greenfield": {
+        "complexity_avg": [
+          4.0,
+          8.0
+        ],
+        "complexity_max": [
+          15,
+          25
+        ],
+        "cycles": [
+          0,
+          0
+        ],
+        "dead_exports": [
+          10,
+          40
+        ],
+        "duplication_pct": [
+          5.0,
+          12.0
+        ],
+        "static_findings": [
+          10,
+          40
+        ]
+      },
+      "mutation_score_pct": {
+        "threshold": 60.0
+      },
+      "tolerance": {
+        "complexity_avg": 0.3,
+        "complexity_max": 2,
+        "duplication_pct": 0.5
+      }
+    }
+  },
+  "policy_sha256": "d91cea2b28353ecd1b74d32d4b39b269521f1c65b4fd1323a844da07b3d2bbcb",
+  "project": "general",
+  "run_id": "3c68094dbd9843bbba9a5efd60df11a3",
+  "schema_version": 2,
+  "slug": "freshness",
+  "source": {
+    "base": "07c360aae271f63c17d9975c592b88e50c93d085",
+    "binding_mode": "standalone-source",
+    "files": {
+      ".ai/freshness/evidence/contract-note.json": {
+        "mode": "file",
+        "sha256": "e4db3fb0c39218c277912e6d1c18473276209bcdaaee19cc21a610b05c345b92"
+      },
+      ".gitignore": {
+        "mode": "file",
+        "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+      },
+      "value.mjs": {
+        "mode": "file",
+        "sha256": "c3e591e0522c4998cf1a916782834a9e4d26f4a9beda921eacd6186c565e9caf"
+      }
+    },
+    "head": "07c360aae271f63c17d9975c592b88e50c93d085",
+    "scope": {
+      "directories": [
+        "."
+      ],
+      "excluded_outputs": [
+        {
+          "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/metrics.json",
+          "reason": "Exact current measurement output"
+        },
+        {
+          "path": ".ai/freshness/evidence/runs/3c68094dbd9843bbba9a5efd60df11a3/mutation.json",
+          "reason": "Exact current measurement output"
+        },
+        {
+          "path": ".ai/freshness/metrics.json",
+          "reason": "Exact current measurement output"
+        },
+        {
+          "path": ".git",
+          "reason": "Git metadata, not analyzer input"
+        }
+      ],
+      "files": []
+    },
+    "scope_sha256": "77c02a3fb6c57ed63af8f214a61f27a4377ca806dd270896dcd717982e84ce20"
+  },
+  "tools": {},
+  "unavailable": [
+    "duplication_pct",
+    "complexity_max",
+    "complexity_avg",
+    "cycles",
+    "dead_exports",
+    "static_findings",
+    "mutation_score_pct",
+    "architecture_rules",
+    "diff_coverage_pct"
+  ],
+  "verdict": "fail",
+  "worst_status": "unavailable"
+}

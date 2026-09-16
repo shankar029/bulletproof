@@ -1,0 +1,59 @@
+ M .ai/workflow-reliability/design-contracts.json
+ M .ai/workflow-reliability/evidence/design.pdf
+ M .ai/workflow-reliability/evidence/document-rendering.json
+ M .ai/workflow-reliability/state.md
+ M README.md
+ M SKILL.md
+ M benchmark/projects/csv-stats-cli/bulletproof/cli.test.ts
+ M docs/architecture.md
+ M evals/README.md
+ M evals/lib/score.mjs
+ M evals/lib/score.test.mjs
+ M evals/report.md
+ M references/final-report.md
+ M references/quality-bar.md
+ M references/quality-metrics.md
+ M references/review-and-pr.md
+ M scripts/mutate.py
+ M scripts/probe.py
+ M scripts/run.py
+?? .ai/workflow-reliability/evidence/i1-independent-before.json
+?? .ai/workflow-reliability/evidence/i1-independent-git-version.json
+?? .ai/workflow-reliability/evidence/i1-independent-node-version.json
+?? .ai/workflow-reliability/evidence/i1-independent-python-version.json
+?? .ai/workflow-reliability/evidence/i1-independent-runner.py
+?? .ai/workflow-reliability/evidence/i1-native-capture-green.json
+?? .ai/workflow-reliability/evidence/i1-native-capture-red.json
+?? .ai/workflow-reliability/evidence/i1-native-cli-encoding-green.json
+?? .ai/workflow-reliability/evidence/i1-native-cli-encoding-red.json
+?? .ai/workflow-reliability/evidence/i1-native-csv-diagnose.mjs
+?? .ai/workflow-reliability/evidence/i1-native-csv-diagnosis.json
+?? .ai/workflow-reliability/evidence/i1-native-final-checks.json
+?? .ai/workflow-reliability/evidence/i1-native-followup-summary.md
+?? .ai/workflow-reliability/evidence/i1-native-mixed-language-green.json
+?? .ai/workflow-reliability/evidence/i1-native-mutation-green.json
+?? .ai/workflow-reliability/evidence/i1-native-node-first.json
+?? .ai/workflow-reliability/evidence/i1-native-node-second.json
+?? .ai/workflow-reliability/evidence/i1-native-python-first.json
+?? .ai/workflow-reliability/evidence/i1-native-report-example-invocation.json
+?? .ai/workflow-reliability/evidence/i1-native-report-example.json
+?? .ai/workflow-reliability/evidence/i1-native-scorer-capture-green.json
+?? .ai/workflow-reliability/evidence/i1-native-shared-output-freshness-green.json
+?? .ai/workflow-reliability/evidence/i1-native-shared-run-green.json
+?? .ai/workflow-reliability/evidence/i1-native-shared-run-targeted.json
+?? .ai/workflow-reliability/evidence/i1-native-summary.md
+?? .ai/workflow-reliability/evidence/i1-quality-stdout.json
+?? .ai/workflow-reliability/evidence/plan.pdf
+?? .ai/workflow-reliability/evidence/runs/66575942a94040d0b4d7c160f4107d5e/metrics.json
+?? .ai/workflow-reliability/evidence/runs/66575942a94040d0b4d7c160f4107d5e/mutation.json
+?? .ai/workflow-reliability/metrics.json
+?? .ai/workflow-reliability/plan.html
+?? .ai/workflow-reliability/tasks.json
+?? evals/lib/native_result.test.mjs
+?? scripts/evidence.py
+?? scripts/native_result.mjs
+?? scripts/tests/helpers.py
+?? scripts/tests/test_evidence.py
+?? scripts/tests/test_mutate.py
+?? scripts/tests/test_probe.py
+?? scripts/tests/test_run.py

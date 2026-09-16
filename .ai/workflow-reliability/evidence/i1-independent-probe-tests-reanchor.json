@@ -1,0 +1,37 @@
+{
+  "name": "probe-tests-reanchor",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts/run.py",
+    "--idle",
+    "120",
+    "--max",
+    "900",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts/tests",
+    "-p",
+    "test_probe.py",
+    "-v"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "NODE_TEST_CONTEXT": null,
+    "BP_TEST_PYTHON": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe"
+  },
+  "started": "2026-09-16T19:58:20.462907+00:00",
+  "finished": "2026-09-16T19:59:19.871256+00:00",
+  "duration_seconds": 59.408,
+  "exit_code": 0,
+  "idle_seconds": 120,
+  "max_seconds": 900,
+  "log": ".ai\\workflow-reliability\\evidence\\i1-independent-probe-tests-reanchor.log",
+  "log_sha256": "c6ce9c9e75d8a519bc2234527abf1d01d8fc4925bf65eddb954ce79aa6074c9b"
+}

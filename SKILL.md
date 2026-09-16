@@ -375,9 +375,13 @@ would exercise it, and commit those tests. **All browser and front-end verificat
   suppress and never lower a threshold.
 - **Run the deterministic quality probe** before the review, so the reviewer sees numbers, not
   adjectives: `python <skill>/scripts/probe.py --slug <slug> --base <base>`. It measures
-  duplication, complexity, cycles, dead code, static findings and diff coverage against the
-  merge-base, and runs **mutation testing on the changed lines** (`scripts/mutate.py` — no
-  project wiring needed), writing `.ai/<slug>/metrics.json`. A **regression against the
+  supported duplication, complexity, cycles, dead-code and static collectors against the
+  merge-base, and runs **mutation testing on the changed lines** (`scripts/mutate.py` — native
+  Node classification), writing source-bound per-run reports and a `.ai/<slug>/metrics.json`
+  display alias. Required diff-coverage/architecture collection is not implemented yet and
+  remains unavailable, not zero. **Required proof must be complete**: missing collectors,
+  stale evidence, unsupported scope or unavailable comparisons block the gate even when
+  measured values show no regression. A **regression against the
   baseline, a new dependency cycle, or a mutation score under the floor fails the gate** — see
   `references/quality-metrics.md`. **Every surviving mutant is killed with a real assertion or
   justified as equivalent in `review.md`.** Re-run the probe after any rework.

@@ -1,0 +1,84 @@
+test_esm_and_cjs_are_counted_as_code (test_probe.ExistingProbeBehaviorTests.test_esm_and_cjs_are_counted_as_code) ... FAIL
+test_failed_or_empty_cycle_command_is_not_zero (test_probe.ExistingProbeBehaviorTests.test_failed_or_empty_cycle_command_is_not_zero) ... 
+  test_failed_or_empty_cycle_command_is_not_zero (test_probe.ExistingProbeBehaviorTests.test_failed_or_empty_cycle_command_is_not_zero) (outcome=(7, '', 'failed')) ... FAIL
+  test_failed_or_empty_cycle_command_is_not_zero (test_probe.ExistingProbeBehaviorTests.test_failed_or_empty_cycle_command_is_not_zero) (outcome=(0, '', '')) ... FAIL
+  test_failed_or_empty_cycle_command_is_not_zero (test_probe.ExistingProbeBehaviorTests.test_failed_or_empty_cycle_command_is_not_zero) (outcome=(0, '{}', '')) ... FAIL
+test_missing_baseline_is_not_a_passing_comparison (test_probe.ExistingProbeBehaviorTests.test_missing_baseline_is_not_a_passing_comparison) ... FAIL
+test_missing_static_results_are_not_zero (test_probe.ExistingProbeBehaviorTests.test_missing_static_results_are_not_zero) ... FAIL
+test_one_greenfield_cycle_fails (test_probe.ExistingProbeBehaviorTests.test_one_greenfield_cycle_fails) ... FAIL
+
+======================================================================
+FAIL: test_esm_and_cjs_are_counted_as_code (test_probe.ExistingProbeBehaviorTests.test_esm_and_cjs_are_counted_as_code)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_probe.py", line 18, in test_esm_and_cjs_are_counted_as_code
+    self.assertEqual({Path(path).suffix for path in probe.code_files(directory)}, {".mjs", ".cjs", ".py"})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'.cjs'
+'.mjs'
+
+======================================================================
+FAIL: test_failed_or_empty_cycle_command_is_not_zero (test_probe.ExistingProbeBehaviorTests.test_failed_or_empty_cycle_command_is_not_zero) (outcome=(7, '', 'failed'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_probe.py", line 32, in test_failed_or_empty_cycle_command_is_not_zero
+    self.assertIsNone(probe.m_cycles("."))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 is not None
+
+======================================================================
+FAIL: test_failed_or_empty_cycle_command_is_not_zero (test_probe.ExistingProbeBehaviorTests.test_failed_or_empty_cycle_command_is_not_zero) (outcome=(0, '', ''))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_probe.py", line 32, in test_failed_or_empty_cycle_command_is_not_zero
+    self.assertIsNone(probe.m_cycles("."))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 is not None
+
+======================================================================
+FAIL: test_failed_or_empty_cycle_command_is_not_zero (test_probe.ExistingProbeBehaviorTests.test_failed_or_empty_cycle_command_is_not_zero) (outcome=(0, '{}', ''))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_probe.py", line 32, in test_failed_or_empty_cycle_command_is_not_zero
+    self.assertIsNone(probe.m_cycles("."))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 is not None
+
+======================================================================
+FAIL: test_missing_baseline_is_not_a_passing_comparison (test_probe.ExistingProbeBehaviorTests.test_missing_baseline_is_not_a_passing_comparison)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_probe.py", line 22, in test_missing_baseline_is_not_a_passing_comparison
+    self.assertEqual(status, "unavailable")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ok' != 'unavailable'
+- ok
++ unavailable
+
+
+======================================================================
+FAIL: test_missing_static_results_are_not_zero (test_probe.ExistingProbeBehaviorTests.test_missing_static_results_are_not_zero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_probe.py", line 37, in test_missing_static_results_are_not_zero
+    self.assertIsNone(probe.m_static("."))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 is not None
+
+======================================================================
+FAIL: test_one_greenfield_cycle_fails (test_probe.ExistingProbeBehaviorTests.test_one_greenfield_cycle_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_probe.py", line 26, in test_one_greenfield_cycle_fails
+    self.assertEqual(probe.judge("cycles", 0, 1, greenfield=True)[1], "fail")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'warn' != 'fail'
+- warn
++ fail
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.019s
+
+FAILED (failures=7)

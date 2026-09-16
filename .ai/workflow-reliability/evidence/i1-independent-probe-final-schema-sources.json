@@ -1,0 +1,27 @@
+{
+  "before": {
+    "scripts/probe.py": "f2d966571e6061f41a9985eb21463ece56c1d6b2153dd21f4fdba26455c3604a",
+    "scripts/tests/test_probe.py": "3269a43f95c0596eb1d77671e70905897dde1c0505d1975cdfa5c23a84d0887b",
+    "scripts/tests/test_measurement_e2e.py": "28e18d7877aeef0823fd6132ed34999fc2d306070a6d033972bcb7a0a20c4997",
+    "scripts/mutate.py": "32634d3b0a4ad2331f30d362f6b04c837b9458039882fb1cae72f7970da37fc3",
+    "scripts/native_result.mjs": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/run.py": "5f41967d4d541effda91adafb1fbfe8434e1e38f5234481f8a0eeb7d8564fdd6",
+    "evals/lib/score.mjs": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd"
+  },
+  "after": {
+    "scripts/probe.py": "f2d966571e6061f41a9985eb21463ece56c1d6b2153dd21f4fdba26455c3604a",
+    "scripts/tests/test_probe.py": "3269a43f95c0596eb1d77671e70905897dde1c0505d1975cdfa5c23a84d0887b",
+    "scripts/tests/test_measurement_e2e.py": "28e18d7877aeef0823fd6132ed34999fc2d306070a6d033972bcb7a0a20c4997",
+    "scripts/mutate.py": "32634d3b0a4ad2331f30d362f6b04c837b9458039882fb1cae72f7970da37fc3",
+    "scripts/native_result.mjs": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/run.py": "5f41967d4d541effda91adafb1fbfe8434e1e38f5234481f8a0eeb7d8564fdd6",
+    "evals/lib/score.mjs": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd"
+  },
+  "unchanged": true,
+  "test_exits": {
+    "probe-frozen-suite": 0,
+    "measurement-frozen-suite": 1
+  }
+}

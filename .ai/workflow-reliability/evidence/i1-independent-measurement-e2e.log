@@ -1,0 +1,29 @@
+test_public_probe_measured_failure_is_distinct_from_incomplete_proof (test_measurement_e2e.MeasurementE2ETests.test_public_probe_measured_failure_is_distinct_from_incomplete_proof) ... ok
+test_public_probe_observes_unrelated_evidence_not_just_its_own_reports (test_measurement_e2e.MeasurementE2ETests.test_public_probe_observes_unrelated_evidence_not_just_its_own_reports) ... ERROR
+
+======================================================================
+ERROR: test_public_probe_observes_unrelated_evidence_not_just_its_own_reports (test_measurement_e2e.MeasurementE2ETests.test_public_probe_observes_unrelated_evidence_not_just_its_own_reports)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measurement_e2e.py", line 124, in test_public_probe_observes_unrelated_evidence_not_just_its_own_reports
+    report = self.probe(base, "freshness", "--skip-mutation")
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measurement_e2e.py", line 73, in probe
+    self.artifact(slug + "-metrics", report)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measurement_e2e.py", line 46, in artifact
+    (EVIDENCE / f"i1-independent-{self.tag}-{suffix}.json").write_text(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        json.dumps(value, indent=2, ensure_ascii=True) + "\n", encoding="utf-8")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\pathlib\__init__.py", line 809, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\pathlib\__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-test_public_probe_observes_unrelated_evidence_not_just_its_own_reports-b9fec30f67784f44bd94d843181e5646-freshness-metrics.json'
+
+----------------------------------------------------------------------
+Ran 2 tests in 65.799s
+
+FAILED (errors=1)

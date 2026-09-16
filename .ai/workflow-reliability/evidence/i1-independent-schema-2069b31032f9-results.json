@@ -1,0 +1,288 @@
+[
+  {
+    "field": null,
+    "value": null,
+    "entry": {
+      "state": "measured",
+      "head": 100.0,
+      "base": null,
+      "comparison": "ok",
+      "status": "ok",
+      "threshold": 60.0,
+      "run_id": "schema-d610223a9b69429b9ba2824cce34041d",
+      "source": {
+        "base": "77702646587eb82c20b6233a0140fe3294af4810",
+        "binding_mode": "standalone-source",
+        "files": {
+          ".gitignore": {
+            "mode": "file",
+            "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+          },
+          "value.mjs": {
+            "mode": "file",
+            "sha256": "277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af"
+          },
+          "value.test.mjs": {
+            "mode": "file",
+            "sha256": "7791b70d6444670106565b2c1e05b32b80d278cec63c2a899f664c6b83044017"
+          }
+        },
+        "head": "03b290335908a890e102b9e73d601c08041b9e6f",
+        "scope": {
+          "directories": [
+            "."
+          ],
+          "excluded_outputs": [
+            {
+              "path": ".ai/schema/evidence/runs/schema-d610223a9b69429b9ba2824cce34041d/metrics.json",
+              "reason": "Exact same-run metrics report published by the invoking probe"
+            },
+            {
+              "path": ".ai/schema/evidence/runs/schema-d610223a9b69429b9ba2824cce34041d/mutation.json",
+              "reason": "Exact fresh invocation-owned mutation report"
+            },
+            {
+              "path": ".ai/schema/metrics.json",
+              "reason": "Generated metrics display alias owned by the invoking probe"
+            },
+            {
+              "path": ".git",
+              "reason": "Git administrative metadata, not source inputs"
+            }
+          ],
+          "files": []
+        },
+        "scope_sha256": "a6927e2e4c55001d983934d225e1022e993bf8521c609bfe683b0d352d71d96d"
+      },
+      "command": {
+        "argv": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "--test-reporter=file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/native_result.mjs",
+          "--test",
+          "value.test.mjs"
+        ],
+        "cwd": ".",
+        "environment": {
+          "NODE_TEST_CONTEXT": null
+        },
+        "idle_seconds": 300,
+        "max_seconds": 300,
+        "runtime": {
+          "executable": "C:\\Program Files\\nodejs\\node.EXE",
+          "observed_version": "v24.11.1"
+        }
+      },
+      "reason": "",
+      "survivors": 0,
+      "artifacts": [
+        {
+          "path": ".ai/schema/evidence/runs/schema-d610223a9b69429b9ba2824cce34041d/mutation.json",
+          "sha256": "d478e15ab77abd47847b0be1e300f43d2ba6f844af99ad0b60bad197a14c1ba6"
+        }
+      ],
+      "scope_support": {
+        "measured_paths": [
+          ".gitignore",
+          "value.mjs",
+          "value.test.mjs"
+        ],
+        "unsupported_paths": []
+      }
+    }
+  },
+  {
+    "field": "source",
+    "value": null,
+    "entry": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "run_id": "schema-f4b0e4583f144843aef59734548a7a06",
+      "reason": "Current mutation proof rejected: Mutation source binding must be an object"
+    }
+  },
+  {
+    "field": "source",
+    "value": 42,
+    "entry": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "run_id": "schema-0259524c6a5a406498c98d676203dc48",
+      "reason": "Current mutation proof rejected: Mutation source binding must be an object"
+    }
+  },
+  {
+    "field": "source",
+    "value": [],
+    "entry": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "run_id": "schema-536f2a82411344149aba0ab56284adb8",
+      "reason": "Current mutation proof rejected: Mutation source binding must be an object"
+    }
+  },
+  {
+    "field": "source",
+    "value": "invalid",
+    "entry": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "run_id": "schema-bf4a71e0179946ef9b417fd28b9bec24",
+      "reason": "Current mutation proof rejected: Mutation source binding must be an object"
+    }
+  },
+  {
+    "field": "source",
+    "value": true,
+    "entry": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "run_id": "schema-1d3ba6c952a24b1080333450ff270edb",
+      "reason": "Current mutation proof rejected: Mutation source binding must be an object"
+    }
+  },
+  {
+    "field": "command",
+    "value": null,
+    "entry": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "run_id": "schema-c927dfea28e74dcba3fad986861cf1b6",
+      "reason": "Current mutation proof rejected: Mutation command binding is missing"
+    }
+  },
+  {
+    "field": "command",
+    "value": 42,
+    "entry": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "run_id": "schema-00bfc2cb2e7b4cfa982e701c235e7cb5",
+      "reason": "Current mutation proof rejected: Mutation command binding is missing"
+    }
+  },
+  {
+    "field": "command",
+    "value": [],
+    "entry": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "run_id": "schema-05dc13d7d83d4b7a9129cc933d9bbebd",
+      "reason": "Current mutation proof rejected: Mutation command binding is missing"
+    }
+  },
+  {
+    "field": "command",
+    "value": "invalid",
+    "entry": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "run_id": "schema-b06d17f7891d4f07897b0ceb7d85c7ab",
+      "reason": "Current mutation proof rejected: Mutation command binding is missing"
+    }
+  },
+  {
+    "field": "command",
+    "value": true,
+    "entry": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "run_id": "schema-71c300eb74f448528cbabb0b21aa65ba",
+      "reason": "Current mutation proof rejected: Mutation command binding is missing"
+    }
+  },
+  {
+    "field": "baseline",
+    "value": null,
+    "entry": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "run_id": "schema-86d70c830db8481f8b9c95b96f682c86",
+      "reason": "Current mutation proof rejected: Mutation baseline must be an object"
+    }
+  },
+  {
+    "field": "baseline",
+    "value": 42,
+    "entry": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "run_id": "schema-2f706abe79ed49e8a816d65746164ff0",
+      "reason": "Current mutation proof rejected: Mutation baseline must be an object"
+    }
+  },
+  {
+    "field": "baseline",
+    "value": [],
+    "entry": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "run_id": "schema-7083a184c79d4a378b04c3644a71b0bb",
+      "reason": "Current mutation proof rejected: Mutation baseline must be an object"
+    }
+  },
+  {
+    "field": "baseline",
+    "value": "invalid",
+    "entry": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "run_id": "schema-d10958600f9d46c1b63936fa169d58fb",
+      "reason": "Current mutation proof rejected: Mutation baseline must be an object"
+    }
+  },
+  {
+    "field": "baseline",
+    "value": true,
+    "entry": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "run_id": "schema-82cd737e7bcf45bb9803b2e666000aa3",
+      "reason": "Current mutation proof rejected: Mutation baseline must be an object"
+    }
+  }
+]

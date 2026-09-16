@@ -140,13 +140,17 @@ tokens on design rather than CSS.
 ### Deterministic quality measurement — not adjectives
 
 `scripts/probe.py` runs the installed analysis tools twice — on the **merge-base in a throwaway
-worktree** and on **HEAD** — and writes `metrics.json` with base, head and delta for duplication,
+worktree** and on the **working tree** — and writes `metrics.json` with base, head and delta for duplication,
 cyclomatic complexity, dependency cycles, dead code, static findings and diff size.
 
 The gate is **delta-based, not absolute**, deliberately: absolute thresholds invite gaming — a model
 forced under a complexity number will shred one coherent function into six incoherent ones. New
 dependency cycles are the exception: absolute fail. Greenfield work (an empty baseline) and
 front-end projects are detected and judged appropriately instead of failing for merely existing.
+Version-2 reports separate measured regression status from required-proof completeness.
+Missing or partially supported measurements, including the currently unimplemented diff-coverage
+and architecture collectors, produce **incomplete/fail**, not a green gate. Unknown baselines
+are not greenfield. Per-run source-bound reports are authoritative; latest aliases are display-only.
 
 ### Mutation testing with zero project wiring
 
@@ -155,6 +159,9 @@ the diff, mutates **only the changed lines of production code** (operator swaps 
 deletion), and runs your own test command against each mutant. Diff-scoped, capped, never mutates
 tests or fixtures, refuses a dirty tree or a red suite, and reports each survivor with file, line and
 the exact edit — to be killed with a real assertion or documented as equivalent.
+ESM/CJS discovery and direct native Node tests are supported. Only native assertion failures
+count as kills; syntax/setup errors, timeouts and unsupported runners remain ungraded.
+Use `--test-cwd` and remainder `-- node --test ...` for exact package/argument routing.
 
 Why it matters, measured on identical code with two green suites that both fully cover the function:
 
@@ -173,7 +180,8 @@ check nothing. See [`quality-metrics.md`](references/quality-metrics.md).
 Your own review can't un-see the reasoning that made a shortcut feel acceptable. The reviewer gets
 the requirement, criteria, design, `metrics.json` and the diff — **and none of your reasoning** —
 and never writes code. Preference order: different model + fresh context → same model + fresh
-context → cold self re-read. On scoring disagreement, **the lower score wins**.
+context. If independent delegation is unavailable, review is blocked; a cold self re-read is
+not a substitute. On scoring disagreement, **the lower score wins**.
 
 ### A final report you can actually act on
 

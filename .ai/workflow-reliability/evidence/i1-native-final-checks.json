@@ -1,0 +1,85 @@
+{
+  "source_sha256": {
+    "scripts/mutate.py": "eb3a3b8a3a4b1e0fc67c9758b47d742f709626b24bc5438b4ad6aa31792ff214",
+    "scripts/native_result.mjs": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+    "scripts/run.py": "3f4f4926f189b7d4568ad22a65c1a374cf08ba9f54cb2a5753e2b6ff5c2e9152",
+    "evals/lib/score.mjs": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+    "evals/lib/native_result.test.mjs": "60455f759a5649c5835505431c62641554ed33cc5b3b446ef46828029261b892",
+    "evals/lib/score.test.mjs": "9805b44feccf72411a8720cc5c5b8813de182328bcf76eb06faf3525c739cf24",
+    "scripts/tests/test_mutate.py": "ff98e89605e73069f0eb57d10489af6623f0760cff9ea23e26fecbfa52ea4c9a",
+    "scripts/tests/test_run.py": "a7c1cffaf658702f8a28c014459b1074fc920c2460e767c12c53da72c6200dad"
+  },
+  "checks": [
+    {
+      "argv": [
+        "node",
+        "--test",
+        "evals/lib/native_result.test.mjs",
+        "evals/lib/score.test.mjs"
+      ],
+      "idle_seconds": 90,
+      "max_seconds": 480,
+      "returncode": 0,
+      "stdout": "(node:43768) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ native reporter counts only real leaves and explicitly serializes assertion causes (227.8259ms)\n✔ test parents with nested subtests are containers, not duplicate leaves (226.2803ms)\n✔ stdout spoofing is quoted data, never assertion proof (428.971ms)\n✔ zero tests, syntax errors and import failures cannot be kills (794.8622ms)\n✔ setup and hooks take precedence over mixed genuine assertion failures (855.8115ms)\n✔ skip/todo/cancellation and missing required baseline inventory are ungraded (1094.5486ms)\n✔ timeout and malformed/truncated reports fail closed (469.6074ms)\n✔ syntax preflight uses the native TS parser without executing product code (291.2503ms)\n(node:46988) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ parseTap reads counts from a green TAP summary (2.293ms)\n✔ parseTap reads a failing summary (0.204ms)\n✔ parseTap returns zeros when the runner crashed (no summary) (0.0701ms)\n✔ toDimensions maps a fully-probed arm to all-1s (0.1313ms)\n✔ toDimensions returns null for unprobed dimensions (0.1029ms)\n✔ toDimensions scores accuracy 0 when no tests ran (0.0604ms)\n✔ toDimensions flips duplication/scope/extensibility to 0 on a hit/failure (0.0637ms)\n✔ toDimensions scores partial reuse as a fraction (0.0761ms)\n✔ composite of a single dimension equals that dimension (0.1419ms)\n✔ composite renormalizes over non-null dimensions — n/a never drags the score (0.1553ms)\n✔ composite blends present dimensions by renormalized weight (0.1605ms)\n✔ composite handles weights that do not sum to 1 (0.0605ms)\n✔ composite is 0 when every dimension is n/a (0.0456ms)\n✔ composite ignores a present dimension absent from weights (pins a config footgun) (0.0732ms)\n✔ hasForbiddenDep flags a forbidden name in dependencies or devDependencies (0.0802ms)\n✔ hasForbiddenDep is false when no forbidden dep is declared directly (0.0551ms)\n✔ hasForbiddenDep ignores absent manifest / empty name list (0.0436ms)\n✔ hasE2E detects real CLI spawn / HTTP / browser driving (0.0641ms)\n✔ hasE2E is false for unit-only tests, empty sources, or no patterns (0.0369ms)\n✔ toDimensions surfaces e2e (1 when a matching test ships, 0 when checked but absent) (0.0565ms)\n✔ testQualityScore: absent or broken arm tests are a real 0, not null (0.0417ms)\n✔ testQualityScore: tests present but not runnable by the runner → 0 (distinct from no-tests) (0.0337ms)\n✔ testQualityScore: kill-rate over graded mutants; skipped excluded (0.0401ms)\n✔ testQualityScore: not applicable, or no valid mutants, is null (0.0352ms)\n✔ toDimensions surfaces testQuality from the probe (0.0396ms)\n✔ runTestQuality: bulletproof paginator kills every mutant; baseline ships no tests (4847.9296ms)\n✔ runTestQuality: not applicable when the task does not opt in via quality.mutate (0.2575ms)\n✔ runTestQuality: native assertions kill, shallow tests survive, logs do not kill (1282.0707ms)\n✔ runTestQuality: setup, spoofed error, zero/missing inventory and skip are not fake kills (3119.1785ms)\n✔ runTestQuality: file wrappers and broken/skipped baselines retain eval zero semantics (1073.8864ms)\nℹ tests 38\nℹ suites 0\nℹ pass 38\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 10485.2231\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_mutate.py",
+        "-v"
+      ],
+      "idle_seconds": 90,
+      "max_seconds": 480,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_baseline_zero_import_syntax_and_skips_fail_before_mutation (test_mutate.MutationTests.test_baseline_zero_import_syntax_and_skips_fail_before_mutation) ... ok\ntest_competing_edit_preserved_with_recovery_bytes (test_mutate.MutationTests.test_competing_edit_preserved_with_recovery_bytes) ... ok\ntest_dirty_untracked_contract_rejected_but_owned_output_is_not (test_mutate.MutationTests.test_dirty_untracked_contract_rejected_but_owned_output_is_not) ... ok\ntest_discovery_diffs_safe_operators_and_ambiguous_scope (test_mutate.MutationTests.test_discovery_diffs_safe_operators_and_ambiguous_scope) ... ok\ntest_exclusive_lock_blocks_a_second_measurement (test_mutate.MutationTests.test_exclusive_lock_blocks_a_second_measurement) ... ok\ntest_inherited_node_context_is_removed_and_bom_is_restored (test_mutate.MutationTests.test_inherited_node_context_is_removed_and_bom_is_restored) ... ok\ntest_legacy_quoted_commands_fail_and_custom_runner_is_unclassified (test_mutate.MutationTests.test_legacy_quoted_commands_fail_and_custom_runner_is_unclassified) ... ok\ntest_nested_package_and_spaced_argv_preserve_test_cwd_and_parameters (test_mutate.MutationTests.test_nested_package_and_spaced_argv_preserve_test_cwd_and_parameters) ... ok\ntest_real_esm_and_cjs_kill_survivor_byte_restoration_and_nonce (test_mutate.MutationTests.test_real_esm_and_cjs_kill_survivor_byte_restoration_and_nonce) ... ok\ntest_setup_log_spoof_zero_missing_and_skipped_mutants_are_not_kills (test_mutate.MutationTests.test_setup_log_spoof_zero_missing_and_skipped_mutants_are_not_kills) ... ok\ntest_syntax_preflight_rejects_generated_typescript_generic_mutant (test_mutate.MutationTests.test_syntax_preflight_rejects_generated_typescript_generic_mutant) ... ok\ntest_timeout_is_ungraded_and_restores_bytes (test_mutate.MutationTests.test_timeout_is_ungraded_and_restores_bytes) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 214.578s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_run.py",
+        "-v"
+      ],
+      "idle_seconds": 90,
+      "max_seconds": 480,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_idle_and_total_timeouts (test_run.CaptureTests.test_idle_and_total_timeouts) ... ok\ntest_legacy_signature_and_missing_program (test_run.CaptureTests.test_legacy_signature_and_missing_program) ... ok\ntest_partial_lines_count_as_progress (test_run.CaptureTests.test_partial_lines_count_as_progress) ... ok\ntest_utf8_env_and_stream_cleanup (test_run.CaptureTests.test_utf8_env_and_stream_cleanup) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 4.768s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "git",
+        "--no-pager",
+        "diff",
+        "--check",
+        "--",
+        "scripts/mutate.py",
+        "scripts/native_result.mjs",
+        "scripts/run.py",
+        "evals/lib/score.mjs",
+        "evals/lib/native_result.test.mjs",
+        "evals/lib/score.test.mjs",
+        "scripts/tests/test_mutate.py",
+        "scripts/tests/test_run.py"
+      ],
+      "idle_seconds": 90,
+      "max_seconds": 480,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

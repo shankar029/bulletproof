@@ -45,6 +45,8 @@ Dimensions 1, 2, and 9 are hard gates — a failure blocks shipping regardless o
 and cycles for Design, static findings for Robustness, mutation score and diff coverage for
 Test quality. No number, no score: mark it unverified and go measure. If a metric is genuinely
 `unavailable`, say so in the scorecard rather than implying a measurement you didn't take.
+Required unavailable proof means incomplete/fail, even if `measurement_status` is `ok`.
+Leave the dependent dimension unverified; do not replace a missing metric with a prose score.
 Score specifically: cite the file or line justifying any score below 5.
 
 Metrics do not establish human readability. For dimensions 6 and 7, also apply

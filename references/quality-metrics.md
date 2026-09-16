@@ -46,7 +46,7 @@ the installed version. Never invent a flag (prime directive 1 applies to tools t
 
 | # | Metric | Answers | Typical tool |
 |---|---|---|---|
-| 1 | **Mutation score** on changed lines | Do the tests actually assert anything? | `scripts/mutate.py` (any language), or the repo's runner if configured |
+| 1 | **Mutation score** on changed lines | Do the tests actually assert anything? | `scripts/mutate.py`, classified native Node tests; other runners remain unclassified |
 | 2 | **Diff coverage** | Is the new code exercised at all? | diff-cover, or the repo's coverage report |
 | 3 | **Cyclomatic / cognitive complexity** of new & changed functions | Is any unit too tangled to maintain? | lizard, radon |
 | 4 | **Duplication** introduced | Was logic copy-pasted instead of reused? | jscpd, CPD |
@@ -60,6 +60,13 @@ Metric 1 is the important one. Coverage says a line ran; a mutation score says a
 have *caught* it being wrong. It is also the hardest metric to fake without writing real
 assertions — which is exactly why it is worth the runtime.
 
+This table is the required proof policy, **not a list of implemented collectors**.
+Diff coverage and architecture-rule collection are not implemented by the probe yet.
+Installing their tools alone does not close that gap. Missing collectors, unknown baseline
+comparisons and partially supported file scopes make required proof **incomplete**.
+Discovery includes `.mjs` and `.cjs`; that does not establish that every external analyzer
+supports those files. Numeric partial observations remain visible but are not complete proof.
+
 ## Mutation testing without project wiring
 
 Most mutation runners demand project-level configuration. `scripts/mutate.py` does not: it
@@ -68,11 +75,25 @@ test command against each mutant, and reports which survived.
 
 ```bash
 python <skill>/scripts/mutate.py --slug <slug> --base origin/main
-python <skill>/scripts/mutate.py --slug <slug> --base origin/main --test-cmd "npm test" --max-mutants 30
+python <skill>/scripts/mutate.py --slug <slug> --base origin/main --test-cwd "packages/app" -- node --test "test/math case.test.mjs"
 ```
 
-It writes `.ai/<slug>/mutation.json` and `probe.py` calls it automatically when the repo has
-no configured runner of its own.
+It writes an atomic version-2 report under `.ai/<slug>/evidence/runs/<run-id>/mutation.json`;
+it does not update the historical `.ai/<slug>/mutation.json` alias. The probe consumes only its current
+invocation's successful report, checking source binding and restoration, never the alias.
+No workflow adoption or ledger is needed.
+
+Explicit remainder argv preserves spaces without a shell. `--repo` retains its original
+directory as the default test cwd before resolving the Git root; `--test-cwd` overrides it.
+Without explicit argv, manifest commands take priority, then native test discovery in the
+selected directory and its `test`/`tests` directories. Nested packages are not traversed.
+Legacy `--test-cmd` accepts simple whitespace-separated commands; ambiguous quoting or
+escaping is rejected. Use remainder argv instead.
+
+Native classification requires Node 22 or later. Tests for this change were run on Node 24;
+Node 22 compatibility is not an execution claim. Direct `node --test` uses the shared native
+event reporter, with `NODE_TEST_CONTEXT` removed from the child environment. npm/custom
+commands may run but are unclassified; arbitrary runner output is not assertion proof.
 
 **How it behaves, and why:**
 - **Diff-scoped.** Mutating the whole repository is slow and answers the wrong question. The
@@ -83,7 +104,9 @@ no configured runner of its own.
   `--max-mutants` (default 20) so a run stays affordable.
 - **Refuses to run** on a dirty working tree (mutants are written in place and restored) or on
   a red suite (every mutant would "die" for the wrong reason).
-- **A timeout counts as killed** — an infinite loop is a detected defect.
+- **A kill needs an actual native assertion failure** in the baseline test inventory.
+  Syntax, import/setup, file-wrapper, empty-suite, timeout, cancellation and unsupported
+  outcomes are ungraded, never assertion kills. Any ungraded candidate makes the run incomplete.
 - **Floor: 60%** on the changed lines. Below that, the gate fails.
 
 **Survivors are a to-do list, not a score to argue with.** Each one is either killed with a
@@ -109,8 +132,8 @@ tests check nothing. That difference is the entire reason this metric exists.
 
 ## How it runs
 
-`scripts/probe.py` in this skill runs every available tool twice — once on the **merge-base**
-(in a throwaway git worktree) and once on **HEAD** — and writes `.ai/<slug>/metrics.json` with
+`scripts/probe.py` in this skill runs available collectors twice — once on the **merge-base**
+(in an owned throwaway git worktree) and once on the **working tree** — and writes `.ai/<slug>/metrics.json` with
 both values and the delta.
 
 ```bash
@@ -121,6 +144,20 @@ python <skill>/scripts/probe.py --slug <slug> --base origin/main --skip-mutation
 Run it once before the independent review (so the reviewer sees the numbers) and again after
 any rework.
 
+The immutable report is `.ai/<slug>/evidence/runs/<run-id>/metrics.json`; the top-level file
+is a display alias. Reports carry source bytes/modes, explicit scope/exclusions, command
+outputs and resolved policy. Changes during collection invalidate the observation.
+This is source freshness, not authenticated identity or a filesystem sandbox.
+The mutation snapshot excludes exactly its report and the matching probe report/display
+paths, so publishing metrics does not invalidate its child proof. Other artifacts and
+contracts remain observed.
+The consumer uses the producer's canonical command selection, including concrete discovery
+for `-- node --test`. It also reconciles candidate identities/bytes, actual native baseline
+and result evidence, outcomes, counters and score. A summary score without consistent
+classified results is unavailable, not measured proof.
+`--require-metric NAME` only adds required proof. There are no exemptions or imported-score
+flags. `--skip-mutation` and automatic UI skipping do not waive mutation completeness.
+
 ### Greenfield work has no baseline
 
 On the first commit of real code the baseline is empty, so **every** metric "regresses" from
@@ -128,6 +165,8 @@ zero and a delta gate would fail the run for merely existing. When the merge-bas
 than three source files the probe says so, records `"baseline": "greenfield"`, and judges
 against absolute sanity limits instead (duplication ≤12%, max complexity ≤25, no cycles).
 Read those as sanity checks, not targets.
+An unavailable merge-base or failed baseline inventory is `"baseline": "unknown"`, never
+greenfield. Missing brownfield comparison is unavailable, not a passing delta.
 
 ### Front-end projects
 
@@ -146,6 +185,7 @@ function into six incoherent ones.
 
 Gate 6 fails if any of these is true:
 
+- Any required measurement or comparison is unavailable, stale or only partially supported.
 - Duplication, complexity, cycles, dead code, or static findings are **worse than the
   baseline** — the change made the codebase harder to maintain.
 - A **new dependency cycle** or **architecture rule violation** appears. This is absolute:
@@ -170,8 +210,8 @@ When scoring `quality-bar.md`, these dimensions may not be scored ≥4 on prose 
 | Robustness | static/security findings |
 | Test quality & evidence | mutation score + diff coverage |
 
-If a metric is `unavailable`, say so in the scorecard and justify the score from evidence you
-*do* have — never imply a measurement you didn't take.
+If a required metric is `unavailable`, mark the dependent score unverified and name the
+missing prerequisite. Other evidence may be useful, but does not waive the completeness gate.
 
 ## Anti-gaming (these are the rules the metrics themselves cannot enforce)
 
@@ -187,30 +227,18 @@ If a metric is `unavailable`, say so in the scorecard and justify the score from
 
 ## `metrics.json`
 
-```json
-{
-  "slug": "checkout-discount-codes",
-  "base": "origin/main",
-  "head": "a1b2c3d",
-  "generated": "2026-02-17T12:00:00Z",
-  "verdict": "pass",
-  "metrics": {
-    "duplication_pct":      { "base": 3.1,  "head": 3.0,  "delta": -0.1, "status": "ok" },
-    "complexity_max":       { "base": 14,   "head": 15,   "delta": 1,    "status": "warn" },
-    "complexity_avg":       { "base": 3.2,  "head": 3.3,  "delta": 0.1,  "status": "ok" },
-    "cycles":               { "base": 0,    "head": 0,    "delta": 0,    "status": "ok" },
-    "dead_exports":         { "base": 2,    "head": 2,    "delta": 0,    "status": "ok" },
-    "static_findings":      { "base": 7,    "head": 6,    "delta": -1,   "status": "ok" },
-    "diff_coverage_pct":    { "head": 94.0, "threshold": 85, "status": "ok" },
-    "mutation_score_pct":   { "head": 78.0, "threshold": 60.0, "status": "ok",
-                              "survivors": 0, "detail": ".ai/<slug>/mutation.json" },
-    "diff_files":           { "head": 6 },
-    "diff_lines":           { "head": 214 }
-  },
-  "unavailable": ["architecture_rules"],
-  "tools": { "jscpd": "4.0.5", "lizard": "1.17.31" }
-}
-```
+Version 2 retains `metrics`, `unavailable`, `worst_status` and `verdict` for existing readers.
+Each measurement has `state` (`measured` or `unavailable`), observed numeric `head` when
+available, `comparison` (`ok`, `warn`, `fail`, `unavailable`) and an explicit reason.
+`measurement_status` describes complete measured comparisons separately from `completeness`.
+`missing_required` lists each missing metric, its reason and prerequisite.
 
-`status` is `ok` (no regression), `warn` (regressed within tolerance — explain it), or `fail`
-(gate-blocking). `verdict` is `pass` only when nothing is `fail`.
+For example, `measurement_status: "ok"` plus `completeness: "incomplete"` still produces
+`verdict: "fail"`. A measured regression can coexist with incomplete proof. Overall `pass`
+requires complete required proof and no measured failure; warnings still require explanation.
+Diff-size counters are informational, not replacements for quality evidence.
+
+Probe exits: **0** complete passing proof, **1** measured failure or incomplete proof,
+**2** invalid/unstartable invocation. Mutation exits: **0** complete classified measurement
+(the probe applies the 60% floor), **2** incomplete/unavailable/invalid.
+The separate evaluation corpus retains its **0.9** test-quality threshold.

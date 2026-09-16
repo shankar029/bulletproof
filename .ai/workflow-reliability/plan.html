@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan — Workflow reliability</title>
+<link rel="stylesheet" href="../assets/artifact.css">
+<script src="../assets/artifact.js" defer data-doc="plan.html" data-slug="workflow-reliability"></script>
+</head>
+<body>
+<h1>Workflow reliability — Build plan</h1>
+<div class="meta">Planning r1 · 16 September 2026 · 11 tasks / 3 increments<br>
+Authority: <a href="state.md">AC01–09 and exclusions</a> · <a href="research.md">research</a> ·
+<a href="design.html">approved design r2</a> · <a href="design-contracts.json">r2 contracts</a> ·
+<a href="design-review.md">independent approval</a><br>
+Execution detail: <a href="tasks.json">tasks.json</a> owns task dependencies, commands, assertions and gate schedules.
+<a href="traceability.md">Traceability</a> remains an evidence index, not a second plan.</div>
+
+<h2>1. Outcome and current boundary</h2>
+<p>Build standalone, honest ESM/CJS measurements first; then real guarded admission and durable resume; then canonical workflow guidance and separate fresh-agent experiments. <strong>FACT:</strong> planning HEAD is <code>dde2b491</code>; differences from research base <code>bcc971d3</code> are task artifacts/assets only. Approved r2 hashes match the independent review. Existing native baseline is <strong>51/51</strong>, not new-feature proof.</p>
+<p class="assumption">Parent accepted r2 under authorized autopilot; human approval is unconfirmed. Every task and feature check below is planned, not executed. No implementation, installation, agent launch, commit or publication belongs to this planning handoff.</p>
+
+<h2>2. Build order</h2>
+<figure>
+<svg viewBox="0 0 760 92" role="img" aria-label="Measurement first, then independent verification and review, guard second, independent verification and review, integration and final proof third">
+<defs><marker id="next" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker></defs>
+<rect x="3" y="17" width="139" height="55" class="b"/><text x="72" y="39" class="t">I1: measurement</text><text x="72" y="57" class="s">no guard dependency</text>
+<rect x="164" y="17" width="111" height="55" class="b-alt"/><text x="219" y="39" class="t">Fresh verify</text><text x="219" y="57" class="s">then fresh review</text>
+<rect x="297" y="17" width="139" height="55" class="b"/><text x="366" y="39" class="t">I2: guard</text><text x="366" y="57" class="s">state / CLI / resume</text>
+<rect x="458" y="17" width="111" height="55" class="b-alt"/><text x="513" y="39" class="t">Fresh verify</text><text x="513" y="57" class="s">then fresh review</text>
+<rect x="591" y="17" width="166" height="55" class="b"/><text x="674" y="39" class="t">I3: final integration</text><text x="674" y="57" class="s">experiments + both gates</text>
+<line x1="142" y1="44" x2="164" y2="44" class="a" marker-end="url(#next)"/>
+<line x1="275" y1="44" x2="297" y2="44" class="a" marker-end="url(#next)"/>
+<line x1="436" y1="44" x2="458" y2="44" class="a" marker-end="url(#next)"/>
+<line x1="569" y1="44" x2="591" y2="44" class="a" marker-end="url(#next)"/>
+</svg>
+<figcaption>Each arrow requires accepted due proof, not merely a completed command. Missing quality proof can stop advancement.</figcaption>
+</figure>
+<table>
+<thead><tr><th>Increment / tasks</th><th>Owned design changes and files</th><th>ACs / prerequisites / proof</th></tr></thead>
+<tbody>
+<tr><td>☐ I1 · P0<br>I1.T1–T4</td><td><code>evidence.py</code>; native reporter, mutation and runner <em>env only</em>; probe and scorer; their tests and metric-consumer sections.</td><td>01, 02, 09; partial 06.<br>Approved r2 → primitives → native/probe → integrated real Git CLI fixtures, native/eval regression, fresh verifier and reviewer.</td></tr>
+<tr><td>☐ I2 · P0/P1<br>I2.T1–T4</td><td><code>workflow_state.py</code>, <code>workflow_gate.py</code>, <code>workflow.py</code>; runner observer; CLI reference; Python/native workflow failure tests. Runtime current-design, research binding and temporal rules belong here.</td><td>03–09 runtime scenarios.<br>I1 gate → state/readiness → dispatch → negative/positive public CLI pairs, live-child recovery and fresh-process resume → both independent gates.</td></tr>
+<tr><td>☐ I3 · P1/P2<br>I3.T1–T3</td><td>Remaining SKILL/reference consumers; conditional live-bundle staging; parent-host resume and held-out diagnosis evidence; final report/index reconciliation.</td><td>04–09 integration; final 01–09.<br>I2 gate → canonical wiring → neutral-input experiments → all regressions, fresh verifier, fresh reviewer and truthful final status.</td></tr>
+</tbody>
+</table>
+
+<h2>3. Safe implementation and proof</h2>
+<p><strong>First ready task: I1.T1.</strong> Confirm the r2 source-snapshot/atomic-write/lock contracts, add independent primitives and their real filesystem tests. After its tests and shared-contract handoff, I1.T2 and I1.T3 may run concurrently: one implementer owns mutation/native/scorer/runner-env; parent owns probe/metric docs. No shared-file concurrent edits. Parent integrates both before I1.T4. Otherwise execute sequentially.</p>
+<p>Every increment runs unit, integration and public CLI E2E checks, then a <strong>fresh non-implementing verifier and a separate fresh read-only reviewer before any commit or next increment</strong>. Rework invalidates affected proof and is reverified/reviewed. Exact argv, Windows cwd, bounds, positive assertions, cleanup, outcome owners and evidence locations are in the linked command/check records. Native 22+ is the intended compatibility contract; only Node 24.11.1 is available here. Do not claim a Node 22 test.</p>
+
+<h2>4. Honest completion and recovery</h2>
+<p>Functional tests proving <em>incomplete/fail</em> are expected to pass; an actual default probe lacking required collectors is expected to fail. These are different verdicts. No fixture supplies missing real measurements. Required unavailable coverage/architecture proof blocks complete quality/guard closure; the plan grants no waiver or automatic onward transition. Preserve reviewed functional work and report the blocker rather than fabricate a green increment.</p>
+<p>Due checks are listed only at each gate task. Later checks stay unverified; spanning ACs stay partial. Changes reopen bound dependents, retaining unaffected receipt IDs and historical pre-action proof. Unknown spawn/tree state stays locked: guard death, age and PID absence cannot establish recovery. Record timeouts; verify owned cleanup; retry once after a concrete remedy, then stop affected work.</p>
+
+<h2>5. Final evidence and exclusions</h2>
+<p>Final regression repeats all Python, native, fixed-corpus and dry-run checks plus all due scenarios. Parent-host resume and diagnosis use neutral input/history manifests and a separate evaluator; capture accesses and disclose shared storage, never claim a sandbox. Exposure or insufficient records leaves blindness unverified. Full quality needs real measurements, not optimistic summaries.</p>
+<p>Preserve historical planner evidence, generic mutation 60%, eval 0.9 and null normalization. No new framework, measurement exemptions, authenticated identities or temporary-location-only refactor. Production deployment is N/A: local CLI/docs delivery. GitHub publication remains 403/EMU blocked; do not retry or bypass. Parent owns Gate 3 consumer readiness and later state/traceability updates. Printed/render verification of this new plan remains a parent handoff check; no page-count measurement is claimed.</p>
+</body>
+</html>

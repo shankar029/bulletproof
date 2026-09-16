@@ -1,0 +1,29 @@
+{
+  "source_sha256": {
+    "scripts/mutate.py": "588076ee9438d98bd2b9eaa755abb5d33c24bdcbb780f8361efbf559fb184dd9",
+    "scripts/native_result.mjs": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+    "scripts/run.py": "3f4f4926f189b7d4568ad22a65c1a374cf08ba9f54cb2a5753e2b6ff5c2e9152",
+    "evals/lib/score.mjs": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+    "evals/lib/native_result.test.mjs": "60455f759a5649c5835505431c62641554ed33cc5b3b446ef46828029261b892",
+    "evals/lib/score.test.mjs": "9805b44feccf72411a8720cc5c5b8813de182328bcf76eb06faf3525c739cf24",
+    "scripts/tests/test_mutate.py": "9f03163ebb9bf9773065e2bfc081e7e173069b55b7ad47135cb5af67d137d62b",
+    "scripts/tests/test_run.py": "a7c1cffaf658702f8a28c014459b1074fc920c2460e767c12c53da72c6200dad"
+  },
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts/tests",
+    "-p",
+    "test_mutate.py",
+    "-v"
+  ],
+  "idle_seconds": 90,
+  "max_seconds": 480,
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "test_baseline_zero_import_syntax_and_skips_fail_before_mutation (test_mutate.MutationTests.test_baseline_zero_import_syntax_and_skips_fail_before_mutation) ... ok\ntest_changed_python_cannot_be_hidden_by_candidate_selection (test_mutate.MutationTests.test_changed_python_cannot_be_hidden_by_candidate_selection) ... ok\ntest_competing_edit_preserved_with_recovery_bytes (test_mutate.MutationTests.test_competing_edit_preserved_with_recovery_bytes) ... ok\ntest_competing_report_write_is_not_overwritten (test_mutate.MutationTests.test_competing_report_write_is_not_overwritten) ... ok\ntest_dirty_untracked_contract_rejected_but_owned_output_is_not (test_mutate.MutationTests.test_dirty_untracked_contract_rejected_but_owned_output_is_not) ... ok\ntest_discovery_diffs_safe_operators_and_ambiguous_scope (test_mutate.MutationTests.test_discovery_diffs_safe_operators_and_ambiguous_scope) ... ok\ntest_exclusive_lock_blocks_a_second_measurement (test_mutate.MutationTests.test_exclusive_lock_blocks_a_second_measurement) ... ok\ntest_inherited_node_context_is_removed_and_bom_is_restored (test_mutate.MutationTests.test_inherited_node_context_is_removed_and_bom_is_restored) ... ok\ntest_legacy_quoted_commands_fail_and_custom_runner_is_unclassified (test_mutate.MutationTests.test_legacy_quoted_commands_fail_and_custom_runner_is_unclassified) ... ok\ntest_nested_package_and_spaced_argv_preserve_test_cwd_and_parameters (test_mutate.MutationTests.test_nested_package_and_spaced_argv_preserve_test_cwd_and_parameters) ... ok\ntest_probe_can_preallocate_shared_run_directory (test_mutate.MutationTests.test_probe_can_preallocate_shared_run_directory) ... ok\ntest_real_esm_and_cjs_kill_survivor_byte_restoration_and_nonce (test_mutate.MutationTests.test_real_esm_and_cjs_kill_survivor_byte_restoration_and_nonce) ... ok\ntest_setup_log_spoof_zero_missing_and_skipped_mutants_are_not_kills (test_mutate.MutationTests.test_setup_log_spoof_zero_missing_and_skipped_mutants_are_not_kills) ... ok\ntest_syntax_preflight_rejects_generated_typescript_generic_mutant (test_mutate.MutationTests.test_syntax_preflight_rejects_generated_typescript_generic_mutant) ... ok\ntest_timeout_is_ungraded_and_restores_bytes (test_mutate.MutationTests.test_timeout_is_ungraded_and_restores_bytes) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 257.558s\n\nOK\n",
+  "source_unchanged": true
+}

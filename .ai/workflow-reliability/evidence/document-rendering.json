@@ -24,7 +24,7 @@
           "effectiveLaunch": {
             "browserLaunched": true,
             "engine": "chrome",
-            "launchHash": 15953319424792439000
+            "launchHash": 962437028186411900
           },
           "launched": false,
           "relaunchedBrowser": false,
@@ -39,7 +39,54 @@
           "effectiveLaunch": {
             "browserLaunched": true,
             "engine": "chrome",
-            "launchHash": 15953319424792439000
+            "launchHash": 962437028186411900
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "messages": []
+      }
+    },
+    {
+      "name": "plan.html",
+      "hash": "33ddf0dd2ba2448800861a334a6a8887b68cbf19c59ffb68421c9c4674f23b31",
+      "pages": 3,
+      "view": {
+        "title": "Plan — Workflow reliability",
+        "styles": 1,
+        "diagrams": [
+          {
+            "width": 785.15625,
+            "height": 95.046875
+          }
+        ]
+      },
+      "errors": {
+        "errors": [],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 962437028186411900
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        }
+      },
+      "consoleLog": {
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 962437028186411900
           },
           "launched": false,
           "relaunchedBrowser": false,
@@ -56,77 +103,145 @@
     {
       "argv": [
         "--session",
-        "reliability-docs-947daee2-3323-423c-abfc-c9146335e268",
+        "reliability-docs-e47de1bb-af8e-4a61-a834-c8e31df25397",
         "--cdp",
-        "http://127.0.0.1:60862",
+        "http://127.0.0.1:65119",
         "--json",
         "open",
         "file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/design.html"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":15953319424792439123},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"6F222AB5D2354E0D5D9AB8D1CD03F485\",\"title\":\"Design — Workflow reliability\",\"url\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/design.html\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":962437028186411925},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"32CE00CBC37228B6DB6DA88E67FDD213\",\"title\":\"Design — Workflow reliability\",\"url\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/design.html\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "reliability-docs-947daee2-3323-423c-abfc-c9146335e268",
+        "reliability-docs-e47de1bb-af8e-4a61-a834-c8e31df25397",
         "--cdp",
-        "http://127.0.0.1:60862",
+        "http://127.0.0.1:65119",
         "--json",
         "eval",
         "JSON.stringify({title:document.title,styles:document.styleSheets.length,diagrams:[...document.querySelectorAll(\"figure svg\")].map(x=>({width:x.getBoundingClientRect().width,height:x.getBoundingClientRect().height}))})"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":15953319424792439123},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/design.html\",\"result\":\"{\\\"title\\\":\\\"Design — Workflow reliability\\\",\\\"styles\\\":1,\\\"diagrams\\\":[{\\\"width\\\":785.15625,\\\"height\\\":95.046875},{\\\"width\\\":785.140625,\\\"height\\\":132.234375}]}\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":962437028186411925},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/design.html\",\"result\":\"{\\\"title\\\":\\\"Design — Workflow reliability\\\",\\\"styles\\\":1,\\\"diagrams\\\":[{\\\"width\\\":785.15625,\\\"height\\\":95.046875},{\\\"width\\\":785.140625,\\\"height\\\":132.234375}]}\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "reliability-docs-947daee2-3323-423c-abfc-c9146335e268",
+        "reliability-docs-e47de1bb-af8e-4a61-a834-c8e31df25397",
         "--cdp",
-        "http://127.0.0.1:60862",
+        "http://127.0.0.1:65119",
         "--json",
         "errors"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":15953319424792439123},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":962437028186411925},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "reliability-docs-947daee2-3323-423c-abfc-c9146335e268",
+        "reliability-docs-e47de1bb-af8e-4a61-a834-c8e31df25397",
         "--cdp",
-        "http://127.0.0.1:60862",
+        "http://127.0.0.1:65119",
         "--json",
         "console"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":15953319424792439123},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":962437028186411925},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "reliability-docs-947daee2-3323-423c-abfc-c9146335e268",
+        "reliability-docs-e47de1bb-af8e-4a61-a834-c8e31df25397",
         "--cdp",
-        "http://127.0.0.1:60862",
+        "http://127.0.0.1:65119",
         "--json",
         "pdf",
         "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\design.pdf"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":15953319424792439123},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\design.pdf\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":962437028186411925},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\design.pdf\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "reliability-docs-947daee2-3323-423c-abfc-c9146335e268",
+        "reliability-docs-e47de1bb-af8e-4a61-a834-c8e31df25397",
         "--cdp",
-        "http://127.0.0.1:60862",
+        "http://127.0.0.1:65119",
+        "--json",
+        "open",
+        "file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/plan.html"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":962437028186411925},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"32CE00CBC37228B6DB6DA88E67FDD213\",\"title\":\"Plan — Workflow reliability\",\"url\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/plan.html\"},\"error\":null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-e47de1bb-af8e-4a61-a834-c8e31df25397",
+        "--cdp",
+        "http://127.0.0.1:65119",
+        "--json",
+        "eval",
+        "JSON.stringify({title:document.title,styles:document.styleSheets.length,diagrams:[...document.querySelectorAll(\"figure svg\")].map(x=>({width:x.getBoundingClientRect().width,height:x.getBoundingClientRect().height}))})"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":962437028186411925},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/plan.html\",\"result\":\"{\\\"title\\\":\\\"Plan — Workflow reliability\\\",\\\"styles\\\":1,\\\"diagrams\\\":[{\\\"width\\\":785.15625,\\\"height\\\":95.046875}]}\"},\"error\":null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-e47de1bb-af8e-4a61-a834-c8e31df25397",
+        "--cdp",
+        "http://127.0.0.1:65119",
+        "--json",
+        "errors"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":962437028186411925},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-e47de1bb-af8e-4a61-a834-c8e31df25397",
+        "--cdp",
+        "http://127.0.0.1:65119",
+        "--json",
+        "console"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":962437028186411925},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-e47de1bb-af8e-4a61-a834-c8e31df25397",
+        "--cdp",
+        "http://127.0.0.1:65119",
+        "--json",
+        "pdf",
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\plan.pdf"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":962437028186411925},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\plan.pdf\"},\"error\":null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-e47de1bb-af8e-4a61-a834-c8e31df25397",
+        "--cdp",
+        "http://127.0.0.1:65119",
         "--json",
         "close"
       ],

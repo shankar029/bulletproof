@@ -5,6 +5,9 @@ import { readFileSync, existsSync, readdirSync, writeFileSync, mkdtempSync, rmSy
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { generateMutants } from './mutate.mjs';
+import { parseReport, classifyResult, checkSyntax } from '../../scripts/native_result.mjs';
+
+const nativeReporter = new URL('../../scripts/native_result.mjs', import.meta.url).href;
 
 /** Parse pass/fail/tests counts from `node --test` TAP output. Returns zeros if absent. */
 export function parseTap(output) {
@@ -103,8 +106,8 @@ export function runQuality(task, projectAbs, armDirAbs, repoRoot) {
 /** Test-realness: mutate the arm's OWN implementation and re-run the arm's OWN tests. A real suite
  *  kills mutants; a shallow/fake/absent one lets them survive. Applies only when the task opts in
  *  via `quality.mutate` (true → mutate `quality.src`, or a filename to mutate). Runs on a temp copy
- *  so committed fixtures are never touched. Mutants that fail to load (tests==0) are skipped
- *  (compile error ≠ kill) so the kill-rate is never inflated. */
+ *  so committed fixtures are never touched. Syntax/setup/timeout/missing-inventory outcomes
+ *  are skipped; only a genuine native leaf assertion failure can count as a kill. */
 export function runTestQuality(task, projectAbs, armDirAbs) {
   const q = task.quality || {};
   if (!q.mutate) return { applicable: false };
@@ -123,30 +126,36 @@ export function runTestQuality(task, projectAbs, armDirAbs) {
     const implPath = path.join(armTmp, implName);
     const original = readFileSync(implPath, 'utf8');
     const runArmTests = () => {
-      const r = spawnSync(process.execPath, ['--test', '--test-reporter=tap', ...testFiles], {
-        cwd: armTmp, encoding: 'utf8', env: childEnv(),
+      const r = spawnSync(process.execPath, ['--test', `--test-reporter=${nativeReporter}`, ...testFiles], {
+        cwd: armTmp, encoding: 'utf8', env: childEnv(), timeout: 60_000,
       });
-      return parseTap(`${r.stdout}\n${r.stderr}`);
+      return { native: parseReport(r.stdout || ''), rc: r.status };
     };
 
     const base = runArmTests();
-    if (base.tests === 0) {
+    if (!base.native.leaf_count) {
       // Test file(s) present but the platform runner discovered/ran ZERO tests — e.g. written for a
       // framework `node --test` can't execute (vitest/jest `describe`/`expect`), or a compile error.
       // A test the runner can't run is not a real test, so this is distinct from "no tests".
       return { applicable: true, testsPresent: true, runnable: false };
     }
-    if (!(base.pass > 0 && base.fail === 0)) {
+    if (classifyResult(base.native, base.rc) !== 'survived') {
       return { applicable: true, testsPresent: true, runnable: true, greenBaseline: false };
     }
     const mutants = generateMutants(original, { max: 16 });
     let killed = 0, survived = 0, skipped = 0;
     for (const m of mutants) {
       writeFileSync(implPath, m.mutated);
+      const syntax = checkSyntax(implPath);
+      if (syntax.status !== 0) {
+        skipped++;
+        continue;
+      }
       const r = runArmTests();
-      if (r.tests === 0) skipped++;
-      else if (r.fail > 0) killed++;
-      else survived++;
+      const outcome = classifyResult(r.native, r.rc, base.native);
+      if (outcome === 'killed-assertion') killed++;
+      else if (outcome === 'survived') survived++;
+      else skipped++;
     }
     return { applicable: true, testsPresent: true, runnable: true, greenBaseline: true, killed, survived, skipped, total: mutants.length };
   } finally {
