@@ -45,6 +45,11 @@ The layer is a reading app, not a form:
 
 ## How the verdict returns — the handoff protocol
 
+Use `communication.md` for the human-facing request: lead with the decision needed, give the
+recommendation and meaningful trade-off, and link the exact artifact. Keep all material risks
+visible and use the host's supported approval mechanism. Concise wording does not change the
+approval, persistence, or stop/wait protocol below.
+
 **Do not open the document with agent-browser for the user to read.** agent-browser drives the
 *agent's* browser instance; the human reads in their own. Hand off like this:
 

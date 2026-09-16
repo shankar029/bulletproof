@@ -7,6 +7,11 @@ All notable changes to this project are documented here. The format is based on
 ## [Unreleased]
 
 ### Added
+- **Focused communication standard.** New `references/communication.md` guides progress,
+  approval, blocker and completion messages: outcome first, bounded human actions, visible
+  uncertainty and material limitations, and complete linked evidence. Shared skill, approval
+  handoffs and final summaries use it without restricting research/planning detail or adding
+  plugins, medical assumptions, persistent modes or mandatory time estimates.
 - **Executable planning and consumer-ready handoffs.** New `references/planning.md` defines
   exact task/change ownership, prerequisites, reuse/preservation constraints, grounded verification
   commands, expected outcomes, owners and evidence. Phase 3 distinguishes vertical increments

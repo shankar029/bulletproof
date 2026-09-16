@@ -105,5 +105,9 @@ gh pr create --fill</code></pre>
 
 ## The chat summary
 
-Mirror the report in a few lines: outcome, gate row, the headline numbers, what is pending, and
-the path to `report.html`. Do not paste the whole report into the chat — link it.
+Follow `communication.md`: lead with the delivered outcome or plainly state incomplete delivery.
+Mirror the required status in a few lines: gate row, headline numbers, material limitations and
+pending work, and the path to `report.html`. Do not paste the whole report into the chat — link it.
+Do not omit a failure or invent a cause to keep the summary short. Give a human next action only
+when one is necessary; otherwise stop. The presentation rules never reduce the full report's
+evidence or required contents.

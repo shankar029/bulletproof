@@ -17,6 +17,14 @@ passes, and say when you pass it.** After Phase 6, score the work against the ru
 The requirement is `$ARGUMENTS` — text, a file path, or a link. If it points at a file or
 URL, read it fully first.
 
+## Communicate clearly
+Follow `references/communication.md` for human-facing updates: lead with the outcome, blocker,
+or decision needed; make progress visible at meaningful transitions; keep uncertainty and
+material limitations explicit. Link complete artifacts instead of repeating them, but never
+shorten research, task contracts, evidence, or required reporting to fit a chat summary.
+Keep agent-owned actions with the agent workflow; request human action only when needed,
+and stop when finished. Existing delegation requirements remain unchanged.
+
 ## Workspace first: check for existing work
 **Before anything else**, look under `.ai/` at the repository root for a slug matching this
 requirement. If `.ai/<slug>/state.md` exists, **read it and resume where it left off** — do not
@@ -423,6 +431,7 @@ ship what is green and record the remaining gap, its root cause, and the propose
 explicit follow-up. Never close the gap by lowering the bar.
 
 ## References (load on demand)
+- `references/communication.md` — focused progress, approval, blocker and completion messages; concise presentation without lost evidence.
 - `references/workspace.md` — the `.ai/<slug>/` workspace, `state.md`, `traceability.md`, resume protocol, increment sizing.
 - `references/research.md` — reusable research procedure; AC coverage, source evidence, freshness, and task-specific handoff.
 - `references/planning.md` — executable task/check contracts, vertical increments, consumer readiness, and controlled revision/resume.
@@ -445,6 +454,8 @@ explicit follow-up. Never close the gap by lowering the bar.
 Every run ends with a report — **written to `.ai/<slug>/report.html`** using the shared theme,
 and summarised in the chat. It is the one artifact a person reads to know what happened, so it
 states what is true, not what was hoped. Structure and template: `references/final-report.md`.
+Use `references/communication.md` for the chat summary, preserving the required status and
+material limitations; the full report remains the evidence record.
 
 It covers: what was **delivered** (and what was not) · each acceptance criterion with how it was
 proven · **the gate row, G1–G6, with pass/blocked and the reason** · the measured numbers (tests,
