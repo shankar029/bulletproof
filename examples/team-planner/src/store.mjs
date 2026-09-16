@@ -1,7 +1,7 @@
 import { mkdir, open, readFile, rename, unlink } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { randomUUID } from 'node:crypto';
-import { AppError, decode, emptyModel, encode, validate } from './schema.mjs';
+import { AppError, decode, emptyModel, encode, validate, upgradeV1 } from './schema.mjs';
 
 async function removeOwned(path) {
   try { await unlink(path); } catch (error) { if (error.code !== 'ENOENT') throw error; }
@@ -21,7 +21,7 @@ export class JsonStore {
     this.#commitFile = commitFile ?? rename;
   }
 
-  static async open({ directory, commitFile }) {
+  static async open({ directory, commitFile, createIfMissing = true }) {
     const store = new JsonStore(directory, commitFile);
     await mkdir(store.directory, { recursive: true });
     let lock;
@@ -35,7 +35,7 @@ export class JsonStore {
       await lock.close();
       let bytes;
       try { bytes = await readFile(store.path, 'utf8'); } catch (error) {
-        if (error.code !== 'ENOENT') throw error;
+        if (error.code !== 'ENOENT' || !createIfMissing) throw error;
       }
       if (bytes === undefined) {
         store.#model = emptyModel();
@@ -85,6 +85,40 @@ export class JsonStore {
       const bytes = encode(next);
       const result = { value: structuredClone(value), revision: next.revision };
       await this.#persist(bytes);
+      this.#model = next;
+      return result;
+    });
+    this.#queue = operation.catch(() => {});
+    return operation;
+  }
+
+  migrateToV2() {
+    if (this.#closed) return Promise.reject(new AppError('STORE_CLOSED', 'Store is closed', 503));
+    const operation = this.#queue.then(async () => {
+      if (this.#model.schemaVersion === 2) return { schemaVersion: 2, revision: this.#model.revision, changed: false };
+      const original = await readFile(this.path);
+      const next = upgradeV1(original);
+      const backupPath = join(this.directory, 'planner.v1-backup.json');
+      let backup;
+      try {
+        backup = await open(backupPath, 'wx');
+      } catch (error) {
+        if (error.code !== 'EEXIST') throw error;
+        if (!(await readFile(backupPath)).equals(original)) throw new AppError('BACKUP_MISMATCH', 'Existing backup differs from current v1 data; preserve both and resolve offline', 409);
+      }
+      if (backup) {
+        try {
+          await backup.writeFile(original);
+          await backup.sync();
+          await backup.close();
+        } catch (error) {
+          await backup.close();
+          await removeOwned(backupPath);
+          throw error;
+        }
+      }
+      const result = { schemaVersion: 2, revision: next.revision, changed: true };
+      await this.#persist(encode(next));
       this.#model = next;
       return result;
     });

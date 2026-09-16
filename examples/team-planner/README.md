@@ -22,8 +22,8 @@ Every API read and write returns a global revision and quoted ETag. POST/PATCH r
 that ETag in `If-Match`; stale writes receive `409 REVISION_CONFLICT`. Reload explicitly
 discards a draft; failed saves retain it. Never automatically replay an uncertain write.
 
-Initial disk format is v1 (`state`); API uses `status`. Migration will be added in the
-evolution slice. Limits: 100 projects, 2,000 tasks, 80-code-point project names,
+Initial disk format is v1 (`state`); API uses `status`. The offline migration converts
+saved data to v2 (`status`, `priority`). Limits: 100 projects, 2,000 tasks, 80-code-point project names,
 160-code-point task titles, 2,000-code-point descriptions, 64 KiB request bodies.
 
 Tasks move todo → in progress → done, or directly todo → done, only when every direct
@@ -38,12 +38,34 @@ Status and dependencies in one PATCH are validated together; failed changes publ
 `priority`, `page` and `pageSize` (1–50, default 10). Filters combine with AND before
 ascending creation order, total counting and slicing. Empty results have zero total pages;
 an out-of-range page returns no items without clamping. Unknown/duplicate keys are errors.
-Priority other than normal requires the planned v2 migration.
+Priority other than normal requires v2 migration.
 
 `GET /api/dashboard?projectId=p-1` summarizes the whole project, not visible search/page
 results. Omit projectId for global totals. Blocked is a subset of todo. Completion is the
 integer floor of 100 × done / total, or zero for empty projects.
 Browser filters and page are URL state; Back restores them. Apply filters resets page 1.
+
+## Offline migration
+
+Stop the server, then run from the example directory:
+
+```powershell
+node src\migrate.mjs --data-dir data
+node src\main.mjs --data-dir data --port 4317
+```
+
+Migration acquires the same writer lock, validates v1, exclusive-creates an exact-byte
+`planner.v1-backup.json`, converts state → status and adds normal priority, and atomically
+replaces the snapshot. IDs, order, text, dependencies and nextId are preserved; revision
+increases once. An existing matching backup permits recovery from a precommit failure;
+a different backup fails `BACKUP_MISMATCH` without overwriting either file. Repeating on v2
+is a no-op. Never run an old v1 binary against v2.
+
+Rollback is an explicitly lossy, offline operation for isolated exercise data only:
+stop every owner; archive the current v2 snapshot if its new work matters; verify the
+backup; write/sync/close a same-directory staged copy and rename it over planner.json.
+This restores old v1 data and **loses all subsequent v2 writes**. Never auto-downgrade.
+The migration tests demonstrate this loss and preserve an archive; fix forward on real data.
 
 ## Storage safety
 
