@@ -31,7 +31,7 @@ export function emptyModel() {
 
 export function validate(model) {
   object(model, ['schemaVersion', 'revision', 'nextId', 'projects', 'tasks'], ['schemaVersion', 'revision', 'nextId', 'projects', 'tasks']);
-  if (model.schemaVersion !== 1) invalid('Unknown schema version', 'schemaVersion');
+  if (![1, 2].includes(model.schemaVersion)) invalid('Unknown schema version', 'schemaVersion');
   safeInteger(model.revision, 0, 'revision');
   safeInteger(model.nextId, 1, 'nextId');
   if (!Array.isArray(model.projects) || !Array.isArray(model.tasks)) invalid('Invalid collections');
@@ -57,6 +57,7 @@ export function validate(model) {
     text(task.description, 'description', 2000, false);
     choice(task.status, statuses, 'status');
     choice(task.priority, priorities, 'priority');
+    if (model.schemaVersion === 1 && task.priority !== 'normal') throw new AppError('MIGRATION_REQUIRED', 'Migrate this store before using priorities', 409);
   }
   validateGraph(model);
   return model;
@@ -66,7 +67,8 @@ export function decode(bytes) {
   let raw;
   try { raw = JSON.parse(bytes); } catch { invalid('Invalid stored JSON'); }
   object(raw, ['schemaVersion', 'revision', 'nextId', 'projects', 'tasks'], ['schemaVersion', 'revision', 'nextId', 'projects', 'tasks']);
-  if (raw.schemaVersion !== 1 || !Array.isArray(raw.tasks)) invalid('Unknown or invalid schema', 'schemaVersion');
+  if (![1, 2].includes(raw.schemaVersion) || !Array.isArray(raw.tasks)) invalid('Unknown or invalid schema', 'schemaVersion');
+  if (raw.schemaVersion === 2) return validate(raw);
   const tasks = raw.tasks.map(task => {
     object(task, ['id', 'projectId', 'title', 'description', 'state', 'dependencyIds', 'createdOrder'], ['id', 'projectId', 'title', 'description', 'state', 'dependencyIds', 'createdOrder']);
     const { state, ...rest } = task;
@@ -77,6 +79,16 @@ export function decode(bytes) {
 
 export function encode(model) {
   validate(model);
+  if (model.schemaVersion === 2) return `${JSON.stringify(model, null, 2)}\n`;
   const tasks = model.tasks.map(({ status, priority, ...task }) => ({ ...task, state: status }));
   return `${JSON.stringify({ ...model, tasks }, null, 2)}\n`;
+}
+
+export function upgradeV1(bytes) {
+  const model = decode(bytes);
+  if (model.schemaVersion === 2) return model;
+  if (model.revision === Number.MAX_SAFE_INTEGER) throw new AppError('CAPACITY_EXCEEDED', 'Revision capacity exceeded', 409);
+  model.schemaVersion = 2;
+  model.revision++;
+  return validate(model);
 }
