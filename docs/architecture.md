@@ -95,6 +95,28 @@ Unlike implementation workers,
 read-only researchers need no worktree isolation, but they need consistent snapshots and distinct
 output destinations. The parent reconciles findings and owns Gate 1.
 
+### 7. Plans are executable handoffs, not lists of intentions
+
+Phase 3 uses [`references/planning.md`](../references/planning.md) to translate the approved
+design into task/check records in a fresh-context subagent by default for non-trivial work,
+with an inline fallback when delegation is unavailable. **Increments are vertical outcomes;
+tasks are internal steps.**
+A component can be extended in several increments when each change has one owner and explicit
+prerequisites. Contracts, logic and wiring do not become independently deliverable merely because
+they occupy separate rows.
+
+The three-page `plan.html` overview remains skimmable. Necessary execution detail can live in
+linked `.ai/<slug>/tasks.md`, with one authoritative copy of each record. Commands, setup, pass
+conditions, verification ownership and evidence paths make the handoff actionable. A bounded
+consumer-readiness check by the parent tests that usability; the incoming implementer also
+confirms its task handoff before editing. Additional independent plan review is reserved for
+high-risk work or complex dependencies. These checks do not replace full AC reconciliation or
+mandatory independent implementation verification.
+
+Plan revisions update affected ACs, dependencies, task/check records and completion evidence
+together. Changed behavior returns to design; missing facts return to research. Resume reconciles
+the actual tree with recorded evidence rather than trusting checked boxes.
+
 ## The eval architecture
 
 The eval exists to make the skill's value **objective, reproducible, and self-critical** — it is an
