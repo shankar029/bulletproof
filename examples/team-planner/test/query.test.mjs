@@ -1,7 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile, writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import { start } from '../src/main.mjs';
-import { directory, cleanup } from './helpers.mjs';
+import { directory, cleanup, root } from './helpers.mjs';
 import { seedQuery } from './query-fixture.mjs';
 
 test('worked F-query filters before paging and dashboard ignores page filters', async t => {
@@ -50,4 +52,20 @@ test('strict query rejects duplicate keys invalid enums and unsafe pagination', 
   assert.equal(missing.status, 404);
   const empty = await (await fetch(`${app.url}/api/dashboard`, { signal: AbortSignal.timeout(5000) })).json();
   assert.deepEqual(empty, { total: 0, todo: 0, inProgress: 0, done: 0, blocked: 0, completionPercent: 0, revision: 0 });
+});
+
+test('valid persisted records need not be stored in display order', async t => {
+  const path = await directory(t);
+  const snapshot = JSON.parse(await readFile(join(root, 'test', 'fixtures', 'planner-v1.json'), 'utf8'));
+  snapshot.tasks.reverse();
+  await writeFile(join(path, 'planner.json'), JSON.stringify(snapshot));
+  const app = await start({ directory: path, port: 0 });
+  cleanup(t, () => app.close());
+  const response = await fetch(`${app.url}/api/tasks?projectId=p-1&status=todo&page=2&pageSize=2`, {
+    signal: AbortSignal.timeout(5000),
+  });
+  assert.equal(response.status, 200);
+  const result = await response.json();
+  assert.deepEqual(result.items.map(task => task.id), ['t-7', 't-8']);
+  assert.equal(result.total, 4);
 });

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team planner — execution plan r1</title>
+<link rel="stylesheet" href="../../assets/artifact.css">
+<script src="../../assets/artifact.js" defer data-doc="plan.html" data-slug="workflow-app-verification"></script>
+</head>
+<body>
+<h1>Team planner — plan r1</h1>
+<p class="meta">16 September 2026 · source cfe5734 · <a href="design.html">Proposed design r1</a> · <a href="research.html">Research</a> · <a href="acceptance.json">ACs / 29-item observation map</a> · <a href="tasks.json">Authoritative executable tasks and checks</a></p>
+<p><strong>Design only; nothing implemented or tested.</strong> Combined fresh-context designer/planner assignment is a disclosed departure from separate design/planning contexts. Human design/UX approval is unconfirmed under autopilot; parent independent review and Gate 3 readiness have not occurred.</p>
+<h2 id="outcome">1. Outcome and boundaries</h2>
+<p>One install-free native-Node example with a usable local UI, committed persistence, graph rules and accurate query results. Then demonstrate compatible saved-data evolution and a labeled, nonshipped pagination fault. Preserve all existing workflow and fixed benchmark code. No credentials, deployment or external integration. This task authorizes only these four design artifacts; later implementation/commit/publishing authority belongs to the parent.</p>
+<h2 id="order">2. Build order</h2>
+<figure><svg viewBox="0 0 750 70" role="img" aria-label="Prerequisites then walking skeleton then dependencies then lists then migration then controlled diagnosis and final verification">
+<rect class="b" x="0" y="15" width="105" height="40"/><text class="t" x="52" y="40">P0 readiness</text>
+<rect class="b" x="130" y="15" width="100" height="40"/><text class="t" x="180" y="40">I1 persist</text>
+<rect class="b" x="260" y="15" width="100" height="40"/><text class="t" x="310" y="40">I2 graph</text>
+<rect class="b" x="390" y="15" width="100" height="40"/><text class="t" x="440" y="40">I3 query</text>
+<rect class="b" x="520" y="15" width="100" height="40"/><text class="t" x="570" y="40">I4 evolve</text>
+<rect class="b" x="650" y="15" width="100" height="40"/><text class="t" x="700" y="40">I5 prove</text>
+<line class="a" x1="105" y1="35" x2="130" y2="35"/><text class="s" x="117" y="28">→</text>
+<line class="a" x1="230" y1="35" x2="260" y2="35"/><text class="s" x="245" y="28">→</text>
+<line class="a" x1="360" y1="35" x2="390" y2="35"/><text class="s" x="375" y="28">→</text>
+<line class="a" x1="490" y1="35" x2="520" y2="35"/><text class="s" x="505" y="28">→</text>
+<line class="a" x1="620" y1="35" x2="650" y2="35"/><text class="s" x="635" y="28">→</text>
+</svg><figcaption>Sequential ownership: shared files recur only for distinct behavior deltas. No nested delegation from this designer.</figcaption></figure>
+<table>
+<thead><tr><th>Slice / outcome</th><th>AC / design</th><th>Owned changes (under examples\team-planner)</th><th>Tasks / exit proof</th></tr></thead>
+<tbody>
+<tr><td>P0 — readiness</td><td>AC11–12; risks</td><td>Artifact acceptance, tooling; isolated replacement experiment only</td><td>P0.T1; C00, C01</td></tr>
+<tr><td>I1 — create, edit, restart</td><td>AC01–03,07–08; program/UX</td><td>package.json, .gitignore, README.md; src schema/store/planner/server/main; public HTML/CSS/app; store/API tests and browser flow</td><td>I1.T1; C02, C03, C07 base</td></tr>
+<tr><td>I2 — complete dependent work safely</td><td>AC04,07–08; rules</td><td>src rules + planner/schema/server/app extensions; rules/API tests; browser flow</td><td>I2.T1; C04, C07 graph</td></tr>
+<tr><td>I3 — find tasks and trust counts</td><td>AC05–08; query/UX</td><td>rules/planner/server/app; query/API tests; browser query flow</td><td>I3.T1; C05, C07 query</td></tr>
+<tr><td>I4 — preserve real v1 data, add priority</td><td>AC09; contracts/decisions</td><td>schema/store, offline migrate entry; planner/server/app; fixture, migration tests; README; source-aware revision evidence</td><td>I4.T1 → T2 → T3; C06, C07 migration</td></tr>
+<tr><td>I5 — original-case diagnosis and whole-app proof</td><td>AC10–12; test strategy</td><td>Isolated controlled copy; durable diagnosis test/runner; no buggy release change. Evidence and final review</td><td>I5.T1 → T2; C08–C11, C07 all</td></tr>
+</tbody></table>
+<p>Exact file deltas, prerequisite states, recovery and checks live only in <a href="tasks.json">tasks.json</a>. New commands there are labeled planned/derived, not falsely presented as current scripts. Each slice ends with due checks, independent verification/review and a green checkpoint; any later commit is parent-owned. A partially covered AC remains not verified.</p>
+<h2 id="execution">3. Execution and proof</h2>
+<ul>
+<li><strong>Start:</strong> parent samples research citations, incorporates its OS-temp correction, reviews this design, accepts all ACs and records READY/REVISE/BLOCKED. Incoming implementer confirms P0 prerequisites. Browser availability and replacement behavior are explicit gates.</li>
+<li><strong>Test first:</strong> one behavior at a time. Begin with runnable public seams, then an assertion that fails for missing behavior, not a missing import. Preserve chronological red/green source hashes, input, command, expected/observed values and refactor regression evidence.</li>
+<li><strong>Test layers:</strong> native node:test through pure rules, real filesystem and HTTP; browser UI via designated agent-browser only. API tests do not replace UI proof. Every slice reruns delivered app tests and its browser journey; final pass covers the complete app and existing repo regression suite.</li>
+<li><strong>Environment:</strong> PowerShell, exact repository cwd recorded in tasks. Node 24.11.1 was observed. Python unavailable: record documented probe/idle-runner limitation; bounded native Node commands have wall/test deadlines but do not claim probe equivalence. Tool-managed OS-temp behavior is not the parent restriction mistakenly asserted in research.</li>
+<li><strong>Browser setup:</strong> missing-tool result already exists; parent may install agent-browser, inspect installed help, install/launch browser, then bind exact supported commands into the planned replay script. If launch fails, retain failed evidence and mark UI checks BLOCKED. No invented flags, silent Playwright substitution or false “all features passed”.</li>
+<li><strong>Coverage:</strong> every newly introduced branch requires a relevant scenario; collect native line/branch coverage and explain gaps. No new arbitrary percentage substitutes for assertions. Python metric/mutation gate remains unmeasured unless that prerequisite is actually resolved.</li>
+</ul>
+<h2 id="revision">4. Evolution, diagnosis and recovery</h2>
+<p>I4 starts by reopening the real v1 checkpoint from disk and recording source/schema/revision. Parent adopts r2 from those observations: stop dependent tasks, refresh changed facts, invalidate v1-only evidence for v2 claims, retain earlier historical results, recheck affected design/readiness, then resume at I4.T1. A copied revision template without a real checkpoint/consumer reconciliation does not exercise the revision contract.</p>
+<p>Migration is offline: dual-reader first, verified backup, atomic replacement, read/edit/restart proof, then remove v1 writer. Retain legacy reader and v1 fixture permanently. v1 binary cannot safely open v2. Rollback restores the verified backup only on isolated test data; it discards subsequent v2 writes and is not an automatic recovery action on user data.</p>
+<p>I5 copies the known-good example into an owned workspace and injects exactly one filter-after-pagination change. Original seven-task HTTP scenario must fail on expected IDs and total; minimize it to two tasks, discriminate query-order versus parsing, then add/retain regression proof, repair the copy and rerun original + minimized + browser + release regressions independently. Never wire a fault switch into shipped code. No failure means no diagnosis PASS.</p>
+<h2 id="gate">5. Acceptance and stopping</h2>
+<p>Parent uses only these artifacts to walk first task and one failure boundary, and reconciles every AC and all 29 workflow items. Verifier and reviewer are not the implementer. Evidence records include snapshot, producer/observer, exact commands, assertions, result, cleanup and limitations. Review separates SPEC / STANDARD / DESIGN CONCERN; no phrase checks or causal A/B claim.</p>
+<p><strong>Current stopping point:</strong> four proposed artifacts ready for parent review, not Gate 3 approved. Render/page count is unmeasured because browser setup is outside this design-only task; task C00 owns that check. Do not implement until parent disposes design/readiness findings. Human sign-off stays unconfirmed; no human wait is requested. Production readiness is N/A because nothing is deployed.</p>
+</body></html>

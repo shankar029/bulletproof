@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team planner — proposed design r1</title>
+<link rel="stylesheet" href="../../assets/artifact.css">
+<script src="../../assets/artifact.js" defer data-doc="design.html" data-slug="workflow-app-verification"></script>
+</head>
+<body>
+<h1>Team planner — design r1</h1>
+<p class="meta">16 September 2026 · Source cfe5734 · <a href="research.html">Research</a> · <a href="feature-inventory.json">29 workflow contracts</a> · <a href="acceptance.json">Binding acceptance and contracts</a> · <a href="plan.html">Execution plan</a></p>
+<p class="assumption"><strong>Unconfirmed human approval:</strong> parent accepted this local, single-user exercise autonomously after design review. All app symbols are proposed. Revised task readiness is in tasks.json r1.1.</p>
+<h2 id="scope">1. Scope</h2>
+<p>Build <code>examples\team-planner</code>: persisted projects/tasks, dependency transitions, queries/dashboard and usable UI (AC01–08); then saved-data migration and isolated controlled defect (AC09–10). Exercise local workflow sources, separately from fixed A/B fixtures (AC11–12). No auth, deployment, deletion or multi-process database.</p>
+<h2 id="program">2. Program design</h2>
+<figure><svg viewBox="0 0 700 125" role="img" aria-label="Module dependencies: UI calls HTTP, HTTP calls Planner, Planner calls rules and store, store calls schema">
+<rect class="b" x="0" y="10" width="95" height="40"/><text class="t" x="47" y="35">Browser UI</text>
+<rect class="b" x="125" y="10" width="90" height="40"/><text class="t" x="170" y="35">HTTP</text>
+<rect class="b" x="245" y="10" width="95" height="40"/><text class="t" x="292" y="35">Planner</text>
+<rect class="b" x="375" y="10" width="95" height="40"/><text class="t" x="422" y="35">JsonStore</text>
+<rect class="b" x="505" y="10" width="95" height="40"/><text class="t" x="552" y="35">Schema</text>
+<rect class="b" x="245" y="80" width="95" height="40"/><text class="t" x="292" y="105">Rules</text>
+<line class="a" x1="95" y1="30" x2="125" y2="30"/><text class="s" x="110" y="22">→</text>
+<line class="a" x1="215" y1="30" x2="245" y2="30"/><text class="s" x="230" y="22">→</text>
+<line class="a" x1="340" y1="30" x2="375" y2="30"/><text class="s" x="357" y="22">→</text>
+<line class="a" x1="470" y1="30" x2="505" y2="30"/><text class="s" x="487" y="22">→</text>
+<line class="a" x1="292" y1="50" x2="292" y2="80"/><text class="s" x="308" y="70">↓</text>
+</svg><figcaption>One process owns disk state; no repository framework or benchmark business logic is imported.</figcaption></figure>
+<table>
+<thead><tr><th>New module / public interface</th><th>Responsibility and collaborators</th><th>Why / principle</th></tr></thead>
+<tbody>
+<tr><td><code>schema.mjs</code>: <code>decode(raw)</code>, <code>encode(model, version)</code>, <code>upgradeV1(raw)</code></td><td>Validate persisted shape; convert to one canonical model. Own shared JSDoc shapes and coded <code>AppError</code>.</td><td>AC03,09; one boundary contract.</td></tr>
+<tr><td><code>rules.mjs</code>: <code>validateDependencies(model, taskId, ids)</code>, <code>transition(model, id, status)</code>, <code>selectTasks(model, query)</code>, <code>summarize(model, projectId)</code></td><td>Pure graph invariants and deterministic filter→sort→page behavior; no I/O.</td><td>AC04–06; readable decisions.</td></tr>
+<tr><td><code>store.mjs</code>: <code>JsonStore.open({directory})</code>, <code>read()</code>, <code>transact(expectedRevision, change)</code>, <code>migrateToV2()</code>, <code>close()</code></td><td>Exclusive process lock, serialized clone/validate/atomic commit, consistent snapshots; schema collaborator.</td><td>AC03,09; transactional state ownership.</td></tr>
+<tr><td><code>planner.mjs</code>: <code>Planner(store)</code>; <code>createProject(input, rev)</code>, <code>createTask(input, rev)</code>, <code>updateTask(id, patch, rev)</code>, <code>listProjects()</code>, <code>listTasks(query)</code>, <code>dashboard(projectId)</code></td><td>One transaction per user command; IDs and referential checks inside lock/queue. Rules + store.</td><td>AC01–06,09; caller hides coordination.</td></tr>
+<tr><td><code>server.mjs</code>: <code>createServer({planner})</code>; <code>main.mjs</code> entry; <code>migrate.mjs</code> offline entry</td><td>Bounded JSON parsing, exact routes/static allowlist, errors; CLI owns start/close/configuration.</td><td>AC01–03,08–09; explicit lifecycle.</td></tr>
+<tr><td><code>public\app.mjs</code>: browser entry; <code>index.html</code>, <code>styles.css</code></td><td>Forms, navigation and rendering. Revision-aware fetch; no copied domain rules or optimistic persistence.</td><td>AC07–08; one visible UI state owner.</td></tr>
+</tbody></table>
+<h2 id="interactions">3. Key interaction</h2>
+<figure><svg viewBox="0 0 700 140" role="img" aria-label="Save sequence: browser sends revision, planner changes a clone, store replaces disk then returns saved; validation or write failure returns error without publication">
+<rect class="b" x="0" y="0" width="130" height="32"/><text class="t" x="65" y="22">Browser</text>
+<rect class="b" x="240" y="0" width="140" height="32"/><text class="t" x="310" y="22">HTTP / Planner</text>
+<rect class="b" x="540" y="0" width="140" height="32"/><text class="t" x="610" y="22">Store / disk</text>
+<line class="a" x1="65" y1="53" x2="310" y2="53"/><text class="s" x="182" y="47">PATCH + If-Match →</text>
+<line class="a" x1="310" y1="77" x2="610" y2="77"/><text class="s" x="460" y="71">validate clone; atomic replace →</text>
+<line class="a" x1="610" y1="103" x2="65" y2="103"/><text class="s" x="338" y="97">← saved + revision only after commit</text>
+<line class="a-dash" x1="610" y1="131" x2="65" y2="131"/><text class="s" x="338" y="125">← conflict / invalid / write failed; old state retained</text>
+</svg><figcaption>Reads expose only committed snapshots. Lost HTTP acknowledgement is uncertain; refresh, never auto-retry a write.</figcaption></figure>
+<h2 id="ux">4. UX before code</h2>
+<p><strong>Projects → tasks → editor</strong>, plus Dashboard. URL preserves filters/page and Back navigation. Project list, task cards and inline editor stack below 720px without horizontal overflow.</p>
+<pre>Team planner       [Projects] [Dashboard]
+Projects           Launch  [Add task]
+[Create project]   [Search] [Status] [Priority]
+Launch             Draft [todo]       [Edit]
+                   Review [blocked]   [Edit]
+                   [Previous] Page 1 of 2 [Next]
+                   Editor: Title / Status / Dependencies / Priority
+                   [Save task] [Cancel]</pre>
+<p>Titled dependency checkboxes; explain incomplete dependencies. Announce loading/empty/saved states; no results offers Clear filters. Pending save prevents duplication. Failure retains inputs and focuses an alert. Conflict offers explicit reload/discard; cancel restores saved fields. Success refreshes counts only after commit.</p>
+<p>System font, neutral surfaces, blue focus/action, text-labeled error/success; native controls, visible focus, ≥44px targets. Verify keyboard, names, contrast and 390/1280px layouts. Automated checks do not certify WCAG conformance.</p>
+<h2 id="contracts">5. Data and decisions</h2>
+<p><a href="acceptance.json">Binding contracts and worked examples</a>: v1 disk <code>state</code> becomes v2 <code>status</code> plus <code>priority</code>; API retains <code>status</code>. Expand dual-reader, migrate offline with backup, retire v1 writing, retain reading.</p>
+<table><tr><th>Decision</th><th>Alternative / rationale</th></tr>
+<tr><td>Node + snapshot file</td><td>Over SQLite: bounded local use needs no database dependency. Lock + atomic replacement; no distributed/power-loss guarantee.</td></tr>
+<tr><td>Global revision</td><td>Over per-task revisions: simpler graph consistency; explicit whole-state conflicts.</td></tr>
+<tr><td>Plain DOM + node:test</td><td>No SPA/build burden. E19 supplies a real HTTP test pattern, not reusable app code.</td></tr>
+</table>
+<p>Caller: <code>const {revision}=planner.listProjects(); await planner.createProject({name:"Launch"}, revision);</code> Use returned revision next. Stale writes fail; fetch current state before deciding. Lock/rollback remain internal.</p>
+<h2 id="risks">6. Risks and proof</h2>
+<p>Reject corrupt schema/occupied lock. Pre-commit failures preserve bytes. Windows replacement needs a bounded experiment. Offline rollback loses later writes. Static allowlist, loopback Host/Origin checks and text rendering constrain local use; no hosted-service claim.</p>
+<p>Proof: HTTP/restart (AC01–03), graph/query/count assertions (04–06), browser journeys (07–08), real migration (09), controlled original/minimized red→green (10), independent final reconciliation (11–12). Results live in the evidence ledger. Managed Python was subsequently found through uv; initial PATH-only absence and OS-temp prohibition are corrected research limitations.</p>
+</body></html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team planner implementation evidence</title>
+<link rel="stylesheet" href="../../assets/artifact.css">
+</head>
+<body>
+<h1>Implementation complete; independent gates pending</h1>
+<p><strong>Final implementation snapshot: <code>3b776d11a58d1f85b673c628f6889e9d79594a5e</code>.</strong>
+Native Node ESM app, plain browser UI, transactional store, project/task editing, dependency lifecycle,
+filtered pages/dashboard, and real v1→v2 migration are persistent under <code>examples\team-planner</code>.
+No runtime packages, benchmark edits, nested agents, push or PR from this implementer.</p>
+<p><a href="implementation.json">Authoritative detailed evidence and limitations</a> ·
+<a href="acceptance.json">Acceptance contracts</a> · <a href="tasks.json">Task lineage</a> ·
+<a href="I3-v1-capture.json">Genuine v1 HTTP capture</a> ·
+<a href="implementation-migration/observation.json">Migration/rollback observation</a></p>
+<h2>Verified by the implementer</h2>
+<p><strong>32 tests pass, zero skipped/cancelled.</strong>
+Native source coverage: <strong>99.33% lines, 96.08% branches, 96.63% functions</strong>.
+Coverage excludes browser code; syntax checks do not prove UI behavior. No Python probe parity claim.
+The four unexecuted store statements handle backup write/sync failure cleanup; some OS/CLI fallback branches remain untested.</p>
+<p><strong>Prerequisite correction, parent update 16 September:</strong> existing managed Python was found by
+<code>uv python find</code> at <code>C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\python.exe</code>.
+Initial PATH-only checks were insufficient, not evidence that Python was absent. Subsequent commands use that
+executable with <code>scripts\run.py --idle 60 --max 180 -- node …</code>. Historical wall-bounded runs remain
+historical; parent owns the actual metrics probe. Parent also reports successful design rendering with two
+diagrams and clean console/errors, a three-page plan, and a four-page design being shortened. None is app-browser proof.</p>
+<pre>cd examples\team-planner
+node scripts\check.mjs unit
+node scripts\check.mjs integration
+node scripts\check.mjs all
+node scripts\check.mjs coverage
+node src\main.mjs --data-dir data --port 4317</pre>
+<p>Each execution used the session's wall-bounded runner. Exact command, cwd, timestamp, exit,
+stdout/stderr and file hashes are retained in
+<a href="implementation-runs/final-app-all.json">all-tests evidence</a>,
+<a href="implementation-runs/final-app-coverage.json">coverage evidence</a> and
+<a href="implementation-runs/final-ui-syntax.json">UI syntax evidence</a>.
+The unit selector runs 22 domain/storage/schema/query/migration tests; integration runs 10 HTTP/process tests.</p>
+<h2>Actual ordered checkpoints</h2>
+<table>
+<thead><tr><th>Slice</th><th>Commit</th><th>Observed proof</th></tr></thead>
+<tbody>
+<tr><td>P0 storage prerequisite</td><td>Before production store</td><td>20 closed-handle replacements; held-reader EPERM preserves bytes. This filesystem does not support the initially hoped-for successful replacement with an open reader.</td></tr>
+<tr><td>I1 persistent UI/API skeleton</td><td>0e89d05</td><td>10 tests; Unicode-limit behavioral red→green; actual process kill before/after commit.</td></tr>
+<tr><td>I2 graph lifecycle</td><td>75f00f5</td><td>14 tests; legal dependency PATCH initially rejected, then graph/transition/atomicity checks pass.</td></tr>
+<tr><td>I3 query/dashboard</td><td>d347226</td><td>16 tests; F-query worked expectations. Eleven genuine HTTP writes create schema1 revision11 fixture, seven tasks, nextId10.</td></tr>
+<tr><td>I4 expand</td><td>83d2668</td><td>18 tests; both formats read/write while genuine v1 writing remains active.</td></tr>
+<tr><td>I4 migrate</td><td>5d8df24</td><td>22 tests; offline CLI, exact backup, recovery after precommit failure, repeat no-op and lossy rollback.</td></tr>
+<tr><td>I4 contract</td><td>3b776d1</td><td>32 tests; new v2 defaults, priority edits/filter/restart, legacy read-only, retired v1 encoder.</td></tr>
+</tbody>
+</table>
+<p>These are implementation checkpoints, <strong>not independently verified slice gates</strong>.
+Genuine focused red→green pairs and setup/integration failures are distinguished in the JSON.
+Some initial runnable seams/additional tests have no separately captured pre-change red; no universal test-first claim is made.</p>
+<h2>Compatibility and source-aware revision</h2>
+<p>I4 re-opened actual I3 source/data and documented changed consumers, stable task IDs and evidence invalidation.
+This was a persisted checkpoint reconciliation in the same implementation context, not fresh-context planner
+resumption. Parent owns authoritative plan/AC reconciliation. The I3 fixture's SHA-256 is
+<code>ad7845486864bb4fef3f938eac02ef4ba213f8d3e20da4e4fa1b1c8b61df4450</code>;
+the exact backup and rollback match it. The transformed revision12 snapshot preserves all IDs/text/edges/status/order.
+An archived revision13 edit is deliberately lost when restoring revision11: rollback is not lossless.</p>
+<p>Final production encoder writes only v2. Remaining legacy state spelling belongs to the strict decoder;
+test occurrences are retained fixture/corruption cases. Historical v1 writer tests remain at their commits and
+in captured logs, superseded—not erased—by v1-read/write-rejection assertions.</p>
+<h2>Parent-owned finishing gates</h2>
+<ul>
+<li>Independent agent-browser journeys and accessibility/responsive/console verification. <code>scripts\e2e.mjs</code> is reserved, intentionally not authored here.</li>
+<li>Controlled I5 diagnosis, independent source/AC review, repository regressions/metrics interpretation and PR.</li>
+<li>Human UX/design approval remains unconfirmed. No claim of all 29 workflow branches passing.</li>
+<li>Browser-before-writer-retirement and independent per-slice sequencing were not exercised because the parent assigned browser verification after implementation.</li>
+</ul>
+<p>Owned tests/servers/children are closed; scratch is empty. Native Windows Ctrl+C key delivery is not tested:
+the graceful Node signal handler is exercised with a test-only IPC bridge, while crash tests actually kill
+their captured child PIDs. Parent-owned <code>evals/report.md</code> changes were observed and left untouched.</p>
+</body>
+</html>

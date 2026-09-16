@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "sourceBase": "cfe5734b4f28817e6236d121a3b206a51606879d",
+  "scope": "Latest five merged PRs #6 through #10; one real application exercise, not causal effectiveness measurement.",
+  "researchAcceptance": {
+    "verdict": "ACCEPTED_WITH_CORRECTIONS",
+    "sampled": [
+      "E01: current SKILL.md has six phases and separate research/design/implementation/verification/review gates.",
+      "E02: CONTRIBUTING.md requires Node >=22, native tests and canonical SKILL.md.",
+      "E11: references/e2e-agent-browser.md designates agent-browser and real browser evidence."
+    ],
+    "corrections": [
+      "Research inferred a parent OS-temporary-directory prohibition that does not exist. Tool-owned temporary directories are allowed; no broad cleanup or main-checkout access is allowed.",
+      "PATH python and py checks failed, but uv python find subsequently found an existing managed Python 3.14.2. Initial report proved PATH unavailability only, not machine-wide absence."
+    ],
+    "independence": "Fresh source-read-only researcher produced persisted artifacts consumed by fresh designer. Parent corrected unsupported conclusions rather than accepting citations as proof of those conclusions."
+  },
+  "designAndPlanning": {
+    "verdict": "ACCEPTED_WITH_READINESS_REVISIONS",
+    "humanApproval": "UNCONFIRMED_AUTOPILOT",
+    "findings": ["R1 shared checks depended on future increments", "R2 browser lifecycle and isolation incomplete", "R3 finite commands lacked consistent executable bounds"],
+    "disposition": "tasks.json r1.1 supplies dueScenarios, runner-owned isolated browser lifecycle and an available bounded-command adapter.",
+    "limitation": "Design and planning were produced by one fresh agent, not separate phase agents. Incoming worker owns storage experiment before production wiring.",
+    "browser": {
+      "tool": "agent-browser 0.37.1 via npm exec",
+      "firstOpen": "Failed os error 10060; no page loaded and browserLaunched=false.",
+      "recovery": "Minimal about:blank open succeeded; subsequent file navigation rendered the design.",
+      "svgCount": 2,
+      "uncaughtErrors": [],
+      "consoleMessages": [],
+      "firstPrint": {"designPages": 4, "planPages": 3},
+      "designDisposition": "Shortened prose without changing contracts; actual reprint is 3 pages.",
+      "transportRecovery": "Native browser startup/port-only CDP had repeated os10060 failures. Existing benchmark Chromium was launched as an owned attached process solely to expose CDP; agent-browser 0.37.1 with --cdp http://127.0.0.1:<port> successfully navigated and printed. All page interactions remained agent-browser. IPv4 URL is an observed working configuration, not a proven root cause.",
+      "pythonRecovery": "uv python find located an existing managed interpreter; scripts/run.py and probe.py --help executed. No Python install or system setting change.",
+      "analysisTooling": "jscpd and madge installed in isolated session tools after missing-command results. lizard installation failed TLS HandshakeFailure, including one retry with native certificate trust; complexity remains unavailable."
+    }
+  },
+  "existingRegressions": {
+    "unit": {"command": "node --test evals\\lib\\*.test.mjs evals\\agent\\agent.test.mjs", "passed": 51, "failed": 0, "skipped": 0, "evidence": "existing-unit.log"},
+    "fixedCorpus": {
+      "command": "node evals\\run.mjs",
+      "firstResult": "FAIL: signup-form could not import its declared Playwright dependency.",
+      "recovery": "npm install --prefix benchmark --no-audit --no-fund, then npm exec --prefix benchmark -- playwright install chromium.",
+      "result": "PASS: all ten bulletproof arms satisfy existing gate; 79/79 functional assertions.",
+      "evidence": "existing-eval-restored.log",
+      "limits": "Fixed fixture results do not prove current workflow-prompt adherence.",
+      "generatedReport": "Excluded generated-date-only delta; preserved existing tracked snapshot."
+    },
+    "liveHarnessDryRun": {
+      "command": "node evals\\agent\\live.mjs --task paginator --dry-run",
+      "result": "PASS: both arms composite 1.00",
+      "evidence": "existing-live-dryrun.log",
+      "limits": "Dry run copies reference solution; not a live model comparison."
+    }
+  },
+  "metricScopeCaution": "Current scripts/probe.py and scripts/mutate.py CODE_EXT omit .mjs/.cjs. Do not report a zero-mutant probe as proof of this Node ESM app. A separate explicitly scoped measurement or an unavailable limitation is required.",
+  "pending": ["App implementation and actual red/green", "Independent live browser verification", "Controlled defect replay", "Final code/29-feature reconciliation", "Metrics", "Persistent report and PR"]
+}

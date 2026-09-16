@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 1,
+  "title": "Latest five PRs: workflow feature inventory and live-observation contract",
+  "researchStatus": "COMPLETE_WITH_EXPLICIT_RUNTIME_GAPS",
+  "applicationVerificationStatus": "NOT_RUN",
+  "snapshot": {
+    "date": "2026-09-16",
+    "repository": "https://github.com/shankar029/bulletproof",
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+    "branch": "shbs-microsoft-workflow-app-verification",
+    "head": "cfe5734b4f28817e6236d121a3b206a51606879d",
+    "initialStatus": "clean",
+    "finalInspectedStatus": "clean",
+    "relevantUncommittedSourcePaths": [],
+    "freshness": "All source observations refer to this unchanged worktree snapshot. Refresh citations and dependent conclusions if the parent changes the tree.",
+    "artifactLocationException": "Parent explicitly authorized research.html and feature-inventory.json under the session files/workflow-app-verification directory instead of normal .ai task output. Parent owns durable integration."
+  },
+  "requirement": "Test the features which we have added till now (last 5 PRs) by implementing a medium complex app and verify for all features we have implemented till now.",
+  "scope": {
+    "type": "INFERENCE",
+    "interpretation": "All workflow changes in latest five merged PRs, with inherited workflow gates as constraints; not every historical feature in the repository.",
+    "assignedWork": "Read-only research, inventory, conventions, runtime prerequisites and observable proof requirements. No app design, implementation, test execution, installations, nested delegation or production edits.",
+    "unknown": "Application domain, authoritative application ACs, production deployment target and quantitative definition of medium complexity are not supplied. Designer/parent owns these choices rather than research silently inventing them."
+  },
+  "pullRequests": [
+    {"number": 6, "title": "feat: add requirement-scoped research handoffs", "mergedAt": "2026-09-16T05:13:38Z", "mergeSha": "cfe90e138687467c7c0a708ea35aa244c4b3879f", "url": "https://github.com/shankar029/bulletproof/pull/6"},
+    {"number": 7, "title": "feat: make planning handoffs executable and evidence-backed", "mergedAt": "2026-09-16T05:52:41Z", "mergeSha": "d0d934d1236f6eeb3ebced21233070539af5e78d", "url": "https://github.com/shankar029/bulletproof/pull/7"},
+    {"number": 8, "title": "feat: add focused human-facing communication guidance", "mergedAt": "2026-09-16T06:14:54Z", "mergeSha": "47625abba80ede76aa503c1f1db1d32cdf46cb04", "url": "https://github.com/shankar029/bulletproof/pull/8"},
+    {"number": 9, "title": "feat: enforce human-readable code and comment discipline", "mergedAt": "2026-09-16T08:11:41Z", "mergeSha": "bbb31c595ea1b594cfaec99ad5c4595e50b66c63", "url": "https://github.com/shankar029/bulletproof/pull/9"},
+    {"number": 10, "title": "feat: adopt focused engineering workflow techniques", "mergedAt": "2026-09-16T09:37:04Z", "mergeSha": "cfe5734b4f28817e6236d121a3b206a51606879d", "url": "https://github.com/shankar029/bulletproof/pull/10"}
+  ],
+  "evidence": {
+    "E01": {"type": "FACT", "sources": ["SKILL.md:22-46", "SKILL.md:142-179", "SKILL.md:242-398"], "claim": "Current entry point, tier and workspace rules, research/design/planning/implementation/verification/review gates, headless sign-off exception, app-scale trigger and metrics expectations."},
+    "E02": {"type": "FACT", "sources": ["CONTRIBUTING.md:7-47", "CONTRIBUTING.md:75-97", "references/project-profile.md:5-34", "benchmark/package.json:1", ".gitignore:1-16"], "claim": "Node >=22, native node:test, TS parameter-property restriction, canonical SKILL and references, manifest/lockfile conventions and instruction discovery. Only benchmark manifest was found; package-lock is ignored."},
+    "E03": {"type": "FACT", "sources": ["references/research.md:13-47", "references/research.md:51-129", "references/research.md:131-207"], "claim": "Read-only scoped research, typed and fresh citations, absence scope, complete standalone handoff, parent acceptance and downstream source verification."},
+    "E04": {"type": "FACT", "sources": ["references/planning.md:12-29", "references/planning.md:51-77", "references/planning.md:89-176"], "claim": "Lineage, vertical increments, executable task/check fields, nonduplicated records, dependency ownership, consumer readiness and complete coverage reconciliation."},
+    "E05": {"type": "FACT", "sources": ["references/planning.md:178-201", "references/workspace.md:79-145", "SKILL.md:287-312"], "claim": "Controlled revision, stable task IDs, evidence invalidation, source-aware resume, intermediate versus final verification."},
+    "E06": {"type": "FACT", "sources": ["references/communication.md:3-89"], "claim": "Outcome-first progress/decision/blocker/completion; detail is not capped; uncertainty and action ownership preserved; no invented next task."},
+    "E07": {"type": "FACT", "sources": ["references/code-clarity.md:12-33", "references/code-clarity.md:43-103", "references/review-and-pr.md:27-59"], "claim": "Traceable normal/failure paths, useful responsibilities, contracts/state ownership, naming, comment discipline and concrete readability acceptance; no arbitrary size metric."},
+    "E08": {"type": "FACT", "sources": ["references/diagnosis.md:3-79"], "claim": "Symptom-specific reproduction, minimization, discriminating causal evidence, preserved original scenario, red regression test, original and minimized reruns and instrumentation cleanup."},
+    "E09": {"type": "FACT", "sources": ["references/testing-and-e2e.md:11-40", "references/testing-and-e2e.md:42-82"], "claim": "Small behavior-first red/green/refactor cycles, real integration and surface-appropriate E2E; setup failure is not behavioral red; preserve equivalent coverage."},
+    "E10": {"type": "FACT", "sources": ["references/planning.md:31-44", "references/planning.md:79-108", "references/code-clarity.md:35-41", "references/design-doc.md:44-63", "references/project-profile.md:21-26", "references/review-and-pr.md:5-18"], "claim": "Decision readiness, expand/migrate/contract, caller burden, consequential alternatives, domain vocabulary, bounded prototypes and categorized snapshot-aware review."},
+    "E11": {"type": "FACT", "sources": ["references/e2e-agent-browser.md:3-20", "references/e2e-agent-browser.md:22-53", "references/e2e-agent-browser.md:70-105", "references/e2e-agent-browser.md:126-153"], "claim": "Designated browser CLI, help before flags, real interactions, clean console/errors, replayable flows and cleanup. Repository detached/process-name examples conflict with host restrictions."},
+    "E12": {"type": "FACT", "sources": ["references/app-scale-delivery.md:10-74", "references/app-scale-delivery.md:107-141", "references/workspace.md:13-42"], "claim": "Greenfield app outer loop, walking skeleton, green vertical milestones, whole-app cross-feature E2E and conditional release readiness; app-scale prose mentions Playwright despite SKILL's designated agent-browser."},
+    "E13": {"type": "FACT", "sources": ["evals/run.mjs:15-47", "evals/run.mjs:104-113", "evals/README.md:17-33", "evals/README.md:95-107"], "claim": "Config-driven fixed-arm regression loop; applicable exact dimensions require 1 and testQuality requires 0.9; reports are written; docs explicitly distinguish fixed from live agents."},
+    "E14": {"type": "FACT", "sources": ["evals/lib/score.mjs:10-49", "evals/lib/score.mjs:52-100", "evals/lib/score.mjs:103-154", "evals/lib/score.mjs:169-180"], "claim": "runFunctional uses ARM_PATH/ARM_DIR to execute oracle; runQuality greps reuse/scope/E2E; runTestQuality creates OS-temp copy, discovers only immediate arm test filenames and mutates one configured source; absent/broken tests score zero."},
+    "E15": {"type": "FACT", "sources": ["evals/agent/live.mjs:25-32", "evals/agent/live.mjs:57-72", "evals/agent/live.mjs:82-142", "evals/agent/workspace.mjs:15-48", "evals/agent/pi.mjs:13-45"], "claim": "v2 stages SKILL/references in OS temp, prepares seeded workspace excluding oracle, invokes pi except dry-run copies reference, then scores artifact and git process. Prompt restricts writes to arm, which conflicts with current workflow requiring root .ai artifacts; bundle excludes scripts/assets."},
+    "E16": {"type": "FACT", "sources": ["evals/lib/score.test.mjs:11-143", "evals/agent/agent.test.mjs:15-115"], "claim": "Tests assert scoring arithmetic, no-test/unrunnable states, paginator mutant kills, prompt flags/isolation, shared/SPEC seeding without oracle, branch process and protected-branch hard zero. They do not observe the five new workflow procedures."},
+    "E17": {"type": "FACT", "sources": ["benchmark/projects/discount-api/bulletproof/index.ts:6-41", "benchmark/projects/discount-api/bulletproof/index.ts:43-85"], "symbols": ["DiscountError", "registerCode(name: string, def: CodeDef): void", "applyDiscount(input: ApplyInput, now: Date = new Date()): ApplyResult", "createServer(): http.Server"], "claim": "Registry-based discount function validates input and business rules, returns rounded result or stable coded error; real HTTP adapter maps POST /apply to result or 400 and unmatched route to 404."},
+    "E18": {"type": "FACT", "sources": ["benchmark/projects/discount-api/shared/http.ts:1-7", "benchmark/projects/discount-api/bulletproof/index.ts:1-3", "benchmark/projects/discount-api/bulletproof/index.ts:62-85"], "symbols": ["sendJson(res: ServerResponse, status: number, payload: unknown): void"], "claim": "Small shared response helper sets application/json and serializes payload. Read as reuse example, not a general app/server framework."},
+    "E19": {"type": "FACT", "sources": ["benchmark/projects/discount-api/bulletproof/index.test.ts:1-64"], "claim": "node:test/assert strict tests normal discounts, zero floor, rounding, inclusive minimum, invalid inputs, unknown/expired code and registry extension; before hook boots server on ephemeral port, fetch asserts status/body for 200/400/404, after closes it."},
+    "E20": {"type": "FACT", "sources": ["benchmark/projects/signup-form/oracle/oracle.mjs:1-44", "benchmark/projects/signup-form/oracle/oracle.mjs:46-86", "benchmark/package.json:1"], "claim": "Real Playwright chromium browser and static HTTP server; asserts initial disabled/no messages, invalid email/password/confirmation no success, valid submission email success. Playwright declared ^1.62.0-alpha-2026-07-19."},
+    "E21": {"type": "FACT", "sources": ["evals/tasks/discount-api/task.json:1-24", "CONTRIBUTING.md:49-73"], "claim": "Existing extension seam is benchmark/projects/<name> arms/shared/oracle with evals/tasks/<id>/task.json, ARM_PATH/ARM_DIR functional contract, single source quality config and optional v2 agent block. Adding a fixture need not change runner."},
+    "E22": {"type": "FACT", "sources": ["scripts/run.py:16-30", "scripts/run.py:42-62", "scripts/run.py:143-155", "scripts/probe.py:134", "scripts/probe.py:379-409", "references/quality-metrics.md:20-40", "references/quality-metrics.md:80-94", "references/quality-metrics.md:116-174"], "claim": "run.py documents --idle/--max and exit 124/125, PID tree cleanup. Python unavailable. Probe source has TemporaryDirectory sites; source search only for those sites, not complete probe behavioral audit. Metrics require unavailable honesty; mutation 60% floor differs from v1 fixture gate 90%."}
+  },
+  "commandEvidence": [
+    {
+      "id": "C01",
+      "type": "FACT",
+      "cwd": "snapshot.cwd",
+      "commands": [
+        "Get-Location",
+        "git --no-pager status --short",
+        "git rev-parse HEAD",
+        "Get-ChildItem -Force -Name",
+        "Get-ChildItem -Path . -Filter AGENTS.md -Recurse | Select-Object -ExpandProperty FullName",
+        "gh pr list --repo shankar029/bulletproof --state merged --limit 5 --json number,title,mergedAt,mergeCommit,files"
+      ],
+      "observed": "Correct cwd; clean status; recorded SHA; no AGENTS.md results. GitHub lists #10, #9, #8, #7, #6 as latest merges with changed paths in SKILL/references/docs/launchers, not application or eval implementation.",
+      "execution": "executed, successful; no test execution"
+    },
+    {
+      "id": "C02",
+      "type": "FACT",
+      "cwd": "snapshot.cwd",
+      "commands": [
+        "git remote -v",
+        "git branch --list",
+        "git ls-files '*AGENTS.md' '*CLAUDE.md' '*.instructions.md' '*copilot-instructions.md' '*cursorrules*' '*package*.json' '*lock*' '*playwright*' '*eslint*' '*tsconfig*' '.github/*' '.cursor/*' '.ai/*'",
+        "Get-Command node,npm,python,py,agent-browser,playwright,git,gh -ErrorAction SilentlyContinue | Select-Object Name,Source",
+        "node --version",
+        "npm --version",
+        "python --version",
+        "py --version"
+      ],
+      "observed": "Origin is GitHub repo; current feature branch recorded. Manifest/path query returned benchmark/package.json only. Node 24.11.1/npm 11.6.2. Python path is WindowsApps alias; command says Python was not found. py command not recognized; grouped call exits 1 and later intended checks were reissued separately.",
+      "execution": "executed; Python/py failures explicit, not a successful prerequisite check"
+    },
+    {
+      "id": "C03",
+      "type": "FACT",
+      "cwd": "snapshot.cwd",
+      "commands": [
+        "git --version",
+        "gh --version",
+        "Test-Path .ai",
+        "Test-Path benchmark\\node_modules\\playwright",
+        "Test-Path node_modules\\playwright",
+        "Test-Path benchmark\\node_modules\\@playwright\\test",
+        "Get-ChildItem -Force -Recurse -File | Where-Object { $_.Name -in @('AGENTS.md','CLAUDE.md','copilot-instructions.md','.cursorrules','package.json','package-lock.json','pnpm-lock.yaml','yarn.lock','tsconfig.json') -or $_.Name -like '*.instructions.md' } | Select-Object -ExpandProperty FullName",
+        "Get-Command pi,copilot,chrome,msedge -ErrorAction SilentlyContinue | Select-Object Name,Source"
+      ],
+      "observed": "git 2.53.0.windows.4, gh 2.98.0. Four Test-Path results false. Recursive instruction/manifest search returned only benchmark/package.json. pi.ps1 and copilot.exe resolve; chrome/msedge were not returned. This does not establish absence of browser binaries installed off PATH or model credentials.",
+      "execution": "executed; grouped call reports exit 1 because some Get-Command names are absent"
+    },
+    {
+      "id": "C04",
+      "type": "FACT",
+      "cwd": "snapshot.cwd",
+      "commands": [
+        "node -e \"const {createRequire}=require('node:module');const path=require('node:path');for(const scope of ['package.json','benchmark/package.json']){const r=createRequire(path.resolve(scope));try{console.log(scope+': '+r.resolve('playwright'))}catch(e){console.log(scope+': '+e.code)}}\"",
+        "npm ls --global --depth=0 agent-browser playwright",
+        "node --help | Select-String 'test-coverage|test-reporter|experimental-strip-types|test-name-pattern'",
+        "git --no-pager log -5 --format='%h %s'"
+      ],
+      "observed": "Both module-resolution probes report MODULE_NOT_FOUND. Selected global npm package list empty. Node help advertises --experimental-test-coverage, --test-coverage-* filters/thresholds, --test-reporter and --test-name-pattern. No coverage command executed. Last five commits include merge and implementation commits, so they are not the same as latest five PRs.",
+      "execution": "executed; no install, tests or browser launch"
+    },
+    {
+      "id": "C05",
+      "type": "FACT",
+      "cwd": "snapshot.cwd",
+      "tool": "functions.rg",
+      "parameters": {
+        "pattern": "research\\.md|planning\\.md|diagnosis\\.md|communication\\.md|code-clarity\\.md|Gate 3|consumer.readiness|red.to.green|expand.migrate.contract",
+        "paths": ["evals", "benchmark", "scripts"],
+        "glob": "*.{mjs,ts,js,py,json}",
+        "output_mode": "content",
+        "-n": true
+      },
+      "observed": "No matches found.",
+      "scopeLimit": "These executable/config files and terms only; not proof no external or differently named test exists. Current scoring and agent assertions were also opened to establish actual coverage."
+    },
+    {
+      "id": "C06",
+      "type": "FACT",
+      "cwd": "snapshot.cwd",
+      "commands": [
+        "git --no-pager status --short",
+        "git rev-parse HEAD",
+        "Get-ChildItem -Force -Name .github,.cursor -ErrorAction SilentlyContinue",
+        "Get-ChildItem evals\\tasks -Directory | Select-Object -ExpandProperty Name"
+      ],
+      "observed": "Still clean at same SHA. No .github/.cursor listing. Ten task directories: csv-stats-cli, discount-api, expr-eval, map-limit, median-backfill, order-fsm, paginator, shape-area, signup-form, uid."
+    }
+  ],
+  "existingCheckDefinitions": [
+    {
+      "id": "EX01",
+      "type": "FACT",
+      "cwd": "snapshot.cwd",
+      "command": "node evals\\run.mjs",
+      "provenance": ["CONTRIBUTING.md:33-47", "E13", "E14"],
+      "status": "NOT_RUN",
+      "assertions": "Runs all ten fixed task arms; functional oracle counts, applicable source signals and mutation kill rate. Bulletproof exact dimensions must equal 1; mutation >=0.9.",
+      "sideEffects": "Writes evals/report.md and report.json; mutation creates OS-temp copies.",
+      "blockers": ["Missing Playwright for UI tasks", "OS-temp usage conflicts with host prohibition"],
+      "doesNotProve": "Live adherence to any new PR workflow contract or behavioral impact of prompt changes."
+    },
+    {
+      "id": "EX02",
+      "type": "FACT",
+      "cwd": "snapshot.cwd",
+      "command": "node --test evals\\lib\\*.test.mjs evals\\agent\\agent.test.mjs",
+      "provenance": ["CONTRIBUTING.md:33-38", "E16"],
+      "status": "NOT_RUN",
+      "assertions": "Scoring arithmetic, mutant generation and kill behavior, isolated prompt/seed construction, basic git-process scoring.",
+      "sideEffects": "Some integration tests create OS-temp workspaces.",
+      "blockers": ["OS-temp use must be resolved before unchanged command execution"],
+      "doesNotProve": "Research source grounding, plan readiness, communication quality, readability or diagnosis in a live app run."
+    },
+    {
+      "id": "EX03",
+      "type": "FACT",
+      "cwd": "snapshot.cwd",
+      "command": "node evals\\agent\\live.mjs --task paginator --dry-run",
+      "provenance": ["CONTRIBUTING.md:33-38", "E15"],
+      "status": "NOT_RUN",
+      "assertions": "Copies known reference arm and tests, scores plumbing. No real agent invocation or observed process adherence.",
+      "sideEffects": "Creates git workspace and copies files in OS temp.",
+      "blockers": ["OS-temp usage"],
+      "doesNotProve": "The user-requested live application implementation."
+    },
+    {
+      "id": "EX04",
+      "type": "INFERENCE",
+      "cwd": "snapshot.cwd",
+      "command": "node --test benchmark\\projects\\discount-api\\bulletproof\\index.test.ts",
+      "provenance": ["E02", "E19"],
+      "status": "NOT_RUN_DERIVED_INVOCATION",
+      "assertions": "Existing business rule results/errors and live HTTP 200/400/404 assertions, server lifecycle.",
+      "prerequisites": "Node >=22, authorized local loopback listener; use owned process cleanup.",
+      "doesNotProve": "A new medium app, persistent storage semantics or general security hardening."
+    },
+    {
+      "id": "EX05",
+      "type": "FACT",
+      "cwd": "snapshot.cwd",
+      "command": "python scripts\\run.py --idle 30 --max 60 -- node --version",
+      "provenance": ["E22"],
+      "status": "NOT_RUN_SOURCE_VERIFIED_RUNNER_SYNTAX",
+      "blockers": ["Python executable unavailable"],
+      "doesNotProve": "An equivalent native fallback exists; parent must validate any fallback separately."
+    }
+  ],
+  "observationRules": {
+    "type": "INFERENCE",
+    "basis": ["E03", "E04", "E08", "E09", "E13", "E14"],
+    "verdicts": ["EXERCISED_PASS", "EXERCISED_FAIL", "NOT_EXERCISED", "BLOCKED", "NOT_APPLICABLE"],
+    "defaultFeatureVerdict": "NOT_EXERCISED",
+    "necessaryEvidence": "Record input/AC/scenario, producer and independent observer, exact source snapshot, commands/cwd, expected and observed behavior, relevant assertions, result/exit status, artifact references and remaining limitations.",
+    "negativeControls": "A test-first red or injected diagnostic scenario must fail for the intended behavioral reason, not missing files/dependencies, syntax or broken harness. Label synthetic/evolution scenarios explicitly.",
+    "conditionalCoverage": "N/A needs an applicability reason and is not PASS. Do not force speculative migration or prototype into production solely to inflate coverage. If user expects every conditional branch exercised, separately scope authorized scenarios before implementation.",
+    "causalLimit": "One app run can demonstrate observed workflow adherence and app correctness; it cannot establish prompt-induced improvements, statistical reliability or all future branches."
+  },
+  "features": [
+    {
+      "id": "PR6-F1", "pr": 6, "name": "Fresh-context, read-only research and permission discipline", "type": "FACT", "evidence": ["E01", "E03"],
+      "trigger": "Every non-trivial requirement; diagnosis does not widen researcher permissions.",
+      "observe": "A fresh researcher receives complete requirement/scope and writes only authorized artifacts; no implementation, installs or nested delegation. Parent owns ACs and Gate 1.",
+      "proof": "Delegation contract, tool transcript, source status/diff, accessible artifact.",
+      "conditional": "Unavailable research delegation is a blocker, not inline fallback. Trivial tier skips full report."
+    },
+    {
+      "id": "PR6-F2", "pr": 6, "name": "Requirement coverage, behavior trace and reuse", "type": "FACT", "evidence": ["E02", "E03"],
+      "trigger": "Research for each assigned AC/sub-deliverable.",
+      "observe": "Opened definitions and real callers/contracts, validation, state, errors, side effects, configuration, consumers, representative helpers and actual assertions support every coverage row.",
+      "proof": "Trace from entry point through real seams; cited source snippets and current tests, not file names alone.",
+      "conditional": "An absent reusable helper must have bounded search evidence; do not invent a helper or architecture."
+    },
+    {
+      "id": "PR6-F3", "pr": 6, "name": "Typed evidence, scoped absence and source freshness", "type": "FACT", "evidence": ["E03"],
+      "trigger": "Every material research claim and subsequent changed snapshot.",
+      "observe": "FACT/INFERENCE/HYPOTHESIS/UNKNOWN labels, source anchors, commands/run status, scoped absence searches, SHA and dirty paths; refresh invalidated facts after edits.",
+      "proof": "Resolve sampled citations and a cross-component/not-found claim against exact tree; verify no unknown silently promoted."
+    },
+    {
+      "id": "PR6-F4", "pr": 6, "name": "Standalone downstream handoff and acceptance", "type": "FACT", "evidence": ["E03", "E12"],
+      "trigger": "Research completion, fresh design consumer and later app milestone/resume.",
+      "observe": "Fresh consumer can use complete report and linked requirement records; parent samples three citations, reconciles all ACs and resolves design-changing unknowns.",
+      "proof": "Recorded consumer input locations, acceptance findings/dispositions and source revalidation; no hidden chat knowledge."
+    },
+    {
+      "id": "PR7-F1", "pr": 7, "name": "Planning lineage and phase ownership", "type": "FACT", "evidence": ["E04"],
+      "trigger": "Non-trivial Phase 3.",
+      "observe": "Planner consumes accepted research, approved or explicitly unconfirmed headless design, ACs and decisions at named versions; planning changes no implementation and invents no new architecture.",
+      "proof": "Fresh-context planning contract, linked snapshots and revision, accessible output.",
+      "conditional": "If planning delegation unavailable only, inline fallback is recorded; missing facts return to research, design changes return to design."
+    },
+    {
+      "id": "PR7-F2", "pr": 7, "name": "Vertical increments, dependency graph and ownership", "type": "FACT", "evidence": ["E04", "E12"],
+      "trigger": "All planned app changes.",
+      "observe": "One owning task per change; prerequisites precede users; no cycles/shared-file concurrency; increments deliver demonstrable behavior rather than horizontal unfinished layers.",
+      "proof": "Graph and exact file/task map; green reviewed commits at slice boundaries; integrated whole-app outcome.",
+      "conditional": "Parallel work only for independent disjoint responsibilities; same component can recur sequentially with distinct owned changes."
+    },
+    {
+      "id": "PR7-F3", "pr": 7, "name": "Executable task and check contracts", "type": "FACT", "evidence": ["E04"],
+      "trigger": "Every implementation task/check.",
+      "observe": "Stable IDs, AC/design references, entry conditions, exact changes, reuse, preserved/excluded behavior, expected proof, owner/timing, failure recovery, status and evidence.",
+      "proof": "Fresh implementer locates first task and failure/dependency boundary using artifacts alone. Commands specify shell/cwd/prerequisites and relevant assertions, not just exit zero."
+    },
+    {
+      "id": "PR7-F4", "pr": 7, "name": "Compact authoritative artifacts and consumer readiness", "type": "FACT", "evidence": ["E04"],
+      "trigger": "Gate 3 and incoming implementer.",
+      "observe": "HTML overview <=3 printed pages with dependency diagram; detailed tasks linked when needed, not duplicated. Parent records READY/REVISE/BLOCKED and reconciles all ACs/changes, not sample only.",
+      "proof": "Measured rendering/page output when available, resolved links, parent readiness record and implementer prerequisite confirmation.",
+      "conditional": "Extra planning review only for genuinely high-risk/complex dependencies, not a mandatory new reviewer."
+    },
+    {
+      "id": "PR7-F5", "pr": 7, "name": "Evidence-backed progress and independent gates", "type": "FACT", "evidence": ["E01", "E04", "E05"],
+      "trigger": "Per-increment completion and final reconciliation.",
+      "observe": "Planned checks remain not run; partial spanning ACs not VERIFIED; future work does not fail earlier slice; Phase 5 verifier differs from implementer and Phase 6 reviewer re-derives results.",
+      "proof": "Task/check evidence linked to commits and independent observed results; final whole-request AC matrix.",
+      "conditional": "Human-owned acceptance cannot be confirmed by agent/screenshot. Production-release items need evidence before relevant release, or N/A reasons."
+    },
+    {
+      "id": "PR7-F6", "pr": 7, "name": "Controlled plan revision and source-aware resume", "type": "FACT", "evidence": ["E05"],
+      "trigger": "Feedback, changed source/prerequisite, oversized increment or resumed session.",
+      "observe": "Record mismatch/impact, stop dependents, route new facts/design changes, preserve stable IDs, update tasks/checks/recovery/state/traceability together and invalidate stale completion evidence.",
+      "proof": "Before/after plan revision and source evidence; affected Gate 2/3 recheck; fresh consumer follows revised first ready task.",
+      "conditional": "No actual mismatch/resume means NOT_EXERCISED for that branch, not proof from a templated revision log."
+    },
+    {
+      "id": "PR8-F1", "pr": 8, "name": "Message shape at meaningful transitions", "type": "FACT", "evidence": ["E06"],
+      "trigger": "Progress/resume, approval, blocker/partial success, completion.",
+      "observe": "Lead with concrete current outcome/blocker/decision, then relevant next action or artifact; messages agree with current evidence and omit invented percentages/estimates.",
+      "proof": "Actual transcript at gates and a real blocker, compared with command outputs and state."
+    },
+    {
+      "id": "PR8-F2", "pr": 8, "name": "Concise presentation without hiding truth", "type": "FACT", "evidence": ["E06"],
+      "trigger": "Long evidence, multiple blockers or explicit detailed-answer request.",
+      "observe": "Full handoffs/checks remain complete; material failures, risks and uncertainty visible; no arbitrary item cap or medical assumptions.",
+      "proof": "Transcript-to-artifact coverage audit; detailed requested output and all material limitations retained."
+    },
+    {
+      "id": "PR8-F3", "pr": 8, "name": "Uncertainty, action ownership and clean stopping", "type": "FACT", "evidence": ["E06"],
+      "trigger": "Failure without known cause, safe next step, real human decision or finished work.",
+      "observe": "Separate observed failure from verified cause/hypothesis; perform agent-owned safe work; preserve true human approval boundary; finish without artificial follow-up.",
+      "proof": "Real failed command and subsequent diagnosis/actions, or explicitly unconfirmed unattended sign-off; final incomplete/complete wording matches results."
+    },
+    {
+      "id": "PR9-F1", "pr": 9, "name": "Readable responsibility boundaries and owned contracts/state", "type": "FACT", "evidence": ["E07"],
+      "trigger": "App design, production source and final review.",
+      "observe": "Trace normal path, decisions, I/O and failure flow; helpers own coherent responsibility; shared boundary contracts defined once; validation/state/cleanup ownership clear.",
+      "proof": "Independent source-reading review and tests of state transitions/error distinctions; no reliance solely on author's design narrative."
+    },
+    {
+      "id": "PR9-F2", "pr": 9, "name": "Behavior-preserving clarity and simple sufficient abstractions", "type": "FACT", "evidence": ["E07"],
+      "trigger": "Implementation or structural refactor.",
+      "observe": "Domain/action names, straightforward branches, explicit failures and suitable reuse; no speculative framework or maze of wrappers; cleanup/ordering/error contracts preserved.",
+      "proof": "Concrete source locations plus regression assertions; lower line count/complexity alone is not acceptance."
+    },
+    {
+      "id": "PR9-F3", "pr": 9, "name": "Comment and behavior-bearing text discipline", "type": "FACT", "evidence": ["E07"],
+      "trigger": "Comments and changed runtime prompts/tool descriptions/schemas.",
+      "observe": "Keep non-obvious why/invariants/API contracts and notices; update stale comments; no incident history/timestamps/local evidence paths in production comments; classify runtime text before shortening.",
+      "proof": "Final diff/source review with contract tests for behavior-bearing text when actually changed.",
+      "conditional": "Runtime prompt/schema modification may be N/A for the app; absence of such changes is not an exercised preservation test."
+    },
+    {
+      "id": "PR9-F4", "pr": 9, "name": "Concrete readability review without metric gaming", "type": "FACT", "evidence": ["E07"],
+      "trigger": "Existing review/disposition process.",
+      "observe": "Findings cite location, behavior/maintenance cost and proportionate remedy; reject only substantive in-scope issues; no arbitrary size/comment quota, separate readability report or unrelated cleanup.",
+      "proof": "Independent review and dispositions, final source and unchanged-or-stronger assertions. Metrics supplement rather than substitute for judgment."
+    },
+    {
+      "id": "PR10-F1", "pr": 10, "name": "Symptom-specific diagnosis reproduction", "type": "FACT", "evidence": ["E08"],
+      "trigger": "Reported app defect or explicitly labeled authorized diagnostic scenario.",
+      "observe": "Real public-path failure with original input, expected/observed outcome, command/cwd/snapshot; insensitive did-not-crash/setup error is not reproduction.",
+      "proof": "Original failing transcript and preserved replay case before fix proposal.",
+      "conditional": "No defect observed means NOT_EXERCISED unless separate scenario authorized. Needed harness writes belong to parent/write-scoped worker."
+    },
+    {
+      "id": "PR10-F2", "pr": 10, "name": "Minimize and distinguish causes with evidence", "type": "FACT", "evidence": ["E08"],
+      "trigger": "Reproduced defect; causal ambiguity where present.",
+      "observe": "Reduce one factor at a time without losing causal path; rank plausible causes when ambiguous, predict discriminating observations and update hypotheses from probes.",
+      "proof": "Original/minimized inputs and outcomes; relevant source trace plus targeted experiment; supported cause clearly separated from hypothesis.",
+      "conditional": "Obvious source-and-observation-backed cause needs no artificial hypothesis count. Unresolved cause remains blocker, not speculative patch."
+    },
+    {
+      "id": "PR10-F3", "pr": 10, "name": "Diagnosis through normal gates and original-case regression proof", "type": "FACT", "evidence": ["E08", "E09"],
+      "trigger": "Fixing established defect.",
+      "observe": "Design correction, planned red regression test, fix, minimized and original reruns and affected regressions; independent verifier replays original case; owned instrumentation removed.",
+      "proof": "Red/green logs, final regression test, both case outcomes, cleanup-marker check and reviewer evidence.",
+      "conditional": "Performance/intermittent cases require comparable workload/environment/baseline and bounded samples; one green run does not prove absence."
+    },
+    {
+      "id": "PR10-F4", "pr": 10, "name": "Small test-first red/green/refactor cycles", "type": "FACT", "evidence": ["E09"],
+      "trigger": "Each new/changed behavior.",
+      "observe": "One focused behavior check fails for expected reason before change; smallest complete implementation passes; refactor stays green; repeat without speculative all-tests-first plan.",
+      "proof": "Chronological test/source snapshots and commands showing relevant red and green; unavailable pre-change proof explicitly recorded.",
+      "conditional": "Missing dependency, nonexistent import or syntax failure is not expected behavioral red and cannot count as PASS."
+    },
+    {
+      "id": "PR10-F5", "pr": 10, "name": "Stable behavioral tests and real side-effect boundaries", "type": "FACT", "evidence": ["E09"],
+      "trigger": "Choosing test interfaces or refactoring app modules.",
+      "observe": "Requirements/worked examples independently determine expected results; tests use stable public seams; persisted/event side effects verified where contracted; collaborators not all mocked.",
+      "proof": "Unit, integration and live surface assertions, failure/boundary cases; deleted tests mapped to equivalent or stronger remaining scenarios."
+    },
+    {
+      "id": "PR10-F6", "pr": 10, "name": "Decision prerequisites before execution-ready tasks", "type": "FACT", "evidence": ["E10"],
+      "trigger": "Uncertain/large work with unresolved factual or design decisions.",
+      "observe": "Separate decision questions from ready tasks, name owners/blocking prerequisites/AC impact and resolution evidence; research inspectable facts without unnecessary human questions.",
+      "proof": "Current clarification/design record linked from task readiness; unresolved downstream questions marked not-yet-specified, not complete or out of scope.",
+      "conditional": "Do not invent interviews/new approvals/trackers. Headless requirement assumptions do not prove unknown APIs."
+    },
+    {
+      "id": "PR10-F7", "pr": 10, "name": "Expand–migrate–contract compatibility changes", "type": "FACT", "evidence": ["E10"],
+      "trigger": "Wide rename/schema/shared-contract migration that cannot safely land by ordinary feature slice.",
+      "observe": "Compatible form first, bounded ordered consumer migration, old form removed only after scoped caller searches and regression/compatibility proof; all deliverable increments green.",
+      "proof": "Before/after consumers and persisted contracts, batch targets, compatibility tests, retirement search and recovery limits.",
+      "conditional": "Greenfield app without existing consumers/data is N/A. Deployment requires old/new coexistence and rollback window evidence; destructive execution needs separate authorization."
+    },
+    {
+      "id": "PR10-F8", "pr": 10, "name": "Domain vocabulary and caller-burden interface review", "type": "FACT", "evidence": ["E10"],
+      "trigger": "Material domain ambiguity or changed public interface.",
+      "observe": "Resolve terms/states against real code and scenarios; realistic caller example exposes invariants, ordering, error/config/performance burden; abstraction hides useful responsibility.",
+      "proof": "Existing design decision table with source-backed terms and caller example; no glossary/ADR created solely for ceremony."
+    },
+    {
+      "id": "PR10-F9", "pr": 10, "name": "Consequential alternatives and proportionate decision records", "type": "FACT", "evidence": ["E10"],
+      "trigger": "Consequential interface decision or costly-to-reverse surprising trade-off.",
+      "observe": "Compare materially different alternatives, caller burden and where future change concentrates; recommendation justified in current design.",
+      "proof": "Alternatives table and approved/unconfirmed decision provenance; durable ADR only if appropriate and in scope.",
+      "conditional": "Routine interface choices do not require artificial alternative exercise or agent fan-out."
+    },
+    {
+      "id": "PR10-F10", "pr": 10, "name": "Question-driven isolated prototypes", "type": "FACT", "evidence": ["E10"],
+      "trigger": "A design question truly needs experimental resolution.",
+      "observe": "Question, success signal, bounded scope and stop condition agreed before experiment; isolate from production wiring/data; capture conclusion/limits then remove or clearly retain nonrelease artifact.",
+      "proof": "Experiment contract, measured observation and cleanup/exclusion, resulting design disposition.",
+      "conditional": "No design uncertainty needing experiment means N/A. Prototype success is not production proof or design sign-off."
+    },
+    {
+      "id": "PR10-F11", "pr": 10, "name": "Categorized, snapshot-complete review", "type": "FACT", "evidence": ["E10", "E07", "E01"],
+      "trigger": "Self and independent review.",
+      "observe": "Pin review base/head and relevant dirty/untracked files; classify SPEC, STANDARD and DESIGN CONCERN with AC/rule/source basis and cost; keep requirement and quality verdicts separate.",
+      "proof": "Full final diff/status, deduplicated findings/dispositions, per-AC observed verdict and final tree reconciliation.",
+      "conditional": "Do not add reviewers solely for categories or relabel preferences as binding rules; missing spec remains verification gap."
+    },
+    {
+      "id": "PR10-F12", "pr": 10, "name": "Progressive disclosure and workflow-changing text verification", "type": "FACT", "evidence": ["E02", "E01"],
+      "trigger": "Editing the workflow itself rather than only using it.",
+      "observe": "Behavior lives in canonical SKILL/references with phase/branch load triggers; avoid duplicated rules, preserve complete handoffs and exact task commands; validate affected branches, not phrase presence/word count.",
+      "proof": "If parent changes workflow prompts, inspect changed triggers and run the relevant live branch.",
+      "conditional": "App-only exercise observes loading current procedures but does not itself exercise editing/maintaining the skill. Keep this branch N/A or separately scoped."
+    }
+  ],
+  "compatibleSeams": [
+    {"type": "INFERENCE", "evidence": ["E02", "E19"], "recommendation": "Use established Node ESM/native node:test and strict assertions for compatible app verification rather than introducing a parallel framework. Native TS requires supported syntax and explicit imports; type stripping is not type checking."},
+    {"type": "INFERENCE", "evidence": ["E17", "E18", "E19"], "recommendation": "Real pure-rule-to-HTTP adapter and shared response helper are representative seam/test patterns. Do not import unrelated discount business logic or inherit unchecked request buffering/static serving behavior blindly."},
+    {"type": "INFERENCE", "evidence": ["E20", "E11", "E12"], "recommendation": "Existing UI fixture demonstrates a static module/browser seam. Parent must reconcile designated agent-browser with existing Playwright fixtures; merely substituting browser drivers without disclosure would not verify the designated-tool workflow."},
+    {"type": "INFERENCE", "evidence": ["E21", "E14"], "recommendation": "If extending the corpus is approved, the task JSON/held-out oracle seam avoids runner changes. Its single-file quality/mutation and shallow test discovery are limited for a multi-module app; preserve genuine app checks rather than forcing all app code into one file to score well."}
+  ],
+  "risksAndUnknowns": [
+    {"id": "U1", "type": "UNKNOWN", "topic": "Meaning of medium complexity and app domain", "impact": "Parent/designer must define observable app ACs and enough real cross-feature behavior; research intentionally did not design an app.", "blocks": "Final app design scope"},
+    {"id": "U2", "type": "FACT", "topic": "Python unavailable", "evidence": ["C02", "E22"], "impact": "run.py/probe.py cannot execute as documented. Parent may validate an authorized native bounded runner; never claim equivalent metrics merely because Node tests run.", "blocks": "Documented Python runner/probe proof"},
+    {"id": "U3", "type": "FACT", "topic": "Browser tooling absent from checked resolution scopes", "evidence": ["C02", "C03", "C04"], "impact": "Missing agent-browser and Playwright resolution; no install permitted in research. Parent must resolve tool prerequisites under own authority and verify actual launch.", "blocks": "UI/browser gate"},
+    {"id": "U4", "type": "UNKNOWN", "topic": "Browser binary, model credentials and PR publishing permissions", "evidence": ["C01", "C03"], "impact": "Read access and executable paths do not prove browser launch, authorized pi model calls or PR creation. Do not inspect secrets."},
+    {"id": "U5", "type": "FACT", "topic": "Host/procedure conflicts", "evidence": ["E11", "E12", "E14", "E15", "E22"], "impact": "No OS-temp operations, detached processes absent explicit authorization, or process-name killing under host rules. Existing harness paths/examples conflict. Resolve safely before running; no workaround presented as compliance."},
+    {"id": "U6", "type": "INFERENCE", "topic": "Existing v2 is not plug-and-play proof for these PRs", "evidence": ["E15"], "impact": "Arm-only output restriction conflicts with .ai workspace; staged bundle lacks scripts/assets; current required delegation readiness is not established by pi path existence. Do not silently use dry-run as live workflow proof."},
+    {"id": "U7", "type": "INFERENCE", "topic": "Conditional branch coverage", "evidence": ["E08", "E10"], "impact": "Fresh app alone does not establish migrations, prototypes, diagnosis or interrupted resume. Explicit coverage labels and separately authorized scenarios needed; no unconditional all-features-verified headline."},
+    {"id": "U8", "type": "FACT", "topic": "No current task workspace or authoritative app acceptance", "evidence": ["C03", "E01"], "impact": "Parent must establish durable state/traceability and identify headless decisions as unconfirmed; session research outputs do not themselves satisfy all normal .ai gate requirements."}
+  ],
+  "handoff": {
+    "readingOrder": ["feature-inventory.json", "research.html", "SKILL.md", "references/planning.md", "references/testing-and-e2e.md", "references/diagnosis.md", "references/app-scale-delivery.md"],
+    "researchCoverage": [
+      {"question": "Which five PRs and features?", "status": "COMPLETE", "evidence": ["C01", "E03", "E04", "E06", "E07", "E08", "E10"]},
+      {"question": "Current conventions and reusable test seams?", "status": "COMPLETE", "evidence": ["E02", "E17", "E18", "E19", "E20", "E21"]},
+      {"question": "What actual behavior must be observed?", "status": "COMPLETE_AS_OBSERVATION_CONTRACT_NOT_APP_DESIGN", "evidence": ["features", "observationRules"]},
+      {"question": "Runtime prerequisites and limitations?", "status": "COMPLETE_WITH_NAMED_GAPS", "evidence": ["C02", "C03", "C04", "risksAndUnknowns"]},
+      {"question": "Existing tests and uncovered workflow behavior?", "status": "COMPLETE_SOURCE_INSPECTION_ONLY", "evidence": ["E13", "E14", "E15", "E16", "C05"]}
+    ],
+    "parentActions": [
+      "Accept/reject research using three resolved source citations plus cross-component and absence claims; preserve snapshot.",
+      "Set app ACs/domain/complexity and which conditional branches require real exercise versus explicit N/A.",
+      "Resolve critical runtime, browser-policy and no-temporary-directory conflicts before execution.",
+      "Pass these artifact paths and source snapshot to fresh designer; no app implementation choices have been made here.",
+      "Later independently verify actual app outcomes AND workflow observations, retaining blocked/not-exercised cases in final report."
+    ],
+    "notPerformed": ["App design", "Application/test implementation", "Any test suite or live app run", "Browser launch", "Dependency install", "Metrics probe", "Production source edits", "Nested delegation", "Git commit or PR mutation"]
+  }
+}

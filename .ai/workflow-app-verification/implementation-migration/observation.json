@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-09-16T11:49:31.199Z",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\src\\migrate.mjs",
+    "--data-dir",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\.work\\migration-capture-YIVXTO"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "exitCode": 0,
+  "stdout": "{\"schemaVersion\":2,\"revision\":12,\"changed\":true}\n",
+  "stderr": "",
+  "snapshots": {
+    "before": {
+      "sha256": "ad7845486864bb4fef3f938eac02ef4ba213f8d3e20da4e4fa1b1c8b61df4450",
+      "schemaVersion": 1,
+      "revision": 11
+    },
+    "after": {
+      "sha256": "71ab7e0b969a72811ee01273cd1a22a8f83fd2321ca8a61492da09eba27d9804",
+      "schemaVersion": 2,
+      "revision": 12
+    },
+    "backup": {
+      "sha256": "ad7845486864bb4fef3f938eac02ef4ba213f8d3e20da4e4fa1b1c8b61df4450",
+      "schemaVersion": 1,
+      "revision": 11
+    },
+    "post-edit-archive": {
+      "sha256": "ed22a7c482c97d74c0cb0561b0f01fac4dc964dc1e5bf2eb21eacdf00b75a300",
+      "schemaVersion": 2,
+      "revision": 13
+    },
+    "rollback": {
+      "sha256": "ad7845486864bb4fef3f938eac02ef4ba213f8d3e20da4e4fa1b1c8b61df4450",
+      "schemaVersion": 1,
+      "revision": 11
+    }
+  },
+  "health": {
+    "status": "ok",
+    "schemaVersion": 2,
+    "revision": 12
+  },
+  "rollbackLimit": "Post-migration revision 13 title/priority edits are lost after rollback to revision 11; archive retained in this evidence",
+  "cleanup": "Owned app closed before replacement; owned scratch removed after capture",
+  "independentObserver": null,
+  "browser": "NOT_RUN"
+}

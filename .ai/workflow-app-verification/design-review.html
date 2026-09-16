@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workflow application — independent design/readiness review</title>
+<link rel="stylesheet" href="../../assets/artifact.css">
+</head>
+<body>
+<main>
+<h1>Independent design/readiness review</h1>
+<p class="meta">16 September 2026 · Reviewed r1 at repository HEAD cfe5734 · Read-only source review</p>
+<p><strong>Verdict: REVISE. Gate 3 is not ready for application implementation.</strong> Keep the proposed medium-complexity planner and its existing scope. Resolve R1–R3 below, complete the bounded P0 prerequisites, and record parent acceptance plus incoming implementer confirmation. This does not call for another architecture, additional features, or an unbounded review cycle.</p>
+<p>Inputs: <a href="research.html">research</a>, <a href="feature-inventory.json">29-feature inventory</a>, <a href="design.html">design</a>, <a href="plan.html">plan</a>, <a href="tasks.json">tasks/checks</a>, and <a href="acceptance.json">acceptance/contracts</a>. Only this review artifact was written; no app implementation, installation, browser launch, source edit, or delegated review was performed.</p>
+
+<h2>1. What is sound</h2>
+<ul>
+<li><strong>Real application exercise:</strong> project/task edits, graph transitions, durable state, filtered pages, dashboard, and browser failure recovery are substantially stronger evidence than prompt-string assertions. The hand-worked seven-task query and two-task minimization cases have correct expected IDs/counts.</li>
+<li><strong>Proportionate structure:</strong> native Node, a plain browser UI, and explicit HTTP/domain/store boundaries fit this example. A bounded local snapshot store is feasible subject to the Windows experiment and actual crash tests. Its lock, revision, and backup burden is justified by the selected persistence and migration contracts; it is not evidence that JSON is generally preferable to a database.</li>
+<li><strong>Useful interfaces:</strong> one transaction owner keeps graph invariants and persistence coordination out of callers. Atomic combined PATCH, stable coded errors, stale revisions, corrupt-input refusal, and explicit rollback loss are specified well. Keep one implementation of shared graph validation rather than duplicating rules in schema and domain layers.</li>
+<li><strong>Honest limitations:</strong> migration and diagnosis are labeled controlled exercises; all proposed checks remain NOT_RUN. Human approval, missing Python metrics, and combined design/planning context are disclosed. These are not grounds to reject the app or invent new scope.</li>
+</ul>
+
+<h2>2. Required bounded revisions</h2>
+<table>
+<thead><tr><th>Finding / basis</th><th>Concrete issue and consequence</th><th>Smallest correction and acceptance</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>R1 — High · STANDARD</strong><br>Executable slice/check readiness<br><code>tasks.json</code>: I1.T1, I2.T1, I4.T1–T3; C04, C06, C07, C11; P0.T1/C00</td>
+<td>The declared task graph is acyclic, but shared check pass conditions introduce future dependencies. I4.T1 requires C06 although C06 lists the migration CLI not created until I4.T2 and its pass condition requires browser outcomes and writer retirement from I4.T3. I4.T3 itself requires migration proof before entry. C04 asks for dashboard-derived effects at I2, before I3 owns the dashboard. C07 lists graph/query/migration and final-state scenarios although I1 only delivers metadata editing. C11's full AC/final-tree pass condition is also reused at each slice. General “due scenarios” prose does not identify the exact subset a consumer may pass. P0 similarly both requires complete C00 browser/print proof and permits core work when that proof is blocked.</td>
+<td>Add stable scenario-level applicability and completion records to the existing checks; no new tracker. Identify exact commands/assertions due at I1, I2, I3, expand, migrate, contract, and final. C06 expand must not invoke the absent CLI or demand contract/browser proof; only final C06 aggregates every stage. Make P0 core-ready versus browser/print-blocked disposition explicit and consistent with the chosen Gate 3 policy. <strong>Accept when</strong> walking I1 and I4.T1→T2→T3 needs no missing future artifact, and future scenarios stay NOT_RUN without either blocking a valid earlier task or earning premature PASS.</td>
+</tr>
+<tr>
+<td><strong>R2 — High · STANDARD</strong><br>Replayable live-browser proof<br><code>tasks.json</code>: I1.T1 e2e driver; C07 commands/prerequisites/J1–J4</td>
+<td>The proposed driver accepts only <code>--base-url</code> and <code>--flow</code>, while J1/J4 require stopping and restarting the server and J4 requires replacing its dataset with the captured v1 fixture. The plan mentions either an “explicitly supplied owned” lifecycle or parent-managed steps, but does not choose an actionable contract or supply those steps. All example commands reuse <code>.work\browser-run</code>; repeated base/query/all runs can collide on unique Launch/Alpha/Beta names or inherit task statuses. <code>--flow all</code> has no defined fresh-state or inter-journey reset semantics. Thus a fresh verifier cannot yet reproduce the promised persistent flows from the commands alone.</td>
+<td>Choose one lifecycle mode and specify it in the current task/check: either a runner-owned server with explicit owned data/process inputs, or exact parent stop/copy/migrate/restart steps around supported driver phases. Define fresh-directory creation and scenario isolation, including whether graph continues base and how all resets before migration. Preserve the actual persisted directory during each restart assertion. <strong>Accept when</strong> a consumer can run base and all twice on isolated data, exercise a genuine process restart and offline migration, and clean up only the captured owned process/directory without inventing flags or operating on an unknown server.</td>
+</tr>
+<tr>
+<td><strong>R3 — Medium · STANDARD</strong><br>Bounded execution contract<br><code>tasks.json</code>: executionDefaults; C00, C04–C08, C10</td>
+<td>The planned <code>check.mjs</code> adapter supplies a wall limit only to calls that use it. Several checks instead invoke raw <code>node --test</code>; a test timeout alone is not a process-tree wall limit, especially around leaked handles. Browser setup and CLI calls are also listed unwrapped. The current Python idle-runner limitation is real, so merely referring to executionDefaults does not establish an executable timeout/cleanup path for these commands.</td>
+<td>Bind raw test and browser commands to one documented bounded invocation mechanism using available tooling, with owned PID/session cleanup and preserved failure output. The pre-implementation P0 commands cannot depend on the I1 adapter before it exists. State wall versus idle semantics honestly; do not build a new testing framework or claim Python equivalence. <strong>Accept when</strong> every long-lived/setup/browser/test invocation has an executable bound and a timeout stop action, including P0, while intentional app servers remain attached and health-checked.</td>
+</tr>
+</tbody>
+</table>
+<p>Source basis: <code>references\planning.md</code>, “Separate increments from tasks,” “Define proof,” and “Accept the handoff”; <code>references\testing-and-e2e.md</code>, unit/integration/E2E contracts; <code>references\e2e-agent-browser.md</code>, grounded commands, persisted flows, and bounded browser execution. These are executable handoff defects, not requests for additional product behavior.</p>
+
+<h2>3. Coverage of the 29 features</h2>
+<p><strong>Structural coverage is complete; behavioral verification is not yet established.</strong> Parsed counts are 29 inventory IDs, 29 distinct matching coverage rows, 12 ACs, 9 tasks, and 12 checks. All AC task/check references and task prerequisite references resolve. This establishes bookkeeping integrity, not that a workflow feature was exercised successfully.</p>
+<table>
+<thead><tr><th>Inventory scope</th><th>Assessment of planned observation</th></tr></thead>
+<tbody>
+<tr><td>PR6-F1–F4</td><td>Research permissions, source traces, typed/fresh evidence and handoff have real transcript/citation observations. Parent must dispose the known false research inference and accept the corrected linked record; a source citation alone does not validate that inference.</td></tr>
+<tr><td>PR7-F1–F6</td><td>Lineage, vertical slices, task contracts, readiness, independent gates and revision/resume are all mapped. R1/R2 presently prevent full executable-readiness acceptance. Separate designer-to-planner phase independence was not exercised; keep that limitation even after parent acceptance. I4 must actually reopen the saved source/data checkpoint and reconcile consumers/evidence; a preplanned version bump or renamed revision alone is not resume proof.</td></tr>
+<tr><td>PR8-F1–F3</td><td>Actual readiness/progress/blocker/final messages can verify communication and uncertainty/action ownership. Compare them with observed results, not the plan's promised prose. Missing Python and unconfirmed approval must remain visible.</td></tr>
+<tr><td>PR9-F1–F4</td><td>Final source-path review plus transaction/graph regressions can verify responsibility, clarity, comments and concrete dispositions. Runtime prompt/tool-description preservation is conditional N/A when none is changed; this must not become a claimed exercised branch.</td></tr>
+<tr><td>PR10-F1–F5</td><td>The real HTTP original/minimized controlled fault, behavioral red→green chronology, retained regression and independent replay are suitable. The injected cause is already disclosed: do not describe the comparison as blind causal discovery. Deterministic pagination does not exercise intermittent/performance diagnosis.</td></tr>
+<tr><td>PR10-F6–F10</td><td>Decision prerequisites, actual v1-data evolution, domain/caller review, consequential alternatives and bounded replacement experiment are all covered in scope. Prototype success is not production crash-atomicity proof. Local stopped-writer migration does not verify deployed old/new coexistence.</td></tr>
+<tr><td>PR10-F11–F12</td><td>Snapshot-complete categorized review is applicable. PR10-F12's workflow-editing branch is correctly N/A for an app-only change; loading the current references is observable but is not evidence of editing their triggers safely.</td></tr>
+</tbody>
+</table>
+<p><strong>AC01–AC10:</strong> substantial positive, negative, compatibility and live-surface scenarios; no material new product feature is needed. <strong>AC11:</strong> final reporting must distinguish covered inventory rows from exercised branches, especially PR7-F1 and PR10-F12. <strong>AC12:</strong> persistent scripts, exact snapshots and independent final reconciliation are appropriate; resolving R2 is necessary for the reproducibility claim.</p>
+
+<h2>4. Independence, feasibility and scope judgment</h2>
+<p><strong>Does the plan massively overstate independence or verification? No in its stated claims; yes, its unqualified shared check exits would overstate per-slice completion if followed mechanically.</strong> It explicitly says sequential ownership, unconfirmed approval, combined design/planning context and NOT_RUN. Sequential increments need not be parallel or dependency-free to be independently verifiable. R1 repairs the actual problem: earlier slices currently reference later proof without a precise staged verdict. Phase 5 and Phase 6 still need actual independent observers; promised owners are not evidence they ran.</p>
+<p><strong>Size:</strong> I1 is a substantial walking skeleton spanning storage crash behavior, HTTP safety, UI, tests and tooling. Keep its vertical outcome, but order existing work into small internal steps if one implementer cannot maintain behavioral red/green cycles; do not introduce horizontal “completed” increments. The separate diagnosis CLI is acceptable only as a thin reusable replay entry over existing test helpers. Avoid a second expectation engine or a generic test framework. These are bounded design concerns, not additional blocking features.</p>
+
+<h2>5. Grounding and prerequisite dispositions</h2>
+<ul>
+<li><strong>Source samples confirmed:</strong> <code>benchmark\projects\discount-api\bulletproof\index.ts</code>, <code>applyDiscount</code> and <code>createServer</code>, match E17's domain-to-HTTP seam. Its <code>index.test.ts</code> matches E19's native assertions, ephemeral-port server, fetch status/body tests and close hook. These are patterns, not reusable planner modules.</li>
+<li><strong>Workflow requirements confirmed:</strong> <code>SKILL.md:219–289</code> requires independent design review, fresh-context planning by default, explicit unattended approval limitations, staged evidence and executable Gate 3. <code>references\code-clarity.md</code> supports the proposed responsibility/caller-burden review without mandating wrappers. <code>scripts\probe.py</code>, <code>main</code>, confirms the planned slug/base command shape; its execution and metric coverage were not tested.</li>
+<li><strong>Tool correction:</strong> accept the parent's explicit correction: tool-managed OS temporary directories are not a blocker. The research's contrary conclusion is false; acceptance/design already supersede it. Do not revive that blocker or claim the reviewer ran the inherited suites.</li>
+<li><strong>Current browser fact:</strong> parent reports <code>npm exec --yes --package=agent-browser -- agent-browser --help</code> succeeded. Update C00's recorded discovery before choosing a global install unnecessarily. Help success proves CLI invocation only; browser installation/launch, supported print commands, and UI proof remain unconfirmed.</li>
+<li><strong>Python:</strong> unavailable per the supplied evidence; documented probe/idle-runner proof remains blocked. Do not hold unrelated core app behavior hostage to that limitation, but do not claim an all-green workflow quality gate.</li>
+<li><strong>Artifacts:</strong> design/plan local links, including shared CSS/JS targets, resolve in this workspace. Browser rendering, console state and the three-page print limits were not measured. The HTML/path check is not render acceptance.</li>
+</ul>
+
+<h2>6. Parent execution decision</h2>
+<ol>
+<li>Dispose R1–R3 in the existing authoritative task/check records and update only affected overview text. Preserve stable IDs and all existing app scope.</li>
+<li>Record the current browser capability fact; perform authorized bounded P0 storage/browser/render checks and explicitly disposition D1–D6. No human wait is required; human approval remains unconfirmed.</li>
+<li>Walk the revised I1 entry and I4 expand→migrate→contract boundary from artifacts only; incoming implementer confirms the same prerequisites. Parent may then record READY for the accepted scope, with remaining nonblocking limitations visible.</li>
+</ol>
+<p><strong>Final review state:</strong> design direction acceptable, executable readiness REVISE, application verification NOT_RUN. Static source/JSON/link/graph checks only; repository status was clean after the read-only inspection. Stop here: this report authorizes neither implementation nor a full-verification claim.</p>
+</main>
+</body>
+</html>

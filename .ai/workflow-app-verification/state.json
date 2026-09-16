@@ -1,0 +1,47 @@
+{
+  "requirement": "Test the features added in the last five merged PRs by implementing and verifying a medium-complexity application.",
+  "scope": ["#6", "#7", "#8", "#9", "#10"],
+  "tier": "full end-to-end exercise",
+  "application": "examples/team-planner",
+  "sourceBase": "cfe5734b4f28817e6236d121a3b206a51606879d",
+  "status": "INDEPENDENT_BROWSER_AND_REVIEW_RUNNING",
+  "gates": {
+    "G1": "Accepted with correction of unsupported temporary-directory prohibition and incomplete Python discovery.",
+    "G2": "Parent accepted autonomously; independent review R1-R3 disposed; design and plan each rendered to three pages; human approval unconfirmed.",
+    "G3": "Executable task revisions accepted; actual incoming handoff and storage prerequisite exercised. Design/planning not independent agents.",
+    "G4": "Implementation and added regressions pass native tests. Historical six commits preserve v1 baseline, expansion, migration and contraction.",
+    "G5": "Controlled original/minimized red-green proof passed. Independent browser verification in progress.",
+    "G6": "Independent final code/workflow review running; no complete or all-features-passed claim."
+  },
+  "evidenceIndex": {
+    "initialContract": ["research.html", "feature-inventory.json", "acceptance.json", "design.html", "plan.html", "tasks.json"],
+    "actualImplementation": ["implementation.json", "implementation-runs", "implementation-migration"],
+    "parentObservations": "parent-observations.json",
+    "controlledDiagnosis": "diagnosis.json",
+    "nativeMutation": ["mutation-initial.json", "mutation-final.json"],
+    "metrics": ["metrics.json", "app-duplication/jscpd-report.json"],
+    "existingRegression": ["existing-unit.log", "existing-eval-restored.log", "existing-live-dryrun.log"]
+  },
+  "actualCommandsFromExampleDirectory": [
+    "node src/main.mjs --data-dir data --port 4317",
+    "node scripts/check.mjs all",
+    "node scripts/check.mjs coverage",
+    "node scripts/diagnose.mjs",
+    "node scripts/mutation.mjs"
+  ],
+  "planAmendment": {
+    "reason": "Actual controlled diagnosis owns an isolated copy and all three baseline/fault/restored phases; external --root/--scenario arguments from the proposed plan are no longer needed.",
+    "actualInterface": "node scripts/diagnose.mjs",
+    "preservedCriteria": "Original and minimized HTTP tests, exact source restoration, no release source mutation, explicit expected behavioral red, captured commands/results and rerunnable proof.",
+    "evidenceInvalidation": "Proposed C08 command strings are historical, not current run instructions. Only the actual commands above and final app README are executable delivery instructions."
+  },
+  "knownWorkflowLimitations": [
+    "One case study is not evidence of general model effectiveness or causal A/B improvement.",
+    "Per-slice independent verification and browser-before-writer-retirement ordering were not exercised.",
+    "Same-agent checkpoint reconciliation is not a fresh-agent resume.",
+    "Human design/UX sign-off remains unconfirmed under autopilot.",
+    "Python probe omits .mjs mutation support; separately measured backend sample is not full changed-line/browser mutation coverage.",
+    "Complexity, static findings and dead-export metrics remain unavailable; no fabricated score."
+  ],
+  "nextActions": ["Resolve independent browser/review findings", "Re-run affected tests", "Persist final per-feature report", "Commit and open PR"]
+}

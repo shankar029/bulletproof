@@ -1,0 +1,42 @@
+{
+  "slug": "workflow-app-verification",
+  "base": "cfe5734b4f28817e6236d121a3b206a51606879d",
+  "merge_base": "cfe5734b4f28",
+  "head": "3b776d1",
+  "generated": "2026-09-16T11:57:31+00:00",
+  "project": "general",
+  "baseline": "compared",
+  "verdict": "pass",
+  "worst_status": "ok",
+  "metrics": {
+    "duplication_pct": {
+      "base": 1.75,
+      "head": 1.51,
+      "delta": -0.24,
+      "status": "ok"
+    },
+    "cycles": {
+      "base": 0,
+      "head": 0,
+      "delta": 0,
+      "status": "ok"
+    },
+    "diff_files": {
+      "head": 29
+    },
+    "diff_lines": {
+      "head": 2032
+    }
+  },
+  "unavailable": [
+    "complexity_max",
+    "complexity_avg",
+    "dead_exports",
+    "static_findings",
+    "mutation_score_pct"
+  ],
+  "tools": {
+    "jscpd": "jscpd 5.2.0",
+    "madge": "8.0.0"
+  }
+}

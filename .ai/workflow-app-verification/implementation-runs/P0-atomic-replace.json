@@ -1,0 +1,21 @@
+{
+  "label": "P0-atomic-replace",
+  "startedAt": "2026-09-16T10:06:59.089Z",
+  "finishedAt": "2026-09-16T10:06:59.362Z",
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-app-verification\\run-bounded.mjs",
+    "30",
+    "node",
+    "examples\\team-planner\\.work\\storage-probe\\probe.mjs"
+  ],
+  "exitCode": 1,
+  "producer": "implementation agent",
+  "independentObserver": null,
+  "sourceHashes": {
+    "examples\\team-planner\\.gitignore": "33d295fab3e87c36e618c2b289b68a40336981bfb91480e08d6770119ff4706d"
+  },
+  "stdout": "",
+  "stderr": "node:internal/fs/promises:787\r\n  return await PromisePrototypeThen(\r\n         ^\r\n\r\nError: EPERM: operation not permitted, rename 'C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\.work\\storage-probe\\owned\\stage-1' -> 'C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\.work\\storage-probe\\owned\\planner.json'\r\n    at async rename (node:internal/fs/promises:787:10)\r\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/.work/storage-probe/probe.mjs:22:5 {\r\n  errno: -4048,\r\n  code: 'EPERM',\r\n  syscall: 'rename',\r\n  path: 'C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\examples\\\\team-planner\\\\.work\\\\storage-probe\\\\owned\\\\stage-1',\r\n  dest: 'C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\examples\\\\team-planner\\\\.work\\\\storage-probe\\\\owned\\\\planner.json'\r\n}\r\n\r\nNode.js v24.11.1\r\n"
+}

@@ -1,0 +1,41 @@
+{
+  "label": "I2-graph-green",
+  "startedAt": "2026-09-16T10:12:24.644Z",
+  "finishedAt": "2026-09-16T10:12:26.229Z",
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-app-verification\\run-bounded.mjs",
+    "120",
+    "node",
+    "examples\\team-planner\\scripts\\check.mjs",
+    "all"
+  ],
+  "exitCode": 0,
+  "producer": "implementation agent",
+  "independentObserver": null,
+  "sourceHashes": {
+    "examples\\team-planner\\.gitignore": "33d295fab3e87c36e618c2b289b68a40336981bfb91480e08d6770119ff4706d",
+    "examples\\team-planner\\package.json": "1564f6c877d16342058d42926949881fa768267d0e9cc19dbcdab10460a32e90",
+    "examples\\team-planner\\public\\app.mjs": "8e435855700d3a8c48920747bb3abcb50c8e0be3a73db8d661210609c90f108a",
+    "examples\\team-planner\\public\\index.html": "a5996d3878b1ad4c14112aad327e497329fedac32876435d89b86f0eab7b0988",
+    "examples\\team-planner\\public\\styles.css": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92",
+    "examples\\team-planner\\README.md": "d5ea5ddc4651aef5061617881e8b6c48914acce3d30faedcbc0ecb126a9a0d40",
+    "examples\\team-planner\\scripts\\check.mjs": "b4926d8fe2bea75bdd0790121cb857e4aa81bb8d0e60a9b908093a826b8471e2",
+    "examples\\team-planner\\src\\errors.mjs": "241e92aa4d6634e11cf4b718226f8402367275e1e352eb90b03e60d844a1943f",
+    "examples\\team-planner\\src\\main.mjs": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+    "examples\\team-planner\\src\\planner.mjs": "13cb7a640ea09ec06bee508d8e8ac67e87ec3d17e9ac194d402252d7ed36648b",
+    "examples\\team-planner\\src\\rules.mjs": "314f0cafd739ba57dad2974588218de89b166c9f6daa41a9c8f7ca6634fbb7d9",
+    "examples\\team-planner\\src\\schema.mjs": "079b3191b5d77e5fce608d4daacc051f608f26aae07409b6252133dfbbed621c",
+    "examples\\team-planner\\src\\server.mjs": "87ffc21052fb87d32b0c4b1961ede0ee1b6f3e37e8c26bb0ac0b1ee3ad0bc5b9",
+    "examples\\team-planner\\src\\store.mjs": "7e647676d2a94f6f6a733e8b0714a7063dcc20b30a37d4d71d87f2cd36bb2348",
+    "examples\\team-planner\\test\\api.test.mjs": "8759b0b23de3d6e0ceaa0f4ede2c377376abe093975bd56689b7d85437026e94",
+    "examples\\team-planner\\test\\crash-child.mjs": "2ee9b6e045eba82f7cb513f6c76e0df1ff9b363463fa876ad14366a4d551d1ef",
+    "examples\\team-planner\\test\\helpers.mjs": "9a1ec66e0745a1018a8b1fc6478bad3e65d0ff97133e0c3d7ccc29df2b6f5c8a",
+    "examples\\team-planner\\test\\lifecycle.test.mjs": "89a10435d5d2eb650e0862bdc37bf8d4c505ba20807e173f7720590f03f7ae76",
+    "examples\\team-planner\\test\\rules.test.mjs": "82b7e65e615d5c57cb84556bd0ae8c14bb52598cc41322e9d80816dad4a36c39",
+    "examples\\team-planner\\test\\store.test.mjs": "ca9167e9caad1b49f91cb8873bdfb5560542b473596982d582f71a5ad9b280a1"
+  },
+  "stdout": "TAP version 13\n# Subtest: real HTTP commits metadata with exact revision headers\nok 1 - real HTTP commits metadata with exact revision headers\n  ---\n  duration_ms: 75.5984\n  type: 'test'\n  ...\n# Subtest: HTTP rejects malformed revision JSON media type and local origin\nok 2 - HTTP rejects malformed revision JSON media type and local origin\n  ---\n  duration_ms: 33.784\n  type: 'test'\n  ...\n# Subtest: static allowlist and method boundary expose no data\nok 3 - static allowlist and method boundary expose no data\n  ---\n  duration_ms: 19.5235\n  type: 'test'\n  ...\n# Subtest: process termination before and after commit retains complete snapshot\nok 4 - process termination before and after commit retains complete snapshot\n  ---\n  duration_ms: 343.151\n  type: 'test'\n  ...\n# Subtest: real CLI logs address checks health and refuses occupied lock or port\nok 5 - real CLI logs address checks health and refuses occupied lock or port\n  ---\n  duration_ms: 689.6236\n  type: 'test'\n  ...\n# Subtest: dependent task lifecycle validates final candidate and reopens in reverse order\nok 6 - dependent task lifecycle validates final candidate and reopens in reverse order\n  ---\n  duration_ms: 45.0295\n  type: 'test'\n  ...\n# Subtest: graph rejects missing self duplicate cross-project and long cycles atomically\nok 7 - graph rejects missing self duplicate cross-project and long cycles atomically\n  ---\n  duration_ms: 37.743\n  type: 'test'\n  ...\n# Subtest: combined status edges PATCH is property-order independent\nok 8 - combined status edges PATCH is property-order independent\n  ---\n  duration_ms: 54.1525\n  type: 'test'\n  ...\n# Subtest: create edit restart and isolated snapshots\nok 9 - create edit restart and isolated snapshots\n  ---\n  duration_ms: 32.1205\n  type: 'test'\n  ...\n# Subtest: Unicode code points not UTF16 units define title limits\nok 10 - Unicode code points not UTF16 units define title limits\n  ---\n  duration_ms: 12.8178\n  type: 'test'\n  ...\n# Subtest: concurrent writers conflict and failed IO preserves bytes and queue recovers\nok 11 - concurrent writers conflict and failed IO preserves bytes and queue recovers\n  ---\n  duration_ms: 19.9611\n  type: 'test'\n  ...\n# Subtest: strict inputs preserve exact committed bytes\nok 12 - strict inputs preserve exact committed bytes\n  ---\n  duration_ms: 24.6641\n  type: 'test'\n  ...\n# Subtest: lock ownership corruption and unknown schema never overwrite files\nok 13 - lock ownership corruption and unknown schema never overwrite files\n  ---\n  duration_ms: 28.29\n  type: 'test'\n  ...\n1..13\n# tests 13\n# suites 0\n# pass 13\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1225.5322\n",
+  "stderr": ""
+}

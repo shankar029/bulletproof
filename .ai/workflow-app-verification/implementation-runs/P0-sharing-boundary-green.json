@@ -1,0 +1,21 @@
+{
+  "label": "P0-sharing-boundary-green",
+  "startedAt": "2026-09-16T10:07:39.954Z",
+  "finishedAt": "2026-09-16T10:07:40.351Z",
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-app-verification\\run-bounded.mjs",
+    "30",
+    "node",
+    "examples\\team-planner\\.work\\storage-probe\\probe.mjs"
+  ],
+  "exitCode": 0,
+  "producer": "implementation agent",
+  "independentObserver": null,
+  "sourceHashes": {
+    "examples\\team-planner\\.gitignore": "33d295fab3e87c36e618c2b289b68a40336981bfb91480e08d6770119ff4706d"
+  },
+  "stdout": "{\"question\":\"Same-directory synchronized rename; held-reader failure boundary\",\"replacements\":20,\"betweenReplacementReads\":200,\"partialReads\":0,\"heldReader\":\"EPERM preserves old bytes; release allows replacement\",\"preRenameFailurePreservesBytes\":true,\"result\":\"PASS_WITH_WINDOWS_SHARING_LIMIT\",\"timestamp\":\"2026-09-16T10:07:40.332Z\"}\n",
+  "stderr": ""
+}

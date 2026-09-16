@@ -1,0 +1,123 @@
+{
+  "revision": "r2-implementation-checkpoint",
+  "status": "IMPLEMENTATION_COMPLETE_NATIVE_CHECKS_GREEN_INDEPENDENT_GATES_PENDING",
+  "finalCommit": "3b776d11a58d1f85b673c628f6889e9d79594a5e",
+  "producer": "implementation agent",
+  "incomingHandoff": "ACCEPTED: all seven artifacts read, r1.1 R1-R3 authoritative; parent accepts design direction; human UX/design approval unconfirmed",
+  "ownership": "Only app and implementation evidence; parent owns independent browser/review/I5 and publishing",
+  "consumerReadiness": {
+    "firstTask": "P0.T1 bounded storage experiment before production store",
+    "failureBoundary": "Pre-rename failure leaves bytes, revision, IDs and memory unchanged; failed storage guarantee stops I1 and dependents",
+    "sourcesRead": ["CONTRIBUTING.md", "SKILL.md", "references/planning.md", "references/testing-and-e2e.md", "references/code-clarity.md"],
+    "pattern": "Native Node ESM and node:test; no benchmark imports",
+    "browser": "NOT_RUN: parent independent verification after implementation",
+    "metrics": "Python availability recovered by parent using uv python find: C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe. Initial PATH-only discovery was insufficient, not proof of runtime absence. Historical implementation commands used the approved wall-bounded Node runner; no idle-watchdog/probe parity claim. Parent owns metrics execution after clean commit.",
+    "subsequentRunner": "& 'C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe' scripts\\run.py --idle 60 --max 180 -- node <args>",
+    "parentToolingUpdate": "2026-09-16T17:25:05.717+05:30: browser design rendering successful, two diagrams, no console/errors; plan measured three printed pages; design four pages with parent shortening. These are parent-reported observations, not app-browser verification."
+  },
+  "designClarifications": [
+    {
+      "id": "D2-Windows-sharing",
+      "observation": "P0 correctly closed writer then held-reader rename failed EPERM before publication",
+      "impact": "External readers of planner.json can make writes unavailable; application reads committed memory; startup reads close before commands",
+      "decision": "Preserve atomic rename; surface STORAGE_UNAVAILABLE on sharing errors without retry/truncation. No successful held-reader replacement claim.",
+      "evidence": ["implementation-runs/P0-atomic-replace.json", "implementation-runs/P0-atomic-replace-closed-writer.json"],
+      "approval": "Within specified precommit failure contract; parent final disposition pending"
+    }
+  ],
+  "slices": [
+    {"id":"I1","commit":"0e89d05","nativeResult":"10 passing tests","evidence":["I1-unicode-red","I1-suite-green"],"independentGate":"NOT_RUN"},
+    {"id":"I2","commit":"75f00f5","nativeResult":"14 passing tests","evidence":["I2-graph-red","I2-integrated-green"],"independentGate":"NOT_RUN"},
+    {"id":"I3","commit":"d347226","nativeResult":"16 passing tests","evidence":["I3-query-red","I3-integrated-green","I3-genuine-v1-capture"],"independentGate":"NOT_RUN"},
+    {"id":"I4.T1","commit":"83d2668","nativeResult":"18 passing tests; actual v1 writing retained during expand window","evidence":["I4-expand-red","I4-expand-green"],"independentGate":"NOT_RUN"},
+    {"id":"I4.T2","commit":"5d8df24","nativeResult":"22 passing tests; offline conversion and failure recovery","evidence":["I4-migrate-recovery-red","I4-migrate-green"],"independentGate":"NOT_RUN"},
+    {"id":"I4.T3","commit":"3b776d1","nativeResult":"32 passing tests; v2 default, priorities, legacy reads/write rejection","evidence":["I4-contract-red","I4-contract-green","I4-boundaries-red","I4-boundaries-green","final-app-all","final-app-coverage"],"independentGate":"NOT_RUN"}
+  ],
+  "sourceAwareRevision": {
+    "checkpointTimestampSource": "I3-v1-capture.json timestamp 2026-09-16T10:15:01.785Z; subsequent source reopen is in tool transcript",
+    "reason": "Paused after actual I3 commit, reopened persisted schema/store source, design and implementation state before expanding real legacy consumers",
+    "checkpointCommit": "d347226",
+    "fixture": "examples/team-planner/test/fixtures/planner-v1.json",
+    "fixtureSha256": "ad7845486864bb4fef3f938eac02ef4ba213f8d3e20da4e4fa1b1c8b61df4450",
+    "observed": {"schemaVersion":1,"revision":11,"nextId":10,"projects":2,"tasks":7,"apiWrites":11},
+    "sourceHashes": {
+      "schema.mjs":"c9c007e089abc7f8502a51ae5ab4a0e9a5f9058aa1b6ec949f8a2335be983a2e",
+      "store.mjs":"7e647676d2a94f6f6a733e8b0714a7063dcc20b30a37d4d71d87f2cd36bb2348",
+      "planner.mjs":"dff08b48819c5a4f10b46a55fc203fb2da60698174a32d7b781d893b7d977c81"
+    },
+    "consumerTrace": [
+      "schema.emptyModel initializes v1; decode accepts state-only v1; encode emits state and removes canonical priority",
+      "store.open invokes decode/emptyModel; transact validates and calls encode; no migration method exists",
+      "Planner exposes canonical status and normal priority; query rejects non-normal v1 priority; UI has no priority editor yet",
+      "store/API tests expect new schema 1; crash child uses ordinary transaction writer; captured fixture is real API output"
+    ],
+    "affectedTasks":["I4.T1","I4.T2","I4.T3"],
+    "affectedChecks":["C02","C03","C05","C06","C07","C09"],
+    "invalidation":"I1-I3 results remain historical proof of those commits only, not v2 compatibility/priority proof. Future I4 checks NOT_RUN. Expand proof must precede migration; migration proof precedes writer retirement.",
+    "designDeltas":[
+      "AppError moved to errors.mjs and re-exported by schema, avoiding schema/rules import cycle. Graph invariant remains rules.validateGraph, shared by schema and Planner.",
+      "encode(model) derives disk version from model rather than second version argument, preventing version disagreement.",
+      "Implementation-only r2 is within pre-approved migration design. Parent owns authoritative task/acceptance reconciliation.",
+      "Assigned verification occurs after implementation. Therefore browser-before-writer-retirement and per-slice independent gate sequencing are not exercised; native compatibility proof gates contract, final independent browser proof remains required before shipment."
+    ],
+    "resumptionLimit":"Real persisted checkpoint reconciliation within same implementation context, not fresh-context planner resumption or parent acceptance; do not overclaim PR7-F6",
+    "historicalNextReady":"I4.T1 dual schema expansion; I4.T2/T3 were stopped until predecessor native proof",
+    "completedState":"Expanded at 83d2668, migrated at 5d8df24, contracted at 3b776d1. All corresponding historical source/test snapshots remain accessible through Git and timestamped runs."
+  },
+  "checks": {
+    "C01": {"result":"PASS_WITH_WINDOWS_SHARING_LIMIT","evidence":"implementation-runs/P0-sharing-boundary-green.json","observed":"20 synchronized closed-handle replacements, 200 between-replacement reads; held-reader EPERM and missing-stage errors preserve old bytes. Not a successful concurrent-held-reader replacement claim.","prototypeSource":"Removed after observation; original source remains in tool transcript. Prototype .work source was excluded from automatic app hash capture."},
+    "C02_C03_C04_C05_C06": {"result":"IMPLEMENTER_NATIVE_PASS","tests":32,"skipped":0,"cancelled":0,"cwd":"examples\\team-planner","commands":["node scripts\\check.mjs unit","node scripts\\check.mjs integration","node scripts\\check.mjs all","node scripts\\check.mjs coverage"],"evidence":["implementation-runs/final-selector-unit.json","implementation-runs/final-selector-integration.json","implementation-runs/final-app-all.json","implementation-runs/final-app-coverage.json"],"coverage":{"linePercent":99.33,"branchPercent":96.08,"functionPercent":96.63,"scope":"src/** only; browser source is not counted","uncoveredStatements":"store.mjs:117-120 backup write/sync error cleanup; actual disk-full/backup-sync failure not injected","additionalGaps":"Some CLI shutdown/startup fallback, malformed-lock and OS cleanup-error branches unexecuted; no blanket all-branches claim."}},
+    "syntax": {"result":"PASS","command":"node --check examples\\team-planner\\public\\app.mjs","evidence":"implementation-runs/final-ui-syntax.json","limit":"Syntax checking is not DOM/browser UX verification"},
+    "C07": {"result":"NOT_RUN_BY_IMPLEMENTER","owner":"parent independent verifier","driver":"scripts/e2e.mjs intentionally not authored per assignment; package reserves test:e2e entry"},
+    "C08_C09_C10_C11": {"result":"PARENT_OWNED","limit":"No independent workflow/review/probe/full-repository conclusions made here"}
+  },
+  "behaviorFirstEvidence": [
+    {"cycle":"I1 Unicode input limits","red":"I1-unicode-red","failure":"80 emoji project name incorrectly rejected by UTF16 .length limit","change":"Count Unicode code points","green":"I1-suite-green"},
+    {"cycle":"I2 dependency lifecycle","red":"I2-graph-red","failure":"Existing public PATCH rejects requested dependencyIds as unknown field","change":"Shared graph validation, transition checks and combined transactional patch","green":"I2-integrated-green"},
+    {"cycle":"I3 filtered pagination","red":"I3-query-red","failure":"Real seeded HTTP query returns 400 instead of expected page IDs","change":"Strict parsing and filter/sort/count/slice; dashboard","green":"I3-integrated-green"},
+    {"cycle":"I4 expand","red":"I4-expand-red","failure":"Strict v1 decoder rejects valid required v2 form","change":"Dual decoding/encoding while v1 writer remains active","green":"I4-expand-green"},
+    {"cycle":"I4 migration recovery","red":"I4-migrate-recovery-red","failure":"After precommit failure, retained matching backup prevents retry with EEXIST","change":"Verify existing backup bytes and continue only when equal","green":"I4-migrate-green"},
+    {"cycle":"I4 contract","red":"I4-contract-red","failure":"Fresh store remains schema1; priority input rejected; legacy write unexpectedly succeeds","change":"v2 default/priorities; remove v1 encoder and reject legacy writes","green":"I4-contract-green"},
+    {"cycle":"I4 strict command types","red":"I4-boundaries-red","failure":"null/number projectId treated as missing resource rather than invalid input","change":"Validate projectId type before resource lookup","green":"I4-boundaries-green"}
+  ],
+  "testFirstLimit":"These are observed focused cycles, not proof that every new behavior was test-first. Initial runnable store/HTTP/UI seams and some additional boundary tests were implemented without a separately captured pre-change red. Green aggregate commands re-execute the same targeted assertions; not every red/green CLI selector is text-identical.",
+  "failedRunsPreserved": [
+    {"run":"P0-atomic-replace","kind":"prototype setup/Windows sharing","disposition":"Original writer initially remained open; corrected and repeated"},
+    {"run":"P0-atomic-replace-closed-writer","kind":"actual design observation","disposition":"Held-reader EPERM preserved bytes; sharing limitation recorded"},
+    {"run":"I1-base-green","kind":"test harness","disposition":"Native fetch does not forward overridden Host; replaced that case with real http.request"},
+    {"run":"I3-query-green","kind":"implementation integration defect","disposition":"Query declaration incorrectly scoped to static branch; fixed dispatch, same tests pass"},
+    {"run":"I4-complete-native-green","kind":"test harness","disposition":"Windows --import needs file URL; corrected with pathToFileURL; no behavioral-red credit"},
+    {"observation":"Native node:test after hooks execute FIFO","kind":"cleanup review","disposition":"Introduced test-only LIFO owned-resource cleanup so app/child/store closes before directory removal"}
+  ],
+  "migrationEvidence": {
+    "legacyCreation":"I3-v1-capture.json contains all eleven actual API requests/responses and generated ID map",
+    "artifactDirectory":"implementation-migration",
+    "observation":"implementation-migration/observation.json",
+    "beforeHash":"ad7845486864bb4fef3f938eac02ef4ba213f8d3e20da4e4fa1b1c8b61df4450",
+    "afterHash":"71ab7e0b969a72811ee01273cd1a22a8f83fd2321ca8a61492da09eba27d9804",
+    "backupHash":"ad7845486864bb4fef3f938eac02ef4ba213f8d3e20da4e4fa1b1c8b61df4450",
+    "postEditArchiveHash":"ed22a7c482c97d74c0cb0561b0f01fac4dc964dc1e5bf2eb21eacdf00b75a300",
+    "rollbackHash":"ad7845486864bb4fef3f938eac02ef4ba213f8d3e20da4e4fa1b1c8b61df4450",
+    "retirementSearch":"Final scoped src/test/public search for state:, .state, schemaVersion: 1 and encode(; production encoder only writes schema2; legacy state remains solely strict decoder. Invalid state fields in tests are corruption cases, not a production writer.",
+    "historicalTestDisposition":"Temporary expand v1-writer test at 83d2668/5d8df24 is replaced by retained-v1-read/all-writes-rejected test at contract. Historical tests/logs retained; no v1 writer result used as v2 proof.",
+    "rollbackLimit":"Restoring revision11 backup demonstrably loses revision13 post-migration title/priority edits; archive retained. No lossless rollback or old-binary/v2 coexistence claim."
+  },
+  "selfReview": [
+    {"category":"SPEC","finding":"Wrong-type projectId produced 404","disposition":"Fixed and regression red/green captured"},
+    {"category":"STANDARD","finding":"Test cleanup registered directory removal before process/store closure under FIFO hooks","disposition":"Test-only LIFO cleanup now closes resources before removing owned directories"},
+    {"category":"DESIGN CONCERN","finding":"Sharing schema-owned errors with schema-imported graph rules would create a module cycle","disposition":"Small errors.mjs boundary, schema re-export; shared graph validator remains one owner"},
+    {"category":"DESIGN CONCERN","finding":"Windows held readers prevent replacement","disposition":"Memory reads, explicit precommit failure; no retry/truncate fallback or broad guarantee"},
+    {"category":"STANDARD","finding":"Browser proof cannot occur before writer retirement under assigned ownership schedule","disposition":"Explicitly unverified ordering exception; parent independent browser gate still required before shipment"}
+  ],
+  "handoff": {
+    "nextOwner":"Parent: independent agent-browser flows, controlled I5 diagnosis, final independent source review and publishing",
+    "appEntry":"examples\\team-planner\\src\\main.mjs --data-dir <owned directory> --port 0",
+    "programmaticEntry":"start({directory,port:0}) from src/main.mjs returns {url,server,store,close}; used in real tests",
+    "fixture":"examples\\team-planner\\test\\fixtures\\planner-v1.json",
+    "querySetup":"test/query-fixture.mjs seedQuery(url) performs real guarded HTTP writes and returns generated label IDs",
+    "browserNotes":"Accessible project form and task editor; selected project/filter/page in URL; no external-base-url lifecycle assumed; no browser driver authored",
+    "ownershipCleanliness":"All six commits scoped to examples/team-planner; no pushes or PR. Parent-owned evals/report.md dirty state observed and left untouched. Owned .work scratch empty; tests exited without force-exit or leaked services.",
+    "signalLimit":"Graceful CLI SIGTERM handler exercised through test-only IPC bridge emitting the Node event; actual child process kills used for crash tests. Native Windows Ctrl+C key delivery not tested."
+  },
+  "limitations": ["No independent app phase verification reported in this implementation handoff", "Human sign-off unconfirmed", "Python is available through the managed executable; probe not run by implementer and remains parent-owned"]
+}

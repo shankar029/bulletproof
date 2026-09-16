@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 1,
+  "revision": "r1.1",
+  "date": "2026-09-16",
+  "status": "PARENT_ACCEPTED_PENDING_STORAGE_PROBE",
+  "reviewDispositions": {
+    "R1": "Checks are scenario-scoped by the authoritative dueScenarios table below. Earlier checks must not require future delivered code; final aggregate is the union. Future scenarios remain NOT_RUN.",
+    "R2": "C07 is runner-owned lifecycle only. No externally supplied base URL. Every invocation allocates a unique directory and owned server on port 0, retains that directory during restarts, then closes only its server and unique browser session. Every flow seeds its own prerequisites; all executes isolated flows sequentially. Migration copies the captured v1 fixture into its own new directory and migrates only while stopped.",
+    "R3": "All finite native commands in this plan run through session run-bounded.mjs: node <artifact-directory>\\run-bounded.mjs 120 <executable> <args>. Browser setup uses 300 seconds; browser suite uses 600 seconds. Windows npm is invoked through cmd.exe /d /s /c with an explicit npm command, or a discovered executable. This is an absolute wall bound, NOT the missing Python idle watchdog. Intentional servers use attached async tool sessions or runner-owned child lifecycle with health verification."
+  },
+  "dueScenarios": {
+    "P0": {"required":["C01 atomic replacement"],"conditional":["C00 browser launch/render before browser proof; Python metrics unavailable does not block core implementation"]},
+    "I1": {"C02":["store/create/edit/no-op/rollback"],"C03":["base HTTP/revisions/origin/input/static"],"C07":["base"],"C11":["delivered I1 changes only"]},
+    "I2": {"C04":["dependency graph and transitions; no dashboard requirement"],"C07":["base","graph"],"C11":["delivered I1-I2 changes only"]},
+    "I3": {"C05":["query and dashboard"],"C07":["base","graph","query"],"C11":["delivered I1-I3 changes only"]},
+    "I4.T1": {"C06":["dual decoding/encoding compatibility unit tests only; no CLI, browser or writer retirement"]},
+    "I4.T2": {"C06":["offline CLI backup/conversion/idempotence/error preservation; no writer retirement or browser"]},
+    "I4.T3": {"C06":["new v2 default, legacy read/write rejection, writer retirement"],"C07":["migration"]},
+    "I5": {"C06":["aggregate all delivered migration scenarios"],"C07":["all"],"C08":["original and minimized controlled defect"],"C09":["all workflow observations"],"C10":["full regression and metrics availability"],"C11":["all ACs and complete final tree"]}
+  },
+  "sourceHead": "cfe5734b4f28817e6236d121a3b206a51606879d",
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "shell": "PowerShell on Windows",
+  "inputs": ["research.html","feature-inventory.json","design.html","acceptance.json"],
+  "authority": "This design task writes only design.html, plan.html, tasks.json and acceptance.json. All implementation, test execution, installs and commits below are prospective parent-owned work. No nested agents or commits by this designer.",
+  "executionDefaults": {
+    "appCwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner",
+    "artifactCwd": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-app-verification",
+    "ownedScratch": "examples\\team-planner\\.work\\<unique-run-id>",
+    "evidence": "Session artifact directory above, evidence\\<check-id>\\<run-id>.json plus stdout/stderr/source diff/screenshots where relevant. Parent must authorize/create evidence folders; no secrets or actual user data.",
+    "evidenceFields": ["checkId","taskId","date","sourceHead","dirtyDiffHash","untrackedFileHashes","artifactRevision","producer","independentObserver","cwd","shell","commandOrSteps","prerequisitesObserved","inputFixture","expected","observed","exitCode","result","attachments","cleanup","limitations"],
+    "testFirst": "For each behavior, establish a runnable public seam before asserting missing behavior. Record focused behavioral red, minimal implementation, same check green, then refactor/regressions. Missing import/syntax/dependency is setup failure. Prechange evidence unavailable means NOT_EXERCISED for that cycle, never fabricate a red.",
+    "reuse": "feature-inventory E17-E19: native ESM/node:test strict assertions and real ephemeral-port node:http/fetch pattern; no suitable existing app persistence/domain/UI to import. Do not couple example to benchmark helpers/business code.",
+    "preserve": "No changes to SKILL.md, references, evals fixed task/config/oracles or benchmark arms. Keep local-only scope and acceptance.json contracts. Do not change existing thresholds or generated reports to hide failures.",
+    "concurrency": "Sequential tasks. All shared-file deltas are dependency ordered; no simultaneous app source edits.",
+    "proofOwnership": "Implementer runs red/green and unit/integration checks. Parent assigns a fresh independent verifier for user-surface proof and read-only independent reviewer for final code/AC re-derivation. This designer does not launch them.",
+    "incrementExit": "Due scenarios + prior delivered app regressions + slice browser flow + independent verification/review. Record source snapshot; future checks remain NOT_RUN. Parent may commit green slices only under its own authority, including required coauthor trailer.",
+    "boundedExecution": "Native node:test has --test-timeout=30000 after current help confirms support; test fixtures use AbortSignal and bounded child process cleanup. Planned scripts\\check.mjs is a small process-lifecycle adapter, not a test framework: run selected native suite, enforce 120s wall cap, kill only owned process tree by PID on timeout, retain stdout/stderr, propagate nonzero exit, verify nonzero tests and no skip/cancel. Supports unit/integration/all/coverage and delivered-file discovery. Does not claim Python idle-watchdog or quality-probe parity. Never use --test-force-exit to hide leaks.",
+    "failureDefault": "Stop current task and all transitive dependents. Diagnose setup versus behavioral failure. Facts return to bounded research, contract changes to design/parent gate; within-contract fixes stay with implementer. Record evidence and revise stable task/check records together. Never waive failed assertions.",
+    "cleanupDefault": "Close owned HTTP servers/browser session and await writes, then remove only owned isolated test directories/stages. Preserve failure evidence first. Stale lock removal requires confirmation its recorded process is stopped. Never use process-name kills, broad directory deletes or detach a service."
+  },
+  "firstReadyTask": "P0.T1",
+  "readiness": {
+    "parentVerdict": "ACCEPTED_R1_R2_R3_DISPOSED",
+    "incomingImplementerConfirmation": "PENDING",
+    "blockingDecisions": [],
+    "conditionalExecutionPrerequisites": ["C01 replacement experiment before store production wiring","C00 agent-browser capability/launch before UI proof","Python missing before documented metric probe; retained blocker, not a reason to skip app work"],
+    "designMeasurement": "Static link/JSON validation can run in design task; browser rendering and <=3 printed pages not yet measured. Parent C00 owns tool setup/measurement and must revise HTML if necessary.",
+    "noHumanWait": "Record design and UX as unconfirmed; parent reviews autonomously. Do not solicit sign-off from an absent user or mark it approved.",
+    "coverageReconciliation": "Parent walks every acceptance criterion and all 29 inventory IDs, task ownership, dependencies and check prerequisites; sampling first task alone is insufficient."
+  },
+  "increments": [
+    {"id":"P0","outcome":"Accepted, executable design and known storage/browser prerequisites","tasks":["P0.T1"],"dependsOn":[],"status":"PENDING"},
+    {"id":"I1","outcome":"Create/edit projects and tasks through UI with atomic v1 persistence and restart","tasks":["I1.T1"],"dependsOn":["P0"],"status":"PENDING"},
+    {"id":"I2","outcome":"Dependency-safe lifecycle through UI/API","tasks":["I2.T1"],"dependsOn":["I1"],"status":"PENDING"},
+    {"id":"I3","outcome":"Accurate filters/pages/dashboard through browser","tasks":["I3.T1"],"dependsOn":["I2"],"status":"PENDING"},
+    {"id":"I4","outcome":"Safely evolve real v1 data to priority-enabled v2","tasks":["I4.T1","I4.T2","I4.T3"],"dependsOn":["I3"],"status":"PENDING"},
+    {"id":"I5","outcome":"Controlled diagnosis proof and independent full-request reconciliation","tasks":["I5.T1","I5.T2"],"dependsOn":["I4"],"status":"PENDING"}
+  ],
+  "tasks": [
+    {
+      "id":"P0.T1","increment":"P0","owner":"parent","purpose":"Accept lineage/ACs, resolve tool and storage prerequisites without production edits.","acs":["AC03","AC11","AC12"],"design":["design.html#scope","design.html#contracts","design.html#risks"],"dependsOn":[],
+      "entry":["Current local source still matches recorded HEAD or changed paths have been revalidated.","Research artifacts available; parent scope includes controlled scenarios and unconfirmed headless design.","No implementation started."],
+      "changes":[
+        {"path":"session artifacts: acceptance.json and tasks.json","delta":"Record research/design/readiness dispositions, source freshness and corrected OS-temp blocker, keeping stable IDs."},
+        {"path":"session artifacts: design.html and plan.html","delta":"Revise only substantiated review/page-render issues; do not duplicate detailed contracts."},
+        {"path":"examples\\team-planner\\.work\\storage-probe\\probe.mjs (planned isolated throwaway)","delta":"After parent authorization, implement only C01 experiment. Remove source after observation; no production imports."}
+      ],
+      "reuse":"Local design-doc/planning/code-clarity/UX/testing references were opened; research E17/E19 actual source/assertion seams re-read. Same theme assets linked in place without modifying them.",
+      "preserve":"No source changes before accepted design; tool-managed OS temp is not a parent blocker. Browser install allowed only after actual missing-tool evidence; no Python success claim.",
+      "proof":["C00","C01"],
+      "failureRecovery":"Readiness REVISE stops I1; storage failure returns D2 to design rather than weak persistence. Browser failure blocks UI/print proof but does not manufacture app failure; parent may proceed with core work while retaining unverified UI gate. Python metrics remain BLOCKED unless availability is actually restored.",
+      "status":"PENDING","evidence":[]
+    },
+    {
+      "id":"I1.T1","increment":"I1","owner":"implementer","purpose":"Walking skeleton: project/task creation and metadata edit travel browser→HTTP→transaction→disk and survive restart.","acs":["AC01","AC02","AC03","AC07","AC08"],"design":["design.html#program","design.html#interactions","design.html#ux"],"dependsOn":["P0.T1"],
+      "entry":["Parent design/readiness accepted; C01 storage behavior passed.","Node and selected test-timeout flags confirmed; browser prerequisite known.","Data/test files are isolated, never real user data."],
+      "changes":[
+        {"path":"examples\\team-planner\\package.json (new)","delta":"private package, type module, engines Node >=22 compatible with used APIs; scripts start/test/test:coverage/test:e2e using native entry points; no runtime dependencies."},
+        {"path":"examples\\team-planner\\.gitignore (new)","delta":"Ignore data\\ and .work\\ and local browser evidence, not source/tests/fixtures."},
+        {"path":"examples\\team-planner\\README.md (new directly related app documentation)","delta":"Runnable start/test commands, local-only scope, endpoints/error/revision basics, storage/lock recovery and no power-loss guarantee. This is user documentation, not a Markdown planning artifact."},
+        {"path":"examples\\team-planner\\src\\schema.mjs (new)","delta":"AppError and shared JSDoc shapes; strict v1 decode/encode with state→canonical status, priority normal; graph-ready fields initially empty dependencies/todo."},
+        {"path":"examples\\team-planner\\src\\store.mjs (new)","delta":"JsonStore lock, initialization, committed reads, queue/revision/clone/atomic write and cleanup per acceptance contracts. Initial default disk v1."},
+        {"path":"examples\\team-planner\\src\\planner.mjs (new)","delta":"Create/list projects; create/list tasks; edit title/description only initially. Allocate IDs/revisions inside transaction. No unsupported status/dependency changes silently accepted."},
+        {"path":"examples\\team-planner\\src\\server.mjs (new)","delta":"HTTP/static/error/security boundary; real health, projects/tasks routes with bounded JSON and If-Match. Unsupported future query keys fail explicitly until owning slice."},
+        {"path":"examples\\team-planner\\src\\main.mjs (new)","delta":"CLI --data-dir/--port, loopback server lifecycle, startup/error messages, graceful owned cleanup."},
+        {"path":"examples\\team-planner\\public\\index.html (new)","delta":"Semantic navigation/project/task forms and error/status regions."},
+        {"path":"examples\\team-planner\\public\\styles.css (new)","delta":"Minimal responsive design tokens and accessible interaction states from UX design."},
+        {"path":"examples\\team-planner\\public\\app.mjs (new)","delta":"Revision-aware fetch/render; projects/task metadata editor; pending/empty/error/success/cancel/conflict states; text-only user content."},
+        {"path":"examples\\team-planner\\test\\store.test.mjs (new)","delta":"Real files: queue, conflicts, bytes on failure, initialization, lock, corrupt schema, snapshot isolation, restart/process-failure cases."},
+        {"path":"examples\\team-planner\\test\\api.test.mjs (new)","delta":"Real ephemeral-port server and fetch for creation/edit/validation/local boundary/error cases; exact body/header and disk assertions."},
+        {"path":"examples\\team-planner\\test\\helpers.mjs (new)","delta":"Owned test directory/server/child process lifecycle fixtures only; no copied business logic or expected-results algorithm."},
+        {"path":"examples\\team-planner\\scripts\\check.mjs (new)","delta":"Small bounded native test runner described in executionDefaults, disjoint unit/integration selectors and coverage mode; no framework."},
+        {"path":"examples\\team-planner\\scripts\\e2e.mjs (new)","delta":"Reusable agent-browser process driver and journey base; capabilities grounded in installed help, parsed/asserted outcomes, explicit scope --flow base|graph|query|migration|all added as slices land."}
+      ],
+      "reuse":"E19 pure-rule/real HTTP node:test pattern; build app-specific bounded response helper in server rather than importing benchmark paths.",
+      "preserve":"v1 on-disk compatibility baseline must exist; API uses status already. All accepted writes atomic. Graph/query/priority functions not promised implemented until later slices.",
+      "proof":["C02","C03","C07"],
+      "failureRecovery":"Precommit failure leaves last committed snapshot usable; discard only owned stage. Stop on lock/corruption, do not reset store. On postcommit HTTP uncertainty read current revision before new action. Tests failing on source/wiring return implementer; persistence guarantee mismatch returns design.",
+      "status":"PENDING","evidence":[]
+    },
+    {
+      "id":"I2.T1","increment":"I2","owner":"implementer","purpose":"Dependency graph and lifecycle form one vertical user flow.","acs":["AC03","AC04","AC07","AC08"],"design":["design.html#program","design.html#ux"],"dependsOn":["I1.T1"],
+      "entry":["I1 independent gate green at recorded snapshot; rerun affected baseline checks.","Canonical v1 task shape and transaction seam exist."],
+      "changes":[
+        {"path":"examples\\team-planner\\src\\rules.mjs (new)","delta":"Cycle/path validation, derived blocked and status transition policies; straightforward graph traversal bounded by dataset, including combined patch final-state validation."},
+        {"path":"examples\\team-planner\\src\\schema.mjs","delta":"Enforce complete graph/status persisted invariants and capacity bounds; preserve v1 state encoding."},
+        {"path":"examples\\team-planner\\src\\planner.mjs","delta":"Add dependencyIds at creation and status/dependency PATCH atomically; revision no-op policy."},
+        {"path":"examples\\team-planner\\src\\server.mjs","delta":"Map new coded rule errors without leaking storage details."},
+        {"path":"examples\\team-planner\\public\\app.mjs","delta":"Titled dependency checkboxes, status select and blocker explanation; errors remain visible; no copied cycle/state rules."},
+        {"path":"examples\\team-planner\\test\\rules.test.mjs (new)","delta":"All transition/graph boundary scenarios and property-order-independent combined PATCH checks through rules/planner."},
+        {"path":"examples\\team-planner\\test\\api.test.mjs","delta":"HTTP graph success/failure and unchanged disk/revision assertions."},
+        {"path":"examples\\team-planner\\scripts\\e2e.mjs","delta":"J2 dependency journey, intentional rejection then correction; prior J1 regression."},
+        {"path":"examples\\team-planner\\README.md","delta":"Document actual transitions, blocked meaning and dependency constraints."}
+      ],
+      "reuse":"Existing I1 transaction/error/form seams; do not add another state owner.",
+      "preserve":"All I1 metadata/restart/security behavior; invalid PATCH cannot partly change title or edges.",
+      "proof":["C02","C03","C04","C07"],
+      "failureRecovery":"Cycle/incomplete dependency is expected domain rejection; nonzero regression result stops I3. Fix final-state validation inside one transaction, never compensate with separate writes.",
+      "status":"PENDING","evidence":[]
+    },
+    {
+      "id":"I3.T1","increment":"I3","owner":"implementer","purpose":"Deterministic filter/page results and dashboard in browser; produce real v1 baseline.","acs":["AC05","AC06","AC07","AC08"],"design":["design.html#program","design.html#ux","design.html#contracts"],"dependsOn":["I2.T1"],
+      "entry":["I2 due checks/review green; project-local graph invariants stable."],
+      "changes":[
+        {"path":"examples\\team-planner\\src\\rules.mjs","delta":"selectTasks and summarize; explicit filter→sort→total→slice; full-project counts independent of paging."},
+        {"path":"examples\\team-planner\\src\\planner.mjs","delta":"Expose listTasks(query), dashboard(projectId), consistent response revision and derived blocked."},
+        {"path":"examples\\team-planner\\src\\server.mjs","delta":"Strict query parsing including repeated keys and no coercion of 1.5/0/-1/NaN; dashboard route."},
+        {"path":"examples\\team-planner\\public\\app.mjs","delta":"Search/status/page controls, project/global dashboard, URL query/history Back, reset page on filter changes, empty/no-results actions."},
+        {"path":"examples\\team-planner\\test\\query.test.mjs (new)","delta":"F-query worked expectations, edge/boundary cases and independent dashboard counts, no expected output computed with production selector."},
+        {"path":"examples\\team-planner\\test\\api.test.mjs","delta":"HTTP query/dashboard assertions over API-seeded real store."},
+        {"path":"examples\\team-planner\\scripts\\e2e.mjs","delta":"J3 query/page/dashboard/deep-link and prior flows; seed F-query via public API where not itself UI-under-test."},
+        {"path":"examples\\team-planner\\test\\fixtures\\planner-v1.json (new)","delta":"Capture exact valid actual I3 API-generated v1 baseline after green check, with redacted synthetic data only."},
+        {"path":"examples\\team-planner\\test\\fixtures\\planner-v1.expected.json (new)","delta":"Hand-reviewed ID/status/edge/text/order/count manifest independent of migration algorithm."},
+        {"path":"examples\\team-planner\\README.md","delta":"Query/page/count definitions and demo usage."}
+      ],
+      "reuse":"I2 rules module for query responsibility; no caching or generic repository/query framework.",
+      "preserve":"Task creation/graph rules/revision errors remain unchanged; page out of range is not silently clamped by API.",
+      "proof":["C02","C03","C04","C05","C07"],
+      "failureRecovery":"Wrong IDs or totals stop migration baseline capture. Preserve failing input, fix production selector normally; controlled fault exercise later must not be conflated with accidental current defect.",
+      "status":"PENDING","evidence":[]
+    },
+    {
+      "id":"I4.T1","increment":"I4","owner":"parent then implementer","purpose":"Reconcile real checkpoint/source and expand compatible schema support.","acs":["AC09","AC11"],"design":["design.html#contracts","design.html#risks"],"dependsOn":["I3.T1"],
+      "entry":["I3 checkpoint, real v1 fixture and independent manifest available.","Parent resumes from artifacts without relying on chat; confirms HEAD/dirty snapshot and disk schema/revision."],
+      "changes":[
+        {"path":"session artifacts: design.html, plan.html, tasks.json, acceptance.json","delta":"Adopt r2 observed schema evolution decision; record real expected/observed checkpoint, changed source consumers, affected checks and invalidation. Preserve IDs; retain historical green I3 results but not as v2 verification. Recheck affected Gate 2/3."},
+        {"path":"examples\\team-planner\\src\\schema.mjs","delta":"Expand decode/encode for v1 and v2, canonical status/priority; pure upgradeV1; strict mixed/unknown shape rejection."},
+        {"path":"examples\\team-planner\\src\\store.mjs","delta":"Read either version but preserve opened version on write during expand phase; expose schema readiness."},
+        {"path":"examples\\team-planner\\test\\migration.test.mjs (new)","delta":"Real legacy decode, v2 decode, corrupt/mixed/future version failure; compatible v1 write before cutover and stable API status."}
+      ],
+      "reuse":"I1 schema boundary and JsonStore transaction ownership; source-aware revision per local planning.md.",
+      "preserve":"No conversion on ordinary open; no non-normal priority written to v1. I3 user flows remain green.",
+      "proof":["C06","C09"],
+      "failureRecovery":"If actual legacy data differs from planned v1, stop I4.T2/T3; refresh source evidence and revise transformation instead of reshaping fixture to make it pass. Missing real resume evidence is NOT_EXERCISED, not synthetic proof.",
+      "status":"PENDING","evidence":[]
+    },
+    {
+      "id":"I4.T2","increment":"I4","owner":"implementer","purpose":"Offline transactional migration with exact backup and recoverable failures.","acs":["AC09"],"design":["design.html#contracts","design.html#risks"],"dependsOn":["I4.T1"],
+      "entry":["r2 parent acceptance recorded; dual reader/legacy roundtrip green; source/data checkpoint verified; example server stopped."],
+      "changes":[
+        {"path":"examples\\team-planner\\src\\store.mjs","delta":"migrateToV2 uses same exclusive writer lock and atomic replacement; backup verification/creation, no-op v2 behavior, explicit failure paths."},
+        {"path":"examples\\team-planner\\src\\migrate.mjs (new)","delta":"CLI --data-dir only; exit 0 with schema/revision on migration/no-op, nonzero coded error on lock/corrupt/write failure; always release own lock."},
+        {"path":"examples\\team-planner\\test\\migration.test.mjs","delta":"Invoke real CLI/store over captured v1; compare exact backup and independent transformed invariants, repeat/no-op, locked/unknown/corrupt/error cases and isolated rollback."},
+        {"path":"examples\\team-planner\\README.md","delta":"Stop→backup/migrate→verify→restart; explicit rollback data-loss and no old-binary/v2 coexistence."}
+      ],
+      "reuse":"Store commit primitive, no second writer implementation in migrate entry.",
+      "preserve":"Exact v1 original on failure; preserve every ID/order/text/edge/status/count/nextId; one revision increment on conversion.",
+      "proof":["C02","C06"],
+      "failureRecovery":"Before replacement, leave original v1 untouched; after success don't restore automatically. For owned fixture rollback, stop all processes, archive current v2 if needed, restore verified backup only with acknowledged loss of new writes. Never delete data to fix migration.",
+      "status":"PENDING","evidence":[]
+    },
+    {
+      "id":"I4.T3","increment":"I4","owner":"implementer","purpose":"Use priority in migrated UI/API, then retire only legacy writing.","acs":["AC05","AC07","AC09"],"design":["design.html#contracts","design.html#ux"],"dependsOn":["I4.T2"],
+      "entry":["Legacy migration plus independent invariant proof passed; no live v1 writer on exercise directory."],
+      "changes":[
+        {"path":"examples\\team-planner\\src\\planner.mjs","delta":"Priority create/edit validation and schema readiness guard."},
+        {"path":"examples\\team-planner\\src\\rules.mjs","delta":"Combine priority filter with prior filters, preserving order/page/count behavior."},
+        {"path":"examples\\team-planner\\src\\server.mjs","delta":"Priority query/write and MIGRATION_REQUIRED response; health reports schema."},
+        {"path":"examples\\team-planner\\public\\app.mjs","delta":"Priority select/filter and legacy read-only migration-required guidance; J4 uses same editor pattern."},
+        {"path":"examples\\team-planner\\src\\schema.mjs","delta":"After compatibility/browser proof, remove v1 encoder path; retain legacy decoder and upgrade transform."},
+        {"path":"examples\\team-planner\\src\\store.mjs","delta":"Default empty stores v2; retained v1 store reads allowed but mutations require migration. Remove production v1 writes."},
+        {"path":"examples\\team-planner\\test\\migration.test.mjs","delta":"Final legacy read-only behavior and default-v2 checks supersede temporary v1-writer checks only with scenario mapping."},
+        {"path":"examples\\team-planner\\test\\query.test.mjs","delta":"F-query v2 priority combined-filter expected E-only case."},
+        {"path":"examples\\team-planner\\test\\api.test.mjs","delta":"Priority/restart and migration-required boundary checks."},
+        {"path":"examples\\team-planner\\scripts\\e2e.mjs","delta":"J4 offline migration then priority edit/filter/restart and all prior journeys."},
+        {"path":"examples\\team-planner\\README.md","delta":"Final v1-read/v2-write compatibility window, priority examples and migration commands."}
+      ],
+      "reuse":"Existing form/URL/query/filter paths; no duplicate v1 UI or new component framework.",
+      "preserve":"Legacy reader/fixture and original query/status API stay; no old writer removal before scoped search and evidence. Keep superseded temporary-test evidence in task history.",
+      "proof":["C02","C03","C04","C05","C06","C07"],
+      "failureRecovery":"If caller search finds remaining production v1 writers, do not contract; migrate them or revise scope. Broken prior fixture/flow reopens this slice; never delete compatibility tests to pass.",
+      "status":"PENDING","evidence":[]
+    },
+    {
+      "id":"I5.T1","increment":"I5","owner":"parent prepares controlled scope; implementer repairs copy; independent verifier replays","purpose":"Demonstrate deterministic diagnosis with original-case behavioral red/green, without shipping injected code.","acs":["AC10","AC11"],"design":["design.html#risks"],"dependsOn":["I4.T3"],
+      "entry":["Release app currently green; parent approves isolated copy and fault label.","F-query and F-min expected outputs are fixed in acceptance.json, not read from faulty implementation."],
+      "changes":[
+        {"path":"examples\\team-planner\\.work\\diagnosis-<run-id>\\src\\rules.mjs (isolated copy only)","delta":"Inject exactly one controlled change: apply page slice before project/status/q/priority filters and derive total from that window. Preserve original source/hash and explicit diff. No environment-driven production fault switch."},
+        {"path":"examples\\team-planner\\test\\diagnosis.test.mjs (new durable regression)","delta":"Public real-server F-query/F-min expectations parameterized by APP_ROOT only in test harness, never production. Default root is correct release app. Regression fails specifically on IDs/total under controlled copy."},
+        {"path":"examples\\team-planner\\scripts\\diagnose.mjs (new nonproduction reproducibility tool)","delta":"--scenario original|minimized|both --root <path>; run same public HTTP replay with owned data directory; setup errors distinct from assertion failures, bounded owned lifecycle. Documentation requires separately reviewed injection diff; script does not silently mutate release source."},
+        {"path":"session evidence\\C08","delta":"Original reproduction, one-factor reductions, hypotheses/predictions/probes, supported cause, correction design, red/green and cleanup evidence."},
+        {"path":"examples\\team-planner\\README.md","delta":"Label controlled-fault exercise, original/minimized exact commands and release-root default; do not present as real user incident."}
+      ],
+      "reuse":"Existing HTTP seeding/lifecycle helpers and expected F-query labels; no testing a disconnected toy paginator.",
+      "preserve":"Release source hash unchanged by injection/repair; no fault switch, no committed faulty copy. All HTTP/store behavior remains real in diagnosis copy.",
+      "proof":["C08","C09","C11"],
+      "failureRecovery":"If control does not fail as predicted, stop; determine setup/fixture/injection mismatch, never claim red. If minimal loses original causal path, restore previous reduction. If correction changes product contract, return to design. Remove owned instrumentation/copy only after independent replay and evidence retained; keep durable regression tests.",
+      "status":"PENDING","evidence":[]
+    },
+    {
+      "id":"I5.T2","increment":"I5","owner":"parent + independent verifier/reviewer","purpose":"Reconcile complete app correctness, workflow observations and final snapshot, including limitations.","acs":["AC01","AC02","AC03","AC04","AC05","AC06","AC07","AC08","AC09","AC10","AC11","AC12"],"design":["design.html#scope","design.html#risks"],"dependsOn":["I5.T1"],
+      "entry":["All planned implementation complete at pinned final snapshot; no unresolved due SPEC or STANDARD failures.","Independent verifier/reviewer have requirement, all four artifacts, research/inventory, evidence and current source."],
+      "changes":[
+        {"path":"session evidence\\C09 and evidence\\C11","delta":"Workflow transcript/29-row verdict reconciliation, categorized review findings/dispositions, final source coverage and per-AC independent outcome."},
+        {"path":"session artifacts: tasks.json and acceptance.json","delta":"Attach actual evidence only; mark complete/blocked/not exercised truthfully, reconcile source after any fixes."},
+        {"path":"examples\\team-planner\\README.md","delta":"Only verified final commands and explicit local/metrics/tooling limits; repair documentation discrepancies, no unrelated edits."}
+      ],
+      "reuse":"Existing Phase 5/6 review contract; native repo regression runner remains separate from app.",
+      "preserve":"Mandatory independence and all material limitations. No metric threshold reduction, no changing fixed corpus/oracles or counting regex matches as workflow proof.",
+      "proof":["C07","C08","C09","C10","C11"],
+      "failureRecovery":"Failed app AC returns owning increment, stale evidence reruns affected checks; final reviewer rechecks resulting snapshot. Missing browser/Python remains BLOCKED/LIMITED, not app-feature PASS. Existing baseline failures are reported with source context and do not justify unrelated fixes. No commits/push by this designer; parent governs later shipment.",
+      "status":"PENDING","evidence":[]
+    }
+  ],
+  "checks": [
+    {
+      "id":"C00","purpose":"Accept research/design/plan and establish browser/command prerequisites.","acs":["AC11","AC12"],"status":"NOT_RUN","owner":"parent; incoming implementer confirms","timing":"Before I1, browser-specific part before any UI acceptance",
+      "cwd":"repository root (tasks.cwd); artifact paths absolute where supplied",
+      "provenance":"Source-defined commands in local references/e2e-agent-browser.md; research C02/C04; new HTML print/check steps derived",
+      "commands":[
+        "git --no-pager status --short; git rev-parse HEAD",
+        "node --version; node --help | Select-String 'test-timeout|test-isolation|experimental-test-coverage'",
+        "Get-Command agent-browser -ErrorAction SilentlyContinue",
+        "npm install -g agent-browser",
+        "agent-browser --help; agent-browser skills get --all",
+        "agent-browser install",
+        "agent-browser open \"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-app-verification/design.html\"",
+        "agent-browser get count \"figure svg\"; agent-browser errors; agent-browser console"
+      ],
+      "prerequisites":"Install only after missing-tool evidence (already present in research; recheck current state). Parent owns installation and browser process. URI forward slashes are URL syntax, not filesystem commands. Inspect help before using any version-specific print/PDF/viewport flags.",
+      "steps":["Resolve E17/E19 and one other sampled citation, plus research not-found claim; retain correction of erroneous OS-temp prohibition.","Compare all ACs and 29 feature IDs; every change has exact task owner, dependency, proof and recovery. Review D1-D6.","Walk P0/I1 and migration failure boundary using artifacts alone; record READY/REVISE/BLOCKED and actual incoming consumer confirmation.","Resolve all HTML links including shared theme, inspect offline rendered figures and console. Repeat for plan.html (one diagram versus design two). Print normal-font A4 via installed supported browser facility; record measured <=3 pages per HTML, never estimate from word count. If printing unavailable record BLOCKED measurement.","Close only owned browser session after artifact check."],
+      "pass":"Source freshness/citations and complete coverage accepted; exact supported commands grounded; design has two visible diagrams, plan one, theme loads, console/errors clean, both <=3 measured pages, explicit readiness verdict. Tool or print failures are not success.",
+      "stopRecovery":"No unsupported flags; inspect help once and use documented alternative. If install/launch/print blocked retain evidence and gate limitation; do not silently switch browser driver.",
+      "evidenceDestination":"evidence\\C00\\<run-id>"
+    },
+    {
+      "id":"C01","purpose":"Bounded storage decision prototype on actual Windows filesystem.","acs":["AC03"],"status":"NOT_RUN","owner":"parent/write-scoped implementer","timing":"Before production JsonStore implementation",
+      "cwd":"repository root",
+      "provenance":"Planned derived native Node experiment, not existing script",
+      "commands":["node examples\\team-planner\\.work\\storage-probe\\probe.mjs"],
+      "prerequisites":"Owned new scratch directory, Node, parent authorization; no real app data. Experiment source limited to file creation/sync/rename/read and owned cleanup.",
+      "steps":["Record question before running: does same-directory rename replace the committed snapshot without readers observing partial JSON on this local filesystem?","Write known old JSON and sync+close known new staged JSON. Repeated reads and replacement, including a held read handle, record exact old/new bytes or explicit sharing error.","Perform at most 20 replacements in <=30 seconds; deliberately provoke a pre-rename failure and verify byte-exact old snapshot remains. No arbitrary throughput threshold.","Success permits D2 with process-crash/local-filesystem limitation; unsupported replacement/held-reader behavior returns design for bounded retry policy or storage reconsideration.","Preserve results and remove isolated throwaway source/data after owned handles closed. This is a prototype observation, not production atomicity proof."],
+      "pass":"No partial/empty JSON observed; successful replace produces exact new bytes; rejected replace leaves exact old bytes; bounded exit 0 with relevant assertions. Any ambiguity blocks storage choice.",
+      "stopRecovery":"30s deadline or unexpected filesystem semantics stops experiment; never broaden into stress test or use production files.",
+      "evidenceDestination":"evidence\\C01\\<run-id>"
+    },
+    {
+      "id":"C02","purpose":"Storage/unit transactional behavior and delivered app regression.","acs":["AC01","AC02","AC03"],"status":"NOT_RUN","owner":"implementer, independent verifier reruns","timing":"I1 then each subsequent slice",
+      "cwd":"executionDefaults.appCwd","provenance":"Planned native test runner; node:test pattern grounded in research E19",
+      "commands":["node scripts\\check.mjs unit"],
+      "prerequisites":"Planned check.mjs and delivered tests exist; flags supported; isolated directories; 120s wrapper/30s test bounds; no skipped tests.",
+      "steps":["Unit mode selects delivered store/rules/query suites; smallest red cycle uses node --test --test-timeout=30000 --test-name-pattern \"<exact new scenario name from test file>\" <exact test file> before/after change, record fully expanded command.","Assert exact disk/memory/revision/nextId equality on rejection; actual restart/lock/corrupt-store behavior.","Read snapshot mutate attempt cannot affect next read; same expected-revision concurrent transactions produce one commit and one conflict; queue recovers after an injected I/O failure.","Terminate owned store test child before/after commit handshake with a bounded PID-scoped kill, recover only its proven stale lock, and assert old/new complete JSON and correct next startup. Capture actual process crash test, not merely mocked rename."],
+      "pass":"All delivered relevant assertions execute with no skips/cancellations and exit 0; intended red must name behavioral mismatch. Persisted side effects verified, no leaked owned process/lock.",
+      "stopRecovery":"Failing source test stops dependent slices; setup failure never counts red; retain owned state before cleanup.",
+      "evidenceDestination":"evidence\\C02\\<run-id>"
+    },
+    {
+      "id":"C03","purpose":"Real HTTP contract, error and startup/restart boundary.","acs":["AC01","AC02","AC03","AC08"],"status":"NOT_RUN","owner":"implementer plus independent verifier","timing":"I1 and all later increments",
+      "cwd":"executionDefaults.appCwd","provenance":"Planned test invocation; native fetch/server pattern source-verified in E19",
+      "commands":["node scripts\\check.mjs integration"],
+      "prerequisites":"api.test.mjs, real store/server, port 0, test-owned dataset; explicit timeout/cleanup hooks",
+      "steps":["Create/list project and task, patch metadata, assert status/ETag/content-type/no-store/error shape; reopen new server/store instance and compare bytes/data.","Send malformed JSON, oversized body, wrong content type, blank/long/unknown inputs, missing/malformed/stale revision; assert exact declared codes and unchanged data.","Send hostile Host/Origin, unknown paths, data-file/traversal attempts, wrong method; verify no private paths/stacks and static allowlist/CSP.","Use real two-client stale writes and conflicting task edits, not mocked coordinator."],
+      "pass":"All declared HTTP/status/header/body/persistence assertions run and pass; no unexpected console/server failures or owned resource leak.",
+      "stopRecovery":"Distinguish expected 4xx from server defect; no converting all errors to 400 or swallowing storage failures.",
+      "evidenceDestination":"evidence\\C03\\<run-id>"
+    },
+    {
+      "id":"C04","purpose":"Graph/lifecycle semantics with real atomic updates.","acs":["AC03","AC04"],"status":"NOT_RUN","owner":"implementer + independent verifier","timing":"I2 and later",
+      "cwd":"executionDefaults.appCwd","provenance":"Planned native tests",
+      "commands":["node --test --test-timeout=30000 test\\rules.test.mjs test\\api.test.mjs"],
+      "prerequisites":"I2 tests exist; C00 flags confirmed; test-owned data/server; wall bound via executionDefaults",
+      "steps":["Execute all AC04 transitions and edge cases, including cycle length >2 and cross-project references.","Combined PATCH includes title/status/dependencies; illegal candidate leaves exact original, legal candidate committed once; repeat with input property order reversed.","Active dependent prevents predecessor reopen; legal reverse reopen order succeeds and dashboard-derived blocked changes."],
+      "pass":"Exact codes/status/state and graph assertions match acceptance.json; every meaningful rule branch has scenario; prior metadata/storage assertions remain green.",
+      "stopRecovery":"Fix invariant at domain boundary; no UI-only validation substituted.",
+      "evidenceDestination":"evidence\\C04\\<run-id>"
+    },
+    {
+      "id":"C05","purpose":"Independent worked query/count expectations.","acs":["AC05","AC06"],"status":"NOT_RUN","owner":"implementer + independent verifier","timing":"I3 and later",
+      "cwd":"executionDefaults.appCwd","provenance":"Planned native tests",
+      "commands":["node --test --test-timeout=30000 test\\query.test.mjs test\\api.test.mjs"],
+      "prerequisites":"F-query generated via public API; generated IDs resolved by label; assertions hardcode expected labels/counts, not a second selector",
+      "steps":["Run every F-query row and independent Alpha/global counts.","Page=0/-1/1.5, pageSize=0/51, unknown/repeated query, invalid enum/missing project return defined failures; empty result and high page return exact empty shape.","At v2, E high/F low combination matches E only with unchanged dashboard. Compare adjacent pages for exact union/order without intervening writes."],
+      "pass":"Expected labels, totals, page metadata and counts match fixture; no algorithm copied into oracle. Nonzero relevant assertions, no skips, exit 0.",
+      "stopRecovery":"Preserve query/data source and diagnose real failure; do not adjust expected results to production output.",
+      "evidenceDestination":"evidence\\C05\\<run-id>"
+    },
+    {
+      "id":"C06","purpose":"Expand/migrate/contract real legacy data and bounded recovery.","acs":["AC09"],"status":"NOT_RUN","owner":"implementer + independent verifier","timing":"I4 internal tasks then full I4 gate",
+      "cwd":"executionDefaults.appCwd","provenance":"Planned app CLI/test commands, explicitly not yet existing",
+      "commands":[
+        "node --test --test-timeout=30000 test\\migration.test.mjs",
+        "node src\\migrate.mjs --data-dir .work\\migration-check",
+        "node src\\main.mjs --data-dir .work\\migration-check --port 4317"
+      ],
+      "prerequisites":"Before CLI commands copy captured v1 fixture to a new owned .work\\migration-check\\planner.json with server stopped; never run over user data. Use attached async for main and verify health once; stop owned process afterwards.",
+      "steps":["Expand phase verifies both versions and legacy writes; contract phase replaces legacy-writer test with old-reader + MIGRATION_REQUIRED while retaining historical proof.","Compare backup byte-for-byte to original, transformed result against independent manifest, API status/counts/edges unchanged; revision increments exactly once.","Repeat migration no-op; test corrupt/unknown/mixed input, occupied writer lock, backup mismatch and failed replacement leave exact original.","Exercise isolated rollback, explicitly demonstrating post-v2 data is not present after backup restoration; no lossless rollback claim.","Scoped final search: Get-ChildItem src,test -Recurse -File | Select-String 'schemaVersion|\\.state|state:|encode'. Review remaining v1 usages; a text hit alone neither passes nor fails compatibility.","Reopen migrated server, priority edit/filter/restart via C07; confirm no legacy production writer remains."],
+      "pass":"All compatibility/backup/idempotence/failure assertions and real browser migrated-data outcomes pass; search dispositions complete; recorded r2 resumed evidence valid.",
+      "stopRecovery":"Any mismatch stops contract phase and downstream diagnosis. Preserve original/backup; parent resolves data-contract change instead of modifying fixture.",
+      "evidenceDestination":"evidence\\C06\\<run-id>"
+    },
+    {
+      "id":"C07","purpose":"Real browser journeys against live persistent app.","acs":["AC01","AC02","AC04","AC05","AC06","AC07","AC08","AC09"],"status":"NOT_RUN","owner":"fresh independent verifier; implementer may run own earlier check","timing":"Each slice's due journey and all journeys after I4/final",
+      "cwd":"executionDefaults.appCwd","provenance":"Planned e2e driver interface; underlying agent-browser commands must be verified from installed help (local reference provides examples)",
+      "commands": [
+        "node scripts\\e2e.mjs --flow base",
+        "node scripts\\e2e.mjs --flow graph",
+        "node scripts\\e2e.mjs --flow query",
+        "node scripts\\e2e.mjs --flow migration",
+        "node scripts\\e2e.mjs --flow all"
+      ],
+      "prerequisites":"C00 installed help/launch evidence; approved app before UI build; test-owned fixed-port dataset; no other server owns port. Start main in attached async tool session, capture PID/log, health check once before browser. Restart/migration journey runner coordinates only explicitly supplied owned app process/data; if external base-url server is used, parent performs recorded stop/migrate/restart steps, driver never kills unknown process.",
+      "steps":["Use accessible snapshot, fresh refs after DOM change, labeled controls; scripts assert parsed output with node:assert, not a mere sequence of clicks or exit 0.","J1 through UI: create Launch, Draft and Review, edit title, invalid-title save retains draft, cancel, successful save; reload then full server restart and verify persistence.","J2 through UI: Review depends on Draft; reject Review start while Draft todo; complete Draft then start Review; reject Draft reopen while dependent active; reopen Review then Draft.","J3 seed F-query using API setup, interact with project/status/q/page controls: B,D then E,F; q=LAUNCH resets page to D,E then F; dashboard Alpha=6/4/1/1/1/16 independent of query; browser Back restores query/page; clear empty search.","J4 starts with captured legacy dataset, confirms readable before migration; parent/owned lifecycle stops→migrates→restarts; browser edit E high/F low, priority+search filter E, reload/restart retains values.","Exercise stale revision from second real API client while editor open; save returns actionable conflict, draft retained until explicit Reload. Render script-like title literally; no execution.","At 390x844 and 1280x800, keyboard journey and visible focus/target size/contrast checks; inspect actual rendered states, overflow, labeled status/error. Use documented viewport/a11y command only after help; no automated audit-only WCAG certification.","Collect screenshots per asserted state; console/errors before declaring green; capture intentional 4xx separately. Cleanup closes owned browser and server; a failed command captures state before cleanup."],
+      "pass":"All due objective UI assertions execute against real server/disk, including failure recovery; relevant console/errors clean and screenshots identify state, no vacuous 'opened page' pass. Human design approval remains unconfirmed.",
+      "stopRecovery":"If port occupied, fail instead of picking another unnoticed port. If tool/launch unavailable, name finishing commands and ACs BLOCKED. No Playwright substitution without a revised policy disposition.",
+      "evidenceDestination":"evidence\\C07\\<run-id>"
+    },
+    {
+      "id":"C08","purpose":"Controlled defect original/minimized behavioral red→green and release-root regression.","acs":["AC05","AC10"],"status":"NOT_RUN","owner":"write-scoped preparer/implementer; independent verifier observes original and reruns","timing":"I5 only, after release app green",
+      "cwd":"executionDefaults.appCwd","provenance":"Planned diagnose CLI and regression tests; F-query/F-min expected outputs independent",
+      "commands":[
+        "node scripts\\diagnose.mjs --scenario original --root .work\\diagnosis-run",
+        "node scripts\\diagnose.mjs --scenario minimized --root .work\\diagnosis-run",
+        "node scripts\\diagnose.mjs --scenario both --root .work\\diagnosis-run",
+        "node scripts\\diagnose.mjs --scenario both --root .",
+        "node --test --test-timeout=30000 test\\diagnosis.test.mjs",
+        "node scripts\\check.mjs all"
+      ],
+      "prerequisites":"Parent owns isolated copy containing app runtime/public files only, unique data dir, one reviewed injection diff, hashes of correct release and faulted copy. Original/minimized commands run on faulted copy first; first two expected nonzero assertion failures. No artifact/runtime fault toggle in shipped app.",
+      "steps":["Preserve original public HTTP response for Alpha todo page2 size2: expected E,F total4; wrong slice-before-filter produces D only with wrong total if total computed from window. Record exact observed rather than assuming fault signature.","Minimize one factor at a time: remove Beta, remove unrelated tasks, simplify titles/dependencies, shrink page size, retain public server/disk path; record each input/result. End with A done then B todo, page1 size1 expects B.","Predictions: bad status parsing would fail with pageSize2 too; order bug yields B at size2 but empty at size1. Execute both queries and inspect only relevant query/selector source; label injection cause already known, not blind discovery.","Record supported correction filter→sort→count→slice, parent accepts within existing design; regression test red on faulty root, restore same algorithm order in copy, rerun unchanged original and minimized now exit0.","Independent verifier replays original from preserved fixture/commands, then all release regressions and C07 query. Prove release source hashes unchanged by controlled injection; remove owned fault/instrumentation copy after proof, retain regression and redacted evidence."],
+      "pass":"Behavior-specific red in original AND minimized followed by same cases green after isolated correction; independent original replay; final release tests green and no fault shipped. Setup failure/missing file or unexplained no-red result is failure of exercise.",
+      "stopRecovery":"If original fails differently, retain evidence and diagnose fixture/injection boundary before any repair. If minimized no longer reaches actual HTTP/data path, restore last faithful case. Do not commit controlled bad state.",
+      "evidenceDestination":"evidence\\C08\\<run-id>"
+    },
+    {
+      "id":"C09","purpose":"Observe current workflow behavior, not artifact phrase presence.","acs":["AC09","AC10","AC11","AC12"],"status":"NOT_RUN","owner":"parent + independent reviewer","timing":"Each gate and final",
+      "cwd":"repository root and session artifact directory",
+      "provenance":"Current local SKILL.md and references/research/planning/communication/code-clarity/diagnosis/testing-and-e2e",
+      "commands":["git rev-parse HEAD; git --no-pager status --short"],
+      "prerequisites":"Actual phase transcript, source snapshots, four linked artifacts and captured check results available to independent observer; missing evidence is explicitly unavailable, not reconstructed from the plan.",
+      "steps":["For every acceptance.json workflowCoverage row, inspect actual transcript/source/results and record EXERCISED_PASS/FAIL/NOT_EXERCISED/BLOCKED/NOT_APPLICABLE plus scope and independent observer.","Verify research permissions/citations and current local procedure load evidence; no reading installed older SKILL as subject.","Walk real incoming task handoff, red/green chronology and per-increment gates. Confirm planned future work stayed unverified.","At I4 checkpoint verify actual resumed source/data snapshot, r2 artifact changes, stale result invalidations, consistent task/AC pointers and relevant Gate2/3 rechecks.","Compare progress/blocker/final communication to evidence. Keep combined design/planning context and headless human approval exception visible.","Final counts cover all 29 IDs exactly once; conditional N/A branch reason is not PASS and one app cannot establish causal A/B improvement."],
+      "pass":"Every item has evidence-backed disposition; no fabricated test results or phrase-check scoring. Full exercised-pass claim only for observed branches; gaps remain explicitly limited.",
+      "stopRecovery":"Missing evidence stays unexercised/blocked. Do not reconstruct nonexistent red runs or human approval; scope changes return parent.",
+      "evidenceDestination":"evidence\\C09\\<run-id>"
+    },
+    {
+      "id":"C10","purpose":"Full app and inherited repository regression/metrics check kept separate.","acs":["AC11","AC12"],"status":"NOT_RUN","owner":"implementer runs; independent reviewer verifies interpretation","timing":"Final and after relevant rework",
+      "cwd":"App commands from executionDefaults.appCwd; eval/probe commands from repository root",
+      "provenance":"App commands planned; root test/eval commands source-verified in research EX01/EX02/EX03. Probe source verified in E22.",
+      "commands":[
+        "node scripts\\check.mjs all",
+        "node scripts\\check.mjs coverage",
+        "node evals\\run.mjs",
+        "node --test evals\\lib\\*.test.mjs evals\\agent\\agent.test.mjs",
+        "node evals\\agent\\live.mjs --task paginator --dry-run",
+        "python scripts\\probe.py --slug workflow-app-verification --base cfe5734b4f28817e6236d121a3b206a51606879d"
+      ],
+      "prerequisites":"Run app commands only after planned scripts exist. Native coverage flag confirmed in C00. Existing full eval may need benchmark Playwright: try documented command first; on actual missing-dependency error parent may run npm install --prefix benchmark under existing manifest and retry, recording any lockfile convention. Tool-managed OS temp is not blocked by parent correction. Python probe currently unavailable; do not claim execution.",
+      "steps":["App all discovers every *.test.mjs excluding helpers/fixtures, uses native runner and verifies nonzero tests/no skips/cancellations. Coverage includes src only, reports untested changed branches with scenarios or gaps; no invented numeric threshold.","Full existing eval result must meet unchanged own thresholds or record exact failure/baseline. Source-regex E2E signal is not browser proof and dry-run does not invoke live agent.","Confirm source/format/build/typecheck configuration: ESM app has no compilation/typecheck framework; syntax checked by Node loading/tests, no fabricated npm build/lint pass.","Record Python probe BLOCKED if still unavailable; native test/coverage/controlled diagnosis is not equivalent mutation/duplication/cycle probe. If restored later, run actual documented probe and disposition all survivors/regressions normally."],
+      "pass":"App full suite/coverage evidence and inherited checks produce their actual stated outcomes. Final workflow gate explicitly LIMITED/BLOCKED while mandatory probe unavailable; never flatten into all-green.",
+      "stopRecovery":"Missing dependencies follow manifest-driven setup only; tests failing in new code return owning task. Existing suite failures reported with preserved logs, no oracle/threshold edits. Owned generated eval report changes reviewed/restored only if produced by this run and not intended deliverables.",
+      "evidenceDestination":"evidence\\C10\\<run-id>"
+    },
+    {
+      "id":"C11","purpose":"Independent final source, AC and readability review with clean release boundaries.","acs":["AC01","AC02","AC03","AC04","AC05","AC06","AC07","AC08","AC09","AC10","AC11","AC12"],"status":"NOT_RUN","owner":"independent read-only reviewer, parent dispositions","timing":"Each due slice and final after all rework",
+      "cwd":"repository root",
+      "provenance":"Local references/review-and-pr.md, code-clarity.md and acceptance contracts",
+      "commands":[
+        "git rev-parse HEAD; git --no-pager status --short",
+        "git --no-pager diff cfe5734b4f28817e6236d121a3b206a51606879d --stat",
+        "git --no-pager diff cfe5734b4f28817e6236d121a3b206a51606879d -- examples\\team-planner",
+        "git ls-files --others --exclude-standard"
+      ],
+      "prerequisites":"Pin base/head and dirty/untracked hashes; new untracked app files must be read directly because git diff alone omits them. Reviewer not implementer. All evidence available, metrics gaps visible.",
+      "steps":["Read actual main/failure paths independent of design narrative: HTTP boundary→Planner→rules→store→commit; startup/lock/cleanup and schema migration.","Re-derive every due AC from final source/tests/browser evidence, separate VERIFIED/VERIFIED-WITH-LIMITATIONS/NOT-VERIFIED/BLOCKED from quality verdict.","Classify each substantive finding SPEC, STANDARD or DESIGN CONCERN with exact path/symbol/line, basis, consequence and remedy; disposition without metric/line-count gaming.","Inspect comments/runtime text/error contracts for stale migration/state explanations or incident history; no unrelated cleanup.","Confirm no production fault switch or copy, no user data, no new framework without justification, no changes to fixed corpus/local workflow. Reconcile review snapshot after any fix.","Report 29 workflow outcomes and all remaining limits. Parent owns any later commit/PR, not this design agent."],
+      "pass":"Independent source-derived per-AC and quality verdicts, no unresolved due substantive finding, final-tree match, owned cleanup complete and limitations explicit. Missing metric/browser proof cannot be waved away by reviewer.",
+      "stopRecovery":"New findings return owning task; rereview changed paths and affected evidence on actual final snapshot. No source writes by reviewer.",
+      "evidenceDestination":"evidence\\C11\\<run-id>"
+    }
+  ],
+  "revisionProtocol": {
+    "trigger":"Real source/data/tool mismatch, approved schema evolution, fresh-context resume or oversized slice.",
+    "steps":["Record expected/observed evidence and impacted AC/task/check IDs; stop transitive dependents.","Facts to bounded research; behavior/interface choices to parent design review; routine ordering to planning.","Preserve stable IDs; update affected task entry/change/preserve/proof/recovery fields and links together.","Invalidate only stale proof; historical result remains historical, not proof of new schema.","Recheck affected Gate2/3 and incoming implementer readiness; restart from first actually ready task."],
+    "plannedRealCheckpoint":"I4.T1 after actual I3 store/source exists; r2 not pre-awarded.",
+    "history":[{"revision":"r1","reason":"Initial design-only handoff from source-grounded research","changed":["all initial artifacts"],"executionEvidence":"NONE","approval":"UNCONFIRMED; parent review pending"}]
+  },
+  "productionReadiness": {
+    "deployment":"NOT_APPLICABLE: local example, no external release/deployment asked.",
+    "authentication":"NOT_APPLICABLE: loopback single-user scope; do not host publicly.",
+    "serviceSLOAndLoadBenchmark":"NOT_APPLICABLE: no production throughput/latency target supplied; test deadlines are safety bounds, not performance claims.",
+    "dataSafety":"APPLICABLE: C02/C06 atomicity, lock, corruption, backup and rollback-limit proof required.",
+    "publishing":"Outside this design-only assignment; parent retains user's original end-to-end scope and decides later commit/PR authorization.",
+    "humanAcceptance":"UNCONFIRMED: unattended design and UX assumptions, not an agent-confirmable approval.",
+    "pythonMetrics":"BLOCKED until real runtime available; native bounded tests do not waive documented quality probe."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "label": "I1-unicode-red",
+  "startedAt": "2026-09-16T10:08:52.033Z",
+  "finishedAt": "2026-09-16T10:08:52.530Z",
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-app-verification\\run-bounded.mjs",
+    "120",
+    "node",
+    "--test",
+    "--test-timeout=30000",
+    "examples\\team-planner\\test\\store.test.mjs"
+  ],
+  "exitCode": 1,
+  "producer": "implementation agent",
+  "independentObserver": null,
+  "sourceHashes": {
+    "examples\\team-planner\\.gitignore": "33d295fab3e87c36e618c2b289b68a40336981bfb91480e08d6770119ff4706d",
+    "examples\\team-planner\\package.json": "1564f6c877d16342058d42926949881fa768267d0e9cc19dbcdab10460a32e90",
+    "examples\\team-planner\\src\\planner.mjs": "7d18002efbd2def01feb8df8a5fd6b91c0326ba56911e159b5f2bb7cbf6968c0",
+    "examples\\team-planner\\src\\schema.mjs": "b7d626f1953d7e02c205118893a1792b27ce4e6320fdbd3d45956b7388b57830",
+    "examples\\team-planner\\src\\store.mjs": "7e647676d2a94f6f6a733e8b0714a7063dcc20b30a37d4d71d87f2cd36bb2348",
+    "examples\\team-planner\\test\\helpers.mjs": "9a1ec66e0745a1018a8b1fc6478bad3e65d0ff97133e0c3d7ccc29df2b6f5c8a",
+    "examples\\team-planner\\test\\store.test.mjs": "ca9167e9caad1b49f91cb8873bdfb5560542b473596982d582f71a5ad9b280a1"
+  },
+  "stdout": "✔ create edit restart and isolated snapshots (32.8824ms)\n✖ Unicode code points not UTF16 units define title limits (7.1151ms)\n✔ concurrent writers conflict and failed IO preserves bytes and queue recovers (26.9907ms)\n✔ strict inputs preserve exact committed bytes (28.5866ms)\n✔ lock ownership corruption and unknown schema never overwrite files (22.8018ms)\nℹ tests 5\nℹ suites 0\nℹ pass 4\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 265.2721\n\n✖ failing tests:\n\ntest at examples\\team-planner\\test\\store.test.mjs:26:1\n✖ Unicode code points not UTF16 units define title limits (7.1151ms)\n  Error [AppError]: Must contain 1–80 characters\n      at invalid (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/src/schema.mjs:15:9)\n      at text (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/src/schema.mjs:27:49)\n      at file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/src/planner.mjs:38:20\n      at file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/src/store.mjs:78:21 {\n    code: 'INVALID_INPUT',\n    status: 400,\n    field: 'name'\n  }\n",
+  "stderr": ""
+}

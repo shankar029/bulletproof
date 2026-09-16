@@ -1,0 +1,36 @@
+{
+  "label": "I1-base-green",
+  "startedAt": "2026-09-16T10:10:41.413Z",
+  "finishedAt": "2026-09-16T10:10:42.083Z",
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\workflow-app-verification\\run-bounded.mjs",
+    "120",
+    "node",
+    "examples\\team-planner\\scripts\\check.mjs",
+    "all"
+  ],
+  "exitCode": 1,
+  "producer": "implementation agent",
+  "independentObserver": null,
+  "sourceHashes": {
+    "examples\\team-planner\\.gitignore": "33d295fab3e87c36e618c2b289b68a40336981bfb91480e08d6770119ff4706d",
+    "examples\\team-planner\\package.json": "1564f6c877d16342058d42926949881fa768267d0e9cc19dbcdab10460a32e90",
+    "examples\\team-planner\\public\\app.mjs": "c8b01f6ee6b12d64b5c1a31da170e64d35433a2d00af6c056f3c1dde5e0eeeee",
+    "examples\\team-planner\\public\\index.html": "a5996d3878b1ad4c14112aad327e497329fedac32876435d89b86f0eab7b0988",
+    "examples\\team-planner\\public\\styles.css": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92",
+    "examples\\team-planner\\README.md": "828ea158d1d827570e16c99a1864d642a8f1f67d3788b91eb9fb0f6fe8056cc2",
+    "examples\\team-planner\\scripts\\check.mjs": "b4926d8fe2bea75bdd0790121cb857e4aa81bb8d0e60a9b908093a826b8471e2",
+    "examples\\team-planner\\src\\main.mjs": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+    "examples\\team-planner\\src\\planner.mjs": "9a288efa45a03b240c88de9e787d0383c10f7d82121e41e0b7ebdcf8fa282a15",
+    "examples\\team-planner\\src\\schema.mjs": "52b483b20f207b214bc677a6900424b9ded076757ac455c8f809d342917d6bc6",
+    "examples\\team-planner\\src\\server.mjs": "87ffc21052fb87d32b0c4b1961ede0ee1b6f3e37e8c26bb0ac0b1ee3ad0bc5b9",
+    "examples\\team-planner\\src\\store.mjs": "7e647676d2a94f6f6a733e8b0714a7063dcc20b30a37d4d71d87f2cd36bb2348",
+    "examples\\team-planner\\test\\api.test.mjs": "ea67629ccab39d9c1f703a39948fc8318374b61e0c25903623bc50c46861b675",
+    "examples\\team-planner\\test\\helpers.mjs": "9a1ec66e0745a1018a8b1fc6478bad3e65d0ff97133e0c3d7ccc29df2b6f5c8a",
+    "examples\\team-planner\\test\\store.test.mjs": "ca9167e9caad1b49f91cb8873bdfb5560542b473596982d582f71a5ad9b280a1"
+  },
+  "stdout": "TAP version 13\n# Subtest: real HTTP commits metadata with exact revision headers\nok 1 - real HTTP commits metadata with exact revision headers\n  ---\n  duration_ms: 74.234\n  type: 'test'\n  ...\n# Subtest: HTTP rejects malformed revision JSON media type and local origin\nnot ok 2 - HTTP rejects malformed revision JSON media type and local origin\n  ---\n  duration_ms: 25.8134\n  type: 'test'\n  location: 'C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\examples\\\\team-planner\\\\test\\\\api.test.mjs:42:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    201 !== 403\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 403\n  actual: 201\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/test/api.test.mjs:54:12)\n    process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    async Test.run (node:internal/test_runner/test:1113:7)\n    async Test.processPendingSubtests (node:internal/test_runner/test:788:7)\n  ...\n# Subtest: static allowlist and method boundary expose no data\nok 3 - static allowlist and method boundary expose no data\n  ---\n  duration_ms: 16.1576\n  type: 'test'\n  ...\n# Subtest: create edit restart and isolated snapshots\nok 4 - create edit restart and isolated snapshots\n  ---\n  duration_ms: 27.7955\n  type: 'test'\n  ...\n# Subtest: Unicode code points not UTF16 units define title limits\nok 5 - Unicode code points not UTF16 units define title limits\n  ---\n  duration_ms: 12.3175\n  type: 'test'\n  ...\n# Subtest: concurrent writers conflict and failed IO preserves bytes and queue recovers\nok 6 - concurrent writers conflict and failed IO preserves bytes and queue recovers\n  ---\n  duration_ms: 16.6954\n  type: 'test'\n  ...\n# Subtest: strict inputs preserve exact committed bytes\nok 7 - strict inputs preserve exact committed bytes\n  ---\n  duration_ms: 20.4027\n  type: 'test'\n  ...\n# Subtest: lock ownership corruption and unknown schema never overwrite files\nok 8 - lock ownership corruption and unknown schema never overwrite files\n  ---\n  duration_ms: 24.7498\n  type: 'test'\n  ...\n1..8\n# tests 8\n# suites 0\n# pass 7\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 301.416\n",
+  "stderr": ""
+}
