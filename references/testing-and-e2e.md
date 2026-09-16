@@ -9,12 +9,35 @@ Put tests where the project puts them and mirror its naming. Wire the test, cove
 lint commands into the project's own script/task runner so they are reproducible.
 
 ## Unit tests (Phase 4)
-- Cover every new function, branch, boundary, and error path — happy path, invalid input,
-  and failure modes.
+- Cover the behavior of every new function, branch, boundary, and error path — happy path,
+  invalid input, and failure modes. This does not require one test per private helper:
+  exercise behavior through the narrowest stable interface that faithfully captures it.
 - Each test must be able to fail: assert on real behavior, no empty or tautological tests,
   no skips.
 - Mock only what you must (nondeterminism, external systems). Never mock away the behavior
   under test.
+
+## Small test-first cycles (Phase 4)
+
+Use the approved design and plan's test boundaries; choosing a routine test does not require
+another user approval. For a new or changed behavior, write or extend one focused check, observe
+it fail for the expected behavioral reason, implement the smallest complete change, and rerun it.
+Then improve structure while green and repeat for the next behavior. Keep changes consistent
+with the approved design; a cycle is not permission to invent a new feature or architecture.
+For defects/performance regressions, use `diagnosis.md` and retain its original reproduction.
+
+Avoid writing all speculative tests before any implementation. Expected results come from the
+requirement, a worked example, or an independent fixture/oracle, not a reimplementation of the
+same algorithm in the assertion. A syntax error, missing dependency, or broken fixture is not
+the intended red signal. If a pre-change failure cannot be demonstrated, explain why in the
+existing evidence record; do not claim an observed red-to-green result or waive required proof.
+
+Prefer checks that survive internal refactors. Keep targeted unit tests for complex logic and
+integration/E2E checks for real interactions. Assert calls/order when that interaction is itself
+the contract, not merely today's implementation. Side-effect checks on persisted data or emitted
+events remain necessary when those effects are required; a high-level return value may not prove
+them. Delete an old test only after identifying its scenarios and verifying equivalent or stronger
+coverage remains. Never remove tests merely because a module was merged or renamed.
 
 ## Integration tests (Phase 4)
 - Exercise real collaborators across module seams — storage, filesystem, transport layer,

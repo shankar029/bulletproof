@@ -147,31 +147,21 @@ After reading the requirement, classify it — and say which tier you chose and 
 is the point. If the harness cannot spawn a subagent, that is a blocker (prime directive 8), not
 a licence to research inline. See `references/delegation.md` for the brief, the tool scoping, and
 the spot-check.
-- **Profile the project** — see `references/project-profile.md`. Keep it to a few lines.
-- **Read the repository's own agent instructions first and obey them** — any `AGENTS.md`,
-  `CLAUDE.md`, `.github/copilot-instructions.md`, `.cursor/rules`/`.cursorrules`,
-  `CONTRIBUTING.md`, and any path-specific instruction files covering the code you will touch.
-  They usually state the exact build/test/convention rules this skill would otherwise
-  reverse-engineer. Cite them in `research.md`; where one contradicts what the code actually
-  does, note the conflict and treat the observed code as truth.
-- **Read the actual code you will touch**, plus its callers and its neighbors. Directive 1
-  applies from here on: everything you claim about this codebase comes from a file you read.
-- **Write `.ai/<slug>/research.md` — the ground truth for the run**: what the codebase does
-  today, what it does **not** do, the constraints and conventions that bind the design, the
-  tests already covering the area, and the seams the new work attaches to. **Every claim carries
-  `path:line` and its snippet, is typed FACT/INFERENCE/HYPOTHESIS/UNKNOWN, and every "not
-  implemented" carries scoped search evidence, not a claim of global absence.** Understand
-  the **blast radius** before designing. `references/research.md` is the reusable procedure,
-  not the output: cover each AC with behavior/failure traces, contracts and consumers, reuse
-  candidates, actual test assertions, relevant history, and explicit unknowns. Include the
-  requirement, accessible workspace records, source snapshot and dirty-tree context so another
-  agent can use the handoff without chat history.
+- **Before investigation, load `references/project-profile.md`** to read applicable repository
+  instructions, establish conventions/domain language, and surface conflicts.
+- **Supply and follow `references/research.md`** for the complete read-only procedure and
+  output contract. Write `.ai/<slug>/research.md` with requirement-scoped behavior, contracts,
+  callers, reuse, tests, blast radius, typed source evidence, scoped absence, and freshness.
+  The report must be usable by a fresh agent without the parent's chat; a summary does not
+  replace current source inspection.
 - **Restate the requirement as testable acceptance criteria** with stable ids (AC1, AC2, …).
   Cover every explicit ask, **every sub-deliverable of a multi-part request**, and the
   non-functional needs it implies. Never drop a part; never invent scope. **Seed
   `.ai/<slug>/traceability.md`** — one row per AC — and carry it through every phase
   (`references/workspace.md`).
-- For a defect, **reproduce it first** and identify the root cause in real code.
+- For a defect or performance regression, **load `references/diagnosis.md`**: establish the
+  exact symptom, distinguish causes with evidence, and carry the original reproduction forward.
+  Research remains read-only; needed harness/instrumentation writes go to the parent.
 - **Clarify** the material unknowns per prime directive 7. Record every question, answer, and
   assumption in `.ai/<slug>/clarifications.md`.
 - **Create the workspace:** `.ai/<slug>/` with `state.md` (requirement, tier, acceptance
@@ -267,33 +257,16 @@ with linked `tasks.md` detail only when needed: the **executable projection of t
 It cites `research.md` and `design.html` and **introduces no new facts of its own** —
 research says what is, design says what will be, the plan says **how it gets built: in what
 grouping, what order, and proven by what tests.**
-- **Derive the build order from the design's dependencies**, not from convenience. Sequence so
-  each step produces something the next can build on and validate: **contracts/types/interfaces
-  → core behavior → integration & wiring → end-to-end → observability/docs** within each slice.
-  These are internal tasks, not automatically deliverable increments.
-- **Group the design's components into increments.** Each increment is a **cohesive vertical
-  slice** — related components that together deliver observable behavior — mapping to specific
-  **design components** and at least one **acceptance criterion**, testable and reviewable on
-  its own. Context-window size is a **constraint** on the grouping, not its purpose: a slice
-  must also **fit comfortably in a single session** with room for its tests and review
-  (`references/workspace.md`). Small work is one increment; large work is several.
-- **Build-order table — the heart of the plan.** One row per increment: **order · increment ·
-  design components it builds · ACs it satisfies · depends-on (what must exist first) · files to
-  add/change · task/detail links · completion checks.** Every planned change has one owning task;
-  a component may recur across increments with distinct change responsibilities and explicit
-  prerequisites. Every AC maps to work and proof in `traceability.md`.
-- **Make each task executable:** stable task ID and parent increment, AC/design references,
-  dependencies/entry conditions, exact files/symbols and behavior delta, reuse pointers,
-  preserved behavior/exclusions, verification owner, and failure/recovery conditions. Start the
-  plan with the desired end state and binding scope boundaries; do not bury unresolved decisions.
-- **Testing plan, per increment and overall.** For each increment name the **unit** (functions,
-  branches, boundaries, error paths), **integration** (module seams), and **browser/end-to-end**
-  tests that prove its criteria, plus the coverage expectation and the **regression scope** it
-  must not break. State **when the full end-to-end verification runs** (Phase 5, per increment)
-  and what the final regression pass covers. Each check specifies its command and working
-  directory/shell, prerequisites, expected observable result, owner/timing, and evidence path.
-  Cite researched tooling; planned tests are not run results. Reserve human acceptance for
-  genuine judgment/access needs; keep independent verification independent.
+- **Apply `references/planning.md`'s increment, task and check contracts** in full. Derive
+  dependencies from the approved design; each change has one owner and each AC has work and
+  proof in `traceability.md`. Preserve exact targets, commands, pass conditions and evidence.
+  Internal tasks are not independent deliverables; components may recur with distinct changes.
+- **Separate unresolved decisions from ready tasks.** Use the planning procedure's decision
+  prerequisites for uncertain work and expand–migrate–contract for wide compatibility changes.
+  Each deliverable increment remains a session-sized, independently verifiable outcome.
+- **Keep the testing plan complete:** per-increment unit/integration/E2E scenarios, coverage,
+  regression scope, verification ownership, full E2E timing and final regression. Planned
+  checks are not results; human-owned acceptance and independent verification keep their owners.
 - **Every increment runs Phases 4–6 at production quality** and ends at a green, reviewed
   commit on the feature branch — never a half-finished state for the next session to reconstruct.
 - If this agent can run parallel subagents, identify the **safe parallelization boundaries**
@@ -335,8 +308,9 @@ At final ship, reconcile the **whole request** with no future work silently left
   returns gaps to the parent rather than improvising.
 - **Implement the approved design.** If reality contradicts the design, stop, update the
   design document (and re-check the gate) — do not silently improvise a different shape.
-- Work in **small, test-backed increments**. Every new unit of behavior ships with a real
-  test that would fail if the behavior broke.
+- Before implementing behavior, load `references/testing-and-e2e.md` for **small test-first
+  cycles**: observe the relevant failure, implement, rerun, and refactor while green.
+  Every new unit of behavior ships with a real test; record any unavailable pre-change proof.
 - Write **unit** tests for new functions, branches, boundaries, and error paths, and
   **integration** tests that exercise real collaborators across module seams. See
   `references/testing-and-e2e.md`.
@@ -436,6 +410,7 @@ ship what is green and record the remaining gap, its root cause, and the propose
 explicit follow-up. Never close the gap by lowering the bar.
 
 ## References (load on demand)
+- `references/diagnosis.md` — for defects/performance regressions: symptom-specific reproduction, causal probes, and original-scenario verification.
 - `references/code-clarity.md` — human-readable code, responsibility boundaries, comment discipline, and concrete review acceptance.
 - `references/communication.md` — focused progress, approval, blocker and completion messages; concise presentation without lost evidence.
 - `references/workspace.md` — the `.ai/<slug>/` workspace, `state.md`, `traceability.md`, resume protocol, increment sizing.
@@ -463,12 +438,5 @@ states what is true, not what was hoped. Structure and template: `references/fin
 Use `references/communication.md` for the chat summary, preserving the required status and
 material limitations; the full report remains the evidence record.
 
-It covers: what was **delivered** (and what was not) · each acceptance criterion with how it was
-proven · **the gate row, G1–G6, with pass/blocked and the reason** · the measured numbers (tests,
-coverage, probe deltas, mutation score, and anything `unavailable`) · the 9-dimension scorecard
-citing those numbers · convergence iterations · **what is pending, unproven or
-environment-blocked, with the exact command to finish it** · assumptions still unconfirmed ·
-follow-ups · and the PR link or the commit plus next step.
-
-Write it even when the run is cut short: a partial report that names the blocker is worth far
-more than none.
+Load `references/final-report.md` when assembling any completion or interrupted-run report;
+its full structure is required, including gates, evidence, limitations, and how to finish.

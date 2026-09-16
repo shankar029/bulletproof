@@ -43,6 +43,24 @@ in `.ai/<slug>/` — see `workspace.md`.
 
 ## Structure (in order, with page budget)
 
+For consequential interface choices, compare two materially different approaches within the
+existing decisions table: a realistic caller example, what each hides, where change concentrates,
+and the trade-off that justifies the recommendation. Routine designs need no extra alternatives
+exercise or agent fan-out. Use `code-clarity.md`'s caller-burden check.
+
+Resolve domain-term ambiguities raised by research before approving behavior. Reuse the existing
+glossary; add a durable definition only when the ambiguity matters beyond this task and updating
+that documentation is in scope. Keep implementation history out of the glossary. Record an ADR
+only for a real trade-off that is costly to reverse and surprising without context, in the
+repository's established location; otherwise the design decision record is enough.
+
+If a design question needs a prototype, agree the question, success signal, scope and stopping
+condition first. Keep the experiment clearly marked and isolated from production wiring/data
+in the task workspace or an authorized scratch worktree. Capture the answer and its limitations
+in the design, then remove throwaway code or retain it outside the release with a clear purpose.
+Prototype output is not production proof and does not waive Gate 2 sign-off; production
+implementation still requires the normal contracts, tests, verification and review.
+
 | Section | Content | Budget |
 |---|---|---|
 | **1. Problem & scope** | 3–5 bullets: what changes, which acceptance criteria (by id), what is explicitly out of scope. | ⅕ page |

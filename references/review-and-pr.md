@@ -4,6 +4,19 @@
 
 Review the full diff as if you would reject it in someone else's PR. Fix everything you flag.
 
+Use separate finding categories within the existing review: **SPEC** (missing, incorrect or
+unrequested behavior; cite the AC), **STANDARD** (a binding repository rule; cite it), and
+**DESIGN CONCERN** (a reasoned maintainability heuristic; cite the code and concrete cost).
+A smell is not automatically a rule violation; repository conventions override generic
+preferences. Keep requirement and quality verdicts visible so one cannot mask failure of the
+other. Deduplicate findings across categories and prioritize by impact; do not add reviewers
+merely to produce separate categories. Use existing tooling results instead of repeating
+lint findings, while still resolving gate failures.
+
+Pin the review base and head/source snapshot before reviewing. Include relevant staged,
+unstaged and untracked changes in a work-in-progress review; a committed three-dot diff alone
+cannot establish coverage of a dirty worktree. Reconcile the final tree again before shipping.
+
 **Correctness & bugs**
 - [ ] Satisfies the current increment's due AC scenarios and affected prior regressions;
       final ship satisfies every AC, and nothing extra.
@@ -87,6 +100,10 @@ Use this brief:
 >    finding. Check for stale comments and inline history as well as overloaded responsibilities
 >    and duplicated integration mechanics. Record findings here, not in a separate report;
 >    do not impose arbitrary size limits or launch unrelated cleanup.
+>    Classify findings as SPEC, STANDARD or DESIGN CONCERN using the rules above. Show both
+>    requirement and quality outcomes; verify that the supplied diff covers the current tree,
+>    including relevant uncommitted content. A missing specification is a verification gap,
+>    not permission to silently skip requirement reconciliation.
 > 2. **Reconcile every requirement** — for each AC, verify it against the actual code and test
 >    evidence, inspect the final `git diff`/`status`, and confirm the cited tests exist and
 >    pass. Distinguish PASS / FAIL / NOT-RUN / INCONCLUSIVE; never accept "passed" without an

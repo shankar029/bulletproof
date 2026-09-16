@@ -32,6 +32,14 @@ Use the existing design's responsibility table and interactions to show these ch
 An extraction should reduce what a reader must keep in mind; moving the same complexity to
 another file without a useful boundary is not an improvement.
 
+**Check the caller's burden.** If this abstraction were removed, would callers need to recreate
+its rules, error handling, or coordination, or would only pass-through ceremony disappear?
+Keep abstractions that concentrate useful responsibility; do not judge depth by line counts.
+For a changed interface, show a realistic caller example in the existing design. Include the
+invariants, ordering, error modes, configuration, and relevant performance constraints callers
+must know, not only the type signature. An interface need not have multiple implementations
+to justify an actual isolation or testing requirement.
+
 ## Implement for the next reader
 
 - **Name the domain and the action.** Names describe the value's meaning, units where relevant,
