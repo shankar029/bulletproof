@@ -1,0 +1,379 @@
+{
+  "document": "workflow-reliability/q2-js-execution-amendment",
+  "revision": 2,
+  "status": "PROPOSED_PENDING_FOCUSED_INDEPENDENT_REVIEW_AND_PARENT_RELEASE",
+  "authority": {
+    "contract": ".ai/workflow-reliability/measurement-enablement-contracts.json",
+    "contract_sha256": "a9a75df36241dc2578ff627703154a2750212c385a163332fe2ccbb47af9bd12",
+    "root_amendment": ".ai/workflow-reliability/evidence/q2-tool-input-root-amendment.json",
+    "root_amendment_sha256": "36514a684b8b1323c752a3559cb49f30be8db61b865435f47682dfd824cda1c1",
+    "binding_checkpoint": "dadce66ff7d9a7494db0af5f8124009d7b132cb9",
+    "direction": "Parent chose immutable execution manifests and a separate versioned JS symbol/reference artifact, then permitted proposing one accurate manifest ownership role instead of structural-only retention. This exact revision still needs focused independent review and parent release before code.",
+    "supersedes_proposal": {
+      "revision": 1,
+      "sha256": "f75074e3fdcc7421fc280962630ae6974e76d98cefcc5d2b6fe321856f6f0f4f",
+      "change": "Replace the proposed retained-control-file ownership exception with explicit manifest-role rows and a backward-only ownership chain; clarify syntax-role record demultiplexing. Original normative contract and accepted root/R1 evidence remain unchanged."
+    },
+    "preserved": [
+      "Context, MeasurementConfig, ParsedInventory, SyntaxEvidence, Candidate, Finding and OwnedArtifactManifest field sets; meanings of existing ownership roles; all nine metrics, rules, thresholds and baseline policy.",
+      "Root-amendment original/staged Artifact semantics, canonical paths, exclusive byte staging, physical independence, source/output overlap rejection and R1 qualification ownership.",
+      "Python AST, baseline/filter/text/frozen-import behavior and the existing Python-only tools={} route.",
+      "Qualified TypeScript 5.9.3 and Node 24.11.1 ARM64 API/resource/settings provenance; no installation or requalification cycle."
+    ],
+    "amends_only": [
+      "The fixed JS execution and immutable manifest lifecycle, including producer-owned fresh execution during validation.",
+      "Exactly one OwnedArtifactManifest.inputs.role enum addition, manifest, with revision=null and only the phase-specific rows specified below. No Context or manifest field is added.",
+      "A separate finite JS evidence/command transport and its existing-role ownership, not fields injected into existing syntax/candidate/finding records.",
+      "Explicit JS branch/interface behavior listed below, controller-file inclusion and materialized-only archive publication."
+    ]
+  },
+  "mode_and_interfaces": {
+    "mode": "The shared-JS branch is enabled by a validated config.tools.typescript binding, including when a revision has zero JS inputs. All lifecycle/transport rules below apply to that branch only. No flag, callback, environment locator or new config field selects it. Without that binding, preserve existing Python-only parsing, its paths/digests/publication and explicit unsupported JS receipts. Nonempty js_entrypoints is validated under the already-declared field rather than unconditionally rejected once this branch is implemented.",
+    "measure_owned": [
+      "New fixed measure.execute_js(context, inventory, config) -> None: publish this revision's request, invoke the actual copied measure_js.mjs through the existing bounded runner, retain command/result/symbol evidence, perform pre/post checks. It never constructs ParsedInventory.",
+      "New fixed measure.prepare_js_manifest(context, inventories, config) -> Artifact and measure.finish_js_manifest(context, inventories, config) -> Artifact: reconstruct the preflight and produced-evidence manifests below from explicit inputs and actual completed execution, not directory discovery.",
+      "Existing measure.validate_observations(context, base, head, config, policy, artifacts, observations) keeps its signature and owns all fresh JS validation execution internally. No caller-supplied replay Context, trusted-result flag or comparison callback is accepted.",
+      "Existing measure.make_manifest(context, base, head) keeps its signature; the JS branch reconstructs the final manifest including qualified JS records and graph-produced syntax/graph records.",
+      "Explicit optional keyword amendment: measure.controller_digest(root, *, include_js=False). False retains the exact five-file digest formula. The JS producer/validator must pass True and require the sixth file; it cannot auto-fallback when that file is missing."
+    ],
+    "graph_owned": [
+      "measure_graph.parse_files(context, inventory, config) keeps its signature and remains the sole ParsedInventory builder. In the JS branch it requires the produced-evidence or final manifest, reads fixed owned JS records, validates schema/source bindings and projects graph/receipts; it does not spawn a tool or import measure/probe.",
+      "graph._parse remains a pure reparse/decoding helper: Python reparses source; JS decodes already-produced owned records. It cannot by itself establish that a rehashed JS symbol table is semantically true.",
+      "New private graph._compare_js_replay(original_context, original_parsed, replay_context, replay_parsed, config) -> None: check owned original/replay records and deterministic semantic equality as specified below. It does not execute, publish metrics or accept a numerical summary.",
+      "Existing graph.validate_evidence signature and Q1 behavior are preserved. For the new JS-enabled mode it explicitly raises ValueError directing full semantic acceptance to measure.validate_observations, rather than silently downgrading its old source-rederivation promise to structural validation. The measure JS branch uses actual replay plus the private comparison and graph.observations after that comparison; no independent graph-side JS acceptance path is introduced."
+    ],
+    "native": "measure_js.mjs is a fixed producer module and executable, invoked as [qualified_node, copied_controller/measure_js.mjs, absolute_request_path]. Its internal functional parse/symbol/candidate APIs share one TypeScript Program/checker for a revision. No live AST, Symbol, TypeChecker, TS numeric heap identity or function crosses JSON. Native tests exercise the functional APIs; the shipped command accepts only JSRequestV1 below, not arbitrary options/code/plugin paths.",
+    "graph_raw_projection": "In JS-enabled mode the existing graph RawMetricEvidence shape uses adapter=python-ast-typescript and semantic_version=mixed-literal-import-graph-v1; commands contains the actual JS capture Artifact for that revision and qualified_raw includes its actual result/symbol refs plus the successful per-file syntax refs. Failed captures retain only actually present refs. Graph reconstruction joins each literal syntax site to exactly one JSModuleReference and rederives local/external edges, unresolved and outside-model sites, then cycles/rules. No new RawMetricEvidence fields or scalar counts. Q1 keeps its existing adapter, semantics and empty command list.",
+    "receipt_projection": "Graph derives exactly one FileReceipt per inventory entry. JS uses adapter=typescript-compiler, semantic_version=typescript-shared-v1 and the unchanged Context/inventory/source bindings. Processed unit_count equals that file's literal-import record count, including zero; raw links its actual per-file syntax/result/symbol artifacts. Failed/unsupported counts are null and raw links only available result/symbol/capture proof. Python receipts retain their existing derivation and fields. Never copy asserted counts or receipt summaries from the JS command.",
+    "composition": "probe reserves/copies/stages and invokes measure's fixed execution functions before either graph.parse_files call. Graph returns both ParsedInventories; measure composes observations and semantic verification; probe composes/report-validates/publishes. No reverse import, graph-side spawn, second regex frontend or executable config channel."
+  },
+  "paths_and_manifests": {
+    "locators": {
+      "preflight": "js-preflight.json",
+      "produced": "js-produced.json",
+      "final": "manifest.json",
+      "request": "{revision}/js/request.json",
+      "command": "{revision}/js/command.json",
+      "result": "{revision}/js/result.json",
+      "symbols": "{revision}/js/symbols.json",
+      "syntax": "Unchanged graph.syntax_name(revision, source_path): {revision}/syntax/{sha256(UTF8(source_path))}.json",
+      "graph": "Unchanged {revision}/graph.json"
+    },
+    "why_produced_manifest": "There are two immutable JS execution manifests plus the existing final measurement manifest. js-produced.json is necessary: after a child has produced real bytes but before graph.parse_files writes per-file syntax/graph, the reader needs actual ownership rows. A preflight reservation is not an ownership row, and the final graph hashes do not yet exist. Do not invent hashes, overwrite the preflight manifest, or waive read_owned to avoid this small handoff.",
+    "reservation_set": "Before the broad source Snapshot, reserve the sorted exact union of selected qualification paths, the three control manifests, both revisions' JS request/command/result/symbol paths, graph paths, and potential syntax paths for all supported Python/six-suffix JS inventory candidates. Use the existing discovery owner for planning and reconcile the resulting immutable inventories to that plan after snapshot/copy. Retain existing exact report/mutation output slots and collisions. No blanket .ai/evidence/controller exclusion. Every reserved path appears once; reject case, ancestor/descendant, alias and input/output collisions before exclusions.",
+    "preflight_rows": "After exclusive qualification staging and inventory/source verification, js-preflight.json contains only actual selected qualification Artifact rows, role=qualification and revision=null. Subject code/config/package files remain independently source-bound inputs, not mislabeled copies in this manifest. All pending generated paths are reservations only. Context.output_manifest is the actual preflight Artifact at launch. Reconstruct it and enforce R1 plus exact reservation equality before every JS child.",
+    "produced_rows": "After both JS attempts have completed and their command/result states have been checked, publish js-produced.json with one actual js-preflight.json Artifact row (role=manifest, revision=null), the unchanged qualification rows and every actually materialized admitted JS request/command (role=command) and result/symbol (role=syntax) row, with matching revision. It contains no self-row or Python/per-source syntax or graph rows that do not yet exist. Context.output_manifest becomes its actual Artifact before graph.parse_files. No source input is reread through an original-root fallback.",
+    "final_rows": "After graph.parse_files has persisted actual successful-file SyntaxEvidence and graph raw records, make_manifest derives all produced inputs, adds one actual js-produced.json Artifact row (role=manifest, revision=null), and adds exactly those per-file syntax rows and both graph rows. The inherited preflight row remains exactly once. It retains the same reservation set, including absent slots for genuinely failed files. Publish manifest.json once and set Context.output_manifest to its Artifact. No self-hash or overwrite.",
+    "control_artifact_ownership": "Retained predecessor manifests have explicit ordinary Artifact ownership using the new manifest role: produced owns preflight; final owns both preflight and produced. Each predecessor row carries its actual hash/length and revision=null. Only the currently active manifest uses the existing Context.output_manifest/self-reference rule; final manifest.json remains reserved and Context-bound without hashing itself. This does not extend that exception to retained predecessor files. Request/capture preflight refs are supplementary cross-checks, never substitutes for predecessor ownership rows. All three documents must also be reconstructed canonically, not accepted solely because a newly supplied hash matches. R1 qualification ownership remains unchanged.",
+    "archive": "Archive exactly the reconstructed final inputs plus the Context-bound final manifest.json, once per path. The final inputs already include the preflight and produced manifests as manifest-role rows; no special unowned predecessor archive list is allowed. Do not blindly copy every reserved path: failed-file syntax/result slots may legitimately be absent. Missing mandatory artifacts, extra materialized files in reserved optional slots inconsistent with their failed state, or any unplanned produced file reject. Keep absent pending slots reserved rather than fabricating an Artifact. Validate all archived copies and original inputs before publishing the existing report.",
+    "canonical_bytes": "Control manifests use the existing evidence._json_bytes: sorted object keys, UTF-8, ensure_ascii=False, finite JSON, compact separators, final LF. Rows and reservations are path-sorted. Unknown fields, duplicate keys/rows/IDs, numeric booleans, malformed paths and ambiguous namespace declarations reject."
+  },
+  "manifest_role_extension": {
+    "target": "OwnedArtifactManifest.inputs[*].role only",
+    "previous_enum": ["syntax", "graph", "scalar", "coverage", "mutation", "command", "qualification", "approval"],
+    "proposed_enum": ["syntax", "graph", "scalar", "coverage", "mutation", "command", "qualification", "approval", "manifest"],
+    "row_fields": "{artifact:unchanged Artifact,role:literal manifest,revision:null}",
+    "meaning": "An already-materialized immutable ownership manifest retained as an input to a later phase. It is not an original tool qualification, numeric measurement, command request/capture or parser result. It grants no execution authority beyond the separately checked current phase.",
+    "phase_rows": {
+      "js-preflight.json": [],
+      "js-produced.json": ["js-preflight.json"],
+      "manifest.json": ["js-preflight.json", "js-produced.json"]
+    },
+    "consumer_checks": [
+      "Select the expected phase by the fixed active Context.output_manifest path. Verify its actual regular independent file, hash, byte length, exact field set, run_id and canonical run_root. Reject any other active manifest locator in this JS branch.",
+      "Require exactly the phase_rows manifest-role paths, each exactly once with revision=null and one reservation. Preflight has no manifest-role rows. Reject self, forward, cyclic, foreign, extra, wrong-role or wrong-revision references; never follow an arbitrary recursive manifest chain.",
+      "For each predecessor, read its actual Artifact through role=manifest/revision=null ownership in the active later manifest. Verify canonical path/components, independence, hash/length, strict JSON, root/run identity and the exact same deterministic reservations; then reconstruct its complete expected phase rows from validated config/inventories and admitted execution files. Rehashed malformed predecessor contents still reject.",
+      "When final is active, its preflight row must exactly match the produced manifest's owned preflight row and every JS request/capture preflight ref. Final's produced row must match the actual produced file. Produced's full inputs must equal the exact reconstructed qualification+preflight+materialized-JS subset of final inputs, not a report-supplied subset.",
+      "Apply R1's unchanged exact selected qualification set and the existing duplicate/case/prefix checks to every phase. A manifest-role row never satisfies a missing qualification row. Controls mislabeled qualification/command/syntax reject even if hashes agree.",
+      "Graph readers validate the produced/final ownership chain before consuming any JS result or symbol bytes. Measure reconstructs the chain before each production/replay launch or dependent read, after semantic comparison and before publication. Repeat all checks independently within the fresh replay root; original and replay predecessor hashes are not interchangeable.",
+      "Reject missing/stale predecessor files, unreserved manifest rows, altered hashes/lengths and post-validation changes under the existing invalid-proof failure boundary. No fallback, overwrite or hidden embedded hash replaces an explicit row."
+    ],
+    "q1_compatibility": "No new manifest-role rows or JS manifest paths are emitted in the tools={} or other non-JS Q1 mode. Its existing manifest.json self binding, exact make_manifest output, five-file controller digest and validation remain unchanged. Recognition of the added enum value does not authorize it in Q1: exact expected-manifest comparison must reject an injected row. The enum extension is proposed only; original contract/root-amendment files and runtime validators are not modified in this authoring turn."
+  },
+  "production_order": [
+    "Validate current source config and qualified bindings. Plan exact outputs using the existing discovery owner and reject overlaps before Snapshot. Observe head source/contracts, materialize immutable base and observed head, and copy/hash the stable controller.",
+    "Create the empty owned run_root; stage only selected exact qualification bytes. Compute both immutable inventories with measure.inventory once; reconcile their paths with the prior reservation plan. Bind source metadata reads as JSInput records below, not a second code census.",
+    "Publish js-preflight.json and bind Context.output_manifest. For base and head, measure.execute_js first checks source/inventory/config, preflight/R1, originals/copies/resources and actual executing/copied controllers. Request/result/command/symbol slots for that revision must be fresh.",
+    "Persist actual JSRequestV1; spawn the copied module with the qualified Node binary and sanitized preload environment. The module checks its request and all admitted file bytes, creates one controlled TypeScript Program, accounts for every JS entry and emits JSSymbolEvidenceV1 plus JSResultV1. The controller captures the actual command and checks all before/after identities. No source or mutant is executed.",
+    "Publish js-produced.json. graph.parse_files reads it and its exact owned result/symbol records, reparses Python, checks each JS source/hash/span, writes unchanged SyntaxEvidence for processed files only, and builds one full ParsedInventory. Its map contains inventory source paths only, never a symbols.json pseudo-source.",
+    "Produce existing graph evidence/observations; missing scalar/coverage/mutation remains explicitly missing. Publish immutable final manifest.json. Full producer validation below must complete before report publication; only then archive validated materialized artifacts and controls and recheck source/tools/controller."
+  ],
+  "validation_order": [
+    "measure.validate_observations first retains the current Context/policy/source/base/head/config/inventory/root-independence checks. Reconstruct and read the original final, produced and preflight manifests, ownership rows and command/request links. Decode original JS records with strict schema/census/span/identity checks. A self-consistent edited original is not yet semantic proof.",
+    "Allocate a new short privately owned empty validation run_root internally, distinct from original run_root, both subjects and controller. Reuse the exact immutable inventory objects, original/head subject roots, current source-bound config/settings and stable controller. Keep the logical Context.run_id, source, revision Git IDs, policy/tool/controller digests and contract_artifacts unchanged; only run_root and output_manifest differ in the replay Context. This Context is never accepted from an external argument.",
+    "Stage fresh independent qualification copies from the declared originals, not from original generated results. Verify the existing toolset digest against both sets of copies. Publish a new replay preflight with the same relative reservations and its own actual root/ref. Generate fresh execution IDs and invoke measure.execute_js for both revisions through the real runner; never copy original result/symbol/command records into replay slots.",
+    "Publish replay produced manifest; graph.parse_files builds fresh full ParsedInventories from actual replay JS records and reparsed Python, with unchanged inventory digests. Publish the replay final manifest with actual files. Do not recursively call measure.validate_observations or launch from graph.",
+    "The fixed measure branch invokes graph._compare_js_replay: independently read ownership and binding chains in each root, compare the deterministic JS projection below and all unchanged SyntaxEvidence, receipts and reconstructed graph data. Recompute cycles/rules from edges, not stored cycle totals. Compare the original RawMetricEvidence and observations with these source-derived results. Use existing Q1 validation for the non-JS mode.",
+    "Recheck original raw/control/qualification files, both staged-copy sets, all source metadata and code, source snapshots/Git identities, tool/resources and executing/copied controllers after comparison. A validation child failure or disagreement never accepts original numeric data. Retain actual replay request/capture/result records as failed or successful verification evidence while in use; they are not imported into production metric counts.",
+    "At the current ephemeral Context boundary the replay is required anew on every accepting validation call; an archived summary or a prior replay hash is not reusable permission. Testing/handoff may retain its actual records in explicitly owned evidence. This amendment adds no general report transport, persistent replay cache or recovery mechanism."
+  ],
+  "bindings_and_comparison": {
+    "semantic_bindings": "JSBinding has no physical subject/controller/run paths. Its source_sha256 is the matching Inventory.source_sha256, inventory_sha256 is the complete immutable Inventory.digest, revision/Git values match Context.source, and run_id is the logical measurement run. Changing any of these is stale proof, not normalization. All source offsets are measured on exact bytes.",
+    "parser_sha256": "Canonical hash of semantic version, actual measure_js.mjs bytes, qualified TypeScript module/resource pin descriptions, qualified Node executable/version/architecture and fixed compiler options/resolution profile. It is independent of subject/run/controller copy locations. Tool resource original absolute locators remain the explicit qualified configuration, unchanged across production/replay; never substitute another installation.",
+    "toolset_sha256": "Preserve the existing toolset_digest algorithm: same config including original tool_artifact_root, qualification refs, Python parser and qualified external resource/runtime/settings inputs. run_root is used only to recheck copies, not included as a semantic input. Do not fold command argv, execution IDs or scratch paths into this digest. JS adapter bytes are additionally bound by parser_sha256 and the six-file controller digest.",
+    "settings_sha256": "Canonical hash of the already-qualified TypeScript compiler options, the fixed typescript-shared-v1 module/reference/normalization semantics and validated js_entrypoints declarations. Source package/config bytes vary only as explicitly bound revision inputs, not as hidden compiler flags. No skipLibCheck, ambient any types, plugins, autotyping or source suppression is added.",
+    "input_admission": "Measure derives JSInput from the full pinned TypeScript resource set, exact source-bound config/approval contract refs, and existing package.json files along ancestors of inventoried JS files and explicit entrypoints up to the selected subject root. Match head metadata to the complete source snapshot and base metadata to the validated immutable Git tree; absence is checked against those same complete scopes. No root-wide package search or new code walk. Local source resolution is limited to immutable Inventory entries; source metadata is not a second code census. Compiler host fileExists/readFile/directoryExists honor only these admitted inputs and explicit known absence. Unexpected required existing source metadata or noninventory local code is failure, not silently treated as absent. Unqualified external package types remain actual diagnostics; no ambient node_modules/plugin/type acquisition fallback.",
+    "run_specific": "JSRequest contains execution_id, purpose, Context execution roots and actual pre_manifest ref; JSResult/JSCommand echo the exact execution ID/request ref and actual produced refs. They are validated within their own root before comparison. Production and replay use different execution IDs, request/preflight hashes and absolute run paths. Each result must match the live request for that actual invocation.",
+    "execution_environment": "Retain source-binding environment stripping for PYTHON*, NODE_*, TS_NODE_* and VSCODE_INSPECTOR_OPTIONS, recording removed names only. Fixed execute_js uses existing run_capture/run.py with idle 30 and max 90 seconds per child, preserves real stdout/stderr and may emit actual completed-file progress. No shell, preload, loader, autotyping or arbitrary request-driven argv; no timeout increase is authorized by this proposal.",
+    "comparison_projection": "Compare every field of JSBinding, JSSymbolEvidenceV1, JSResult.provenance and the ordered JSResult.syntax evidence and semantic state/reasons. Compare actual result/symbol Artifact content via each root's own manifest, not physical Artifact hashes that incorporate run-specific envelopes. Ignore only explicitly transport-specific request/execution references and command root/argv/timing/capture fields after independently validating them against the known invocation; no generic path stripping, recursive hash-field deletion or message suppression. JS symbol/source/package/resource paths and diagnostic display paths are canonical root-relative tagged references from JSInput, so they need no scratch-path normalization.",
+    "diagnostic_text": "Retain the original TypeScript diagnostic message chain, including actual compiler text, in the symbol artifact. To avoid root-dependent text, pass canonical root-relative virtual subject file names to the controlled compiler host; map them explicitly to the bound subject bytes. Default-lib diagnostics use tagged tool-resource paths. Unexpected absolute subject/scratch paths in semantic diagnostic arguments/text are an explicit unnormalizable result, not an arbitrary string replacement.",
+    "controller": "The JS branch copies the same five Python files plus measure_js.mjs from the approved current controller source into controller_root, never from historical base and never into subjects. include_js=True hashes all six, requiring exact bytes and regular independent files. The actual Node argv points at that copied measure_js.mjs, whose bytes are checked before/after each production and replay child and at final validation. Python-only callers retain the default five-file controller formula; no filesystem-exists fallback decides the JS profile."
+  },
+  "type_rules": {
+    "notation": "Normative finite record notation, not a runtime schema framework. Each fields map is the exact required key set; no optional or extra keys unless a type explicitly permits null. Existing Path/Hash/Id/Revision/Count/Span/Artifact/Inventory/Context/MeasurementConfig/SyntaxEvidence/Candidate/Finding retain their original definitions. All arrays have deterministic sorting and uniqueness rules below.",
+    "JSInput": "{scope:subject|head-contract|tool-resource,path:Path,sha256:Hash,bytes:Count}",
+    "input_roots": "subject paths resolve against the selected immutable revision root; head-contract paths only against head_root and an exact Context.contract_artifacts/source-snapshot member; tool-resource paths only against the explicitly qualified TypeScript package root/resource pins. These are source/tool input references, never run-root Artifact references. No other scope or absolute path is admitted.",
+    "JSRange": "{start_byte:Count,end_byte:Count,start_line:Line,end_line:Line}; end may equal start for a genuine point/EOF diagnostic. Nonempty declarations/references/imports/candidates still require original Span, not JSRange.",
+    "JSResolution": "{state:local|external|unresolved|dynamic,symbol_ids:list[Hash],external:string|null,reason:string}",
+    "resolution_rules": "local has a nonempty sorted unique set of IDs in this artifact and external=null; external has no local IDs and a canonical nonempty module/export or pinned-library name; unresolved/dynamic have no IDs or external target and a nonempty reason. No heap IDs, absolute paths or guessed dynamic target. Aliases may resolve to multiple declarations via one merged symbol ID.",
+    "JSSite": "{path:Path,span:Span,kind:computed-import|reflection|runtime-command,reason:string}",
+    "JSMessage": "{text:string,category:Count,code:Count,next:list[JSMessage]}; TypeScript's actual message chain, not an invented diagnostic summary. Category must be one of the four qualified TypeScript DiagnosticCategory values.",
+    "JSLocation": "{file:JSInput|null,utf16_start:Count|null,utf16_length:Count|null,byte_range:JSRange|null}",
+    "location_rules": "All location fields are null together only for a genuinely source-less diagnostic. Otherwise file is an admitted subject/tool-resource input, both UTF-16 counts are present and byte_range is the exact strict conversion including valid zero-width EOF. Diagnostic related information follows the same rule. File read/decode failure retains null location only as an execution/census reason, not as a mislabeled source-less compiler diagnostic."
+  },
+  "records": {
+    "JSBinding": {
+      "fields": {
+        "semantic_version": "literal typescript-shared-v1",
+        "run_id": "Id",
+        "revision": "Revision",
+        "git_revision": "full Git object ID",
+        "inventory_sha256": "Hash",
+        "source_sha256": "Hash",
+        "parser_sha256": "Hash",
+        "toolset_sha256": "Hash",
+        "settings_sha256": "Hash",
+        "policy_sha256": "Hash"
+      }
+    },
+    "JSRequestV1": {
+      "fields": {
+        "schema_version": "integer 1",
+        "binding": "JSBinding",
+        "execution_id": "fresh 32-character lowercase hexadecimal ID",
+        "purpose": "produce|validate",
+        "context": "Context with actual preflight output_manifest",
+        "inventory": "unchanged Inventory",
+        "config": "unchanged validated MeasurementConfig",
+        "pre_manifest": "Artifact exactly equal to context.output_manifest",
+        "inputs": "list[JSInput]",
+        "outputs": "{result:Path,symbols:Path}"
+      },
+      "invariants": "outputs equal the compiled revision locators; no arbitrary output, executable, argv, options or callback fields. The controller supplies the admitted metadata/resource file list and verifies it from source/contracts/qualification. The producer verifies config/binding/inputs and confines all compiler host reads to this list plus the exact JS inventory entries. Input omission or an unexpected required existing source read is explicit failure, not an ambient fallback."
+    },
+    "JSCommandV1": {
+      "fields": {
+        "schema_version": "integer 1",
+        "binding": "JSBinding",
+        "execution_id": "same ID as request",
+        "request": "Artifact",
+        "pre_manifest": "Artifact",
+        "argv": "list[string], exact actual qualified Node/copied-module/request invocation",
+        "cwd": "absolute actual selected subject root",
+        "idle_seconds": "positive Number",
+        "max_seconds": "positive Number",
+        "environment_delta": "{removed_names:sorted unique list[string]}",
+        "returncode": "integer",
+        "stdout": "string",
+        "stderr": "string",
+        "capture_semantics": "literal run_capture UTF-8 replacement-decoded, newline-normalized separate streams",
+        "result": "Artifact|null",
+        "symbols": "Artifact|null"
+      },
+      "invariants": "Controller-authored actual capture through run.py; no claimed raw byte-exact streams. Validate exact executable/module/runtime digests, roots, request/preflight links, environment stripping and bounds. Result references are hashes of actual materialized files, never pending predictions. A missing/partial result cannot be converted to successful output."
+    },
+    "JSResultV1": {
+      "fields": {
+        "schema_version": "integer 1",
+        "binding": "JSBinding",
+        "execution_id": "same ID as request",
+        "request": "Artifact",
+        "state": "produced|failed",
+        "symbols": "Artifact|null",
+        "provenance": "JSProvenance",
+        "syntax": "list[unchanged SyntaxEvidence]",
+        "reasons": "list[string]"
+      },
+      "invariants": "Produced means the adapter completed its census, not that every file parsed or any metric is complete. It requires a symbol artifact, exactly one census row per JS entry, syntax records exactly for processed files and empty reasons. Failed requires a nonempty reason list; incomplete/missing child output is also preserved by the controller's actual command failure. Syntax is inline here; graph.parse_files alone writes the per-file SyntaxEvidence artifacts and constructs ParsedInventory. No computed Candidate/Finding totals enter this record."
+    },
+    "JSProvenance": {
+      "fields": {
+        "runtime": "{executable:absolute qualified Node file,version:literal v24.11.1,architecture:literal arm64,typescript_version:literal 5.9.3,exec_argv:list[string]}",
+        "adapter_sha256": "Hash of the actual executing measure_js.mjs bytes",
+        "controller_files": "list[{path:Path,sha256:Hash,bytes:Count}], exactly the six fixed controller-relative names",
+        "loaded_modules": "list[JSInput], actual nonbuiltin require-cache modules, tool-resource scope only",
+        "reads": "list[JSInput], actual source/metadata/compiler-resource reads"
+      },
+      "invariants": "Compare actual runtime to qualified executable/module/resource bindings and recorded argv; no extra exec_argv preload/loader options. Loaded JS modules must be pinned TypeScript resources; Node builtins are supplied by the pinned runtime, not unqualified packages. Every processed census file must have its actual read hash in reads. Other reads must belong to admitted inputs; sort/deduplicate by scope/path. The controller independently checks six copied/current file hashes, actual child adapter hash and every observed module/read pin before and after execution. This is JS module/file provenance, not complete native-DLL closure or sandboxing."
+    },
+    "JSSymbolEvidenceV1": {
+      "fields": {
+        "schema_version": "integer 1",
+        "binding": "JSBinding",
+        "inputs": "list[JSInput]",
+        "files": "list[JSCensus]",
+        "symbols": "list[JSSymbol]",
+        "exports": "list[JSExport]",
+        "aliases": "list[JSAlias]",
+        "references": "list[JSReference]",
+        "module_references": "list[JSModuleReference]",
+        "entrypoints": "list[JSEntryPoint]",
+        "outside_model": "list[JSSite]",
+        "directives": "list[{path:Path,span:Span,kind:ts-ignore|ts-expect-error|ts-nocheck|ts-check|other-suppression,text:string}]",
+        "diagnostics": "list[JSDiagnostic]"
+      },
+      "ownership": "One program-level artifact per revision at {revision}/js/symbols.json, role=syntax and that revision. Syntax accurately classifies parser-produced symbol metadata; it does not assert this record is structurally SyntaxEvidence. Consumers dispatch by the compiled locator and expected record type, then enforce that type's exact required field set/version/bindings: symbols.json is JSSymbolEvidenceV1, result.json is JSResultV1, and per-source syntax locators are unchanged SyntaxEvidence. Correct role alone cannot make the wrong record type valid. Result/command records reference its actual Artifact. Never add its path to ParsedInventory.syntax_artifacts or guess record type from overlapping keys. Per-source links use path/source hash/parser/inventory identities already present in unchanged SyntaxEvidence."
+    },
+    "JSCensus": {
+      "fields": {
+        "path": "Path",
+        "source_sha256": "Hash from FileEntry",
+        "observed_sha256": "Hash|null",
+        "suffix": ".js|.mjs|.cjs|.jsx|.ts|.tsx",
+        "state": "processed|failed|unsupported",
+        "reason": "string",
+        "token_count": "Count|null",
+        "function_count": "Count|null",
+        "diagnostic_ids": "sorted unique list[Hash]"
+      },
+      "invariants": "Exactly the six-suffix JS/TS subset of immutable inventory, no shortening or rediscovery. Processed requires matching actual source bytes, strict UTF-8 decoding and syntactic success; counts are actual AST/token counts, including zero. Function count is body-bearing function/arrow/method/accessor/constructor nodes, not type signatures or lizard complexity. Failed/unsupported have nonempty reasons and null counts; missing reader/input, bad UTF-8 and invalid syntax are never processed zero. Any changed observed hash invalidates freshness. A zero-input program still emits an actual empty census under the qualified API."
+    },
+    "JSSymbol": {
+      "fields": {
+        "id": "Hash",
+        "name": "string",
+        "flags": "Count, actual qualified TypeScript SymbolFlags bitmask",
+        "declarations": "nonempty list[JSDeclaration]"
+      },
+      "invariants": "Only symbols with inventory-source declarations are local. Merged declarations belong to one deterministic ID; compiler/library/external symbols resolve through JSResolution.external rather than pretend inventory declarations."
+    },
+    "JSDeclaration": {
+      "fields": {
+        "path": "Path",
+        "source_sha256": "Hash",
+        "span": "Span",
+        "kind": "qualified TypeScript SyntaxKind name",
+        "lexical_scope": "list[string]",
+        "name": "string",
+        "token_context": "list[{kind:string,text:string}]",
+        "occurrence": "Count"
+      }
+    },
+    "JSExport": {
+      "fields": {
+        "path": "Path",
+        "span": "Span",
+        "name": "string",
+        "kind": "declaration|default|reexport|star|commonjs",
+        "type_only": "boolean",
+        "target": "JSResolution"
+      }
+    },
+    "JSAlias": {
+      "fields": {
+        "path": "Path",
+        "span": "Span",
+        "name": "string",
+        "kind": "import|reexport|namespace|import-equals",
+        "target": "JSResolution"
+      }
+    },
+    "JSReference": {
+      "fields": {
+        "path": "Path",
+        "span": "Span",
+        "kind": "identifier|property|shorthand|type|alias|export|namespace-element",
+        "target": "JSResolution"
+      }
+    },
+    "JSModuleReference": {
+      "fields": {
+        "path": "Path",
+        "span": "Span",
+        "specifier": "string|null",
+        "kind": "import|reexport|require|type-import",
+        "resolution": "local|external|unresolved|dynamic",
+        "targets": "sorted unique list[Path]",
+        "external": "string|null",
+        "reason": "string"
+      },
+      "invariants": "Each literal SyntaxEvidence import has exactly one matching module-reference record by path/span/kind/specifier. Local targets are inventoried paths, external is a canonical bare module name, missing literal local targets are unresolved, and computed specifiers have null specifier and dynamic resolution plus an outside-model site. No runtime-command graph edges. Resolve using the qualified NodeNext host, admitted package metadata and explicit .js/.mjs/.cjs/.jsx/.ts/.tsx source inputs, including TypeScript's qualified extension substitution; do not invent a separate suffix-search regex frontend."
+    },
+    "JSEntryPoint": {
+      "fields": {
+        "path": "Path",
+        "source_sha256": "Hash|null",
+        "state": "active|absent-at-revision",
+        "public_exports": "sorted unique list[string]",
+        "origins": "nonempty list[{kind:package|suite|config,input:JSInput,pointer:string,origin_ref:string}]"
+      },
+      "invariants": "Origins point to actual admitted package exports/bin, registered suite test files or source-bound config js_entrypoints values, not a per-finding whitelist. Validate the referenced JSON pointer/value and declared origin_ref. Package origins have subject scope; suite/config origins use the actual head-contract configuration. For package/suite roots enumerate actual exported symbols; for explicit config roots validate the listed subset. Active roots must resolve to inventoried files and actual named exports; empty public_exports grants no implicit all-export exemption. A config path introduced only at head is explicitly absent-at-revision at base, not a fabricated processed file or dropped declaration. Dynamic/unsupported package conditions remain disclosed and block a complete dead-symbol claim rather than broadening public roots."
+    },
+    "JSDiagnostic": {
+      "fields": {
+        "id": "Hash",
+        "code": "Count, actual TypeScript diagnostic code",
+        "category": "Count, qualified DiagnosticCategory",
+        "source": "string|null",
+        "message": "JSMessage",
+        "location": "JSLocation",
+        "related": "list[{code:Count,category:Count,message:JSMessage,location:JSLocation}]"
+      },
+      "invariants": "Retain every pre-emit diagnostic, including multiple diagnostics on a file, unresolved external types, default-library and source-less option/missing-root diagnostics such as 6053. IDs bind code/category/source, canonical message arguments/chain and exact tagged location; no coalescing by file or aggregate count. Missing inventory root is infrastructure failure even if diagnostics exist; source-less is never recoded as processed-empty."
+    }
+  },
+  "identity_and_projection": {
+    "canonical_ids": "Use SHA-256 of the existing canonical JSON encoding. A symbol ID hashes ['js-symbol-v1', sorted declaration descriptors], where each descriptor contains path, kind, lexical_scope, name, token_context and occurrence, not line numbers, whole-file hash, physical roots or TS heap IDs. Source hashes/spans are separately mandatory freshness bindings. Diagnostic IDs hash their declared diagnostic fields except id. Repeated structurally identical declarations are distinguished by deterministic source-order occurrence within that lexical descriptor.",
+    "lexical_scope": "Use named enclosing declaration kinds/names and deterministic occurrence indices for anonymous scopes. token_context comes from actual parsed-node tokens in order, with trivia omitted but token kind and exact token text retained. Template interpolation, regexp versus division, types and arrow operators are obtained from the same AST/token model. Do not tokenize again with a heuristic regex.",
+    "sorting": "files by path; inputs/provenance reads/modules by scope/path; controller_files by path; symbols by id; declarations by path/start_byte/end_byte/kind; exports/aliases/references/module_references/outside sites/directives by path/span then canonical full record; entrypoints by path and origins by canonical full record; diagnostics by id. Reject duplicate identities/records or dangling IDs. Lists in the original inventory and original SyntaxEvidence follow their existing ordering contracts, not a new sorting policy.",
+    "byte_boundaries": "Decode file bytes strictly as UTF-8 while preserving BOM and CRLF. Map TypeScript UTF-16 offsets to byte positions without splitting surrogate pairs or UTF-8 sequences; lines use actual source line boundaries. Zero-width diagnostic positions are preserved by JSRange. Existing nonempty Span is unchanged. All slices must match source; failed decoding or invalid offsets are failures, not replacement-decoded syntax.",
+    "dead_symbols": "Follow checker aliases/reexports and lexical/property/shorthand/type references over the full census. Namespace computed access is a dynamic reference/outside-model site, never evidence of no use. Reference uncertainty, unresolved locals or failed inputs prevent complete absence-of-reference claims. Public roots require the explicit backed entrypoint set. This component produces evidence; the scalar adapter still owns dead_exports aggregation and its receipt completeness.",
+    "directives": "Inventory actual parser-recognized comment directives with exact source spans/text, and carry descriptions in the existing SyntaxEvidence.diagnostics string list. Do not synthesize TypeScript diagnostic codes for directives, silently omit them, introduce suppressions or turn their presence into a per-finding exemption. Raw compiler diagnostics remain original compiler output.",
+    "findings": "Existing Finding records derive from actual diagnostics/unused-symbol evidence and source context, with original identity_parts semantics. Do not insert raw diagnostic fields into Finding. Source-less diagnostics map to paired null path/span. Point diagnostics retain exact JSRange in raw evidence; any nonempty context Span used by a future projection must be source-backed and explicitly identified as context. If unchanged Finding cannot faithfully represent a case, keep the diagnostic and mark that projection unavailable rather than fabricate a span or silently drop it.",
+    "candidates": "Existing Candidate records derive from the shared processed SyntaxEvidence and exact source tokens with the original operator/changed-production policy. Candidate IDs and before/after hashes follow the original contract; edits preserve every byte outside span. Native APIs may return those records directly for CHECK-JS-PARSER. No new candidate totals/policy or actual root mutant execution is included. Any persisted candidate payload must remain in its existing Q4 owner rather than being smuggled into SyntaxEvidence.",
+    "scalar_boundary": "JSSymbolEvidence is not a metric count or complete scalar observation. This amendment does not implement scalar collectors; all nine required IDs and missing coverage/mutation behavior remain unchanged. Neither a semantic hash nor an arbitrary supplied replay Context establishes acceptance."
+  },
+  "failure_behavior": {
+    "bad_control_or_identity": "Missing/stale/malformed preflight/produced/final manifest, wrong role/revision/reservation, duplicate/colliding declarations, changed source/config/tool/controller, bad path/copy identity or forged request/result links rejects before the dependent read/launch/publication. Preserve ValueError/OSError and existing unable-to-run exit 2; no fallback to originals, old replay or an unowned result.",
+    "parser_outcomes": "Real invalid syntax, UTF-8/read/reader failures are explicit per-file failed receipts/census with no SyntaxEvidence and null unit counts, never omitted files. Semantic diagnostics do not by themselves imply syntax failure. Exhaustive failed/empty files remain in the census and graph nodes. A reproducibly failed collector cannot make overall completeness true.",
+    "command_failure": "Retain actual nonzero/timeout/stderr capture. Missing or partial result after a failed child yields failed JS receipts for the affected revision, never successful zero evidence. A zero-exit child with missing/malformed/truncated result or inconsistent census is invalid proof. Producer/graph code reconstruct failure receipts from the admitted command/request and inventory, not an invented successful symbol table.",
+    "replay_failure": "A failed replay cannot validate a successful original. Reproducible explicit failed original/replay states may support an honest unavailable observation, but never a complete scalar/graph claim; mismatches and stale states reject. No timeout-as-pass or omission of a failed revision.",
+    "publication": "Valid incomplete measurements retain the existing fail/exit-1 behavior. Invalid proof is exit 2. No publication until original and replay semantic/freshness checks complete. Retaining diagnostic files does not grant metric acceptance or recovery."
+  },
+  "smallest_required_tests": [
+    {
+      "id": "JS-LIFE-01",
+      "proof": "Actual two-Git-revision fixture with at least three base code files: preflight contains no pending hashes; real Node executes before graph.parse_files; produced owns preflight with role=manifest/revision=null and actual JS records; final owns preflight/produced exactly once plus successful syntax/graphs. Reconstruct, retain and archive the full backward-only chain, with no self-hash or unowned predecessor. Audit graph calls to show no subprocess launch or reverse import."
+    },
+    {
+      "id": "JS-LIFE-02",
+      "proof": "Actual fresh validation root and qualification copies, same subject/inventory/config, new execution IDs and real child launches; no copied prior outputs. Require semantic equality despite changed run paths. Mutate original symbols/targets/diagnostics/source spans/raw results and recompute all refs/manifests: fresh replay still rejects. No graph-only or supplied replay-Context acceptance shortcut."
+    },
+    {
+      "id": "JS-OWN-01",
+      "proof": "Real malformed/rehashed preflight, produced and final files: missing/wrong/duplicate qualification, JS or manifest rows/reservations; non-null manifest revision; self/forward/cyclic/foreign references; inconsistent final-versus-produced preflight refs; controls mislabeled qualification/command/syntax; changed preflight bytes/ref; result from another execution/revision; missing command/result/symbol; wrong syntax-role record schema at a valid locator; unknown materialized output; optional failed-file slot populated; changed executing/copied JS adapter. Audit rejection before the dependent launch/read and after actual mid-execution tampering."
+    },
+    {
+      "id": "JS-PARSE-01",
+      "proof": "All six suffixes: real empty/comment/functionless, invalid syntax/UTF-8, missing input/reader, BOM, Unicode/surrogate/UTF-8 boundaries, CRLF, templates/interpolation, regex/division, types, arrows, return/expression candidate deletion. Exact census partition and byte/hash assertions; zero-input program is actually invoked. No skipped failure or fabricated zero."
+    },
+    {
+      "id": "JS-SYMBOL-01",
+      "proof": "Real import/export/reexport/alias cycles, merged/anonymous lexical identities, namespace literal/computed properties, local/external/unresolved targets, shadowed require, dynamic/reflection/runtime-command sites, package/type boundaries and backed entrypoint roots including head-only roots. Tamper source-backed IDs/targets/origins while rehashing records; real replay rejects."
+    },
+    {
+      "id": "JS-DIAG-01",
+      "proof": "Actual multiple pre-emit diagnostics, source-less bad options/missing root, Unicode and zero-width EOF positions, related locations and library diagnostics. Preserve raw code/category/message/UTF-16/byte positions; never classify infrastructure failure as a processed zero file."
+    },
+    {
+      "id": "JS-COMPAT-01",
+      "proof": "Existing empty-Q1 Python/standalone imports and native/source-binding/R1 tests retain behavior; tools={} keeps its exact manifest, rejects an injected manifest-role row and keeps the five-file controller path. Actual CHECK-JS-PARSER candidate APIs inspect current score.mjs and native_result.mjs and real fixture bytes, without executing actual root mutants. Selected commands stream real progress using short owned temporary roots and unchanged bounds."
+    }
+  ],
+  "excluded": [
+    "Scalar collection/aggregation, coverage/reporters, root mutant execution, metric attachment bridge, positive guarded closure, recovery and complete Q2/Q3/Q4.",
+    "New Context/config/manifest fields, ownership role additions beyond the single proposed manifest value, policy thresholds/exclusions, framework/plugin/callback systems or modified original normative/qualification evidence.",
+    "Installation, network, agents, commits, pushes, symlink privilege retry, unowned old-temp cleanup or C3 writer files."
+  ],
+  "delivery": "Only this additive proposal and its at-most-two-page human rationale. Parent obtains one focused independent review and explicitly releases implementation. Preserve original contract/root amendment and historical binding acceptance; this proposal claims no parser implementation, tests or Q acceptance."
+}

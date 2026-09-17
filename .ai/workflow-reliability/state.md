@@ -5,7 +5,7 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: C3 accepted with preservation proof; Q2 parser amendment pending.
+- Phase: C3 preserved; Q2 shared-JS design accepted for implementation.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
 - Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
@@ -37,13 +37,72 @@
 - No repeated uncoached model-effectiveness study claimed by deterministic tests.
 
 ## Next action
-Review the bounded Q2 parser lifecycle/symbol-transport amendment and release its
-implementation only after acceptance. C3 is the current approved preservation increment.
-Recovery remains blocked;
+Implement the accepted Q2 shared-JS slice against frozen amendment revision 3,
+then independently verify and review its actual parser/lifecycle behavior.
+C3 is preserved. Recovery remains blocked;
 no recovery stub or silent completion of the original requirement.
 The local I1 preservation commit is `aaec9b9`.
 The continuation addendum replaces implementation-dispatch dependencies only; it does not
 close I1.T4 or remove any required measurement, independent role or final acceptance check.
+
+## Q2 shared-JS amendment review
+- FACT: C3 is preserved in `ce7c07eb4bec9239db4d45cdf9bc83c88a43a16c`.
+  After commit, only the earlier `evals/report.md` delta and three Q2 proposal/handoff
+  files remained outside that commit. No publication attempt occurred.
+- Q2 owner returned proposal revision 2 at
+  `evidence/q2-js-execution-amendment.json`, reported SHA-256
+  `cd69b23bd22c08fe6884fcd5fbb5570d4dd0e5f4551b2f161ce4d0c0da61333a`,
+  with `evidence/q2-js-execution-rationale.md`. No parser code or tests are claimed.
+- The proposal adds a produced-evidence manifest between preflight execution and final
+  graph publication, with explicit backward-only manifest-role ownership. It specifies
+  fixed measure-owned execution/replay and separate versioned symbol evidence while
+  retaining existing SyntaxEvidence/Candidate/Finding shapes and Python-only behavior.
+  These are proposed contracts, not implementation facts.
+- Fresh reviewer `7d466374-d6f6-49a0-9b17-bfdadc889d81` owns one focused design review
+  against the original contracts, root amendment, R1 and current production callers.
+  Parent must adjudicate its result before releasing code. Q2 proposal and runtime
+  files are frozen during review. Scalars, guarded metrics, recovery and complete
+  quality remain separate unfinished requirements.
+- FACT: `evidence/q2-js-execution-review.md` returns REVISE, with nine authority/
+  runtime pins unchanged. Parent accepts JS-R1 (materialize base before filesystem
+  reservation discovery), JS-R2 (explicit measure-owned production/replay purpose)
+  and JS-R3 (consistent ownership/decoding/comparison/archive rules for failed
+  partial output). Successful-path architecture is supported; code is not released.
+- Q2 owner must retain exact reviewed revision-2 proposal/rationale bytes and return
+  a bounded revision 3 addressing those findings. The same reviewer will handle the
+  second focused pass. No new Context field, ownership role or collector scope is
+  authorized by this correction.
+- Parent also re-anchored the review's six-suffix classification caution in
+  `measure.py` `_walk`/`inventory`: `.jsx`/`.tsx` are currently unsupported entries
+  in an immutable digest, and inventory receives no config. Revision 3 must explicitly
+  define the JS-enabled classification/interface while preserving the default
+  inventory behavior; graph must not rewrite a frozen inventory or infer hidden mode.
+- FACT: parent matched retained revision-2 proposal/rationale hashes and the final
+  revision-3 hashes: amendment
+  `887c8a3ba5dd9f8efd32081b3c3e20fbea8a0fada67349a1555bcda34f7b4c9e`,
+  rationale `82680496ec4466922e6273d53df5d6ef354ad1045d0fdf86b5e5be9191d1cbd9`.
+  Owner reports no runtime/test edits. Earlier unreviewed r3 hashes are superseded.
+- Revision 3 explicitly proposes early base discovery, a private purpose argument,
+  six finite output scenarios with strictly failure-only opaque retention, and
+  `include_js=False` inventory/discovery keywords preserving default behavior.
+  Parent read the exact revised failure table and classification rules. Same reviewer
+  `7d466374-d6f6-49a0-9b17-bfdadc889d81` now owns the second focused pass in
+  `evidence/q2-js-execution-review-r2.md`; implementation remains unreleased.
+- FACT: second focused review `evidence/q2-js-execution-review-r2.md` APPROVES
+  frozen revision 3 and closes JS-R1/R2/R3 plus the six-suffix classification
+  caution at the design level. All 12 reviewed input pins remained unchanged;
+  no parser or test implementation is implied by that result.
+- Parent accepts revision 3 at the recorded hash for the minimal shared-JS
+  implementation. Human sign-off remains unconfirmed under the authorized
+  autonomous continuation. The retained proposal status is historical; this
+  explicit parent disposition and final review authorize implementation without
+  rewriting the reviewed bytes.
+- Preserve the accepted amendment, exact r2 history, reviews and original seam
+  handoff before dispatch. Owner `32d88126-0b11-466a-b04a-76bebef5b9c9` then owns
+  parser/inventory/controller/manifest/graph/probe integration and its seven
+  specified proof groups, not scalars, root mutants, coverage, metric attachment
+  or recovery. Independent verification/review and a green local preservation
+  boundary remain mandatory before this component is called delivered.
 
 ## C3 bounded acceptance
 - FACT: C3 owner `52883f96-3559-4d94-af39-c8e3625a9c99` returned
