@@ -1,0 +1,113 @@
+{
+  "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\shape report js\\jscpd-report.json",
+  "sha256": "06bb5d9d12ea2d2f243b5b653cb57edeaeb36a321d6199c193a95d956b09684a",
+  "raw": {
+    "duplicates": [
+      {
+        "firstFile": {
+          "end": 10,
+          "endLoc": {
+            "column": 2,
+            "line": 10,
+            "position": 310
+          },
+          "name": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\shape fixtures\\shape a.js",
+          "start": 2,
+          "startLoc": {
+            "column": 0,
+            "line": 2,
+            "position": 15
+          }
+        },
+        "format": "javascript",
+        "fragment": "export const calculate = async (value) => {\n  const matcher = /a[b-c]+/;\n  function inner(item) {\n    return item > 3 ? item + 4 : item - 2;\n  }\n  const message = `caf\u00e9 ${inner(value)}`;\n  const division = value / 2;\n  return matcher.test(message) && division > 3 ? message : \"none\";\n};",
+        "isNew": false,
+        "kind": "exact",
+        "lines": 9,
+        "secondFile": {
+          "end": 10,
+          "endLoc": {
+            "column": 2,
+            "line": 10,
+            "position": 310
+          },
+          "name": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\shape fixtures\\shape b.js",
+          "start": 2,
+          "startLoc": {
+            "column": 0,
+            "line": 2,
+            "position": 15
+          }
+        },
+        "tokens": 70
+      }
+    ],
+    "statistics": {
+      "detectionDate": "2026-09-17T08:43:36.667Z",
+      "formats": {
+        "javascript": {
+          "clones": 1,
+          "duplicatedLines": 8,
+          "duplicatedTokens": 70,
+          "lines": 20,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 40.0,
+          "percentageTokens": 50.0,
+          "sources": 2,
+          "tokens": 140
+        }
+      },
+      "total": {
+        "clones": 1,
+        "duplicatedLines": 8,
+        "duplicatedTokens": 70,
+        "lines": 20,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 40.0,
+        "percentageTokens": 50.0,
+        "sources": 2,
+        "tokens": 140
+      }
+    },
+    "summary": {
+      "by": "tokens",
+      "files": [
+        {
+          "bytes": 312,
+          "complexity": 4,
+          "duplicatedLines": 8,
+          "duplicatedTokens": 70,
+          "format": "javascript",
+          "lines": 10,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\shape fixtures\\shape a.js",
+          "tokens": 70
+        },
+        {
+          "bytes": 312,
+          "complexity": 4,
+          "duplicatedLines": 8,
+          "duplicatedTokens": 70,
+          "format": "javascript",
+          "lines": 10,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\shape fixtures\\shape b.js",
+          "tokens": 70
+        }
+      ],
+      "folders": [
+        {
+          "bytes": 624,
+          "complexity": 8,
+          "duplicatedLines": 16,
+          "files": 2,
+          "lines": 20,
+          "path": "//?/C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/shape fixtures",
+          "tokens": 140
+        }
+      ],
+      "totalFiles": 2,
+      "totalFolders": 1
+    }
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "cases": {
+    "no-clone-py": {
+      "files": 1,
+      "clones": 0,
+      "source_lines": [
+        9
+      ],
+      "tokens": [
+        40
+      ],
+      "formats": [
+        "python"
+      ]
+    },
+    "clone-py": {
+      "files": 2,
+      "clones": 1,
+      "source_lines": [
+        9,
+        9
+      ],
+      "tokens": [
+        40,
+        40
+      ],
+      "formats": [
+        "python",
+        "python"
+      ]
+    },
+    "no-clone-js": {
+      "files": 1,
+      "clones": 0,
+      "source_lines": [
+        11
+      ],
+      "tokens": [
+        53
+      ],
+      "formats": [
+        "javascript"
+      ]
+    },
+    "clone-js": {
+      "files": 2,
+      "clones": 1,
+      "source_lines": [
+        11,
+        11
+      ],
+      "tokens": [
+        53,
+        53
+      ],
+      "formats": [
+        "javascript",
+        "javascript"
+      ]
+    },
+    "no-clone-mjs": {
+      "files": 1,
+      "clones": 0,
+      "source_lines": [
+        11
+      ],
+      "tokens": [
+        53
+      ],
+      "formats": [
+        "javascript"
+      ]
+    },
+    "clone-mjs": {
+      "files": 2,
+      "clones": 1,
+      "source_lines": [
+        11,
+        11
+      ],
+      "tokens": [
+        53,
+        53
+      ],
+      "formats": [
+        "javascript",
+        "javascript"
+      ]
+    },
+    "no-clone-cjs": {
+      "files": 1,
+      "clones": 0,
+      "source_lines": [
+        11
+      ],
+      "tokens": [
+        53
+      ],
+      "formats": [
+        "javascript"
+      ]
+    },
+    "clone-cjs": {
+      "files": 2,
+      "clones": 1,
+      "source_lines": [
+        11,
+        11
+      ],
+      "tokens": [
+        53,
+        53
+      ],
+      "formats": [
+        "javascript",
+        "javascript"
+      ]
+    },
+    "no-clone-ts": {
+      "files": 1,
+      "clones": 0,
+      "source_lines": [
+        11
+      ],
+      "tokens": [
+        53
+      ],
+      "formats": [
+        "typescript"
+      ]
+    },
+    "clone-ts": {
+      "files": 2,
+      "clones": 1,
+      "source_lines": [
+        11,
+        11
+      ],
+      "tokens": [
+        53,
+        53
+      ],
+      "formats": [
+        "typescript",
+        "typescript"
+      ]
+    },
+    "no-clone-tsx": {
+      "files": 1,
+      "clones": 0,
+      "source_lines": [
+        11
+      ],
+      "tokens": [
+        53
+      ],
+      "formats": [
+        "tsx"
+      ]
+    },
+    "clone-tsx": {
+      "files": 2,
+      "clones": 1,
+      "source_lines": [
+        11,
+        11
+      ],
+      "tokens": [
+        53,
+        53
+      ],
+      "formats": [
+        "tsx",
+        "tsx"
+      ]
+    },
+    "no-clone-jsx": {
+      "files": 1,
+      "clones": 0,
+      "source_lines": [
+        11
+      ],
+      "tokens": [
+        53
+      ],
+      "formats": [
+        "jsx"
+      ]
+    },
+    "clone-jsx": {
+      "files": 2,
+      "clones": 1,
+      "source_lines": [
+        11,
+        11
+      ],
+      "tokens": [
+        53,
+        53
+      ],
+      "formats": [
+        "jsx",
+        "jsx"
+      ]
+    }
+  },
+  "initial_census": {
+    "input_files": 35,
+    "summary_files": 28,
+    "nonempty_inputs_match": true,
+    "omitted_empty": [
+      "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\empty.py",
+      "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\empty.js",
+      "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\empty.mjs",
+      "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\empty.cjs",
+      "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\empty.ts",
+      "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\empty.tsx",
+      "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\empty.jsx"
+    ]
+  },
+  "sources": [
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 first.py",
+      "sha256": "f092db0706ccc8e2985963058208e808732da0849cf339b816e9e4dd4bd1d697"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 second.py",
+      "sha256": "f092db0706ccc8e2985963058208e808732da0849cf339b816e9e4dd4bd1d697"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 first.js",
+      "sha256": "ecfd40d468d0cf5f2f5cb5ea906816a6dccc8e1bc69aad6606095ed464f95786"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 second.js",
+      "sha256": "ecfd40d468d0cf5f2f5cb5ea906816a6dccc8e1bc69aad6606095ed464f95786"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 first.mjs",
+      "sha256": "ecfd40d468d0cf5f2f5cb5ea906816a6dccc8e1bc69aad6606095ed464f95786"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 second.mjs",
+      "sha256": "ecfd40d468d0cf5f2f5cb5ea906816a6dccc8e1bc69aad6606095ed464f95786"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 first.cjs",
+      "sha256": "ecfd40d468d0cf5f2f5cb5ea906816a6dccc8e1bc69aad6606095ed464f95786"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 second.cjs",
+      "sha256": "ecfd40d468d0cf5f2f5cb5ea906816a6dccc8e1bc69aad6606095ed464f95786"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 first.ts",
+      "sha256": "ecfd40d468d0cf5f2f5cb5ea906816a6dccc8e1bc69aad6606095ed464f95786"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 second.ts",
+      "sha256": "ecfd40d468d0cf5f2f5cb5ea906816a6dccc8e1bc69aad6606095ed464f95786"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 first.tsx",
+      "sha256": "ecfd40d468d0cf5f2f5cb5ea906816a6dccc8e1bc69aad6606095ed464f95786"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 second.tsx",
+      "sha256": "ecfd40d468d0cf5f2f5cb5ea906816a6dccc8e1bc69aad6606095ed464f95786"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 first.jsx",
+      "sha256": "ecfd40d468d0cf5f2f5cb5ea906816a6dccc8e1bc69aad6606095ed464f95786"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 second.jsx",
+      "sha256": "ecfd40d468d0cf5f2f5cb5ea906816a6dccc8e1bc69aad6606095ed464f95786"
+    }
+  ],
+  "invalid_encoding_exit": 0,
+  "all_fixture_hashes_unchanged": true,
+  "max_size": "u64::MAX: representable file metadata length cannot exceed this; not a size exclusion"
+}

@@ -1,0 +1,984 @@
+{
+  "census r2 report": {
+    "keys": [
+      "duplicates",
+      "statistics",
+      "summary"
+    ],
+    "statistics": {
+      "detectionDate": "2026-09-17T08:37:44.632Z",
+      "formats": {
+        "javascript": {
+          "clones": 5,
+          "duplicatedLines": 35,
+          "duplicatedTokens": 198,
+          "lines": 60,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 58.333333333333336,
+          "percentageTokens": 74.71698113207546,
+          "sources": 12,
+          "tokens": 265
+        },
+        "jsx": {
+          "clones": 1,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "lines": 20,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 35.0,
+          "percentageTokens": 44.9438202247191,
+          "sources": 4,
+          "tokens": 89
+        },
+        "python": {
+          "clones": 1,
+          "duplicatedLines": 6,
+          "duplicatedTokens": 30,
+          "lines": 16,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 37.5,
+          "percentageTokens": 46.875,
+          "sources": 4,
+          "tokens": 64
+        },
+        "tsx": {
+          "clones": 1,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "lines": 20,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 35.0,
+          "percentageTokens": 44.9438202247191,
+          "sources": 4,
+          "tokens": 89
+        },
+        "typescript": {
+          "clones": 1,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "lines": 20,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 35.0,
+          "percentageTokens": 44.9438202247191,
+          "sources": 4,
+          "tokens": 89
+        }
+      },
+      "total": {
+        "clones": 9,
+        "duplicatedLines": 62,
+        "duplicatedTokens": 348,
+        "lines": 136,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 45.588235294117645,
+        "percentageTokens": 58.38926174496645,
+        "sources": 28,
+        "tokens": 596
+      }
+    },
+    "summary": {
+      "by": "tokens",
+      "files": [
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 28,
+          "duplicatedTokens": 159,
+          "format": "javascript",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone a.js",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "jsx",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone a.jsx",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "javascript",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone a.mjs",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "typescript",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone a.ts",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "tsx",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone a.tsx",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "javascript",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone b.js",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "jsx",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone b.jsx",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "javascript",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone b.mjs",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "typescript",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone b.ts",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "tsx",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone b.tsx",
+          "tokens": 40
+        },
+        {
+          "bytes": 197,
+          "complexity": 2,
+          "duplicatedLines": 14,
+          "duplicatedTokens": 78,
+          "format": "javascript",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone a.cjs",
+          "tokens": 39
+        },
+        {
+          "bytes": 197,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 39,
+          "format": "javascript",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone b.cjs",
+          "tokens": 39
+        },
+        {
+          "bytes": 175,
+          "complexity": 2,
+          "duplicatedLines": 6,
+          "duplicatedTokens": 30,
+          "format": "python",
+          "lines": 7,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone a.py",
+          "tokens": 30
+        },
+        {
+          "bytes": 175,
+          "complexity": 2,
+          "duplicatedLines": 6,
+          "duplicatedTokens": 30,
+          "format": "python",
+          "lines": 7,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone b.py",
+          "tokens": 30
+        },
+        {
+          "bytes": 20,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "javascript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\short caf\u00e9.cjs",
+          "tokens": 5
+        },
+        {
+          "bytes": 20,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "javascript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\short caf\u00e9.js",
+          "tokens": 5
+        },
+        {
+          "bytes": 20,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "jsx",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\short caf\u00e9.jsx",
+          "tokens": 5
+        },
+        {
+          "bytes": 20,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "javascript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\short caf\u00e9.mjs",
+          "tokens": 5
+        },
+        {
+          "bytes": 20,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "typescript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\short caf\u00e9.ts",
+          "tokens": 5
+        },
+        {
+          "bytes": 20,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "tsx",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\short caf\u00e9.tsx",
+          "tokens": 5
+        },
+        {
+          "bytes": 15,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "javascript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\comment.cjs",
+          "tokens": 4
+        },
+        {
+          "bytes": 15,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "javascript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\comment.js",
+          "tokens": 4
+        },
+        {
+          "bytes": 15,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "jsx",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\comment.jsx",
+          "tokens": 4
+        },
+        {
+          "bytes": 15,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "javascript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\comment.mjs",
+          "tokens": 4
+        },
+        {
+          "bytes": 15,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "typescript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\comment.ts",
+          "tokens": 4
+        },
+        {
+          "bytes": 15,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "tsx",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\comment.tsx",
+          "tokens": 4
+        },
+        {
+          "bytes": 8,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "python",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\short caf\u00e9.py",
+          "tokens": 3
+        },
+        {
+          "bytes": 14,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "python",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\comment.py",
+          "tokens": 1
+        }
+      ],
+      "folders": [
+        {
+          "bytes": 3016,
+          "complexity": 42,
+          "duplicatedLines": 124,
+          "files": 28,
+          "lines": 136,
+          "path": "//?/C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/fixtures with spaces",
+          "tokens": 596
+        }
+      ],
+      "totalFiles": 28,
+      "totalFolders": 1
+    },
+    "clone_count": 9
+  },
+  "clone report": {
+    "keys": [
+      "duplicates",
+      "statistics",
+      "summary"
+    ],
+    "statistics": {
+      "detectionDate": "2026-09-17T08:36:50.221Z",
+      "formats": {
+        "javascript": {
+          "clones": 3,
+          "duplicatedLines": 21,
+          "duplicatedTokens": 120,
+          "lines": 36,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 58.333333333333336,
+          "percentageTokens": 75.0,
+          "sources": 4,
+          "tokens": 160
+        },
+        "jsx": {
+          "clones": 1,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "lines": 18,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 38.88888888888889,
+          "percentageTokens": 50.0,
+          "sources": 2,
+          "tokens": 80
+        },
+        "tsx": {
+          "clones": 1,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "lines": 18,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 38.88888888888889,
+          "percentageTokens": 50.0,
+          "sources": 2,
+          "tokens": 80
+        },
+        "typescript": {
+          "clones": 1,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "lines": 18,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 38.88888888888889,
+          "percentageTokens": 50.0,
+          "sources": 2,
+          "tokens": 80
+        }
+      },
+      "total": {
+        "clones": 6,
+        "duplicatedLines": 42,
+        "duplicatedTokens": 240,
+        "lines": 90,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 46.666666666666664,
+        "percentageTokens": 60.0,
+        "sources": 10,
+        "tokens": 400
+      }
+    },
+    "summary": {
+      "by": "tokens",
+      "files": [
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 21,
+          "duplicatedTokens": 120,
+          "format": "javascript",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone a.js",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "jsx",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone a.jsx",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "javascript",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone a.mjs",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "typescript",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone a.ts",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "tsx",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone a.tsx",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "javascript",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone b.js",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "jsx",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone b.jsx",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "javascript",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone b.mjs",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "typescript",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone b.ts",
+          "tokens": 40
+        },
+        {
+          "bytes": 204,
+          "complexity": 2,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 40,
+          "format": "tsx",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\clone b.tsx",
+          "tokens": 40
+        }
+      ],
+      "folders": [
+        {
+          "bytes": 2040,
+          "complexity": 20,
+          "duplicatedLines": 84,
+          "files": 10,
+          "lines": 90,
+          "path": "//?/C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/fixtures with spaces",
+          "tokens": 400
+        }
+      ],
+      "totalFiles": 10,
+      "totalFolders": 1
+    },
+    "clone_count": 6
+  },
+  "comment r2 report": {
+    "keys": [
+      "duplicates",
+      "statistics",
+      "summary"
+    ],
+    "statistics": {
+      "detectionDate": "2026-09-17T08:37:46.617Z",
+      "formats": {
+        "javascript": {
+          "clones": 0,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "lines": 3,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 0.0,
+          "percentageTokens": 0.0,
+          "sources": 3,
+          "tokens": 12
+        },
+        "jsx": {
+          "clones": 0,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "lines": 1,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 0.0,
+          "percentageTokens": 0.0,
+          "sources": 1,
+          "tokens": 4
+        },
+        "python": {
+          "clones": 0,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "lines": 1,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 0.0,
+          "percentageTokens": 0.0,
+          "sources": 1,
+          "tokens": 1
+        },
+        "tsx": {
+          "clones": 0,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "lines": 1,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 0.0,
+          "percentageTokens": 0.0,
+          "sources": 1,
+          "tokens": 4
+        },
+        "typescript": {
+          "clones": 0,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "lines": 1,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 0.0,
+          "percentageTokens": 0.0,
+          "sources": 1,
+          "tokens": 4
+        }
+      },
+      "total": {
+        "clones": 0,
+        "duplicatedLines": 0,
+        "duplicatedTokens": 0,
+        "lines": 7,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 0.0,
+        "percentageTokens": 0.0,
+        "sources": 7,
+        "tokens": 25
+      }
+    },
+    "summary": {
+      "by": "tokens",
+      "files": [
+        {
+          "bytes": 15,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "javascript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\comment.cjs",
+          "tokens": 4
+        },
+        {
+          "bytes": 15,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "javascript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\comment.js",
+          "tokens": 4
+        },
+        {
+          "bytes": 15,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "jsx",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\comment.jsx",
+          "tokens": 4
+        },
+        {
+          "bytes": 15,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "javascript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\comment.mjs",
+          "tokens": 4
+        },
+        {
+          "bytes": 15,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "typescript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\comment.ts",
+          "tokens": 4
+        },
+        {
+          "bytes": 15,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "tsx",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\comment.tsx",
+          "tokens": 4
+        },
+        {
+          "bytes": 14,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "python",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\comment.py",
+          "tokens": 1
+        }
+      ],
+      "folders": [
+        {
+          "bytes": 104,
+          "complexity": 7,
+          "duplicatedLines": 0,
+          "files": 7,
+          "lines": 7,
+          "path": "//?/C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/fixtures with spaces",
+          "tokens": 25
+        }
+      ],
+      "totalFiles": 7,
+      "totalFolders": 1
+    },
+    "clone_count": 0
+  },
+  "empty r2 report": {
+    "keys": [
+      "duplicates",
+      "statistics",
+      "summary"
+    ],
+    "statistics": {
+      "detectionDate": "2026-09-17T08:37:45.924Z",
+      "formats": {},
+      "total": {
+        "clones": 0,
+        "duplicatedLines": 0,
+        "duplicatedTokens": 0,
+        "lines": 0,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 0.0,
+        "percentageTokens": 0.0,
+        "sources": 0,
+        "tokens": 0
+      }
+    },
+    "summary": {
+      "by": "tokens",
+      "files": [],
+      "folders": [],
+      "totalFiles": 0,
+      "totalFolders": 0
+    },
+    "clone_count": 0
+  },
+  "short r2 report": {
+    "keys": [
+      "duplicates",
+      "statistics",
+      "summary"
+    ],
+    "statistics": {
+      "detectionDate": "2026-09-17T08:37:45.203Z",
+      "formats": {
+        "javascript": {
+          "clones": 0,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "lines": 3,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 0.0,
+          "percentageTokens": 0.0,
+          "sources": 3,
+          "tokens": 15
+        },
+        "jsx": {
+          "clones": 0,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "lines": 1,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 0.0,
+          "percentageTokens": 0.0,
+          "sources": 1,
+          "tokens": 5
+        },
+        "python": {
+          "clones": 0,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "lines": 1,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 0.0,
+          "percentageTokens": 0.0,
+          "sources": 1,
+          "tokens": 3
+        },
+        "tsx": {
+          "clones": 0,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "lines": 1,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 0.0,
+          "percentageTokens": 0.0,
+          "sources": 1,
+          "tokens": 5
+        },
+        "typescript": {
+          "clones": 0,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "lines": 1,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 0.0,
+          "percentageTokens": 0.0,
+          "sources": 1,
+          "tokens": 5
+        }
+      },
+      "total": {
+        "clones": 0,
+        "duplicatedLines": 0,
+        "duplicatedTokens": 0,
+        "lines": 7,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 0.0,
+        "percentageTokens": 0.0,
+        "sources": 7,
+        "tokens": 33
+      }
+    },
+    "summary": {
+      "by": "tokens",
+      "files": [
+        {
+          "bytes": 20,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "javascript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\short caf\u00e9.cjs",
+          "tokens": 5
+        },
+        {
+          "bytes": 20,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "javascript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\short caf\u00e9.js",
+          "tokens": 5
+        },
+        {
+          "bytes": 20,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "jsx",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\short caf\u00e9.jsx",
+          "tokens": 5
+        },
+        {
+          "bytes": 20,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "javascript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\short caf\u00e9.mjs",
+          "tokens": 5
+        },
+        {
+          "bytes": 20,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "typescript",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\short caf\u00e9.ts",
+          "tokens": 5
+        },
+        {
+          "bytes": 20,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "tsx",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\short caf\u00e9.tsx",
+          "tokens": 5
+        },
+        {
+          "bytes": 8,
+          "complexity": 1,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "format": "python",
+          "lines": 1,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\fixtures with spaces\\short caf\u00e9.py",
+          "tokens": 3
+        }
+      ],
+      "folders": [
+        {
+          "bytes": 128,
+          "complexity": 7,
+          "duplicatedLines": 0,
+          "files": 7,
+          "lines": 7,
+          "path": "//?/C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/fixtures with spaces",
+          "tokens": 33
+        }
+      ],
+      "totalFiles": 7,
+      "totalFolders": 1
+    },
+    "clone_count": 0
+  },
+  "zero report": {
+    "keys": [
+      "duplicates",
+      "statistics",
+      "summary"
+    ],
+    "statistics": {
+      "detectionDate": "2026-09-17T08:36:53.535Z",
+      "formats": {},
+      "total": {
+        "clones": 0,
+        "duplicatedLines": 0,
+        "duplicatedTokens": 0,
+        "lines": 0,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 0.0,
+        "percentageTokens": 0.0,
+        "sources": 0,
+        "tokens": 0
+      }
+    },
+    "summary": {
+      "by": "tokens",
+      "files": [],
+      "folders": [],
+      "totalFiles": 0,
+      "totalFolders": 0
+    },
+    "clone_count": 0
+  }
+}

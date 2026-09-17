@@ -1,0 +1,113 @@
+{
+  "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\shape report py\\jscpd-report.json",
+  "sha256": "17c46e0648be5a8946bbfd0525aafa86813a40423380d3e03fa753e9682ed209",
+  "raw": {
+    "duplicates": [
+      {
+        "firstFile": {
+          "end": 8,
+          "endLoc": {
+            "column": 59,
+            "line": 8,
+            "position": 270
+          },
+          "name": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\shape fixtures\\shape a.py",
+          "start": 1,
+          "startLoc": {
+            "column": 0,
+            "line": 1,
+            "position": 0
+          }
+        },
+        "format": "python",
+        "fragment": "# caf\u00e9 \ud83d\ude00\nasync def outer(value):\n    def inner(item):\n        return item + 4 if item > 3 else item - 2\n    message = f\"caf\u00e9 {inner(value)}\"\n    division = value / 2\n    transformer = lambda item: item * 2\n    return message if transformer(division) > 3 else \"none\"",
+        "isNew": false,
+        "kind": "exact",
+        "lines": 8,
+        "secondFile": {
+          "end": 8,
+          "endLoc": {
+            "column": 59,
+            "line": 8,
+            "position": 270
+          },
+          "name": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\shape fixtures\\shape b.py",
+          "start": 1,
+          "startLoc": {
+            "column": 0,
+            "line": 1,
+            "position": 0
+          }
+        },
+        "tokens": 54
+      }
+    ],
+    "statistics": {
+      "detectionDate": "2026-09-17T08:43:41.027Z",
+      "formats": {
+        "python": {
+          "clones": 1,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 54,
+          "lines": 16,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 43.75,
+          "percentageTokens": 50.0,
+          "sources": 2,
+          "tokens": 108
+        }
+      },
+      "total": {
+        "clones": 1,
+        "duplicatedLines": 7,
+        "duplicatedTokens": 54,
+        "lines": 16,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 43.75,
+        "percentageTokens": 50.0,
+        "sources": 2,
+        "tokens": 108
+      }
+    },
+    "summary": {
+      "by": "tokens",
+      "files": [
+        {
+          "bytes": 279,
+          "complexity": 3,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 54,
+          "format": "python",
+          "lines": 8,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\shape fixtures\\shape a.py",
+          "tokens": 54
+        },
+        {
+          "bytes": 279,
+          "complexity": 3,
+          "duplicatedLines": 7,
+          "duplicatedTokens": 54,
+          "format": "python",
+          "lines": 8,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\shape fixtures\\shape b.py",
+          "tokens": 54
+        }
+      ],
+      "folders": [
+        {
+          "bytes": 558,
+          "complexity": 6,
+          "duplicatedLines": 14,
+          "files": 2,
+          "lines": 16,
+          "path": "//?/C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/shape fixtures",
+          "tokens": 108
+        }
+      ],
+      "totalFiles": 2,
+      "totalFolders": 1
+    }
+  }
+}

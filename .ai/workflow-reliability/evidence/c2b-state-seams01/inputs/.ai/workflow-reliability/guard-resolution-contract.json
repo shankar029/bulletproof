@@ -1,0 +1,44 @@
+{
+  "revision": "c1-resolved-views",
+  "status": "parent accepted after independent design-boundary review: APPROVE",
+  "addresses": "evidence/c1-implementation.md",
+  "unchanged": [
+    "Strict persisted r2 WorkflowContract, CurrentDesign, Ledger, Event, Receipt and GuardSnapshot schemas",
+    "Only requires edges own dependencies; no persisted reverse graph",
+    "evaluate performs no I/O, callbacks or global-cache reads",
+    "Standalone measurement and evidence.py remain independent of workflow"
+  ],
+  "resolved_ledger": {
+    "document": "Validated on-disk Ledger",
+    "receipts": "Mapping from ledger-referenced receipt ID to ReceiptObservation, including recursively referenced prerequisites",
+    "ReceiptObservation": {
+      "status": "valid|missing|stale|invalid",
+      "document": "Validated Receipt or null",
+      "observed_sha256": "Observed immutable file-byte hash or null",
+      "artifacts": "Mapping of declared artifact paths to observations of existence, expected/observed hash and byte length",
+      "reason": "Explicit diagnostic, empty only for valid observations"
+    },
+    "rules": "Resolve only validated relative receipt/artifact paths inside the workspace/root boundary. Reject links and traversal before reading. Cyclic receipt references are invalid, never recursive overflow. Missing, changed or malformed referenced proof becomes an explicit observation, never a pass. Invalid top-level ledger or contract is an input error."
+  },
+  "resolved_inputs": {
+    "target": "The requested target's ordinary GuardSnapshot",
+    "targets": "Mapping of canonical kind:id to current GuardSnapshot or explicit blocked observation for each recursively required target",
+    "rules": "Derive membership and prerequisite closure from the validated requires graph. Include member actions when evaluating increment/ship. Hash each target's own normalized FileScope, preserving directory membership, missing declared paths and exact exclusions. Do not compare a target-wide digest to a different prerequisite scope."
+  },
+  "public_boundary": {
+    "load_workspace": "Returns (WorkflowContract, CurrentDesign, ResolvedLedger), with resolved views represented by named ordinary Python dataclasses or TypedDicts in workflow_state.py",
+    "bind_inputs": "Returns ResolvedInputs for the requested target and its derived dependency closure",
+    "evaluate": "evaluate(contract, resolved_ledger, resolved_inputs, target) -> Readiness; consumes materialized values only",
+    "serialization": "Event.inputs, Receipt.inputs and Readiness.inputs serialize only the existing target GuardSnapshot, never resolved views, receipt maps or handles",
+    "locking": "CLI freshly loads and binds under its already-held lock before decisions and append/admission; read-only status may observe a concurrent change and is not permission to dispatch",
+    "dependency_direction": "workflow_gate may import pure types/helpers from workflow_state; workflow_state must not import workflow_gate. Persistence does not invoke decision logic."
+  },
+  "acceptance": [
+    "A matching pass event with a missing/tampered receipt or artifact still blocks.",
+    "A valid receipt in another target's different scope is compared to that target's current scope.",
+    "Changes reopen affected dependency chains without invalidating unrelated receipt IDs or bytes.",
+    "evaluate runs on materialized fixture views without filesystem access.",
+    "Current checks and historical before-action consumed checks keep distinct freshness semantics.",
+    "Resolved views are absent from persisted JSON; unknown persisted keys remain rejected."
+  ]
+}

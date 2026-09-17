@@ -1,0 +1,222 @@
+{
+  "document": "C2 final bounded amendment: ordinary CLI only",
+  "revision": "c2-recovery-r2",
+  "status": "DESIGN ONLY; parent adopted F1-F4 and scope direction; final independent review and implementation dispatch pending",
+  "anchor": "d971634219a633cc4401fb7dcba9685e672978aa",
+  "human_approval": "unconfirmed; existing unattended authorization is not human approval",
+  "scope": {
+    "name": "C2b-ordinary-v1",
+    "acs": ["AC04 partial routed execution", "AC05 partial artifact resume; recovery incomplete", "AC09 affected integration proof"],
+    "decision": "Defer production recovery-gate machinery and live v1-to-v2 migration. Implement only independently useful ordinary CLI operations after this revision's independent review and parent acceptance.",
+    "implemented_verb_target": ["status", "next", "record", "close", "adopt"],
+    "original_requirement_retained": "The original six-verb C2 requirement still includes recover. It is BLOCKED/FUTURE, not deleted or fulfilled. No recover subparser, handler, stub decoder, generic always-unverified qualifier or positive synthetic recovery path is included in C2b-ordinary-v1. Overall C2 and AC05 remain incomplete.",
+    "not_an_authorization_now": "This design role writes only the two current design artifacts, two exact r1 archives and r2 disposition. No code, tests, operator guide, shared status, install, platform search, agent or publication.",
+    "unchanged_core": [
+      "Persisted WorkflowContract, CurrentDesign, Ledger, Event, Receipt, GuardSnapshot and all other existing v1 workflow record shapes",
+      "ResolvedLedger(document, receipts), ResolvedInputs, gate public evaluate signature and pure/no-I/O boundary",
+      "Only Action.requires and Increment.requires own dependencies; exact historical receipt-reference chronology and evaluation-local prefix caches",
+      "Legacy completed, failed/no-spawn execution and external-handoff receipt semantics; no imported historical execution or approval",
+      "Eight-field ProcessObservation; run_capture signature/tuple/callback behavior and currently null creation identity",
+      "Standalone evidence.py and its lexical exclusive_lock semantics",
+      "Actual quality obligations, current-design bindings, independent roles, scoped reopening and actual Git commit/source verification"
+    ],
+    "required_core_interface_exception": "Ordinary adopt cannot validate a prospective design through _load_design because that function first reads the live current-design.json. A partial retry also cannot call current bind_inputs on its coherent old basis while live publication is inconsistent. Propose one shared validation extraction plus a keyword-only explicit validated-basis mode on bind_inputs, detailed below. No schema or gate change. These exact state.py seams require explicit review/parent authorization and affected C1 revalidation before editing frozen code."
+  },
+  "evidence": {
+    "facts": [
+      "workflow_state.py:760-804 _load_design reads the live pointer and validates retained paths/hashes, DesignReview, candidate hashes, history and adoption. load_workspace:877-889 and bind_inputs:974-993 depend on it.",
+      "workflow_state.py:631-725 strictly validates v1 Event/Ledger; append_event:996-1028 requires an existing ledger, assigns sequence and validates before atomic replacement, but does not require live current-design loading.",
+      "workflow_gate.py:206-221 rejects interrupted/recovered as completed proof; unresolved:456-467 blocks executable admissions without completed, even if a lexical lock disappeared.",
+      "evidence.py:132-172 provides atomic JSON replacement and exclusive O_EXCL lock whose finally removes the unchanged owned file. No lifetime proof follows from that removal.",
+      "run.py:82-212 emits actual observer events with null creation identity; direct exit/best-effort cleanup is not descendant-death proof.",
+      "tests/workflow_fixtures.py:111-144 adopt writes workflow/pointer before the adopted event. This synthetic fixture is not a crash-safe production bootstrap protocol.",
+      "evidence/c2-recovery-platform-research.md observed zero command-resolution matches for docker and docker.exe, no daemon or mutation operation, and no canonical workflow.json/ledger.json in the three immediate root .ai directories. These are bounded observations, not global absence or proof of no unresolved processes."
+    ],
+    "inference": "A supported recovery producer is a prerequisite, not an adapter to attach after immutable null-identity admissions. Defer those new records and predicates entirely. An ordinary v1 CLI remains useful if its adoption entry path is explicitly specified.",
+    "qualification_blocker": "No available qualified producer supplies pre-admission identity plus complete lifetime/guard-inactivity evidence. Stop that path; no alternate platform search is authorized.",
+    "history": {
+      "r1_contract": {"path": "evidence\\c2-recovery-r1-contract.json", "sha256": "06b940ad95641c7a75f537871bda10b1bb9980b08a2ce8edc1e4fdf2572e52e5"},
+      "r1_design": {"path": "evidence\\c2-recovery-r1-design.html", "sha256": "319b7963dce63653c77e036050cbf128629dc7729ddbb05470620a8a15cfeaec"},
+      "unchanged": ["evidence\\c2-recovery-design-notes.md", "evidence\\c2-recovery-design-review.md", "evidence\\c2-recovery-platform-research.md"],
+      "archive_policy": "Exact r1 byte copies, not corrected historical prose. Relative links in the archived HTML retain their original bytes; use the current overview for navigation."
+    }
+  },
+  "review_dispositions": {
+    "F1": {
+      "decision": "ADOPT; recovery implementation BLOCKED",
+      "change": "Withdraw C2R-D-first recovery state/gate implementation, all v2 ownership records, resolved recovery dataclasses/qualifier signatures, lifetime predicates and second acquisition-lock protocol. No latent production interfaces or dead tests for an unavailable positive.",
+      "dispatch": "Only C2b-ordinary-v1 can proceed after final review. It never resolves an interrupted executable lifetime."
+    },
+    "F2": {
+      "decision": "ADOPT; live migration DEFERRED",
+      "change": "No upgrade_ledger, archived v1 ledger, mixed-prefix validator or new version. Existing persistent v1 inputs retain ordinary semantics. Preserve historical artifacts. Specify only ordinary initial/revised adoption publication using existing v1 schemas and the finite table below.",
+      "bound": "Retained ordinary candidate workflow/design documents support exact publication retry; they are not a ledger archive, migration, second event journal or mutable status tracker."
+    },
+    "F3": {
+      "decision": "ADOPT",
+      "change": "Unknown spawn blocks all currently unsupported recovery. No current exception. A future qualified complete-environment-reset path could resolve it only with qualified pre-admission environment/guard binding and inactive pending launch authority. That is a deferred constraint, not an executable interface."
+    },
+    "F4": {
+      "decision": "ADOPT",
+      "change": "No numeric review wall-clock guarantee. Resolve unchanged exact reviewed/report bytes and subject-bound metadata before the accepted append; ledger sequence establishes acceptance order. Do not use mtime or invent a FindingResult timestamp.",
+      "future": "Real platform capture/guard/lifetime temporal qualification remains mandatory before any future recovery, separate from review-byte acceptance."
+    }
+  },
+  "ordinary_boundary": {
+    "cli_options": "Retain design-contracts.json.cli.workflow options for status/next/record/close/adopt exactly. No new flags, command overrides or bypasses. recover is absent from accepted subcommands; invoking it yields argparse's unsupported-command exit 2, not a pretend recovery result.",
+    "help_and_operator_guide": "List five actually implemented verbs once implemented. Explicit limitations section: original recover is deferred/blocked; unresolved executable lifetime stops mutation/dispatch in this workspace. No age, PID, direct/root exit, deleted lock, new directory/worktree, imported report or automatic replay clears it. Human approval remains unconfirmed unless actual attributed evidence exists. Installing a tool or making a clean worktree is not a reset.",
+    "normal_load": "status/next/record/close use load_workspace and bind_inputs; no alternate permissive loader. status may report malformed/incomplete adoption, not readiness to dispatch. Only adopt has the narrow raw-read publication entry below.",
+    "lock": "Use one CLI lexical lock at .ai\\SLUG\\evidence\\workflow.lock via the existing evidence.exclusive_lock for every mutating operation, held through revalidation and writes and, for next, capture/completion. Original LockOwner metadata in this lexical file is collision ownership only, not durable recovery authority. No extra acquisition lock is needed because no stale lock is released. A present/orphan lock gives conflict 3; never delete or steal it.",
+    "admission": "Under that lock, load/bind/evaluate; blocked implies no runner call. Persist v1 admission and launch-intent before run_capture, then synchronous actual observer events. No authority is hidden in reason, receipt_refs, another tracker, or synthetic process events. A command/handoff follows the original registered definition only.",
+    "uncertain_lifetime": "No completed event on observer-persistence failure or unresolved launch/capture state, even if callback later saw direct exit or wrapper returned zero. Preserve actual observations, error diagnostics and unresolved admission. CLI preflight rejects every mutating path with RECOVERY_UNVERIFIED obtained from authoritative Readiness; it does not remove/filter admissions. Read-only status remains available.",
+    "normal_completion": "For an ordinary observed terminal capture without recovery uncertainty, retain existing completion rules and child/structured outcome separation. launch-failed has the observer's actual null returncode, not an invented child 127; the wrapper still returns its actual 127/125. Failed/no-spawn is not executed work. Timeout/cleanup uncertainty is not repaired from a root exit. Do not retrofit these CLI classifications onto old completed ledger records.",
+    "handoff": "Null-command check admissions await response; no child/launch intent and no process-recovery interpretation. record accepts only the matching admitted attributed proof under unchanged receipt validation. Existing pending handoffs and completed history remain intact across ordinary compatible adoption.",
+    "record_close": "Preserve the original immutable receipt/producer/current-source/prerequisite checks. Review/report bytes must resolve before acceptance append; ledger sequence, not invented review timestamps, binds order. close must check actual resolved Git commit/current feature HEAD and scoped committed source/modes/membership against the proven source, not just accept a 40-hex string. Gate readiness/mandatory verification/review/metrics remain required. No fake positive quality closure while Q2-Q5 proof is absent.",
+    "lifetime_preflight_for_adopt": "On a coherent old state, evaluate the existing ship target with its bound inputs and resolved ledger; refuse RECOVERY_UNVERIFIED without requiring ship's ordinary closure proofs to be complete. This consults Readiness, not a copied lifetime state machine. In a partial revised retry use bind_inputs(root,W0,ship,design=P0,ledger=L0) and ResolvedLedger(L0,resolve_receipts(root,slug,L0,claim_receipt_ids)), then the unchanged evaluate. No copied unresolved predicate or private _Evaluation(None) shortcut. The retry cannot append a lifecycle resolution or permit a child.",
+    "scope_observation": "Lock/output paths must not accidentally be input evidence. Retain current _snapshot_for exact-output exclusion restrictions; do not add a broad .ai exclusion or weaken snapshots to hide these files. Choose declared input scopes that do not cover the transient lock. An incompatible scope is an explicit input/design error, not silently normalized away."
+  },
+  "adopt_contract": {
+    "purpose": "Initial and revised v1 design adoption only. No recovery, migration, historical execution import or general transaction-repair API.",
+    "inputs_without_new_flags": [
+      "--revision REV selects retained .ai\\SLUG\\design-history\\REV.html and .ai\\SLUG\\contracts\\REV.json as already required by _load_design.",
+      "Also stage .ai\\SLUG\\design-history\\REV.workflow.json (existing WorkflowContract shape) and REV.current-design.json (existing CurrentDesign shape). These are immutable proposed publication documents, not new record schemas.",
+      "--review PATH is a safe repository-relative JSON file containing the existing DesignReview metadata shape, exactly equal as a value to candidate CurrentDesign.review. Its artifact points to the unchanged independently produced report. Its candidate_hashes must bind document/components/canonical WorkflowContract exactly; copy no reviewer identity to the adopter.",
+      "All staged candidate files, metadata/report/dispositions/authorization and retained history refs are read/hash-checked before writes. Missing or malformed candidate input is error 2. No CLI-generated approval, revision or claimed historical execution.",
+      "For revision adoption, retain exact current workflow.json and current-design.json bytes as design-history\\OLD.workflow.json and OLD.current-design.json before appending the new adoption. If identical retained files already exist, reuse them. If any existing retained file differs, including a partial earlier write, conflict 3 with no overwrite. This retains ordinary design inputs, not the ledger.",
+      "For candidates published by this CLI, workflow/current-design JSON serialization is the existing write_json_atomic sorted UTF-8 JSON plus LF. Retained proposed JSON documents must use those canonical bytes so retry comparisons are exact. Older coherent v1 live documents may be noncanonical; retain their original bytes for the old-side comparison, without rewriting history."
+    ],
+    "new_shared_validation_seam": {
+      "file": "scripts\\workflow_state.py",
+      "signature": "validate_design_binding(root: Path, contract: dict, design: dict, ledger: dict) -> dict",
+      "what": "Validate explicit contract/ledger shapes and slug agreement, then the same design schema, retained paths/artifacts, review/context/unattended authorization, candidate hashes, normative components, history/adoption order and source bindings currently in _load_design. Return the validated design. Read-only; no adoption, append, repair, gate invocation or weakening of checks.",
+      "as_is_to_be": "_load_design(root, contract, ledger) still reads only current-design.json, then delegates to this helper. load_workspace retains its signature; bind_inputs retains existing positional-call behavior with the explicit paired keyword extension below. Both normal paths remain fail-closed. The helper permits adopt to validate an in-memory prospective triple before any live publication, or the exact pre-append basis on retry.",
+      "callers": "Existing _load_design, explicit-basis bind_inputs mode, and planned workflow.py adopt path only. No caller-supplied validation callback, temporary permissive live state or isolated fake workspace.",
+      "why": "AC04/05/09: one reusable validation body plus the paired explicit-basis binding mode prevent bootstrap/retry deadlocks without duplicating design or lifetime policy. These are narrow read-only state seams, not a general loader redesign.",
+      "explicit_basis_binding": {
+        "signature": "bind_inputs(root: Path, contract: dict, target: dict, *, design: dict | None = None, ledger: dict | None = None) -> ResolvedInputs",
+        "rules": "Existing three-positional-argument behavior remains unchanged. Both optional values must be supplied together or neither; one alone raises ValueError. If both are supplied, validate the exact contract/design/ledger triple through validate_design_binding, then reuse the existing dependency_closure/_snapshot_for materialization loop unchanged. Do not read the inconsistent live pointer in this branch. No fabricated snapshot or omitted target scopes.",
+        "caller_boundary": "Only adopt's A1/A2 old-basis validation uses explicit values; ordinary status/next/record/close must use normal load/bind. This makes the existing pure evaluate usable for authoritative lifetime preflight against the exact historical prefix without duplicating its predicate. No historical prefix becomes dispatch permission."
+      },
+      "proof_reopened": "C1 _load_design/load_workspace/bind_inputs design-validation, snapshot-scope parity and history/artifact/approval mismatch tests plus prospective-empty-basis/partial-publication cases. Gate, record schemas, runner and evidence.py remain unchanged. If another core change is needed, stop with the exact seam; do not expand these two read-only state interface changes."
+    },
+    "terminology": {
+      "W0_P0": "Exact previous canonical-location workflow/current-design bytes, retained under their old revision paths and verified as a coherent old state. For initial bootstrap both are absent.",
+      "W1_P1": "Exact staged candidate workflow/current-design bytes for REV; both existing v1 shapes, canonical serialization.",
+      "L0": "Actual valid v1 ledger immediately before a new adoption, expected_seq=n. It stays on disk unchanged until append. For initial bootstrap only, it is the existing-schema empty ledger.",
+      "E": "Exactly one ordinary v1 adopted event for REV at n+1, no admission/process/receipt/closure. On retry read E from the actual ledger rather than regenerate its run_id/time.",
+      "L1": "L0 plus E. In a partial publication retry E must be the final event; later runtime events in an incoherent publication are a conflict.",
+      "candidate_validation": "Validate prospective (W1,P1,L1) using validate_design_binding before append. Validate old (W0,P0,L0) for revised adoption, including its exact current source/artifact bindings. Initial basis has no old design and must be truly empty authority, not a discarded prior ledger."
+    },
+    "event_construction": [
+      "Use the existing Event fields: kind=adopted, target=REV, fresh unique run_id, receipt_refs=[], outcome=ready, process=null, child_exit=null, spawned=no, completion_commit=null, actual append UTC time and diagnostic reason. Producer identifies the self-declared acting designer/adopter, never the independent review producer. No new fields.",
+      "Event.inputs.source is a real source_snapshot of the immutable candidate HTML/normative/workflow/current-design documents, exact --review metadata, review report/dispositions/authorization, retained history refs and, on revised adoption, retained exact W0/P0 files. Store ordinary GuardSnapshot only. Check all expected byte hashes, not filename presence.",
+      "Event.inputs.contract has adopted_contract_sha256=canonical_hash(W1), components=P1.components, actions={}, checks={}, claims={}. This is design provenance, not guarded execution proof. Validate snapshot, event at n+1 and prospective ledger using existing validators.",
+      "Re-read exact candidate bytes and live basis under the lock immediately before append_event(workspace,E-without-seq,n). If hashes/sequence changed, no append. F4 guarantee is exact reviewed bytes resolved before accepted sequence, not numeric reviewer time.",
+      "After append, publish workflow.json first, current-design.json second, using write_json_atomic. Finally load_workspace must succeed on the published candidate. No child executes during publication. Do not report adoption success before this final coherent load."
+    ],
+    "initial_bootstrap": [
+      "adopt is dispatched before any unconditional load_workspace call. Acquire the same lexical mutation lock and raw-read only the named authority/candidate files with safe_path/read_json and strict validators.",
+      "A fresh bootstrap requires both live workflow/current-design absent, candidate history=[] and supersedes=null, and ledger absent or exactly empty v1 ledger for this slug. No existing adopted/lifecycle event may be discarded or inferred away.",
+      "Missing authority is not evidence of process separation. Refuse bootstrap if this workspace is known to have unresolved prior guard execution or remnants contradict an empty basis. Do not reinitialize a damaged existing ledger. Untracked hostile deletion is outside this cooperative trust boundary, not a supported reset.",
+      "When ledger is absent, exclusively initialize only the empty existing v1 shape, flush/fsync and validate it; do not overwrite an existing file. A partial/malformed initialization conflicts and stops. No historical admission, receipt or approval is imported.",
+      "Construct E and validate the full prospective triple without reading a live pointer; append through existing append_event once the empty ledger exists. Then publish W1, then P1. An unwound interruption after empty initialization is the B1 table row, not a call to the failing normal loader."
+    ],
+    "finite_publication_retry_table": [
+      {
+        "id": "B0",
+        "disk": "W absent, P absent, ledger absent; complete valid initial candidate and no contradictory prior authority",
+        "checks": "Initial rules; all candidate/review artifacts; prospective E/L1 validates through shared helper",
+        "action": "Exclusively initialize empty L0; append E; publish W1 then P1; final normal load"
+      },
+      {
+        "id": "B1",
+        "disk": "W absent, P absent, ledger exactly empty L0; initial candidate",
+        "checks": "Same initial rules, slug and zero events; never accept malformed/partially written empty ledger",
+        "action": "Append E once; publish W1 then P1; final normal load"
+      },
+      {
+        "id": "A0",
+        "disk": "Coherent W0/P0/L0; candidate supersedes exactly current revision; retained old input copies may be absent or exact",
+        "checks": "Normal old load, no unresolved lifetime, candidate history equals old history plus old current entry, same slug; preserve existing runtime-referenced IDs/command-versus-handoff classification",
+        "action": "Retain absent old input copies exclusively; validate prospective triple; append E; publish W1 then P1"
+      },
+      {
+        "id": "A1",
+        "disk": "L1 ends in exact E; W/P both old, or both absent for initial adoption",
+        "checks": "Read L0 as the exact event prefix before E; verify retained old pair or empty initial basis, candidate/review bytes equal E.inputs.source, E binding/target/fields and prospective triple",
+        "action": "Do not append again; publish W1 then P1; final normal load"
+      },
+      {
+        "id": "A2",
+        "disk": "L1 ends in exact E; W=W1 and P=P0, or P absent for initial adoption",
+        "checks": "Same as A1; raw W bytes exactly candidate; old P exact retained bytes",
+        "action": "Publish only P1; final normal load; do not append or rewrite W"
+      },
+      {
+        "id": "A3",
+        "disk": "W=W1, P=P1 and coherent ledger whose latest adopted revision is REV; later valid ordinary events allowed",
+        "checks": "Normal load plus exact same candidate, review bytes and matching E source/binding; no newer adopted revision",
+        "action": "Return already adopted, no writes or duplicate E. This is a publication acknowledgment, never permission to dispatch; any lifetime blocker still governs ordinary mutation"
+      },
+      {
+        "id": "X",
+        "disk": "Every other combination: P1 before W1, mismatched bytes/review/hash/slug/history, missing old retained input after E, partial immutable file, malformed ledger, E not final while publication incoherent, revision duplicate/different candidate, newer adoption or lost authority",
+        "checks": "No guessing from mtime, reason, PID, lock age, a partial file or candidate existence",
+        "action": "Stop: input error 2 for malformed input; conflict 3 for inconsistent publication. No overwrite, rollback, duplicate append, lifecycle repair, child or new design loop"
+      }
+    ],
+    "retry_limits": [
+      "The table describes adopt-only publication retry after exception unwinding releases the owned lock. A process death leaving a lexical lock blocks entry with exit 3. No automatic stale-lock repair or universal crash-recovery claim.",
+      "Before E, exact orphan retained candidate/old-design copies confer no authority; A0/B0/B1 may reuse them only after validating all candidate/current inputs. Partially created immutable copies are conflicts, never silently truncated or replaced.",
+      "All revisions/IDs and candidate paths are validated before I/O. Files not named by current/candidate history are not searched for a replacement state. No mutable transaction/status file is added.",
+      "A1/A2 cannot invoke normal load first. They raw-read the finite named inputs, validate the exact old and prospective triples through the shared helper, and use the ledger's actual E/prefix. After publication they must call normal load.",
+      "On a partial revised retry, unresolved executable lifetime is tested against the validated L0 prefix and the old contract without deleting any event from the actual ledger. Reconstruct only that historical validation basis, not a filtered dispatch ledger. No next/record/close can use this basis.",
+      "Prospective adoption must preserve action/check/increment IDs referenced by existing runtime events and the executable-versus-null-command classification for admitted actions. Do not turn an unresolved executable admission into a handoff, remove it or reinterpret it via adoption. Compatible component/command changes reopen proof by existing freshness rules; incompatible historical ID retirement stops for a later contract decision."
+    ]
+  },
+  "what_can_be_implemented_after_review": [
+    "Shared design-validation extraction and explicit-basis bind_inputs mode for finite ordinary adopt bootstrap/publication/retry; all persisted schemas remain v1",
+    "Five-verb parser/help, real registered execution and immutable admitted record/receipt flow using existing state/gate/observer",
+    "Read-only authoritative status, real no-spawn on block, admitted handoffs and artifact-only selective resume without process recovery",
+    "Actual Git close preconditions and honest missing-quality denial; no fabricated positive metrics",
+    "Operator reference for the five supported verbs, explicit deferred sixth requirement and permanent unresolved-lifetime stop in this scope"
+  ],
+  "deferred_not_executable_interfaces": [
+    "recover subcommand and all durable full admission-to-owner/platform-identity bindings needed for real positive recovery",
+    "Ledger/Event v2, live migration, mixed-prefix archive, RecoveryObservation/QualifiedRecoveryFacts, qualifier/decoder registry and recovery gate predicates",
+    "Stale lock release, second acquisition lock, automatic replay, process/orphan supervision or environment reset",
+    "Any future known-tree recovery without qualified admitted creation identity and exhaustive descendant coverage",
+    "Any future unknown-spawn exception except qualified complete-environment reset bound before admission, with matched inactive guard/pending launch authority",
+    "Any claim that immutable currently unqualified v1 runs will become recoverable after a future adapter appears",
+    "Platform temporal proof from caller booleans, timestamps, file mtime or self-declared independent role; actual semantic qualification is still mandatory"
+  ],
+  "verification_grouping": {
+    "now_in_this_role": "Read/compare accepted sources, preserve exact r1 bytes, validate new JSON/links/whitespace and protected hashes only. Parent renders the short two-page-target overview and commissions the same independent reviewer.",
+    "after_review_step_1": "One small C1-boundary correction: extract validate_design_binding and add paired explicit-basis keywords to bind_inputs without changing predicates/materialization; add focused prospective/live parity and missing/tampered/history/review/authorization/adoption tests. Independent acceptance before widening frozen ownership.",
+    "after_review_step_2": "Existing C2b owner implements five ordinary verbs and adoption table, tests real filesystem/process effects and documents only supported behavior. No platform or collector work in this context; stop any new material seam.",
+    "tests": [
+      "Assert parser/help list exactly status,next,record,close,adopt; recover is unsupported with explicit future limitation, no stub or recovery event appended",
+      "Real empty-authority initial adoption, valid revised adoption and A3 idempotency; exactly one new adopted event, no imported execution/receipt; normal load succeeds only after complete publication",
+      "Inject unwound failures at empty ledger initialization, each immutable old-input retain, adoption append, workflow publish and pointer publish; classify B0/B1/A0/A1/A2/A3/X exactly and retry only allowed states",
+      "Malformed/partial immutable file, missing review/report, changed candidate/review bytes, wrong source hashes/context/candidate, unconfirmed approval without authorization, out-of-order publication, invalid history or conflicting revision: no writes/child",
+      "Initial helper validates a prospective triple while live pointer absent; normal _load_design still rejects it. Explicit-basis bind_inputs requires both keywords, rejects invalid triples and yields the same target scopes/hashes as normal binding on a coherent snapshot. During A1/A2 it permits old-basis evaluation only, not dispatch; unresolved old admission still blocks. Preserve all C1 negative design-binding tests and no duplicated validation policy",
+      "Existing completed/handoff receipts retain behavior; changing current relevant components reopens only affected proof; original exact-reference historical closure and prefix-cache regressions retain semantics",
+      "Actual child/sentinel proving admission+intent precede spawn, no spawn on blocked readiness, ordinary argv/cwd/env/output/exit collision behavior",
+      "Actual owned observer-write failure and unknown/guard-death gap: admission remains unresolved after lexical file absence; no completed fabrication or next/adopt continuation. Process-death stale lock blocks retry; no foreign process cleanup",
+      "Adopt cannot erase or convert an existing unresolved executable admission through action deletion/handoff reclassification; no filtered ledger used for dispatch",
+      "Actual record acceptance with valid admitted attributed non-quality evidence; actual Git source/commit mismatch rejection; missing required metrics keeps close blocked",
+      "Five original workflow failure pairs remain obligations of C2: ordinary scope may prove supported actual cases, but unavailable positive quality/recovery counterparts stay explicitly blocked, not synthetic successes",
+      "Pure gate remains no-I/O with unchanged graph and cache behavior; no new resolved recovery type or production qualifier exists"
+    ],
+    "commands": "Use existing continuation test definitions after implementation, managed Python -B and PYTHONDONTWRITEBYTECODE=1, bounded native unittest batches with positive inventories. This design role uses idle 30/max 90 for any external read-only probe. No implementation tests are claimed here.",
+    "acceptance_limits": "Parent must independently verify/review changed source and integrated callers. C2a old evidence remains historical for its unchanged runner. Q2-Q5 actual metrics, live host resume/diagnosis, sixth verb, complete AC05, overall C2/release and human approval remain open.",
+    "last_round_stop": "This is the last planned design revision. Any material issue remaining after the same independent review stops that path with a named blocker; no further speculative schema/platform/convergence loop."
+  },
+  "principles_and_exact_amendment": {
+    "AC04": "Real partial routed boundary, explicit five-verb help and no pretend recovery; reuse one existing lexical lock and actual runner facts. No authority in prose fields or an alternate status ledger.",
+    "AC05": "Preserve actual v1 history/hand-offs/selective resume. Defer impossible positive lifetime recovery instead of backfilling identities. Finite adopt publication is metadata consistency, never process recovery.",
+    "AC09": "Freeze schemas/gate/runner/evidence; only the explicitly identified shared-validator extraction and explicit-basis bind_inputs mode may change C1 after approval. Retain proof/metric/Git requirements and exact earlier receipt chronology.",
+    "original_design_delta": "Amend design-contracts.json.cli.workflow dispatch/support boundary and C2 continuation grouping only: five implemented ordinary verbs in a named partial slice, sixth verb explicitly blocked. Add finite ordinary-adopt publication and its two read-only state seams. Do not edit original design/plan/history in this role or redesign measurement/entire CLI.",
+    "rejected": "Generic unverified recovery framework, null-identity v2 migration, fixture-driven ledger archives, stub recover, fabricated review clock, load-before-bootstrap deadlock, duplicate permissive design validator, recovered-label success and new-worktree-as-reset"
+  }
+}

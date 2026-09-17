@@ -1,0 +1,27 @@
+test_explicit_binding_matches_default (test_workflow_adoption_binding.AdoptionBindingTests.test_explicit_binding_matches_default) ... ERROR
+test_shared_validator_accepts_coherent_explicit_triple (test_workflow_adoption_binding.AdoptionBindingTests.test_shared_validator_accepts_coherent_explicit_triple) ... ERROR
+
+======================================================================
+ERROR: test_explicit_binding_matches_default (test_workflow_adoption_binding.AdoptionBindingTests.test_explicit_binding_matches_default)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_adoption_binding.py", line 39, in test_explicit_binding_matches_default
+    state.bind_inputs(self.root, self.contract, self.node,
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      design=self.design, ledger=self.ledger),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: bind_inputs() got an unexpected keyword argument 'design'
+
+======================================================================
+ERROR: test_shared_validator_accepts_coherent_explicit_triple (test_workflow_adoption_binding.AdoptionBindingTests.test_shared_validator_accepts_coherent_explicit_triple)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_adoption_binding.py", line 34, in test_shared_validator_accepts_coherent_explicit_triple
+    state.validate_design_binding(self.root, self.contract, self.design, self.ledger),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'workflow_state' has no attribute 'validate_design_binding'. Did you mean: 'validate_binding'?
+
+----------------------------------------------------------------------
+Ran 2 tests in 4.402s
+
+FAILED (errors=2)

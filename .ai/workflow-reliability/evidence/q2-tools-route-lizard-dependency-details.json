@@ -1,0 +1,22 @@
+{
+  "lizard_ext/htmloutput.py": {
+    "sha256": "1bb31d2c3ec0c2e4742cb080904a721f1e0dfecb0270541d5dded78398d9597d",
+    "excerpts": [
+      {
+        "start": 1,
+        "end": 38,
+        "text": "# -*- coding: utf-8 -*-\n\n'''\nThis module extends the default output formatting to include HTML.\n'''\n\nfrom __future__ import print_function\nimport sys\nimport datetime\n\n\ndef html_output(result, options, *_):\n    try:\n        from jinja2 import Template\n    except ImportError:\n        sys.stderr.write(\n                \"HTML Output depends on jinja2. `pip install jinja2` first\")\n        sys.exit(2)\n\n    file_list = []\n    for source_file in result:\n        if source_file:\n            source_file_dict = {\"filename\": source_file.filename}\n            func_list = []\n            for source_function in source_file.function_list:\n                if source_function:\n                    source_function_dict = _create_dict(source_function)\n                    func_list.append(source_function_dict)\n                    source_file_dict[\"functions\"] = func_list\n        file_list.append(source_file_dict)\n    output = Template(TEMPLATE).render(\n            title='Lizard code complexity report',\n            date=datetime.datetime.now().strftime('%Y-%m-%d %H:%M'),\n            thresholds=options.thresholds, files=file_list)\n    print(output)\n    return 0\n\n"
+      }
+    ]
+  },
+  "lizard_languages/erlang.py": {
+    "sha256": "88b532f2eb8477d7a197610b77b977084377494288061411270beb37fd7fd1a4",
+    "excerpts": [
+      {
+        "start": 1,
+        "end": 45,
+        "text": "\"\"\"\nLanguage parser for erlang\n\"\"\"\n\nimport re\nfrom lizard_languages.code_reader import CodeReader, CodeStateMachine\nimport pygments.token as py_token\nfrom pygments import lex, lexers\n\n\nclass ErlangReader(CodeReader):\n    # pylint: disable=R0903\n\n    ext = ['erl', 'hrl', 'es', 'escript']\n    language_names = ['erlang']\n\n    # Separated condition categories\n    _control_flow_keywords = {'if', 'catch', 'when'}  # when is used in guards\n    _logical_operators = {'and', 'or', 'not'}\n    _case_keywords = {'case'}\n    # Note: '?' in Erlang is a macro expansion operator (e.g., ?MODULE, ?EMPTY_NODE)\n    # Unlike C-style ternary, it's for compile-time macro substitution\n    # Included in ternary_operators because macro usage adds to code complexity\n    _ternary_operators = {'?'}\n\n    def __init__(self, context):\n        super(ErlangReader, self).__init__(context)\n        self.parallel_states = [ErlangStates(context)]\n\n    @staticmethod\n    def get_comment_from_token(token):\n        if token.startswith(\"%%\"):\n            return token[2:]\n\n    @staticmethod\n    def generate_tokens(source_code, addition='', token_class=None):\n        lexer = lexers.get_lexer_by_name('erlang')\n        tokens = lex(source_code, lexer=lexer)\n        return map(\n            lambda x: x[1],\n            filter(lambda x: x[0] != py_token.Whitespace, tokens)\n        )\n\n\nclass ErlangStates(CodeStateMachine):"
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "results": [],
+  "commands": [
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-a6a974fd-a170-48d5-b1f9-3a85b0b3de9c",
+        "--cdp",
+        "http://127.0.0.1:57418",
+        "--json",
+        "close"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"closed\":true,\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":false,\"engine\":\"chrome\",\"launchHash\":null},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":false,\"saveStatus\":\"not_configured\"},\"restoreStatus\":\"not_configured\",\"saveStatus\":\"not_configured\"},\"error\":null}\n",
+      "stderr": ""
+    }
+  ]
+}

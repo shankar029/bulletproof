@@ -1,0 +1,601 @@
+{
+  "dependencies": {
+    "lizard": "1.24.0",
+    "vulture": "2.16",
+    "pygments": "2.21.0",
+    "pathspec": "1.1.1",
+    "pathspec_backend": "simple",
+    "pygments_lexer_plugins": [],
+    "optional_modules_confirmed_absent": [
+      "re2",
+      "hyperscan",
+      "typing_extensions",
+      "colorama",
+      "jinja2",
+      "tomli"
+    ]
+  },
+  "rows": [
+    {
+      "case": "positive caf\u00e9.py",
+      "api": "scan",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py"
+      ],
+      "receipts": [
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "sha256": "bf1bd23fd2f42c2b4b65f316e5915e857eb86c635fc02114261d21d50b0e539e",
+          "before": 0,
+          "after": 0
+        }
+      ],
+      "findings80": [
+        {
+          "confidence": 90,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "first_lineno": 2,
+          "last_lineno": 2,
+          "message": "unused import 'os'",
+          "name": "os",
+          "typ": "import",
+          "size": 1
+        },
+        {
+          "confidence": 100,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "first_lineno": 5,
+          "last_lineno": 5,
+          "message": "unreachable code after 'return'",
+          "name": "return",
+          "typ": "unreachable_code",
+          "size": 1
+        }
+      ],
+      "all_confidences": [
+        {
+          "confidence": 90,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "first_lineno": 2,
+          "last_lineno": 2,
+          "message": "unused import 'os'",
+          "name": "os",
+          "typ": "import",
+          "size": 1
+        },
+        {
+          "confidence": 60,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "first_lineno": 3,
+          "last_lineno": 5,
+          "message": "unused function 'calculate'",
+          "name": "calculate",
+          "typ": "function",
+          "size": 3
+        },
+        {
+          "confidence": 100,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "first_lineno": 5,
+          "last_lineno": 5,
+          "message": "unreachable code after 'return'",
+          "name": "return",
+          "typ": "unreachable_code",
+          "size": 1
+        }
+      ],
+      "pre_report_exit": 0,
+      "report_return": 3,
+      "post_report_exit": 3,
+      "stdout": "vulture fixtures with spaces\\positive caf\u00e9.py:2: unused import 'os' (90% confidence)\nvulture fixtures with spaces\\positive caf\u00e9.py:5: unreachable code after 'return' (100% confidence)\n",
+      "stderr": ""
+    },
+    {
+      "case": "negative.py",
+      "api": "scan",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\negative.py"
+      ],
+      "receipts": [
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\negative.py",
+          "sha256": "04531b10ffe8a274511dc71fcd6d144d78d11246921616ea197ef349db72d01c",
+          "before": 0,
+          "after": 0
+        }
+      ],
+      "findings80": [],
+      "all_confidences": [],
+      "pre_report_exit": 0,
+      "report_return": 0,
+      "post_report_exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "case": "empty.py",
+      "api": "scan",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\empty.py"
+      ],
+      "receipts": [
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\empty.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "before": 0,
+          "after": 0
+        }
+      ],
+      "findings80": [],
+      "all_confidences": [],
+      "pre_report_exit": 0,
+      "report_return": 0,
+      "post_report_exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "case": "comments.py",
+      "api": "scan",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\comments.py"
+      ],
+      "receipts": [
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\comments.py",
+          "sha256": "2b247b10804b06de18731cd160af13b53acb12e355bb2630df6cad7b9e0ea999",
+          "before": 0,
+          "after": 0
+        }
+      ],
+      "findings80": [],
+      "all_confidences": [],
+      "pre_report_exit": 0,
+      "report_return": 0,
+      "post_report_exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "case": "functionless.py",
+      "api": "scan",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\functionless.py"
+      ],
+      "receipts": [
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\functionless.py",
+          "sha256": "3520d1003649a336d66c16926a7848357dbe2fb46cb95f92db261c6a81af07f6",
+          "before": 0,
+          "after": 0
+        }
+      ],
+      "findings80": [],
+      "all_confidences": [],
+      "pre_report_exit": 0,
+      "report_return": 0,
+      "post_report_exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "case": "nested async.py",
+      "api": "scan",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\nested async.py"
+      ],
+      "receipts": [
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\nested async.py",
+          "sha256": "e1afbb1b97f5261ba731adef708ee7df68cc06077aedb5e35c3c3b3f413f459c",
+          "before": 0,
+          "after": 0
+        }
+      ],
+      "findings80": [
+        {
+          "confidence": 100,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\nested async.py",
+          "first_lineno": 4,
+          "last_lineno": 4,
+          "message": "unreachable code after 'return'",
+          "name": "return",
+          "typ": "unreachable_code",
+          "size": 1
+        }
+      ],
+      "all_confidences": [
+        {
+          "confidence": 100,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\nested async.py",
+          "first_lineno": 4,
+          "last_lineno": 4,
+          "message": "unreachable code after 'return'",
+          "name": "return",
+          "typ": "unreachable_code",
+          "size": 1
+        }
+      ],
+      "pre_report_exit": 0,
+      "report_return": 3,
+      "post_report_exit": 3,
+      "stdout": "vulture fixtures with spaces\\nested async.py:4: unreachable code after 'return' (100% confidence)\n",
+      "stderr": ""
+    },
+    {
+      "case": "template314.py",
+      "api": "scan",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\template314.py"
+      ],
+      "receipts": [
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\template314.py",
+          "sha256": "e3740daf666c09dcb6183524d21db52c87ffa503baaffd90c5f2a747163a3cd0",
+          "before": 0,
+          "after": 0
+        }
+      ],
+      "findings80": [],
+      "all_confidences": [],
+      "pre_report_exit": 0,
+      "report_return": 0,
+      "post_report_exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "case": "noqa.py",
+      "api": "scan",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\noqa.py"
+      ],
+      "receipts": [
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\noqa.py",
+          "sha256": "1e6144ed9bda5f404b315f0377fbd5c3b02af34b2e05c19c3b36f3bf683ae500",
+          "before": 0,
+          "after": 0
+        }
+      ],
+      "findings80": [],
+      "all_confidences": [],
+      "pre_report_exit": 0,
+      "report_return": 0,
+      "post_report_exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "case": "reflection.py",
+      "api": "scan",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\reflection.py"
+      ],
+      "receipts": [
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\reflection.py",
+          "sha256": "754807cd0d14382255218338bd2961796a2ca2d14aa2316ea07b580d45c4db3d",
+          "before": 0,
+          "after": 0
+        }
+      ],
+      "findings80": [],
+      "all_confidences": [
+        {
+          "confidence": 60,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\reflection.py",
+          "first_lineno": 1,
+          "last_lineno": 2,
+          "message": "unused function 'dynamic_target'",
+          "name": "dynamic_target",
+          "typ": "function",
+          "size": 2
+        }
+      ],
+      "pre_report_exit": 0,
+      "report_return": 0,
+      "post_report_exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "case": "whitelist.py",
+      "api": "scan",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\whitelist.py"
+      ],
+      "receipts": [
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\whitelist.py",
+          "sha256": "d426b50f4467a9e540655842b3a2d723743c8beedc19c7386f055259228e4e20",
+          "before": 0,
+          "after": 0
+        }
+      ],
+      "findings80": [],
+      "all_confidences": [],
+      "pre_report_exit": 0,
+      "report_return": 0,
+      "post_report_exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "case": "invalid syntax.py",
+      "api": "scan",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\invalid syntax.py"
+      ],
+      "receipts": [
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\invalid syntax.py",
+          "sha256": "e36a298b5c90925bca30ec9e874c2d0da5ed70a015740497be06a9b9e1f3bf31",
+          "before": 0,
+          "after": 1
+        }
+      ],
+      "findings80": [],
+      "all_confidences": [],
+      "pre_report_exit": 1,
+      "report_return": 1,
+      "post_report_exit": 1,
+      "stdout": "",
+      "stderr": "vulture fixtures with spaces\\invalid syntax.py:1: invalid syntax at \"def broken(:\"\n"
+    },
+    {
+      "case": "invalid nul.py",
+      "api": "scan",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\invalid nul.py"
+      ],
+      "receipts": [
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\invalid nul.py",
+          "sha256": "030cfc9d84ec055a2cbdc28add87983004534e196d43233d1b212a6dc72c2c8a",
+          "before": 0,
+          "after": 1
+        }
+      ],
+      "findings80": [],
+      "all_confidences": [],
+      "pre_report_exit": 1,
+      "report_return": 1,
+      "post_report_exit": 1,
+      "stdout": "",
+      "stderr": "vulture fixtures with spaces\\invalid nul.py:None: source code string cannot contain null bytes\n"
+    },
+    {
+      "case": "zero files",
+      "api": "scan",
+      "inputs": [],
+      "receipts": [],
+      "findings80": [],
+      "all_confidences": [],
+      "pre_report_exit": 0,
+      "report_return": 0,
+      "post_report_exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "case": "invalid plus positive",
+      "api": "scan",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\invalid syntax.py",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py"
+      ],
+      "receipts": [
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\invalid syntax.py",
+          "sha256": "e36a298b5c90925bca30ec9e874c2d0da5ed70a015740497be06a9b9e1f3bf31",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "sha256": "bf1bd23fd2f42c2b4b65f316e5915e857eb86c635fc02114261d21d50b0e539e",
+          "before": 1,
+          "after": 1
+        }
+      ],
+      "findings80": [
+        {
+          "confidence": 90,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "first_lineno": 2,
+          "last_lineno": 2,
+          "message": "unused import 'os'",
+          "name": "os",
+          "typ": "import",
+          "size": 1
+        },
+        {
+          "confidence": 100,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "first_lineno": 5,
+          "last_lineno": 5,
+          "message": "unreachable code after 'return'",
+          "name": "return",
+          "typ": "unreachable_code",
+          "size": 1
+        }
+      ],
+      "all_confidences": [
+        {
+          "confidence": 90,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "first_lineno": 2,
+          "last_lineno": 2,
+          "message": "unused import 'os'",
+          "name": "os",
+          "typ": "import",
+          "size": 1
+        },
+        {
+          "confidence": 60,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "first_lineno": 3,
+          "last_lineno": 5,
+          "message": "unused function 'calculate'",
+          "name": "calculate",
+          "typ": "function",
+          "size": 3
+        },
+        {
+          "confidence": 100,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "first_lineno": 5,
+          "last_lineno": 5,
+          "message": "unreachable code after 'return'",
+          "name": "return",
+          "typ": "unreachable_code",
+          "size": 1
+        }
+      ],
+      "pre_report_exit": 1,
+      "report_return": 3,
+      "post_report_exit": 3,
+      "stdout": "vulture fixtures with spaces\\positive caf\u00e9.py:2: unused import 'os' (90% confidence)\nvulture fixtures with spaces\\positive caf\u00e9.py:5: unreachable code after 'return' (100% confidence)\n",
+      "stderr": "vulture fixtures with spaces\\invalid syntax.py:1: invalid syntax at \"def broken(:\"\n"
+    },
+    {
+      "case": "resource scavenge",
+      "api": "scavenge",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\whitelist.py"
+      ],
+      "receipts": [],
+      "findings80": [],
+      "all_confidences": [],
+      "pre_report_exit": 0,
+      "report_return": 0,
+      "post_report_exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "case": "invalid encoding",
+      "api": "scavenge",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\bad encoding.py"
+      ],
+      "receipts": [],
+      "findings80": [],
+      "all_confidences": [],
+      "pre_report_exit": 1,
+      "report_return": 1,
+      "post_report_exit": 1,
+      "stdout": "",
+      "stderr": "Error: Could not read file C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\bad encoding.py - \nTry to change the encoding to UTF-8.\n"
+    },
+    {
+      "case": "missing",
+      "api": "scavenge",
+      "inputs": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\missing.py"
+      ],
+      "system_exit": "Error: C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\missing.py could not be found.",
+      "stdout": "",
+      "stderr": "",
+      "classification": "infrastructure-error; no successful census"
+    }
+  ],
+  "assertions": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "files": [
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+      "sha256": "bf1bd23fd2f42c2b4b65f316e5915e857eb86c635fc02114261d21d50b0e539e"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\negative.py",
+      "sha256": "04531b10ffe8a274511dc71fcd6d144d78d11246921616ea197ef349db72d01c"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\empty.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\comments.py",
+      "sha256": "2b247b10804b06de18731cd160af13b53acb12e355bb2630df6cad7b9e0ea999"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\functionless.py",
+      "sha256": "3520d1003649a336d66c16926a7848357dbe2fb46cb95f92db261c6a81af07f6"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\nested async.py",
+      "sha256": "e1afbb1b97f5261ba731adef708ee7df68cc06077aedb5e35c3c3b3f413f459c"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\template314.py",
+      "sha256": "e3740daf666c09dcb6183524d21db52c87ffa503baaffd90c5f2a747163a3cd0"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\noqa.py",
+      "sha256": "1e6144ed9bda5f404b315f0377fbd5c3b02af34b2e05c19c3b36f3bf683ae500"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\reflection.py",
+      "sha256": "754807cd0d14382255218338bd2961796a2ca2d14aa2316ea07b580d45c4db3d"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\whitelist.py",
+      "sha256": "d426b50f4467a9e540655842b3a2d723743c8beedc19c7386f055259228e4e20"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\invalid syntax.py",
+      "sha256": "e36a298b5c90925bca30ec9e874c2d0da5ed70a015740497be06a9b9e1f3bf31"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\invalid nul.py",
+      "sha256": "030cfc9d84ec055a2cbdc28add87983004534e196d43233d1b212a6dc72c2c8a"
+    }
+  ],
+  "whitelist_resource_sha256": "95ba8a02b985097f67f33d1568f73c5ea6f9a92d33770f136ee0cb2131268bb3",
+  "item_slots": [
+    "confidence",
+    "filename",
+    "first_lineno",
+    "last_lineno",
+    "message",
+    "name",
+    "typ"
+  ],
+  "exit_codes": {
+    "NoDeadCode": 0,
+    "InvalidInput": 1,
+    "InvalidCmdlineArguments": 2,
+    "DeadCode": 3
+  },
+  "limits": [
+    "confidence80 explicit, static model only; unreferenced function confidence60 is excluded",
+    "report overwrites invalid-input status with DeadCode; retain pre-report diagnostics/status",
+    "scan returns None; explicit successful scan receipts provide census, not findings count",
+    "noqa affects findings; retain directive inventory; no dynamic target resolution"
+  ]
+}

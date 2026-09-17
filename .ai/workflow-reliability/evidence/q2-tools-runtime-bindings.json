@@ -1,0 +1,254 @@
+{
+  "executors": {
+    "jscpd": {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd\\jscpd.exe",
+      "sha256": "c0bbbe8f3fea28395e08e60abcfe703dca0e39c0a393aa4a7fc602f816ad8670",
+      "pe": {
+        "machine": "0x8664",
+        "declared_imports": [
+          {
+            "name": "api-ms-win-core-synch-l1-2-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "api-ms-win-crt-heap-l1-1-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "api-ms-win-crt-locale-l1-1-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "api-ms-win-crt-math-l1-1-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "api-ms-win-crt-runtime-l1-1-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "api-ms-win-crt-stdio-l1-1-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "bcryptprimitives.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\bcryptprimitives.dll",
+            "sha256": "d3da1097e9e1fc16c910350e40c4405ef52f36f134f9bf165fbe02194c1eaa82"
+          },
+          {
+            "name": "KERNEL32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\KERNEL32.dll",
+            "sha256": "6a7bd4daff9c0c4cc8b9478ecd9828c3f19be257a4a18db9559cae929197fffa"
+          },
+          {
+            "name": "kernel32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\kernel32.dll",
+            "sha256": "6a7bd4daff9c0c4cc8b9478ecd9828c3f19be257a4a18db9559cae929197fffa"
+          },
+          {
+            "name": "ntdll.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\ntdll.dll",
+            "sha256": "60ef561645b50dce71ad0919dbbef3ad334a0489432cde718e75b73b558c7997"
+          },
+          {
+            "name": "USERENV.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\USERENV.dll",
+            "sha256": "18bd1660ab7cacd90789f1bebe35bc6a5730b1e75e5582f53575473fae3db530"
+          },
+          {
+            "name": "VCRUNTIME140.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\VCRUNTIME140.dll",
+            "sha256": "6d987d8cb2a47cff9c29c1fcbb853e7ef273c545f7d822728f7d2d448ca18758"
+          }
+        ],
+        "limit": "PE import table and existing file candidates only; not a loaded-module or API-set forwarding attestation."
+      }
+    },
+    "ruff": {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\ruff-native\\ruff.exe",
+      "sha256": "22b93aa554f2c3ec969fa83c5d77da3d61a4a54c61cbca70f5eeec63eef28e48",
+      "pe": {
+        "machine": "0x8664",
+        "declared_imports": [
+          {
+            "name": "ADVAPI32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+            "sha256": "021452c20f89c50d64c304391ec18169f95a9fa14762f76cfd2dded627dbf0bb"
+          },
+          {
+            "name": "api-ms-win-core-synch-l1-2-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "bcryptprimitives.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\bcryptprimitives.dll",
+            "sha256": "d3da1097e9e1fc16c910350e40c4405ef52f36f134f9bf165fbe02194c1eaa82"
+          },
+          {
+            "name": "combase.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\combase.dll",
+            "sha256": "850b43094ae61a5d3b8f40f0cddf89b4a90190bf5fc57c5242e0bf5b06644b2f"
+          },
+          {
+            "name": "kernel32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\kernel32.dll",
+            "sha256": "6a7bd4daff9c0c4cc8b9478ecd9828c3f19be257a4a18db9559cae929197fffa"
+          },
+          {
+            "name": "netapi32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\netapi32.dll",
+            "sha256": "8295d8a375cde035d057fc7d06fb8eced2c22649db28aa0afa9727f078c725cc"
+          },
+          {
+            "name": "ntdll.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\ntdll.dll",
+            "sha256": "60ef561645b50dce71ad0919dbbef3ad334a0489432cde718e75b73b558c7997"
+          },
+          {
+            "name": "shell32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\shell32.dll",
+            "sha256": "ef0fbd71a46fe4b35bff893ea65241cd08ea5231de704c106e39920c03698fe9"
+          },
+          {
+            "name": "userenv.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\userenv.dll",
+            "sha256": "18bd1660ab7cacd90789f1bebe35bc6a5730b1e75e5582f53575473fae3db530"
+          }
+        ],
+        "limit": "PE import table and existing file candidates only; not a loaded-module or API-set forwarding attestation."
+      }
+    },
+    "python": {
+      "path": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "sha256": "5829a9ef2930e10a965503ea0f96248bd4b19faf4177fdfd061f1d484448bb03",
+      "pe": {
+        "machine": "0x8664",
+        "declared_imports": [
+          {
+            "name": "api-ms-win-crt-heap-l1-1-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "api-ms-win-crt-locale-l1-1-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "api-ms-win-crt-math-l1-1-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "api-ms-win-crt-runtime-l1-1-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "api-ms-win-crt-stdio-l1-1-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "KERNEL32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\KERNEL32.dll",
+            "sha256": "6a7bd4daff9c0c4cc8b9478ecd9828c3f19be257a4a18db9559cae929197fffa"
+          },
+          {
+            "name": "python314.dll",
+            "resolved_existing_candidate": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python314.dll",
+            "sha256": "0f2429383aacc0499f57e732fc7778da6187d133af9171b938a66fe7d5ab254c"
+          },
+          {
+            "name": "VCRUNTIME140.dll",
+            "resolved_existing_candidate": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\VCRUNTIME140.dll",
+            "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066"
+          }
+        ],
+        "limit": "PE import table and existing file candidates only; not a loaded-module or API-set forwarding attestation."
+      }
+    },
+    "node": {
+      "path": "C:\\Program Files\\nodejs\\node.EXE",
+      "sha256": "8f3e33fa1f67843a320d2200ed1a5d40cc59766715a7a02728b8213c2167a084",
+      "pe": {
+        "machine": "0xaa64",
+        "declared_imports": [
+          {
+            "name": "ADVAPI32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+            "sha256": "021452c20f89c50d64c304391ec18169f95a9fa14762f76cfd2dded627dbf0bb"
+          },
+          {
+            "name": "CRYPT32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\CRYPT32.dll",
+            "sha256": "e3e800f1905658674ce4af1d3efb31d722b9255aaae4fa46c54302d329ba4ab6"
+          },
+          {
+            "name": "dbghelp.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\dbghelp.dll",
+            "sha256": "cc3dab856a3711619e5782e68db079c0ae604c491655bd3e2a3a49a855965a61"
+          },
+          {
+            "name": "IPHLPAPI.DLL",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\IPHLPAPI.DLL",
+            "sha256": "b98fa18aa4d2333da270bea8ea29f889cd26197a8ae1353ab92c06998e876e0a"
+          },
+          {
+            "name": "KERNEL32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\KERNEL32.dll",
+            "sha256": "6a7bd4daff9c0c4cc8b9478ecd9828c3f19be257a4a18db9559cae929197fffa"
+          },
+          {
+            "name": "ole32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\ole32.dll",
+            "sha256": "a05e95c0e03dfec6508f511ccb5731b752861be17086d9c8879b54f8922faf1d"
+          },
+          {
+            "name": "SHELL32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\SHELL32.dll",
+            "sha256": "ef0fbd71a46fe4b35bff893ea65241cd08ea5231de704c106e39920c03698fe9"
+          },
+          {
+            "name": "USER32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\USER32.dll",
+            "sha256": "f2fc06e7e5016a15ad7f7f4ee250154b7d41d0a0706bf14927a3bbd4c42727dd"
+          },
+          {
+            "name": "USERENV.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\USERENV.dll",
+            "sha256": "18bd1660ab7cacd90789f1bebe35bc6a5730b1e75e5582f53575473fae3db530"
+          },
+          {
+            "name": "WINMM.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\WINMM.dll",
+            "sha256": "2ebb728e5c510492df8fde4ec81b8a8554f2f33d1686b837d22c962b7d2fa9b7"
+          },
+          {
+            "name": "WS2_32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\WS2_32.dll",
+            "sha256": "e1266872f796f68b4be9c20640ca940a7a96e1ba98c741d472ae305fccf87ca9"
+          }
+        ],
+        "limit": "PE import table and existing file candidates only; not a loaded-module or API-set forwarding attestation."
+      }
+    }
+  },
+  "os": "Windows-11-10.0.26100-SP0",
+  "python": "3.14.2 (main, Dec  9 2025, 19:03:14) [MSC v.1944 64 bit (AMD64)]",
+  "runner": {
+    "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+    "sha256": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e"
+  },
+  "python_dll": {
+    "path": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python314.dll",
+    "sha256": "0f2429383aacc0499f57e732fc7778da6187d133af9171b938a66fe7d5ab254c"
+  }
+}

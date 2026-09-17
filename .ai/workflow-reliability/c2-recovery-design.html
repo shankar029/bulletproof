@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C2 final amendment — ordinary CLI only</title>
+<link rel="stylesheet" href="../assets/artifact.css">
+<script src="../assets/artifact.js" defer data-doc="c2-recovery-design.html" data-slug="workflow-reliability"></script>
+</head>
+<body>
+<h1>C2: ordinary CLI, recovery deferred</h1>
+<div class="meta">Final proposed r2 · C2b-ordinary-v1 · AC04/05/09 partial<br>
+<a href="c2-recovery-contract.json">Exact contract and adoption retry table</a> ·
+<a href="evidence/c2-recovery-r2-disposition.md">F1–F4 dispositions</a></div>
+<p class="assumption">Parent adopted the findings and scope direction. Final independent
+review and dispatch remain pending; human approval is unconfirmed. Design only.</p>
+
+<h2>1. Stop the unsupported path</h2>
+<p><strong>F1:</strong> the inspected Docker candidate is unavailable; there is no qualified
+pre-admission identity or complete-lifetime evidence producer. Defer recovery records,
+gate predicates, qualifiers and positive recovery. <strong>F2:</strong> defer live v1→v2
+migration; the bounded local check found no canonical continuing guard ledgers.
+Original schemas and historical evidence remain intact.</p>
+<p><strong>C2b-ordinary-v1:</strong> implement <code>status</code>, <code>next</code>,
+<code>record</code>, <code>close</code>, <code>adopt</code> after review. Help and the operator
+guide must list these five supported verbs. The original sixth verb, <code>recover</code>,
+remains explicitly blocked/future: no subcommand stub. Overall C2 and AC05 are incomplete.</p>
+
+<h2>2. Small explicit core exception</h2>
+<table>
+<thead><tr><th>Component / AC</th><th>Exact boundary</th></tr></thead>
+<tbody>
+<tr><td>State · 04/05/09</td><td>Extract existing <code>_load_design</code> checks into
+<code>validate_design_binding(root, contract, design, ledger)</code>. Ordinary loading still
+reads the live pointer; adopt validates prospective documents. Add paired optional
+<code>design</code>/<code>ledger</code> keywords to <code>bind_inputs</code> for validated
+old-basis evaluation during partial publication. No relaxed check.</td></tr>
+<tr><td>CLI · 04/05/09</td><td>One lexical lock; revalidate → admission/intent → actual
+observer → normal completion/receipt. Finite adopt-only publication below.</td></tr>
+<tr><td>Gate / runner · 05/09</td><td>Frozen: v1 records, eight observer fields, pure
+readiness, requires graph, exact receipt chronology and prefix caches.</td></tr>
+</tbody>
+</table>
+<p><strong>Why:</strong> shared validation/materialization avoids duplicated policy and
+load-before-adoption dead ends. Parent must authorize these exact C1 seams before edits.</p>
+
+<h2>3. Ordinary adopt: validate before publication</h2>
+<p>Stage immutable revision HTML, normative contract, and existing-schema workflow/current-design
+documents. <code>--review</code> supplies matching existing DesignReview metadata and the unchanged
+independent report. Validate old and prospective triples through the shared helper.</p>
+<p><strong>Initial:</strong> absent authority → exclusive empty v1 ledger → adopted event →
+workflow → pointer → normal load. <strong>Revision:</strong> retain exact old design inputs,
+validate → append one adopted event → workflow → pointer. These are design documents,
+not a migration archive or second runtime journal.</p>
+<figure>
+<svg viewBox="0 0 760 70" role="img" aria-label="After validation, publish the adopted event, then workflow, then current-design pointer">
+<defs><marker id="adopt-arrow" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker></defs>
+<rect x="5" y="10" width="210" height="40" class="b"/><text x="110" y="35" class="t">Adopted event</text>
+<rect x="275" y="10" width="210" height="40" class="b"/><text x="380" y="35" class="t">workflow.json</text>
+<rect x="545" y="10" width="210" height="40" class="b"/><text x="650" y="35" class="t">current-design.json</text>
+<line x1="215" y1="30" x2="275" y2="30" class="a" marker-end="url(#adopt-arrow)"/>
+<line x1="485" y1="30" x2="545" y2="30" class="a" marker-end="url(#adopt-arrow)"/>
+</svg>
+<figcaption>Only adopt handles the exact intermediate states; ordinary loading remains fail-closed.</figcaption>
+</figure>
+<p>The linked finite table permits only exact empty-basis, old-pair, event-before-publication,
+workflow-before-pointer and already-published retries. Conflicting/partial bytes stop.
+Only adopt raw-reads these named inputs; other verbs still fail normal load on an incomplete
+publication. An orphan lexical lock blocks even retry—never steal it.</p>
+
+<h2>4. Boundaries and acceptance</h2>
+<p><strong>F3:</strong> unknown spawn blocks every currently unsupported recovery.
+A future complete-environment-reset exception needs qualified pre-admission bindings.
+No fabricated events, lock deletion/age/PID/root-exit shortcut, automatic replay or
+new-worktree-as-reset. Full durable recovery ownership is deferred, not hidden in reason.</p>
+<p><strong>F4:</strong> exact reviewed bytes resolve before append; ledger sequence proves
+acceptance ordering. No invented review wall clock. Future platform temporal qualification
+remains separate. Legacy completion/handoff, actual Git close checks, required independent
+proof and Q2–Q5 missing metrics retain their policies.</p>
+<p><strong>After review:</strong> focused shared-validator proof, then ordinary CLI/adoption
+failure-table and real no-spawn/resume tests, then independent verification/review. No recovery
+or new quality pass. Parent renders this two-page-target overview. Any remaining material
+finding stops that path; this is the last planned design round.</p>
+</body>
+</html>

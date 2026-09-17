@@ -1,0 +1,48 @@
+{
+  "url": "https://pypi.org/pypi/pathspec/json",
+  "response_sha256": "df109cf06c88402cc0907de428b352e676ce059ed5eb51c87a8732c0fb9e90a6",
+  "selected_metadata": {
+    "info": {
+      "name": "pathspec",
+      "version": "1.1.1",
+      "license": null,
+      "license_expression": null,
+      "requires_dist": [
+        "hyperscan>=0.7; extra == \"hyperscan\"",
+        "typing-extensions>=4; extra == \"optional\"",
+        "google-re2>=1.1; extra == \"re2\""
+      ],
+      "requires_python": ">=3.9",
+      "project_urls": {
+        "Change Log": "https://python-path-specification.readthedocs.io/en/latest/changes.html",
+        "Documentation": "https://python-path-specification.readthedocs.io/en/latest/index.html",
+        "Issue Tracker": "https://github.com/cpburnz/python-pathspec/issues",
+        "Source Code": "https://github.com/cpburnz/python-pathspec"
+      }
+    },
+    "urls": [
+      {
+        "filename": "pathspec-1.1.1-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/f1/d9/7fb5aa316bc299258e68c73ba3bddbc499654a07f151cba08f6153988714/pathspec-1.1.1-py3-none-any.whl",
+        "digests": {
+          "blake2b_256": "f1d97fb5aa316bc299258e68c73ba3bddbc499654a07f151cba08f6153988714",
+          "md5": "124d4c96d90978265c9e7b4d8eefa288",
+          "sha256": "a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189"
+        },
+        "yanked": false,
+        "upload_time_iso_8601": "2026-04-27T01:46:07.060850Z"
+      },
+      {
+        "filename": "pathspec-1.1.1.tar.gz",
+        "url": "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz",
+        "digests": {
+          "blake2b_256": "5a8242f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1",
+          "md5": "c762d0a00d6cfc9de003e02d5072b26a",
+          "sha256": "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
+        },
+        "yanked": false,
+        "upload_time_iso_8601": "2026-04-27T01:46:08.907631Z"
+      }
+    ]
+  }
+}

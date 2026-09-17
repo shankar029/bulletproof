@@ -1,0 +1,1477 @@
+{
+  "version": "5.9.3",
+  "node": "v24.11.1",
+  "executable": "C:\\Program Files\\nodejs\\node.EXE",
+  "options": {
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnreachableCode": false,
+    "target": 99,
+    "module": 199,
+    "moduleResolution": 99,
+    "jsx": 1,
+    "types": [],
+    "typeRoots": []
+  },
+  "checks": [
+    {
+      "case": "clean.js",
+      "diagnostics": [],
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.js",
+      "sourceStatements": 1,
+      "function": "calculate",
+      "checkerSymbol": "calculate"
+    },
+    {
+      "case": "zero-function.js",
+      "census": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.js",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.js",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.js"
+      ],
+      "diagnostics": [],
+      "units": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "invalid.js",
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.js",
+      "syntacticCodes": [
+        8017,
+        1005
+      ]
+    },
+    {
+      "case": "clean.mjs",
+      "diagnostics": [],
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.mjs",
+      "sourceStatements": 1,
+      "function": "calculate",
+      "checkerSymbol": "calculate"
+    },
+    {
+      "case": "zero-function.mjs",
+      "census": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.mjs",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.mjs",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.mjs"
+      ],
+      "diagnostics": [],
+      "units": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "invalid.mjs",
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.mjs",
+      "syntacticCodes": [
+        8017,
+        1005
+      ]
+    },
+    {
+      "case": "clean.cjs",
+      "diagnostics": [],
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.cjs",
+      "sourceStatements": 2,
+      "function": "calculate",
+      "checkerSymbol": "calculate"
+    },
+    {
+      "case": "zero-function.cjs",
+      "census": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.cjs",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.cjs",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.cjs"
+      ],
+      "diagnostics": [],
+      "units": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "invalid.cjs",
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.cjs",
+      "syntacticCodes": [
+        8017,
+        1005
+      ]
+    },
+    {
+      "case": "clean.ts",
+      "diagnostics": [],
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.ts",
+      "sourceStatements": 1,
+      "function": "calculate",
+      "checkerSymbol": "calculate"
+    },
+    {
+      "case": "zero-function.ts",
+      "census": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.ts",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.ts",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.ts"
+      ],
+      "diagnostics": [],
+      "units": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "invalid.ts",
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.ts",
+      "syntacticCodes": [
+        1005
+      ]
+    },
+    {
+      "case": "clean.tsx",
+      "diagnostics": [],
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.tsx",
+      "sourceStatements": 1,
+      "function": "calculate",
+      "checkerSymbol": "calculate"
+    },
+    {
+      "case": "zero-function.tsx",
+      "census": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.tsx",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.tsx",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.tsx"
+      ],
+      "diagnostics": [],
+      "units": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "invalid.tsx",
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.tsx",
+      "syntacticCodes": [
+        1005
+      ]
+    },
+    {
+      "case": "clean.jsx",
+      "diagnostics": [],
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.jsx",
+      "sourceStatements": 1,
+      "function": "calculate",
+      "checkerSymbol": "calculate"
+    },
+    {
+      "case": "zero-function.jsx",
+      "census": [
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.jsx",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.jsx",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.jsx"
+      ],
+      "diagnostics": [],
+      "units": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "invalid.jsx",
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.jsx",
+      "syntacticCodes": [
+        8017,
+        1005
+      ]
+    }
+  ],
+  "shapeFiles": [
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.js",
+      "scriptKind": "JS",
+      "syntaxKinds": [
+        "SourceFile",
+        "FirstStatement",
+        "VariableDeclarationList",
+        "VariableDeclaration",
+        "Identifier",
+        "ArrowFunction",
+        "AsyncKeyword",
+        "Parameter",
+        "EqualsGreaterThanToken",
+        "Block",
+        "FunctionDeclaration",
+        "ReturnStatement",
+        "ConditionalExpression",
+        "BinaryExpression",
+        "GreaterThanToken",
+        "FirstLiteralToken",
+        "QuestionToken",
+        "PlusToken",
+        "ColonToken",
+        "MinusToken",
+        "RegularExpressionLiteral",
+        "TemplateExpression",
+        "TemplateHead",
+        "TemplateSpan",
+        "CallExpression",
+        "LastTemplateToken",
+        "PropertyAccessExpression",
+        "AmpersandAmpersandToken",
+        "SlashToken",
+        "StringLiteral",
+        "EndOfFileToken"
+      ],
+      "arrowSpan": {
+        "utf16Start": 52,
+        "utf16End": 273,
+        "byteStart": 55,
+        "byteEnd": 279,
+        "line": 4
+      },
+      "genuineStaticDiagnostics": [
+        {
+          "code": 6133,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.js",
+          "start": 44,
+          "length": 5,
+          "message": "'outer' is declared but its value is never read."
+        },
+        {
+          "code": 7006,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.js",
+          "start": 59,
+          "length": 5,
+          "message": "Parameter 'value' implicitly has an 'any' type."
+        },
+        {
+          "code": 7006,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.js",
+          "start": 89,
+          "length": 1,
+          "message": "Parameter 'x' implicitly has an 'any' type."
+        }
+      ]
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.mjs",
+      "scriptKind": "JS",
+      "syntaxKinds": [
+        "SourceFile",
+        "FirstStatement",
+        "VariableDeclarationList",
+        "VariableDeclaration",
+        "Identifier",
+        "ArrowFunction",
+        "AsyncKeyword",
+        "Parameter",
+        "EqualsGreaterThanToken",
+        "Block",
+        "FunctionDeclaration",
+        "ReturnStatement",
+        "ConditionalExpression",
+        "BinaryExpression",
+        "GreaterThanToken",
+        "FirstLiteralToken",
+        "QuestionToken",
+        "PlusToken",
+        "ColonToken",
+        "MinusToken",
+        "RegularExpressionLiteral",
+        "TemplateExpression",
+        "TemplateHead",
+        "TemplateSpan",
+        "CallExpression",
+        "LastTemplateToken",
+        "PropertyAccessExpression",
+        "AmpersandAmpersandToken",
+        "SlashToken",
+        "StringLiteral",
+        "EndOfFileToken"
+      ],
+      "arrowSpan": {
+        "utf16Start": 52,
+        "utf16End": 273,
+        "byteStart": 55,
+        "byteEnd": 279,
+        "line": 4
+      },
+      "genuineStaticDiagnostics": [
+        {
+          "code": 6133,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.mjs",
+          "start": 44,
+          "length": 5,
+          "message": "'outer' is declared but its value is never read."
+        },
+        {
+          "code": 7006,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.mjs",
+          "start": 59,
+          "length": 5,
+          "message": "Parameter 'value' implicitly has an 'any' type."
+        },
+        {
+          "code": 7006,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.mjs",
+          "start": 89,
+          "length": 1,
+          "message": "Parameter 'x' implicitly has an 'any' type."
+        }
+      ]
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.cjs",
+      "scriptKind": "JS",
+      "syntaxKinds": [
+        "SourceFile",
+        "FirstStatement",
+        "VariableDeclarationList",
+        "VariableDeclaration",
+        "Identifier",
+        "ArrowFunction",
+        "AsyncKeyword",
+        "Parameter",
+        "EqualsGreaterThanToken",
+        "Block",
+        "FunctionDeclaration",
+        "ReturnStatement",
+        "ConditionalExpression",
+        "BinaryExpression",
+        "GreaterThanToken",
+        "FirstLiteralToken",
+        "QuestionToken",
+        "PlusToken",
+        "ColonToken",
+        "MinusToken",
+        "RegularExpressionLiteral",
+        "TemplateExpression",
+        "TemplateHead",
+        "TemplateSpan",
+        "CallExpression",
+        "LastTemplateToken",
+        "PropertyAccessExpression",
+        "AmpersandAmpersandToken",
+        "SlashToken",
+        "StringLiteral",
+        "EndOfFileToken"
+      ],
+      "arrowSpan": {
+        "utf16Start": 52,
+        "utf16End": 273,
+        "byteStart": 55,
+        "byteEnd": 279,
+        "line": 4
+      },
+      "genuineStaticDiagnostics": [
+        {
+          "code": 6133,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.cjs",
+          "start": 44,
+          "length": 5,
+          "message": "'outer' is declared but its value is never read."
+        },
+        {
+          "code": 7006,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.cjs",
+          "start": 59,
+          "length": 5,
+          "message": "Parameter 'value' implicitly has an 'any' type."
+        },
+        {
+          "code": 7006,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.cjs",
+          "start": 89,
+          "length": 1,
+          "message": "Parameter 'x' implicitly has an 'any' type."
+        }
+      ]
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.ts",
+      "scriptKind": "TS",
+      "syntaxKinds": [
+        "SourceFile",
+        "InterfaceDeclaration",
+        "Identifier",
+        "PropertySignature",
+        "NumberKeyword",
+        "FirstStatement",
+        "VariableDeclarationList",
+        "VariableDeclaration",
+        "ArrowFunction",
+        "AsyncKeyword",
+        "Parameter",
+        "EqualsGreaterThanToken",
+        "Block",
+        "FunctionDeclaration",
+        "ReturnStatement",
+        "ConditionalExpression",
+        "BinaryExpression",
+        "GreaterThanToken",
+        "FirstLiteralToken",
+        "QuestionToken",
+        "PlusToken",
+        "ColonToken",
+        "MinusToken",
+        "RegularExpressionLiteral",
+        "TemplateExpression",
+        "TemplateHead",
+        "TemplateSpan",
+        "CallExpression",
+        "LastTemplateToken",
+        "PropertyAccessExpression",
+        "AmpersandAmpersandToken",
+        "SlashToken",
+        "StringLiteral",
+        "EndOfFileToken"
+      ],
+      "arrowSpan": {
+        "utf16Start": 87,
+        "utf16End": 316,
+        "byteStart": 90,
+        "byteEnd": 322,
+        "line": 5
+      },
+      "genuineStaticDiagnostics": [
+        {
+          "code": 6196,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.ts",
+          "start": 48,
+          "length": 4,
+          "message": "'Size' is declared but never used."
+        },
+        {
+          "code": 6133,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.ts",
+          "start": 79,
+          "length": 5,
+          "message": "'outer' is declared but its value is never read."
+        },
+        {
+          "code": 7006,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.ts",
+          "start": 132,
+          "length": 1,
+          "message": "Parameter 'x' implicitly has an 'any' type."
+        }
+      ]
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.tsx",
+      "scriptKind": "TSX",
+      "syntaxKinds": [
+        "SourceFile",
+        "InterfaceDeclaration",
+        "Identifier",
+        "PropertySignature",
+        "NumberKeyword",
+        "FirstStatement",
+        "VariableDeclarationList",
+        "VariableDeclaration",
+        "ArrowFunction",
+        "AsyncKeyword",
+        "Parameter",
+        "EqualsGreaterThanToken",
+        "Block",
+        "FunctionDeclaration",
+        "ReturnStatement",
+        "ConditionalExpression",
+        "BinaryExpression",
+        "GreaterThanToken",
+        "FirstLiteralToken",
+        "QuestionToken",
+        "PlusToken",
+        "ColonToken",
+        "MinusToken",
+        "RegularExpressionLiteral",
+        "TemplateExpression",
+        "TemplateHead",
+        "TemplateSpan",
+        "CallExpression",
+        "LastTemplateToken",
+        "PropertyAccessExpression",
+        "AmpersandAmpersandToken",
+        "SlashToken",
+        "StringLiteral",
+        "JsxElement",
+        "JsxOpeningElement",
+        "JsxAttributes",
+        "JsxExpression",
+        "JsxClosingElement",
+        "EndOfFileToken"
+      ],
+      "arrowSpan": {
+        "utf16Start": 87,
+        "utf16End": 316,
+        "byteStart": 90,
+        "byteEnd": 322,
+        "line": 5
+      },
+      "genuineStaticDiagnostics": [
+        {
+          "code": 6196,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.tsx",
+          "start": 48,
+          "length": 4,
+          "message": "'Size' is declared but never used."
+        },
+        {
+          "code": 7006,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.tsx",
+          "start": 132,
+          "length": 1,
+          "message": "Parameter 'x' implicitly has an 'any' type."
+        },
+        {
+          "code": 6133,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.tsx",
+          "start": 325,
+          "length": 4,
+          "message": "'view' is declared but its value is never read."
+        },
+        {
+          "code": 7026,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.tsx",
+          "start": 332,
+          "length": 9,
+          "message": "JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists."
+        },
+        {
+          "code": 7026,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.tsx",
+          "start": 351,
+          "length": 10,
+          "message": "JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists."
+        }
+      ]
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.jsx",
+      "scriptKind": "JSX",
+      "syntaxKinds": [
+        "SourceFile",
+        "FirstStatement",
+        "VariableDeclarationList",
+        "VariableDeclaration",
+        "Identifier",
+        "ArrowFunction",
+        "AsyncKeyword",
+        "Parameter",
+        "EqualsGreaterThanToken",
+        "Block",
+        "FunctionDeclaration",
+        "ReturnStatement",
+        "ConditionalExpression",
+        "BinaryExpression",
+        "GreaterThanToken",
+        "FirstLiteralToken",
+        "QuestionToken",
+        "PlusToken",
+        "ColonToken",
+        "MinusToken",
+        "RegularExpressionLiteral",
+        "TemplateExpression",
+        "TemplateHead",
+        "TemplateSpan",
+        "CallExpression",
+        "LastTemplateToken",
+        "PropertyAccessExpression",
+        "AmpersandAmpersandToken",
+        "SlashToken",
+        "StringLiteral",
+        "JsxElement",
+        "JsxOpeningElement",
+        "JsxAttributes",
+        "JsxExpression",
+        "JsxClosingElement",
+        "EndOfFileToken"
+      ],
+      "arrowSpan": {
+        "utf16Start": 52,
+        "utf16End": 273,
+        "byteStart": 55,
+        "byteEnd": 279,
+        "line": 4
+      },
+      "genuineStaticDiagnostics": [
+        {
+          "code": 7006,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.jsx",
+          "start": 59,
+          "length": 5,
+          "message": "Parameter 'value' implicitly has an 'any' type."
+        },
+        {
+          "code": 7006,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.jsx",
+          "start": 89,
+          "length": 1,
+          "message": "Parameter 'x' implicitly has an 'any' type."
+        },
+        {
+          "code": 6133,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.jsx",
+          "start": 282,
+          "length": 4,
+          "message": "'view' is declared but its value is never read."
+        },
+        {
+          "code": 7026,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.jsx",
+          "start": 289,
+          "length": 9,
+          "message": "JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists."
+        },
+        {
+          "code": 7026,
+          "category": 1,
+          "source": null,
+          "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/shape.jsx",
+          "start": 308,
+          "length": 10,
+          "message": "JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists."
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.js",
+      "sha256": "914a98b7f6459b51949d5abd4ed9c6997cf57c75cf03db3c37242aa85b82bd04"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.js",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.js",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.js",
+      "sha256": "6d684facc699b7f9df361784dbe34ee9a4dd4032077a05805469a826ef23225f"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.js",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.mjs",
+      "sha256": "914a98b7f6459b51949d5abd4ed9c6997cf57c75cf03db3c37242aa85b82bd04"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.mjs",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.mjs",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.mjs",
+      "sha256": "6d684facc699b7f9df361784dbe34ee9a4dd4032077a05805469a826ef23225f"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.mjs",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.cjs",
+      "sha256": "c37dcead2776a674af46c257cb450844a1d7fea513212648e118837387b0e54f"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.cjs",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.cjs",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.cjs",
+      "sha256": "2e9ef776a1d09c8f20b47f5f77c1c377912e2aab726f15df1703d60391fb5562"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.cjs",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.ts",
+      "sha256": "03c26acc3d6fa82b75f5dc1b0e2f37db846049b5a6466214fda614fc0539e160"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.ts",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.ts",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.ts",
+      "sha256": "6d684facc699b7f9df361784dbe34ee9a4dd4032077a05805469a826ef23225f"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.ts",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.tsx",
+      "sha256": "03c26acc3d6fa82b75f5dc1b0e2f37db846049b5a6466214fda614fc0539e160"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.tsx",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.tsx",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.tsx",
+      "sha256": "6d684facc699b7f9df361784dbe34ee9a4dd4032077a05805469a826ef23225f"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.tsx",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.jsx",
+      "sha256": "914a98b7f6459b51949d5abd4ed9c6997cf57c75cf03db3c37242aa85b82bd04"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.jsx",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.jsx",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.jsx",
+      "sha256": "6d684facc699b7f9df361784dbe34ee9a4dd4032077a05805469a826ef23225f"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.jsx",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.js",
+      "sha256": "e395ee27564e05bc9dff8e466ecdd02567b0a5fc1d46b4a8d8dc4064b6ea5a32"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.mjs",
+      "sha256": "e395ee27564e05bc9dff8e466ecdd02567b0a5fc1d46b4a8d8dc4064b6ea5a32"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.cjs",
+      "sha256": "e395ee27564e05bc9dff8e466ecdd02567b0a5fc1d46b4a8d8dc4064b6ea5a32"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.ts",
+      "sha256": "7d1ee5e4360853477f6bbf5a590911bf835895dd96813c0f7faeea98ee4db9a8"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.tsx",
+      "sha256": "01781935f1b1d4c9fa400475e961e57dd592c8875d45087df681ade0c86ff57b"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.jsx",
+      "sha256": "bc3c8736a6a0aa537cf924cfbf3ed461a6bb01e9e454b67081b402ce02898fc6"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\symbols.ts",
+      "sha256": "968ea84711cb3e107071f9d05e3a2d7c442a261710c6f55e0a46c3fd7c316c6d"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\reexport.ts",
+      "sha256": "132ca549c53e053a52cc13cd9e169847ec5aa99834bbd222182d150a566c412d"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\consumer.ts",
+      "sha256": "a39b44e5933e125ab1945ed90f423a5b853fd65692c1c31eedd86e640b3a3a92"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\unresolved.ts",
+      "sha256": "49227fa9f578f10658ac65ca930aa3bc36bc0752844864d4944c6e983af2c5d0"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\findings.ts",
+      "sha256": "db52081e71c2b92ed5471b76ee5b1a5d688290b43d1579d03f5e8546e5847fe5"
+    }
+  ],
+  "positives": [
+    {
+      "code": 6133,
+      "category": 1,
+      "source": null,
+      "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/findings.ts",
+      "start": 18,
+      "length": 6,
+      "message": "'unused' is declared but its value is never read."
+    },
+    {
+      "code": 2322,
+      "category": 1,
+      "source": null,
+      "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/findings.ts",
+      "start": 37,
+      "length": 5,
+      "message": "Type 'string' is not assignable to type 'number'."
+    },
+    {
+      "code": 6133,
+      "category": 1,
+      "source": null,
+      "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/findings.ts",
+      "start": 86,
+      "length": 9,
+      "message": "'parameter' is declared but its value is never read."
+    },
+    {
+      "code": 7027,
+      "category": 1,
+      "source": null,
+      "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/findings.ts",
+      "start": 121,
+      "length": 19,
+      "message": "Unreachable code detected."
+    }
+  ],
+  "sourceLess": [
+    {
+      "code": 5052,
+      "category": 1,
+      "source": null,
+      "file": null,
+      "start": null,
+      "length": null,
+      "message": "Option 'checkJs' cannot be specified without specifying option 'allowJs'."
+    }
+  ],
+  "missing": [
+    {
+      "code": 6053,
+      "category": 1,
+      "source": null,
+      "file": null,
+      "start": null,
+      "length": null,
+      "message": "File 'C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/does not exist.ts' not found.\n  The file is in the program because:\n    Root file specified for compilation"
+    }
+  ],
+  "unresolvedDiagnostics": [
+    {
+      "code": 2307,
+      "category": 1,
+      "source": null,
+      "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/unresolved.ts",
+      "start": 21,
+      "length": 14,
+      "message": "Cannot find module './missing.js' or its corresponding type declarations."
+    },
+    {
+      "code": 2307,
+      "category": 1,
+      "source": null,
+      "file": "C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/source-qualified-1/typescript fixtures with spaces/unresolved.ts",
+      "start": 58,
+      "length": 24,
+      "message": "Cannot find module 'q2-uninstalled-package' or its corresponding type declarations."
+    }
+  ],
+  "symbols": {
+    "exports": [
+      "used",
+      "unusedExport",
+      "Size"
+    ],
+    "aliasResolvedToUsed": true,
+    "namespaceComputedAccess": "Recorded syntax outside finite static-property-reference model; not inferred dead"
+  },
+  "emptyProgram": {
+    "inputFiles": 0,
+    "diagnostics": []
+  },
+  "actualReadFiles": [
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.js",
+      "sha256": "914a98b7f6459b51949d5abd4ed9c6997cf57c75cf03db3c37242aa85b82bd04"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\package.json",
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.full.d.ts",
+      "sha256": "bde31fd423cd93b0eff97197a3f66df7c93e8c0c335cbeb113b7ff1ac35c23f4"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.d.ts",
+      "sha256": "2ab096661c711e4a81cc464fa1e6feb929a54f5340b46b0a07ac6bbf857471f0"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.d.ts",
+      "sha256": "8fd575e12870e9944c7e1d62e1f5a73fcf23dd8d3a321f2a2c74c20d022283fe"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2023.d.ts",
+      "sha256": "27bdc30a0e32783366a5abeda841bc22757c1797de8681bbe81fbc735eeb1c10"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2022.d.ts",
+      "sha256": "ee7bad0c15b58988daa84371e0b89d313b762ab83cb5b31b8a2d1162e8eb41c2"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2021.d.ts",
+      "sha256": "feecb1be483ed332fad555aff858affd90a48ab19ba7272ee084704eb7167569"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.d.ts",
+      "sha256": "5efce4fc3c29ea84e8928f97adec086e3dc876365e0982cc8479a07954a3efd4"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2019.d.ts",
+      "sha256": "68d73b4a11549f9c0b7d352d10e91e5dca8faa3322bfb77b661839c42b1ddec7"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2018.d.ts",
+      "sha256": "5e1c4c362065a6b95ff952c0eab010f04dcd2c3494e813b493ecfd4fcb9fc0d8"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.d.ts",
+      "sha256": "e44bb8bbac7f10ecc786703fe0a6a4b952189f908707980ba8f3c8975a760962"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2016.d.ts",
+      "sha256": "3facaf05f0c5fc569c5649dd359892c98a85557e3e0c847964caeb67076f4d75"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.d.ts",
+      "sha256": "45b7ab580deca34ae9729e97c13cfd999df04416a79116c3bfb483804f85ded4"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es5.d.ts",
+      "sha256": "c430d44666289dae81f30fa7b2edebf186ecc91a2d4c71266ea6ae76388792e1"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.decorators.d.ts",
+      "sha256": "8e7f8264d0fb4c5339605a15daadb037bf238c10b654bb3eee14208f860a32ea"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.decorators.legacy.d.ts",
+      "sha256": "782dec38049b92d4e85c1585fbea5474a219c6984a35b004963b00beb1aab538"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.core.d.ts",
+      "sha256": "c57796738e7f83dbc4b8e65132f11a377649c00dd3eee333f672b8f0a6bea671"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.collection.d.ts",
+      "sha256": "dc2df20b1bcdc8c2d34af4926e2c3ab15ffe1160a63e58b7e09833f616efff44"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.iterable.d.ts",
+      "sha256": "0559b1f683ac7505ae451f9a96ce4c3c92bdc71411651ca6ddb0e88baaaad6a3"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.symbol.d.ts",
+      "sha256": "4ff2a353abf8a80ee399af572debb8faab2d33ad38c4b4474cff7f26e7653b8d"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.generator.d.ts",
+      "sha256": "515d0b7b9bea2e31ea4ec968e9edd2c39d3eebf4a2d5cbd04e88639819ae3b71"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.promise.d.ts",
+      "sha256": "0dc1e7ceda9b8b9b455c3a2d67b0412feab00bd2f66656cd8850e8831b08b537"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.proxy.d.ts",
+      "sha256": "ce691fb9e5c64efb9547083e4a34091bcbe5bdb41027e310ebba8f7d96a98671"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.reflect.d.ts",
+      "sha256": "8d697a2a929a5fcb38b7a65594020fcef05ec1630804a33748829c5ff53640d0"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.symbol.wellknown.d.ts",
+      "sha256": "fb0f136d372979348d59b3f5020b4cdb81b5504192b1cacff5d1fbba29378aa1"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2016.array.include.d.ts",
+      "sha256": "d15bea3d62cbbdb9797079416b8ac375ae99162a7fba5de2c6c505446486ac0a"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2016.intl.d.ts",
+      "sha256": "68d18b664c9d32a7336a70235958b8997ebc1c3b8505f4f1ae2b7e7753b87618"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.arraybuffer.d.ts",
+      "sha256": "eb3d66c8327153d8fa7dd03f9c58d351107fe824c79e9b56b462935176cdf12a"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.date.d.ts",
+      "sha256": "38f0219c9e23c915ef9790ab1d680440d95419ad264816fa15009a8851e79119"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.intl.d.ts",
+      "sha256": "4de680d5bb41c17f7f68e0419412ca23c98d5749dcaaea1896172f06435891fc"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.object.d.ts",
+      "sha256": "69ab18c3b76cd9b1be3d188eaf8bba06112ebbe2f47f6c322b5105a6fbc45a2e"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.sharedmemory.d.ts",
+      "sha256": "a680117f487a4d2f30ea46f1b4b7f58bef1480456e18ba53ee85c2746eeca012"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.string.d.ts",
+      "sha256": "2f11ff796926e0832f9ae148008138ad583bd181899ab7dd768a2666700b1893"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.typedarrays.d.ts",
+      "sha256": "954296b30da6d508a104a3a0b5d96b76495c709785c1d11610908e63481ee667"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2018.asynciterable.d.ts",
+      "sha256": "0a969edff4bd52585473d24995c5ef223f6652d6ef46193309b3921d65dd4376"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2018.asyncgenerator.d.ts",
+      "sha256": "ac9538681b19688c8eae65811b329d3744af679e0bdfa5d842d0e32524c73e1c"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2018.promise.d.ts",
+      "sha256": "811ec78f7fefcabbda4bfa93b3eb67d9ae166ef95f9bff989d964061cbf81a0c"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2018.regexp.d.ts",
+      "sha256": "717937616a17072082152a2ef351cb51f98802fb4b2fdabd32399843875974ca"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2018.intl.d.ts",
+      "sha256": "9e9fbd7030c440b33d021da145d3232984c8bb7916f277e8ffd3dc2e3eae2bdb"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2019.array.d.ts",
+      "sha256": "d7e7d9b7b50e5f22c915b525acc5a49a7a6584cf8f62d0569e557c5cfc4b2ac2"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2019.object.d.ts",
+      "sha256": "71c37f4c9543f31dfced6c7840e068c5a5aacb7b89111a4364b1d5276b852557"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2019.string.d.ts",
+      "sha256": "576711e016cf4f1804676043e6a0a5414252560eb57de9faceee34d79798c850"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2019.symbol.d.ts",
+      "sha256": "89c1b1281ba7b8a96efc676b11b264de7a8374c5ea1e6617f11880a13fc56dc6"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2019.intl.d.ts",
+      "sha256": "74f7fa2d027d5b33eb0471c8e82a6c87216223181ec31247c357a3e8e2fddc5b"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.bigint.d.ts",
+      "sha256": "d6d7ae4d1f1f3772e2a3cde568ed08991a8ae34a080ff1151af28b7f798e22ca"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.intl.d.ts",
+      "sha256": "639e512c0dfc3fad96a84caad71b8834d66329a1f28dc95e3946c9b58176c73a"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.date.d.ts",
+      "sha256": "063600664504610fe3e99b717a1223f8b1900087fab0b4cad1496a114744f8df"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.number.d.ts",
+      "sha256": "368af93f74c9c932edd84c58883e736c9e3d53cec1fe24c0b0ff451f529ceab1"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.promise.d.ts",
+      "sha256": "934019d7e3c81950f9a8426d093458b65d5aff2c7c1511233c0fd5b941e608ab"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.sharedmemory.d.ts",
+      "sha256": "52ada8e0b6e0482b728070b7639ee42e83a9b1c22d205992756fe020fd9f4a47"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.string.d.ts",
+      "sha256": "3bdefe1bfd4d6dee0e26f928f93ccc128f1b64d5d501ff4a8cf3c6371200e5e6"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.symbol.wellknown.d.ts",
+      "sha256": "59fb2c069260b4ba00b5643b907ef5d5341b167e7d1dbf58dfd895658bda2867"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2021.promise.d.ts",
+      "sha256": "af3dd424cf267428f30ccfc376f47a2c0114546b55c44d8c0f1d57d841e28d74"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2021.string.d.ts",
+      "sha256": "995c005ab91a498455ea8dfb63aa9f83fa2ea793c3d8aa344be4a1678d06d399"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2021.weakref.d.ts",
+      "sha256": "959d36cddf5e7d572a65045b876f2956c973a586da58e5d26cde519184fd9b8a"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2021.intl.d.ts",
+      "sha256": "965f36eae237dd74e6cca203a43e9ca801ce38824ead814728a2807b1910117d"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2022.array.d.ts",
+      "sha256": "3925a6c820dcb1a06506c90b1577db1fdbf7705d65b62b99dce4be75c637e26b"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2022.error.d.ts",
+      "sha256": "0a3d63ef2b853447ec4f749d3f368ce642264246e02911fcb1590d8c161b8005"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2022.intl.d.ts",
+      "sha256": "8cdf8847677ac7d20486e54dd3fcf09eda95812ac8ace44b4418da1bbbab6eb8"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2022.object.d.ts",
+      "sha256": "8444af78980e3b20b49324f4a16ba35024fef3ee069a0eb67616ea6ca821c47a"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2022.regexp.d.ts",
+      "sha256": "b4b67b1a91182421f5df999988c690f14d813b9850b40acd06ed44691f6727ad"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2022.string.d.ts",
+      "sha256": "3287d9d085fbd618c3971944b65b4be57859f5415f495b33a6adc994edd2f004"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2023.array.d.ts",
+      "sha256": "df83c2a6c73228b625b0beb6669c7ee2a09c914637e2d35170723ad49c0f5cd4"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2023.collection.d.ts",
+      "sha256": "436aaf437562f276ec2ddbee2f2cdedac7664c1e4c1d2c36839ddd582eeb3d0a"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2023.intl.d.ts",
+      "sha256": "8e3c06ea092138bf9fa5e874a1fdbc9d54805d074bee1de31b99a11e2fec239d"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.arraybuffer.d.ts",
+      "sha256": "87dc0f382502f5bbce5129bdc0aea21e19a3abbc19259e0b43ae038a9fc4e326"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.collection.d.ts",
+      "sha256": "b1cb28af0c891c8c96b2d6b7be76bd394fddcfdb4709a20ba05a7c1605eea0f9"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.object.d.ts",
+      "sha256": "2fef54945a13095fdb9b84f705f2b5994597640c46afeb2ce78352fab4cb3279"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.promise.d.ts",
+      "sha256": "ac77cb3e8c6d3565793eb90a8373ee8033146315a3dbead3bde8db5eaf5e5ec6"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.regexp.d.ts",
+      "sha256": "56e4ed5aab5f5920980066a9409bfaf53e6d21d3f8d020c17e4de584d29600ad"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.sharedmemory.d.ts",
+      "sha256": "4ece9f17b3866cc077099c73f4983bddbcb1dc7ddb943227f1ec070f529dedd1"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.string.d.ts",
+      "sha256": "0a6282c8827e4b9a95f4bf4f5c205673ada31b982f50572d27103df8ceb8013c"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.intl.d.ts",
+      "sha256": "811c71eee4aa0ac5f7adf713323a5c41b0cf6c4e17367a34fbce379e12bbf0a4"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.decorators.d.ts",
+      "sha256": "d4b1d2c51d058fc21ec2629fff7a76249dec2e36e12960ea056e3ef89174080f"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.disposable.d.ts",
+      "sha256": "51ad4c928303041605b4d7ae32e0c1ee387d43a24cd6f1ebf4a2699e1076d4fa"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.collection.d.ts",
+      "sha256": "e3a2a0cee0f03ffdde24d89660eba2685bfbdeae955a6c67e8c4c9fd28928eeb"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.array.d.ts",
+      "sha256": "1c9319a09485199c1f7b0498f2988d6d2249793ef67edda49d1e584746be9032"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.iterator.d.ts",
+      "sha256": "22adec94ef7047a6c9d1af3cb96be87a335908bf9ef386ae9fd50eeb37f44c47"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.promise.d.ts",
+      "sha256": "60037901da1a425516449b9a20073aa03386cce92f7a1fd902d7602be3a7c2e9"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.float16.d.ts",
+      "sha256": "196cb558a13d4533a5163286f30b0509ce0210e4b316c56c38d4c0fd2fb38405"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.error.d.ts",
+      "sha256": "73f78680d4c08509933daf80947902f6ff41b6230f94dd002ae372620adb0f60"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.sharedmemory.d.ts",
+      "sha256": "c5239f5c01bcfa9cd32f37c496cf19c61d69d37e48be9de612b541aac915805b"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.dom.d.ts",
+      "sha256": "080941d9f9ff9307f7e27a83bcd888b7c8270716c39af943532438932ec1d0b9"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.webworker.importscripts.d.ts",
+      "sha256": "80e18897e5884b6723488d4f5652167e7bb5024f946743134ecc4aa4ee731f89"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.scripthost.d.ts",
+      "sha256": "cd034f499c6cdca722b60c04b5b1b78e058487a7085a8e0d6fb50809947ee573"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.dom.iterable.d.ts",
+      "sha256": "2e80ee7a49e8ac312cc11b77f1475804bee36b3b2bc896bead8b6e1266befb43"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.dom.asynciterable.d.ts",
+      "sha256": "d7a3c8b952931daebdfc7a2897c53c0a1c73624593fa070e46bd537e64dcd20a"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.js",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.js",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.js",
+      "sha256": "6d684facc699b7f9df361784dbe34ee9a4dd4032077a05805469a826ef23225f"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.js",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.mjs",
+      "sha256": "914a98b7f6459b51949d5abd4ed9c6997cf57c75cf03db3c37242aa85b82bd04"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.mjs",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.mjs",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.mjs",
+      "sha256": "6d684facc699b7f9df361784dbe34ee9a4dd4032077a05805469a826ef23225f"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.mjs",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.cjs",
+      "sha256": "c37dcead2776a674af46c257cb450844a1d7fea513212648e118837387b0e54f"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.cjs",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.cjs",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.cjs",
+      "sha256": "2e9ef776a1d09c8f20b47f5f77c1c377912e2aab726f15df1703d60391fb5562"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.cjs",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.ts",
+      "sha256": "03c26acc3d6fa82b75f5dc1b0e2f37db846049b5a6466214fda614fc0539e160"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.ts",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.ts",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.ts",
+      "sha256": "6d684facc699b7f9df361784dbe34ee9a4dd4032077a05805469a826ef23225f"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.ts",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.tsx",
+      "sha256": "03c26acc3d6fa82b75f5dc1b0e2f37db846049b5a6466214fda614fc0539e160"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.tsx",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.tsx",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.tsx",
+      "sha256": "6d684facc699b7f9df361784dbe34ee9a4dd4032077a05805469a826ef23225f"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.tsx",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean café.jsx",
+      "sha256": "914a98b7f6459b51949d5abd4ed9c6997cf57c75cf03db3c37242aa85b82bd04"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.jsx",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.jsx",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.jsx",
+      "sha256": "6d684facc699b7f9df361784dbe34ee9a4dd4032077a05805469a826ef23225f"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.jsx",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.js",
+      "sha256": "e395ee27564e05bc9dff8e466ecdd02567b0a5fc1d46b4a8d8dc4064b6ea5a32"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.mjs",
+      "sha256": "e395ee27564e05bc9dff8e466ecdd02567b0a5fc1d46b4a8d8dc4064b6ea5a32"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.cjs",
+      "sha256": "e395ee27564e05bc9dff8e466ecdd02567b0a5fc1d46b4a8d8dc4064b6ea5a32"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.ts",
+      "sha256": "7d1ee5e4360853477f6bbf5a590911bf835895dd96813c0f7faeea98ee4db9a8"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.tsx",
+      "sha256": "01781935f1b1d4c9fa400475e961e57dd592c8875d45087df681ade0c86ff57b"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.jsx",
+      "sha256": "bc3c8736a6a0aa537cf924cfbf3ed461a6bb01e9e454b67081b402ce02898fc6"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\symbols.ts",
+      "sha256": "968ea84711cb3e107071f9d05e3a2d7c442a261710c6f55e0a46c3fd7c316c6d"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\reexport.ts",
+      "sha256": "132ca549c53e053a52cc13cd9e169847ec5aa99834bbd222182d150a566c412d"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\consumer.ts",
+      "sha256": "a39b44e5933e125ab1945ed90f423a5b853fd65692c1c31eedd86e640b3a3a92"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\unresolved.ts",
+      "sha256": "49227fa9f578f10658ac65ca930aa3bc36bc0752844864d4944c6e983af2c5d0"
+    },
+    {
+      "file": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\findings.ts",
+      "sha256": "db52081e71c2b92ed5471b76ee5b1a5d688290b43d1579d03f5e8546e5847fe5"
+    }
+  ],
+  "loadedModules": [
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-typescript.cjs",
+      "sha256": "bb63396587c8b731b2aec2a771e3723d043a5caaa5da71a6b2f232e144f600d6"
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\typescript.js",
+      "sha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675"
+    }
+  ],
+  "fields": "Diagnostic code/category/source/file/start/length/message; offsets are UTF-16, source-less path/span null",
+  "limits": "No source execution, no external type downloads, no auto type acquisition; JSX parse support is not JSX runner/coverage qualification"
+}

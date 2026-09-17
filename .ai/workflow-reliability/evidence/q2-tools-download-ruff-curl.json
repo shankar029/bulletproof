@@ -1,0 +1,52 @@
+{
+  "argv": [
+    "C:\\WINDOWS\\system32\\curl.exe",
+    "--fail",
+    "--location",
+    "--silent",
+    "--show-error",
+    "--max-time",
+    "60",
+    "--output",
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\ruff-0.16.8-py3-none-win_amd64.whl",
+    "https://files.pythonhosted.org/packages/1e/5d/a509c07d714b6da88f2c518b4637cf6f1d46b074be8f0f1e5fb9ff5126fe/ruff-0.16.8-py3-none-win_amd64.whl"
+  ],
+  "wrapper_argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+    "--idle",
+    "30",
+    "--max",
+    "90",
+    "--",
+    "C:\\WINDOWS\\system32\\curl.exe",
+    "--fail",
+    "--location",
+    "--silent",
+    "--show-error",
+    "--max-time",
+    "60",
+    "--output",
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\ruff-0.16.8-py3-none-win_amd64.whl",
+    "https://files.pythonhosted.org/packages/1e/5d/a509c07d714b6da88f2c518b4637cf6f1d46b074be8f0f1e5fb9ff5126fe/ruff-0.16.8-py3-none-win_amd64.whl"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917",
+  "exit": 35,
+  "captures": {
+    "stdout": {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-ruff-curl.stdout.log",
+      "sha256": "112b80673ec5583e8a69c1548ff05a50490454a2149a1b4fdce3e4bff0a38d75",
+      "bytes": 250
+    },
+    "stderr": {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-ruff-curl.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "capture_semantics": "Raw wrapper bytes; run.py CLI merges child stderr into stdout and normalizes newlines",
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "classification": "failed local regression capture; no test pass count established",
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B", "scripts\\run.py", "--idle", "120", "--max", "600", "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B", ".ai\\workflow-reliability\\evidence\\c2b-state-capture.py",
+    "workflow01", "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B", "-m", "unittest", "discover", "-s", "scripts\\tests", "-p", "test_workflow*.py", "-v"
+  ],
+  "exit": 124,
+  "observed_output": "[run] idle-timeout after 120s of silence; outer runner killed its capture command (exit 124)",
+  "evidence_limit": "Tool transcript retains the exact outer marker. Capturer buffered child stdout/stderr and was killed before persisting them; workflow01 has input copies only, no result.json. Do not infer a partial pass count.",
+  "cause": "Outer idle monitoring saw no output while the inner runner buffered a combined regression longer than 120 seconds.",
+  "cleanup_limit": "Existing runner attempted owned process-tree cleanup. This attempt did not persist child IDs or handles, so no independent whole-tree-death or removal of every temporary fixture is claimed. Do not delete guessed temporary directories or target processes by name.",
+  "one_recovery": "Keep production/tests frozen. Split the same workflow regression into per-module batches below the outer idle ceiling. Capturer now persists launch metadata and actual child lifecycle events before returning. No heartbeat to conceal silence; retain 120/600 bounds. A second timeout stops this request."
+}

@@ -1,0 +1,134 @@
+{
+  "results": [
+    {
+      "name": "c2-recovery-design.html",
+      "hash": "319b7963dce63653c77e036050cbf128629dc7729ddbb05470620a8a15cfeaec",
+      "pages": 2,
+      "view": {
+        "title": "C2 recovery — bounded design amendment",
+        "styles": 1,
+        "diagrams": [
+          {
+            "width": 785.171875,
+            "height": 103.3125
+          }
+        ]
+      },
+      "errors": {
+        "errors": [],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 14135474661156020000
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        }
+      },
+      "consoleLog": {
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 14135474661156020000
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "messages": []
+      }
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-9c73e284-7dcb-4120-9f59-8fd11c5c9366",
+        "--cdp",
+        "http://127.0.0.1:51752",
+        "--json",
+        "open",
+        "file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/c2-recovery-design.html"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14135474661156019739},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"7D55AEF89D9440FE257C6EACC9F6160C\",\"title\":\"C2 recovery — bounded design amendment\",\"url\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/c2-recovery-design.html\"},\"error\":null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-9c73e284-7dcb-4120-9f59-8fd11c5c9366",
+        "--cdp",
+        "http://127.0.0.1:51752",
+        "--json",
+        "eval",
+        "JSON.stringify({title:document.title,styles:document.styleSheets.length,diagrams:[...document.querySelectorAll(\"figure svg\")].map(x=>({width:x.getBoundingClientRect().width,height:x.getBoundingClientRect().height}))})"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14135474661156019739},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/c2-recovery-design.html\",\"result\":\"{\\\"title\\\":\\\"C2 recovery — bounded design amendment\\\",\\\"styles\\\":1,\\\"diagrams\\\":[{\\\"width\\\":785.171875,\\\"height\\\":103.3125}]}\"},\"error\":null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-9c73e284-7dcb-4120-9f59-8fd11c5c9366",
+        "--cdp",
+        "http://127.0.0.1:51752",
+        "--json",
+        "errors"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14135474661156019739},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-9c73e284-7dcb-4120-9f59-8fd11c5c9366",
+        "--cdp",
+        "http://127.0.0.1:51752",
+        "--json",
+        "console"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14135474661156019739},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-9c73e284-7dcb-4120-9f59-8fd11c5c9366",
+        "--cdp",
+        "http://127.0.0.1:51752",
+        "--json",
+        "pdf",
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c2-recovery-design.pdf"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14135474661156019739},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\c2-recovery-design.pdf\"},\"error\":null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-9c73e284-7dcb-4120-9f59-8fd11c5c9366",
+        "--cdp",
+        "http://127.0.0.1:51752",
+        "--json",
+        "close"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"closed\":true,\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":false,\"engine\":\"chrome\",\"launchHash\":null},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":false,\"saveStatus\":\"not_configured\"},\"restoreStatus\":\"not_configured\",\"saveStatus\":\"not_configured\"},\"error\":null}\n",
+      "stderr": ""
+    }
+  ]
+}

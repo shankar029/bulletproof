@@ -1,0 +1,292 @@
+#!/usr/bin/env python3
+"""Run a command under an *idle* timeout and recover cleanly when it hangs.
+
+A total timeout is the wrong tool for "stuck for hours": set it low and it kills
+healthy long jobs (renders, installs, test suites); set it high and a real hang
+still burns that whole budget. This runner watches *progress* instead. Every
+chunk of stdout/stderr resets an idle timer; the command is only killed when it
+produces NO output for --idle seconds. A hung process dies in `idle` seconds no
+matter how long the job would legitimately take.
+
+On an idle kill the whole process tree is terminated (so no orphaned browser,
+daemon, or child keeps a lock), a machine-readable marker is printed, and the
+process exits 124 — the same code GNU `timeout` uses — so callers can branch on
+"it hung" vs "it failed".
+
+Usage:
+    python run.py [--idle SECONDS] [--max SECONDS] [--label NAME] -- <command> [args...]
+
+Options:
+    --idle SECONDS   Kill if no output for this long. Default 60.
+    --max SECONDS    Absolute ceiling regardless of output (0 = none). Default 0.
+    --label NAME     Human label used in the markers. Default: the command.
+
+Exit codes:
+    <command's own>  Ran to completion (pass its code straight through).
+    124              Killed — idle timeout (hung, no output for --idle s).
+    125              Killed — max timeout (--max ceiling hit).
+
+Markers (always on their own line, easy to grep from a transcript):
+    [run] idle-timeout after Ns of silence — killed "<label>" (exit 124)
+    [run] max-timeout after Ns — killed "<label>" (exit 125)
+"""
+import argparse
+import codecs
+import io
+import os
+import signal
+import subprocess
+import sys
+import threading
+import time
+
+
+def _kill_tree(proc):
+    """Kill the process and every child, cross-platform, best-effort."""
+    if proc.poll() is not None:
+        return
+    try:
+        if os.name == "nt":
+            subprocess.run(
+                ["taskkill", "/F", "/T", "/PID", str(proc.pid)],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+            )
+        else:
+            try:
+                os.killpg(os.getpgid(proc.pid), signal.SIGKILL)
+            except (ProcessLookupError, PermissionError):
+                proc.kill()
+    except Exception:
+        try:
+            proc.kill()
+        except Exception:
+            pass
+
+
+def _popen(cmd, cwd=None, merge_stderr=True, *, env=None):
+    kwargs = dict(
+        cwd=cwd,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT if merge_stderr else subprocess.PIPE,
+        bufsize=0,
+        env=env,
+    )
+    if os.name == "nt":
+        kwargs["creationflags"] = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
+    else:
+        kwargs["preexec_fn"] = os.setsid  # own process group -> kill the whole tree
+    return subprocess.Popen(cmd, **kwargs)
+
+
+def run_capture(cmd, cwd=None, idle=300.0, max_total=0.0, *, env=None, observe=None):
+    """Run `cmd`, capturing output, under an *idle* timeout that resets on every
+    chunk of output. Attempts owned process-tree cleanup on silence.
+    Returns (rc, stdout, stderr):
+        rc = command's own code on completion,
+             124 if killed for going silent longer than `idle`,
+             125 for max timeout, launch error or observer error,
+             127 if the command was not found.
+    Callers get an idle-hang as rc 124 exactly like GNU `timeout`.
+
+    Optional observe(event) runs synchronously: launch-failed on Popen failure,
+    spawned immediately after Popen, direct-exited after wait. Events are plain
+    ProcessObservation dictionaries, not durable receipts. Creation identity and
+    its evidence are null: this runner has no qualified platform identity probe.
+    Direct exit and best-effort cleanup never prove descendant termination.
+    Callback exceptions become [observer-error] diagnostics and rc 125, with
+    owned cleanup attempted. The callback must return promptly; it is not under
+    the monitor's timeouts. The caller owns durable intent before this call.
+    """
+    proc = None
+
+    def notify(phase, *, cleanup="not-attempted", error=None):
+        if observe is None:
+            return None
+        event = {
+            "phase": phase,
+            "pid": proc.pid if proc is not None else None,
+            # _popen establishes a new Unix session before Popen returns.
+            "process_group": proc.pid if proc is not None and os.name != "nt" else None,
+            "start_identity": None,
+            "identity_evidence": None,
+            "returncode": proc.returncode if phase == "direct-exited" else None,
+            "cleanup": cleanup,
+            "error": error,
+        }
+        try:
+            observe(event)
+        except Exception as exc:  # noqa: BLE001
+            return f"[observer-error] {phase}: {type(exc).__name__}: {exc}"
+        return None
+
+    try:
+        proc = _popen(cmd, cwd=cwd, merge_stderr=False, env=env)
+    except Exception as exc:  # noqa: BLE001
+        diagnostic = "not found" if isinstance(exc, FileNotFoundError) else str(exc)
+        observer_error = notify("launch-failed", error=str(exc))
+        if observer_error is not None:
+            return 125, "", diagnostic + "\n" + observer_error
+        return (127 if isinstance(exc, FileNotFoundError) else 125), "", diagnostic
+
+    observer_error = notify("spawned")
+    cleanup = "not-attempted"
+    if observer_error is not None:
+        cleanup = "best-effort-attempted"
+        _kill_tree(proc)
+
+    out_chunks, err_chunks = [], []
+    last = [time.monotonic()]
+    lock = threading.Lock()
+
+    def pump(stream, sink):
+        decoder = io.IncrementalNewlineDecoder(
+            codecs.getincrementaldecoder("utf-8")(errors="replace"), translate=True)
+        try:
+            while chunk := stream.read(4096):
+                with lock:
+                    last[0] = time.monotonic()
+                sink.append(decoder.decode(chunk))
+            sink.append(decoder.decode(b"", final=True))
+        finally:
+            stream.close()
+
+    threads = [
+        threading.Thread(target=pump, args=(proc.stdout, out_chunks), daemon=True),
+        threading.Thread(target=pump, args=(proc.stderr, err_chunks), daemon=True),
+    ]
+    for t in threads:
+        t.start()
+
+    started = time.monotonic()
+    reason = None
+    while proc.poll() is None:
+        time.sleep(0.5)
+        now = time.monotonic()
+        with lock:
+            idle_for = now - last[0]
+        if idle > 0 and idle_for >= idle:
+            reason = 124
+            cleanup = "best-effort-attempted"
+            _kill_tree(proc)
+            break
+        if max_total > 0 and (now - started) >= max_total:
+            reason = 125
+            cleanup = "best-effort-attempted"
+            _kill_tree(proc)
+            break
+
+    proc.wait()
+    timeout_error = {124: "[idle-timeout]", 125: "[max-timeout]"}.get(reason)
+    exit_error = notify("direct-exited", cleanup=cleanup,
+                        error=observer_error or timeout_error)
+    if exit_error is not None:
+        # The direct child is already reaped. _kill_tree deliberately refuses
+        # to target its old PID; no descendant-termination claim follows.
+        _kill_tree(proc)
+        observer_error = "\n".join(value for value in (observer_error, exit_error) if value)
+    for t in threads:
+        t.join(timeout=2)
+
+    stdout = "".join(out_chunks)
+    stderr = "".join(err_chunks)
+    if timeout_error is not None:
+        stderr = (stderr + "\n" + timeout_error).strip()
+    if observer_error is not None:
+        return 125, stdout, (stderr + "\n" + observer_error).strip()
+    if reason is not None:
+        return reason, stdout, stderr
+    return proc.returncode, stdout, stderr
+
+
+def main() -> int:
+    # The child stream is UTF-8; forwarding through a redirected Windows
+    # cp1252 TextIOWrapper otherwise crashes the pump thread and loses logs.
+    # Configure the CLI's actual sinks, independent of inherited locale/env.
+    for stream in (sys.stdout, sys.stderr):
+        stream.reconfigure(encoding="utf-8", errors="backslashreplace")
+    parser = argparse.ArgumentParser(add_help=True)
+    parser.add_argument("--idle", type=float, default=60.0)
+    parser.add_argument("--max", type=float, default=0.0)
+    parser.add_argument("--label", default=None)
+    parser.add_argument("command", nargs=argparse.REMAINDER)
+    args = parser.parse_args()
+
+    cmd = args.command
+    if cmd and cmd[0] == "--":
+        cmd = cmd[1:]
+    if not cmd:
+        print("run.py: no command given (use: run.py --idle 60 -- <cmd>)", file=sys.stderr)
+        return 2
+
+    label = args.label or " ".join(cmd)
+
+    popen_kwargs = dict(
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        bufsize=1,
+        universal_newlines=True,
+        encoding="utf-8",
+        errors="replace",
+    )
+    if os.name == "nt":
+        popen_kwargs["creationflags"] = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
+    else:
+        popen_kwargs["preexec_fn"] = os.setsid  # own process group -> kill the whole tree
+
+    proc = subprocess.Popen(cmd, **popen_kwargs)
+
+    last_output = time.monotonic()
+    started = last_output
+    lock = threading.Lock()
+    killed_reason = [None]  # "idle" | "max"
+
+    def pump():
+        nonlocal last_output
+        assert proc.stdout is not None
+        try:
+            for line in proc.stdout:
+                with lock:
+                    last_output = time.monotonic()
+                sys.stdout.write(line)
+                sys.stdout.flush()
+        finally:
+            proc.stdout.close()
+
+    pump_thread = threading.Thread(target=pump, daemon=True)
+    pump_thread.start()
+
+    while proc.poll() is None:
+        time.sleep(0.5)
+        now = time.monotonic()
+        with lock:
+            idle_for = now - last_output
+        if args.idle > 0 and idle_for >= args.idle:
+            killed_reason[0] = "idle"
+            _kill_tree(proc)
+            break
+        if args.max > 0 and (now - started) >= args.max:
+            killed_reason[0] = "max"
+            _kill_tree(proc)
+            break
+
+    proc.wait()
+    pump_thread.join(timeout=2)
+
+    if killed_reason[0] == "idle":
+        print(
+            f'\n[run] idle-timeout after {int(args.idle)}s of silence — killed "{label}" (exit 124)',
+            flush=True,
+        )
+        return 124
+    if killed_reason[0] == "max":
+        print(
+            f'\n[run] max-timeout after {int(args.max)}s — killed "{label}" (exit 125)',
+            flush=True,
+        )
+        return 125
+    return proc.returncode
+
+
+if __name__ == "__main__":
+    sys.exit(main())

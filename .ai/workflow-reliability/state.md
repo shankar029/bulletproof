@@ -5,7 +5,7 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: C2a independently verified/reviewed; preserving before C2 CLI implementation.
+- Phase: state seams independently verified/reviewed for preservation; ordinary CLI and Q2 adapters next.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
 - Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
@@ -37,8 +37,9 @@
 - No repeated uncoached model-effectiveness study claimed by deterministic tests.
 
 ## Next action
-Preserve the approved C2a process-lifecycle observer, then implement the remaining
-C2 CLI component. Do not treat the observer seam as the six-verb CLI.
+Preserve the accepted adoption-validation state seams, then integrate the ordinary
+five-verb CLI and the qualified Q2 measurement adapters. Positive recovery remains blocked;
+no recovery stub or silent completion of the original requirement.
 The local I1 preservation commit is `aaec9b9`.
 The continuation addendum replaces implementation-dispatch dependencies only; it does not
 close I1.T4 or remove any required measurement, independent role or final acceptance check.
@@ -121,6 +122,164 @@ close I1.T4 or remove any required measurement, independent role or final accept
   source/test hashes, 22 owner pins, 35 final-input pins and 10 artifact pins.
   AC04 is accepted only for the observer seam; AC05 recovery/resume and overall
   AC09 quality remain open. Parent accepts preservation before remaining C2 work.
+- FACT: C2a runner, owner/independent tests, review and bounded evidence are preserved
+  in `d971634219a633cc4401fb7dcba9685e672978aa`. All three reviewed source/test hashes
+  matched immediately before staging; staged diff check passed. Report rendered to
+  three pages without browser/console errors. After commit, only the earlier
+  `evals/report.md` date delta remained outside the commit.
+- Remaining C2 implementation is owned by `a93df3f0-aa79-45e1-a2ce-c998915758cf`:
+  six-verb CLI, CLI tests, native paired failure cases and operator reference. C1/Q1
+  and the runner remain frozen. Any required interface correction must be surfaced
+  before editing those files. Positive quality/closure scenarios lacking actual
+  collectors remain explicitly blocked, never populated with invented passing metrics.
+- FACT: C2 owner stopped before production edits at the mandatory frozen-interface
+  check (`evidence/c2b-interface-blocker.md`). The gate only clears executable
+  unresolved admissions on `completed`; state requires actual terminal process
+  observations for that event. Recovery after an unknown-spawn reset cannot fabricate
+  those observations. Event also lacks a typed durable LockOwner/recovery-artifact
+  binding once the lexical mutex is removed.
+- The one real-persistence/synthetic-protocol diagnostic exited 0 and retained seven
+  unchanged input hashes; it is not actual recovery or a CLI test pass. No CLI/native
+  tests ran and no CLI implementation was written. Parent accepts this design-level
+  blocker rather than allowing reason-field encoding, filtered ledger views or fake
+  completion events.
+- Designer `269ca50e-e7c3-43b0-bbc9-d2fc40a98d1c` owns only a bounded proposed typed
+  ownership/recovery amendment, versioning and affected-proof plan. Independent
+  review and parent acceptance are required before any frozen core edit. Existing
+  runner, metric requirements and historical acceptance remain unchanged.
+- FACT: the proposed `c2-recovery-contract.json`/HTML add typed v2 admission ownership,
+  immutable recovery references and materialized lifetime-only gate resolution. They
+  explicitly lack an established positive platform qualifier. This is a design proposal,
+  not permission to ship an always-blocked placeholder or claim live recovery.
+- Independent designer-reviewer `64dfb469-4c58-48e5-baa2-aeca2fa35d87` is checking
+  correctness, minimality, versioning, stale-lock safety and whether platform qualification
+  must precede production work. No amendment or core edit is accepted yet.
+- Parent rendered the unchanged proposal to two pages with one visible diagram and no
+  browser/console errors. The first helper invocation rejected the digit in the filename;
+  only that helper's filename allowlist was corrected and one replay passed. The initial
+  rendering record is retained as `evidence/c2-recovery-design-rendering-failed-name.json`.
+- Q2's independent prerequisite may proceed without recovery/core changes: owner
+  `056029ed-1e2f-4d8d-af0b-7d04bafbe5d3` is qualifying the previously approved TypeScript,
+  jscpd, lizard, vulture and Ruff tools in owned external storage. Actual missing-tool
+  failure precedes any provisioning; no repository dependency/config or production
+  adapter changes are authorized. Results must establish exact versions/APIs/census,
+  or name each blocker. C2R and Q2 proof remain separate.
+- FACT: independent design review is REVISE (`evidence/c2-recovery-design-review.md`).
+  Parent accepts all four findings: qualify a real pre-admission identity/evidence
+  path before production recovery machinery; specify or defer live v1 migration;
+  consistently limit unknown-spawn recovery to a qualified complete environment
+  reset; bind review acceptance by actual bytes/sequence rather than absent timestamps.
+- No production recovery amendment is adopted. The platform prerequisite cannot be
+  deferred behind immutable null-identity admissions and still claim those runs become
+  recoverable later. The final design round is held until feasibility evidence exists.
+- Researcher `2c5aaf54-e540-442b-a434-911a0e9ee872` owns one read-only feasibility
+  check of an already-available Docker-compatible execution environment, if present.
+  No installation, daemon launch, environment reset or container mutation is authorized.
+  If unavailable or inadequate, return the named prerequisite rather than a broad
+  platform hunt. Q2 qualification remains independent and active.
+- FACT: `evidence/c2-recovery-platform-research.md` found neither `docker` nor
+  `docker.exe` through this session's command resolution. This is not proof of
+  machine-wide absence; no daemon inquiry, install or container action occurred.
+  No qualified producer or positive recovery path was established. The bounded
+  root `.ai` check also found no canonical persistent v1 guard ledgers.
+- Parent selects the final-round design direction: defer positive recovery and
+  speculative v2 migration/qualifier machinery; preserve original recovery
+  requirements as blocked. Propose independently useful status/next/record/close/
+  adopt only, with no stub recover verb and explicit interruption limitations.
+  Existing schemas/core remain frozen unless a concrete ordinary-operation seam
+  is independently reviewed. This scope is proposed, not yet implementation approval.
+- Original designer `269ca50e-e7c3-43b0-bbc9-d2fc40a98d1c` is disposing F1-F4 in
+  the final planned revision, preserving exact r1 artifacts. Ordinary adoption
+  must specify actual bootstrap/partial-publication behavior, not hide another
+  load-before-adopt dependency. Independent review follows; no further broad cycle.
+- FACT: Q2 `evidence/q2-tools-report.md` qualifies jscpd 5.2.1 and Ruff 0.16.8 on
+  bounded real fixtures. TypeScript 5.9.3, lizard 1.24.0 and Vulture 2.16 remain
+  blocked by package-access TLS negotiation failures, not by missing versions.
+  CHECK-TOOLS is incomplete; no production adapters were written. Coverage stays Q3.
+- Parent authorized one bounded secure acquisition follow-up: same official hosts
+  using normally verified TLS 1.2 if negotiation is the cause; no insecure HTTP,
+  certificate disabling, trust-store changes or policy bypass. If that fails, the
+  owner may propose an exact-tag official-source route for review, not silently
+  provision it or substitute another tool/version. Existing qualification and failed
+  download evidence remain immutable.
+- FACT: final proposed r2 names C2b-ordinary-v1 and defers recovery/v2 migration.
+  It specifies five ordinary verbs and finite adoption bootstrap/publication retries.
+  Two exact state seams are now explicit: shared `validate_design_binding` and paired
+  optional design/ledger inputs to `bind_inputs`. No production change is authorized
+  until the final independent review accepts these interfaces and their ordering.
+- Normative r2 contract SHA-256:
+  `80442414f2bdc597e75222e7ba475339b5932f732b1f947ffd9828267e0b949d`.
+  Parent added only a publication-order diagram to the overview; final HTML hash
+  `a290690f4c16755d47a21930dd40fc6f01df9789ec2b2691f6b0ea773803750a`
+  renders to two pages with no browser/console errors. R1 source and rendering
+  artifacts are preserved separately. Reviewer was notified of the presentation delta.
+- FACT: final design re-review APPROVE (`evidence/c2-recovery-design-review-r2.md`)
+  binds the normative r2 and reconciles the diagram-only HTML delta. Parent accepts
+  ordinary-five-verb design and the exact two state seams. Adopted-event construction
+  must include the existing `binding_mode="guarded"` field and actual source snapshot;
+  no synthetic bootstrap proof. Full C2/recovery/AC05 remain incomplete.
+- Owner `a93df3f0-aa79-45e1-a2ce-c998915758cf` is implementing only the state-seam
+  sub-slice first. Gate/runner/evidence/schemas stay frozen; independent verification
+  and review precede CLI integration. Any further material seam need stops that path.
+- FACT: Q2 same-host TLS 1.2 attempts failed once per host. Official GitHub acquisition
+  succeeded for data-only exact packages/source (`evidence/q2-tools-route-report.md`).
+  Parent approves the released TypeScript 5.9.3 package and unaltered pinned lizard/
+  Vulture/Pygments/pathspec source execution in isolated owned external storage.
+  This changes distribution provenance, not versions or policy; no PyPI wheel identity
+  is asserted. No build backends, source rewrites or ambient plugin dependencies.
+  Owner rechecks archives and qualifies actual APIs/imports before tool acceptance.
+- FACT: C2b-S owner implemented the two approved state seams and 16 new tests.
+  Local successful batches total 61 distinct methods. Two buffered capture attempts
+  hit the outer idle timeout and supplied no gate pass; first-capture child identity
+  and complete old fixture/process cleanup remain unverified. No logs were reconstructed.
+  See `evidence/c2b-state-handoff.md`; implementation is not accepted yet.
+- Parent authorized a distinct progress-visible independent route, not a third
+  identical buffered retry. Verifier `096ede71-aae0-490a-a029-0b11e44dc39c` streams
+  actual unittest output through the existing bounded CLI runner, preserving previous
+  timeouts and checking the affected workflow/evidence scope. No timeout increase,
+  fake heartbeat or unsupported old-process cleanup claim is authorized.
+- FACT: `evidence/q2-tools-source-report.md` qualifies the remaining TypeScript,
+  lizard and Vulture APIs. With retained jscpd/Ruff evidence, CHECK-TOOLS is qualified;
+  Q2 adapters and actual metrics are not implemented. Strict source decoding before
+  lizard's text API and preservation of Vulture's pre-report error status are mandatory.
+  Prior TLS/helper failures and narrower successful follow-ups remain documented.
+- Parent accepts the qualified tool prerequisite with those limits. Adapter production
+  dispatch waits until the active state verification/review freeze is clear, avoiding
+  concurrent changes to imported measurement dependencies. Coverage remains Q3.
+- FACT: the fresh streamed verifier returned BLOCKED
+  (`evidence/c2b-state-independent-report.md`). Evidence10 passed; workflow100
+  produced 42 positive methods and 58 errored methods (98 records including
+  subtests), all FileNotFoundError at 265-266-character receipt staging paths.
+  No assertion failures, new timeouts or output overflows were reported. All
+  owner16 and independent1 adoption methods passed; 29/29 bounded pins matched.
+  The deep private TEMP layout is a suspected verifier transport problem, not
+  an established production defect or a passing regression gate.
+- Parent authorizes one capture-only short-OS-temp correction by the same verifier:
+  use a new exclusively owned short root, first exercise actual receipt staging,
+  then replay the affected workflow scope with unchanged 120/600 bounds and real
+  streamed progress. Preserve the failed capture and original helper bytes.
+  Do not rerun the deep-layout helper unchanged, alter production/tests to hide
+  errors, change OS settings, delete unknown old fixtures, or claim old tree death.
+  Retain evidence10 as its disjoint successful batch; no duplicate pass totals.
+- FACT: the short-temp correction passed actual receipt staging at 145 characters
+  and the full workflow100 replay (exit0, 263.471 seconds). Together with retained
+  disjoint evidence10, accepted proof is 110 distinct passing methods. No accepted
+  batch reported failures/errors/skips/timeouts. All 49 bounded pins matched;
+  original failed captures remain unchanged. New owned short temp was empty and
+  removed nonrecursively; original whole-tree cleanup remains UNKNOWN.
+- FACT: separate `evidence/c2b-state-code-review.md` is APPROVE. Reviewer reconciled
+  all 49 pins, 17 evidence hashes, method inventories and 75 unchanged definitions.
+  Shared validation/materialization is preserved. Simultaneously malformed live
+  inputs can surface a different first error after the extraction; both fail closed.
+- Parent accepts only C2b-S functional preservation, including the two test files.
+  CLI/adoption publication, positive recovery, actual Q2-Q5 quality, human approval,
+  host exercises and publication are not completed by this approval.
+- FACT: parent preservation check materialized all three staged source/test files
+  through Git into a new owned temporary checkout; each exactly matched reviewed
+  working bytes. Git stores LF while the qualified local checkout restores CRLF.
+  No source, attribute or Git configuration change was needed. See
+  `evidence/c2b-state-parent-preservation.json`; this adds no test or portability claim.
+  The updated report renders to three pages with no browser/console errors.
 
 ## Continuation acceptance - 17 September 2026
 - User requested completion plus an attractive README and updated guides. When asked about

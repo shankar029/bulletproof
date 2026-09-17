@@ -1,0 +1,18 @@
+{
+  "npm": {
+    "url": "https://registry.npmjs.org/typescript/5.9.3",
+    "exit": 35,
+    "status": "curl: (35) schannel: next InitializeSecurityContext failed: SEC_E_ILLEGAL_MESSAGE (0x80090326) - This error usually occurs when a fatal SSL/TLS alert is received (e.g. handshake failed). More detail may be available in the Windows System event log.\r\nhttp_code=000;ssl_verify_result=0\r\n",
+    "body_sha256": null,
+    "bytes": 0,
+    "expected_sha256": null
+  },
+  "pypi-files": {
+    "url": "https://files.pythonhosted.org/packages/60/c1/1da7937391a7e67edfb33bb3cd6d3426a7027cf3dd904ecb29c2b4416e78/lizard-1.24.0-py2.py3-none-any.whl",
+    "exit": 35,
+    "status": "curl: (35) schannel: next InitializeSecurityContext failed: SEC_E_ILLEGAL_MESSAGE (0x80090326) - This error usually occurs when a fatal SSL/TLS alert is received (e.g. handshake failed). More detail may be available in the Windows System event log.\r\nhttp_code=000;ssl_verify_result=0\r\n",
+    "body_sha256": null,
+    "bytes": 0,
+    "expected_sha256": "a688bc607a891ff4a7836826f25742dc9c1bf648da3075dbd495e199e8848602"
+  }
+}

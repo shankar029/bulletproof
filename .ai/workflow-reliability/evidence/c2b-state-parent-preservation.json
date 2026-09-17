@@ -1,0 +1,33 @@
+{
+  "scope": "Parent staged-source preservation, not additional tests or quality proof",
+  "head_before_commit": "d971634219a633cc4401fb7dcba9685e672978aa",
+  "staged_files_at_check": 551,
+  "source_attributes": {},
+  "files": [
+    {
+      "path": "scripts/workflow_state.py",
+      "reviewed_working_sha256": "fe30290e61d319c76546c31acd454bc7c642fc83ad55126e368fa44ab4b57a6e",
+      "stored_lf_sha256": "7fbe90ecec2cecb125e676df280b59f06ebb155bae7308db2fbf00af239526c2",
+      "checkout_sha256": "fe30290e61d319c76546c31acd454bc7c642fc83ad55126e368fa44ab4b57a6e",
+      "checkout_matches_reviewed": true,
+      "only_stored_crlf_normalization": true
+    },
+    {
+      "path": "scripts/tests/test_workflow_adoption_binding.py",
+      "reviewed_working_sha256": "318707e82f94864fde02c434ca54e87f9338b8c66beace679be271655343f1b5",
+      "stored_lf_sha256": "15e06a8371f126038cf0d6b22a0172bc897e4debc65af7fc52c2fa5e9ce35e2c",
+      "checkout_sha256": "318707e82f94864fde02c434ca54e87f9338b8c66beace679be271655343f1b5",
+      "checkout_matches_reviewed": true,
+      "only_stored_crlf_normalization": true
+    },
+    {
+      "path": "scripts/tests/test_workflow_adoption_verification.py",
+      "reviewed_working_sha256": "9c78b24fcd90b757aac55c6425f3738741b4eefe175e5cd710b02e72b5616b53",
+      "stored_lf_sha256": "243f648d705bcbf44725e577943559bea255d32a77158c281d03e93e6696cbdf",
+      "checkout_sha256": "9c78b24fcd90b757aac55c6425f3738741b4eefe175e5cd710b02e72b5616b53",
+      "checkout_matches_reviewed": true,
+      "only_stored_crlf_normalization": true
+    }
+  ],
+  "limitation": "Verified actual checkout under this repository Windows configuration, not cross-platform execution or universal checkout equivalence. Initial raw-index-equality check rejected Git built-in CRLF normalization; no source/config/attribute change followed."
+}

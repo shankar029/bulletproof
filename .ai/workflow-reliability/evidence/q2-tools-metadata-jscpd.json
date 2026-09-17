@@ -1,0 +1,127 @@
+{
+  "url": "https://api.github.com/repos/kucherenko/jscpd/releases/latest",
+  "response_sha256": "e34df16d6a04178ada527dde2ac85fde7f54b8d9e531779543aa8b780faec0b0",
+  "selected_metadata": {
+    "tag_name": "v5.2.1",
+    "html_url": "https://github.com/kucherenko/jscpd/releases/tag/v5.2.1",
+    "published_at": "2026-09-15T06:41:06Z",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "checksums.txt",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/checksums.txt",
+        "digest": "sha256:d170b307408848536a6b713c4cc0447291cf5a72b46b4a06adfe1afb680f0d6e",
+        "size": 754
+      },
+      {
+        "name": "checksums.txt.sigstore.json",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/checksums.txt.sigstore.json",
+        "digest": "sha256:cee9622a1cb2044e72939ef4224a8044a2b2dabf1e173610e0804c72921f9a58",
+        "size": 10099
+      },
+      {
+        "name": "jscpd-darwin-arm64.tar.gz",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-darwin-arm64.tar.gz",
+        "digest": "sha256:0b166a710f62a674fa0d81850e1f005069e05d8b1170e8ffed36baa0305f5340",
+        "size": 1743438
+      },
+      {
+        "name": "jscpd-darwin-arm64.tar.gz.sigstore.json",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-darwin-arm64.tar.gz.sigstore.json",
+        "digest": "sha256:035ad2339e1a38a7816bacb261af89cc89f164167cbd2dcb8df3d54118bbf338",
+        "size": 9855
+      },
+      {
+        "name": "jscpd-darwin-x64.tar.gz",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-darwin-x64.tar.gz",
+        "digest": "sha256:c9a28525e986029c062b8ef5e0c872b11eb4934d545cab13b2ff6fa942caa702",
+        "size": 1937313
+      },
+      {
+        "name": "jscpd-darwin-x64.tar.gz.sigstore.json",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-darwin-x64.tar.gz.sigstore.json",
+        "digest": "sha256:6b422fa06e88c7dd08c3d79639153f5e08761e7c4622cd014f5ece7325990f02",
+        "size": 9999
+      },
+      {
+        "name": "jscpd-linux-arm64-gnu.tar.gz",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-linux-arm64-gnu.tar.gz",
+        "digest": "sha256:35beb27a3bde88fcc0bd5173238b0f6ebdfed95cf0e692c29d3599ed7d3d3153",
+        "size": 1888531
+      },
+      {
+        "name": "jscpd-linux-arm64-gnu.tar.gz.sigstore.json",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-linux-arm64-gnu.tar.gz.sigstore.json",
+        "digest": "sha256:2b27c909a063139449bdc27434eac00f511f8142492943477305345d963ee04e",
+        "size": 9955
+      },
+      {
+        "name": "jscpd-linux-arm64-musl.tar.gz",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-linux-arm64-musl.tar.gz",
+        "digest": "sha256:5699ae97f557b922bae06de52ef93eb70d544a6209ebeb47c650728af1385ed7",
+        "size": 1882745
+      },
+      {
+        "name": "jscpd-linux-arm64-musl.tar.gz.sigstore.json",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-linux-arm64-musl.tar.gz.sigstore.json",
+        "digest": "sha256:329c99a6e83593adedc51c967b5b5cf7452687d05dfdd04da34e9ada53891dbd",
+        "size": 9999
+      },
+      {
+        "name": "jscpd-linux-x64-gnu.tar.gz",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-linux-x64-gnu.tar.gz",
+        "digest": "sha256:1030dfff5e4b0525f4804c12e49cdce40a8140935f9453b312fdb9da45eac743",
+        "size": 2032462
+      },
+      {
+        "name": "jscpd-linux-x64-gnu.tar.gz.sigstore.json",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-linux-x64-gnu.tar.gz.sigstore.json",
+        "digest": "sha256:425b2a0fefdc872dd48539f6dff12651175f5fb2b9cc52c6763d64d03a8961b3",
+        "size": 10103
+      },
+      {
+        "name": "jscpd-linux-x64-musl.tar.gz",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-linux-x64-musl.tar.gz",
+        "digest": "sha256:4f5af330e1eabb0cffbf79dd110fd873eb2395222451d21bf4b25514fc635b59",
+        "size": 2114237
+      },
+      {
+        "name": "jscpd-linux-x64-musl.tar.gz.sigstore.json",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-linux-x64-musl.tar.gz.sigstore.json",
+        "digest": "sha256:9bf30e3a07b309b237d5d67b683809e708dd828d7a372a961ece3a4f68cf3afe",
+        "size": 9959
+      },
+      {
+        "name": "jscpd-windows-arm64-msvc.tar.gz",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-windows-arm64-msvc.tar.gz",
+        "digest": "sha256:0c087be00387c56a7faecaf000c7f6783982e80642e729a8eb2fcdccfe9ee862",
+        "size": 1687324
+      },
+      {
+        "name": "jscpd-windows-arm64-msvc.tar.gz.sigstore.json",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-windows-arm64-msvc.tar.gz.sigstore.json",
+        "digest": "sha256:03aa74241e99368f9ff86aebca6ea90286428b5110a113b1d8b399afbb572814",
+        "size": 10055
+      },
+      {
+        "name": "jscpd-windows-x64-msvc.tar.gz",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-windows-x64-msvc.tar.gz",
+        "digest": "sha256:b4941605a87dc0e4957fcf727d2c92e68b8ed92aaac5c378a86a9636357654cb",
+        "size": 1807774
+      },
+      {
+        "name": "jscpd-windows-x64-msvc.tar.gz.sigstore.json",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/jscpd-windows-x64-msvc.tar.gz.sigstore.json",
+        "digest": "sha256:b93febeac0873531176c6e0d4b9c133ea95043e5d76a72ab268424a6ae0cbf35",
+        "size": 10003
+      },
+      {
+        "name": "multiple.intoto.jsonl",
+        "browser_download_url": "https://github.com/kucherenko/jscpd/releases/download/v5.2.1/multiple.intoto.jsonl",
+        "digest": "sha256:01b0cdef1b132a3ae5b45b211915cd904264d96cf0049c2e17c38160775ad189",
+        "size": 11820
+      }
+    ]
+  }
+}

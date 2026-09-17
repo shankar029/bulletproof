@@ -1,0 +1,72 @@
+{
+  "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\shape fixtures\\unicode positions.py",
+  "sha256": "d03dfad114c35d45f3dcedce6898071eafc7eb5ac5ad2f66549d3ded0b6cb596",
+  "raw": [
+    {
+      "cell": null,
+      "code": "E702",
+      "end_location": {
+        "column": 13,
+        "row": 1
+      },
+      "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\shape fixtures\\unicode positions.py",
+      "fix": null,
+      "location": {
+        "column": 12,
+        "row": 1
+      },
+      "message": "Multiple statements on one line (semicolon)",
+      "name": "multiple-statements-on-one-line-semicolon",
+      "noqa_row": 1,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/multiple-statements-on-one-line-semicolon"
+    },
+    {
+      "cell": null,
+      "code": "B018",
+      "end_location": {
+        "column": 26,
+        "row": 1
+      },
+      "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\shape fixtures\\unicode positions.py",
+      "fix": null,
+      "location": {
+        "column": 14,
+        "row": 1
+      },
+      "message": "Found useless expression. Either assign it to a variable or remove it.",
+      "name": "useless-expression",
+      "noqa_row": 1,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/useless-expression"
+    },
+    {
+      "cell": null,
+      "code": "F821",
+      "end_location": {
+        "column": 26,
+        "row": 1
+      },
+      "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\shape fixtures\\unicode positions.py",
+      "fix": null,
+      "location": {
+        "column": 14,
+        "row": 1
+      },
+      "message": "Undefined name `missing_name`",
+      "name": "undefined-name",
+      "noqa_row": 1,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-name"
+    }
+  ],
+  "observed_column": 14,
+  "candidate_columns": {
+    "unicode_codepoints_1based": 14,
+    "utf8_bytes_1based": 18,
+    "utf16_units_1based": 15
+  },
+  "matched_models": [
+    "unicode_codepoints_1based"
+  ]
+}

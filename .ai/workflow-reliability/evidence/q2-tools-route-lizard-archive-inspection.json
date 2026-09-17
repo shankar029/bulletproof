@@ -1,0 +1,413 @@
+{
+  "status": "DATA_ONLY_NOT_PROVISIONED_OR_EXECUTED",
+  "origin": {
+    "repository": "terryyin/lizard",
+    "version": "1.24.0",
+    "tag": "1.24.0",
+    "commit": "308b1c3efd8c1c69bcc3eb82deeaec64fd3662ec",
+    "ref_object": {
+      "sha": "308b1c3efd8c1c69bcc3eb82deeaec64fd3662ec",
+      "type": "commit",
+      "url": "https://api.github.com/repos/terryyin/lizard/git/commits/308b1c3efd8c1c69bcc3eb82deeaec64fd3662ec"
+    },
+    "release_status": 200,
+    "release": {
+      "html_url": "https://github.com/terryyin/lizard/releases/tag/1.24.0",
+      "draft": false,
+      "prerelease": false,
+      "published_at": "2026-08-19T00:03:37Z"
+    },
+    "assets": [],
+    "proposed_source_archive": "https://api.github.com/repos/terryyin/lizard/tarball/308b1c3efd8c1c69bcc3eb82deeaec64fd3662ec"
+  },
+  "archive": {
+    "url": "https://api.github.com/repos/terryyin/lizard/tarball/308b1c3efd8c1c69bcc3eb82deeaec64fd3662ec",
+    "resolved_url": "https://codeload.github.com/terryyin/lizard/legacy.tar.gz/308b1c3efd8c1c69bcc3eb82deeaec64fd3662ec",
+    "http_status": 200,
+    "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\route-1\\lizard-source-archive.capture",
+    "sha256": "a55057a0589e0c0230eff798752d621f2e3c646b54354b4b37501b32f433c611",
+    "bytes": 267773
+  },
+  "runtime_file_pins": [
+    {
+      "path": "lizard.py",
+      "sha256": "d0807a33d38976a5e5756b37d637e35aa8d2018dee0b87f059d003f3154a07af",
+      "bytes": 44016
+    },
+    {
+      "path": "lizard_ext/__init__.py",
+      "sha256": "510da86787a3d4209e920898d908fcb06c7c1e17a8632c6370ec6faf017bd247",
+      "bytes": 871
+    },
+    {
+      "path": "lizard_ext/auto_open.py",
+      "sha256": "6f20ff45b79586f494851d9b24c462b6f037cdc2846a9170bf4f9768327a185a",
+      "bytes": 1096
+    },
+    {
+      "path": "lizard_ext/checkstyleoutput.py",
+      "sha256": "5330c783cdfb12b1197a95e447c23c602a33dabd65926cc672d300edda7207e3",
+      "bytes": 1245
+    },
+    {
+      "path": "lizard_ext/csvoutput.py",
+      "sha256": "3084df1747f492cbc0ceb097ad8ddf74061c9c5d03dcb9e19f1912f75bb03ac0",
+      "bytes": 2485
+    },
+    {
+      "path": "lizard_ext/default_ordered_dict.py",
+      "sha256": "61b573ea73e543a0e359cfc4385073e8024dd972e8f5da6751d7b27a342f5031",
+      "bytes": 831
+    },
+    {
+      "path": "lizard_ext/extension_base.py",
+      "sha256": "ae78d42f69aa4864e8515632763bbb7daf19c329cb3d8f12d45d7b80824fe792",
+      "bytes": 346
+    },
+    {
+      "path": "lizard_ext/halstead_classifier.py",
+      "sha256": "a2e1193a1d7f6dea48cf0eb575be6675bbfda72bfaa5bcef31c69faf9ce1924c",
+      "bytes": 5351
+    },
+    {
+      "path": "lizard_ext/halstead_metrics.py",
+      "sha256": "746b08f51623b8dc3be21c8c798ead6499001fbd3bc14f80deeae400dc4c58dd",
+      "bytes": 2308
+    },
+    {
+      "path": "lizard_ext/htmloutput.py",
+      "sha256": "1bb31d2c3ec0c2e4742cb080904a721f1e0dfecb0270541d5dded78398d9597d",
+      "bytes": 6537
+    },
+    {
+      "path": "lizard_ext/keywords.py",
+      "sha256": "571b31a004ed295fbc7a030a77b23cb1ddaa6d932d105129b2cce4fffeab9a34",
+      "bytes": 893
+    },
+    {
+      "path": "lizard_ext/lizardboolcount.py",
+      "sha256": "69b98c03d5f754544ee66ce289c53158a98795d1cd0b48c111eecd280280e5fb",
+      "bytes": 1062
+    },
+    {
+      "path": "lizard_ext/lizardcomplextags.py",
+      "sha256": "cf826ccfc1cdc5b65784346e51e56735f82de59bf8158116da444f3b81b71771",
+      "bytes": 1027
+    },
+    {
+      "path": "lizard_ext/lizardcpre.py",
+      "sha256": "6d5acc5df7c651997276fff3c0856da7e223f57c9730511c6a9d91e0398b5cf5",
+      "bytes": 1277
+    },
+    {
+      "path": "lizard_ext/lizarddependencycount.py",
+      "sha256": "e8db76cfaf5cc86f0fde971e4d409353aca1e21ef795eccbd9ac11161ecaefb6",
+      "bytes": 2423
+    },
+    {
+      "path": "lizard_ext/lizarddumpcomments.py",
+      "sha256": "f9ce3a53708ffdb7837c1b81f5084e6e9881eb02bbc6ad6ef637918e003253dd",
+      "bytes": 683
+    },
+    {
+      "path": "lizard_ext/lizardduplicate.py",
+      "sha256": "039cae25fb8820a24ae02839e32027f2f77c1b63bd995599c0a3663ad60e46e0",
+      "bytes": 11020
+    },
+    {
+      "path": "lizard_ext/lizardduplicated_param_list.py",
+      "sha256": "fc0a5e49b8c0f8d53fae6202b22bf27c6104834f8ef78c16816a5e784f05dd97",
+      "bytes": 1811
+    },
+    {
+      "path": "lizard_ext/lizardexitcount.py",
+      "sha256": "ce2015162e51823c493b0010cba2f375965f964befc53897388a741402f4c0a4",
+      "bytes": 692
+    },
+    {
+      "path": "lizard_ext/lizardgotocount.py",
+      "sha256": "c361965b0a958788fb16e9b8d56be0d7bd9bef426fb429b9042cd952699395c3",
+      "bytes": 514
+    },
+    {
+      "path": "lizard_ext/lizardhalstead.py",
+      "sha256": "6743c9edad7c1fecb0427233313233d6e03a87acb0c498a128ddf80d0da0e587",
+      "bytes": 8443
+    },
+    {
+      "path": "lizard_ext/lizardignoreassert.py",
+      "sha256": "b2a2f0727250d3a498a8893dd3589be0d43c102c2321efea2f84facf5c0b5c09",
+      "bytes": 644
+    },
+    {
+      "path": "lizard_ext/lizardio.py",
+      "sha256": "c5037e0202c62ca25aac99207daa97fd32b2ba96dbec64dcc0fc6b2f6075275c",
+      "bytes": 3357
+    },
+    {
+      "path": "lizard_ext/lizardmccabe.py",
+      "sha256": "9cbc1f6239c05a7d434a80dcfa4de23ef96d8925ff6260047407ccdeb39d2d24",
+      "bytes": 1538
+    },
+    {
+      "path": "lizard_ext/lizardmodified.py",
+      "sha256": "91670cf506f2712d3bc688324fdcb47de1b416357ef8cfb552d0b3cce1462af5",
+      "bytes": 1765
+    },
+    {
+      "path": "lizard_ext/lizardnd.py",
+      "sha256": "fe8f8b03608e83844b3eea1c9fa27443eb8df031dd489162ec79ea7b2c2e96e6",
+      "bytes": 8425
+    },
+    {
+      "path": "lizard_ext/lizardnonstrict.py",
+      "sha256": "0d6744da44e7dfd19ff1491a47020ef688164c3baa038957365408053dee2d13",
+      "bytes": 457
+    },
+    {
+      "path": "lizard_ext/lizardns.py",
+      "sha256": "dcf609ad765e163cc59dba2d20d6419be307792f0c43154db6440977f4b97d80",
+      "bytes": 5161
+    },
+    {
+      "path": "lizard_ext/lizardoutside.py",
+      "sha256": "1469b6b5b059d7bfb63828264250febe86d409f40a6f4140ca07fce9e337c6e3",
+      "bytes": 336
+    },
+    {
+      "path": "lizard_ext/lizardstatementcount.py",
+      "sha256": "c5893a8b148822d484d415905f3ad699db85806840dd547cd7b48d28b7dfc954",
+      "bytes": 1182
+    },
+    {
+      "path": "lizard_ext/lizardwordcount.py",
+      "sha256": "d906170fbf80b6492001b8bd55289dba731b4ac190ecc2986fa213f9b4be7289",
+      "bytes": 7575
+    },
+    {
+      "path": "lizard_ext/version.py",
+      "sha256": "d17368a6881a7cec90561fffbb1512bada15daebaca8ec041cfd6d19a7a07911",
+      "bytes": 181
+    },
+    {
+      "path": "lizard_ext/xmloutput.py",
+      "sha256": "f9c6e1d217b83bf5fec17e7a824bfd02748f34dd2abd1ec5002aa505e7b3512e",
+      "bytes": 5609
+    },
+    {
+      "path": "lizard_languages/__init__.py",
+      "sha256": "91b108ac61885267f2bdfb46c7387d6175d0434ce3b7e7826295543ef3f6bbce",
+      "bytes": 1595
+    },
+    {
+      "path": "lizard_languages/clike.py",
+      "sha256": "0218139ff599cf658d842629fb73beefc8e0c6600695e4fe62313b9d75b45119",
+      "bytes": 14926
+    },
+    {
+      "path": "lizard_languages/code_reader.py",
+      "sha256": "0e7381e9f3161efd733f0ae9a718101ac4fc285438c69b98b69bfe281f9002cc",
+      "bytes": 7845
+    },
+    {
+      "path": "lizard_languages/csharp.py",
+      "sha256": "503ba21b6d1875b6f828c0ff9a06fcdac843dfb511ab766fa8d2e923bed504f1",
+      "bytes": 3015
+    },
+    {
+      "path": "lizard_languages/erlang.py",
+      "sha256": "88b532f2eb8477d7a197610b77b977084377494288061411270beb37fd7fd1a4",
+      "bytes": 4245
+    },
+    {
+      "path": "lizard_languages/fortran.py",
+      "sha256": "bf02b3d55770c94b56a04094457b91e9ef04da44d1ef51eda5d6ceb260e8c83c",
+      "bytes": 8993
+    },
+    {
+      "path": "lizard_languages/gdscript.py",
+      "sha256": "00c080b91dbd332cfe6e1e769748cdc4f31bfb8b34dc36d9c260f0f3de460093",
+      "bytes": 733
+    },
+    {
+      "path": "lizard_languages/go.py",
+      "sha256": "b27b73d23384ba3e2494f8a9a1315dd7a5032b57c05107f02bb617fdc2cc6407",
+      "bytes": 1346
+    },
+    {
+      "path": "lizard_languages/golike.py",
+      "sha256": "cd187551edf4ae999d627fdee99c0fb15a20121c57bb0f7ff87ae00b454eee3f",
+      "bytes": 3273
+    },
+    {
+      "path": "lizard_languages/java.py",
+      "sha256": "fd714199ddcb8b6e46f08ab72a9c52de8bb5f401041eeff2aa5cd83dd0fe5647",
+      "bytes": 8901
+    },
+    {
+      "path": "lizard_languages/java_body_states.py",
+      "sha256": "c944dd874e0bb48dd1ee236f470d7e2e0a7ae0a7b613e4e7794070d7f1cb6016",
+      "bytes": 4033
+    },
+    {
+      "path": "lizard_languages/javascript.py",
+      "sha256": "be788234c5be79af49a6fe9cf2a09c8cb5436234fc573b635e2829e57456b741",
+      "bytes": 317
+    },
+    {
+      "path": "lizard_languages/js_style_regex_expression.py",
+      "sha256": "5e0ca881c878c44958b421b812704abda9474e5ded8d13dc20870841145deb52",
+      "bytes": 1970
+    },
+    {
+      "path": "lizard_languages/kotlin.py",
+      "sha256": "2ad0ccda6dbcd2f316c3cf7785f56d67d47b8032b191b224d1a300da2be70b0f",
+      "bytes": 3020
+    },
+    {
+      "path": "lizard_languages/lua.py",
+      "sha256": "de7a8172e9c1cc9ae1bf822a69ff31bdbcaac59cb7692c49f888878a61c595a7",
+      "bytes": 1573
+    },
+    {
+      "path": "lizard_languages/objc.py",
+      "sha256": "073bc3a0c6e0595e26dd730576c873630633362b587dbb2e156318e368bf60a7",
+      "bytes": 2889
+    },
+    {
+      "path": "lizard_languages/perl.py",
+      "sha256": "43ea3d749d0eeec3bd5a635382db4b6f2c92dc2eb72143b68f4d5c1efc9e2b47",
+      "bytes": 12106
+    },
+    {
+      "path": "lizard_languages/php.py",
+      "sha256": "8673a6d35077a6901e887d64ca4126d30539a1c7db007b2774a05aca91610ef0",
+      "bytes": 1707
+    },
+    {
+      "path": "lizard_languages/php_states.py",
+      "sha256": "f4ecbb88a491f5e181eacb616fff60f347a5709e15fe804f5a918bc69cdcb38f",
+      "bytes": 9152
+    },
+    {
+      "path": "lizard_languages/plsql.py",
+      "sha256": "5ad9f2ebe616e0973a1b81210a0a12bb0f03f3ac7a255444a6bcda504c8a7dfc",
+      "bytes": 17261
+    },
+    {
+      "path": "lizard_languages/python.py",
+      "sha256": "de5924da44829a358b42fc58d22a1e09e9e2970a74e67661c25de5504a1a06b2",
+      "bytes": 16501
+    },
+    {
+      "path": "lizard_languages/r.py",
+      "sha256": "34734f0c69d65dc97c84c8b554bf0e33a9f0f05f693fac595fb120508a1c39e7",
+      "bytes": 12930
+    },
+    {
+      "path": "lizard_languages/ruby.py",
+      "sha256": "819a68594361c1551d84a9cf264276ef13280af3a43c749c98738b07dc708e74",
+      "bytes": 2285
+    },
+    {
+      "path": "lizard_languages/rubylike.py",
+      "sha256": "ca32376d2379a92aa337e41495bca2cdf374c7dccc176ee566a702c834f9c774",
+      "bytes": 3603
+    },
+    {
+      "path": "lizard_languages/rust.py",
+      "sha256": "2712654efeefb18412f355aae9d339ea00593c1954c871fcced7cb6c9f21554f",
+      "bytes": 1023
+    },
+    {
+      "path": "lizard_languages/scala.py",
+      "sha256": "fa13d519e7992df1beccb1085328f159ed151a2382d9e27b9b75e16f28291452",
+      "bytes": 1432
+    },
+    {
+      "path": "lizard_languages/script_language.py",
+      "sha256": "1a06d3d12a9bb308b2379b8a96da6b01f288a543f3caeb780d62356825fd27ef",
+      "bytes": 1396
+    },
+    {
+      "path": "lizard_languages/solidity.py",
+      "sha256": "9af5823bed0c6418fb68bb8a3881df66f151c2f421c473814ef5f7153d3393c8",
+      "bytes": 676
+    },
+    {
+      "path": "lizard_languages/st.py",
+      "sha256": "42288635813c0b399f999005ff02d02a8bd7935172a9af101464d733599e34d9",
+      "bytes": 4385
+    },
+    {
+      "path": "lizard_languages/swift.py",
+      "sha256": "807dd815e39cff8559db583a32d518d6f1e427bfbe62bd74960cc5b58df5ac97",
+      "bytes": 2566
+    },
+    {
+      "path": "lizard_languages/tnsdl.py",
+      "sha256": "cb675c648fcf9ab88d77b5133f50dbf50129581cca7a81fca1d47392237e3f59",
+      "bytes": 3009
+    },
+    {
+      "path": "lizard_languages/tsx.py",
+      "sha256": "cfc6f3592835e81bf5c442548fd903536d213a03e983e1fee41efa48241011fd",
+      "bytes": 5242
+    },
+    {
+      "path": "lizard_languages/ttcn.py",
+      "sha256": "b5290f9ad89fb2e508e5a50a046fae1efc1c9994d671bb4c5a850c1770b0e1c2",
+      "bytes": 2199
+    },
+    {
+      "path": "lizard_languages/typescript.py",
+      "sha256": "5e8867ab087e3bf8d64bdf86cabe0bd50771c4ba398f34778f9abc71039f6bc1",
+      "bytes": 24414
+    },
+    {
+      "path": "lizard_languages/vue.py",
+      "sha256": "297501528d91d73345f0f7dfaf3fcab1010de389b95c544ca065f2971294793d",
+      "bytes": 1038
+    },
+    {
+      "path": "lizard_languages/zig.py",
+      "sha256": "b589e67b727f4bbb19ea2e4d35ef1b22f30965e285169f119dd223d5ddc37222",
+      "bytes": 809
+    }
+  ],
+  "runtime_tree_sha256": "08245452ddd9aeef35dff5ed0bac6461188ceaf8e50b40341ddcb844cccd2787",
+  "static_external_import_sites": [
+    {
+      "path": "lizard.py",
+      "line": 58,
+      "module": "future_builtins"
+    },
+    {
+      "path": "lizard.py",
+      "line": 959,
+      "module": "pathspec"
+    },
+    {
+      "path": "lizard.py",
+      "line": 960,
+      "module": "pathspec.patterns.gitwildmatch"
+    },
+    {
+      "path": "lizard_ext/htmloutput.py",
+      "line": 14,
+      "module": "jinja2"
+    },
+    {
+      "path": "lizard_languages/erlang.py",
+      "line": 7,
+      "module": "pygments.token"
+    },
+    {
+      "path": "lizard_languages/erlang.py",
+      "line": 8,
+      "module": "pygments"
+    }
+  ],
+  "static_parse_errors": [],
+  "limits": "Syntax/import inventory only; conditional/optional imports are not mandatory runtime dependency claims. No package import or install."
+}

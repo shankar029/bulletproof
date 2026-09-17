@@ -1,0 +1,662 @@
+{
+  "lizard_rows": [
+    {
+      "name": "branch caf\u00e9.py",
+      "reader": "PythonReader",
+      "functions": [
+        {
+          "name": "branch",
+          "ccn": 2,
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "empty.py",
+      "reader": "PythonReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "comments.py",
+      "reader": "PythonReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "functionless.py",
+      "reader": "PythonReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "nested arrow async.py",
+      "reader": "PythonReader",
+      "functions": [
+        {
+          "name": "outer.inner",
+          "ccn": 2,
+          "start": 2,
+          "end": 3
+        },
+        {
+          "name": "outer",
+          "ccn": 1,
+          "start": 1,
+          "end": 4
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "branch caf\u00e9.js",
+      "reader": "JavaScriptReader",
+      "functions": [
+        {
+          "name": "branch",
+          "ccn": 2,
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "empty.js",
+      "reader": "JavaScriptReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "comments.js",
+      "reader": "JavaScriptReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "functionless.js",
+      "reader": "JavaScriptReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "nested arrow async.js",
+      "reader": "JavaScriptReader",
+      "functions": [
+        {
+          "name": "inner",
+          "ccn": 2,
+          "start": 2,
+          "end": 2
+        },
+        {
+          "name": "outer",
+          "ccn": 3,
+          "start": 1,
+          "end": 6
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "branch caf\u00e9.mjs",
+      "reader": "JavaScriptReader",
+      "functions": [
+        {
+          "name": "branch",
+          "ccn": 2,
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "branch caf\u00e9.mjs",
+      "reader": "JavaScriptReader",
+      "functions": [
+        {
+          "name": "branch",
+          "ccn": 2,
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "empty.mjs",
+      "reader": "JavaScriptReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "comments.mjs",
+      "reader": "JavaScriptReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "functionless.mjs",
+      "reader": "JavaScriptReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "nested arrow async.mjs",
+      "reader": "JavaScriptReader",
+      "functions": [
+        {
+          "name": "inner",
+          "ccn": 2,
+          "start": 2,
+          "end": 2
+        },
+        {
+          "name": "outer",
+          "ccn": 3,
+          "start": 1,
+          "end": 6
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "branch caf\u00e9.cjs",
+      "reader": "JavaScriptReader",
+      "functions": [
+        {
+          "name": "branch",
+          "ccn": 2,
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "branch caf\u00e9.cjs",
+      "reader": "JavaScriptReader",
+      "functions": [
+        {
+          "name": "branch",
+          "ccn": 2,
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "empty.cjs",
+      "reader": "JavaScriptReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "comments.cjs",
+      "reader": "JavaScriptReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "functionless.cjs",
+      "reader": "JavaScriptReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "nested arrow async.cjs",
+      "reader": "JavaScriptReader",
+      "functions": [
+        {
+          "name": "inner",
+          "ccn": 2,
+          "start": 2,
+          "end": 2
+        },
+        {
+          "name": "outer",
+          "ccn": 3,
+          "start": 1,
+          "end": 6
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "branch caf\u00e9.ts",
+      "reader": "TypeScriptReader",
+      "functions": [
+        {
+          "name": "branch",
+          "ccn": 2,
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "empty.ts",
+      "reader": "TypeScriptReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "comments.ts",
+      "reader": "TypeScriptReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "functionless.ts",
+      "reader": "TypeScriptReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "nested arrow async.ts",
+      "reader": "TypeScriptReader",
+      "functions": [
+        {
+          "name": "inner",
+          "ccn": 2,
+          "start": 2,
+          "end": 2
+        },
+        {
+          "name": "outer",
+          "ccn": 3,
+          "start": 1,
+          "end": 6
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "branch caf\u00e9.tsx",
+      "reader": "TSXReader",
+      "functions": [
+        {
+          "name": "branch",
+          "ccn": 2,
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "empty.tsx",
+      "reader": "TSXReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "comments.tsx",
+      "reader": "TSXReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "functionless.tsx",
+      "reader": "TSXReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "nested arrow async.tsx",
+      "reader": "TSXReader",
+      "functions": [
+        {
+          "name": "inner",
+          "ccn": 2,
+          "start": 2,
+          "end": 2
+        },
+        {
+          "name": "outer",
+          "ccn": 3,
+          "start": 1,
+          "end": 6
+        },
+        {
+          "name": "view",
+          "ccn": 1,
+          "start": 7,
+          "end": 7
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "branch caf\u00e9.jsx",
+      "reader": "TSXReader",
+      "functions": [
+        {
+          "name": "branch",
+          "ccn": 2,
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "empty.jsx",
+      "reader": "TSXReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "comments.jsx",
+      "reader": "TSXReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "functionless.jsx",
+      "reader": "TSXReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "nested arrow async.jsx",
+      "reader": "TSXReader",
+      "functions": [
+        {
+          "name": "inner",
+          "ccn": 2,
+          "start": 2,
+          "end": 2
+        },
+        {
+          "name": "outer",
+          "ccn": 3,
+          "start": 1,
+          "end": 6
+        },
+        {
+          "name": "view",
+          "ccn": 1,
+          "start": 7,
+          "end": 7
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "unknown.unsupported",
+      "reader": null,
+      "functions": [
+        {
+          "name": "branch",
+          "ccn": 2,
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "absent.py",
+      "reader": "PythonReader",
+      "functions": [],
+      "stderr": "Error: Fail to read source file 'C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\absent.py'\n"
+    },
+    {
+      "name": "invalid utf8.py",
+      "reader": "PythonReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "invalid syntax.py",
+      "reader": "PythonReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "generated.py",
+      "reader": "PythonReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "forgiven.py",
+      "reader": "PythonReader",
+      "functions": [],
+      "stderr": ""
+    },
+    {
+      "name": "deep recursion.js",
+      "reader": "JavaScriptReader",
+      "functions": [],
+      "stderr": "[skip] fail to process 'C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\deep recursion.js' with RecursionError - Stack overflow (used 1953 kB)\n"
+    }
+  ],
+  "vulture_rows": [
+    {
+      "case": "positive caf\u00e9.py",
+      "confidence80_count": 2,
+      "findings": [
+        {
+          "confidence": 90,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "first_lineno": 2,
+          "last_lineno": 2,
+          "message": "unused import 'os'",
+          "name": "os",
+          "typ": "import",
+          "size": 1
+        },
+        {
+          "confidence": 100,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "first_lineno": 5,
+          "last_lineno": 5,
+          "message": "unreachable code after 'return'",
+          "name": "return",
+          "typ": "unreachable_code",
+          "size": 1
+        }
+      ],
+      "pre_report_exit": 0,
+      "post_report_exit": 3,
+      "error": ""
+    },
+    {
+      "case": "negative.py",
+      "confidence80_count": 0,
+      "findings": [],
+      "pre_report_exit": 0,
+      "post_report_exit": 0,
+      "error": ""
+    },
+    {
+      "case": "empty.py",
+      "confidence80_count": 0,
+      "findings": [],
+      "pre_report_exit": 0,
+      "post_report_exit": 0,
+      "error": ""
+    },
+    {
+      "case": "comments.py",
+      "confidence80_count": 0,
+      "findings": [],
+      "pre_report_exit": 0,
+      "post_report_exit": 0,
+      "error": ""
+    },
+    {
+      "case": "functionless.py",
+      "confidence80_count": 0,
+      "findings": [],
+      "pre_report_exit": 0,
+      "post_report_exit": 0,
+      "error": ""
+    },
+    {
+      "case": "nested async.py",
+      "confidence80_count": 1,
+      "findings": [
+        {
+          "confidence": 100,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\nested async.py",
+          "first_lineno": 4,
+          "last_lineno": 4,
+          "message": "unreachable code after 'return'",
+          "name": "return",
+          "typ": "unreachable_code",
+          "size": 1
+        }
+      ],
+      "pre_report_exit": 0,
+      "post_report_exit": 3,
+      "error": ""
+    },
+    {
+      "case": "template314.py",
+      "confidence80_count": 0,
+      "findings": [],
+      "pre_report_exit": 0,
+      "post_report_exit": 0,
+      "error": ""
+    },
+    {
+      "case": "noqa.py",
+      "confidence80_count": 0,
+      "findings": [],
+      "pre_report_exit": 0,
+      "post_report_exit": 0,
+      "error": ""
+    },
+    {
+      "case": "reflection.py",
+      "confidence80_count": 0,
+      "findings": [],
+      "pre_report_exit": 0,
+      "post_report_exit": 0,
+      "error": ""
+    },
+    {
+      "case": "whitelist.py",
+      "confidence80_count": 0,
+      "findings": [],
+      "pre_report_exit": 0,
+      "post_report_exit": 0,
+      "error": ""
+    },
+    {
+      "case": "invalid syntax.py",
+      "confidence80_count": 0,
+      "findings": [],
+      "pre_report_exit": 1,
+      "post_report_exit": 1,
+      "error": "vulture fixtures with spaces\\invalid syntax.py:1: invalid syntax at \"def broken(:\"\n"
+    },
+    {
+      "case": "invalid nul.py",
+      "confidence80_count": 0,
+      "findings": [],
+      "pre_report_exit": 1,
+      "post_report_exit": 1,
+      "error": "vulture fixtures with spaces\\invalid nul.py:None: source code string cannot contain null bytes\n"
+    },
+    {
+      "case": "zero files",
+      "confidence80_count": 0,
+      "findings": [],
+      "pre_report_exit": 0,
+      "post_report_exit": 0,
+      "error": ""
+    },
+    {
+      "case": "invalid plus positive",
+      "confidence80_count": 2,
+      "findings": [
+        {
+          "confidence": 90,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "first_lineno": 2,
+          "last_lineno": 2,
+          "message": "unused import 'os'",
+          "name": "os",
+          "typ": "import",
+          "size": 1
+        },
+        {
+          "confidence": 100,
+          "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+          "first_lineno": 5,
+          "last_lineno": 5,
+          "message": "unreachable code after 'return'",
+          "name": "return",
+          "typ": "unreachable_code",
+          "size": 1
+        }
+      ],
+      "pre_report_exit": 1,
+      "post_report_exit": 3,
+      "error": "vulture fixtures with spaces\\invalid syntax.py:1: invalid syntax at \"def broken(:\"\n"
+    },
+    {
+      "case": "resource scavenge",
+      "confidence80_count": 0,
+      "findings": [],
+      "pre_report_exit": 0,
+      "post_report_exit": 0,
+      "error": ""
+    },
+    {
+      "case": "invalid encoding",
+      "confidence80_count": 0,
+      "findings": [],
+      "pre_report_exit": 1,
+      "post_report_exit": 1,
+      "error": "Error: Could not read file C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\bad encoding.py - \nTry to change the encoding to UTF-8.\n"
+    },
+    {
+      "case": "missing",
+      "confidence80_count": 0,
+      "findings": null,
+      "pre_report_exit": null,
+      "post_report_exit": null,
+      "error": "Error: C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\missing.py could not be found."
+    }
+  ],
+  "tool_sources": {
+    "lizard": {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard\\terryyin-lizard-308b1c3\\lizard.py",
+      "sha256": "d0807a33d38976a5e5756b37d637e35aa8d2018dee0b87f059d003f3154a07af"
+    },
+    "vulture": {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture\\jendrikseipp-vulture-b0f67ba\\vulture\\core.py",
+      "sha256": "bbbb778365c044188b89d69c6f77dbf23a7b1477a8f419019c4f71a4f56c7faa"
+    },
+    "pygments": {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\pygments\\pygments-pygments-a43b45d\\pygments\\__init__.py",
+      "sha256": "83fe99688e06ed80d7d44d325f79027de83a434c60f249bceffd67fda3e7d2b1"
+    },
+    "pathspec": {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\pathspec\\cpburnz-python-pathspec-ecf71a9\\pathspec\\__init__.py",
+      "sha256": "d0f9d909e715a38523b1f0341051ac0148a4cb3d6348316640ff600a82975bf6"
+    }
+  },
+  "typescript": {
+    "files": 41,
+    "cases": 18,
+    "shape_cases": 6,
+    "positive_codes": [
+      6133,
+      2322,
+      6133,
+      7027
+    ],
+    "compiler_js_sha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675"
+  }
+}

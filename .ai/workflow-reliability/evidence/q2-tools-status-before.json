@@ -1,0 +1,40 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+    "--no-pager",
+    "status",
+    "--short"
+  ],
+  "wrapper_argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+    "--idle",
+    "30",
+    "--max",
+    "90",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+    "--no-pager",
+    "status",
+    "--short"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "exit": 0,
+  "captures": {
+    "stdout": {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-status-before.stdout.log",
+      "sha256": "5bc0c521b69e552a7930fc8038cca86bb71683feac8f6bc7ebf5ce9f6ddf21ed",
+      "bytes": 1483
+    },
+    "stderr": {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-status-before.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "capture_semantics": "Raw wrapper bytes; run.py CLI merges child stderr into stdout and normalizes newlines",
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

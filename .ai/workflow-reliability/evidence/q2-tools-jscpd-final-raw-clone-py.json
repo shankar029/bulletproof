@@ -1,0 +1,113 @@
+{
+  "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\final clone-py\\jscpd-report.json",
+  "sha256": "b8d2e0eef26696cfdffbd9d72fd4075d684c5a638a06f105364b17ca58d8cd4b",
+  "raw": {
+    "duplicates": [
+      {
+        "firstFile": {
+          "end": 9,
+          "endLoc": {
+            "column": 21,
+            "line": 9,
+            "position": 210
+          },
+          "name": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 first.py",
+          "start": 1,
+          "startLoc": {
+            "column": 0,
+            "line": 1,
+            "position": 0
+          }
+        },
+        "format": "python",
+        "fragment": "# caf\u00e9 \ud83d\ude00\ndef calculate(value):\n    doubled = value * 2\n    offset = doubled + 10\n    divisor = offset / 4\n    remainder = divisor % 3\n    if remainder > 2:\n        return remainder - 3\n    return offset + 7",
+        "isNew": false,
+        "kind": "exact",
+        "lines": 9,
+        "secondFile": {
+          "end": 9,
+          "endLoc": {
+            "column": 21,
+            "line": 9,
+            "position": 210
+          },
+          "name": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 second.py",
+          "start": 1,
+          "startLoc": {
+            "column": 0,
+            "line": 1,
+            "position": 0
+          }
+        },
+        "tokens": 40
+      }
+    ],
+    "statistics": {
+      "detectionDate": "2026-09-17T08:41:41.430Z",
+      "formats": {
+        "python": {
+          "clones": 1,
+          "duplicatedLines": 8,
+          "duplicatedTokens": 40,
+          "lines": 18,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 44.44444444444444,
+          "percentageTokens": 50.0,
+          "sources": 2,
+          "tokens": 80
+        }
+      },
+      "total": {
+        "clones": 1,
+        "duplicatedLines": 8,
+        "duplicatedTokens": 40,
+        "lines": 18,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 44.44444444444444,
+        "percentageTokens": 50.0,
+        "sources": 2,
+        "tokens": 80
+      }
+    },
+    "summary": {
+      "by": "tokens",
+      "files": [
+        {
+          "bytes": 220,
+          "complexity": 2,
+          "duplicatedLines": 8,
+          "duplicatedTokens": 40,
+          "format": "python",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 first.py",
+          "tokens": 40
+        },
+        {
+          "bytes": 220,
+          "complexity": 2,
+          "duplicatedLines": 8,
+          "duplicatedTokens": 40,
+          "format": "python",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd final fixtures\\caf\u00e9 second.py",
+          "tokens": 40
+        }
+      ],
+      "folders": [
+        {
+          "bytes": 440,
+          "complexity": 4,
+          "duplicatedLines": 16,
+          "files": 2,
+          "lines": 18,
+          "path": "//?/C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/q2-tools-20260917/jscpd final fixtures",
+          "tokens": 80
+        }
+      ],
+      "totalFiles": 2,
+      "totalFolders": 1
+    }
+  }
+}

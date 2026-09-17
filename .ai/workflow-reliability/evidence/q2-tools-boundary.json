@@ -1,0 +1,21 @@
+{
+  "source_pins": {
+    "scripts\\run.py": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+    "scripts\\measure.py": "5d6f15a95de50d932953023508dd12ae2f470fd073af91d409ca5a948838b084",
+    "scripts\\measure_graph.py": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391",
+    "scripts\\probe.py": "668042417c42b7aa457a695ffa8782845d18b9834c1937f17e277190cc0bb083",
+    ".ai\\workflow-reliability\\measurement-enablement-contracts.json": "a9a75df36241dc2578ff627703154a2750212c385a163332fe2ccbb47af9bd12",
+    ".ai\\workflow-reliability\\evidence\\measurement-design-review-r2.md": "02a86a471880ac6e220f188b73c06dd645b937205f8e55303bc46c6fcb96ec8d"
+  },
+  "all_initial_pins_unchanged": true,
+  "ruff_explicit_census": 8,
+  "ruff_resolved_rules": 158,
+  "toolchain_installs": "Two standalone official native releases extracted; no venv created and no Python wheels installed",
+  "coverage": "7.16.1 DEFERRED to Q3; neither provisioned nor executed",
+  "cleanup": {
+    "scratch_empty": true,
+    "ruff_cache": [],
+    "background_processes_started": 0,
+    "retained": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917"
+  }
+}

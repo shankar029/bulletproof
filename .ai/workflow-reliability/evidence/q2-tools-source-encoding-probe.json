@@ -1,0 +1,46 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-c",
+    "import json,locale,pathlib,sys;p=pathlib.Path(sys.argv[1]);a=json.loads(p.read_text())['files'][0]['path'];b=json.loads(p.read_text(encoding='utf-8'))['files'][0]['path'];print(json.dumps({'preferred_encoding':locale.getencoding(),'default_path':a,'default_exists':pathlib.Path(a).exists(),'utf8_path':b,'utf8_exists':pathlib.Path(b).exists()},ensure_ascii=True));assert pathlib.Path(b).exists()",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-typescript-results.json"
+  ],
+  "wrapper_argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+    "--idle",
+    "30",
+    "--max",
+    "90",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-c",
+    "import json,locale,pathlib,sys;p=pathlib.Path(sys.argv[1]);a=json.loads(p.read_text())['files'][0]['path'];b=json.loads(p.read_text(encoding='utf-8'))['files'][0]['path'];print(json.dumps({'preferred_encoding':locale.getencoding(),'default_path':a,'default_exists':pathlib.Path(a).exists(),'utf8_path':b,'utf8_exists':pathlib.Path(b).exists()},ensure_ascii=True));assert pathlib.Path(b).exists()",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-typescript-results.json"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1",
+  "exit": 0,
+  "captures": {
+    "stdout": {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-encoding-probe.stdout.log",
+      "sha256": "b742f891a00717794c5e7aad8e7763396621346a5531825592c94d3e0aa7d886",
+      "bytes": 477
+    },
+    "stderr": {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-encoding-probe.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "capture_semantics": "Raw wrapper bytes; run.py CLI merges child stderr into stdout and normalizes newlines",
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

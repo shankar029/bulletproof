@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C2 recovery — bounded design amendment</title>
+<link rel="stylesheet" href="../assets/artifact.css">
+<script src="../assets/artifact.js" defer data-doc="c2-recovery-design.html" data-slug="workflow-reliability"></script>
+</head>
+<body>
+<h1>C2 recovery: authority, not a label</h1>
+<div class="meta">Proposed r1 · AC04 / AC05 / AC09 · HEAD d971634<br>
+<a href="c2-recovery-contract.json">Exact fields, interfaces, migration and test matrix</a> ·
+<a href="evidence/c2-recovery-design-notes.md">Grounding and validation notes</a></div>
+<p class="assumption">Design only. Parent owns independent review and final adoption.
+Human approval remains unconfirmed under unattended authorization. No implementation,
+new recovery experiment or quality claim.</p>
+
+<h2>1. Observed blocker → bounded correction</h2>
+<p><strong>FACT:</strong> state validates only the old event fields and requires terminal
+observations for completion. Gate lifetime resolution recognizes only completion.
+The lexical mutex unlinks in <code>finally</code>. Thus unknown-spawn recovery cannot be
+represented without inventing process facts. The existing
+<a href="evidence/c2b-interface-blocker.md">pinned diagnosis</a> remains sufficient;
+its seven source/contract hashes were reconciled, not its production scenario rerun.</p>
+<figure>
+<svg viewBox="0 0 760 100" role="img" aria-label="Durable admission binds owner; state resolves immutable recovery evidence; pure gate clears lifetime only">
+<defs><marker id="r-arrow" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker></defs>
+<rect x="5" y="20" width="210" height="55" class="b"/><text x="110" y="43" class="t">Admission + owner</text><text x="110" y="62" class="s">durable before Popen</text>
+<rect x="274" y="20" width="210" height="55" class="b"/><text x="379" y="43" class="t">State resolves proof</text><text x="379" y="62" class="s">hash + qualified semantics</text>
+<rect x="543" y="20" width="210" height="55" class="b"/><text x="648" y="43" class="t">Pure gate</text><text x="648" y="62" class="s">lifetime only, never success</text>
+<line x1="215" y1="48" x2="274" y2="48" class="a" marker-end="url(#r-arrow)"/>
+<line x1="484" y1="48" x2="543" y2="48" class="a" marker-end="url(#r-arrow)"/>
+</svg>
+<figcaption>Recovered labels, PID absence and caller booleans carry no authority.</figcaption>
+</figure>
+
+<h2>2. Minimal component delta</h2>
+<table>
+<thead><tr><th>Owner / why</th><th>What changes / how</th></tr></thead>
+<tbody>
+<tr><td>State · 04/05/09</td><td>Ledger/Event v2; admitted <code>lock_owner</code>,
+recovered <code>recovery_ref</code>. Ordinary resolved dataclasses mirror receipt resolution.
+Immutable bytes and exact admission/basis hashes prevent substitution.</td></tr>
+<tr><td>Gate · 04/05/09</td><td><code>recovery_resolves(run_id)</code> consumes qualified
+materialized facts; preserve public evaluate signature, requires graph, exact receipt
+chronology and evaluation-local prefix caches. No I/O.</td></tr>
+<tr><td>CLI · 04/05/09</td><td>Persist owner before launch; validate captures/review, append
+interrupted then recovered, remove only matching stale lock after guard-inactivity proof.
+Short acquisition claim serializes replacement; orphan claim stays blocked.</td></tr>
+</tbody>
+</table>
+<p>Six verbs/options, eight-field observer and standalone locks stay unchanged. Recovery
+never creates successful work, red, check proof, closure or automatic replay.</p>
+
+<h2>3. Compatibility and failure contract</h2>
+<p>Archive original v1 ledger bytes; v2 retains its exact event prefix and marks every new
+event v2. Locked <code>adopt</code> alone upgrades, with no unresolved legacy executable run.
+Legacy unknown runs cannot acquire invented ownership. Historical successful receipts keep
+their policy. Pointer/archive mismatch fails closed; nothing is retrospectively admitted.</p>
+<p>Missing/tampered captures, wrong run/token/guard, stale basis/adoption, unsupported
+coverage and independent-review mismatch cannot unlock. Malformed submission is exit 2;
+uncertain recovery/conflict is 3. Exact partial-write retries preserve sequence and evidence;
+different evidence or intervening events require reconciliation, not rewriting.</p>
+
+<h2>4. Platform qualification is separately blocked</h2>
+<p class="unverified"><strong>No actual positive recovery path is established here.</strong>
+The runner emits null creation identity; Windows group creation/taskkill and the test's
+retained direct-process handle do not establish durable guard identity or complete
+descendant death. No reset API, supervisor or authenticated operator is assumed.</p>
+<p>Accept the finite data/control seam separately. Before live recovery can pass, qualify
+one actual evidence producer and decoder proving matched guard inactivity plus complete
+admitted tree termination or environment reset. Raw hashes and independent attribution
+are necessary, not sufficient. Otherwise preserve the blocked workspace and continue only
+in an externally verified clean execution environment with new adoption and fresh checks;
+a new directory is not isolation.</p>
+
+<h2>5. Small execution grouping after review</h2>
+<p><strong>C2R-D:</strong> one state/gate context: strict records → immutable resolver →
+pure predicate → targeted legacy/chronology/tamper/cache tests → independent verification
+and review. Then the existing C2b owner wires CLI and real negative crash/lock tests.
+Synthetic resolved-proof positives are labeled protocol tests only.</p>
+<p><strong>C2R-P:</strong> separate supported-platform qualification and real CLI positive,
+or retain the explicit blocker. Reopen affected C1 persistence, resolved-view and gate proof;
+keep old results historical. C2a runner stays frozen. Q2–Q5 actual metrics and later host
+exercises remain required and separate. Parent next: review this amendment and accept or
+revise the split—not declare end-to-end recovery implemented.</p>
+</body>
+</html>

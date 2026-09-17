@@ -1,0 +1,168 @@
+{
+  "status": "DATA_ONLY_NOT_PROVISIONED_OR_EXECUTED",
+  "origin": {
+    "repository": "jendrikseipp/vulture",
+    "version": "2.16",
+    "tag": "v2.16",
+    "commit": "b0f67ba0044693aa9ec0d38fe460590facc98004",
+    "ref_object": {
+      "sha": "258fe6a1974e89a2add9a45519a9e9dd9f46154e",
+      "type": "tag",
+      "url": "https://api.github.com/repos/jendrikseipp/vulture/git/tags/258fe6a1974e89a2add9a45519a9e9dd9f46154e"
+    },
+    "release_status": 200,
+    "release": {
+      "html_url": "https://github.com/jendrikseipp/vulture/releases/tag/v2.16",
+      "draft": false,
+      "prerelease": false,
+      "published_at": "2026-03-25T14:41:13Z"
+    },
+    "assets": [],
+    "proposed_source_archive": "https://api.github.com/repos/jendrikseipp/vulture/tarball/b0f67ba0044693aa9ec0d38fe460590facc98004"
+  },
+  "archive": {
+    "url": "https://api.github.com/repos/jendrikseipp/vulture/tarball/b0f67ba0044693aa9ec0d38fe460590facc98004",
+    "resolved_url": "https://codeload.github.com/jendrikseipp/vulture/legacy.tar.gz/b0f67ba0044693aa9ec0d38fe460590facc98004",
+    "http_status": 200,
+    "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\route-1\\vulture-source-archive.capture",
+    "sha256": "53b37a8bfe9204458cf1bda786df5bd082312f3d2a9f02aacc8879e9b91e11cf",
+    "bytes": 46147
+  },
+  "runtime_file_pins": [
+    {
+      "path": "vulture/__init__.py",
+      "sha256": "db00d1c838e8716765e9a4625fa096148f5c9fa846ac2eeb94cd77b277378c22",
+      "bytes": 108
+    },
+    {
+      "path": "vulture/__main__.py",
+      "sha256": "702b295119f2f69ac1f06be2ddd2b10a8b32cdc059fbaa8a5c033a1c25b411d2",
+      "bytes": 38
+    },
+    {
+      "path": "vulture/config.py",
+      "sha256": "cf4d982fa0232f89b586585b6ea9604ec6fdf4b4c6cb86510a6055f1e267fdf1",
+      "bytes": 6964
+    },
+    {
+      "path": "vulture/core.py",
+      "sha256": "bbbb778365c044188b89d69c6f77dbf23a7b1477a8f419019c4f71a4f56c7faa",
+      "bytes": 21449
+    },
+    {
+      "path": "vulture/lines.py",
+      "sha256": "7701c1b7d2414c2f366056773ae01316af149a74235fba384fe0ff5964e11943",
+      "bytes": 731
+    },
+    {
+      "path": "vulture/noqa.py",
+      "sha256": "264d48a5e86cf1b19e3f3f25c277d3d2ec05fe7fed59bbe032fd512e95f6ee79",
+      "bytes": 1349
+    },
+    {
+      "path": "vulture/reachability.py",
+      "sha256": "51aea083adacd6c0afb371dfced7918dd4066cca7c5f72ec92d07df0e0dd0532",
+      "bytes": 7819
+    },
+    {
+      "path": "vulture/utils.py",
+      "sha256": "0a77f014c5757376e4a5b304f2ad0e785d21cb1c895046a6e8f1fd4f12639d29",
+      "bytes": 3628
+    },
+    {
+      "path": "vulture/version.py",
+      "sha256": "54968263b9f8961b9fdce857815591f87b3f8c7df96190e527510c747be8907b",
+      "bytes": 21
+    },
+    {
+      "path": "vulture/whitelists/argparse_whitelist.py",
+      "sha256": "dc0ee36aa8ea7623259222aebcc3e3c5f4f4dd97fc9c6c80e42591e30eb84896",
+      "bytes": 173
+    },
+    {
+      "path": "vulture/whitelists/ast_whitelist.py",
+      "sha256": "3fcc3b19b7a90d0ddbc47d4d18f2fa4f5ec734415d44933983524ce428a4c81a",
+      "bytes": 2585
+    },
+    {
+      "path": "vulture/whitelists/collections_whitelist.py",
+      "sha256": "95ba8a02b985097f67f33d1568f73c5ea6f9a92d33770f136ee0cb2131268bb3",
+      "bytes": 132
+    },
+    {
+      "path": "vulture/whitelists/ctypes_whitelist.py",
+      "sha256": "0c7d3223722b9ab1a6adc8f21c428d4877cc5426b7a1188b7d1247657940aea8",
+      "bytes": 115
+    },
+    {
+      "path": "vulture/whitelists/enum_whitelist.py",
+      "sha256": "6981647677329539b593e553a0554ac7dc553e2de12d0f0073982273e9599973",
+      "bytes": 184
+    },
+    {
+      "path": "vulture/whitelists/logging_whitelist.py",
+      "sha256": "cb85cc46da4cec69bca27f79a60163c6a3ac3dea522250a30823b91e66465d2c",
+      "bytes": 95
+    },
+    {
+      "path": "vulture/whitelists/pint_whitelist.py",
+      "sha256": "ac7fd2528901d7e4c3c224fb83ad4a2c9c403ccf8fa1ea5e8756cadb86e76f34",
+      "bytes": 60
+    },
+    {
+      "path": "vulture/whitelists/socketserver_whitelist.py",
+      "sha256": "646dcfaf0f0e189626683b40e3f1e71f26f1c952649d10b97312b60cd6008c3a",
+      "bytes": 64
+    },
+    {
+      "path": "vulture/whitelists/ssl_whitelist.py",
+      "sha256": "682b1fe808c7cc8bc6e1d9282419eec2730ceb07871a98f4d3fa575838fa5d34",
+      "bytes": 272
+    },
+    {
+      "path": "vulture/whitelists/string_whitelist.py",
+      "sha256": "62f2c5e74a70f4a4e4aa6dd8a18698182a824cd08b2dc986f801608b9a8acfdb",
+      "bytes": 237
+    },
+    {
+      "path": "vulture/whitelists/sys_whitelist.py",
+      "sha256": "1f54ffd4fab94ff3c9349d2f88df4fef673b092c5747e27b3236a33c712f62ec",
+      "bytes": 105
+    },
+    {
+      "path": "vulture/whitelists/threading_whitelist.py",
+      "sha256": "23d9d9d2c4cc90de1d99f5e2e6af5468f83007b5b26680b5731e17356ffc4ac9",
+      "bytes": 85
+    },
+    {
+      "path": "vulture/whitelists/unittest_whitelist.py",
+      "sha256": "51a9c3bcbd8d1c5ce5054fd6c3489d134468e7dba147a6a7d50c446d169b4c7c",
+      "bytes": 342
+    },
+    {
+      "path": "vulture/whitelists/whitelist_utils.py",
+      "sha256": "7453bb2f5ff2fcbc41472efd01e9d2d059cfae99791aa206b51ce01b4a43f1c8",
+      "bytes": 874
+    }
+  ],
+  "runtime_tree_sha256": "3474c05afae0447066d0516a389560c6107225e84d4f5f860de39d246fe92a5c",
+  "static_external_import_sites": [
+    {
+      "path": "vulture/config.py",
+      "line": 12,
+      "module": "tomli"
+    },
+    {
+      "path": "vulture/whitelists/ast_whitelist.py",
+      "line": 1,
+      "module": "whitelist_utils"
+    },
+    {
+      "path": "vulture/whitelists/pint_whitelist.py",
+      "line": 1,
+      "module": "pint"
+    }
+  ],
+  "static_parse_errors": [],
+  "limits": "Syntax/import inventory only; conditional/optional imports are not mandatory runtime dependency claims. No package import or install."
+}

@@ -1,0 +1,1614 @@
+{
+  "prior_evidence": [
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-boundary.json",
+      "sha256": "8716357d8aa5d63beb98d3232aa0fcfc2f63f05ae878ac749e0e94e66851cb1a",
+      "bytes": 1237
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-jscpd.json",
+      "sha256": "ec037a8aa0158f30bcfcbbe390d79b3ab001e9dd896052e8d39f659d4de8016c",
+      "bytes": 451
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-lizard-curl.json",
+      "sha256": "098f23a3f7d40983c274aae6375af6c275d4bd0a5822467b0f567eb3d5d66ec7",
+      "bytes": 2238
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-lizard-curl.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-lizard-curl.stdout.log",
+      "sha256": "112b80673ec5583e8a69c1548ff05a50490454a2149a1b4fdce3e4bff0a38d75",
+      "bytes": 250
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-lizard-urllib-failure.json",
+      "sha256": "af64be4e302da86dd1c48a9400f77f60e98d96e58ee9ad5133fbe6f1968d7857",
+      "bytes": 274
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-pathspec-curl.json",
+      "sha256": "7a18ce5f7d78ab7816671fa89127e6b12eab6cc87e40b6de45c8715a040ac5c6",
+      "bytes": 2230
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-pathspec-curl.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-pathspec-curl.stdout.log",
+      "sha256": "112b80673ec5583e8a69c1548ff05a50490454a2149a1b4fdce3e4bff0a38d75",
+      "bytes": 250
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-pathspec-urllib-failure.json",
+      "sha256": "896acc41b1d28a74296c6fcd30c9be96af588943082f39dbf3c644f285815236",
+      "bytes": 271
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-pygments-curl.json",
+      "sha256": "8972116baaceebb9e228f8b6aab60b39c08ce5899ecef497ea0dd17e02388790",
+      "bytes": 2234
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-pygments-curl.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-pygments-curl.stdout.log",
+      "sha256": "112b80673ec5583e8a69c1548ff05a50490454a2149a1b4fdce3e4bff0a38d75",
+      "bytes": 250
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-pygments-urllib-failure.json",
+      "sha256": "f3618bdd97d88d2c5cff0e99b5f91d22dec3afc856efa72cc617db231fd06201",
+      "bytes": 272
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-ruff-curl.json",
+      "sha256": "8bd57fd3865e5aaef3fd01a47bf9e6c72150baa5907d4d12095d39b715f3cacd",
+      "bytes": 2234
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-ruff-curl.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-ruff-curl.stdout.log",
+      "sha256": "112b80673ec5583e8a69c1548ff05a50490454a2149a1b4fdce3e4bff0a38d75",
+      "bytes": 250
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-ruff-github.json",
+      "sha256": "ad340d57adf7b03b3ddab84693fc5380110cf17fa148c7ec25abef81f90f63dc",
+      "bytes": 453
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-ruff-urllib-failure.json",
+      "sha256": "a56f1dc4312645b5fa4d126af148a6494623274f261e47edc890cbb3c179ffbf",
+      "bytes": 274
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-vulture-curl.json",
+      "sha256": "eb62058972b879b9e7709c109cba968897eb80eac54ec5da165c6134a2c7988d",
+      "bytes": 2220
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-vulture-curl.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-vulture-curl.stdout.log",
+      "sha256": "112b80673ec5583e8a69c1548ff05a50490454a2149a1b4fdce3e4bff0a38d75",
+      "bytes": 250
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-download-vulture-urllib-failure.json",
+      "sha256": "1b18fb57ca6ca7ba2b3ce33a6444d2d635aba468c8ca442cf10f0f2d8685238c",
+      "bytes": 269
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-executables.json",
+      "sha256": "c128065bb420095d789b70cf0e916625b317831e3b236326f188118dc28e09b9",
+      "bytes": 246
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-head-after.json",
+      "sha256": "4ceaa34062767319660d801b6477f403c5732a10cd1ba2b59e68a79918c63321",
+      "bytes": 1556
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-head-after.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-head-after.stdout.log",
+      "sha256": "8027e11f0f8c7da4a2fd9747219835ce52a4d1d5da98b194c9504945fa31eec0",
+      "bytes": 42
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-head.json",
+      "sha256": "b50658e91cf3356adec75b7c8a170175fb30ecb3243eb001ffe48383e67b64fa",
+      "bytes": 1544
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-head.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-head.stdout.log",
+      "sha256": "8027e11f0f8c7da4a2fd9747219835ce52a4d1d5da98b194c9504945fa31eec0",
+      "bytes": 42
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-census-r2.json",
+      "sha256": "997a67e9ce6763c61d2689064e7004f19cbf4a183976d8613eba65072b1ce87d",
+      "bytes": 13314
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-census-r2.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-census-r2.stdout.log",
+      "sha256": "647358fd3f628f3011341b08374974e2529cf6f9ddd15ebde718853d183747e1",
+      "bytes": 307
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-census.json",
+      "sha256": "90730446eb93976b2ba721d5e2050122998218a4f9e913e1e4ff4a9e21b4ce2e",
+      "bytes": 13426
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-census.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-census.stdout.log",
+      "sha256": "8895e4f143e62da32c12f87324e462a4ae66dd586f8045994d04a7c1d2309c95",
+      "bytes": 158
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-comment-r2.json",
+      "sha256": "642d6591803210d901541a31048bbef2fb6a83bd4ecb62ce94f605bb426d900a",
+      "bytes": 4970
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-comment-r2.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-comment-r2.stdout.log",
+      "sha256": "cb0a98da5d99f9123ada2bb90a38c7976ea506471235785ceccc856d5809ed45",
+      "bytes": 307
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-comment.json",
+      "sha256": "3011c846b7f3ec26b9eed3140e17fa00c6d06c418ad2412cdfd2224ff1950d4b",
+      "bytes": 5082
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-comment.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-comment.stdout.log",
+      "sha256": "8895e4f143e62da32c12f87324e462a4ae66dd586f8045994d04a7c1d2309c95",
+      "bytes": 158
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-debug.json",
+      "sha256": "0d185d39c5e01c4c89f691b61d7341a561dcbe00a31b9afc98da3e5bdb60cfde",
+      "bytes": 13042
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-debug.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-debug.stdout.log",
+      "sha256": "e7fe8b483b93e090dd93f3a7b80cc6c45104dd1113d6c91d52a80266c967a68c",
+      "bytes": 6570
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-doc.json",
+      "sha256": "a375d0898d96d932a0cb2d6a994e26ff9ce58aaf2f22a4323cdbfadb6e1e0a90",
+      "bytes": 351
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-empty-r2.json",
+      "sha256": "29bfd93b25f4649597392b9f219af3baac3aa3f40a9f29ada71890efd16460ae",
+      "bytes": 4934
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-empty-r2.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-empty-r2.stdout.log",
+      "sha256": "499d8d44b87018f4cf191cfa6b2ff270d3c85d65977b1274b297cc18150cb392",
+      "bytes": 405
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-empty.json",
+      "sha256": "4fbbe6defc54a95e3da5f577f3aa3eb57465b52797ab5383fac45e4a0eb0b19a",
+      "bytes": 5046
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-empty.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-empty.stdout.log",
+      "sha256": "8895e4f143e62da32c12f87324e462a4ae66dd586f8045994d04a7c1d2309c95",
+      "bytes": 158
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-cjs.json",
+      "sha256": "521918a1e4353e8ab0a146a5b18a30727733d2527f7663c9473c5ad16a534367",
+      "bytes": 3634
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-cjs.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-cjs.stdout.log",
+      "sha256": "f3448cd36624871a0550ce99c1edf72857aab3f02f9ed204784f5fda22b0c0c5",
+      "bytes": 305
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-js.json",
+      "sha256": "84714c268966b983a8199171fe0d31373931fc34bab9237ba394270148c3a013",
+      "bytes": 3626
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-js.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-js.stdout.log",
+      "sha256": "c651e02d570d28b4f4b6d2073fa4fcf026f0845749e548283450905dcfffd4d2",
+      "bytes": 304
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-jsx.json",
+      "sha256": "4859c34ae7ec66ec96c5a93b195fd4323c166184cbdbacb30002fbbf87833f8c",
+      "bytes": 3634
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-jsx.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-jsx.stdout.log",
+      "sha256": "403f0d8dc152fb8260a0bf06d34716aad75546de72fd56160074b02b6246558e",
+      "bytes": 305
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-mjs.json",
+      "sha256": "43f395ccff5427f576e3724816bd4f5c791ecc50a2a941f94debef47d1b3ffc2",
+      "bytes": 3634
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-mjs.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-mjs.stdout.log",
+      "sha256": "fe0e11741d89421fa7c535950662680497f2a0e07ae8de7b0d4b559c5012877e",
+      "bytes": 305
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-py.json",
+      "sha256": "50c4672ab014ced5ee4d7abc1aa87b26427a1a1bff83dce03bcba20ca72e5bb8",
+      "bytes": 3626
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-py.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-py.stdout.log",
+      "sha256": "a2b397e3f6b2d122457de35156d7e2e098385ea5ee37272f3014c2efdbb354ae",
+      "bytes": 304
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-ts.json",
+      "sha256": "aae190af51c54b237e6b779aeac1c9e8b7a018698200d27f0fc4bd061790c64f",
+      "bytes": 3626
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-ts.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-ts.stdout.log",
+      "sha256": "edc035770ec4730c45a9c17732d6218ee9217778b9073302ab329d482516869a",
+      "bytes": 304
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-tsx.json",
+      "sha256": "d834cfe2a17fc0c9ce14820f2a8e32832740c0adca311c043f13e1b99d25c078",
+      "bytes": 3634
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-tsx.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-clone-tsx.stdout.log",
+      "sha256": "c29aaecef2f9dbeccd3c46801f8cc384b7272b0ee3e6e3ece552718a749aab02",
+      "bytes": 304
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-debug.json",
+      "sha256": "be17762c9a4b376487cb0f8e6a9a648cc20c233b1ff26e80e249fe40908203a1",
+      "bytes": 3048
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-debug.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-debug.stdout.log",
+      "sha256": "d0ec219dad4ba21cba38856457289cf6162e9f6f2cecf334a195f0e3ee061c5f",
+      "bytes": 1556
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-cjs.json",
+      "sha256": "440a3f5cf8fc00d8fd2093a02d94639e81d0304b43bd043df9bcc66ca663914d",
+      "bytes": 3332
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-cjs.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-cjs.stdout.log",
+      "sha256": "4f30bd56935cecdd5bebcec957ef5ae0885b97900fecb3ec229a50f5d343854d",
+      "bytes": 307
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-js.json",
+      "sha256": "06f2d97e85d76f0ed8570007f2dc2efc18b5f2c5e107719cae1a6f2a900492a5",
+      "bytes": 3326
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-js.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-js.stdout.log",
+      "sha256": "0b08bbb85c295da917550fe7d2ec9c23b6c45c8207db44816687f6a55fba2627",
+      "bytes": 306
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-jsx.json",
+      "sha256": "cb1b6e433b8863d9697ca106af30d5f41ec374f57156df90e1db07467cf8344d",
+      "bytes": 3332
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-jsx.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-jsx.stdout.log",
+      "sha256": "e1701b228443f7e22b033fc7eb8f6bb35ffd2a3b45ca50fff7eeab6fca3771c2",
+      "bytes": 307
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-mjs.json",
+      "sha256": "1e4d390c43c9995a991dbfd5f6e04d15b0c0a81d11db73f38aea6441d9db9e63",
+      "bytes": 3332
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-mjs.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-mjs.stdout.log",
+      "sha256": "dbdf109f9ee58f926cda4f1bec71aadebca8e4075881e2391868d0306d021fa5",
+      "bytes": 307
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-py.json",
+      "sha256": "fff73e6c597415259ec8f053b0abdf61e3d4ed7d57c1c052a368b3362868b2c8",
+      "bytes": 3326
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-py.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-py.stdout.log",
+      "sha256": "1a22c670cb558a553dceaba0aa7a6f20459d9f34758250abf0054cdedf8a8c68",
+      "bytes": 306
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-ts.json",
+      "sha256": "caa6a81c917442a1393c91d9f4dc02faae79d7fd3a05b22821dce4f2fdd4ba7c",
+      "bytes": 3326
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-ts.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-ts.stdout.log",
+      "sha256": "058ac26b59d0c4d4577a4a83e11e216fb1dc4f99748b794a805bf040701719b3",
+      "bytes": 306
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-tsx.json",
+      "sha256": "5dbc1a797e3ab6d7c2de5f808481bac3d8754beeb92eb0f838f24359ef5c733b",
+      "bytes": 3332
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-tsx.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-no-clone-tsx.stdout.log",
+      "sha256": "86cc1ca09ffb4c2367121b0db3686088a8b853490504d748c09537fd5add98ed",
+      "bytes": 307
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-raw-clone-cjs.json",
+      "sha256": "9e514bc2a2ed385848cb2c70f4291512fc64282e61708eb0a8f17c7061f90a78",
+      "bytes": 3743
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-raw-clone-js.json",
+      "sha256": "9ea5d2b517deb9cc0e3cb38d537b8a229a08b5029848edf610bacfaa5119deb9",
+      "bytes": 3738
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-raw-clone-jsx.json",
+      "sha256": "667943a9317e21fe484ef356be15f7634c43b35591ec750ab10fa0f1a50e1ace",
+      "bytes": 3715
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-raw-clone-mjs.json",
+      "sha256": "da3fb8f13ba0a9054fd13ff825c28c5fe1e368864d0a7f62eeef7293a11d0556",
+      "bytes": 3743
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-raw-clone-py.json",
+      "sha256": "78edca7a9ceae55211775227084145be719043bd3c91fca0e6bd33101cc901e1",
+      "bytes": 3705
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-raw-clone-ts.json",
+      "sha256": "6153f21f8f55b50c2d8b44bc1a94f5bd5d2efe3a74c746a39b60ac8131d42460",
+      "bytes": 3738
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-raw-clone-tsx.json",
+      "sha256": "6e3f5d696ffc8bc4e8b321216d5f7fbf92fdb0d02166d3e11691781d8cab0d52",
+      "bytes": 3715
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-raw-no-clone-cjs.json",
+      "sha256": "f79b98718294bbb4daf52af807602f0288d83df750225a17ac9b8043aa2d98b4",
+      "bytes": 1906
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-raw-no-clone-js.json",
+      "sha256": "bfa39675191bc12831c80d5554d33eab59078d10356c7cc5a08b401cc64e8bf3",
+      "bytes": 1904
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-raw-no-clone-jsx.json",
+      "sha256": "152977e312f64ac08e8408e1aa2a3185d6f61e3792e673daaabf71edb8170498",
+      "bytes": 1892
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-raw-no-clone-mjs.json",
+      "sha256": "4bbe82f8e8c31b7f9456a35a8b6c378afd65ef2a01044df8cd9879b021914fa3",
+      "bytes": 1906
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-raw-no-clone-py.json",
+      "sha256": "86c757d94d05fc0e4343ed21652d0b1e75f182fabcea6a5bdd2abab61ea1a799",
+      "bytes": 1892
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-raw-no-clone-ts.json",
+      "sha256": "a1459bdc9e5042b3a05618a78e41e26cf39076d1d31e76e30cf3340f043f645e",
+      "bytes": 1904
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-final-raw-no-clone-tsx.json",
+      "sha256": "557e04da549cca1f02d52e8dece1d353d327e870a42e0ef4573a3a39dc1d03e1",
+      "bytes": 1892
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-help.json",
+      "sha256": "d1a1eeab290712443dfbde24e8e79b27a6969c80037f90ad7385851f46e53687",
+      "bytes": 1594
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-help.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-help.stdout.log",
+      "sha256": "0dbe0b069783f1e52548d3aec354bf9b2d14ac5326e5e8378865f7ea75440b61",
+      "bytes": 6782
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-inputs.json",
+      "sha256": "81031f8fb970c5c1615db2932624afcd16824027ffb73c35f688cb84557bd9c4",
+      "bytes": 10110
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-invalid-encoding.json",
+      "sha256": "25b9643bcbc6f9732d317ae90fdbfff3bb02601d58e5d03fba30b6172e5ca8b5",
+      "bytes": 3327
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-invalid-encoding.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-invalid-encoding.stdout.log",
+      "sha256": "97cc1ebd6dc9dd78296edad503bea8383572e3a4d297d28e10e7671d923e9f5f",
+      "bytes": 412
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-invalid-raw.json",
+      "sha256": "e86177a6f2edca1b65dd17c0431c2b271f2ce29a2ce91153388945f6b5334903",
+      "bytes": 830
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-license.json",
+      "sha256": "fb75c5491a806404f7360d7e97a8ef964736af11ad763e6cc9eb74b5d305baf3",
+      "bytes": 345
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-list.json",
+      "sha256": "f6ce0a5867b931e61b160f2aa1f3f54118bcae933b32e56484162374c069571c",
+      "bytes": 1594
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-list.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-list.stdout.log",
+      "sha256": "fa8aa7f2389cfb5c65cf574ae3182fd668f8f0026e15746ee41406ff3b58f15d",
+      "bytes": 1701
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-missing.json",
+      "sha256": "ad62a78820c0ac969f824b2d16ac3bb326a238ed123ea7562e64eca81e3975e1",
+      "bytes": 3139
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-missing.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-missing.stdout.log",
+      "sha256": "00be16ea37c69e04a7d6e1f26c2ce3707e5e1ebac29b9830bc3a60653131bbf7",
+      "bytes": 272
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-positive.json",
+      "sha256": "33c4f77c2dd2c64a448e0ab4ca4630e3ac5d08d8687e648c9fe9f906d0f41aa1",
+      "bytes": 13306
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-positive.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-positive.stdout.log",
+      "sha256": "af0a650687accf00e2701eff06faf599106929f97a2d257765696fb74fc47e50",
+      "bytes": 303
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-raw-census-r2.json",
+      "sha256": "0c317fda100ada0362012bf868de68bbc8c2d48f1f681cb8c020be31551b9176",
+      "bytes": 25669
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-raw-clone-report.json",
+      "sha256": "3cf09c851319914056f3c42b3cd1dd119755f7b2e485a776bf742559838b2178",
+      "bytes": 14321
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-raw-comment-r2.json",
+      "sha256": "00f444239f5dff3abe75bdfcfeda7298597268d066b085f5ca32fdde9b5cba35",
+      "bytes": 5516
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-raw-empty-r2.json",
+      "sha256": "3ce5e196d479af77d2f5534a9936212619139f3d6a7d34aa96b97e9ced8e1cab",
+      "bytes": 822
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-raw-short-r2.json",
+      "sha256": "5759b396cfac10d05120f70a26454297434b30ba5859898b5f640354f98ca012",
+      "bytes": 5569
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-raw-zero-report.json",
+      "sha256": "cd70009d378cb84f4d67c607f4c9734e77900f212fb98b3ece6bad42cbce5ed5",
+      "bytes": 818
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-resolved-config.json",
+      "sha256": "af06c28dec96da6ca3d3f269b6a51faeead044f95049284d2aecca02a9671279",
+      "bytes": 1656
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-results.json",
+      "sha256": "c78a1d173941fbafc7561526cefa8e40220719cd564dc45f0c33095568dda4af",
+      "bytes": 8295
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-schema-overview.json",
+      "sha256": "07b362496f3be67913cb7fbb2b7817710442dcc466873ea44de134aae3f18698",
+      "bytes": 32258
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-cjs.json",
+      "sha256": "660fa81ad9a3dfdf7acdfd9ef30a11a884cf5efc3ff3ad56d8737e87b3072d26",
+      "bytes": 3564
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-cjs.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-cjs.stdout.log",
+      "sha256": "890eac43489e4fce33ccb8a32877ed1254cf74b12bf3ccccb4cf82c60969fa3c",
+      "bytes": 306
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-js.json",
+      "sha256": "24fa3dca40befa1b71f29acebe3641846d50b336f7224fe4da9f3ebb4703fb06",
+      "bytes": 3556
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-js.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-js.stdout.log",
+      "sha256": "3b9d48f185159d6800fa430cab314e6cef66d7b2972276d70b73e2ce34060c49",
+      "bytes": 305
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-jsx.json",
+      "sha256": "dfde54deb49eb66bbd6d0890724ae05f8d7e4284d5713a12ad14c6680ee8e2be",
+      "bytes": 3564
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-jsx.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-jsx.stdout.log",
+      "sha256": "abb95b9bc09dd949ad6a2643e170f1bcefb56ffb43abfc81e74bd1176cd6652c",
+      "bytes": 306
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-mjs.json",
+      "sha256": "61433095f1fc7e3c5e374cb6d652fdcb6ad8c97d70d478e2932da5b89242d2cb",
+      "bytes": 3564
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-mjs.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-mjs.stdout.log",
+      "sha256": "7b88f440d610749367478344d6372453ac0b9b610faedd01610d6236a2fd3ec8",
+      "bytes": 306
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-py.json",
+      "sha256": "c9ed19adb0aaab84ae85284c75f994a8784ba670aa5dd393033a406bb77801c4",
+      "bytes": 3556
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-py.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-py.stdout.log",
+      "sha256": "0b7df7df9cc0d3133cc09d8a1bf1dff29931d06927ad309f7c84064f6c17dea8",
+      "bytes": 305
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-raw-cjs.json",
+      "sha256": "e5ccd3a87c848268cb914d917584a3ed16c1933dd55d0530d9b92c6d8796c23d",
+      "bytes": 3774
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-raw-js.json",
+      "sha256": "6a7faa19cc1bf89e4034898ac15c8576b4c6df1373aa800909cace4b6718adc4",
+      "bytes": 3712
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-raw-jsx.json",
+      "sha256": "d8fe050d1243246352f0612b58180d53bad1f66e0992a2339ab818b142a1dde7",
+      "bytes": 3791
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-raw-mjs.json",
+      "sha256": "2ab8100446d3442838b543879e856a762fcb5893114fef5c0ce5c5a222a0315f",
+      "bytes": 3717
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-raw-py.json",
+      "sha256": "fb91d6f4ac451e85e178d050eae479488fcb79637ea62944907ce67466234b32",
+      "bytes": 3688
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-raw-ts.json",
+      "sha256": "0e63bd96bc2df8b356f0278170d10c2ac3ede28c71a94a0f8e3ed96964c85d73",
+      "bytes": 3828
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-raw-tsx.json",
+      "sha256": "a0e6fe6670f3d412382268839539bebd1926d979dc5f8d5db1e83aa2226a102e",
+      "bytes": 3840
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-results.json",
+      "sha256": "8a961639fe0d449d28ea3bd871f6b92e2bea18a5275c7338aaf4bbdb8c07708f",
+      "bytes": 9345
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-ts.json",
+      "sha256": "2c2f210e72192995cb5d3b67c26546c4e903aee0a6dc1ce5f53592d7b44af481",
+      "bytes": 3556
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-ts.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-ts.stdout.log",
+      "sha256": "4cbbeea5361536f733cb51e823bbcd95aaa585cfd3e1efed5c485832d8f5df17",
+      "bytes": 305
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-tsx.json",
+      "sha256": "af41f5d422e795a7e36cbb3eb5a889039c200040171f6d1c4f5a951ac8ba9440",
+      "bytes": 3564
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-tsx.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-shape-tsx.stdout.log",
+      "sha256": "50f37fe52d0a81a04c4ec8d0ef0145177362824a1bbca1bdbea9a19ed3b8ade9",
+      "bytes": 306
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-short-r2.json",
+      "sha256": "04b08d23494b3edd5c96b4e5448fde590927ec4bae7c60b2d558fe8395562c8c",
+      "bytes": 5074
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-short-r2.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-short-r2.stdout.log",
+      "sha256": "e0b6dee60c0f501cbd170cd11c65e5d54d61c6b76bfe58fed37e4c764189edac",
+      "bytes": 305
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-short.json",
+      "sha256": "8f5f4a9ce16a35a28420428506e09ed43722f780c59ec1948e0fcee85c868e4d",
+      "bytes": 5206
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-short.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-short.stdout.log",
+      "sha256": "8895e4f143e62da32c12f87324e462a4ae66dd586f8045994d04a7c1d2309c95",
+      "bytes": 158
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-source-cli.json",
+      "sha256": "31f1ee206f7a9fc019f27a2a45ea86e63ae32c992a8b0e507aa08960a5627873",
+      "bytes": 365
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-source-index.json",
+      "sha256": "2ccc5ea8e0e4479940bee6e34bca53269eb20329d73f848033f4cc2d6f22280c",
+      "bytes": 630
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-source-runner.json",
+      "sha256": "b50e8b0d47f0fc49bbb89f906045838562deb4b0e5e95b7a5d3e07767b0e0446",
+      "bytes": 365
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-source-summary.json",
+      "sha256": "05a02df8360681233876f4d8fadd78ce9d479ddcf1c4fd67dd8a279675c44af2",
+      "bytes": 377
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-source-walker.json",
+      "sha256": "aba1de488864bfe73dfa296af1c85d0f013a1bc32a98fe1aaaac17ee7c18ca93",
+      "bytes": 377
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-version.json",
+      "sha256": "cda7ac6606d9c61bd6aa2cc26da5e115d8bec73ea65e3a31f090a9acb6863be1",
+      "bytes": 1604
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-version.stdout.log",
+      "sha256": "c1a2e1c904ddeb0ed64df9c34b6b04d9a98998bf0af8237b942777ace9221d23",
+      "bytes": 13
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-zero.json",
+      "sha256": "a285b2a397e4badc24f917569c97bcc71446a068b58d5e53a60ebe96c44ef82d",
+      "bytes": 3129
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-zero.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-zero.stdout.log",
+      "sha256": "8c4615f5fe3142e5b4d46ae7c12055383983cd46839bcebe2dfcb86276e8a997",
+      "bytes": 400
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-locations.json",
+      "sha256": "5cca237f58e8b64bf0d13d7d838589002cb9e53bb12c829a9f1918b05c7aebc5",
+      "bytes": 1198
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-manifest.json",
+      "sha256": "7e257ed9f054c33d36bccb32bd6623f3adb9b20521d49d812eecf9903ff777dd",
+      "bytes": 110043
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-metadata-jscpd.json",
+      "sha256": "780e8398e4a06235862c06e22739035395b5da84ffe25c2b60b2bc8e0ae86ead",
+      "bytes": 6492
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-metadata-lizard.json",
+      "sha256": "3141dad0011d5a7484fcc87ec31c98bb2696206ce70a52c0a6de3d76ad52bcef",
+      "bytes": 1806
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-metadata-pathspec.json",
+      "sha256": "2294b84ddf97a4dbb8973a397b662c5bb13276ccc720122d5e5835bd75b226d6",
+      "bytes": 2099
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-metadata-pygments.json",
+      "sha256": "972c30d4282c707021a969255c141cfdac3c5369bf4b0049ae02aa3fa9847a65",
+      "bytes": 1986
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-metadata-ruff-github.json",
+      "sha256": "dccb9941dcdd819c4438c3056f9e98e8afd09ed0e8468d235984adceb0799bb4",
+      "bytes": 13410
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-metadata-ruff.json",
+      "sha256": "444d187dbe6cbf08a92cf89c6dd47ec3d57efc2a141e3309801392dd5cbb13a7",
+      "bytes": 11947
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-metadata-typescript-curl.json",
+      "sha256": "e132a55b145fe63b1d15e0331fe55f4ed40cb2d56093f1004378117f6ec30fd9",
+      "bytes": 2030
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-metadata-typescript-curl.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-metadata-typescript-curl.stdout.log",
+      "sha256": "112b80673ec5583e8a69c1548ff05a50490454a2149a1b4fdce3e4bff0a38d75",
+      "bytes": 250
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-metadata-typescript-urllib-failure.json",
+      "sha256": "bf6c5dcd25c64e95426ff3e449c497440c740c450b0739dbfea741f4cc53ca1b",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-metadata-vulture.json",
+      "sha256": "3cf65e59569f9c5fcc0e63eef99c069c98af1ae269cde2e4a4ea35664632df85",
+      "bytes": 2976
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-missing-jscpd.json",
+      "sha256": "44bc53ae8e1074a9177b5bcdd0b5d89508c05af4f637d31e1fbf23061b801370",
+      "bytes": 1592
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-missing-jscpd.stderr.log",
+      "sha256": "c0e23283b7118c3554cfeea6249040dde288be5b223ae75430a08031e31893bb",
+      "bytes": 1598
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-missing-jscpd.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-missing-lizard.json",
+      "sha256": "931b1823bee84823dee1c1b9e14a5d5b094e7009a39f65cc424e0f11e15262f2",
+      "bytes": 1615
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-missing-lizard.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-missing-lizard.stdout.log",
+      "sha256": "9a125c83f4bb06c4ffdfbd8a808b84323c9d5b270f4110c4cdf4d2476249cf16",
+      "bytes": 175
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-missing-ruff.json",
+      "sha256": "99b529c7003cba4fe484825670280716f52e9e0c0069684c071057c352fe9aeb",
+      "bytes": 1607
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-missing-ruff.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-missing-ruff.stdout.log",
+      "sha256": "d4c21fa92b75f2d3622a76a6294041392088c30c4081f2ca22f0f4611e81b6c5",
+      "bytes": 169
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-missing-typescript.json",
+      "sha256": "affdcd213c50c503e786c566c702745a07e4e2b92303c59ba5767d5894977f9c",
+      "bytes": 1524
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-missing-typescript.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-missing-typescript.stdout.log",
+      "sha256": "492c3af75504e66dd4311c01ee5297ac8f1b0053d354ee179e42584740e8c6ab",
+      "bytes": 1052
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-missing-vulture.json",
+      "sha256": "ac6a9d614f22662be53a6c553d8fa17f19f297c90edb13ca395e9044e93c9438",
+      "bytes": 1619
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-missing-vulture.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-missing-vulture.stdout.log",
+      "sha256": "0a3c09c88ab68e5bcfb4c96bdf38b15c2f4fccd7f73d06cceebe3d9397495554",
+      "bytes": 178
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-node-version.json",
+      "sha256": "d1e78d79a6b867afd2d0d18a786aae4604cdcb626dcb920c51f939ba6fbebdf6",
+      "bytes": 1428
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-node-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-node-version.stdout.log",
+      "sha256": "d3418c43c24a028c4774f8771e03c578ccc9021a4098708b6aa0b7f6686b5bbe",
+      "bytes": 10
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-python-version.json",
+      "sha256": "fdbb08286f5e0000e24777b546ca00a3241abaa7afd6ddedfc6f33bb6abeaed5",
+      "bytes": 1570
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-python-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-python-version.stdout.log",
+      "sha256": "1d0ef696b42240b6e4da7d690c8425e32ebc3a130bfe762302b6dcd92d530efa",
+      "bytes": 15
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-qualify.py",
+      "sha256": "761b7aec4e104a076fecd0a7376b78935eb8692099f6b52c1925c415bad5205d",
+      "bytes": 42666
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-report.md",
+      "sha256": "15b420d544e36434e4c93ee7cd4db8f974e96ecb71e78e0184bb776978144697",
+      "bytes": 14839
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-clean.json",
+      "sha256": "f2b222d7690a65cb0af74697aeb652d8d8920ef5670ca63cbbb66d44898d107c",
+      "bytes": 3958
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-clean.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-clean.stdout.log",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-comment.json",
+      "sha256": "39367f42535d74d5f18f621b4c09e8fa28dfabad63e1839987073f5e7b4ab0c7",
+      "bytes": 3946
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-comment.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-comment.stdout.log",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-directive.json",
+      "sha256": "b411d6297895810473f8b1f6c3a88000a0d7efd31febb49be9edd31f95284d31",
+      "bytes": 3954
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-directive.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-directive.stdout.log",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-empty.json",
+      "sha256": "023a2736df0784e552723508756bf8f36a9732c229b13d0e9ae28b3386e01724",
+      "bytes": 3938
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-empty.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-empty.stdout.log",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-findings.json",
+      "sha256": "ce59c71a7d5db3888499658e3c1cf3dfb25d5f884fdfa7baef1558b0e2f4114f",
+      "bytes": 3953
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-findings.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-findings.stdout.log",
+      "sha256": "124c212b779578d1bd242561716706324796f79698784fdac2dc79e269f3be3e",
+      "bytes": 3219
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-nested.json",
+      "sha256": "0c88f552550d8bae379b3a9767fff95249504af114bcadb158f4e0dd57f1b7f4",
+      "bytes": 3942
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-nested.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-nested.stdout.log",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-py314.json",
+      "sha256": "2379ac6d0d23d37f1cd3300ffaff2316f2973cb7ee98ca65b2451dd4284dc009",
+      "bytes": 3938
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-py314.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-py314.stdout.log",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-syntax.json",
+      "sha256": "a1b1033e0e9fb98090724a9407dd877d3c52da2795126bb767a69af4833a647a",
+      "bytes": 3945
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-syntax.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-case-syntax.stdout.log",
+      "sha256": "0df61ef3ef86eee2de8e5c5aa2d47ddbaf8fdcba749956828bba04d1299fe2b3",
+      "bytes": 1040
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-check-help.json",
+      "sha256": "dc4bead6fea0655b40d9c4a573f87104c1e803429feccbc5f67a5da7a10ddd4b",
+      "bytes": 1642
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-check-help.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-check-help.stdout.log",
+      "sha256": "424b5c047de648dcf5f4cb18c0cf1c2f7992ab79002b1afa27cd2cfd29550851",
+      "bytes": 6469
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-column-semantics.json",
+      "sha256": "80064a3fe85ff7ae49271adef7d5b8615e9d0a0083258bae988518c8ab16c956",
+      "bytes": 2368
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-executable.json",
+      "sha256": "774a5babb1682a8d243a2dfc365f6c48d628add739c5f890d90c95ff70040b2c",
+      "bytes": 228
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-files.json",
+      "sha256": "de26e15fe2adeff359dfc7e68e95917aca5ffb2be6f777a379d47b0dca429a39",
+      "bytes": 5943
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-files.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-files.stdout.log",
+      "sha256": "e2fce870fec51f2501604d278e5143cab4b388e4b33b6d19c6b43b1772ede61b",
+      "bytes": 993
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-help.json",
+      "sha256": "279b6b88bfb8cffce296ca2576ac99e951b82cd2dafc29ffc7cf8b629bf8a87c",
+      "bytes": 1602
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-help.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-help.stdout.log",
+      "sha256": "53d628932bae406807b7ea9feadbdd62fb47ecac7ce2c39ac23aef819da29161",
+      "bytes": 2008
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-inputs.json",
+      "sha256": "67b70c3384c7d9dba870f1f68d27d2b328eed0302a1d96ca26ce878a217b523e",
+      "bytes": 2289
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-license.json",
+      "sha256": "c8f6dab006a38f6054593f503a0331687fd37d7a6736d0fad8e1166df03a5e87",
+      "bytes": 343
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-missing.json",
+      "sha256": "86d454ee86bbb2682ef8b07248e7caa72cd375a00e23cd491da246ea3eb4741c",
+      "bytes": 3905
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-missing.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-missing.stdout.log",
+      "sha256": "5e90747c638b00fb77ee285606716a377db6a98de0a9fdf7ddc150d37fe97f1f",
+      "bytes": 545
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-results.json",
+      "sha256": "32c16a8fc7737241427aa7ef9701fbbc6d63219299b0d15a7301f29463bc81bb",
+      "bytes": 2635
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rule-B006.json",
+      "sha256": "5541cf5aa6acccaa0afeec4cd65a6b86fd3529d92a1b3d794a2860389974ba9b",
+      "bytes": 1746
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rule-B006.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rule-B006.stdout.log",
+      "sha256": "4fadb0f011a95f9a30e6aa3c42fc2bcc412a29b6204c7f05aeabae0fd0f6c0f2",
+      "bytes": 2482
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rule-E701.json",
+      "sha256": "ca2eadc77e3ffa279e3c5573984af80f08743fc4ee30bc39f519b03896ad2579",
+      "bytes": 1745
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rule-E701.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rule-E701.stdout.log",
+      "sha256": "d5188e9e6d98e2ac623595b84486f638336aa287c68e7511f36f88b2e432e120",
+      "bytes": 979
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rule-F401.json",
+      "sha256": "d7907d111b32c286b621bcddc3099f3af57c05051a6a6584b502178e1185f9c4",
+      "bytes": 1746
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rule-F401.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rule-F401.stdout.log",
+      "sha256": "e232665f055999559702593d08ac1e3149e957e9dd29ac13ae20bad8477b89bb",
+      "bytes": 4546
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rule-help.json",
+      "sha256": "63804451d2b2d8f37097a498b32fb6af20b30bfdbd24462e48688acdf1bd302d",
+      "bytes": 1638
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rule-help.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rule-help.stdout.log",
+      "sha256": "f914ca58cd99594beca59b62c89139fcf94f052751e6e365a56bd94b9d0bd4a7",
+      "bytes": 1561
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rule-S101.json",
+      "sha256": "ac4e00691cdad9d321df4ce7935b9910791f53ca8f00cfe22c2c46e302139711",
+      "bytes": 1746
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rule-S101.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rule-S101.stdout.log",
+      "sha256": "f635294314b538e155f6deae273a1b39054d0d88cf28d36da2afd52174573129",
+      "bytes": 1325
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-rules.json",
+      "sha256": "97e2c89b81d40d6c8377471e63b2eb912137edb9fc70169e225413fc6a1cbc1a",
+      "bytes": 2234
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-settings-exact.json",
+      "sha256": "aa097c5537a1ce8d71f950362052492ea225ea740ed2c5397a60dc0759dfadd5",
+      "bytes": 4015
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-settings-exact.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-settings-exact.stdout.log",
+      "sha256": "f66787b32f438737c6ee822cc1be8e54e0d9f92ba8aa5280a6ff019977288d5f",
+      "bytes": 20001
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-settings.json",
+      "sha256": "a55dc4b0920628262a14ff8b92d0866f5889c735823b58d50a2cab7f9a04d4a5",
+      "bytes": 2439
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-settings.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-settings.stdout.log",
+      "sha256": "f66787b32f438737c6ee822cc1be8e54e0d9f92ba8aa5280a6ff019977288d5f",
+      "bytes": 20001
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-unicode-positions.json",
+      "sha256": "413ad05b65d029d4c53bd013d51b27c1101e5189a9ef11a8e50e8a258dcb6bb2",
+      "bytes": 3978
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-unicode-positions.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-unicode-positions.stdout.log",
+      "sha256": "1e93ad366a5f8df1c1a7a662ed493fb0a4619c36675e3da2d8f3ef02925ed016",
+      "bytes": 1779
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-version.json",
+      "sha256": "8543a1bdb5e5f77b6061e009ebbc9c0c55c0a533cca77232cc51e6822d4f74ce",
+      "bytes": 1612
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-version.stdout.log",
+      "sha256": "a9ded85c29a621aa834beec9a18703152fac7026ad45e9f5a37b7188e691eefc",
+      "bytes": 13
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-zero.json",
+      "sha256": "5f20ca7b2dc415d1fdb6a92e1aea3bf6a790be49b535b5560c22f4ebde36e2a6",
+      "bytes": 3896
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-zero.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-ruff-zero.stdout.log",
+      "sha256": "b4f8cd2ca560b51e2e32511207de1ecc181b0b9151213bad503682e9da575172",
+      "bytes": 58
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-runtime-bindings.json",
+      "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b",
+      "bytes": 11068
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-status-after.json",
+      "sha256": "1339fcbc772a0fa6c3fc182a111b9e52f47869b917468cee1ae070b72230288b",
+      "bytes": 1563
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-status-after.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-status-after.stdout.log",
+      "sha256": "91ee495bf277a07279d83aef81b9effd10375845f9d47758d6766e4148630c38",
+      "bytes": 10281
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-status-before.json",
+      "sha256": "6eaaf89b9d259b0f206b7acf9106d3110b11e1b8d3e2d8a1481d85ef204b4d11",
+      "bytes": 1564
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-status-before.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-status-before.stdout.log",
+      "sha256": "5bc0c521b69e552a7930fc8038cca86bb71683feac8f6bc7ebf5ce9f6ddf21ed",
+      "bytes": 1483
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-typescript-source-identity.json",
+      "sha256": "17ca6de38e7d440c48de49184b32eaf2fafb167fd93e040fbd6147f3b85ef52c",
+      "bytes": 160
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-typescript-upstream-package.json",
+      "sha256": "45ab75a04db5c2700f0a1f4da414301dd40481de5dcc48deec237865a64e47e6",
+      "bytes": 364
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-unavailable-lizard-help.json",
+      "sha256": "af3ef9b1e1149b27991b871d2f7e5172c3f79bf9f574a7a65274736dd8410190",
+      "bytes": 1635
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-unavailable-lizard-help.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-unavailable-lizard-help.stdout.log",
+      "sha256": "7fd11bc63dbde4c19d131dcc8e914c6919f4ba9bb06cc5772e1fd463f14a98e2",
+      "bytes": 111
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-unavailable-lizard-version.json",
+      "sha256": "d6495961b8d58d07c014006cad0df28defdf5b9ade406502728182f6469244a9",
+      "bytes": 1647
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-unavailable-lizard-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-unavailable-lizard-version.stdout.log",
+      "sha256": "7fd11bc63dbde4c19d131dcc8e914c6919f4ba9bb06cc5772e1fd463f14a98e2",
+      "bytes": 111
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-unavailable-vulture-help.json",
+      "sha256": "0427c712449f723951c2b69674245f946235c596a94395027c4cfbdfbe6dddeb",
+      "bytes": 1639
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-unavailable-vulture-help.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-unavailable-vulture-help.stdout.log",
+      "sha256": "e977aabeb0026e9d0cb85ed1c46a6c353a4872560d175c1802528bf428324a98",
+      "bytes": 112
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-unavailable-vulture-version.json",
+      "sha256": "62ec6eb9dd01197e9253740f4351e22eefba8efb26da9639bc86275f9ecfcce9",
+      "bytes": 1651
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-unavailable-vulture-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-unavailable-vulture-version.stdout.log",
+      "sha256": "e977aabeb0026e9d0cb85ed1c46a6c353a4872560d175c1802528bf428324a98",
+      "bytes": 112
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-uv-pip-help.json",
+      "sha256": "12d1f787446e76ff384f55c552b33c03f42395c10395046133e25448646d64f5",
+      "bytes": 1481
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-uv-pip-help.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-uv-pip-help.stdout.log",
+      "sha256": "90f957ce217df5444ec33286a5c6fb3072ef1cebb8abd945778ee8e616d8728b",
+      "bytes": 11678
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-uv-version.json",
+      "sha256": "d601cc2eaef04b7459988310e49ad9ccd42c59700577a72ed9f6b4fcb90d01b3",
+      "bytes": 1426
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-uv-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-uv-version.stdout.log",
+      "sha256": "757a8b478fd2da7d492011928193a5563aac91fbfd502070db6a95022af5069a",
+      "bytes": 34
+    }
+  ],
+  "owned_package_candidates": [
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd-windows-x64-msvc.tar.gz",
+      "sha256": "b4941605a87dc0e4957fcf727d2c92e68b8ed92aaac5c378a86a9636357654cb",
+      "bytes": 1807774
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\ruff-x86_64-pc-windows-msvc.zip",
+      "sha256": "7985e06caf14b0077cb68da41edbf812e1d9654fe4c144d72b71138e96350129",
+      "bytes": 9759952
+    }
+  ],
+  "curl": "C:\\WINDOWS\\system32\\curl.exe",
+  "curl_sha256": "c561f00995f74ba666c522ed7a0b966d918aec37ea150bec6c6780fcd3e75fa0",
+  "owned_route_root": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\route-1"
+}

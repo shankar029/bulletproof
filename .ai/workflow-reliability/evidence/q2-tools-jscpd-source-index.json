@@ -1,0 +1,16 @@
+{
+  "url": "https://api.github.com/repos/kucherenko/jscpd/git/trees/v5.2.1?recursive=1",
+  "sha256": "2fe36e21507cd7e861cccfa1a63b3d5deb67db3ac03c9685313e1e60ba32e155",
+  "paths": [
+    "rust/crates/cpd-core/src/lib.rs",
+    "rust/crates/cpd-core/src/summary.rs",
+    "rust/crates/cpd-finder/src/lib.rs",
+    "rust/crates/cpd-finder/src/walker.rs",
+    "rust/crates/cpd-reporter/src/codeclimate.rs",
+    "rust/crates/cpd-reporter/src/lib.rs",
+    "rust/crates/cpd-reporter/src/summary_render.rs",
+    "rust/crates/cpd-tokenizer/src/lib.rs",
+    "rust/crates/cpd/src/cli.rs",
+    "rust/crates/cpd/src/lib.rs"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd\\jscpd.exe",
+    "--config",
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd-config.json",
+    "--min-tokens",
+    "40",
+    "--min-lines",
+    "5",
+    "--mode",
+    "mild",
+    "--reporters",
+    "json",
+    "--summary",
+    "--summary-top",
+    "256",
+    "--no-gitignore",
+    "--no-colors",
+    "--no-tips",
+    "--formats-exts",
+    "javascript:js,mjs,cjs;typescript:ts;tsx:tsx;jsx:jsx",
+    "--workers",
+    "1",
+    "--absolute",
+    "--output",
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\missing report",
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\absent.py"
+  ],
+  "wrapper_argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+    "--idle",
+    "30",
+    "--max",
+    "90",
+    "--",
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd\\jscpd.exe",
+    "--config",
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd-config.json",
+    "--min-tokens",
+    "40",
+    "--min-lines",
+    "5",
+    "--mode",
+    "mild",
+    "--reporters",
+    "json",
+    "--summary",
+    "--summary-top",
+    "256",
+    "--no-gitignore",
+    "--no-colors",
+    "--no-tips",
+    "--formats-exts",
+    "javascript:js,mjs,cjs;typescript:ts;tsx:tsx;jsx:jsx",
+    "--workers",
+    "1",
+    "--absolute",
+    "--output",
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\missing report",
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\absent.py"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917",
+  "exit": 1,
+  "captures": {
+    "stdout": {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-missing.stdout.log",
+      "sha256": "00be16ea37c69e04a7d6e1f26c2ce3707e5e1ebac29b9830bc3a60653131bbf7",
+      "bytes": 272
+    },
+    "stderr": {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-jscpd-missing.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "capture_semantics": "Raw wrapper bytes; run.py CLI merges child stderr into stdout and normalizes newlines",
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

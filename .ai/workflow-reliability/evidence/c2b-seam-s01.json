@@ -1,0 +1,484 @@
+{
+  "classification": "synthetic protocol diagnosis; no actual recovery or CLI proof",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    ".ai/workflow-reliability/evidence/c2b-seam-probe.py",
+    "s01"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "python": "3.14.2 (main, Dec  9 2025, 19:03:14) [MSC v.1944 64 bit (AMD64)]",
+  "generated": "2026-09-17T08:14:18.014420+00:00",
+  "lexical_lock_removed_after_exception": true,
+  "rejected_additional_event_fields": {
+    "lock_owner": "Invalid record fields; expected seq, kind, target, run_id, inputs, receipt_refs, producer, outcome, process, child_exit, spawned, completion_commit, time, reason",
+    "recovery_evidence": "Invalid record fields; expected seq, kind, target, run_id, inputs, receipt_refs, producer, outcome, process, child_exit, spawned, completion_commit, time, reason"
+  },
+  "before_recovery_events": {
+    "target": {
+      "kind": "action",
+      "id": "A-work"
+    },
+    "status": "blocked",
+    "due": [],
+    "future": [
+      "A-metrics",
+      "A-review",
+      "A-test",
+      "A-verify",
+      "B-metrics",
+      "B-review",
+      "B-test",
+      "B-verify"
+    ],
+    "reopened": [],
+    "blockers": [
+      {
+        "code": "RECOVERY_UNVERIFIED",
+        "target": {
+          "id": "A-work",
+          "kind": "action"
+        },
+        "reason": "Unresolved admission; direct exit or missing lock is not tree-termination proof",
+        "owner": {
+          "actor_id": "fixture-account",
+          "context_id": "implementer",
+          "host": "fixture-host",
+          "model": "fixture-model",
+          "role": "implementer"
+        },
+        "command_or_handoff_ref": "action:A-work"
+      }
+    ],
+    "next_command": null,
+    "ledger_seq": 3,
+    "inputs": {
+      "source": {
+        "binding_mode": "standalone-source",
+        "base": null,
+        "head": null,
+        "scope": {
+          "files": [
+            "src/A.py"
+          ],
+          "directories": [],
+          "excluded_outputs": []
+        },
+        "files": {
+          "src/A.py": {
+            "sha256": "e13df8c44af5dea1e412403910b99cc5a48f2ccbf68a66b3374d6ab9cef9fc65",
+            "mode": "file"
+          }
+        },
+        "scope_sha256": "d25851fa3860581b927db940d6d703fac372770b4258acfbb57b090a396fa36c"
+      },
+      "contract": {
+        "binding_mode": "guarded",
+        "adopted_contract_sha256": "edd558af780158c6ba9ba0306f7fa5d032f6db27c99a2f1746425b0531f23b2c",
+        "components": {
+          "a": "8648c44c84a5e9a805aae70e1e9c3d58b4d2606fbaccae55ee2b702fc497c6c1"
+        },
+        "actions": {
+          "A-work": "7c92569414b5f977d80fe8734ae6362544c7b999ba9210948e155c0f0b67ca0a"
+        },
+        "checks": {},
+        "claims": {}
+      }
+    },
+    "limitations": [
+      "Producer/context IDs are self-declared, not authenticated independence.",
+      "Only declared input scopes are observed; this is not a sandbox.",
+      "Read-only readiness is not permission to dispatch without locked revalidation.",
+      "Design human approval and publication require their own attributed evidence."
+    ]
+  },
+  "after_synthetic_interrupted_recovered_events": {
+    "target": {
+      "kind": "action",
+      "id": "A-work"
+    },
+    "status": "blocked",
+    "due": [],
+    "future": [
+      "A-metrics",
+      "A-review",
+      "A-test",
+      "A-verify",
+      "B-metrics",
+      "B-review",
+      "B-test",
+      "B-verify"
+    ],
+    "reopened": [],
+    "blockers": [
+      {
+        "code": "RECOVERY_UNVERIFIED",
+        "target": {
+          "id": "A-work",
+          "kind": "action"
+        },
+        "reason": "Unresolved admission; direct exit or missing lock is not tree-termination proof",
+        "owner": {
+          "actor_id": "fixture-account",
+          "context_id": "implementer",
+          "host": "fixture-host",
+          "model": "fixture-model",
+          "role": "implementer"
+        },
+        "command_or_handoff_ref": "action:A-work"
+      }
+    ],
+    "next_command": null,
+    "ledger_seq": 5,
+    "inputs": {
+      "source": {
+        "binding_mode": "standalone-source",
+        "base": null,
+        "head": null,
+        "scope": {
+          "files": [
+            "src/A.py"
+          ],
+          "directories": [],
+          "excluded_outputs": []
+        },
+        "files": {
+          "src/A.py": {
+            "sha256": "e13df8c44af5dea1e412403910b99cc5a48f2ccbf68a66b3374d6ab9cef9fc65",
+            "mode": "file"
+          }
+        },
+        "scope_sha256": "d25851fa3860581b927db940d6d703fac372770b4258acfbb57b090a396fa36c"
+      },
+      "contract": {
+        "binding_mode": "guarded",
+        "adopted_contract_sha256": "edd558af780158c6ba9ba0306f7fa5d032f6db27c99a2f1746425b0531f23b2c",
+        "components": {
+          "a": "8648c44c84a5e9a805aae70e1e9c3d58b4d2606fbaccae55ee2b702fc497c6c1"
+        },
+        "actions": {
+          "A-work": "7c92569414b5f977d80fe8734ae6362544c7b999ba9210948e155c0f0b67ca0a"
+        },
+        "checks": {},
+        "claims": {}
+      }
+    },
+    "limitations": [
+      "Producer/context IDs are self-declared, not authenticated independence.",
+      "Only declared input scopes are observed; this is not a sandbox.",
+      "Read-only readiness is not permission to dispatch without locked revalidation.",
+      "Design human approval and publication require their own attributed evidence."
+    ]
+  },
+  "ledger": {
+    "events": [
+      {
+        "child_exit": null,
+        "completion_commit": null,
+        "inputs": {
+          "contract": {
+            "actions": {},
+            "adopted_contract_sha256": "edd558af780158c6ba9ba0306f7fa5d032f6db27c99a2f1746425b0531f23b2c",
+            "binding_mode": "guarded",
+            "checks": {},
+            "claims": {},
+            "components": {
+              "a": "8648c44c84a5e9a805aae70e1e9c3d58b4d2606fbaccae55ee2b702fc497c6c1",
+              "b": "130bb60bae69e3c3c4375ca839562ad0b7718afc65f68288a1480d6892b6bf24"
+            }
+          },
+          "source": {
+            "base": null,
+            "binding_mode": "standalone-source",
+            "files": {
+              ".ai/demo/contracts/r1.json": {
+                "mode": "file",
+                "sha256": "cadcf3b25dbf4882ea4e7a7bad5ba0597d3db4d06efca7903ccbbd7fb5133613"
+              },
+              ".ai/demo/design-history/r1.html": {
+                "mode": "file",
+                "sha256": "14f0307f0b8df93203975ce9ea43433a230cce72bc36b02e52b5985fde1681d6"
+              }
+            },
+            "head": null,
+            "scope": {
+              "directories": [],
+              "excluded_outputs": [],
+              "files": [
+                ".ai/demo/contracts/r1.json",
+                ".ai/demo/design-history/r1.html"
+              ]
+            },
+            "scope_sha256": "9ff1f0977f6b6290a2568f243ea8d0a89081ac14197c6222957aca21c2ddccf9"
+          }
+        },
+        "kind": "adopted",
+        "outcome": "ready",
+        "process": null,
+        "producer": {
+          "actor_id": "fixture-account",
+          "context_id": "implementer",
+          "host": "fixture-host",
+          "model": "fixture-model",
+          "role": "implementer"
+        },
+        "reason": "Fixture event",
+        "receipt_refs": [],
+        "run_id": "adopt-r1",
+        "seq": 1,
+        "spawned": "no",
+        "target": "r1",
+        "time": "2026-09-17T00:00:00+00:00"
+      },
+      {
+        "child_exit": null,
+        "completion_commit": null,
+        "inputs": {
+          "contract": {
+            "actions": {
+              "A-work": "7c92569414b5f977d80fe8734ae6362544c7b999ba9210948e155c0f0b67ca0a"
+            },
+            "adopted_contract_sha256": "edd558af780158c6ba9ba0306f7fa5d032f6db27c99a2f1746425b0531f23b2c",
+            "binding_mode": "guarded",
+            "checks": {},
+            "claims": {},
+            "components": {
+              "a": "8648c44c84a5e9a805aae70e1e9c3d58b4d2606fbaccae55ee2b702fc497c6c1"
+            }
+          },
+          "source": {
+            "base": null,
+            "binding_mode": "standalone-source",
+            "files": {
+              "src/A.py": {
+                "mode": "file",
+                "sha256": "e13df8c44af5dea1e412403910b99cc5a48f2ccbf68a66b3374d6ab9cef9fc65"
+              }
+            },
+            "head": null,
+            "scope": {
+              "directories": [],
+              "excluded_outputs": [],
+              "files": [
+                "src/A.py"
+              ]
+            },
+            "scope_sha256": "d25851fa3860581b927db940d6d703fac372770b4258acfbb57b090a396fa36c"
+          }
+        },
+        "kind": "admitted",
+        "outcome": "ready",
+        "process": null,
+        "producer": {
+          "actor_id": "fixture-account",
+          "context_id": "implementer",
+          "host": "fixture-host",
+          "model": "fixture-model",
+          "role": "implementer"
+        },
+        "reason": "Fixture event",
+        "receipt_refs": [],
+        "run_id": "synthetic-unknown-run",
+        "seq": 2,
+        "spawned": "no",
+        "target": {
+          "id": "A-work",
+          "kind": "action"
+        },
+        "time": "2026-09-17T00:00:00+00:00"
+      },
+      {
+        "child_exit": null,
+        "completion_commit": null,
+        "inputs": {
+          "contract": {
+            "actions": {
+              "A-work": "7c92569414b5f977d80fe8734ae6362544c7b999ba9210948e155c0f0b67ca0a"
+            },
+            "adopted_contract_sha256": "edd558af780158c6ba9ba0306f7fa5d032f6db27c99a2f1746425b0531f23b2c",
+            "binding_mode": "guarded",
+            "checks": {},
+            "claims": {},
+            "components": {
+              "a": "8648c44c84a5e9a805aae70e1e9c3d58b4d2606fbaccae55ee2b702fc497c6c1"
+            }
+          },
+          "source": {
+            "base": null,
+            "binding_mode": "standalone-source",
+            "files": {
+              "src/A.py": {
+                "mode": "file",
+                "sha256": "e13df8c44af5dea1e412403910b99cc5a48f2ccbf68a66b3374d6ab9cef9fc65"
+              }
+            },
+            "head": null,
+            "scope": {
+              "directories": [],
+              "excluded_outputs": [],
+              "files": [
+                "src/A.py"
+              ]
+            },
+            "scope_sha256": "d25851fa3860581b927db940d6d703fac372770b4258acfbb57b090a396fa36c"
+          }
+        },
+        "kind": "launch-intent",
+        "outcome": "ready",
+        "process": null,
+        "producer": {
+          "actor_id": "fixture-account",
+          "context_id": "implementer",
+          "host": "fixture-host",
+          "model": "fixture-model",
+          "role": "implementer"
+        },
+        "reason": "Fixture event",
+        "receipt_refs": [],
+        "run_id": "synthetic-unknown-run",
+        "seq": 3,
+        "spawned": "unknown",
+        "target": {
+          "id": "A-work",
+          "kind": "action"
+        },
+        "time": "2026-09-17T00:00:00+00:00"
+      },
+      {
+        "child_exit": null,
+        "completion_commit": null,
+        "inputs": {
+          "contract": {
+            "actions": {
+              "A-work": "7c92569414b5f977d80fe8734ae6362544c7b999ba9210948e155c0f0b67ca0a"
+            },
+            "adopted_contract_sha256": "edd558af780158c6ba9ba0306f7fa5d032f6db27c99a2f1746425b0531f23b2c",
+            "binding_mode": "guarded",
+            "checks": {},
+            "claims": {},
+            "components": {
+              "a": "8648c44c84a5e9a805aae70e1e9c3d58b4d2606fbaccae55ee2b702fc497c6c1"
+            }
+          },
+          "source": {
+            "base": null,
+            "binding_mode": "standalone-source",
+            "files": {
+              "src/A.py": {
+                "mode": "file",
+                "sha256": "e13df8c44af5dea1e412403910b99cc5a48f2ccbf68a66b3374d6ab9cef9fc65"
+              }
+            },
+            "head": null,
+            "scope": {
+              "directories": [],
+              "excluded_outputs": [],
+              "files": [
+                "src/A.py"
+              ]
+            },
+            "scope_sha256": "d25851fa3860581b927db940d6d703fac372770b4258acfbb57b090a396fa36c"
+          }
+        },
+        "kind": "interrupted",
+        "outcome": "interrupted",
+        "process": null,
+        "producer": {
+          "actor_id": "fixture-account",
+          "context_id": "implementer",
+          "host": "fixture-host",
+          "model": "fixture-model",
+          "role": "implementer"
+        },
+        "reason": "Fixture event",
+        "receipt_refs": [],
+        "run_id": "synthetic-unknown-run",
+        "seq": 4,
+        "spawned": "unknown",
+        "target": {
+          "id": "A-work",
+          "kind": "action"
+        },
+        "time": "2026-09-17T00:00:00+00:00"
+      },
+      {
+        "child_exit": null,
+        "completion_commit": null,
+        "inputs": {
+          "contract": {
+            "actions": {
+              "A-work": "7c92569414b5f977d80fe8734ae6362544c7b999ba9210948e155c0f0b67ca0a"
+            },
+            "adopted_contract_sha256": "edd558af780158c6ba9ba0306f7fa5d032f6db27c99a2f1746425b0531f23b2c",
+            "binding_mode": "guarded",
+            "checks": {},
+            "claims": {},
+            "components": {
+              "a": "8648c44c84a5e9a805aae70e1e9c3d58b4d2606fbaccae55ee2b702fc497c6c1"
+            }
+          },
+          "source": {
+            "base": null,
+            "binding_mode": "standalone-source",
+            "files": {
+              "src/A.py": {
+                "mode": "file",
+                "sha256": "e13df8c44af5dea1e412403910b99cc5a48f2ccbf68a66b3374d6ab9cef9fc65"
+              }
+            },
+            "head": null,
+            "scope": {
+              "directories": [],
+              "excluded_outputs": [],
+              "files": [
+                "src/A.py"
+              ]
+            },
+            "scope_sha256": "d25851fa3860581b927db940d6d703fac372770b4258acfbb57b090a396fa36c"
+          }
+        },
+        "kind": "recovered",
+        "outcome": "interrupted",
+        "process": null,
+        "producer": {
+          "actor_id": "fixture-account",
+          "context_id": "implementer",
+          "host": "fixture-host",
+          "model": "fixture-model",
+          "role": "implementer"
+        },
+        "reason": "Fixture event",
+        "receipt_refs": [],
+        "run_id": "synthetic-unknown-run",
+        "seq": 5,
+        "spawned": "unknown",
+        "target": {
+          "id": "A-work",
+          "kind": "action"
+        },
+        "time": "2026-09-17T00:00:00+00:00"
+      }
+    ],
+    "schema_version": 1,
+    "slug": "demo"
+  },
+  "before_hashes": {
+    "scripts/workflow_state.py": "a8069bd5f93c3d77f0e517f106d29c873df181a3ea80352b0c9224fcb6ca194b",
+    "scripts/workflow_gate.py": "f7ff2c1ac229a88f39be6ddc6000f060afc545dbf5dd47b5bf3ddcc4ff43f23d",
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/run.py": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+    "scripts/tests/workflow_fixtures.py": "9902d319a37436449a1a8fb47c10ca7ec15d82c5bdea331d3ba4c23bf03dcabf",
+    ".ai/workflow-reliability/design-contracts.json": "5b3eb1ac8f4ad0e8914965a783d97242da7ba9e8da00229b622a8360578335bf",
+    ".ai/workflow-reliability/guard-resolution-contract.json": "401762912eb5bd399eb16117252b497bbf9d0088a6c85505fb3ff21a681209e8"
+  },
+  "after_hashes": {
+    "scripts/workflow_state.py": "a8069bd5f93c3d77f0e517f106d29c873df181a3ea80352b0c9224fcb6ca194b",
+    "scripts/workflow_gate.py": "f7ff2c1ac229a88f39be6ddc6000f060afc545dbf5dd47b5bf3ddcc4ff43f23d",
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/run.py": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+    "scripts/tests/workflow_fixtures.py": "9902d319a37436449a1a8fb47c10ca7ec15d82c5bdea331d3ba4c23bf03dcabf",
+    ".ai/workflow-reliability/design-contracts.json": "5b3eb1ac8f4ad0e8914965a783d97242da7ba9e8da00229b622a8360578335bf",
+    ".ai/workflow-reliability/guard-resolution-contract.json": "401762912eb5bd399eb16117252b497bbf9d0088a6c85505fb3ff21a681209e8"
+  },
+  "owned_fixture_removed": true
+}

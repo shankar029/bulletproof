@@ -1,0 +1,18 @@
+{
+  "classification": "second outer timeout; execution stopped, gate regressions not verified",
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B", "scripts\\run.py", "--idle", "120", "--max", "600", "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B", ".ai\\workflow-reliability\\evidence\\c2b-state-capture.py",
+    "gate02", "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B", "-m", "unittest", "discover", "-s", "scripts\\tests", "-p", "test_workflow_gate.py", "-v"
+  ],
+  "exit": 124,
+  "observation": "Spawned child PID 43520 persisted in gate02/lifecycle.jsonl; after 120 seconds without forwarded output the outer run.py emitted idle-timeout/124. No child result.json or buffered test logs were saved.",
+  "cause_limit": "Capturer buffers child test output; the outer idle bound cannot observe that progress. Actual gate progress/completion and any partial count are unknown, not a failed test assertion or a pass.",
+  "cleanup": "Existing runner attempted owned process-tree cleanup. Subsequent Get-CimInstance Win32_Process -Filter 'ProcessId = 43520' returned no process. Direct PID absence is not whole-tree-death proof. No further kill or guessed temporary-directory deletion occurred.",
+  "disposition": "Second timeout after one split recovery: no third invocation or further implementation. Return frozen local seams and the missing gate-proof obligation to parent."
+}

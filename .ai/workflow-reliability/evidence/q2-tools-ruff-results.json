@@ -1,0 +1,123 @@
+{
+  "cases": {
+    "clean caf\u00e9.py": {
+      "exit": 0,
+      "count": 0,
+      "codes": [],
+      "record_keys": [],
+      "source_unchanged": true
+    },
+    "comment.py": {
+      "exit": 0,
+      "count": 0,
+      "codes": [],
+      "record_keys": [],
+      "source_unchanged": true
+    },
+    "directive.py": {
+      "exit": 0,
+      "count": 0,
+      "codes": [],
+      "record_keys": [],
+      "source_unchanged": true
+    },
+    "empty.py": {
+      "exit": 0,
+      "count": 0,
+      "codes": [],
+      "record_keys": [],
+      "source_unchanged": true
+    },
+    "findings.py": {
+      "exit": 1,
+      "count": 4,
+      "codes": [
+        "F401",
+        "S101",
+        "B006",
+        "E701"
+      ],
+      "record_keys": [
+        "cell",
+        "code",
+        "end_location",
+        "filename",
+        "fix",
+        "location",
+        "message",
+        "name",
+        "noqa_row",
+        "severity",
+        "url"
+      ],
+      "source_unchanged": true
+    },
+    "nested.py": {
+      "exit": 0,
+      "count": 0,
+      "codes": [],
+      "record_keys": [],
+      "source_unchanged": true
+    },
+    "py314.py": {
+      "exit": 0,
+      "count": 0,
+      "codes": [],
+      "record_keys": [],
+      "source_unchanged": true
+    },
+    "syntax.py": {
+      "exit": 1,
+      "count": 2,
+      "codes": [
+        "invalid-syntax",
+        "invalid-syntax"
+      ],
+      "record_keys": [
+        "cell",
+        "code",
+        "end_location",
+        "filename",
+        "fix",
+        "location",
+        "message",
+        "name",
+        "noqa_row",
+        "severity",
+        "url"
+      ],
+      "source_unchanged": true
+    }
+  },
+  "missing": {
+    "exit": 1,
+    "json": [
+      {
+        "cell": null,
+        "code": "E902",
+        "end_location": {
+          "column": 1,
+          "row": 1
+        },
+        "filename": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\missing.py",
+        "fix": null,
+        "location": {
+          "column": 1,
+          "row": 1
+        },
+        "message": "The system cannot find the file specified. (os error 2)",
+        "name": "io-error",
+        "noqa_row": null,
+        "severity": "error",
+        "url": "https://docs.astral.sh/ruff/rules/io-error"
+      }
+    ]
+  },
+  "zero": {
+    "exit": 0,
+    "raw": "warning: No Python files found under the given path(s)\r\n[]"
+  },
+  "rules": 158,
+  "exact_rules_match_family_resolution": true,
+  "cache_directories": []
+}

@@ -1,0 +1,34 @@
+{
+  "actual_receipt_resolved": "valid",
+  "fixture": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bc2-etrf24pn\\bulletproof-workflow-fixture-afx2igtk",
+  "limits": "Real filesystem receipt staging; synthetic protocol proof/identities, not actor or recovery proof.",
+  "observed_repository_imports": {
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/measure.py": "5d6f15a95de50d932953023508dd12ae2f470fd073af91d409ca5a948838b084",
+    "scripts/measure_graph.py": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391",
+    "scripts/mutate.py": "f7abaf6134a8300308ad5df181609b1215bed24c9de97ee4be91241de84088e3",
+    "scripts/probe.py": "668042417c42b7aa457a695ffa8782845d18b9834c1937f17e277190cc0bb083",
+    "scripts/run.py": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+    "scripts/tests/workflow_fixtures.py": "9902d319a37436449a1a8fb47c10ca7ec15d82c5bdea331d3ba4c23bf03dcabf",
+    "scripts/workflow_gate.py": "f7ff2c1ac229a88f39be6ddc6000f060afc545dbf5dd47b5bf3ddcc4ff43f23d",
+    "scripts/workflow_state.py": "fe30290e61d319c76546c31acd454bc7c642fc83ad55126e368fa44ab4b57a6e"
+  },
+  "owned_temp_remaining": [],
+  "receipt": {
+    "id": "receipt-run-2",
+    "sha256": "5ff9ee498310af7c364e4661cb3b2b7892947305efe0052c6077b504f0c14757"
+  },
+  "stage_observations": [
+    {
+      "destination": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bc2-etrf24pn\\bulletproof-workflow-fixture-afx2igtk\\.ai\\demo\\evidence\\receipts\\receipt-run-2.json",
+      "destination_length": 129,
+      "phase": "actual-stage-exists-before-replace",
+      "sha256": "5ff9ee498310af7c364e4661cb3b2b7892947305efe0052c6077b504f0c14757",
+      "source": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bc2-etrf24pn\\bulletproof-workflow-fixture-afx2igtk\\.ai\\demo\\evidence\\receipts\\.receipt-run-2.json-ojysic9v.stage",
+      "source_length": 145,
+      "staged_bytes": 1586
+    }
+  ],
+  "status": "pass",
+  "temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bc2-etrf24pn"
+}

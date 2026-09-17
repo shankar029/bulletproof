@@ -1,0 +1,1106 @@
+{
+  "status": "CHECK-TOOLS qualified; Q2 implementation and quality not completed",
+  "human_approval": "unconfirmed; parent provenance-route approval is recorded user-authorized autonomy",
+  "prior_evidence_verified": 417,
+  "extracted_files_verified": 3348,
+  "required_pins": {
+    "executors": {
+      "python": {
+        "path": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "sha256": "5829a9ef2930e10a965503ea0f96248bd4b19faf4177fdfd061f1d484448bb03",
+        "pe": {
+          "machine": "0x8664",
+          "declared_imports": [
+            {
+              "name": "api-ms-win-crt-heap-l1-1-0.dll",
+              "resolved_existing_candidate": null,
+              "sha256": null
+            },
+            {
+              "name": "api-ms-win-crt-locale-l1-1-0.dll",
+              "resolved_existing_candidate": null,
+              "sha256": null
+            },
+            {
+              "name": "api-ms-win-crt-math-l1-1-0.dll",
+              "resolved_existing_candidate": null,
+              "sha256": null
+            },
+            {
+              "name": "api-ms-win-crt-runtime-l1-1-0.dll",
+              "resolved_existing_candidate": null,
+              "sha256": null
+            },
+            {
+              "name": "api-ms-win-crt-stdio-l1-1-0.dll",
+              "resolved_existing_candidate": null,
+              "sha256": null
+            },
+            {
+              "name": "KERNEL32.dll",
+              "resolved_existing_candidate": "C:\\WINDOWS\\System32\\KERNEL32.dll",
+              "sha256": "6a7bd4daff9c0c4cc8b9478ecd9828c3f19be257a4a18db9559cae929197fffa"
+            },
+            {
+              "name": "python314.dll",
+              "resolved_existing_candidate": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python314.dll",
+              "sha256": "0f2429383aacc0499f57e732fc7778da6187d133af9171b938a66fe7d5ab254c"
+            },
+            {
+              "name": "VCRUNTIME140.dll",
+              "resolved_existing_candidate": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\VCRUNTIME140.dll",
+              "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066"
+            }
+          ],
+          "limit": "PE import table and existing file candidates only; not a loaded-module or API-set forwarding attestation."
+        }
+      },
+      "node": {
+        "path": "C:\\Program Files\\nodejs\\node.EXE",
+        "sha256": "8f3e33fa1f67843a320d2200ed1a5d40cc59766715a7a02728b8213c2167a084",
+        "pe": {
+          "machine": "0xaa64",
+          "declared_imports": [
+            {
+              "name": "ADVAPI32.dll",
+              "resolved_existing_candidate": "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+              "sha256": "021452c20f89c50d64c304391ec18169f95a9fa14762f76cfd2dded627dbf0bb"
+            },
+            {
+              "name": "CRYPT32.dll",
+              "resolved_existing_candidate": "C:\\WINDOWS\\System32\\CRYPT32.dll",
+              "sha256": "e3e800f1905658674ce4af1d3efb31d722b9255aaae4fa46c54302d329ba4ab6"
+            },
+            {
+              "name": "dbghelp.dll",
+              "resolved_existing_candidate": "C:\\WINDOWS\\System32\\dbghelp.dll",
+              "sha256": "cc3dab856a3711619e5782e68db079c0ae604c491655bd3e2a3a49a855965a61"
+            },
+            {
+              "name": "IPHLPAPI.DLL",
+              "resolved_existing_candidate": "C:\\WINDOWS\\System32\\IPHLPAPI.DLL",
+              "sha256": "b98fa18aa4d2333da270bea8ea29f889cd26197a8ae1353ab92c06998e876e0a"
+            },
+            {
+              "name": "KERNEL32.dll",
+              "resolved_existing_candidate": "C:\\WINDOWS\\System32\\KERNEL32.dll",
+              "sha256": "6a7bd4daff9c0c4cc8b9478ecd9828c3f19be257a4a18db9559cae929197fffa"
+            },
+            {
+              "name": "ole32.dll",
+              "resolved_existing_candidate": "C:\\WINDOWS\\System32\\ole32.dll",
+              "sha256": "a05e95c0e03dfec6508f511ccb5731b752861be17086d9c8879b54f8922faf1d"
+            },
+            {
+              "name": "SHELL32.dll",
+              "resolved_existing_candidate": "C:\\WINDOWS\\System32\\SHELL32.dll",
+              "sha256": "ef0fbd71a46fe4b35bff893ea65241cd08ea5231de704c106e39920c03698fe9"
+            },
+            {
+              "name": "USER32.dll",
+              "resolved_existing_candidate": "C:\\WINDOWS\\System32\\USER32.dll",
+              "sha256": "f2fc06e7e5016a15ad7f7f4ee250154b7d41d0a0706bf14927a3bbd4c42727dd"
+            },
+            {
+              "name": "USERENV.dll",
+              "resolved_existing_candidate": "C:\\WINDOWS\\System32\\USERENV.dll",
+              "sha256": "18bd1660ab7cacd90789f1bebe35bc6a5730b1e75e5582f53575473fae3db530"
+            },
+            {
+              "name": "WINMM.dll",
+              "resolved_existing_candidate": "C:\\WINDOWS\\System32\\WINMM.dll",
+              "sha256": "2ebb728e5c510492df8fde4ec81b8a8554f2f33d1686b837d22c962b7d2fa9b7"
+            },
+            {
+              "name": "WS2_32.dll",
+              "resolved_existing_candidate": "C:\\WINDOWS\\System32\\WS2_32.dll",
+              "sha256": "e1266872f796f68b4be9c20640ca940a7a96e1ba98c741d472ae305fccf87ca9"
+            }
+          ],
+          "limit": "PE import table and existing file candidates only; not a loaded-module or API-set forwarding attestation."
+        }
+      }
+    },
+    "python_dll": {
+      "path": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python314.dll",
+      "sha256": "0f2429383aacc0499f57e732fc7778da6187d133af9171b938a66fe7d5ab254c"
+    },
+    "contracts": [
+      {
+        "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "sha256": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e"
+      },
+      {
+        "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\measurement-enablement-contracts.json",
+        "sha256": "a9a75df36241dc2578ff627703154a2750212c385a163332fe2ccbb47af9bd12"
+      },
+      {
+        "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\measurement-design-review-r2.md",
+        "sha256": "02a86a471880ac6e220f188b73c06dd645b937205f8e55303bc46c6fcb96ec8d"
+      }
+    ],
+    "concurrent_disjoint_writer": "Parent-authorized C2 workflow_state.py; not in qualification pins"
+  },
+  "source_archives": {
+    "typescript": {
+      "url": "https://github.com/microsoft/TypeScript/releases/download/v5.9.3/typescript-5.9.3.tgz",
+      "resolved_url": "https://release-assets.githubusercontent.com/github-production-release-asset/20929025/4b305d62-6b81-4c50-85db-2723c02bbdbc",
+      "http_status": 200,
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\route-1\\typescript-release-package.capture",
+      "sha256": "10e108c9cf7d5f2879053dff18515fb405abf2ccef63eaaf017d9c571687a1d3",
+      "bytes": 4377468
+    },
+    "lizard": {
+      "url": "https://api.github.com/repos/terryyin/lizard/tarball/308b1c3efd8c1c69bcc3eb82deeaec64fd3662ec",
+      "resolved_url": "https://codeload.github.com/terryyin/lizard/legacy.tar.gz/308b1c3efd8c1c69bcc3eb82deeaec64fd3662ec",
+      "http_status": 200,
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\route-1\\lizard-source-archive.capture",
+      "sha256": "a55057a0589e0c0230eff798752d621f2e3c646b54354b4b37501b32f433c611",
+      "bytes": 267773
+    },
+    "vulture": {
+      "url": "https://api.github.com/repos/jendrikseipp/vulture/tarball/b0f67ba0044693aa9ec0d38fe460590facc98004",
+      "resolved_url": "https://codeload.github.com/jendrikseipp/vulture/legacy.tar.gz/b0f67ba0044693aa9ec0d38fe460590facc98004",
+      "http_status": 200,
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\route-1\\vulture-source-archive.capture",
+      "sha256": "53b37a8bfe9204458cf1bda786df5bd082312f3d2a9f02aacc8879e9b91e11cf",
+      "bytes": 46147
+    },
+    "pygments": {
+      "url": "https://api.github.com/repos/pygments/pygments/tarball/a43b45dcf081b6010c6ab4428f149f7f6d2499c4",
+      "resolved_url": "https://codeload.github.com/pygments/pygments/legacy.tar.gz/a43b45dcf081b6010c6ab4428f149f7f6d2499c4",
+      "http_status": 200,
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\route-1\\pygments-source-archive.capture",
+      "sha256": "fdffdcdab90d4e022e825902e2ad1f9a546b568eb949d2ef117f3d7054594743",
+      "bytes": 5167222
+    },
+    "pathspec": {
+      "url": "https://api.github.com/repos/cpburnz/python-pathspec/tarball/ecf71a99ca739479d450b9830f43416ea0c519c7",
+      "resolved_url": "https://codeload.github.com/cpburnz/python-pathspec/legacy.tar.gz/ecf71a99ca739479d450b9830f43416ea0c519c7",
+      "http_status": 200,
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\route-1\\pathspec-source-archive.capture",
+      "sha256": "6a27200bec6146a0b0833b4201e058b73109ccd09a9ea8255667278414487de6",
+      "bytes": 136396
+    }
+  },
+  "source_roots": {
+    "typescript": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package",
+    "lizard": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard\\terryyin-lizard-308b1c3",
+    "vulture": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture\\jendrikseipp-vulture-b0f67ba",
+    "pygments": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\pygments\\pygments-pygments-a43b45d",
+    "pathspec": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\pathspec\\cpburnz-python-pathspec-ecf71a9"
+  },
+  "artifacts": [
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-encoding-probe.json",
+      "sha256": "f8b942b5bce892449737ae6c91107e9880b836892cd8b6ecf31bf5a07568be93",
+      "bytes": 2805
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-encoding-probe.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-encoding-probe.stdout.log",
+      "sha256": "b742f891a00717794c5e7aad8e7763396621346a5531825592c94d3e0aa7d886",
+      "bytes": 477
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-extracted-pins.json",
+      "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af",
+      "bytes": 1119098
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-finalize.py",
+      "sha256": "a552092a87fb2c442f4c36bedc4668b445bf273a288ba7000bf075692350b25b",
+      "bytes": 9252
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-head-context.json",
+      "sha256": "bc601849fc1b7cafc30e701fe52387f3399536578d57cb8281cc5982ec113712",
+      "bytes": 1832
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-head-context.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-head-context.stdout.log",
+      "sha256": "8027e11f0f8c7da4a2fd9747219835ce52a4d1d5da98b194c9504945fa31eec0",
+      "bytes": 42
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-helper.py",
+      "sha256": "1b49862342e814d6d20f0134df66eb41fde280e0350eca845049049f6645b000",
+      "bytes": 4352
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-lizard-api.json",
+      "sha256": "06c4dffc899fbaa70eec9558db8c989e9c15fcd220a3e27d339238641475e420",
+      "bytes": 1972
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-lizard-api.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-lizard-api.stdout.log",
+      "sha256": "29a896b09706aad9564f5f30991b3f7dfcb53c3cac09f329ae0880df012ff102",
+      "bytes": 918
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-lizard-boundaries-results.json",
+      "sha256": "ec56aff06fb3d8e3b3c7ceb114827a8c8a55533e5868e086f1e2bdd57193d2b6",
+      "bytes": 59563
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-lizard-boundaries.json",
+      "sha256": "1b4c20215d3a18a973e3ceb73d9a07695e356cd5f478d4fdfc15eee334c61fdb",
+      "bytes": 1978
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-lizard-boundaries.py",
+      "sha256": "2329ed30fec22709916148fd5181563f8b2e3e9c59803090ce71d40ca685b5ce",
+      "bytes": 4026
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-lizard-boundaries.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-lizard-boundaries.stdout.log",
+      "sha256": "574aca5aa732683c65a93c97c0f262674c78de231f78fb11b97ebce7084a53da",
+      "bytes": 189
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-lizard-help.json",
+      "sha256": "c4e9a2a1fb2efa73b690ca1246b962a03d5d68c149a4fc10ee0753a89e03b430",
+      "bytes": 2029
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-lizard-help.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-lizard-help.stdout.log",
+      "sha256": "bea971f58be9f6a52a0582add89d18b38746027d9b2bd50a8d5c8f565f0424cc",
+      "bytes": 5440
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-lizard-results.json",
+      "sha256": "2ef3cd40316b0b553546366cffc60c9d8c0eb892f835dd164feffb5637a49b32",
+      "bytes": 62085
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-lizard-version.json",
+      "sha256": "deefc03d7415db18a594b160548d89308558c63fa8ca4c2d486b11c0cc3e0aa7",
+      "bytes": 2038
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-lizard-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-lizard-version.stdout.log",
+      "sha256": "1d5b3e6f57d3cdda5a4b3f00c62a33e9b693bc1a58a429676e0c44feef8d41e2",
+      "bytes": 8
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-prior-pins.json",
+      "sha256": "83541373e261a105357e402d37da2be4e733085966ef7fb72f67daa95c37c6e4",
+      "bytes": 116400
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-python-provenance-cli-lizard-help.json",
+      "sha256": "84918e135c89619b25d62aea12b7d779a3820a81a61ed8285cdc7ddbfb5994b4",
+      "bytes": 66444
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-python-provenance-cli-lizard-version.json",
+      "sha256": "3a534a9131942d3d693fcdd8a651ea9eef7f0cc72799a3187e3b746ed709853c",
+      "bytes": 66447
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-python-provenance-cli-vulture-help.json",
+      "sha256": "27ce79831dfda1c43f3dcb422bc12c6809bfda26ac19c429f8247c6eb43f4283",
+      "bytes": 66445
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-python-provenance-cli-vulture-version.json",
+      "sha256": "e7ad95b15512a52b740e5f44d18fc93e0018afa5ead99086d67d836104568020",
+      "bytes": 66448
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-python-provenance-lizard.json",
+      "sha256": "c2f9b6235d514d3729e20973256e264b3c9449abba174a3a9a8b7079e43a3c8e",
+      "bytes": 66320
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-python-provenance-vulture.json",
+      "sha256": "7cbbe382094ab6e892843a8891c8fedb34267a38fff012474b80b8f996096407",
+      "bytes": 66321
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-python.py",
+      "sha256": "59bb614dd496dc3dc2fbd8b2fb3ee991e04152ea6a6ebabacdd224d1a4513424",
+      "bytes": 16654
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-report.md",
+      "sha256": "35385fe56defb50cd999a941a9b4e225846ae5de78d8f76fbfca2051ef19bebe",
+      "bytes": 12094
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-required-pins.json",
+      "sha256": "a56bbec703961ea22eb75abcdee765d7d092839dbd95439d0ad88139b845b897",
+      "bytes": 6216
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-roots.json",
+      "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde",
+      "bytes": 892
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-summary.json",
+      "sha256": "d5eb03a68898935d87679ce8beff7cf2750bb86942086e3c3d7018e508c6f391",
+      "bytes": 16817
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-tracked-context.json",
+      "sha256": "0ca2afe084a78952fb89c30646b3c013aa1a35978d6430446e052736bbe7855d",
+      "bytes": 1897
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-tracked-context.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-tracked-context.stdout.log",
+      "sha256": "5437b8291558b6dd379e36831e4e1cd499cf153f02e690296a31a6975c5d4c2d",
+      "bytes": 174
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-typescript-api.json",
+      "sha256": "26d0cce2c3fed48381557f69ae642e796ddd6bf2d2f5bb4ed1e8a924ba926ec8",
+      "bytes": 1778
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-typescript-api.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-typescript-api.stdout.log",
+      "sha256": "d76c639995ebbd075c94a4eb18f2ed9ff99cbcace49d17362b8b4b129d609795",
+      "bytes": 143
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-typescript-help.json",
+      "sha256": "2c5d6e7d84d1cd4457e68785cb128ba0096eb9cdb7f6f6f687b54c83b07daddb",
+      "bytes": 1821
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-typescript-help.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-typescript-help.stdout.log",
+      "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256",
+      "bytes": 19850
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-typescript-results.json",
+      "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86",
+      "bytes": 77921
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-typescript-version.json",
+      "sha256": "a587fbf5e01ca8f890e80a13422764cb473700056684227306cb337372dba5b3",
+      "bytes": 1802
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-typescript-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-typescript-version.stdout.log",
+      "sha256": "150530a709f8e85071ae8b5e388c2c167381270598bb295467c83598d3fe6a3c",
+      "bytes": 15
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-typescript.cjs",
+      "sha256": "bb63396587c8b731b2aec2a771e3723d043a5caaa5da71a6b2f232e144f600d6",
+      "bytes": 10854
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-vulture-api.json",
+      "sha256": "159b7555961c94ba92316d7156fc84b21f93dfba1fa25618e55e9429feabcf06",
+      "bytes": 1975
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-vulture-api.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-vulture-api.stdout.log",
+      "sha256": "f32a0f386d8a6e213935c45bb6a56edb40c0301db67f74258447f2d3761bf7bb",
+      "bytes": 90
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-vulture-help.json",
+      "sha256": "bf747adf9f004d914c6f77f3cc7646a976f98ae21bca97d126e2543180758506",
+      "bytes": 2033
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-vulture-help.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-vulture-help.stdout.log",
+      "sha256": "77b2eeb271a10f1262d835bf1181a43900a94fa6c334bc5b027ed704e6bfb48c",
+      "bytes": 1764
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-vulture-results.json",
+      "sha256": "43a02a543dce248e4393a84235fbb899a879afdb2907ed7c07bd852c1b9d6e6d",
+      "bytes": 25177
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-vulture-version.json",
+      "sha256": "cf521313139b2f4e0a4006fb743d18368e6c5ee7ac6536e8852fdce490c26ef6",
+      "bytes": 2043
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-vulture-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-tools-source-vulture-version.stdout.log",
+      "sha256": "4368ab8dcb8dc83414c32befc5e396da7346d542823f200f4bc148a0f3beea77",
+      "bytes": 14
+    }
+  ],
+  "synthetic_fixtures": [
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean caf\u00e9.cjs",
+      "sha256": "c37dcead2776a674af46c257cb450844a1d7fea513212648e118837387b0e54f",
+      "bytes": 167
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean caf\u00e9.js",
+      "sha256": "914a98b7f6459b51949d5abd4ed9c6997cf57c75cf03db3c37242aa85b82bd04",
+      "bytes": 141
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean caf\u00e9.jsx",
+      "sha256": "914a98b7f6459b51949d5abd4ed9c6997cf57c75cf03db3c37242aa85b82bd04",
+      "bytes": 141
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean caf\u00e9.mjs",
+      "sha256": "914a98b7f6459b51949d5abd4ed9c6997cf57c75cf03db3c37242aa85b82bd04",
+      "bytes": 141
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean caf\u00e9.ts",
+      "sha256": "03c26acc3d6fa82b75f5dc1b0e2f37db846049b5a6466214fda614fc0539e160",
+      "bytes": 119
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\clean caf\u00e9.tsx",
+      "sha256": "03c26acc3d6fa82b75f5dc1b0e2f37db846049b5a6466214fda614fc0539e160",
+      "bytes": 119
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.cjs",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8",
+      "bytes": 15
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.js",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8",
+      "bytes": 15
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.jsx",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8",
+      "bytes": 15
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.mjs",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8",
+      "bytes": 15
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.ts",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8",
+      "bytes": 15
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\comment.tsx",
+      "sha256": "07ef76ffdebb8c414d7b7d9764a1bcb502df069ed070e93c304e6071717dbea8",
+      "bytes": 15
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\consumer.ts",
+      "sha256": "a39b44e5933e125ab1945ed90f423a5b853fd65692c1c31eedd86e640b3a3a92",
+      "bytes": 239
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.cjs",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.js",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.jsx",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.mjs",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.ts",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\empty.tsx",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\findings.ts",
+      "sha256": "db52081e71c2b92ed5471b76ee5b1a5d688290b43d1579d03f5e8546e5847fe5",
+      "bytes": 144
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.cjs",
+      "sha256": "2e9ef776a1d09c8f20b47f5f77c1c377912e2aab726f15df1703d60391fb5562",
+      "bytes": 22
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.js",
+      "sha256": "6d684facc699b7f9df361784dbe34ee9a4dd4032077a05805469a826ef23225f",
+      "bytes": 26
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.jsx",
+      "sha256": "6d684facc699b7f9df361784dbe34ee9a4dd4032077a05805469a826ef23225f",
+      "bytes": 26
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.mjs",
+      "sha256": "6d684facc699b7f9df361784dbe34ee9a4dd4032077a05805469a826ef23225f",
+      "bytes": 26
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.ts",
+      "sha256": "6d684facc699b7f9df361784dbe34ee9a4dd4032077a05805469a826ef23225f",
+      "bytes": 26
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\functionless.tsx",
+      "sha256": "6d684facc699b7f9df361784dbe34ee9a4dd4032077a05805469a826ef23225f",
+      "bytes": 26
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\reexport.ts",
+      "sha256": "132ca549c53e053a52cc13cd9e169847ec5aa99834bbd222182d150a566c412d",
+      "bytes": 45
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.cjs",
+      "sha256": "e395ee27564e05bc9dff8e466ecdd02567b0a5fc1d46b4a8d8dc4064b6ea5a32",
+      "bytes": 282
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.js",
+      "sha256": "e395ee27564e05bc9dff8e466ecdd02567b0a5fc1d46b4a8d8dc4064b6ea5a32",
+      "bytes": 282
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.jsx",
+      "sha256": "bc3c8736a6a0aa537cf924cfbf3ed461a6bb01e9e454b67081b402ce02898fc6",
+      "bytes": 327
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.mjs",
+      "sha256": "e395ee27564e05bc9dff8e466ecdd02567b0a5fc1d46b4a8d8dc4064b6ea5a32",
+      "bytes": 282
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.ts",
+      "sha256": "7d1ee5e4360853477f6bbf5a590911bf835895dd96813c0f7faeea98ee4db9a8",
+      "bytes": 325
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\shape.tsx",
+      "sha256": "01781935f1b1d4c9fa400475e961e57dd592c8875d45087df681ade0c86ff57b",
+      "bytes": 370
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\symbols.ts",
+      "sha256": "968ea84711cb3e107071f9d05e3a2d7c442a261710c6f55e0a46c3fd7c316c6d",
+      "bytes": 93
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.cjs",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f",
+      "bytes": 20
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.js",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f",
+      "bytes": 20
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.jsx",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f",
+      "bytes": 20
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.mjs",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f",
+      "bytes": 20
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.ts",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f",
+      "bytes": 20
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\syntax.tsx",
+      "sha256": "a163ac54f94094d17c5061fdccab04184631968d6edd6b700f2d2c5537d1e69f",
+      "bytes": 20
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript fixtures with spaces\\unresolved.ts",
+      "sha256": "49227fa9f578f10658ac65ca930aa3bc36bc0752844864d4944c6e983af2c5d0",
+      "bytes": 112
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\branch caf\u00e9.cjs",
+      "sha256": "496681aca029111894e6e73abb1fffc83c11e52aa849bd2cabb035cfc2a047a0",
+      "bytes": 99
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\branch caf\u00e9.js",
+      "sha256": "496681aca029111894e6e73abb1fffc83c11e52aa849bd2cabb035cfc2a047a0",
+      "bytes": 99
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\branch caf\u00e9.jsx",
+      "sha256": "496681aca029111894e6e73abb1fffc83c11e52aa849bd2cabb035cfc2a047a0",
+      "bytes": 99
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\branch caf\u00e9.mjs",
+      "sha256": "496681aca029111894e6e73abb1fffc83c11e52aa849bd2cabb035cfc2a047a0",
+      "bytes": 99
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\branch caf\u00e9.py",
+      "sha256": "0e0744fc08e31b202ff96371b2a102c8b2a7b836b856a4c8841f1c6541ee4bfd",
+      "bytes": 101
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\branch caf\u00e9.ts",
+      "sha256": "43b37808de15ab01c773501f9e008f4d031e0cc0344be744d7d6b18e61a85aef",
+      "bytes": 107
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\branch caf\u00e9.tsx",
+      "sha256": "43b37808de15ab01c773501f9e008f4d031e0cc0344be744d7d6b18e61a85aef",
+      "bytes": 107
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\comments.cjs",
+      "sha256": "a6e2af760444ea52dd02a7c16230f06fa6b781652e8d65a7a8282b57619c21cb",
+      "bytes": 12
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\comments.js",
+      "sha256": "a6e2af760444ea52dd02a7c16230f06fa6b781652e8d65a7a8282b57619c21cb",
+      "bytes": 12
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\comments.jsx",
+      "sha256": "a6e2af760444ea52dd02a7c16230f06fa6b781652e8d65a7a8282b57619c21cb",
+      "bytes": 12
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\comments.mjs",
+      "sha256": "a6e2af760444ea52dd02a7c16230f06fa6b781652e8d65a7a8282b57619c21cb",
+      "bytes": 12
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\comments.py",
+      "sha256": "ee173748c5311f161b68f404632aa850f5743e7ea721bb6ec37f0cc235cd54cf",
+      "bytes": 11
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\comments.ts",
+      "sha256": "a6e2af760444ea52dd02a7c16230f06fa6b781652e8d65a7a8282b57619c21cb",
+      "bytes": 12
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\comments.tsx",
+      "sha256": "a6e2af760444ea52dd02a7c16230f06fa6b781652e8d65a7a8282b57619c21cb",
+      "bytes": 12
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\deep recursion.js",
+      "sha256": "b4eb35c1d17c427a197ae319a8be07cc3fd164804d45c972897030bf26b7c2e3",
+      "bytes": 28811
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\empty.cjs",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\empty.js",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\empty.jsx",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\empty.mjs",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\empty.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\empty.ts",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\empty.tsx",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\forgiven.py",
+      "sha256": "d0a3ed3946052cb111baaddcae820df5e9aebb6e4fca8a1a1309249e38aa58e9",
+      "bytes": 118
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\functionless.cjs",
+      "sha256": "dc55e0a5ea2f5be863837803dfa8dfe3d3a6adeed9877fe9fba3466ed22c7986",
+      "bytes": 19
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\functionless.js",
+      "sha256": "dc55e0a5ea2f5be863837803dfa8dfe3d3a6adeed9877fe9fba3466ed22c7986",
+      "bytes": 19
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\functionless.jsx",
+      "sha256": "dc55e0a5ea2f5be863837803dfa8dfe3d3a6adeed9877fe9fba3466ed22c7986",
+      "bytes": 19
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\functionless.mjs",
+      "sha256": "dc55e0a5ea2f5be863837803dfa8dfe3d3a6adeed9877fe9fba3466ed22c7986",
+      "bytes": 19
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\functionless.py",
+      "sha256": "149f8d2b05fe00146cfbc987726628643ce653502ce89c2b94552f89a0fad241",
+      "bytes": 12
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\functionless.ts",
+      "sha256": "dc55e0a5ea2f5be863837803dfa8dfe3d3a6adeed9877fe9fba3466ed22c7986",
+      "bytes": 19
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\functionless.tsx",
+      "sha256": "dc55e0a5ea2f5be863837803dfa8dfe3d3a6adeed9877fe9fba3466ed22c7986",
+      "bytes": 19
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\generated.py",
+      "sha256": "e711b5ea5088521e8406343401c18e1fc12f05b5e226b966941a18c9745c453b",
+      "bytes": 119
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\invalid syntax.py",
+      "sha256": "e36a298b5c90925bca30ec9e874c2d0da5ed70a015740497be06a9b9e1f3bf31",
+      "bytes": 26
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\invalid utf8.py",
+      "sha256": "b88c193009c22360a2a1e815905a7ea5f0b091647e5eaaff56a0cd90e22598b7",
+      "bytes": 3
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\nested arrow async.cjs",
+      "sha256": "c673dd92f0257251f676034b68704d9f3580ddd0e72bf2b907eefd3526834832",
+      "bytes": 228
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\nested arrow async.js",
+      "sha256": "c673dd92f0257251f676034b68704d9f3580ddd0e72bf2b907eefd3526834832",
+      "bytes": 228
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\nested arrow async.jsx",
+      "sha256": "525d8dcb6e3a237b8e987787b0cf9e6588ccb0f643bff5f06c2a4c75d8c0d2e7",
+      "bytes": 290
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\nested arrow async.mjs",
+      "sha256": "c673dd92f0257251f676034b68704d9f3580ddd0e72bf2b907eefd3526834832",
+      "bytes": 228
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\nested arrow async.py",
+      "sha256": "255a03b778033e4063690b87e3bb67345155d73835291cd912c4724c65f96804",
+      "bytes": 116
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\nested arrow async.ts",
+      "sha256": "bd866df10002984dd80174a81095bb331616081451651c24d2b04f28ae5ea8fe",
+      "bytes": 236
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\nested arrow async.tsx",
+      "sha256": "5f571e8b43e5faaf6bd5dac7f3a9ffd598ce0ada66b8398f748d9c06c7391ae0",
+      "bytes": 298
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\lizard fixtures with spaces\\unknown.unsupported",
+      "sha256": "496681aca029111894e6e73abb1fffc83c11e52aa849bd2cabb035cfc2a047a0",
+      "bytes": 99
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\bad encoding.py",
+      "sha256": "b88c193009c22360a2a1e815905a7ea5f0b091647e5eaaff56a0cd90e22598b7",
+      "bytes": 3
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\comments.py",
+      "sha256": "2b247b10804b06de18731cd160af13b53acb12e355bb2630df6cad7b9e0ea999",
+      "bytes": 14
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\empty.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\functionless.py",
+      "sha256": "3520d1003649a336d66c16926a7848357dbe2fb46cb95f92db261c6a81af07f6",
+      "bytes": 25
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\invalid nul.py",
+      "sha256": "030cfc9d84ec055a2cbdc28add87983004534e196d43233d1b212a6dc72c2c8a",
+      "bytes": 11
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\invalid syntax.py",
+      "sha256": "e36a298b5c90925bca30ec9e874c2d0da5ed70a015740497be06a9b9e1f3bf31",
+      "bytes": 26
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\negative.py",
+      "sha256": "04531b10ffe8a274511dc71fcd6d144d78d11246921616ea197ef349db72d01c",
+      "bytes": 86
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\nested async.py",
+      "sha256": "e1afbb1b97f5261ba731adef708ee7df68cc06077aedb5e35c3c3b3f413f459c",
+      "bytes": 137
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\noqa.py",
+      "sha256": "1e6144ed9bda5f404b315f0377fbd5c3b02af34b2e05c19c3b36f3bf683ae500",
+      "bytes": 25
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\positive caf\u00e9.py",
+      "sha256": "bf1bd23fd2f42c2b4b65f316e5915e857eb86c635fc02114261d21d50b0e539e",
+      "bytes": 92
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\reflection.py",
+      "sha256": "754807cd0d14382255218338bd2961796a2ca2d14aa2316ea07b580d45c4db3d",
+      "bytes": 86
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\template314.py",
+      "sha256": "e3740daf666c09dcb6183524d21db52c87ffa503baaffd90c5f2a747163a3cd0",
+      "bytes": 63
+    },
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\vulture fixtures with spaces\\whitelist.py",
+      "sha256": "d426b50f4467a9e540655842b3a2d723743c8beedc19c7386f055259228e4e20",
+      "bytes": 40
+    }
+  ],
+  "retained_native_tools_rehashed_not_rerun": {
+    "jscpd": {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd\\jscpd.exe",
+      "sha256": "c0bbbe8f3fea28395e08e60abcfe703dca0e39c0a393aa4a7fc602f816ad8670",
+      "pe": {
+        "machine": "0x8664",
+        "declared_imports": [
+          {
+            "name": "api-ms-win-core-synch-l1-2-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "api-ms-win-crt-heap-l1-1-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "api-ms-win-crt-locale-l1-1-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "api-ms-win-crt-math-l1-1-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "api-ms-win-crt-runtime-l1-1-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "api-ms-win-crt-stdio-l1-1-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "bcryptprimitives.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\bcryptprimitives.dll",
+            "sha256": "d3da1097e9e1fc16c910350e40c4405ef52f36f134f9bf165fbe02194c1eaa82"
+          },
+          {
+            "name": "KERNEL32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\KERNEL32.dll",
+            "sha256": "6a7bd4daff9c0c4cc8b9478ecd9828c3f19be257a4a18db9559cae929197fffa"
+          },
+          {
+            "name": "kernel32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\kernel32.dll",
+            "sha256": "6a7bd4daff9c0c4cc8b9478ecd9828c3f19be257a4a18db9559cae929197fffa"
+          },
+          {
+            "name": "ntdll.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\ntdll.dll",
+            "sha256": "60ef561645b50dce71ad0919dbbef3ad334a0489432cde718e75b73b558c7997"
+          },
+          {
+            "name": "USERENV.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\USERENV.dll",
+            "sha256": "18bd1660ab7cacd90789f1bebe35bc6a5730b1e75e5582f53575473fae3db530"
+          },
+          {
+            "name": "VCRUNTIME140.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\VCRUNTIME140.dll",
+            "sha256": "6d987d8cb2a47cff9c29c1fcbb853e7ef273c545f7d822728f7d2d448ca18758"
+          }
+        ],
+        "limit": "PE import table and existing file candidates only; not a loaded-module or API-set forwarding attestation."
+      }
+    },
+    "ruff": {
+      "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\ruff-native\\ruff.exe",
+      "sha256": "22b93aa554f2c3ec969fa83c5d77da3d61a4a54c61cbca70f5eeec63eef28e48",
+      "pe": {
+        "machine": "0x8664",
+        "declared_imports": [
+          {
+            "name": "ADVAPI32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+            "sha256": "021452c20f89c50d64c304391ec18169f95a9fa14762f76cfd2dded627dbf0bb"
+          },
+          {
+            "name": "api-ms-win-core-synch-l1-2-0.dll",
+            "resolved_existing_candidate": null,
+            "sha256": null
+          },
+          {
+            "name": "bcryptprimitives.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\bcryptprimitives.dll",
+            "sha256": "d3da1097e9e1fc16c910350e40c4405ef52f36f134f9bf165fbe02194c1eaa82"
+          },
+          {
+            "name": "combase.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\combase.dll",
+            "sha256": "850b43094ae61a5d3b8f40f0cddf89b4a90190bf5fc57c5242e0bf5b06644b2f"
+          },
+          {
+            "name": "kernel32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\kernel32.dll",
+            "sha256": "6a7bd4daff9c0c4cc8b9478ecd9828c3f19be257a4a18db9559cae929197fffa"
+          },
+          {
+            "name": "netapi32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\netapi32.dll",
+            "sha256": "8295d8a375cde035d057fc7d06fb8eced2c22649db28aa0afa9727f078c725cc"
+          },
+          {
+            "name": "ntdll.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\ntdll.dll",
+            "sha256": "60ef561645b50dce71ad0919dbbef3ad334a0489432cde718e75b73b558c7997"
+          },
+          {
+            "name": "shell32.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\shell32.dll",
+            "sha256": "ef0fbd71a46fe4b35bff893ea65241cd08ea5231de704c106e39920c03698fe9"
+          },
+          {
+            "name": "userenv.dll",
+            "resolved_existing_candidate": "C:\\WINDOWS\\System32\\userenv.dll",
+            "sha256": "18bd1660ab7cacd90789f1bebe35bc6a5730b1e75e5582f53575473fae3db530"
+          }
+        ],
+        "limit": "PE import table and existing file candidates only; not a loaded-module or API-set forwarding attestation."
+      }
+    }
+  },
+  "runtime_import_records_rehashed": 1362,
+  "stage_bootstrap_hashes": "Version/help used the initial bootstrap stage; subsequent API stage added fixture functions. Per-execution provenance records preserve stage hashes; only approved external module bytes are asserted unchanged.",
+  "preserved_original_failure": "lizard API run exit1: incorrect decode-diagnostic expectation. Strict text API boundary separately qualified; raw result unchanged.",
+  "scope": "No production adapter/integration, repository tests/docs/shared-state, install/build/dependency/OS/network changes in this phase",
+  "concurrent_writer": "Parent C2 workflow_state.py deliberately excluded from pin assertions",
+  "coverage": "7.16.1 deferred to Q3",
+  "cleanup": "No live child processes, no bytecode; owned tools/fixtures retained as bound evidence"
+}

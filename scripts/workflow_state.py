@@ -757,9 +757,14 @@ def _verify_artifact(root, ref):
     return content
 
 
-def _load_design(root, contract, ledger):
+def validate_design_binding(root: Path, contract: dict, design: dict, ledger: dict) -> dict:
+    """Validate an explicit adoption basis without reading or publishing a live pointer."""
+    validate_contract(contract)
+    validate_ledger(ledger)
+    if contract["slug"] != ledger["slug"]:
+        raise ValueError("Workspace slug mismatch")
+    root = Path(root).resolve(strict=True)
     workspace = ".ai/" + contract["slug"]
-    design = read_json(safe_path(root, workspace + "/current-design.json"))
     validate_design(design)
     if design["revision"] != contract["design_revision"]:
         raise ValueError("Current design and workflow revision disagree")
@@ -802,6 +807,11 @@ def _load_design(root, contract, ledger):
     if binding["adopted_contract_sha256"] != canonical_hash(contract) or binding["components"] != design["components"]:
         raise ValueError("Current pointer/adopted contract mismatch")
     return design
+
+
+def _load_design(root, contract, ledger):
+    design = read_json(safe_path(root, ".ai/%s/current-design.json" % contract["slug"]))
+    return validate_design_binding(root, contract, design, ledger)
 
 
 def _receipt_artifacts(root, receipt):
@@ -971,15 +981,25 @@ def _snapshot_for(root, contract, design, item):
     return {"source": source, "contract": binding}
 
 
-def bind_inputs(root: Path, contract: dict, target: dict) -> ResolvedInputs:
+def bind_inputs(root: Path, contract: dict, target: dict, *,
+                design: dict | None = None, ledger: dict | None = None) -> ResolvedInputs:
+    """Bind live inputs, or an explicit validated basis for adoption retry only.
+
+    Explicit design and ledger must be supplied together. They do not replace
+    persisted authority or authorize ordinary dispatch from a historical prefix.
+    """
+    if (design is None) != (ledger is None):
+        raise ValueError("Explicit design and ledger must be supplied together")
     validate_contract(contract)
     validate_target(target)
     if target["kind"] != "ship" and target["id"] not in contract[target["kind"] + "s"]:
         raise ValueError("Unknown target")
     root = Path(root).resolve(strict=True)
-    ledger = read_json(safe_path(root, ".ai/%s/evidence/ledger.json" % contract["slug"]))
-    validate_ledger(ledger)
-    design = _load_design(root, contract, ledger)
+    if design is None:
+        ledger = read_json(safe_path(root, ".ai/%s/evidence/ledger.json" % contract["slug"]))
+        design = _load_design(root, contract, ledger)
+    else:
+        design = validate_design_binding(root, contract, design, ledger)
     snapshots = {}
     for key, item in dependency_closure(contract, target).items():
         try:

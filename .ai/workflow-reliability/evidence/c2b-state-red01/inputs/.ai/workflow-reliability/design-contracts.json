@@ -1,0 +1,637 @@
+{
+  "document": "Workflow reliability design contracts",
+  "revision": "r2",
+  "status": "PROPOSED; bounded revision for accepted DR1-DR7; not implementation or independent approval",
+  "implementation_clarifications": {
+    "shared_measurement_outputs": "Observed integration counterexample i1-child-freshness-red.log: publishing parent metrics immediately invalidated child source binding. The existing own-generated-output invariant includes the exact same-run metrics.json and slug metrics display alias, alongside the current mutation report. These explicit generated report paths are excluded by the shared invocation; other contracts and unrelated evidence stay observed. No new exclusion flag, exemption, identity or workflow dependency.",
+    "consumer_reconciliation": "Review R1/R2 require probe to reuse mutate.select_test_run, not duplicate native argv expansion, and call mutate.validate_mutation_results(report, repo). The producer-owned validator regenerates default-budget candidate identity/bytes, checks native/process evidence against baseline inventory, and reconciles outcomes/counters/score. This is structural validation, not authentication. No new CLI or workflow dependency; mutation producer completion precedes consumer integration."
+  },
+  "base": "bcc971d3b64559127dfc43eb0bfd4348c42803ca",
+  "overview": "design.html",
+  "notation": "Typed design records, not a runtime DSL. Listed fields are required unless suffixed ?. Use ordinary standard-library validation; reject unknown versions/enums, duplicate JSON keys/IDs, malformed hashes and non-finite numbers. Arrays of record references are not executable expressions. The records below are the single definitions; procedures reference them rather than introducing alternative fields.",
+  "dispositions": {
+    "DR1": "ACCEPTED. run_capture gains an optional synchronous lifecycle observer exposing the actual Popen child identity while alive, not only env/return tuple. Durable launch-intent precedes Popen; spawned and direct-exited events do not close the crash interval or prove descendant death. Recovery explicitly needs supported termination evidence; unknown spawn/tree remains blocked. Live-child, observer-write-failure and uncertain-spawn crash cases are required. No supervisor or host API.",
+    "DR2": "ACCEPTED. Remove allowed_outputs enforcement claim. declared_changes is reviewed scope guidance only; runtime detects changes solely in observed source scopes and makes no claim about writes elsewhere, even by a routed child.",
+    "DR3": "ACCEPTED. Only Action.requires and Increment.requires own forward edges for their distinct admission/closure targets. Remove Check.gates/prerequisites, Increment.actions/due_checks/regression_checks/depends_on, Action.depends_on/check_id and copied replay commands. Membership, reverse edges, future/due sets and replay are derived.",
+    "DR4": "ACCEPTED. Explicitly bind references\\delegation.md and references\\testing-and-e2e.md: resolve current-design pointer in briefs, preserve mandatory fresh roles, admit before-action red/handoffs, label direct run.py execution diagnostic/unbound.",
+    "DR5": "ACCEPTED. New I1-owned scripts\\evidence.py supplies file snapshots, exclusive local lock and atomic JSON independent of workflow state. Standalone probe/mutation require no adoption, ledger, BootstrapReview, imports or exemptions. SourceSnapshot is distinct from guard ContractBinding; no silently empty guarded bindings. Generic --measurements/imported metric and exemption machinery removed.",
+    "DR6": "ACCEPTED. Remove asserted product-wide OS-temp ban and scratch-only rewrites of existing runners. Exact ownership and cleanup remain required; private temporary directories or project-local scratch are implementation choices subject to the actual execution environment.",
+    "DR7": "ACCEPTED. Define bounded experimental blindness by neutral participant inputs/history, independent evaluator, withheld cause/oracle, manifests and available access traces, with post-run grading. Shared filesystem is disclosed, not isolation. Exposure or insufficient records makes blindness unverified, but does not block independent P0 delivery."
+  },
+  "sources": {
+    "S1": "scripts\\mutate.py:35-57,79-111,149-184,196-253,256-366: CODE_EXT, OPERATORS, detect_test_cmd(repo), changed_lines(repo, base), build_mutants(repo, targets, limit), main(); read; research E01-E04.",
+    "S2": "scripts\\probe.py:26-29,97-104,129-224,274-376,379-495: code_files(root), collect(root, skip_mutation), mutation_entry(repo, slug, base, skip), judge(name, base, head, greenfield=False), main(); read; research E01/E06-E10.",
+    "S3": "scripts\\run.py:42-140: _kill_tree(proc), _popen(cmd, cwd=None, merge_stderr=True), run_capture(cmd, cwd=None, idle=300.0, max_total=0.0); reopened for r2. Popen is local; monitor dies with caller; tree cleanup is best effort. Tuple does not prove orphan termination.",
+    "S4": "evals\\lib\\score.mjs:9-13,26-39,108-187: parseTap, runTestQuality, testQualityScore, composite; evals\\run.mjs:35-43 TQ_BAR=0.9; read; research E11-E14.",
+    "S5": "examples\\team-planner\\scripts\\check.mjs:5-29, mutation.mjs:18-58, package.json:4-11; read; research E19. Native execution, SHA-256 and conservative failure classification are prior art; historical example is not an edit target.",
+    "S6": "references\\planning.md:53-121,151-156,178-201; references\\workspace.md:16-29,81-104,124-135; read; research E16-E17. Stable IDs, due checks, owners, independent increments and scoped reopening.",
+    "S7": "SKILL.md:246-310,329-399; references\\review-and-pr.md:115-159; references\\design-doc.md; read; research E16-E18/E25. Canonical triggers, current contract and independent review.",
+    "S8": "references\\research.md:130-149,175-189; references\\communication.md:18-90; references\\final-report.md:18-45; references\\quality-metrics.md:120-216; references\\quality-bar.md:35-55; read; research E18/E25.",
+    "S9": "evals\\agent\\workspace.mjs:15-47; evals\\agent\\live.mjs:25-32,60-73,99-137; read; research E21-E24. Neutral seed/oracle separation, incomplete script staging, Git hygiene distinct from workflow proof.",
+    "S10": "CONTRIBUTING.md:11-15,31-44,77-91; references\\code-clarity.md and project-profile.md; README.md:142-185; docs\\architecture.md:57-78; evals\\README.md:89-106; read. Native/dependency-free conventions and canonical ownership.",
+    "S11": "https://nodejs.org/download/release/v22.0.0/docs/api/test.json: custom reporters, TestsStream test:pass/test:fail/test:plan; fetched in r1. Async-generator reporter receives identity, nesting and details.error.cause. Fixtures, not documentation alone, must validate supported event shapes.",
+    "S12": "evidence\\p0-reproductions.json: parent-run original-source hashes, omitted ESM/CJS targets, independent node --check failure versus mutate 100% kill, probe exit 0/pass with unavailable measurements, stale 100 score after dirty-prerequisite failure. Read, not rerun. Pre-fix counterexamples only; corrected serialization setup error is not behavioral red.",
+    "S13": "references\\delegation.md:19-24,34-55,108-155; references\\testing-and-e2e.md:19-36,49-75; read for r2. Current briefs pass design.html; testing instructions use direct run.py. Both require explicit guarded/current-pointer integration."
+  },
+  "boundaries": {
+    "measurement_first": "I1 owns evidence.py, standalone source-bound reports, native classification and metric completeness. evidence.py imports no workflow modules. mutate.py/probe.py never call load_workspace, adopt or ledger validation. Running with only a Git fixture and tests must produce a fresh honest report, including a failing incomplete report, without workflow.json or current-design.json. I1 retains ordinary independent review/verification obligations through existing artifact procedures; the not-yet-built guard is not claimed as their executor.",
+    "guard_later": "workflow_state.py imports evidence.py, not the reverse. The guard pairs SourceSnapshot with explicit ContractBinding only when admitting a check. A standalone report has binding_mode=standalone-source and is not automatically a guarded receipt. A metrics check reruns the producer after admission with the same run ID, then verifies returned source/command/policy hashes and attaches its own contract binding.",
+    "removed_ceremony": "No --measurements import API, metric-receipt reuse, caller-authored not-applicable exemptions or generic bootstrap record in this scope. Missing diff-coverage/architecture collection remains required-unavailable and fails closed; no substitute green. Future collectors can add measurements without redesigning collection. Initial guard adoption uses an ordinary independently attributed design-review artifact bound to candidate hashes, grants no historical execution/temporal proof and is never prerequisite to I1.",
+    "trust": "Only routed commands are admitted. Self-declared role/context IDs are not authentication. File hashes cover declared observed scopes, not the whole machine. Neither the guard nor experiment inputs create a filesystem sandbox; outside-scope writes and host tools remain outside the observation guarantee."
+  },
+  "interfaces": [
+    {
+      "component": "scripts\\evidence.py",
+      "kind": "new; independent measurement-first primitives",
+      "acs": ["AC01", "AC02", "AC03", "AC09"],
+      "sources": ["S2", "S5", "S10"],
+      "signatures": [
+        "source_snapshot(root: Path, scope: FileScope) -> SourceSnapshot",
+        "write_json_atomic(path: Path, value: dict) -> None",
+        "exclusive_lock(path: Path, owner: dict) -> ContextManager[None]"
+      ],
+      "responsibility": "Hash enumerated input bytes; same-directory atomic JSON replacement; exclusive local lock creation. No contract, ledger, adoption or proof policy.",
+      "collaborators": ["mutate.py", "probe.py", "later workflow_state.py", "stdlib json/hashlib/os/pathlib"],
+      "principle": "Small shared mechanism with dependency direction from policy to mechanism."
+    },
+    {
+      "component": "scripts\\mutate.py",
+      "kind": "changed",
+      "acs": ["AC01", "AC02", "AC09"],
+      "sources": ["S1", "S3", "S5", "S12"],
+      "signatures": [
+        "select_test_run(repo_root: Path, test_cwd: Path, argv: list[str] | None) -> TestRun",
+        "detect_test_cmd(repo: str) -> list[str] | None",
+        "changed_lines(repo: str, base: str) -> dict[str, set[int]]",
+        "build_mutants(repo: str, targets: dict[str, set[int]], limit: int) -> list[dict]",
+        "validate_mutation_results(report: dict, repo: Path) -> None (raises on inconsistent default-budget proof)"
+      ],
+      "responsibility": "Discover, mutate, execute and restore; emit current-run classified results.",
+      "delta": "Add .mjs/.cjs to both discovery sets. Add strict equality and token-boundary guards so comparisons cannot select =>, shifts or partial operators. Skip lexically ambiguous regex/template/comment spans with reasons; no parser framework. node --check each generated JS-family mutant before native tests. Retain exclusions, deterministic spread and default max=20.",
+      "collaborators": ["run_capture", "native_result.mjs", "evidence.py"],
+      "principle": "Extend existing discovery/operator path instead of building a second mutation engine."
+    },
+    {
+      "component": "scripts\\native_result.mjs",
+      "kind": "new",
+      "acs": ["AC01", "AC06", "AC09"],
+      "sources": ["S4", "S5", "S11"],
+      "signatures": [
+        "export default async function* report(source: AsyncIterable<TestEvent>): AsyncGenerator<string>",
+        "export function parseReport(text: string): NativeResult"
+      ],
+      "responsibility": "Normalize native test events, never child log phrases, into one result protocol.",
+      "delta": "Replace count/string heuristics in mutation and runTestQuality with real leaf outcome/cause classification. Existing parseTap signature/count semantics for other consumers remain unchanged.",
+      "collaborators": ["Node custom reporter API", "mutate.py JSON reader", "evals\\lib\\score.mjs"],
+      "principle": "Shared Node result format without a Python dependency in Node-only evals."
+    },
+    {
+      "component": "scripts\\probe.py",
+      "kind": "changed",
+      "acs": ["AC02", "AC09"],
+      "sources": ["S2", "S8", "S12"],
+      "signatures": [
+        "assess_report(metrics: dict[str, Measurement], policy: MetricPolicy) -> MetricVerdict",
+        "judge(name, base, head, greenfield=False) -> tuple[dict | None, str]",
+        "mutation_entry(repo, slug, base, skip, *, run_id, test_run=None) -> Measurement"
+      ],
+      "responsibility": "Keep collection independent of completeness/regression assessment.",
+      "delta": "Failed baseline inventory becomes unknown, not greenfield. Missing baseline comparison is unavailable, not ok. Reject failed/empty/malformed or partially unsupported analyzer output as complete measurement. Only consume this invocation's mutation report after checking return code, ID, inputs and restoration.",
+      "collaborators": ["existing collectors", "mutate.py", "evidence.py"],
+      "principle": "An honest partial result requires no workflow initialization."
+    },
+    {
+      "component": "scripts\\run.py",
+      "kind": "changed; backward-compatible optional seams",
+      "acs": ["AC01", "AC04", "AC05", "AC09"],
+      "sources": ["S3", "S4"],
+      "signatures": [
+        "run_capture(cmd, cwd=None, idle=300.0, max_total=0.0, *, env=None, observe=None) -> tuple[int, str, str]",
+        "_popen(cmd, cwd=None, merge_stderr=True, *, env=None)",
+        "observe(event: ProcessObservation) -> None (synchronous caller callback)"
+      ],
+      "responsibility": "Continue bounded capture/PID-scoped best-effort cleanup. env enables isolated native tests; optional observe exposes actual lifecycle while the process handle is available.",
+      "delta": "I1 uses env only. Guard uses observe for launch-failed, spawned immediately after successful Popen, and direct-exited after wait. Callback persistence failure triggers best-effort owned cleanup and an observer-error result, never a success receipt. No default observer, background supervisor or automatic orphan discovery.",
+      "collaborators": ["mutate.py", "workflow.py observer", "existing _kill_tree"],
+      "principle": "Expose known process facts; never infer whole-tree death from tuple status or root PID."
+    },
+    {
+      "component": "scripts\\workflow_gate.py",
+      "kind": "new",
+      "acs": ["AC03", "AC05", "AC07", "AC08", "AC09"],
+      "sources": ["S6", "S7", "S8"],
+      "signatures": ["evaluate(contract: WorkflowContract, ledger: Ledger, inputs: GuardSnapshot, target: Target) -> Readiness"],
+      "responsibility": "Pure due-edge, freshness, independence, completeness and temporal decisions.",
+      "collaborators": ["workflow.py", "validated workflow_state inputs"],
+      "principle": "One forward graph, derived reverse/status views; no I/O."
+    },
+    {
+      "component": "scripts\\workflow_state.py",
+      "kind": "new; guard-specific state only",
+      "acs": ["AC03", "AC04", "AC05", "AC07", "AC08"],
+      "sources": ["S5", "S6", "S8"],
+      "signatures": [
+        "load_workspace(root: Path, slug: str) -> tuple[WorkflowContract, CurrentDesign, Ledger]",
+        "bind_inputs(root: Path, contract: WorkflowContract, target: Target) -> GuardSnapshot",
+        "append_event(workspace: Path, event: Event, expected_seq: int) -> Event"
+      ],
+      "responsibility": "Validate guard records, bind contracts and append under an already-held lock using evidence.py. Lifecycle observations are persisted as ledger events, not a second writable process tracker.",
+      "collaborators": ["evidence.py", "workflow.py"],
+      "principle": "Guard policy consumes independent persistence primitives."
+    },
+    {
+      "component": "scripts\\workflow.py",
+      "kind": "new",
+      "acs": ["AC03", "AC04", "AC05", "AC07", "AC08", "AC09"],
+      "sources": ["S3", "S6", "S7", "S13"],
+      "signatures": ["main(argv: list[str] | None = None) -> int"],
+      "responsibility": "Visible load/lock/evaluate/admit/run/record flow; status, next, record, close, adopt and recover.",
+      "collaborators": ["workflow_gate.evaluate", "workflow_state", "run_capture lifecycle callback"],
+      "principle": "Small local command boundary; real host delegation remains the parent's job."
+    },
+    {
+      "component": "Canonical references and native evaluations",
+      "kind": "changed docs; proposed native tests",
+      "acs": ["AC04", "AC05", "AC06", "AC07", "AC08", "AC09"],
+      "sources": ["S6", "S7", "S8", "S9", "S10", "S13"],
+      "signatures": ["runTestQuality(task, projectAbs, armDirAbs) retains its existing signature; no other production API"],
+      "responsibility": "Wire current-design, guarded check/handoff, research correction and truthful status at their actual reference consumers. Add deterministic public-CLI tests separately from parent-host experiments.",
+      "collaborators": ["SKILL.md", "references", "existing node:test", "new stdlib unittest tests"],
+      "principle": "Canonical triggers, no new evaluation framework or copied status authority."
+    }
+  ],
+  "cli": {
+    "mutation": {
+      "preserve": "--slug --base --repo --test-cmd --max-mutants --timeout",
+      "add": "--test-cwd PATH; --run-id ID; remainder -- COMMAND ARG... mutually exclusive with --test-cmd",
+      "selection": "Preserve original --repo directory as default test cwd before normalizing Git root. Explicit --test-cwd is resolved separately. Explicit argv wins; otherwise existing manifest priority in test cwd, then sorted native *.test.js/*.test.mjs/*.test.cjs in cwd/test/tests without entering nested packages. No root package does not imply no tests. No implicit recursive selection of this repository's benchmark fixture arms: use the documented eval file list explicitly.",
+      "execution": "Direct node --test receives the absolute native reporter module URI, explicit test-file argv, and env minus NODE_TEST_CONTEXT. Reject conflicting reporter configuration rather than guess. Node 22+ for new native path; nested team-planner retains Node 24 requirement. npm/custom commands still run unchanged but are unavailable/unclassified unless using an explicitly supported native result route; do not parse arbitrary script internals.",
+      "spaces": "New remainder argv preserves each argument. Legacy --test-cmd accepts simple whitespace-separated commands only; ambiguous quoting/escaping fails with exit 2 and guidance to use argv. Never shell=True.",
+      "example": "python scripts\\mutate.py --slug esm-check --base BASE --test-cwd \"packages\\space name\" -- node --test \"test\\math case.test.mjs\"",
+      "safety": "Refuse dirty mutation inputs including untracked source; disregard only exact invocation-owned output paths, never all .ai contracts. Exclusive measurement lock; original byte backup and finally restoration with full source-hash check. Detected intervening edit is recovery-required, not overwritten. Scratch is uniquely owned and cleanup touches only that owned path; no product-wide location restriction.",
+      "exit": "0 complete classified measurement; 2 incomplete/unavailable/invalid invocation. Any ungraded candidate makes complete=false. Score threshold belongs to probe; timeout is never a kill."
+    },
+    "probe": {
+      "add": "--test-cwd and remainder argv forwarded to mutation; optional --require-metric NAME adds a required measurement to defaults, never removes one. No --measurements or receipt/exemption input.",
+      "policy": "Resolve the built-in MetricPolicy and observed repo numeric bars, record its hash and origins; no guard artifact needed. Required unsupported measurements produce incomplete/fail immediately, not a request to bootstrap a ledger. No runtime flag weakens defaults or thresholds.",
+      "compatibility": "schema_version=2; retain metrics, unavailable, worst_status, verdict. verdict remains pass|fail; incomplete is fail for old readers too. Existing v1/latest files are historical only. --skip-mutation/UI skip does not waive required proof.",
+      "exit": "0 complete and no measured failure; 1 measured failure or incomplete required proof; 2 invalid invocation/policy or unable to start.",
+      "freshness": "Allocate unique run ID/directory before collection; all outputs atomic. Consume only this run's mutation path and successful result, matching source/command/policy hashes. Never use mutation.json as fallback. Latest aliases are display compatibility only."
+    },
+    "workflow": {
+      "common": "python scripts\\workflow.py VERB --slug SLUG [--repo ROOT]; validate slug [a-z0-9]+(-[a-z0-9]+)*.",
+      "status": "Optional --target KIND:ID; derive Readiness from disk without writing proof.",
+      "next": "Required --action ID; registered argv/cwd only, no command overrides. Under exclusive lock re-evaluate and append admission plus launch-intent before run_capture. Blocked means runner is never called. Null-command handoff action records awaiting-response and spawned=false, releases lock, and returns an artifact brief; it does not create an agent.",
+      "record": "Required --receipt PATH; validate the unchanged returned attributed proof against its matching admitted check, current relevant bindings and artifact hashes. Recorder does not become producer. Unadmitted old results do not establish guarded readiness.",
+      "close": "--increment ID --commit SHA, or --ship. Validate declared requires edges, all member actions executed, mandatory independent verification/review and quality proof, and commit/source match before appending closed. No child on close. Ship covers every increment and AC.",
+      "adopt": "--revision ID --review PATH. Validate preserved CurrentDesign revision, candidate workflow/components and independently attributed DesignReview. Adoption is a present-time design decision only; no old execution proof is imported. Unconfirmed human approval requires existing explicit unattended authorization and remains disclosed.",
+      "recover": "--run ID --lock-token TOKEN --evidence PATH. Evaluate RecoveryEvidence using the recovery rules below. Unknown spawn/descendant state never permits unlock or another child. A valid recovery records interruption, not success, and requires later checks; never auto-replay.",
+      "exit": "0 accepted/ready/successful child; 1 proof/policy block; 2 malformed input/schema/path/unknown ID; 3 lock/sequence/uncertain recovery. next preserves actual child code including 124/125/127, with a distinct structured outcome and spawned state. child_exit=0 with invalid check proof yields wrapper 1. Code collision never erases outcome."
+    }
+  },
+  "records": {
+    "FileScope": {
+      "fields": {
+        "files": "list[repo-relative Path]",
+        "directories": "list[repo-relative Path], deterministic recursive membership",
+        "excluded_outputs": "list[{path,reason}], only generated/owned output exclusions"
+      },
+      "rules": "Include source, tests, config/manifests, command scripts and new/deleted relevant paths. Changes outside this scope are not observed. Reviewer owns completeness of scope selection."
+    },
+    "SourceSnapshot": {
+      "fields": {
+        "binding_mode": "standalone-source",
+        "base": "full resolved comparison SHA|null",
+        "head": "full SHA|null; provenance, not freshness by itself",
+        "scope": "FileScope",
+        "files": "sorted map[Path -> {sha256:hex|null,mode:file|executable|missing}]",
+        "scope_sha256": "hash of names/existence/modes/byte hashes"
+      },
+      "rules": "No workflow fields or empty-contract placeholders. Hash bytes plus membership. Exclude own generated report/ledger/log outputs, not all .ai documents. Validate path traversal and symlink/reparse escapes for inputs the tool reads; this is not child-write confinement."
+    },
+    "ContractBinding": {
+      "fields": {
+        "binding_mode": "guarded",
+        "adopted_contract_sha256": "global hash for provenance",
+        "components": "map[component ID -> normative hash]",
+        "actions": "map[action ID -> canonical hash]",
+        "checks": "map[check ID -> canonical hash]",
+        "claims": "map[claim ID -> active binding hash]"
+      },
+      "rules": "Required only on guarded proof; missing means unbound, never implied empty success. Compare relevant hashes for freshness; unrelated contract edits preserve unaffected proof after accepted adoption. Record hashes use sorted-key UTF-8 JSON."
+    },
+    "GuardSnapshot": {
+      "fields": {"source": "SourceSnapshot", "contract": "ContractBinding"},
+      "rules": "Combines independent source measurement with explicitly adopted current contracts."
+    },
+    "Command": {
+      "fields": {
+        "argv": "nonempty list[str]",
+        "cwd": "repo-relative directory",
+        "runtime": "{executable,observed_version}",
+        "idle_seconds": "positive finite number",
+        "max_seconds": "positive finite number",
+        "environment": "map[name -> nonsecret string|null]; null removes variable"
+      },
+      "rules": "Single authoritative runnable definition. Replay is derived from it and linked prerequisites, not separately editable. No unresolved globs in native argv; no reentrant same-workspace guard command. Foreground commands only; no promise to manage daemonized descendants."
+    },
+    "TestRun": {
+      "fields": {"command": "Command", "runner": "node-native|process", "test_files": "list[Path]", "assertions": "list[AssertionTarget]"},
+      "rules": "Select test cwd independently from Git root. Changed targets outside the measured scope remain unmeasured, never silently covered."
+    },
+    "AssertionTarget": {
+      "fields": {
+        "id": "stable scenario-local ID",
+        "test_file": "Path",
+        "test_name": "full nested name",
+        "source_sha256": "test source hash",
+        "assertion_lines": "nonempty list[positive integer]",
+        "purpose": "AC/scenario property",
+        "expected_red": "{operator,expected_relation,actual_relation}; described data predicate, not executable expression"
+      },
+      "rules": "Required red uses an actual matching non-skipped native AssertionError/ERR_ASSERTION cause, stack reaching a declared assertion line and matching expected/actual symptom. Independent consumer inspects relevance. Stdout phrases, test count or nonzero exit alone are insufficient."
+    },
+    "NativeResult": {
+      "fields": {
+        "schema_version": "1",
+        "complete": "boolean; normal reporter stream end",
+        "tests": "list[{file,line,name,nesting,outcome:pass|assertion-fail|setup-error|cancelled|skipped|todo,error?:{name,code,cause_code,message,assertion_stack,operator,expected,actual}}]",
+        "leaf_count": "nonnegative integer; excludes suites/file pseudo-tests",
+        "logs": "list[{stream,text}]; quoted data only"
+      },
+      "rules": "Serialize Error properties explicitly. Classify timeout/launch error before syntax/setup/incomplete before relevant assertion before positive green. Mixed setup/assertion is ungraded. Baseline needs rc=0, positive complete actual tests and no skipped/cancelled required targets. Killed mutant requires nonzero exit plus genuine assertion failure in baseline inventory without higher-priority error. Containers do not create extra kills; unknown shapes fail closed."
+    },
+    "MetricPolicy": {
+      "fields": {
+        "schema_version": "1",
+        "required": "list[metric name]",
+        "rules": "map[name -> {mode:compare|floor|coverage,threshold:number|null,origin:built-in|repo-source,origin_ref:string}]",
+        "sha256": "canonical hash of required/rules"
+      },
+      "rules": "Code-change defaults require duplication_pct, complexity_max, complexity_avg, cycles, dead_exports, static_findings, mutation_score_pct, diff_coverage_pct and architecture_rules. Unknown applicability does not remove proof. Missing collectors/coverage bar are reported explicitly, not fabricated. Preserve current compare tolerances and mutation 60%; separate eval 0.9/null normalization unchanged. Only documented tightening: known-greenfield cycles fail above zero, consistent with no-new-cycle rule. A known successful <3-source-file baseline may use existing other greenfield limits; failed inventory is unknown. No exemption/import acceptance path in this change."
+    },
+    "Measurement": {
+      "fields": {
+        "name": "metric ID",
+        "state": "measured|unavailable",
+        "base": "number|null",
+        "head": "number|null",
+        "comparison": "ok|warn|fail|unavailable",
+        "reason": "string",
+        "run_id": "this invocation ID",
+        "source": "SourceSnapshot",
+        "command": "Command|null if collector unavailable",
+        "artifacts": "list[{path,sha256,bytes}]",
+        "scope_support": "measured languages/paths and unsupported remainder"
+      },
+      "rules": "Missing brownfield baseline is unavailable comparison. Empty/failed/malformed/partially unsupported analyzer output is not measured zero. External mutation text-score scraping alone cannot establish complete classified proof. Report partial observation and incomplete status; no analyzer installation or invented metric."
+    },
+    "MetricVerdict": {
+      "fields": {
+        "schema_version": "2",
+        "run_id": "unique ID",
+        "source": "SourceSnapshot",
+        "baseline": "compared|greenfield|unknown",
+        "measurement_status": "ok|warn|fail|unavailable",
+        "completeness": "complete|incomplete",
+        "missing_required": "list[{metric,reason,owner,command_ref:string|null,prerequisite:string}]",
+        "verdict": "pass|fail",
+        "metrics": "map[name -> Measurement with retained legacy numeric keys]",
+        "unavailable": "list[name]",
+        "worst_status": "measured-only compatibility summary",
+        "policy": "MetricPolicy",
+        "generated": "UTC timestamp"
+      },
+      "rules": "Measurement summary considers observed assessed numbers only; no assessed observations => unavailable. Completeness separately checks all required proof. pass requires complete plus no measured failure. I1 can emit incomplete/fail without any review/ledger. Missing-proof owner defaults to operator in standalone mode; guard derives the assigned owner. When no finishing executable exists, name the missing collector/configuration prerequisite rather than invent a runnable command."
+    },
+    "MutationReport": {
+      "fields": {
+        "schema_version": "2",
+        "run_id": "unique invocation ID",
+        "source": "SourceSnapshot before mutation",
+        "test_run": "TestRun|null before successful selection",
+        "baseline": "NativeResult|null",
+        "results": "list[{file,line,operator,before_sha256,after_sha256,outcome:killed-assertion|survived|invalid-syntax|setup-error|timeout|unclassified,artifacts}]",
+        "score_pct": "number|null",
+        "complete": "boolean",
+        "reason": "string",
+        "restored_sha256": "hash|null",
+        "generated": "UTC timestamp",
+        "killed": "integer",
+        "survived": "integer",
+        "total": "integer",
+        "ungraded": "integer"
+      },
+      "rules": "score_pct=100*killed/(killed+survived); zero graded => null; any ungraded candidate => incomplete. No mutable lines is null/reason, not 100% or implicit exemption. Write evidence\\runs\\ID\\mutation.json first, atomically; optional latest alias is display only. Source restoration, return code, unique run and exact test command must match before probe accepts it."
+    },
+    "WorkflowContract": {
+      "fields": {
+        "schema_version": "1",
+        "slug": "validated slug",
+        "design_revision": "CurrentDesign ID",
+        "increments": "map[ID -> Increment]",
+        "actions": "map[ID -> Action]",
+        "checks": "map[ID -> Check]",
+        "claims": "map[ID -> ResearchBinding]",
+        "revision_reason": "string"
+      },
+      "rules": "workflow.json owns executable definitions. Only requires lists own edges. Validate typed IDs, cycles, unique Check.action_id, and membership. Every closure must require independent verification, independent review and metrics checks plus scenario proof; absent mandatory checks is malformed, not ready. Plans/state/traceability link definitions and derived results. No duplicate command or gating indexes."
+    },
+    "Target": {
+      "fields": {"kind": "action|check|increment|ship", "id": "stable ID; literal ship for final target"},
+      "rules": "Check target resolves its action for execution; ship is derived union of all increment closures. No custom target kinds or transition language."
+    },
+    "Increment": {
+      "fields": {
+        "id": "stable increment ID",
+        "acs": "nonempty list[AC ID]",
+        "components": "nonempty list[component ID]",
+        "requires": "list[Target of kind increment or check]",
+        "implementers": "list[Producer]"
+      },
+      "rules": "Increment requires defines closure proof and prerequisite increments, not action admission checks. Every member action must have completed execution before closure; members derive from Action.increment. An action inherits only prerequisite-increment closure edges, not its own increment's final review/metrics checks. A prior regression check required again is another forward edge here, not a separate regression list. Completion commit lives only in the closed event."
+    },
+    "Action": {
+      "fields": {
+        "id": "stable action/task ID",
+        "increment": "increment ID",
+        "kind": "work|check|retire",
+        "requires": "list[Target of kind action or check]",
+        "command": "Command|null for explicit external/human check handoff",
+        "owner": "Producer",
+        "inputs": "FileScope",
+        "components": "list[component ID]",
+        "claims": "list[claim ID]",
+        "declared_changes": "list[Path]; review guidance only",
+        "retirement": "{legacy_scope:FileScope,expected_legacy_presence:list[Path]}|null"
+      },
+      "rules": "Action requires alone defines checks needed before this child/handoff. Work completion is execution, not correctness. Check actions cannot depend on their own result. Retire requires at least one Check with kind=compatibility and validity=before-action; derive those checks from requires. Old-path presence is observable scope, not another proof-edge list. No arbitrary command override."
+    },
+    "Check": {
+      "fields": {
+        "id": "stable check ID",
+        "action_id": "unique registered check action ID",
+        "acs": "nonempty list[AC/scenario]",
+        "kind": "test|behavioral-red|metrics|verification|review|compatibility|research|human",
+        "owner_role": "implementer|researcher|verifier|reviewer|human",
+        "context_rule": "same-allowed|independent",
+        "validity": "current|before-action",
+        "assertions": "list[AssertionTarget]",
+        "pass_condition": "specific observable predicate; not executable prose",
+        "handoff_steps": "list[string]; only if associated command is null"
+      },
+      "rules": "Inputs, prerequisites, command and actual owner come only from action_id; no writable reverse gates. A before-action check must have exactly one consuming work/retire Action.requires edge; derive that action, retain historical consumption at its admission. It may additionally be referenced by closure without becoming current-source proof. Replay resolves the same command/handoff steps; receipts retain execution facts, not a competing live command. Fixed validators consume NativeResult/MetricVerdict/FindingResult; actual relevant red assertions are mandatory."
+    },
+    "Producer": {
+      "fields": {"actor_id": "self-declared string", "context_id": "self-declared fresh-context ID", "role": "implementer|researcher|verifier|reviewer|human", "host": "string", "model": "string|unknown"},
+      "rules": "Verifier/reviewer contexts differ from all implementers and each other for the increment. Actor account may be shared; identities are not authenticated. Recorder never replaces producer. Human-owned acceptance remains unconfirmed without attributed human evidence."
+    },
+    "Receipt": {
+      "fields": {
+        "schema_version": "1",
+        "id": "unique immutable ID",
+        "check_id": "check ID",
+        "run_id": "admission ID",
+        "producer": "Producer",
+        "recorded_by": "Producer",
+        "outcome": "pass|fail|blocked|unavailable",
+        "inputs": "GuardSnapshot",
+        "prerequisite_receipts": "list[{id,sha256}]",
+        "result": "NativeResult|MetricVerdict|FindingResult",
+        "artifacts": "list[{path,sha256,bytes,media_type}]",
+        "started_at": "UTC timestamp",
+        "finished_at": "UTC timestamp"
+      },
+      "rules": "Acceptance sequence, not timestamp, proves order. Verify immutable artifact content, exact check/action hashes, relevant input hashes and prior receipt hashes. A metrics receipt wraps a matching admitted fresh standalone report; it does not relabel a previous measurement as new. Missing/malformed/stale proof blocks. Keep returned independent findings and parent dispositions separate."
+    },
+    "FindingResult": {
+      "fields": {
+        "kind": "verification|review|research|human",
+        "verdict": "VERIFIED|VERIFIED-WITH-LIMITATIONS|NOT-VERIFIED|BLOCKED",
+        "scenarios": "map[AC/scenario -> {verdict,evidence_refs,reason}]",
+        "findings": "list[{id,location,observation,blocking,evidence_refs}]",
+        "source_artifact": "{path,sha256}",
+        "disposition_refs": "list[{finding_id,path,sha256}]",
+        "human_confirmation": "confirmed|unconfirmed|not-applicable"
+      },
+      "rules": "Retain actual returned text unchanged. Missing required proof, independent roles, temporal order or human acceptance cannot be waived by VERIFIED-WITH-LIMITATIONS."
+    },
+    "Ledger": {
+      "fields": {"schema_version": "1", "slug": "slug", "events": "ordered list[Event]"},
+      "rules": "evidence\\ledger.json is sole runtime event authority. Immutable receipts/runs live under evidence\\receipts and evidence\\runs. Replace the small local ledger atomically under lock; no distributed persistence."
+    },
+    "Event": {
+      "fields": {
+        "seq": "monotonic integer assigned under lock",
+        "kind": "adopted|admitted|launch-intent|process-observed|completed|receipt-accepted|closed|interrupted|recovered",
+        "target": "Target or design revision ID",
+        "run_id": "unique ID",
+        "inputs": "GuardSnapshot",
+        "receipt_refs": "list[{id,sha256}]",
+        "producer": "Producer",
+        "outcome": "ready|awaiting-response|executed|pass|fail|blocked|unavailable|interrupted",
+        "process": "ProcessObservation|null",
+        "child_exit": "integer|null",
+        "spawned": "yes|no|unknown",
+        "completion_commit": "full SHA|null; only on closed",
+        "time": "UTC timestamp",
+        "reason": "string"
+      },
+      "rules": "Record admission/launch-intent before Popen. A missing lifecycle record after launch-intent means unknown, not no spawn. Null-command handoff awaits record, not crash recovery. Pre-snapshot on admission and post-snapshot on completion are distinct facts. Status derives unresolved process state from these events."
+    },
+    "ProcessObservation": {
+      "fields": {
+        "phase": "launch-failed|spawned|direct-exited",
+        "pid": "integer|null",
+        "process_group": "integer|null; known new Unix session group, not invented Windows tree handle",
+        "start_identity": "platform-observed process creation identity|null",
+        "identity_evidence": "capture reference|null",
+        "returncode": "integer|null",
+        "cleanup": "not-attempted|best-effort-attempted|unknown",
+        "error": "string|null"
+      },
+      "rules": "Observer receives actual Popen PID immediately after spawn and after wait, preserving existing tuple return. creation identity is populated only by supported observed platform inspection; absent is explicit null. An in-memory Popen handle is not serializable recovery authority. direct-exited never asserts that every descendant exited. Do not claim the current helper exposes these facts before implementation."
+    },
+    "RecoveryEvidence": {
+      "fields": {
+        "run_id": "unresolved admission ID",
+        "lock_token": "exact recorded token",
+        "producer": "attributed operator/verifier",
+        "kind": "known-tree-terminated|execution-environment-reset",
+        "observations": "list[{command:Command,artifact:{path,sha256},observed_at,process_identity_or_environment_identity}]",
+        "coverage": "which admitted process/tree or complete execution environment was checked",
+        "unresolved": "list[string]",
+        "review": "independent attributed FindingResult"
+      },
+      "rules": "Not a caller boolean permitting unlock. Match the unresolved run, identities and raw supported platform evidence; require no unresolved lifetime/descendant questions. Unknown-spawn recovery needs substantiated complete execution-environment reset after the launch attempt, not an arbitrary empty PID search. No reset API is provided or assumed."
+    },
+    "LockOwner": {
+      "fields": {"token": "random ID", "guard_pid": "integer", "created_at": "UTC timestamp", "run_id": "ID", "workspace": "canonical local path"},
+      "rules": "Exclusive O_CREAT|O_EXCL, never check-then-create. Guard death, lock age and token match alone do not prove child termination. Lifecycle ownership stays in ledger, not duplicated here."
+    },
+    "CurrentDesign": {
+      "fields": {
+        "schema_version": "1",
+        "revision": "ID",
+        "document": "{path,sha256}",
+        "contract": "{path,sha256}",
+        "components": "map[ID -> normative component hash]",
+        "supersedes": "revision ID|null",
+        "review": "DesignReview",
+        "history": "list[{revision,document,contract}]",
+        "reason": "string"
+      },
+      "rules": "Standalone current-design.json pointer resolves retained design-history\\REV.html and contracts\\REV.json; initial design.html remains historical after revision. Component contracts hold normative interfaces, overview links them. Pointer/history hashes must agree with adoption event. Identical relevant component hashes preserve proof; changed components reopen consumers."
+    },
+    "DesignReview": {
+      "fields": {
+        "producer": "independent reviewer Producer",
+        "designer": "Producer",
+        "candidate_hashes": "{document,components,workflow_contract}",
+        "verdict": "APPROVE|REVISE|REJECT",
+        "artifact": "{path,sha256}; unmodified independent design-review report",
+        "disposition_refs": "list[{finding_id,path,sha256}]",
+        "human_approval": "confirmed|unconfirmed",
+        "unattended_authorization": "reference|null"
+      },
+      "rules": "Same shape for initial and revised adoption; no BootstrapReview protocol. Require APPROVE with no unresolved blocking finding; preserve the original report and separate parent dispositions. Validates only design acceptance now. No old measurements, checkboxes or retroactive temporal events imported. Not used by standalone measurements."
+    },
+    "ResearchBinding": {
+      "fields": {
+        "claim_id": "stable ID",
+        "report": "research.md heading anchor",
+        "claim_sha256": "named section hash",
+        "epistemic": "FACT|INFERENCE|HYPOTHESIS|UNKNOWN",
+        "scope": "paths/queries/filters/exclusions and inspected snapshot",
+        "source_refs": "list[{path,sha256,lines,snippet_ref}]",
+        "supersedes": "list[claim ID]",
+        "correction_owner": "researcher Producer",
+        "acceptance_owner": "parent/reviewer Producer",
+        "accepted_receipt": "research receipt ID|null"
+      },
+      "rules": "research.md owns prose; this is only a dependency index. Hash claim heading through next same/higher heading. Correction gets new ID and explicit supersedes, preserving old context. Parent accepts bounded recheck. Reopen bound consumers of superseded claims. Distinguish not-found-in-scope, not-inspected, inaccessible and empty baseline; no global absence from a lone search."
+    },
+    "Readiness": {
+      "fields": {
+        "target": "Target",
+        "status": "ready|blocked|complete",
+        "due": "list[{check_id,owner,outcome:valid|missing|stale|fail|blocked|unavailable,receipt_refs}]",
+        "future": "derived list[check ID]",
+        "reopened": "list[{id,changed_prerequisites,invalidated_receipts}]",
+        "blockers": "list[{code,target,reason,owner,command_or_handoff_ref}]",
+        "next_command": "controlled workflow.py argv|null",
+        "ledger_seq": "integer",
+        "inputs": "GuardSnapshot",
+        "limitations": "list[string]"
+      },
+      "rules": "Blocked => next_command=null; remediation separately identifies owner/registered replay, not permitted dispatch. A derived response, never a second status file. State/traceability/report/communication index this result and reviewer judgments, with unconfirmed approval/publication disclosed."
+    }
+  },
+  "procedures": {
+    "edges_and_resume": [
+      "Resolve only forward requires edges. Action admission needs its Action.requires plus increment-kind edges inherited from its parent Increment.requires. It does not wait for its own increment's closing review. Check proof prerequisites are those of Check.action_id. Increment closure needs its requires and executed member actions. Ship unions all closures.",
+      "Derive reverse edges, membership, due/future lists and command replay. Changing a requires edge changes the owning record hash. Reject references to unknown IDs, cycles, orphan/duplicate check actions and missing mandatory closure proof.",
+      "For each due check recursively validate receipt bytes, relevant source/component/check/action/claim hashes, prerequisite receipts, roles/contexts and actual outcome. Unknown required measurements cannot be waived.",
+      "On changed inputs compute reverse dependency closure and reopen affected tasks/increments. Preserve unaffected receipt IDs/content. No blanket reset or copying old green status. Re-read current-design pointer on fresh-context resume.",
+      "Before spawning acquire lock and re-evaluate, then persist admission/launch-intent and call run_capture with lifecycle observer. Persist actual observation synchronously. Check input changes within observed scopes invalidate check proof. Work changes within observed scopes reopen their affected current checks; declared_changes is review guidance, not enforced write permissions.",
+      "A command returning zero records execution, not task correctness or closure. Close additionally checks feature-branch completion commit matches the proven source. Future checks do not block earlier scoped admission; final ship includes all ACs."
+    ],
+    "process_recovery": [
+      "Current run_capture keeps Popen private and its timeout monitor dies with the caller. The new synchronous observer exposes known lifecycle facts; it is not a supervisor. Guard writes durable launch-intent before entering the spawn operation.",
+      "Successful Popen triggers spawned observation with actual PID/group and any supported creation identity before the normal monitor proceeds. If observer persistence fails, stop the command best effort using the still-owned handle, report observer error and leave admission unresolved unless termination evidence is established. Do not append false no-spawn/success.",
+      "Crashes can occur between Popen and durable spawned, or between intent and Popen. Both leave spawned=unknown. No callback design can erase that interval. Guard death also does not imply child or descendants stopped; direct-exited after wait proves only that direct child.",
+      "recover with known ownership needs captured, supported platform evidence identifying the admitted process and owned descendants and establishing their termination, independently checked. A PID number alone, PID reuse, root absence or best-effort taskkill request is insufficient. If platform inspection cannot cover the tree, return RECOVERY_UNVERIFIED/exit 3 without clearing the lock.",
+      "For uncertain spawn or unidentified descendants, ordinary recovery remains blocked. Only independently checked evidence that the entire admitted execution environment was reset/terminated after the launch attempt may resolve it; otherwise keep the original workspace blocked and use a separately verified clean environment. Do not implement an orphan finder, rebooter, supervisor or imaginary host API.",
+      "Valid recovery appends interrupted/recovered with evidence and releases the matching stale lock only after confirming guard inactivity. No replay or success receipt; fresh due checks are still required. Human/null-command handoffs are awaiting-response and accept matching record without pretending a child existed."
+    ],
+    "temporal_proof": [
+      "A before-action behavioral-red/compatibility check is accepted while its pre-change source and current contracts match. Its single consuming work/retire action derives from requires. Compatibility also requires observed old/new coexistence, legacy presence and due caller/migration/rollback checks.",
+      "Consume exact receipt hashes in a durable action admission before modification/retirement. Backdated timestamps or tests after old paths disappeared cannot substitute for earlier accepted proof.",
+      "After work, retain consumed before-action proof as historical evidence tied to that admission; do not demand old bytes equal new bytes. Require separate current green/post-retirement checks. Contract/prerequisite changes reopen affected consumers; never backfill chronology."
+    ],
+    "persistence": [
+      "Independent evidence.py writes same-directory unique staging JSON, flush/fsync and os.replace; directory fsync where supported. Same-directory is for atomicity, not an OS-temp policy.",
+      "Write immutable blobs before accepting ledger references; crash-orphaned blobs are not proof. Append ledger last under expected-sequence check and exclusive workspace lock. Measurement lock is separate; child producers never reenter the guard or append its ledger.",
+      "Input hashes exclude exact owned output files so emitting metrics or ledger events cannot self-invalidate source proof. Include normative .ai contracts explicitly where relevant. Hash only declared scopes and disclose their limits.",
+      "Keep original receipts/revisions immutable. Adoption pointer/ledger mismatch fails closed until reconciled against retained hashes. Cleanup only exact owned scratch paths; do not alter old runners just to relocate private temporary directories."
+    ]
+  },
+  "document_bindings": [
+    {
+      "acs": ["AC03", "AC04", "AC05", "AC07", "AC09"],
+      "files": ["SKILL.md", "references\\workflow-gates.md (new)", "references\\planning.md", "references\\workspace.md", "references\\review-and-pr.md", "references\\delegation.md", "references\\testing-and-e2e.md"],
+      "sources": ["S6", "S7", "S13"],
+      "change": "Canonical triggers load the detailed admission reference at plan acceptance, before registered checks/work, resume and closure. Delegation briefs resolve current-design.json and provide that revision plus admitted handoff/check identity. Testing reference routes required red through before-action admission and green through current checks; direct run.py remains useful diagnostic execution but is not automatically a guarded receipt. Preserve mandatory independent fresh verifier/reviewer and explicit outside-guard limitation."
+    },
+    {
+      "acs": ["AC02", "AC09"],
+      "files": ["SKILL.md", "references\\quality-metrics.md", "references\\quality-bar.md", "references\\review-and-pr.md", "references\\final-report.md", "README.md", "docs\\architecture.md", "evals\\README.md"],
+      "sources": ["S2", "S4", "S8", "S10"],
+      "change": "Update schema/exit/pass consumers together. State unsupported coverage/architecture collection as required-unavailable, not automatic measurement. Distinguish numeric no-regression from completeness; unknown baseline never greenfield. Remove timeout kills/stale reuse and directly coupled README cold-self-review fallback. Keep eval threshold/null semantics separate."
+    },
+    {
+      "acs": ["AC07", "AC08"],
+      "files": ["SKILL.md", "references\\design-doc.md", "references\\planning.md", "references\\workspace.md", "references\\research.md", "references\\communication.md", "references\\final-report.md"],
+      "sources": ["S6", "S7", "S8"],
+      "change": "Use standalone current-design pointer/history on revision; require earlier consumed compatibility before retirement. Research corrections retain scoped claims/supersession and correction/acceptance owners. Status/traceability/messages derive readiness, not optimistic independent trackers."
+    }
+  ],
+  "compatibility": {
+    "standalone": "I1 commands remain usable without workflow artifacts. Reports identify standalone-source binding, not guarded admission. Existing project/root cwd and simple legacy command forms remain supported; ambiguous text must use new argv.",
+    "adoption": "Missing workflow/current-design blocks guarded advancement only. An ordinary source/candidate-hash-bound independent design review permits present-time adoption, not historical check migration. Unconfirmed human approval stays explicit under authorized autopilot.",
+    "thresholds": "Generic mutation 60%, independent eval 0.9 and composite null normalization are retained. Current greenfield cycle policy is tightened to no cycles, not relaxed. Missing required proof remains fail even if this means overall quality cannot yet be claimed complete.",
+    "packaging": "Existing installers copy scripts. If the existing live harness invokes the new guard, stageSkillBundle must include scripts/assets as well as SKILL/references; no new host adapter. No scratch-location-only refactor.",
+    "scope": "No historical team-planner or workflow-app-verification evidence edits. No UI surface, dependency/framework/factory, publication retry or unsupported host API. Reverting guarded capability must not downgrade old proof into readiness."
+  },
+  "verification": {
+    "status": "Proposed verification, not executed feature evidence. Later planner owns task/check IDs and exact command expansion. Parent rerenders r2; r1's reported three-page render does not verify this revision.",
+    "deterministic": [
+      {
+        "acs": ["AC01", "AC02", "AC09"],
+        "cases": [
+          "Real Git fixtures with .mjs/.cjs changes, native tests and no workflow.json/current-design.json/ledger: mutation/probe emit fresh source-only results. Missing quality collectors fail incomplete without asking for adoption.",
+          "Root with no package; nested ESM package test cwd; argv and filenames containing spaces; explicit root eval selection; source byte restoration.",
+          "Actual assertion kill versus syntax/arrow mutation, import/setup errors, empty/skipped/todo/cancelled required tests, timeouts and printed ERR_ASSERTION; never count wrong-reason kills.",
+          "Stale high-score latest report plus failed current mutation, mismatched run/input hashes, failed baseline and malformed/empty analyzer output; assert nonzero incomplete and no stale score consumption.",
+          "Pure policy/classifier boundaries; all existing thresholds and eval normalization retained."
+        ]
+      },
+      {
+        "acs": ["AC03", "AC04", "AC05", "AC09"],
+        "cases": [
+          "Real sentinel child remains absent for missing review, same context, stale/malformed proof, missing metric, edge cycle or unmet action requires. Closure-only review does not block execution of the review check itself.",
+          "Assert derived reverse/due/replay views cannot be independently authored; reject removed duplicate fields as malformed rather than choose an authority.",
+          "Start a live long-running child, persist spawned identity, terminate only the guard, then assert a second next/recover with just dead-guard/lock-age/root-PID evidence remains blocked while child is alive. Clean up only test-owned handles/PIDs.",
+          "Known-tree termination with actual platform evidence resolves interruption, not success. Unsupported tree evidence remains blocked. Inject crash after Popen before observer persistence and observer-write failure; missing PID becomes unknown, never no-spawn. Environment-reset recovery validation has positive/negative protocol cases, not a claimed live machine reset.",
+          "Observed input edit invalidates corresponding proof; outside-scope write is deliberately not claimed detectable. Receipt emission does not change source hash. Lock contention prevents two routed admissions."
+        ]
+      },
+      {
+        "acs": ["AC05", "AC06", "AC07", "AC08"],
+        "cases": [
+          "Fresh process reads artifacts only after one prerequisite changes: affected branch reopens; unrelated receipt IDs/hashes survive.",
+          "Change component/check/claim binding; only consumers reopen. Current-design history retains old revision; delegation brief resolves the new pointer.",
+          "Compatibility after retirement, backdated receipt, or already-absent legacy paths blocks before child. Valid earlier compatibility admission plus retire plus current post-checks closes while preserving historical pre-proof.",
+          "Correct research claim with explicit supersedes and both owners; status/report view cites the same due blockers.",
+          "Negative workflow evaluations pair each of absent review, setup-as-red, stale evidence, unavailable metric and premature retirement with a valid actual execution/assertion case."
+        ]
+      }
+    ],
+    "native_commands": {
+      "existing": ["node --test evals\\lib\\*.test.mjs evals\\agent\\agent.test.mjs", "node evals\\run.mjs", "node evals\\agent\\live.mjs --task paginator --dry-run"],
+      "new": ["python -B -m unittest discover -s scripts\\tests", "node --test evals\\workflow\\EXPLICIT-TEST-FILES"],
+      "rules": "Use documented native runners; expand exact files where needed. No new framework. Add actual relevant assertions and subprocess effects, not JSON snapshot-only success. Preserve private scratch ownership/cleanup; obey the execution session's restrictions without converting them into product behavior."
+    },
+    "parent_host_experiments": {
+      "acs": ["AC05", "AC06", "AC09"],
+      "separation": "Deterministic tests are not fresh-agent or blind-diagnosis evidence. Parent uses actual available fresh contexts; this CLI creates none. Missing host support is a named final limitation, not an I1 prerequisite.",
+      "resume": "Supply a new participant only the workspace path and neutral resume instruction after changing one prerequisite. No prior conversation/changed-ID hint. Capture input manifest, first status, actions and declared context. Independent evaluator checks reopened affected work, preserved unaffected proof and no blocked dispatch.",
+      "diagnosis": "Independent evaluator selects a new bounded defect/oracle after reusable participant instructions are frozen, outside fixed failure fixtures and the disclosed planner example. Seed a separate participant directory with symptom/runtime/source only; neutral fresh Git history contains no injection diff, cause, fix or solution. Keep cause/oracle/solution in evaluator context and a separate unadvertised evaluator-owned location, not participant inputs. Do not send evaluator artifacts through coordination messages before completion.",
+      "shared_filesystem": "This withholds experimental inputs; it does not prevent all filesystem access. Record shared-storage/tool capabilities and missing per-path sandbox. Retain participant input/history manifest, transcript and available tool-access records; evaluator checks for exposure/searches reaching withheld material. Cause/oracle exposure, leaked history or insufficient records to substantiate this bounded input/access claim makes blindness NOT-VERIFIED. Do not silently count it as held out or demand adversarial isolation that the host lacks.",
+      "grading": "Only after participant completes, run evaluator-held original/minimized symptom assertions and regression oracle against output. Inspect actual relevant red, supported causal diagnosis, minimized reproduction, original-case green and scope. Preserve grader command/cwd/output and raw evidence; no stdout-only pass. Release withheld manifest for independent review after grading.",
+      "record": "schema_version; experiment_id; kind resume|held-out-diagnosis; participant/evaluator Producer; instructions_hash; participant_input_manifest[{path,sha256}]; seed_history_ref; withheld_manifest_ref; access_capabilities; transcript_ref; available_access_log_refs; exposure_findings; blindness verified-bounded|not-verified; output_source_snapshot; grader_command; assertion_results; outcome verified|failed|environment-blocked; limitations.",
+      "claims": "At most one observed bounded exercise, with shared-filesystem/access-record limits explicit. No authenticated isolation, repeated uncoached study or causal/general model-effectiveness claim."
+    },
+    "final_proof": "Independent verification/review at each increment before dependent work; final existing native/eval regressions plus all due AC scenarios and separate fresh-agent experiments. Historical 51/51 and four P0 counterexamples remain baseline evidence only. Missing collectors, metrics, approval, platform recovery evidence or live experiments stay incomplete/unverified with owner and exact supported replay or named prerequisite. No hidden waiver, threshold relaxation or publication attempt."
+  }
+}

@@ -1,0 +1,350 @@
+{
+  "document": "C2 recovery authority: bounded proposed amendment",
+  "revision": "c2-recovery-r1",
+  "status": "DESIGN ONLY; parent independent review/adoption pending; human approval unconfirmed",
+  "anchor": "d971634219a633cc4401fb7dcba9685e672978aa",
+  "scope": {
+    "acs": ["AC04", "AC05", "AC09"],
+    "root_cause": "Strict Event cannot carry durable admission ownership or immutable recovery references, ResolvedLedger has no recovery observations, and unresolved() recognizes only completed. Adding recovered labels does not repair this missing authority seam.",
+    "decision": "Version the ledger envelope and new events, add typed admission ownership and immutable recovery proof, resolve it at the state I/O boundary, consume only qualified resolved facts in the pure gate. Do not fabricate terminal process observations.",
+    "qualification_decision": "BLOCKED-QUALIFICATION for actual positive known-tree or environment-reset recovery on the inspected Windows host. No complete supported platform path is established by the current runner, witness helpers or pinned diagnostic. Adopt the data/control contract separately from platform qualification; do not call all of C2 recovery implemented.",
+    "not_authorized_now": "No production/tests/shared docs/status edits, delegation, install, commit or publication. This proposal changes none of the existing artifacts.",
+    "unchanged": [
+      "WorkflowContract, CurrentDesign, Receipt, GuardSnapshot and Readiness persisted schemas",
+      "Exactly eight ProcessObservation fields; start_identity and identity_evidence remain nullable and currently unqualified",
+      "run_capture signature, tuple, observer semantics and runner-owned Popen handles",
+      "Standalone evidence.exclusive_lock and measurement behavior",
+      "Single requires graph, exact earlier receipt-reference chronology, selective freshness, evaluation-local prefix caches",
+      "Successful receipt/work/closure policy, required independent roles and all actual metric requirements",
+      "Six public workflow verbs and all options/exit conventions"
+    ]
+  },
+  "grounding": {
+    "S1": "scripts\\workflow_state.py:24-49 ReceiptObservation/ResolvedLedger/ResolvedInputs; 631-726 validate_event/validate_ledger; 877-889 load_workspace; 996-1028 append_event",
+    "S2": "scripts\\workflow_gate.py:206-221 completed; 399-418 closure_proven_before; 456-467 unresolved; 489-553 evaluate",
+    "S3": "scripts\\evidence.py:132-172 write_json_atomic/exclusive_lock: lexical finally unlink, byte/file identity check, no workflow policy",
+    "S4": "scripts\\run.py:43-79 _kill_tree/_popen; 82-212 run_capture: best-effort cleanup, nullable creation identity, synchronous observer",
+    "S5": "scripts\\tests\\test_run.py:16-51 ProcessWitness: retained Windows handle tests direct-process signalling only; 85-99 assert_observation requires null creation identity",
+    "S6": "scripts\\tests\\workflow_fixtures.py:1-5 synthetic disclaimer; 35-62 fixture; 145-184 start/finish inject synthetic process facts, not platform recovery",
+    "S7": ".ai\\workflow-reliability\\evidence\\c2b-interface-blocker.md; c2b-seam-probe.py; c2b-seam-s01.json: read complete, seven pinned inputs reconciled without rerunning the reproduction",
+    "S8": ".ai\\workflow-reliability\\design-contracts.json records/cli/procedures, design.html, guard-resolution-contract.json, state.md and continuation-plan.html/evidence\\continuation-plan-review.md C2: read, historical constraints retained"
+  },
+  "notation": "This JSON is a design specification, not a runtime schema engine or DSL. Fields listed below are exact and required unless explicitly nullable or conditional. Existing validators supply IDs, UTC timestamps, Producer, Command, FindingResult, hashes, safe relative paths, duplicate-key/unknown-key/nonfinite rejection. Integers exclude booleans. SHA-256 hashes raw artifact bytes; canonical_hash hashes record values with the current sorted UTF-8 JSON plus LF convention.",
+  "records": {
+    "LedgerV2": {
+      "fields": {
+        "schema_version": "literal integer 2",
+        "slug": "existing slug",
+        "legacy": "null or {artifact: ArtifactRef, event_count: nonnegative integer}",
+        "events": "ordered original Event prefix followed by EventV2 suffix"
+      },
+      "rules": [
+        "ArtifactRef in this amendment is exactly {path,sha256,bytes}; bytes is nonnegative and sha256 is lowercase 64 hex. This local shorthand does not change original two-field _artifact_ref, ProcessObservation.identity_evidence or FindingResult reference shapes. All persisted artifact paths are repository-relative and pass safe_path.",
+        "legacy=null means every event is EventV2. Otherwise the referenced immutable original v1 ledger must have this slug, exactly event_count events, and its decoded events must equal the entire prefix exactly, including sequence and every value.",
+        "Use evidence\\ledger-history\\<original-byte-sha256>.json under this workspace for the original bytes. No nested migrations. Reject a legacy artifact that is not a v1 ledger. Old readers reject v2 rather than silently weakening it.",
+        "All new events have schema_version=2. No new legacy event may be appended, no counter reduction, event deletion, legacy rewrite or token/identity backfill. Existing records/receipts/revisions remain historical byte-preserved artifacts.",
+        "load_workspace verifies original artifact bytes before evaluating a mixed ledger; mismatch is top-level malformed input, not a recoverable observation."
+      ]
+    },
+    "EventV2": {
+      "fields": {
+        "existing": "all original Event fields, unchanged",
+        "schema_version": "literal integer 2",
+        "lock_owner": "LockOwnerV2 on admitted only; null on every other kind",
+        "recovery_ref": "ArtifactRef on recovered only; null on every other kind"
+      },
+      "rules": [
+        "Every new admission, including external handoff, binds its owner atomically in the admission event before launch-intent/Popen. run_id equals lock_owner.run_id; owner.workspace equals canonical workspace; created_at is not later than admission.time.",
+        "Executable admission starts spawned=unknown. Handoff starts spawned=no/outcome=awaiting-response. No-spawn is never inferred from absence of an event.",
+        "For v2 runs, interrupted/recovered must have exactly the admission target and admission inputs, outcome=interrupted, process=null, child_exit=null, completion_commit=null, receipt_refs=[]. spawned equals latest actual observed state or unknown, not a synthetic terminal observation.",
+        "One interrupted then one recovered at most; recovered must follow interrupted, neither may follow completed or handoff admission. No process-observed, completed or receipt-accepted may follow interruption for that run. A new explicit next uses a new run ID.",
+        "The recovered event's producer is the recording operator, not a replacement for proof producer or independent reviewer. Only recovered owns the hash-bound reference; reason and receipt_refs never encode recovery authority.",
+        "Preserve original completion and successful receipt rules. Recovery is not completion even if the child had once returned zero."
+      ]
+    },
+    "LockOwnerV2": {
+      "fields": {
+        "schema_version": "literal integer 2",
+        "token": "random UUID hex, 32 lowercase hex characters",
+        "guard_pid": "positive integer",
+        "created_at": "UTC timestamp",
+        "run_id": "existing ID",
+        "workspace": "canonical absolute local workspace path",
+        "guard_identity": "GuardIdentity",
+        "environment_identity": "EnvironmentIdentity or null"
+      },
+      "rules": [
+        "Existing five LockOwner fields are retained; identity additions belong to the guard owner, not ProcessObservation.",
+        "The lexical execution lock serializes exactly this owner. The admitted copy in the sole ledger remains authority after lexical unlink. Match all owner fields, not just token/PID.",
+        "Never populate start/environment identities from PID, time, cwd, random token or self-declared actor. Null means unqualified; admission can still run, but positive recovery then requires separately qualified coverage and cannot assume these identities.",
+        "UUID/instance IDs prevent accidental collision, not authenticated identity. Reject token or guard instance reuse by a different admitted run."
+      ]
+    },
+    "GuardIdentity": {
+      "fields": {
+        "instance_id": "random UUID hex, 32 lowercase hex",
+        "platform": "nt|posix",
+        "start_identity": "nonempty platform-observed opaque string or null",
+        "identity_evidence": "ArtifactRef or null"
+      },
+      "rules": "start_identity and identity_evidence are both null or both present. Pair with LockOwner.guard_pid. An opaque string is only structurally valid; a qualified platform decoder must validate its meaning and the bound raw artifact. Current support records null/null."
+    },
+    "EnvironmentIdentity": {
+      "fields": {
+        "platform": "nt|posix",
+        "identity": "nonempty opaque platform/environment identity",
+        "identity_evidence": "ArtifactRef"
+      },
+      "rules": "Reserved representation, not an invented boot/reset API. Must be observed and bound before admission for reset recovery. Current inspected implementation cannot qualify one; record null in LockOwner."
+    },
+    "RecoveryBinding": {
+      "fields": {
+        "run_id": "ID",
+        "admission_seq": "positive integer",
+        "admission_sha256": "canonical_hash of the exact admission event including owner",
+        "owner_sha256": "canonical_hash of admission.lock_owner",
+        "lock_token": "exact owner token",
+        "workspace": "exact canonical owner workspace",
+        "basis_seq": "positive integer, >= admission_seq",
+        "basis_sha256": "canonical_hash of ordered ledger events through basis_seq inclusive",
+        "adopted_contract_sha256": "then-current adopted contract hash at basis_seq"
+      },
+      "rules": "Bind both the historical admission and current adoption at validation. Never substitute latest admission by target or rewrite the admission to current inputs. Basis must be the entire ledger immediately before the recovery's interrupted event. Later evidence cannot backfill an earlier recovered event."
+    },
+    "RecoveryEvidenceV2": {
+      "fields": {
+        "schema_version": "literal integer 2",
+        "id": "unique immutable recovery ID",
+        "binding": "RecoveryBinding",
+        "producer": "existing Producer, role verifier or human",
+        "kind": "known-tree-terminated|execution-environment-reset",
+        "observations": "nonempty list[RecoveryCapture], unique capture IDs and normalized paths",
+        "unresolved": "list[nonempty string]; must be empty for positive acceptance",
+        "review": "RecoveryReview"
+      },
+      "rules": [
+        "Owned canonical path evidence\\recoveries\\<id>.json; external --evidence PATH is read safely, validated and copied without rewriting its bytes into that path before the ledger reference is appended. No overwrite, no latest alias.",
+        "Caller submission is data, never a status certificate. No valid, terminated, reset=true or allow_unlock input flag exists.",
+        "Subject digest is canonical_hash of exactly schema_version,id,binding,producer,kind,observations,unresolved; excluding review avoids recursive hashes. Review subject_sha256 must equal this digest.",
+        "Every capture artifact and review artifact is hash/size verified, under safe_path, before decoding. Unsafe links/traversal, duplicate keys, unknown versions and malformed shapes reject. Artifact hash match alone does not establish termination.",
+        "Evidence is stale if its basis/adoption/owner changes before interruption, or a capture/review is newer than its recovered event. It is immutable historical recovery after acceptance: subsequent unrelated source/adoption changes do not undo established death, but changed proof bytes or unsupported validator do."
+      ]
+    },
+    "RecoveryCapture": {
+      "fields": {
+        "id": "ID",
+        "subject": "guard|child-tree|environment",
+        "command": "existing Command describing the real capture invocation",
+        "artifact": "ArtifactRef",
+        "observed_at": "UTC timestamp"
+      },
+      "rules": "No handwritten parse of arbitrary stdout and no executable expression. Qualified adapter decodes the raw artifact's identities, lifetime coverage and temporal facts; the subject label is not evidence. Capture commands are provenance, never automatically executed from --evidence. Require guard capture plus the selected lifetime coverage capture. Captures must follow admission and any launch-intent; UTC is checked but sequence/hash establishes ledger chronology."
+    },
+    "RecoveryReview": {
+      "fields": {
+        "producer": "Producer with role verifier",
+        "subject_sha256": "subject digest defined above",
+        "result": "existing FindingResult with kind=verification",
+        "artifacts": "list[ArtifactRef] covering source_artifact, dispositions and every evidence_refs path"
+      },
+      "rules": [
+        "Reviewer context differs from evidence producer and admission producer. EventV2 admission producer must equal the registered Action.owner at admission; next enforces this under the current adoption. Actor account may be shared. Reviewer must inspect exact subject-bound captures. This recovery-only attribution rule does not replace or relax existing ordinary receipt independence from all implementers.",
+        "Require VERIFIED or VERIFIED-WITH-LIMITATIONS, no blocking findings, human_confirmation=not-applicable, and scenarios guard-inactive, lifetime-covered, binding-matched with verified verdicts and nonempty declared evidence references.",
+        "Do not waive missing identity/tree/platform evidence through limitations. Semantic platform validator must separately pass; self-declared independent review is neither authentication nor sufficient proof."
+      ]
+    },
+    "RecoveryObservation": {
+      "kind": "frozen ordinary Python dataclass, materialized only",
+      "fields": {
+        "status": "valid|missing|stale|invalid|unverified",
+        "document": "validated RecoveryEvidenceV2 or null",
+        "observed_sha256": "observed raw evidence hash or null",
+        "artifacts": "mapping path -> existing receipt-style existence/hash/size observations",
+        "facts": "QualifiedRecoveryFacts or null",
+        "reason": "diagnostic; empty only if valid"
+      },
+      "rules": "valid requires nonnull facts from the trusted qualified decoder plus successful structural, binding and review checks. No deserialization of this dataclass from user JSON. Missing map entry cannot default to valid."
+    },
+    "QualifiedRecoveryFacts": {
+      "kind": "frozen ordinary Python dataclass, materialized only",
+      "fields": {
+        "qualification_id": "fixed code-supported adapter/version ID",
+        "evidence_sha256": "raw evidence hash",
+        "subject_sha256": "review-bound subject digest",
+        "binding": "RecoveryBinding",
+        "guard_identity": "exact admitted GuardIdentity",
+        "guard_pid": "exact admitted guard_pid",
+        "guard_inactive_at": "UTC timestamp established by decoded platform evidence",
+        "coverage": "known-tree-terminated|execution-environment-reset",
+        "covered_identity_sha256": "canonical hash of qualified admitted child identity or admitted EnvironmentIdentity",
+        "lifetime_ended_at": "UTC timestamp established by decoded complete coverage evidence",
+        "artifact_sha256s": "mapping of every decoded platform artifact path -> actual hash"
+      },
+      "rules": [
+        "A qualifier produces these facts only after proving the exact guard inactive and complete admitted lifetime coverage, including descendants and any unknown-spawn interval. Guard start identity/evidence must be nonnull and match the durable owner; missing guard creation identity cannot qualify. A caller cannot supply these facts through the CLI.",
+        "Known-tree requires actual nonnull admitted spawn creation identity/evidence and exhaustive supported descendant coverage. A live-process snapshot alone cannot establish that departed/reparented descendants are absent.",
+        "Reset requires nonnull pre-admission EnvironmentIdentity plus qualified complete-environment reset after launch intent. A clean directory, new worktree, current boot string or operator assertion is insufficient.",
+        "Current null identity, unsupported creation identity, missing guard match, unknown spawn, unknown descendants or unsupported reset format yields unverified; never fake facts to exercise a CLI positive.",
+        "These in-memory values have the same trust boundary as resolved receipts: Python callers can construct them. Tests may explicitly label synthetic values; the production CLI must exclusively use the state resolver and real qualified decoder."
+      ]
+    }
+  },
+  "interfaces": [
+    {
+      "component": "scripts\\workflow_state.py",
+      "signatures": [
+        "validate_event(value: dict, *, legacy: bool = False) -> None",
+        "validate_ledger(value: dict) -> None",
+        "verify_legacy_prefix(root: Path, ledger: dict) -> None",
+        "validate_lock_owner(value: dict) -> None",
+        "validate_recovery_evidence(value: dict) -> None",
+        "resolve_recoveries(root: Path, slug: str, ledger: dict) -> dict[str, RecoveryObservation]",
+        "resolve_recovery_candidate(root: Path, contract: dict, ledger: dict, evidence_path: Path, *, run_id: str, lock_token: str) -> RecoveryObservation",
+        "qualify_recovery(document: dict, captures: dict[str, bytes], admission: dict, basis_events: list[dict]) -> QualifiedRecoveryFacts | None",
+        "load_workspace(root: Path, slug: str) -> tuple[dict, dict, ResolvedLedger]",
+        "append_event(workspace: Path, event: dict, expected_seq: int) -> dict",
+        "upgrade_ledger(workspace: Path, expected_seq: int) -> None"
+      ],
+      "delta": "ResolvedLedger adds recoveries: dict[str, RecoveryObservation] with default_factory=dict for existing two-positional-argument callers. Map key is recovery evidence SHA-256, not run ID or target; repeated/conflicting IDs reject. resolve_recoveries only traverses actual recovered references, not orphan blobs. validate_ledger checks schemas/count/sequence purely; verify_legacy_prefix verifies archive bytes and equality in load_workspace, bind_inputs and append_event before any decision/write. load_workspace also checks design and resolves reference bytes. append_event rejects missing/tampered/unqualified recovery references before atomic append, using the same resolver as recover. upgrade_ledger is called only by locked adopt, preserving original bytes before replacing envelope.",
+      "principle": "AC04/05/09: reuse receipt-resolution boundary and dataclasses; single authoritative ledger, no new framework. qualify_recovery is a specified interface for later qualified support, not permission to ship a success stub or an always-blocked placeholder labeled complete.",
+      "qualification_split": "Do not implement a pretend adapter in C2R-D. The no-qualified-adapter result is an explicit unsupported capability diagnostic in the real resolver. C2R-P must supply and qualify actual decoder support before any live positive acceptance claim."
+    },
+    {
+      "component": "scripts\\workflow_gate.py",
+      "signatures": [
+        "evaluate(contract, ledger, inputs, target) -> dict (unchanged public signature)",
+        "_Evaluation.recovery_resolves(run_id: str) -> bool",
+        "_Evaluation.unresolved() (existing generator)"
+      ],
+      "delta": "Only unresolved changes its lifetime predicate: existing valid completed OR a recovered event with exact validated materialized facts. recovery_resolves independently matches ref/hash, run/admission/owner/basis/adoption, event ordering and fact coverage; label/status without facts is insufficient. No I/O/callback/global cache. completed, _execution and _receipt never count recovery as execution. closure_proven_before passes recoveries to ResolvedLedger(prefix, receipts, recoveries); recovery_resolves only uses events and exact basis within that prefix, never future recovered facts. Legacy archive verification is the trusted load boundary, like receipt artifact resolution, not gate filesystem work.",
+      "principle": "AC04/05/09: pure policy over materialized facts; memoization remains per evaluation/prefix. No ledger filtering or alternate readiness. No graph change.",
+      "qualification_split": "Unit positive may construct labeled synthetic QualifiedRecoveryFacts to prove the policy implication, not actual platform validity."
+    },
+    {
+      "component": "scripts\\workflow.py (planned, not present)",
+      "signatures": [
+        "main(argv: list[str] | None = None) -> int (six verbs unchanged)",
+        "new_lock_owner(workspace: Path, run_id: str) -> dict",
+        "recover_run(root: Path, slug: str, run_id: str, lock_token: str, evidence_path: Path) -> int"
+      ],
+      "delta": "next serializes durable owner into admitted before launch intent and run_capture. recover reads actual ledger owner, validates candidate through state, records interruption/recovery without Popen and never rewrites old lifecycle. status/next/record/close/adopt resolve the same ledger, even if execution lock disappeared.",
+      "principle": "AC04/05/09: command boundary orchestrates mechanisms; no serialized handles, new process supervisor, recovery booleans, caller command overrides or copied status authority."
+    }
+  ],
+  "migration_and_read_rules": [
+    "v1 load/evaluate remains available for historical inspection with existing successful completion/receipt policy; absent recovery fields never imply authority. In-memory legacy recovered labels still cannot resolve an unresolved executable admission.",
+    "No mutating CLI verb appends to v1 except adopt's explicit upgrade. New guarded execution requires v2 and a reviewed current-design adoption containing this amendment. Merely changing schema_version is invalid.",
+    "upgrade_ledger requires expected sequence and held mutation lock, valid old ledger/design, and no executable admission without completed, regardless of interrupted/recovered labels. Legacy unresolved runs with no durable owner cannot be recovered in place under this amendment. Report legacy authority unavailable, preserve their workspace/evidence and use the separately verified clean-environment alternative.",
+    "Persist the exact original v1 bytes at the immutable history path with exclusive creation, flush/fsync, hash/size verification; if it already exists require identical bytes. Then atomically write the v2 envelope with unchanged original event values as prefix. No copying old runs into new admissions.",
+    "Adopt then appends a normal EventV2 adopted fact and publishes the reviewed pointer using existing fail-closed mismatch rules. There is no multi-file transaction claim: crash between envelope/adoption/pointer writes blocks mutation until the exact retained hashes/sequence are reconciled by adopt, without inventing historical approval.",
+    "Original v1 pending handoffs retain receipt semantics; a new EventV2 acceptance for that original handoff may be appended after upgrade. No owner may be retrofitted to its old admission; recovery is never used to resolve handoff.",
+    "Unknown versions, mixed unmarked legacy events, missing original archive or invalid pointer/adoption cause input error 2. No permissive legacy fallback. Old evidence artifacts and prior independent results are preserved as historical, not new-byte proof."
+  ],
+  "flows": {
+    "pure_recovery_predicate": [
+      "Find exactly one recovered event for this run in this evaluator's events and its immediately preceding matching interrupted event; their seq must equal binding.basis_seq+2 and +1. Find the earlier v2 admission and owner; legacy/null owner cannot qualify.",
+      "Get ledger.recoveries[recovered.recovery_ref.sha256]. Require status valid, nonnull document/facts, matching observed raw hash and exact expected artifact sizes/hashes. Require document.id/path binding and every fact artifact hash equal the corresponding observed capture. No missing/stale artifact observation is permitted.",
+      "Recompute canonical admission hash, owner hash, exact ordered prefix hash and adoption hash from these events. Match every RecoveryBinding field, evidence kind/subject digest, reviewer subject digest and facts.evidence_sha256. Reject a matching run ID with a different target/owner/guard or an out-of-prefix recovered event.",
+      "Require fact guard PID/identity exactly match nonnull qualified admission owner. All capture, guard-inactive and lifetime-ended times must be >= the latest admission/launch/lifecycle observation time through basis and <= recovered.time. The platform qualifier must establish their semantic order, not just parse timestamps.",
+      "For known-tree require one admitted spawned observation with nonnull start_identity/identity_evidence and compare covered_identity_sha256 with canonical_hash of exactly {pid,process_group,start_identity,identity_evidence} from that observation. For reset require nonnull owner.environment_identity and compare its canonical hash. Unknown root identity cannot use known-tree; unknown spawn can use only independently qualified complete environment reset.",
+      "Require kind/coverage agreement, no unresolved questions and qualified semantic facts plus independent review. Return true only for lifetime resolution. Callers may not use this boolean as successful work/receipt proof; completed retains its original rejection of interrupted/recovered runs."
+    ],
+    "admission": [
+      "Acquire the short acquisition/recovery claim described below, then acquire lexical execution lock with newly generated LockOwnerV2. Load/adoption-check/bind/evaluate under ownership; block without spawn on any failure.",
+      "Atomically append admission containing full owner; append launch-intent under expected sequence. Release acquisition claim before capture, retain execution lock. A failure before durable admission permits no Popen. An intent/Popen gap remains unknown.",
+      "Pass existing synchronous observer to run_capture; append only actual eight-field process facts. Observation write failure leaves admission unresolved, despite eventual lexical lock finally-unlink. Do not infer no-spawn or tree death."
+    ],
+    "recovery": [
+      "Acquire exclusive short recovery claim; never steal a live/uncertain claim. Load all authority, resolve exact run/token and inspect execution lock if present. Candidate basis must match current full ledger/adoption; there must be no completed/recovered for the run.",
+      "Resolve immutable captures, semantic platform qualification, independently attributed review and exact guard inactivity. If any fact is unsupported or uncertain return 3 with RECOVERY_UNVERIFIED, no ledger append/unlink/spawn.",
+      "Copy unchanged candidate to exclusive immutable recovery ID path and verify bytes. Append interrupted at basis_seq+1, then recovered at basis_seq+2 referencing those bytes, expected-sequence checked, before releasing any stale execution lock. Keep admission inputs in both events.",
+      "Re-load/resolve the reference and evaluate. Only if qualified recovery resolves that run, and the current execution lock still matches every durable owner field and physical file identity/bytes, remove that stale lock. Missing execution lock is not an error and was never evidence.",
+      "If interruption was appended but recovered was not, an identical evidence retry is allowed only when ledger is exactly its basis plus that single matching interrupted event, with no intervening event/adoption. Recheck all evidence, append only recovered. If basis is stale, retain interruption and return 3 for parent/operator reconciliation; never rewrite it.",
+      "If recovered already exists, an exact run/token/evidence retry revalidates it and only finishes matching stale-lock cleanup; no duplicate event. Different evidence on the same run conflicts. If proof was tampered/missing later, leave blocked.",
+      "Release recovery claim; return 0 for accepted interruption only. Never spawn/replay, record a success/red receipt, count executed work or close. Future explicit next still evaluates all ordinary due prerequisites and uses a fresh run."
+    ],
+    "acquisition_serialization": [
+      "Guard-only convention, not standalone evidence.py change: every mutating CLI path takes evidence\\guard-acquire.lock via existing exclusive_lock while acquiring its execution lock or replacing/removing a stale one. recover keeps this short claim through validation/append/unlink. Normal next holds it only through admission/intent and releases it before capture; the normal execution lock remains held through completion.",
+      "Normal record/close/adopt use the same acquisition order, acquire their normal mutation/execution lock, and release the acquisition claim. Observer appends remain protected by their held execution lock; recover may not modify anything while that original guard is active.",
+      "This second file is a lexical collision-exclusion mechanism only, never a second process tracker or recovery authority. It is needed because stat/read/unlink alone cannot prevent another compliant CLI from replacing a stale lock between checks.",
+      "Claim contention or an orphaned claim is conflict 3; no age/PID-based deletion and no recursive auto-recovery of this claim. Until a qualified guard-inactivity/exclusive-maintenance path is supplied, such a crash remains explicitly blocked. This liveness limit must be exercised and disclosed, not silently bypassed.",
+      "Do not delete the current execution lock from inside its own exclusive_lock context. Stale release occurs only in recover under the distinct acquisition claim, after exact qualified guard inactivity. External hostile writers remain outside the cooperative local-file trust boundary."
+    ]
+  },
+  "platform_qualification": {
+    "current_fact": "The runner emits null creation identity/evidence; Windows CREATE_NEW_PROCESS_GROUP is not a durable descendant containment object. _kill_tree checks root poll and performs best-effort taskkill. ProcessWitness retains an in-process direct handle, which cannot be serialized or re-opened safely from PID alone. No inspected artifact establishes a complete tree/reset or original guard-creation validator.",
+    "supported_positive_now": "NONE established for the requested recover kinds. No OS reset, kill, new process experiment or broad capability research was performed in this design task.",
+    "required_before_C2R_P": [
+      "Choose exactly one real existing host/platform evidence producer, inspect its actual interface/raw output, and qualify a stable guard creation identity captured before admission. Record producer/decoder version and supported platform range in code, not caller metadata.",
+      "Prove either complete non-escaping admitted tree lifetime coverage with durable identity, or complete admitted execution-environment reset bound to pre-admission identity. Tests must include escaping/reparented descendants or reject environments where that cannot be established.",
+      "Specify the concrete raw capture format and deterministic decoder checks; map parsed identities, times and coverage to QualifiedRecoveryFacts. Unknown output/errors/partial enumeration/PID reuse return unverified. Independent reviewer attribution alone never suffices.",
+      "Qualify concurrent recovery/acquisition, crash at each write boundary and guard inactivity recheck through stale-lock release. No assumed atomic compare-and-unlink API.",
+      "Run a real owned CLI positive and negatives on that supported path without synthetic platform status. Preserve commands, raw bytes, hashes, cleanup and independent verification/review. Only then advertise that path."
+    ],
+    "concrete_split": "C2R-D implements and verifies the finite data/control seam and explicit unsupported outcomes; C2b may resume six-verb dispatch/record/adopt/status/close and real negative recovery/resume scenarios after its independent acceptance. C2R-P remains a separately scoped platform-qualification prerequisite for live positive recovery. Do not implement general supervision or expand run.py here. Parent must adopt this split as a limitation rather than mark complete AC05.",
+    "alternative": "If no qualified existing platform path is available, leave the affected original workspace blocked and preserve its entire ledger. Continue only in a separately verified clean execution environment whose separation from the unresolved child is established externally, with new workflow adoption and fresh required checks; no old success/temporal receipts are imported. A new directory/worktree on the same machine is not itself this proof.",
+    "separate_blockers": "Q2-Q5 actual metrics, later host experiments, independent acceptance, human approval and publication remain separate; recovery schema work does not solve or waive them."
+  },
+  "errors": {
+    "2": "Malformed top-level ledger/design/schema/path/unknown ID, malformed submitted RecoveryEvidence or illegal event chronology; unknown schema versions; migrated archive mismatch. No writes or spawn.",
+    "3": "Lock/sequence conflict; valid-shaped recovery lacks qualified coverage, independence or identity; missing/tampered/stale referenced recovery evidence; cross-run/token/owner/adoption/basis mismatch. Report structured RECOVERY_UNVERIFIED for lifetime uncertainty; never clear block.",
+    "1": "Ordinary proof/policy block unchanged. next seeing unresolved lifetime does not spawn; recover itself uses 3 for uncertainty. status displays authoritative blocked Readiness and existing status exit policy.",
+    "0": "Recovery accepted only as interruption. Existing child exit/structured outcome policy otherwise unchanged.",
+    "resolver_distinction": "A malformed CLI candidate is input error 2. A referenced blob that has since become malformed is RecoveryObservation invalid and keeps the existing ledger blocked; do not discard the admission or crash through to a permissive view."
+  },
+  "verification": {
+    "classification": "Planned tests, not executed; pure protocol positives are explicitly synthetic, actual CLI positives require C2R-P.",
+    "state_matrix": [
+      "v1 historical successful receipts retain exact bytes/order; unresolved v1 cannot upgrade/recover; old labels are not accepted; fresh v2 cannot omit owner",
+      "v2 envelope archive hash/count/slug/prefix mismatch, new legacy suffix, unknown versions/fields, duplicate keys/IDs/tokens, boolean integer, nonfinite value, unsafe/link/alias path reject",
+      "owner mismatch for run/token/workspace/guard identity; recovered before admission, before interruption, after completed, duplicate recovery, mismatched target/snapshot or post-interruption completion reject",
+      "missing/tampered/byte-length-changed capture, evidence and review; valid hash but semantically unsupported format; wrong review subject/context/scenario; caller terminated boolean reject",
+      "stale basis, cross-run candidate, wrong token, wrong admission hash, future timestamp, changed guard start identity and pointer/adoption mismatch never append/unlink",
+      "atomic migration/reference-before-ledger writes; no overwrite immutable ID; one interrupted partial retry and exact recovered cleanup retry; stale retry refuses without rewriting history"
+    ],
+    "gate_matrix": [
+      "admission+intent+labels stays blocked even with lexical lock absent",
+      "labeled synthetic valid RecoveryObservation plus QualifiedRecoveryFacts clears only lifetime blocker; recovered work/check has no executed success/red/proof/closure",
+      "status valid without facts, wrong fact/hash/binding/coverage, missing map entry, tampered reference or future recovery in an earlier prefix stays blocked",
+      "unrelated valid receipts survive recovered run and unrelated adoption; changed relevant prerequisites still reopen consumers",
+      "original exact-ID/hash backfill tests, failed/no-spawn producer tests, UTC and metric comparison regressions remain green; prefix evaluator counts remain linear in prefix count",
+      "evaluate on materialized views with file/process APIs forbidden; no callback, global cache or serialized resolved view"
+    ],
+    "cli_matrix": [
+      "actual blocked sentinel, durable admission owner before Popen, normal capture, lexical unlink exception, observer-write failure, guard death and unknown gap: no subsequent child",
+      "unknown identity, root absence/direct exit, taskkill request, PID reuse/absence/age, unknown descendants and unqualified reset: recover=3, no unlink or success",
+      "all six verbs retain exact options and structured outcome semantics; actual missing quality stays blocked, never use synthetic metrics as CLI positive",
+      "two compliant acquisitions/recoveries cannot unlink each other's owner; orphan acquisition claim fails closed",
+      "C2R-P only: real qualified recovery clears lifetime, stale lock removed after matching guard inactivity, no auto replay, work/check/closure still missing, a subsequent explicit admitted action follows unchanged gates"
+    ],
+    "implementation_group": {
+      "C2R-D_order": [
+        "After parent independent design review/adoption: state strict records, archive migration and immutable resolver with finite semantic binding tests",
+        "Pure gate recovery predicate and prefix propagation, preserving completed/receipt/closure logic",
+        "CLI durable admission and recover orchestration, conservative unsupported-platform outcomes, owned real negative crash/lock tests and exact retry semantics",
+        "Focused state/gate regressions plus unchanged evidence/runner tests; separate verifier then reviewer; parent may resume remaining C2b only after accepting this partial seam"
+      ],
+      "files": [
+        "scripts\\workflow_state.py",
+        "scripts\\workflow_gate.py",
+        "scripts\\tests\\test_workflow_state.py",
+        "scripts\\tests\\test_workflow_gate.py",
+        "scripts\\tests\\workflow_fixtures.py (explicit separate legacy/v2 synthetic builders, never silently upgrade old fixtures)",
+        "scripts\\workflow.py and scripts\\tests\\test_workflow_cli.py (C2 owner after seam acceptance)"
+      ],
+      "regression_reopen": "Reopen C1 strict serialization/load/append/path/adoption proof, all ResolvedLedger construction/prefix/cache proof, unresolved/no-spawn/execution/receipt/closure chronology, selective resume and integrated C1 caller evidence on changed bytes. Preserve old 83-workflow+10-evidence/121-method results as historical, not new-byte acceptance. C2a runner remains byte-frozen; rerun focused callers, not relabel its prior evidence. No Q collector redesign.",
+      "execution_recipe": "Later implementation, not this design run: managed P with PYTHONDONTWRITEBYTECODE=1; P -B scripts\\run.py --idle 30 --max 90 -- P -B -m unittest discover -s scripts\\tests -p test_workflow_state.py -v; same for test_workflow_gate.py. Split existing named methods into bounded batches if required; no zero-test pass or raising this assignment's limits. Fresh verifier/reviewer and broad regression budgeting belong to parent after implementation.",
+      "context_bound": "One context for C2R-D state/gate finite seam and its tests, with no platform experiments or collector work. CLI integration remains the already assigned following C2b context, not a concurrent frozen-file writer. C2R-P has its own qualification decision before implementation."
+    }
+  },
+  "alternatives": [
+    {"choice": "reason-encoded owner, second process tracker, filtered ledger", "decision": "reject", "why": "AC04/05 single typed authority; diagnostics and duplicated views cannot authorize dispatch"},
+    {"choice": "recovered label or successful completed with fake lifecycle", "decision": "reject", "why": "AC04/09 conflates lifetime safety with executed work and can backfill quality"},
+    {"choice": "extend ProcessObservation or serialize Popen/witness handles", "decision": "reject", "why": "AC09 preserves eight-field observer; handle lifetime is not durable platform evidence"},
+    {"choice": "optional authority on all old events", "decision": "reject", "why": "AC05/09 would silently grandfather unknown runs; explicit v2 envelope and immutable original prefix bound compatibility"},
+    {"choice": "change evidence.exclusive_lock finally behavior", "decision": "reject", "why": "AC09 breaks unrelated standalone measurement; durable admission must survive lexical cleanup"},
+    {"choice": "new framework, recovery DSL or generic platform callback supplied by caller", "decision": "reject", "why": "AC04/05 small dataclasses and code-owned qualified decoder suffice; arbitrary callback/status is not evidence"},
+    {"choice": "assume Windows taskkill or root witness proves full tree", "decision": "reject", "why": "S3-S5 establish only best-effort/direct process facts, not creation identity, descendants or reset"},
+    {"choice": "split contract integration from actual positive platform qualification", "decision": "selected proposal", "why": "AC04/05/09 removes the representation blocker without inventing capability or hiding the remaining live positive blocker"}
+  ]
+}
