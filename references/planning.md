@@ -16,6 +16,10 @@ the accepted `research.md`, approved `design.html`, applicable design-review dis
 existing plan/task records. Confirm that the files are accessible and that the design approval
 and source snapshot still apply. Record the plan revision/date and the research/design versions
 or commits it consumes, including relevant uncommitted changes.
+For an adopted workspace, resolve the current design/contract through
+`current-design.json` per [workspace.md](workspace.md); do not use an old overview as live
+authority. Initial procedural planning prepares the candidate and does not require a
+pre-existing adoption.
 
 The parent owns scope, ordering, Gate 3, and any user approval. **Non-trivial planning defaults
 to a bounded, fresh-context subagent** per `delegation.md`, given the accepted research, approved
@@ -87,6 +91,13 @@ internal task of a session-sized integrated increment, not a completed but broke
 If no safe grouping exists, stop and revise the migration design instead of promising green
 only at the end. This is compatibility scaffolding with planned removal, not indefinite duplication.
 
+For guarded retirement, register a `retire` action with its legacy scope and expected legacy
+presence, requiring a `compatibility` check with `validity="before-action"`. Accept that check
+while legacy and replacement coexist, **before** admitting retirement. The consuming admission
+must carry the exact earlier receipt reference; test caller migration/rollback and then current
+post-retirement behavior separately. A final green test or backdated receipt cannot establish
+earlier compatibility. See [workflow-gates.md](workflow-gates.md#execution-and-returned-evidence).
+
 Use the fields below for each task, compactly. Share common setup/check definitions by ID and link
 them rather than repeating them. Mark genuinely inapplicable fields N/A with a reason.
 
@@ -148,6 +159,22 @@ Use **one authoritative copy** of each record. Do not create `tasks.md` when it 
 or duplicate records in HTML and Markdown. `state.md` tracks phase/increment and points to the
 next task; `traceability.md` maps ACs to task/check IDs and evidence. Those are indexes, not
 alternative plans. Verify all artifact paths/anchors are reachable from a fresh agent's workspace.
+
+### Registering the guarded projection
+
+Before dispatch, follow [workflow-gates.md](workflow-gates.md) for the existing strict
+`WorkflowContract`, `CurrentDesign` and `DesignReview` shapes and ordinary adoption.
+`Action.requires` owns admission edges; `Increment.requires` owns closure edges.
+Commands and owners live in that contract; membership, reverse dependencies and readiness
+are derived. Narrative plans link those IDs instead of copying a second live graph or command
+registry. Keep mandatory metrics, independent verification and review in closure requirements.
+An action can be ready while its increment cannot close; successful execution is not acceptance.
+
+After adoption or revision, run actual `status` for the target, then `next` only for its
+registered action. A null command is an admitted handoff, not an automatic agent launch.
+Preserve runtime-referenced IDs and executable/handoff classification when staging revisions.
+Do not mutate the live workflow/pointer to make an action ready. Missing positive metric
+attachment blocks quality closure; it is not a reason to drop required checks.
 
 ## 6. Accept the handoff (Gate 3)
 

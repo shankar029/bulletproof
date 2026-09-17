@@ -1,6 +1,7 @@
 # Using Bulletproof
 
-[README](../README.md) · [Install](../README.md#quick-start) · [Measurement guide](../references/quality-metrics.md)
+[README](../README.md) · [Install](../README.md#quick-start) ·
+[Operator guide](../references/workflow-gates.md) · [Measurement guide](../references/quality-metrics.md)
 
 Bulletproof is a delivery skill with per-host launchers. You supply the requirement; the
 agent follows a source-backed design, implementation and verification workflow. Its tools
@@ -29,6 +30,13 @@ Use the repository's documented runtime requirements for the application being c
 Bulletproof's Python utilities and native Node reporter have their own requirements; the
 [measurement guide](../references/quality-metrics.md) describes their supported routes.
 Browser verification additionally requires agent-browser and its browser runtime.
+
+Keep the complete installed `scripts/` directory together, not only `workflow.py`: its
+imports and native reporter are part of the runtime. Existing installers and live-harness
+bundle staging already copy the complete scripts/references/assets payload; no new install
+step or bootstrap generator is needed. Operator examples shown from this checkout use
+relative script paths; from your application use the verified installed script paths and
+pass the application's actual Git root as `--repo`.
 
 ## 2. Describe the outcome
 
@@ -83,11 +91,27 @@ Silence is not approval. If you want unattended execution, say so explicitly:
 An unattended design assumption must remain labeled as such; it is not a human approval receipt.
 External actions remain subject to the host's permission rules.
 
+Initial research, design review and planning are procedural and produce a candidate before
+adoption. For guarded work, the [operator guide](../references/workflow-gates.md) explains
+immutable revision staging and ordinary `adopt` (event → workflow → pointer). Never copy a
+candidate directly onto the live pointer or mark earlier work admitted after the fact.
+On later revisions, old documents remain history; `current-design.json` selects the current
+retained document/contract. An exported HTML decision alone is not runtime adoption.
+
 ## 4. Follow the evidence, not the activity
 
 The plan should identify independently useful increments, their dependencies, exact checks,
 owners and expected results. During implementation, expect concise updates when a phase,
 decision or blocker changes rather than a stream of tool narration.
+
+After adoption, expect updates derived from actual `status` for the intended target.
+`next` runs only a registered action; `record` accepts an admitted return without changing
+its producer. Null-command handoffs do not launch an agent—the host must supply the actual
+fresh role. Ready action, executed command, accepted check and closed increment are different.
+Required red and compatibility receipts must precede the action consuming them.
+Corrected research retains superseded claims and source/search scope instead of silently
+rewriting history. Direct test commands remain development/diagnostic evidence, not guarded
+receipts. These checks do not authenticate declared roles or prevent access outside the CLI.
 
 Meaningful proof includes actual test assertions and the real interface: browser flows,
 HTTP requests, CLI execution or library calls. A process failing to start is not a behavioral
@@ -104,12 +128,17 @@ Give a fresh agent the same repository and task workspace:
 > prerequisite evidence before dispatching the next task.
 
 The entry point is `state.md`, followed by the referenced design, plan and traceability.
+For adopted work, resolve `current-design.json` and run actual `status` before dispatch.
+An inconsistent live workflow/pointer is a blocker, not a reason to use an older overview.
 The agent must revalidate affected evidence after source or requirements change. Preserve
 unaffected proof; do not erase the workspace or restart discovery just because the chat is new.
 
 The workspace is durable context, not a promise of automatic recovery after every process
 failure. A dead parent process does not establish that its children stopped. Do not delete
 locks or replay a command solely because the lock looks old.
+There is no `recover`, reset or orphan-lock-steal command. Repeating exact adoption after an
+ordinary exception unwinds may complete finite metadata publication states; that is not
+recovery after process death. Preserve uncertain lifetime evidence and report the blocker.
 
 ## 6. Read the final report
 
@@ -128,6 +157,17 @@ The main handoff is `.ai/<slug>/report.html`. It should answer:
 source under `evidence/runs/<run-id>/`; read those bindings before reusing a result.
 The standalone mutation tool no longer publishes a latest `mutation.json` alias.
 
+Currently all nine quality metrics remain mandatory, and registered metric commands run
+unchanged but produce no accepted guarded metric receipt. Successful attachment needs the
+later producer-owned ID/registered-argv/source-projection/raw-validation bridge. `close`
+checks Git then mandatory gates, but positive quality closure is unavailable.
+Configured collectors currently cover the Python graph and qualified tool-binding smoke,
+not complete shared-JS/scalar/coverage/mutation collection. A symlink-creation test remains
+Windows-environment-unverified (`WinError 1314`), and earlier timeout cleanup remains UNKNOWN.
+Do not read a selected passing suite as full-quality or cross-platform proof.
+Historical planner 37-test/coverage and 29-feature evaluation statistics retain their original
+scope; they are not today's root-quality dashboard.
+
 ## Common problems
 
 | Symptom | What to do |
@@ -145,6 +185,8 @@ The standalone mutation tool no longer publishes a latest `mutation.json` alias.
 ## Choose the right deeper guide
 
 - [Planning](../references/planning.md): executable handoffs, compatibility and revision.
+- [Workflow operator guide](../references/workflow-gates.md): adoption, five ordinary verbs,
+  evidence/status, closure denial and unsupported recovery.
 - [Workspace](../references/workspace.md): state, traceability and evidence freshness.
 - [Quality metrics](../references/quality-metrics.md): tool support, completeness and mutation.
 - [Whole-app delivery](../references/app-scale-delivery.md): walking skeleton and vertical slices.

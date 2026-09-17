@@ -71,6 +71,18 @@ When finished, stop. No routine recap, offer to continue, or artificial follow-u
 
 ## Before sending
 
+For an adopted task, obtain actual `workflow.py status` Readiness for the intended target
+per [workflow-gates.md](workflow-gates.md). Derive readiness, blockers, due/reopened checks
+and any permitted next command from that result and its current input binding. Link the
+captured observation; if inputs changed, refresh it before relying on it. A malformed
+workspace or failed status call is an error, not a cached green status.
+
+`state.md`, chat, task displays and the final report are presentation indexes, not a second
+runtime ledger. Distinguish ready action, executed command, accepted check and closed
+increment. Before adoption, report procedural gate evidence explicitly; do not invent
+Readiness JSON. Preserve incomplete metrics, unconfirmed human approval and publication/
+host limits even when a bounded functional slice passes.
+
 Check that the first line accurately states the result, blocker, or required decision; the
 message agrees with observed evidence and current state; and the reader knows whether they
 need to act. Keep meaningful uncertainty and every material limitation. Move supporting detail

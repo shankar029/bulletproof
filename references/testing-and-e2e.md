@@ -26,6 +26,18 @@ Then improve structure while green and repeat for the next behavior. Keep change
 with the approved design; a cycle is not permission to invent a new feature or architecture.
 For defects/performance regressions, use `diagnosis.md` and retain its original reproduction.
 
+For an adopted workflow, resolve its current design and check registration first, then use
+[workflow-gates.md](workflow-gates.md) for `status`/`next`/`record`. Required behavioral red
+is a `before-action` check: its actual relevant assertion failure must be accepted before
+the consuming implementation action is admitted. Setup/import/syntax failures do not qualify.
+The admission consumes the exact earlier receipt; a later failure cannot backfill the sequence.
+Green checks bind current inputs. Compatibility proof similarly precedes retirement, with
+legacy coexistence observed before deletion and current checks afterward.
+
+Direct `run.py` or test-runner invocation remains useful diagnostic/development evidence,
+but it is unbound, not a guarded receipt. Initial research/design diagnostics before adoption
+are procedural and remain labeled as such. Never manufacture an admission for an old run.
+
 Avoid writing all speculative tests before any implementation. Expected results come from the
 requirement, a worked example, or an independent fixture/oracle, not a reimplementation of the
 same algorithm in the assertion. A syntax error, missing dependency, or broken fixture is not

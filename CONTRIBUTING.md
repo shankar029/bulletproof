@@ -38,7 +38,8 @@ The eval is how we know the skill delivers. Keep it green.
 ```bash
 node evals/run.mjs                       # v1: config-driven corpus + composite scorecard (regression gate)
 node --test evals/lib/*.test.mjs \
-            evals/agent/agent.test.mjs   # unit tests for the scoring library + agent harness
+            evals/agent/agent.test.mjs \
+            evals/workflow/failures.test.mjs   # native inventory (see Python prerequisite below)
 node evals/agent/live.mjs --task <id> --dry-run   # v2: agent-in-the-loop plumbing (no model)
 ```
 
@@ -52,6 +53,24 @@ Use the actual installed Python executable if the `python` alias is unavailable.
 `PYTHONDONTWRITEBYTECODE=1` for subprocess fixtures when capturing broad source fingerprints.
 Run the smallest affected tests during implementation, then the integrated regression scope.
 Capture positive test counts; a runner that could not start is not a successful check.
+
+Affected CLI discovery includes the three boundary regressions in
+`scripts/tests/test_workflow_cli_boundaries.py`, using the existing `CliFixture` without
+inheriting/recounting the original 30 methods:
+
+```powershell
+python -B scripts\run.py --idle 120 --max 1800 -- python -u -B -m unittest discover -s scripts\tests -p "test_workflow_cli*.py" -v
+```
+
+For the native workflow entries, set `BULLETPROOF_PYTHON` to the absolute installed Python
+executable and `PYTHONDONTWRITEBYTECODE=1`. `evals/workflow/failures.test.mjs` replays five
+Python CLI failure pairs; these are not five extra independent features/tests of the runtime.
+The native reporter suite (`evals/lib/native_result.test.mjs`) is included in the library
+glob, not counted again. Wrap native commands in `scripts/run.py` with idle
+and maximum bounds too. On Windows, use a newly owned short OS-temp root for subprocess
+fixtures, not a deep worktree path. Do not silently skip a platform failure: the known actual
+symlink-creation case is environment-unverified (`WinError 1314`), not a passing test.
+Selected scopes and concurrent development results are not a full-suite/host-matrix claim.
 
 The corpus gate and functional tests do not replace the standalone probe's required
 measurements. Missing collectors or partially supported inputs remain incomplete/fail.

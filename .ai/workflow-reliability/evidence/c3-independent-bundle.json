@@ -1,0 +1,190 @@
+{
+  "owner_helper_sha256": "56e4df111c29845fc918678706e624b6e0047b3893abd88bb813362ef76973b1",
+  "files": [
+    {
+      "relative": "SKILL.md",
+      "sha256": "50def1dbd8b0ba52b6afccc22b713b0f44bbcacb6fc6fbe67c89070a47c91e64"
+    },
+    {
+      "relative": "references/workspace.md",
+      "sha256": "58b4d47eab3f01b270573414ee691979c98900d1f94a08934e791c9d02adb2c4"
+    },
+    {
+      "relative": "references/planning.md",
+      "sha256": "98431529d611dc4158d8843acba3a249596f9568ce228aad1b02635d758923f4"
+    },
+    {
+      "relative": "references/design-doc.md",
+      "sha256": "5bfc63405930d2c2080be5bbf99f1d200f7dfd04a4e53f7e4e5fed2e16892a03"
+    },
+    {
+      "relative": "references/delegation.md",
+      "sha256": "b390e61182e5199dde6bd87757f0afa63c8a4bd3ab7ca7428ba18945c25a776d"
+    },
+    {
+      "relative": "references/testing-and-e2e.md",
+      "sha256": "004ba58d13c5c008d6d14fd4d915677504571fe8350d4d010eae2ae5972504b5"
+    },
+    {
+      "relative": "references/research.md",
+      "sha256": "910335416c4ab6a74b2c82a397da39e022b532e751ad0bf4855e62f1004925be"
+    },
+    {
+      "relative": "references/communication.md",
+      "sha256": "102b6b1b161106f0061029344afa7c6e7ef26c4c13e6c4df9b30a8f9b30b9e20"
+    },
+    {
+      "relative": "references/review-and-pr.md",
+      "sha256": "8350d1650d326aca43930946f031c15beb80662ac34e7cab305d70d1f3226ee0"
+    },
+    {
+      "relative": "references/final-report.md",
+      "sha256": "87d6a81d1fce98b56404fbf282fafa27847991c335cd8030f73aaabba77d787d"
+    },
+    {
+      "relative": "references/workflow-gates.md",
+      "sha256": "2a30dd85a5f72bcf56dfc023775556089282bcd566252653540d70a3b3fe9a6c"
+    },
+    {
+      "relative": "scripts/workflow.py",
+      "sha256": "a740bdc3325f86293341b7099010b8edba30062f7ddc2a2acef1012bc1b1e1a1"
+    },
+    {
+      "relative": "scripts/workflow_state.py",
+      "sha256": "fe30290e61d319c76546c31acd454bc7c642fc83ad55126e368fa44ab4b57a6e"
+    },
+    {
+      "relative": "scripts/workflow_gate.py",
+      "sha256": "f7ff2c1ac229a88f39be6ddc6000f060afc545dbf5dd47b5bf3ddcc4ff43f23d"
+    },
+    {
+      "relative": "scripts/evidence.py",
+      "sha256": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4"
+    },
+    {
+      "relative": "scripts/mutate.py",
+      "sha256": "f7abaf6134a8300308ad5df181609b1215bed24c9de97ee4be91241de84088e3"
+    },
+    {
+      "relative": "scripts/run.py",
+      "sha256": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e"
+    },
+    {
+      "relative": "scripts/native_result.mjs",
+      "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0"
+    },
+    {
+      "relative": "assets/artifact.css",
+      "sha256": "58b25ffb81a8d1cf7958bfb8a0b755c4954382404a5871f2f27da74d054db61c"
+    },
+    {
+      "relative": "assets/artifact.js",
+      "sha256": "560a862ea5571fc6ef47af2a8f33ed3f677d9d79c5b148877707049d4926f496"
+    }
+  ],
+  "links": [
+    {
+      "relative": "references/workspace.md",
+      "link": "workflow-gates.md",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\workflow-gates.md"
+    },
+    {
+      "relative": "references/workspace.md",
+      "link": "workflow-gates.md#interruption-and-trust-limits",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\workflow-gates.md"
+    },
+    {
+      "relative": "references/planning.md",
+      "link": "workspace.md",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\workspace.md"
+    },
+    {
+      "relative": "references/planning.md",
+      "link": "workflow-gates.md#execution-and-returned-evidence",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\workflow-gates.md"
+    },
+    {
+      "relative": "references/planning.md",
+      "link": "workflow-gates.md",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\workflow-gates.md"
+    },
+    {
+      "relative": "references/design-doc.md",
+      "link": "workflow-gates.md#prepare-and-adopt-reviewed-artifacts",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\workflow-gates.md"
+    },
+    {
+      "relative": "references/design-doc.md",
+      "link": "planning.md#3-write-executable-task-records",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\planning.md"
+    },
+    {
+      "relative": "references/delegation.md",
+      "link": "workflow-gates.md",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\workflow-gates.md"
+    },
+    {
+      "relative": "references/testing-and-e2e.md",
+      "link": "workflow-gates.md",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\workflow-gates.md"
+    },
+    {
+      "relative": "references/research.md",
+      "link": "workflow-gates.md#research-claims-and-corrections",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\workflow-gates.md"
+    },
+    {
+      "relative": "references/communication.md",
+      "link": "workflow-gates.md",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\workflow-gates.md"
+    },
+    {
+      "relative": "references/review-and-pr.md",
+      "link": "workflow-gates.md",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\workflow-gates.md"
+    },
+    {
+      "relative": "references/final-report.md",
+      "link": "workflow-gates.md",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\workflow-gates.md"
+    },
+    {
+      "relative": "references/workflow-gates.md",
+      "link": "../SKILL.md",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\SKILL.md"
+    },
+    {
+      "relative": "references/workflow-gates.md",
+      "link": "workspace.md",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\workspace.md"
+    },
+    {
+      "relative": "references/workflow-gates.md",
+      "link": "planning.md",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\planning.md"
+    },
+    {
+      "relative": "references/workflow-gates.md",
+      "link": "quality-metrics.md",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\quality-metrics.md"
+    },
+    {
+      "relative": "references/workflow-gates.md",
+      "link": "research.md",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\research.md"
+    },
+    {
+      "relative": "references/workflow-gates.md",
+      "link": "communication.md",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\communication.md"
+    },
+    {
+      "relative": "references/workflow-gates.md",
+      "link": "final-report.md",
+      "target": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3i-b-M0u04C\\bp-skill-EyaWDD\\references\\final-report.md"
+    }
+  ],
+  "limitation": "Disposable existing stageSkillBundle invocation; no host installation or download.",
+  "passed": true,
+  "cleanup": "Only newly owned staged bundle removed; old trees untouched"
+}

@@ -5,7 +5,7 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: bounded CLI/tool-binding checkpoint approved for local preservation.
+- Phase: C3 accepted with preservation proof; Q2 parser amendment pending.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
 - Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
@@ -37,12 +37,67 @@
 - No repeated uncoached model-effectiveness study claimed by deterministic tests.
 
 ## Next action
-Preserve the approved CLI/tool-binding checkpoint, then continue actual Q2 collectors
-and canonical documentation integration. Recovery remains blocked;
+Review the bounded Q2 parser lifecycle/symbol-transport amendment and release its
+implementation only after acceptance. C3 is the current approved preservation increment.
+Recovery remains blocked;
 no recovery stub or silent completion of the original requirement.
 The local I1 preservation commit is `aaec9b9`.
 The continuation addendum replaces implementation-dispatch dependencies only; it does not
 close I1.T4 or remove any required measurement, independent role or final acceptance check.
+
+## C3 bounded acceptance
+- FACT: C3 owner `52883f96-3559-4d94-af39-c8e3625a9c99` returned
+  `evidence/c3-integration-handoff.md` and `evidence/c3-integration-seal.json`.
+  The bounded delta covers canonical adoption/current-design/compatibility/research/
+  readiness guidance, README and related guides, and three historical CLI regressions
+  ported into ordinary discovery without inheriting the existing 30 methods.
+- Owner reports 33 passing CLI methods, 70 native entries (including five CLI replays),
+  15-file links, 12 browser views and three actual navigation checks. These are local
+  development results, not independent acceptance or a new whole-suite quality claim.
+- Fresh verifier `b685b633-90ec-4bb1-905f-3d78211282c1` owns C3 independent functional
+  replay and source/evidence pins. Separate reviewer
+  `a3735b9f-606a-4f93-a0ac-2b2ec9b65429` owns code/documentation review and final
+  reconciliation when that proof arrives. Both have bounded C3-only scopes.
+- C3 owned paths and runtime inputs remain frozen. Q2 may author only its pending
+  amendment, not implementation. Parent status records are outside those source pins.
+  No preservation commit, complete metrics, positive recovery or release is claimed.
+- FACT: `evidence/c3-code-review.md` gives preliminary bounded APPROVE with no
+  substantive findings. Reviewer matched all 16 owned hashes and seven historical
+  files, checked the three ported bodies and discovered 33 unique CLI methods without
+  running the suites. AC07/08/10 source/documentation alignment is accepted only with
+  the stated limitations. Independent execution/browser proof and its final reviewer
+  reconciliation remain pending; the source freeze continues.
+- FACT: `evidence/c3-independent-report.md` now reports fresh CLI33 and native70
+  (five CLI replays), 12 browser views/three navigation actions, 15 repository
+  documents and 20 local links across 11 installed-layout documents. All 217
+  input pins matched; no tests, production or documentation changed. These counts
+  are not added to earlier runs. Remaining 245 discovered Python methods were not
+  executed; full quality and host exercises remain open.
+- Final reviewer reconciliation requested against the independent seal
+  `80f5c69048b5098372864d46a3c9010f56da60a647db9cc9cb65777ac4926758`.
+  C3 preservation awaits that disposition and parent staging/checkout verification.
+- FACT: final `evidence/c3-code-review.md` now APPROVES bounded preservation,
+  reconciling all 217 inputs, 42 evidence hashes and 16 reviewed source/doc/test
+  files. No substantive correction is required. Parent accepts C3 AC07/08/10 with
+  the documented limitations; this is not release or full-quality approval.
+  Parent staging and actual checkout verification remain the preservation step.
+- Parent preservation attempt 1 matched 259 input/evidence pins and all 16 actual
+  staged checkout files, then failed while recording metadata: the helper incorrectly
+  assumed a root `.gitattributes` existed. Its owned checkout was already removed.
+  The helper now records that file's absence explicitly; this is a capture correction,
+  not a product failure or a new test result. The failed tool execution is retained.
+- FACT: corrected `evidence/c3-parent-preservation.json` matches all 259 sealed
+  input/evidence pins and actual staged checkout bytes for all 16 reviewed files.
+  This verifies Git's real materialization rather than equating normalized blobs
+  with tested working bytes. The new owned checkout was removed; old cleanup remains
+  UNKNOWN. Report rendering passed at three pages without browser/console errors.
+  C3 sources, original/fresh proof, final review and parent records are the bounded
+  local commit scope. Q2 drafts and the unrelated `evals/report.md` are excluded.
+- FACT: a separate Git-object check matched exact staged blob bytes for all 81
+  sealed C3 evidence/review files, including ignored raw logs explicitly staged.
+  Final report HTML SHA-256 is
+  `424baac07cab963282a4e73ed8a973b2572a1f4227df95b947a8f85169bc4a13`;
+  its final render remains three pages with no browser/console errors.
 
 ## Latest bounded correction handoff
 - FACT: `evidence/q1-attr-result.md` reports the minimal Git-native all-attributes census
@@ -440,6 +495,27 @@ close I1.T4 or remove any required measurement, independent role or final accept
   captured r1-only.diff's CRLF patch text; its sealed bytes were not reformatted.
   Eleven new ZIPs were inspected as bounded source-fixture evidence, not installed
   tool packages. The accepted-status report renders to three pages without errors.
+- FACT: checkpoint source, guide, approved contracts and owned evidence are preserved
+  in `dadce66ff7d9a7494db0af5f8124009d7b132cb9`. The index is clear; only the earlier
+  unrelated `evals/report.md` date delta remains. No publication attempt occurred.
+- Parent schedules the next bounded Q2 component: shared JS syntax/symbol/candidate
+  production and its real native tests; full scalar integration remains required.
+  C3 canonical skill/reference/user-guide/README wiring and normal discovery of the
+  three custom independent CLI cases may proceed separately. No positive metric,
+  recovery or full quality claim is authorized by either workstream.
+- FACT: Q2 parser owner stopped before edits on two concrete seams
+  (`evidence/q2-adapter-js-seam-handoff.md`): public probe supplies output_manifest
+  only after parsing, and strict SyntaxEvidence has no symbol/reference transport.
+  Graph must not import measure/probe or accept executable callbacks to work around
+  that order. No parser tests or parser implementation are claimed.
+- Parent selects an additive bounded amendment: immutable pre-execution and final
+  manifests, fixed measure-owned production/revalidation launches before graph's
+  unchanged ParsedInventory assembly, and a separately versioned symbol artifact.
+  Existing SyntaxEvidence/Candidate/Finding shapes remain unchanged. Exact schema,
+  consumer references, deterministic comparison and failure ownership require
+  focused review before code. If needed, one explicit manifest ownership role may
+  be proposed; mislabeling it as a selected qualification or leaving it unowned is
+  not acceptable. C3's disjoint work is not blocked by this parser amendment.
 
 ## Continuation acceptance - 17 September 2026
 - User requested completion plus an attractive README and updated guides. When asked about

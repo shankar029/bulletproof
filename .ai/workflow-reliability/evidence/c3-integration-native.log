@@ -1,0 +1,112 @@
+✔ baseline args disable skills and do not load the skill (1.038ms)
+✔ bulletproof args load exactly the given skill on top of an isolated base (0.096ms)
+✔ bulletproof without a skill path throws (0.2345ms)
+✔ unknown arm throws (0.0869ms)
+✔ both prompts point at the deliverable, SPEC, and .ts imports (0.1858ms)
+✔ prompts stay neutral: no reuse/dependency/tool-choice hints that would leak trap guardrails (0.1912ms)
+✔ only the bulletproof prompt invokes the workflow (0.0752ms)
+✔ both arms allow task records without relaxing deliverable or seed boundaries (0.1519ms)
+✔ skill bundle includes executable sibling imports, references and assets (32.0137ms)
+✔ missing bundle payload fails and cleans only the owned partial directory (14.7841ms)
+✔ prepWorkspace seeds shared + SPEC and never copies the held-out oracle (4.9004ms)
+✔ summarize handles empty and computes mean/stddev/min/max (0.1766ms)
+✔ passRate is the fraction of runs at/above the bar (0.0966ms)
+✔ isConventionalCommit accepts type(scope)!: subject, rejects freeform (0.1951ms)
+✔ scoreProcess: feature branch + conventional commit scores 1.0 (0.088ms)
+✔ scoreProcess: committing to main is a hard zero regardless of message (0.0383ms)
+✔ scoreProcess: no commits at all scores 0 (no process followed) (0.0361ms)
+✔ scoreProcess: branched but non-conventional message scores partial (0.0414ms)
+✔ cappedComposite: committing to main zeroes an otherwise-perfect composite (0.054ms)
+✔ cappedComposite: leaves the composite untouched when main was not committed to (0.0508ms)
+✔ cappedComposite: no process observation (dry-run) never caps (0.0343ms)
+✔ generates a distinct mutant per operator site (1.0161ms)
+✔ flips relational and boundary operators (0.1125ms)
+✔ flips boolean literals (0.076ms)
+✔ dedupes identical mutants and excludes no-ops (0.1059ms)
+✔ respects the max bound (0.0877ms)
+✔ does not touch ++, +=, or comment terminators (0.0763ms)
+(node:39248) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ native reporter counts only real leaves and explicitly serializes assertion causes (220.2302ms)
+✔ test parents with nested subtests are containers, not duplicate leaves (227.2146ms)
+✔ stdout spoofing is quoted data, never assertion proof (421.0594ms)
+✔ zero tests, syntax errors and import failures cannot be kills (804.6498ms)
+✔ setup and hooks take precedence over mixed genuine assertion failures (893.9096ms)
+✔ skip/todo/cancellation and missing required baseline inventory are ungraded (1152.4773ms)
+✔ timeout and malformed/truncated reports fail closed (492.1021ms)
+✔ syntax preflight uses the native TS parser without executing product code (364.7327ms)
+(node:48628) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ parseTap reads counts from a green TAP summary (2.1916ms)
+✔ parseTap reads a failing summary (0.7792ms)
+✔ parseTap returns zeros when the runner crashed (no summary) (0.1066ms)
+✔ toDimensions maps a fully-probed arm to all-1s (0.1997ms)
+✔ toDimensions returns null for unprobed dimensions (0.2432ms)
+✔ toDimensions scores accuracy 0 when no tests ran (0.1125ms)
+✔ toDimensions flips duplication/scope/extensibility to 0 on a hit/failure (0.2858ms)
+✔ toDimensions scores partial reuse as a fraction (0.2273ms)
+✔ composite of a single dimension equals that dimension (0.3767ms)
+✔ composite renormalizes over non-null dimensions — n/a never drags the score (0.1875ms)
+✔ composite blends present dimensions by renormalized weight (0.1685ms)
+✔ composite handles weights that do not sum to 1 (0.0786ms)
+✔ composite is 0 when every dimension is n/a (0.0743ms)
+✔ composite ignores a present dimension absent from weights (pins a config footgun) (0.0505ms)
+✔ hasForbiddenDep flags a forbidden name in dependencies or devDependencies (0.087ms)
+✔ hasForbiddenDep is false when no forbidden dep is declared directly (0.06ms)
+✔ hasForbiddenDep ignores absent manifest / empty name list (0.0695ms)
+✔ hasE2E detects real CLI spawn / HTTP / browser driving (0.0866ms)
+✔ hasE2E is false for unit-only tests, empty sources, or no patterns (0.0492ms)
+✔ toDimensions surfaces e2e (1 when a matching test ships, 0 when checked but absent) (0.0674ms)
+✔ testQualityScore: absent or broken arm tests are a real 0, not null (0.0386ms)
+✔ testQualityScore: tests present but not runnable by the runner → 0 (distinct from no-tests) (0.0412ms)
+✔ testQualityScore: kill-rate over graded mutants; skipped excluded (0.0442ms)
+✔ testQualityScore: not applicable, or no valid mutants, is null (0.0383ms)
+✔ toDimensions surfaces testQuality from the probe (0.0461ms)
+✔ runTestQuality: bulletproof paginator kills every mutant; baseline ships no tests (4936.9179ms)
+✔ runTestQuality: not applicable when the task does not opt in via quality.mutate (0.3892ms)
+✔ runTestQuality: native assertions kill, shallow tests survive, logs do not kill (1381.8158ms)
+✔ runTestQuality: setup, spoofed error, zero/missing inventory and skip are not fake kills (3060.0962ms)
+✔ runTestQuality: file wrappers and broken/skipped baselines retain eval zero semantics (1116.6292ms)
+test_missing_review_pair_blocks_then_actual_handoff_record_unblocks (test_workflow_cli.WorkflowCliTests.test_missing_review_pair_blocks_then_actual_handoff_record_unblocks) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 10.302s
+
+OK
+✔ missing review blocks; admitted attributed review permits dependent work (11209.7594ms)
+test_setup_vs_red_pair_uses_real_native_assertion (test_workflow_cli.WorkflowCliTests.test_setup_vs_red_pair_uses_real_native_assertion) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 12.604s
+
+OK
+✔ setup failure is not behavioral red; actual matching assertion failure is (13265.0954ms)
+test_stale_pair_fresh_process_reopens_only_affected_receipt (test_workflow_cli.WorkflowCliTests.test_stale_pair_fresh_process_reopens_only_affected_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 19.277s
+
+OK
+✔ stale proof blocks; fresh public-CLI execution resumes without rewriting receipts (20324.0362ms)
+test_metrics_pair_failure_capture_and_independent_work_not_fake_closure (test_workflow_cli.WorkflowCliTests.test_metrics_pair_failure_capture_and_independent_work_not_fake_closure) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 12.050s
+
+OK
+✔ missing metrics blocks attachment; unrelated work works (positive quality closure unavailable) (12755.4648ms)
+test_compatibility_pair_requires_accepted_pre_retirement_proof (test_workflow_cli.WorkflowCliTests.test_compatibility_pair_requires_accepted_pre_retirement_proof) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 9.115s
+
+OK
+✔ premature retirement blocks; prior accepted compatibility permits retirement (9746.6249ms)
+ℹ tests 70
+ℹ suites 0
+ℹ pass 70
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 67490.0622

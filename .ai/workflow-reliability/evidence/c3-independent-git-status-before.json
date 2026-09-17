@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+    "--idle",
+    "30",
+    "--max",
+    "60",
+    "--",
+    "git",
+    "--no-pager",
+    "status",
+    "--short"
+  ],
+  "exit": 0,
+  "elapsed_seconds": 0.7174919999961276,
+  "output": " M .ai/workflow-reliability/state.md\n M CONTRIBUTING.md\n M README.md\n M SKILL.md\n M docs/architecture.md\n M docs/user-guide.md\n M evals/report.md\n M references/communication.md\n M references/delegation.md\n M references/design-doc.md\n M references/final-report.md\n M references/planning.md\n M references/research.md\n M references/review-and-pr.md\n M references/testing-and-e2e.md\n M references/workflow-gates.md\n M references/workspace.md\n?? .ai/workflow-reliability/evidence/c3-independent-before.json\n?? .ai/workflow-reliability/evidence/c3-independent-verify.py\n?? .ai/workflow-reliability/evidence/c3-integration-checks.py\n?? .ai/workflow-reliability/evidence/c3-integration-cli-tests.json\n?? .ai/workflow-reliability/evidence/c3-integration-docs.json\n?? .ai/workflow-reliability/evidence/c3-integration-docs.mjs\n?? .ai/workflow-reliability/evidence/c3-integration-handoff.md\n?? .ai/workflow-reliability/evidence/c3-integration-native.json\n?? .ai/workflow-reliability/evidence/c3-integration-native.py\n?? .ai/workflow-reliability/evidence/c3-integration-operator-guide-1280-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-operator-guide-1280-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-operator-guide-390-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-operator-guide-390-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-docs.json\n?? .ai/workflow-reliability/evidence/c3-integration-r2-operator-guide-1280-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-operator-guide-1280-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-operator-guide-390-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-operator-guide-390-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-readme-1280-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-readme-1280-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-readme-390-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-readme-390-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-readme-feature-navigation.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-user-guide-1280-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-user-guide-1280-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-user-guide-390-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-user-guide-390-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-readme-1280-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-readme-1280-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-readme-390-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-readme-390-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-seal.json\n?? .ai/workflow-reliability/evidence/c3-integration-seal.py\n?? .ai/workflow-reliability/evidence/c3-integration-user-guide-1280-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-user-guide-1280-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-user-guide-390-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-user-guide-390-light.png\n?? .ai/workflow-reliability/evidence/q2-adapter-js-seam-handoff.md\n?? scripts/tests/test_workflow_cli_boundaries.py\n"
+}

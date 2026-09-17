@@ -1,0 +1,39 @@
+{
+  "kind": "local-development-replay",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+    "--idle",
+    "120",
+    "--max",
+    "1800",
+    "--",
+    "node",
+    "--test",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\evals\\lib\\mutate.test.mjs",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\evals\\lib\\native_result.test.mjs",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\evals\\lib\\score.test.mjs",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\evals\\agent\\agent.test.mjs",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\evals\\workflow\\failures.test.mjs"
+  ],
+  "exit": 0,
+  "elapsed_seconds": 67.91567759998725,
+  "before": {
+    "evals\\lib\\mutate.test.mjs": "9199ff7c1b5a6ffa16c7a8bdd20a6f324f1fa3fc8b2c3175e010e178e8199e92",
+    "evals\\lib\\native_result.test.mjs": "60455f759a5649c5835505431c62641554ed33cc5b3b446ef46828029261b892",
+    "evals\\lib\\score.test.mjs": "9805b44feccf72411a8720cc5c5b8813de182328bcf76eb06faf3525c739cf24",
+    "evals\\agent\\agent.test.mjs": "684386299d9c7be73cb573e202d77e768657202a7d4c862200bf31111048217f",
+    "evals\\workflow\\failures.test.mjs": "26f7c40184a7766690ab2cfc54f97baea403ab6c14612eb77e3b607966b29034"
+  },
+  "after": {
+    "evals\\lib\\mutate.test.mjs": "9199ff7c1b5a6ffa16c7a8bdd20a6f324f1fa3fc8b2c3175e010e178e8199e92",
+    "evals\\lib\\native_result.test.mjs": "60455f759a5649c5835505431c62641554ed33cc5b3b446ef46828029261b892",
+    "evals\\lib\\score.test.mjs": "9805b44feccf72411a8720cc5c5b8813de182328bcf76eb06faf3525c739cf24",
+    "evals\\agent\\agent.test.mjs": "684386299d9c7be73cb573e202d77e768657202a7d4c862200bf31111048217f",
+    "evals\\workflow\\failures.test.mjs": "26f7c40184a7766690ab2cfc54f97baea403ab6c14612eb77e3b607966b29034"
+  },
+  "owned_temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c3n-y7iacvlz",
+  "remaining_owned_temp_entries": [],
+  "limits": "Five workflow entries replay Python cases already in CLI33; not additional independent runtime features."
+}

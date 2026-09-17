@@ -33,6 +33,14 @@ this work (state, clarifications, design, plan, review, evidence) live in `.ai/<
 work survives a restart or a new session. Layout, `state.md` format, and the resume protocol
 are in `references/workspace.md`.
 
+For an adopted task, load `references/workflow-gates.md`: resolve
+`current-design.json` and its retained design/contract before using the plan or dispatching
+work. Run `status` for the intended target and derive updates from that Readiness, not
+checkboxes. Initial research, design and planning are procedural: they prepare the reviewed
+candidate for ordinary `adopt`; they do not require adoption before those artifacts exist.
+Never overwrite live authority or backfill approval. Guarded operations enforce only routed
+commands; host permissions and genuinely fresh contexts remain external responsibilities.
+
 ## Right-size the ceremony first
 After reading the requirement, classify it — and say which tier you chose and why.
 
@@ -106,17 +114,18 @@ After reading the requirement, classify it — and say which tier you chose and 
   **progress, not wall-clock** — kill only when the command goes *silent*. Wrap them:
   `python <skill>/scripts/run.py --idle 60 -- <cmd>` (default 60s of no output; pass `--idle 120`
   for renders/e2e, `--idle 30` for light commands, and `--max <s>` for an absolute ceiling). The
-  runner resets its timer on every byte of output and, on silence past the window, **kills the
-  whole process tree** (no orphaned browser/daemon holding a lock) and exits **124** (idle) or
-  **125** (max). Never leave a raw command un-wrapped, and never sit waiting on one yourself.
+  runner monitors output and, on silence past the window, **attempts owned process-tree
+  cleanup** and exits **124** (idle) or **125** (max). Cleanup is best effort; direct exit is
+  not proof that descendants died. Never leave a raw command un-wrapped.
 - **An idle kill is a recover-and-continue event, not a dead end.** When you see exit 124/125 or
   the `[run] idle-timeout …` / `[run] max-timeout …` marker: (1) record the hung command, its
-  exit code, and the phase in `state.md`; (2) confirm the tree is dead (`taskkill //F //IM
-  chrome.exe` for a stalled browser; kill any saved PID) so no lock lingers; (3) apply the
-  obvious unstick — non-interactive/`--ci` flags, kill a stale lock/daemon, smaller scope — and
-  relaunch **once** under `run.py`; (4) if it hangs again, treat it as a blocker: log it and route
-  around it (skip, or take a different path to the same proof). Two idle kills of the same command
-  is a blocker, not a third attempt.
+  exit code, and the phase in `state.md`; (2) inspect only exact owned process identities and
+  supported cleanup evidence—never kill by process name or infer tree death from PID absence;
+  (3) if cleanup and safe replay are established, apply a concrete remedy (non-interactive
+  flags or smaller scope) and relaunch **once** under `run.py`; (4) a second hang blocks the
+  affected check. Preserve failed evidence; do not silently skip required proof.
+  For adopted work, unresolved lifetimes or orphan locks stay blocked under
+  `references/workflow-gates.md`; no recovery/reset/lock-steal API is available.
 - **Test runners must be non-interactive.** Use the single-run form (`vitest run`, `--watch=false`,
   `--ci`), never a watch mode.
 - **Bound every retry.** If a command hangs or a tool is missing, record the blocker in
@@ -245,6 +254,9 @@ code — see `references/ux-design.md`. Skip it entirely for library / CLI / API
   final report and PR. A trivial-tier change needs no design and no sign-off.
 
   Protocol and verdict handling: `references/html-theme.md`. Record the outcome in `state.md`.
+  For guarded adoption or a revision, follow `references/design-doc.md` and
+  `references/workflow-gates.md`: retain candidate/history bytes and candidate-bound review,
+  then use ordinary `adopt`. An HTML verdict alone is not an adopted runtime contract.
 
 ### Phase 3 — Plan the execution of the design
 **Delegate non-trivial planning to a fresh-context subagent by default.** Supply accepted
@@ -261,6 +273,10 @@ grouping, what order, and proven by what tests.**
   dependencies from the approved design; each change has one owner and each AC has work and
   proof in `traceability.md`. Preserve exact targets, commands, pass conditions and evidence.
   Internal tasks are not independent deliverables; components may recur with distinct changes.
+- Before guarded dispatch, load `references/workflow-gates.md` and register the approved
+  plan in its existing contract shapes. Keep forward edges and commands in `workflow.json`;
+  do not maintain another runtime graph. Required before-action red/compatibility proof
+  precedes its consuming action; independent closure checks remain mandatory.
 - **Separate unresolved decisions from ready tasks.** Use the planning procedure's decision
   prerequisites for uncertain work and expand–migrate–contract for wide compatibility changes.
   Each deliverable increment remains a session-sized, independently verifiable outcome.
@@ -298,7 +314,8 @@ planned/not-yet-verified and does not block an earlier slice. An AC spanning inc
 VERIFIED until all of its tasks/checks are satisfied; record partial proof by task/check.
 At final ship, reconcile the **whole request** with no future work silently left out.
 
-- **Re-read `design.html` before starting each increment.** The design, not your
+- **Re-read the current design before starting each increment:** resolve the adopted
+  pointer per `references/workspace.md`, or `design.html` before adoption. The design, not your
   recollection, is the contract — this is the main defense against drift on long work.
 - **Read the plan and current task/check records too.** Confirm entry conditions and source
   freshness, preserve the stated invariants, and attach change/check evidence before marking
@@ -311,6 +328,9 @@ At final ship, reconcile the **whole request** with no future work silently left
 - Before implementing behavior, load `references/testing-and-e2e.md` for **small test-first
   cycles**: observe the relevant failure, implement, rerun, and refactor while green.
   Every new unit of behavior ships with a real test; record any unavailable pre-change proof.
+- For adopted work/checks, use `status` then registered `next` per
+  `references/workflow-gates.md`; use `record` for admitted handoff returns without changing
+  producer attribution. Direct runner execution is diagnostic/unbound, not guarded proof.
 - Write **unit** tests for new functions, branches, boundaries, and error paths, and
   **integration** tests that exercise real collaborators across module seams. See
   `references/testing-and-e2e.md`.
@@ -337,6 +357,8 @@ would exercise it, and commit those tests. **All browser and front-end verificat
 - Consume the plan's check records as well as the design/ACs. Independently confirm expected
   outcomes, capture the assigned evidence, and leave human-owned acceptance unconfirmed until
   that human responds. A planned check or passing command with no relevant assertions is not proof.
+- Supply the current-design binding and admitted check identity in the fresh-context brief
+  per `references/delegation.md`; a null-command handoff does not itself launch an agent.
 - Capture the evidence into `.ai/<slug>/evidence/`: commands run, output, screenshots,
   console/error output, artifacts, and one pass/fail line per criterion.
 - **If the environment makes real end-to-end proof impossible** (no network, no credentials,
@@ -378,8 +400,9 @@ would exercise it, and commit those tests. **All browser and front-end verificat
   supported duplication, complexity, cycles, dead-code and static collectors against the
   merge-base, and runs **mutation testing on the changed lines** (`scripts/mutate.py` — native
   Node classification), writing source-bound per-run reports and a `.ai/<slug>/metrics.json`
-  display alias. Required diff-coverage/architecture collection is not implemented yet and
-  remains unavailable, not zero. **Required proof must be complete**: missing collectors,
+  display alias. Configured collection currently covers the Python graph and qualified
+  tool-binding smoke checks, not complete shared-JS/scalar/coverage/mutation collection.
+  See `references/quality-metrics.md` for support boundaries. **Required proof must be complete**: missing collectors,
   stale evidence, unsupported scope or unavailable comparisons block the gate even when
   measured values show no regression. A **regression against the
   baseline, a new dependency cycle, or a mutation score under the floor fails the gate** — see
@@ -387,6 +410,10 @@ would exercise it, and commit those tests. **All browser and front-end verificat
   justified as equivalent in `review.md`.** Re-run the probe after any rework.
 - Assemble the **evidence bundle** (including the design document) and ship per
   `references/review-and-pr.md`.
+- For adopted tasks, reconcile actual `status` and `close` results per
+  `references/workflow-gates.md`. Successful guarded metrics need a producer-owned bridge
+  that is not available; all nine metrics remain required and positive quality closure is
+  unavailable. Do not turn local preservation into a closed increment or ship claim.
 - **Write the final report** to `.ai/<slug>/report.html` per `references/final-report.md`, and
   summarise it in the chat. Write it even if the run is being cut short.
 - **Create the feature branch before your first commit; never commit to a protected or
@@ -414,6 +441,7 @@ ship what is green and record the remaining gap, its root cause, and the propose
 explicit follow-up. Never close the gap by lowering the bar.
 
 ## References (load on demand)
+- `references/workflow-gates.md` — before adoption, guarded dispatch/handoff, resume or closure: current authority, five ordinary CLI verbs, temporal proof and explicit metric/recovery limits.
 - `references/diagnosis.md` — for defects/performance regressions: symptom-specific reproduction, causal probes, and original-scenario verification.
 - `references/code-clarity.md` — human-readable code, responsibility boundaries, comment discipline, and concrete review acceptance.
 - `references/communication.md` — focused progress, approval, blocker and completion messages; concise presentation without lost evidence.

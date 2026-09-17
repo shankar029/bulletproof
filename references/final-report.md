@@ -25,6 +25,14 @@ the report itself.
 - **Write it even when the run is cut short.** A partial report that names the blocker is worth
   far more than none — if you are interrupted, this is the file that saves the work.
 - Keep it to about two pages. It is a status document, not a narrative.
+- For adopted work, resolve the current design and derive runtime readiness/blockers from
+  actual `status` per [workflow-gates.md](workflow-gates.md), with the observation's input
+  binding. The report and `state.md` are indexes, not another ledger. Before adoption,
+  label gate evidence procedural instead of inventing guarded status.
+- Separate ready/executed/accepted/closed and local preservation from release. Keep
+  unavailable metric attachment/positive closure, recovery, unconfirmed human approval
+  and host/publication limitations visible. Historical test/coverage/evaluation figures
+  retain their original scope and date; they are not current root quality measurements.
 
 ## Structure
 

@@ -12,6 +12,23 @@ in `.ai/<slug>/` — see `workspace.md`.
 | `plan.html` | always (non-trivial work) | increments, tasks, test strategy |
 | `tasks.md` | only when execution detail does not fit the overview | task/check records linked from `plan.html`; no duplicate records |
 
+## Current contract and retained revisions
+
+Before adoption, these documents support ordinary procedural research, design review and
+planning. They are not required to have prior guarded admissions: the initial candidate
+must exist before it can be adopted. Human approval remains confirmed only by the human;
+explicit unattended authorization permits an unconfirmed assumption, not a backfilled approval.
+
+For guarded operation, use [workflow-gates.md](workflow-gates.md#prepare-and-adopt-reviewed-artifacts).
+Retain the design and normative component definitions under revision-specific paths, stage
+the existing-schema workflow/current-design candidates, and bind independent review to the
+exact candidate hashes. Invoke ordinary `adopt`; never directly overwrite the live pointer.
+On revision, preserve old bytes and their history rather than rewriting the earlier rationale.
+Subsequent implementers/reviewers resolve `current-design.json`, not whichever HTML filename
+looks newest. A new revision does not supply earlier execution or compatibility proof.
+Retirement requires accepted pre-action compatibility evidence per
+[planning](planning.md#3-write-executable-task-records).
+
 ## Hard rules
 
 - **Design for a maintainer, not just an executor.** Apply `code-clarity.md` in the existing

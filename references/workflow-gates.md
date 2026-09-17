@@ -6,12 +6,20 @@ It is not yet the complete six-verb workflow: recovery is unavailable, and
 successful metric attachment awaits a qualified producer bridge. Required
 quality closure cannot succeed in this slice.
 
+[Canonical skill](../SKILL.md) ·
+[Workspace/resume](workspace.md) · [Planning](planning.md) · [Measurement support](quality-metrics.md)
+
 ## Invocation and authority
 
 Use a verified Python interpreter (`$python` below) and the actual Git repository
 root (`$repo`). Git must be available on that process's PATH. Set
 `PYTHONDONTWRITEBYTECODE=1`; the examples use `-B`. Run external invocations through
 the existing bounded runner:
+
+The examples assume this checkout as the working directory. From an application,
+use the verified installed paths for both scripts and the application's actual
+Git root as `--repo`. Keep the full installed `scripts/` directory together;
+the existing installers/bundle copy its imports and reporter, not just this CLI.
 
 ```powershell
 & $python -B scripts\run.py --idle 120 --max 600 -- $python -B scripts\workflow.py --help
@@ -63,6 +71,12 @@ unchanged independently attributed review report. Report, disposition,
 authorization and retained history bytes must exist and match their references.
 An unconfirmed human approval requires explicit unattended authorization and
 remains unconfirmed. The CLI does not generate approval.
+
+Initial research, design, independent design review and planning are **procedural**:
+they produce these candidates before the first adoption. They need no invented prior
+admission. Thereafter, resolve the live pointer's retained revision in each phase and
+delegation brief. A revised proposal is not current merely because `design.html` was edited.
+Never copy candidates directly over `workflow.json` or `current-design.json`; use `adopt`.
 
 ```powershell
 & $python -B scripts\run.py --idle 120 --max 600 -- $python -B scripts\workflow.py adopt --slug demo --repo $repo --revision r1 --review .ai/demo/evidence/review-r1.json
@@ -142,6 +156,12 @@ Do not inject flags, rewrite producer UUIDs or backfill an admission.
 
 ## Closure and errors
 
+All nine quality metrics remain required. At the accepted CLI/tool-binding boundary,
+configured collectors cover the Python graph plus qualified tool-binding **smoke**
+execution, not complete shared-JS/scalar/coverage/mutation collection. Qualification
+of a tool is not collection of a metric. Consult [quality-metrics.md](quality-metrics.md)
+and source-bound run evidence; do not treat work in progress as supported positive closure.
+
 ```powershell
 & $python -B scripts\run.py --idle 120 --max 600 -- $python -B scripts\workflow.py close --slug demo --repo $repo --increment A --commit $commit
 & $python -B scripts\run.py --idle 120 --max 600 -- $python -B scripts\workflow.py close --slug demo --repo $repo --ship
@@ -168,6 +188,42 @@ Launch failure records no executed child and a null child return code even when
 the runner returns 127. Observer publication failure reports `[observer-error]`
 and cannot create a completed event. Timeout/cleanup or unknown launch state
 remains unresolved even if a later observation reports direct exit.
+
+## Research claims and corrections
+
+The strict claim schema is defined by `workflow_state._claim`; the source binding is
+checked by `_validate_claim_files`, and `workflow_gate` evaluates attributed acceptance.
+A claim's `report` is a repository-relative Markdown path plus one unambiguous heading
+anchor. `claim_sha256` hashes that heading's section (including subordinate headings until
+the next same/higher-level heading); source references bind whole-file hashes and valid
+line numbers. Preserve exact bytes and re-anchor after source edits.
+
+Keep scoped absence queries/exclusions and typed FACT/INFERENCE/HYPOTHESIS/UNKNOWN in the
+research report. The descriptive `scope` is not an executed query or a proof of exhaustive
+absence. The validator checks hashes/line ranges, not the truth of `snippet_ref` or prose.
+Follow [research.md](research.md) for the human/agent evidence checks.
+
+Corrections retain old claim IDs through `supersedes` without cycles, with a researcher
+`correction_owner` and separate `acceptance_owner` attribution. A bound claim needs an
+existing accepted research receipt whose producer, recorder and exact claim hash match;
+its research check must still be current. Superseded claims and HYPOTHESIS/UNKNOWN cannot
+permit dependent actions. Stage reviewed revisions and use ordinary adoption; do not edit
+live contracts, change historical receipts or manufacture an acceptance ID. Initial
+procedural research is not automatically a guarded research receipt.
+
+## Readiness and communication
+
+Use actual `status` for the intended action, increment or ship target after adoption and
+after relevant input changes. It derives readiness from the registered graph, ledger,
+resolved receipt artifacts and current source/contract/claim bindings. Report its blockers
+and due/reopened checks, preserving unaffected historical evidence. An error loading live
+authority is not permission to fall back to a separate status ledger.
+
+`state.md`, plan checkboxes, chat and reports are indexes into that evidence. A ready action
+can belong to a blocked increment; executed work is not an accepted check, and accepted
+checks do not imply closure. Capture status with its input binding and refresh stale
+observations. Before adoption, label procedural gate evidence rather than fabricate status.
+See [communication.md](communication.md) and [final-report.md](final-report.md).
 
 ## Interruption and trust limits
 

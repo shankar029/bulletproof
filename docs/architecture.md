@@ -68,8 +68,24 @@ Goodhart effects, with greenfield and front‑end projects detected and judged a
 Standalone `evidence.py` supplies scoped hashes, atomic reports and an exclusive local lock.
 The shared `native_result.mjs` classifies actual Node test events; process errors are not
 assertion kills. Probe version 2 separates measured status from completeness and rejects stale
-mutation aliases. Required missing collectors (currently diff coverage and architecture rules)
-block the gate. These mechanisms neither initialize a workflow ledger nor authenticate actors.
+mutation aliases. Required unavailable measurements block the gate. Configured collection at
+the accepted CLI/tool-binding boundary covers the Python graph and qualified tool-binding smoke,
+not complete shared-JS/scalar/coverage/mutation collection. These mechanisms neither initialize
+a workflow ledger nor authenticate actors.
+
+### 3d. Guarded routing has an explicit boundary
+
+`workflow.py` supplies ordinary status/next/record/close/adopt. `workflow_state.py` validates
+persisted authority and binds inputs; `workflow_gate.py` derives readiness. Initial procedural
+research/design/plan prepare immutable candidates; adoption publishes event, workflow, then
+current-design pointer. History is retained, not overwritten. Commands/forward edges have one
+owner in `workflow.json`; state/report/chat summarize actual derived status, not a second ledger.
+
+The guard admits only routed operations. Hashes are not a sandbox and self-declared contexts
+are not authentication. Mandatory independent roles remain host/skill obligations. Successful
+metric attachment needs a later producer bridge, so positive quality closure is unavailable;
+all nine metrics remain required. No recovery/reset/orphan-lock-steal API is present. See the
+[operator guide](../references/workflow-gates.md) for exact contracts and limits.
 
 ### 4. Safe by default
 Feature branches only; PR‑only; **never** commit to `main`/`master`/protected branches. The skill

@@ -134,6 +134,19 @@ For multi-increment work, review **each increment** before moving on — not onc
 
 ## Quality gate (before shipping)
 
+For adopted work, resolve `current-design.json` and compare the retained current contract,
+actual `status` and immutable receipts with the tree. Follow
+[workflow-gates.md](workflow-gates.md) for admitted independent handoffs and returned evidence;
+reviewer, verifier and implementer remain distinct contexts, not authenticated identities.
+Check earlier red/compatibility consumption, research supersession and scoped reopening,
+not just the final green command. Historical design/review artifacts cannot backfill approval.
+
+After precommit proof and a matching feature commit, ordinary `close` checks actual Git
+membership/bytes/modes and mandatory gates; inspect the returned result. Positive quality
+closure is currently unavailable because guarded metric attachment lacks its producer bridge.
+Keep all nine metrics required. Local functional preservation is not a closed increment or
+ship pass. There is no recovery/reset/lock-steal path for uncertain process lifetime.
+
 Run whichever of format, lint, type-check, coverage, and build the repo actually configures
 (check its scripts, hooks, and CI), **plus the full test suite, always**. If the repo has no
 formatter/linter/type-checker, say so rather than inventing one. Fix every failure. Never

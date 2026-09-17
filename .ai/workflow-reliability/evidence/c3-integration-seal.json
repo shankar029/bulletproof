@@ -1,0 +1,1032 @@
+{
+  "kind": "C3 local frozen handoff; parent independent acceptance pending",
+  "base": "dadce66ff7d9a7494db0af5f8124009d7b132cb9",
+  "owned": {
+    "SKILL.md": "50def1dbd8b0ba52b6afccc22b713b0f44bbcacb6fc6fbe67c89070a47c91e64",
+    "README.md": "a2aa0b49bc7c51254be1ef924aedb76fd7ef71ae4c1d8f023ed57a17cba020e6",
+    "CONTRIBUTING.md": "b8b2c662f43c03b90312a035ee12d76336599b9bdd04af58eec3d94b2fdabc22",
+    "docs/user-guide.md": "7cab3f28647b957755081df6055a4babacad41884adc5057bd9b904cde1d5544",
+    "docs/architecture.md": "d74e7b664a56c43f019500ca761ab803d551fc829f7791cf4cf3b1bce9e6fe1d",
+    "references/workspace.md": "58b4d47eab3f01b270573414ee691979c98900d1f94a08934e791c9d02adb2c4",
+    "references/planning.md": "98431529d611dc4158d8843acba3a249596f9568ce228aad1b02635d758923f4",
+    "references/design-doc.md": "5bfc63405930d2c2080be5bbf99f1d200f7dfd04a4e53f7e4e5fed2e16892a03",
+    "references/delegation.md": "b390e61182e5199dde6bd87757f0afa63c8a4bd3ab7ca7428ba18945c25a776d",
+    "references/testing-and-e2e.md": "004ba58d13c5c008d6d14fd4d915677504571fe8350d4d010eae2ae5972504b5",
+    "references/research.md": "910335416c4ab6a74b2c82a397da39e022b532e751ad0bf4855e62f1004925be",
+    "references/communication.md": "102b6b1b161106f0061029344afa7c6e7ef26c4c13e6c4df9b30a8f9b30b9e20",
+    "references/review-and-pr.md": "8350d1650d326aca43930946f031c15beb80662ac34e7cab305d70d1f3226ee0",
+    "references/final-report.md": "87d6a81d1fce98b56404fbf282fafa27847991c335cd8030f73aaabba77d787d",
+    "references/workflow-gates.md": "2a30dd85a5f72bcf56dfc023775556089282bcd566252653540d70a3b3fe9a6c",
+    "scripts/tests/test_workflow_cli_boundaries.py": "16c7cae48fb86ad47e5122abf79c592997628da51ed8cdacaecffc53858dc528"
+  },
+  "historical_unchanged": {
+    ".ai/workflow-reliability/evidence/joint-cli-binding-tests.py": {
+      "sha256": "8dbebee8be389cd41844f1ba6749df3cffe6738c4416a868ca6e4c3a57135900",
+      "git_blob": "9ef736665ed840d0ec6342b5c4b3f938fac09c6a"
+    },
+    ".ai/workflow-reliability/evidence/joint-cli-binding-verify.py": {
+      "sha256": "389199aea691ac8679d1bc3d10a0fb1bd24deed28701d9c37ca707724f98a725",
+      "git_blob": "0194f3cf1bb0ec06974121072a28be7bfb06c271"
+    },
+    ".ai/workflow-reliability/evidence/joint-cli-binding-r1-report.md": {
+      "sha256": "12711817b52c4a3b098125c2eeb348f51cb274aa1343032960d647794afc5535",
+      "git_blob": "5876068e80f9cb424ab1fc16caa4b00d528dd638"
+    },
+    ".ai/workflow-reliability/evidence/joint-cli-binding-r2-report.md": {
+      "sha256": "6be5fda97fefd0b4962f9262dbde71a3e28615b4e8f1d9a1eeaff41e2d5afb09",
+      "git_blob": "bb8c90d0eaaa1b63a77424d6a61553c463c19590"
+    },
+    ".ai/workflow-reliability/evidence/joint-cli-binding-report.md": {
+      "sha256": "c9253360cb545a00921ac2403e3f632d8fb8b6be902aca33ff0835db0b630fe6",
+      "git_blob": "71a915ac3880cfea15106deb127eb4dbcdd7498a"
+    },
+    ".ai/workflow-reliability/evidence/joint-cli-binding-code-review-r2.md": {
+      "sha256": "6475a8f53f4746a7a612336ca53d589d4180e5f0bc0004d0fd1c2d38e185aa73",
+      "git_blob": "01182fbff2c87b4e14d31eebb8a8947678d51557"
+    },
+    ".ai/workflow-reliability/evidence/joint-cli-binding-code-review.md": {
+      "sha256": "f08c0c79dd78827f1b7e9986c520888b396ec72411b408f88a3afa364cb35632",
+      "git_blob": "c392ec5ce01c750190dc4b5f541c9e20eef59cba"
+    }
+  },
+  "source_anchors": {
+    "scripts/workflow.py": {
+      "sha256": "a740bdc3325f86293341b7099010b8edba30062f7ddc2a2acef1012bc1b1e1a1",
+      "definitions": {
+        "_accept": [
+          173,
+          237
+        ],
+        "_next": [
+          240,
+          325
+        ],
+        "_committed": [
+          335,
+          358
+        ],
+        "_close": [
+          361,
+          378
+        ],
+        "_adopt": [
+          425,
+          560
+        ],
+        "_parser": [
+          563,
+          586
+        ],
+        "main": [
+          589,
+          643
+        ]
+      }
+    },
+    "scripts/workflow_state.py": {
+      "sha256": "fe30290e61d319c76546c31acd454bc7c642fc83ad55126e368fa44ab4b57a6e",
+      "definitions": {
+        "_claim": [
+          401,
+          410
+        ],
+        "validate_contract": [
+          449,
+          506
+        ],
+        "validate_design": [
+          737,
+          748
+        ],
+        "validate_design_binding": [
+          760,
+          809
+        ],
+        "load_workspace": [
+          887,
+          899
+        ],
+        "_section_hash": [
+          902,
+          918
+        ],
+        "_validate_claim_files": [
+          921,
+          929
+        ],
+        "bind_inputs": [
+          984,
+          1013
+        ]
+      }
+    },
+    "scripts/workflow_gate.py": {
+      "sha256": "f7ff2c1ac229a88f39be6ddc6000f060afc545dbf5dd47b5bf3ddcc4ff43f23d",
+      "definitions": {
+        "_receipt": [
+          289,
+          353
+        ],
+        "claims": [
+          372,
+          397
+        ],
+        "evaluate": [
+          489,
+          546
+        ]
+      }
+    },
+    "scripts/tests/test_workflow_cli_boundaries.py": {
+      "sha256": "16c7cae48fb86ad47e5122abf79c592997628da51ed8cdacaecffc53858dc528",
+      "definitions": {
+        "test_registered_environment_sets_removes_and_preserves_exact_values": [
+          23,
+          44
+        ],
+        "test_close_rejects_real_scoped_membership_and_git_mode_mismatch": [
+          46,
+          63
+        ],
+        "test_adoption_cannot_reclassify_an_actual_pending_handoff_as_executable": [
+          65,
+          80
+        ]
+      }
+    },
+    "SKILL.md": {
+      "sha256": "50def1dbd8b0ba52b6afccc22b713b0f44bbcacb6fc6fbe67c89070a47c91e64",
+      "headings": [
+        {
+          "line": 6,
+          "text": "# Bulletproof Delivery"
+        },
+        {
+          "line": 20,
+          "text": "## Communicate clearly"
+        },
+        {
+          "line": 28,
+          "text": "## Workspace first: check for existing work"
+        },
+        {
+          "line": 44,
+          "text": "## Right-size the ceremony first"
+        },
+        {
+          "line": 58,
+          "text": "## Prime directives"
+        },
+        {
+          "line": 104,
+          "text": "## Working rules (they cost whole runs when broken)"
+        },
+        {
+          "line": 151,
+          "text": "## The Loop"
+        },
+        {
+          "line": 153,
+          "text": "### Phase 1 \u2014 Understand & research"
+        },
+        {
+          "line": 186,
+          "text": "### Phase 2 \u2014 Program design (before any implementation)"
+        },
+        {
+          "line": 261,
+          "text": "### Phase 3 \u2014 Plan the execution of the design"
+        },
+        {
+          "line": 310,
+          "text": "### Phase 4 \u2014 Implement + test"
+        },
+        {
+          "line": 347,
+          "text": "### Phase 5 \u2014 End-to-end verification"
+        },
+        {
+          "line": 371,
+          "text": "### Phase 6 \u2014 Review, prove, ship"
+        },
+        {
+          "line": 434,
+          "text": "### Convergence"
+        },
+        {
+          "line": 443,
+          "text": "## References (load on demand)"
+        },
+        {
+          "line": 466,
+          "text": "## Final report"
+        }
+      ]
+    },
+    "README.md": {
+      "sha256": "a2aa0b49bc7c51254be1ef924aedb76fd7ef71ae4c1d8f023ed57a17cba020e6",
+      "headings": [
+        {
+          "line": 14,
+          "text": "## From a prompt to a delivery record"
+        },
+        {
+          "line": 31,
+          "text": "## Quick start"
+        },
+        {
+          "line": 69,
+          "text": "## Features at a glance"
+        },
+        {
+          "line": 76,
+          "text": "### Understand the problem before changing the code"
+        },
+        {
+          "line": 87,
+          "text": "### Build deliberately, in increments that survive a handoff"
+        },
+        {
+          "line": 100,
+          "text": "### Verify behavior, not just plausible output"
+        },
+        {
+          "line": 113,
+          "text": "### Scale the workflow to the work"
+        },
+        {
+          "line": 129,
+          "text": "## The delivery workspace"
+        },
+        {
+          "line": 156,
+          "text": "## Evidence and current limits"
+        },
+        {
+          "line": 191,
+          "text": "## Explore the project"
+        }
+      ]
+    },
+    "CONTRIBUTING.md": {
+      "sha256": "b8b2c662f43c03b90312a035ee12d76336599b9bdd04af58eec3d94b2fdabc22",
+      "headings": [
+        {
+          "line": 1,
+          "text": "# Contributing to bulletproof"
+        },
+        {
+          "line": 7,
+          "text": "## Ground rules (the skill's prime directives apply to this repo too)"
+        },
+        {
+          "line": 17,
+          "text": "## Dev environment"
+        },
+        {
+          "line": 34,
+          "text": "## Running the eval"
+        },
+        {
+          "line": 86,
+          "text": "## Adding an eval task"
+        },
+        {
+          "line": 112,
+          "text": "## Editing the skill"
+        },
+        {
+          "line": 130,
+          "text": "## Commit & PR conventions"
+        },
+        {
+          "line": 136,
+          "text": "## Docs"
+        }
+      ]
+    },
+    "docs/user-guide.md": {
+      "sha256": "7cab3f28647b957755081df6055a4babacad41884adc5057bd9b904cde1d5544",
+      "headings": [
+        {
+          "line": 1,
+          "text": "# Using Bulletproof"
+        },
+        {
+          "line": 10,
+          "text": "## 1. Install for your host"
+        },
+        {
+          "line": 41,
+          "text": "## 2. Describe the outcome"
+        },
+        {
+          "line": 71,
+          "text": "## 3. Review decisions before code"
+        },
+        {
+          "line": 101,
+          "text": "## 4. Follow the evidence, not the activity"
+        },
+        {
+          "line": 123,
+          "text": "## 5. Resume interrupted work"
+        },
+        {
+          "line": 143,
+          "text": "## 6. Read the final report"
+        },
+        {
+          "line": 171,
+          "text": "## Common problems"
+        },
+        {
+          "line": 185,
+          "text": "## Choose the right deeper guide"
+        }
+      ]
+    },
+    "docs/architecture.md": {
+      "sha256": "d74e7b664a56c43f019500ca761ab803d551fc829f7791cf4cf3b1bce9e6fe1d",
+      "headings": [
+        {
+          "line": 1,
+          "text": "# Architecture & Design"
+        },
+        {
+          "line": 7,
+          "text": "## Mental model"
+        },
+        {
+          "line": 31,
+          "text": "## Key design decisions"
+        },
+        {
+          "line": 33,
+          "text": "### 1. One skill, thin per\u2011agent launchers"
+        },
+        {
+          "line": 37,
+          "text": "### 2. The shipped Copilot launcher is a custom agent"
+        },
+        {
+          "line": 43,
+          "text": "### 3. The loop is a convergence loop, not a single pass"
+        },
+        {
+          "line": 52,
+          "text": "### 3a. Design precedes code, and the design is a reviewable artifact"
+        },
+        {
+          "line": 58,
+          "text": "### 3b. Work is durable across sessions"
+        },
+        {
+          "line": 63,
+          "text": "### 3c. Quality is measured, not asserted"
+        },
+        {
+          "line": 76,
+          "text": "### 3d. Guarded routing has an explicit boundary"
+        },
+        {
+          "line": 90,
+          "text": "### 4. Safe by default"
+        },
+        {
+          "line": 94,
+          "text": "### 5. Parallelism is capability\u2011 and independence\u2011gated"
+        },
+        {
+          "line": 102,
+          "text": "### 6. Research is a contract, not another phase"
+        },
+        {
+          "line": 120,
+          "text": "### 7. Plans are executable handoffs, not lists of intentions"
+        },
+        {
+          "line": 142,
+          "text": "## The eval architecture"
+        },
+        {
+          "line": 148,
+          "text": "### Held-out oracle grading (the shared foundation)"
+        },
+        {
+          "line": 153,
+          "text": "### Layer 1 \u2014 `benchmark/` (original illustrative A/B)"
+        },
+        {
+          "line": 159,
+          "text": "### Layer 2 \u2014 `evals/` (config-driven regression gate, v1)"
+        },
+        {
+          "line": 168,
+          "text": "### Layer 3 \u2014 `evals/agent/` (agent-in-the-loop, v2)"
+        },
+        {
+          "line": 176,
+          "text": "### Why this matters"
+        },
+        {
+          "line": 181,
+          "text": "## Repository layout"
+        },
+        {
+          "line": 194,
+          "text": "## Environment notes"
+        }
+      ]
+    },
+    "references/workspace.md": {
+      "sha256": "58b4d47eab3f01b270573414ee691979c98900d1f94a08934e791c9d02adb2c4",
+      "headings": [
+        {
+          "line": 1,
+          "text": "# Reference: Workspace, State & Resumability"
+        },
+        {
+          "line": 7,
+          "text": "## Slug & layout"
+        },
+        {
+          "line": 36,
+          "text": "### Adopted authority versus design history"
+        },
+        {
+          "line": 65,
+          "text": "## `state.md` \u2014 the resume contract"
+        },
+        {
+          "line": 70,
+          "text": "# <slug>"
+        },
+        {
+          "line": 82,
+          "text": "## Acceptance criteria"
+        },
+        {
+          "line": 86,
+          "text": "## Increments"
+        },
+        {
+          "line": 91,
+          "text": "## Assumptions"
+        },
+        {
+          "line": 94,
+          "text": "## Log"
+        },
+        {
+          "line": 99,
+          "text": "## Protocol"
+        },
+        {
+          "line": 132,
+          "text": "## `traceability.md` \u2014 the requirement matrix that ties the gates together"
+        },
+        {
+          "line": 140,
+          "text": "# Traceability \u2014 <slug>"
+        },
+        {
+          "line": 168,
+          "text": "## Sizing increments (Phase 3)"
+        }
+      ]
+    },
+    "references/planning.md": {
+      "sha256": "98431529d611dc4158d8843acba3a249596f9568ce228aad1b02635d758923f4",
+      "headings": [
+        {
+          "line": 1,
+          "text": "# Reference: Executable Planning & Agent Handoff"
+        },
+        {
+          "line": 12,
+          "text": "## Inputs and ownership"
+        },
+        {
+          "line": 35,
+          "text": "## 1. State the outcome and the boundaries"
+        },
+        {
+          "line": 55,
+          "text": "## 2. Separate increments from tasks"
+        },
+        {
+          "line": 81,
+          "text": "## 3. Write executable task records"
+        },
+        {
+          "line": 121,
+          "text": "## 4. Define proof, not just test names"
+        },
+        {
+          "line": 151,
+          "text": "## 5. Keep the overview short without losing execution detail"
+        },
+        {
+          "line": 163,
+          "text": "### Registering the guarded projection"
+        },
+        {
+          "line": 179,
+          "text": "## 6. Accept the handoff (Gate 3)"
+        },
+        {
+          "line": 205,
+          "text": "## 7. Revise and resume without silently drifting"
+        },
+        {
+          "line": 230,
+          "text": "## Delegation brief"
+        },
+        {
+          "line": 244,
+          "text": "## Inspiration"
+        }
+      ]
+    },
+    "references/design-doc.md": {
+      "sha256": "5bfc63405930d2c2080be5bbf99f1d200f7dfd04a4e53f7e4e5fed2e16892a03",
+      "headings": [
+        {
+          "line": 1,
+          "text": "# Reference: The Design & Plan Documents (HTML, max 3 pages)"
+        },
+        {
+          "line": 15,
+          "text": "## Current contract and retained revisions"
+        },
+        {
+          "line": 32,
+          "text": "## Hard rules"
+        },
+        {
+          "line": 61,
+          "text": "## Structure (in order, with page budget)"
+        },
+        {
+          "line": 92,
+          "text": "## Diagrams \u2014 keep them simple"
+        },
+        {
+          "line": 127,
+          "text": "## Skeleton"
+        },
+        {
+          "line": 184,
+          "text": "## Keeping it honest"
+        },
+        {
+          "line": 199,
+          "text": "## `plan.html`"
+        }
+      ]
+    },
+    "references/delegation.md": {
+      "sha256": "b390e61182e5199dde6bd87757f0afa63c8a4bd3ab7ca7428ba18945c25a776d",
+      "headings": [
+        {
+          "line": 1,
+          "text": "# Reference: Delegating Phases to Subagents"
+        },
+        {
+          "line": 17,
+          "text": "## Capability ladder"
+        },
+        {
+          "line": 33,
+          "text": "## Rules that make delegation safe"
+        },
+        {
+          "line": 57,
+          "text": "## Which phases"
+        },
+        {
+          "line": 59,
+          "text": "### Current-contract and admission context"
+        },
+        {
+          "line": 85,
+          "text": "## Brief: research"
+        },
+        {
+          "line": 124,
+          "text": "## Brief: design"
+        },
+        {
+          "line": 149,
+          "text": "## Brief: design review (Gate 2b)"
+        },
+        {
+          "line": 177,
+          "text": "## Planning and consumer readiness (Phase 3)"
+        },
+        {
+          "line": 194,
+          "text": "## Brief: verify (Phase 5 end-to-end)"
+        },
+        {
+          "line": 225,
+          "text": "## Handoff back"
+        }
+      ]
+    },
+    "references/testing-and-e2e.md": {
+      "sha256": "004ba58d13c5c008d6d14fd4d915677504571fe8350d4d010eae2ae5972504b5",
+      "headings": [
+        {
+          "line": 1,
+          "text": "# Reference: Testing & End-to-End Verification"
+        },
+        {
+          "line": 11,
+          "text": "## Unit tests (Phase 4)"
+        },
+        {
+          "line": 20,
+          "text": "## Small test-first cycles (Phase 4)"
+        },
+        {
+          "line": 54,
+          "text": "## Integration tests (Phase 4)"
+        },
+        {
+          "line": 72,
+          "text": "## End-to-end verification (Phase 5)"
+        },
+        {
+          "line": 92,
+          "text": "## Evidence to capture"
+        }
+      ]
+    },
+    "references/research.md": {
+      "sha256": "910335416c4ab6a74b2c82a397da39e022b532e751ad0bf4855e62f1004925be",
+      "headings": [
+        {
+          "line": 1,
+          "text": "# Reference: Requirement-Scoped Codebase Research"
+        },
+        {
+          "line": 13,
+          "text": "## Input contract (supplied by the parent)"
+        },
+        {
+          "line": 28,
+          "text": "## Operating boundaries"
+        },
+        {
+          "line": 49,
+          "text": "## Investigation procedure"
+        },
+        {
+          "line": 51,
+          "text": "### 1. Map the requirement to research questions"
+        },
+        {
+          "line": 59,
+          "text": "### 2. Locate the relevant surfaces"
+        },
+        {
+          "line": 72,
+          "text": "### 3. Trace behavior and blast radius"
+        },
+        {
+          "line": 89,
+          "text": "### 4. Find reuse and existing proof"
+        },
+        {
+          "line": 102,
+          "text": "### 5. Recover decision context when it matters"
+        },
+        {
+          "line": 119,
+          "text": "### 6. Synthesize, check coverage, and stop"
+        },
+        {
+          "line": 131,
+          "text": "## Evidence and freshness rules"
+        },
+        {
+          "line": 151,
+          "text": "## Output contract"
+        },
+        {
+          "line": 175,
+          "text": "## Parent acceptance and downstream use"
+        },
+        {
+          "line": 177,
+          "text": "### Corrections in an adopted contract"
+        },
+        {
+          "line": 209,
+          "text": "## Delegation brief"
+        },
+        {
+          "line": 227,
+          "text": "## Inspiration"
+        }
+      ]
+    },
+    "references/communication.md": {
+      "sha256": "102b6b1b161106f0061029344afa7c6e7ef26c4c13e6c4df9b30a8f9b30b9e20",
+      "headings": [
+        {
+          "line": 1,
+          "text": "# Reference: Focused Communication"
+        },
+        {
+          "line": 11,
+          "text": "## Separate presentation from execution"
+        },
+        {
+          "line": 22,
+          "text": "## Choose the message shape"
+        },
+        {
+          "line": 34,
+          "text": "## Keep the visible work small, not the truth"
+        },
+        {
+          "line": 56,
+          "text": "## Preserve uncertainty and action ownership"
+        },
+        {
+          "line": 72,
+          "text": "## Before sending"
+        },
+        {
+          "line": 103,
+          "text": "## Inspiration"
+        }
+      ]
+    },
+    "references/review-and-pr.md": {
+      "sha256": "8350d1650d326aca43930946f031c15beb80662ac34e7cab305d70d1f3226ee0",
+      "headings": [
+        {
+          "line": 1,
+          "text": "# Reference: Review, Prove & Ship"
+        },
+        {
+          "line": 3,
+          "text": "## Self-review \u2014 read your own diff as a demanding staff engineer"
+        },
+        {
+          "line": 62,
+          "text": "## Independent verification & review \u2014 separate session, different model when possible"
+        },
+        {
+          "line": 135,
+          "text": "## Quality gate (before shipping)"
+        },
+        {
+          "line": 155,
+          "text": "## Evidence bundle"
+        },
+        {
+          "line": 176,
+          "text": "## Ship"
+        }
+      ]
+    },
+    "references/final-report.md": {
+      "sha256": "87d6a81d1fce98b56404fbf282fafa27847991c335cd8030f73aaabba77d787d",
+      "headings": [
+        {
+          "line": 1,
+          "text": "# Reference: The Final Report"
+        },
+        {
+          "line": 18,
+          "text": "## Rules"
+        },
+        {
+          "line": 37,
+          "text": "## Structure"
+        },
+        {
+          "line": 52,
+          "text": "## Skeleton"
+        },
+        {
+          "line": 114,
+          "text": "## The chat summary"
+        }
+      ]
+    },
+    "references/workflow-gates.md": {
+      "sha256": "2a30dd85a5f72bcf56dfc023775556089282bcd566252653540d70a3b3fe9a6c",
+      "headings": [
+        {
+          "line": 1,
+          "text": "# Guarded workflow CLI"
+        },
+        {
+          "line": 12,
+          "text": "## Invocation and authority"
+        },
+        {
+          "line": 46,
+          "text": "## Prepare and adopt reviewed artifacts"
+        },
+        {
+          "line": 101,
+          "text": "## Execution and returned evidence"
+        },
+        {
+          "line": 157,
+          "text": "## Closure and errors"
+        },
+        {
+          "line": 192,
+          "text": "## Research claims and corrections"
+        },
+        {
+          "line": 214,
+          "text": "## Readiness and communication"
+        },
+        {
+          "line": 228,
+          "text": "## Interruption and trust limits"
+        }
+      ]
+    }
+  },
+  "unchanged_banner_sha256": "d8c9cb127953f4393aef14c9cf1058c9559cbeb47ab1bf595aacd85e22958d03",
+  "artifacts": {
+    ".ai/workflow-reliability/evidence/c3-integration-checks.py": "7e0ca5cf7f578855a3bfc56c4e9b5931061b83031ef82742e0bb5775211d3a4e",
+    ".ai/workflow-reliability/evidence/c3-integration-cli-tests.json": "68e2dd9012ce583e5ca56e2ad0ba21304763fb99b8a3eca537c3a9b2f89c6a24",
+    ".ai/workflow-reliability/evidence/c3-integration-cli-tests.log": "3cb27332034490ce18312de962017cd1c0fa7bbd0be749d564fb9fc26e01241d",
+    ".ai/workflow-reliability/evidence/c3-integration-docs.json": "26a6b7f87838558fdea56fe089d75ea93894d6dae58c0ede9b4a343463c71aab",
+    ".ai/workflow-reliability/evidence/c3-integration-docs.mjs": "56e4df111c29845fc918678706e624b6e0047b3893abd88bb813362ef76973b1",
+    ".ai/workflow-reliability/evidence/c3-integration-handoff.md": "14dd21653f58f847a1fe6d233ac4dc3e0fd8693c7a6f49ce3d8e61dbf1b1363a",
+    ".ai/workflow-reliability/evidence/c3-integration-native.json": "e0a16198e915d4e27df4cb6af2bd82a8b7692949fd4ed93ab5f95572822161dc",
+    ".ai/workflow-reliability/evidence/c3-integration-native.log": "19cc8454af42303ebae4fcbb0e007b0d7eddcddfeb12e3e6e77cf04a771f3a5c",
+    ".ai/workflow-reliability/evidence/c3-integration-native.py": "e169f317642b43127334d8b27720fd7466753e236e3f96b8fa1633c692a867e9",
+    ".ai/workflow-reliability/evidence/c3-integration-operator-guide-1280-dark.png": "7e82556faab26724dc9d3f54d00cb077554f2f025dfd3a0448a5089c198da84a",
+    ".ai/workflow-reliability/evidence/c3-integration-operator-guide-1280-light.png": "1dcbc541a6f52769463e7fe89a716d3909c673b4f7a93c028cc680c9ec4f2cca",
+    ".ai/workflow-reliability/evidence/c3-integration-operator-guide-390-dark.png": "9268b6201b32430e0a2d3081e53c4e9d303252e1974b1cda91a18e18ff0e0ad9",
+    ".ai/workflow-reliability/evidence/c3-integration-operator-guide-390-light.png": "14139ba016c3f6b3d5486c0c7682451d94f3243125693d97bb7718e2e249eab6",
+    ".ai/workflow-reliability/evidence/c3-integration-r2-docs.json": "c8424e541e71d3a4300ae9fea80923f785b12d1dd429a2d38745a2f2a13bdd05",
+    ".ai/workflow-reliability/evidence/c3-integration-r2-operator-guide-1280-dark.png": "8867160996bae9da7d17426e96f1ded42f64ba880c02f26a3bd158ad61cce4b9",
+    ".ai/workflow-reliability/evidence/c3-integration-r2-operator-guide-1280-light.png": "83d0605ec0a4d289de76d88bfd5f52699f0d2459ae89f594973614b288f7257e",
+    ".ai/workflow-reliability/evidence/c3-integration-r2-operator-guide-390-dark.png": "d10245293d1aa1507becf2652c7dd0cc10937533255645fdc0d44253e00a9b66",
+    ".ai/workflow-reliability/evidence/c3-integration-r2-operator-guide-390-light.png": "0305a8531ec279f5bbc33989e1eb98b0fb787e3f58a23195c32368828fd31a81",
+    ".ai/workflow-reliability/evidence/c3-integration-r2-readme-1280-dark.png": "fdf20e03a43842327056ec86ce805e5d7ca0ccba8b4808a7658eea4c84beacd4",
+    ".ai/workflow-reliability/evidence/c3-integration-r2-readme-1280-light.png": "5bc71e5fe15f0f2cf7fc8f8f5d041544e62827d5d07ab8d623d22e88124b91d5",
+    ".ai/workflow-reliability/evidence/c3-integration-r2-readme-390-dark.png": "bf1184fbf8ce4998e59bf59a9ebbdc045dff4eab3987a597513802dc4a38c484",
+    ".ai/workflow-reliability/evidence/c3-integration-r2-readme-390-light.png": "5fc5dc6af0db72081d1f5102d81659ad743976d306f9225d0545d170ecbcfe8e",
+    ".ai/workflow-reliability/evidence/c3-integration-r2-readme-feature-navigation.png": "75121f351cf9f1c1082cc45c8bc5c2f7513c033e2e7890b139bc08578adf8393",
+    ".ai/workflow-reliability/evidence/c3-integration-r2-user-guide-1280-dark.png": "aecbc5694127793c22172bc39556e8061fd61876ccfcd7b0464ca59b327572ca",
+    ".ai/workflow-reliability/evidence/c3-integration-r2-user-guide-1280-light.png": "271d50ac611bff91bff03f2bf42071bf269dcf188b64f6dcc4697329cb3d0314",
+    ".ai/workflow-reliability/evidence/c3-integration-r2-user-guide-390-dark.png": "8922ead71829e702cf6ac38e2e0ad6c6c33100027f4d3be0ce3f81944ca2d2e3",
+    ".ai/workflow-reliability/evidence/c3-integration-r2-user-guide-390-light.png": "3b8eec9bba6213f27160f564c0f598014acbbd075a458ea47b03b0dd522ea29a",
+    ".ai/workflow-reliability/evidence/c3-integration-readme-1280-dark.png": "fdf20e03a43842327056ec86ce805e5d7ca0ccba8b4808a7658eea4c84beacd4",
+    ".ai/workflow-reliability/evidence/c3-integration-readme-1280-light.png": "5bc71e5fe15f0f2cf7fc8f8f5d041544e62827d5d07ab8d623d22e88124b91d5",
+    ".ai/workflow-reliability/evidence/c3-integration-readme-390-dark.png": "bf1184fbf8ce4998e59bf59a9ebbdc045dff4eab3987a597513802dc4a38c484",
+    ".ai/workflow-reliability/evidence/c3-integration-readme-390-light.png": "5fc5dc6af0db72081d1f5102d81659ad743976d306f9225d0545d170ecbcfe8e",
+    ".ai/workflow-reliability/evidence/c3-integration-seal.py": "b4ce952482c5bda502ea3efdb5842829d8f27295312108d76686983c21f7a742",
+    ".ai/workflow-reliability/evidence/c3-integration-user-guide-1280-dark.png": "aecbc5694127793c22172bc39556e8061fd61876ccfcd7b0464ca59b327572ca",
+    ".ai/workflow-reliability/evidence/c3-integration-user-guide-1280-light.png": "271d50ac611bff91bff03f2bf42071bf269dcf188b64f6dcc4697329cb3d0314",
+    ".ai/workflow-reliability/evidence/c3-integration-user-guide-390-dark.png": "8922ead71829e702cf6ac38e2e0ad6c6c33100027f4d3be0ce3f81944ca2d2e3",
+    ".ai/workflow-reliability/evidence/c3-integration-user-guide-390-light.png": "3b8eec9bba6213f27160f564c0f598014acbbd075a458ea47b03b0dd522ea29a"
+  },
+  "git_checks": [
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-B",
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "30",
+        "--max",
+        "60",
+        "--",
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "SKILL.md",
+        "README.md",
+        "CONTRIBUTING.md",
+        "docs/user-guide.md",
+        "docs/architecture.md",
+        "references/workspace.md",
+        "references/planning.md",
+        "references/design-doc.md",
+        "references/delegation.md",
+        "references/testing-and-e2e.md",
+        "references/research.md",
+        "references/communication.md",
+        "references/review-and-pr.md",
+        "references/final-report.md",
+        "references/workflow-gates.md",
+        "scripts/tests/test_workflow_cli_boundaries.py"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-B",
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "30",
+        "--max",
+        "60",
+        "--",
+        "git",
+        "diff",
+        "--exit-code",
+        "dadce66ff7d9a7494db0af5f8124009d7b132cb9",
+        "--",
+        ".ai/workflow-reliability/evidence"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-B",
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "30",
+        "--max",
+        "60",
+        "--",
+        "git",
+        "diff",
+        "--exit-code",
+        "dadce66ff7d9a7494db0af5f8124009d7b132cb9",
+        "--",
+        "assets/bulletproof-banner.svg"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-B",
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "30",
+        "--max",
+        "60",
+        "--",
+        "git",
+        "status",
+        "--short",
+        "--untracked-files=normal"
+      ],
+      "exit": 0,
+      "stdout": " M .ai/workflow-reliability/state.md\n M CONTRIBUTING.md\n M README.md\n M SKILL.md\n M docs/architecture.md\n M docs/user-guide.md\n M evals/report.md\n M references/communication.md\n M references/delegation.md\n M references/design-doc.md\n M references/final-report.md\n M references/planning.md\n M references/research.md\n M references/review-and-pr.md\n M references/testing-and-e2e.md\n M references/workflow-gates.md\n M references/workspace.md\n?? .ai/workflow-reliability/evidence/c3-integration-checks.py\n?? .ai/workflow-reliability/evidence/c3-integration-cli-tests.json\n?? .ai/workflow-reliability/evidence/c3-integration-docs.json\n?? .ai/workflow-reliability/evidence/c3-integration-docs.mjs\n?? .ai/workflow-reliability/evidence/c3-integration-handoff.md\n?? .ai/workflow-reliability/evidence/c3-integration-native.json\n?? .ai/workflow-reliability/evidence/c3-integration-native.py\n?? .ai/workflow-reliability/evidence/c3-integration-operator-guide-1280-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-operator-guide-1280-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-operator-guide-390-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-operator-guide-390-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-docs.json\n?? .ai/workflow-reliability/evidence/c3-integration-r2-operator-guide-1280-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-operator-guide-1280-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-operator-guide-390-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-operator-guide-390-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-readme-1280-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-readme-1280-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-readme-390-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-readme-390-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-readme-feature-navigation.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-user-guide-1280-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-user-guide-1280-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-user-guide-390-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-r2-user-guide-390-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-readme-1280-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-readme-1280-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-readme-390-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-readme-390-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-seal.py\n?? .ai/workflow-reliability/evidence/c3-integration-user-guide-1280-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-user-guide-1280-light.png\n?? .ai/workflow-reliability/evidence/c3-integration-user-guide-390-dark.png\n?? .ai/workflow-reliability/evidence/c3-integration-user-guide-390-light.png\n?? .ai/workflow-reliability/evidence/q2-adapter-js-seam-handoff.md\n?? scripts/tests/test_workflow_cli_boundaries.py\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-B",
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "30",
+        "--max",
+        "60",
+        "--",
+        "git",
+        "rev-parse",
+        "dadce66ff7d9a7494db0af5f8124009d7b132cb9:.ai/workflow-reliability/evidence/joint-cli-binding-tests.py",
+        "dadce66ff7d9a7494db0af5f8124009d7b132cb9:.ai/workflow-reliability/evidence/joint-cli-binding-verify.py",
+        "dadce66ff7d9a7494db0af5f8124009d7b132cb9:.ai/workflow-reliability/evidence/joint-cli-binding-r1-report.md",
+        "dadce66ff7d9a7494db0af5f8124009d7b132cb9:.ai/workflow-reliability/evidence/joint-cli-binding-r2-report.md",
+        "dadce66ff7d9a7494db0af5f8124009d7b132cb9:.ai/workflow-reliability/evidence/joint-cli-binding-report.md",
+        "dadce66ff7d9a7494db0af5f8124009d7b132cb9:.ai/workflow-reliability/evidence/joint-cli-binding-code-review-r2.md",
+        "dadce66ff7d9a7494db0af5f8124009d7b132cb9:.ai/workflow-reliability/evidence/joint-cli-binding-code-review.md"
+      ],
+      "exit": 0,
+      "stdout": "9ef736665ed840d0ec6342b5c4b3f938fac09c6a\n0194f3cf1bb0ec06974121072a28be7bfb06c271\n5876068e80f9cb424ab1fc16caa4b00d528dd638\nbb8c90d0eaaa1b63a77424d6a61553c463c19590\n71a915ac3880cfea15106deb127eb4dbcdd7498a\n01182fbff2c87b4e14d31eebb8a8947678d51557\nc392ec5ce01c750190dc4b5f541c9e20eef59cba\n",
+      "stderr": ""
+    }
+  ],
+  "final_cli_dependency_changes_since_execution": [],
+  "counts": {
+    "python_discovered": 278,
+    "python_executed": 33,
+    "python_unexecuted": 245,
+    "native_entries": 70,
+    "native_python_replays_already_in_cli33": 5,
+    "render_views": 12
+  },
+  "limits": "No current root-quality/coverage/mutation or independent/host acceptance. Parent owns state, traceability, review, report and commits."
+}

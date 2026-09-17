@@ -5,7 +5,8 @@
 Works with pi, Claude Code and the GitHub Copilot CLI custom-agent launcher.
 
 [Quick start](#quick-start) · [Features](#features-at-a-glance) ·
-[User guide](docs/user-guide.md) · [Evidence & limits](#evidence-and-current-limits) ·
+[User guide](docs/user-guide.md) · [Operator guide](references/workflow-gates.md) ·
+[Evidence & limits](#evidence-and-current-limits) ·
 [Contribute](CONTRIBUTING.md)
 
 ---
@@ -67,6 +68,11 @@ See the [user guide](docs/user-guide.md) for approvals, unattended work, resumin
 
 ## Features at a glance
 
+[Understand](#understand-the-problem-before-changing-the-code) ·
+[Build & resume](#build-deliberately-in-increments-that-survive-a-handoff) ·
+[Verify](#verify-behavior-not-just-plausible-output) ·
+[Scale](#scale-the-workflow-to-the-work)
+
 ### Understand the problem before changing the code
 
 | Feature | What it adds |
@@ -84,10 +90,12 @@ See the [user guide](docs/user-guide.md) for approvals, unattended work, resumin
 |---|---|
 | **Executable planning** | Stable task/check IDs, prerequisites, exact commands, owners, expected outcomes and evidence destinations; unresolved decisions stay visible. [Planning](references/planning.md) |
 | **Session-sized delivery** | Cohesive vertical slices, consumer-readiness checks and durable workspaces instead of relying on a long conversation. [Workspace](references/workspace.md) |
+| **Current design, retained history** | Reviewed immutable candidates become current through ordinary adoption; later briefs resolve the current pointer instead of rewriting old decisions. [Design history](references/design-doc.md#current-contract-and-retained-revisions) |
 | **Test-first implementation** | Small behavioral red/green cycles, independent expectations and real collaborators; setup failures are not behavioral-red proof. [Testing](references/testing-and-e2e.md) |
 | **Human-readable code** | Clear main flows, cohesive responsibilities, explicit errors and current rationale rather than inline incident journals. [Code clarity](references/code-clarity.md) |
-| **Compatibility-aware changes** | Plans coexistence, migration, rollback and retirement checks rather than assuming a final green test proves safe sequencing. [Planning](references/planning.md) |
-| **Focused communication** | Outcome-first updates, explicit blockers and decisions, concise summaries linked to complete evidence. [Communication](references/communication.md) |
+| **Compatibility-aware changes** | Plans coexistence, migration and rollback; guarded retirement consumes accepted earlier compatibility proof, not a later green result. [Planning](references/planning.md) |
+| **Research corrections** | Scoped absence, explicit supersession and source-bound acceptance keep corrected findings distinct from historical claims. [Research](references/research.md#corrections-in-an-adopted-contract) |
+| **Focused communication** | Outcome-first updates and explicit blockers; adopted-work readiness comes from actual status, not a separate optimistic tracker. [Communication](references/communication.md) |
 
 ### Verify behavior, not just plausible output
 
@@ -95,6 +103,7 @@ See the [user guide](docs/user-guide.md) for approvals, unattended work, resumin
 |---|---|
 | **Surface-appropriate E2E** | Real browser flows with agent-browser, HTTP requests for services, and actual CLI/library invocation. [E2E](references/testing-and-e2e.md) |
 | **Independent roles** | Fresh-context research, verification and review; a self-review is not a substitute for independent acceptance. [Delegation](references/delegation.md) |
+| **Guarded command routing** | `status`, `next`, `record`, `close`, `adopt`: registered commands, immutable receipts and current prerequisites. Recovery and positive quality closure remain unavailable. [Operator guide](references/workflow-gates.md) |
 | **Deterministic quality reports** | Base/head observations with separate measured status and required-proof completeness. Missing required proof fails closed. [Metrics](references/quality-metrics.md) |
 | **Native ESM/CJS mutation evidence** | Diff-scoped mutation, exact test arguments and working directory, native assertion classification, restoration and stale-report rejection. [Mutation](references/quality-metrics.md) |
 | **Bounded process execution** | Idle and total time limits, captured output and owned-process cleanup through `scripts/run.py`. [Process runner](scripts/run.py) |
@@ -111,9 +120,11 @@ See the [user guide](docs/user-guide.md) for approvals, unattended work, resumin
 | **Portable packaging** | One canonical `SKILL.md`, on-demand references, shared tools/assets and thin per-host launchers. [Architecture](docs/architecture.md) |
 | **Regression and live evaluations** | A fixed ten-task corpus plus a separate agent-in-the-loop harness; fixture scores are not live model-effectiveness claims. [Evaluations](evals/README.md) |
 
-**What enforces what?** Most rows describe instructions the host agent must follow. The process
-runner, measurement tools and HTML review UI are executable components. Host permissions,
-fresh-context delegation and human approval are not created by a Markdown instruction.
+**What enforces what?** The skill's phase, research and independent-role rules are procedural
+instructions. The workflow CLI checks **commands routed through it**; direct tools can bypass
+that boundary. The process runner, measurement tools and HTML review UI are also executable.
+None grants host permissions, authenticates declared contexts, creates a sandbox, or establishes
+human approval. A host's ability to launch genuinely fresh agents must be verified separately.
 
 ## The delivery workspace
 
@@ -136,6 +147,12 @@ The agent resumes from these artifacts and rechecks their prerequisites against 
 tree. A checkbox is not proof, and a later review cannot retroactively establish an earlier
 approval or compatibility check. Large recordings can be stored separately with durable references.
 
+For adopted tasks, `current-design.json` points to immutable `design-history/` and `contracts/`
+records; `workflow.json` owns registrations and `evidence/ledger.json` owns runtime events.
+Initial research/design/plan prepare the reviewed candidate **before** adoption. Use the
+[operator guide](references/workflow-gates.md) for staging, adoption, handoffs and status;
+do not replace the live pointer by hand or import historical execution as new proof.
+
 ## Evidence and current limits
 
 **Functional correctness, workflow compliance and model effectiveness are different claims.**
@@ -147,13 +164,26 @@ before comparing scores.
   is supported, but unsupported syntax, languages and runners remain explicitly ungraded.
   Syntax/import/setup failures and timeouts do not count as assertion kills.
 - Quality collection depends on installed tools **and complete supported input inventories**.
-  Diff-coverage and architecture-rule collectors are not yet implemented. Installing their
-  namesakes alone does not wire them into the probe.
+  At the accepted CLI/tool-binding boundary, configured collection covers the Python graph
+  plus qualified tool-binding smoke checks—not complete shared-JS/scalar/coverage/mutation
+  collection. Installing an analyzer or qualifying its launch does not collect its metrics.
 - Required unavailable measurements produce **incomplete/fail**. Passing the functional suites
   does not turn that into a release-quality pass.
+- All nine metrics remain required. Registered metric commands run unchanged, but successful
+  guarded attachment still needs producer-owned run ID, registered argv, source projection
+  and raw-validation integration. No accepted metric receipt or positive quality closure is
+  available. `close` checks Git membership/bytes/modes and mandatory gates; it cannot finish
+  quality closure in this boundary.
+- No recovery/reset/orphan-lock-steal command exists. Metadata publication retry after ordinary
+  unwind is not process recovery. A Windows symlink-creation case remains environment-unverified
+  (`WinError 1314`); earlier timeout-tree cleanup remains UNKNOWN. No cross-platform or
+  full-quality result is implied.
 - Source hashes detect changes in declared scope; they do not create a filesystem sandbox or
   authenticate a reviewer. Separate agent contexts depend on host capabilities.
 - Publishing requires repository permission. A local commit is not an opened PR.
+
+The planner's 37-test/coverage results and the 29-feature evaluation are **historical,
+scoped observations**, not current root-suite or root-quality measurements.
 
 For tool setup and exact report/exit semantics, use the [measurement guide](references/quality-metrics.md).
 For observed runs, consult their source-bound evidence rather than treating this page as a live dashboard.
@@ -163,6 +193,7 @@ For observed runs, consult their source-bound evidence rather than treating this
 | Start here | Purpose |
 |---|---|
 | [User guide](docs/user-guide.md) | First task, approvals, resume, reports and common problems |
+| [Workflow operator guide](references/workflow-gates.md) | Five ordinary verbs, current authority, evidence, denial and interruption limits |
 | [Architecture](docs/architecture.md) | Components, boundaries and design rationale |
 | [SKILL.md](SKILL.md) | Canonical six-phase operating instructions |
 | [References](references/) | Detailed procedures, loaded when relevant |

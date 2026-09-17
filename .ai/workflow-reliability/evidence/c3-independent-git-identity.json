@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+    "--idle",
+    "30",
+    "--max",
+    "60",
+    "--",
+    "git",
+    "--no-pager",
+    "rev-parse",
+    "HEAD",
+    "--abbrev-ref",
+    "HEAD"
+  ],
+  "exit": 0,
+  "elapsed_seconds": 0.6529024999763351,
+  "output": "dadce66ff7d9a7494db0af5f8124009d7b132cb9\nshbs-microsoft-workflow-app-verification\n"
+}

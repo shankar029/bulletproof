@@ -56,6 +56,22 @@ gracefully:
 
 ## Which phases
 
+### Current-contract and admission context
+
+For an adopted task, every brief below includes the resolved `current-design.json` revision,
+retained document/contract paths and hashes, registered action/check IDs, current `status`
+blockers and exact evidence destinations. Use [workflow-gates.md](workflow-gates.md);
+do not send only historical `design.html` or the parent's optimistic summary.
+For an admitted null-command check, pass the original run ID, inputs and prerequisite
+receipt references. The host launches the actual fresh agent; `next` only returns the
+handoff. `record` retains the registered producer, with separate recorder attribution.
+
+Initial research/design/review/planning precede adoption and use the ordinary briefs without
+invented admissions. Later guarded operations do not retroactively convert that work into
+execution proof. Mandatory fresh researcher/verifier/reviewer roles remain; self-declared
+context strings are not authentication or evidence of host isolation. If the host cannot
+provide the required fresh role, report the blocker rather than rename self-review.
+
 | Phase | Delegate | Why |
 |---|---|---|
 | **1 — Research** | **Required — always a subagent** | Independence + biggest context win; read-heavy, output small. Read-only. |

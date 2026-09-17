@@ -13,7 +13,7 @@ The slug is short kebab-case derived from the requirement (`checkout-discount-co
 .ai/
   assets/              # shared theme, copied once per repo: artifact.css, artifact.js
   <slug>/
-    state.md            # source of truth for resume — always present, always current
+    state.md            # resume index; guarded readiness is derived, not owned here
     research.md         # ground truth: what exists today, cited path:line; what does not
     traceability.md     # living matrix: AC -> design -> task -> test -> evidence -> verdict
     clarifications.md   # questions asked, answers received, assumptions taken
@@ -32,6 +32,26 @@ The slug is short kebab-case derived from the requirement (`checkout-discount-co
 **Do not create files this work doesn't need.** Trivial-tier work writes `state.md` only.
 Contained work skips `architecture.html`. There is never a second copy of the same content in
 two documents — `state.md` links, it does not restate.
+
+### Adopted authority versus design history
+
+Initial research/design/plan use the procedural artifacts above. Once a reviewed contract
+is ready for guarded operation, follow [workflow-gates.md](workflow-gates.md) to stage
+immutable candidates and invoke ordinary `adopt`. No bootstrap generator or historical
+execution import is provided. In an adopted workspace:
+
+| Record | Authority |
+|---|---|
+| `current-design.json` | Current revision, retained document/contract hashes, review and history |
+| `design-history/<revision>.html`, `contracts/<revision>.json` | Immutable design and normative component definitions |
+| `workflow.json` | Registered commands, owners, forward dependencies and check contracts |
+| `evidence/ledger.json`, `evidence/receipts/` | Runtime events and immutable evidence; readiness is derived from these and current inputs |
+
+`design.html` remains an initial/proposal overview, not an alternative live pointer.
+Resolve the retained paths in `current-design.json` on every adopted resume and brief.
+Do not edit retained revisions, copy candidates directly over live files, or repair history
+into a pass. Adoption publishes event → workflow → pointer; the operator guide owns the
+finite metadata retry rules. These retries after ordinary unwind are not process recovery.
 
 Commit `.ai/<slug>/` with the change: the design record belongs with the code that implements
 it, and the PR links to it. Keep `evidence/` out of version control if the artifacts are large
@@ -80,7 +100,7 @@ Blocked on: none | <what, and who/what unblocks it>
 
 **On every invocation, before anything else:** look for `.ai/<slug>/state.md` matching this
 requirement.
-- **Found** → read `state.md`, then the design and plan it points to, then **resume at the
+- **Found** → read `state.md`, then resolve the current design as above and read the plan, then **resume at the
   recorded phase and increment**. Do not restart, do not redesign, and do not re-derive intent
   from the diff. If the recorded state and the working tree disagree, reconcile explicitly and
   say so before continuing.
@@ -97,11 +117,17 @@ re-check for a file in a loop. The answer can arrive in a later session; the wor
 makes that safe. **Write `report.html` before you stop**, so the person reading knows exactly
 where the work stands.
 
-**Before starting any increment**, re-read `design.html` (or its relevant section). This is the
+**Before starting any increment**, re-read the resolved current design (or its relevant section). This is the
 main defense against drift on a long task: the design, not your recollection, is the contract.
 Also read the plan and current task/check records (`tasks.md` only if present), confirm their
 prerequisites and source snapshot, and reconcile completion evidence with the tree. Use
 `planning.md` for revision and resume; do not treat a completed checkbox as proof.
+For adopted work, run actual `status` for the intended action/increment/ship target before
+dispatch and after relevant source, contract or evidence changes. Copy its blockers and
+reopened checks into summaries with the observation's source context; preserve unaffected
+receipt bytes. Missing or inconsistent live authority is a blocker, not a fallback to old
+`design.html`. There is no recovery/reset/orphan-lock-steal operation; preserve uncertain
+process evidence and follow [the interruption limits](workflow-gates.md#interruption-and-trust-limits).
 
 ## `traceability.md` — the requirement matrix that ties the gates together
 

@@ -174,6 +174,24 @@ and move necessary detail below it instead of omitting evidence to hit a page co
 
 ## Parent acceptance and downstream use
 
+### Corrections in an adopted contract
+
+Keep the original report sections and explicitly supersede corrected claims; do not silently
+replace old evidence. Initial research is procedural and can precede adoption. For later
+guarded claim bindings, follow [workflow-gates.md](workflow-gates.md#research-claims-and-corrections)
+and the existing validators, not a new claim namespace or schema.
+
+The existing claim record identifies a report heading/hash, epistemic state, descriptive
+search scope, source hashes/line references, `supersedes`, researcher `correction_owner`,
+`acceptance_owner` and `accepted_receipt`. Retain superseded IDs, update affected consumers
+in a reviewed candidate, and use ordinary adoption rather than editing live authority.
+The gate rejects superseded, HYPOTHESIS/UNKNOWN, missing or stale acceptance bindings.
+Hash/line validation does not establish that a snippet supports the prose or that a scoped
+absence search was adequate; the researcher and accepting parent must check those facts.
+Record the actual query, filters, exclusions and source snapshot, distinguishing not found,
+not inspected and inaccessible. Re-anchor after edits, and let actual `status` identify
+affected work; neither an edited report nor an optimistic correction note is accepted proof.
+
 1. Confirm the report exists at the agreed location and covers the **whole requirement**, not just
    the easiest path or one worker's scope. Reconcile the AC rows against the original request.
 2. Check that important behavior, contracts, reuse candidates, and test claims have resolvable
