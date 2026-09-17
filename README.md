@@ -1,19 +1,12 @@
-<p align="center">
-  <img src="assets/bulletproof-banner.svg" alt="Bulletproof: from requirement to reviewed delivery, with evidence at every step" width="920">
-</p>
+![Bulletproof: from requirement to reviewed delivery, with evidence at every step](assets/bulletproof-banner.svg)
 
-<p align="center">
-  <strong>A delivery workflow for coding agents. Design first. Test real behavior. Show the proof.</strong><br>
-  Works with pi, Claude Code and the GitHub Copilot CLI custom-agent launcher.
-</p>
+**A delivery workflow for coding agents. Design first. Test real behavior. Show the proof.**
 
-<p align="center">
-  <a href="#quick-start">Quick start</a> ·
-  <a href="#features-at-a-glance">Features</a> ·
-  <a href="docs/user-guide.md">User guide</a> ·
-  <a href="#evidence-and-current-limits">Evidence & limits</a> ·
-  <a href="CONTRIBUTING.md">Contribute</a>
-</p>
+Works with pi, Claude Code and the GitHub Copilot CLI custom-agent launcher.
+
+[Quick start](#quick-start) · [Features](#features-at-a-glance) ·
+[User guide](docs/user-guide.md) · [Evidence & limits](#evidence-and-current-limits) ·
+[Contribute](CONTRIBUTING.md)
 
 ---
 

@@ -25,6 +25,13 @@ The workspace mirrors the fixture layout (`arm/` next to `shared/`) so the produ
 `../shared/*.ts` and the existing oracle/quality/test-realness probes score it with the same scoring
 lib as v1 (per-run output shows `composite`, `acc`, `test-real`, and `process` when applicable).
 
+The live skill bundle includes `SKILL.md`, `references`, `scripts` and `assets`, matching the
+installers. Relative tool imports and the HTML theme therefore remain available; failed
+staging removes its owned partial bundle and raises the error. Both arms receive the same
+permission to keep task records in `.ai/`, while deliverable code stays in the specified arm
+and seeded files remain unchanged. Supplying the workflow tools does not prove the agent used
+them or passed every gate. The dry-run exercises reference-solution plumbing, not live adoption.
+
 ### Process adherence (v2-only)
 Because the agent runs in a real git workspace, the harness observes whether it followed the skill's
 process rules (`evals/agent/process.mjs`, unit-tested): **committed** its work, on a **feature

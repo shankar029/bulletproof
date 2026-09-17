@@ -1,10 +1,11 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, rmSync } from 'node:fs';
+import { existsSync, rmSync, mkdtempSync, mkdirSync, writeFileSync, readFileSync, readdirSync } from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { buildPiArgs } from './pi.mjs';
-import { prepWorkspace, buildPrompt } from './workspace.mjs';
+import { prepWorkspace, buildPrompt, stageSkillBundle } from './workspace.mjs';
 import { summarize, passRate } from './stats.mjs';
 import { isConventionalCommit, scoreProcess, cappedComposite } from './process.mjs';
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -47,6 +48,47 @@ test('prompts stay neutral: no reuse/dependency/tool-choice hints that would lea
 test('only the bulletproof prompt invokes the workflow', () => {
   assert.match(buildPrompt({ arm: 'bulletproof', armFile: agent.armFile }), /bulletproof delivery workflow/);
   assert.doesNotMatch(buildPrompt({ arm: 'baseline', armFile: agent.armFile }), /bulletproof delivery workflow/);
+});
+test('both arms allow task records without relaxing deliverable or seed boundaries', () => {
+  for (const armFile of ['arm/index.ts', 'index.ts']) {
+    const baseline = buildPrompt({ arm: 'baseline', armFile });
+    const bulletproof = buildPrompt({ arm: 'bulletproof', armFile });
+    assert.equal(baseline.replace(/ Implement it\.$/, ''), bulletproof.split(' Use the bulletproof')[0]);
+    assert.match(baseline, /task records may live in `\.ai\/`/);
+    assert.match(baseline, /Keep deliverable code inside/);
+    assert.match(baseline, /Do not modify seeded files/);
+  }
+});
+
+function bundleFixture(t) {
+  const root = mkdtempSync(path.join(os.tmpdir(), 'bp-bundle-test-'));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const source = path.join(root, 'source');
+  for (const part of ['references', 'scripts', 'assets']) mkdirSync(path.join(source, part), { recursive: true });
+  writeFileSync(path.join(source, 'SKILL.md'), '# Test skill\n');
+  writeFileSync(path.join(source, 'references', 'guide.md'), 'Use the bundled tools.\n');
+  writeFileSync(path.join(source, 'assets', 'theme.css'), 'body { color: navy; }\n');
+  writeFileSync(path.join(source, 'scripts', 'helper.mjs'), 'export const value = 42;\n');
+  writeFileSync(path.join(source, 'scripts', 'tool.mjs'), 'export { value } from "./helper.mjs";\n');
+  return { root, source };
+}
+
+test('skill bundle includes executable sibling imports, references and assets', async t => {
+  const { root, source } = bundleFixture(t);
+  const bundle = stageSkillBundle(source, root);
+  for (const file of ['SKILL.md', 'references/guide.md', 'assets/theme.css', 'scripts/tool.mjs', 'scripts/helper.mjs']) {
+    assert.deepEqual(readFileSync(path.join(bundle, file)), readFileSync(path.join(source, file)));
+  }
+  const tool = await import(pathToFileURL(path.join(bundle, 'scripts', 'tool.mjs')).href);
+  assert.equal(tool.value, 42);
+});
+
+test('missing bundle payload fails and cleans only the owned partial directory', t => {
+  const { root, source } = bundleFixture(t);
+  rmSync(path.join(source, 'assets'), { recursive: true });
+  assert.throws(() => stageSkillBundle(source, root), { code: 'ENOENT' });
+  assert.deepEqual(readdirSync(root), ['source']);
+  assert.equal(readFileSync(path.join(source, 'SKILL.md'), 'utf8'), '# Test skill\n');
 });
 
 // ---- prepWorkspace: isolated, seeded, oracle held out ----

@@ -2,7 +2,7 @@
   "results": [
     {
       "file": "README.md",
-      "sha256": "54dcd310c6c0a8bfd195ef481d9fd48839ad09540674391e55c48b713418918f",
+      "sha256": "843d5b554c3a1a5f96fdbd104c3c70a634b81c6549648df4a989b270eeca657c",
       "renderer": "marked 18.0.12; local GitHub-like preview, not github.com",
       "links": 38,
       "width": 1280,
@@ -17,12 +17,12 @@
             "alt": "Bulletproof: from requirement to reviewed delivery, with evidence at every step"
           }
         ],
-        "text": 9833
+        "text": 9834
       }
     },
     {
       "file": "README.md",
-      "sha256": "54dcd310c6c0a8bfd195ef481d9fd48839ad09540674391e55c48b713418918f",
+      "sha256": "843d5b554c3a1a5f96fdbd104c3c70a634b81c6549648df4a989b270eeca657c",
       "renderer": "marked 18.0.12; local GitHub-like preview, not github.com",
       "links": 38,
       "width": 390,
@@ -37,7 +37,7 @@
             "alt": "Bulletproof: from requirement to reviewed delivery, with evidence at every step"
           }
         ],
-        "text": 9833
+        "text": 9834
       }
     },
     {
@@ -75,9 +75,9 @@
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "set",
         "viewport",
@@ -85,98 +85,98 @@
         "900"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"deviceScaleFactor\":1.0,\"height\":900,\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"mobile\":false,\"width\":1280},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"deviceScaleFactor\":1.0,\"height\":900,\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"mobile\":false,\"width\":1280},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "set",
         "media",
         "light"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"set\":true},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"set\":true},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "open",
         "file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/readme-preview.html"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"D71FA411FFE375137D74D186BC3C6BCC\",\"title\":\"readme preview\",\"url\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/readme-preview.html\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"197DFCD1B922CB95140FC4E33B543375\",\"title\":\"readme preview\",\"url\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/readme-preview.html\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "eval",
         "JSON.stringify({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,headings:document.querySelectorAll(\"h1,h2,h3\").length,images:[...document.images].map(i=>({loaded:i.complete&&i.naturalWidth>0,alt:i.alt})),text:document.body.innerText.length})"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/readme-preview.html\",\"result\":\"{\\\"width\\\":1280,\\\"scrollWidth\\\":1280,\\\"headings\\\":10,\\\"images\\\":[{\\\"loaded\\\":true,\\\"alt\\\":\\\"Bulletproof: from requirement to reviewed delivery, with evidence at every step\\\"}],\\\"text\\\":9833}\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/readme-preview.html\",\"result\":\"{\\\"width\\\":1280,\\\"scrollWidth\\\":1280,\\\"headings\\\":10,\\\"images\\\":[{\\\"loaded\\\":true,\\\"alt\\\":\\\"Bulletproof: from requirement to reviewed delivery, with evidence at every step\\\"}],\\\"text\\\":9834}\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "errors"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "console"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "screenshot",
         "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\readme-1280-light.png"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\readme-1280-light.png\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\readme-1280-light.png\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "set",
         "viewport",
@@ -184,98 +184,98 @@
         "900"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"deviceScaleFactor\":1.0,\"height\":900,\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"mobile\":false,\"width\":390},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"deviceScaleFactor\":1.0,\"height\":900,\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"mobile\":false,\"width\":390},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "set",
         "media",
         "dark"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"set\":true},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"set\":true},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "open",
         "file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/readme-preview.html"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"D71FA411FFE375137D74D186BC3C6BCC\",\"title\":\"readme preview\",\"url\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/readme-preview.html\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"197DFCD1B922CB95140FC4E33B543375\",\"title\":\"readme preview\",\"url\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/readme-preview.html\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "eval",
         "JSON.stringify({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,headings:document.querySelectorAll(\"h1,h2,h3\").length,images:[...document.images].map(i=>({loaded:i.complete&&i.naturalWidth>0,alt:i.alt})),text:document.body.innerText.length})"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/readme-preview.html\",\"result\":\"{\\\"width\\\":390,\\\"scrollWidth\\\":390,\\\"headings\\\":10,\\\"images\\\":[{\\\"loaded\\\":true,\\\"alt\\\":\\\"Bulletproof: from requirement to reviewed delivery, with evidence at every step\\\"}],\\\"text\\\":9833}\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/readme-preview.html\",\"result\":\"{\\\"width\\\":390,\\\"scrollWidth\\\":390,\\\"headings\\\":10,\\\"images\\\":[{\\\"loaded\\\":true,\\\"alt\\\":\\\"Bulletproof: from requirement to reviewed delivery, with evidence at every step\\\"}],\\\"text\\\":9834}\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "errors"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "console"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "screenshot",
         "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\readme-390-dark.png"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\readme-390-dark.png\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\readme-390-dark.png\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "set",
         "viewport",
@@ -283,98 +283,98 @@
         "900"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"deviceScaleFactor\":1.0,\"height\":900,\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"mobile\":false,\"width\":1280},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"deviceScaleFactor\":1.0,\"height\":900,\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"mobile\":false,\"width\":1280},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "set",
         "media",
         "light"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"set\":true},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"set\":true},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "open",
         "file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/user-guide-preview.html"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"D71FA411FFE375137D74D186BC3C6BCC\",\"title\":\"user-guide preview\",\"url\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/user-guide-preview.html\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"197DFCD1B922CB95140FC4E33B543375\",\"title\":\"user-guide preview\",\"url\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/user-guide-preview.html\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "eval",
         "JSON.stringify({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,headings:document.querySelectorAll(\"h1,h2,h3\").length,images:[...document.images].map(i=>({loaded:i.complete&&i.naturalWidth>0,alt:i.alt})),text:document.body.innerText.length})"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/user-guide-preview.html\",\"result\":\"{\\\"width\\\":1280,\\\"scrollWidth\\\":1280,\\\"headings\\\":9,\\\"images\\\":[],\\\"text\\\":7566}\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/user-guide-preview.html\",\"result\":\"{\\\"width\\\":1280,\\\"scrollWidth\\\":1280,\\\"headings\\\":9,\\\"images\\\":[],\\\"text\\\":7566}\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "errors"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "console"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "screenshot",
         "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\user-guide-1280-light.png"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\user-guide-1280-light.png\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\user-guide-1280-light.png\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "set",
         "viewport",
@@ -382,98 +382,98 @@
         "900"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"deviceScaleFactor\":1.0,\"height\":900,\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"mobile\":false,\"width\":390},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"deviceScaleFactor\":1.0,\"height\":900,\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"mobile\":false,\"width\":390},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "set",
         "media",
         "dark"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"set\":true},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"set\":true},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "open",
         "file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/user-guide-preview.html"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"D71FA411FFE375137D74D186BC3C6BCC\",\"title\":\"user-guide preview\",\"url\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/user-guide-preview.html\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"197DFCD1B922CB95140FC4E33B543375\",\"title\":\"user-guide preview\",\"url\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/user-guide-preview.html\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "eval",
         "JSON.stringify({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,headings:document.querySelectorAll(\"h1,h2,h3\").length,images:[...document.images].map(i=>({loaded:i.complete&&i.naturalWidth>0,alt:i.alt})),text:document.body.innerText.length})"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/user-guide-preview.html\",\"result\":\"{\\\"width\\\":390,\\\"scrollWidth\\\":390,\\\"headings\\\":9,\\\"images\\\":[],\\\"text\\\":7566}\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/session-state/c154cbfc-3b1d-4163-b8dd-5f0b43af3095/files/workflow-reliability/user-guide-preview.html\",\"result\":\"{\\\"width\\\":390,\\\"scrollWidth\\\":390,\\\"headings\\\":9,\\\"images\\\":[],\\\"text\\\":7566}\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "errors"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "console"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "screenshot",
         "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\user-guide-390-dark.png"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":3231708394899645923},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\user-guide-390-dark.png\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":14958699816968582701},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\user-guide-390-dark.png\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "docs-fee1e2ad-aa4f-4a09-8115-5579c682d7b8",
+        "docs-df0a3f94-28fd-4796-a1b4-27a1892347f9",
         "--cdp",
-        "http://127.0.0.1:52170",
+        "http://127.0.0.1:55956",
         "--json",
         "close"
       ],

@@ -9,28 +9,16 @@
 //   node evals/agent/live.mjs --task paginator                      # baseline + bulletproof, live
 // Flags: --arms a,b · --dry-run · --timeout <ms> · --keep (don't delete workspaces)
 import { spawnSync } from 'node:child_process';
-import { cpSync, existsSync, mkdtempSync, readFileSync, readdirSync, rmSync } from 'node:fs';
-import os from 'node:os';
+import { cpSync, existsSync, readFileSync, readdirSync, rmSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { runFunctional, runQuality, runTestQuality, toDimensions, composite } from '../lib/score.mjs';
 import { buildPiArgs, invokePi } from './pi.mjs';
-import { prepWorkspace, buildPrompt } from './workspace.mjs';
+import { prepWorkspace, buildPrompt, stageSkillBundle } from './workspace.mjs';
 import { summarize, passRate } from './stats.mjs';
 import { isConventionalCommit, scoreProcess, cappedComposite } from './process.mjs';
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
-const SKILL = path.join(REPO, 'SKILL.md');
-
-/** Stage a self-contained skill bundle (SKILL.md + references/) so `references/*.md` resolve
- *  for the agent — mirroring how the installer lays the skill out on disk. */
-function stageSkillBundle() {
-  const dir = mkdtempSync(path.join(os.tmpdir(), 'bp-skill-'));
-  cpSync(SKILL, path.join(dir, 'SKILL.md'));
-  cpSync(path.join(REPO, 'references'), path.join(dir, 'references'), { recursive: true });
-  return dir;
-}
-
 function parseArgs(argv) {
   const o = { arms: ['baseline', 'bulletproof'], dryRun: false, timeout: 300_000, keep: false, runs: 1 };
   for (let i = 0; i < argv.length; i++) {
@@ -94,7 +82,7 @@ const opts = parseArgs(process.argv.slice(2));
 const task = JSON.parse(readFileSync(path.join(REPO, 'evals', 'tasks', opts.task, 'task.json'), 'utf8'));
 if (!task.agent) throw new Error(`task "${opts.task}" has no "agent" block (needed for v2 agent-in-the-loop)`);
 const projectAbs = path.join(REPO, task.project);
-const skillBundle = (!opts.dryRun && opts.arms.includes('bulletproof')) ? stageSkillBundle() : null;
+const skillBundle = (!opts.dryRun && opts.arms.includes('bulletproof')) ? stageSkillBundle(REPO) : null;
 
 /** One end-to-end sample for an arm: prep → produce (or dry-run copy) → score → clean up. */
 function runOnce(arm) {
