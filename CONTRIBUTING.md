@@ -17,6 +17,9 @@ would — planned, tested, verified, and shipped as a PR with proof.
 ## Dev environment
 
 - **Node ≥ 22** (the benchmark uses native TypeScript type‑stripping via `node --test`).
+- **Python 3** for the standard-library process, evidence and measurement tools and their tests.
+  The current Windows validation environment uses Python 3.14.2 and Node 24.11.1;
+  those observations are not proof of every older runtime or platform.
 - **git ≥ 2.4**, and **`gh`** if you want to open PRs from the CLI.
 - **Playwright** only for the UI benchmark arm:
   ```bash
@@ -38,6 +41,21 @@ node --test evals/lib/*.test.mjs \
             evals/agent/agent.test.mjs   # unit tests for the scoring library + agent harness
 node evals/agent/live.mjs --task <id> --dry-run   # v2: agent-in-the-loop plumbing (no model)
 ```
+
+Python runtime tests use the standard library, including real Git and subprocess fixtures:
+
+```powershell
+python -B scripts\run.py --idle 120 --max 1800 -- python -B -m unittest discover -s scripts\tests -v
+```
+
+Use the actual installed Python executable if the `python` alias is unavailable. Keep
+`PYTHONDONTWRITEBYTECODE=1` for subprocess fixtures when capturing broad source fingerprints.
+Run the smallest affected tests during implementation, then the integrated regression scope.
+Capture positive test counts; a runner that could not start is not a successful check.
+
+The corpus gate and functional tests do not replace the standalone probe's required
+measurements. Missing collectors or partially supported inputs remain incomplete/fail.
+See [quality metrics](references/quality-metrics.md) for current support and report semantics.
 
 `evals/run.mjs` **exits non-zero if any `bulletproof` arm regresses**, so it doubles as the CI gate;
 it writes `evals/report.md` (committed snapshot) and `evals/report.json` (gitignored). The original
@@ -98,6 +116,12 @@ See `benchmark/README.md` for the illustrative A/B design and
 
 ## Docs
 
+- Start here: [user guide](docs/user-guide.md)
 - Architecture & design rationale: [`docs/architecture.md`](docs/architecture.md)
 - Roadmap for the eval harness: [`EVAL-PLAN.md`](EVAL-PLAN.md)
 - Changelog: [`CHANGELOG.md`](CHANGELOG.md)
+
+README feature claims must distinguish skill instructions, executable tools and host
+capabilities. Check relative links and narrow/wide rendering after substantial presentation
+changes. Do not publish fixture scores as model-effectiveness evidence or describe planned
+commands as implemented behavior.

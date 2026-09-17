@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 280" role="img" aria-labelledby="title description">
+  <title id="title">Bulletproof</title>
+  <desc id="description">A coding-agent delivery workflow: understand, design, plan, build, verify, and review and ship.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101e35"/>
+      <stop offset="1" stop-color="#153d50"/>
+    </linearGradient>
+  </defs>
+  <rect width="1100" height="280" rx="20" fill="url(#background)"/>
+  <path d="M77 50 115 65v35c0 27-19 47-38 56-19-9-38-29-38-56V65Z" fill="#123b4c" stroke="#74e0c1" stroke-width="3"/>
+  <path d="m58 100 13 13 27-30" fill="none" stroke="#74e0c1" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+    <text x="143" y="100" font-size="54" font-weight="750" fill="#ffffff">bulletproof</text>
+    <text x="145" y="139" font-size="23" fill="#c1d5e4">From requirement to reviewed delivery.</text>
+    <text x="145" y="169" font-size="18" fill="#86e5cb">Evidence at every step. Honest about what remains.</text>
+    <g fill="#19354a" stroke="#456577">
+      <rect x="38" y="212" width="150" height="40" rx="9"/>
+      <rect x="212" y="212" width="150" height="40" rx="9"/>
+      <rect x="386" y="212" width="150" height="40" rx="9"/>
+      <rect x="560" y="212" width="150" height="40" rx="9"/>
+      <rect x="734" y="212" width="150" height="40" rx="9"/>
+      <rect x="908" y="212" width="154" height="40" rx="9"/>
+    </g>
+    <g fill="#e8f1f7" font-size="17" text-anchor="middle">
+      <text x="113" y="238">Understand</text>
+      <text x="287" y="238">Design</text>
+      <text x="461" y="238">Plan</text>
+      <text x="635" y="238">Build</text>
+      <text x="809" y="238">Verify</text>
+      <text x="985" y="238">Review &amp; ship</text>
+    </g>
+  </g>
+</svg>

@@ -40,3 +40,6 @@ cp launchers/claude/commands/bulletproof.md ~/.claude/commands/bulletproof.md
 /bulletproof add rate limiting to the /login endpoint (max 5/min per IP)
 /bulletproof ./docs/feature-checkout.md
 ```
+
+Continue with the [user guide](../docs/user-guide.md) for approvals, unattended execution,
+resuming interrupted work and reading the delivery evidence.

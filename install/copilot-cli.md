@@ -1,7 +1,8 @@
 # Install for GitHub Copilot CLI
 
-Copilot CLI does **not** support custom slash commands (upstream issues #618, #1004), so
-`/bulletproof` isn't available. Instead, install a **custom agent** that embodies the workflow.
+The shipped Copilot CLI integration is a **custom agent** that loads the Bulletproof
+workflow. Host capabilities evolve: use the agent-selection mechanism supported by your
+installed CLI rather than assuming the pi/Claude slash-command launcher works here.
 
 ## Quick install (one command)
 ```bash
@@ -28,7 +29,8 @@ cp launchers/copilot/agents/bulletproof.agent.md ~/.copilot/agents/bulletproof.a
 ```
 
 (Per project instead: put the agent in `.github/agents/bulletproof.agent.md` and the playbook
-in the repo, e.g. `docs/bulletproof/`.)
+in repo-root `bulletproof/`, matching the shipped launcher's `bulletproof/SKILL.md` reference.
+If you choose another location, update that reference in the copied launcher.)
 
 ## Use
 Start Copilot CLI with the custom agent, then give it the requirement:
@@ -40,6 +42,11 @@ copilot --agent bulletproof
 
 (Check `copilot --help` for the exact flag in your version; some builds select agents via an
 interactive picker or `/agents`.)
+
+Continue with the [user guide](../docs/user-guide.md) for your first requirement, design
+approval, unattended operation, resuming a workspace and interpreting the final report.
+Installing the agent does not grant repository permissions or create independent subagents
+when the host does not expose them.
 
 ## Optional: make it the default behavior
 Add the prime directives to `AGENTS.md` or `.github/copilot-instructions.md` at the repo root so

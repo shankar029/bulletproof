@@ -42,3 +42,6 @@ cp launchers/pi/prompts/bulletproof.md ~/.pi/agent/prompts/bulletproof.md
 
 The template tells pi to load the `bulletproof` skill and run the full loop. You can also run
 `/skill:bulletproof <requirement>` directly without the template.
+
+Continue with the [user guide](../docs/user-guide.md) for approvals, unattended execution,
+resuming interrupted work and reading the delivery evidence.

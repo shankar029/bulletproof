@@ -1,6 +1,7 @@
 # Architecture & Design
 
-How the pieces fit, and the rationale behind the choices. For usage see [`README.md`](../README.md);
+How the pieces fit, and the rationale behind the choices. For usage see the
+[user guide](user-guide.md) and [`README.md`](../README.md);
 for the eval roadmap see [`EVAL-PLAN.md`](../EVAL-PLAN.md).
 
 ## Mental model
@@ -18,14 +19,14 @@ requirement ──▶ launcher (per agent) ──▶ SKILL.md (the loop) ──�
 ```
 
 - **`SKILL.md` is the single source of truth.** The whole operating loop lives here once.
-- **Launchers are thin.** Each agent has a tiny entry file that points at `SKILL.md`, so behavior
-  is identical everywhere and there's only one place to change.
+- **Launchers are thin.** Each agent has an entry file that points at `SKILL.md`, so the
+  intended procedure has one owner. Actual capabilities and execution still depend on the host.
 - **References are progressive disclosure.** `SKILL.md` stays lean; depth (workspace/resume, design
   documents, test setup, review checklist, quality rubric, metrics, parallelism) sits in
   `references/*.md` and is pulled in only when a phase needs it.
-- **Scripts and assets ship with the skill.** `scripts/` (probe, mutation) and `assets/` (artifact
-  theme) are installed alongside `SKILL.md`; they run from outside the target project and never add
-  dependencies or config to it.
+- **Scripts and assets ship with the skill.** The process, evidence and measurement tools and
+  the artifact theme are installed alongside `SKILL.md`. Analysis dependencies stay outside
+  the target project's manifests; task-specific reports/configuration belong in its workspace.
 
 ## Key design decisions
 
@@ -33,11 +34,11 @@ requirement ──▶ launcher (per agent) ──▶ SKILL.md (the loop) ──�
 DRY and consistency: the loop is authored once. `launchers/pi`, `launchers/claude`, and
 `launchers/copilot` only adapt the invocation surface, not the behavior.
 
-### 2. Copilot CLI is a custom agent, not a slash command
-Copilot CLI has **no custom slash‑command support** upstream
-(github/copilot-cli issues #618, #1004). So its launcher is a **custom agent**
-(`.github/agents/bulletproof.agent.md`) that carries the same instructions. pi and Claude Code get
-real `/bulletproof` commands.
+### 2. The shipped Copilot launcher is a custom agent
+The Copilot launcher installs `bulletproof.agent.md` in the host's agents directory.
+pi and Claude Code receive `/bulletproof` command launchers. This describes the shipped
+integration, not an assertion that a current or future host cannot support other invocation
+mechanisms. See the [Copilot install guide](../install/copilot-cli.md).
 
 ### 3. The loop is a convergence loop, not a single pass
 Passing tests is the *floor*. After the six phases, the agent scores the work against the 9‑dimension
