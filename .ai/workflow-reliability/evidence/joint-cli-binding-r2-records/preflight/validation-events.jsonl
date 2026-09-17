@@ -1,0 +1,6 @@
+{"event": "entered", "target": "Q1Fixture.validate", "ordinal": 1, "method": "preflight", "monotonic": 228493.3652849, "pid": 44528}
+{"event": "returned-control/completed-invocation", "target": "Q1Fixture.validate", "ordinal": 1, "method": "preflight", "seconds": 10.306947799981572, "return_value_is_none": false, "meaning": "Return event includes exception unwind; not an assertion verdict", "pid": 44528}
+{"event": "entered", "target": "Q1Fixture.validate", "ordinal": 2, "method": "preflight", "monotonic": 228503.6727456, "pid": 44528}
+{"event": "returned-control/completed-invocation", "target": "Q1Fixture.validate", "ordinal": 2, "method": "preflight", "seconds": 10.032838900020579, "return_value_is_none": true, "meaning": "Return event includes exception unwind; not an assertion verdict", "pid": 44528}
+{"event": "entered", "target": "_AssertRaisesContext.__exit__", "ordinal": 3, "method": "preflight", "monotonic": 228513.7114154, "pid": 44528}
+{"event": "returned-control/completed-invocation", "target": "_AssertRaisesContext.__exit__", "ordinal": 3, "method": "preflight", "seconds": 0.0002714000002015382, "return_value_is_none": false, "meaning": "Return event includes exception unwind; not an assertion verdict", "pid": 44528}

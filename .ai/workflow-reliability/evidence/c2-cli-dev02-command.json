@@ -1,0 +1,27 @@
+{
+  "temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c2cli-c04b00",
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "transcript": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c2-cli-dev02-invocations.jsonl",
+  "git": "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts\\run.py",
+    "--idle",
+    "120",
+    "--max",
+    "600",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-u",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts\\tests",
+    "-p",
+    "test_workflow_cli.py",
+    "-v"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "phase": "Preparation only; no test or tool fixture launched",
+  "command": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe -B scripts\\run.py --idle 120 --max 1800 -- C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe -B -u .ai\\workflow-reliability\\evidence\\joint-cli-binding-r1-verify.py prepare",
+  "tool_shell_id": "366",
+  "exit_code": 1,
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\joint-cli-binding-r1-verify.py\", line 271, in <module>\n    raise SystemExit(action() or 0)\n                     ~~~~~~^^\n  File \"C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\joint-cli-binding-r1-verify.py\", line 112, in prepare\n    assert repro[\"audited_launches\"][0][\"argv\"] == repro[\"command\"][\"argv\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+  "cause": "Verifier compared Windows subprocess audit command-line string with captured argv list without Windows list2cmdline conversion.",
+  "correction": "Apply standard subprocess.list2cmdline only for string-form audit argv; resume preparation while comparing and preserving the two existing preparation artifacts. No production or test-body correction.",
+  "production_failure": false
+}

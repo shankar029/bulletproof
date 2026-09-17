@@ -1,0 +1,27 @@
+{
+  "test_sha256": "bd2e20c4fc364de645c7118e45bb469b9f7408f19793ba1968f6008cdb6d540c",
+  "cli_sha256": "a740bdc3325f86293341b7099010b8edba30062f7ddc2a2acef1012bc1b1e1a1",
+  "temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c2cli-5fc470",
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts\\run.py",
+    "--idle",
+    "120",
+    "--max",
+    "600",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-u",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts\\tests",
+    "-p",
+    "test_workflow_cli.py",
+    "-v"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-S",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\probe.py",
+    "--repo",
+    "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-jxnnobjr\\bulletproof-git-0ccns7n5",
+    "--slug",
+    "frozen-env-off",
+    "--base",
+    "65707dc932cb3d3dab0c5cc7190ecf33d0a74f11",
+    "--skip-mutation",
+    "--measurement-config",
+    "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-jxnnobjr\\bulletproof-git-0ccns7n5\\measurement.json"
+  ],
+  "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-jxnnobjr\\bulletproof-git-0ccns7n5",
+  "exit_code": 1,
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "raw": {
+    "stdout": {
+      "bytes": 89618,
+      "sha256": "bba2bf028044618c6b74a65909c3ffd1aa1afd3e07078cfb98bb52e066d55411"
+    },
+    "stderr": {
+      "bytes": 275,
+      "sha256": "9cb7707efedc08101beb550cb33cc747aa0e0ed13ff99f5eb23b09ec7adc9498"
+    }
+  },
+  "outer_run_bounds": {
+    "idle": 120,
+    "max": 1200
+  }
+}

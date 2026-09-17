@@ -1,0 +1,30 @@
+{
+  "selected": [
+    "test_measure_graph.GraphTests.test_invalid_python_and_mixed_languages_remain_explicit",
+    "test_measure_graph.GraphTests.test_missing_ambiguous_and_escaping_imports_are_incomplete",
+    "test_measure_graph.GraphTests.test_rehashed_graph_payload_is_not_accepted_as_authoritative",
+    "test_measure_graph.GraphTests.test_replaced_architecture_identity_fails_even_when_total_falls",
+    "test_measure_graph.GraphTests.test_replaced_cycle_fails_at_equal_count_and_line_moves_preserve_identity",
+    "test_measure_graph.GraphTests.test_runtime_nonpackage_child_is_unresolved_not_a_local_namesake",
+    "test_measure_graph.GraphTests.test_runtime_precedence_preserves_shadowable_and_relative_names",
+    "test_measure_graph.GraphTests.test_zero_import_receipts_complete_and_source_bytes_are_not_executed"
+  ],
+  "tests_run": 8,
+  "passed": [
+    "test_measure_graph.GraphTests.test_invalid_python_and_mixed_languages_remain_explicit",
+    "test_measure_graph.GraphTests.test_missing_ambiguous_and_escaping_imports_are_incomplete",
+    "test_measure_graph.GraphTests.test_rehashed_graph_payload_is_not_accepted_as_authoritative",
+    "test_measure_graph.GraphTests.test_replaced_architecture_identity_fails_even_when_total_falls",
+    "test_measure_graph.GraphTests.test_replaced_cycle_fails_at_equal_count_and_line_moves_preserve_identity",
+    "test_measure_graph.GraphTests.test_runtime_nonpackage_child_is_unresolved_not_a_local_namesake",
+    "test_measure_graph.GraphTests.test_runtime_precedence_preserves_shadowable_and_relative_names",
+    "test_measure_graph.GraphTests.test_zero_import_receipts_complete_and_source_bytes_are_not_executed"
+  ],
+  "failures": [],
+  "errors": [],
+  "skips": [],
+  "seconds": 270.7115577000077,
+  "completion_events": 13,
+  "trace_errors": [],
+  "incomplete_target_invocations": []
+}

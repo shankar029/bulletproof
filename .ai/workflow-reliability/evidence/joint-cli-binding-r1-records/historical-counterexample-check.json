@@ -1,0 +1,40 @@
+{
+  "source": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-binding-r1-repro\\reproduction.json",
+  "pin": {
+    "sha256": "a74b337ca26cb7ca7991f53069c60abca01afec6b26e1b262beb82fef9e0d46f",
+    "bytes": 44757
+  },
+  "manifest_ref": {
+    "path": "r1-missing-row.json",
+    "sha256": "88fb1eef3bc1a61df8b666b13b20c366d8c7deef8f49c5396ec1788979930a8d",
+    "bytes": 1366
+  },
+  "checked_artifacts": [
+    {
+      "path": "head/binding/typescript/request.json",
+      "sha256": "6a1acec2bd3606253d402401435b1ce598b8922e60663204479679f7686d5da4",
+      "bytes": 37093
+    },
+    {
+      "path": "head/binding/typescript/result.json",
+      "sha256": "f90bce8586146b5cc0556d06720d64ac6bb0e46871fe77cc1f4b014d0dbc1def",
+      "bytes": 26708
+    },
+    {
+      "path": "head/binding/typescript/command.json",
+      "sha256": "70f8f47d440cd716833444cc1a24fde7ccf431d60cdf0e3a1c9681c6c964206c",
+      "bytes": 3869
+    }
+  ],
+  "audited_launches": [
+    {
+      "event": "subprocess.Popen",
+      "executable": "None",
+      "argv": "\"C:\\Program Files\\nodejs\\node.exe\" -e \"\n'use strict';\nconst fs = require('node:fs'), path = require('node:path'), crypto = require('node:crypto');\nconst request = JSON.parse(fs.readFileSync(process.argv[1], 'utf8'));\nconst hash = data => crypto.createHash('sha256').update(data).digest('hex');\nconst key = file => process.platform === 'win32' ? path.resolve(file).toLowerCase() : path.resolve(file);\nconst allowed = new Map(request.source.resources.map(p => [key(p.path), p]));\nfunction checked(file) {\n  const pin = allowed.get(key(file));\n  if (!pin) throw new Error('Unqualified compiler resource: ' + file);\n  const bytes = fs.readFileSync(file);\n  if (hash(bytes) !== pin.sha256) throw new Error('Changed compiler resource: ' + file);\n  return bytes;\n}\nchecked(request.module_path);\nconst ts = require(request.module_path);\nif (ts.version !== '5.9.3') throw new Error('Unexpected compiler version');\nconst virtual = path.join(path.dirname(request.result_path), 'binding.ts');\nconst text = 'export const answer: number = 42;\\n';\nconst options = request.source.settings, reads = new Map();\nconst host = ts.createCompilerHost(options);\nhost.readFile = file => {\n  if (key(file) === key(virtual)) return text;\n  if (!allowed.has(key(file))) return undefined;\n  const bytes = checked(file), pin = allowed.get(key(file));\n  reads.set(pin.path, {path: pin.path, sha256: hash(bytes)});\n  return new TextDecoder('utf-8', {fatal:true}).decode(bytes);\n};\nhost.fileExists = file => key(file) === key(virtual) || allowed.has(key(file));\nhost.directoryExists = dir => key(dir) === key(path.dirname(virtual)) ||\n  request.source.resources.some(p => key(p.path).startsWith(key(dir) + path.sep));\nhost.writeFile = () => {throw new Error('Unexpected compiler output');};\nconst program = ts.createProgram([virtual], options, host);\nconst diagnostics = ts.getPreEmitDiagnostics(program).map(d => ({\n  code:d.code, message:ts.flattenDiagnosticMessageText(d.messageText, '\\n')}));\nif (diagnostics.length) throw new Error(JSON.stringify(diagnostics));\nconst sf = program.getSourceFile(virtual);\nif (!sf) throw new Error('Missing compiler input');\nconst checker = program.getTypeChecker();\nconst symbol = checker.getSymbolAtLocation(sf.statements[0].declarationList.declarations[0].name);\nconst syntax = ts.createSourceFile(virtual, text, ts.ScriptTarget.Latest, true, ts.ScriptKind.TS);\nlet nodes = 0;\nfunction visit(node) { nodes++; ts.forEachChild(node, visit); }\nvisit(syntax);\nconst imports = Object.keys(require.cache).sort().map(file => {\n  const bytes = checked(file), pin = allowed.get(key(file));\n  return {module:path.basename(file), path:pin.path, sha256:hash(bytes)};\n});\nconst payload = {tool:'typescript', settings:options, imports, resources_read:[...reads.values()],\n  smoke:{symbol:symbol?.getName(), nodes, diagnostics},\n  runtime:{executable:fs.realpathSync(process.execPath), version:process.version, arch:process.arch,\n           compiler_version:ts.version, exec_argv:process.execArgv}};\nfs.writeFileSync(request.result_path, JSON.stringify(payload), {flag:'wx', encoding:'utf8'});\nconsole.log('Executed qualified source binding: typescript');\n\" C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-evidence-exau3mrx\\run_root\\head\\binding\\typescript\\request.json",
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-evidence-exau3mrx\\head_root"
+    }
+  ],
+  "returncode": 0,
+  "symbol": "answer",
+  "limitation": "Independent reconciliation of owner-recorded execution, not rerunning unfixed code"
+}

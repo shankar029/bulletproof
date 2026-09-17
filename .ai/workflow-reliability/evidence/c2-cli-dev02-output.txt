@@ -1,0 +1,66 @@
+test_actual_finding_producer_binds_declared_observed_artifacts (test_workflow_cli.WorkflowCliTests.test_actual_finding_producer_binds_declared_observed_artifacts) ... FAIL
+test_adoption_conflicting_candidate_and_out_of_order_publication_are_not_repaired (test_workflow_cli.WorkflowCliTests.test_adoption_conflicting_candidate_and_out_of_order_publication_are_not_repaired) ... ok
+test_adoption_missing_review_and_unconfirmed_without_authorization_reject (test_workflow_cli.WorkflowCliTests.test_adoption_missing_review_and_unconfirmed_without_authorization_reject) ... ok
+test_adoption_preserves_pending_handoff_and_rejects_runtime_id_removal (test_workflow_cli.WorkflowCliTests.test_adoption_preserves_pending_handoff_and_rejects_runtime_id_removal) ... ok
+test_bootstrap_refuses_remaining_real_run_artifacts_after_authority_loss (test_workflow_cli.WorkflowCliTests.test_bootstrap_refuses_remaining_real_run_artifacts_after_authority_loss) ... ok
+test_close_rejects_wrong_commit_dirty_source_and_protected_branch (test_workflow_cli.WorkflowCliTests.test_close_rejects_wrong_commit_dirty_source_and_protected_branch) ... ok
+test_compatibility_pair_requires_accepted_pre_retirement_proof (test_workflow_cli.WorkflowCliTests.test_compatibility_pair_requires_accepted_pre_retirement_proof) ... ok
+test_failed_launch_and_nonzero_exit_are_not_work_completion (test_workflow_cli.WorkflowCliTests.test_failed_launch_and_nonzero_exit_are_not_work_completion) ... ok
+test_guard_death_while_owned_child_alive_keeps_next_blocked (test_workflow_cli.WorkflowCliTests.test_guard_death_while_owned_child_alive_keeps_next_blocked) ... ok
+test_help_five_verbs_no_recovery_and_strict_options (test_workflow_cli.WorkflowCliTests.test_help_five_verbs_no_recovery_and_strict_options) ... ok
+test_lexical_lock_contention_never_spawns_or_steals (test_workflow_cli.WorkflowCliTests.test_lexical_lock_contention_never_spawns_or_steals) ... ok
+test_metrics_pair_failure_capture_and_independent_work_not_fake_closure (test_workflow_cli.WorkflowCliTests.test_metrics_pair_failure_capture_and_independent_work_not_fake_closure) ... ok
+test_missing_review_pair_blocks_then_actual_handoff_record_unblocks (test_workflow_cli.WorkflowCliTests.test_missing_review_pair_blocks_then_actual_handoff_record_unblocks) ... ok
+test_native_shaped_stdout_from_non_native_command_is_not_proof (test_workflow_cli.WorkflowCliTests.test_native_shaped_stdout_from_non_native_command_is_not_proof) ... ok
+test_observer_persistence_denial_leaves_durable_unresolved_intent (test_workflow_cli.WorkflowCliTests.test_observer_persistence_denial_leaves_durable_unresolved_intent) ... ok
+test_partial_retained_old_copy_is_conflict_not_overwritten (test_workflow_cli.WorkflowCliTests.test_partial_retained_old_copy_is_conflict_not_overwritten) ... ok
+test_publication_failures_retry_B1_A1_A2_once_without_rewriting_event (test_workflow_cli.WorkflowCliTests.test_publication_failures_retry_B1_A1_A2_once_without_rewriting_event) ... ok
+test_real_initial_adoption_and_idempotency (test_workflow_cli.WorkflowCliTests.test_real_initial_adoption_and_idempotency) ... ok
+test_real_pre_popen_exit_leaves_unresolved_intent_even_without_lock (test_workflow_cli.WorkflowCliTests.test_real_pre_popen_exit_leaves_unresolved_intent_even_without_lock) ... FAIL
+test_record_rejects_wrong_producer_and_tampered_artifact (test_workflow_cli.WorkflowCliTests.test_record_rejects_wrong_producer_and_tampered_artifact) ... ok
+test_record_requires_exact_earlier_prerequisite_receipt (test_workflow_cli.WorkflowCliTests.test_record_requires_exact_earlier_prerequisite_receipt) ... ok
+test_registered_spaced_argv_cwd_and_intent_before_child (test_workflow_cli.WorkflowCliTests.test_registered_spaced_argv_cwd_and_intent_before_child) ... ok
+test_revised_adoption_retains_history_and_retries_exact_old_basis (test_workflow_cli.WorkflowCliTests.test_revised_adoption_retains_history_and_retries_exact_old_basis) ... ok
+test_setup_vs_red_pair_uses_real_native_assertion (test_workflow_cli.WorkflowCliTests.test_setup_vs_red_pair_uses_real_native_assertion) ... ok
+test_stale_pair_fresh_process_reopens_only_affected_receipt (test_workflow_cli.WorkflowCliTests.test_stale_pair_fresh_process_reopens_only_affected_receipt) ... ok
+test_successful_metric_command_still_cannot_attach_quality (test_workflow_cli.WorkflowCliTests.test_successful_metric_command_still_cannot_attach_quality) ... ok
+test_transient_lock_scope_is_explicit_input_error (test_workflow_cli.WorkflowCliTests.test_transient_lock_scope_is_explicit_input_error) ... ok
+
+======================================================================
+FAIL: test_actual_finding_producer_binds_declared_observed_artifacts (test_workflow_cli.WorkflowCliTests.test_actual_finding_producer_binds_declared_observed_artifacts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_cli.py", line 353, in test_actual_finding_producer_binds_declared_observed_artifacts
+    self.f.cli("status", "--target", "check:A-review", expected=1)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_cli.py", line 74, in cli
+    code, stdout, stderr = self.run(*argv, expected=expected)
+                           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_cli.py", line 40, in run
+    raise AssertionError("%r returned %s\n%s\n%s" % (argv, *result))
+AssertionError: ('C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe', '-B', 'C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\workflow.py', 'status', '--slug', 'demo', '--repo', 'C:\\Users\\shbs\\AppData\\Local\\Temp\\c2cli-c04b00\\bulletproof-git-gf1e65f6', '--target', 'check:A-review') returned 0
+{"target": {"kind": "check", "id": "A-review"}, "status": "ready", "due": [], "future": ["A-metrics", "A-test", "A-verify", "B-metrics", "B-review", "B-test", "B-verify"], "reopened": [{"id": "check:A-review", "changed_prerequisites": ["Missing or changed artifact: .ai/demo/evidence/observed.txt; Missing or changed artifact: .ai/demo/evidence/observed.txt"], "invalidated_receipts": ["receipt-4b12663ff6b74dc987ef6afcaf989010"]}], "blockers": [], "next_command": ["python", "scripts/workflow.py", "next", "--slug", "demo", "--action", "A-review-run"], "ledger_seq": 12, "inputs": {"source": {"binding_mode": "standalone-source", "base": null, "head": null, "scope": {"files": ["review.py", "src/A.py"], "directories": [], "excluded_outputs": []}, "files": {"review.py": {"sha256": "437be32f2759796755024a713e69a67dff57b526e123ea9fc2167ebf1b74f461", "mode": "file"}, "src/A.py": {"sha256": "e13df8c44af5dea1e412403910b99cc5a48f2ccbf68a66b3374d6ab9cef9fc65", "mode": "file"}}, "scope_sha256": "382411d87e1da218ca0c424592b1ed12944faa8f145faf70aaf9a0f96805a185"}, "contract": {"binding_mode": "guarded", "adopted_contract_sha256": "e4eef4d962e5fa992400ce41607de3d1eb327fe77858921cc0453ba91f8d452f", "components": {"a": "8648c44c84a5e9a805aae70e1e9c3d58b4d2606fbaccae55ee2b702fc497c6c1"}, "actions": {"A-review-run": "243fc974c222de548b95b25c60ee0bda5d4f68d723f8b198e2d2269b343fe7e4"}, "checks": {"A-review": "041024653dfcec96f27a2d542630260e19adc0745b546a8be5ed4d3531d4086e"}, "claims": {}}}, "limitations": ["Producer/context IDs are self-declared, not authenticated independence.", "Only declared input scopes are observed; this is not a sandbox.", "Read-only readiness is not permission to dispatch without locked revalidation.", "Design human approval and publication require their own attributed evidence."]}
+
+
+
+======================================================================
+FAIL: test_real_pre_popen_exit_leaves_unresolved_intent_even_without_lock (test_workflow_cli.WorkflowCliTests.test_real_pre_popen_exit_leaves_unresolved_intent_even_without_lock)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_cli.py", line 533, in test_real_pre_popen_exit_leaves_unresolved_intent_even_without_lock
+    self.f.cli("next", "--action", "A-work", expected=71, hook=hook)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_cli.py", line 74, in cli
+    code, stdout, stderr = self.run(*argv, expected=expected)
+                           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_cli.py", line 40, in run
+    raise AssertionError("%r returned %s\n%s\n%s" % (argv, *result))
+AssertionError: ('C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe', '-B', '-c', "\nimport os,sys\nsys.path.insert(0,sys.argv[1])\nimport workflow\ndef audit(event,args):\n    if event=='subprocess.Popen' and args[0]==sys.executable:\n        os._exit(71)\nsys.addaudithook(audit)\nraise SystemExit(workflow.main(sys.argv[2:]))\n", 'C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts', 'next', '--slug', 'demo', '--repo', 'C:\\Users\\shbs\\AppData\\Local\\Temp\\c2cli-c04b00\\bulletproof-git-az629mhu', '--action', 'A-work') returned 0
+{"run_id": "19d050b71b3749838dce790abac6516e", "wrapper_exit": 0, "stdout": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c2cli-c04b00\\bulletproof-git-az629mhu\\.ai\\demo\\evidence\\runs\\19d050b71b3749838dce790abac6516e\\stdout.txt", "stderr": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c2cli-c04b00\\bulletproof-git-az629mhu\\.ai\\demo\\evidence\\runs\\19d050b71b3749838dce790abac6516e\\stderr.txt", "outcome": "executed", "spawned": "yes", "child_exit": 0}
+
+
+
+----------------------------------------------------------------------
+Ran 27 tests in 241.774s
+
+FAILED (failures=2)

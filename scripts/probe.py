@@ -510,6 +510,7 @@ def _execute_configured(args, trace, repo, test_cwd):
     config = measure_graph.load_json(measure_graph.input_path(repo, config_name).read_bytes())
     config_ref = measure_graph.artifact(repo, config_name)
     measure.validate_config(config, repo)
+    print("probe: validated measurement configuration and original tool inputs", file=sys.stderr, flush=True)
     if args.require_metric and set(args.require_metric) - set(measure.REQUIRED):
         raise ValueError("Configured Q1 profile requires exactly the nine approved metrics")
     run_id = uuid.uuid4().hex
@@ -530,7 +531,15 @@ def _execute_configured(args, trace, repo, test_cwd):
         for revision, root in (("base", base_root), ("head", repo)):
             reserved += [measure_graph.syntax_name(revision, Path(path).relative_to(root).as_posix())
                          for path in code_files(root) if Path(path).suffix.lower() == ".py"]
+        reserved += [ref["path"] for ref in measure.tool_artifacts(config)]
+        measure._path_partition(reserved)
         extra_outputs = [(run_dir / "measurement" / name).relative_to(repo).as_posix() for name in reserved]
+        measure.check_tool_outputs(
+            config, repo, extra_outputs + [
+                ".ai/%s/metrics.json" % args.slug,
+                (run_dir / "metrics.json").relative_to(repo).as_posix(),
+                (run_dir / "mutation.json").relative_to(repo).as_posix()],
+            [config_path, measure_graph.input_path(repo, config["approval_artifact"]["path"])])
         for name in extra_outputs:
             if measure_graph.input_path(repo, name).exists():
                 raise ValueError("Reserved output already exists")
@@ -539,6 +548,7 @@ def _execute_configured(args, trace, repo, test_cwd):
         if source["files"].get(config_name, {}).get("sha256") != config_ref["sha256"]:
             raise ValueError("Config overlaps an output or changed before the source snapshot")
         _copy_subject(repo, head_root, head_sha, source)
+        print("probe: materialized immutable base and observed head", file=sys.stderr, flush=True)
         controller, raw_root = scratch / "controller", scratch / "raw"
         controller.mkdir()
         raw_root.mkdir()
@@ -550,17 +560,23 @@ def _execute_configured(args, trace, repo, test_cwd):
                    "controller_root": str(controller), "run_root": str(raw_root),
                    "controller_sha256": measure.controller_digest(controller),
                    "policy_sha256": measure_graph.digest(policy),
-                   "toolset_sha256": measure_graph.digest({"python_parser": measure_graph.parser_digest()}),
+                   "toolset_sha256": measure.toolset_digest(config, subject_roots=[repo]),
                    "contract_artifacts": [config["approval_artifact"], config_ref]}
+        measure.stage_tool_inputs(context, config)
+        print("probe: staged and rechecked exact tool artifacts", file=sys.stderr, flush=True)
         base = measure_graph.parse_files(context, measure.inventory(context, "base", {}), config)
         head = measure_graph.parse_files(context, measure.inventory(context, "head", changes), config)
         pairs = measure.collect_pair(context, config, base, head)
         observations = [item for pair in pairs.values() for item in pair]
+        print("probe: collected both revision observations", file=sys.stderr, flush=True)
         manifest = measure.make_manifest(context, base, head)
         context["output_manifest"] = measure_graph.persist(context, "manifest.json", manifest)
         report = _configured_report(context, base, head, config, manifest, observations, args.slug, args.base, trace)
         # observations is a required report field, checked separately by the producer.
         validate_measurement_report(report, context, base, head, config, policy, manifest)
+        print("probe: reconciled source, owned raw evidence and report", file=sys.stderr, flush=True)
+        if measure.toolset_digest(config, raw_root, [repo, base_root, head_root, controller, raw_root]) != context["toolset_sha256"]:
+            raise ValueError("Tool inputs changed before publication")
         if _snapshot(repo, args.slug, run_id, extra_outputs)["scope_sha256"] != source["scope_sha256"] or measure.git_head(repo) != head_sha:
             raise ValueError("Original source changed during configured collection")
         # All final paths are reserved individually before publication. They did not

@@ -1,0 +1,75 @@
+{
+  "runid_exit": 2,
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "help_argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts\\run.py",
+    "--idle",
+    "120",
+    "--max",
+    "600",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts\\probe.py",
+    "--help"
+  ],
+  "runid_argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts\\run.py",
+    "--idle",
+    "120",
+    "--max",
+    "600",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts\\probe.py",
+    "--slug",
+    "c2-cli-interface",
+    "--run-id",
+    "c2-cli-admission"
+  ],
+  "after": [
+    {
+      "Path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\probe.py",
+      "Hash": "668042417C42B7AA457A695FFA8782845D18B9834C1937F17E277190CC0BB083"
+    },
+    {
+      "Path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\workflow_state.py",
+      "Hash": "FE30290E61D319C76546C31ACD454BC7C642FC83AD55126E368FA44AB4B57A6E"
+    },
+    {
+      "Path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\workflow_gate.py",
+      "Hash": "F7FF2C1AC229A88F39BE6DDC6000F060AFC545DBF5DD47B5BF3DDCC4FF43F23D"
+    },
+    {
+      "Path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\c2-recovery-contract.json",
+      "Hash": "80442414F2BDC597E75222E7BA475339B5932F732B1F947FFD9828267E0B949D"
+    }
+  ],
+  "generated": "2026-09-17T09:57:24.0117613Z",
+  "before": [
+    {
+      "Path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\probe.py",
+      "Hash": "668042417C42B7AA457A695FFA8782845D18B9834C1937F17E277190CC0BB083"
+    },
+    {
+      "Path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\workflow_state.py",
+      "Hash": "FE30290E61D319C76546C31ACD454BC7C642FC83AD55126E368FA44AB4B57A6E"
+    },
+    {
+      "Path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\workflow_gate.py",
+      "Hash": "F7FF2C1AC229A88F39BE6DDC6000F060AFC545DBF5DD47B5BF3DDCC4FF43F23D"
+    },
+    {
+      "Path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\c2-recovery-contract.json",
+      "Hash": "80442414F2BDC597E75222E7BA475339B5932F732B1F947FFD9828267E0B949D"
+    }
+  ],
+  "source_boundary": "Concurrent Q2 writer authorized; these pins describe only these two invocations",
+  "python": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+  "help_exit": 0
+}

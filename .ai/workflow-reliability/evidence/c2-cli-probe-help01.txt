@@ -1,0 +1,21 @@
+usage: probe.py [-h] --slug SLUG [--base BASE] [--repo REPO] [--skip-mutation]
+                [--force-mutation] [--test-cwd TEST_CWD]
+                [--require-metric REQUIRE_METRIC]
+                [--measurement-config MEASUREMENT_CONFIG]
+                ...
+
+positional arguments:
+  command
+
+options:
+  -h, --help            show this help message and exit
+  --slug SLUG
+  --base BASE
+  --repo REPO
+  --skip-mutation
+  --force-mutation      Run mutation even on a UI project, where it is slow.
+  --test-cwd TEST_CWD
+  --require-metric REQUIRE_METRIC
+  --measurement-config MEASUREMENT_CONFIG
+                        Source-bound Q1 Python graph config; missing metrics
+                        still fail

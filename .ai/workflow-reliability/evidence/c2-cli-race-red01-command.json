@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+    "--idle",
+    "120",
+    "--max",
+    "180",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-u",
+    "-B",
+    "-m",
+    "unittest",
+    "test_workflow_cli.WorkflowCliTests.test_candidate_change_between_parse_and_snapshot_has_no_adoption",
+    "test_workflow_cli.WorkflowCliTests.test_real_pre_popen_exit_leaves_unresolved_intent_even_without_lock",
+    "test_workflow_cli.WorkflowCliTests.test_actual_finding_producer_binds_declared_observed_artifacts",
+    "-v"
+  ],
+  "temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c2cli-7da5c0",
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests"
+}

@@ -1,0 +1,13 @@
+{
+  "owner_pin": {
+    "sha256": "2bac110b6f2a2fb5b4418f1a513f04eea61c828b8986eda24b34576d5fb626e0",
+    "bytes": 3375
+  },
+  "replacements": {
+    "name.startswith(\"q2-binding-r1-\")": "name.startswith(\"joint-cli-binding-r1-\")",
+    "verbosity=2, resultclass=Result": "verbosity=2, resultclass=Result, failfast=True"
+  },
+  "executed_capture_sha256": "faf7ebe80d3774ffbecf7c006f6e4a42c60e03b37a31fe0924792d8ee591ed47",
+  "test_bodies_changed": false,
+  "production_changed": false
+}

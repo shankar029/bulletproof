@@ -5,7 +5,7 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: state seams independently verified/reviewed for preservation; ordinary CLI and Q2 adapters next.
+- Phase: bounded CLI/tool-binding checkpoint approved for local preservation.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
 - Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
@@ -37,8 +37,8 @@
 - No repeated uncoached model-effectiveness study claimed by deterministic tests.
 
 ## Next action
-Preserve the accepted adoption-validation state seams, then integrate the ordinary
-five-verb CLI and the qualified Q2 measurement adapters. Positive recovery remains blocked;
+Preserve the approved CLI/tool-binding checkpoint, then continue actual Q2 collectors
+and canonical documentation integration. Recovery remains blocked;
 no recovery stub or silent completion of the original requirement.
 The local I1 preservation commit is `aaec9b9`.
 The continuation addendum replaces implementation-dispatch dependencies only; it does not
@@ -280,6 +280,166 @@ close I1.T4 or remove any required measurement, independent role or final accept
   No source, attribute or Git configuration change was needed. See
   `evidence/c2b-state-parent-preservation.json`; this adds no test or portability claim.
   The updated report renders to three pages with no browser/console errors.
+- FACT: C2b-S, its approved ordinary-operation design, reviewed proof and Q2 tool
+  qualification records are preserved in `ee6e0e34e78b70fcb672074af0a76f51fe937e1a`.
+  Only the earlier unrelated `evals/report.md` date delta remained after commit.
+  No provisioned package/binary archive was added; no publication was attempted.
+- Parent authorizes the existing CLI owner for ordinary status/next/record/close/adopt,
+  their real failure/resume/adoption tests and operator guide. A separate Q2 owner may
+  implement the approved scalar/shared-JS/graph adapters and corresponding tests.
+  Owners must preserve existing public core signatures and avoid each other's files.
+  Concurrent local test results are development evidence, not a shared frozen-tree
+  acceptance claim. Both writers must stop before fresh integrated verification/review.
+  Any new interface/design need is a named blocker, not permission to silently extend
+  schemas, bypass required metrics, introduce recovery machinery or waive quality.
+- FACT: CLI owner stopped before edits on a supported producer-interface gap
+  (`evidence/c2-cli-producer-interface-blocker.md`). Both probe paths generate
+  their own UUID; actual help has no admission-ID input, and `--run-id` exits2.
+  The gate requires the earlier admission ID and exact admitted source binding.
+  Parent also confirmed that configured raw-report validation needs its context,
+  inventories, policy and artifacts; adding one flag alone is not a full bridge.
+- Parent explicitly narrows the current ordinary-CLI delivery boundary: continue
+  actual ordinary operations, nonmetric proof, failure capture and missing-metric
+  denial. Successful guarded metric attachment is an unavailable prerequisite,
+  not a supported operation or positive closure claim. Reject it explicitly before
+  creating an accepted receipt; do not import score JSON, rewrite IDs, backfill
+  admission, relax the gate or silently treat a matching summary as validated proof.
+  This retains r2's already-required missing-quality closure block.
+- A separate producer/CLI binding follow-up must define pre-admitted identity,
+  exact registered-command expansion, source projection and producer-owned raw
+  validation together before successful metric attachment. Q2's adapter owner is
+  informed, but no unreviewed identity flag or producer/schema change is authorized
+  by this discovery. Ordinary CLI work must not remain blocked on that deferred
+  positive path; the overall requirement remains incomplete until it is delivered.
+- FACT: Q2 owner also stopped before production edits on a separate artifact-locator
+  gap (`evidence/q2-adapter-binding-handoff.md`). Qualified original locators are
+  absolute, while runtime Artifact paths are run-relative and a fresh run starts
+  empty. Existing config has no original-artifact root. The bounded diagnostic
+  rechecked 3,348 tool/resource pins, both native binaries and ten artifact copies;
+  this is not adapter acceptance.
+- Parent selects one explicit source-bound read-only tool-artifact root, with exact
+  verified staging, original/copy freshness and unchanged strict relative output
+  paths. Q2 owner is writing a small additive normative amendment for focused
+  independent review before production resumes. Empty Q1 mode remains unchanged;
+  package/code resources stay external. No metric threshold or guard change is
+  authorized. The ordinary CLI owner proceeds independently on its narrowed scope.
+- FACT: `evidence/q2-tool-input-root-amendment.json` binds the original measurement
+  contract and adds only conditional `tool_artifact_root` intake/staging semantics.
+  Its SHA-256 is `36514a684b8b1323c752a3559cb49f30be8db61b865435f47682dfd824cda1c1`.
+  Focused independent `evidence/q2-tool-input-root-review.md` returns APPROVE with
+  no material findings; existing JSON-only readers are not opaque-byte staging APIs.
+- Parent accepts that exact amendment and releases Q2 implementation, including
+  ROOT01-05 and the original real scalar/graph/parser/reconciliation checks. Original
+  proposal/review bytes remain intact; this entry records acceptance, not human
+  confirmation or executed adapter proof. Q2 and ordinary CLI writers remain
+  disjoint and must both freeze before integrated independent acceptance.
+- FACT: Q2 delivered a native-tool input-root development checkpoint
+  (`evidence/q2-adapter-root-handoff.md`): conditional root validation, exact byte
+  staging/ownership, overlap rejection and original/copy/native-tool rechecks in
+  measure/probe. No scalar analyzer ran as a collector; JS/source-tool bindings
+  and actual scalar/raw integration remain unfinished.
+- Its selected 14-method pass predates the final small correction; two repeated
+  methods pass afterward. These are not 16 distinct final-byte passes. Actual
+  symlink creation is environment-blocked by WinError1314, and earlier timeout
+  cleanup remains unverified. No independent acceptance or full-suite pass follows.
+- Parent continues the same approved Q2 implementation with a smaller next slice:
+  qualified TypeScript/lizard/Vulture source-tool bindings and focused real tests.
+  The existing owner retains implementation ownership; no new design, installation
+  or policy weakening is authorized. Shared JS/scalar adapters remain subsequent
+  work, and both writers still must freeze before fresh integrated acceptance.
+- FACT: CLI owner returned `evidence/c2-cli-local-handoff.md` and froze its five
+  owned files: workflow.py, CLI tests, two native failure-pair files and the operator
+  guide. All 30 final CLI methods pass locally; 126 existing regression methods
+  passed in an earlier overlapping run. Native pairs replay five Python scenarios,
+  not additional independent behavioral proof. An actual adoption parse/snapshot
+  race was reproduced and corrected; its red record remains preserved.
+- This is development evidence: Q2 measure.py changed during the CLI runs. The CLI
+  owner is now idle; final integrated verification/review waits for the Q2 source-
+  binding checkpoint to freeze. No CLI acceptance or commit is claimed. Successful
+  metrics/quality closure and recovery remain explicitly unavailable in the guide.
+- FACT: Q2 source bindings are locally implemented and frozen
+  (`evidence/q2-adapter-source-handoff.md`). Ten selected methods pass on unchanged
+  final bytes, including seven new source-binding cases; this is not full Q2 proof.
+  Actual isolated tool/runtime/resource observations and rejection evidence are
+  retained. Shared JS/scalar collectors and raw metric reconciliation remain pending.
+- Both source owners are now idle. Parent freezes the ordinary CLI plus native/source
+  tool-binding checkpoint for independent verifier
+  `e0de4213-9fd4-4032-9ef7-9722d1d26519`. No production writes are authorized during
+  its affected integration replay. Named symlink-creation environment limitations
+  remain outside passing counts; no full-suite or complete-Q2 pass is implied.
+  Separate code review follows the fresh verification result before preservation.
+- FACT: joint verifier returned NOT-VERIFIED (`evidence/joint-cli-binding-report.md`).
+  Of 263 discovered Python methods, 204 passed, one timed out twice, 57 never
+  started and one remains symlink-environment-unverified. Thirteen native entries
+  passed (five Python replays plus eight reporter cases). No production assertion
+  failure was observed, but joint regression acceptance is withheld.
+- The repeated idle timeout is the unchanged graph receipt/artifact corruption
+  method. Parent read its sequence of real validation calls without completed-case
+  output. Removing broad profiling did not fix silence. Parent authorizes one
+  distinct capture-only route: narrowly report actual completed validator returns,
+  prove transport on real validation, then execute the timed-out method and 57
+  unstarted selectors with unchanged idle120/max1800 limits. No fake heartbeat,
+  production/test-body rewrite or unchanged third attempt is authorized.
+- Original 4,511 pins matched; eight additionally observed runtime inputs were
+  current-only. The new replay must pin them prospectively, without retroactively
+  upgrading prior proof. Seven old temp directories and complete timeout-tree
+  cleanup remain UNKNOWN; new runs use separately owned short temp roots.
+- FACT: the distinct Q1 progress route passed all 58 outstanding methods. Joint
+  accounting is now 262 passed / 263 discovered, with the named symlink environment
+  case unverified; native13 remains five replays plus eight reporter tests.
+  The formerly timed-out method completed in 136.195 seconds, with twelve real
+  validations taking 9.8-10.1 seconds each. No source/test-body change or timeout
+  increase occurred. All 4,608 prospective pins matched; earlier current-only and
+  old cleanup limits remain. See `evidence/joint-cli-binding-r2-report.md`.
+- FACT: separate `evidence/joint-cli-binding-code-review.md` returns REVISE for one
+  P2 finding: inspect_source_binding checks smoke-output reservations but not exact
+  staged qualification rows/roles/revisions/input reservations. Byte rehashing alone
+  does not establish manifest ownership. CLI/adoption review found no further
+  required corrections, but joint acceptance remains withheld.
+- Parent reopens only the Q2 owner for R1: reproduce an actual rehashed malformed
+  manifest, add the smallest prelaunch ownership check and real focused tests,
+  preserve valid binding/compatibility behavior, then stop for independent replay
+  and narrowed re-review. No new schema, collector, guard or recovery work is
+  authorized during this correction. Previous 262-method proof remains historical
+  once the affected source changes; no automatic refreshed-count claim.
+- FACT: R1 owner reproduced an actual successful TypeScript launch with a missing
+  qualification row, then added only `_validate_binding_ownership` and its prelaunch
+  call. Twenty real rehashed malformed manifests now reject with no audited launch,
+  run-root write or smoke output; a valid control actually launches. Ten selected
+  methods pass on fixed bytes, not a refreshed 262-method run.
+- Fixed measure.py hash:
+  `1cd5e00bd054a83ea338f7aab6150de6988443d6a12435cdfad30e72ee78dfd1`.
+  Fixed source-binding test hash:
+  `bcc36f23061dd5b4db2dfcb161c0202bbe95db1fb930b1c6ef79fe8c9b95d1b3`.
+  `evidence/q2-binding-r1-handoff.md` retains the real red/green artifacts and commands.
+- Same independent verifier `e0de4213-9fd4-4032-9ef7-9722d1d26519` now owns fresh
+  affected replay without broad profiling or unrelated reruns. Production is frozen.
+  Same reviewer `eaec213a-63fa-49e5-bbe5-a9bed6127d02` will reconcile the correction
+  afterward. Historical runtime, symlink and cleanup limitations remain explicit.
+- FACT: `evidence/joint-cli-binding-r1-report.md` independently verifies all ten
+  affected methods (801.803 seconds, no failures/errors/skips/timeouts). Twenty
+  actual malformed manifests reject before writes/launches; the valid control
+  runs. All 4,651 prospective pins match, and exact raw reconstruction isolates
+  the authorized helper/call/test addition. Historical 262/native13 are not rerun.
+- The original synchronous reviewer cannot receive follow-up messages through
+  the tool. Fresh narrowed reviewer `21e56a4a-f30d-4fca-8e66-f1964f100afe` is
+  reconciling only R1 against that preserved review and the new independent proof.
+  This does not reopen or replace the unchanged broader CLI review.
+- FACT: `evidence/joint-cli-binding-code-review-r2.md` is APPROVE and closes R1.
+  The reviewer inspected the actual helper/call/regression, reconstructed the prior
+  bytes, and reconciled 4,651 pins plus seal/index and real red/green records.
+- Parent accepts bounded ordinary CLI and tool-input/source-binding preservation.
+  Historical 262/263 and native13 remain distinct from the fresh ten-method R1
+  replay. The symlink environment case, earlier runtime/cleanup limits and custom
+  evidence-test discovery limitation remain explicit. No whole-Q2, successful
+  metric attachment/closure, recovery, host experiment or release acceptance.
+- FACT: parent materialized the nine staged source/test/guide files through actual
+  Git checkout; all match the reviewed working bytes exactly. Stored LF versus
+  local CRLF is recorded in `evidence/joint-cli-binding-parent-preservation.json`.
+  Source/status whitespace checks pass. The broad check flags only the immutable
+  captured r1-only.diff's CRLF patch text; its sealed bytes were not reformatted.
+  Eleven new ZIPs were inspected as bounded source-fixture evidence, not installed
+  tool packages. The accepted-status report renders to three pages without errors.
 
 ## Continuation acceptance - 17 September 2026
 - User requested completion plus an attractive README and updated guides. When asked about

@@ -1,0 +1,1497 @@
+[
+  {
+    "case": "missing-row",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-manifest-0.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-0.json",
+      "sha256": "981365a7b01ee36b2905aa5f671a9dd70e69ea8ff87befdc89f24fa5323e85b5",
+      "bytes": 1381
+    },
+    "error": "Qualification ownership must match selected input: q2-tools-runtime-bindings.json",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "missing-all-rows",
+    "manifest": {
+      "inputs": [],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-manifest-1.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-1.json",
+      "sha256": "4ab864caae05ac90d68fe9f9e482c12a10319074f0c7509569073ff4dc3bdd52",
+      "bytes": 624
+    },
+    "error": "Qualification ownership must match selected input: q2-tools-runtime-bindings.json",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "wrong-role",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "command"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-manifest-2.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-2.json",
+      "sha256": "4c6ffe8226f6da5a794bf10b4011f1809d4514fbcfccea4a65b909cb1aa2edb4",
+      "bytes": 1559
+    },
+    "error": "Qualification ownership must match selected input: q2-tools-runtime-bindings.json",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "wrong-revision",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": "head",
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-manifest-3.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-3.json",
+      "sha256": "b632fd59399c0a4cc293ba13505ac3da5b492da0dae04f7d220bdbc57b4c6816",
+      "bytes": 1567
+    },
+    "error": "Qualification ownership must match selected input: q2-tools-runtime-bindings.json",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "duplicate-row",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-manifest-4.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-4.json",
+      "sha256": "8f03a013aa3bb8115e7fce5f84dfc57e10845e18cd7e7a049aa3a82fed6143ea",
+      "bytes": 1749
+    },
+    "error": "Duplicate/colliding artifact path: q2-tools-runtime-bindings.json",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "changed-hash",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-manifest-5.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-5.json",
+      "sha256": "00bb6b947e7ec779303440566ea0698e044d191c677f7d535e2676d156e3ffbc",
+      "bytes": 1565
+    },
+    "error": "Qualification ownership must match selected input: q2-tools-runtime-bindings.json",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "changed-length",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11069,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-manifest-6.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-6.json",
+      "sha256": "5cae81f10869a0977de6252e1cc42b5ef7ea0fe769837ef4883525ee31a040d7",
+      "bytes": 1565
+    },
+    "error": "Qualification ownership must match selected input: q2-tools-runtime-bindings.json",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "noninteger-length",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068.0,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-manifest-7.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-7.json",
+      "sha256": "f8124cac1307420d73e23c64fcef245a9a47a4d64074791536983a47ad0149ad",
+      "bytes": 1567
+    },
+    "error": "Qualification ownership must match selected input: q2-tools-runtime-bindings.json",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "changed-path",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "r1-other.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-manifest-8.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-8.json",
+      "sha256": "51435fd292a18e5f06d5fffa4de45df4e4d94c4abfcd0b7c14213a624e077149",
+      "bytes": 1548
+    },
+    "error": "Qualification ownership must match selected input: q2-tools-runtime-bindings.json",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "extra-row-field",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification",
+          "extra": true
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-manifest-9.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-9.json",
+      "sha256": "f26291f5374df9853e796fa7a2704a2dbbcf1ad2f8f374364fd8ab81e6bcbce9",
+      "bytes": 1578
+    },
+    "error": "Invalid binding ownership row",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "missing-input-reservation",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-manifest-10.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-10.json",
+      "sha256": "b1580a62b453c5fa31d3aba16b76dfdc07bdbed7bcf8af4858d439b5fe24931b",
+      "bytes": 1533
+    },
+    "error": "Qualification ownership must match selected input: q2-tools-runtime-bindings.json",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "duplicate-input-reservation",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "q2-tools-runtime-bindings.json",
+        "r1-manifest-11.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-11.json",
+      "sha256": "8ffc22504de65d1c2839310e68845824d57cc0ffaeff657036475cd888cd470b",
+      "bytes": 1599
+    },
+    "error": "Duplicate/colliding artifact path: q2-tools-runtime-bindings.json",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "prefix-input-reservation",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "q2-tools-runtime-bindings.json/child",
+        "r1-manifest-12.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-12.json",
+      "sha256": "b0998434554a90ef18e5f1e2f89f5ebd8a4dd0e8a8a4ec5e8bb0ff5bcafa60df",
+      "bytes": 1605
+    },
+    "error": "Artifact file/directory prefix collision: q2-tools-runtime-bindings.json",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "prefix-input-row",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json/child",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-manifest-13.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-13.json",
+      "sha256": "5cf59d1483247b645f347c34815ebf2542af59f1e612c3a1a4578c2503ffece9",
+      "bytes": 1756
+    },
+    "error": "Artifact file/directory prefix collision: q2-tools-runtime-bindings.json",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "conflicting-input-row",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-manifest-14.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-14.json",
+      "sha256": "30e72a755372953e87614bc2745fc86dd06439099441c26f559805f67afc0204",
+      "bytes": 1750
+    },
+    "error": "Duplicate/colliding artifact path: q2-tools-runtime-bindings.json",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "unselected-qualification",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "path": "r1-extra.json",
+            "sha256": "80957e8a96e1fce2faa172ee5e9d75cacf8fcb020db8ccf5ec125baa22e3e3c3",
+            "bytes": 39
+          },
+          "role": "qualification",
+          "revision": null
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-extra.json",
+        "r1-manifest-15.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-15.json",
+      "sha256": "357b0723ea20de9b19495ca756709f8767bd1022de1572c149c350a2f3488b69",
+      "bytes": 1746
+    },
+    "error": "Unselected qualification ownership declaration",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "cross-namespace-prefix",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "path": "r1-nested",
+            "sha256": "80957e8a96e1fce2faa172ee5e9d75cacf8fcb020db8ccf5ec125baa22e3e3c3",
+            "bytes": 39
+          },
+          "role": "command",
+          "revision": "head"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-nested/child",
+        "r1-manifest-16.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-16.json",
+      "sha256": "f6ec727ea56cb4d9c70f9c4251d5945e7b42c4c5e34a75426aa70defcb68f3e9",
+      "bytes": 1740
+    },
+    "error": "Artifact file/directory prefix collision: r1-nested",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "case-collision",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "Q2-TOOLS-RUNTIME-BINDINGS.JSON",
+        "r1-manifest-17.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-17.json",
+      "sha256": "05a5d77e7869e5ae5d5495698d638ee078a8ce81d8cf895b2827bdef817fa649",
+      "bytes": 1599
+    },
+    "error": "Duplicate/colliding artifact path: Q2-TOOLS-RUNTIME-BINDINGS.JSON",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "malformed-input-list",
+    "manifest": {
+      "inputs": null,
+      "reserved_outputs": [
+        "q2-tools-runtime-bindings.json",
+        "q2-tools-source-extracted-pins.json",
+        "q2-tools-source-roots.json",
+        "q2-tools-source-typescript-help.stdout.log",
+        "q2-tools-source-typescript-results.json",
+        "manifest.json",
+        "base/binding/typescript/request.json",
+        "base/binding/typescript/result.json",
+        "base/binding/typescript/command.json",
+        "head/binding/typescript/request.json",
+        "head/binding/typescript/result.json",
+        "head/binding/typescript/command.json",
+        "r1-manifest-18.json"
+      ],
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-18.json",
+      "sha256": "def3f9f8d31e50d3fe71ac6da45d3f40f983d2c0e0e0d06e9127954d0d3b3c6f",
+      "bytes": 627
+    },
+    "error": "Invalid binding ownership manifest",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  },
+  {
+    "case": "malformed-reservation-list",
+    "manifest": {
+      "inputs": [
+        {
+          "artifact": {
+            "bytes": 11068,
+            "path": "q2-tools-runtime-bindings.json",
+            "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 1119098,
+            "path": "q2-tools-source-extracted-pins.json",
+            "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 892,
+            "path": "q2-tools-source-roots.json",
+            "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 19850,
+            "path": "q2-tools-source-typescript-help.stdout.log",
+            "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256"
+          },
+          "revision": null,
+          "role": "qualification"
+        },
+        {
+          "artifact": {
+            "bytes": 77921,
+            "path": "q2-tools-source-typescript-results.json",
+            "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86"
+          },
+          "revision": null,
+          "role": "qualification"
+        }
+      ],
+      "reserved_outputs": null,
+      "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\run_root",
+      "run_id": "source-binding-development"
+    },
+    "manifest_ref": {
+      "path": "r1-manifest-19.json",
+      "sha256": "3be95212f3edd5c929f0933d6133d7f60c8c8248508f2c40a1d80a4c9003d7c8",
+      "bytes": 1112
+    },
+    "error": "Invalid binding ownership manifest",
+    "launches": [],
+    "writes": [],
+    "outputs_present": []
+  }
+]

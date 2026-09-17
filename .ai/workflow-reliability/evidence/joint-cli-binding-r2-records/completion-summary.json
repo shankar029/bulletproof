@@ -1,0 +1,249 @@
+{
+  "preflight": {
+    "tests": 0,
+    "seconds": null,
+    "entered": 3,
+    "completed": 3,
+    "paired_ordinals": true,
+    "validation_completions": 2,
+    "validation_min_seconds": 10.032838900020579,
+    "validation_max_seconds": 10.306947799981572,
+    "validation_sum_seconds": 20.33978670000215,
+    "assert_context_exit_completions": 1,
+    "cleanup": {
+      "owned_temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-pb5aoj0w",
+      "remaining": [],
+      "removed_empty_only": true,
+      "old_temp_trees": "Untouched; cleanup UNKNOWN"
+    },
+    "exit": 0
+  },
+  "test_measure_graph": {
+    "tests": 8,
+    "seconds": 270.7115577000077,
+    "entered": 13,
+    "completed": 13,
+    "paired_ordinals": true,
+    "validation_completions": 12,
+    "validation_min_seconds": 9.388974100002088,
+    "validation_max_seconds": 11.259091799991438,
+    "validation_sum_seconds": 123.96553259997745,
+    "assert_context_exit_completions": 1,
+    "cleanup": {
+      "owned_temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-d7k7xs_q",
+      "remaining": [],
+      "removed_empty_only": true,
+      "old_temp_trees": "Untouched; cleanup UNKNOWN"
+    },
+    "exit": 0
+  },
+  "test_measure_inventory": {
+    "tests": 10,
+    "seconds": 345.47839860001113,
+    "entered": 55,
+    "completed": 55,
+    "paired_ordinals": true,
+    "validation_completions": 19,
+    "validation_min_seconds": 0.17771190000348724,
+    "validation_max_seconds": 10.707034599996405,
+    "validation_sum_seconds": 125.72847209993051,
+    "assert_context_exit_completions": 36,
+    "cleanup": {
+      "owned_temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-xptkddcd",
+      "remaining": [],
+      "removed_empty_only": true,
+      "old_temp_trees": "Untouched; cleanup UNKNOWN"
+    },
+    "exit": 0
+  },
+  "test_measure_q1_attr": {
+    "tests": 4,
+    "seconds": 55.58888679998927,
+    "entered": 2,
+    "completed": 2,
+    "paired_ordinals": true,
+    "validation_completions": 0,
+    "validation_min_seconds": null,
+    "validation_max_seconds": null,
+    "validation_sum_seconds": 0,
+    "assert_context_exit_completions": 2,
+    "cleanup": {
+      "owned_temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-2ezu4zb2",
+      "remaining": [],
+      "removed_empty_only": true,
+      "old_temp_trees": "Untouched; cleanup UNKNOWN"
+    },
+    "exit": 0
+  },
+  "test_measure_q1_attr_independent": {
+    "tests": 1,
+    "seconds": 19.051695700007258,
+    "entered": 2,
+    "completed": 2,
+    "paired_ordinals": true,
+    "validation_completions": 0,
+    "validation_min_seconds": null,
+    "validation_max_seconds": null,
+    "validation_sum_seconds": 0,
+    "assert_context_exit_completions": 2,
+    "cleanup": {
+      "owned_temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-vlr5sh2u",
+      "remaining": [],
+      "removed_empty_only": true,
+      "old_temp_trees": "Untouched; cleanup UNKNOWN"
+    },
+    "exit": 0
+  },
+  "test_measure_q1_final_verification": {
+    "tests": 3,
+    "seconds": 52.22410449999734,
+    "entered": 4,
+    "completed": 4,
+    "paired_ordinals": true,
+    "validation_completions": 1,
+    "validation_min_seconds": 10.270525500003714,
+    "validation_max_seconds": 10.270525500003714,
+    "validation_sum_seconds": 10.270525500003714,
+    "assert_context_exit_completions": 3,
+    "cleanup": {
+      "owned_temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-1zbua7fu",
+      "remaining": [],
+      "removed_empty_only": true,
+      "old_temp_trees": "Untouched; cleanup UNKNOWN"
+    },
+    "exit": 0
+  },
+  "test_measure_q1_integration": {
+    "tests": 9,
+    "seconds": 450.3076855999825,
+    "entered": 32,
+    "completed": 32,
+    "paired_ordinals": true,
+    "validation_completions": 4,
+    "validation_min_seconds": 0.5615693999861833,
+    "validation_max_seconds": 9.882508799986681,
+    "validation_sum_seconds": 18.168806899979245,
+    "assert_context_exit_completions": 28,
+    "cleanup": {
+      "owned_temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-vxvopd0h",
+      "remaining": [],
+      "removed_empty_only": true,
+      "old_temp_trees": "Untouched; cleanup UNKNOWN"
+    },
+    "exit": 0
+  },
+  "test_measure_q1_resumed": {
+    "tests": 8,
+    "seconds": 179.86268340001698,
+    "entered": 27,
+    "completed": 27,
+    "paired_ordinals": true,
+    "validation_completions": 0,
+    "validation_min_seconds": null,
+    "validation_max_seconds": null,
+    "validation_sum_seconds": 0,
+    "assert_context_exit_completions": 27,
+    "cleanup": {
+      "owned_temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-xafweseo",
+      "remaining": [],
+      "removed_empty_only": true,
+      "old_temp_trees": "Untouched; cleanup UNKNOWN"
+    },
+    "exit": 0
+  },
+  "test_measure_q1_review": {
+    "tests": 2,
+    "seconds": 77.27519929999835,
+    "entered": 2,
+    "completed": 2,
+    "paired_ordinals": true,
+    "validation_completions": 1,
+    "validation_min_seconds": 9.957174099981785,
+    "validation_max_seconds": 9.957174099981785,
+    "validation_sum_seconds": 9.957174099981785,
+    "assert_context_exit_completions": 1,
+    "cleanup": {
+      "owned_temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-flt9c3iu",
+      "remaining": [],
+      "removed_empty_only": true,
+      "old_temp_trees": "Untouched; cleanup UNKNOWN"
+    },
+    "exit": 0
+  },
+  "test_measure_q1_verification": {
+    "tests": 6,
+    "seconds": 196.17013670000597,
+    "entered": 2,
+    "completed": 2,
+    "paired_ordinals": true,
+    "validation_completions": 2,
+    "validation_min_seconds": 0.16920040000695735,
+    "validation_max_seconds": 9.892790600017179,
+    "validation_sum_seconds": 10.061991000024136,
+    "assert_context_exit_completions": 0,
+    "cleanup": {
+      "owned_temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-iobautcu",
+      "remaining": [],
+      "removed_empty_only": true,
+      "old_temp_trees": "Untouched; cleanup UNKNOWN"
+    },
+    "exit": 0
+  },
+  "test_measure_q1_verification_r2": {
+    "tests": 2,
+    "seconds": 94.18811090002418,
+    "entered": 3,
+    "completed": 3,
+    "paired_ordinals": true,
+    "validation_completions": 2,
+    "validation_min_seconds": 0.2487433000060264,
+    "validation_max_seconds": 10.307940300001064,
+    "validation_sum_seconds": 10.55668360000709,
+    "assert_context_exit_completions": 1,
+    "cleanup": {
+      "owned_temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-jxnnobjr",
+      "remaining": [],
+      "removed_empty_only": true,
+      "old_temp_trees": "Untouched; cleanup UNKNOWN"
+    },
+    "exit": 0
+  },
+  "test_measurement_e2e": {
+    "tests": 4,
+    "seconds": 367.0519566000148,
+    "entered": 0,
+    "completed": 0,
+    "paired_ordinals": true,
+    "validation_completions": 0,
+    "validation_min_seconds": null,
+    "validation_max_seconds": null,
+    "validation_sum_seconds": 0,
+    "assert_context_exit_completions": 0,
+    "cleanup": {
+      "owned_temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-_wgkl0t0",
+      "remaining": [],
+      "removed_empty_only": true,
+      "old_temp_trees": "Untouched; cleanup UNKNOWN"
+    },
+    "exit": 0
+  },
+  "timed-method": {
+    "tests": 1,
+    "seconds": 136.19553550001,
+    "entered": 23,
+    "completed": 23,
+    "paired_ordinals": true,
+    "validation_completions": 12,
+    "validation_min_seconds": 9.825759800005471,
+    "validation_max_seconds": 10.04972579999594,
+    "validation_sum_seconds": 119.10197470002458,
+    "assert_context_exit_completions": 11,
+    "cleanup": {
+      "owned_temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-ceif1vz5",
+      "remaining": [],
+      "removed_empty_only": true,
+      "old_temp_trees": "Untouched; cleanup UNKNOWN"
+    },
+    "exit": 0
+  }
+}

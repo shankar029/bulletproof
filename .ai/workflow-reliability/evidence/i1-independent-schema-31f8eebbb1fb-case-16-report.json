@@ -1,0 +1,168 @@
+{
+  "baseline": {
+    "complete": true,
+    "leaf_count": 1,
+    "logs": [],
+    "schema_version": 1,
+    "tests": [
+      {
+        "file": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space yyt7g3lu\\value.test.mjs",
+        "line": 1,
+        "name": "required",
+        "nesting": 0,
+        "outcome": "pass"
+      }
+    ]
+  },
+  "baseline_artifacts": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"schema_version\":1,\"complete\":true,\"tests\":[{\"file\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space yyt7g3lu\\\\value.test.mjs\",\"line\":1,\"name\":\"required\",\"nesting\":0,\"outcome\":\"pass\"}],\"leaf_count\":1,\"logs\":[]}\n"
+  },
+  "complete": true,
+  "generated": "2026-09-17T12:41:06+00:00",
+  "killed": 1,
+  "reason": "Measurement completed",
+  "restored_sha256": "2c2a285c7674a9cdb4dcd9794a6128737ffa273a8718278d4ec4a27b14b71ee5",
+  "results": null,
+  "run_id": "schema-10526493c4864ed19a7417f57c970924",
+  "schema_version": 2,
+  "score_pct": 100.0,
+  "source": {
+    "base": "0a405cd1072509506882c88d42648ffa7609b337",
+    "binding_mode": "standalone-source",
+    "files": {
+      ".ai/schema/evidence/runs/schema-0919a4e3a419488db312e2efa439d6cc/mutation.json": {
+        "mode": "file",
+        "sha256": "04a325f36dbc981b0d73a30e2abbf15609f60244b0a918789e544944634368d9"
+      },
+      ".ai/schema/evidence/runs/schema-178465c7258a4f799685bd8224dc5a04/mutation.json": {
+        "mode": "file",
+        "sha256": "6de00824abb09f3592973d09db71f7064f22042cb4323b41075ee98f62f318b6"
+      },
+      ".ai/schema/evidence/runs/schema-39c1fceab43e4a02980daae75a548bd0/mutation.json": {
+        "mode": "file",
+        "sha256": "ae82415e6be915cb5ddc06ff07ab0d9a5d4925aa7e69c931e17331f2077f48d2"
+      },
+      ".ai/schema/evidence/runs/schema-40c14d695c43418a827eac9cd3707ca8/mutation.json": {
+        "mode": "file",
+        "sha256": "0118eae9c3379550ec649b8995dd360d3cec1cebacff45e2f32b0afc4d0f532f"
+      },
+      ".ai/schema/evidence/runs/schema-521681c06fed4be883cfc94897d79312/mutation.json": {
+        "mode": "file",
+        "sha256": "550202c339b9c97ebae7c5fea9e23f76e86dd2661f4f1fe2c96ff3656c816565"
+      },
+      ".ai/schema/evidence/runs/schema-5d07ce9de5ed4120a3688d5ec0a2802b/mutation.json": {
+        "mode": "file",
+        "sha256": "61964f1dfd1e04815c393ae1d78ae4969638901a204770aa45cf86f28e9bd418"
+      },
+      ".ai/schema/evidence/runs/schema-736871674a4b45ffa47815e38e8e47e8/mutation.json": {
+        "mode": "file",
+        "sha256": "ed3ac836f6b3ae7f5781cb0f07a6be0ab08df19d8110ffdbd93f10b5d1810cbd"
+      },
+      ".ai/schema/evidence/runs/schema-7cf755bd24b14ea99b5b9307480a4f45/mutation.json": {
+        "mode": "file",
+        "sha256": "fce4e1efd83ff266608bb35819ee83bf6030ddd3feb8707f8ac93f23e1c1ef56"
+      },
+      ".ai/schema/evidence/runs/schema-8b8f005401704503bdcab1f70d638ef7/mutation.json": {
+        "mode": "file",
+        "sha256": "549f2ad2c086b04881e240fec761dc0172f526bd0421a336217b644bdc7f1346"
+      },
+      ".ai/schema/evidence/runs/schema-b2c0f0c23c444cf09cf1c2b3a38da22a/mutation.json": {
+        "mode": "file",
+        "sha256": "0bd6b453b28a312f04197326aae9cfc8d3a85954ab315db70f7d61965246a2fe"
+      },
+      ".ai/schema/evidence/runs/schema-b9d61594893a4640bb23bef2754dfa5e/mutation.json": {
+        "mode": "file",
+        "sha256": "7055a7e9ad43cf0e02055073f51d0131eb5995ffd14e0cc64ecab31c4401a08d"
+      },
+      ".ai/schema/evidence/runs/schema-bb7629fb47794dd7865fa3617c8022da/mutation.json": {
+        "mode": "file",
+        "sha256": "286b554fc1b244d98fa98ed6fc296698ae5e6ab70237968686d8deadea2d6d6e"
+      },
+      ".ai/schema/evidence/runs/schema-c52b62727f5b4655ac50bf0af6f7bcce/mutation.json": {
+        "mode": "file",
+        "sha256": "c89a132cc9ac30de9f5f3406ed3b212c5b25f010607aea45e5c51881535f879f"
+      },
+      ".ai/schema/evidence/runs/schema-f4e924fd685b4c3eb80f45e90d91010b/mutation.json": {
+        "mode": "file",
+        "sha256": "0431573a6f50ac6201b9235e9b213fd2a31d1adc8cbdeee54234d46485b4fc02"
+      },
+      ".ai/schema/evidence/runs/schema-f6726ad1ad774d5abb3e7990feeb9586/mutation.json": {
+        "mode": "file",
+        "sha256": "54866d71bc76480312ff6ef6874e173c70e601f40cc721fed96d4f8a83aa438d"
+      },
+      ".ai/schema/evidence/runs/schema-f893046a961743f0ba23e0d329dfc8fc/mutation.json": {
+        "mode": "file",
+        "sha256": "89e688fab3b393375d31d188dd60dcc5ca9b669d1956e923879510fede886b18"
+      },
+      ".gitignore": {
+        "mode": "file",
+        "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+      },
+      "value.mjs": {
+        "mode": "file",
+        "sha256": "277cb5d75babb7c02f4d5afb505da67fc9e986f20db259da3a7fe781d1ddd6af"
+      },
+      "value.test.mjs": {
+        "mode": "file",
+        "sha256": "7791b70d6444670106565b2c1e05b32b80d278cec63c2a899f664c6b83044017"
+      }
+    },
+    "head": "aa5b2c0f3868db512c176302f36ce67a9fda385a",
+    "scope": {
+      "directories": [
+        "."
+      ],
+      "excluded_outputs": [
+        {
+          "path": ".ai/schema/evidence/runs/schema-10526493c4864ed19a7417f57c970924/metrics.json",
+          "reason": "Exact same-run metrics report published by the invoking probe"
+        },
+        {
+          "path": ".ai/schema/evidence/runs/schema-10526493c4864ed19a7417f57c970924/mutation.json",
+          "reason": "Exact fresh invocation-owned mutation report"
+        },
+        {
+          "path": ".ai/schema/metrics.json",
+          "reason": "Generated metrics display alias owned by the invoking probe"
+        },
+        {
+          "path": ".git",
+          "reason": "Git administrative metadata, not source inputs"
+        }
+      ],
+      "files": []
+    },
+    "scope_sha256": "2c2a285c7674a9cdb4dcd9794a6128737ffa273a8718278d4ec4a27b14b71ee5"
+  },
+  "survived": 0,
+  "test_run": {
+    "assertions": [],
+    "command": {
+      "argv": [
+        "C:\\Program Files\\nodejs\\node.EXE",
+        "--test-reporter=file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/native_result.mjs",
+        "--test",
+        "value.test.mjs"
+      ],
+      "cwd": ".",
+      "environment": {
+        "NODE_TEST_CONTEXT": null
+      },
+      "idle_seconds": 300,
+      "max_seconds": 300,
+      "runtime": {
+        "executable": "C:\\Program Files\\nodejs\\node.EXE",
+        "observed_version": "v24.11.1"
+      }
+    },
+    "runner": "node-native",
+    "test_files": [
+      "value.test.mjs"
+    ]
+  },
+  "total": 1,
+  "ungraded": 0,
+  "unsupported_scope": []
+}

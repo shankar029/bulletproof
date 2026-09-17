@@ -1,0 +1,43 @@
+test_missing_review_pair_blocks_then_actual_handoff_record_unblocks (test_workflow_cli.WorkflowCliTests.test_missing_review_pair_blocks_then_actual_handoff_record_unblocks) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 10.410s
+
+OK
+✔ missing review blocks; admitted attributed review permits dependent work (11198.0254ms)
+test_setup_vs_red_pair_uses_real_native_assertion (test_workflow_cli.WorkflowCliTests.test_setup_vs_red_pair_uses_real_native_assertion) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 12.510s
+
+OK
+✔ setup failure is not behavioral red; actual matching assertion failure is (13213.9706ms)
+test_stale_pair_fresh_process_reopens_only_affected_receipt (test_workflow_cli.WorkflowCliTests.test_stale_pair_fresh_process_reopens_only_affected_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 19.275s
+
+OK
+✔ stale proof blocks; fresh public-CLI execution resumes without rewriting receipts (19711.2544ms)
+test_metrics_pair_failure_capture_and_independent_work_not_fake_closure (test_workflow_cli.WorkflowCliTests.test_metrics_pair_failure_capture_and_independent_work_not_fake_closure) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 10.912s
+
+OK
+✔ missing metrics blocks attachment; unrelated work works (positive quality closure unavailable) (11711.5739ms)
+test_compatibility_pair_requires_accepted_pre_retirement_proof (test_workflow_cli.WorkflowCliTests.test_compatibility_pair_requires_accepted_pre_retirement_proof) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 8.888s
+
+OK
+✔ premature retirement blocks; prior accepted compatibility permits retirement (9698.4534ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 65673.7573

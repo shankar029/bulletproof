@@ -1,0 +1,179 @@
+{
+  "fresh_methods": 10,
+  "overlap_with_historical_262": [
+    "test_measure_q2.ToolRootTests.test_duplicate_prefix_reserved_namespace_and_hardlinks_reject",
+    "test_measure_q2.ToolRootTests.test_empty_mode_and_conditional_root_validation",
+    "test_measure_source_bindings.SourceBindingTests.test_actual_three_tools_at_two_git_revisions_with_import_provenance",
+    "test_measure_source_bindings.SourceBindingTests.test_all_resources_not_just_loaded_module_are_bound",
+    "test_measure_source_bindings.SourceBindingTests.test_empty_q1_and_native_bindings_still_validate",
+    "test_measure_source_bindings.SourceBindingTests.test_environment_preload_and_python_path_are_not_execution_inputs",
+    "test_measure_source_bindings.SourceBindingTests.test_missing_qualification_module_and_unknown_settings_reject",
+    "test_measure_source_bindings.SourceBindingTests.test_raw_staging_reservation_and_controller_remain_authoritative",
+    "test_measure_source_bindings.SourceBindingTests.test_unqualified_python_import_rejects_before_module_execution"
+  ],
+  "new_method_ids": [
+    "test_measure_source_bindings.SourceBindingTests.test_qualification_ownership_rejects_rehashed_manifests_before_launch"
+  ],
+  "historical_262_refreshed": false,
+  "raw_index_entries_verified": 29,
+  "actual_command_artifacts": 11,
+  "successful_commands": 10,
+  "expected_unqualified_import_rejections": 1,
+  "commands": [
+    {
+      "record": ".ai\\workflow-reliability\\evidence\\joint-cli-binding-r1-results\\raw-901e8e8620fb.json",
+      "artifact": "head/binding/typescript/command.json",
+      "returncode": 0,
+      "argv_prefix": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "-e"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-zc6z474h\\head_root",
+      "stdout": "Executed qualified source binding: typescript\n",
+      "stderr": "",
+      "toolset_sha256": "478fea1255eb767c1b62fcd6a8c6948139379fd4bc618c8df811056ed41d4ef9"
+    },
+    {
+      "record": ".ai\\workflow-reliability\\evidence\\joint-cli-binding-r1-results\\raw-901e8e8620fb.json",
+      "artifact": "head/binding/vulture/command.json",
+      "returncode": 0,
+      "argv_prefix": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-zc6z474h\\head_root",
+      "stdout": "Executed qualified source binding: vulture\n",
+      "stderr": "",
+      "toolset_sha256": "478fea1255eb767c1b62fcd6a8c6948139379fd4bc618c8df811056ed41d4ef9"
+    },
+    {
+      "record": ".ai\\workflow-reliability\\evidence\\joint-cli-binding-r1-results\\raw-b9c3fd6b5ae1.json",
+      "artifact": "head/binding/vulture/command.json",
+      "returncode": 1,
+      "argv_prefix": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-tff7lmrb\\head_root",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 37, in <module>\n    import lizard, vulture, pygments, pathspec\n  File \"C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-tff7lmrb\\pathspec-package\\pathspec\\__init__.py\", line 30, in <module>\n    from .gitignore import (\n    \tGitIgnoreSpec)\n  File \"C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-tff7lmrb\\pathspec-package\\pathspec\\gitignore.py\", line 25, in <module>\n    from pathspec._backends.agg import (\n    \tmake_gitignore_backend)\n  File \"C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-tff7lmrb\\pathspec-package\\pathspec\\_backends\\agg.py\", line 27, in <module>\n    from .re2.base import (\n    \tre2_error)\n  File \"C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-tff7lmrb\\pathspec-package\\pathspec\\_backends\\re2\\base.py\", line 12, in <module>\n    from ._base import (\n    \tre2_error)\n  File \"C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-tff7lmrb\\pathspec-package\\pathspec\\_backends\\re2\\_base.py\", line 17, in <module>\n    import re2\n  File \"<string>\", line 28, in find_spec\n    checked(spec.origin)\n    ~~~~~~~^^^^^^^^^^^^^\n  File \"<string>\", line 19, in checked\n    raise ImportError(\"Unqualified import/resource: \" + str(path))\nImportError: Unqualified import/resource: C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-tff7lmrb\\pathspec-package\\re2.py\n",
+      "toolset_sha256": "d6e770f74314dd77d57b179997131de9eaf3985860de5dde3bc53bcdd2e05416"
+    },
+    {
+      "record": ".ai\\workflow-reliability\\evidence\\joint-cli-binding-r1-results\\raw-d4215de8eeb7.json",
+      "artifact": "head/binding/typescript/command.json",
+      "returncode": 0,
+      "argv_prefix": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "-e"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-z7ipjecw\\head_root",
+      "stdout": "Executed qualified source binding: typescript\n",
+      "stderr": "",
+      "toolset_sha256": "4aa9728b01d4dae5802806bfed0d1f380be9ad14aaab1d4dfca8d3cbf6ebf6d3"
+    },
+    {
+      "record": ".ai\\workflow-reliability\\evidence\\joint-cli-binding-r1-results\\raw-e994874c51a1.json",
+      "artifact": "base/binding/typescript/command.json",
+      "returncode": 0,
+      "argv_prefix": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "-e"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-w7r6e6ir\\base_root",
+      "stdout": "Executed qualified source binding: typescript\n",
+      "stderr": "",
+      "toolset_sha256": "91bc9ae99aae55a3a8e93edc4a3bab252763c53ca23c56a20a2e027495d9d201"
+    },
+    {
+      "record": ".ai\\workflow-reliability\\evidence\\joint-cli-binding-r1-results\\raw-f9df00e58d91.json",
+      "artifact": "base/binding/typescript/command.json",
+      "returncode": 0,
+      "argv_prefix": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "-e"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-uxy367e7\\base_root",
+      "stdout": "Executed qualified source binding: typescript\n",
+      "stderr": "",
+      "toolset_sha256": "6d3de8a3edad775ef11895125bca7f832e078426c0d11759b5da8f377fc9c3aa"
+    },
+    {
+      "record": ".ai\\workflow-reliability\\evidence\\joint-cli-binding-r1-results\\raw-f9df00e58d91.json",
+      "artifact": "head/binding/typescript/command.json",
+      "returncode": 0,
+      "argv_prefix": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "-e"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-uxy367e7\\head_root",
+      "stdout": "Executed qualified source binding: typescript\n",
+      "stderr": "",
+      "toolset_sha256": "6d3de8a3edad775ef11895125bca7f832e078426c0d11759b5da8f377fc9c3aa"
+    },
+    {
+      "record": ".ai\\workflow-reliability\\evidence\\joint-cli-binding-r1-results\\raw-f9df00e58d91.json",
+      "artifact": "base/binding/lizard/command.json",
+      "returncode": 0,
+      "argv_prefix": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-uxy367e7\\base_root",
+      "stdout": "Executed qualified source binding: lizard\n",
+      "stderr": "",
+      "toolset_sha256": "6d3de8a3edad775ef11895125bca7f832e078426c0d11759b5da8f377fc9c3aa"
+    },
+    {
+      "record": ".ai\\workflow-reliability\\evidence\\joint-cli-binding-r1-results\\raw-f9df00e58d91.json",
+      "artifact": "head/binding/lizard/command.json",
+      "returncode": 0,
+      "argv_prefix": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-uxy367e7\\head_root",
+      "stdout": "Executed qualified source binding: lizard\n",
+      "stderr": "",
+      "toolset_sha256": "6d3de8a3edad775ef11895125bca7f832e078426c0d11759b5da8f377fc9c3aa"
+    },
+    {
+      "record": ".ai\\workflow-reliability\\evidence\\joint-cli-binding-r1-results\\raw-f9df00e58d91.json",
+      "artifact": "base/binding/vulture/command.json",
+      "returncode": 0,
+      "argv_prefix": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-uxy367e7\\base_root",
+      "stdout": "Executed qualified source binding: vulture\n",
+      "stderr": "",
+      "toolset_sha256": "6d3de8a3edad775ef11895125bca7f832e078426c0d11759b5da8f377fc9c3aa"
+    },
+    {
+      "record": ".ai\\workflow-reliability\\evidence\\joint-cli-binding-r1-results\\raw-f9df00e58d91.json",
+      "artifact": "head/binding/vulture/command.json",
+      "returncode": 0,
+      "argv_prefix": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcbr1-67jov8bw\\q1-evidence-uxy367e7\\head_root",
+      "stdout": "Executed qualified source binding: vulture\n",
+      "stderr": "",
+      "toolset_sha256": "6d3de8a3edad775ef11895125bca7f832e078426c0d11759b5da8f377fc9c3aa"
+    }
+  ]
+}

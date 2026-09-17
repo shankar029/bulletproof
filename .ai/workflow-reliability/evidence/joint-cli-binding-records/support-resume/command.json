@@ -1,0 +1,61 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+    "--idle",
+    "120",
+    "--max",
+    "1800",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-u",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\joint-cli-binding-resume.py",
+    "worker",
+    "support"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "environment": {
+    "PATH": "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd;C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.6.0_arm64__8wekyb3d8bbwe;C:\\Users\\shbs\\AppData\\Local\\Programs\\GitHub Copilot;C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd;C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin;C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\usr\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Users\\shbs\\AppData\\Local\\copilot-desktop-gh-2.98.0;C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Pandoc\\;C:\\Program Files\\GitHub CLI\\;C:\\Program Files\\WezTerm;C:\\Users\\shbs\\AppData\\Local\\Programs\\Herdr\\bin;C:\\Users\\shbs\\AppData\\Roaming\\agency\\CurrentVersion;C:\\Users\\shbs\\.local\\bin;C:\\Users\\shbs\\AppData\\Local\\pnpm;C:\\Users\\shbs\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\shbs\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\shbs\\AppData\\Roaming\\npm;C:\\Users\\shbs\\AppData\\Local\\Microsoft\\WinGet\\Packages\\GitHub.Copilot_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\\Users\\shbs\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\shbs\\AppData\\Local\\Programs\\Obsidian;C:\\Users\\shbs\\AppData\\Local\\Microsoft\\WinGet\\Packages\\marlocarlo.psmux_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\\Users\\shbs\\Tools;C:\\Users\\shbs\\.dotnet\\tools",
+    "TEMP": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb-d1c7tvf7",
+    "TMP": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb-d1c7tvf7",
+    "TMPDIR": "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb-d1c7tvf7",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "BULLETPROOF_PYTHON": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe"
+  },
+  "helper_sha256": "af9f1d5d0662219117e0612881f39c324c40d4566e84e46822a6d2fe64d26591",
+  "retained_completed": [
+    "test_evidence.EvidenceTests.test_atomic_write_preserves_old_bytes_on_replace_failure",
+    "test_evidence.EvidenceTests.test_generated_outputs_do_not_hide_contracts",
+    "test_evidence.EvidenceTests.test_invalid_json_does_not_touch_destination",
+    "test_evidence.EvidenceTests.test_lock_collision_does_not_remove_original_owner",
+    "test_evidence.EvidenceTests.test_lock_exception_releases_only_its_own_record",
+    "test_evidence.EvidenceTests.test_owned_git_fixture_preserves_bytes_and_reports_commands",
+    "test_evidence.EvidenceTests.test_rejects_traversal_absolute_and_excluded_inputs",
+    "test_evidence.EvidenceTests.test_scope_is_canonical_and_preserves_missing_directory_state",
+    "test_evidence.EvidenceTests.test_snapshot_binds_bytes_membership_and_missing_paths",
+    "test_evidence.EvidenceTests.test_snapshot_rejects_directory_link_escape",
+    "test_run.CaptureTests.test_cli_forwards_unicode_with_cp1252_parent_encoding",
+    "test_run.CaptureTests.test_direct_exit_observer_failure_never_returns_success",
+    "test_run.CaptureTests.test_explicit_none_retains_env_and_positional_compatibility",
+    "test_run.CaptureTests.test_idle_and_total_timeouts",
+    "test_run.CaptureTests.test_launch_failure_has_no_fabricated_pid_or_exit",
+    "test_run.CaptureTests.test_launch_failure_observer_error_is_explicit",
+    "test_run.CaptureTests.test_legacy_signature_and_missing_program",
+    "test_run.CaptureTests.test_nonzero_exit_is_a_direct_child_fact",
+    "test_run.CaptureTests.test_observer_success_preserves_exact_result",
+    "test_run.CaptureTests.test_other_launch_error_is_observed",
+    "test_run.CaptureTests.test_partial_lines_count_as_progress",
+    "test_run.CaptureTests.test_spawn_is_synchronous_while_owned_pid_alive",
+    "test_run.CaptureTests.test_spawn_observer_error_is_not_success",
+    "test_run.CaptureTests.test_spawn_observer_failure_cleans_up_specific_live_pid",
+    "test_run.CaptureTests.test_timeout_observations_report_actual_exit_and_cleanup_attempt",
+    "test_run.CaptureTests.test_utf8_env_and_stream_cleanup"
+  ],
+  "selected": [
+    "test_run_c2a_verification.ObserverBoundaryTests.test_direct_exit_failure_does_not_claim_or_kill_surviving_descendant",
+    "test_run_c2a_verification.ObserverBoundaryTests.test_synchronous_callback_is_explicitly_outside_capture_timeout",
+    "test_run_c2a_verification.ObserverBoundaryTests.test_timeout_and_exit_callback_failure_preserve_both_diagnostics"
+  ]
+}

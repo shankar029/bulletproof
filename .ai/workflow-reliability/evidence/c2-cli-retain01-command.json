@@ -1,0 +1,22 @@
+{
+  "test_sha256": "f0177c837797c7f546241d5b5bd608ef8088342775eda2bb63fc272b8ddec374",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+    "--idle",
+    "120",
+    "--max",
+    "180",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-u",
+    "-B",
+    "-m",
+    "unittest",
+    "test_workflow_cli.WorkflowCliTests.test_each_old_input_retain_failure_unwinds_for_exact_A0_retry",
+    "-v"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests",
+  "temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c2cli-1695cc"
+}

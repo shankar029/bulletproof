@@ -1,0 +1,34 @@
+{
+  "selected": [
+    "test_measure_inventory.InventoryTests.test_deleted_renamed_and_untracked_inputs_change_inventory",
+    "test_measure_inventory.InventoryTests.test_fresh_cross_root_aliases_reject_different_names_and_noncode_inputs",
+    "test_measure_inventory.InventoryTests.test_independent_equal_content_copies_survive_owned_head_write",
+    "test_measure_inventory.InventoryTests.test_inventory_retains_all_code_and_deliberate_exclusions",
+    "test_measure_inventory.InventoryTests.test_omitted_entry_digest_revision_and_changed_map_are_rejected",
+    "test_measure_inventory.InventoryTests.test_one_discovery_owner_and_standalone_imports",
+    "test_measure_inventory.InventoryTests.test_owned_artifacts_cannot_alias_a_source_input",
+    "test_measure_inventory.InventoryTests.test_paths_reject_traversal_root_file_aliases_and_absolute_names",
+    "test_measure_inventory.InventoryTests.test_real_link_is_failed_not_a_shortened_success",
+    "test_measure_inventory.InventoryTests.test_real_read_and_walk_errors_are_enumerated"
+  ],
+  "tests_run": 10,
+  "passed": [
+    "test_measure_inventory.InventoryTests.test_deleted_renamed_and_untracked_inputs_change_inventory",
+    "test_measure_inventory.InventoryTests.test_fresh_cross_root_aliases_reject_different_names_and_noncode_inputs",
+    "test_measure_inventory.InventoryTests.test_independent_equal_content_copies_survive_owned_head_write",
+    "test_measure_inventory.InventoryTests.test_inventory_retains_all_code_and_deliberate_exclusions",
+    "test_measure_inventory.InventoryTests.test_omitted_entry_digest_revision_and_changed_map_are_rejected",
+    "test_measure_inventory.InventoryTests.test_one_discovery_owner_and_standalone_imports",
+    "test_measure_inventory.InventoryTests.test_owned_artifacts_cannot_alias_a_source_input",
+    "test_measure_inventory.InventoryTests.test_paths_reject_traversal_root_file_aliases_and_absolute_names",
+    "test_measure_inventory.InventoryTests.test_real_link_is_failed_not_a_shortened_success",
+    "test_measure_inventory.InventoryTests.test_real_read_and_walk_errors_are_enumerated"
+  ],
+  "failures": [],
+  "errors": [],
+  "skips": [],
+  "seconds": 345.47839860001113,
+  "completion_events": 55,
+  "trace_errors": [],
+  "incomplete_target_invocations": []
+}

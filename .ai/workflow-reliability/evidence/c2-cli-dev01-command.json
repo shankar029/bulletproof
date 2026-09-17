@@ -1,0 +1,27 @@
+{
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "scripts\\run.py",
+    "--idle",
+    "120",
+    "--max",
+    "600",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-u",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts\\tests",
+    "-p",
+    "test_workflow_cli.py",
+    "-v"
+  ],
+  "temp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c2cli-82137b",
+  "python": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+  "git": "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe"
+}

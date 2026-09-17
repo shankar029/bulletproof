@@ -1,0 +1,26 @@
+{
+  "selected": [
+    "test_measure_q1_verification.IndependentQ1VerificationTests.test_actual_greenfield_requires_complete_two_file_baseline",
+    "test_measure_q1_verification.IndependentQ1VerificationTests.test_builtin_import_uses_actual_python_resolution_not_local_sys_file",
+    "test_measure_q1_verification.IndependentQ1VerificationTests.test_disjoint_roots_must_not_share_mutable_base_head_files",
+    "test_measure_q1_verification.IndependentQ1VerificationTests.test_module_cannot_be_used_as_a_package_but_graph_must_fail_closed",
+    "test_measure_q1_verification.IndependentQ1VerificationTests.test_native_relative_imports_match_nested_package_edges",
+    "test_measure_q1_verification.IndependentQ1VerificationTests.test_public_census_keeps_ignored_untracked_tests_examples_benchmarks"
+  ],
+  "tests_run": 6,
+  "passed": [
+    "test_measure_q1_verification.IndependentQ1VerificationTests.test_actual_greenfield_requires_complete_two_file_baseline",
+    "test_measure_q1_verification.IndependentQ1VerificationTests.test_builtin_import_uses_actual_python_resolution_not_local_sys_file",
+    "test_measure_q1_verification.IndependentQ1VerificationTests.test_disjoint_roots_must_not_share_mutable_base_head_files",
+    "test_measure_q1_verification.IndependentQ1VerificationTests.test_module_cannot_be_used_as_a_package_but_graph_must_fail_closed",
+    "test_measure_q1_verification.IndependentQ1VerificationTests.test_native_relative_imports_match_nested_package_edges",
+    "test_measure_q1_verification.IndependentQ1VerificationTests.test_public_census_keeps_ignored_untracked_tests_examples_benchmarks"
+  ],
+  "failures": [],
+  "errors": [],
+  "skips": [],
+  "seconds": 196.17013670000597,
+  "completion_events": 2,
+  "trace_errors": [],
+  "incomplete_target_invocations": []
+}

@@ -1,0 +1,43 @@
+{
+  "scope": "Source-binding execution and focused compatibility only; not collectors or all Q2",
+  "selected": [
+    "test_measure_source_bindings.SourceBindingTests.test_actual_three_tools_at_two_git_revisions_with_import_provenance"
+  ],
+  "tests_run": 1,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "before": {
+    "scripts/measure.py": "1e5d96b94eb531276f42a1c815868ee1774985337808e0b804299ab0d3b17f71",
+    "scripts/probe.py": "d7be5050cf70cb836e46f0b661632b2d426d6bdc4684f1b54aa9061d61948904",
+    "scripts/measure_graph.py": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391",
+    "scripts/run.py": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/tests/helpers.py": "2694cd24dd07b1a6e3ceff7ac2addb7d4fc8bc40ee197f6d3c4206d281bf2068",
+    "scripts/tests/test_measure_source_bindings.py": "496526f755be37c003c6e259bab31f37891afb33650188cc6c6ddd9617d72f72",
+    "scripts/tests/test_measure_q2.py": "8f0adaa478501bb4d1b81bb54ecdf45011d68787977537401fc4f24e563db7f8",
+    "scripts/tests/test_measure_inventory.py": "d97a98983cb2c825abd87ffec4f96981c652dece88846abd3864179a2921d227",
+    "scripts/tests/test_measure_graph.py": "22a1fc3d9506e0a200ce43991ea0b667d48a26b2b69a61d5a7937761ae1876df",
+    ".ai/workflow-reliability/evidence/q2-adapter-source-development.py": "1260516d89a063bac84bb10f7c0b103fed2ecf813c2e20288dd6b25febbeee45",
+    ".ai/workflow-reliability/evidence/q2-tool-input-root-amendment.json": "36514a684b8b1323c752a3559cb49f30be8db61b865435f47682dfd824cda1c1",
+    ".ai/workflow-reliability/evidence/q2-tool-input-root-review.md": "2e14e84f8b8201a9d43c6ff2070631ce68db595f03e529c6e17d243ddfbd6062"
+  },
+  "after": {
+    "scripts/measure.py": "1e5d96b94eb531276f42a1c815868ee1774985337808e0b804299ab0d3b17f71",
+    "scripts/probe.py": "d7be5050cf70cb836e46f0b661632b2d426d6bdc4684f1b54aa9061d61948904",
+    "scripts/measure_graph.py": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391",
+    "scripts/run.py": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/tests/helpers.py": "2694cd24dd07b1a6e3ceff7ac2addb7d4fc8bc40ee197f6d3c4206d281bf2068",
+    "scripts/tests/test_measure_source_bindings.py": "496526f755be37c003c6e259bab31f37891afb33650188cc6c6ddd9617d72f72",
+    "scripts/tests/test_measure_q2.py": "8f0adaa478501bb4d1b81bb54ecdf45011d68787977537401fc4f24e563db7f8",
+    "scripts/tests/test_measure_inventory.py": "d97a98983cb2c825abd87ffec4f96981c652dece88846abd3864179a2921d227",
+    "scripts/tests/test_measure_graph.py": "22a1fc3d9506e0a200ce43991ea0b667d48a26b2b69a61d5a7937761ae1876df",
+    ".ai/workflow-reliability/evidence/q2-adapter-source-development.py": "1260516d89a063bac84bb10f7c0b103fed2ecf813c2e20288dd6b25febbeee45",
+    ".ai/workflow-reliability/evidence/q2-tool-input-root-amendment.json": "36514a684b8b1323c752a3559cb49f30be8db61b865435f47682dfd824cda1c1",
+    ".ai/workflow-reliability/evidence/q2-tool-input-root-review.md": "2e14e84f8b8201a9d43c6ff2070631ce68db595f03e529c6e17d243ddfbd6062"
+  },
+  "same_bytes": true,
+  "prior_symlink_creation": "WinError 1314; persistent case remains blocked, not retried or counted",
+  "full_Q2_complete": false
+}

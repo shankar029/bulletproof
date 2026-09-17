@@ -1,0 +1,32 @@
+{
+  "actual_fixture_roots": [
+    "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-pb5aoj0w\\bulletproof-git-1xcq5pqu",
+    "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-pb5aoj0w\\q1-evidence-katresvh"
+  ],
+  "positive_observations": 14,
+  "validation_completions": [
+    {
+      "event": "returned-control/completed-invocation",
+      "target": "Q1Fixture.validate",
+      "ordinal": 1,
+      "method": "preflight",
+      "seconds": 10.306947799981572,
+      "return_value_is_none": false,
+      "meaning": "Return event includes exception unwind; not an assertion verdict",
+      "pid": 44528
+    },
+    {
+      "event": "returned-control/completed-invocation",
+      "target": "Q1Fixture.validate",
+      "ordinal": 2,
+      "method": "preflight",
+      "seconds": 10.032838900020579,
+      "return_value_is_none": true,
+      "meaning": "Return event includes exception unwind; not an assertion verdict",
+      "pid": 44528
+    }
+  ],
+  "all_target_completions": 3,
+  "events_observed_before_preflight_exit": true,
+  "counts_as_additional_test_method": false
+}

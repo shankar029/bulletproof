@@ -1,0 +1,44 @@
+ M .ai/workflow-reliability/state.md
+ M evals/report.md
+ M scripts/measure.py
+ M scripts/probe.py
+?? .ai/workflow-reliability/evidence/c2-cli-dev01-command.json
+?? .ai/workflow-reliability/evidence/c2-cli-dev01-exit.txt
+?? .ai/workflow-reliability/evidence/c2-cli-dev01-output.txt
+?? .ai/workflow-reliability/evidence/c2-cli-dev02-command.json
+?? .ai/workflow-reliability/evidence/c2-cli-dev02-exit.txt
+?? .ai/workflow-reliability/evidence/c2-cli-dev02-invocations.jsonl
+?? .ai/workflow-reliability/evidence/c2-cli-dev02-output.txt
+?? .ai/workflow-reliability/evidence/c2-cli-final01-after-pins.json
+?? .ai/workflow-reliability/evidence/c2-cli-final01-before-pins.json
+?? .ai/workflow-reliability/evidence/c2-cli-final01-command.json
+?? .ai/workflow-reliability/evidence/c2-cli-final01-exit.txt
+?? .ai/workflow-reliability/evidence/c2-cli-final01-inventory.json
+?? .ai/workflow-reliability/evidence/c2-cli-final01-invocations.jsonl
+?? .ai/workflow-reliability/evidence/c2-cli-final01-output.txt
+?? .ai/workflow-reliability/evidence/c2-cli-native01-command.json
+?? .ai/workflow-reliability/evidence/c2-cli-native01-exit.txt
+?? .ai/workflow-reliability/evidence/c2-cli-native01-invocations.jsonl
+?? .ai/workflow-reliability/evidence/c2-cli-native01-output.txt
+?? .ai/workflow-reliability/evidence/c2-cli-probe-api01.json
+?? .ai/workflow-reliability/evidence/c2-cli-probe-help01.txt
+?? .ai/workflow-reliability/evidence/c2-cli-probe-runid01.txt
+?? .ai/workflow-reliability/evidence/c2-cli-producer-interface-blocker.md
+?? .ai/workflow-reliability/evidence/c2-cli-race-red01-command.json
+?? .ai/workflow-reliability/evidence/c2-cli-race-red01-exit.txt
+?? .ai/workflow-reliability/evidence/c2-cli-race-red01-invocations.jsonl
+?? .ai/workflow-reliability/evidence/c2-cli-race-red01-output.txt
+?? .ai/workflow-reliability/evidence/q2-adapter-binding-check-results.json
+?? .ai/workflow-reliability/evidence/q2-adapter-binding-check.py
+?? .ai/workflow-reliability/evidence/q2-adapter-binding-handoff.md
+?? .ai/workflow-reliability/evidence/q2-adapter-development-incidents.md
+?? .ai/workflow-reliability/evidence/q2-adapter-root-development-records/
+?? .ai/workflow-reliability/evidence/q2-adapter-root-development.py
+?? .ai/workflow-reliability/evidence/q2-adapter-tool-input-root-rationale.md
+?? .ai/workflow-reliability/evidence/q2-tool-input-root-amendment.json
+?? .ai/workflow-reliability/evidence/q2-tool-input-root-review.md
+?? evals/workflow/
+?? references/workflow-gates.md
+?? scripts/tests/test_measure_q2.py
+?? scripts/tests/test_workflow_cli.py
+?? scripts/workflow.py

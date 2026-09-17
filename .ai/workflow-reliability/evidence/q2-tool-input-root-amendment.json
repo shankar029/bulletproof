@@ -1,0 +1,81 @@
+{
+  "document": "workflow-reliability/q2-tool-input-root-amendment",
+  "revision": 1,
+  "status": "PROPOSED_PENDING_FOCUSED_INDEPENDENT_REVIEW_AND_PARENT_RELEASE",
+  "authority": {
+    "contract": ".ai/workflow-reliability/measurement-enablement-contracts.json",
+    "contract_sha256": "a9a75df36241dc2578ff627703154a2750212c385a163332fe2ccbb47af9bd12",
+    "scope": "One optional MeasurementConfig field and its input/staging resolution semantics. Original contract and qualification evidence remain unchanged.",
+    "direction": "Parent approved the explicit source-bound original-artifact-root direction on 2026-09-17; this exact amendment still requires focused review and implementation release.",
+    "replaces_only": [
+      "MeasurementConfig invariant: ToolBinding help/configuration/qualification Artifact paths are resolved at intake against the explicit original root, then against run_root after staging.",
+      "The Q2 artifact-root recommendation in q2-adapter-binding-handoff.md: an existing repository task-evidence directory is permitted, not only external directories."
+    ]
+  },
+  "configuration_extension": {
+    "field": "tool_artifact_root",
+    "type": "nonempty string naming a canonical existing absolute directory",
+    "presence": "Required if and only if tools is nonempty. Omit, rather than null or empty string, when tools={}. Reject a root supplied with tools={}.",
+    "version": "Keep MeasurementConfig schema_version=1 and semantic_profile unchanged; this explicitly authorized optional extension is the only added field. Unknown fields still reject.",
+    "read_only": "The adapter reads originals and never writes, renames, installs into, chmods or cleans this directory. This is access intent, not a requirement to change filesystem permissions or a claim of sandbox-enforced read-only access.",
+    "compatibility": "Existing empty Q1 configs omit the field and retain current validation, toolset binding and behavior. No global path fallback is added. The existing validate_config(config, root) signature and return shape remain unchanged."
+  },
+  "original_location": {
+    "choice": "Permit a canonical existing task-evidence directory inside the original repository, or an explicit external data directory. Prefer the existing verified originals. The root locator remains absolute and unchanged when the source config is copied into the head subject.",
+    "reason": "probe._snapshot observes directories=['.'] with exact output exclusions; _copy_subject copies those observed bytes, including ignored normative evidence. Existing qualification JSON/logs are provenance data, not dependency/package manifests. Requiring external duplicate originals would create another provenance copy without fixing an isolation defect.",
+    "restrictions": [
+      "Tool executable/module/package/runtime-resource roots remain external to the measured repository and its base/head/controller/run roots. Do not copy tool packages, binaries or dependencies into evidence or subjects.",
+      "The original data root must not equal or lie inside any generated subject/controller/run root or current final run-output directory. It may be an ancestor of the final output directory, as an existing task-evidence directory is; referenced files, not that whole ancestor directory, are the original inputs.",
+      "Do not add this directory to source exclusions. Repository-resident originals must appear with matching hashes in the broad head source snapshot and copied head subject. External originals are bound by the source configuration and toolset binding, not inserted into the repository SourceSnapshot schema.",
+      "Do not add the original directory as a fifth root to _validate_root_independence: that would reject legitimate source ancestry or enumerate unrelated evidence. Extend checks only over the explicitly referenced original files and existing relevant file identities."
+    ],
+    "grounding": [
+      {"path": "scripts/probe.py", "lines": [372, 380], "fact": "Broad snapshot plus exact current output exclusions, not blanket .ai/evidence exclusion."},
+      {"path": "scripts/probe.py", "lines": [463, 481], "fact": "Head subject copies observed working-tree files and verifies bytes."},
+      {"path": "scripts/probe.py", "lines": [507, 580], "fact": "Source config precedes fresh raw directory; exact archive reservations precede source snapshot and publication."},
+      {"path": "scripts/measure.py", "lines": [491, 522], "fact": "Existing cross-root checks compare physical regular-file identities, not just hashes."}
+    ]
+  },
+  "artifact_resolution": {
+    "intake": "Only ToolBinding.help, ToolBinding.configuration and each ToolBinding.qualification Artifact resolve as tool_artifact_root / Artifact.path. Read and verify actual bytes against sha256 and bytes before staging. Approval artifacts retain their existing source-root semantics.",
+    "staged": "Copy each selected artifact into Context.run_root / Artifact.path with the EXACT SAME relative path, hash and length. Config and Artifact records are not rewritten. Consumers of staged artifacts resolve them only against run_root and require manifest ownership. Original rechecks explicitly use tool_artifact_root.",
+    "no_fallback": "There is no search, basename match, package-parent convention, environment lookup, session-path literal, root-wide copy or root autodiscovery. A failed original read never falls back to a staged or subject copy; a failed staged read never falls back to an original.",
+    "contents": "Artifact identity does not qualify content. The existing Q2 tool-specific validators still check help/API/version, approved settings, exact tool/resource pins and qualification evidence. A configuration artifact remains data, not an arbitrary callback/plugin/import channel."
+  },
+  "path_and_identity_checks": [
+    "Apply strict Path syntax unchanged: no absolute/drive/backslash/empty/dot/dotdot/control components, escaping resolution or Windows trailing-dot/space aliases. Root and every existing component must have canonical spelling and no symlink or junction/reparse alias.",
+    "Every selected original and staged leaf must be a regular file with observable physical identity. Reject original st_nlink>1 and distinct selected paths with the same physical file identity; reject staged hardlinks to originals, tools/resources, any source/controller file or another staged path. Missing identity or unsupported checks fail closed.",
+    "Reject duplicate JSON keys, duplicate entries within any qualification list, conflicting hash/length declarations for the same path, and distinct spellings colliding under Windows case folding. An identical cross-tool reference to the same original is shared once in the manifest, not copied twice or treated as two independent inputs.",
+    "Reject file-versus-directory prefix collisions among all input and reserved output paths. Input artifact paths cannot be manifest.json or occupy the base or head top-level namespaces, which belong to generated revision evidence. Compare against every other deterministic Q2 generated path before execution; later adapters cannot allocate a colliding output.",
+    "Require fresh exclusive destination files beneath the newly owned run_root; copy bytes, never link or overwrite. Check path containment/components, file identity, hash and length after copying and again during final validation. Path observations are not a concurrency lock or authenticated-producer claim."
+  ],
+  "reservation_and_overlap": {
+    "planning": "Before source snapshot or tools execute, compute the sorted unique union of selected Artifact.path values plus every generated Q2 raw/command/syntax/graph/scalar path and manifest.json. Project these paths into the final measurement archive and include the existing summary/mutation output slots in collision checks.",
+    "manifest": "Selected staged inputs each have one existing OwnedArtifactManifest.inputs row {artifact: unchanged Artifact, role: 'qualification', revision: null}, shared across base/head. Each selected path appears exactly once in reserved_outputs, alongside generated outputs. Hash actual staged files; never invent hashes for pending output files. No new manifest fields or roles.",
+    "source_overlap": "Before installing exact output exclusions, reject any selected original, config, approval, tool/resource input or source input that equals, aliases, or is a file/directory prefix collision with a planned raw/archive/summary output. Require new archive artifact paths absent. An original below a current summary exclusion must reject rather than disappear from source. The existing task-evidence ancestor itself is not an overlap.",
+    "publication": "Preserve probe's final source freshness and exact output ownership checks. Recheck originals, staged copies and input/output identities after validation and immediately before publication. Publish copies, never relocate originals. Any retained diagnostic artifacts remain failed evidence; no replacement successful report on failed validation. This amendment adds no scratch-lifetime or failure-report publication mechanism."
+  },
+  "integration": {
+    "measure.validate_config(config, root)": "Accept exactly the existing field set plus the conditional tool_artifact_root field; validate its root and selected originals using the absolute locator, not root. root still resolves source approvals/roots/suites exactly as today. Validate strict ToolBindings and content with the already approved Q2 rules; no signature change or staging side effect.",
+    "probe._execute_configured": "After config intake, plan/check reservations and source overlap; observe source; materialize unchanged baseline and observed head; create disjoint controller/run roots; strictly stage selected artifacts. Use the same source config and original authority for both revisions, even when qualification evidence did not exist in the historical base. Do not modify or inject anything into the immutable baseline.",
+    "Context": "No fields added. Source config remains bound by contract_artifacts/config hash. run_root holds owned copies; output_manifest binds qualification rows. toolset_sha256 binds the validated Q2 input description; controller_sha256 includes the actual shipped Q2 adapters as already required by Q2.",
+    "toolset_binding": "Derive one canonical toolset digest from the existing Python parser binding, validated ToolBinding/config bytes including tool_artifact_root, every selected original/staged Artifact identity, and the rehashed approved executable/module/runtime/resource/settings inputs. Recompute against actual bytes before each revision's tool execution and during/following producer validation. Both revisions must match the same digest. Resource enumeration is limited to explicitly pinned qualified sets, not ambient packages or root-wide discovery.",
+    "measure.make_manifest": "Deterministically reconstruct the existing manifest shape including the staged qualification set, sorted and unique. Do not trust a supplied manifest's extra paths or generate an ownership list by scanning the run directory.",
+    "measure.validate_observations": "Revalidate the source-bound config at head_root; independently resolve originals through config.tool_artifact_root and staged refs through run_root. Check original/copy/tool/resource bytes and identities before and after qualified raw decoding, manifest reconstruction and source-derived observation reconciliation. External originals must remain accessible for validation; archival copies alone cannot silently replace them.",
+    "probe.validate_measurement_report": "Continue using the full raw Context and producer validation, including the extended toolset check. No report shape/projection, --run-id flag, guarded attachment bridge, registered argv or guard source-binding change is introduced.",
+    "reuse": "Use existing path/hash/JSON primitives where their guarantees suffice, and explicit local checks for regular files/hardlink identities. Do not alter evidence.py, run.py or Q1 baseline/filter/text/frozen-import behavior."
+  },
+  "failures": {
+    "invalid_input_or_proof": "Bad/missing conditional root, malformed/ref-mismatched/unreadable original artifact, path/identity/overlap failure, changed original/copy/tool binding or invalid manifest raises ValueError/OSError at the existing boundary. Public probe reports unable-to-run and exit 2; library callers receive rejection. No valid complete report is published.",
+    "collector_unavailability": "Actual qualified collector failures or missing/invalid source processing remain explicit unavailable/partial observations under the existing Q2 contract, not zeros. An otherwise valid incomplete report remains verdict=fail and exit 1. This amendment neither reclassifies collector errors as success nor changes existing process exit codes.",
+    "missing_required_proof": "Coverage and mutation remain required and incomplete when absent. Availability of staged qualification artifacts cannot make Q green."
+  },
+  "smallest_development_tests_after_release": [
+    {"id": "ROOT01", "scope": "Existing empty-Q1 fixture and standalone imports", "proof": "Omitted field preserves current config/toolset/results; root with empty tools, missing root with nonempty tools and unknown fields reject."},
+    {"id": "ROOT02", "scope": "Real two-Git-revision fixture with at least three base code files", "proof": "Use actual qualified evidence in an existing .ai task-evidence root; copy exact selected artifacts to a short owned run root. Original hashes remain in broad source; base is unchanged; qualification manifest rows have revision=null; both revisions bind the same toolset. Repeat with an explicit external data root."},
+    {"id": "ROOT03", "scope": "Real filesystem/path and reservation boundaries", "proof": "Reject traversal, absolute refs, case/prefix collisions, duplicate/conflicting refs, missing/nonregular originals, existing destinations, real symlink/junction/hardlink aliases and exact summary/archive/source overlap. Permit a task-evidence ancestor with disjoint selected files. No mocks/skips; unavailable host link facilities remain a named unverified case."},
+    {"id": "ROOT04", "scope": "Real originals and owned copies", "proof": "Mutate/delete an original after staging; mutate a staged copy; alter its hash and manifest consistently; change a tool/resource byte or root locator. Consumer rechecks reject each mismatch, including one introduced after initial validation. Missing originals never fall back to intact copies."},
+    {"id": "ROOT05", "scope": "Actual configured probe plus existing Q2 reconciliation fixtures", "proof": "Staging preserves qualified bytes and exact output freshness; no original is overwritten/excluded. Invalid configuration/proof is exit 2; genuine incomplete all-nine report remains exit 1. Root-wide unreferenced files are not staged; Q2 raw scalar/census/identity reconciliation remains required, not replaced by these tests."}
+  ],
+  "delivery_boundary": "Author amendment and rationale only, then idle for focused independent review and explicit parent implementation release. No production edits/tests, tools installation, agents, shared state/report edits, commit or publication."
+}

@@ -1,0 +1,218 @@
+[
+  {
+    "bytes": 33589,
+    "path": "scripts\\workflow.py",
+    "changed_since_final01": false,
+    "own_scope": true,
+    "before_final01_sha256": "a740bdc3325f86293341b7099010b8edba30062f7ddc2a2acef1012bc1b1e1a1",
+    "sha256": "a740bdc3325f86293341b7099010b8edba30062f7ddc2a2acef1012bc1b1e1a1"
+  },
+  {
+    "bytes": 50761,
+    "path": "scripts\\workflow_state.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "fe30290e61d319c76546c31acd454bc7c642fc83ad55126e368fa44ab4b57a6e",
+    "sha256": "fe30290e61d319c76546c31acd454bc7c642fc83ad55126e368fa44ab4b57a6e"
+  },
+  {
+    "bytes": 31589,
+    "path": "scripts\\workflow_gate.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "f7ff2c1ac229a88f39be6ddc6000f060afc545dbf5dd47b5bf3ddcc4ff43f23d",
+    "sha256": "f7ff2c1ac229a88f39be6ddc6000f060afc545dbf5dd47b5bf3ddcc4ff43f23d"
+  },
+  {
+    "bytes": 10919,
+    "path": "scripts\\run.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+    "sha256": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e"
+  },
+  {
+    "bytes": 7050,
+    "path": "scripts\\evidence.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "sha256": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4"
+  },
+  {
+    "bytes": 33946,
+    "path": "scripts\\mutate.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "f7abaf6134a8300308ad5df181609b1215bed24c9de97ee4be91241de84088e3",
+    "sha256": "f7abaf6134a8300308ad5df181609b1215bed24c9de97ee4be91241de84088e3"
+  },
+  {
+    "bytes": 7049,
+    "path": "scripts\\native_result.mjs",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+    "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0"
+  },
+  {
+    "bytes": 40490,
+    "path": "scripts\\probe.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "d7be5050cf70cb836e46f0b661632b2d426d6bdc4684f1b54aa9061d61948904",
+    "sha256": "d7be5050cf70cb836e46f0b661632b2d426d6bdc4684f1b54aa9061d61948904"
+  },
+  {
+    "bytes": 47382,
+    "path": "scripts\\measure.py",
+    "changed_since_final01": true,
+    "own_scope": false,
+    "before_final01_sha256": "7b0f20b6d050b6d5ea3104c6c24ebe4f1d1db9a3b160edf63c32e248337bb179",
+    "sha256": "6fc837d1b65a984e55cdde44db8471c3f92b691afcd9e6a461f8c9b3b0f505b5"
+  },
+  {
+    "bytes": 27123,
+    "path": "scripts\\measure_graph.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391",
+    "sha256": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391"
+  },
+  {
+    "bytes": 1813,
+    "path": "scripts\\tests\\helpers.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "2694cd24dd07b1a6e3ceff7ac2addb7d4fc8bc40ee197f6d3c4206d281bf2068",
+    "sha256": "2694cd24dd07b1a6e3ceff7ac2addb7d4fc8bc40ee197f6d3c4206d281bf2068"
+  },
+  {
+    "bytes": 14779,
+    "path": "scripts\\tests\\workflow_fixtures.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "9902d319a37436449a1a8fb47c10ca7ec15d82c5bdea331d3ba4c23bf03dcabf",
+    "sha256": "9902d319a37436449a1a8fb47c10ca7ec15d82c5bdea331d3ba4c23bf03dcabf"
+  },
+  {
+    "bytes": 8210,
+    "path": "scripts\\tests\\test_evidence.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "fd7e060cc71d443517b5d6fc9d4279aab210a773ae19ae5267df5fba89825510",
+    "sha256": "fd7e060cc71d443517b5d6fc9d4279aab210a773ae19ae5267df5fba89825510"
+  },
+  {
+    "bytes": 15681,
+    "path": "scripts\\tests\\test_run.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "92bedd163977112eff3efd3cfbad5fc9aaa9fe9a2318dd2aad832903914b85e5",
+    "sha256": "92bedd163977112eff3efd3cfbad5fc9aaa9fe9a2318dd2aad832903914b85e5"
+  },
+  {
+    "bytes": 1418,
+    "path": "evals\\workflow\\helpers.mjs",
+    "changed_since_final01": false,
+    "own_scope": true,
+    "before_final01_sha256": "d0bded0a4a646298ad61b89056a1c1e66f0448914d206b6b1a1602d42d054cb5",
+    "sha256": "d0bded0a4a646298ad61b89056a1c1e66f0448914d206b6b1a1602d42d054cb5"
+  },
+  {
+    "bytes": 1046,
+    "path": "evals\\workflow\\failures.test.mjs",
+    "changed_since_final01": false,
+    "own_scope": true,
+    "before_final01_sha256": "26f7c40184a7766690ab2cfc54f97baea403ab6c14612eb77e3b607966b29034",
+    "sha256": "26f7c40184a7766690ab2cfc54f97baea403ab6c14612eb77e3b607966b29034"
+  },
+  {
+    "bytes": 12089,
+    "path": "references\\workflow-gates.md",
+    "changed_since_final01": false,
+    "own_scope": true,
+    "before_final01_sha256": "e931f3037c852de98a32a2fabe8625d740c214b4fed0612cf51b5dfae40c24f8",
+    "sha256": "e931f3037c852de98a32a2fabe8625d740c214b4fed0612cf51b5dfae40c24f8"
+  },
+  {
+    "bytes": 33749,
+    "path": ".ai\\workflow-reliability\\c2-recovery-contract.json",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "80442414f2bdc597e75222e7ba475339b5932f732b1f947ffd9828267e0b949d",
+    "sha256": "80442414f2bdc597e75222e7ba475339b5932f732b1f947ffd9828267e0b949d"
+  },
+  {
+    "bytes": 62680,
+    "path": ".ai\\workflow-reliability\\design-contracts.json",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "5b3eb1ac8f4ad0e8914965a783d97242da7ba9e8da00229b622a8360578335bf",
+    "sha256": "5b3eb1ac8f4ad0e8914965a783d97242da7ba9e8da00229b622a8360578335bf"
+  },
+  {
+    "bytes": 3682,
+    "path": ".ai\\workflow-reliability\\guard-resolution-contract.json",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "401762912eb5bd399eb16117252b497bbf9d0088a6c85505fb3ff21a681209e8",
+    "sha256": "401762912eb5bd399eb16117252b497bbf9d0088a6c85505fb3ff21a681209e8"
+  },
+  {
+    "bytes": 20072,
+    "path": "scripts\\tests\\test_workflow_adoption_binding.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "318707e82f94864fde02c434ca54e87f9338b8c66beace679be271655343f1b5",
+    "sha256": "318707e82f94864fde02c434ca54e87f9338b8c66beace679be271655343f1b5"
+  },
+  {
+    "bytes": 4791,
+    "path": "scripts\\tests\\test_workflow_adoption_verification.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "9c78b24fcd90b757aac55c6425f3738741b4eefe175e5cd710b02e72b5616b53",
+    "sha256": "9c78b24fcd90b757aac55c6425f3738741b4eefe175e5cd710b02e72b5616b53"
+  },
+  {
+    "bytes": 34048,
+    "path": "scripts\\tests\\test_workflow_cli.py",
+    "changed_since_final01": true,
+    "own_scope": true,
+    "before_final01_sha256": "0a4f1ef506ac680f6fcf95316681a50bbe723c74b9afd52bf201004a69fc4c3d",
+    "sha256": "7add37fab83264ee4c3a99b03263ef1badbf01b573242744a187265edfceba2d"
+  },
+  {
+    "bytes": 3599,
+    "path": "scripts\\tests\\test_workflow_core_verification_r2.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "d58655d83ac448c788d9217d1365631e24e20778b7a9b8b89dcadc32af9ae11b",
+    "sha256": "d58655d83ac448c788d9217d1365631e24e20778b7a9b8b89dcadc32af9ae11b"
+  },
+  {
+    "bytes": 17050,
+    "path": "scripts\\tests\\test_workflow_core_verification.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "c9c1181ae017f7d42415ca848777fbac388152c18eb57a839f8631132a9e5a8d",
+    "sha256": "c9c1181ae017f7d42415ca848777fbac388152c18eb57a839f8631132a9e5a8d"
+  },
+  {
+    "bytes": 49731,
+    "path": "scripts\\tests\\test_workflow_gate.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "af23bb4d96ea9da28f15291dc2c4cbb8e0e9272a40b27140e28efc89f3993636",
+    "sha256": "af23bb4d96ea9da28f15291dc2c4cbb8e0e9272a40b27140e28efc89f3993636"
+  },
+  {
+    "bytes": 21174,
+    "path": "scripts\\tests\\test_workflow_state.py",
+    "changed_since_final01": false,
+    "own_scope": false,
+    "before_final01_sha256": "7b259c0f2e6c4e31a5c614769995df97f999fe86ed44b0e1351e3ee7a2d72466",
+    "sha256": "7b259c0f2e6c4e31a5c614769995df97f999fe86ed44b0e1351e3ee7a2d72466"
+  }
+]

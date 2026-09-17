@@ -1,0 +1,63 @@
+{
+  "scope": "Parent actual staged checkout, not a new test run",
+  "head_before_commit": "ee6e0e34e78b70fcb672074af0a76f51fe937e1a",
+  "staged_files_at_check": 457,
+  "files": [
+    {
+      "path": "scripts/workflow.py",
+      "reviewed_sha256": "a740bdc3325f86293341b7099010b8edba30062f7ddc2a2acef1012bc1b1e1a1",
+      "stored_sha256": "a58daf423cbc356e0f65650927a8a285b21dc749f03bc6ea465ade7d2c4e7f0a",
+      "actual_checkout_matches_reviewed": true
+    },
+    {
+      "path": "scripts/measure.py",
+      "reviewed_sha256": "1cd5e00bd054a83ea338f7aab6150de6988443d6a12435cdfad30e72ee78dfd1",
+      "stored_sha256": "dc46a7e04e3a1ee88fbc10ec93abd28ee964b40b0cebc15ec13e4c1a3597800c",
+      "actual_checkout_matches_reviewed": true
+    },
+    {
+      "path": "scripts/probe.py",
+      "reviewed_sha256": "d7be5050cf70cb836e46f0b661632b2d426d6bdc4684f1b54aa9061d61948904",
+      "stored_sha256": "2232f6f1dce1d00b283b5cfbecdae9a731b85bfdd0d5e7e73725353f13d32d00",
+      "actual_checkout_matches_reviewed": true
+    },
+    {
+      "path": "scripts/tests/test_workflow_cli.py",
+      "reviewed_sha256": "bd2e20c4fc364de645c7118e45bb469b9f7408f19793ba1968f6008cdb6d540c",
+      "stored_sha256": "bc0a61896b67c12f468cd96c69177f96115f709ec85c9b7095e8992f5e045959",
+      "actual_checkout_matches_reviewed": true
+    },
+    {
+      "path": "scripts/tests/test_measure_q2.py",
+      "reviewed_sha256": "8f0adaa478501bb4d1b81bb54ecdf45011d68787977537401fc4f24e563db7f8",
+      "stored_sha256": "d19e81548bd091daba0b4f37c4ee296f8dd94a14476ec876c1e6903c5facef83",
+      "actual_checkout_matches_reviewed": true
+    },
+    {
+      "path": "scripts/tests/test_measure_source_bindings.py",
+      "reviewed_sha256": "bcc36f23061dd5b4db2dfcb161c0202bbe95db1fb930b1c6ef79fe8c9b95d1b3",
+      "stored_sha256": "e37d0c92c85bb979f798bbdea3fc37f2a32213ba7ef7f420cf38927477e1a88c",
+      "actual_checkout_matches_reviewed": true
+    },
+    {
+      "path": "evals/workflow/helpers.mjs",
+      "reviewed_sha256": "d0bded0a4a646298ad61b89056a1c1e66f0448914d206b6b1a1602d42d054cb5",
+      "stored_sha256": "84b4c374a4bd40d3a8fbf498c59f6362cd478f4652e61a03bae351b11c0010b5",
+      "actual_checkout_matches_reviewed": true
+    },
+    {
+      "path": "evals/workflow/failures.test.mjs",
+      "reviewed_sha256": "26f7c40184a7766690ab2cfc54f97baea403ab6c14612eb77e3b607966b29034",
+      "stored_sha256": "a5aea486fb2a2b03cb158b3cbdfb17d64e83cf093729d4b1275af1eecf556e5a",
+      "actual_checkout_matches_reviewed": true
+    },
+    {
+      "path": "references/workflow-gates.md",
+      "reviewed_sha256": "e931f3037c852de98a32a2fabe8625d740c214b4fed0612cf51b5dfae40c24f8",
+      "stored_sha256": "4660b36f97773ef3baadd81653c2deff0009dbfe054677c3e25df70b37423de8",
+      "actual_checkout_matches_reviewed": true
+    }
+  ],
+  "raw_evidence_whitespace": "Only immutable evidence/joint-cli-binding-r1-records/r1-only.diff triggers broad whitespace check; source and status checks are clean. Raw captured CRLF patch bytes retained unchanged.",
+  "limits": "Actual current Windows repository checkout only; earlier262 and native13 remain historical, ten fresh R1 methods separate. Symlink environment case and historical runtime/cleanup limits retained."
+}

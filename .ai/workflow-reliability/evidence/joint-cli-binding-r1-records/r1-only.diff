@@ -1,0 +1,162 @@
+--- reviewed/scripts/measure.py
++++ current/scripts/measure.py
+@@ -898,6 +898,31 @@
+     return [prefix + name + ".json" for name in ("request", "result", "command")]
+ 
+ 
++def _validate_binding_ownership(manifest, config):
++    if (not isinstance(manifest, dict) or not isinstance(manifest.get("inputs"), list) or
++            not isinstance(manifest.get("reserved_outputs"), list)):
++        raise ValueError("Invalid binding ownership manifest")
++    reserved = manifest["reserved_outputs"]
++    _path_partition(reserved)
++    rows = manifest["inputs"]
++    for row in rows:
++        if (not isinstance(row, dict) or set(row) != {"artifact", "role", "revision"} or
++                not isinstance(row["artifact"], dict) or
++                set(row["artifact"]) != {"path", "sha256", "bytes"}):
++            raise ValueError("Invalid binding ownership row")
++    paths = [row["artifact"]["path"] for row in rows]
++    _path_partition(paths)
++    _path_partition(set(paths) | set(reserved))
++    declared = {row["artifact"]["path"]: row for row in rows}
++    expected = {ref["path"]: ref for ref in tool_artifacts(config)}
++    for name, artifact in expected.items():
++        row = {"artifact": artifact, "role": "qualification", "revision": None}
++        if name not in reserved or _json_bytes(declared.get(name)) != _json_bytes(row):
++            raise ValueError("Qualification ownership must match selected input: " + name)
++    if any(row["role"] == "qualification" and row["artifact"]["path"] not in expected for row in rows):
++        raise ValueError("Unselected qualification ownership declaration")
++
++
+ def inspect_source_binding(context, config, tool, revision):
+     """Fixed API smoke/provenance, not a metric collector or arbitrary command hook."""
+     names = source_binding_paths(tool, revision)
+@@ -906,6 +931,7 @@
+     root = graph.root_path(context["run_root"])
+     ref = context["output_manifest"]
+     manifest = graph.load_json(_artifact_bytes(root, ref)[0])
++    _validate_binding_ownership(manifest, config)
+     if (manifest["run_id"] != context["run_id"] or manifest["root"] != str(root) or
+             any(manifest["reserved_outputs"].count(name) != 1 for name in names)):
+         raise ValueError("Binding execution requires exact predeclared artifact ownership")
+--- reviewed/scripts/tests/test_measure_source_bindings.py
++++ current/scripts/tests/test_measure_source_bindings.py
+@@ -5,6 +5,7 @@
+ import os
+ from pathlib import Path
+ import shutil
++import sys
+ import unittest
+ 
+ from helpers import SCRIPTS
+@@ -261,6 +262,109 @@
+         with self.assertRaisesRegex(ValueError, "controller changed"):
+             measure.inspect_source_binding(context, fixture.config, "typescript", "head")
+ 
++    def test_qualification_ownership_rejects_rehashed_manifests_before_launch(self):
++        fixture = self.fixture(("typescript",))
++        measure.validate_config(fixture.config, fixture.git.root)
++        context = self.context(fixture)
++        root = Path(context["run_root"])
++        original_ref = context["output_manifest"]
++        original = graph.load_json((root / original_ref["path"]).read_bytes())
++        selected = original["inputs"][0]["artifact"]["path"]
++        extra = graph.persist(context, "r1-extra.json", {"purpose": "unselected input fixture"})
++        cases = []
++
++        def altered(label):
++            manifest = copy.deepcopy(original)
++            cases.append((label, manifest))
++            return manifest
++
++        altered("missing-row")["inputs"].pop(0)
++        altered("missing-all-rows")["inputs"].clear()
++        altered("wrong-role")["inputs"][0]["role"] = "command"
++        altered("wrong-revision")["inputs"][0]["revision"] = "head"
++        altered("duplicate-row")["inputs"].append(copy.deepcopy(original["inputs"][0]))
++        altered("changed-hash")["inputs"][0]["artifact"]["sha256"] = "0" * 64
++        altered("changed-length")["inputs"][0]["artifact"]["bytes"] += 1
++        row = altered("noninteger-length")["inputs"][0]
++        row["artifact"]["bytes"] = float(row["artifact"]["bytes"])
++        altered("changed-path")["inputs"][0]["artifact"]["path"] = "r1-other.json"
++        altered("extra-row-field")["inputs"][0]["extra"] = True
++        altered("missing-input-reservation")["reserved_outputs"].remove(selected)
++        altered("duplicate-input-reservation")["reserved_outputs"].append(selected)
++        altered("prefix-input-reservation")["reserved_outputs"].append(selected + "/child")
++        row = copy.deepcopy(original["inputs"][0])
++        row["artifact"]["path"] += "/child"
++        altered("prefix-input-row")["inputs"].append(row)
++        row = copy.deepcopy(original["inputs"][0])
++        row["artifact"]["sha256"] = "0" * 64
++        altered("conflicting-input-row")["inputs"].append(row)
++        manifest = altered("unselected-qualification")
++        manifest["inputs"].append({"artifact": extra, "role": "qualification", "revision": None})
++        manifest["reserved_outputs"].append(extra["path"])
++        manifest = altered("cross-namespace-prefix")
++        manifest["inputs"].append({"artifact": {**extra, "path": "r1-nested"},
++                                   "role": "command", "revision": "head"})
++        manifest["reserved_outputs"].append("r1-nested/child")
++        if os.name == "nt":
++            altered("case-collision")["reserved_outputs"].append(selected.upper())
++        altered("malformed-input-list")["inputs"] = None
++        altered("malformed-reservation-list")["reserved_outputs"] = None
++
++        active, launches, writes = [False], [], []
++
++        def audit(event, args):
++            if not active[0]:
++                return
++            if event == "subprocess.Popen":
++                launches.append({"executable": str(args[0]), "argv": args[1], "cwd": str(args[2])})
++            elif event == "open" and isinstance(args[0], str) and isinstance(args[2], int):
++                path = Path(args[0])
++                if path.is_relative_to(root) and args[2] & (os.O_WRONLY | os.O_RDWR | os.O_CREAT):
++                    writes.append({"path": str(path), "mode": args[1], "flags": args[2]})
++
++        sys.addaudithook(audit)
++        records = []
++        try:
++            for index, (label, manifest) in enumerate(cases):
++                with self.subTest(case=label):
++                    name = "r1-manifest-" + str(index) + ".json"
++                    if isinstance(manifest["reserved_outputs"], list):
++                        manifest["reserved_outputs"].append(name)
++                    context["output_manifest"] = graph.persist(context, name, manifest)
++                    self.assertEqual(graph.artifact(root, name), context["output_manifest"])
++                    self.assertNotEqual(original_ref["sha256"], context["output_manifest"]["sha256"])
++                    launches.clear()
++                    writes.clear()
++                    active[0] = True
++                    try:
++                        with self.assertRaises(ValueError) as error:
++                            measure.inspect_source_binding(context, fixture.config, "typescript", "head")
++                    finally:
++                        active[0] = False
++                    present = [name for name in measure.source_binding_paths("typescript", "head")
++                               if (root / name).exists()]
++                    records.append({"case": label, "manifest": manifest,
++                                    "manifest_ref": context["output_manifest"], "error": str(error.exception),
++                                    "launches": list(launches), "writes": list(writes),
++                                    "outputs_present": present})
++                    self.assertEqual(launches, [])
++                    self.assertEqual(writes, [])
++                    self.assertEqual(present, [])
++                    print("Completed real ownership rejection:", label, flush=True)
++            context["output_manifest"] = original_ref
++            active[0] = True
++            try:
++                valid = measure.inspect_source_binding(context, fixture.config, "typescript", "base")
++            finally:
++                active[0] = False
++            self.assertEqual(len(launches), 1)
++            self.assertTrue(writes)
++            self.assertEqual(valid["observed"]["smoke"]["symbol"], "answer")
++            self.capture("r1-valid-control", {"observation": valid, "launches": launches, "writes": writes})
++        finally:
++            active[0] = False
++            self.capture("r1-ownership", records)
++
+     def test_empty_q1_and_native_bindings_still_validate(self):
+         fixture = Q1Fixture()
+         self.addCleanup(fixture.close)

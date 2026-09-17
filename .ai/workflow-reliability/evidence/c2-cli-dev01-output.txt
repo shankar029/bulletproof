@@ -1,0 +1,45 @@
+test_adoption_conflicting_candidate_and_out_of_order_publication_are_not_repaired (test_workflow_cli.WorkflowCliTests.test_adoption_conflicting_candidate_and_out_of_order_publication_are_not_repaired) ... ok
+test_adoption_missing_review_and_unconfirmed_without_authorization_reject (test_workflow_cli.WorkflowCliTests.test_adoption_missing_review_and_unconfirmed_without_authorization_reject) ... ok
+test_close_rejects_wrong_commit_dirty_source_and_protected_branch (test_workflow_cli.WorkflowCliTests.test_close_rejects_wrong_commit_dirty_source_and_protected_branch) ... ok
+test_compatibility_pair_requires_accepted_pre_retirement_proof (test_workflow_cli.WorkflowCliTests.test_compatibility_pair_requires_accepted_pre_retirement_proof) ... ok
+test_failed_launch_and_nonzero_exit_are_not_work_completion (test_workflow_cli.WorkflowCliTests.test_failed_launch_and_nonzero_exit_are_not_work_completion) ... ok
+test_guard_death_while_owned_child_alive_keeps_next_blocked (test_workflow_cli.WorkflowCliTests.test_guard_death_while_owned_child_alive_keeps_next_blocked) ... ok
+test_help_five_verbs_no_recovery_and_strict_options (test_workflow_cli.WorkflowCliTests.test_help_five_verbs_no_recovery_and_strict_options) ... ok
+test_lexical_lock_contention_never_spawns_or_steals (test_workflow_cli.WorkflowCliTests.test_lexical_lock_contention_never_spawns_or_steals) ... ok
+test_metrics_pair_failure_capture_and_independent_work_not_fake_closure (test_workflow_cli.WorkflowCliTests.test_metrics_pair_failure_capture_and_independent_work_not_fake_closure) ... ok
+test_missing_review_pair_blocks_then_actual_handoff_record_unblocks (test_workflow_cli.WorkflowCliTests.test_missing_review_pair_blocks_then_actual_handoff_record_unblocks) ... ok
+test_observer_persistence_denial_leaves_durable_unresolved_intent (test_workflow_cli.WorkflowCliTests.test_observer_persistence_denial_leaves_durable_unresolved_intent) ... ok
+test_publication_failures_retry_B1_A1_A2_once_without_rewriting_event (test_workflow_cli.WorkflowCliTests.test_publication_failures_retry_B1_A1_A2_once_without_rewriting_event) ... ok
+test_real_initial_adoption_and_idempotency (test_workflow_cli.WorkflowCliTests.test_real_initial_adoption_and_idempotency) ... ok
+test_record_rejects_wrong_producer_and_tampered_artifact (test_workflow_cli.WorkflowCliTests.test_record_rejects_wrong_producer_and_tampered_artifact) ... ok
+test_registered_spaced_argv_cwd_and_intent_before_child (test_workflow_cli.WorkflowCliTests.test_registered_spaced_argv_cwd_and_intent_before_child) ... ok
+test_revised_adoption_retains_history_and_retries_exact_old_basis (test_workflow_cli.WorkflowCliTests.test_revised_adoption_retains_history_and_retries_exact_old_basis) ... ok
+test_setup_vs_red_pair_uses_real_native_assertion (test_workflow_cli.WorkflowCliTests.test_setup_vs_red_pair_uses_real_native_assertion) ... FAIL
+test_stale_pair_fresh_process_reopens_only_affected_receipt (test_workflow_cli.WorkflowCliTests.test_stale_pair_fresh_process_reopens_only_affected_receipt) ... ok
+
+======================================================================
+FAIL: test_setup_vs_red_pair_uses_real_native_assertion (test_workflow_cli.WorkflowCliTests.test_setup_vs_red_pair_uses_real_native_assertion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_cli.py", line 243, in test_setup_vs_red_pair_uses_real_native_assertion
+    self.f.adopt()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_cli.py", line 71, in adopt
+    return self.cli("adopt", "--revision", revision, "--review",
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    ".ai/demo/evidence/review-%s.json" % revision, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_cli.py", line 63, in cli
+    code, stdout, stderr = self.run(*argv, expected=expected)
+                           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\helpers.py", line 37, in run
+    raise AssertionError("%r returned %s\n%s\n%s" % (argv, *result))
+AssertionError: ('C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe', '-B', 'C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\workflow.py', 'adopt', '--slug', 'demo', '--repo', 'C:\\Users\\shbs\\AppData\\Local\\Temp\\c2cli-82137b\\bulletproof-git-abldcehs', '--revision', 'r2', '--review', '.ai/demo/evidence/review-r2.json') returned 3
+{"outcome": "blocked", "reason": "Conflicting immutable retained design: C:\\Users\\shbs\\AppData\\Local\\Temp\\c2cli-82137b\\bulletproof-git-abldcehs\\.ai\\demo\\design-history\\r1.workflow.json", "details": null}
+
+
+
+----------------------------------------------------------------------
+Ran 18 tests in 164.280s
+
+FAILED (failures=1)

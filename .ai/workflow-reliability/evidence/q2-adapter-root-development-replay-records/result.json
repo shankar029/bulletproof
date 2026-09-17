@@ -1,0 +1,68 @@
+{
+  "scope": "Selected development checks only, not full suite, Q2, or independent acceptance",
+  "selected_methods": [
+    "test_measure_q2.ToolRootTests.test_actual_executable_copy_is_external_and_tamper_rejects",
+    "test_measure_q2.ToolRootTests.test_actual_junction_root_rejects",
+    "test_measure_q2.ToolRootTests.test_actual_opaque_bytes_shared_artifact_and_external_resources",
+    "test_measure_q2.ToolRootTests.test_duplicate_prefix_reserved_namespace_and_hardlinks_reject",
+    "test_measure_q2.ToolRootTests.test_empty_mode_and_conditional_root_validation",
+    "test_measure_q2.ToolRootTests.test_missing_changed_original_and_copy_have_no_fallback",
+    "test_measure_q2.ToolRootTests.test_overlap_before_snapshot_exclusions_and_ancestor_allowed",
+    "test_measure_q2.ToolRootTests.test_real_two_revision_probe_with_repository_and_external_originals",
+    "test_measure_q2.ToolRootTests.test_rehashed_copy_and_changed_root_cannot_keep_context_binding",
+    "test_measure_q2.ToolRootTests.test_strict_artifact_shapes_namespace_and_forged_help_hash",
+    "test_measure_graph.GraphTests.test_zero_import_receipts_complete_and_source_bytes_are_not_executed",
+    "test_measure_q1_integration.Q1IntegrationTests.test_public_python_cli_from_nested_cwd_keeps_all_nine_and_archives_raw",
+    "test_measure_q1_integration.Q1IntegrationTests.test_public_mixed_root_marks_every_unsupported_input",
+    "test_measure_q1_integration.Q1IntegrationTests.test_public_validator_rejects_metric_comparison_revision_and_verdict_forgery"
+  ],
+  "tests_run": 14,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "environment_blocked_not_retried": [
+    {
+      "id": "test_measure_q2.ToolRootTests.test_actual_symlink_root_rejects",
+      "observed_error": "Prior actual os.symlink call raised WinError 1314; privilege not held",
+      "disposition": "Persistent test remains; not retried and not counted as passed or skipped"
+    }
+  ],
+  "source_before": {
+    "scripts/measure.py": "6fc837d1b65a984e55cdde44db8471c3f92b691afcd9e6a461f8c9b3b0f505b5",
+    "scripts/probe.py": "d7be5050cf70cb836e46f0b661632b2d426d6bdc4684f1b54aa9061d61948904",
+    "scripts/measure_graph.py": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391",
+    "scripts/tests/test_measure_q2.py": "af7bda77510290efa0189ce5175daada5081bf6219e8a66755116eae9b38bf89",
+    "scripts/tests/helpers.py": "2694cd24dd07b1a6e3ceff7ac2addb7d4fc8bc40ee197f6d3c4206d281bf2068",
+    "scripts/tests/test_measure_inventory.py": "d97a98983cb2c825abd87ffec4f96981c652dece88846abd3864179a2921d227",
+    "scripts/tests/test_measure_graph.py": "22a1fc3d9506e0a200ce43991ea0b667d48a26b2b69a61d5a7937761ae1876df",
+    "scripts/tests/test_measure_q1_integration.py": "889e5ab71f3e8d9cb16b9ded4dc9327fcf1d5f4820426e0773f17c8f1b4976a9",
+    ".ai/workflow-reliability/evidence/q2-adapter-root-development.py": "20110faff8cfde13ef3c51a481dfeef9d8d92a4674b285a0d5e8ccd44c377c1e",
+    ".ai/workflow-reliability/evidence/q2-tool-input-root-amendment.json": "36514a684b8b1323c752a3559cb49f30be8db61b865435f47682dfd824cda1c1",
+    ".ai/workflow-reliability/evidence/q2-tool-input-root-review.md": "2e14e84f8b8201a9d43c6ff2070631ce68db595f03e529c6e17d243ddfbd6062"
+  },
+  "source_after": {
+    "scripts/measure.py": "6fc837d1b65a984e55cdde44db8471c3f92b691afcd9e6a461f8c9b3b0f505b5",
+    "scripts/probe.py": "d7be5050cf70cb836e46f0b661632b2d426d6bdc4684f1b54aa9061d61948904",
+    "scripts/measure_graph.py": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391",
+    "scripts/tests/test_measure_q2.py": "af7bda77510290efa0189ce5175daada5081bf6219e8a66755116eae9b38bf89",
+    "scripts/tests/helpers.py": "2694cd24dd07b1a6e3ceff7ac2addb7d4fc8bc40ee197f6d3c4206d281bf2068",
+    "scripts/tests/test_measure_inventory.py": "d97a98983cb2c825abd87ffec4f96981c652dece88846abd3864179a2921d227",
+    "scripts/tests/test_measure_graph.py": "22a1fc3d9506e0a200ce43991ea0b667d48a26b2b69a61d5a7937761ae1876df",
+    "scripts/tests/test_measure_q1_integration.py": "889e5ab71f3e8d9cb16b9ded4dc9327fcf1d5f4820426e0773f17c8f1b4976a9",
+    ".ai/workflow-reliability/evidence/q2-adapter-root-development.py": "20110faff8cfde13ef3c51a481dfeef9d8d92a4674b285a0d5e8ccd44c377c1e",
+    ".ai/workflow-reliability/evidence/q2-tool-input-root-amendment.json": "36514a684b8b1323c752a3559cb49f30be8db61b865435f47682dfd824cda1c1",
+    ".ai/workflow-reliability/evidence/q2-tool-input-root-review.md": "2e14e84f8b8201a9d43c6ff2070631ce68db595f03e529c6e17d243ddfbd6062"
+  },
+  "source_unchanged": true,
+  "raw_fixture_records": [
+    "repository.json",
+    "external.json"
+  ],
+  "qualified_collectors_executed": [],
+  "unfinished": [
+    "Source-tool bindings",
+    "JS syntax/symbol/candidates",
+    "Scalar collectors",
+    "Full Q2 raw reconciliation and CHECK-SCALARS/CHECK-GRAPH/CHECK-JS-PARSER/CHECK-RECONCILE"
+  ]
+}

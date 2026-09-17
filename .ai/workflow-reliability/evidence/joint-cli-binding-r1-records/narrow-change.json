@@ -1,0 +1,27 @@
+{
+  "changed_previous_pins": {
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\measure.py": {
+      "before": {
+        "sha256": "1acf798f411b62fc757a8c78fb675a6b5a66b68bbf92f620757d4a12b5b3c6f4",
+        "bytes": 69700
+      },
+      "current": {
+        "sha256": "1cd5e00bd054a83ea338f7aab6150de6988443d6a12435cdfad30e72ee78dfd1",
+        "bytes": 71195
+      }
+    },
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\test_measure_source_bindings.py": {
+      "before": {
+        "sha256": "e0cf6722ec29f31085e4fa0cc311d542fc80950e53ed37b790b5fa6fa3ca092e",
+        "bytes": 16075
+      },
+      "current": {
+        "sha256": "bcc36f23061dd5b4db2dfcb161c0202bbe95db1fb930b1c6ef79fe8c9b95d1b3",
+        "bytes": 21953
+      }
+    }
+  },
+  "measure_raw_reconstructed": "1acf798f411b62fc757a8c78fb675a6b5a66b68bbf92f620757d4a12b5b3c6f4",
+  "tests_raw_reconstructed": "e0cf6722ec29f31085e4fa0cc311d542fc80950e53ed37b790b5fa6fa3ca092e",
+  "method": "Remove only new helper/call; remove only new test/sys import; exact raw-byte comparison"
+}

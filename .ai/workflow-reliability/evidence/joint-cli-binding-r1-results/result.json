@@ -1,0 +1,61 @@
+{
+  "scope": "R1 ownership and selected source/native compatibility, not refreshed joint acceptance",
+  "argv": [
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-binding-r1-verify.py",
+    "joint-cli-binding-r1-results"
+  ],
+  "selected": [
+    "test_measure_source_bindings",
+    "test_measure_q2.ToolRootTests.test_empty_mode_and_conditional_root_validation",
+    "test_measure_q2.ToolRootTests.test_duplicate_prefix_reserved_namespace_and_hardlinks_reject"
+  ],
+  "tests_run": 10,
+  "passed_ids": [
+    "test_measure_source_bindings.SourceBindingTests.test_actual_three_tools_at_two_git_revisions_with_import_provenance",
+    "test_measure_source_bindings.SourceBindingTests.test_all_resources_not_just_loaded_module_are_bound",
+    "test_measure_source_bindings.SourceBindingTests.test_empty_q1_and_native_bindings_still_validate",
+    "test_measure_source_bindings.SourceBindingTests.test_environment_preload_and_python_path_are_not_execution_inputs",
+    "test_measure_source_bindings.SourceBindingTests.test_missing_qualification_module_and_unknown_settings_reject",
+    "test_measure_source_bindings.SourceBindingTests.test_qualification_ownership_rejects_rehashed_manifests_before_launch",
+    "test_measure_source_bindings.SourceBindingTests.test_raw_staging_reservation_and_controller_remain_authoritative",
+    "test_measure_source_bindings.SourceBindingTests.test_unqualified_python_import_rejects_before_module_execution",
+    "test_measure_q2.ToolRootTests.test_empty_mode_and_conditional_root_validation",
+    "test_measure_q2.ToolRootTests.test_duplicate_prefix_reserved_namespace_and_hardlinks_reject"
+  ],
+  "seconds": 801.80265160001,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "before": {
+    "scripts/measure.py": "1cd5e00bd054a83ea338f7aab6150de6988443d6a12435cdfad30e72ee78dfd1",
+    "scripts/probe.py": "d7be5050cf70cb836e46f0b661632b2d426d6bdc4684f1b54aa9061d61948904",
+    "scripts/measure_graph.py": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391",
+    "scripts/run.py": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/tests/helpers.py": "2694cd24dd07b1a6e3ceff7ac2addb7d4fc8bc40ee197f6d3c4206d281bf2068",
+    "scripts/tests/test_measure_source_bindings.py": "bcc36f23061dd5b4db2dfcb161c0202bbe95db1fb930b1c6ef79fe8c9b95d1b3",
+    "scripts/tests/test_measure_q2.py": "8f0adaa478501bb4d1b81bb54ecdf45011d68787977537401fc4f24e563db7f8",
+    "scripts/tests/test_measure_inventory.py": "d97a98983cb2c825abd87ffec4f96981c652dece88846abd3864179a2921d227",
+    ".ai/workflow-reliability/evidence/q2-binding-r1-verify.py": "2bac110b6f2a2fb5b4418f1a513f04eea61c828b8986eda24b34576d5fb626e0",
+    ".ai/workflow-reliability/evidence/q2-tool-input-root-amendment.json": "36514a684b8b1323c752a3559cb49f30be8db61b865435f47682dfd824cda1c1",
+    ".ai/workflow-reliability/evidence/joint-cli-binding-code-review.md": "f08c0c79dd78827f1b7e9986c520888b396ec72411b408f88a3afa364cb35632"
+  },
+  "after": {
+    "scripts/measure.py": "1cd5e00bd054a83ea338f7aab6150de6988443d6a12435cdfad30e72ee78dfd1",
+    "scripts/probe.py": "d7be5050cf70cb836e46f0b661632b2d426d6bdc4684f1b54aa9061d61948904",
+    "scripts/measure_graph.py": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391",
+    "scripts/run.py": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/tests/helpers.py": "2694cd24dd07b1a6e3ceff7ac2addb7d4fc8bc40ee197f6d3c4206d281bf2068",
+    "scripts/tests/test_measure_source_bindings.py": "bcc36f23061dd5b4db2dfcb161c0202bbe95db1fb930b1c6ef79fe8c9b95d1b3",
+    "scripts/tests/test_measure_q2.py": "8f0adaa478501bb4d1b81bb54ecdf45011d68787977537401fc4f24e563db7f8",
+    "scripts/tests/test_measure_inventory.py": "d97a98983cb2c825abd87ffec4f96981c652dece88846abd3864179a2921d227",
+    ".ai/workflow-reliability/evidence/q2-binding-r1-verify.py": "2bac110b6f2a2fb5b4418f1a513f04eea61c828b8986eda24b34576d5fb626e0",
+    ".ai/workflow-reliability/evidence/q2-tool-input-root-amendment.json": "36514a684b8b1323c752a3559cb49f30be8db61b865435f47682dfd824cda1c1",
+    ".ai/workflow-reliability/evidence/joint-cli-binding-code-review.md": "f08c0c79dd78827f1b7e9986c520888b396ec72411b408f88a3afa364cb35632"
+  },
+  "same_bytes": true,
+  "symlink": "Prior WinError 1314 retained; not retried, skipped or counted here",
+  "joint_262_refreshed": false,
+  "Q2_complete": false
+}

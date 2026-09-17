@@ -1,0 +1,887 @@
+{
+  "base": "ee238117e3642e5e9c43542cf29f4f3af7d563c9",
+  "baseline": "greenfield",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "--show-toplevel"
+      ],
+      "code": 0,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 300.0,
+      "max_seconds": 900,
+      "stderr": "",
+      "stdout": "C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/evidence/i1-independent-fixture-space nxtqzgdt\n"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "code": 0,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 300.0,
+      "max_seconds": 900,
+      "stderr": "",
+      "stdout": "9c15451cb2b760ecc4ab9d9ad49e6e009b7e706b\n"
+    },
+    {
+      "argv": [
+        "git",
+        "merge-base",
+        "ee238117e3642e5e9c43542cf29f4f3af7d563c9",
+        "HEAD"
+      ],
+      "code": 0,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 300.0,
+      "max_seconds": 900,
+      "stderr": "",
+      "stdout": "ee238117e3642e5e9c43542cf29f4f3af7d563c9\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "lizard",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named lizard\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "vulture",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named vulture\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "semgrep",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named semgrep\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "worktree",
+        "add",
+        "--detach",
+        "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-_wgkl0t0\\tmp7nk2asof\\base",
+        "ee238117e3642e5e9c43542cf29f4f3af7d563c9"
+      ],
+      "code": 0,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 300.0,
+      "max_seconds": 900,
+      "stderr": "Preparing worktree (detached HEAD ee23811)\n",
+      "stdout": "HEAD is now at ee23811 fixture: independent pre-change\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "lizard",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named lizard\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "vulture",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named vulture\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "semgrep",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named semgrep\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "worktree",
+        "remove",
+        "--force",
+        "C:\\Users\\shbs\\AppData\\Local\\Temp\\jcb2-_wgkl0t0\\tmp7nk2asof\\base"
+      ],
+      "code": 0,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 300.0,
+      "max_seconds": 900,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--numstat",
+        "ee238117e3642e5e9c43542cf29f4f3af7d563c9"
+      ],
+      "code": 0,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 300.0,
+      "max_seconds": 900,
+      "stderr": "",
+      "stdout": "2\t2\tpackages/mjs space/value.mjs\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-B",
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\mutate.py",
+        "--slug",
+        "mjs",
+        "--base",
+        "ee238117e3642e5e9c43542cf29f4f3af7d563c9",
+        "--repo",
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+        "--run-id",
+        "77596a7f9f674ec3868df8240acd5f46",
+        "--test-cwd",
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt\\packages\\mjs space",
+        "--max-mutants",
+        "20",
+        "--",
+        "C:\\Program Files\\nodejs\\node.EXE",
+        "--test",
+        "math case.test.mjs"
+      ],
+      "code": 0,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 300.0,
+      "max_seconds": 5400,
+      "stderr": "mutate: packages/mjs space/value.mjs:1 -> killed-assertion\nmutate: packages/mjs space/value.mjs:2 -> survived\nmutate: wrote C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt\\.ai\\mjs\\evidence\\runs\\77596a7f9f674ec3868df8240acd5f46\\mutation.json\n",
+      "stdout": "{\n  \"schema_version\": 2,\n  \"run_id\": \"77596a7f9f674ec3868df8240acd5f46\",\n  \"source\": {\n    \"binding_mode\": \"standalone-source\",\n    \"base\": \"ee238117e3642e5e9c43542cf29f4f3af7d563c9\",\n    \"head\": \"9c15451cb2b760ecc4ab9d9ad49e6e009b7e706b\",\n    \"scope\": {\n      \"files\": [],\n      \"directories\": [\n        \".\"\n      ],\n      \"excluded_outputs\": [\n        {\n          \"path\": \".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/metrics.json\",\n          \"reason\": \"Exact same-run metrics report published by the invoking probe\"\n        },\n        {\n          \"path\": \".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/mutation.json\",\n          \"reason\": \"Exact fresh invocation-owned mutation report\"\n        },\n        {\n          \"path\": \".ai/mjs/metrics.json\",\n          \"reason\": \"Generated metrics display alias owned by the invoking probe\"\n        },\n        {\n          \"path\": \".git\",\n          \"reason\": \"Git administrative metadata, not source inputs\"\n        }\n      ]\n    },\n    \"files\": {\n      \".gitignore\": {\n        \"sha256\": \"dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883\",\n        \"mode\": \"file\"\n      },\n      \"packages/mjs space/math case.test.mjs\": {\n        \"sha256\": \"8b0f0132e7f1128a7c5d5c2e9829b7d676f57e5bb951bad6b83a387afd45adfb\",\n        \"mode\": \"file\"\n      },\n      \"packages/mjs space/value.mjs\": {\n        \"sha256\": \"23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056\",\n        \"mode\": \"file\"\n      }\n    },\n    \"scope_sha256\": \"0507ec886dc4f3ebf26bfa925f3788d08603ad4d6bd7c7682d6910fee42753f0\"\n  },\n  \"test_run\": {\n    \"command\": {\n      \"argv\": [\n        \"C:\\\\Program Files\\\\nodejs\\\\node.EXE\",\n        \"--test-reporter=file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/native_result.mjs\",\n        \"--test\",\n        \"math case.test.mjs\"\n      ],\n      \"cwd\": \"packages/mjs space\",\n      \"runtime\": {\n        \"executable\": \"C:\\\\Program Files\\\\nodejs\\\\node.EXE\",\n        \"observed_version\": \"v24.11.1\"\n      },\n      \"idle_seconds\": 300,\n      \"max_seconds\": 300,\n      \"environment\": {\n        \"NODE_TEST_CONTEXT\": null\n      }\n    },\n    \"runner\": \"node-native\",\n    \"test_files\": [\n      \"packages/mjs space/math case.test.mjs\"\n    ],\n    \"assertions\": []\n  },\n  \"baseline\": {\n    \"schema_version\": 1,\n    \"complete\": true,\n    \"tests\": [\n      {\n        \"file\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space nxtqzgdt\\\\packages\\\\mjs space\\\\math case.test.mjs\",\n        \"line\": 2,\n        \"name\": \"required boundary\",\n        \"nesting\": 0,\n        \"outcome\": \"pass\"\n      }\n    ],\n    \"leaf_count\": 1,\n    \"logs\": []\n  },\n  \"results\": [\n    {\n      \"file\": \"packages/mjs space/value.mjs\",\n      \"line\": 1,\n      \"operator\": \"literal true -> false\",\n      \"before_sha256\": \"23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056\",\n      \"after_sha256\": \"db098ff72274513a7a84d43bbf4c8070df5c050e66ef9e3aaf58afe7b95c27dc\",\n      \"outcome\": \"killed-assertion\",\n      \"artifacts\": {\n        \"syntax\": {\n          \"returncode\": 0,\n          \"stdout\": \"\",\n          \"stderr\": \"\"\n        },\n        \"execution\": {\n          \"returncode\": 1,\n          \"stdout\": \"{\\\"schema_version\\\":1,\\\"complete\\\":true,\\\"tests\\\":[{\\\"file\\\":\\\"C:\\\\\\\\Users\\\\\\\\shbs\\\\\\\\.copilot\\\\\\\\repos\\\\\\\\copilot-worktrees\\\\\\\\bulletproof\\\\\\\\shbs-microsoft-crispy-system\\\\\\\\.ai\\\\\\\\workflow-reliability\\\\\\\\evidence\\\\\\\\i1-independent-fixture-space nxtqzgdt\\\\\\\\packages\\\\\\\\mjs space\\\\\\\\math case.test.mjs\\\",\\\"line\\\":2,\\\"name\\\":\\\"required boundary\\\",\\\"nesting\\\":0,\\\"outcome\\\":\\\"assertion-fail\\\",\\\"error\\\":{\\\"name\\\":\\\"AssertionError\\\",\\\"code\\\":\\\"ERR_TEST_FAILURE\\\",\\\"cause_code\\\":\\\"ERR_ASSERTION\\\",\\\"message\\\":\\\"Expected values to be strictly equal:\\\\n\\\\nfalse !== true\\\\n\\\",\\\"assertion_stack\\\":\\\"AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\\\\n\\\\nfalse !== true\\\\n\\\\n    at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/evidence/i1-independent-fixture-space%20nxtqzgdt/packages/mjs%20space/math%20case.test.mjs:2:37)\\\\n    at Test.runInAsyncScope (node:async_hooks:214:14)\\\\n    at Test.run (node:internal/test_runner/test:1106:25)\\\\n    at Test.start (node:internal/test_runner/test:1003:17)\\\\n    at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)\\\",\\\"operator\\\":\\\"strictEqual\\\",\\\"expected\\\":\\\"true\\\",\\\"actual\\\":\\\"false\\\"}}],\\\"leaf_count\\\":1,\\\"logs\\\":[]}\\n\",\n          \"stderr\": \"\"\n        },\n        \"native\": {\n          \"schema_version\": 1,\n          \"complete\": true,\n          \"tests\": [\n            {\n              \"file\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space nxtqzgdt\\\\packages\\\\mjs space\\\\math case.test.mjs\",\n              \"line\": 2,\n              \"name\": \"required boundary\",\n              \"nesting\": 0,\n              \"outcome\": \"assertion-fail\",\n              \"error\": {\n                \"name\": \"AssertionError\",\n                \"code\": \"ERR_TEST_FAILURE\",\n                \"cause_code\": \"ERR_ASSERTION\",\n                \"message\": \"Expected values to be strictly equal:\\n\\nfalse !== true\\n\",\n                \"assertion_stack\": \"AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\\n\\nfalse !== true\\n\\n    at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/evidence/i1-independent-fixture-space%20nxtqzgdt/packages/mjs%20space/math%20case.test.mjs:2:37)\\n    at Test.runInAsyncScope (node:async_hooks:214:14)\\n    at Test.run (node:internal/test_runner/test:1106:25)\\n    at Test.start (node:internal/test_runner/test:1003:17)\\n    at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)\",\n                \"operator\": \"strictEqual\",\n                \"expected\": \"true\",\n                \"actual\": \"false\"\n              }\n            }\n          ],\n          \"leaf_count\": 1,\n          \"logs\": []\n        }\n      }\n    },\n    {\n      \"file\": \"packages/mjs space/value.mjs\",\n      \"line\": 2,\n      \"operator\": \"literal true -> false\",\n      \"before_sha256\": \"23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056\",\n      \"after_sha256\": \"1c634eb2aac076464d11ac9e9b02f91f0b27d4c129b25b47961f9e57dbdc28e0\",\n      \"outcome\": \"survived\",\n      \"artifacts\": {\n        \"syntax\": {\n          \"returncode\": 0,\n          \"stdout\": \"\",\n          \"stderr\": \"\"\n        },\n        \"execution\": {\n          \"returncode\": 0,\n          \"stdout\": \"{\\\"schema_version\\\":1,\\\"complete\\\":true,\\\"tests\\\":[{\\\"file\\\":\\\"C:\\\\\\\\Users\\\\\\\\shbs\\\\\\\\.copilot\\\\\\\\repos\\\\\\\\copilot-worktrees\\\\\\\\bulletproof\\\\\\\\shbs-microsoft-crispy-system\\\\\\\\.ai\\\\\\\\workflow-reliability\\\\\\\\evidence\\\\\\\\i1-independent-fixture-space nxtqzgdt\\\\\\\\packages\\\\\\\\mjs space\\\\\\\\math case.test.mjs\\\",\\\"line\\\":2,\\\"name\\\":\\\"required boundary\\\",\\\"nesting\\\":0,\\\"outcome\\\":\\\"pass\\\"}],\\\"leaf_count\\\":1,\\\"logs\\\":[]}\\n\",\n          \"stderr\": \"\"\n        },\n        \"native\": {\n          \"schema_version\": 1,\n          \"complete\": true,\n          \"tests\": [\n            {\n              \"file\": \"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\i1-independent-fixture-space nxtqzgdt\\\\packages\\\\mjs space\\\\math case.test.mjs\",\n              \"line\": 2,\n              \"name\": \"required boundary\",\n              \"nesting\": 0,\n              \"outcome\": \"pass\"\n            }\n          ],\n          \"leaf_count\": 1,\n          \"logs\": []\n        }\n      }\n    }\n  ],\n  \"score_pct\": 50.0,\n  \"complete\": true,\n  \"reason\": \"Measurement completed\",\n  \"restored_sha256\": \"0507ec886dc4f3ebf26bfa925f3788d08603ad4d6bd7c7682d6910fee42753f0\",\n  \"generated\": \"2026-09-17T12:44:06+00:00\",\n  \"killed\": 1,\n  \"survived\": 1,\n  \"total\": 2,\n  \"ungraded\": 0,\n  \"unsupported_scope\": [],\n  \"baseline_artifacts\": {\n    \"returncode\": 0,\n    \"stdout\": \"{\\\"schema_version\\\":1,\\\"complete\\\":true,\\\"tests\\\":[{\\\"file\\\":\\\"C:\\\\\\\\Users\\\\\\\\shbs\\\\\\\\.copilot\\\\\\\\repos\\\\\\\\copilot-worktrees\\\\\\\\bulletproof\\\\\\\\shbs-microsoft-crispy-system\\\\\\\\.ai\\\\\\\\workflow-reliability\\\\\\\\evidence\\\\\\\\i1-independent-fixture-space nxtqzgdt\\\\\\\\packages\\\\\\\\mjs space\\\\\\\\math case.test.mjs\\\",\\\"line\\\":2,\\\"name\\\":\\\"required boundary\\\",\\\"nesting\\\":0,\\\"outcome\\\":\\\"pass\\\"}],\\\"leaf_count\\\":1,\\\"logs\\\":[]}\\n\",\n    \"stderr\": \"\"\n  }\n}\n"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "code": 0,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 300.0,
+      "max_seconds": 900,
+      "stderr": "",
+      "stdout": "9c15451cb2b760ecc4ab9d9ad49e6e009b7e706b\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "lizard",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named lizard\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "semgrep",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named semgrep\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-m",
+        "vulture",
+        "--version"
+      ],
+      "code": 1,
+      "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\i1-independent-fixture-space nxtqzgdt",
+      "idle_seconds": 60.0,
+      "max_seconds": 60,
+      "stderr": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe: No module named vulture\n",
+      "stdout": ""
+    }
+  ],
+  "completeness": "incomplete",
+  "generated": "2026-09-17T12:44:16+00:00",
+  "head": "9c15451cb2b760ecc4ab9d9ad49e6e009b7e706b",
+  "measurement_status": "fail",
+  "merge_base": "ee238117e364",
+  "metrics": {
+    "architecture_rules": {
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "No supported collector implemented",
+      "run_id": "77596a7f9f674ec3868df8240acd5f46",
+      "state": "unavailable"
+    },
+    "complexity_avg": {
+      "base": null,
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "Collector unavailable, failed or malformed",
+      "run_id": "77596a7f9f674ec3868df8240acd5f46",
+      "scope_support": {
+        "measured_paths": [],
+        "unsupported_paths": [
+          "packages/mjs space/math case.test.mjs",
+          "packages/mjs space/value.mjs"
+        ]
+      },
+      "source": {
+        "base": "ee238117e3642e5e9c43542cf29f4f3af7d563c9",
+        "binding_mode": "standalone-source",
+        "files": {
+          ".gitignore": {
+            "mode": "file",
+            "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+          },
+          "packages/mjs space/math case.test.mjs": {
+            "mode": "file",
+            "sha256": "8b0f0132e7f1128a7c5d5c2e9829b7d676f57e5bb951bad6b83a387afd45adfb"
+          },
+          "packages/mjs space/value.mjs": {
+            "mode": "file",
+            "sha256": "23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056"
+          }
+        },
+        "head": "9c15451cb2b760ecc4ab9d9ad49e6e009b7e706b",
+        "scope": {
+          "directories": [
+            "."
+          ],
+          "excluded_outputs": [
+            {
+              "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/mutation.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/mjs/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".git",
+              "reason": "Git metadata, not analyzer input"
+            }
+          ],
+          "files": []
+        },
+        "scope_sha256": "27cfa69f04bc40a72a27b7a045c0ad27e8a8fcd218a5f2e0a8a99e78e968ff6d"
+      },
+      "state": "unavailable"
+    },
+    "complexity_max": {
+      "base": null,
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "Collector unavailable, failed or malformed",
+      "run_id": "77596a7f9f674ec3868df8240acd5f46",
+      "scope_support": {
+        "measured_paths": [],
+        "unsupported_paths": [
+          "packages/mjs space/math case.test.mjs",
+          "packages/mjs space/value.mjs"
+        ]
+      },
+      "source": {
+        "base": "ee238117e3642e5e9c43542cf29f4f3af7d563c9",
+        "binding_mode": "standalone-source",
+        "files": {
+          ".gitignore": {
+            "mode": "file",
+            "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+          },
+          "packages/mjs space/math case.test.mjs": {
+            "mode": "file",
+            "sha256": "8b0f0132e7f1128a7c5d5c2e9829b7d676f57e5bb951bad6b83a387afd45adfb"
+          },
+          "packages/mjs space/value.mjs": {
+            "mode": "file",
+            "sha256": "23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056"
+          }
+        },
+        "head": "9c15451cb2b760ecc4ab9d9ad49e6e009b7e706b",
+        "scope": {
+          "directories": [
+            "."
+          ],
+          "excluded_outputs": [
+            {
+              "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/mutation.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/mjs/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".git",
+              "reason": "Git metadata, not analyzer input"
+            }
+          ],
+          "files": []
+        },
+        "scope_sha256": "27cfa69f04bc40a72a27b7a045c0ad27e8a8fcd218a5f2e0a8a99e78e968ff6d"
+      },
+      "state": "unavailable"
+    },
+    "cycles": {
+      "base": null,
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "Collector unavailable, failed or malformed",
+      "run_id": "77596a7f9f674ec3868df8240acd5f46",
+      "scope_support": {
+        "measured_paths": [
+          "packages/mjs space/math case.test.mjs",
+          "packages/mjs space/value.mjs"
+        ],
+        "unsupported_paths": []
+      },
+      "source": {
+        "base": "ee238117e3642e5e9c43542cf29f4f3af7d563c9",
+        "binding_mode": "standalone-source",
+        "files": {
+          ".gitignore": {
+            "mode": "file",
+            "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+          },
+          "packages/mjs space/math case.test.mjs": {
+            "mode": "file",
+            "sha256": "8b0f0132e7f1128a7c5d5c2e9829b7d676f57e5bb951bad6b83a387afd45adfb"
+          },
+          "packages/mjs space/value.mjs": {
+            "mode": "file",
+            "sha256": "23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056"
+          }
+        },
+        "head": "9c15451cb2b760ecc4ab9d9ad49e6e009b7e706b",
+        "scope": {
+          "directories": [
+            "."
+          ],
+          "excluded_outputs": [
+            {
+              "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/mutation.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/mjs/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".git",
+              "reason": "Git metadata, not analyzer input"
+            }
+          ],
+          "files": []
+        },
+        "scope_sha256": "27cfa69f04bc40a72a27b7a045c0ad27e8a8fcd218a5f2e0a8a99e78e968ff6d"
+      },
+      "state": "unavailable"
+    },
+    "dead_exports": {
+      "base": null,
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "Collector unavailable, failed or malformed",
+      "run_id": "77596a7f9f674ec3868df8240acd5f46",
+      "scope_support": {
+        "measured_paths": [],
+        "unsupported_paths": [
+          "packages/mjs space/math case.test.mjs",
+          "packages/mjs space/value.mjs"
+        ]
+      },
+      "source": {
+        "base": "ee238117e3642e5e9c43542cf29f4f3af7d563c9",
+        "binding_mode": "standalone-source",
+        "files": {
+          ".gitignore": {
+            "mode": "file",
+            "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+          },
+          "packages/mjs space/math case.test.mjs": {
+            "mode": "file",
+            "sha256": "8b0f0132e7f1128a7c5d5c2e9829b7d676f57e5bb951bad6b83a387afd45adfb"
+          },
+          "packages/mjs space/value.mjs": {
+            "mode": "file",
+            "sha256": "23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056"
+          }
+        },
+        "head": "9c15451cb2b760ecc4ab9d9ad49e6e009b7e706b",
+        "scope": {
+          "directories": [
+            "."
+          ],
+          "excluded_outputs": [
+            {
+              "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/mutation.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/mjs/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".git",
+              "reason": "Git metadata, not analyzer input"
+            }
+          ],
+          "files": []
+        },
+        "scope_sha256": "27cfa69f04bc40a72a27b7a045c0ad27e8a8fcd218a5f2e0a8a99e78e968ff6d"
+      },
+      "state": "unavailable"
+    },
+    "diff_coverage_pct": {
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "No supported collector implemented",
+      "run_id": "77596a7f9f674ec3868df8240acd5f46",
+      "state": "unavailable"
+    },
+    "diff_files": {
+      "head": 1
+    },
+    "diff_lines": {
+      "head": 4
+    },
+    "duplication_pct": {
+      "base": null,
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "Collector unavailable, failed or malformed",
+      "run_id": "77596a7f9f674ec3868df8240acd5f46",
+      "scope_support": {
+        "measured_paths": [],
+        "unsupported_paths": [
+          "packages/mjs space/math case.test.mjs",
+          "packages/mjs space/value.mjs"
+        ]
+      },
+      "source": {
+        "base": "ee238117e3642e5e9c43542cf29f4f3af7d563c9",
+        "binding_mode": "standalone-source",
+        "files": {
+          ".gitignore": {
+            "mode": "file",
+            "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+          },
+          "packages/mjs space/math case.test.mjs": {
+            "mode": "file",
+            "sha256": "8b0f0132e7f1128a7c5d5c2e9829b7d676f57e5bb951bad6b83a387afd45adfb"
+          },
+          "packages/mjs space/value.mjs": {
+            "mode": "file",
+            "sha256": "23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056"
+          }
+        },
+        "head": "9c15451cb2b760ecc4ab9d9ad49e6e009b7e706b",
+        "scope": {
+          "directories": [
+            "."
+          ],
+          "excluded_outputs": [
+            {
+              "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/mutation.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/mjs/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".git",
+              "reason": "Git metadata, not analyzer input"
+            }
+          ],
+          "files": []
+        },
+        "scope_sha256": "27cfa69f04bc40a72a27b7a045c0ad27e8a8fcd218a5f2e0a8a99e78e968ff6d"
+      },
+      "state": "unavailable"
+    },
+    "mutation_score_pct": {
+      "artifacts": [
+        {
+          "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/mutation.json",
+          "sha256": "6bae731587b590cf35780585eee9b4f04cec41434bbae6b05ed7deba72e975d5"
+        }
+      ],
+      "base": null,
+      "command": {
+        "argv": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "--test-reporter=file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/native_result.mjs",
+          "--test",
+          "math case.test.mjs"
+        ],
+        "cwd": "packages/mjs space",
+        "environment": {
+          "NODE_TEST_CONTEXT": null
+        },
+        "idle_seconds": 300,
+        "max_seconds": 300,
+        "runtime": {
+          "executable": "C:\\Program Files\\nodejs\\node.EXE",
+          "observed_version": "v24.11.1"
+        }
+      },
+      "comparison": "fail",
+      "head": 50.0,
+      "reason": "",
+      "run_id": "77596a7f9f674ec3868df8240acd5f46",
+      "scope_support": {
+        "measured_paths": [
+          ".gitignore",
+          "packages/mjs space/math case.test.mjs",
+          "packages/mjs space/value.mjs"
+        ],
+        "unsupported_paths": []
+      },
+      "source": {
+        "base": "ee238117e3642e5e9c43542cf29f4f3af7d563c9",
+        "binding_mode": "standalone-source",
+        "files": {
+          ".gitignore": {
+            "mode": "file",
+            "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+          },
+          "packages/mjs space/math case.test.mjs": {
+            "mode": "file",
+            "sha256": "8b0f0132e7f1128a7c5d5c2e9829b7d676f57e5bb951bad6b83a387afd45adfb"
+          },
+          "packages/mjs space/value.mjs": {
+            "mode": "file",
+            "sha256": "23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056"
+          }
+        },
+        "head": "9c15451cb2b760ecc4ab9d9ad49e6e009b7e706b",
+        "scope": {
+          "directories": [
+            "."
+          ],
+          "excluded_outputs": [
+            {
+              "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/metrics.json",
+              "reason": "Exact same-run metrics report published by the invoking probe"
+            },
+            {
+              "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/mutation.json",
+              "reason": "Exact fresh invocation-owned mutation report"
+            },
+            {
+              "path": ".ai/mjs/metrics.json",
+              "reason": "Generated metrics display alias owned by the invoking probe"
+            },
+            {
+              "path": ".git",
+              "reason": "Git administrative metadata, not source inputs"
+            }
+          ],
+          "files": []
+        },
+        "scope_sha256": "0507ec886dc4f3ebf26bfa925f3788d08603ad4d6bd7c7682d6910fee42753f0"
+      },
+      "state": "measured",
+      "status": "fail",
+      "survivors": 1,
+      "threshold": 60.0
+    },
+    "static_findings": {
+      "base": null,
+      "comparison": "unavailable",
+      "head": null,
+      "reason": "Collector unavailable, failed or malformed",
+      "run_id": "77596a7f9f674ec3868df8240acd5f46",
+      "scope_support": {
+        "measured_paths": [],
+        "unsupported_paths": [
+          "packages/mjs space/math case.test.mjs",
+          "packages/mjs space/value.mjs"
+        ]
+      },
+      "source": {
+        "base": "ee238117e3642e5e9c43542cf29f4f3af7d563c9",
+        "binding_mode": "standalone-source",
+        "files": {
+          ".gitignore": {
+            "mode": "file",
+            "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+          },
+          "packages/mjs space/math case.test.mjs": {
+            "mode": "file",
+            "sha256": "8b0f0132e7f1128a7c5d5c2e9829b7d676f57e5bb951bad6b83a387afd45adfb"
+          },
+          "packages/mjs space/value.mjs": {
+            "mode": "file",
+            "sha256": "23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056"
+          }
+        },
+        "head": "9c15451cb2b760ecc4ab9d9ad49e6e009b7e706b",
+        "scope": {
+          "directories": [
+            "."
+          ],
+          "excluded_outputs": [
+            {
+              "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/mutation.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".ai/mjs/metrics.json",
+              "reason": "Exact current measurement output"
+            },
+            {
+              "path": ".git",
+              "reason": "Git metadata, not analyzer input"
+            }
+          ],
+          "files": []
+        },
+        "scope_sha256": "27cfa69f04bc40a72a27b7a045c0ad27e8a8fcd218a5f2e0a8a99e78e968ff6d"
+      },
+      "state": "unavailable"
+    }
+  },
+  "missing_required": [
+    {
+      "metric": "architecture_rules",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "No supported collector implemented"
+    },
+    {
+      "metric": "complexity_avg",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "Collector unavailable, failed or malformed"
+    },
+    {
+      "metric": "complexity_max",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "Collector unavailable, failed or malformed"
+    },
+    {
+      "metric": "cycles",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "Collector unavailable, failed or malformed"
+    },
+    {
+      "metric": "dead_exports",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "Collector unavailable, failed or malformed"
+    },
+    {
+      "metric": "diff_coverage_pct",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "No supported collector implemented"
+    },
+    {
+      "metric": "duplication_pct",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "Collector unavailable, failed or malformed"
+    },
+    {
+      "metric": "static_findings",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison",
+      "reason": "Collector unavailable, failed or malformed"
+    }
+  ],
+  "policy": {
+    "origins": [
+      "built-in quality metrics; required coverage and architecture proof"
+    ],
+    "required": [
+      "architecture_rules",
+      "complexity_avg",
+      "complexity_max",
+      "cycles",
+      "dead_exports",
+      "diff_coverage_pct",
+      "duplication_pct",
+      "mutation_score_pct",
+      "static_findings"
+    ],
+    "rules": {
+      "greenfield": {
+        "architecture_rules": [
+          0,
+          0
+        ],
+        "complexity_avg": [
+          4.0,
+          8.0
+        ],
+        "complexity_max": [
+          15,
+          25
+        ],
+        "cycles": [
+          0,
+          0
+        ],
+        "dead_exports": [
+          10,
+          40
+        ],
+        "duplication_pct": [
+          5.0,
+          12.0
+        ],
+        "static_findings": [
+          10,
+          40
+        ]
+      },
+      "mutation_score_pct": {
+        "threshold": 60.0
+      },
+      "tolerance": {
+        "complexity_avg": 0.3,
+        "complexity_max": 2,
+        "duplication_pct": 0.5
+      }
+    }
+  },
+  "policy_sha256": "ca5efab2bdd218bd9b598fcff5416e9a3e49d3b0d7ea230bd28f1686e5409dea",
+  "project": "general",
+  "run_id": "77596a7f9f674ec3868df8240acd5f46",
+  "schema_version": 2,
+  "slug": "mjs",
+  "source": {
+    "base": "ee238117e3642e5e9c43542cf29f4f3af7d563c9",
+    "binding_mode": "standalone-source",
+    "files": {
+      ".gitignore": {
+        "mode": "file",
+        "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883"
+      },
+      "packages/mjs space/math case.test.mjs": {
+        "mode": "file",
+        "sha256": "8b0f0132e7f1128a7c5d5c2e9829b7d676f57e5bb951bad6b83a387afd45adfb"
+      },
+      "packages/mjs space/value.mjs": {
+        "mode": "file",
+        "sha256": "23b3480011e750cb8275ab624b6a1e81a01c68adfb10ddaa36e4652c051b8056"
+      }
+    },
+    "head": "9c15451cb2b760ecc4ab9d9ad49e6e009b7e706b",
+    "scope": {
+      "directories": [
+        "."
+      ],
+      "excluded_outputs": [
+        {
+          "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/metrics.json",
+          "reason": "Exact current measurement output"
+        },
+        {
+          "path": ".ai/mjs/evidence/runs/77596a7f9f674ec3868df8240acd5f46/mutation.json",
+          "reason": "Exact current measurement output"
+        },
+        {
+          "path": ".ai/mjs/metrics.json",
+          "reason": "Exact current measurement output"
+        },
+        {
+          "path": ".git",
+          "reason": "Git metadata, not analyzer input"
+        }
+      ],
+      "files": []
+    },
+    "scope_sha256": "27cfa69f04bc40a72a27b7a045c0ad27e8a8fcd218a5f2e0a8a99e78e968ff6d"
+  },
+  "tools": {},
+  "unavailable": [
+    "duplication_pct",
+    "complexity_max",
+    "complexity_avg",
+    "cycles",
+    "dead_exports",
+    "static_findings",
+    "architecture_rules",
+    "diff_coverage_pct"
+  ],
+  "verdict": "fail",
+  "worst_status": "fail"
+}

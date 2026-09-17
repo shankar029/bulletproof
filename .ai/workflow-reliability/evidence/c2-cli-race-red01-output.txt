@@ -1,0 +1,30 @@
+test_candidate_change_between_parse_and_snapshot_has_no_adoption (test_workflow_cli.WorkflowCliTests.test_candidate_change_between_parse_and_snapshot_has_no_adoption) ... FAIL
+test_real_pre_popen_exit_leaves_unresolved_intent_even_without_lock (test_workflow_cli.WorkflowCliTests.test_real_pre_popen_exit_leaves_unresolved_intent_even_without_lock) ... ok
+test_actual_finding_producer_binds_declared_observed_artifacts (test_workflow_cli.WorkflowCliTests.test_actual_finding_producer_binds_declared_observed_artifacts) ... ok
+
+======================================================================
+FAIL: test_candidate_change_between_parse_and_snapshot_has_no_adoption (test_workflow_cli.WorkflowCliTests.test_candidate_change_between_parse_and_snapshot_has_no_adoption)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_cli.py", line 474, in test_candidate_change_between_parse_and_snapshot_has_no_adoption
+    self.f.adopt(expected=2, hook=hook)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_cli.py", line 82, in adopt
+    return self.cli("adopt", "--revision", revision, "--review",
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    ".ai/demo/evidence/review-%s.json" % revision, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_cli.py", line 74, in cli
+    code, stdout, stderr = self.run(*argv, expected=expected)
+                           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_cli.py", line 40, in run
+    raise AssertionError("%r returned %s\n%s\n%s" % (argv, *result))
+AssertionError: ('C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe', '-B', '-c', "\nimport os,sys\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1])\nimport workflow\nreads=0\ndef audit(event,args):\n    global reads\n    if event=='open' and str(args[0]).replace('\\\\','/').endswith('/r1.workflow.json'):\n        reads+=1\n        if reads==2:\n            path=Path(args[0])\n            content=path.read_bytes()\n            path.write_bytes(b' '+content)\nsys.addaudithook(audit)\nraise SystemExit(workflow.main(sys.argv[2:]))\n", 'C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts', 'adopt', '--slug', 'demo', '--repo', 'C:\\Users\\shbs\\AppData\\Local\\Temp\\c2cli-7da5c0\\bulletproof-git-tsx1q_o6', '--revision', 'r1', '--review', '.ai/demo/evidence/review-r1.json') returned 0
+{"outcome": "adopted", "revision": "r1", "phase": "B0"}
+
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 24.472s
+
+FAILED (failures=1)
