@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-c",
+    "import a; assert a.VALUE == 7; print(a.child.sibling.__file__)"
+  ],
+  "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-ckv59vxz",
+  "exit_code": 0,
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "raw": {
+    "stdout": {
+      "bytes": 74,
+      "sha256": "4c08ed7851c25da29324be55335f0529bb22297a24dcf64c8cb8fe5ea885e390"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "outer_run_bounds": {
+    "idle": 120,
+    "max": 1200
+  }
+}

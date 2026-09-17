@@ -1,0 +1,88 @@
+{
+  "checked_utc": "2026-09-17T04:56:50.529885+00:00",
+  "verdict": "NOT-VERIFIED",
+  "reason": "Committed-baseline C1-only workflow replay failed two architecture_rules supplied-mode subtests. Evidence suite not run after failure; no retry or production changes.",
+  "baseline_sha": "0b7e1a1f6fd1f807bd254886e2877d605596d96d",
+  "candidate_probe_sha256": "993d41638aeb0bb8b62ef0084b58f309139a3b1af11a113a159bd35c90466a82",
+  "workflow": {
+    "tests_run": 83,
+    "failing_subtests": 2,
+    "seconds": 178.537,
+    "exit_code": 1
+  },
+  "evidence_suite": "NOT-RUN: stopped after concrete workflow failure",
+  "original_pins_checked": 1939,
+  "changed_original_inputs_since_replay": [],
+  "raw_log_checks": [
+    {
+      "run": "baseline",
+      "stream": "stdout",
+      "expected_sha256": "7ac59c6a07ab43d05bec57d71bdb7fed105b3505a34494117472b7ce3375ee30",
+      "observed_sha256": "7ac59c6a07ab43d05bec57d71bdb7fed105b3505a34494117472b7ce3375ee30",
+      "expected_bytes": 42,
+      "observed_bytes": 42,
+      "matches": true
+    },
+    {
+      "run": "baseline",
+      "stream": "stderr",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_bytes": 0,
+      "observed_bytes": 0,
+      "matches": true
+    },
+    {
+      "run": "archive",
+      "stream": "stdout",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_bytes": 0,
+      "observed_bytes": 0,
+      "matches": true
+    },
+    {
+      "run": "archive",
+      "stream": "stderr",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_bytes": 0,
+      "observed_bytes": 0,
+      "matches": true
+    },
+    {
+      "run": "workflow",
+      "stream": "stdout",
+      "expected_sha256": "20bf1ca97877c466ec97ccc9e5fbc5b8c9a95216053d3d3bebf91a510e60d04e",
+      "observed_sha256": "20bf1ca97877c466ec97ccc9e5fbc5b8c9a95216053d3d3bebf91a510e60d04e",
+      "expected_bytes": 17111,
+      "observed_bytes": 17111,
+      "matches": true
+    },
+    {
+      "run": "workflow",
+      "stream": "stderr",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_bytes": 0,
+      "observed_bytes": 0,
+      "matches": true
+    }
+  ],
+  "artifacts": {
+    ".ai\\workflow-reliability\\evidence\\c1-standalone-preservation-archive.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".ai\\workflow-reliability\\evidence\\c1-standalone-preservation-archive.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".ai\\workflow-reliability\\evidence\\c1-standalone-preservation-baseline.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".ai\\workflow-reliability\\evidence\\c1-standalone-preservation-baseline.stdout.log": "7ac59c6a07ab43d05bec57d71bdb7fed105b3505a34494117472b7ce3375ee30",
+    ".ai\\workflow-reliability\\evidence\\c1-standalone-preservation-capture.py": "6d73ab030f29708e4d7b8488584eafa664ccc24930ee97a6bfd204440b562d39",
+    ".ai\\workflow-reliability\\evidence\\c1-standalone-preservation-manifest.json": "b3ba27aef77a71e365b0f54864e17c50f4d6230639c83746e55734e3c38a9068",
+    ".ai\\workflow-reliability\\evidence\\c1-standalone-preservation-report.md": "e68ea7d6436abe7eddf9dec3b247070488ebeb193c767c3b8458c40b6e3963c2",
+    ".ai\\workflow-reliability\\evidence\\c1-standalone-preservation-workflow-imports.json": "a4291dd6af93494002deae33208e037f57cdfcb6b2e9119d3fe2df962a306915",
+    ".ai\\workflow-reliability\\evidence\\c1-standalone-preservation-workflow.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".ai\\workflow-reliability\\evidence\\c1-standalone-preservation-workflow.stdout.log": "20bf1ca97877c466ec97ccc9e5fbc5b8c9a95216053d3d3bebf91a510e60d04e"
+  },
+  "owned_temporary_root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\c1-standalone-owned-wuibjqwm",
+  "owned_temporary_root_absent": true,
+  "source_and_evidence_fresh": true,
+  "limits": "Standalone commit-composition result only. Integrated r5/re-review remain preserved; no Q1/complete quality acceptance or C2 action."
+}

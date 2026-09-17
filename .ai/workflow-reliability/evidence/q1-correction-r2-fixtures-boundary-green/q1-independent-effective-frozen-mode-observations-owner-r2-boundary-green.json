@@ -1,0 +1,100 @@
+{
+  "on": {
+    "environment_delta": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHON_FROZEN_MODULES": "on"
+    },
+    "native_argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "-S",
+      "-c",
+      "import __hello__; print(__hello__.__spec__.origin)"
+    ],
+    "probe_argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "-S",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\probe.py",
+      "--repo",
+      "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-kp9xzc9k",
+      "--slug",
+      "frozen-env-on",
+      "--base",
+      "dfc114858d64eefca5bd54bca431a50f546eb377",
+      "--skip-mutation",
+      "--measurement-config",
+      "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-kp9xzc9k\\measurement.json"
+    ],
+    "native_origin": "frozen",
+    "edges": [
+      {
+        "from": "a.py",
+        "to": "__hello__",
+        "kind": "import",
+        "resolution": "external",
+        "span": {
+          "start_byte": 0,
+          "end_byte": 16,
+          "start_line": 1,
+          "end_line": 1
+        }
+      }
+    ],
+    "tools": {
+      "python_parser": "fb3cfccde62e9ab7e3dfd6321a4297c507a8cce457fce9361793acc90cf085ec"
+    },
+    "receipt_toolsets": [
+      "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b"
+    ]
+  },
+  "off": {
+    "environment_delta": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHON_FROZEN_MODULES": "off"
+    },
+    "native_argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "-S",
+      "-c",
+      "import __hello__; print(__hello__.__spec__.origin)"
+    ],
+    "probe_argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "-S",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\probe.py",
+      "--repo",
+      "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-kp9xzc9k",
+      "--slug",
+      "frozen-env-off",
+      "--base",
+      "dfc114858d64eefca5bd54bca431a50f546eb377",
+      "--skip-mutation",
+      "--measurement-config",
+      "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-kp9xzc9k\\measurement.json"
+    ],
+    "native_origin": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-kp9xzc9k\\__hello__.py",
+    "edges": [
+      {
+        "from": "a.py",
+        "to": "__hello__.py",
+        "kind": "import",
+        "resolution": "local",
+        "span": {
+          "start_byte": 0,
+          "end_byte": 16,
+          "start_line": 1,
+          "end_line": 1
+        }
+      }
+    ],
+    "tools": {
+      "python_parser": "5215c84478cf910fd213e5f12d9069879af797551ea2959c034316cf506e0b90"
+    },
+    "receipt_toolsets": [
+      "e412811d0d58598965d8b81c7f6b2043cb72b931b9bfd9cd5aa334582883c321"
+    ]
+  }
+}

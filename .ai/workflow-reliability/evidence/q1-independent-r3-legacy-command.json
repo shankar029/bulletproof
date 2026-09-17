@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-independent-r3-capture.py",
+    "worker",
+    "test_probe.py",
+    "legacy"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "exit_code": 0,
+  "seconds": 58.851811800006544,
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "Q1_VERIFICATION_TAG": "independent-r3-legacy"
+  },
+  "outer_bounds": {
+    "idle": 120,
+    "max": 1200
+  },
+  "raw": {
+    "stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-independent-r3-legacy.stdout.bin"
+    },
+    "stderr": {
+      "sha256": "ed9505179d8ad396b011335eb315224ce830403e10c1a42f0c8ad94cc54defb0",
+      "bytes": 2911,
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-independent-r3-legacy.stderr.bin"
+    }
+  }
+}

@@ -5,7 +5,7 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: I1 functional preservation approved; quality closure blocked; I2/I3 not started.
+- Phase: C1/Q1 accepted for combined local preservation; C2 lifecycle/CLI is next.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
 - Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
@@ -20,6 +20,7 @@
 7. **AC07 / P1:** Keep historical design records and an explicit current contract; bind migration retirement to earlier compatibility evidence and wire the canonical workflow triggers.
 8. **AC08 / P2:** Strengthen scoped research claims and explicit supersession of corrected claims; derive communication status from authoritative readiness rather than separate optimistic summaries.
 9. **AC09:** Preserve existing native/evaluation behavior except explicitly documented metric/guard outcome changes. Independently verify and review each increment before proceeding; retain conservative unavailable results and exact replay commands.
+10. **AC10:** Refresh the README with an attractive, navigable overview of all main agent/skill features, accurate installation and limits, and linked user/operator guides. Distinguish executable tooling from procedural instructions and host capabilities.
 
 ## Planned priority order
 - Research and reviewed design for the full scope; separate fresh-context planning.
@@ -36,10 +37,255 @@
 - No repeated uncoached model-effectiveness study claimed by deterministic tests.
 
 ## Next action
-Preserve the independently verified/reviewed I1 source and evidence on the existing branch.
-The next implementation prerequisite is actual supported quality collection, including
-diff coverage and architecture rules, plus whole-change mutation proof. Only then can
-I1.T4 close and I2.T1 begin. Do not infer permission to waive these checks.
+Preserve the accepted combined C1/Q1 dependency set, then start the bounded C2
+lifecycle/CLI continuation. Do not commit a C1-only failing composition.
+The local I1 preservation commit is `aaec9b9`.
+The continuation addendum replaces implementation-dispatch dependencies only; it does not
+close I1.T4 or remove any required measurement, independent role or final acceptance check.
+
+## Latest bounded correction handoff
+- FACT: `evidence/q1-attr-result.md` reports the minimal Git-native all-attributes census
+  correction and 27 focused passing methods. The prior four-method red run is preserved.
+  Literal drivers named `unset`/`unspecified` now reject; absent/reset attributes remain
+  accepted. Ambiguous present declarations, including `-filter` and `-text`, are explicitly
+  unsupported. No execution escape was observed before or after the correction.
+- FACT: final `measure.py` SHA-256 is
+  `5d6f15a95de50d932953023508dd12ae2f470fd073af91d409ca5a948838b084`;
+  the owner reports 465 final pins unchanged. This is local evidence, not acceptance.
+- Independent verifier `708c4d0b-2afb-4528-b119-97583eb8251b` owns the focused correction
+  replay plus integrated C1 against these shared dependencies. Separate narrowed re-review
+  follows. Prior 74-method Q1 and 93-method C1 results remain historical, not new-byte proof.
+- This closes only the existing bounded correction attempt, not a new broad convergence
+  cycle. C2/Q2, combined preservation and overall release acceptance remain gated.
+- FACT: `evidence/q1-attr-independent-report.md` returns VERIFIED-WITH-LIMITATIONS:
+  28 focused +83 workflow +10 evidence methods passed once, with no failures/errors/skips/
+  timeouts. The verifier added one real `-text` rejection / `!text` reset test. Two evidence
+  helper issues were recovered without rerunning tests or changing production. All 4,778
+  final pins matched; the four disclosed parent document edits were outside those pins.
+- FACT: parent prospective source composition (`evidence/c1-q1-composition-result.json`)
+  matches 31 candidate source/reference files byte-for-byte, including all 13 independently
+  observed script imports. The private index was removed; the real index was unchanged.
+  This is a byte/composition check, not an additional test run or full quality proof.
+- Separate reviewer `9a253936-ce4f-4e86-89be-a19ac9f6c7d5` owns final narrowed gate/proof
+  re-review plus the directly related quality-reference changes. No production writers
+  are active. Combined preservation awaits this verdict.
+- FACT: final narrowed review is APPROVE (`evidence/q1-attr-code-review.md`), including
+  the quality-reference delta. Three direct reviewer tests passed; these repeat existing
+  tests and are not added to the independent 121-method count.
+- FACT: reviewer later observed 4,776/4,778 verifier pins matching. The two changed pins
+  are parent-regenerated `report.pdf` and `report-rendering.json`, explicitly disclosed
+  and reconciled by the reviewer without reopening code acceptance. Historical unchanged
+  verification remains historical; no unconditional later 4,778-unchanged claim is made.
+- Parent accepts combined C1/Q1 functional preservation with the source-composition proof.
+  Actual complete quality, C2-C4, Q2-Q5, human approval and publication remain open. This
+  is a partial local preservation boundary, not a green release or completed request.
+
+## Continuation acceptance - 17 September 2026
+- User requested completion plus an attractive README and updated guides. When asked about
+  the missing-prerequisite planning dead end, the user authorized autonomous decisions while
+  unavailable. Human design approval remains unconfirmed.
+- Parent accepts the independently reviewed scheduling addendum: implement state/gate,
+  independently verify/review, then CLI/lifecycle, canonical integration and actual host
+  exercises. AC10 documentation drafts may proceed in parallel on disjoint files.
+- The original plan required unscheduled mixed-language collectors before any subsequent
+  implementation. `evidence/continuation-measurement-research.md` identifies that missing
+  prerequisite; it does not establish a technical dependency on the guard.
+- Required quality collection is separate release prerequisite Q, not waived or passed.
+  No retrospective guard admissions, imported green scores, fabricated independent approval
+  or publication retry is authorized. Original design/task/evidence history stays intact.
+- Parent rechecked accepted r2 interfaces and the C1 boundary. No production code changed
+  since the reviewed preservation commit; continuation research/plan are additive artifacts.
+- C1 implementer found that the original pure gate lacked resolved receipt bodies and
+  per-prerequisite current snapshots. Parent accepted the independently reviewed
+  `guard-resolution-contract.json` clarification; persisted schemas remain unchanged.
+- Existing-feature README, banner, user/install/architecture/contributor guidance preserved
+  in `015d353`. Documentation review findings were corrected; local light/dark desktop/mobile
+  rendering and link evidence is under `evidence/documentation-*`. Guard additions await C2.
+- Q design revision 2 independently accepted (`evidence/measurement-design-review-r2.md`).
+  Parent adopts the explicit new 100% changed executable-line and decision-outcome policy
+  for its declared finite models, retaining mutation 60% and evaluation 0.9. This is an
+  autonomous decision, not historical policy or confirmed human approval.
+- Q1 inventory/Python graph/architecture implementation may run disjointly from C1.
+  Q2 tool qualification, Q3 coverage, Q4 classified mixed-language mutation and final Q5
+  proof remain required. No broad final measurement while concurrent writers are active.
+- C1 implementation returned 52 local core tests plus 10 evidence tests passing, but observed
+  concurrent probe dependency changes; final dependency freshness is explicitly reopened.
+  Fresh verifier `a02590d4-37a7-4531-ae44-21f0e15cfed3` owns independent acceptance proof.
+- Q1 required an explicit owned artifact root in its Context; parent accepted `run_root`
+  with canonical manifest-root equality and strict paths. The overview initially rendered
+  to four pages after dispatch; parent shortened only presentation and confirmed three pages,
+  two visible diagrams and no browser errors. This late presentation check is recorded,
+  not retroactively claimed as a pre-dispatch observation.
+- Independent live-harness packaging correction: original staged bundle lacked scripts/assets.
+  Parent restored installer payload parity and equal `.ai/` task-record permission for both
+  arms, retaining deliverable/seed boundaries. Native 65/65 and all ten fixed corpus tasks
+  passed; live dry-run is plumbing proof only. Integrated independent review remains due.
+- C1 independent verification returned NOT-VERIFIED: closure can be backfilled from later
+  proof, failed/no-spawn launch can count as executed work, and UTC validation accepts a
+  naive datetime. Final workflow discovery: 60 passed / 3 failed; evidence: 10 passed.
+  The verifier observed 1,881 pinned files and 171 imported modules unchanged. Parent accepts
+  all three as C1 defects and returned correction to the original production owner.
+  Preserve `evidence/c1-independent-verification.md` and its failing regression tests;
+  C2 remains blocked until correction, independent replay and separate review.
+- Another forced compaction occurred during this continuation. Re-anchored state, original
+  research/design and continuation plan before changes. This is an execution-sizing issue,
+  not the actual fresh-context resume experiment required by AC05.
+- Q1 implementation returned 28 measurement tests and 19 legacy probe tests passing.
+  Inventory, Python graph/architecture and producer validation are implemented; all nine
+  metrics remain required and unsupported/missing collectors remain incomplete/fail.
+  Source is frozen for verifier `e2c9aae7-db2e-4de4-a109-04cbbd9861c9`; the implementation
+  return alone is not independent acceptance or permission for Q2. C1 owner was notified
+  of the final measurement/probe dependency hashes before its correction replay.
+- Updated report and traceability to distinguish committed I1/docs from incomplete C1/Q.
+  Report initially printed to four pages; condensed without changing verdicts and observed
+  three pages with no browser/console errors (`evidence/report-rendering.json`).
+- C1 production owner corrected closure chronology, no-spawn execution proof and parsed UTC
+  validation. Local corrected run: 70 workflow tests plus 10 evidence tests passing, with
+  all original independent tests preserved. Final Q1 dependency hashes matched the actual
+  imports. Returned the frozen correction to the original independent verifier for replay;
+  local green does not replace the prior NOT-VERIFIED verdict or separate review.
+- C1 independent r2 verified the original F2/F3 fixes but found residual F1: prefix
+  validation accepts an older proof while an old closure names a replacement receipt
+  accepted later (closure seq32, receipt acceptance seq38). Workflow: 70 passed / 1 failed;
+  evidence: 10 passed. Parent accepted the exact-reference defect and returned correction
+  iteration 2 to the original implementer. Original/r2 tests and evidence remain untouched.
+- Q1 independent verification returned NOT-VERIFIED: builtin `sys` resolves to local
+  `sys.py`, fabricating graph/architecture failures; freshly collected evidence accepts
+  base/head source hard links sharing mutable bytes. The normal CLI copy path was not
+  observed creating this alias. Existing Q1 28 and legacy probe 19 pass; added verification
+  4 pass /2 fail. Parent accepted both defects and returned correction to the Q1 owner,
+  preserving `evidence/q1-independent-verification.md` and regression tests.
+  C1 owner was notified that its measurement dependency freeze has reopened.
+- C1 correction iteration 2 binds the exact prefix receipt ID/hash union and preserves
+  current freshness/order checks. Local 75 workflow +10 evidence tests pass; four new
+  owned cases cover handoff, transitive action, inherited increment and ship reclosure.
+  Frozen return is `evidence/c1-correction-r2-report.md`. Original verifier owns r3 replay;
+  concurrent Q1 dependency changes must be reconciled before final acceptance.
+- C1 independent r3 returned VERIFIED-WITH-LIMITATIONS: 75 workflow plus 10 evidence
+  tests pass; all original/residual defects resolved on the bounded tested surfaces.
+  The verifier pinned newer actual Q1 bytes and observed 1,878 inputs/172 imports
+  unchanged through handoff. Separate read-only reviewer
+  `bbe59c68-4708-4952-8f3d-7d91551302dc` now owns C1 and pending live-bundle/portable-hero
+  review. This is not C2 authorization, actual quality proof or release acceptance.
+- Separate C1 review returned REVISE. R1: receipt-supplied floor/coverage modes can bypass
+  mandatory metric regression comparison. R2: failed spawned metric/finding commands can
+  authorize direct consumers. R3: prefix closure evaluation duplicates work exponentially
+  (12 increments, 4,096 evaluator instances, 7.134 seconds observed). Original F1-F3
+  mechanisms were accepted fixed. Parent accepted all new findings and dispatched bounded
+  correction iteration 3 with persisted regressions, independent replay and re-review.
+  Full return and disposition: `evidence/c1-code-review.md`. C2 remains blocked.
+- The same independent reviewer approved the separate bundle/portable-README slice and
+  replayed all 21 harness tests. Preserved only that accepted slice plus its evidence in
+  local commit `0b7e1a1f6fd1f807bd254886e2877d605596d96d`; no Python runtime/test files
+  were included. Index checked empty afterward. Both production owners were notified of
+  the changed root HEAD. This is partial preservation, not C1/Q closure or publication.
+- Q1 correction returned locally green: 39 measurement tests (including six unchanged
+  verifier tests) and 19 legacy probe tests passed. Interpreter builtin/frozen precedence
+  and cross-root physical-file identity checks address the two findings; no CLI-copy bug
+  is claimed. Original verifier now owns correction replay. 321 pinned inputs and 137
+  original verifier files/tests were preserved; `evidence/q1-correction-result.md` records
+  exact observations and limits. C1 owner received final frozen dependency hashes.
+- C1 correction iteration 3 returned 83 workflow +10 evidence tests passing on the final
+  Q1 dependency bytes. Mandatory comparisons, producer outcome/exit qualification and
+  per-call prefix memoization address review R1-R3; original verifier owns r4 replay.
+  Actual evaluator counts for 3/5/8 increments changed from 8/32/256 to 4/6/9.
+  The larger 12-increment timing is still only the reviewer's pre-fix observation.
+  Return/freeze/reconciliation are in `evidence/c1-correction-r3-*`; independent replay
+  and separate re-review remain required. No further production writers are authorized.
+- Q1 independent correction replay verified original F1/F2 but found an effective-mode
+  binding defect: documented `PYTHON_FROZEN_MODULES=on/off` changes real native/probe
+  resolution while parser/toolset hashes remain identical. Per-run resolution is correct;
+  no false overall green or successful forgery was observed. Original Q1 39 and probe19
+  pass; new boundaries 1 pass /1 fail. Parent accepted the finding and authorized Q1
+  correction round2 in the original owner. C1 verifier was notified of reopened dependency
+  freshness. Preserve `evidence/q1-independent-r2-verification.md` and new failing test.
+- C1 independent r4 passed all 83 workflow +10 evidence tests and verified review R1-R3
+  on its tested snapshot. Final handoff detected the anticipated subsequent Q1 graph
+  fingerprint edit, so current-tree verdict is BLOCKED-FRESHNESS, not accepted.
+  Preserve `evidence/c1-independent-r4-verification.md`; do not repeatedly replay while
+  Q1 writes. Next C1 replay must follow its final freeze, then separate reviewer recheck.
+- Q1 round2 source is frozen: `measure_graph.py` hash
+  `b8ef51ae7ecb2e900808187f32766c2dd8c5948ce0db3f5681221483ca92e061`.
+  Local42 Q1 +19 probe tests pass. The effective complete frozen-module census now binds
+  environment/CLI precedence, ignored environment and build defaults; private CPython
+  API absence fails closed. Original Q1 verifier owns r3; original C1 verifier owns one
+  stable r5 freshness replay. Both may write only scoped tests/evidence; no production
+  writers authorized. `evidence/q1-correction-r2-result.md` records limits and raw evidence.
+- C1 stable r5 replay passed 83 workflow +10 evidence tests with 1,883 relevant file pins,
+  172 observed imports and 52 protected historical files unchanged through handoff.
+  Actual graph hash matches the final Q1 freeze. The original separate reviewer now owns
+  bounded correction re-review; prior BLOCKED-FRESHNESS is resolved for this snapshot,
+  not future edits. `evidence/c1-independent-r5-verification.md` preserves exact proof.
+- C1 separate correction re-review APPROVE: R1-R3 resolved; 1,883 pins remain unchanged.
+  The original 12-increment case now uses 13 evaluators/888 unique uncached pairs and
+  took 0.367805s in one observation, versus 4,096/7.133808s before; not a statistical
+  speedup claim. Full return and parent acceptance: `evidence/c1-code-review-r2.md`.
+  Original verifier is checking only accepted C1 files over committed HEAD in a private
+  candidate tree so C1 preservation does not silently depend on uncommitted Q1 modules.
+  No additional C1 implementation changes are authorized by this compatibility check.
+- Q1 independent r3 accepted F1/F2/F3 with limitations: 42 Q1 +19 probe tests and ten
+  actual interpreter-mode controls pass. 322 owner pins/382 historical files unchanged.
+  Fresh separate reviewer `1b351703-5886-4edc-8cf8-1058ef536fb2` owns Q1 code review.
+  Neither this return nor C1 acceptance closes complete quality or authorizes publication.
+- Q1 separate review returned REVISE: Windows directory aliases can hide local edges,
+  and a status-clean baseline with assume-unchanged flags can differ from its immutable
+  Git tree while fresh graph proof is accepted. Original F1-F3 remain accepted fixed.
+  Parent accepted both findings and authorized bounded correction round3 in the Q1 owner;
+  original return/reproductions/disposition are preserved in `evidence/q1-code-review.md`.
+- C1 standalone composition did NOT pass: committed I1 probe lacks the architecture-rule
+  comparison needed by the new guard. All83 methods ran, with two failing architecture
+  subtests (floor/coverage); Q1 modules were absent and candidate imports were isolated.
+  No evidence-suite retry or production patch followed. The private tree was removed.
+  `evidence/c1-standalone-preservation-report.md` preserves the failure. Integrated C1
+  acceptance remains valid only for its tested shared-policy dependency, so preserve
+  C1 and Q1 together after Q1 acceptance rather than commit a broken C1-only tree.
+- Q1 owner reproduced R1/R2 before edits, then stopped at a real representation ambiguity:
+  raw Git blobs differ from legitimate versioned-attribute checkout bytes. Parent selected
+  a deterministic isolated versioned-attribute checkout policy, with neutral LF defaults,
+  no ambient conversion/configuration, no external filters, and explicit platform mode
+  projection. Proposal: `baseline-materialization-contract.json`; original reviewer owns
+  narrow independent boundary adjudication before implementation. Concrete Git commands
+  must be qualified against the installed tool. Human approval remains unconfirmed;
+  the choice uses the user's existing explicit autonomous authorization.
+- Independent baseline-boundary review APPROVE, with no required revision. Parent accepted
+  and authorized actual Git qualification then bounded correction. Full review and original
+  proposal hash are in `evidence/baseline-materialization-review.md`; only approval metadata
+  changed in the proposal. Expected bytes must match exactly, full relevant/non-code scope
+  remains, external filters must never execute, and policy/Git identities must be validated.
+- On explicit user continuation, the prior Q1 worker was no longer available and no
+  background agents remained. Persisted Git-qualification outputs exist, but no final
+  correction return is present. Replacement owner `d29478a1-bb2c-4dde-a19b-f6ebba084b1a`
+  is resuming the same approved correction from disk, including any partial edits.
+  This is interruption recovery, not another design/convergence round or AC05 experiment.
+  No completed qualification or production acceptance is inferred from file presence.
+- Resumed Q1 owner returned frozen R1/R2 corrections. Shared canonical paths and isolated
+  immutable-tree materialization now have local passing executions for all52 distinct Q1
+  methods plus19 probe tests. This is NOT one clean aggregate run: initial timeout and
+  two long capture-path errors are preserved; affected cases passed with short unique
+  tags. Qualified scope is the observed Git core/69-DLL set, not arbitrary Git builds.
+  `evidence/q1-resumed-correction-result.md` and final-freeze/handoff retain exact limits.
+- Replacement independent verifier `708c4d0b-2afb-4528-b119-97583eb8251b` now owns
+  bounded R1/R2 replay plus existing regression coverage. Prior verifier sessions were
+  cleared, not concurrently replaced. Production is frozen; only scoped independent
+  tests/evidence may be added. Separate correction review is still required.
+- Independent Q1 final verification returned VERIFIED-WITH-LIMITATIONS: three completed
+  disjoint batches, 25 graph/inventory +30 integration/boundary +19 probe methods, with
+  no failures/errors/skips/timeouts. This is52 original Q1 +3 new independent +19 probe,
+  not a single aggregate process. Original/review defects resolved in bounded proof.
+  `evidence/q1-final-verification-report.md` and final freeze/handoff retain raw evidence.
+- Replacement separate reviewer `9a253936-ce4f-4e86-89be-a19ac9f6c7d5` owns narrowed
+  Q1 R1/R2 correction review; prior original reviewer was cleared on restart.
+  Parent meanwhile replayed C1 against the final collector source:83 workflow +10 evidence
+  tests passed, 12 named runtime/test files unchanged before/after. Logs are PowerShell
+  captured text in `evidence/c1-q1-integrated-parent-*`, not a complete binary/import
+  attestation or new independent review. Combined preservation still awaits Q1 review.
+- Narrowed Q1 review accepts path and original immutable-baseline corrections but found
+  one residual policy bug: literal filter drivers named `unset`/`unspecified` collide
+  with textual Git attribute states and are admitted. Isolation prevented execution;
+  this is not an execution escape, corrupted-baseline acceptance or overall-green proof.
+  Full return: `evidence/q1-code-review-final.md`. Parent authorized one bounded
+  classification fix with qualified Git-native census and literal-name regressions,
+  not a fresh broad convergence cycle. Q2/C2 admission remains held.
 
 ## Implementation checkpoint
 - Compaction occurred during I1. Re-anchored from state, research, revised design and source;

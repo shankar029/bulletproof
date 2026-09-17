@@ -1,0 +1,35 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\probe.py",
+    "--repo",
+    "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-zjna1f7u",
+    "--slug",
+    "greenfield",
+    "--base",
+    "b470e2b88ede02a8e41f8b9b524988b6090d4267",
+    "--skip-mutation",
+    "--measurement-config",
+    "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-zjna1f7u\\measurement.json"
+  ],
+  "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-zjna1f7u",
+  "exit_code": 1,
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "raw": {
+    "stdout": {
+      "bytes": 46964,
+      "sha256": "0d2aaa4d17174365684a8fe394a3463fb7b97aa1d9859427736a12cb9c302d8f"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "outer_run_bounds": {
+    "idle": 120,
+    "max": 1200
+  }
+}

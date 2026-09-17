@@ -1,0 +1,92 @@
+{
+  "checked_utc": "2026-09-17T04:06:39.759264+00:00",
+  "verdict": "BLOCKED-FRESHNESS",
+  "scope": "Bounded C1 functional correction replay; separate reviewer recheck remains due. No C2 or actual quality acceptance.",
+  "manifest": {
+    "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r4-manifest.json",
+    "sha256": "42b1662afb382f91ca89b65a72e357606b9ff968b0c9797de803f85216e4e77e"
+  },
+  "report": {
+    "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r4-verification.md",
+    "sha256": "eef1cf48718f5fc220ea19a3926f43da22098ded5d623d12ad28f38febcbce7f"
+  },
+  "imports": {
+    "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r4-imports.json",
+    "sha256": "a737f8fdaac4e1db1d0e79bb82d7f77a0ba49866b840131e215b867ca9a10fd8"
+  },
+  "pinned_input_count": 1881,
+  "protected_original_count": 41,
+  "changed_inputs_since_replay": [
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\measure_graph.py",
+      "expected": "f40c8c1c05b62bc76bd027790b7111faf5394290c7309e5e32ebfe02de4dacf6",
+      "observed": "b8ef51ae7ecb2e900808187f32766c2dd8c5948ce0db3f5681221483ca92e061"
+    }
+  ],
+  "changed_original_artifacts": [],
+  "new_applicable_python_inputs": [],
+  "raw_stream_checks": [
+    {
+      "run": "head",
+      "stream": "stdout",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r4-head.stdout.log",
+      "expected_sha256": "7ac59c6a07ab43d05bec57d71bdb7fed105b3505a34494117472b7ce3375ee30",
+      "observed_sha256": "7ac59c6a07ab43d05bec57d71bdb7fed105b3505a34494117472b7ce3375ee30",
+      "expected_bytes": 42,
+      "observed_bytes": 42,
+      "matches": true
+    },
+    {
+      "run": "head",
+      "stream": "stderr",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r4-head.stderr.log",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_bytes": 0,
+      "observed_bytes": 0,
+      "matches": true
+    },
+    {
+      "run": "workflow",
+      "stream": "stdout",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r4-workflow.stdout.log",
+      "expected_sha256": "1b54301d6784c776b7d239d07085dd253f43081475e1095ae9a030df0621b551",
+      "observed_sha256": "1b54301d6784c776b7d239d07085dd253f43081475e1095ae9a030df0621b551",
+      "expected_bytes": 15022,
+      "observed_bytes": 15022,
+      "matches": true
+    },
+    {
+      "run": "workflow",
+      "stream": "stderr",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r4-workflow.stderr.log",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_bytes": 0,
+      "observed_bytes": 0,
+      "matches": true
+    },
+    {
+      "run": "evidence",
+      "stream": "stdout",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r4-evidence.stdout.log",
+      "expected_sha256": "19fba8b42add66c45eb41c37a72ef0c3a47ffd220b4f186c0b91c67582951e14",
+      "observed_sha256": "19fba8b42add66c45eb41c37a72ef0c3a47ffd220b4f186c0b91c67582951e14",
+      "expected_bytes": 1524,
+      "observed_bytes": 1524,
+      "matches": true
+    },
+    {
+      "run": "evidence",
+      "stream": "stderr",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r4-evidence.stderr.log",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_bytes": 0,
+      "observed_bytes": 0,
+      "matches": true
+    }
+  ],
+  "freshness_blocked": true,
+  "limits": "Applicable file-backed runtime/test inputs only; excludes unrelated docs/measurement tests/evidence, unobserved edit-and-revert intervals, OS/DLL attestation and future edits. No test rerun performed for this handoff."
+}

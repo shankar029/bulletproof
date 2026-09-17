@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Continuation plan — Workflow reliability</title>
+<link rel="stylesheet" href="../assets/artifact.css">
+<script src="../assets/artifact.js" defer data-doc="continuation-plan.html" data-slug="workflow-reliability"></script>
+</head>
+<body>
+<h1>Workflow reliability — Continuation plan</h1>
+<div class="meta">17 September 2026 · Scheduling addendum at aaec9b9 · AC01–AC10<br>
+<a href="evidence/continuation-plan-review.md">APPROVE: bounded review, ownership and executable checks</a> ·
+<a href="design.html">Accepted design</a> · <a href="design-contracts.json">r2 contracts</a> ·
+<a href="tasks.json">Historical task/check registry</a></div>
+
+<h2>1. Decision and authority</h2>
+<p><strong>Proceed with bounded functional implementation, not release.</strong>
+The old I1.T4 → I2.T1 dependency requires quality collectors that no scheduled task implements.
+<a href="evidence/continuation-measurement-research.md">Continuation research</a> establishes the missing prerequisite;
+it does not establish a need for the guard to collect metrics.</p>
+<p class="assumption">The user explicitly authorized autonomous decisions while unavailable.
+The parent selects this sequencing correction under that authorization. This review is not
+human design/UX approval, an I1.T4 pass, or a metric waiver. Preserve original design, tasks,
+state history and evidence; the parent records this additive scheduling decision before dispatch.</p>
+<table>
+<thead><tr><th>Implementation readiness</th><th>Release readiness</th></tr></thead>
+<tbody><tr><td>I1 source has qualified independent functional acceptance. After parent acceptance
+of this addendum and snapshot recheck, start C1 without declaring I1 closed.</td>
+<td>I1.T4 remains BLOCKED. Required metrics, whole-change mutation, final AC proof and
+independent gates must all pass before ship. Publication remains blocked by the recorded 403/EMU policy.</td></tr></tbody>
+</table>
+
+<h2>2. Executable projection, unchanged runtime design</h2>
+<p>In <code>workflow_state</code>, <code>load_workspace</code>, <code>bind_inputs</code> and
+<code>append_event</code> own validated persistence;
+<code>workflow_gate.evaluate</code> is pure; <code>workflow.main</code> owns lock → revalidate →
+admit → bounded run → record. Extend <code>run_capture(..., env=None, observe=None)</code>
+without changing its return tuple. These guard APIs are <strong>planned, absent at this snapshot</strong>.</p>
+<p>Only <code>Action.requires</code> and <code>Increment.requires</code> own runtime edges;
+commands, reverse dependencies and status are derived. Continuation work uses accepted
+functional prerequisites, not a fictional I1 closure. No bypass flag, imported historical
+receipt, synthetic quality pass or measurement dependency on the guard.</p>
+<p>Persist launch intent before spawn and actual lifecycle observations synchronously.
+Observer-write failure and uncertain spawn/tree remain blocked. The existing lexical lock
+releases on exit: durable unresolved admission must still prevent replay. Exact owned-output
+exclusions only; no sandbox, authenticated identities, orphan supervisor or invented reset API.</p>
+
+<h2>3. Bounded build order and owners</h2>
+<table>
+<thead><tr><th>Slice / predecessor</th><th>Single writer and completion boundary</th></tr></thead>
+<tbody>
+<tr><td>C0 · now</td><td>Parent accepts this correction, records authorization and unchanged blockers,
+pins source/contracts, and assigns identities. This reviewer writes only the two review artifacts.</td></tr>
+<tr><td>C1 · C0</td><td>Guard implementer: state/gate and their tests (I2.T1). Validate one graph,
+bindings, temporal proof and scoped reopening. Then fresh verifier and separate reviewer accept
+this functional slice before C2.</td></tr>
+<tr><td>C2 · C1 functional acceptance</td><td>Same role, fresh bounded increment: workflow CLI,
+run observer, CLI/run tests, five paired failure evaluations and detailed operator reference
+(I2.T2/T3). Independently verify/review real dispatch, crash and resume behavior.</td></tr>
+<tr><td>C3 · C2 functional acceptance</td><td>Canonical-doc owner wires current design, research
+supersession, temporal testing, delegation and authoritative status (I3.T1). Separate docs owner
+may draft AC10 in parallel on disjoint files; reconcile against actual CLI before acceptance.</td></tr>
+<tr><td>C4 · C3 functional acceptance</td><td>Parent dispatches actual fresh-context resume and
+held-out diagnosis; independent evaluator grades. Fixed fixtures and dry-run do not replace
+these exercises. Final verifier/reviewer reconcile runtime, procedural and documentation proof.</td></tr>
+</tbody>
+</table>
+<p>Each slice: re-read design → implement and targeted checks → integrated checks → fresh
+verification → distinct read-only review → parent dispositions. Changes reopen affected proof.
+Local preservation is explicitly partial, never a green increment closure. No concurrent source,
+docs or evidence writers during broad measurement; stop at an unresolved interface or failed check.</p>
+
+<h2>4. AC10 — attractive, complete and honest documentation</h2>
+<p><strong>Acceptance:</strong> README gives a clear value statement, quick start, navigable feature
+overview, evidence/limits and links to a new user guide plus the canonical operator guide.
+Cover all six phases, diagnosis/TDD, research grounding, design/UX approval, session-sized planning,
+durable resume, code clarity, communication, E2E, quality/mutation, independent roles, reports,
+app-scale/production guidance, parallel work, HTML review, installation and evaluation.</p>
+<p>Also explain guard admission/recovery, temporal compatibility, current-design history and research
+corrections once implemented. Label procedural skill obligations separately from executable tooling
+and host capabilities. No “any agent guarantees delivery,” automatic collector coverage, proven
+isolation, untested-version or general model-effectiveness claims. Reviewer checks feature-to-source
+coverage, links and actual help; inspect wide/narrow rendering and readable light/dark HTML.</p>
+
+<h2>5. Checks, measurement debt and stop</h2>
+<p><a href="evidence/continuation-plan-review.md#checks">Exact check expansion and per-slice matrix</a>
+reuse managed Python through <code>scripts/run.py</code>, unittest, explicit Node suites and existing
+corpus commands. Require positive test inventories, real filesystem/process effects, source hashes
+and separate raw verifier/reviewer returns. Planned commands are not observed passes.</p>
+<p><strong>Separate release prerequisite Q:</strong> parent owns a bounded collector design covering
+mixed-language inventories, coverage/architecture policy, classified Python mutation and parser-backed
+JS candidates. Then implement approved collectors, freeze all inputs, collect actual base/head
+metrics and whole-change mutation, resolve failures, and independently verify/review. Installing tools
+or rerunning the unchanged probe cannot close this gap. New code belongs in the measured scope.</p>
+<p class="unverified">Final ship remains blocked until Q, all due AC01–AC10 checks and actual host
+exercises are accepted. Missing process evidence keeps recovery blocked; absent host capability
+keeps its exercise unverified. No publication retry without an authorized access change.</p>
+<p><strong>Reviewer stop:</strong> deliver these two artifacts only. Parent next action: accept the
+addendum and dispatch C1 with the linked check contract; do not mark I1.T4 done.</p>
+</body>
+</html>

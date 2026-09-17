@@ -1,0 +1,438 @@
+test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) ... 
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='architecture_rules', mode='floor') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='architecture_rules', mode='coverage') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='complexity_avg', mode='floor') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='complexity_avg', mode='coverage') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='complexity_max', mode='floor') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='complexity_max', mode='coverage') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='cycles', mode='floor') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='cycles', mode='coverage') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='dead_exports', mode='floor') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='dead_exports', mode='coverage') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='diff_coverage_pct', mode='floor') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='diff_coverage_pct', mode='coverage') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='duplication_pct', mode='floor') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='duplication_pct', mode='coverage') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='mutation_score_pct', mode='floor') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='mutation_score_pct', mode='coverage') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='static_findings', mode='floor') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='static_findings', mode='coverage') ... FAIL
+test_review_r1_tightening_adds_to_comparison_and_preserves_positive_proof (test_workflow_gate.WorkflowGateTests.test_review_r1_tightening_adds_to_comparison_and_preserves_positive_proof) ... ok
+test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) ... 
+  test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='review', code=1) ... FAIL
+  test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='review', code=124) ... FAIL
+  test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='verification', code=1) ... FAIL
+  test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='verification', code=124) ... FAIL
+  test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='research', code=1) ... FAIL
+  test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='research', code=124) ... FAIL
+  test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='human', code=1) ... FAIL
+  test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='human', code=124) ... FAIL
+test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers) ... 
+  test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers) (code=1) ... FAIL
+  test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers) (code=124) ... FAIL
+  test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers) (code=125) ... FAIL
+  test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers) (code=127) ... FAIL
+test_review_r2_red_execution_exception_requires_validated_native_proof (test_workflow_gate.WorkflowGateTests.test_review_r2_red_execution_exception_requires_validated_native_proof) ... 
+  test_review_r2_red_execution_exception_requires_validated_native_proof (test_workflow_gate.WorkflowGateTests.test_review_r2_red_execution_exception_requires_validated_native_proof) (code=124) ... FAIL
+  test_review_r2_red_execution_exception_requires_validated_native_proof (test_workflow_gate.WorkflowGateTests.test_review_r2_red_execution_exception_requires_validated_native_proof) (code=125) ... FAIL
+  test_review_r2_red_execution_exception_requires_validated_native_proof (test_workflow_gate.WorkflowGateTests.test_review_r2_red_execution_exception_requires_validated_native_proof) (code=127) ... FAIL
+test_review_r2_red_execution_exception_requires_validated_native_proof (test_workflow_gate.WorkflowGateTests.test_review_r2_red_execution_exception_requires_validated_native_proof) ... FAIL
+test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation (test_workflow_gate.WorkflowGateTests.test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation) ... C1 R3 scale: increments=3 evaluators=8 proof_misses=133 unique=87
+
+  test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation (test_workflow_gate.WorkflowGateTests.test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation) (increments=3) ... FAIL
+C1 R3 scale: increments=5 evaluators=32 proof_misses=589 unique=195
+  test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation (test_workflow_gate.WorkflowGateTests.test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation) (increments=5) ... FAIL
+C1 R3 scale: increments=8 evaluators=256 proof_misses=4845 unique=432
+  test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation (test_workflow_gate.WorkflowGateTests.test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation) (increments=8) ... FAIL
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='architecture_rules', mode='floor')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='architecture_rules', mode='coverage')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='complexity_avg', mode='floor')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='complexity_avg', mode='coverage')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='complexity_max', mode='floor')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='complexity_max', mode='coverage')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='cycles', mode='floor')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='cycles', mode='coverage')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='dead_exports', mode='floor')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='dead_exports', mode='coverage')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='diff_coverage_pct', mode='floor')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='diff_coverage_pct', mode='coverage')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='duplication_pct', mode='floor')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='duplication_pct', mode='coverage')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='mutation_score_pct', mode='floor')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='mutation_score_pct', mode='coverage')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='static_findings', mode='floor')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='static_findings', mode='coverage')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='review', code=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 709, in test_review_r2_failed_finding_producers_and_valid_handoffs
+    self.assertEqual(result["status"], "blocked" if code else "ready")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='review', code=124)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 709, in test_review_r2_failed_finding_producers_and_valid_handoffs
+    self.assertEqual(result["status"], "blocked" if code else "ready")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='verification', code=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 709, in test_review_r2_failed_finding_producers_and_valid_handoffs
+    self.assertEqual(result["status"], "blocked" if code else "ready")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='verification', code=124)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 709, in test_review_r2_failed_finding_producers_and_valid_handoffs
+    self.assertEqual(result["status"], "blocked" if code else "ready")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='research', code=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 709, in test_review_r2_failed_finding_producers_and_valid_handoffs
+    self.assertEqual(result["status"], "blocked" if code else "ready")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='research', code=124)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 709, in test_review_r2_failed_finding_producers_and_valid_handoffs
+    self.assertEqual(result["status"], "blocked" if code else "ready")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='human', code=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 709, in test_review_r2_failed_finding_producers_and_valid_handoffs
+    self.assertEqual(result["status"], "blocked" if code else "ready")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) (kind='human', code=124)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 709, in test_review_r2_failed_finding_producers_and_valid_handoffs
+    self.assertEqual(result["status"], "blocked" if code else "ready")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers) (code=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 688, in test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers
+    self.assertEqual(result["status"], "blocked" if code else "ready")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers) (code=124)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 688, in test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers
+    self.assertEqual(result["status"], "blocked" if code else "ready")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers) (code=125)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 688, in test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers
+    self.assertEqual(result["status"], "blocked" if code else "ready")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers) (code=127)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 688, in test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers
+    self.assertEqual(result["status"], "blocked" if code else "ready")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r2_red_execution_exception_requires_validated_native_proof (test_workflow_gate.WorkflowGateTests.test_review_r2_red_execution_exception_requires_validated_native_proof) (code=124)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 731, in test_review_r2_red_execution_exception_requires_validated_native_proof
+    self.assertEqual(self.evaluate("action", "B-work")["status"],
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     "ready" if code == 1 else "blocked")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r2_red_execution_exception_requires_validated_native_proof (test_workflow_gate.WorkflowGateTests.test_review_r2_red_execution_exception_requires_validated_native_proof) (code=125)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 731, in test_review_r2_red_execution_exception_requires_validated_native_proof
+    self.assertEqual(self.evaluate("action", "B-work")["status"],
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     "ready" if code == 1 else "blocked")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r2_red_execution_exception_requires_validated_native_proof (test_workflow_gate.WorkflowGateTests.test_review_r2_red_execution_exception_requires_validated_native_proof) (code=127)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 731, in test_review_r2_red_execution_exception_requires_validated_native_proof
+    self.assertEqual(self.evaluate("action", "B-work")["status"],
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     "ready" if code == 1 else "blocked")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r2_red_execution_exception_requires_validated_native_proof (test_workflow_gate.WorkflowGateTests.test_review_r2_red_execution_exception_requires_validated_native_proof)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 734, in test_review_r2_red_execution_exception_requires_validated_native_proof
+    self.assertEqual(self.evaluate("action", "B-work")["status"], "blocked")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ready' != 'blocked'
+- ready
++ blocked
+
+
+======================================================================
+FAIL: test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation (test_workflow_gate.WorkflowGateTests.test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation) (increments=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 780, in test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation
+    self.assertLessEqual(len(constructions), size + 1)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 8 not less than or equal to 4
+
+======================================================================
+FAIL: test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation (test_workflow_gate.WorkflowGateTests.test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation) (increments=5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 780, in test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation
+    self.assertLessEqual(len(constructions), size + 1)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 32 not less than or equal to 6
+
+======================================================================
+FAIL: test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation (test_workflow_gate.WorkflowGateTests.test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation) (increments=8)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_gate.py", line 780, in test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation
+    self.assertLessEqual(len(constructions), size + 1)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 256 not less than or equal to 9
+
+----------------------------------------------------------------------
+Ran 6 tests in 75.215s
+
+FAILED (failures=37)

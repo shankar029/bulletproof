@@ -1,0 +1,111 @@
+test_closure_cannot_be_retroactively_satisfied_by_later_receipts (test_workflow_core_verification.CoreVerificationTests.test_closure_cannot_be_retroactively_satisfied_by_later_receipts) ... ok
+test_context_independence_is_increment_local_but_includes_all_implementers (test_workflow_core_verification.CoreVerificationTests.test_context_independence_is_increment_local_but_includes_all_implementers) ... ok
+test_date_shaped_value_with_offset_suffix_is_not_a_utc_timestamp (test_workflow_core_verification.CoreVerificationTests.test_date_shaped_value_with_offset_suffix_is_not_a_utc_timestamp) ... ok
+test_directory_membership_and_missing_path_resume_preserve_other_branch (test_workflow_core_verification.CoreVerificationTests.test_directory_membership_and_missing_path_resume_preserve_other_branch) ... ok
+test_fresh_process_append_and_stale_sequence_preserve_ledger_bytes (test_workflow_core_verification.CoreVerificationTests.test_fresh_process_append_and_stale_sequence_preserve_ledger_bytes) ... ok
+test_historical_consumption_preserves_source_not_changed_contracts (test_workflow_core_verification.CoreVerificationTests.test_historical_consumption_preserves_source_not_changed_contracts) ... ok
+test_launch_failed_cannot_claim_successful_work_execution (test_workflow_core_verification.CoreVerificationTests.test_launch_failed_cannot_claim_successful_work_execution) ... ok
+test_materialized_gate_is_repeatable_without_files_processes_or_network (test_workflow_core_verification.CoreVerificationTests.test_materialized_gate_is_repeatable_without_files_processes_or_network) ... ok
+test_multihop_different_scope_receipt_replacement_and_check_change (test_workflow_core_verification.CoreVerificationTests.test_multihop_different_scope_receipt_replacement_and_check_change) ... ok
+test_nested_unknown_fields_cannot_be_persisted_as_alternate_authority (test_workflow_core_verification.CoreVerificationTests.test_nested_unknown_fields_cannot_be_persisted_as_alternate_authority) ... ok
+test_research_heading_is_selective_but_bound_source_is_not (test_workflow_core_verification.CoreVerificationTests.test_research_heading_is_selective_but_bound_source_is_not) ... ok
+test_closure_exact_receipt_refs_must_be_accepted_in_its_prefix (test_workflow_core_verification_r2.ClosureReferenceChronologyTests.test_closure_exact_receipt_refs_must_be_accepted_in_its_prefix) ... ok
+test_admission_ready_without_closure_checks_and_execution_is_not_closure (test_workflow_gate.WorkflowGateTests.test_admission_ready_without_closure_checks_and_execution_is_not_closure) ... ok
+test_all_checks_ready_for_closure_then_closed_and_ship_union (test_workflow_gate.WorkflowGateTests.test_all_checks_ready_for_closure_then_closed_and_ship_union) ... ok
+test_backdated_timestamp_cannot_replace_receipt_acceptance_sequence (test_workflow_gate.WorkflowGateTests.test_backdated_timestamp_cannot_replace_receipt_acceptance_sequence) ... ok
+test_behavioral_red_requires_actual_matching_assertion_not_setup_or_logs (test_workflow_gate.WorkflowGateTests.test_behavioral_red_requires_actual_matching_assertion_not_setup_or_logs) ... ok
+test_changed_check_reopens_its_consumers_not_other_checks (test_workflow_gate.WorkflowGateTests.test_changed_check_reopens_its_consumers_not_other_checks) ... ok
+test_changed_component_preserves_unrelated_proof_after_adoption (test_workflow_gate.WorkflowGateTests.test_changed_component_preserves_unrelated_proof_after_adoption) ... ok
+test_check_admission_not_gated_by_own_closure_or_result (test_workflow_gate.WorkflowGateTests.test_check_admission_not_gated_by_own_closure_or_result) ... ok
+test_closure_needs_all_member_executions_before_its_sequence (test_workflow_gate.WorkflowGateTests.test_closure_needs_all_member_executions_before_its_sequence) ... ok
+test_compatibility_after_legacy_disappears_cannot_admit_retirement (test_workflow_gate.WorkflowGateTests.test_compatibility_after_legacy_disappears_cannot_admit_retirement) ... ok
+test_earlier_consumed_compatibility_survives_retirement_then_current_checks_close (test_workflow_gate.WorkflowGateTests.test_earlier_consumed_compatibility_survives_retirement_then_current_checks_close) ... ok
+test_external_handoff_is_awaiting_response_not_unknown_spawn (test_workflow_gate.WorkflowGateTests.test_external_handoff_is_awaiting_response_not_unknown_spawn) ... ok
+test_finding_limitation_does_not_waive_scenarios_blockers_or_human (test_workflow_gate.WorkflowGateTests.test_finding_limitation_does_not_waive_scenarios_blockers_or_human) ... ok
+test_fresh_process_resumes_from_only_artifacts_and_retains_other_branch (test_workflow_gate.WorkflowGateTests.test_fresh_process_resumes_from_only_artifacts_and_retains_other_branch) ... ok
+test_future_handoff_receipt_cannot_replace_exact_closure_proof (test_workflow_gate.WorkflowGateTests.test_future_handoff_receipt_cannot_replace_exact_closure_proof) ... ok
+test_greenfield_metric_claim_cannot_hide_new_cycles (test_workflow_gate.WorkflowGateTests.test_greenfield_metric_claim_cannot_hide_new_cycles) ... ok
+test_honest_failed_launch_is_recordable_but_never_executed_work (test_workflow_gate.WorkflowGateTests.test_honest_failed_launch_is_recordable_but_never_executed_work) ... ok
+test_human_confirmation_and_completed_external_receipt (test_workflow_gate.WorkflowGateTests.test_human_confirmation_and_completed_external_receipt) ... ok
+test_inherited_increment_dependency_requires_closure_not_just_its_tests (test_workflow_gate.WorkflowGateTests.test_inherited_increment_dependency_requires_closure_not_just_its_tests) ... ok
+test_inherited_increment_receipts_cannot_be_backfilled_into_closure (test_workflow_gate.WorkflowGateTests.test_inherited_increment_receipts_cannot_be_backfilled_into_closure) ... ok
+test_metrics_run_source_floor_and_measurement_consistency (test_workflow_gate.WorkflowGateTests.test_metrics_run_source_floor_and_measurement_consistency) ... ok
+test_metrics_unavailable_or_omitted_never_passes (test_workflow_gate.WorkflowGateTests.test_metrics_unavailable_or_omitted_never_passes) ... ok
+test_missing_or_tampered_receipt_blocks_even_with_pass_event (test_workflow_gate.WorkflowGateTests.test_missing_or_tampered_receipt_blocks_even_with_pass_event) ... ok
+test_no_spawn_cannot_supply_a_behavioral_red_receipt (test_workflow_gate.WorkflowGateTests.test_no_spawn_cannot_supply_a_behavioral_red_receipt) ... ok
+test_ordinary_action_cannot_backfill_current_prerequisite_chronology (test_workflow_gate.WorkflowGateTests.test_ordinary_action_cannot_backfill_current_prerequisite_chronology) ... ok
+test_prerequisite_increment_cannot_close_after_dependent_closure (test_workflow_gate.WorkflowGateTests.test_prerequisite_increment_cannot_close_after_dependent_closure) ... ok
+test_pure_gate_runs_after_materialization_without_any_file_reads (test_workflow_gate.WorkflowGateTests.test_pure_gate_runs_after_materialization_without_any_file_reads) ... ok
+test_recorder_cannot_replace_producer (test_workflow_gate.WorkflowGateTests.test_recorder_cannot_replace_producer) ... ok
+test_recovered_event_alone_is_not_supported_termination_evidence (test_workflow_gate.WorkflowGateTests.test_recovered_event_alone_is_not_supported_termination_evidence) ... ok
+test_replacing_prerequisite_receipt_invalidates_old_dependent_chain (test_workflow_gate.WorkflowGateTests.test_replacing_prerequisite_receipt_invalidates_old_dependent_chain) ... ok
+test_research_requires_bound_attributed_acceptance_and_current_section (test_workflow_gate.WorkflowGateTests.test_research_requires_bound_attributed_acceptance_and_current_section) ... ok
+test_research_supersession_reopens_bound_consumers_preserves_unrelated (test_workflow_gate.WorkflowGateTests.test_research_supersession_reopens_bound_consumers_preserves_unrelated) ... ok
+test_research_unknown_and_wrong_acceptance_owner_block (test_workflow_gate.WorkflowGateTests.test_research_unknown_and_wrong_acceptance_owner_block) ... ok
+test_retirement_requires_post_change_proof_not_only_consumed_precheck (test_workflow_gate.WorkflowGateTests.test_retirement_requires_post_change_proof_not_only_consumed_precheck) ... ok
+test_review_r1_greenfield_and_warn_comparisons_remain_authoritative (test_workflow_gate.WorkflowGateTests.test_review_r1_greenfield_and_warn_comparisons_remain_authoritative) ... ok
+test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) ... 
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='architecture_rules', mode='floor') ... FAIL
+  test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='architecture_rules', mode='coverage') ... FAIL
+test_review_r1_tightening_adds_to_comparison_and_preserves_positive_proof (test_workflow_gate.WorkflowGateTests.test_review_r1_tightening_adds_to_comparison_and_preserves_positive_proof) ... ok
+test_review_r2_exit_and_recorded_outcome_must_both_establish_success (test_workflow_gate.WorkflowGateTests.test_review_r2_exit_and_recorded_outcome_must_both_establish_success) ... ok
+test_review_r2_failed_finding_producers_and_valid_handoffs (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_finding_producers_and_valid_handoffs) ... ok
+test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers (test_workflow_gate.WorkflowGateTests.test_review_r2_failed_metric_producers_cannot_authorize_direct_consumers) ... ok
+test_review_r2_red_execution_exception_requires_validated_native_proof (test_workflow_gate.WorkflowGateTests.test_review_r2_red_execution_exception_requires_validated_native_proof) ... ok
+test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation (test_workflow_gate.WorkflowGateTests.test_review_r3_prefix_work_is_shared_and_scoped_to_one_evaluation) ... C1 R3 scale: increments=3 evaluators=4 proof_misses=87 unique=87
+C1 R3 scale: increments=5 evaluators=6 proof_misses=195 unique=195
+C1 R3 scale: increments=8 evaluators=9 proof_misses=432 unique=432
+ok
+test_same_implementer_context_cannot_review_or_verify (test_workflow_gate.WorkflowGateTests.test_same_implementer_context_cannot_review_or_verify) ... ok
+test_ship_cannot_substitute_receipts_from_a_later_valid_reclosure (test_workflow_gate.WorkflowGateTests.test_ship_cannot_substitute_receipts_from_a_later_valid_reclosure) ... ok
+test_ship_closure_requires_increment_closures_in_its_prefix (test_workflow_gate.WorkflowGateTests.test_ship_closure_requires_increment_closures_in_its_prefix) ... ok
+test_stale_source_reopens_only_affected_branch_receipt_bytes_preserved (test_workflow_gate.WorkflowGateTests.test_stale_source_reopens_only_affected_branch_receipt_bytes_preserved) ... ok
+test_transitive_action_proof_must_match_closure_prefix_exactly (test_workflow_gate.WorkflowGateTests.test_transitive_action_proof_must_match_closure_prefix_exactly) ... ok
+test_unresolved_launch_and_direct_exit_do_not_authorize_new_dispatch (test_workflow_gate.WorkflowGateTests.test_unresolved_launch_and_direct_exit_do_not_authorize_new_dispatch) ... ok
+test_verifier_reviewer_must_differ_even_on_same_actor_account (test_workflow_gate.WorkflowGateTests.test_verifier_reviewer_must_differ_even_on_same_actor_account) ... ok
+test_action_inherits_only_prerequisite_increment_closure (test_workflow_state.WorkflowStateTests.test_action_inherits_only_prerequisite_increment_closure) ... ok
+test_append_assigns_sequence_atomically_and_rejects_stale_writer (test_workflow_state.WorkflowStateTests.test_append_assigns_sequence_atomically_and_rejects_stale_writer) ... ok
+test_append_refuses_receipt_blob_not_yet_written (test_workflow_state.WorkflowStateTests.test_append_refuses_receipt_blob_not_yet_written) ... ok
+test_before_action_exactly_one_consumer_and_retirement_requirement (test_workflow_state.WorkflowStateTests.test_before_action_exactly_one_consumer_and_retirement_requirement) ... ok
+test_closure_requires_metrics_review_verification_and_scenarios (test_workflow_state.WorkflowStateTests.test_closure_requires_metrics_review_verification_and_scenarios) ... ok
+test_cyclic_receipt_links_and_duplicate_reference_ids_are_rejected (test_workflow_state.WorkflowStateTests.test_cyclic_receipt_links_and_duplicate_reference_ids_are_rejected) ... ok
+test_different_target_scopes_membership_missing_and_outputs (test_workflow_state.WorkflowStateTests.test_different_target_scopes_membership_missing_and_outputs) ... ok
+test_duplicate_admission_invalid_seq_and_unadmitted_event (test_workflow_state.WorkflowStateTests.test_duplicate_admission_invalid_seq_and_unadmitted_event) ... ok
+test_graph_rejects_cycles_unknown_edges_and_duplicate_check_actions (test_workflow_state.WorkflowStateTests.test_graph_rejects_cycles_unknown_edges_and_duplicate_check_actions) ... ok
+test_history_retained_and_component_binding_selective (test_workflow_state.WorkflowStateTests.test_history_retained_and_component_binding_selective) ... ok
+test_lifecycle_requires_intent_observed_identity_and_current_adoption (test_workflow_state.WorkflowStateTests.test_lifecycle_requires_intent_observed_identity_and_current_adoption) ... ok
+test_load_and_bind_use_named_unserialized_views (test_workflow_state.WorkflowStateTests.test_load_and_bind_use_named_unserialized_views) ... ok
+test_malformed_receipt_is_observation_not_top_level_input_success (test_workflow_state.WorkflowStateTests.test_malformed_receipt_is_observation_not_top_level_input_success) ... ok
+test_missing_recursive_receipt_and_tampered_chain_never_resolve_valid (test_workflow_state.WorkflowStateTests.test_missing_recursive_receipt_and_tampered_chain_never_resolve_valid) ... ok
+test_paths_and_directory_links_are_rejected_before_reads (test_workflow_state.WorkflowStateTests.test_paths_and_directory_links_are_rejected_before_reads) ... ok
+test_previous_increment_review_does_not_replace_current_mandatory_proof (test_workflow_state.WorkflowStateTests.test_previous_increment_review_does_not_replace_current_mandatory_proof) ... ok
+test_receipt_and_artifact_bytes_resolved_and_tampering_blocks (test_workflow_state.WorkflowStateTests.test_receipt_and_artifact_bytes_resolved_and_tampering_blocks) ... ok
+test_receipt_and_metric_dates_reject_naive_values_before_comparison (test_workflow_state.WorkflowStateTests.test_receipt_and_metric_dates_reject_naive_values_before_comparison) ... ok
+test_receipt_result_types_and_binding_hashes_are_strict (test_workflow_state.WorkflowStateTests.test_receipt_result_types_and_binding_hashes_are_strict) ... ok
+test_reject_duplicate_keys_nonfinite_and_unknown_record_keys (test_workflow_state.WorkflowStateTests.test_reject_duplicate_keys_nonfinite_and_unknown_record_keys) ... ok
+test_reject_history_hash_review_and_adoption_mismatch (test_workflow_state.WorkflowStateTests.test_reject_history_hash_review_and_adoption_mismatch) ... ok
+test_strict_types_ids_and_normalized_paths (test_workflow_state.WorkflowStateTests.test_strict_types_ids_and_normalized_paths) ... ok
+test_timestamp_validation_checks_parsed_utc_awareness (test_workflow_state.WorkflowStateTests.test_timestamp_validation_checks_parsed_utc_awareness) ... ok
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='architecture_rules', mode='floor')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\AppData\Local\Temp\c1-standalone-owned-wuibjqwm\candidate\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+======================================================================
+FAIL: test_review_r1_required_comparisons_cannot_be_replaced_by_floors (test_workflow_gate.WorkflowGateTests.test_review_r1_required_comparisons_cannot_be_replaced_by_floors) (metric='architecture_rules', mode='coverage')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\AppData\Local\Temp\c1-standalone-owned-wuibjqwm\candidate\scripts\tests\test_workflow_gate.py", line 657, in test_review_r1_required_comparisons_cannot_be_replaced_by_floors
+    self.assertNotEqual(self.evaluate("check", "A-metrics")["status"], "complete")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete'
+
+----------------------------------------------------------------------
+Ran 83 tests in 178.537s
+
+FAILED (failures=2)

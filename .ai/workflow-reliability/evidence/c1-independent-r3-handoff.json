@@ -1,0 +1,17 @@
+{
+  "checked_utc": "2026-09-17T03:21:31.185484+00:00",
+  "scope": "Top-level Python runtime-module census, workflow-discovered tests and workflow/evidence helpers, explicit C1 contracts/correction inputs, managed Python files; excludes unrelated measurement tests/docs/evidence. Not whole-root stability or OS/DLL attestation.",
+  "manifest": "c1-independent-r3-manifest.json",
+  "changed_applicable_inputs_since_capture": {},
+  "added_applicable_inputs": [],
+  "changed_original_evidence_tests": [],
+  "raw_log_hashes_match": {
+    "c1-independent-r3-workflow.stdout.log": true,
+    "c1-independent-r3-workflow.stderr.log": true,
+    "c1-independent-r3-evidence.stdout.log": true,
+    "c1-independent-r3-evidence.stderr.log": true
+  },
+  "report_sha256": "09f2cd28ec13c6ade56d07d02cc1afdb5d20853fbbc59148b04e6818e76f4a37",
+  "freshness_blocked": false,
+  "verdict": "VERIFIED-WITH-LIMITATIONS: bounded C1 functional verification; separate review due; no C2 or quality claim"
+}

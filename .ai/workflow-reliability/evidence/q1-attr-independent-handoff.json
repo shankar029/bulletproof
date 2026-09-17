@@ -1,0 +1,45 @@
+{
+  "status": "VERIFIED-WITH-LIMITATIONS",
+  "checked_unique_pins": 4778,
+  "changed": [],
+  "raw_changed": [],
+  "artifacts": {
+    ".ai\\workflow-reliability\\evidence\\q1-attr-independent-freeze.json": {
+      "bytes": 1450126,
+      "sha256": "539d86dcd2964610cd795a5cb21a986192c9a9dc51b1bed12f117083c754c2a3"
+    },
+    ".ai\\workflow-reliability\\evidence\\q1-attr-independent-report.md": {
+      "bytes": 17047,
+      "sha256": "0c4ebffc1e0bd4a559ea36e92d8274dcded277e4893564aca395969f033160f4"
+    },
+    ".ai\\workflow-reliability\\evidence\\q1-attr-independent-capture.py": {
+      "bytes": 8948,
+      "sha256": "790d432fc628dc555e1ddd545812b098bfeb80c7581176cf2cbdfa2e5fa344aa"
+    },
+    ".ai\\workflow-reliability\\evidence\\q1-attr-independent-finalize.py": {
+      "bytes": 10146,
+      "sha256": "d64f3f272ff77297c61314a3b8e053aefb1c5255e01646c4d07769c9ba5134b5"
+    },
+    ".ai\\workflow-reliability\\evidence\\q1-attr-independent-handoff.py": {
+      "bytes": 1817,
+      "sha256": "338c6c29ed75ce1ad39e2178f44b75c539b1b6b53752619ecbfb83bc348c9d6a"
+    },
+    "scripts\\tests\\test_measure_q1_attr_independent.py": {
+      "bytes": 1629,
+      "sha256": "101df14abd1d3c646ac348e95a6f2ac0510e2d87e70bdff1324fcbd2f3568396"
+    }
+  },
+  "test_counts": {
+    "focused": 28,
+    "workflow": 83,
+    "evidence": 10
+  },
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "test_timeouts": 0,
+  "prior_74_rerun": false,
+  "separate_narrowed_review_due": true,
+  "combined_commit_composition_verified": false,
+  "whole_task_complete": false
+}

@@ -1,0 +1,120 @@
+{
+  "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-cbdb3d70",
+  "base": "50c95aee10e2e50af8de776d699873d7784e2fff",
+  "archive": "q1-independent-relative-imports-r3.zip",
+  "files": {
+    "original/.gitignore": {
+      "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883",
+      "bytes": 5
+    },
+    "original/a.py": {
+      "sha256": "29cc73fb38676daa530f233422112d5cf342f59c1ae94c63492947536baefe85",
+      "bytes": 46
+    },
+    "original/approval.txt": {
+      "sha256": "20ead7dc3b7c828cb2e7d0084467ba84cb1f911c03fbd371224e24c24c326701",
+      "bytes": 55
+    },
+    "original/b.py": {
+      "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+      "bytes": 10
+    },
+    "original/c.py": {
+      "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+      "bytes": 10
+    },
+    "original/measurement.json": {
+      "sha256": "0820fe6d1aeb402d9003d84a89651e1e332408482a4bb2cb4ea35064d6e59f52",
+      "bytes": 1198
+    },
+    "original/test_example.py": {
+      "sha256": "8cc263d23109db43de954956d46b6907cff78d989f5960c4366535f0008df103",
+      "bytes": 111
+    },
+    "original/.ai/relative-imports/metrics.json": {
+      "sha256": "6997eba7ef600545857c3a8f41efb629e6250812b0f7ef63aceac8acc4535b58",
+      "bytes": 62010
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/metrics.json": {
+      "sha256": "6997eba7ef600545857c3a8f41efb629e6250812b0f7ef63aceac8acc4535b58",
+      "bytes": 62010
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/measurement/manifest.json": {
+      "sha256": "ca697ed161754a37d841a07f258a18d2ac711eee5800f3f54137bd40bc2685d7",
+      "bytes": 4279
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/measurement/base/graph.json": {
+      "sha256": "e09ca803c91fe0eab2189e829031382eaf94adf7827ae5dece0b21cca8eebf1f",
+      "bytes": 4528
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/measurement/base/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json": {
+      "sha256": "622085aff97183592d66007aee02420625285bfcee835aa5b5bb74a9c30d1c99",
+      "bytes": 1827
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/measurement/base/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json": {
+      "sha256": "938a60568b4efa43e79522d15eccd0b9d432cdc25f9cd1c6f78b7bc0d095e2fe",
+      "bytes": 667
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/measurement/base/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json": {
+      "sha256": "1899733b049716cbf35a4f43bf85afa0feab0c80847203c95d5d9a95885149c9",
+      "bytes": 667
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/measurement/base/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json": {
+      "sha256": "8bfe90e5f8a4a4c83b079ead006cce615894a7008ce3cf846f860d478543d000",
+      "bytes": 667
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/measurement/head/graph.json": {
+      "sha256": "25554b01a2371afb9ec87b5d8e0498d3db20bd579d849e86a2b6e87cdb5a0bb7",
+      "bytes": 8994
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/measurement/head/syntax/16803481391d67c7c561d4909a975614974489ba5c6038041b89590e8f25872e.json": {
+      "sha256": "0d2f351107912648f2f4aeff554138876f06807e518bbec0187286ec11cc7630",
+      "bytes": 434
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/measurement/head/syntax/2ae8d244b47fb268d7a2953abf51cefc179bf78447df222f16468dd93a4d0224.json": {
+      "sha256": "0db1650c3fc28e4c9f696c5d89cde52768582a76d21a7722bb0350132f08edd7",
+      "bytes": 1047
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/measurement/head/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json": {
+      "sha256": "da44cdebd0159da1ecb3e0f3912fb74cface570ac60fdd5292d03924d777e878",
+      "bytes": 1827
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/measurement/head/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json": {
+      "sha256": "16e9fe4cb9b5374597f7e755bff4806d7c963e88adeaa18566051987ee94c570",
+      "bytes": 667
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/measurement/head/syntax/8b764cb4d1395faae213fca171d3ac5ad5bd09363b4b442b58e4937ac9206ed0.json": {
+      "sha256": "83a57621bfe156eb6c2cb3f7c68ffbaaeb09e31af148df23fb6e97b5ede928e5",
+      "bytes": 430
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/measurement/head/syntax/a05bb9da4a677393b90d012131a4b13562dbdf81180c94099364ef9a940b2fd0.json": {
+      "sha256": "1cd6f762743defc9409c74577718a55a02cbc5087e585dfc05bc6801dab1d0af",
+      "bytes": 677
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/measurement/head/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json": {
+      "sha256": "eab5f5235d11871c6a93be983142ce3f83734fd824a65b2cac69d9e1437a4198",
+      "bytes": 667
+    },
+    "original/.ai/relative-imports/evidence/runs/570055f306e24f5a8c9f17b111263332/measurement/head/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json": {
+      "sha256": "2409683faff66f3ddc0e226a8b2985aad45a92a1eaf43ff9e507d3fdaf09b5c2",
+      "bytes": 1038
+    },
+    "original/pkg/sibling.py": {
+      "sha256": "76b26c40fd1de8995c9a5457c2bd4cf363c42d1f88a66f4d583bc10295f2062a",
+      "bytes": 10
+    },
+    "original/pkg/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "original/pkg/sub/child.py": {
+      "sha256": "122f444bf4be456e69474c045f073bd30f13a66700fed5adf9b4c0d9dc14af7f",
+      "bytes": 45
+    },
+    "original/pkg/sub/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "report": null
+}

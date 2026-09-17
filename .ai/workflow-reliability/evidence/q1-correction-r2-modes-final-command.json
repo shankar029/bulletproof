@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-correction-r2-capture.py",
+    "worker",
+    "test_measure_graph.py::effective_frozen_binding",
+    "modes-final"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "Q1_VERIFICATION_TAG": "owner-r2-modes-final"
+  },
+  "exit_code": 0,
+  "seconds": 11.951471399981529,
+  "outer_bounds": {
+    "idle": 120,
+    "max": 900
+  },
+  "raw": {
+    "stdout": {
+      "sha256": "d021db6dc0709217384ab9d5db988a982a741dc512bd83feabb86bde0d339f7f",
+      "bytes": 36054,
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-correction-r2-modes-final.stdout.bin"
+    },
+    "stderr": {
+      "sha256": "d0bef18b57aeeea8beec288ebb4b365b1ca6b003c7cf156f9a35f736c22940d8",
+      "bytes": 291,
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-correction-r2-modes-final.stderr.bin"
+    }
+  }
+}

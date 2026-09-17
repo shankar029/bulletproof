@@ -1,0 +1,35 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-resumed-correction-capture.py",
+    "worker",
+    "test_measure_inventory.py::test_paths_reject",
+    "path-diagnostic-final"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "worker_pid": 22544,
+  "capture_pid": 33088,
+  "outer_bounds": {
+    "idle": 120,
+    "max": 1200
+  },
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "Q1_VERIFICATION_TAG": "resumed-path-diagnostic-final"
+  },
+  "exit_code": 0,
+  "seconds": 7.245314299972961,
+  "raw": {
+    "stdout": {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-resumed-correction-path-diagnostic-final.stdout.bin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "stderr": {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-resumed-correction-path-diagnostic-final.stderr.bin",
+      "sha256": "9e4b48b012e1f7c37fcf8c93aecbf01509d25528a9ec9c5f8e0cf0b0551405a3",
+      "bytes": 567
+    }
+  }
+}

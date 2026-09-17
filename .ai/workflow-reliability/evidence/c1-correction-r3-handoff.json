@@ -1,0 +1,40 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-correction-r3-handoff.py"
+  ],
+  "changed_since_test": {},
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "limits": "Stable interval only; final dependency freeze and independent acceptance remain parent-owned.",
+  "pins_rechecked": 1913,
+  "protected_independent_artifacts": 38,
+  "red_to_final_delta": {
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-correction-r3-final-capture.py": {
+      "final": "ad5ff43d3894bb79b13f8ac3395ce39f26b479fd1f3326f4e549fd76d9cb14d9",
+      "red": null
+    },
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\test_workflow_gate.py": {
+      "final": "af23bb4d96ea9da28f15291dc2c4cbb8e0e9272a40b27140e28efc89f3993636",
+      "red": "fef77df2411567243e639918571d25ace29e528b2a858c16443bd424ccb777b7"
+    },
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\workflow_gate.py": {
+      "final": "f7ff2c1ac229a88f39be6ddc6000f060afc545dbf5dd47b5bf3ddcc4ff43f23d",
+      "red": "a703ef74ba71ad2205b7dc4d0293a6acf3a14a8dcdccda337ec9274ec924251f"
+    }
+  },
+  "source_checks": "AST/compile/import-use/final-LF/trailing-whitespace passed on the two changed C1 files",
+  "source_hashes": {
+    ".ai/workflow-reliability/evidence/c1-code-review.md": "ab19b2610d6ef849d9ee800e109184a2aa1eb6461e32c1785d80d24a62b096d5",
+    "scripts/measure.py": "44151bb17de01576687191b5e5c6872ac37f409419639265b7c9fd0ebf9290d8",
+    "scripts/measure_graph.py": "f40c8c1c05b62bc76bd027790b7111faf5394290c7309e5e32ebfe02de4dacf6",
+    "scripts/probe.py": "bf2bf37f6a2b329e9b673cda41f6c415396e78a38e082661970350b4b54b6b6e",
+    "scripts/tests/test_workflow_core_verification.py": "c9c1181ae017f7d42415ca848777fbac388152c18eb57a839f8631132a9e5a8d",
+    "scripts/tests/test_workflow_core_verification_r2.py": "d58655d83ac448c788d9217d1365631e24e20778b7a9b8b89dcadc32af9ae11b",
+    "scripts/tests/test_workflow_gate.py": "af23bb4d96ea9da28f15291dc2c4cbb8e0e9272a40b27140e28efc89f3993636",
+    "scripts/tests/test_workflow_state.py": "7b259c0f2e6c4e31a5c614769995df97f999fe86ed44b0e1351e3ee7a2d72466",
+    "scripts/tests/workflow_fixtures.py": "9902d319a37436449a1a8fb47c10ca7ec15d82c5bdea331d3ba4c23bf03dcabf",
+    "scripts/workflow_gate.py": "f7ff2c1ac229a88f39be6ddc6000f060afc545dbf5dd47b5bf3ddcc4ff43f23d",
+    "scripts/workflow_state.py": "a8069bd5f93c3d77f0e517f106d29c873df181a3ea80352b0c9224fcb6ca194b"
+  }
+}

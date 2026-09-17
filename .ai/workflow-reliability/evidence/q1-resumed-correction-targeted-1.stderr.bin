@@ -1,0 +1,26 @@
+test_ambient_index_info_attributes_and_replacements_do_not_define_tree (test_measure_q1_resumed.ResumedBoundaryTests.test_ambient_index_info_attributes_and_replacements_do_not_define_tree) ... ok
+test_external_filter_macro_rejected_before_sentinel_execution (test_measure_q1_resumed.ResumedBoundaryTests.test_external_filter_macro_rejected_before_sentinel_execution) ... ERROR
+test_hidden_index_controls_and_full_noncode_scope (test_measure_q1_resumed.ResumedBoundaryTests.test_hidden_index_controls_and_full_noncode_scope) ... ok
+test_neutral_and_versioned_eol_modes_exact_bytes (test_measure_q1_resumed.ResumedBoundaryTests.test_neutral_and_versioned_eol_modes_exact_bytes) ... ok
+test_shared_paths_reject_alias_components_and_preserve_directory_dot (test_measure_q1_resumed.ResumedBoundaryTests.test_shared_paths_reject_alias_components_and_preserve_directory_dot) ... ok
+test_unqualified_attributes_and_git_types_fail_closed (test_measure_q1_resumed.ResumedBoundaryTests.test_unqualified_attributes_and_git_types_fail_closed) ... ok
+
+======================================================================
+ERROR: test_external_filter_macro_rejected_before_sentinel_execution (test_measure_q1_resumed.ResumedBoundaryTests.test_external_filter_macro_rejected_before_sentinel_execution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_resumed.py", line 158, in test_external_filter_macro_rejected_before_sentinel_execution
+    self.assertEqual(sentinel.read_text(), "executed")
+                     ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\pathlib\__init__.py", line 787, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\pathlib\__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-resumed-tests-0efwnnta\\EXECUTED'
+
+----------------------------------------------------------------------
+Ran 6 tests in 101.081s
+
+FAILED (errors=1)

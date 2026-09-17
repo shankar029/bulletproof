@@ -60,9 +60,11 @@ Metric 1 is the important one. Coverage says a line ran; a mutation score says a
 have *caught* it being wrong. It is also the hardest metric to fake without writing real
 assertions — which is exactly why it is worth the runtime.
 
-This table is the required proof policy, **not a list of implemented collectors**.
-Diff coverage and architecture-rule collection are not implemented by the probe yet.
-Installing their tools alone does not close that gap. Missing collectors, unknown baseline
+This table is the required proof policy, **not a list of universally supported collectors**.
+The configured measurement path supports Python literal-import graphs and their declared
+architecture rules. Dynamic imports, reflection and mixed-language graph coverage are not
+established by that model. Diff coverage and the remaining measurement adapters are still
+incomplete; installing their tools alone does not close those gaps. Missing collectors, unknown baseline
 comparisons and partially supported file scopes make required proof **incomplete**.
 Discovery includes `.mjs` and `.cjs`; that does not establish that every external analyzer
 supports those files. Numeric partial observations remain visible but are not complete proof.
@@ -157,6 +159,26 @@ and result evidence, outcomes, counters and score. A summary score without consi
 classified results is unavailable, not measured proof.
 `--require-metric NAME` only adds required proof. There are no exemptions or imported-score
 flags. `--skip-mutation` and automatic UI skipping do not waive mutation completeness.
+
+### Configured baseline qualification
+
+The configured measurement path independently materializes the selected immutable Git
+tree and compares the complete relevant file set, bytes and supported file types/modes.
+A clean `git status`, index flags or fresh fingerprints alone do not prove baseline identity.
+Base, head, controller and artifact inputs must not share mutable physical files.
+
+Materialization uses isolated configuration, neutral LF defaults and qualified versioned
+text/EOL transformations. It rejects external filters before checkout and rejects other
+unqualified transformations explicitly. Git's all-attributes census omits genuinely absent
+or reset attributes, but present values `unset` and `unspecified` are ambiguous: they can be
+literal filter names. These present declarations are unsupported, including disabled forms
+such as `-filter` and `-text`; they are not silently treated as safe defaults.
+
+Qualification is version- and platform-bound. The current evidence covers the qualified
+Git 2.53.0.windows.4 core and bundled libraries on Windows with Python 3.14.2, not arbitrary
+Git distributions or POSIX execution. Windows mode projection is recorded separately from
+immutable Git modes. This policy is not a sandbox, an atomic filesystem lease or proof of
+complete mutation-controller isolation.
 
 ### Greenfield work has no baseline
 

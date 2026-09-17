@@ -1,0 +1,35 @@
+test_atomic_write_preserves_old_bytes_on_replace_failure (test_evidence.EvidenceTests.test_atomic_write_preserves_old_bytes_on_replace_failure) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-evidence-s3qs0bwd
+ok
+test_generated_outputs_do_not_hide_contracts (test_evidence.EvidenceTests.test_generated_outputs_do_not_hide_contracts) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-evidence-a73d07o3
+ok
+test_invalid_json_does_not_touch_destination (test_evidence.EvidenceTests.test_invalid_json_does_not_touch_destination) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-evidence-drg3wxiv
+ok
+test_lock_collision_does_not_remove_original_owner (test_evidence.EvidenceTests.test_lock_collision_does_not_remove_original_owner) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-evidence-6lsi_0a1
+ok
+test_lock_exception_releases_only_its_own_record (test_evidence.EvidenceTests.test_lock_exception_releases_only_its_own_record) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-evidence-ygts4r8w
+ok
+test_owned_git_fixture_preserves_bytes_and_reports_commands (test_evidence.EvidenceTests.test_owned_git_fixture_preserves_bytes_and_reports_commands) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-evidence-yyaj5waq
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-mtx2j_81
+[native-start] 'git init --quiet'
+[native-start] 'git config user.name "Test fixture"'
+[native-start] 'git config user.email fixture@example.invalid'
+[native-start] 'git config core.autocrlf false'
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "fixture: capture input"'
+[native-start] 'git rev-parse HEAD'
+[native-start] 'C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe -B -c "import sys; print(\'observed\'); sys.exit(7)"'
+ok
+test_rejects_traversal_absolute_and_excluded_inputs (test_evidence.EvidenceTests.test_rejects_traversal_absolute_and_excluded_inputs) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-evidence-p6cntqxt
+ok
+test_scope_is_canonical_and_preserves_missing_directory_state (test_evidence.EvidenceTests.test_scope_is_canonical_and_preserves_missing_directory_state) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-evidence-v7h06lmm
+ok
+test_snapshot_binds_bytes_membership_and_missing_paths (test_evidence.EvidenceTests.test_snapshot_binds_bytes_membership_and_missing_paths) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-evidence-gzt0hxpa
+ok
+test_snapshot_rejects_directory_link_escape (test_evidence.EvidenceTests.test_snapshot_rejects_directory_link_escape) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-evidence-4i_8wcok
+[native-start] 'powershell.exe -NoProfile -NonInteractive -Command "New-Item -ItemType Junction -Path \'C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-evidence-4i_8wcok\\repo\\linked\' -Target \'C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-evidence-4i_8wcok\\outside\' | Out-Null"'
+ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 5.922s
+
+OK

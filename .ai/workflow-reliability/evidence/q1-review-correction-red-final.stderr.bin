@@ -1,0 +1,36 @@
+test_fresh_assume_unchanged_baseline_is_rejected (test_measure_q1_review.ReviewBoundaryTests.test_fresh_assume_unchanged_baseline_is_rejected) ... FAIL
+test_public_source_root_aliases_rejected (test_measure_q1_review.ReviewBoundaryTests.test_public_source_root_aliases_rejected) ... 
+  test_public_source_root_aliases_rejected (test_measure_q1_review.ReviewBoundaryTests.test_public_source_root_aliases_rejected) (root='scripts.') ... FAIL
+  test_public_source_root_aliases_rejected (test_measure_q1_review.ReviewBoundaryTests.test_public_source_root_aliases_rejected) (root='scripts ') ... FAIL
+
+======================================================================
+FAIL: test_fresh_assume_unchanged_baseline_is_rejected (test_measure_q1_review.ReviewBoundaryTests.test_fresh_assume_unchanged_baseline_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_review.py", line 102, in test_fresh_assume_unchanged_baseline_is_rejected
+    with self.assertRaisesRegex(ValueError, "Baseline"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_public_source_root_aliases_rejected (test_measure_q1_review.ReviewBoundaryTests.test_public_source_root_aliases_rejected) (root='scripts.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_review.py", line 78, in test_public_source_root_aliases_rejected
+    self.assertEqual(observed["exit"], 2, "An aliased root must not yield measured external edges")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : An aliased root must not yield measured external edges
+
+======================================================================
+FAIL: test_public_source_root_aliases_rejected (test_measure_q1_review.ReviewBoundaryTests.test_public_source_root_aliases_rejected) (root='scripts ')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_review.py", line 78, in test_public_source_root_aliases_rejected
+    self.assertEqual(observed["exit"], 2, "An aliased root must not yield measured external edges")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : An aliased root must not yield measured external edges
+
+----------------------------------------------------------------------
+Ran 2 tests in 58.276s
+
+FAILED (failures=3)

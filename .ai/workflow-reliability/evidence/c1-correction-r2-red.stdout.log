@@ -1,0 +1,15 @@
+test_closure_exact_receipt_refs_must_be_accepted_in_its_prefix (test_workflow_core_verification_r2.ClosureReferenceChronologyTests.test_closure_exact_receipt_refs_must_be_accepted_in_its_prefix) ... FAIL
+
+======================================================================
+FAIL: test_closure_exact_receipt_refs_must_be_accepted_in_its_prefix (test_workflow_core_verification_r2.ClosureReferenceChronologyTests.test_closure_exact_receipt_refs_must_be_accepted_in_its_prefix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_workflow_core_verification_r2.py", line 67, in test_closure_exact_receipt_refs_must_be_accepted_in_its_prefix
+    self.assertNotEqual(own["status"], "complete", diagnostic)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'complete' == 'complete' : {"closure_seq": 32, "dependent_status": "ready", "increment_status": "complete", "old_ref": {"id": "receipt-run-2", "sha256": "fcfc5bbdb6eaaf30c2520bb43703f999af0e1367ce5b8e7ffd76252ac3f6cb64"}, "replacement_acceptance_seq": 38, "replacement_ref": {"id": "receipt-run-6", "sha256": "fc52ad0779b6c000f60fc43b7ff98e7b7ad735b8341bfe9313e1c5de7605afd8"}}
+
+----------------------------------------------------------------------
+Ran 1 test in 1.959s
+
+FAILED (failures=1)

@@ -1,0 +1,24 @@
+test_esm_and_cjs_are_counted_as_code (test_probe.ExistingProbeBehaviorTests.test_esm_and_cjs_are_counted_as_code) ... ok
+test_failed_or_empty_cycle_command_is_not_zero (test_probe.ExistingProbeBehaviorTests.test_failed_or_empty_cycle_command_is_not_zero) ... ok
+test_missing_baseline_is_not_a_passing_comparison (test_probe.ExistingProbeBehaviorTests.test_missing_baseline_is_not_a_passing_comparison) ... ok
+test_missing_static_results_are_not_zero (test_probe.ExistingProbeBehaviorTests.test_missing_static_results_are_not_zero) ... ok
+test_one_greenfield_cycle_fails (test_probe.ExistingProbeBehaviorTests.test_one_greenfield_cycle_fails) ... ok
+test_current_native_mutation_is_measured_even_when_other_proof_is_missing (test_probe.ProbeCliTests.test_current_native_mutation_is_measured_even_when_other_proof_is_missing) ... ok
+test_invalid_baseline_never_becomes_greenfield (test_probe.ProbeCliTests.test_invalid_baseline_never_becomes_greenfield) ... ok
+test_stale_score_is_not_used_after_current_mutation_failure (test_probe.ProbeCliTests.test_stale_score_is_not_used_after_current_mutation_failure) ... ok
+test_unavailable_default_cli_fails_without_workflow_artifacts (test_probe.ProbeCliTests.test_unavailable_default_cli_fails_without_workflow_artifacts) ... ok
+test_complexity_inventory_preserves_quoted_filename (test_probe.ProbePolicyTests.test_complexity_inventory_preserves_quoted_filename) ... ok
+test_default_policy_cannot_omit_unimplemented_required_collectors (test_probe.ProbePolicyTests.test_default_policy_cannot_omit_unimplemented_required_collectors) ... ok
+test_language_support_does_not_claim_python_cycles (test_probe.ProbePolicyTests.test_language_support_does_not_claim_python_cycles) ... ok
+test_malformed_static_inventory_is_unsupported_not_a_crash (test_probe.ProbePolicyTests.test_malformed_static_inventory_is_unsupported_not_a_crash) ... ok
+test_measured_without_value_and_empty_policy_are_invalid (test_probe.ProbePolicyTests.test_measured_without_value_and_empty_policy_are_invalid) ... ok
+test_nonfinite_and_boolean_measurements_are_rejected (test_probe.ProbePolicyTests.test_nonfinite_and_boolean_measurements_are_rejected) ... ok
+test_partial_complexity_csv_is_not_a_complete_measurement (test_probe.ProbePolicyTests.test_partial_complexity_csv_is_not_a_complete_measurement) ... ok
+test_partial_scope_and_missing_comparison_cannot_complete (test_probe.ProbePolicyTests.test_partial_scope_and_missing_comparison_cannot_complete) ... ok
+test_policy_distinguishes_missing_proof_from_measured_failure (test_probe.ProbePolicyTests.test_policy_distinguishes_missing_proof_from_measured_failure) ... ok
+test_snapshot_ignores_own_output_but_not_other_contracts (test_probe.ProbePolicyTests.test_snapshot_ignores_own_output_but_not_other_contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 59.271s
+
+OK

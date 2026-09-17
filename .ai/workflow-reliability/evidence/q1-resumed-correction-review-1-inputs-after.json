@@ -1,0 +1,958 @@
+{
+  "C:\\Program Files\\nodejs\\node.EXE": {
+    "sha256": "8f3e33fa1f67843a320d2200ed1a5d40cc59766715a7a02728b8213c2167a084",
+    "bytes": 79087104
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\baseline-materialization-contract.json": {
+    "sha256": "c26d151147bcd36a54d67b1633b77588dab8242c994ad49a23017ed39077047e",
+    "bytes": 4261
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\measurement-design-review-r2.md": {
+    "sha256": "02a86a471880ac6e220f188b73c06dd645b937205f8e55303bc46c6fcb96ec8d",
+    "bytes": 1778
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-code-review.md": {
+    "sha256": "1bb83ca7e0b92c30d396d465be3927c174b19c4a18b10ae440f8cea435e80fa1",
+    "bytes": 16593
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-independent-capture.py": {
+    "sha256": "6a8ee43bd9a88e54511a35053f04c283859e6ca703ecc01995bd64f96d1412af",
+    "bytes": 4800
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-resumed-correction-capture.py": {
+    "sha256": "d3f75db699ae6e9ff5fbad0c65d71da9d90c2c7d4de53a6f24cf1a3ae41f82e5",
+    "bytes": 2238
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification.json": {
+    "sha256": "2cab4ac9f7e2a832da568016aa93acfbcfed6221e6c60d53960dcdbf2afdb3fd",
+    "bytes": 26153
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\measurement-enablement-contracts.json": {
+    "sha256": "a9a75df36241dc2578ff627703154a2750212c385a163332fe2ccbb47af9bd12",
+    "bytes": 91245
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\measurement-enablement.html": {
+    "sha256": "f26b65924ab0cc4cadd1d0cde43fb68a804729f7d4200498902834097d5846c2",
+    "bytes": 8527
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\CONTRIBUTING.md": {
+    "sha256": "f2afb5b5ac7a4c8c0f6c826011b738cbc4a2a16e22033f09ba1e9c94f77f24cf",
+    "bytes": 7148
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\__pycache__\\evidence.cpython-314.pyc": {
+    "sha256": "835802d22af4eed033ff8401afacc6525272ddec9f75991e38e7657b86c11fdb",
+    "bytes": 13717
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\__pycache__\\mutate.cpython-314.pyc": {
+    "sha256": "ade2d18574875a876d4d5df97e2c4ad07a743b599c137507b9581af0080eaf6e",
+    "bytes": 44062
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\__pycache__\\run.cpython-314.pyc": {
+    "sha256": "ca712a2ea52180394cd2ddf56bd9b0835ede138306cfe1c602cc20c01ebf865e",
+    "bytes": 12106
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\evidence.py": {
+    "sha256": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "bytes": 7050
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\measure.py": {
+    "sha256": "05b94f8d8a91fa022f3758e148d7ef343cfcbb82210550ad649d520927f6c42d",
+    "bytes": 33236
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\measure_graph.py": {
+    "sha256": "57a797df63968adaadea048313d0cc6eacb9c4f57ca1a4f46a68523b1bc44ef4",
+    "bytes": 26757
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\mutate.py": {
+    "sha256": "f7abaf6134a8300308ad5df181609b1215bed24c9de97ee4be91241de84088e3",
+    "bytes": 33946
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\native_result.mjs": {
+    "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+    "bytes": 7049
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\probe.py": {
+    "sha256": "f78ac6c281d707e8f04656196e667c72c6b8144918c83c2b34716b9b820d8ba0",
+    "bytes": 38953
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py": {
+    "sha256": "5f41967d4d541effda91adafb1fbfe8434e1e38f5234481f8a0eeb7d8564fdd6",
+    "bytes": 8355
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\__pycache__\\helpers.cpython-314.pyc": {
+    "sha256": "9182d2994fc8dee6cb51bd23a7d9f74668daa6a536866038f81e420956c58241",
+    "bytes": 3809
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\helpers.py": {
+    "sha256": "2694cd24dd07b1a6e3ceff7ac2addb7d4fc8bc40ee197f6d3c4206d281bf2068",
+    "bytes": 1813
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\test_measure_graph.py": {
+    "sha256": "22a1fc3d9506e0a200ce43991ea0b667d48a26b2b69a61d5a7937761ae1876df",
+    "bytes": 18793
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\test_measure_inventory.py": {
+    "sha256": "d97a98983cb2c825abd87ffec4f96981c652dece88846abd3864179a2921d227",
+    "bytes": 17940
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\test_measure_q1_integration.py": {
+    "sha256": "889e5ab71f3e8d9cb16b9ded4dc9327fcf1d5f4820426e0773f17c8f1b4976a9",
+    "bytes": 11523
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\test_measure_q1_resumed.py": {
+    "sha256": "92abe3b23f7f0b78e30f1ec512f02526ea4dbbcb8dc9d8adecdbfb2998c70d7f",
+    "bytes": 10676
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\test_measure_q1_review.py": {
+    "sha256": "05a8f099d06d17afe83f7c5f50998a267c67df2aa8eba96f2e70e73164c40316",
+    "bytes": 6287
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\test_measure_q1_verification.py": {
+    "sha256": "f58d77f2cc957d7eae0bfaf4a3f99a63370fc1901a2b5312ce43b3a445bb19c6",
+    "bytes": 12841
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\test_measure_q1_verification_r2.py": {
+    "sha256": "4bb2639f64390d1af0ff1d223843d0f1036e6a75742587d86411f4d0d5db8d46",
+    "bytes": 5137
+  },
+  "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\test_probe.py": {
+    "sha256": "ec5cb8f0f25937ba95ff48e6ad99158812a73c451e9ea012f9981f893cdff86e",
+    "bytes": 12404
+  },
+  "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.EXE": {
+    "sha256": "7f2d8f209c65b27a1cb6ae388b59877afcf5d17e67d04ba7b4a237849380d1e2",
+    "bytes": 46792
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\DLLs\\_bz2.pyd": {
+    "sha256": "19b99d530562f31cc96856ee008a01435ba6946bc3f75e50bca31a9f3ca675d8",
+    "bytes": 73216
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\DLLs\\_ctypes.pyd": {
+    "sha256": "88ee3c274ea64702c9dfaa76ca21ad8455554a89fa4e040f7fb450c34e7869ec",
+    "bytes": 130048
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\DLLs\\_hashlib.pyd": {
+    "sha256": "2fcc877682b56e81ea97bb3851dbdb3ad65ec1e20196b338900d1e0c8b7fb88c",
+    "bytes": 55296
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\DLLs\\_lzma.pyd": {
+    "sha256": "8ebe081ee970dd5a8315ed60e233951aeedba60c6c75a60519b0bbe9cf1267ac",
+    "bytes": 152576
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\DLLs\\_uuid.pyd": {
+    "sha256": "71000901491095692137201f98c03bd6915d0c49c0275f4370219db24482e8bf",
+    "bytes": 13824
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\DLLs\\_zstd.pyd": {
+    "sha256": "340388b533a560a38a769090dc87794d68f0bfdb088d50c0023217f3063138f0",
+    "bytes": 489472
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__future__.py": {
+    "sha256": "981d4c398849f9ebcab72300d9c1fe288fd6d7f28957b3b3fa3a493a5836d95c",
+    "bytes": 5218
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\__future__.cpython-314.pyc": {
+    "sha256": "29d17a8fc07ad3c7ae527029cb265d6e76e6b7868645d7a747055f07f814cf60",
+    "bytes": 4837
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\_colorize.cpython-314.pyc": {
+    "sha256": "7a9809cacb729cb48e602780954f4810764a5f4cbf448c3052045b607c7d2717",
+    "bytes": 18576
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\_opcode_metadata.cpython-314.pyc": {
+    "sha256": "09ff20356bf18df47bf00802cd05763c44c039d1155ecebaca52af782f306f95",
+    "bytes": 10461
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\_py_warnings.cpython-314.pyc": {
+    "sha256": "95f9f8c80c0ec592751f90607f87ea35591039024b3eb6beaaab4b8b4f99e7e8",
+    "bytes": 37039
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\_weakrefset.cpython-314.pyc": {
+    "sha256": "37d2152aa086d60a9cae725d2b0aa694af14bbad80ca2fb80c56c1b1592be33b",
+    "bytes": 9460
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\annotationlib.cpython-314.pyc": {
+    "sha256": "f27035db22715ce711d9f56c01bd06ac23b95058a81e322cdf218c3b12439078",
+    "bytes": 46737
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\argparse.cpython-314.pyc": {
+    "sha256": "8db560d5a55d907bb2417825ef2316ff700ec560bf3883249fb79b30deba3bd5",
+    "bytes": 113660
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\ast.cpython-314.pyc": {
+    "sha256": "04f517d6fb0e6e4d29bdd7061176471f2224d7ec30451c888de7883e11700b53",
+    "bytes": 31653
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\base64.cpython-314.pyc": {
+    "sha256": "2d586c1f12650a5c31112f8f131c0ed6cb7a011fd4c5a8ec11c18421e334f079",
+    "bytes": 26669
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\bisect.cpython-314.pyc": {
+    "sha256": "078d1e2dd8963da33f7524d45d6573e27d6e080cbc0579f16641b44dab7b324f",
+    "bytes": 3651
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\bz2.cpython-314.pyc": {
+    "sha256": "ef7eca02fc8372bb522fe5fe36bb29135fa107059fb45e852b1051fd97cfb33b",
+    "bytes": 15340
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\codeop.cpython-314.pyc": {
+    "sha256": "cb640a2b2904259722682610bb6b7ae9796017bf01f37e0fba7405341aa070ce",
+    "bytes": 7017
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\contextlib.cpython-314.pyc": {
+    "sha256": "a78cf557470f571c9b9c71986428900ad944447c8cbc0258b56b5eed79167f83",
+    "bytes": 31195
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\contextvars.cpython-314.pyc": {
+    "sha256": "b3ded84f1bb041aa26cdfe7c0fe3a4878543ccbc90b354523eda4a60454c0b7a",
+    "bytes": 446
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\copy.cpython-314.pyc": {
+    "sha256": "17f7002bba33c8a680c98a519d75d5fa8c21b0bf44e563c671d28e0c8f14c146",
+    "bytes": 10171
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\copyreg.cpython-314.pyc": {
+    "sha256": "6505a4a722f43c35147ed921023804443b327687f91b1d7247c1d0069f3eb206",
+    "bytes": 7975
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\csv.cpython-314.pyc": {
+    "sha256": "d3d14e04d8ee92435c0dd0231b39d810882c5220cad1f718229471dbb2a8e52c",
+    "bytes": 21238
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\dataclasses.cpython-314.pyc": {
+    "sha256": "c5f28369ef3f67c32e8b32e9bfd5c564e08f4c55db257605a2662871ae9ef30d",
+    "bytes": 54835
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\datetime.cpython-314.pyc": {
+    "sha256": "e77e5e9ab0a475f37d40bf25d7f7456fed65c9eb8b012fe2d704e8421bd2429f",
+    "bytes": 557
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\difflib.cpython-314.pyc": {
+    "sha256": "10f3efe1370ea546ebe56682ed3b5cd0b7c226d50191c21777a73a9db2d20013",
+    "bytes": 73988
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\dis.cpython-314.pyc": {
+    "sha256": "9eca4beb6075e9cff765e957be9f51db17a16cb308115635fc16dcb7e3825e8a",
+    "bytes": 54283
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\enum.cpython-314.pyc": {
+    "sha256": "e87697dcf9f7bb9fa5779acfcb623a4cdb5aa485c424afb12d4e58d009327bd2",
+    "bytes": 88031
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\fnmatch.cpython-314.pyc": {
+    "sha256": "6abfdec897cf7aa272bf6df27e9542b7c07437e251a8e78d9ab91a3c09f607f6",
+    "bytes": 7921
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\functools.cpython-314.pyc": {
+    "sha256": "7990a7317c55f046f2e85a7a18c526a475724135f53528ba45cafd7171d2d22d",
+    "bytes": 48048
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\gettext.cpython-314.pyc": {
+    "sha256": "0ade040398420ebfe6b405f9ff28ed2a16a3fc0680f2a10d0e065cc984be07f9",
+    "bytes": 23213
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\glob.cpython-314.pyc": {
+    "sha256": "d5e618f2fcb475be2628da8d8628b4f7510d30878f174c4ae58613c3cb93d77d",
+    "bytes": 25219
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\hashlib.cpython-314.pyc": {
+    "sha256": "fcd6a5b42db110e2e89e91574dff22acd463453cdd57293857539af1359a5344",
+    "bytes": 8406
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\heapq.cpython-314.pyc": {
+    "sha256": "ac67ecb1573ff657ce5225639a2811a1b2ac0c47580adead6ab83c9e8a62c767",
+    "bytes": 18656
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\inspect.cpython-314.pyc": {
+    "sha256": "25302265dd33e7c24e04f0b8436bd4634bf6d82efeb5f4e23115d8895bbb77df",
+    "bytes": 139469
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\keyword.cpython-314.pyc": {
+    "sha256": "9f54a0fe9f0286d8bdf1b3f0bf30007054d253039e96fdd3fe4815dfb032a0c4",
+    "bytes": 1590
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\linecache.cpython-314.pyc": {
+    "sha256": "bf611365c6588ee08a1c42e9a0da334e304a660b4490b5c18d622860997e4cb3",
+    "bytes": 9443
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\locale.cpython-314.pyc": {
+    "sha256": "7fb700d23cac41376ef0875ccde78571bdc1ad31d27d1e273304f3b2f0097d9f",
+    "bytes": 59964
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\lzma.cpython-314.pyc": {
+    "sha256": "607e529dcfc1bc9028718054fc1723caffb876e0a8b7abe575b2c3bf8512e2dd",
+    "bytes": 16520
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\opcode.cpython-314.pyc": {
+    "sha256": "3ee96bf3f6a7068cd639466a25faa034f499f29815a91079b365e94ab2f56929",
+    "bytes": 4547
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\operator.cpython-314.pyc": {
+    "sha256": "6e28c8f18c04f28a7733168f08cf6695dd2774106fc021742c4a69579972e865",
+    "bytes": 19055
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\pprint.cpython-314.pyc": {
+    "sha256": "cf3b0e3cdfcfecdd99dac4069286512a3db994b15ac6f9787a45b59cd9a86622",
+    "bytes": 30873
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\random.cpython-314.pyc": {
+    "sha256": "fab935e293f977dd6f61608cd51bcb2dfdf0629a478d60c81fdebf7479924b95",
+    "bytes": 37836
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\reprlib.cpython-314.pyc": {
+    "sha256": "45fddb07d3164a1b62f83f81a71136d74d139279acd7c36808053b7db8557140",
+    "bytes": 11739
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\shutil.cpython-314.pyc": {
+    "sha256": "ca0c81b42a9c828b6ac0ddfca2c045ac201622d753a0dd86fb785dfb7264c5c3",
+    "bytes": 72263
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\signal.cpython-314.pyc": {
+    "sha256": "86412ae09ba00f1c0f7659ab55ac7d416e2743402b52dea6e2c209e2a3f66a64",
+    "bytes": 4642
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\struct.cpython-314.pyc": {
+    "sha256": "2257f81ddc3aa1660da05e5c5038f1b944e81d2dc5b1831809bcde0b461b368d",
+    "bytes": 386
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\subprocess.cpython-314.pyc": {
+    "sha256": "7e6ec7e45d869ca9ccf68b5eba57872ef837db0de62977d364f9fb0804fee0b4",
+    "bytes": 85058
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\tempfile.cpython-314.pyc": {
+    "sha256": "931fa6efa29175ce70207fe7eaf69081e611bce48c52fbd784feced38294a674",
+    "bytes": 42477
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\textwrap.cpython-314.pyc": {
+    "sha256": "58bc9b22b1610e17e90c35dbc4c548b7823a744f6f15bd17c25b400d5d1c4f90",
+    "bytes": 18493
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\threading.cpython-314.pyc": {
+    "sha256": "9c83d1bf988907259cbb9bf7b0c559d86ebbe8cac33e18afdb2e3678d9e1226f",
+    "bytes": 66547
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\token.cpython-314.pyc": {
+    "sha256": "9f5a0f29d3b830b86d036d1ad45e073cfe4e2f40a02d145ade11807f16d59a2a",
+    "bytes": 3933
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\tokenize.cpython-314.pyc": {
+    "sha256": "4b0573c02bcee86ad5389257da0af6bf6fc9c467fd2d7523c8b64fd1470ccfb7",
+    "bytes": 27003
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\traceback.cpython-314.pyc": {
+    "sha256": "a0ffb535abda119b486dec952a4eb64114fa2455ffeef2b2cee479c0ade1388e",
+    "bytes": 78967
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\types.cpython-314.pyc": {
+    "sha256": "09ebfe21dd70a7079be2e02f6834640ecc2cf32950df03b4822250d77c17eae6",
+    "bytes": 15672
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\uuid.cpython-314.pyc": {
+    "sha256": "8cd8d5cffe5babd0d77d25c1d32061d8e48d39c103c16bb913a3ab8ac61a6376",
+    "bytes": 41023
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\warnings.cpython-314.pyc": {
+    "sha256": "4c74e38c501b9a9eb48e20682597b36ed0ba922c6bdb7805f5a676c1f19a98f7",
+    "bytes": 2555
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\__pycache__\\weakref.cpython-314.pyc": {
+    "sha256": "6673bb293de3ddc19a950e541f6e94d9efc1fe3206d647b8c9d9f616d77ac8e7",
+    "bytes": 27678
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\_ast_unparse.py": {
+    "sha256": "2c477f40fe644f8e8454e8af97aaf3de90579bdce5ddfe597f29d3012d10443f",
+    "bytes": 40422
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\_collections_abc.py": {
+    "sha256": "50beebb1f309d83fd3af45f0e4c98c9dbfe0edd2f40edc8dc79e5cf0072cfbea",
+    "bytes": 32089
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\_colorize.py": {
+    "sha256": "15db41bec8e25fd1ba81cf234df2cc7446d0fbc10285fda73186176365efd730",
+    "bytes": 11031
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\_opcode_metadata.py": {
+    "sha256": "d9badc5ab19a66415e230bf8f4299491b2207d584981a92b6e7c447cfa1aeac3",
+    "bytes": 10115
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\_py_warnings.py": {
+    "sha256": "16604a696fcf69c0d85cd9a93dbd0c2a7fcd1de168a37ecf2da3b812b22ace77",
+    "bytes": 30651
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\_sitebuiltins.py": {
+    "sha256": "b9388bc1d6d12ed6be12da420ab1feca40f99c0e33ec315d92b1e01cb69b25bc",
+    "bytes": 3128
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\_weakrefset.py": {
+    "sha256": "2dd7cb459d654fe78b00c5c47ee8e786c037ee77763304603f5e976dd62cbf81",
+    "bytes": 3962
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\abc.py": {
+    "sha256": "e558702a95cdce3febd289da021715d2b92bc43995b8a1bc58dfa1c3d8010287",
+    "bytes": 6538
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\annotationlib.py": {
+    "sha256": "94547bf18a845960d719b2ba2408b2aedbd7edee33522bd3a6ac68c2b34487d6",
+    "bytes": 42034
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\argparse.py": {
+    "sha256": "7b73a121353cca465b96265ba256b7c5b92f18e3b2fb2d9a5a950e227b7fccf5",
+    "bytes": 105988
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\ast.py": {
+    "sha256": "5ea9a796353544bea0d706153516f04ef3d92be305d15a73238403837d77e34c",
+    "bytes": 25479
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\base64.py": {
+    "sha256": "202d288f0b6d25ed1b206640f86e934381e6766fa0496f6f8d87d9c1bf92cdef",
+    "bytes": 22029
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\bisect.py": {
+    "sha256": "f1cf7b85fc36b5da249813fc5ab97d9464f8cc1bc817f7146206fa2713e35999",
+    "bytes": 3423
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\bz2.py": {
+    "sha256": "368b9ee55f0b6dbfc81b15e1a17c51cccddb009389eae8e9a7acf2402ca4109a",
+    "bytes": 11978
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\codecs.py": {
+    "sha256": "718f39b3ea68fe934214d789c5bce3005fa828040b03a72d2f715fc5e2647b7e",
+    "bytes": 36840
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\codeop.py": {
+    "sha256": "6777d19fa0f88c415d615c78e214ede057dd7507db8494744ca2c53fe9911a3a",
+    "bytes": 5902
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\collections\\__init__.py": {
+    "sha256": "dbd563752a57c6633b7566b1e9c95bc8ea81df1a1d213b23f61c5335424e5af5",
+    "bytes": 52903
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\collections\\__pycache__\\__init__.cpython-314.pyc": {
+    "sha256": "9c2e772ef7e72ad41b7ebbbee1311c14793330d34154bc7d4c75e750d35cf8e6",
+    "bytes": 74818
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\compression\\__init__.py": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\compression\\__pycache__\\__init__.cpython-314.pyc": {
+    "sha256": "2bb5a55ee67ec9ad7609614a764bf2c96d99ba06628e9b8eae14dee21e551433",
+    "bytes": 201
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\compression\\_common\\__init__.py": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\compression\\_common\\__pycache__\\__init__.cpython-314.pyc": {
+    "sha256": "c85a1211e680545ed1f79f5be6a1539449704230acf88f276f6845fba7945aea",
+    "bytes": 209
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\compression\\_common\\__pycache__\\_streams.cpython-314.pyc": {
+    "sha256": "5cd590593e691447276617710f3eb8157b4b739e09c1dd7ce43aa9cdb1f91406",
+    "bytes": 7862
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\compression\\_common\\_streams.py": {
+    "sha256": "8b8e943815c748d030e540a023400cb87fb13f75c2f0615a63ec42ef9f156c92",
+    "bytes": 5670
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\compression\\zstd\\__init__.py": {
+    "sha256": "a4a2da5a3f729baf74dc9873afe02da7919a5e394e665dc7beb24438d105cc76",
+    "bytes": 8759
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\compression\\zstd\\__pycache__\\__init__.cpython-314.pyc": {
+    "sha256": "4490a3e756777fbcaef8040819fe5391faa7734d66e3dead0c68d189b41c2bcf",
+    "bytes": 11780
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\compression\\zstd\\__pycache__\\_zstdfile.cpython-314.pyc": {
+    "sha256": "b7b1fbc3607ac2c13311a160136662c66eef9268a736883be84d63e9b409219b",
+    "bytes": 15789
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\compression\\zstd\\_zstdfile.py": {
+    "sha256": "662c2fc97fae490e6dc0e1ceb6a4363bea76ffa05b0acd788aec1274157c4216",
+    "bytes": 12286
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\contextlib.py": {
+    "sha256": "c1e0d67b2007de11ae93cd36cf6faf38d9ab32656a832d592a49325eec579f96",
+    "bytes": 27801
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\contextvars.py": {
+    "sha256": "cf0d77b49a9cde369bb6fc3e5c3e51658e8878cb9dab64a883b70caa86119007",
+    "bytes": 198
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\copy.py": {
+    "sha256": "15154fde290d6e65b5007905689a47a9a5a724822c5e06eec35d9ffbb2a3aa69",
+    "bytes": 8582
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\copyreg.py": {
+    "sha256": "6376eb5722806396f5842997ac18add369ea9ac3ff4fcfe1460c41a088cac425",
+    "bytes": 7716
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\csv.py": {
+    "sha256": "7604e007804bef2693cb9705257a4ab18ab9b7a188fa3c1eb21a8a55f6ae1ddf",
+    "bytes": 19186
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\ctypes\\__init__.py": {
+    "sha256": "77dd2b5905652d1e1960034bce46320a900891116d8c1278c3b27bcfad2e809c",
+    "bytes": 22066
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\ctypes\\__pycache__\\__init__.cpython-314.pyc": {
+    "sha256": "81224dc91084f48057bc9d19b99f51b98f9fcf312a19934db8a69c90fc09e0c6",
+    "bytes": 29712
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\ctypes\\__pycache__\\_endian.cpython-314.pyc": {
+    "sha256": "abdf50ac0627290ee36cd3569edfb3495858d3897684c28ee60f48ef20953b34",
+    "bytes": 3741
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\ctypes\\_endian.py": {
+    "sha256": "499773a028a41ee18153fedfe0a00a26efb2a650f568b9bc17e2f3a914a23468",
+    "bytes": 2557
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\dataclasses.py": {
+    "sha256": "cd1435e8cd7b7fd8b0128e05c2583445ea3f76fb437b065d22cb7587206afca8",
+    "bytes": 71358
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\datetime.py": {
+    "sha256": "742884b0c8e7dc69911858245db4f34d42e8ec0f769d580c570bd56032b0866c",
+    "bytes": 331
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\difflib.py": {
+    "sha256": "000f99f04cf8fd967753ed9929be6d5025e006437e0ef19b65e3303072538b74",
+    "bytes": 83976
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\dis.py": {
+    "sha256": "17d4d9a9195c9ee5aa27a96f3e0871f9363fd501e3a64ef20cb1cc876d7ad553",
+    "bytes": 45533
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\encodings\\__init__.py": {
+    "sha256": "dadc37a3e430ce905b113d2e2a73ee2762dda8a4ad30567b83eb4b44eda147eb",
+    "bytes": 5809
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\encodings\\__pycache__\\__init__.cpython-314.pyc": {
+    "sha256": "9757e11e20ab2cfec151fa0255862a7f86a2bc53df8b1f792dc0384f90960d5d",
+    "bytes": 6542
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\encodings\\__pycache__\\_win_cp_codecs.cpython-314.pyc": {
+    "sha256": "4170dc9f804872bb5e17565b60dc3e79dc1de0aa2cad2bbbe0722960d6822aa6",
+    "bytes": 3374
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\encodings\\__pycache__\\aliases.cpython-314.pyc": {
+    "sha256": "1a3bc90edf906cee172d92361b78809c0d137d94d61305678b7a69fb9b0b6ee3",
+    "bytes": 12615
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\encodings\\__pycache__\\cp1252.cpython-314.pyc": {
+    "sha256": "cd804bc58440ec309c72798f26b09ac1b78417298a1010c098bc6c6a517855d0",
+    "bytes": 3444
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\encodings\\__pycache__\\utf_8.cpython-314.pyc": {
+    "sha256": "6d493c544e30c5110121e4187fddf23481d4cb13052dad00611ab4bbea8afe76",
+    "bytes": 2389
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\encodings\\_win_cp_codecs.py": {
+    "sha256": "a10ef385d2096ff10a4ed00e7adfb7750fefcd10aa8eea1b573846145c9abad7",
+    "bytes": 1229
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\encodings\\aliases.py": {
+    "sha256": "e38fc524cc8b2355807921411c918c0d971419c4d6ba6147409785db42d257a3",
+    "bytes": 15957
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\encodings\\cp1252.py": {
+    "sha256": "19aa5bee667f5fb387924a813aec9fa1dda47769d09e8483a748bdb202be6a84",
+    "bytes": 13511
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\encodings\\utf_8.py": {
+    "sha256": "ba0cac060269583523ca9506473a755203037c57d466a11aa89a30a5f6756f3d",
+    "bytes": 1005
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\enum.py": {
+    "sha256": "f58ac9cdf3ad80dcc4d445471192397e63374d7100f5ed790d6593a076097e82",
+    "bytes": 85416
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\fnmatch.py": {
+    "sha256": "ce582bc266922e4c682e2a85d72095124430a6bf58716c6f2537103480eae742",
+    "bytes": 6791
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\functools.py": {
+    "sha256": "046ec9660146db48862c7b22c78e2ef3818eaed6920e5cbf35f551ef09fec6cd",
+    "bytes": 43561
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\genericpath.py": {
+    "sha256": "cdac5a68dd738051e0d66fc81d5947d6a1776248fc6fe862253477608d870ec4",
+    "bytes": 6247
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\gettext.py": {
+    "sha256": "54c00df11915aafb017ed23860dcb5197ed063f7ee07e5612625ec86afadcaf5",
+    "bytes": 21595
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\glob.py": {
+    "sha256": "403f046e49ce9967cef50d2f72e7986f7f08c6ba942376fcfe78520e005502f9",
+    "bytes": 19758
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\hashlib.py": {
+    "sha256": "88fa624821fbdee7eb2ef87c2437b207afe328cf117c7463367e2db5eb1af492",
+    "bytes": 9459
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\heapq.py": {
+    "sha256": "f2d644de141a488db66fc13608a794ef5f2d33162299f6751ea92c3cb0b4c9ea",
+    "bytes": 23440
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\importlib\\__init__.py": {
+    "sha256": "72b07de4133a7e39b2f6a7920465669aa04626f217e800779587bc0713fe002e",
+    "bytes": 4767
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\importlib\\__pycache__\\__init__.cpython-314.pyc": {
+    "sha256": "1087f81394fc0180d099f96bf1c72e59b6031493a4912406b86d41947da5c123",
+    "bytes": 4674
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\importlib\\__pycache__\\_abc.cpython-314.pyc": {
+    "sha256": "2d919ead7d1e07fae4850a74af549d9cb788aa6093a2a046d6641ce97543f812",
+    "bytes": 1726
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\importlib\\_abc.py": {
+    "sha256": "80aab7931dc999dee581c8b8b56fcd973fe156335a96ceeaf6acfc03cebf10e8",
+    "bytes": 1354
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\importlib\\_bootstrap.py": {
+    "sha256": "9cb541ddc6807aaba91e4243de57d869baa7f423565b1ac27024b9e826b50e1c",
+    "bytes": 57459
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\importlib\\_bootstrap_external.py": {
+    "sha256": "9750820035459ff08336cc59409d92c2f32f6f633c1831ba14c1ad9c3a56d9f2",
+    "bytes": 57663
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\importlib\\machinery.py": {
+    "sha256": "34b7583fd83ebb2629b7645c0dd293839ce16b19cf8742801e21a21fe08f5811",
+    "bytes": 2166
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\importlib\\util.py": {
+    "sha256": "7bdfadad42664ba169ffac8160765673cd79937f74324f4664de8d820c35b863",
+    "bytes": 11414
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\inspect.py": {
+    "sha256": "dfa331ea130e46fcac095c4b60a9591e62647aa4f9c9caf94bb96c1fb9aeea2a",
+    "bytes": 127190
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\io.py": {
+    "sha256": "1b75584d4efcc612dc0db2ae98619408276585a106f0544879edb5e25b55430a",
+    "bytes": 4736
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\json\\__init__.py": {
+    "sha256": "95022d150a27a2bfd54ac21bfce35812c96b53c420bb7b018dcb573f13e52da0",
+    "bytes": 14066
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\json\\__pycache__\\__init__.cpython-314.pyc": {
+    "sha256": "0fda5883834979daa84842d04893ac055c5df6a3eca7c33b89c8b612436085f4",
+    "bytes": 14208
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\json\\__pycache__\\decoder.cpython-314.pyc": {
+    "sha256": "c13920c564a52828785f3639023b5c057df62784d8d04c274faf5fa8ce0c311e",
+    "bytes": 14512
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\json\\__pycache__\\encoder.cpython-314.pyc": {
+    "sha256": "f3b551b06fcb3035b0d92d3d439a802aa1324c7a980a84b5cb70a0db960c8b74",
+    "bytes": 17086
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\json\\__pycache__\\scanner.cpython-314.pyc": {
+    "sha256": "99da5e476077aa8000244d2318d781655ce29e4c8029b03e6d9d9ef24e31acc3",
+    "bytes": 3601
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\json\\decoder.py": {
+    "sha256": "302ce57cb6f411122d7ef2ad2997c1fc0f184849fab3f1f585752f18f2195c73",
+    "bytes": 12873
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\json\\encoder.py": {
+    "sha256": "d68a4d04d2cfd95897498307f29349058b42c3f48ea6aa6739714a09200a7d01",
+    "bytes": 16990
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\json\\scanner.py": {
+    "sha256": "572958017eae8842eeddd0e3d18d3c56cc0a197348224915e1d87ce937841764",
+    "bytes": 2434
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\keyword.py": {
+    "sha256": "18c2be738c04ad20ad375f6a71db34b3823c7f40b0340f5294d0e89f3c9b093b",
+    "bytes": 1073
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\linecache.py": {
+    "sha256": "e1b815521669b40b0795b0963e9115cae67e684b8f06ce0e50d1d87a112c7db0",
+    "bytes": 7840
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\locale.py": {
+    "sha256": "0e90907424b4bef150b00feb1bef4687bacb416e6e3f2b463e0758ee34979fe4",
+    "bytes": 79129
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\lzma.py": {
+    "sha256": "b01a78a04c6a9ba6c645758cace78ed53a53871ea3ff88744e23f6263613d507",
+    "bytes": 13426
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\ntpath.py": {
+    "sha256": "7c5c992b1b52f97d7dc73ad09ea8b97917475e7e4474563379e71b03015f04ca",
+    "bytes": 30886
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\opcode.py": {
+    "sha256": "1036d90c917bb27c540ac3205d22896ee747214df1f2682458ab915758e4fdf2",
+    "bytes": 3152
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\operator.py": {
+    "sha256": "a9f9910965c31f841caad0447ee47299ac539a371422aefe200c86c60f3b4697",
+    "bytes": 11158
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\os.py": {
+    "sha256": "1494f3b93c6714d7a511963586f2b392dc92f3181c0d1ead82c621a4b0aad969",
+    "bytes": 41959
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\pathlib\\__init__.py": {
+    "sha256": "042a4d0a5e1ef66778daa86dc269af205bd42d06e793e53d8b99dff4c45928ca",
+    "bytes": 46807
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\pathlib\\__pycache__\\__init__.cpython-314.pyc": {
+    "sha256": "81d50680c2133e676662f84753e7d713fbe2ec343c2979569d222ac82d162b70",
+    "bytes": 61706
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\pathlib\\__pycache__\\_os.cpython-314.pyc": {
+    "sha256": "535e0480ae645f837877317808032815b566083a684ba1ae74d36921db28b9f3",
+    "bytes": 22498
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\pathlib\\_os.py": {
+    "sha256": "61e844988e54bdf47c0b11ad2b3fd961f058bb370793428f4c6868bd40cab6f2",
+    "bytes": 18161
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\posixpath.py": {
+    "sha256": "8a5bc2b6674e76efe0f507b873a41d746beba466a191153ed18a7580ef6e08e1",
+    "bytes": 18813
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\pprint.py": {
+    "sha256": "0b807d4a62c4292ead5b64e1b455f98b0ba225667ff3ee74bd7e0b873620402d",
+    "bytes": 24412
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\random.py": {
+    "sha256": "62dca8cdae7482513b99bb093ff038afd5131954e7eb78166d673a772cee871c",
+    "bytes": 37259
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\re\\__init__.py": {
+    "sha256": "741a9de729ed8207bfa19db990f8826f1bf3661f33d0970a80c08cd1338ebc35",
+    "bytes": 17876
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\re\\__pycache__\\__init__.cpython-314.pyc": {
+    "sha256": "bc12ad570757d144b56f4fa46675e6a5a461032f6c1fdafdea2274433a327dff",
+    "bytes": 20024
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\re\\__pycache__\\_casefix.cpython-314.pyc": {
+    "sha256": "c27e56f9e9e8f615e56294f1d2f87cfdacdebfc90c1234af4396ebef4d0db428",
+    "bytes": 1867
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\re\\__pycache__\\_compiler.cpython-314.pyc": {
+    "sha256": "29d396c824ba188cd49eff46b7c8841d5ec02946097ee093b1328f72ee6dee6c",
+    "bytes": 29722
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\re\\__pycache__\\_constants.cpython-314.pyc": {
+    "sha256": "d9614adddf700c0c020a99190f4a9f566ceb3836f3d845a738ab1f8df297863f",
+    "bytes": 5682
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\re\\__pycache__\\_parser.cpython-314.pyc": {
+    "sha256": "9078ae3e5d74dd70035c79f01de2f9e28093312eaaeddaf270c322df9852609e",
+    "bytes": 45312
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\re\\_casefix.py": {
+    "sha256": "1b12d9136f23db6c3f6f26053fefc15ca964b886838c7b9c1fabf8d2efc1e5c8",
+    "bytes": 5444
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\re\\_compiler.py": {
+    "sha256": "d49f30cf9a1dbae33b200ed8befd9d0ce3ac612783a10ac35196536f98923e91",
+    "bytes": 26855
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\re\\_constants.py": {
+    "sha256": "42253b3181b81aad6c46392f44a0ab26dcfa31feea411296f43ba16616a1ab0b",
+    "bytes": 6036
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\re\\_parser.py": {
+    "sha256": "e57bd194a2d42398355ae7c1ccc2ddfb78421dd431eb81e3809dbe8ca9057dc4",
+    "bytes": 40353
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\reprlib.py": {
+    "sha256": "b04872e10d76252e44eae50cc785eb0fe478491afc4d7f0825a93f82b2eaba5f",
+    "bytes": 8064
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\shutil.py": {
+    "sha256": "ab36f39f04e349020cdd13cf41b50905fc399150fb5e6a7cf73d69b22dd949cd",
+    "bytes": 60568
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\signal.py": {
+    "sha256": "0363c964c90ac0b3e515de5749205e6e6454051a1211058375d84d91eab6071a",
+    "bytes": 2495
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\site.py": {
+    "sha256": "bf3567b10092d10189a9f7eb12eb1f0c72d023c0d4e72cfa93a5f2e7d3122fd0",
+    "bytes": 25768
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\stat.py": {
+    "sha256": "f76eaa7f02d6ef4a8c3c3e82cae34ed72870b643b8c94937a34c697d1e9d6ca2",
+    "bytes": 6147
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\struct.py": {
+    "sha256": "50c14e55f94957804c1e45e975fedbe8e86f7e1dbb745b150370ff681155370a",
+    "bytes": 285
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\subprocess.py": {
+    "sha256": "44f1dd075f61930212ad38dfe555492e0fd89f114cf9eaab2e3960945112383d",
+    "bytes": 90780
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\sysconfig\\__init__.py": {
+    "sha256": "a080b0d644b97a1bfbdc18496be6bfa81338796db0d0ff31cdee917e41a720b9",
+    "bytes": 28596
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\sysconfig\\__pycache__\\__init__.cpython-314.pyc": {
+    "sha256": "9d2786642df4343f3afc8a577963b4a862e81f86f3fd1717cbb07630d31b984b",
+    "bytes": 28624
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\tempfile.py": {
+    "sha256": "e3e951ac276abd01709060e4d65a483b9e33beda8b5bba79c756a16ac1fdedb7",
+    "bytes": 32875
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\textwrap.py": {
+    "sha256": "7f05d89c983f5aa8cefcff707a9cc561ed60c51fc8a68e2e3ab61cc6dfa84544",
+    "bytes": 19382
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\threading.py": {
+    "sha256": "5323909624ec2165e70b6d31333e4191b63d383d2dc5a7d7d516a3475ea2b7e3",
+    "bytes": 56923
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\token.py": {
+    "sha256": "61d4270311099c8a0c0b2e45fb363fd1c4e347a720bcc25f682b63dc28c34234",
+    "bytes": 2584
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\tokenize.py": {
+    "sha256": "65ba1bacdc42e768382208ff27f3001ee77d9d61aafba686c67652d22b84b330",
+    "bytes": 21849
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\traceback.py": {
+    "sha256": "c7057fe0778bdbe4c277755f91336bd1a652e350e531a4319e6466792a854b0f",
+    "bytes": 70248
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\types.py": {
+    "sha256": "8e3836b81d5764ef5449bd155c49bf745d5e79f6056978d35b7cd4b4d752e9ef",
+    "bytes": 11342
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\__init__.py": {
+    "sha256": "2698f2daf7a02609a6825b89cd459ebaa283dec2403c7b846315a0701bc74a0d",
+    "bytes": 3246
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\__pycache__\\__init__.cpython-314.pyc": {
+    "sha256": "24074a120934af0906a389aa29bbed0f07779035ed2c9b2f038dd57d79523d3e",
+    "bytes": 3327
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\__pycache__\\case.cpython-314.pyc": {
+    "sha256": "cebd75d452ff3f32005cf18ae1812aae2ec8102b0c844859d61407cf5758eeb1",
+    "bytes": 80139
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\__pycache__\\loader.cpython-314.pyc": {
+    "sha256": "0dd6062465896f942509ccc0fe9ed415bd614edc8de4d86c51223252644d81c6",
+    "bytes": 24108
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\__pycache__\\main.cpython-314.pyc": {
+    "sha256": "6280ceab2d42e738882cb4c83818ac906d1ccbbd500d9249347dc613887f263d",
+    "bytes": 13652
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\__pycache__\\result.cpython-314.pyc": {
+    "sha256": "fdeb0739d0aa7ca7753e749763aaae71a3bca8b08dfcb69f94babf07682cddc0",
+    "bytes": 13330
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\__pycache__\\runner.cpython-314.pyc": {
+    "sha256": "3def3a5e6f0e06f9c099c57a56abbe07114b83210cb53ae2275d6e804d2ba55c",
+    "bytes": 20160
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\__pycache__\\signals.cpython-314.pyc": {
+    "sha256": "7066a5471e95d344560856f3e4af86ae337bf41255add67f2847f9f110719a7b",
+    "bytes": 3805
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\__pycache__\\suite.cpython-314.pyc": {
+    "sha256": "baf69ef3a04deb3b78431bc610995c003651fa054d2cb7961f35eb836c4209d4",
+    "bytes": 16358
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\__pycache__\\util.cpython-314.pyc": {
+    "sha256": "602f7bb869817ffdc3a422fadb44249099d9a0829bab2a0dd91e66661bee41d7",
+    "bytes": 7597
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\case.py": {
+    "sha256": "a79b422eec43c90352e25a54bce8cee106811974c8dea9405199e4caa689ffe9",
+    "bytes": 64227
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\loader.py": {
+    "sha256": "b715a61e71ad8d23537fde5471067e5c1ca44b266052fdf417c4e1fe3a8d102c",
+    "bytes": 20820
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\main.py": {
+    "sha256": "12de7da0fea92dbff8713ebe9904ada6dbd1e0a334d58861c6287ccfc0a261d2",
+    "bytes": 11660
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\result.py": {
+    "sha256": "813415b331a53acc1bd88ffebadfcb46886dba1ff2bbda2908533e24548db50c",
+    "bytes": 9269
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\runner.py": {
+    "sha256": "51780085229bd3547a2751e8d75ab1d8f391dd2c9c3ca1d011b54529348faeb4",
+    "bytes": 11383
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\signals.py": {
+    "sha256": "f8286e818ca56e10e03745bc056cdfd31147678f9a1dc8cb6b0fe96ef9a4362a",
+    "bytes": 2403
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\suite.py": {
+    "sha256": "ed2da92bc9f97c53403ee2d3d12cc53b16a96e85d596ebc887b5a93458f3f6bc",
+    "bytes": 13512
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\unittest\\util.py": {
+    "sha256": "fdcc640c3505d16deab9c32eae7c3f5f67c3b5e81c563dc6698fa7fcf403854d",
+    "bytes": 5215
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\uuid.py": {
+    "sha256": "18cf6964825ae92a6c92758c5daab09b92e962dfb50622ea3d0a069a7fbc6857",
+    "bytes": 38116
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\warnings.py": {
+    "sha256": "142225786de63c593f1c9abdacf5b4fc0b05dd847f6bed0ebb4b4aa2d4d93b02",
+    "bytes": 1966
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\weakref.py": {
+    "sha256": "5e5f727a19a858cb4c56dbaf3e0a138ded02fb954a9a58a840a0764216ae9522",
+    "bytes": 17771
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\zipfile\\__init__.py": {
+    "sha256": "7f86ad3712225caf8ada9c4e2036323023c5def089b40a9486c23d06b8a2582c",
+    "bytes": 92259
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\zipfile\\__pycache__\\__init__.cpython-314.pyc": {
+    "sha256": "da555667af770da6d479df4b574c623df88142352d6417ae5aebc6ef30d11780",
+    "bytes": 110762
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\zipfile\\_path\\__init__.py": {
+    "sha256": "319c002564b7deca9ca9dc913f5d06bc32a2f376d291094afa635558af6e17ff",
+    "bytes": 11953
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\zipfile\\_path\\__pycache__\\__init__.cpython-314.pyc": {
+    "sha256": "066cc1f2baa66b6a754f852679a05dd79cd05daa07b882d8b6c0894200118fae",
+    "bytes": 20680
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\zipfile\\_path\\__pycache__\\glob.cpython-314.pyc": {
+    "sha256": "99521c2686601bfd6136f3ca0e2163a123d05bd01cd9b7de09800469d6f1c2ed",
+    "bytes": 5905
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\zipfile\\_path\\glob.py": {
+    "sha256": "d84da9b313d40544a87657a0ea2f9cf719416fd3c3450724c5d2dde5b475d2b5",
+    "bytes": 3314
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\Lib\\zipimport.py": {
+    "sha256": "4de64633a484e16c39fdb46a3f939ce7c577b14a6e9ee49b79871ec1880b4597",
+    "bytes": 33466
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe": {
+    "sha256": "5829a9ef2930e10a965503ea0f96248bd4b19faf4177fdfd061f1d484448bb03",
+    "bytes": 91648
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python3.dll": {
+    "sha256": "9eb83d4ad75461b7ab1129885414a5382f1985346d96484df257a3110e50eb29",
+    "bytes": 59392
+  },
+  "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python314.dll": {
+    "sha256": "0f2429383aacc0499f57e732fc7778da6187d133af9171b938a66fe7d5ab254c",
+    "bytes": 6565376
+  }
+}

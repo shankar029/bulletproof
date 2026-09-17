@@ -1,0 +1,87 @@
+{
+  "checked_utc": "2026-09-17T04:32:49.541056+00:00",
+  "verdict": "VERIFIED-WITH-LIMITATIONS",
+  "manifest": {
+    "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r5-manifest.json",
+    "sha256": "f000779a48027273287be4662c41b3a98dc9e7b3f358a126b219ca7dfab366c2"
+  },
+  "report": {
+    "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r5-verification.md",
+    "sha256": "9146c404f81acbd8908d20efd942ca9dff7c173782cdcc3b9620629c278344b8"
+  },
+  "imports": {
+    "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r5-imports.json",
+    "sha256": "a7a3e7af3c55664eb811ca5a571e07c604e7b1f062c9b6ae627cfc44a9302615"
+  },
+  "pinned_input_count": 1883,
+  "import_count": 172,
+  "protected_original_count": 52,
+  "changed_inputs_since_replay": [],
+  "changed_original_artifacts": [],
+  "new_applicable_inputs": [],
+  "raw_stream_checks": [
+    {
+      "run": "head",
+      "stream": "stdout",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r5-head.stdout.log",
+      "expected_sha256": "7ac59c6a07ab43d05bec57d71bdb7fed105b3505a34494117472b7ce3375ee30",
+      "observed_sha256": "7ac59c6a07ab43d05bec57d71bdb7fed105b3505a34494117472b7ce3375ee30",
+      "expected_bytes": 42,
+      "observed_bytes": 42,
+      "matches": true
+    },
+    {
+      "run": "head",
+      "stream": "stderr",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r5-head.stderr.log",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_bytes": 0,
+      "observed_bytes": 0,
+      "matches": true
+    },
+    {
+      "run": "workflow",
+      "stream": "stdout",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r5-workflow.stdout.log",
+      "expected_sha256": "74a6e95b780b7fd28b90171f9bbc52327408dfd8a2734772ccb0b4654495dcac",
+      "observed_sha256": "74a6e95b780b7fd28b90171f9bbc52327408dfd8a2734772ccb0b4654495dcac",
+      "expected_bytes": 15022,
+      "observed_bytes": 15022,
+      "matches": true
+    },
+    {
+      "run": "workflow",
+      "stream": "stderr",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r5-workflow.stderr.log",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_bytes": 0,
+      "observed_bytes": 0,
+      "matches": true
+    },
+    {
+      "run": "evidence",
+      "stream": "stdout",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r5-evidence.stdout.log",
+      "expected_sha256": "129a1390d53081a90250156aaedc0ed73ae1007b43514e50e436718bce51eceb",
+      "observed_sha256": "129a1390d53081a90250156aaedc0ed73ae1007b43514e50e436718bce51eceb",
+      "expected_bytes": 1524,
+      "observed_bytes": 1524,
+      "matches": true
+    },
+    {
+      "run": "evidence",
+      "stream": "stderr",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\c1-independent-r5-evidence.stderr.log",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_bytes": 0,
+      "observed_bytes": 0,
+      "matches": true
+    }
+  ],
+  "freshness_blocked": false,
+  "tests_passed": true,
+  "limits": "One bounded C1 freshness replay, not Q1 or complete quality acceptance. Relevant file-backed scope only, not whole-root/OS or future attestation. Separate reviewer recheck remains due."
+}

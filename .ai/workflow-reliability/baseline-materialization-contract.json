@@ -1,0 +1,35 @@
+{
+  "document": "workflow-reliability/baseline-materialization",
+  "revision": 1,
+  "status": "ACCEPTED_FOR_BOUNDED_Q1_CORRECTION",
+  "approval_reference": "evidence/baseline-materialization-review.md",
+  "authority": "Autonomous continuation authorized by the user; human approval remains unconfirmed.",
+  "extends": "measurement-enablement-contracts.json",
+  "grounding": [
+    "evidence/q1-code-review.md",
+    "evidence/q1-review-correction-boundary.md"
+  ],
+  "policy": {
+    "id": "isolated-versioned-attribute-checkout-v1",
+    "representation": "Expected baseline bytes are independently materialized from the selected immutable Git tree, not inferred from the supplied index, status or working bytes.",
+    "defaults": "Use deterministic neutral LF defaults with automatic platform/user EOL conversion disabled. Honor transformations explicitly requested by versioned attributes, including Git's built-in text/EOL behavior. Other built-in transformations require actual qualification; otherwise reject them as unsupported rather than silently applying or ignoring them.",
+    "configuration": "The independent derivation uses only controlled configuration and the selected tree's versioned attributes. Do not inherit caller/local/system/global configuration, info/attributes, templates, hooks or ambient Git overrides. Object replacement must not redefine the selected immutable revision. Qualify the concrete Git commands and environment before implementing them.",
+    "external_filters": "Reject declared external filters before any materialization can execute them. Do not run clean/smudge programs to define equality. Do not implement a parallel partial Git-attributes interpreter.",
+    "comparison": "Compare the complete relevant path set, actual bytes, regular-file types and platform-representable modes against the independent materialization. Recollecting fresh fingerprints from a corrupted baseline must not make it valid. Caller assume-unchanged, skip-worktree or altered index state cannot define expected source content.",
+    "modes": "Preserve and compare executable distinctions on platforms that represent them. On Windows, record the Git-tree mode and explicit platform projection; do not claim ordinary worktree bits prove Git's executable distinction or actual Q4 execution.",
+    "unsupported": "Unqualified transformations, links, submodules, ambiguous paths and incomplete materialization cannot establish an immutable baseline. Report the concrete unsupported condition; no zero, shortened census or success-shaped fallback.",
+    "usage": "Use this same policy for configured CLI baseline creation and supplied-Context validation. Do not modify the supplied source, its index or ambient configuration. Head evidence must continue to match its separately observed current-source snapshot.",
+    "binding": "Bind the compiled policy semantics and qualified Git identity through the existing source/controller/tool evidence. No new public Context field is authorized unless qualification establishes a genuine missing binding that needs another explicit amendment.",
+    "ownership": "Expected trees and any private index/config/template files are uniquely owned temporary resources. Cleanup is limited to their exact owned paths."
+  },
+  "required_controls": [
+    "Original fresh assume-unchanged baseline corruption is rejected while the genuine no-cycle baseline remains accepted.",
+    "Skip-worktree and altered index controls cannot conceal a different baseline.",
+    "Versioned LF/CRLF behavior and platform-representable mode controls match the declared representation.",
+    "Ambient configuration, caller info/attributes and object replacement cannot alter expected immutable content.",
+    "A declared external filter is rejected without executing a sentinel program.",
+    "The normal CLI and common validator agree on accepted independently materialized baselines.",
+    "Original path-alias, builtin/frozen-mode, physical-alias and all-nine/incomplete regressions remain."
+  ],
+  "limits": "This is a deterministic source-representation policy, not a sandbox, authenticated ownership, atomic filesystem lease, Q4 controller-execution proof or complete quality acceptance."
+}

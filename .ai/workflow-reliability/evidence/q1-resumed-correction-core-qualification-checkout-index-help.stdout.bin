@@ -1,0 +1,17 @@
+usage: git checkout-index [<options>] [--] [<file>...]
+
+    -a, --[no-]all        check out all files in the index
+    --[no-]ignore-skip-worktree-bits
+                          do not skip files with skip-worktree set
+    -f, --[no-]force      force overwrite of existing files
+    -q, --[no-]quiet      no warning for existing files and files not in index
+    -n, --no-create       don't checkout new files
+    --create              opposite of --no-create
+    -u, --[no-]index      update stat information in the index file
+    -z                    paths are separated with NUL character
+    --[no-]stdin          read list of paths from the standard input
+    --[no-]temp           write the content to temporary files
+    --[no-]prefix <string>
+                          when creating files, prepend <string>
+    --stage (1|2|3|all)   copy out the files from named stage
+

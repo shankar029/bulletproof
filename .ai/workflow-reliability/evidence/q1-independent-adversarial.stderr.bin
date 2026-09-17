@@ -1,0 +1,114 @@
+test_actual_greenfield_requires_complete_two_file_baseline (test_measure_q1_verification.IndependentQ1VerificationTests.test_actual_greenfield_requires_complete_two_file_baseline) ... ERROR
+test_builtin_import_uses_actual_python_resolution_not_local_sys_file (test_measure_q1_verification.IndependentQ1VerificationTests.test_builtin_import_uses_actual_python_resolution_not_local_sys_file) ... ERROR
+test_disjoint_roots_must_not_share_mutable_base_head_files (test_measure_q1_verification.IndependentQ1VerificationTests.test_disjoint_roots_must_not_share_mutable_base_head_files) ... ok
+test_module_cannot_be_used_as_a_package_but_graph_must_fail_closed (test_measure_q1_verification.IndependentQ1VerificationTests.test_module_cannot_be_used_as_a_package_but_graph_must_fail_closed) ... ERROR
+test_public_census_keeps_ignored_untracked_tests_examples_benchmarks (test_measure_q1_verification.IndependentQ1VerificationTests.test_public_census_keeps_ignored_untracked_tests_examples_benchmarks) ... ERROR
+
+======================================================================
+ERROR: test_actual_greenfield_requires_complete_two_file_baseline (test_measure_q1_verification.IndependentQ1VerificationTests.test_actual_greenfield_requires_complete_two_file_baseline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_verification.py", line 100, in test_actual_greenfield_requires_complete_two_file_baseline
+    report = self.cli(fixture, "greenfield")
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_verification.py", line 86, in cli
+    preserve_fixture(label, fixture)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_verification.py", line 67, in preserve_fixture
+    target.write_bytes(data)
+    ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\pathlib\__init__.py", line 796, in write_bytes
+    with self.open(mode='wb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\pathlib\__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-independent-greenfield-files\\.ai\\greenfield\\evidence\\runs\\adf27c76cf614d76914729a2cfccbac6\\measurement\\base\\syntax\\41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json'
+
+======================================================================
+ERROR: test_builtin_import_uses_actual_python_resolution_not_local_sys_file (test_measure_q1_verification.IndependentQ1VerificationTests.test_builtin_import_uses_actual_python_resolution_not_local_sys_file)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [WinError 206] The filename or extension is too long: 'C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-independent-builtin-resolution-files\\.ai\\builtin-resolution\\evidence\\runs\\0f3a1c58a2544775a80b99d8f7b1c54e\\measurement\\base'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_verification.py", line 141, in test_builtin_import_uses_actual_python_resolution_not_local_sys_file
+    report = self.cli(fixture, "builtin-resolution")
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_verification.py", line 86, in cli
+    preserve_fixture(label, fixture)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_verification.py", line 66, in preserve_fixture
+    target.parent.mkdir(parents=True, exist_ok=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\pathlib\__init__.py", line 1016, in mkdir
+    self.mkdir(mode, parents=False, exist_ok=exist_ok)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [WinError 206] The filename or extension is too long: 'C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-independent-builtin-resolution-files\\.ai\\builtin-resolution\\evidence\\runs\\0f3a1c58a2544775a80b99d8f7b1c54e\\measurement\\base'
+
+======================================================================
+ERROR: test_module_cannot_be_used_as_a_package_but_graph_must_fail_closed (test_measure_q1_verification.IndependentQ1VerificationTests.test_module_cannot_be_used_as_a_package_but_graph_must_fail_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [WinError 206] The filename or extension is too long: 'C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-independent-nonpackage-resolution-files\\.ai\\nonpackage-resolution\\evidence\\runs\\90110d4e3ccf4981a8e8982eba4cf1b5\\measurement'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_verification.py", line 159, in test_module_cannot_be_used_as_a_package_but_graph_must_fail_closed
+    report = self.cli(fixture, "nonpackage-resolution")
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_verification.py", line 86, in cli
+    preserve_fixture(label, fixture)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_verification.py", line 66, in preserve_fixture
+    target.parent.mkdir(parents=True, exist_ok=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\pathlib\__init__.py", line 1016, in mkdir
+    self.mkdir(mode, parents=False, exist_ok=exist_ok)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [WinError 206] The filename or extension is too long: 'C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-independent-nonpackage-resolution-files\\.ai\\nonpackage-resolution\\evidence\\runs\\90110d4e3ccf4981a8e8982eba4cf1b5\\measurement'
+
+======================================================================
+ERROR: test_public_census_keeps_ignored_untracked_tests_examples_benchmarks (test_measure_q1_verification.IndependentQ1VerificationTests.test_public_census_keeps_ignored_untracked_tests_examples_benchmarks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [WinError 206] The filename or extension is too long: 'C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-independent-untracked-census-files\\.ai\\untracked-census\\evidence\\runs\\d81b449fe6934873a68b40746a9560dc\\measurement\\base\\syntax'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_verification.py", line 117, in test_public_census_keeps_ignored_untracked_tests_examples_benchmarks
+    report = self.cli(fixture, "untracked-census")
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_verification.py", line 86, in cli
+    preserve_fixture(label, fixture)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_verification.py", line 66, in preserve_fixture
+    target.parent.mkdir(parents=True, exist_ok=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\pathlib\__init__.py", line 1016, in mkdir
+    self.mkdir(mode, parents=False, exist_ok=exist_ok)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [WinError 206] The filename or extension is too long: 'C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-independent-untracked-census-files\\.ai\\untracked-census\\evidence\\runs\\d81b449fe6934873a68b40746a9560dc\\measurement\\base\\syntax'
+
+----------------------------------------------------------------------
+Ran 5 tests in 76.723s
+
+FAILED (errors=4)

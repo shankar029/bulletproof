@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-correction-capture.py",
+    "worker",
+    "test_measure_graph.py::runtime_precedence",
+    "frozen-alias-red-r1"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "exit_code": 1,
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "Q1_VERIFICATION_TAG": "owner-correction-frozen-alias-red-r1"
+  },
+  "seconds": 15.487747800012585,
+  "outer_bounds": {
+    "idle": 120,
+    "max": 900
+  },
+  "raw": {
+    "stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-correction-frozen-alias-red-r1.stdout.bin"
+    },
+    "stderr": {
+      "sha256": "d368b6af97024e63fda8a37705d24d5c38b2a398c425c5b85a1fac86d0c55e56",
+      "bytes": 1177,
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-correction-frozen-alias-red-r1.stderr.bin"
+    }
+  }
+}

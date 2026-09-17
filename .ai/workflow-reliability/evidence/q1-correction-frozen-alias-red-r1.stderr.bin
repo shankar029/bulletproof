@@ -1,0 +1,15 @@
+test_runtime_precedence_preserves_shadowable_and_relative_names (test_measure_graph.GraphTests.test_runtime_precedence_preserves_shadowable_and_relative_names) ... FAIL
+
+======================================================================
+FAIL: test_runtime_precedence_preserves_shadowable_and_relative_names (test_measure_graph.GraphTests.test_runtime_precedence_preserves_shadowable_and_relative_names)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_graph.py", line 37, in test_runtime_precedence_preserves_shadowable_and_relative_names
+    self.assertFalse(fixture.head["graph"]["unresolved"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [{'from': 'scripts/evidence.py', 'specifier': 'os.path', 'span': {'start_byte': 38, 'end_byte': 52, 'start_line': 3, 'end_line': 3}, 'reason': 'Runtime module is not a package'}] is not false
+
+----------------------------------------------------------------------
+Ran 1 test in 14.028s
+
+FAILED (failures=1)

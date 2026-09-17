@@ -1,0 +1,20 @@
+test_effective_frozen_binding_respects_startup_precedence_and_consistency (test_measure_graph.GraphTests.test_effective_frozen_binding_respects_startup_precedence_and_consistency) ... FAIL
+
+======================================================================
+FAIL: test_effective_frozen_binding_respects_startup_precedence_and_consistency (test_measure_graph.GraphTests.test_effective_frozen_binding_respects_startup_precedence_and_consistency)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_graph.py", line 57, in test_effective_frozen_binding_respects_startup_precedence_and_consistency
+    self.assertEqual(code, 0, error)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import sys; sys.path.insert(0,'C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts'); import measure_graph as g; import importlib,json,os; sys.path.insert(0,'C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-m021jple'); table=g._frozen_import_binding(); before=g.parser_digest(); module=importlib.import_module('__phello__.spam'); os.environ['PYTHON_FROZEN_MODULES']='off' if table['__phello__'] else 'on'; sys._xoptions['frozen_modules']=os.environ['PYTHON_FROZEN_MODULES']; print(json.dumps({'table':table,'digest':before,'after':g.parser_digest(),'table_after':g._frozen_import_binding(),'native_origin':module.__spec__.origin,'local':getattr(module,'LOCAL',False)}))
+                                                                                                                                                                                                                                                                                                                                                                                                                                                     ~~~~~^^^^^^^^^^^^^^
+KeyError: '__phello__'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 6.995s
+
+FAILED (failures=1)

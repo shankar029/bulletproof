@@ -1,0 +1,35 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-attr-capture.py",
+    "worker",
+    "test_measure_q1_attr.py",
+    "red"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "worker_pid": 17032,
+  "capture_pid": 47280,
+  "outer_bounds": {
+    "idle": 120,
+    "max": 1200
+  },
+  "environment_delta": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "Q1_VERIFICATION_TAG": "resumed-red"
+  },
+  "exit_code": 1,
+  "seconds": 62.3975422999938,
+  "raw": {
+    "stdout": {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-attr-red.stdout.bin",
+      "sha256": "862d0a96c0b1aaf56627fda51c0234df024c88724ef885a72cf228cfac75874c",
+      "bytes": 288
+    },
+    "stderr": {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-attr-red.stderr.bin",
+      "sha256": "56c5b040fbb1cfbd733e796813b58b2c554adc68e30e2b22ba1e7708853a69dd",
+      "bytes": 10976
+    }
+  }
+}

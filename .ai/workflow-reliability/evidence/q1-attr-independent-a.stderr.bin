@@ -1,0 +1,368 @@
+test_absent_and_reset_filter_preserve_normal_baseline (test_measure_q1_attr.AttributeAdmissionTests.test_absent_and_reset_filter_preserve_normal_baseline) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-juqb_zhi
+[native-start] 'git init --quiet'
+[native-start] 'git config user.name "Test fixture"'
+[native-start] 'git config user.email fixture@example.invalid'
+[native-start] 'git config core.autocrlf false'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\q1-attr-tests-l8s26t78
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "no effective filter"'
+[native-start] 'git rev-parse HEAD'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-az2vq998
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-az2vq998 clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-az2vq998 C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-juqb_zhi C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-attr-tests-l8s26t78\\base'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-az2vq998 update-ref --no-deref HEAD 6c66d483fc4086fe3838674b624f9d2579c828a6'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-az2vq998 ls-tree -r -z --full-tree 6c66d483fc4086fe3838674b624f9d2579c828a6'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-az2vq998 read-tree 6c66d483fc4086fe3838674b624f9d2579c828a6'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-az2vq998 check-attr --cached --all -z -- .gitattributes a.py'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-az2vq998 checkout-index --all --force'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-expected-base-zk7fv7g5
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-ucqy7r2l
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ucqy7r2l clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ucqy7r2l C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-attr-tests-l8s26t78\\base C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-expected-base-zk7fv7g5\\tree'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ucqy7r2l update-ref --no-deref HEAD 6c66d483fc4086fe3838674b624f9d2579c828a6'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ucqy7r2l ls-tree -r -z --full-tree 6c66d483fc4086fe3838674b624f9d2579c828a6'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ucqy7r2l read-tree 6c66d483fc4086fe3838674b624f9d2579c828a6'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ucqy7r2l check-attr --cached --all -z -- .gitattributes a.py'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ucqy7r2l checkout-index --all --force'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-th6tb4tu
+[native-start] 'git init --quiet'
+[native-start] 'git config user.name "Test fixture"'
+[native-start] 'git config user.email fixture@example.invalid'
+[native-start] 'git config core.autocrlf false'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\q1-attr-tests-gy3i9goo
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "no effective filter"'
+[native-start] 'git rev-parse HEAD'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-ruov1fbl
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ruov1fbl clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ruov1fbl C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-th6tb4tu C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-attr-tests-gy3i9goo\\base'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ruov1fbl update-ref --no-deref HEAD b8515f5897b9781b28396859679177f81f235ea0'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ruov1fbl ls-tree -r -z --full-tree b8515f5897b9781b28396859679177f81f235ea0'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ruov1fbl read-tree b8515f5897b9781b28396859679177f81f235ea0'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ruov1fbl check-attr --cached --all -z -- .gitattributes a.py'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ruov1fbl checkout-index --all --force'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-expected-base-dcxhxri5
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-czwtbd44
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-czwtbd44 clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-czwtbd44 C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-attr-tests-gy3i9goo\\base C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-expected-base-dcxhxri5\\tree'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-czwtbd44 update-ref --no-deref HEAD b8515f5897b9781b28396859679177f81f235ea0'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-czwtbd44 ls-tree -r -z --full-tree b8515f5897b9781b28396859679177f81f235ea0'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-czwtbd44 read-tree b8515f5897b9781b28396859679177f81f235ea0'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-czwtbd44 check-attr --cached --all -z -- .gitattributes a.py'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-czwtbd44 checkout-index --all --force'
+ok
+test_disabled_filter_is_explicitly_unsupported_when_ambiguous (test_measure_q1_attr.AttributeAdmissionTests.test_disabled_filter_is_explicitly_unsupported_when_ambiguous) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-h4phf7ov
+[native-start] 'git init --quiet'
+[native-start] 'git config user.name "Test fixture"'
+[native-start] 'git config user.email fixture@example.invalid'
+[native-start] 'git config core.autocrlf false'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\q1-attr-tests-huyhib2v
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "disabled filter textual ambiguity"'
+[native-start] 'git rev-parse HEAD'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-_uii8zmu
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-_uii8zmu clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-_uii8zmu C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-h4phf7ov C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-attr-tests-huyhib2v\\base'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-_uii8zmu update-ref --no-deref HEAD 8a62806cd989789e65f795f002fce7cb73b8087a'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-_uii8zmu ls-tree -r -z --full-tree 8a62806cd989789e65f795f002fce7cb73b8087a'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-_uii8zmu read-tree 8a62806cd989789e65f795f002fce7cb73b8087a'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-_uii8zmu check-attr --cached --all -z -- .gitattributes a.py'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-expected-base-rpj2w3ct
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-62bqvyp8
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-62bqvyp8 clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-62bqvyp8 C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-h4phf7ov C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-expected-base-rpj2w3ct\\tree'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-62bqvyp8 update-ref --no-deref HEAD 8a62806cd989789e65f795f002fce7cb73b8087a'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-62bqvyp8 ls-tree -r -z --full-tree 8a62806cd989789e65f795f002fce7cb73b8087a'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-62bqvyp8 read-tree 8a62806cd989789e65f795f002fce7cb73b8087a'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-62bqvyp8 check-attr --cached --all -z -- .gitattributes a.py'
+ok
+test_literal_unset_driver_rejected_at_both_boundaries (test_measure_q1_attr.AttributeAdmissionTests.test_literal_unset_driver_rejected_at_both_boundaries) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-k1f3ksx8
+[native-start] 'git init --quiet'
+[native-start] 'git config user.name "Test fixture"'
+[native-start] 'git config user.email fixture@example.invalid'
+[native-start] 'git config core.autocrlf false'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\q1-attr-tests-f7r1krjf
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "literal filter state-marker collision"'
+[native-start] 'git rev-parse HEAD'
+[native-start] 'git config filter.unset.smudge "\\"C:/Users/shbs/AppData/Roaming/uv/python/cpython-3.14.2-windows-x86_64-none/python.exe\\" -B \\"C:/Users/shbs/AppData/Local/Temp/q1-attr-tests-f7r1krjf/driver.py\\" \\"C:/Users/shbs/AppData/Local/Temp/q1-attr-tests-f7r1krjf/EXECUTED\\""'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-pxdi9te3
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-pxdi9te3 clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-pxdi9te3 C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-k1f3ksx8 C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-attr-tests-f7r1krjf\\base'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-pxdi9te3 update-ref --no-deref HEAD d64b6f1b183e5d356e59f8af2bf99385ae956f7b'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-pxdi9te3 ls-tree -r -z --full-tree d64b6f1b183e5d356e59f8af2bf99385ae956f7b'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-pxdi9te3 read-tree d64b6f1b183e5d356e59f8af2bf99385ae956f7b'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-pxdi9te3 check-attr --cached --all -z -- .gitattributes a.py'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-expected-base-k7zw_mcu
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-wacyyw0n
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-wacyyw0n clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-wacyyw0n C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-k1f3ksx8 C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-expected-base-k7zw_mcu\\tree'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-wacyyw0n update-ref --no-deref HEAD d64b6f1b183e5d356e59f8af2bf99385ae956f7b'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-wacyyw0n ls-tree -r -z --full-tree d64b6f1b183e5d356e59f8af2bf99385ae956f7b'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-wacyyw0n read-tree d64b6f1b183e5d356e59f8af2bf99385ae956f7b'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-wacyyw0n check-attr --cached --all -z -- .gitattributes a.py'
+[native-start] 'git config filter.unset.smudge "\\"C:/Users/shbs/AppData/Roaming/uv/python/cpython-3.14.2-windows-x86_64-none/python.exe\\" -B \\"C:/Users/shbs/AppData/Local/Temp/q1-attr-tests-f7r1krjf/driver.py\\" \\"C:/Users/shbs/AppData/Local/Temp/q1-attr-tests-f7r1krjf/EXECUTED\\""'
+[native-start] 'git checkout-index --all --force'
+ok
+test_literal_unspecified_driver_rejected_at_both_boundaries (test_measure_q1_attr.AttributeAdmissionTests.test_literal_unspecified_driver_rejected_at_both_boundaries) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-jt1y8xs4
+[native-start] 'git init --quiet'
+[native-start] 'git config user.name "Test fixture"'
+[native-start] 'git config user.email fixture@example.invalid'
+[native-start] 'git config core.autocrlf false'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\q1-attr-tests-h5xd5nc8
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "literal filter state-marker collision"'
+[native-start] 'git rev-parse HEAD'
+[native-start] 'git config filter.unspecified.smudge "\\"C:/Users/shbs/AppData/Roaming/uv/python/cpython-3.14.2-windows-x86_64-none/python.exe\\" -B \\"C:/Users/shbs/AppData/Local/Temp/q1-attr-tests-h5xd5nc8/driver.py\\" \\"C:/Users/shbs/AppData/Local/Temp/q1-attr-tests-h5xd5nc8/EXECUTED\\""'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-b_iwudw7
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-b_iwudw7 clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-b_iwudw7 C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-jt1y8xs4 C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-attr-tests-h5xd5nc8\\base'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-b_iwudw7 update-ref --no-deref HEAD 3833b0ef800c833a53fe41c2a33dcbbc2b4dc505'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-b_iwudw7 ls-tree -r -z --full-tree 3833b0ef800c833a53fe41c2a33dcbbc2b4dc505'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-b_iwudw7 read-tree 3833b0ef800c833a53fe41c2a33dcbbc2b4dc505'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-b_iwudw7 check-attr --cached --all -z -- .gitattributes a.py'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-expected-base-j377fh53
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-elfnxx2p
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-elfnxx2p clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-elfnxx2p C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-jt1y8xs4 C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-expected-base-j377fh53\\tree'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-elfnxx2p update-ref --no-deref HEAD 3833b0ef800c833a53fe41c2a33dcbbc2b4dc505'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-elfnxx2p ls-tree -r -z --full-tree 3833b0ef800c833a53fe41c2a33dcbbc2b4dc505'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-elfnxx2p read-tree 3833b0ef800c833a53fe41c2a33dcbbc2b4dc505'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-elfnxx2p check-attr --cached --all -z -- .gitattributes a.py'
+[native-start] 'git config filter.unspecified.smudge "\\"C:/Users/shbs/AppData/Roaming/uv/python/cpython-3.14.2-windows-x86_64-none/python.exe\\" -B \\"C:/Users/shbs/AppData/Local/Temp/q1-attr-tests-h5xd5nc8/driver.py\\" \\"C:/Users/shbs/AppData/Local/Temp/q1-attr-tests-h5xd5nc8/EXECUTED\\""'
+[native-start] 'git checkout-index --all --force'
+ok
+test_disabled_text_rejects_but_reset_text_is_genuinely_absent (test_measure_q1_attr_independent.IndependentAttributeTests.test_disabled_text_rejects_but_reset_text_is_genuinely_absent) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-8n0fspk_
+[native-start] 'git init --quiet'
+[native-start] 'git config user.name "Test fixture"'
+[native-start] 'git config user.email fixture@example.invalid'
+[native-start] 'git config core.autocrlf false'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\q1-attr-independent-tests-n2ytg993
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "ambiguous present text"'
+[native-start] 'git rev-parse HEAD'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-6fae4_b1
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-6fae4_b1 clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-6fae4_b1 C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-8n0fspk_ C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-attr-independent-tests-n2ytg993\\negative'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-6fae4_b1 update-ref --no-deref HEAD 362948a5b5a344816a47e88b7e62097c4a304c6e'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-6fae4_b1 ls-tree -r -z --full-tree 362948a5b5a344816a47e88b7e62097c4a304c6e'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-6fae4_b1 read-tree 362948a5b5a344816a47e88b7e62097c4a304c6e'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-6fae4_b1 check-attr --cached --all -z -- .gitattributes a.py'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-expected-base-6t_hkjb6
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-zddrkrns
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-zddrkrns clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-zddrkrns C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-8n0fspk_ C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-expected-base-6t_hkjb6\\tree'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-zddrkrns update-ref --no-deref HEAD 362948a5b5a344816a47e88b7e62097c4a304c6e'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-zddrkrns ls-tree -r -z --full-tree 362948a5b5a344816a47e88b7e62097c4a304c6e'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-zddrkrns read-tree 362948a5b5a344816a47e88b7e62097c4a304c6e'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-zddrkrns check-attr --cached --all -z -- .gitattributes a.py'
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "genuinely reset text"'
+[native-start] 'git rev-parse HEAD'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-61pku08r
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-61pku08r clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-61pku08r C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-8n0fspk_ C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-attr-independent-tests-n2ytg993\\positive'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-61pku08r update-ref --no-deref HEAD d108494d7da64ec22f6bed93ad4b1f7078c29638'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-61pku08r ls-tree -r -z --full-tree d108494d7da64ec22f6bed93ad4b1f7078c29638'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-61pku08r read-tree d108494d7da64ec22f6bed93ad4b1f7078c29638'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-61pku08r check-attr --cached --all -z -- .gitattributes a.py'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-61pku08r checkout-index --all --force'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-expected-base-g6b0fc5f
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-1fa6a7av
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-1fa6a7av clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-1fa6a7av C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-attr-independent-tests-n2ytg993\\positive C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-expected-base-g6b0fc5f\\tree'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-1fa6a7av update-ref --no-deref HEAD d108494d7da64ec22f6bed93ad4b1f7078c29638'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-1fa6a7av ls-tree -r -z --full-tree d108494d7da64ec22f6bed93ad4b1f7078c29638'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-1fa6a7av read-tree d108494d7da64ec22f6bed93ad4b1f7078c29638'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-1fa6a7av check-attr --cached --all -z -- .gitattributes a.py'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-1fa6a7av checkout-index --all --force'
+ok
+test_external_filter_macro_rejected_before_sentinel_execution (test_measure_q1_resumed.ResumedBoundaryTests.test_external_filter_macro_rejected_before_sentinel_execution) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-5jnh6t6l
+[native-start] 'git init --quiet'
+[native-start] 'git config user.name "Test fixture"'
+[native-start] 'git config user.email fixture@example.invalid'
+[native-start] 'git config core.autocrlf false'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\q1-resumed-tests-9eblyxna
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "fixture: capture input"'
+[native-start] 'git rev-parse HEAD'
+[native-start] 'git config filter.tripwire.smudge "\\"C:/Users/shbs/AppData/Roaming/uv/python/cpython-3.14.2-windows-x86_64-none/python.exe\\" -B \\"C:/Users/shbs/AppData/Local/Temp/q1-resumed-tests-9eblyxna/driver.py\\" \\"C:/Users/shbs/AppData/Local/Temp/q1-resumed-tests-9eblyxna/EXECUTED\\""'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-l5zqfv26
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-l5zqfv26 clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-l5zqfv26 C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-5jnh6t6l C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-resumed-tests-9eblyxna\\direct'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-l5zqfv26 update-ref --no-deref HEAD f624429399105ad1948f773d9dd29f8603f71c18'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-l5zqfv26 ls-tree -r -z --full-tree f624429399105ad1948f773d9dd29f8603f71c18'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-l5zqfv26 read-tree f624429399105ad1948f773d9dd29f8603f71c18'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-l5zqfv26 check-attr --cached --all -z -- .gitattributes a.py'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-2koxr9rt
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-2koxr9rt clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-2koxr9rt C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-5jnh6t6l C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-resumed-tests-9eblyxna\\cli-path'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-2koxr9rt update-ref --no-deref HEAD f624429399105ad1948f773d9dd29f8603f71c18'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-2koxr9rt ls-tree -r -z --full-tree f624429399105ad1948f773d9dd29f8603f71c18'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-2koxr9rt read-tree f624429399105ad1948f773d9dd29f8603f71c18'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-2koxr9rt check-attr --cached --all -z -- .gitattributes a.py'
+[native-start] 'git config filter.tripwire.smudge "\\"C:/Users/shbs/AppData/Roaming/uv/python/cpython-3.14.2-windows-x86_64-none/python.exe\\" -B \\"C:/Users/shbs/AppData/Local/Temp/q1-resumed-tests-9eblyxna/driver.py\\" \\"C:/Users/shbs/AppData/Local/Temp/q1-resumed-tests-9eblyxna/EXECUTED\\""'
+[native-start] 'git checkout-index --all --force'
+ok
+test_neutral_and_versioned_eol_modes_exact_bytes (test_measure_q1_resumed.ResumedBoundaryTests.test_neutral_and_versioned_eol_modes_exact_bytes) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-8hhbag_e
+[native-start] 'git init --quiet'
+[native-start] 'git config user.name "Test fixture"'
+[native-start] 'git config user.email fixture@example.invalid'
+[native-start] 'git config core.autocrlf false'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\q1-resumed-tests-7aodip2u
+[native-start] 'git add --all'
+[native-start] 'git update-index --chmod=+x neutral.py'
+[native-start] 'git commit --quiet -m "versioned materialization"'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-head-ml67ha5q
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe rev-parse HEAD'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-t2e62vhr
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-t2e62vhr clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-t2e62vhr C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-8hhbag_e C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-resumed-tests-7aodip2u\\base'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-t2e62vhr update-ref --no-deref HEAD 9560a6f298ef37654eeb28e2a93ccd87b6b4b81c'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-t2e62vhr ls-tree -r -z --full-tree 9560a6f298ef37654eeb28e2a93ccd87b6b4b81c'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-t2e62vhr read-tree 9560a6f298ef37654eeb28e2a93ccd87b6b4b81c'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-t2e62vhr check-attr --cached --all -z -- .gitattributes nested/.gitattributes nested/again.txt nested/unix.txt neutral.py windows.txt'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-t2e62vhr checkout-index --all --force'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-expected-base-o__ph18m
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-87ptw87x
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-87ptw87x clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-87ptw87x C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-resumed-tests-7aodip2u\\base C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-expected-base-o__ph18m\\tree'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-87ptw87x update-ref --no-deref HEAD 9560a6f298ef37654eeb28e2a93ccd87b6b4b81c'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-87ptw87x ls-tree -r -z --full-tree 9560a6f298ef37654eeb28e2a93ccd87b6b4b81c'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-87ptw87x read-tree 9560a6f298ef37654eeb28e2a93ccd87b6b4b81c'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-87ptw87x check-attr --cached --all -z -- .gitattributes nested/.gitattributes nested/again.txt nested/unix.txt neutral.py windows.txt'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-87ptw87x checkout-index --all --force'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-expected-base-jqr7xfpe
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-ja_4fpqp
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ja_4fpqp clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ja_4fpqp C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-resumed-tests-7aodip2u\\base C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-expected-base-jqr7xfpe\\tree'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ja_4fpqp update-ref --no-deref HEAD 9560a6f298ef37654eeb28e2a93ccd87b6b4b81c'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ja_4fpqp ls-tree -r -z --full-tree 9560a6f298ef37654eeb28e2a93ccd87b6b4b81c'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ja_4fpqp read-tree 9560a6f298ef37654eeb28e2a93ccd87b6b4b81c'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ja_4fpqp check-attr --cached --all -z -- .gitattributes nested/.gitattributes nested/again.txt nested/unix.txt neutral.py windows.txt'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-ja_4fpqp checkout-index --all --force'
+ok
+test_unqualified_attributes_and_git_types_fail_closed (test_measure_q1_resumed.ResumedBoundaryTests.test_unqualified_attributes_and_git_types_fail_closed) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-hfi3w955
+[native-start] 'git init --quiet'
+[native-start] 'git config user.name "Test fixture"'
+[native-start] 'git config user.email fixture@example.invalid'
+[native-start] 'git config core.autocrlf false'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\q1-resumed-tests-s7melf_k
+[native-start] 'git add a.py'
+[native-start] 'git add .gitattributes'
+[native-start] 'git commit --quiet -m "unsupported ident"'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-head-fyepu8ha
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe rev-parse HEAD'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-tjcod30g
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-tjcod30g clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-tjcod30g C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-hfi3w955 C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-resumed-tests-s7melf_k\\0'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-tjcod30g update-ref --no-deref HEAD 07db254cbd0628b47a71f5b522a645ae2f676205'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-tjcod30g ls-tree -r -z --full-tree 07db254cbd0628b47a71f5b522a645ae2f676205'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-tjcod30g read-tree 07db254cbd0628b47a71f5b522a645ae2f676205'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-tjcod30g check-attr --cached --all -z -- .gitattributes a.py'
+[native-start] 'git add a.py'
+[native-start] 'git add .gitattributes'
+[native-start] 'git commit --quiet -m "unsupported working-tree-encoding=UTF-16"'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-head-l1h63gqu
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe rev-parse HEAD'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-032hywwe
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-032hywwe clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-032hywwe C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-hfi3w955 C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-resumed-tests-s7melf_k\\1'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-032hywwe update-ref --no-deref HEAD e5766a113080f31e09ed340cf160e3188333c6b6'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-032hywwe ls-tree -r -z --full-tree e5766a113080f31e09ed340cf160e3188333c6b6'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-032hywwe read-tree e5766a113080f31e09ed340cf160e3188333c6b6'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-032hywwe check-attr --cached --all -z -- .gitattributes a.py'
+[native-start] 'git add a.py'
+[native-start] 'git add .gitattributes'
+[native-start] 'git commit --quiet -m "unsupported crlf"'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-head-2f777rl0
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe rev-parse HEAD'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-9zgrqegy
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-9zgrqegy clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-9zgrqegy C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-hfi3w955 C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-resumed-tests-s7melf_k\\2'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-9zgrqegy update-ref --no-deref HEAD b3c41b4cc89c28061be102ebd854d8ac528b9929'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-9zgrqegy ls-tree -r -z --full-tree b3c41b4cc89c28061be102ebd854d8ac528b9929'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-9zgrqegy read-tree b3c41b4cc89c28061be102ebd854d8ac528b9929'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-9zgrqegy check-attr --cached --all -z -- .gitattributes a.py'
+[native-start] 'git add --all'
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "plain files"'
+[native-start] 'git rev-parse HEAD'
+[native-start] 'git rev-parse 465f52d4e3b18b28bd17524da8a7cfdb7475e1d9:a.py'
+[native-start] 'git update-index --add --cacheinfo 120000 2ae28399f5fda2dfb1b04405f4a3b4895f5fac1e unsupported'
+[native-start] 'git commit --quiet -m "unsupported mode 120000"'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-head-pdwp7vs4
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe rev-parse HEAD'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-cvkqe7ao
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-cvkqe7ao clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-cvkqe7ao C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-hfi3w955 C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-resumed-tests-s7melf_k\\3'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-cvkqe7ao update-ref --no-deref HEAD 70a4524e4b154e358bf4b195a76100abd2048d6e'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-cvkqe7ao ls-tree -r -z --full-tree 70a4524e4b154e358bf4b195a76100abd2048d6e'
+[native-start] 'git update-index --add --cacheinfo 160000 465f52d4e3b18b28bd17524da8a7cfdb7475e1d9 unsupported'
+[native-start] 'git commit --quiet -m "unsupported mode 160000"'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-head-79r9ctgj
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe rev-parse HEAD'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-policy-7_nuhciv
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-7_nuhciv clone --quiet --no-hardlinks --no-checkout --template=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-7_nuhciv C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-hfi3w955 C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-resumed-tests-s7melf_k\\4'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-7_nuhciv update-ref --no-deref HEAD 406ed135022a68cfe6287aeb351572c73cce8dc0'
+[native-start] 'C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin\\git.exe -c core.autocrlf=false -c core.eol=lf -c core.attributesFile=nul -c core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-policy-7_nuhciv ls-tree -r -z --full-tree 406ed135022a68cfe6287aeb351572c73cce8dc0'
+ok
+test_public_python_cli_from_nested_cwd_keeps_all_nine_and_archives_raw (test_measure_q1_integration.Q1IntegrationTests.test_public_python_cli_from_nested_cwd_keeps_all_nine_and_archives_raw) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-aeqt6vf_
+[native-start] 'git init --quiet'
+[native-start] 'git config user.name "Test fixture"'
+[native-start] 'git config user.email fixture@example.invalid'
+[native-start] 'git config core.autocrlf false'
+[owned-temp] C:\Users\shbs\AppData\Local\Temp\q1-evidence-cna49hqe
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "fixture: capture input"'
+[native-start] 'git rev-parse HEAD'
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "fixture: actual cycle"'
+[native-start] 'git rev-parse HEAD'
+[native-start] 'C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe -B C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\probe.py --repo C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-aeqt6vf_ --slug q1 --base 24dd26b893ff3ada59d63e568baebca9c8b2368e --skip-mutation --measurement-config C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-aeqt6vf_\\measurement.json'
+ok
+test_esm_and_cjs_are_counted_as_code (test_probe.ExistingProbeBehaviorTests.test_esm_and_cjs_are_counted_as_code) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\tmper9ya7az
+ok
+test_failed_or_empty_cycle_command_is_not_zero (test_probe.ExistingProbeBehaviorTests.test_failed_or_empty_cycle_command_is_not_zero) ... ok
+test_missing_baseline_is_not_a_passing_comparison (test_probe.ExistingProbeBehaviorTests.test_missing_baseline_is_not_a_passing_comparison) ... ok
+test_missing_static_results_are_not_zero (test_probe.ExistingProbeBehaviorTests.test_missing_static_results_are_not_zero) ... ok
+test_one_greenfield_cycle_fails (test_probe.ExistingProbeBehaviorTests.test_one_greenfield_cycle_fails) ... ok
+test_current_native_mutation_is_measured_even_when_other_proof_is_missing (test_probe.ProbeCliTests.test_current_native_mutation_is_measured_even_when_other_proof_is_missing) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-nhmxmsq9
+[native-start] 'git init --quiet'
+[native-start] 'git config user.name "Test fixture"'
+[native-start] 'git config user.email fixture@example.invalid'
+[native-start] 'git config core.autocrlf false'
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "fixture: capture input"'
+[native-start] 'git rev-parse HEAD'
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "fixture: capture input"'
+[native-start] 'git rev-parse HEAD'
+[native-start] 'C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe -B C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\probe.py --slug fresh --base c02655c02fb3a90d55e37a54224886c19028ddfb -- node --test source.test.mjs'
+ok
+test_invalid_baseline_never_becomes_greenfield (test_probe.ProbeCliTests.test_invalid_baseline_never_becomes_greenfield) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-ga22kob4
+[native-start] 'git init --quiet'
+[native-start] 'git config user.name "Test fixture"'
+[native-start] 'git config user.email fixture@example.invalid'
+[native-start] 'git config core.autocrlf false'
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "fixture: capture input"'
+[native-start] 'git rev-parse HEAD'
+[native-start] 'C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe -B C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\probe.py --slug unknown-base --base missing-reference --skip-mutation'
+ok
+test_stale_score_is_not_used_after_current_mutation_failure (test_probe.ProbeCliTests.test_stale_score_is_not_used_after_current_mutation_failure) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-w7xggoad
+[native-start] 'git init --quiet'
+[native-start] 'git config user.name "Test fixture"'
+[native-start] 'git config user.email fixture@example.invalid'
+[native-start] 'git config core.autocrlf false'
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "fixture: capture input"'
+[native-start] 'git rev-parse HEAD'
+[native-start] 'C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe -B C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\probe.py --slug stale --base 9dc6dbb0e87a4edbc4cbb5ed8c9a285aeacb5829 -- node --test missing.test.mjs'
+ok
+test_unavailable_default_cli_fails_without_workflow_artifacts (test_probe.ProbeCliTests.test_unavailable_default_cli_fails_without_workflow_artifacts) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\bulletproof-git-v8xwehw6
+[native-start] 'git init --quiet'
+[native-start] 'git config user.name "Test fixture"'
+[native-start] 'git config user.email fixture@example.invalid'
+[native-start] 'git config core.autocrlf false'
+[native-start] 'git add --all'
+[native-start] 'git commit --quiet -m "fixture: capture input"'
+[native-start] 'git rev-parse HEAD'
+[native-start] 'C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe -B C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\probe.py --slug observed --base d852f423deaa082fd0fb54ae3c38566cf1a35f3d --skip-mutation'
+ok
+test_complexity_inventory_preserves_quoted_filename (test_probe.ProbePolicyTests.test_complexity_inventory_preserves_quoted_filename) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\tmpeug332d5
+ok
+test_default_policy_cannot_omit_unimplemented_required_collectors (test_probe.ProbePolicyTests.test_default_policy_cannot_omit_unimplemented_required_collectors) ... ok
+test_language_support_does_not_claim_python_cycles (test_probe.ProbePolicyTests.test_language_support_does_not_claim_python_cycles) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\tmpalzx3svz
+ok
+test_malformed_static_inventory_is_unsupported_not_a_crash (test_probe.ProbePolicyTests.test_malformed_static_inventory_is_unsupported_not_a_crash) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\tmpl9w9pb7b
+ok
+test_measured_without_value_and_empty_policy_are_invalid (test_probe.ProbePolicyTests.test_measured_without_value_and_empty_policy_are_invalid) ... ok
+test_nonfinite_and_boolean_measurements_are_rejected (test_probe.ProbePolicyTests.test_nonfinite_and_boolean_measurements_are_rejected) ... ok
+test_partial_complexity_csv_is_not_a_complete_measurement (test_probe.ProbePolicyTests.test_partial_complexity_csv_is_not_a_complete_measurement) ... ok
+test_partial_scope_and_missing_comparison_cannot_complete (test_probe.ProbePolicyTests.test_partial_scope_and_missing_comparison_cannot_complete) ... ok
+test_policy_distinguishes_missing_proof_from_measured_failure (test_probe.ProbePolicyTests.test_policy_distinguishes_missing_proof_from_measured_failure) ... ok
+test_snapshot_ignores_own_output_but_not_other_contracts (test_probe.ProbePolicyTests.test_snapshot_ignores_own_output_but_not_other_contracts) ... [owned-temp] C:\Users\shbs\AppData\Local\Temp\tmpgtha72ih
+ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 228.396s
+
+OK

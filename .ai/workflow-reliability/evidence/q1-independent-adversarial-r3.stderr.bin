@@ -1,0 +1,31 @@
+test_actual_greenfield_requires_complete_two_file_baseline (test_measure_q1_verification.IndependentQ1VerificationTests.test_actual_greenfield_requires_complete_two_file_baseline) ... ok
+test_builtin_import_uses_actual_python_resolution_not_local_sys_file (test_measure_q1_verification.IndependentQ1VerificationTests.test_builtin_import_uses_actual_python_resolution_not_local_sys_file) ... FAIL
+test_disjoint_roots_must_not_share_mutable_base_head_files (test_measure_q1_verification.IndependentQ1VerificationTests.test_disjoint_roots_must_not_share_mutable_base_head_files) ... FAIL
+test_module_cannot_be_used_as_a_package_but_graph_must_fail_closed (test_measure_q1_verification.IndependentQ1VerificationTests.test_module_cannot_be_used_as_a_package_but_graph_must_fail_closed) ... ok
+test_native_relative_imports_match_nested_package_edges (test_measure_q1_verification.IndependentQ1VerificationTests.test_native_relative_imports_match_nested_package_edges) ... ok
+test_public_census_keeps_ignored_untracked_tests_examples_benchmarks (test_measure_q1_verification.IndependentQ1VerificationTests.test_public_census_keeps_ignored_untracked_tests_examples_benchmarks) ... ok
+
+======================================================================
+FAIL: test_builtin_import_uses_actual_python_resolution_not_local_sys_file (test_measure_q1_verification.IndependentQ1VerificationTests.test_builtin_import_uses_actual_python_resolution_not_local_sys_file)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_verification.py", line 148, in test_builtin_import_uses_actual_python_resolution_not_local_sys_file
+    self.assertNotIn(("scripts/evidence.py", "sys.py"), local,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     "CPython's builtin sys takes precedence over a repository sys.py")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('scripts/evidence.py', 'sys.py') unexpectedly found in [('scripts/evidence.py', 'sys.py'), ('sys.py', 'scripts/evidence.py')] : CPython's builtin sys takes precedence over a repository sys.py
+
+======================================================================
+FAIL: test_disjoint_roots_must_not_share_mutable_base_head_files (test_measure_q1_verification.IndependentQ1VerificationTests.test_disjoint_roots_must_not_share_mutable_base_head_files)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_verification.py", line 214, in test_disjoint_roots_must_not_share_mutable_base_head_files
+    self.assertTrue(rejected, "Distinct paths are not distinct mutable source copies")
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Distinct paths are not distinct mutable source copies
+
+----------------------------------------------------------------------
+Ran 6 tests in 95.276s
+
+FAILED (failures=2)

@@ -10,64 +10,63 @@
 <body>
 <h1>Workflow reliability - incomplete delivery</h1>
 <div class="meta">Branch: shbs-microsoft-workflow-app-verification<br>
-Current scope: I1 measurement reliability. Independently approved for limited local preservation.<br>
-<a href="design.html">Design</a> · <a href="tasks.json">Executable plan</a> · <a href="traceability.md">Acceptance ledger</a></div>
+Current scope: guarded-workflow continuation, measurement enablement and documentation.<br>
+<a href="design.html">Design</a> · <a href="continuation-plan.html">Continuation plan</a> · <a href="traceability.md">Acceptance ledger</a></div>
 
 <h2>Outcome</h2>
-<p><strong>FACT:</strong> I1 adds real ESM/CJS mutation classification and incomplete/fail metric reporting. Independent verification and separate review approve its functional preservation. <strong>The prioritized request is not complete:</strong> guarded transitions and remaining P1/P2 work are unimplemented. Missing required quality proof blocks advancement.</p>
+<p><strong>Partial delivery:</strong> I1 reliability, docs and bundle repair are committed. C1/Q1 now have independent verification and review approval for combined local preservation; the source candidate matches tested bytes. CLI, remaining collectors and release quality are still incomplete.</p>
 
 <h2>Implemented and pending</h2>
-<p>Implemented: source-bound atomic reports/locking; exact argv/cwd; assertion-only kills; restoration and freshness checks; unknown-baseline handling; completeness policy and consistent docs. Windows Unicode capture and a missing CSV assertion are fixed.</p>
-<p>Pending: command admission, scoped resume, compatibility-retirement proof, current-design pointers, held-out diagnosis and authoritative workflow status. No live-model effectiveness gain is claimed.</p>
+<p><strong>Delivered:</strong> source-bound atomic reports, exact argv/cwd, assertion-only kills, freshness/restoration and fail-closed completeness; redesigned README/banner, user guide and installation/contributor/architecture updates. Docs were rendered locally at desktop/mobile sizes in light/dark modes.</p>
+<p><strong>Accepted:</strong> <a href="evidence/q1-attr-code-review.md">final attribute correction and quality guide</a>. Parent rendering replacements are explicitly reconciled, not unchanged proof. <strong>Next:</strong> combined preservation, CLI/recovery, operator/canonical docs, fresh-agent resume, held-out diagnosis and complete quality proof.</p>
 
 <h2>Acceptance and gates</h2>
 <table>
 <tr><th>AC</th><th>Current verdict</th><th>Evidence or blocker</th></tr>
 <tr><td>01 - ESM/CJS</td><td>VERIFIED-WITH-LIMITATIONS</td><td>Windows/Node24 native discovery/routing.</td></tr>
-<tr><td>02 - truthful metrics</td><td>VERIFIED functionally</td><td>31 real-producer controls/corruptions per run.</td></tr>
-<tr><td>03-04 - guarded transitions</td><td>NOT-VERIFIED</td><td>I2 not started; depends on blocked I1 gate.</td></tr>
-<tr><td>05-08 - resume/contracts/research/status</td><td>NOT-VERIFIED</td><td>Future I2/I3 work; compaction was not a fresh-agent resume experiment.</td></tr>
-<tr><td>09 - delivery</td><td>Quality closure BLOCKED</td><td>Verification/review accepted; required metrics missing.</td></tr>
+<tr><td>02 - truthful metrics</td><td>VERIFIED-WITH-LIMITATIONS</td><td><a href="evidence/q1-attr-code-review.md">Final correction approved</a>; complete quality still due.</td></tr>
+<tr><td>03-04 - guards</td><td>Core accepted with limits; CLI pending</td><td><a href="evidence/c1-code-review-r2.md">Re-review approved</a>; shared-policy preservation before C2.</td></tr>
+<tr><td>05-08 - resume/contracts/research/status</td><td>NOT-VERIFIED overall</td><td>Protocol cases exercised; actual CLI/canonical/host work remains.</td></tr>
+<tr><td>09 - delivery</td><td>BLOCKED</td><td>Continuation gates and actual measurements due.</td></tr>
+<tr><td>10 - documentation</td><td>Partial</td><td><a href="evidence/documentation-disposition.md">Existing-feature docs reviewed</a>; operator additions due.</td></tr>
 </table>
 <table>
 <tr><th>G1</th><th>G2</th><th>G3</th><th>G4</th><th>G5</th><th>G6</th></tr>
-<tr><td>Pass</td><td>Autopilot acceptance</td><td>Pass</td><td>Coverage unverified</td><td>Pass for I1</td><td>Blocked</td></tr>
+<tr><td>Pass</td><td>Autonomous acceptance; human unconfirmed</td><td>Continuation accepted</td><td>Bounded correction passes</td><td>Integrated replay passes</td><td>Partial preservation; quality blocked</td></tr>
 </table>
 
 <h2>Measurements, not substitutes</h2>
 <table>
 <tr><th>Observation</th><th>Result</th><th>Scope</th></tr>
-<tr><td>Python tests</td><td>54 passed</td><td><a href="evidence/i1-independent-review-fixes-verification.md">Full replay</a>; 97/98 inputs unchanged plus reviewed packaging delta.</td></tr>
-<tr><td>Native tests</td><td>62 passed; none skipped</td><td><a href="evidence/i1-integrated-native-final.log">Scorer/reporter/harness regression</a></td></tr>
-<tr><td>Fixed corpus</td><td>10 tasks pass; 79 functional assertions</td><td><a href="evidence/i1-integrated-corpus-final.log">Fixed artifacts, not live model evaluation</a></td></tr>
+<tr><td>I1 Python tests (historical)</td><td>54 passed</td><td><a href="evidence/i1-independent-review-fixes-verification.md">I1 full replay</a>; 97/98 inputs unchanged plus reviewed packaging delta.</td></tr>
+<tr><td>C1 independent r5</td><td>83 workflow + 10 evidence passed</td><td><a href="evidence/c1-independent-r5-verification.md">Stable replay</a>; separate correction review approved.</td></tr>
+<tr><td>Q1 independent r3</td><td>42 Q1 + 19 probe passed</td><td><a href="evidence/q1-independent-r3-verification.md">Original corrections verified</a>; later review reopened acceptance.</td></tr>
+<tr><td>Q1 independent baseline replay</td><td>74 distinct methods passed</td><td><a href="evidence/q1-final-verification-report.md">Three clean batches</a>; before the final attribute correction.</td></tr>
+<tr><td>Final independent replay</td><td>28 focused +83 workflow +10 evidence passed</td><td><a href="evidence/q1-attr-independent-report.md">121 distinct methods, once each</a>; <a href="evidence/c1-q1-composition-result.json">combined candidate bytes match</a>.</td></tr>
+<tr><td>Continuation native tests</td><td>65 passed; none skipped</td><td><a href="evidence/continuation-native.log">Scorer/reporter/harness regression</a>; bundle correction reviewed and committed.</td></tr>
+<tr><td>Fixed corpus</td><td>10 tasks pass; 79 functional assertions</td><td><a href="evidence/continuation-corpus.log">Fixed artifacts, not live model evaluation</a></td></tr>
 <tr><td>CSV mutation</td><td>9/9 graded kills; seven ungraded</td><td>0.9 evaluation bar unchanged; not whole-change mutation proof</td></tr>
-<tr><td>Actual quality</td><td>Incomplete/fail</td><td><a href="metrics.json">Latest report</a>; run/source binding must be read with its freshness</td></tr>
+<tr><td>Actual quality</td><td>No current complete proof</td><td><a href="metrics.json">Historical incomplete report</a>; subsequent edits invalidate current-snapshot use.</td></tr>
 </table>
-<p>Independent probe again lacked nine required measurements. Diff-coverage/architecture collectors are unimplemented; other tools/scope proof are unavailable; dirty source blocks mutation. Immediate freshness was verified before evidence archival. Refusal tests are not a quality pass.</p>
+<p><a href="measurement-enablement.html">Measurement enablement</a> is in progress. Refusal tests, installed tools and dry-run evaluation cannot replace missing actual measurements.</p>
 
 <h2>Quality scorecard</h2>
 <table>
 <tr><th>Dimension</th><th>Status</th><th>Basis</th></tr>
-<tr><td>Correctness</td><td>Verified for I1 only</td><td>R1/R2 resolved; future ACs unimplemented.</td></tr>
+<tr><td>Correctness</td><td>C1/Q1 accepted with limits</td><td>Independent replay/review accepted; full quality not established.</td></tr>
 <tr><td>Grounding</td><td>Exhaustive audit unverified</td><td>Cited research and source-backed review.</td></tr>
 <tr><td>Design fidelity</td><td>Accepted for I1</td><td>Canonical selection/reconciliation matches contract.</td></tr>
-<tr><td>Scope fidelity</td><td>4/5 bounded review</td><td>I1 only; overall request incomplete.</td></tr>
+<tr><td>Scope fidelity</td><td>Historical I1: 4/5 bounded review</td><td>Continuation not rescored; overall request incomplete.</td></tr>
 <tr><td>Reuse / DRY</td><td>Unverified</td><td>Duplication proof unavailable.</td></tr>
 <tr><td>Modularity</td><td>Unverified</td><td>Complexity/cycles/architecture unavailable.</td></tr>
 <tr><td>Maintainability</td><td>Not numerically rescored</td><td>Command-selection duplication resolved.</td></tr>
 <tr><td>Robustness</td><td>Unverified</td><td>Static proof unavailable.</td></tr>
 <tr><td>Test quality</td><td>Unverified for ship</td><td>Whole-change mutation/coverage missing.</td></tr>
 </table>
-<p><a href="evidence/i1-code-review-r2.md">Final re-review approves limited preservation</a>: R1/R2 resolved, packaging R3 independently checked, raw hashes preserved. No thresholds weakened and no quality waiver granted.</p>
+<p><a href="evidence/i1-code-review-r2.md">I1 re-review</a> approves limited preservation, not release. Continuation scores remain unproven.</p>
 
 <h2>How to finish</h2>
-<p>Local preservation is approved, not full release. Actual collectors and fresh whole-change proof are needed to close I1 before I2.T1. The commit SHA is delivered in the session handoff. Replay the approved commands from PowerShell:</p>
-<pre><code>$p = Get-Content -Raw .ai\workflow-reliability\tasks.json | ConvertFrom-Json
-foreach ($id in 'CMD-ALL-PY','CMD-NATIVE-BASE','CMD-NATIVE-RESULT','CMD-EVAL','CMD-PROBE') {
-  $c = $p.commands.$id
-  &amp; $p.execution.python -B scripts\run.py --idle $c.idle_seconds --max $c.max_seconds -- @($c.argv)
-  if ($LASTEXITCODE -ne 0) { break }
-}</code></pre>
-<p>Commands cannot supply unimplemented collectors. Human approval is unconfirmed under autopilot. Only Node 24.11.1 was executed; Node 22 is unverified. Hash scopes are not a sandbox; identities are not authenticated. GitHub remains blocked by the prior EMU 403; no publication retry occurred.</p>
+<p>Earlier commits: <code>aaec9b9</code> (I1), <code>015d353</code> (docs), <code>0b7e1a1</code> (bundle/hero). Preserve C1/Q1 together, then complete C2/C3/C4 and Q2-Q5. <a href="evidence/c1-standalone-preservation-report.md">The C1-only candidate failed</a>; combined source composition now matches. Freeze all writers before final quality proof.</p>
+<p>Human approval remains unconfirmed. Executed runtimes: Python 3.14.2 / Node 24.11.1 on Windows; no broader matrix proof. Hash scope is not a sandbox; producer identities are self-declared. Compaction is not fresh-agent resume. Publication remains blocked by EMU 403; no retry or bypass occurred.</p>
 </body>
 </html>

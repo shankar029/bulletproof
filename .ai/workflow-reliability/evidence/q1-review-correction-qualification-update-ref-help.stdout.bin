@@ -1,0 +1,14 @@
+usage: git update-ref [<options>] -d <refname> [<old-oid>]
+   or: git update-ref [<options>]    <refname> <new-oid> [<old-oid>]
+   or: git update-ref [<options>] --stdin [-z] [--batch-updates]
+
+    -m <reason>           reason of the update
+    -d                    delete the reference
+    --no-deref            update <refname> not the one it points to
+    --deref               opposite of --no-deref
+    -z                    stdin has NUL-terminated arguments
+    --[no-]stdin          read updates from stdin
+    --[no-]create-reflog  create a reflog
+    -0, --[no-]batch-updates
+                          batch reference updates
+

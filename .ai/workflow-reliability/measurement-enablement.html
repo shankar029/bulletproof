@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Measurement enablement — Workflow reliability</title>
+<link rel="stylesheet" href="../assets/artifact.css">
+<script src="../assets/artifact.js" defer data-doc="measurement-enablement.html" data-slug="workflow-reliability"></script>
+</head>
+<body>
+<h1>Enable actual quality measurements</h1>
+<div class="meta">17 September 2026 · Prerequisite Q · Revision 2 · Independently accepted design<br>
+<a href="measurement-enablement-contracts.json">Precise contracts, adapters and check sequence</a> ·
+<a href="evidence/continuation-measurement-research.md">Grounding</a> ·
+<a href="continuation-plan.html">Approved functional continuation</a></div>
+
+<h2>1. Decision and boundary</h2>
+<p><strong>Build producers, not another gate.</strong> Current collectors cannot supply
+complete mixed-language proof. Q1–Q5 enable all nine metrics; actual proof still gates release.
+Mutation stays 60%; evaluation stays 0.9.</p>
+<p class="assumption"><strong>New autonomous policy:</strong> 100% changed executable lines and
+decision outcomes under the declared models. This is not historical policy or human approval.
+An empty executable denominator is unavailable, not 100%. Tool qualification remains required.</p>
+
+<h2>2. Program design</h2>
+<figure><svg viewBox="0 0 720 85" role="img" aria-label="Module dependencies">
+<rect x="5" y="10" width="145" height="54" class="b"/><text x="77" y="41" class="t">probe: verdict</text>
+<line x1="150" y1="37" x2="215" y2="37" class="a"/><text x="181" y="27" class="l">calls →</text>
+<rect x="215" y="10" width="270" height="54" class="b"/><text x="350" y="32" class="t">measure: inventory + adapters</text><text x="350" y="51" class="s">coverage / graph / scalar / mutation</text>
+<line x1="485" y1="37" x2="550" y2="37" class="a"/><text x="517" y="27" class="l">uses →</text>
+<rect x="550" y="10" width="165" height="54" class="b"/><text x="632" y="41" class="t">evidence + run</text>
+</svg><figcaption>Standalone measurement never imports the guard. New APIs are proposed.</figcaption></figure>
+<table>
+<thead><tr><th>Component / criterion</th><th>Interface, change and responsibility</th></tr></thead>
+<tbody>
+<tr><td><code>measure.py</code> · Q1</td><td><code>inventory(context, revision, changed_production)</code>,
+<code>collect_pair(context, config, base, head)</code>: lower-layer discovery owner.
+Probe imports it, never the reverse. Retain errors, exclusions and zero-output files.</td></tr>
+<tr><td><code>measure_graph.py</code> +
+<code>measure_js.mjs</code> · Q1/Q2</td><td><code>parse_files(context, inventory, config) → ParsedInventory</code>,
+<code>evaluate_rules(graph, rules)</code>: Python AST/TypeScript produce shared source-bound
+records for graph, scalar, coverage and candidate adapters. No reverse imports/framework.</td></tr>
+<tr><td><code>measure_scalars.py</code> · Q2</td><td><code>collect(context, parsed, config)</code>:
+jscpd duplication; lizard complexity; Vulture/JS dead-code findings; Ruff/TypeScript static
+diagnostics. Identical semantics at base/head.</td></tr>
+<tr><td><code>measure_coverage.py</code> · Q3</td><td><code>collect(context, parsed, config, suites)</code>,
+<code>select(candidate, coverage, suites)</code>: Python child coverage and Node V8 ranges;
+union line sets, retain uncovered files.</td></tr>
+<tr><td><code>mutate.py</code> +
+<code>unittest_result.py</code> · Q3–Q5</td><td>Extend <code>build_mutants</code>,
+<code>select_test_run</code>, <code>validate_mutation_results</code>: AST/token candidates,
+phase-aware proof and selected suites. Stable controller executes separate target bytes,
+including mutated controller sources.</td></tr>
+<tr><td><code>probe.py</code> + producers · Q1–Q4</td><td><code>validate_measurement_report(report, context,
+base, head, config, policy, artifacts)</code>: producers rederive all nine metrics, comparisons
+and verdict from validated raw evidence. Reject inconsistent summaries; no guard dependency.</td></tr>
+</tbody></table>
+
+<h2>3. Exact meaning of “measured”</h2>
+<p>Inventory includes tests/examples/benchmarks; coverage/mutation select changed production.
+Zero findings require successful processing. Unsupported inputs remain explicit.
+<code>DirectoryRef = "." | Path</code> permits root only in directory fields;
+file/artifact paths remain non-root, non-escaping.</p>
+<p>Compare cycle/architecture identities in the literal-import graph; enforce layering and
+forbidden test/benchmark imports. Unresolved locals or parse failures are unavailable.
+Computed imports/reflection/commands remain outside this static model, not proved safe.</p>
+<p>Producer validators bind raw records, exact receipt partitions, revision/source/tool/policy
+and owned artifacts; recompute values, denominators and verdict. Hash identity alone is
+not aggregate consistency, authenticated identity or containment.</p>
+
+<h2>4. Self-measurement without self-corruption</h2>
+<figure><svg viewBox="0 0 720 90" role="img" aria-label="Measurement execution sequence">
+<rect x="5" y="10" width="175" height="54" class="b"/><text x="92" y="32" class="t">Freeze + green baseline</text><text x="92" y="51" class="s">controller separate from target</text>
+<line x1="180" y1="37" x2="270" y2="37" class="a"/><text x="225" y="27" class="l">map →</text>
+<rect x="270" y="10" width="175" height="54" class="b"/><text x="357" y="32" class="t">Select tests; mutate copy</text><text x="357" y="51" class="s">syntax → classified run</text>
+<line x1="445" y1="37" x2="535" y2="37" class="a"/><text x="490" y="27" class="l">verify →</text>
+<rect x="535" y="10" width="180" height="54" class="b"/><text x="625" y="32" class="t">Restore + reconcile</text><text x="625" y="51" class="s">any missing proof → fail</text>
+</svg></figure>
+<p>Retain the deterministic 20-candidate sample and expose omissions. Coverage selects
+<em>tests, not mutants</em>; uncertain mapping and survivors use full-suite confirmation.
+Python kills require the actual failed test assert instruction or qualified unittest failure
+path, not an ancestor assertion line. Setup/application errors and timeouts never kill.</p>
+<p>The historical Python suite took about 12 minutes. Measure durations and cost the schedule
+before launch; keep the controller outside mutated target files. Budget exhaustion is
+incomplete, never tail dropping or timeout-as-survival.</p>
+
+<h2>5. Incremental delivery and proof</h2>
+<table>
+<thead><tr><th>Slice</th><th>Observable result / real tests</th></tr></thead>
+<tbody>
+<tr><td>Q1 · shortest first</td><td>Inventory + Python AST graph + architecture/cycle reconciliation.
+A Python-only Git fixture measures real graph values while other required metrics still fail
+closed. Tests: root/nested cwd, standalone imports, failed enumeration, swapped revision,
+zero imports, replaced cycle, forbidden edge and forged graph/summary rejection.
+No external installation needed for this first slice.</td></tr>
+<tr><td>Q2 · after Q1</td><td>Qualify external tools; extend every scalar to Python/JS/MJS/TS.
+Tests: zero-function/zero-clone files, ignored inputs, parse failure, dynamic-site disclosure,
+same-rule base/head and new-violation identity.</td></tr>
+<tr><td>Q3 → Q4 → Q5</td><td>Phase-aware unittest, subprocess coverage and selection → mixed Python/parsed-JS
+mutation → actual frozen whole-change probe. Test uncovered files, both branch arms,
+setup/cleanup/subtests, templates/regexes, controller self-mutation and stale/forged summaries.
+Each slice: unit + real CLI integration, fresh verification/review; final native/corpus regression.</td></tr>
+</tbody></table>
+<p><strong>Q2 prerequisites:</strong> qualify skill-owned coverage.py, lizard, Vulture, Ruff,
+jscpd and TypeScript 5.9.3; installed tsc 7.0.2 is not that parser API. No WSL or project
+framework dependencies. Documented platform support is not execution proof.</p>
+<p><strong>Rejected:</strong> imported scores, extension-only inventories, unqualified Windows
+tools and controller exclusions. Q is not passed; publication's 403 remains separate.
+Preserved <a href="evidence/measurement-design-review.md">review</a>,
+<a href="evidence/measurement-design-fixes.md">dispositions</a> and
+<a href="evidence/measurement-design-review-r2.md">independent acceptance</a>.</p>
+</body>
+</html>

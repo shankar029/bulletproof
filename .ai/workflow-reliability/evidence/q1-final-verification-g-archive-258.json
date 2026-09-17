@@ -1,0 +1,223 @@
+{
+  "source": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-w3soti1v",
+  "archive": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-final-verification-a-g\\258.zip",
+  "files": {
+    ".gitignore": {
+      "bytes": 16,
+      "sha256": "50a99179054ed41b7994be63fc77a8a925e108f225056da1db5cb8b57a320500"
+    },
+    "a.py": {
+      "bytes": 10,
+      "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886"
+    },
+    "approval.txt": {
+      "bytes": 55,
+      "sha256": "20ead7dc3b7c828cb2e7d0084467ba84cb1f911c03fbd371224e24c24c326701"
+    },
+    "b.py": {
+      "bytes": 10,
+      "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886"
+    },
+    "c.py": {
+      "bytes": 10,
+      "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886"
+    },
+    "ignored.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "measurement.json": {
+      "bytes": 1198,
+      "sha256": "0820fe6d1aeb402d9003d84a89651e1e332408482a4bb2cb4ea35064d6e59f52"
+    },
+    "module.cjs": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "module.mjs": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "test_example.py": {
+      "bytes": 111,
+      "sha256": "8cc263d23109db43de954956d46b6907cff78d989f5960c4366535f0008df103"
+    },
+    "unsupported.go": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".git/COMMIT_EDITMSG": {
+      "bytes": 14,
+      "sha256": "04d622e20520de53bb7cb6dc880083e32252215feba4f95ae6b0bfb52fd032fb"
+    },
+    ".git/config": {
+      "bytes": 209,
+      "sha256": "06b935a50e54338b7099f27b3a786ef819ef1fb51bd0da11ea72d81a173aae49"
+    },
+    ".git/description": {
+      "bytes": 73,
+      "sha256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee"
+    },
+    ".git/HEAD": {
+      "bytes": 23,
+      "sha256": "f6f2b945f6c411b02ba3da9c7ace88dcf71b6af65ba2e0d89aa82900042b5a10"
+    },
+    ".git/index": {
+      "bytes": 1523,
+      "sha256": "594582f5423eccf3d5fa73943b42841b7ae5eef8027ab6eacd588c076944afd8"
+    },
+    ".git/hooks/applypatch-msg.sample": {
+      "bytes": 478,
+      "sha256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7"
+    },
+    ".git/hooks/commit-msg.sample": {
+      "bytes": 896,
+      "sha256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437"
+    },
+    ".git/hooks/fsmonitor-watchman.sample": {
+      "bytes": 4726,
+      "sha256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0"
+    },
+    ".git/hooks/post-update.sample": {
+      "bytes": 189,
+      "sha256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5"
+    },
+    ".git/hooks/pre-applypatch.sample": {
+      "bytes": 424,
+      "sha256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475"
+    },
+    ".git/hooks/pre-commit.sample": {
+      "bytes": 1649,
+      "sha256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b"
+    },
+    ".git/hooks/pre-merge-commit.sample": {
+      "bytes": 416,
+      "sha256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53"
+    },
+    ".git/hooks/pre-push.sample": {
+      "bytes": 1374,
+      "sha256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a"
+    },
+    ".git/hooks/pre-rebase.sample": {
+      "bytes": 4898,
+      "sha256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3"
+    },
+    ".git/hooks/pre-receive.sample": {
+      "bytes": 544,
+      "sha256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989"
+    },
+    ".git/hooks/prepare-commit-msg.sample": {
+      "bytes": 1492,
+      "sha256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619"
+    },
+    ".git/hooks/push-to-checkout.sample": {
+      "bytes": 2783,
+      "sha256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f"
+    },
+    ".git/hooks/sendemail-validate.sample": {
+      "bytes": 2308,
+      "sha256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92"
+    },
+    ".git/hooks/update.sample": {
+      "bytes": 3650,
+      "sha256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106"
+    },
+    ".git/info/exclude": {
+      "bytes": 240,
+      "sha256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1"
+    },
+    ".git/logs/HEAD": {
+      "bytes": 339,
+      "sha256": "f6d5195736e5ee0451f7cbdbfd563537532f10740b7d25c6764d6cc1bdac5683"
+    },
+    ".git/logs/refs/heads/master": {
+      "bytes": 339,
+      "sha256": "f6d5195736e5ee0451f7cbdbfd563537532f10740b7d25c6764d6cc1bdac5683"
+    },
+    ".git/objects/0a/979d4ef477386ba3190fbb0d977e160cd8329f": {
+      "bytes": 26,
+      "sha256": "fca08304046b5242c79fcef807252f0667de761a2106d73dbe3fafa371ac0664"
+    },
+    ".git/objects/40/1ecc8385eaa10da1cbca03e8b900aab2180509": {
+      "bytes": 70,
+      "sha256": "21e02b25153cbd861768929d800e4e557df6027d1b16a1580603927c0a4934a3"
+    },
+    ".git/objects/41/f583563e6b5611728f93f8274d49e2c5edc29b": {
+      "bytes": 56,
+      "sha256": "1f6356020f52d3cdd7ee9502a5ee52cadf11188ec911cd16d935a5a004f3b6f8"
+    },
+    ".git/objects/4c/1e54e9c7f3e14c81ebe8678a78a58aae73cb93": {
+      "bytes": 160,
+      "sha256": "5da330f9d382061a9df62538420258dc5f1bc6a3bc41882c71ed020c1d35d3f4"
+    },
+    ".git/objects/72/62fbad208dea13e9dc8629dca74844bdf58f61": {
+      "bytes": 32,
+      "sha256": "ddda32af084ecce0545f898b05c3f56244b1f31ea36e3f770d7fb406d2b4bdd3"
+    },
+    ".git/objects/77/d3d97aec1bd590475180a050446129172b051d": {
+      "bytes": 135,
+      "sha256": "ffedddd69a18e0ef4e5dc7113ef871d2627e0a6190e1682e9a5e46143ac88f0e"
+    },
+    ".git/objects/79/40609e5b01024d2f8b690d6c68a026d39c04ca": {
+      "bytes": 513,
+      "sha256": "5c5db1a65ef690674a32435d32b22b9fafdb62ac0df5b89c10ed3d0ea734b511"
+    },
+    ".git/objects/8e/5ec30f1ed6d59b1062c2e4c8a95f2d769e5acd": {
+      "bytes": 55,
+      "sha256": "b8d5e35ba8070717772de29f2876944903fbf7a190785e2943c6c38da6e7e17b"
+    },
+    ".git/objects/93/f72cc72125000edbbe9530c4d95b856f751bf3": {
+      "bytes": 66,
+      "sha256": "092cd7f8a9fdc32fa0b13e90c22dd0edc7354a7611b7795833bcf7a9f8835bca"
+    },
+    ".git/objects/97/ed32231c9f236220de6916e1efac42108c7aa4": {
+      "bytes": 45,
+      "sha256": "2e2ec546d314ab81ca7ddb87127a307dbbeec8bd6a6875b4516b4de754dbae1a"
+    },
+    ".git/objects/a8/a080dd7e878a5df800eb462738f155480810b1": {
+      "bytes": 202,
+      "sha256": "191d7529bd92927881e22445251f164fd6e8a32fa036fe131bf99ff2d94380c7"
+    },
+    ".git/objects/bf/e78d2d7f25f3a40ceb1922a5c56c56905b7065": {
+      "bytes": 107,
+      "sha256": "ae530919557fcdf8c29cf0447d4eed97be869bc15d60ca6133041b0b1121fc5e"
+    },
+    ".git/objects/db/e5b2ba83eb75a5e5716e652b92be9023621430": {
+      "bytes": 20,
+      "sha256": "671049ec7c79778973ce4d41d00ea03e4501e9f0bf281a070620b30ce805b928"
+    },
+    ".git/objects/e1/a4e59115b3b057060c939f1ba4480b2fc40a71": {
+      "bytes": 371,
+      "sha256": "e6d930870423865da7059eed78b877f21a39d4c289e0e158a31832605709721d"
+    },
+    ".git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391": {
+      "bytes": 15,
+      "sha256": "164c5fa8067facf1a43f09ce3d0e35ebf53a7f5723ecbf15a8667cfc53c26f6c"
+    },
+    ".git/refs/heads/master": {
+      "bytes": 41,
+      "sha256": "6a88057bbb6116a68698ba74edc42d89f2ae83258d384c00b41777963cae7ea8"
+    },
+    ".hidden/excluded.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "examples/example.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "nested/pkg/module.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "nested/pkg/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "node_modules/excluded.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "links_not_followed": []
+}

@@ -1,0 +1,38 @@
+ M .ai/workflow-reliability/evidence/documentation-rendering.json
+ M .ai/workflow-reliability/evidence/readme-1280-light.png
+ M .ai/workflow-reliability/evidence/readme-390-dark.png
+ M .ai/workflow-reliability/state.md
+ M README.md
+ M evals/agent/README.md
+ M evals/agent/agent.test.mjs
+ M evals/agent/live.mjs
+ M evals/agent/workspace.mjs
+ M scripts/probe.py
+?? .ai/workflow-reliability/continuation-plan.html
+?? .ai/workflow-reliability/evidence/c1-boundary-review.md
+?? .ai/workflow-reliability/evidence/c1-implementation-result.md
+?? .ai/workflow-reliability/evidence/c1-implementation.md
+?? .ai/workflow-reliability/evidence/c1-independent-manifest.json
+?? .ai/workflow-reliability/evidence/continuation-measurement-research.md
+?? .ai/workflow-reliability/evidence/continuation-plan-review.md
+?? .ai/workflow-reliability/evidence/live-bundle-verification.md
+?? .ai/workflow-reliability/evidence/measurement-design-fixes.md
+?? .ai/workflow-reliability/evidence/measurement-design-rendering.json
+?? .ai/workflow-reliability/evidence/measurement-design-review-r2.md
+?? .ai/workflow-reliability/evidence/measurement-design-review.md
+?? .ai/workflow-reliability/evidence/measurement-enablement.pdf
+?? .ai/workflow-reliability/evidence/q1-implementation.md
+?? .ai/workflow-reliability/guard-resolution-contract.json
+?? .ai/workflow-reliability/measurement-enablement-contracts.json
+?? .ai/workflow-reliability/measurement-enablement.html
+?? scripts/measure.py
+?? scripts/measure_graph.py
+?? scripts/tests/test_measure_graph.py
+?? scripts/tests/test_measure_inventory.py
+?? scripts/tests/test_measure_q1_integration.py
+?? scripts/tests/test_workflow_core_verification.py
+?? scripts/tests/test_workflow_gate.py
+?? scripts/tests/test_workflow_state.py
+?? scripts/tests/workflow_fixtures.py
+?? scripts/workflow_gate.py
+?? scripts/workflow_state.py

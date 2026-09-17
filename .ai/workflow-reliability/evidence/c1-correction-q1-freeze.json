@@ -1,0 +1,26 @@
+{
+  "basis": "c1-correction-workflow-imports.json and user-provided Q1 freeze hashes",
+  "changed_actual_imports": {},
+  "checked_actual_imports": 171,
+  "production_changed_by_this_check": false,
+  "q1_frozen_dependencies": {
+    "measure": {
+      "current_sha256": "4754fe05621b81a8d499c38dbb913619dd43af50782d07b058849d50994ef8ed",
+      "expected_frozen_sha256": "4754fe05621b81a8d499c38dbb913619dd43af50782d07b058849d50994ef8ed",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\measure.py",
+      "tested_import_sha256": "4754fe05621b81a8d499c38dbb913619dd43af50782d07b058849d50994ef8ed"
+    },
+    "measure_graph": {
+      "current_sha256": "17f50ca7b304bba114131d7578d0250979df3d113201593d99b67e8479fa5245",
+      "expected_frozen_sha256": "17f50ca7b304bba114131d7578d0250979df3d113201593d99b67e8479fa5245",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\measure_graph.py",
+      "tested_import_sha256": "17f50ca7b304bba114131d7578d0250979df3d113201593d99b67e8479fa5245"
+    },
+    "probe": {
+      "current_sha256": "bf2bf37f6a2b329e9b673cda41f6c415396e78a38e082661970350b4b54b6b6e",
+      "expected_frozen_sha256": "bf2bf37f6a2b329e9b673cda41f6c415396e78a38e082661970350b4b54b6b6e",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\probe.py",
+      "tested_import_sha256": "bf2bf37f6a2b329e9b673cda41f6c415396e78a38e082661970350b4b54b6b6e"
+    }
+  }
+}

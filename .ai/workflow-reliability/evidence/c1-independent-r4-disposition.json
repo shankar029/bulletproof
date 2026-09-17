@@ -1,0 +1,27 @@
+{
+  "recorded_utc": "2026-09-17T04:07:11.334809+00:00",
+  "verdict": "BLOCKED-FRESHNESS",
+  "tested_snapshot_functional_verdict": "VERIFIED-WITH-LIMITATIONS",
+  "workflow_tests_passed": 83,
+  "evidence_tests_passed": 10,
+  "final_report": {
+    "path": ".ai\\workflow-reliability\\evidence\\c1-independent-r4-verification.md",
+    "sha256": "88d8ef8c5e0b2d3b3c31c65771fa52e974a0bf60092436d78faed3e4314e9e7a"
+  },
+  "preserved_handoff": {
+    "path": ".ai\\workflow-reliability\\evidence\\c1-independent-r4-handoff.json",
+    "sha256": "5e993695b8471c0440aa9b00a1b3dc303e55327b9f96f4ed4059218e63f91775"
+  },
+  "preserved_replay_manifest": {
+    "path": ".ai\\workflow-reliability\\evidence\\c1-independent-r4-manifest.json",
+    "sha256": "42b1662afb382f91ca89b65a72e357606b9ff968b0c9797de803f85216e4e77e"
+  },
+  "observed_changed_inputs": [
+    {
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\measure_graph.py",
+      "expected": "f40c8c1c05b62bc76bd027790b7111faf5394290c7309e5e32ebfe02de4dacf6",
+      "observed": "b8ef51ae7ecb2e900808187f32766c2dd8c5948ce0db3f5681221483ca92e061"
+    }
+  ],
+  "note": "Handoff report hash records the draft before freshness disposition; final_report pins the amended report. No replay or Q1 source inspection after blocker. Parent to arrange stable freeze/replay; separate reviewer recheck remains due. No C2 or quality claim."
+}

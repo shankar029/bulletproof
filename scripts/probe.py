@@ -29,14 +29,13 @@ import tempfile
 import uuid
 from datetime import datetime, timezone
 from evidence import source_snapshot, write_json_atomic
-from mutate import DEFAULT_MAX_MUTANTS, select_test_run, validate_mutation_results
+from mutate import DEFAULT_MAX_MUTANTS, changed_lines, select_test_run, validate_mutation_results
 from run import run_capture
-
-SKIP_DIRS = {".git", ".ai", "node_modules", "dist", "build", "target", "vendor",
-             "__pycache__", ".venv", "venv", ".tox", ".next", "coverage", "out"}
-CODE_EXT = {".py", ".js", ".jsx", ".mjs", ".cjs", ".ts", ".tsx", ".go", ".rs", ".java", ".kt",
-            ".cs", ".rb", ".php", ".swift", ".c", ".h", ".cc", ".cpp", ".scala"}
-JS_EXT = {".js", ".jsx", ".mjs", ".cjs", ".ts", ".tsx"}
+import measure
+import measure_graph
+from measure import (CODE_EXT, JS_EXT, SKIP_DIRS, LOWER_BETTER, TOLERANCE,
+                     GREENFIELD_LIMITS, MUTATION_FLOOR, code_files, default_policy,
+                     judge, assess_report)
 TRACE = ContextVar("probe_commands", default=None)
 
 
@@ -102,16 +101,6 @@ def _attach_result(value):
     trace = TRACE.get()
     if trace:
         trace[-1]["result_report"] = value
-
-
-def code_files(root):
-    found = []
-    for base, dirs, files in os.walk(root):
-        dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith(".")]
-        for f in files:
-            if os.path.splitext(f)[1].lower() in CODE_EXT:
-                found.append(os.path.join(base, f))
-    return found
 
 
 UI_DEPS = ("react", "vue", "svelte", "@angular/core", "solid-js", "preact")
@@ -288,9 +277,6 @@ def collect(root, skip_mutation):
     }
 
 
-MUTATION_FLOOR = 60.0
-
-
 def mutation_entry(repo, slug, base, skip, *, run_id, test_run=None):
     """Consume only successful, restored native proof from this invocation."""
     missing = {"state": "unavailable", "head": None, "base": None,
@@ -374,95 +360,8 @@ def mutation_entry(repo, slug, base, skip, *, run_id, test_run=None):
             "scope_support": {"measured_paths": sorted(source["files"]), "unsupported_paths": []}}
 
 
-# lower is better for these; higher is better for the rest
-LOWER_BETTER = {"duplication_pct", "complexity_max", "complexity_avg",
-                "cycles", "dead_exports", "static_findings"}
-ABSOLUTE_ZERO = {"cycles"}          # any increase fails outright
-TOLERANCE = {"complexity_max": 2, "complexity_avg": 0.3, "duplication_pct": 0.5}
-
-# Greenfield work has no baseline to regress against: the first commit of real
-# code would "regress" every metric from zero. Judge it against sanity limits
-# instead, and say so in the report rather than failing the gate for existing.
-GREENFIELD_LIMITS = {                      # metric: (warn above, fail above)
-    "duplication_pct": (5.0, 12.0),
-    "complexity_max": (15, 25),
-    "complexity_avg": (4.0, 8.0),
-    "cycles": (0, 0),
-    "dead_exports": (10, 40),
-    "static_findings": (10, 40),
-}
-
-
-def judge(name, base, head, greenfield=False):
-    if head is None:
-        return None, "unavailable"
-    entry = {"base": base, "head": head}
-    if greenfield:
-        entry["baseline"] = "greenfield"
-        warn_at, fail_at = GREENFIELD_LIMITS.get(name, (None, None))
-        if fail_at is not None and head > fail_at:
-            status = "fail"
-        elif warn_at is not None and head > warn_at:
-            status = "warn"
-        else:
-            status = "ok"
-        entry["status"] = status
-        if fail_at is not None:
-            entry["limit"] = fail_at
-        return entry, status
-    if base is None:
-        entry["status"] = "unavailable"
-        return entry, "unavailable"
-    delta = round(head - base, 2)
-    entry["delta"] = delta
-    if name in LOWER_BETTER:
-        if delta <= 0:
-            status = "ok"
-        elif name in ABSOLUTE_ZERO:
-            status = "fail"
-        elif delta <= TOLERANCE.get(name, 0):
-            status = "warn"
-        else:
-            status = "fail"
-    else:
-        status = "ok" if delta >= 0 else ("warn" if delta > -5 else "fail")
-    entry["status"] = status
-    return entry, status
-
-
 def _number(value):
     return type(value) in (int, float) and math.isfinite(value)
-
-
-def default_policy():
-    return {"required": [*sorted(LOWER_BETTER), "mutation_score_pct",
-                         "diff_coverage_pct", "architecture_rules"],
-            "rules": {"mutation_score_pct": {"threshold": MUTATION_FLOOR},
-                      "greenfield": GREENFIELD_LIMITS.copy(), "tolerance": TOLERANCE.copy()},
-            "origins": ["built-in quality metrics; required coverage and architecture proof"]}
-
-
-def assess_report(metrics, policy):
-    if not isinstance(policy.get("required"), list) or not policy["required"]:
-        raise ValueError("Policy requires at least one measurement")
-    statuses = []
-    missing = []
-    for name, entry in metrics.items():
-        if entry.get("head") is not None and not _number(entry["head"]):
-            raise ValueError("Non-finite or non-numeric measurement: " + name)
-        if entry.get("state") == "measured" and entry.get("head") is None:
-            raise ValueError("Measured value missing: " + name)
-        if entry.get("state") == "measured" and entry.get("comparison") in {"ok", "warn", "fail"}:
-            statuses.append(entry["comparison"])
-    for name in policy["required"]:
-        entry = metrics.get(name, {})
-        if entry.get("state") != "measured" or entry.get("comparison") not in {"ok", "warn", "fail"}:
-            missing.append({"metric": name, "reason": entry.get("reason") or "Required measurement missing",
-                            "prerequisite": "Produce a fresh complete supported measurement and comparison"})
-    measured = next((status for status in ("fail", "warn", "ok") if status in statuses), "unavailable")
-    return {"measurement_status": measured, "completeness": "incomplete" if missing else "complete",
-            "missing_required": missing, "verdict": "fail" if missing or measured == "fail" else "pass",
-            "worst_status": measured}
 
 
 def _artifact(path, root):
@@ -470,13 +369,14 @@ def _artifact(path, root):
             "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
 
 
-def _snapshot(repo, slug, run_id=None):
+def _snapshot(repo, slug, run_id=None, extra_outputs=()):
     exclusions = [{"path": ".git", "reason": "Git metadata, not analyzer input"}]
     outputs = [".ai/%s/metrics.json" % slug]
     if run_id is not None:
         outputs += [".ai/%s/evidence/runs/%s/%s.json" % (slug, run_id, kind)
                     for kind in ("metrics", "mutation")]
     exclusions += [{"path": path, "reason": "Exact current measurement output"} for path in outputs]
+    exclusions += [{"path": path, "reason": "Exact reserved Q1 artifact"} for path in extra_outputs]
     return source_snapshot(repo, {"directories": ["."], "excluded_outputs": exclusions})
 
 
@@ -518,6 +418,169 @@ def _scope_support(name, root, commands):
     return {"measured_paths": sorted(paths & supported), "unsupported_paths": sorted(paths - supported)}
 
 
+def _configured_mutation():
+    # The configured mixed-suite producer is Q4. Legacy native-only proof remains
+    # available through the unchanged unconfigured entry point, not imported here.
+    return {"state": "unavailable", "head": None, "base": None, "comparison": "unavailable",
+            "status": "unavailable", "reason": "No configured mixed-suite mutation adapter in Q1"}
+
+
+def validate_measurement_report(report, context, base, head, config, policy, artifacts):
+    """Reject inconsistent current-invocation proof, including rehashed raw evidence."""
+    try:
+        changed = {name: sorted(lines) for name, lines in changed_lines(
+            context["head_root"], context["source"]["base"]).items()}
+        if head["inventory"]["changed_production"] != changed:
+            raise ValueError("Changed-production map differs from the canonical committed diff")
+        observations = measure.validate_observations(
+            context, base, head, config, policy, artifacts, report["observations"])
+        summary = measure.assess_observations(
+            measure.with_cycle_ids(observations, base, head), _configured_mutation(),
+            policy, base["inventory"])
+        expected_binding = {
+            "schema_version": 2, "measurement_detail_version": 1, "run_id": context["run_id"],
+            "source": context["source"], "policy": policy, "policy_sha256": context["policy_sha256"],
+            "head": context["source"]["head"], "merge_base": context["source"]["base"][:12],
+            "baseline": ("unknown" if base["inventory"]["enumeration_state"] != "complete" else
+                         "greenfield" if len(base["inventory"]["entries"]) < 3 else "compared"),
+            "inventories": {"base": base["inventory"], "head": head["inventory"]},
+            "parsed": {"base": base, "head": head},
+            "artifact_manifest": artifacts, "config_sha256": measure_graph.digest(config),
+            "unavailable": sorted(name for name, entry in summary["metrics"].items()
+                                  if entry["state"] != "measured" or entry["comparison"] == "unavailable"),
+            "tools": {"python_parser": measure_graph.parser_digest(),
+                      "baseline_materialization": measure.baseline_tree(
+                          context["base_root"], context["source"]["base"])}, **summary}
+        for key, value in expected_binding.items():
+            if measure_graph.digest(report.get(key)) != measure_graph.digest(value):
+                raise ValueError("Measurement report mismatch: " + key)
+        if set(report) != set(expected_binding) | {"slug", "base", "generated", "commands", "project", "observations"}:
+            raise ValueError("Unknown or missing report fields")
+    except (OSError, KeyError, TypeError, AttributeError, RecursionError) as error:
+        raise ValueError("Malformed measurement proof: " + str(error)) from error
+
+
+def _copy_subject(repo, target, revision, source=None):
+    measure.materialize_baseline(repo, target, revision)
+    if source is not None:
+        # Reproduce the observed working tree, including untracked/ignored normative
+        # inputs and deletions. Never copy .git metadata or resurrect deleted files.
+        for path in target.iterdir():
+            if path.name != ".git":
+                if path.is_dir() and not path.is_symlink():
+                    shutil.rmtree(path)
+                else:
+                    path.unlink()
+        for name, receipt in source["files"].items():
+            if receipt["sha256"] is None:
+                continue
+            original = measure_graph.input_path(repo, name)
+            destination = measure_graph.input_path(target, name)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(original, destination)
+            if hashlib.sha256(destination.read_bytes()).hexdigest() != receipt["sha256"]:
+                raise ValueError("Source changed while materializing subject")
+
+
+def _configured_report(context, base, head, config, manifest, observations, slug, requested_base, commands):
+    policy = measure.config_policy(config)
+    summary = measure.assess_observations(
+        measure.with_cycle_ids(observations, base, head), _configured_mutation(), policy, base["inventory"])
+    return {
+        "schema_version": 2, "measurement_detail_version": 1, "run_id": context["run_id"],
+        "source": context["source"], "policy": policy, "policy_sha256": context["policy_sha256"],
+        "commands": commands, "slug": slug, "base": requested_base,
+        "merge_base": context["source"]["base"][:12], "head": context["source"]["head"],
+        "generated": datetime.now(timezone.utc).isoformat(timespec="seconds"), "project": "general",
+        "baseline": ("unknown" if base["inventory"]["enumeration_state"] != "complete" else
+                     "greenfield" if len(base["inventory"]["entries"]) < 3 else "compared"),
+        "inventories": {"base": base["inventory"], "head": head["inventory"]},
+        "parsed": {"base": base, "head": head}, "observations": observations,
+        "artifact_manifest": manifest, "config_sha256": measure_graph.digest(config),
+        "tools": {"python_parser": measure_graph.parser_digest(),
+                  "baseline_materialization": measure.baseline_tree(
+                      context["base_root"], context["source"]["base"])},
+        "unavailable": sorted(name for name, entry in summary["metrics"].items()
+                              if entry["state"] != "measured" or entry["comparison"] == "unavailable"), **summary}
+
+
+def _execute_configured(args, trace, repo, test_cwd):
+    config_path = Path(args.measurement_config).absolute()
+    config_name = config_path.relative_to(repo).as_posix()
+    config = measure_graph.load_json(measure_graph.input_path(repo, config_name).read_bytes())
+    config_ref = measure_graph.artifact(repo, config_name)
+    measure.validate_config(config, repo)
+    if args.require_metric and set(args.require_metric) - set(measure.REQUIRED):
+        raise ValueError("Configured Q1 profile requires exactly the nine approved metrics")
+    run_id = uuid.uuid4().hex
+    run_dir = repo / ".ai" / args.slug / "evidence" / "runs" / run_id
+    if run_dir.exists():
+        raise ValueError("Run output already exists")
+    head_sha = measure.git_head(repo)
+    code, merge_base, error = run(["git", "merge-base", args.base, "HEAD"], cwd=repo, timeout=90)
+    if code:
+        raise ValueError("Configured measurement needs an immutable baseline: " + error)
+    merge_base = merge_base.strip()
+    changes = {name: sorted(lines) for name, lines in changed_lines(repo, merge_base).items()}
+    with tempfile.TemporaryDirectory(prefix="bulletproof-q1-") as scratch:
+        scratch = Path(scratch).resolve()
+        base_root, head_root = scratch / "base", scratch / "head"
+        _copy_subject(repo, base_root, merge_base)
+        reserved = ["manifest.json", "base/graph.json", "head/graph.json"]
+        for revision, root in (("base", base_root), ("head", repo)):
+            reserved += [measure_graph.syntax_name(revision, Path(path).relative_to(root).as_posix())
+                         for path in code_files(root) if Path(path).suffix.lower() == ".py"]
+        extra_outputs = [(run_dir / "measurement" / name).relative_to(repo).as_posix() for name in reserved]
+        for name in extra_outputs:
+            if measure_graph.input_path(repo, name).exists():
+                raise ValueError("Reserved output already exists")
+        source = _snapshot(repo, args.slug, run_id, extra_outputs)
+        source.update(base=merge_base, head=head_sha)
+        if source["files"].get(config_name, {}).get("sha256") != config_ref["sha256"]:
+            raise ValueError("Config overlaps an output or changed before the source snapshot")
+        _copy_subject(repo, head_root, head_sha, source)
+        controller, raw_root = scratch / "controller", scratch / "raw"
+        controller.mkdir()
+        raw_root.mkdir()
+        for name in ("measure.py", "measure_graph.py", "probe.py", "evidence.py", "run.py"):
+            shutil.copy2(Path(__file__).with_name(name), controller / name)
+        policy = measure.config_policy(config)
+        context = {"schema_version": 1, "run_id": run_id, "source": source,
+                   "base_root": str(base_root), "head_root": str(head_root),
+                   "controller_root": str(controller), "run_root": str(raw_root),
+                   "controller_sha256": measure.controller_digest(controller),
+                   "policy_sha256": measure_graph.digest(policy),
+                   "toolset_sha256": measure_graph.digest({"python_parser": measure_graph.parser_digest()}),
+                   "contract_artifacts": [config["approval_artifact"], config_ref]}
+        base = measure_graph.parse_files(context, measure.inventory(context, "base", {}), config)
+        head = measure_graph.parse_files(context, measure.inventory(context, "head", changes), config)
+        pairs = measure.collect_pair(context, config, base, head)
+        observations = [item for pair in pairs.values() for item in pair]
+        manifest = measure.make_manifest(context, base, head)
+        context["output_manifest"] = measure_graph.persist(context, "manifest.json", manifest)
+        report = _configured_report(context, base, head, config, manifest, observations, args.slug, args.base, trace)
+        # observations is a required report field, checked separately by the producer.
+        validate_measurement_report(report, context, base, head, config, policy, manifest)
+        if _snapshot(repo, args.slug, run_id, extra_outputs)["scope_sha256"] != source["scope_sha256"] or measure.git_head(repo) != head_sha:
+            raise ValueError("Original source changed during configured collection")
+        # All final paths are reserved individually before publication. They did not
+        # exist when source was observed, and none can replace an input.
+        archive = run_dir / "measurement"
+        for name in manifest["reserved_outputs"]:
+            destination = measure_graph.input_path(repo, (archive / name).relative_to(repo).as_posix())
+            if destination.exists() or destination.relative_to(repo).as_posix() in source["files"]:
+                raise ValueError("Measurement output overlaps source")
+        run_dir.mkdir(parents=True, exist_ok=False)
+        for name in manifest["reserved_outputs"]:
+            destination = archive / name
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(raw_root / name, destination)
+        write_json_atomic(run_dir / "metrics.json", report)
+        write_json_atomic(repo / ".ai" / args.slug / "metrics.json", report)
+    print(json.dumps(report, indent=2))
+    return 1 if report["verdict"] == "fail" else 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--slug", required=True)
@@ -528,6 +591,7 @@ def main():
                     help="Run mutation even on a UI project, where it is slow.")
     ap.add_argument("--test-cwd")
     ap.add_argument("--require-metric", action="append", default=[])
+    ap.add_argument("--measurement-config", help="Source-bound Q1 Python graph config; missing metrics still fail")
     ap.add_argument("command", nargs=argparse.REMAINDER)
     args = ap.parse_args()
     if args.command == ["--"]:
@@ -540,7 +604,7 @@ def main():
     token = TRACE.set(trace)
     try:
         return _execute(args, trace)
-    except (OSError, ValueError) as error:
+    except (OSError, ValueError, KeyError, TypeError) as error:
         print("probe: unable to run: %s" % error, file=sys.stderr)
         return 2
     finally:
@@ -559,6 +623,8 @@ def _execute(args, trace):
     repo = Path(repo)
     if not Path(test_cwd).is_dir() or not Path(test_cwd).resolve().is_relative_to(repo.resolve()):
         raise ValueError("Test cwd must be an existing directory inside the repository")
+    if args.measurement_config:
+        return _execute_configured(args, trace, repo, test_cwd)
     run_id = uuid.uuid4().hex
     run_dir = repo / ".ai" / args.slug / "evidence" / "runs" / run_id
     source_snapshot(repo, {"files": [path.relative_to(repo).as_posix() for path in

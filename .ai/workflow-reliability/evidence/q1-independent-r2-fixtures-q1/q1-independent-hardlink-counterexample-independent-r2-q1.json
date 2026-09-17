@@ -1,0 +1,11 @@
+{
+  "base": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-evidence-0ag_x4sb\\base\\a.py",
+  "head": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-evidence-0ag_x4sb\\head\\a.py",
+  "samefile": true,
+  "shared_write_observed": true,
+  "validator_rejected": true,
+  "rejection": "Shared mutable file identity across Context roots: C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-evidence-0ag_x4sb\\base\\a.py and C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-evidence-0ag_x4sb\\head\\a.py",
+  "base_before_sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+  "base_after_sha256": "5b6d77f6de013d3ff138bfcadbc922ac7c079ca247a5e642173541cc824d7903",
+  "head_after_sha256": "5b6d77f6de013d3ff138bfcadbc922ac7c079ca247a5e642173541cc824d7903"
+}

@@ -1,0 +1,717 @@
+{
+  "document": "workflow-reliability/measurement-enablement",
+  "revision": 2,
+  "status": "CORRECTED_PENDING_NARROWED_INDEPENDENT_ACCEPTANCE",
+  "date": "2026-09-17",
+  "scope": "Design only. Additive release prerequisite Q; does not block approved C1-C4 functional continuation.",
+  "ownership": {
+    "this_handoff": ["measurement-enablement.html", "measurement-enablement-contracts.json", "evidence/measurement-design-fixes.md"],
+    "parent": "Obtain narrowed independent acceptance of R1-R4, update state.md and dispatch only shortest Q1 first. Original evidence/measurement-design-review.md is preserved. No implementation, tests, installs, mutation, agents or publication in this correction.",
+    "approval": "Parent explicitly accepts R1-R4 and the NEW 100% changed executable-line AND changed decision-outcome floors under the declared finite coverage models as an autonomous policy decision, not a historical root bar or human sign-off. Skill-owned external provisioning is authorized for later Q2 after design review, with no project manifest or OS changes. This correction does not pass Q or authorize implementation by this designer."
+  },
+  "acceptance": {
+    "Q1": "Every base/head code input has a hashed, explicitly classified inventory receipt. Every required metric remains present, and malformed/missing/partially supported proof fails closed.",
+    "Q2": "Produce all six scalar metrics plus architecture_rules over the declared Python/JS/TS analyzer semantics; reconcile findings and new cycle/architecture identities against the same-tool baseline.",
+    "Q3": "Measure changed-production executable lines and decisions using real Python and Node execution, including subprocesses; apply the parent-accepted NEW 100% line and 100% decision-outcome policy under the declared finite models, not an inferred historical bar.",
+    "Q4": "Python unittest assertion-only outcomes and parser-backed JS candidates produce source-bound, regenerated mixed-language mutation proof with a positive baseline and unchanged 60% floor.",
+    "Q5": "Include new measurement/controller code in scope; bound actual self-mutation using a clean stable controller and empirical coverage selection without deleting candidates. Complete actual Q plus independent verification/review before final release."
+  },
+  "grounding": {
+    "head_observed": "aaec9b9851a9ce8f778943c5c088d6c4442e36f8",
+    "base_from_current_state": "bcc971d3b64559127dfc43eb0bfd4348c42803ca",
+    "tree_status": "Other parent-owned continuation/document changes were already present; no whole-tree freshness claim. Re-enumerate the final integrated tree, including guard and new measurement files.",
+    "sources_read": [
+      ".ai/workflow-reliability/state.md",
+      ".ai/workflow-reliability/evidence/continuation-measurement-research.md",
+      ".ai/workflow-reliability/continuation-plan.html",
+      ".ai/workflow-reliability/evidence/continuation-plan-review.md:1-200",
+      ".ai/workflow-reliability/design-contracts.json:230-327",
+      "CONTRIBUTING.md",
+      "references/quality-metrics.md",
+      "references/design-doc.md",
+      "references/html-theme.md",
+      "scripts/probe.py:35-39,103-111,137-292,296-466,485-650",
+      "scripts/mutate.py:90-111,172-330,333-426,470-690",
+      "scripts/evidence.py:1-172",
+      "scripts/run.py:1-230",
+      "scripts/native_result.mjs:1-143",
+      "scripts/tests/helpers.py",
+      "scripts/tests/test_measurement_e2e.py:1-110",
+      "evals/lib/score.mjs:1-220"
+    ],
+    "facts": [
+      "collect returns duplication_pct, complexity_max, complexity_avg, cycles, dead_exports and static_findings. Diff coverage and architecture currently enter as required-unavailable.",
+      "_scope_support cannot establish duplication coverage and infers several other supports without explicit successful file receipts.",
+      "judge uses aggregate comparison, tolerances of 0.5 duplication points, 2 maximum complexity and 0.3 average complexity. Architecture needs a new explicit rule, not its higher-is-better fallback.",
+      "Mutation classification/validation currently require node-native; build_mutants masks lines and rejects entire JS files containing comments/templates. DEFAULT_MAX_MUTANTS is 20.",
+      "The actual root Python tests are unittest; native Node and corpus are separate commands. Prior 704.748-second Python proof is historical, not a current runtime measurement.",
+      "Test fixtures invoke scripts at SCRIPTS, and test_measurement_e2e persists random artifact names under target .ai. Separate control and target roots plus explicit artifact ownership are required for self-measurement."
+    ],
+    "inference": "Collector, inventory and runner gaps are implementable independently of the workflow guard. Reinstalling tools alone cannot fix producer/consumer contracts.",
+    "unknown": [
+      "Actual final-tree numerical measurements and runtime costs.",
+      "Installed operation of tools not present in the probed environment.",
+      "Printed HTML page count: no browser/OS rendering action was authorized; the compact shared-theme overview requires parent rendering verification."
+    ]
+  },
+  "tool_evidence": {
+    "probe_wrapper": {
+      "python": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "argv_prefix": ["{python}", "-B", "scripts/run.py", "--idle", "30", "--max", "90", "--"],
+      "observed": [
+        "Python 3.14.2 Windows x64; Node v24.11.1.",
+        "find_spec: coverage, lizard, vulture, ruff absent in managed Python; PATH: jscpd and ruff absent.",
+        "Node --help exposes --experimental-test-coverage, --test-coverage-include/exclude, --test-reporter, --test-reporter-destination and NODE_V8_COVERAGE.",
+        "Global npm TypeScript bin/tsc --version and --help succeed: 7.0.2. Package exports include version-only root and unstable APIs, not the 5.x compiler API.",
+        "Requiring the absolute TypeScript package directory failed MODULE_NOT_FOUND. This is not proof that all parser tools are absent; do not substitute the 7.x API for the planned 5.9.3 API.",
+        "Python TestCase.run calls _callSetUp, _callTestMethod, _callTearDown and doCleanups through shared outcome handling. addFailure alone cannot identify assertion phase."
+      ]
+    },
+    "recommended_tool_set": [
+      {
+        "tool": "coverage.py",
+        "proposed_version": "7.16.1",
+        "role": "Python lines, arcs, child-process collection and per-unit contexts",
+        "state": "UPSTREAM_DOCUMENTED_NOT_INSTALLED",
+        "sources": [
+          "https://coverage.readthedocs.io/en/latest/",
+          "https://coverage.readthedocs.io/en/latest/install.html",
+          "https://coverage.readthedocs.io/en/latest/subprocess.html",
+          "https://coverage.readthedocs.io/en/latest/api_coverage.html",
+          "https://coverage.readthedocs.io/en/latest/api_coveragedata.html"
+        ],
+        "evidence": "Documentation identifies 7.16.1 and Python 3.10-3.15 support; subprocess patch, parallel/combine and public contexts_by_lineno API. Windows child flushing still requires actual qualification.",
+        "qualification": ["--version", "--help", "run --help", "combine --help", "json --help"]
+      },
+      {
+        "tool": "typescript",
+        "proposed_version": "5.9.3",
+        "role": "One JS/TS syntax and symbol adapter for graph, candidates, coverage obligations, static/dead findings",
+        "state": "UPSTREAM_DOCUMENTED_SEPARATE_INSTALL_REQUIRED",
+        "sources": ["https://raw.githubusercontent.com/microsoft/TypeScript/v5.9.3/package.json"],
+        "evidence": "Package version 5.9.3 exposes lib/typescript.js, engines node >=14.17. Windows uses ordinary Node. Global 7.0.2 is a different API.",
+        "qualification": ["bin/tsc --version", "bin/tsc --help --all", "Read installed typescript.d.ts for createSourceFile, createProgram, forEachChild, getTypeChecker and getPreEmitDiagnostics before adapter implementation."]
+      },
+      {
+        "tool": "jscpd",
+        "proposed_version": null,
+        "version_constraint": "Pin a released Windows-x64 v5 binary and digest at Q2 qualification; no latest resolution at measurement time.",
+        "role": "Cross-file duplication plus file census",
+        "state": "WINDOWS_DISTRIBUTION_DOCUMENTED_NOT_INSTALLED",
+        "sources": [
+          "https://raw.githubusercontent.com/kucherenko/jscpd/master/README.md",
+          "https://raw.githubusercontent.com/kucherenko/jscpd/master/docs/rust.md"
+        ],
+        "evidence": "v5 documents native Windows x64/arm64 packages, JSON summary, min-tokens/min-lines, formats-exts and summary-top. No installed help or exact released version verified.",
+        "qualification": ["--version", "--help", "--list", "Verify the released JSON summary/source census schema; do not infer scanning from clone pairs."]
+      },
+      {
+        "tool": "lizard",
+        "proposed_version": "1.24.0",
+        "role": "Per-file lexical cyclomatic function complexity",
+        "state": "UPSTREAM_SOURCE_DOCUMENTED_NOT_INSTALLED",
+        "sources": [
+          "https://raw.githubusercontent.com/terryyin/lizard/master/lizard.py",
+          "https://raw.githubusercontent.com/terryyin/lizard/master/lizard_languages/typescript.py",
+          "https://raw.githubusercontent.com/terryyin/lizard/master/lizard_ext/version.py"
+        ],
+        "evidence": "Source provides FileAnalyzer.analyze_source_code(filename, code) and TS reader; per-file return permits functionless files. Read errors/fallback C parser and swallowed RecursionError must not be accepted as success. Windows-compatible Python source is credible, not an executed 3.14 guarantee.",
+        "qualification": ["--version", "--help", "Read installed API and explicit reader mapping; run real UTF-8/CRLF/zero-function/TS/MJS/recursion-error fixtures in Q2."]
+      },
+      {
+        "tool": "vulture",
+        "proposed_version": "2.16",
+        "role": "Python dead-code findings at existing confidence 80",
+        "state": "UPSTREAM_DOCUMENTED_NOT_INSTALLED",
+        "sources": [
+          "https://raw.githubusercontent.com/jendrikseipp/vulture/main/README.md",
+          "https://raw.githubusercontent.com/jendrikseipp/vulture/main/vulture/version.py"
+        ],
+        "evidence": "Python source tool, explicit .py arguments and min-confidence documented. Its own documentation warns that dynamic calls defeat static precision.",
+        "qualification": ["--version", "--help", "Read installed scan/report APIs or parse verified CLI output; qualify native Windows Python 3.14 operation."]
+      },
+      {
+        "tool": "ruff",
+        "proposed_version": null,
+        "version_constraint": "Pin a released Windows-x64 binary supporting target-version py314 at Q2; verify rule list before freezing.",
+        "role": "Python static findings: E, F, B and S rule families",
+        "state": "WINDOWS_DISTRIBUTION_DOCUMENTED_NOT_INSTALLED",
+        "sources": ["https://docs.astral.sh/ruff/installation/", "https://docs.astral.sh/ruff/configuration/"],
+        "evidence": "Native Windows distribution; explicit file arguments override ignore discovery unless force-exclude. No installed version claimed.",
+        "qualification": ["--version", "check --help", "rule --help", "Verify target py314, JSON output, no-cache and no-fix behavior; record full selected rule IDs."]
+      }
+    ],
+    "environment_contract": "Parent authorizes skill-owned external provisioning only in later Q2 after design review; no provisioning in this correction or Q1. Record absolute executable/module paths, versions, package/binary hashes and exact rule/config bytes. Never add project manifests, lockfiles, framework dependencies, root analyzer configs, OS changes or network auto-registry resolution. Generate owned per-run configs, archive their bytes. Qualified tool/API versions must match at base and head. Qualification failure is a named implementation prerequisite, not a fabricated receipt.",
+    "rejected": {
+      "mutmut": "Requires fork/WSL on Windows and pytest; does not provide this assertion-classified contract.",
+      "cosmic_ray": "Another controller still needs phase/assertion adapters and diff/freshness integration; unnecessary second orchestration engine.",
+      "semgrep_auto": "Unpinned registry and native host support not qualified. Proposed static metric is explicitly Ruff plus TypeScript diagnostics, not a claim of Semgrep-equivalent vulnerability coverage.",
+      "madge_only": "Cannot establish Python inventory; one parsed graph supports cycles and architecture consistently.",
+      "knip_root_autodetection": "Root has no package.json; replace implicit package detection with explicit JS source/symbol analysis, not pretend an absent package was scanned.",
+      "stdlib_trace_only": "No drop-in branch/subprocess/context adapter; coverage.py reduces bespoke tracing.",
+      "global_tsc_latest": "Observed 7.x API differs. Qualify the pinned 5.x API rather than silently using unstable native APIs."
+    }
+  },
+  "policy_proposal": {
+    "status": "PARENT_ACCEPTED_AUTONOMOUS_POLICY",
+    "required": [
+      "duplication_pct", "complexity_max", "complexity_avg", "cycles",
+      "dead_exports", "static_findings", "mutation_score_pct",
+      "diff_coverage_pct", "architecture_rules"
+    ],
+    "numerical_coverage": {
+      "changed_executable_line_floor_pct": 100,
+      "changed_decision_outcome_floor_pct": 100,
+      "origin": "NEW policy explicitly accepted by parent in the 2026-09-17 correction assignment under autonomous decision authority; not an established historical root bar. Human sign-off is not claimed.",
+      "rationale": "A full changed-line floor is simple, explicit and consistent with the existing demand for meaningful new/error-branch tests. Branch obligations are separately enumerated so line coverage cannot hide missing outcomes.",
+      "not_an_escape": "No pragma-based omissions, equivalent-branch exemptions or unknown-as-covered paths. A genuinely unreachable obligation needs a reviewed semantic correction, not a waiver. Zero whole-change executable denominator is unavailable/null pending a separate applicability decision, never 100."
+    },
+    "preserved": {
+      "mutation_floor_pct": 60,
+      "mutation_default_cap": 20,
+      "eval_test_quality_floor": 0.9,
+      "eval_null_normalization": "Unchanged",
+      "tolerance": {"duplication_pct": 0.5, "complexity_max": 2, "complexity_avg": 0.3},
+      "greenfield_limits": {
+        "duplication_pct": [5, 12], "complexity_max": [15, 25],
+        "complexity_avg": [4, 8], "cycles": [0, 0],
+        "dead_exports": [10, 40], "static_findings": [10, 40]
+      },
+      "baseline": "Only a successful inventory of fewer than three code files establishes greenfield. Missing/failed brownfield baseline is unavailable."
+    },
+    "assessment": [
+      "Require all nine measurements with complete observations and assessable policy. Partial scalars remain visible but state/comparison unavailable.",
+      "Existing lower-is-better comparison/tolerances remain. New cycle identities or architecture violation identities fail even if aggregate count falls.",
+      "architecture_rules head is violation count; compare new identities, never use generic higher-is-better fallback. Greenfield requires zero violations.",
+      "diff_coverage_pct is a head floor with explicit changed-decision outcome subcheck, not a base/head percentage comparison.",
+      "A measured zero needs a successful exhaustive applicable inventory. Empty global functions, zero mutation candidates or zero changed executable denominator are null/unavailable.",
+      "Any ungraded selected mutant, unsupported changed language, missing result, stale input or failed restoration makes mutation incomplete regardless of numerical score.",
+      "Preserve measurement_status separately from completeness; incomplete always verdict fail and probe exit 1. Invalid invocation/policy is exit 2. No generic imported-score or exemption path."
+    ]
+  },
+  "record_notation": {
+    "kind": "Normative typed schemas for implementation, not an executable runtime DSL",
+    "validation": "Fields listed below are required unless the field name ends in ?. Reject unknown fields/versions/enums, duplicate keys/IDs, booleans as integers/numbers, non-finite values, unpaired source/artifact hashes and escaping/linked paths. Standard-library validators; no schema framework dependency.",
+    "types": {
+      "Path": "nonempty normalized root-relative POSIX path; no absolute, drive, empty/dot/dotdot components; reject case-fold collisions on Windows. File/artifact references always use Path, never DirectoryRef",
+      "DirectoryRef": "'.' or Path, only for fields explicitly representing directories: source roots, suite/command cwd, directory enumeration errors and directory members of source scope. For operational inputs resolve canonically against the selected base/head subject root and require a real directory, containment and no linked/junction path components. Diagnostic enumeration errors may name an inaccessible directory but never authorize traversal. Reject traversal, aliases and case-fold collisions. Does not relax file or artifact paths",
+      "AbsoluteRoot": "absolute canonical existing owned directory supplied by Context, not a repository-relative Path",
+      "Revision": "base|head; always bound to the matching Context root, Git object ID and source hash",
+      "Hash": "64 lowercase hexadecimal SHA-256 characters",
+      "Id": "nonempty stable ASCII identifier; no whitespace",
+      "Line": "integer >= 1",
+      "Offset": "integer >= 0; canonical source byte offset, end exclusive",
+      "Count": "integer >= 0",
+      "Number": "finite int or float, excluding bool",
+      "Artifact": "{path: Path, sha256: Hash, bytes: Count}; path relative to owned run root",
+      "SourceSnapshot": "Existing evidence.source_snapshot record, plus immutable base/head Git IDs; broad source/contracts observation retained",
+      "Command": "Existing command record: exact argv, cwd:DirectoryRef resolved against selected subject root, executable/version, idle/max seconds, nonsecret environment delta; no shell string or unresolved glob. Keep absolute execution cwd in raw capture separately",
+      "Span": "{start_byte: Offset, end_byte: Offset, start_line: Line, end_line: Line}; nonempty, valid source boundaries"
+    }
+  },
+  "records": {
+    "MeasurementConfig": {
+      "fields": {
+        "schema_version": "1", "semantic_profile": "workflow-reliability-q-v1",
+        "tools": "map[tool ID -> ToolBinding]",
+        "python_source_roots": "nonempty unique list[DirectoryRef]",
+        "js_entrypoints": "list[{path:Path,origin_ref:string,public_exports:list[string]}]",
+        "suites": "nonempty list[{id:Id,runner:python-unittest|node-native,argv:list[string],cwd:DirectoryRef,test_files:list[Path],idle_seconds:Number,max_seconds:Number}]",
+        "coverage_policy": "{changed_executable_line_floor_pct:Number,changed_decision_outcome_floor_pct:Number,approval_artifact:Artifact}",
+        "architecture_rules": "nonempty list[ArchitectureRule]",
+        "mutation_cap": "integer exactly 20 for Q",
+        "mutation_max_seconds": "positive Number",
+        "approval_artifact": "Artifact"
+      },
+      "invariants": "This is proposed --measurement-config input, not a metric-import channel. Paths/argv expanded before hashing; validate suites against actual discovery and source entrypoints. No executable predicate strings, arbitrary callbacks, exclusions, required-set replacement or rule deletion. Root profile/rule set is compiled and versioned in the adapters; config names approved records and tool locations. Policy below approved floors or changed architecture semantics needs parent reapproval, not a permissive runtime default. Artifact paths are owned-run relative except approval_artifact, which references the hashed existing design approval in source scope.",
+      "valid_directory_fields_example": {
+        "python_source_roots": ["scripts", "."],
+        "suites": [{
+          "id": "python-probe",
+          "runner": "python-unittest",
+          "argv": ["C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe", "-B", "-m", "unittest", "discover", "-s", "scripts/tests", "-p", "test_probe.py", "-v"],
+          "cwd": ".",
+          "test_files": ["scripts/tests/test_probe.py"],
+          "idle_seconds": 120,
+          "max_seconds": 1800
+        }]
+      },
+      "example_scope": "Concrete valid directory/file configuration fields, not a complete runnable MeasurementConfig or fabricated tool binding. A Q1 fixture config supplies its real approval artifact, all five rules and discovered suite; tools may be empty while external metrics stay unavailable."
+    },
+    "ToolBinding": {
+      "fields": {
+        "executable": "absolute existing file", "module_path": "absolute existing path|null",
+        "observed_version": "nonempty string", "sha256": "Hash",
+        "qualified_api": "Id", "help": "Artifact", "configuration": "Artifact",
+        "qualification": "list[Artifact]"
+      },
+      "invariants": "Read/validate exact installed version and raw help. Tool code/config is a measurement input; changes invalidate both sides. Qualification artifacts are not numeric measurements. A missing package is unavailable, never auto-installed by probe."
+    },
+    "ArchitectureRule": {
+      "fields": {
+        "id": "ARCH01|ARCH02|ARCH03|ARCH04|ARCH05",
+        "version": "1", "origin_ref": "nonempty string"
+      },
+      "invariants": "Predicates and scopes are the compiled semantics under adapters.graph.rules, not expressions evaluated from config. Config includes all five IDs exactly once. Unknown IDs/version fail; any new rules require code/tests and versioned parent approval."
+    },
+    "ParsedInventory": {
+      "fields": {
+        "inventory": "Inventory",
+        "receipts": "list[FileReceipt]",
+        "syntax_artifacts": "map[Path -> Artifact]",
+        "graph": "Graph"
+      },
+      "invariants": "measure_graph.parse_files is the sole producer of this explicit shared record for one revision. Inventory is immutable, not re-enumerated or rewritten by parsers. Exactly one parse receipt per entry, including zero-import files; syntax_artifacts contains a SyntaxEvidence artifact for every successfully parsed file and no other paths. All scalar/graph/coverage/candidate consumers use these same file hashes and syntax records. No live third-party AST objects cross the Python/Node JSON boundary. Consumer checks revision, source and parser digest before reuse.",
+      "syntax_artifact_schema": "SyntaxEvidence = {schema_version:1,revision:Revision,inventory_sha256:Hash,path:Path,source_sha256:Hash,parser_sha256:Hash,semantic_version:Id,nodes:list[{kind:string,span:Span}],literal_imports:list[{specifier:string,kind:string,span:Span}],outside_model:list[{kind:string,span:Span,reason:string}],diagnostics:list[string]}; parser-specific additional record fields require a versioned schema amendment"
+    },
+    "Subject": {
+      "fields": {
+        "root": "absolute uniquely owned directory",
+        "source_sha256": "Hash", "git_base": "full Git object ID", "git_head": "full Git object ID",
+        "controller_sha256": "Hash",
+        "path_mapping": "map[original Path -> subject Path]",
+        "reserved_outputs": "list[Path]"
+      },
+      "invariants": "One-to-one source mapping, preserving bytes/modes and required source contracts, including ignored normative artifacts. Test source roots refer to subject, never controller. Existing input paths cannot become reserved outputs."
+    },
+    "Context": {
+      "fields": {
+        "schema_version": "1", "run_id": "Id", "source": "SourceSnapshot",
+        "base_root": "absolute owned snapshot directory", "head_root": "absolute owned target directory",
+        "controller_root": "absolute owned stable controller directory",
+        "run_root": "AbsoluteRoot; uniquely owned external scratch root for generated measurement artifacts",
+        "controller_sha256": "Hash", "policy_sha256": "Hash", "toolset_sha256": "Hash",
+        "output_manifest": "Artifact", "contract_artifacts": "list[Artifact]"
+      },
+      "invariants": "Control code and target code are distinct copies of the same approved head files at creation. Controller digest is checked before each child and after all execution. Original checkout is never a mutation target. Parent-accepted Q1 clarification: run_root supplies the artifact root missing from the original Context. Resolve generated Artifact paths and output_manifest.path beneath it using strict non-escaping, non-linked paths; OwnedArtifactManifest.root must equal its canonical root. Keep it disjoint from subject/controller source inputs; declare exact output ownership, never blanket source exclusions."
+    },
+    "Inventory": {
+      "fields": {
+        "schema_version": "1", "revision": "base|head", "source_sha256": "Hash",
+        "entries": "list[FileEntry]", "changed_production": "map[Path -> sorted unique list[Line]]",
+        "scope_exclusions": "list[{path:Path,kind:directory|file,reason:string,origin_ref:string}]",
+        "enumeration_state": "complete|failed",
+        "enumeration_errors": "list[{directory:DirectoryRef,entry:Path|null,operation:walk|stat|read,reason:string}]",
+        "digest": "Hash"
+      },
+      "invariants": "entries are unique/sorted paths; measure.py alone owns CODE_EXT, SKIP_DIRS, JS_EXT and discovery for probe and adapters. Retain deliberate code_files skip semantics at both revisions and explicitly enumerate encountered excluded directory roots (including dot-prefixed roots), not their unvisited descendants. Analyzer scope includes tests/examples/benchmarks. Any walk/stat/read failure makes enumeration_state=failed and dependent observations unavailable; partial entries are diagnostic only, never a complete or greenfield census. changed_production uses existing changed_lines exclusions and committed merge-base->HEAD diff supplied by probe/mutate; base carries an empty map. No newly added controller/collector exclusions. Parsing state in FileEntry remains pending at enumeration; parsed results live only in ParsedInventory receipts/artifacts so inventory digest never changes during parsing."
+    },
+    "FileEntry": {
+      "fields": {
+        "path": "Path", "sha256": "Hash", "bytes": "Count",
+        "language": "python|javascript|typescript|unsupported",
+        "suffix": "nonempty string", "role": "production|test",
+        "parser": "string|null", "parse_state": "pending|unsupported",
+        "reason": "string", "diagnostics": "list[string]"
+      },
+      "invariants": "Enumeration does not assert parsing success: parser=null and parse_state=pending for a declared supported language, unsupported otherwise. ParsedInventory owns actual parser identity and success/failure receipts. Current required adapters handle .py, .js, .mjs, .cjs, .ts; JSX/TSX may use the same parser but must qualify coverage/runner support before becoming measured. Every other code_files extension remains explicit unsupported, never silently removed."
+    },
+    "FileReceipt": {
+      "fields": {
+        "path": "Path", "source_sha256": "Hash", "adapter": "Id",
+        "run_id": "Id", "revision": "Revision", "inventory_sha256": "Hash",
+        "toolset_sha256": "Hash", "policy_sha256": "Hash",
+        "semantic_version": "Id", "state": "processed|failed|unsupported",
+        "unit_count": "Count|null", "reason": "string", "raw": "list[Artifact]"
+      },
+      "invariants": "Exactly one receipt for each metric input and language adapter. processed requires explicit successful consumption of the exact file, including zero-output files; suffix, invocation root or clone pairs alone is insufficient."
+    },
+    "Observation": {
+      "fields": {
+        "schema_version": "1", "metric": "required metric ID", "revision": "base|head",
+        "run_id": "Id", "source_sha256": "Hash", "inventory_sha256": "Hash",
+        "semantic_version": "Id", "toolset_sha256": "Hash", "policy_sha256": "Hash",
+        "state": "complete|partial|unavailable", "value": "Number|null",
+        "receipts": "list[FileReceipt]", "findings": "list[Finding]",
+        "outside_model": "list[{path:Path,span:Span,kind:string,reason:string}]",
+        "commands": "list[Command]", "raw": "list[Artifact]", "reasons": "list[string]"
+      },
+      "invariants": "Complete means every applicable inventory input was processed under the stated finite analyzer model. It does not mean absence of dynamic behavior or vulnerabilities. Receipt/source mismatch invalidates the observation; same semantic/tool/rule hashes required for comparisons."
+    },
+    "OwnedArtifactManifest": {
+      "fields": {
+        "run_id": "Id", "root": "AbsoluteRoot",
+        "inputs": "list[{artifact:Artifact,role:syntax|graph|scalar|coverage|mutation|command|qualification|approval,revision:Revision|null}]",
+        "reserved_outputs": "list[Path]"
+      },
+      "invariants": "Exact predeclared ownership; preexisting source inputs and owned output paths are disjoint, with no duplicates, links or escaping paths. inputs here are the validator's artifact inputs: generated raw evidence is an allowed already-materialized owned output, not a preexisting source input. Every referenced raw artifact appears exactly once with the same bytes/hash/role/revision and its generated path must be reserved. Pending final output paths have no fabricated hashes. Context.output_manifest identifies this manifest, which does not hash itself. Approval/tool artifacts are checked against approved originals, not trusted because they occur in this manifest."
+    },
+    "MetricPolicy": {
+      "fields": {
+        "required": "exact nine IDs in policy_proposal.required",
+        "rules": "compiled semantic profile, preserved thresholds/tolerances/greenfield limits and accepted coverage floors",
+        "approval_artifact": "Artifact", "sha256": "Hash"
+      },
+      "invariants": "Derived from validated MeasurementConfig and the parent-approved versioned profile, not a summary-supplied policy. Same rule/tool digests on both revisions; finite semantics and zero-denominator treatment remain those in policy_proposal."
+    },
+    "RawMetricEvidence": {
+      "fields": {
+        "schema_version": "1", "run_id": "Id", "revision": "Revision",
+        "inventory_sha256": "Hash", "source_sha256": "Hash",
+        "adapter": "Id", "semantic_version": "Id", "toolset_sha256": "Hash", "policy_sha256": "Hash",
+        "receipts": "list[FileReceipt]", "commands": "list[Artifact]",
+        "qualified_raw": "list[Artifact]", "payload": "one of the metric-specific payloads below"
+      },
+      "payloads": {
+        "duplication": "{files:list[{path:Path,source_sha256:Hash,source_lines:Count,processed:boolean}],clones:list[{locations:list[{path:Path,start_line:Line,end_line:Line}]}]}; source_lines from qualified census, inclusive clone ranges, union locations before division; separate low-window census never supplies clone findings",
+        "complexity": "{files:list[{path:Path,source_sha256:Hash,functions:list[{id:Hash,span:Span,cyclomatic_complexity:Count}],diagnostics:list[string]}]}; include functionless files; recompute maximum, sum and population size",
+        "dead_exports": "{findings:list[Finding],entrypoints:list[{path:Path,origin_ref:string,public_exports:list[string]}],outside_model:list[{path:Path,span:Span,kind:string,reason:string}]}; reconstruct from qualified Vulture records and pinned JS symbol/reference evidence over the complete ParsedInventory, not a reported count",
+        "static_findings": "{findings:list[Finding],resolved_rule_ids:list[Id],diagnostics:list[string]}; reconstruct all Ruff/TypeScript diagnostics and canonical IDs from qualified raw output, including source-less diagnostics",
+        "graph": "{graph:Graph}; edges, unresolved and outside_model sites reconstructed from shared syntax evidence and approved resolution settings; cached cycles/findings are never authoritative",
+        "coverage": "{files:list[CoverageFile],suites:list[Suite]}; reconstruct executable sets/obligations from source syntax plus coverage.py analysis, and observations from qualified coverage.py/V8 logs, source maps and completed run identities",
+        "mutation": "MutationReportV3; validated exclusively by mutate.validate_mutation_results against canonical candidates, raw runner outcomes, baselines and restoration"
+      },
+      "invariants": "These are internal producer-owned normalized records, not an external import API. Each metric adapter decodes qualified_raw bytes using its pinned, qualified schema and checks that decoding equals payload/receipts. Command artifacts contain exact Command, integer returncode, stdout/stderr bytes and tool/runtime identity; successful consumption must be explicit, including zero-output files. Normalized payloads are not trusted solely because their hashes match. Tool-specific installed field paths remain Q2 qualification work; an unqualified or unparseable format is unavailable, never accepted as numeric proof."
+    },
+    "MeasurementSummary": {
+      "fields": {
+        "metrics": "map[exact required metric ID -> {state:measured|unavailable,head:Number|null,base:Number|null,comparison:ok|warn|fail|unavailable,status:ok|warn|fail|unavailable,reason:string}]",
+        "measurement_status": "ok|warn|fail|unavailable", "completeness": "complete|incomplete",
+        "missing_required": "list[{metric:Id,reason:string,prerequisite:string}]",
+        "verdict": "pass|fail", "worst_status": "ok|warn|fail|unavailable"
+      },
+      "invariants": "Producer rederives every value and policy decision from validated observations. Existing schema-2 report fields remain; metric-specific counts, identities, numerator/denominator, coverage-outcome check, thresholds and deltas are also rederived and compared when serialized. Mutation and diff coverage are head-only; never invent their base observations."
+    },
+    "Finding": {
+      "fields": {
+        "id": "Hash", "rule": "Id", "path": "Path|null", "span": "Span|null",
+        "symbol": "string|null", "message": "string", "confidence": "Number|null",
+        "identity_parts": "list[string]"
+      },
+      "invariants": "id hashes canonical identity_parts, not message or line number alone. Rule+path+qualified symbol+normalized AST/token context+occurrence disambiguator. Paired null path/span only for source-less static diagnostics; their identity uses qualified diagnostic code and canonical arguments. No silent per-source suppression; list directives as diagnostics."
+    },
+    "Graph": {
+      "fields": {
+        "schema_version": "1", "inventory_sha256": "Hash",
+        "nodes": "sorted unique list[Path]",
+        "edges": "list[{from:Path,to:string,kind:import|reexport|require|type-import,resolution:local|external,span:Span}]",
+        "unresolved": "list[{from:Path,specifier:string,span:Span,reason:string}]",
+        "outside_model": "list[{path:Path,span:Span,kind:computed-import|reflection|runtime-command,reason:string}]",
+        "cycles": "list[{id:Hash,ordered_nodes:list[Path]}]"
+      },
+      "invariants": "Resolve all literal local imports; record builtins and bare external modules as external terminals. Runtime-command edges are not silently mixed into an import cycle count. Graph completeness is explicitly static-literal completeness."
+    },
+    "CoverageFile": {
+      "fields": {
+        "path": "Path", "sha256": "Hash", "model": "coverage-py-lines-arcs-v1|v8-js-token-ranges-v1",
+        "changed_lines": "sorted unique list[Line]",
+        "executable_lines": "sorted unique list[Line]",
+        "covered_lines": "sorted unique list[Line]",
+        "obligations": "list[{id:Hash,span:Span,kind:python-arc|js-branch,outcomes:list[string],observed:list[string]}]",
+        "units": "map[Id -> {covered_lines:list[Line],observed_outcomes:list[Hash]}]",
+        "child_mapping": "complete|uncertain",
+        "raw": "list[Artifact]", "reason": "string"
+      },
+      "invariants": "covered subset executable; observed subset declared outcomes. Python obligations from coverage possible branch arcs whose decision source intersects change; JS obligations from parsed if/conditional/short-circuit/switch/loop constructs intersecting change. An executable file absent from runtime logs remains in denominator with no covered lines. Unknown source-range mapping is unavailable, not covered."
+    },
+    "Suite": {
+      "fields": {
+        "id": "Id", "runner": "python-unittest|node-native",
+        "command": "Command", "test_files": "nonempty list[Path]",
+        "test_source_sha256": "Hash", "unit_granularity": "test-method|test-file",
+        "discovered_test_ids": "nonempty unique list[Id]",
+        "baseline": "Artifact", "coverage": "list[Artifact]",
+        "duration_seconds": "Number"
+      },
+      "invariants": "No root autodetection for Q: explicit current Python discovery and all native files. Keep corpus as separate mandatory regression; any new changed production requiring corpus behavior must register its actual runnable unit, not substitute a score."
+    },
+    "UnittestResult": {
+      "fields": {
+        "schema_version": "1", "runner": "python-unittest", "runtime_version": "string",
+        "complete": "boolean", "tests": "list[PythonTest]", "discovery": "nonempty unique list[Id]",
+        "fixture_errors": "list[PythonError]", "logs": "list[{stream:stdout|stderr,text:string}]"
+      },
+      "invariants": "One terminal record per discovered test. Discovery, import, module/class fixture or reporter failures set complete=false. Structured result written to a dedicated owned channel, not scraped from stdout."
+    },
+    "PythonTest": {
+      "fields": {
+        "id": "Id", "file": "Path", "source_sha256": "Hash",
+        "outcome": "pass|assertion-fail|setup-error|error|skipped|expected-failure|unexpected-success",
+        "events": "list[{phase:setup|body|teardown|cleanup,subtest_id:string|null,error:PythonError|null}]",
+        "subtests": "list[{id:string,outcome:pass|assertion-fail|error|skipped}]"
+      },
+      "invariants": "Subtest identity uses test ID plus stable parameters and ordinal; unsupported/nonstable parameter serialization is unclassified. Selected mutant inventory must match its selected clean baseline, including subtests; missing later subtests fail closed."
+    },
+    "PythonError": {
+      "fields": {
+        "type": "string", "message": "string", "is_assertion_error": "boolean",
+        "phase": "discovery|module-fixture|class-fixture|setup|body|teardown|cleanup|reporter",
+        "frames": "list[{path:string,line:Line,function:string,source_sha256:Hash|null}]",
+        "assertion_site": "{file:Path,span:Span,kind:unittest-assert|python-assert,source_sha256:Hash}|null",
+        "raising_origin": "{frame_index:Count,instruction_offset:Count,instruction_span:Span,code_sha256:Hash,source_sha256:Hash,opcode:string,exception_identity:Id,kind:python-assert|stdlib-unittest-failure,supported_helper:string|null,helper_call_chain:list[{frame_index:Count,instruction_offset:Count,call_span:Span,code_sha256:Hash}],qualification:Artifact}|null"
+      },
+      "invariants": "Require the actual raising instruction/frame for this exception, not an ancestor assertion line. For python-assert, the failed assert instruction must belong to unchanged baseline test/helper code and its parsed assert span. For unittest-assert, require an actually invoked supported stdlib helper and qualified stdlib assertion-failure path, bound to installed runtime/library code hashes, with no application-origin raise or rethrow disguised as a helper failure. Helper chain must originate in the unchanged baseline test body. Arguments, predicates, __eq__/__bool__ or same-line calls that raise application AssertionError are not assertion failures. Ambiguous/missing instruction/span or origin proof is unclassified, never a kill. Runtime qualification must establish this distinction; no private API compatibility is assumed. Preserve phase/error precedence and positive baseline requirements."
+    },
+    "Candidate": {
+      "fields": {
+        "id": "Hash", "path": "Path", "language": "python|javascript|typescript",
+        "line": "Line", "span": "Span", "operator": "Id",
+        "before_text": "string", "after_text": "string",
+        "before_sha256": "Hash", "after_sha256": "Hash"
+      },
+      "invariants": "Whole-file byte hashes, not line hashes. id binds path/span/operator/before/after hashes. CRLF, UTF-8 and AST UTF-16 offsets converted explicitly; edits preserve all bytes outside span."
+    },
+    "Selection": {
+      "fields": {
+        "candidate_id": "Hash", "coverage_sha256": "Hash",
+        "suite_ids": "nonempty list[Id]", "unit_ids": "nonempty list[Id]",
+        "mode": "observed-covering-units|full-suite-fallback",
+        "reason": "string", "baseline": "Artifact",
+        "baseline_seconds": "Number", "max_seconds": "Number"
+      },
+      "invariants": "Select all units observed at edited span; ambiguous module-import/child contexts use their whole owning suite. No mapping or unexecuted span runs the full compatible suite, never removes the candidate. Selection hashes source, tests, runtime, environment and coverage."
+    },
+    "MutationReportV3": {
+      "fields": {
+        "schema_version": "3", "run_id": "Id", "source": "SourceSnapshot",
+        "controller_sha256": "Hash", "inventory_sha256": "Hash", "policy_sha256": "Hash",
+        "candidate_semantics": "ast-token-operators-v1", "eligible": "list[Candidate]",
+        "selected_candidate_ids": "list[Hash]", "unsampled_ids": "list[Hash]",
+        "unsupported_scope": "list[{path:Path,reason:string}]",
+        "suites": "list[Suite]", "selections": "list[Selection]",
+        "results": "list[{candidate_id:Hash,outcome:killed-assertion|survived|invalid-syntax|setup-error|timeout|unclassified,syntax:Artifact,execution:Artifact,runner_result:Artifact,full_confirmation:Artifact|null,restored_sha256:Hash|null}]",
+        "killed": "Count", "survived": "Count", "ungraded": "Count", "total": "Count",
+        "score_pct": "Number|null", "complete": "boolean", "reason": "string",
+        "restored_sha256": "Hash|null", "budget": "{max_seconds:Number,elapsed_seconds:Number,unexecuted_ids:list[Hash]}"
+      },
+      "invariants": "All selected IDs exactly one result in canonical order. All eligible IDs exactly selected or unsampled. complete means complete classified deterministic sample, not exhaustive mutation of every possible operator. total equals selected count; score round(100*killed/(killed+survived),1), null for zero graded. Any unsupported or ungraded/unexecuted selected candidate forbids complete."
+    }
+  },
+  "adapters": {
+    "inventory": {
+      "files": ["scripts/measure.py"],
+      "interfaces": [
+        "code_files(root: AbsoluteRoot) -> list[absolute file paths]",
+        "inventory(context: Context, revision: Revision, changed_production: dict[Path, list[Line]]) -> Inventory",
+        "collect_pair(context: Context, config: MeasurementConfig, base: ParsedInventory, head: ParsedInventory) -> dict[str, tuple[Observation, Observation]]"
+      ],
+      "ownership": "Move CODE_EXT, SKIP_DIRS, JS_EXT and the single discovery walk from probe.py to measure.py. code_files is a compatibility projection of that same walk, not a second enumeration algorithm; probe imports/reexports it. A private walker returns paths, deliberate exclusions and errors for inventory; code_files raises OSError on traversal failure. measure.py never imports probe, mutate or workflow modules. probe obtains changed_production from the existing mutate.changed_lines owner and passes the map; measure validates its revision/path binding against Context. No discovery constants or parser logic are copied into adapters.",
+      "algorithm": "Select root strictly from context.base_root or context.head_root and bind matching immutable Git/source identity. Walk once with explicit onerror handling; reject linked paths, case collisions and read/stat failures, retaining diagnostic paths/errors without calling the shortened census complete. Record full relative paths/file bytes and encountered deliberate exclusions before any analyzer. Source snapshot is broader than analyzer scope and includes normative .ai contracts. Parse only through measure_graph.parse_files(context, inventory, config); no rediscovery or mutation of inventory entries. Each metric receives the exact shared ParsedInventory for its revision. collect_pair returns the seven base/head metrics (six scalars plus architecture), never mutation/coverage pseudo-base entries.",
+      "output_ownership": "Declare exact report/config paths before fingerprinting. Intermediate data live in uniquely owned external scratch; archive final raw artifacts at individually reserved paths. Never exclude all .ai, an evidence subtree, or arbitrary supplied input. Reject input/output overlap."
+    },
+    "aggregate_validation": {
+      "files": ["scripts/measure.py", "scripts/measure_graph.py", "scripts/measure_scalars.py", "scripts/measure_coverage.py", "scripts/probe.py"],
+      "interfaces": [
+        "measure.validate_observations(context: Context, base: ParsedInventory, head: ParsedInventory, config: MeasurementConfig, policy: MetricPolicy, artifacts: OwnedArtifactManifest, observations: list[Observation]) -> list[Observation]",
+        "measure.assess_observations(observations: list[Observation], mutation: Observation, policy: MetricPolicy, base_inventory: Inventory) -> MeasurementSummary",
+        "probe.validate_measurement_report(report: dict, context: Context, base: ParsedInventory, head: ParsedInventory, config: MeasurementConfig, policy: MetricPolicy, artifacts: OwnedArtifactManifest) -> None",
+        "measure_graph.validate_evidence(context: Context, parsed: ParsedInventory, config: MeasurementConfig, raw: RawMetricEvidence, artifacts: OwnedArtifactManifest) -> list[Observation]",
+        "measure_scalars.validate_evidence(context: Context, parsed: ParsedInventory, config: MeasurementConfig, raw: RawMetricEvidence, artifacts: OwnedArtifactManifest) -> list[Observation]",
+        "measure_coverage.validate_evidence(context: Context, parsed: ParsedInventory, config: MeasurementConfig, raw: RawMetricEvidence, artifacts: OwnedArtifactManifest) -> list[Observation]"
+      ],
+      "ownership": "Producer-owned boundary, not guard validation. probe remains the top-level composition/publication owner and calls its validator before write_json_atomic and whenever accepting its current-invocation report. measure dispatches fixed metric-specific validation to graph/scalar/coverage adapters and derives policy summaries; no plugin registry, callback framework or probe reverse import. Q1 must not import not-yet-added Q2/Q3 modules: those metric IDs are explicitly unavailable until their implementation slice wires the fixed calls. probe independently invokes mutate.validate_mutation_results for mutation, using the existing producer-owned validator extended to v3, then passes only its rederived Observation to measure.assess_observations. Unavailable mutation is explicitly rederived from its failed/skipped execution or absent adapter, not accepted from an asserted score.",
+      "algorithm": [
+        "Validate context/source freshness, immutable base/head Git IDs and distinct matching revision/root inventories. Reconcile the canonical inventory and its enumeration completion with owned source bytes; reject a missing file, swapped revision, or shortened census. Match policy/config approval, semantic profile and exact qualified tool/config digests against expected inputs, never report-supplied replacements.",
+        "Read only manifest-owned artifacts; check exact bytes/hashes/roles/revisions and exact per-metric/per-revision receipt partitions. Bind every receipt to run/source/inventory/tool/policy. Unsupported or failed files remain explicit; no receipt or input may disappear because a tool emitted no finding.",
+        "Decode each qualified raw artifact into the declared metric payload. Reconstruct graph nodes/edges and outside-model/unresolved sites from shared syntax/source records; enumerate canonical cycles and evaluate all five approved architecture rules. Recompute values and identity deltas at base/head, ignoring supplied cycle lists/counts and violation summaries.",
+        "Recompute duplication union/denominator from clone locations and census; complexity max/mean from all function records; dead/static totals from canonical deduplicated raw findings. For coverage rederive changed executable and covered sets, exact numerator/denominator and changed outcome obligations/observations from syntax and qualified runtime evidence; no trusted normalized percentage or denominator.",
+        "Derive complete/partial/unavailable from enumeration, receipt partitions, parser/tool outcomes, source mappings and declared applicability. A missing adapter yields explicit unavailable, not an exception granting omission. Honest partial diagnostic values remain visible but cannot become measured comparisons.",
+        "Recompute all nine metric entries, thresholds/tolerances, greenfield status, identity regressions, coverage floor/outcome check, measurement_status, missing_required, completeness and outer verdict. Compare every supplied summary and observation to the rederived form; ValueError for malformed/inconsistent proof, including a forged final comparison. Before publishing fresh output, preserve valid incomplete/fail observations rather than rejecting them as malformed."
+      ],
+      "q1_boundary": "Q1 implements graph raw evidence and validation plus the common binding/receipt/policy/verdict boundary. Missing scalar/coverage adapters stay explicit unavailable, not synthetic raw successes; mutation retains existing strict native validation. Later Q2/Q3/Q4 extend the same fixed boundary. No guard/ledger import or numeric CLI import.",
+      "trust_limit": "Consistency and source binding, not authenticated producer identity or sandboxing. Do not claim that checksums authenticate the party that produced raw bytes."
+    },
+    "graph": {
+      "files": ["scripts/measure_graph.py", "scripts/measure_js.mjs"],
+      "interfaces": [
+        "parse_files(context: Context, inventory: Inventory, config: MeasurementConfig) -> ParsedInventory",
+        "evaluate_rules(graph: Graph, rules: list[ArchitectureRule]) -> list[Finding]",
+        "enumerate_cycles(graph: Graph) -> list[Cycle]"
+      ],
+      "shared_parse": "measure_graph owns parse_files and its revision-specific ParsedInventory return; Python ast.parse plus compile without execution, later pinned JS parser through measure_js.mjs. Each returns source-bound serialized SyntaxEvidence, including empty/comment-only files. Graph nodes include every inventory entry; unsupported/failed parser receipts block dependent completeness. Scalars/coverage/candidates reuse these syntax artifacts rather than walking/parsing independently. Modules exchange plain validated dict records; type names here describe contracts, not a new framework. graph/scalar/coverage modules do not import measure/probe/mutate; measure composes them, probe composes measure plus mutate. Q1 must import each module standalone.",
+      "python": "AST Import and ImportFrom, including conditional and function-local imports. Resolve absolute imports using declared source roots scripts and repository root; relative imports from package context. Include from package import child-module when an actual child file exists, else bind package. Detect ambiguous local names. Builtins/sys.stdlib_module_names and explicitly external unresolved bare packages become external terminals; missing relative/local imports are unresolved, not externals.",
+      "javascript": "Parse static import/export-from, literal import(), and unshadowed require(string); resolve exact .js/.mjs/.cjs/.ts and directory entry mappings using source package exports/type and explicit analyzer module-resolution settings. Missing literal relative target fails completeness. Type-only imports retain their own edge kind and count in the declared combined graph. No module execution.",
+      "dynamic": "Record computed import/require, importlib calls, eval/exec/reflection and child-process launch sites separately, with parsed span. Do not claim their runtime targets are known. Literal import model applies equally base/head; new unknown constructs in protected foundations are a separately defined architecture finding. Arbitrary runtime commands are not statically authenticated or sandboxed.",
+      "cycle_definition": "All elementary directed cycles on local edges, including self loops. Canonical rotation of ordered node paths, hash identity, deduplicate; retain direction. Use SCC decomposition before bounded enumeration. If enumeration exceeds configured time/output budget, partial/unavailable rather than truncate to a passing number. New identity fails even when count decreases.",
+      "rules": [
+        {"id": "ARCH01", "scope": "scripts/probe.py, scripts/mutate.py, scripts/measure*.py, scripts/measure_js.mjs, scripts/unittest_result.py, scripts/evidence.py, scripts/run.py, scripts/native_result.mjs", "predicate": "No local import path reachable from these measurement roots may enter scripts/workflow*.py.", "why": "Measurement independent of guard; actual guard may depend on evidence, never reverse."},
+        {"id": "ARCH02", "scope": "scripts/evidence.py, scripts/run.py", "predicate": "No repository-local imports; external stdlib only. Nonstdlib bare imports are violations, not hidden external terminals.", "why": "Foundation layering."},
+        {"id": "ARCH03", "scope": "production scripts/**", "predicate": "No literal local imports from tests, evals, benchmark or examples.", "why": "Production tools do not depend on their clients/fixtures."},
+        {"id": "ARCH04", "scope": "evals/lib/** production files", "predicate": "Imports entering scripts/** may target only scripts/native_result.mjs.", "why": "Retain the observed narrow shared reporter seam."},
+        {"id": "ARCH05", "scope": "scripts/evidence.py, scripts/run.py", "predicate": "New computed module-loading/reflection constructs are violations; ordinary subprocess.run/Popen commands are recorded but not claimed resolved.", "why": "Do not make the small static foundation rule silently meaningless through dynamic imports."}
+      ]
+    },
+    "scalars": {
+      "files": ["scripts/measure_scalars.py", "scripts/measure_js.mjs"],
+      "interface": "collect(context: Context, parsed: ParsedInventory, config: MeasurementConfig) -> dict[str, Observation]",
+      "duplication_pct": {
+        "tool": "Qualified jscpd v5",
+        "parameters": {"min_tokens": 40, "min_lines": 5, "mode": "mild", "cross_formats": false, "renamed_or_similar": false},
+        "inventory": "Run exact staged input files with JSON summary-top >= inventory size and no configured ignores/max-size filter. Require source census including zero-clone files. For files below the clone-window threshold, run a separate min-tokens=1/min-lines=1 census; use it only as file-consumption proof, never use its clone pairs as metric findings. Empty/comment-only files have parsed zero-token receipts. Verify released JSON field paths in Q2 before binding parser. If summary omits a nonempty file even in census, fail unavailable; do not invent a successful scan.",
+        "value": "100 * cardinality(union of all detected clone-covered (path,line) pairs) / sum per-file analyzer source line counts from the complete census, rounded 2 decimals. Validate every clone location within its file. Never average language percentages.",
+        "semantic_change": "Version jscpd-union-lines-v1 explicitly. Historical unqualified percentage observations are not comparable. Rerun both base and head; same 40-token/5-line settings and existing 0.5-point tolerance retained."
+      },
+      "complexity": {
+        "tool": "lizard FileAnalyzer.analyze_source_code",
+        "inventory": "Call once for each exact input after syntax parsing. Select Python/JS/TS reader explicitly; .mjs/.cjs use an in-memory .js filename alias with an exact reverse mapping, never rename source. Do not invoke recursive CLI discovery, duplicate-content filtering or fallback CLikeReader. Capture diagnostics and reject swallowed recursion/parse errors or GENERATED CODE early-stop/suppression directives.",
+        "value": "max and arithmetic mean over all returned function cyclomatic_complexity values, rounded average to 2 decimals. Functionless files get successful unit_count=0 receipts, not fake functions. Empty whole population is unavailable, not zero.",
+        "semantics": "lizard lexical cyclomatic function model, not cognitive complexity or a proof of complete runtime control flow. Qualify actual nested/arrow/async/TS constructs and disclose reader semantics."
+      },
+      "dead_exports": {
+        "python": "Run Vulture over all explicit Python files together, min-confidence 80 unchanged. Count its verified finding records; AST receipts establish every file parsed, including zero findings. Reject I/O/tool/parse errors rather than treating exit code as a count. Record built-in heuristics and any directives.",
+        "javascript": "Use TypeScript AST/checker symbol identities across every JS/TS input; collect unused local binding diagnostics and exports without any lexical import/reexport/property reference in the complete inventory. Follow reexport aliases; namespace computed access is an outside-model site, not statically known absence of use. Treat public package exports and registered CLI/test entrypoint exports as externally visible roots using actual package/test configuration, not per-finding whitelists. Record the full entrypoint set and origin.",
+        "value": "Count deduplicated Vulture findings plus JS local-unused/export-no-static-reference findings. Preserve name dead_exports for compatibility; semantic version mixed-static-unused-v1.",
+        "limit": "No claim that these findings prove dynamic deadness, or that zero means every export is used at runtime. Do not silently ignore dynamic sites or subtract suspected false positives. Parent approves this defined analyzer replacing the former mutually-exclusive knip/vulture selection."
+      },
+      "static_findings": {
+        "python": "Ruff explicit file list, config isolation, no fix/cache, target py314, selected E/F/B/S families resolved to a pinned complete rule-ID list. JSON records. Every file command must parse/process successfully; syntax findings remain findings but also block AST-dependent metrics. Existing directives are inventoried, never silently added or broadened.",
+        "javascript": "Pinned TypeScript program over all explicit JS/TS input files: noEmit=true, allowJs=true, checkJs=true, strict=true, noUnusedLocals=true, noUnusedParameters=true, allowUnreachableCode=false. Use existing package module boundaries; include pinned compiler default libs and explicitly declared external type inputs. Count all pre-emit diagnostics; diagnostic source+code+span identity. Unresolved bare external type references are actual diagnostics, not invented type declarations; missing local source input is infrastructure/inventory failure.",
+        "value": "Total deduplicated Ruff plus TypeScript diagnostics. Mixed-static-diagnostics-v1; same rules/tools/options at base and head. Diagnostics are lint/type/safety findings, not exhaustive security analysis.",
+        "configuration": "No arbitrary ambient any declarations, skipLibCheck-based hiding, auto-registry downloads or new source suppressions to get green. Generated tool config is owned per-run, never root manifest."
+      }
+    },
+    "coverage": {
+      "files": ["scripts/measure_coverage.py", "scripts/measure_js.mjs"],
+      "interfaces": [
+        "collect(context: Context, parsed: ParsedInventory, config: MeasurementConfig, suites: list[Suite]) -> list[CoverageFile]",
+        "assess_diff(context: Context, parsed: ParsedInventory, files: list[CoverageFile], policy: MetricPolicy) -> Observation",
+        "select(candidate: Candidate, coverage: list[CoverageFile], suites: list[Suite]) -> Selection"
+      ],
+      "python": "Run coverage.py with branch=true, source set to exact owned target roots, parallel=true and patch=subprocess. Run each unittest test method as a unit when independent selection is qualified; otherwise retain module/class fixture group. Set a fixed unit context before starting that unit; descendants inherit the same config/context. Combine within that unit then union globally. Preserve ordinary uninstrumented full-suite proof as well. Coverage JSON provides executed/missing lines and branches; use public API for per-context data, never manufacture executions with add_lines.",
+      "python_children": "Environment overrides must explicitly propagate the collector config; instrumented real child invocation proves the target source hash. Naturally terminated children flush; intentionally killed children may lose data. Such loss can reduce observed coverage and makes unit mapping uncertain: use full-suite fallback for selection, never treat absent child data as proof of nonexecution. Add real direct tests for uncovered paths rather than synthetic coverage.",
+      "javascript": "Run Node native suites with NODE_V8_COVERAGE into a unit-owned directory; retain separate native result and process completion. Use native lcov as secondary evidence, not sole inventory. Parse raw V8 function/block ranges and script source hashes. Normalize file URLs, drive case, UTF-16 offsets, CRLF and source maps; unsupported transformation maps are unavailable. Unloaded changed JS files are still parsed with zero runtime hits.",
+      "javascript_lines": "Executable obligations are lines containing runtime tokens of statements/expressions, excluding comments, import-only/type-only declarations and punctuation-only delimiters according to pinned AST classification. A line is covered only if every executable token span on that line is covered by a positive innermost V8 range; parent function hit must not override an inner zero-count block. Multiline expressions and nested zero ranges have real fixtures.",
+      "javascript_branches": "Enumerate both if/conditional outcomes, RHS-executed/RHS-skipped short-circuit outcomes, each switch case plus no-match when no default, and loop-body/exit outcomes. Map to nested V8 block counts; infer complement only from verified enclosing and child counters within the same invocation. Ambiguous counter mapping stays unavailable. These are declared decision outcomes, not full MC/DC or exception-path coverage.",
+      "value": "D = union (path,line) in changed_production intersect executable_lines; C = covered elements of D. diff_coverage_pct = 100*|C|/|D|. Keep exact numerator/denominator before rounding; compare floor on exact counts. Changed decision obligations additionally require every declared outcome observed. No percentage averaging or source omission.",
+      "selection": [
+        "Generate mutation candidates before looking at coverage.",
+        "Select every test unit observed covering the candidate span; include shared import/fixture units and conservative owning-suite fallbacks for unknown child/source attribution.",
+        "Uncovered/no-observed-unit candidate runs full compatible suite. Imported reporter/scorer use includes both Python CLI fixtures and native suites if either executes that target.",
+        "Require clean selected baseline in the same unit grouping and environment; grouping differs from the full suite only after an equivalence/fixture-isolation integration check.",
+        "A selected assertion kill may be graded under this explicitly empirical selection model. A selected survivor requires full compatible-suite confirmation before final survived classification.",
+        "If any coverage, source, test, command, parser or environment hash changes, discard selection and rerun the baseline. No static claim of universal test-selection soundness."
+      ]
+    },
+    "python_runner": {
+      "files": ["scripts/unittest_result.py", "scripts/mutate.py"],
+      "interfaces": [
+        "run_unittest(selection: Selection, result_path: Path) -> int",
+        "classify_unittest(result: UnittestResult, rc: int, baseline: UnittestResult) -> str"
+      ],
+      "supported": "CPython 3.14 stdlib synchronous TestCase/TestSuite, normal loader/discovery, module/class fixtures, setUp/tearDown/addCleanup and subTest. Reject overridden run/_call* lifecycle, FunctionTestCase, IsolatedAsyncioTestCase, custom failureException or unrecognized suite wrappers until a separately tested adapter exists; record affected test IDs, not silently skip.",
+      "implementation": "Retain real TestCase.run behavior; wrap each discovered instance's standard _callSetUp/_callTestMethod/_callTearDown/_callCleanup with a phase recorder before invoking it, using installed-version signature checks. On a raised exception record its object identity, traceback and current phase before rethrowing; retain this association until TestResult receives it, since the wrapper can unwind before addFailure/addError. Subtest callbacks occur within the active body phase. Custom TestResult records addSuccess/addFailure/addError/addSubTest/skip/expected outcomes and complete discovery identity. Module/class fixture errors remain non-body. Do not classify from text or fabricated Node fields.",
+      "assertion_provenance": "Use unchanged parsed test/helper source plus runtime-qualified instruction/span provenance. Identify the actual origin of this exception object and its raising instruction, not any matching ancestor line. For bare assert require the failed assert instruction itself in unchanged test/helper code; evaluation of its predicate/message must not have raised the error. For unittest require an actually invoked supported helper and its qualified stdlib failure path, not an application exception from argument evaluation, __eq__/__bool__, same-line calls, caught/rethrown errors or a helper-shaped function name. Record PythonError.raising_origin and the source-bound test/helper call chain; bind stdlib instructions/code hashes to the qualified CPython 3.14 runtime. If origin cannot be established, classify unclassified. Application AssertionError during assertion arguments or predicates is never a kill even when the assertion ancestor line matches. Keep all existing baseline, phase and error precedence. Exact CPython instrumentation/API support is a bounded Q3 qualification task, not assumed here.",
+      "precedence": "launch/timeout -> syntax/import/fixture/reporter/non-body error -> incomplete or changed identity/subtest inventory -> relevant body assertion -> positive green. Mixed assertion and any higher-priority error is ungraded. Baseline requires positive complete all-pass tests with no skips/expected failures. No early failfast."
+    },
+    "candidate_generation": {
+      "files": ["scripts/mutate.py", "scripts/measure_js.mjs"],
+      "interfaces": ["build_mutants(repo, targets, limit, *, unsupported=None, parsed: ParsedInventory|null = null) -> list[Candidate]"],
+      "shared_input": "Legacy native-only callers retain the existing path when parsed=null. New v3 callers must supply the shared head ParsedInventory, bound to repo/source hashes and the committed changed_production map. Token lookup over those exact bytes does not rediscover files or introduce another syntax owner; candidate regeneration validates/reuses the same parser evidence. Missing or stale parsed input cannot fall back to legacy heuristics for v3.",
+      "python": "AST identify Compare, BoolOp, BinOp and bool constants; tokenize locates actual operator byte spans. Preserve current operator families ==/!=, >=/<, <=/>, >/<, and/or, binary +/- and True/False. Do not mutate strings, docstrings, annotations or comments. Only Python grammar, never JS statement deletion. compile(mutated_bytes, path, 'exec') preflight without execution/pycache.",
+      "javascript": "Use pinned TypeScript syntax tree, not line regexes. Match BinaryExpression equality/comparison/logical/arithmetic tokens and boolean literals, plus standalone ExpressionStatement/ReturnStatement deletion where replacing with an empty statement preserves syntactic parent structure. Do not delete declarations, exports, import directives or for-header fragments. Traverse executable template interpolations but not literal template text, regex bodies or comments. Require executable AST context, not TS type nodes or arrow => token.",
+      "selection": "For each changed line choose first eligible span by existing operator family precedence then byte offset; if none, supported safe statement deletion. Sort by (line,path,span). If n>20 select indices floor(i*n/20), i=0..19, matching the existing deterministic spread. Enumerate all eligible candidates and no-operator parsed lines before sampling; expose changed sampling distribution from the former heuristic.",
+      "invalid": "Parse failure/unsupported changed file is unsupported_scope even if it would not be sampled. Invalid generated syntax is an ungraded selected result, not dropped and replaced with a more favorable candidate. Zero candidates is null/incomplete.",
+      "reconciliation": "Consumer regenerates candidates with exact parser/operator/policy hashes and compares IDs, byte hashes, sample and omissions. Changes to generator require a new semantic version and a fresh whole run."
+    },
+    "execution_and_runtime": {
+      "files": ["scripts/mutate.py", "scripts/measure.py", "scripts/tests/helpers.py", "scripts/tests/test_measurement_e2e.py"],
+      "interfaces": [
+        "prepare_subject(context: Context) -> Subject",
+        "run_candidate(context: Context, candidate: Candidate, selection: Selection) -> MutationResult",
+        "validate_mutation_results(report: dict, repo: AbsoluteRoot, *, context: Context|null = null, config: MeasurementConfig|null = null, artifacts: OwnedArtifactManifest|null = null) -> None"
+      ],
+      "validator_contract": "Legacy v2 retains its existing two-argument validation. V3 requires non-null context/config/artifacts from the producer, validates their identity and raw artifacts, regenerates candidates and reclassifies instruction-bound outcomes, then rejects any mismatching counts/completeness/score. Missing v3 expected inputs is ValueError, never fallback to v2. probe builds the mutation Observation only after this validation, deriving its score/state from validated graded counts and completion/restoration, not an unvalidated summary.",
+      "controller": "Create a clean owned snapshot of approved controller/head files outside the mutation subject, hash it, and launch it in a fresh process. No sys.path/cwd leakage from subject into controller. Controller run/evidence/classifiers/reporters are stable; tests import and launch scripts from a separate complete subject copy. Changing scripts/mutate.py, probe.py, run.py, native_result.mjs or newly added controller sources remains an eligible target in that subject. Stable reporting does not replace tests that directly exercise the mutated reporter.",
+      "subject": "Owned clean Git worktree or equivalently committed private repository at the exact source tree; record Git mapping, bytes and modes. Each candidate starts from clean subject content. All child fixture paths derive from subject SCRIPTS, never controller SCRIPTS. Existing nested mutation tests retain their real fixture operations; they do not accidentally rerun the outer whole-change mutation in its own repository.",
+      "outputs": "Refactor test artifact sink into a context-owned path; register exact filenames before writing, including existing E2E random IDs. No source/test logic change or skipped scenario. Scratch files may be external and ephemeral; source snapshots still bind all preexisting files and contracts. Unexpected modified inputs or unregistered output paths invalidate the variant. Cleanup only owned paths; no broad .ai exclusion.",
+      "restoration": "Check original source untouched, target before hash, mutant after hash, and post-run restore hash. If target differs from owned mutant bytes preserve intervening edit plus original backup and fail recovery-required; never overwrite a competing edit. Controller bytes must remain unchanged. Original source snapshot rechecked before publishing.",
+      "bounds": {
+        "qualification_command": {"idle_seconds": 30, "max_seconds": 90},
+        "baseline_full_python": {"idle_seconds": 120, "max_seconds": 1800},
+        "baseline_native": {"idle_seconds": 120, "max_seconds": 1800},
+        "scalar_adapter": {"idle_seconds": 120, "max_seconds": 900},
+        "candidate": "max_seconds = min(1800, max(60, 3*observed_selected_baseline_seconds+30)); idle_seconds=min(300,max_seconds). Full confirmation uses its own baseline-derived bound, not the selected-unit bound.",
+        "mutation_phase_max_seconds": 5400,
+        "scheduling": "After actual baseline durations, calculate worst-case selected execution plus full-survivor confirmations and restoration within 5400 seconds. If estimate exceeds budget, report the estimate and request parent-approved bounded schedule/budget revision before mutation; do not lower mutant cap, remove suites or auto-extend indefinitely.",
+        "budget_exhaustion": "Stop, restore and emit incomplete/unexecuted IDs. Do not mark remaining candidates survived or silently resume by importing earlier scores. A later authorized fresh run revalidates all inputs; no retrospective same-run receipts.",
+        "cost_reduction": "Unit-level coverage selection and stable controller prevent unnecessary 12-minute whole-suite reruns and controller recursion. No guaranteed speedup is claimed. Remaining expensive full confirmations are real proof cost; exact total cannot be known from source alone."
+      },
+      "test_safety_boundary": "This is controlled source ownership and best-effort PID-scoped cleanup through existing run_capture, not a sandbox or proof that arbitrary descendants cannot escape. Abnormal output/timeout remains unavailable; authenticated producer independence is handled separately by the parent/host."
+    }
+  },
+  "compatibility": {
+    "probe": "Keep metrics report schema_version=2 and its legacy numeric/verdict fields; add measurement_detail_version=1 and hashed Observation artifacts. Existing consumers still see incomplete as fail. probe.validate_measurement_report is the explicit producer-owned prepublication/acceptance boundary; delegate raw graph/scalar/coverage validation and canonical assessment to measure, and mutation validation to mutate. default_policy/judge/assess_report retain compatibility entry points backed by the common approved rules/assessment rather than a second policy implementation. assess_report on bare metrics is not evidence validation. Replace _scope_support guesses for the configured path and update mutation_entry together; no alternate optimistic summary. Unconfigured legacy calls preserve honest unavailable behavior.",
+    "mutation": "Introduce schema_version=3 for mixed suites, candidate population and controller binding. Retain the existing v2 native-only validator as a separate strictly versioned path while tests/consumers migrate; never accept v2 as mixed-Python proof. New Q producer emits v3 only. Canonical report remains invocation-owned mutation.json; latest aliases are never inputs.",
+    "cli": "Q adds --measurement-config PATH to probe and mutation for validated tool locations, suite definitions and stricter policy only; it cannot remove required metrics, reduce the accepted 20-candidate default budget, or import measurement results. Keep existing native remainder argv behavior. No config plus existing callers continues its honest unavailable behavior. New flag/help are proposed, not runnable today.",
+    "docs": "Update references/quality-metrics.md and actual consumers with supported finite semantics, external-tool setup, sample interpretation, numerical coverage-policy origin and missing-as-fail behavior. Coordinate with parent canonical-doc owner; original r2 artifacts stay historical.",
+    "guard": "Standalone source binding never becomes a guarded receipt automatically. Parent later runs the fresh producer under actual guard admission and binds its unchanged outer metric verdict; no measurement dependency on ledger/adoption."
+  },
+  "increments": [
+    {
+      "id": "Q1", "depends_on": ["parent design approval"],
+      "files": ["scripts/measure.py", "scripts/measure_graph.py", "scripts/probe.py", "scripts/tests/test_measure_inventory.py", "scripts/tests/test_measure_graph.py"],
+      "deliverable": "Shortest achievable real vertical slice: inventory plus Python literal-import cycles/architecture through probe. No external tools needed. Mixed root remains incomplete with explicit JS remainder, not released.",
+      "checks": ["CHECK-INVENTORY", "CHECK-GRAPH", "CHECK-PARTIAL-PROBE", "CHECK-RECONCILE"],
+      "validation_scope": "Implement common producer-owned validation plus graph/cycle/architecture rederivation and all-nine-metric fail-closed outer verdict. CHECK-RECONCILE graph/receipt/revision/comparison cases only; later raw scalar/coverage/mutation extensions belong to their respective slices. No external tools, coverage runner or guard integration."
+    },
+    {
+      "id": "Q2", "depends_on": ["Q1 functional verification/review", "authorized external tool qualification"],
+      "files": ["scripts/measure_js.mjs", "scripts/measure_scalars.py", "scripts/measure.py", "scripts/measure_graph.py", "scripts/probe.py", "scripts/tests/test_measure_scalars.py", "scripts/tests/test_measure_graph.py", "evals/lib/measure_js.test.mjs"],
+      "deliverable": "All current file languages have real scalar and architecture measurements; collector semantics bound identically at base/head.",
+      "checks": ["CHECK-TOOLS", "CHECK-SCALARS", "CHECK-GRAPH", "CHECK-JS-PARSER", "CHECK-RECONCILE"]
+    },
+    {
+      "id": "Q3", "depends_on": ["Q2 functional verification/review", "accepted coverage policy artifact bound to config"],
+      "files": ["scripts/unittest_result.py", "scripts/tests/test_unittest_result.py", "scripts/measure_coverage.py", "scripts/measure_js.mjs", "scripts/measure.py", "scripts/probe.py", "scripts/tests/test_measure_coverage.py"],
+      "deliverable": "Phase-aware unittest reporter first, then actual changed-line/decision coverage including subprocesses and source-bound conservative selection. This owns runner discovery/positive baseline evidence before Q4 consumes it; uncovered paths remain failing evidence.",
+      "checks": ["CHECK-PY-CLASSIFICATION", "CHECK-COVERAGE", "CHECK-SELECTION", "CHECK-RECONCILE"]
+    },
+    {
+      "id": "Q4", "depends_on": ["Q3 functional verification/review"],
+      "files": ["scripts/mutate.py", "scripts/probe.py", "scripts/measure_js.mjs", "scripts/tests/helpers.py", "scripts/tests/test_measurement_e2e.py", "scripts/tests/test_mutate.py", "scripts/tests/test_probe.py"],
+      "deliverable": "Mixed mutation with real body-assertion evidence, parser-backed byte edits and clean controller/subject separation. Test sink changes are behavior-preserving and revalidated.",
+      "checks": ["CHECK-PY-CLASSIFICATION", "CHECK-JS-PARSER", "CHECK-SELF-MUTATION", "CHECK-RECONCILE", "CHECK-SELECTION"]
+    },
+    {
+      "id": "Q5", "depends_on": ["Q4 functional verification/review", "all final parent/guard/docs changes frozen"],
+      "files": ["references/quality-metrics.md", "references/quality-bar.md", "references/review-and-pr.md", "references/final-report.md", "docs/architecture.md", "CONTRIBUTING.md"],
+      "deliverable": "Current documentation and actual final-tree required metrics/native/eval proof, independent verification/review and parent disposition. No promised result.",
+      "checks": ["CHECK-REGRESSION", "CHECK-ACTUAL-Q", "CHECK-INDEPENDENT"],
+      "coordination": "Parent serializes docs ownership. Every new producer/controller file and final guard change is inside final scope; no parallel writers during proof."
+    }
+  ],
+  "check_registry": {
+    "execution_rule": "Planned checks, not executed evidence. Use managed Python or qualified external interpreter explicitly, all external commands through stable scripts/run.py with declared bounds. Unit/integration tests use stdlib unittest and node:test only. Real fixtures/commands; no stubs, skipped tests, imported scores or fake analyzer receipts.",
+    "CHECK-TOOLS": "External environment only: capture exact version/help, digest, license/package source and rule list. Run actual tiny positive/negative files for every suffix, paths with spaces, UTF-8 and CRLF; record zero-output census. Stop adapter implementation on API/schema mismatch and obtain bounded amendment.",
+    "CHECK-INVENTORY": "Temporary real Git repo: root source/cwd '.', nested cwd, traversal/absolute/dot-component rejection, file/artifact '.' rejection, case-fold collisions, linked directories, nested packages, ignored-looking tracked file, .mjs/.cjs, zero-function file, unsupported .go, absent/renamed/untracked source. Exact before/after inventory and receipt partitions; swapped base/head identities rejected. Import measure, graph and probe standalone, verify probe discovery is the same lower-layer owner. Actual traversal/stat/read failure must be unavailable, not a shortened success; preserve deliberate exclusions and zero-import receipts. No mocked success census.",
+    "CHECK-GRAPH": "Real Python and JS imports, relative/absolute/conditional/type/reexport edges, stdlib, external, missing local, computed import and subprocess site. New directed cycle replaces old at equal count; new architecture violation replaces old at lower count; both fail. Zero-edge processed files stay complete. Dynamic sites remain disclosed without universal claims.",
+    "CHECK-PARTIAL-PROBE": "Public probe on explicitly configured Python Git fixture returns actual cycle/architecture numbers and incomplete/fail for all still-missing required metrics. Use at least three base code files for identity-regression fixtures so greenfield does not bypass comparison. Required set unchanged; no environment-created fake successful metrics.",
+    "CHECK-SCALARS": "Real tool runs at two Git revisions: clone/no-clone/short file, functionless/nested/TS function, known unused symbol, known lint/type finding. Every input accounted; errors not zero; same configs/hashes; removal of one finding cannot mask a new architecture identity.",
+    "CHECK-JS-PARSER": "Execute parse/candidate APIs on real changed score.mjs and native_result.mjs plus multiline comments/templates, template interpolation, regex/division, Unicode offsets, CRLF, arrow operators, types, return/expression deletion. Do not execute actual root mutants during qualification. Later fixture mutants syntax-preflight and run against real Node assertions.",
+    "CHECK-COVERAGE": "Real Python parent launches child with overridden env; real Node parent launches native children. Two-arm decisions, loops, short-circuit, multiple statements per line, unloaded changed files and nested zero ranges. Interrupted child cannot inflate coverage; missing mappings unavailable. Union counts reconcile exactly; branch-only gap fails even when line floor meets.",
+    "CHECK-SELECTION": "Instrument real units A/B/C, shared fixture/module imports and child-only execution; verify all observed covering units selected. No hits/uncertain maps force full compatible suite. Selected green baseline identity must match; full confirmation for survivor. Same target mutation with selected/all tests used as validation fixtures; record empirical limit rather than universal equivalence.",
+    "CHECK-PY-CLASSIFICATION": "Actual unittest processes: passing test, genuine unittest/bare-assert body and helper kills with raising-instruction evidence; negative application AssertionError during assertEqual argument evaluation, bare-assert predicate/message evaluation, same-line calls, __eq__/__bool__ and rethrow from helper. Matching assertion ancestor lines never suffice. Also setUp/tearDown/cleanup assertions, module/class fixture errors, subtests, skipped/expected/unexpected success, import/syntax failure, forged stdout, truncated/missing provenance, timeout and changed inventory. Only positive relevant body assertions with actual qualified origin grade kills.",
+    "CHECK-SELF-MUTATION": "Fixture with real controller sources: eligible edits to mutate/probe/run/reporter/adapters execute from subject while outer controller hashes stay stable; test logs prove target path/hash. Preserve nested real mutation fixture tests, deliberate abnormal execution, competing edit and owned-output checks. No controller exemption.",
+    "CHECK-RECONCILE": "Starting from real-produced reports/raw artifacts, alter a scalar value, coverage denominator or observed outcome, graph cycle identity or architecture finding, receipt revision, completeness, metric comparison and outer verdict; producer-owned validation must reject each inconsistent summary even if its artifact hash is updated. Reject raw records inconsistent with qualified output/source/receipt partitions. Q1 runs graph/receipt/revision/all-required-verdict cases; Q2 scalar cases; Q3 coverage cases; Q4 mutation cases. Mutation additionally rejects corrupt IDs/bytes, missing/duplicate results, wrong runner, altered selection, wrong tool/policy/controller hash, stale source, ungraded result marked killed and missing restoration. Consumer independently regenerates candidates and reclassifies raw results. No ordinary consistency check is delegated to the guard.",
+    "CHECK-REGRESSION": {
+      "python_argv": ["{qualified_python}", "-B", "-m", "unittest", "discover", "-s", "scripts/tests", "-v"],
+      "native_argv": ["{node}", "--test", "{expanded sorted actual native test file inventory}"],
+      "native_inventory_seed": ["evals/lib/mutate.test.mjs", "evals/lib/score.test.mjs", "evals/lib/native_result.test.mjs", "evals/agent/agent.test.mjs"],
+      "native_inventory_rule": "Add every actual new native test file, including workflow and measurement files, by explicit discovery/registry reconciliation before execution; no shell wildcard or stale four-file shortcut.",
+      "eval_argv": ["{node}", "evals/run.mjs"],
+      "bounds": {"idle_seconds": 120, "max_seconds_each": 1800},
+      "assertions": "Positive full inventories, zero unclassified setup/skip/cancel cases, all current corpus arms meet unchanged 0.9 policy/null semantics. Archive commands/output and actual source hashes."
+    },
+    "CHECK-ACTUAL-Q": {
+      "proposed_argv": ["{qualified_python}", "-B", "{stable_controller}/scripts/probe.py", "--repo", "{frozen_source_root}", "--slug", "workflow-reliability", "--base", "bcc971d3b64559127dfc43eb0bfd4348c42803ca", "--measurement-config", "{owned_qualified_config}"],
+      "preconditions": "New flag/collectors implemented and approved; tool/config paths concrete; no parallel writers; source clean and inputs frozen; actual baseline schedule fits declared runtime or parent explicitly revises budget.",
+      "sequence": ["reserve outputs", "snapshot", "inventory base/head", "qualify matching tools/rules", "parse each immutable inventory into shared ParsedInventory", "collect base/head scalars and graph", "full green baseline plus coverage", "enumerate full candidate population and canonical sample", "cost and validate selection", "run all selected mutants with bounded fallbacks", "restore/reconcile all raw results", "recheck original/controller source", "producer validates raw evidence and rederives all required metrics/comparisons/verdict", "atomic fresh report"],
+      "acceptance": "Actual complete proof and no measured failure, not a planned pass. Any failing value reopens implementation; any unavailable prerequisite keeps Q blocked. Do not replace root mutation with eval fixture scores."
+    },
+    "CHECK-INDEPENDENT": "Parent dispatches fresh verifier then distinct read-only reviewer after this design-only handoff. Reconcile Q1-Q5 and AC01-AC10, all actual numbers, changed candidate distribution, survivors/equivalence explanations, finite analyzer limitations and final source freshness. No independent approval is manufactured here."
+  },
+  "external_blockers_vs_work": {
+    "implementation_work_not_external_blockers": [
+      "Missing inventory/coverage/architecture adapters, Python reporter, JS parser integration and bounded self-mutation are owned implementation tasks Q1-Q4.",
+      "Parent has accepted the new numerical coverage floors for the declared finite models autonomously; bind that policy artifact before Q3. This is not discovery of a historical root bar.",
+      "12-minute test suite is a cost input, not proof measurement is impossible; selection may reduce it but real fallback cost remains."
+    ],
+    "genuine_external_prerequisites": [
+      "Skill-owned provisioning is authorized for later Q2 after design review. Distribution access and exact-version Windows/Python qualification remain prerequisites; none installed in this handoff and no project manifest/OS changes authorized.",
+      "If real native tool qualification fails, parent must approve another tested adapter/environment before that metric becomes complete. No WSL/OS modification is assumed.",
+      "Existing publication 403/EMU restriction remains separate; no access retry/bypass authorized.",
+      "Authenticated identity and arbitrary-process sandbox guarantees require host capabilities outside these scalar collectors and are not promised by Q."
+    ],
+    "stop": "Return after correcting the two existing design files and writing evidence/measurement-design-fixes.md with dispositions/current hashes. Preserve original review. Parent obtains narrowed independent acceptance, renders the <=3-page overview, updates state and implements shortest Q1. No implementation/tests/agents/installs/publication or changing workflow_* reads in this correction; no new Q pass."
+  }
+}

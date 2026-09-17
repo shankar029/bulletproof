@@ -1,0 +1,152 @@
+{
+  "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-qmm5ok4x",
+  "base": "3ed938b4ef76c7f2f37e5e9afc04baa4cb0d591a",
+  "archive": "q1-independent-frozen-env-off-resumed-q1-recovery-integration.zip",
+  "files": {
+    "original/.gitignore": {
+      "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883",
+      "bytes": 5
+    },
+    "original/a.py": {
+      "sha256": "9e151bb8964dd13251b18779fc9acb792c58a7c028f667657db3344e82918fbc",
+      "bytes": 17
+    },
+    "original/approval.txt": {
+      "sha256": "20ead7dc3b7c828cb2e7d0084467ba84cb1f911c03fbd371224e24c24c326701",
+      "bytes": 55
+    },
+    "original/b.py": {
+      "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+      "bytes": 10
+    },
+    "original/c.py": {
+      "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+      "bytes": 10
+    },
+    "original/measurement.json": {
+      "sha256": "0820fe6d1aeb402d9003d84a89651e1e332408482a4bb2cb4ea35064d6e59f52",
+      "bytes": 1198
+    },
+    "original/test_example.py": {
+      "sha256": "8cc263d23109db43de954956d46b6907cff78d989f5960c4366535f0008df103",
+      "bytes": 111
+    },
+    "original/__hello__.py": {
+      "sha256": "4f17da3b0b32f502257e0080a3c9d25ccb4c1ed24424139d70afe6fbb540dafb",
+      "bytes": 13
+    },
+    "original/.ai/frozen-env-off/metrics.json": {
+      "sha256": "9ed3b845f1e5ce48815c318c71bb994a1846c1064a1505a6f891450f6d99cead",
+      "bytes": 66484
+    },
+    "original/.ai/frozen-env-off/evidence/runs/240e0a3974d94a4296d62ef118c5e2d8/metrics.json": {
+      "sha256": "9ed3b845f1e5ce48815c318c71bb994a1846c1064a1505a6f891450f6d99cead",
+      "bytes": 66484
+    },
+    "original/.ai/frozen-env-off/evidence/runs/240e0a3974d94a4296d62ef118c5e2d8/measurement/manifest.json": {
+      "sha256": "333aee21db8cad724be056310828a2eb9ff70ac40afd65ccd49d43d2f72f1471",
+      "bytes": 3341
+    },
+    "original/.ai/frozen-env-off/evidence/runs/240e0a3974d94a4296d62ef118c5e2d8/measurement/base/graph.json": {
+      "sha256": "b829d91a89835cafe26c22416a9d7367fedf417d9c725049ea28017871d42176",
+      "bytes": 4528
+    },
+    "original/.ai/frozen-env-off/evidence/runs/240e0a3974d94a4296d62ef118c5e2d8/measurement/base/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json": {
+      "sha256": "ada8a1d31566f3bfe60ac0f9b76714dd890c8c6c99a06a191a72dafc36946e4e",
+      "bytes": 1827
+    },
+    "original/.ai/frozen-env-off/evidence/runs/240e0a3974d94a4296d62ef118c5e2d8/measurement/base/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json": {
+      "sha256": "f1f055289d314a9e884ff949b6a4b7c3b12f3cb873468eaee5e373ba9f9e3859",
+      "bytes": 667
+    },
+    "original/.ai/frozen-env-off/evidence/runs/240e0a3974d94a4296d62ef118c5e2d8/measurement/base/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json": {
+      "sha256": "40b4088ea9eb86ff839b81821a6cb6e74db098549f1404f6ebc53b3d31e264f4",
+      "bytes": 667
+    },
+    "original/.ai/frozen-env-off/evidence/runs/240e0a3974d94a4296d62ef118c5e2d8/measurement/base/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json": {
+      "sha256": "8ed12f7cf170a5ed727c36c53de7cc7c7c66353cb5669fc626aeca0e2f996234",
+      "bytes": 667
+    },
+    "original/.ai/frozen-env-off/evidence/runs/240e0a3974d94a4296d62ef118c5e2d8/measurement/head/graph.json": {
+      "sha256": "5f353a92fb3f9f71c667d24f67acc13e4b3f21bd5dd0dd345af26decc971ed1b",
+      "bytes": 5590
+    },
+    "original/.ai/frozen-env-off/evidence/runs/240e0a3974d94a4296d62ef118c5e2d8/measurement/head/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json": {
+      "sha256": "e89f763b2fe257e35d146607f70edb2dfb55b1f78c27dd9f7f850d7899eaa242",
+      "bytes": 1827
+    },
+    "original/.ai/frozen-env-off/evidence/runs/240e0a3974d94a4296d62ef118c5e2d8/measurement/head/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json": {
+      "sha256": "b855d2b5f32efb0a96704d4e790f2ebebbeb5ab322efcb1b031ba5891f07bd11",
+      "bytes": 667
+    },
+    "original/.ai/frozen-env-off/evidence/runs/240e0a3974d94a4296d62ef118c5e2d8/measurement/head/syntax/b7087fb64f4536b5d4dec94f959164c70c9de80e20ff303eac8ac5a92200594d.json": {
+      "sha256": "18c7905b19d88310c0e6bfa8b95483623b9167126368db74ae56722646c45436",
+      "bytes": 677
+    },
+    "original/.ai/frozen-env-off/evidence/runs/240e0a3974d94a4296d62ef118c5e2d8/measurement/head/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json": {
+      "sha256": "39be71e4ab5ffcb7fec04b53d9d07f9c6fff90367a9983dd289954a58dbdc6ab",
+      "bytes": 667
+    },
+    "original/.ai/frozen-env-off/evidence/runs/240e0a3974d94a4296d62ef118c5e2d8/measurement/head/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json": {
+      "sha256": "5764dd33df21b4685ce787bc3471a485cfc5ad4fd024dcdc9cb83baf7e28b1fb",
+      "bytes": 692
+    },
+    "original/.ai/frozen-env-on/metrics.json": {
+      "sha256": "4b2b249c8ccc458f67887d29cedf01a7be2f64a38537ff7a1e11a78e17700a09",
+      "bytes": 63087
+    },
+    "original/.ai/frozen-env-on/evidence/runs/94a7a108a67947dbbf4cd40736991c6b/metrics.json": {
+      "sha256": "4b2b249c8ccc458f67887d29cedf01a7be2f64a38537ff7a1e11a78e17700a09",
+      "bytes": 63087
+    },
+    "original/.ai/frozen-env-on/evidence/runs/94a7a108a67947dbbf4cd40736991c6b/measurement/manifest.json": {
+      "sha256": "49bb6d4dd4de8ee56ac55cd0725024b84dc08d8312d83e1bc5e519625981e6a7",
+      "bytes": 3341
+    },
+    "original/.ai/frozen-env-on/evidence/runs/94a7a108a67947dbbf4cd40736991c6b/measurement/base/graph.json": {
+      "sha256": "5b5fa597298189d71dbbe194996887eaa0703b388fdb09626d46f2aadd8aba71",
+      "bytes": 4528
+    },
+    "original/.ai/frozen-env-on/evidence/runs/94a7a108a67947dbbf4cd40736991c6b/measurement/base/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json": {
+      "sha256": "28930d4096ada03c10775683069f5abd370dd1cf51154fdc80a7a64e5460839f",
+      "bytes": 1827
+    },
+    "original/.ai/frozen-env-on/evidence/runs/94a7a108a67947dbbf4cd40736991c6b/measurement/base/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json": {
+      "sha256": "2969c3d412c9eb551a145350b20f59cc612e98661a6c0b2ab82b248d7cb76880",
+      "bytes": 667
+    },
+    "original/.ai/frozen-env-on/evidence/runs/94a7a108a67947dbbf4cd40736991c6b/measurement/base/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json": {
+      "sha256": "e3c724cc15057dc2bd4ec41aaa86ed803cd3322eb8f9025a08f4c5d6a11d34fc",
+      "bytes": 667
+    },
+    "original/.ai/frozen-env-on/evidence/runs/94a7a108a67947dbbf4cd40736991c6b/measurement/base/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json": {
+      "sha256": "89031f938a5b8eba3f24d4df1416734a6ef3460156134bc50c5be79ce32eb53e",
+      "bytes": 667
+    },
+    "original/.ai/frozen-env-on/evidence/runs/94a7a108a67947dbbf4cd40736991c6b/measurement/head/graph.json": {
+      "sha256": "27cc31f90b4e224a82f7df7a14832b6cacbc7a9cace25bd2ac6a21ea3637170d",
+      "bytes": 5590
+    },
+    "original/.ai/frozen-env-on/evidence/runs/94a7a108a67947dbbf4cd40736991c6b/measurement/head/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json": {
+      "sha256": "14059fb553f360498b99a8ab256099fa111fe31dc98f95bff811fedcdae25f48",
+      "bytes": 1827
+    },
+    "original/.ai/frozen-env-on/evidence/runs/94a7a108a67947dbbf4cd40736991c6b/measurement/head/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json": {
+      "sha256": "4bf8b0d0a8a4d8527eaf7caffd3c98a64ed31ee58b1f934659724c66f709c00f",
+      "bytes": 667
+    },
+    "original/.ai/frozen-env-on/evidence/runs/94a7a108a67947dbbf4cd40736991c6b/measurement/head/syntax/b7087fb64f4536b5d4dec94f959164c70c9de80e20ff303eac8ac5a92200594d.json": {
+      "sha256": "3828f3af979c165d054a034106ba17a58d2b09c26d7da8f95e460c9536ff5a14",
+      "bytes": 677
+    },
+    "original/.ai/frozen-env-on/evidence/runs/94a7a108a67947dbbf4cd40736991c6b/measurement/head/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json": {
+      "sha256": "3d15ba215460f756d835b663bbac9626b437bbb118843be0bc6a34e4b9c9856e",
+      "bytes": 667
+    },
+    "original/.ai/frozen-env-on/evidence/runs/94a7a108a67947dbbf4cd40736991c6b/measurement/head/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json": {
+      "sha256": "08b43dc26bf4f59ad15ddb17229466502b9e81215d006236bc32dfb5d8b8ba8c",
+      "bytes": 692
+    }
+  },
+  "report": null
+}

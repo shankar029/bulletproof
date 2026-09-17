@@ -1,0 +1,18 @@
+{
+  "checked_utc": "2026-09-17T03:02:27.188461+00:00",
+  "scope": "Repository top-level Python runtime-module census, workflow-discovered tests plus fixture/evidence helpers, explicit C1 contract/correction inputs, managed Python files; not whole-root or unrelated measurement-test/docs/evidence stability.",
+  "manifest": "c1-independent-r2-manifest.json",
+  "changed_applicable_inputs_since_run": [],
+  "added_applicable_python_inputs": [],
+  "changed_original_verification_artifacts": [],
+  "raw_log_hashes_match": {
+    "c1-independent-r2-workflow.stdout.log": true,
+    "c1-independent-r2-workflow.stderr.log": true,
+    "c1-independent-r2-evidence.stdout.log": true,
+    "c1-independent-r2-evidence.stderr.log": true
+  },
+  "report_sha256": "bf25048c54a80f5e5277b7039a4f85ca96427405e26b697333d8d93fbee7da25",
+  "new_regression_sha256": "d58655d83ac448c788d9217d1365631e24e20778b7a9b8b89dcadc32af9ae11b",
+  "freshness_replay_needed": false,
+  "verdict": "NOT-VERIFIED: F1 exact closure receipt chronology remains open; F2/F3 bounded correction tests pass; separate review due; no C2 advancement"
+}

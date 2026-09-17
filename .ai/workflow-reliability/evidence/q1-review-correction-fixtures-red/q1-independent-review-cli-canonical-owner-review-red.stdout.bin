@@ -1,0 +1,1989 @@
+{
+  "schema_version": 2,
+  "measurement_detail_version": 1,
+  "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+  "source": {
+    "binding_mode": "standalone-source",
+    "base": "824eb179cf92150d0283538d1963c6dd0e279d61",
+    "head": "846e1e8babe185506d1dd48ca1c3ea77fc242265",
+    "scope": {
+      "files": [],
+      "directories": [
+        "."
+      ],
+      "excluded_outputs": [
+        {
+          "path": ".ai/canonical/evidence/runs/7ce0b88b25604657bb9a97cdac0a33f4/measurement/base/graph.json",
+          "reason": "Exact reserved Q1 artifact"
+        },
+        {
+          "path": ".ai/canonical/evidence/runs/7ce0b88b25604657bb9a97cdac0a33f4/measurement/base/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json",
+          "reason": "Exact reserved Q1 artifact"
+        },
+        {
+          "path": ".ai/canonical/evidence/runs/7ce0b88b25604657bb9a97cdac0a33f4/measurement/base/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json",
+          "reason": "Exact reserved Q1 artifact"
+        },
+        {
+          "path": ".ai/canonical/evidence/runs/7ce0b88b25604657bb9a97cdac0a33f4/measurement/base/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json",
+          "reason": "Exact reserved Q1 artifact"
+        },
+        {
+          "path": ".ai/canonical/evidence/runs/7ce0b88b25604657bb9a97cdac0a33f4/measurement/base/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json",
+          "reason": "Exact reserved Q1 artifact"
+        },
+        {
+          "path": ".ai/canonical/evidence/runs/7ce0b88b25604657bb9a97cdac0a33f4/measurement/head/graph.json",
+          "reason": "Exact reserved Q1 artifact"
+        },
+        {
+          "path": ".ai/canonical/evidence/runs/7ce0b88b25604657bb9a97cdac0a33f4/measurement/head/syntax/0dc06862aa2eb0e96ee6fe8388555b8c922c5921f238ce3759373dc88fbeae11.json",
+          "reason": "Exact reserved Q1 artifact"
+        },
+        {
+          "path": ".ai/canonical/evidence/runs/7ce0b88b25604657bb9a97cdac0a33f4/measurement/head/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json",
+          "reason": "Exact reserved Q1 artifact"
+        },
+        {
+          "path": ".ai/canonical/evidence/runs/7ce0b88b25604657bb9a97cdac0a33f4/measurement/head/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json",
+          "reason": "Exact reserved Q1 artifact"
+        },
+        {
+          "path": ".ai/canonical/evidence/runs/7ce0b88b25604657bb9a97cdac0a33f4/measurement/head/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json",
+          "reason": "Exact reserved Q1 artifact"
+        },
+        {
+          "path": ".ai/canonical/evidence/runs/7ce0b88b25604657bb9a97cdac0a33f4/measurement/head/syntax/c65258de69aee7d40d544055125b46aede844597a7602cad7f84a3df47ec0416.json",
+          "reason": "Exact reserved Q1 artifact"
+        },
+        {
+          "path": ".ai/canonical/evidence/runs/7ce0b88b25604657bb9a97cdac0a33f4/measurement/head/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json",
+          "reason": "Exact reserved Q1 artifact"
+        },
+        {
+          "path": ".ai/canonical/evidence/runs/7ce0b88b25604657bb9a97cdac0a33f4/measurement/manifest.json",
+          "reason": "Exact reserved Q1 artifact"
+        },
+        {
+          "path": ".ai/canonical/evidence/runs/7ce0b88b25604657bb9a97cdac0a33f4/metrics.json",
+          "reason": "Exact current measurement output"
+        },
+        {
+          "path": ".ai/canonical/evidence/runs/7ce0b88b25604657bb9a97cdac0a33f4/mutation.json",
+          "reason": "Exact current measurement output"
+        },
+        {
+          "path": ".ai/canonical/metrics.json",
+          "reason": "Exact current measurement output"
+        },
+        {
+          "path": ".git",
+          "reason": "Git metadata, not analyzer input"
+        }
+      ]
+    },
+    "files": {
+      ".gitignore": {
+        "sha256": "dcbc6bb40da7e62f6ed7b71031254fbc090421e4c4eeb108cf1767b5b454f883",
+        "mode": "file"
+      },
+      "a.py": {
+        "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+        "mode": "file"
+      },
+      "approval.txt": {
+        "sha256": "20ead7dc3b7c828cb2e7d0084467ba84cb1f911c03fbd371224e24c24c326701",
+        "mode": "file"
+      },
+      "b.py": {
+        "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+        "mode": "file"
+      },
+      "c.py": {
+        "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+        "mode": "file"
+      },
+      "measurement.json": {
+        "sha256": "8a7c1358bc53a846445cea1107d74208030e574bf69323e2cc491bb1a3c8bfe0",
+        "mode": "file"
+      },
+      "scripts/a.py": {
+        "sha256": "d6baf0a01a7fbb8ec42f54d92ef39770a0fc6da738bb35fb695c5687919b7358",
+        "mode": "file"
+      },
+      "scripts/b.py": {
+        "sha256": "049ca59a12b1e0ed09f3623b69526b647265b3fe9435ecd52e417fb9e98fa52b",
+        "mode": "file"
+      },
+      "test_example.py": {
+        "sha256": "8cc263d23109db43de954956d46b6907cff78d989f5960c4366535f0008df103",
+        "mode": "file"
+      }
+    },
+    "scope_sha256": "f3466d433e9e276d8436668f762f518e26fc83a85f32357c06b0241850cc110e"
+  },
+  "policy": {
+    "required": [
+      "complexity_avg",
+      "complexity_max",
+      "cycles",
+      "dead_exports",
+      "duplication_pct",
+      "static_findings",
+      "mutation_score_pct",
+      "diff_coverage_pct",
+      "architecture_rules"
+    ],
+    "rules": {
+      "mutation_score_pct": {
+        "threshold": 60.0
+      },
+      "greenfield": {
+        "duplication_pct": [
+          5.0,
+          12.0
+        ],
+        "complexity_max": [
+          15,
+          25
+        ],
+        "complexity_avg": [
+          4.0,
+          8.0
+        ],
+        "cycles": [
+          0,
+          0
+        ],
+        "dead_exports": [
+          10,
+          40
+        ],
+        "static_findings": [
+          10,
+          40
+        ],
+        "architecture_rules": [
+          0,
+          0
+        ]
+      },
+      "tolerance": {
+        "complexity_max": 2,
+        "complexity_avg": 0.3,
+        "duplication_pct": 0.5
+      },
+      "coverage": {
+        "changed_executable_line_floor_pct": 100,
+        "changed_decision_outcome_floor_pct": 100
+      }
+    },
+    "origins": [
+      "built-in quality metrics; required coverage and architecture proof"
+    ],
+    "approval_artifact": {
+      "path": "approval.txt",
+      "sha256": "20ead7dc3b7c828cb2e7d0084467ba84cb1f911c03fbd371224e24c24c326701",
+      "bytes": 55
+    },
+    "semantic_profile": "workflow-reliability-q-v1"
+  },
+  "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "--show-toplevel"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-xko06ev4",
+      "idle_seconds": 300.0,
+      "max_seconds": 900,
+      "code": 0,
+      "stdout": "C:/Users/shbs/AppData/Local/Temp/bulletproof-git-xko06ev4\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "merge-base",
+        "824eb179cf92150d0283538d1963c6dd0e279d61",
+        "HEAD"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-xko06ev4",
+      "idle_seconds": 90.0,
+      "max_seconds": 90,
+      "code": 0,
+      "stdout": "824eb179cf92150d0283538d1963c6dd0e279d61\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "clone",
+        "--quiet",
+        "--no-hardlinks",
+        "--no-checkout",
+        "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-xko06ev4",
+        "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-q1-_b8u7un_\\base"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-xko06ev4",
+      "idle_seconds": 90.0,
+      "max_seconds": 90,
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "checkout",
+        "--quiet",
+        "--detach",
+        "824eb179cf92150d0283538d1963c6dd0e279d61"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-q1-_b8u7un_\\base",
+      "idle_seconds": 90.0,
+      "max_seconds": 90,
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "clone",
+        "--quiet",
+        "--no-hardlinks",
+        "--no-checkout",
+        "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-xko06ev4",
+        "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-q1-_b8u7un_\\head"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-xko06ev4",
+      "idle_seconds": 90.0,
+      "max_seconds": 90,
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "checkout",
+        "--quiet",
+        "--detach",
+        "846e1e8babe185506d1dd48ca1c3ea77fc242265"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-q1-_b8u7un_\\head",
+      "idle_seconds": 90.0,
+      "max_seconds": 90,
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "slug": "canonical",
+  "base": "824eb179cf92150d0283538d1963c6dd0e279d61",
+  "merge_base": "824eb179cf92",
+  "head": "846e1e8babe185506d1dd48ca1c3ea77fc242265",
+  "generated": "2026-09-17T05:07:28+00:00",
+  "project": "general",
+  "baseline": "compared",
+  "inventories": {
+    "base": {
+      "schema_version": 1,
+      "revision": "base",
+      "source_sha256": "4c2aca4387a65f48258542f2b1e4dee210762d241905bbbd51a90dfedb401aa3",
+      "entries": [
+        {
+          "path": "a.py",
+          "sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+          "bytes": 11,
+          "language": "python",
+          "suffix": ".py",
+          "role": "production",
+          "parser": null,
+          "parse_state": "pending",
+          "reason": "",
+          "diagnostics": []
+        },
+        {
+          "path": "b.py",
+          "sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+          "bytes": 11,
+          "language": "python",
+          "suffix": ".py",
+          "role": "production",
+          "parser": null,
+          "parse_state": "pending",
+          "reason": "",
+          "diagnostics": []
+        },
+        {
+          "path": "c.py",
+          "sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+          "bytes": 11,
+          "language": "python",
+          "suffix": ".py",
+          "role": "production",
+          "parser": null,
+          "parse_state": "pending",
+          "reason": "",
+          "diagnostics": []
+        },
+        {
+          "path": "test_example.py",
+          "sha256": "f12a8a95f695f6057d08b3b531ee7206c91e091efcbeedeb34da7b6b302ca1f0",
+          "bytes": 115,
+          "language": "python",
+          "suffix": ".py",
+          "role": "test",
+          "parser": null,
+          "parse_state": "pending",
+          "reason": "",
+          "diagnostics": []
+        }
+      ],
+      "changed_production": {},
+      "scope_exclusions": [
+        {
+          "path": ".git",
+          "kind": "directory",
+          "reason": "Deliberate code_files directory exclusion",
+          "origin_ref": "measure.code_files/v1"
+        }
+      ],
+      "enumeration_state": "complete",
+      "enumeration_errors": [],
+      "digest": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b"
+    },
+    "head": {
+      "schema_version": 1,
+      "revision": "head",
+      "source_sha256": "f3466d433e9e276d8436668f762f518e26fc83a85f32357c06b0241850cc110e",
+      "entries": [
+        {
+          "path": "a.py",
+          "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+          "bytes": 10,
+          "language": "python",
+          "suffix": ".py",
+          "role": "production",
+          "parser": null,
+          "parse_state": "pending",
+          "reason": "",
+          "diagnostics": []
+        },
+        {
+          "path": "b.py",
+          "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+          "bytes": 10,
+          "language": "python",
+          "suffix": ".py",
+          "role": "production",
+          "parser": null,
+          "parse_state": "pending",
+          "reason": "",
+          "diagnostics": []
+        },
+        {
+          "path": "c.py",
+          "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+          "bytes": 10,
+          "language": "python",
+          "suffix": ".py",
+          "role": "production",
+          "parser": null,
+          "parse_state": "pending",
+          "reason": "",
+          "diagnostics": []
+        },
+        {
+          "path": "scripts/a.py",
+          "sha256": "d6baf0a01a7fbb8ec42f54d92ef39770a0fc6da738bb35fb695c5687919b7358",
+          "bytes": 19,
+          "language": "python",
+          "suffix": ".py",
+          "role": "production",
+          "parser": null,
+          "parse_state": "pending",
+          "reason": "",
+          "diagnostics": []
+        },
+        {
+          "path": "scripts/b.py",
+          "sha256": "049ca59a12b1e0ed09f3623b69526b647265b3fe9435ecd52e417fb9e98fa52b",
+          "bytes": 19,
+          "language": "python",
+          "suffix": ".py",
+          "role": "production",
+          "parser": null,
+          "parse_state": "pending",
+          "reason": "",
+          "diagnostics": []
+        },
+        {
+          "path": "test_example.py",
+          "sha256": "8cc263d23109db43de954956d46b6907cff78d989f5960c4366535f0008df103",
+          "bytes": 111,
+          "language": "python",
+          "suffix": ".py",
+          "role": "test",
+          "parser": null,
+          "parse_state": "pending",
+          "reason": "",
+          "diagnostics": []
+        }
+      ],
+      "changed_production": {
+        "scripts/a.py": [
+          1,
+          2
+        ],
+        "scripts/b.py": [
+          1,
+          2
+        ]
+      },
+      "scope_exclusions": [
+        {
+          "path": ".git",
+          "kind": "directory",
+          "reason": "Deliberate code_files directory exclusion",
+          "origin_ref": "measure.code_files/v1"
+        }
+      ],
+      "enumeration_state": "complete",
+      "enumeration_errors": [],
+      "digest": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620"
+    }
+  },
+  "parsed": {
+    "base": {
+      "inventory": {
+        "schema_version": 1,
+        "revision": "base",
+        "source_sha256": "4c2aca4387a65f48258542f2b1e4dee210762d241905bbbd51a90dfedb401aa3",
+        "entries": [
+          {
+            "path": "a.py",
+            "sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+            "bytes": 11,
+            "language": "python",
+            "suffix": ".py",
+            "role": "production",
+            "parser": null,
+            "parse_state": "pending",
+            "reason": "",
+            "diagnostics": []
+          },
+          {
+            "path": "b.py",
+            "sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+            "bytes": 11,
+            "language": "python",
+            "suffix": ".py",
+            "role": "production",
+            "parser": null,
+            "parse_state": "pending",
+            "reason": "",
+            "diagnostics": []
+          },
+          {
+            "path": "c.py",
+            "sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+            "bytes": 11,
+            "language": "python",
+            "suffix": ".py",
+            "role": "production",
+            "parser": null,
+            "parse_state": "pending",
+            "reason": "",
+            "diagnostics": []
+          },
+          {
+            "path": "test_example.py",
+            "sha256": "f12a8a95f695f6057d08b3b531ee7206c91e091efcbeedeb34da7b6b302ca1f0",
+            "bytes": 115,
+            "language": "python",
+            "suffix": ".py",
+            "role": "test",
+            "parser": null,
+            "parse_state": "pending",
+            "reason": "",
+            "diagnostics": []
+          }
+        ],
+        "changed_production": {},
+        "scope_exclusions": [
+          {
+            "path": ".git",
+            "kind": "directory",
+            "reason": "Deliberate code_files directory exclusion",
+            "origin_ref": "measure.code_files/v1"
+          }
+        ],
+        "enumeration_state": "complete",
+        "enumeration_errors": [],
+        "digest": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b"
+      },
+      "receipts": [
+        {
+          "path": "a.py",
+          "source_sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "base",
+          "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "base/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json",
+              "sha256": "18c6f68ff0db0d1461d8bcd70fe9268936b6de3d6fc557f53e621366e151db3a",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "b.py",
+          "source_sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "base",
+          "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "base/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json",
+              "sha256": "0b18880eb3a20a839cefdb250f21acc621c6916a8da26588f71777ab6d51370d",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "c.py",
+          "source_sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "base",
+          "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "base/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json",
+              "sha256": "c2089ddc50cd53f22a35623ae0fb15e71ab912481cf98e2a9d2b12bbf215490c",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "test_example.py",
+          "source_sha256": "f12a8a95f695f6057d08b3b531ee7206c91e091efcbeedeb34da7b6b302ca1f0",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "base",
+          "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 1,
+          "reason": "",
+          "raw": [
+            {
+              "path": "base/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json",
+              "sha256": "ca9d2fb6ad78589d0f98f5fcc77943a391704f242fcbd5195d2520b0a4ba0f91",
+              "bytes": 1827
+            }
+          ]
+        }
+      ],
+      "syntax_artifacts": {
+        "a.py": {
+          "path": "base/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json",
+          "sha256": "18c6f68ff0db0d1461d8bcd70fe9268936b6de3d6fc557f53e621366e151db3a",
+          "bytes": 667
+        },
+        "b.py": {
+          "path": "base/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json",
+          "sha256": "0b18880eb3a20a839cefdb250f21acc621c6916a8da26588f71777ab6d51370d",
+          "bytes": 667
+        },
+        "c.py": {
+          "path": "base/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json",
+          "sha256": "c2089ddc50cd53f22a35623ae0fb15e71ab912481cf98e2a9d2b12bbf215490c",
+          "bytes": 667
+        },
+        "test_example.py": {
+          "path": "base/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json",
+          "sha256": "ca9d2fb6ad78589d0f98f5fcc77943a391704f242fcbd5195d2520b0a4ba0f91",
+          "bytes": 1827
+        }
+      },
+      "graph": {
+        "schema_version": 1,
+        "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+        "nodes": [
+          "a.py",
+          "b.py",
+          "c.py",
+          "test_example.py"
+        ],
+        "edges": [
+          {
+            "from": "test_example.py",
+            "to": "unittest",
+            "kind": "import",
+            "resolution": "external",
+            "span": {
+              "start_byte": 0,
+              "end_byte": 15,
+              "start_line": 1,
+              "end_line": 1
+            }
+          }
+        ],
+        "unresolved": [],
+        "outside_model": [],
+        "cycles": []
+      }
+    },
+    "head": {
+      "inventory": {
+        "schema_version": 1,
+        "revision": "head",
+        "source_sha256": "f3466d433e9e276d8436668f762f518e26fc83a85f32357c06b0241850cc110e",
+        "entries": [
+          {
+            "path": "a.py",
+            "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+            "bytes": 10,
+            "language": "python",
+            "suffix": ".py",
+            "role": "production",
+            "parser": null,
+            "parse_state": "pending",
+            "reason": "",
+            "diagnostics": []
+          },
+          {
+            "path": "b.py",
+            "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+            "bytes": 10,
+            "language": "python",
+            "suffix": ".py",
+            "role": "production",
+            "parser": null,
+            "parse_state": "pending",
+            "reason": "",
+            "diagnostics": []
+          },
+          {
+            "path": "c.py",
+            "sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+            "bytes": 10,
+            "language": "python",
+            "suffix": ".py",
+            "role": "production",
+            "parser": null,
+            "parse_state": "pending",
+            "reason": "",
+            "diagnostics": []
+          },
+          {
+            "path": "scripts/a.py",
+            "sha256": "d6baf0a01a7fbb8ec42f54d92ef39770a0fc6da738bb35fb695c5687919b7358",
+            "bytes": 19,
+            "language": "python",
+            "suffix": ".py",
+            "role": "production",
+            "parser": null,
+            "parse_state": "pending",
+            "reason": "",
+            "diagnostics": []
+          },
+          {
+            "path": "scripts/b.py",
+            "sha256": "049ca59a12b1e0ed09f3623b69526b647265b3fe9435ecd52e417fb9e98fa52b",
+            "bytes": 19,
+            "language": "python",
+            "suffix": ".py",
+            "role": "production",
+            "parser": null,
+            "parse_state": "pending",
+            "reason": "",
+            "diagnostics": []
+          },
+          {
+            "path": "test_example.py",
+            "sha256": "8cc263d23109db43de954956d46b6907cff78d989f5960c4366535f0008df103",
+            "bytes": 111,
+            "language": "python",
+            "suffix": ".py",
+            "role": "test",
+            "parser": null,
+            "parse_state": "pending",
+            "reason": "",
+            "diagnostics": []
+          }
+        ],
+        "changed_production": {
+          "scripts/a.py": [
+            1,
+            2
+          ],
+          "scripts/b.py": [
+            1,
+            2
+          ]
+        },
+        "scope_exclusions": [
+          {
+            "path": ".git",
+            "kind": "directory",
+            "reason": "Deliberate code_files directory exclusion",
+            "origin_ref": "measure.code_files/v1"
+          }
+        ],
+        "enumeration_state": "complete",
+        "enumeration_errors": [],
+        "digest": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620"
+      },
+      "receipts": [
+        {
+          "path": "a.py",
+          "source_sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json",
+              "sha256": "0f918913400e2dc1c1316b516530fd52012e290472c7f81a39139c6cfd396330",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "b.py",
+          "source_sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json",
+              "sha256": "5403a1cdb5adeeab6602925b81c03e06e4c44558594ab987f5df532ed5da9c57",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "c.py",
+          "source_sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json",
+              "sha256": "e2b9237e2886ab5b28b5e35c5a5d4435a4e6626a28aaff3105b283ea1088b8b9",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "scripts/a.py",
+          "source_sha256": "d6baf0a01a7fbb8ec42f54d92ef39770a0fc6da738bb35fb695c5687919b7358",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 1,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/0dc06862aa2eb0e96ee6fe8388555b8c922c5921f238ce3759373dc88fbeae11.json",
+              "sha256": "25ee03d6b4aba2c792e175964e6af4481f41f23ddf0cc7875a8ec3a2cc2f95b7",
+              "bytes": 942
+            }
+          ]
+        },
+        {
+          "path": "scripts/b.py",
+          "source_sha256": "049ca59a12b1e0ed09f3623b69526b647265b3fe9435ecd52e417fb9e98fa52b",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 1,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/c65258de69aee7d40d544055125b46aede844597a7602cad7f84a3df47ec0416.json",
+              "sha256": "802fc72a1ad32f12187d4c03d3fffd7fb1361f5bbef395dd46f2ee215ee73f2b",
+              "bytes": 942
+            }
+          ]
+        },
+        {
+          "path": "test_example.py",
+          "source_sha256": "8cc263d23109db43de954956d46b6907cff78d989f5960c4366535f0008df103",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 1,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json",
+              "sha256": "3962f6bc2888299feafc2d5db536afe32d25ad7a344de28fa1bb275af41517b1",
+              "bytes": 1827
+            }
+          ]
+        }
+      ],
+      "syntax_artifacts": {
+        "a.py": {
+          "path": "head/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json",
+          "sha256": "0f918913400e2dc1c1316b516530fd52012e290472c7f81a39139c6cfd396330",
+          "bytes": 667
+        },
+        "b.py": {
+          "path": "head/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json",
+          "sha256": "5403a1cdb5adeeab6602925b81c03e06e4c44558594ab987f5df532ed5da9c57",
+          "bytes": 667
+        },
+        "c.py": {
+          "path": "head/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json",
+          "sha256": "e2b9237e2886ab5b28b5e35c5a5d4435a4e6626a28aaff3105b283ea1088b8b9",
+          "bytes": 667
+        },
+        "scripts/a.py": {
+          "path": "head/syntax/0dc06862aa2eb0e96ee6fe8388555b8c922c5921f238ce3759373dc88fbeae11.json",
+          "sha256": "25ee03d6b4aba2c792e175964e6af4481f41f23ddf0cc7875a8ec3a2cc2f95b7",
+          "bytes": 942
+        },
+        "scripts/b.py": {
+          "path": "head/syntax/c65258de69aee7d40d544055125b46aede844597a7602cad7f84a3df47ec0416.json",
+          "sha256": "802fc72a1ad32f12187d4c03d3fffd7fb1361f5bbef395dd46f2ee215ee73f2b",
+          "bytes": 942
+        },
+        "test_example.py": {
+          "path": "head/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json",
+          "sha256": "3962f6bc2888299feafc2d5db536afe32d25ad7a344de28fa1bb275af41517b1",
+          "bytes": 1827
+        }
+      },
+      "graph": {
+        "schema_version": 1,
+        "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+        "nodes": [
+          "a.py",
+          "b.py",
+          "c.py",
+          "scripts/a.py",
+          "scripts/b.py",
+          "test_example.py"
+        ],
+        "edges": [
+          {
+            "from": "scripts/a.py",
+            "to": "scripts/b.py",
+            "kind": "import",
+            "resolution": "local",
+            "span": {
+              "start_byte": 0,
+              "end_byte": 8,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "from": "scripts/b.py",
+            "to": "scripts/a.py",
+            "kind": "import",
+            "resolution": "local",
+            "span": {
+              "start_byte": 0,
+              "end_byte": 8,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "from": "test_example.py",
+            "to": "unittest",
+            "kind": "import",
+            "resolution": "external",
+            "span": {
+              "start_byte": 0,
+              "end_byte": 15,
+              "start_line": 1,
+              "end_line": 1
+            }
+          }
+        ],
+        "unresolved": [],
+        "outside_model": [],
+        "cycles": [
+          {
+            "id": "fe6fe1c9e5a83a22bc1bd6103589f676f9294ac22204fe7706f0968e79065425",
+            "ordered_nodes": [
+              "scripts/a.py",
+              "scripts/b.py"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "observations": [
+    {
+      "schema_version": 1,
+      "revision": "base",
+      "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+      "source_sha256": "4c2aca4387a65f48258542f2b1e4dee210762d241905bbbd51a90dfedb401aa3",
+      "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+      "semantic_version": "python-literal-import-v3",
+      "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+      "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+      "receipts": [
+        {
+          "path": "a.py",
+          "source_sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "base",
+          "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "base/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json",
+              "sha256": "18c6f68ff0db0d1461d8bcd70fe9268936b6de3d6fc557f53e621366e151db3a",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "b.py",
+          "source_sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "base",
+          "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "base/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json",
+              "sha256": "0b18880eb3a20a839cefdb250f21acc621c6916a8da26588f71777ab6d51370d",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "c.py",
+          "source_sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "base",
+          "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "base/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json",
+              "sha256": "c2089ddc50cd53f22a35623ae0fb15e71ab912481cf98e2a9d2b12bbf215490c",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "test_example.py",
+          "source_sha256": "f12a8a95f695f6057d08b3b531ee7206c91e091efcbeedeb34da7b6b302ca1f0",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "base",
+          "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 1,
+          "reason": "",
+          "raw": [
+            {
+              "path": "base/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json",
+              "sha256": "ca9d2fb6ad78589d0f98f5fcc77943a391704f242fcbd5195d2520b0a4ba0f91",
+              "bytes": 1827
+            }
+          ]
+        }
+      ],
+      "outside_model": [],
+      "commands": [],
+      "raw": [
+        {
+          "path": "base/graph.json",
+          "sha256": "39567a38388b1d1350d1d7096a2d63c8c7c33aec302f340045b7ee7711e59d6e",
+          "bytes": 4528
+        }
+      ],
+      "reasons": [],
+      "state": "complete",
+      "metric": "architecture_rules",
+      "value": 0,
+      "findings": []
+    },
+    {
+      "schema_version": 1,
+      "revision": "head",
+      "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+      "source_sha256": "f3466d433e9e276d8436668f762f518e26fc83a85f32357c06b0241850cc110e",
+      "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+      "semantic_version": "python-literal-import-v3",
+      "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+      "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+      "receipts": [
+        {
+          "path": "a.py",
+          "source_sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json",
+              "sha256": "0f918913400e2dc1c1316b516530fd52012e290472c7f81a39139c6cfd396330",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "b.py",
+          "source_sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json",
+              "sha256": "5403a1cdb5adeeab6602925b81c03e06e4c44558594ab987f5df532ed5da9c57",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "c.py",
+          "source_sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json",
+              "sha256": "e2b9237e2886ab5b28b5e35c5a5d4435a4e6626a28aaff3105b283ea1088b8b9",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "scripts/a.py",
+          "source_sha256": "d6baf0a01a7fbb8ec42f54d92ef39770a0fc6da738bb35fb695c5687919b7358",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 1,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/0dc06862aa2eb0e96ee6fe8388555b8c922c5921f238ce3759373dc88fbeae11.json",
+              "sha256": "25ee03d6b4aba2c792e175964e6af4481f41f23ddf0cc7875a8ec3a2cc2f95b7",
+              "bytes": 942
+            }
+          ]
+        },
+        {
+          "path": "scripts/b.py",
+          "source_sha256": "049ca59a12b1e0ed09f3623b69526b647265b3fe9435ecd52e417fb9e98fa52b",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 1,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/c65258de69aee7d40d544055125b46aede844597a7602cad7f84a3df47ec0416.json",
+              "sha256": "802fc72a1ad32f12187d4c03d3fffd7fb1361f5bbef395dd46f2ee215ee73f2b",
+              "bytes": 942
+            }
+          ]
+        },
+        {
+          "path": "test_example.py",
+          "source_sha256": "8cc263d23109db43de954956d46b6907cff78d989f5960c4366535f0008df103",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 1,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json",
+              "sha256": "3962f6bc2888299feafc2d5db536afe32d25ad7a344de28fa1bb275af41517b1",
+              "bytes": 1827
+            }
+          ]
+        }
+      ],
+      "outside_model": [],
+      "commands": [],
+      "raw": [
+        {
+          "path": "head/graph.json",
+          "sha256": "7c62764da201fd435691722d874a1bd5cbf79940617601d22c096c486b0bf874",
+          "bytes": 6787
+        }
+      ],
+      "reasons": [],
+      "state": "complete",
+      "metric": "architecture_rules",
+      "value": 0,
+      "findings": []
+    },
+    {
+      "schema_version": 1,
+      "metric": "complexity_avg",
+      "revision": "base",
+      "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+      "source_sha256": "4c2aca4387a65f48258542f2b1e4dee210762d241905bbbd51a90dfedb401aa3",
+      "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+      "semantic_version": "q1-missing-adapter-v1",
+      "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+      "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+      "state": "unavailable",
+      "value": null,
+      "receipts": [],
+      "findings": [],
+      "outside_model": [],
+      "commands": [],
+      "raw": [],
+      "reasons": [
+        "No qualified Q1 adapter for complexity_avg"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "metric": "complexity_avg",
+      "revision": "head",
+      "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+      "source_sha256": "f3466d433e9e276d8436668f762f518e26fc83a85f32357c06b0241850cc110e",
+      "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+      "semantic_version": "q1-missing-adapter-v1",
+      "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+      "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+      "state": "unavailable",
+      "value": null,
+      "receipts": [],
+      "findings": [],
+      "outside_model": [],
+      "commands": [],
+      "raw": [],
+      "reasons": [
+        "No qualified Q1 adapter for complexity_avg"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "metric": "complexity_max",
+      "revision": "base",
+      "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+      "source_sha256": "4c2aca4387a65f48258542f2b1e4dee210762d241905bbbd51a90dfedb401aa3",
+      "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+      "semantic_version": "q1-missing-adapter-v1",
+      "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+      "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+      "state": "unavailable",
+      "value": null,
+      "receipts": [],
+      "findings": [],
+      "outside_model": [],
+      "commands": [],
+      "raw": [],
+      "reasons": [
+        "No qualified Q1 adapter for complexity_max"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "metric": "complexity_max",
+      "revision": "head",
+      "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+      "source_sha256": "f3466d433e9e276d8436668f762f518e26fc83a85f32357c06b0241850cc110e",
+      "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+      "semantic_version": "q1-missing-adapter-v1",
+      "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+      "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+      "state": "unavailable",
+      "value": null,
+      "receipts": [],
+      "findings": [],
+      "outside_model": [],
+      "commands": [],
+      "raw": [],
+      "reasons": [
+        "No qualified Q1 adapter for complexity_max"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "revision": "base",
+      "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+      "source_sha256": "4c2aca4387a65f48258542f2b1e4dee210762d241905bbbd51a90dfedb401aa3",
+      "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+      "semantic_version": "python-literal-import-v3",
+      "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+      "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+      "receipts": [
+        {
+          "path": "a.py",
+          "source_sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "base",
+          "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "base/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json",
+              "sha256": "18c6f68ff0db0d1461d8bcd70fe9268936b6de3d6fc557f53e621366e151db3a",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "b.py",
+          "source_sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "base",
+          "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "base/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json",
+              "sha256": "0b18880eb3a20a839cefdb250f21acc621c6916a8da26588f71777ab6d51370d",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "c.py",
+          "source_sha256": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "base",
+          "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "base/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json",
+              "sha256": "c2089ddc50cd53f22a35623ae0fb15e71ab912481cf98e2a9d2b12bbf215490c",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "test_example.py",
+          "source_sha256": "f12a8a95f695f6057d08b3b531ee7206c91e091efcbeedeb34da7b6b302ca1f0",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "base",
+          "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 1,
+          "reason": "",
+          "raw": [
+            {
+              "path": "base/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json",
+              "sha256": "ca9d2fb6ad78589d0f98f5fcc77943a391704f242fcbd5195d2520b0a4ba0f91",
+              "bytes": 1827
+            }
+          ]
+        }
+      ],
+      "outside_model": [],
+      "commands": [],
+      "raw": [
+        {
+          "path": "base/graph.json",
+          "sha256": "39567a38388b1d1350d1d7096a2d63c8c7c33aec302f340045b7ee7711e59d6e",
+          "bytes": 4528
+        }
+      ],
+      "reasons": [],
+      "state": "complete",
+      "metric": "cycles",
+      "value": 0,
+      "findings": []
+    },
+    {
+      "schema_version": 1,
+      "revision": "head",
+      "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+      "source_sha256": "f3466d433e9e276d8436668f762f518e26fc83a85f32357c06b0241850cc110e",
+      "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+      "semantic_version": "python-literal-import-v3",
+      "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+      "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+      "receipts": [
+        {
+          "path": "a.py",
+          "source_sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json",
+              "sha256": "0f918913400e2dc1c1316b516530fd52012e290472c7f81a39139c6cfd396330",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "b.py",
+          "source_sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json",
+              "sha256": "5403a1cdb5adeeab6602925b81c03e06e4c44558594ab987f5df532ed5da9c57",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "c.py",
+          "source_sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 0,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json",
+              "sha256": "e2b9237e2886ab5b28b5e35c5a5d4435a4e6626a28aaff3105b283ea1088b8b9",
+              "bytes": 667
+            }
+          ]
+        },
+        {
+          "path": "scripts/a.py",
+          "source_sha256": "d6baf0a01a7fbb8ec42f54d92ef39770a0fc6da738bb35fb695c5687919b7358",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 1,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/0dc06862aa2eb0e96ee6fe8388555b8c922c5921f238ce3759373dc88fbeae11.json",
+              "sha256": "25ee03d6b4aba2c792e175964e6af4481f41f23ddf0cc7875a8ec3a2cc2f95b7",
+              "bytes": 942
+            }
+          ]
+        },
+        {
+          "path": "scripts/b.py",
+          "source_sha256": "049ca59a12b1e0ed09f3623b69526b647265b3fe9435ecd52e417fb9e98fa52b",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 1,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/c65258de69aee7d40d544055125b46aede844597a7602cad7f84a3df47ec0416.json",
+              "sha256": "802fc72a1ad32f12187d4c03d3fffd7fb1361f5bbef395dd46f2ee215ee73f2b",
+              "bytes": 942
+            }
+          ]
+        },
+        {
+          "path": "test_example.py",
+          "source_sha256": "8cc263d23109db43de954956d46b6907cff78d989f5960c4366535f0008df103",
+          "adapter": "python-ast",
+          "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+          "revision": "head",
+          "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+          "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+          "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+          "semantic_version": "python-literal-import-v3",
+          "state": "processed",
+          "unit_count": 1,
+          "reason": "",
+          "raw": [
+            {
+              "path": "head/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json",
+              "sha256": "3962f6bc2888299feafc2d5db536afe32d25ad7a344de28fa1bb275af41517b1",
+              "bytes": 1827
+            }
+          ]
+        }
+      ],
+      "outside_model": [],
+      "commands": [],
+      "raw": [
+        {
+          "path": "head/graph.json",
+          "sha256": "7c62764da201fd435691722d874a1bd5cbf79940617601d22c096c486b0bf874",
+          "bytes": 6787
+        }
+      ],
+      "reasons": [],
+      "state": "complete",
+      "metric": "cycles",
+      "value": 1,
+      "findings": []
+    },
+    {
+      "schema_version": 1,
+      "metric": "dead_exports",
+      "revision": "base",
+      "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+      "source_sha256": "4c2aca4387a65f48258542f2b1e4dee210762d241905bbbd51a90dfedb401aa3",
+      "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+      "semantic_version": "q1-missing-adapter-v1",
+      "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+      "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+      "state": "unavailable",
+      "value": null,
+      "receipts": [],
+      "findings": [],
+      "outside_model": [],
+      "commands": [],
+      "raw": [],
+      "reasons": [
+        "No qualified Q1 adapter for dead_exports"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "metric": "dead_exports",
+      "revision": "head",
+      "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+      "source_sha256": "f3466d433e9e276d8436668f762f518e26fc83a85f32357c06b0241850cc110e",
+      "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+      "semantic_version": "q1-missing-adapter-v1",
+      "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+      "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+      "state": "unavailable",
+      "value": null,
+      "receipts": [],
+      "findings": [],
+      "outside_model": [],
+      "commands": [],
+      "raw": [],
+      "reasons": [
+        "No qualified Q1 adapter for dead_exports"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "metric": "duplication_pct",
+      "revision": "base",
+      "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+      "source_sha256": "4c2aca4387a65f48258542f2b1e4dee210762d241905bbbd51a90dfedb401aa3",
+      "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+      "semantic_version": "q1-missing-adapter-v1",
+      "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+      "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+      "state": "unavailable",
+      "value": null,
+      "receipts": [],
+      "findings": [],
+      "outside_model": [],
+      "commands": [],
+      "raw": [],
+      "reasons": [
+        "No qualified Q1 adapter for duplication_pct"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "metric": "duplication_pct",
+      "revision": "head",
+      "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+      "source_sha256": "f3466d433e9e276d8436668f762f518e26fc83a85f32357c06b0241850cc110e",
+      "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+      "semantic_version": "q1-missing-adapter-v1",
+      "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+      "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+      "state": "unavailable",
+      "value": null,
+      "receipts": [],
+      "findings": [],
+      "outside_model": [],
+      "commands": [],
+      "raw": [],
+      "reasons": [
+        "No qualified Q1 adapter for duplication_pct"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "metric": "static_findings",
+      "revision": "base",
+      "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+      "source_sha256": "4c2aca4387a65f48258542f2b1e4dee210762d241905bbbd51a90dfedb401aa3",
+      "inventory_sha256": "5535c46424b471df87eee1f1f0f8c71d5e2464f90a89d14df3cfe7ee554dc88b",
+      "semantic_version": "q1-missing-adapter-v1",
+      "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+      "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+      "state": "unavailable",
+      "value": null,
+      "receipts": [],
+      "findings": [],
+      "outside_model": [],
+      "commands": [],
+      "raw": [],
+      "reasons": [
+        "No qualified Q1 adapter for static_findings"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "metric": "static_findings",
+      "revision": "head",
+      "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+      "source_sha256": "f3466d433e9e276d8436668f762f518e26fc83a85f32357c06b0241850cc110e",
+      "inventory_sha256": "81d6a391fa77f7738640443d6a0a8f4d02e7ecdb061a4bf14f62f7980483d620",
+      "semantic_version": "q1-missing-adapter-v1",
+      "toolset_sha256": "328a7b2f2d9b149e51bd74e0c3a1810e38c46b0eaba60ae961f1027de1e9c12b",
+      "policy_sha256": "d28b76f3e32f1e8680aaabad611010cbab8a9330260767aa290c99da84660502",
+      "state": "unavailable",
+      "value": null,
+      "receipts": [],
+      "findings": [],
+      "outside_model": [],
+      "commands": [],
+      "raw": [],
+      "reasons": [
+        "No qualified Q1 adapter for static_findings"
+      ]
+    }
+  ],
+  "artifact_manifest": {
+    "run_id": "7ce0b88b25604657bb9a97cdac0a33f4",
+    "root": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-q1-_b8u7un_\\raw",
+    "inputs": [
+      {
+        "artifact": {
+          "path": "base/graph.json",
+          "sha256": "39567a38388b1d1350d1d7096a2d63c8c7c33aec302f340045b7ee7711e59d6e",
+          "bytes": 4528
+        },
+        "role": "graph",
+        "revision": "base"
+      },
+      {
+        "artifact": {
+          "path": "base/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json",
+          "sha256": "ca9d2fb6ad78589d0f98f5fcc77943a391704f242fcbd5195d2520b0a4ba0f91",
+          "bytes": 1827
+        },
+        "role": "syntax",
+        "revision": "base"
+      },
+      {
+        "artifact": {
+          "path": "base/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json",
+          "sha256": "0b18880eb3a20a839cefdb250f21acc621c6916a8da26588f71777ab6d51370d",
+          "bytes": 667
+        },
+        "role": "syntax",
+        "revision": "base"
+      },
+      {
+        "artifact": {
+          "path": "base/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json",
+          "sha256": "c2089ddc50cd53f22a35623ae0fb15e71ab912481cf98e2a9d2b12bbf215490c",
+          "bytes": 667
+        },
+        "role": "syntax",
+        "revision": "base"
+      },
+      {
+        "artifact": {
+          "path": "base/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json",
+          "sha256": "18c6f68ff0db0d1461d8bcd70fe9268936b6de3d6fc557f53e621366e151db3a",
+          "bytes": 667
+        },
+        "role": "syntax",
+        "revision": "base"
+      },
+      {
+        "artifact": {
+          "path": "head/graph.json",
+          "sha256": "7c62764da201fd435691722d874a1bd5cbf79940617601d22c096c486b0bf874",
+          "bytes": 6787
+        },
+        "role": "graph",
+        "revision": "head"
+      },
+      {
+        "artifact": {
+          "path": "head/syntax/0dc06862aa2eb0e96ee6fe8388555b8c922c5921f238ce3759373dc88fbeae11.json",
+          "sha256": "25ee03d6b4aba2c792e175964e6af4481f41f23ddf0cc7875a8ec3a2cc2f95b7",
+          "bytes": 942
+        },
+        "role": "syntax",
+        "revision": "head"
+      },
+      {
+        "artifact": {
+          "path": "head/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json",
+          "sha256": "3962f6bc2888299feafc2d5db536afe32d25ad7a344de28fa1bb275af41517b1",
+          "bytes": 1827
+        },
+        "role": "syntax",
+        "revision": "head"
+      },
+      {
+        "artifact": {
+          "path": "head/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json",
+          "sha256": "5403a1cdb5adeeab6602925b81c03e06e4c44558594ab987f5df532ed5da9c57",
+          "bytes": 667
+        },
+        "role": "syntax",
+        "revision": "head"
+      },
+      {
+        "artifact": {
+          "path": "head/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json",
+          "sha256": "e2b9237e2886ab5b28b5e35c5a5d4435a4e6626a28aaff3105b283ea1088b8b9",
+          "bytes": 667
+        },
+        "role": "syntax",
+        "revision": "head"
+      },
+      {
+        "artifact": {
+          "path": "head/syntax/c65258de69aee7d40d544055125b46aede844597a7602cad7f84a3df47ec0416.json",
+          "sha256": "802fc72a1ad32f12187d4c03d3fffd7fb1361f5bbef395dd46f2ee215ee73f2b",
+          "bytes": 942
+        },
+        "role": "syntax",
+        "revision": "head"
+      },
+      {
+        "artifact": {
+          "path": "head/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json",
+          "sha256": "0f918913400e2dc1c1316b516530fd52012e290472c7f81a39139c6cfd396330",
+          "bytes": 667
+        },
+        "role": "syntax",
+        "revision": "head"
+      }
+    ],
+    "reserved_outputs": [
+      "base/graph.json",
+      "base/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json",
+      "base/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json",
+      "base/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json",
+      "base/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json",
+      "head/graph.json",
+      "head/syntax/0dc06862aa2eb0e96ee6fe8388555b8c922c5921f238ce3759373dc88fbeae11.json",
+      "head/syntax/41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json",
+      "head/syntax/4a5b41e3baadee0baf005de03d6147999639b53fe6da1820bf453dbebf686c95.json",
+      "head/syntax/c1083dd42cc6c998196e2ddb60b9e99ba1534ae92be3bf1c996618d3c34c7033.json",
+      "head/syntax/c65258de69aee7d40d544055125b46aede844597a7602cad7f84a3df47ec0416.json",
+      "head/syntax/f0de093a8c24f6a3ed1c71a2eedb8d29cb68daa281b1dd2323b67d75ce3fb800.json",
+      "manifest.json"
+    ]
+  },
+  "config_sha256": "e6487dc076147f421639b2fe5e5382d05896ae5a53821b9cf8d3d742294c86d4",
+  "tools": {
+    "python_parser": "fb3cfccde62e9ab7e3dfd6321a4297c507a8cce457fce9361793acc90cf085ec"
+  },
+  "unavailable": [
+    "complexity_avg",
+    "complexity_max",
+    "dead_exports",
+    "diff_coverage_pct",
+    "duplication_pct",
+    "mutation_score_pct",
+    "static_findings"
+  ],
+  "metrics": {
+    "architecture_rules": {
+      "base": 0,
+      "head": 0,
+      "delta": 0,
+      "status": "ok",
+      "state": "measured",
+      "comparison": "ok",
+      "reason": "",
+      "new_ids": []
+    },
+    "complexity_avg": {
+      "head": null,
+      "base": null,
+      "state": "unavailable",
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "reason": "No qualified Q1 adapter for complexity_avg"
+    },
+    "complexity_max": {
+      "head": null,
+      "base": null,
+      "state": "unavailable",
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "reason": "No qualified Q1 adapter for complexity_max"
+    },
+    "cycles": {
+      "base": 0,
+      "head": 1,
+      "delta": 1,
+      "status": "fail",
+      "state": "measured",
+      "comparison": "fail",
+      "reason": "",
+      "new_ids": [
+        "fe6fe1c9e5a83a22bc1bd6103589f676f9294ac22204fe7706f0968e79065425"
+      ]
+    },
+    "dead_exports": {
+      "head": null,
+      "base": null,
+      "state": "unavailable",
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "reason": "No qualified Q1 adapter for dead_exports"
+    },
+    "duplication_pct": {
+      "head": null,
+      "base": null,
+      "state": "unavailable",
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "reason": "No qualified Q1 adapter for duplication_pct"
+    },
+    "static_findings": {
+      "head": null,
+      "base": null,
+      "state": "unavailable",
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "reason": "No qualified Q1 adapter for static_findings"
+    },
+    "mutation_score_pct": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "reason": "No configured mixed-suite mutation adapter in Q1"
+    },
+    "diff_coverage_pct": {
+      "state": "unavailable",
+      "head": null,
+      "base": null,
+      "comparison": "unavailable",
+      "status": "unavailable",
+      "reason": "No qualified Q1 coverage adapter"
+    }
+  },
+  "measurement_status": "fail",
+  "completeness": "incomplete",
+  "missing_required": [
+    {
+      "metric": "complexity_avg",
+      "reason": "No qualified Q1 adapter for complexity_avg",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison"
+    },
+    {
+      "metric": "complexity_max",
+      "reason": "No qualified Q1 adapter for complexity_max",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison"
+    },
+    {
+      "metric": "dead_exports",
+      "reason": "No qualified Q1 adapter for dead_exports",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison"
+    },
+    {
+      "metric": "duplication_pct",
+      "reason": "No qualified Q1 adapter for duplication_pct",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison"
+    },
+    {
+      "metric": "static_findings",
+      "reason": "No qualified Q1 adapter for static_findings",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison"
+    },
+    {
+      "metric": "mutation_score_pct",
+      "reason": "No configured mixed-suite mutation adapter in Q1",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison"
+    },
+    {
+      "metric": "diff_coverage_pct",
+      "reason": "No qualified Q1 coverage adapter",
+      "prerequisite": "Produce a fresh complete supported measurement and comparison"
+    }
+  ],
+  "verdict": "fail",
+  "worst_status": "fail"
+}

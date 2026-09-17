@@ -1,0 +1,10 @@
+usage: git check-attr [--source <tree-ish>] [-a | --all | <attr>...] [--] <pathname>...
+   or: git check-attr --stdin [-z] [--source <tree-ish>] [-a | --all | <attr>...]
+
+    -a, --[no-]all        report all attributes set on file
+    --[no-]cached         use .gitattributes only from the index
+    --[no-]stdin          read file names from stdin
+    -z                    terminate input and output records by a NUL character
+    --[no-]source <tree-ish>
+                          which tree-ish to check attributes at
+

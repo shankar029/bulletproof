@@ -1,0 +1,583 @@
+{
+  "git": {
+    "path": "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+    "sha256": "7f2d8f209c65b27a1cb6ae388b59877afcf5d17e67d04ba7b4a237849380d1e2"
+  },
+  "environment": {
+    "GIT_CONFIG_NOSYSTEM": "1",
+    "GIT_CONFIG_GLOBAL": "nul",
+    "GIT_ATTR_NOSYSTEM": "1",
+    "GIT_NO_REPLACE_OBJECTS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "HOME": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+    "USERPROFILE": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+    "XDG_CONFIG_HOME": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty"
+  },
+  "removed_environment_keys": [
+    "GIT_ASKPASS",
+    "GIT_CONFIG_COUNT",
+    "GIT_CONFIG_KEY_0",
+    "GIT_CONFIG_KEY_1",
+    "GIT_CONFIG_KEY_2",
+    "GIT_CONFIG_PARAMETERS",
+    "GIT_CONFIG_VALUE_0",
+    "GIT_CONFIG_VALUE_1",
+    "GIT_CONFIG_VALUE_2",
+    "GIT_EXEC_PATH",
+    "GIT_OPTIONAL_LOCKS",
+    "GIT_TERMINAL_PROMPT"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "--version"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41",
+      "exit": 0,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-version.stdout.bin",
+          "bytes": 29,
+          "sha256": "273b5bb71631a35a798a1650a4d2537ff0096738cb0ac8323a09e8ada64bb254"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-version.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "clone",
+        "-h"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41",
+      "exit": 129,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-clone-help.stdout.bin",
+          "bytes": 3113,
+          "sha256": "73e5d91bcf660071f52e6b5377b82734bf401f3aa2d98375f3cc0305cea266d3"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-clone-help.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "check-attr",
+        "-h"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41",
+      "exit": 129,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-attributes-help.stdout.bin",
+          "bytes": 523,
+          "sha256": "018630b09f87ee8934244ef06ea0d4d17cc1096b8f52395fc2ad398f523e606b"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-attributes-help.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "ls-tree",
+        "-h"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41",
+      "exit": 129,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-tree-help.stdout.bin",
+          "bytes": 697,
+          "sha256": "c61e2cecb1ce72939ce9d56803fd80049b6b12369350dffde2f3737f4d9640ff"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-tree-help.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "read-tree",
+        "-h"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41",
+      "exit": 129,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-read-tree-help.stdout.bin",
+          "bytes": 1412,
+          "sha256": "a89a944aeb1d575cc0dbb1ddedb150026df982338ee4d74698f1fe507d3f0650"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-read-tree-help.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "checkout-index",
+        "-h"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41",
+      "exit": 129,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-checkout-index-help.stdout.bin",
+          "bytes": 878,
+          "sha256": "9ff0ede8e0105bad62341df0ccb31c66a2f6708dab44a1c4157f8899563d2a26"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-checkout-index-help.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "update-ref",
+        "-h"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41",
+      "exit": 129,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-update-ref-help.stdout.bin",
+          "bytes": 638,
+          "sha256": "913fef30c35828586f75a5f4af8fdf12f43e5d6830552cdc34e5de271b57aa78"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-update-ref-help.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.eol=lf",
+        "-c",
+        "core.attributesFile=nul",
+        "-c",
+        "core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+        "clone",
+        "--quiet",
+        "--no-hardlinks",
+        "--no-checkout",
+        "--template=C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+        "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-5offzdp4",
+        "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\expected"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41",
+      "exit": 0,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-clone-neutral.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-clone-neutral.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.eol=lf",
+        "-c",
+        "core.attributesFile=nul",
+        "-c",
+        "core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+        "update-ref",
+        "--no-deref",
+        "HEAD",
+        "b46832650d750cd3a12f1f55ee16defcc91a03a1"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\expected",
+      "exit": 0,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-detach-neutral.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-detach-neutral.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.eol=lf",
+        "-c",
+        "core.attributesFile=nul",
+        "-c",
+        "core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+        "read-tree",
+        "b46832650d750cd3a12f1f55ee16defcc91a03a1"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\expected",
+      "exit": 0,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-read-neutral.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-read-neutral.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.eol=lf",
+        "-c",
+        "core.attributesFile=nul",
+        "-c",
+        "core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+        "ls-tree",
+        "-r",
+        "-z",
+        "--full-tree",
+        "b46832650d750cd3a12f1f55ee16defcc91a03a1"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\expected",
+      "exit": 0,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-list-neutral.stdout.bin",
+          "bytes": 323,
+          "sha256": "bc5112d63008b984e1847bd885d1c0b4f82f82981a27d722162b20d3cbcc33f1"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-list-neutral.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.eol=lf",
+        "-c",
+        "core.attributesFile=nul",
+        "-c",
+        "core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+        "check-attr",
+        "--cached",
+        "-z",
+        "filter",
+        "ident",
+        "working-tree-encoding",
+        "text",
+        "eol",
+        "crlf",
+        "--",
+        ".gitattributes",
+        "executable.py",
+        "lf.txt",
+        "module.py",
+        "neutral.txt"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\expected",
+      "exit": 0,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-attrs-neutral.stdout.bin",
+          "bytes": 906,
+          "sha256": "3120095a8543ed767424f3cce4aea2358d89cc6c90afd5b035a4c5b5af381bb7"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-attrs-neutral.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.eol=lf",
+        "-c",
+        "core.attributesFile=nul",
+        "-c",
+        "core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+        "checkout-index",
+        "--all",
+        "--force"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\expected",
+      "exit": 0,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-checkout-neutral.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-checkout-neutral.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.eol=lf",
+        "-c",
+        "core.attributesFile=nul",
+        "-c",
+        "core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+        "clone",
+        "--quiet",
+        "--no-hardlinks",
+        "--no-checkout",
+        "--template=C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+        "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-5offzdp4",
+        "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\blocked"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41",
+      "exit": 0,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-clone-filter.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-clone-filter.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.eol=lf",
+        "-c",
+        "core.attributesFile=nul",
+        "-c",
+        "core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+        "read-tree",
+        "ca6bb599dc3d23ff6b044e7a3f3daa6caa660b35"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\blocked",
+      "exit": 0,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-read-filter.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-read-filter.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.eol=lf",
+        "-c",
+        "core.attributesFile=nul",
+        "-c",
+        "core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+        "check-attr",
+        "--cached",
+        "-z",
+        "filter",
+        "--",
+        "module.py"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\blocked",
+      "exit": 0,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-attrs-filter.stdout.bin",
+          "bytes": 26,
+          "sha256": "40b23b0861cab821a384732aab1757e70f9a5769baac79737f2be0e585d83b3a"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-attrs-filter.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.eol=lf",
+        "-c",
+        "core.attributesFile=nul",
+        "-c",
+        "core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+        "clone",
+        "--quiet",
+        "--no-hardlinks",
+        "--no-checkout",
+        "--template=C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+        "C:\\Users\\shbs\\AppData\\Local\\Temp\\bulletproof-git-5offzdp4",
+        "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\positive"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41",
+      "exit": 0,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-clone-positive.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-clone-positive.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.eol=lf",
+        "-c",
+        "core.attributesFile=nul",
+        "-c",
+        "core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+        "read-tree",
+        "ca6bb599dc3d23ff6b044e7a3f3daa6caa660b35"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\positive",
+      "exit": 0,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-read-positive.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-read-positive.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd\\git.exe",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.eol=lf",
+        "-c",
+        "core.attributesFile=nul",
+        "-c",
+        "core.hooksPath=C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\empty",
+        "-c",
+        "filter.tripwire.smudge=\"C:/Users/shbs/AppData/Roaming/uv/python/cpython-3.14.2-windows-x86_64-none/python.exe\" -B \"C:/Users/shbs/AppData/Local/Temp/q1-git-qualification-8cp2pj41/filter.py\" \"C:/Users/shbs/AppData/Local/Temp/q1-git-qualification-8cp2pj41/sentinel\"",
+        "checkout-index",
+        "--all",
+        "--force"
+      ],
+      "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\q1-git-qualification-8cp2pj41\\positive",
+      "exit": 0,
+      "raw": {
+        "stdout": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-sentinel-positive.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q1-review-correction-qualification-sentinel-positive.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ],
+  "tree": "100644 blob 2ea7b9763d9e1c50bd20378820e57d6b377dd264\t.gitattributes\u0000100755 blob 2ae28399f5fda2dfb1b04405f4a3b4895f5fac1e\texecutable.py\u0000100644 blob 6d4e150796aec4d9ee5a728616ba079ea2121ab3\tlf.txt\u0000100644 blob 0a979d4ef477386ba3190fbb0d977e160cd8329f\tmodule.py\u0000100644 blob 693ff54ae7bd15c5b5a25b9c6573351d1818c3ae\tneutral.txt\u0000",
+  "qualified": [
+    "neutral LF",
+    "versioned text/eol",
+    "cached attribute macro expansion",
+    "no-checkout/read-tree/attribute-check before filter execution",
+    "detached HEAD via update-ref",
+    "immutable executable tree mode"
+  ],
+  "unqualified_reject": [
+    "ident",
+    "working-tree-encoding",
+    "legacy crlf attribute"
+  ],
+  "status": "PASS",
+  "sentinel_positive": true
+}

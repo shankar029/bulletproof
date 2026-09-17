@@ -1,0 +1,42 @@
+--- reviewed/measure.py
++++ corrected/measure.py
+@@ -131,23 +131,27 @@
+         batch, size = [], 0
+ 
+         def attributes(paths):
+-            raw = git(["check-attr", "--cached", "-z", "filter", "ident", "working-tree-encoding",
+-                       "text", "eol", "crlf", "--", *paths], target).split("\0")
+-            if raw.pop() != "" or len(raw) != len(paths) * 18:
++            raw = git(["check-attr", "--cached", "--all", "-z", "--", *paths], target).split("\0")
++            if raw.pop() != "" or len(raw) % 3:
+                 raise ValueError("Baseline incomplete attribute census")
+-            expected = [(name, attr) for name in paths for attr in
+-                        ("filter", "ident", "working-tree-encoding", "text", "eol", "crlf")]
+-            for (name, attr), offset in zip(expected, range(0, len(raw), 3)):
+-                path, attribute, value = raw[offset:offset + 3]
+-                if (path, attribute) != (name, attr):
++            seen = set()
++            for offset in range(0, len(raw), 3):
++                name, attr, value = raw[offset:offset + 3]
++                if name not in paths or (name, attr) in seen:
+                     raise ValueError("Baseline attribute census mismatch")
+-                allowed = {"unspecified", "unset"}
++                seen.add((name, attr))
++                if attr not in {"filter", "ident", "working-tree-encoding", "text", "eol", "crlf"}:
++                    continue
++                # --all omits genuinely unspecified attributes. Present textual
++                # state markers can instead be literal values (e.g. filter=unset).
++                allowed = set()
+                 if attr == "text":
+-                    allowed |= {"set", "auto"}
++                    allowed = {"set", "auto"}
+                 elif attr == "eol":
+-                    allowed |= {"lf", "crlf"}
++                    allowed = {"lf", "crlf"}
+                 if value not in allowed:
+-                    raise ValueError("Baseline unsupported attribute %s=%s: %s" % (attr, value, name))
++                    reason = " (ambiguous present declaration)" if value in {"unset", "unspecified"} else ""
++                    raise ValueError("Baseline unsupported attribute %s=%s: %s%s" % (attr, value, name, reason))
+ 
+         for name in names:
+             if batch and size + len(name) > 6000:

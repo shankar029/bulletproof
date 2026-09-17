@@ -1,0 +1,20 @@
+test_effective_frozen_mode_from_environment_has_distinct_tool_binding (test_measure_q1_verification_r2.CorrectionBoundaryTests.test_effective_frozen_mode_from_environment_has_distinct_tool_binding) ... FAIL
+test_fresh_hidden_noncode_contract_alias_is_rejected (test_measure_q1_verification_r2.CorrectionBoundaryTests.test_fresh_hidden_noncode_contract_alias_is_rejected) ... ok
+
+======================================================================
+FAIL: test_effective_frozen_mode_from_environment_has_distinct_tool_binding (test_measure_q1_verification_r2.CorrectionBoundaryTests.test_effective_frozen_mode_from_environment_has_distinct_tool_binding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_q1_verification_r2.py", line 71, in test_effective_frozen_mode_from_environment_has_distinct_tool_binding
+    self.assertNotEqual(reports["on"]["tools"]["python_parser"],
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        reports["off"]["tools"]["python_parser"],
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        "Different effective frozen-import semantics must not share a parser/tool fingerprint")
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '5768d1aa07955a0444da0cd87805a6c5d459f5a241719287c62ecd10fde97538' == '5768d1aa07955a0444da0cd87805a6c5d459f5a241719287c62ecd10fde97538' : Different effective frozen-import semantics must not share a parser/tool fingerprint
+
+----------------------------------------------------------------------
+Ran 2 tests in 41.149s
+
+FAILED (failures=1)

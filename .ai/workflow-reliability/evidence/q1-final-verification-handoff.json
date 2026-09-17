@@ -1,0 +1,47 @@
+{
+  "status": "VERIFIED-WITH-LIMITATIONS",
+  "checked_unique_pins": 1951,
+  "changed": [],
+  "artifacts": {
+    ".ai\\workflow-reliability\\evidence\\q1-final-verification-final-freeze.json": {
+      "bytes": 477356,
+      "sha256": "ef9cf2f214c81385473c1d06362b3616d2541129f804e225e33b8fabd60b26e7"
+    },
+    ".ai\\workflow-reliability\\evidence\\q1-final-verification-report.md": {
+      "bytes": 16150,
+      "sha256": "cf0133349b4587d587aa626919a748922b30d6a461a6ad40897dd1f21192360a"
+    },
+    ".ai\\workflow-reliability\\evidence\\q1-final-verification-execution-notes.md": {
+      "bytes": 5333,
+      "sha256": "cfb2b986fcd9eff0b236fc22af6d9b9eb1fd96ca07478e48f6e4507db417ccc5"
+    },
+    ".ai\\workflow-reliability\\evidence\\q1-final-verification-capture.py": {
+      "bytes": 5705,
+      "sha256": "3155843222cf6a476ae2b0743c2daee6d916ed127a4328ec02cf611e4111f26b"
+    },
+    ".ai\\workflow-reliability\\evidence\\q1-final-verification-finalize.py": {
+      "bytes": 11421,
+      "sha256": "6017d52e1c79cb3a6157147da5325cbcb4e94917563e8052abe04ead076e4f86"
+    },
+    ".ai\\workflow-reliability\\evidence\\q1-final-verification-handoff.py": {
+      "bytes": 1862,
+      "sha256": "ddb4066cb34db8b62df922bf7c181eb2e59c900c3fd34f5019a8e01b76859ad0"
+    },
+    "scripts\\tests\\test_measure_q1_final_verification.py": {
+      "bytes": 3208,
+      "sha256": "ac4cd43ceb1ef358eb2f620beccc44ca8c8f2483e7747206ed0bd9504d7b22f2"
+    }
+  },
+  "tests": {
+    "original_q1": 52,
+    "new_independent": 3,
+    "legacy_probe": 19,
+    "distinct": 74,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "timeouts": 0
+  },
+  "separate_code_rereview_required": true,
+  "whole_task_complete": false
+}

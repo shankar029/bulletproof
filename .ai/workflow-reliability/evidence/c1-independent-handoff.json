@@ -1,0 +1,15 @@
+{
+  "checked_utc": "2026-09-17T02:40:51.729839+00:00",
+  "tested_manifest": "c1-independent-final-manifest.json",
+  "changed_since_final_run": [],
+  "added_python_files": [],
+  "final_raw_logs_match": {
+    "c1-independent-final-workflow.stdout.log": true,
+    "c1-independent-final-workflow.stderr.log": true,
+    "c1-independent-final-evidence.stdout.log": true,
+    "c1-independent-final-evidence.stderr.log": true
+  },
+  "report_sha256": "928430a3092b8028a927181409bdb9acfe6bbd9d0e92cab2dc3f2ddfa9d66433",
+  "replay_needed_for_freshness": false,
+  "functional_verdict": "NOT-VERIFIED: three reproduced assertion failures; no production edits or C2 advancement"
+}

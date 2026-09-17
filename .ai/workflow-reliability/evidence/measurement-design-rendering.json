@@ -1,0 +1,138 @@
+{
+  "results": [
+    {
+      "name": "measurement-enablement.html",
+      "hash": "f26b65924ab0cc4cadd1d0cde43fb68a804729f7d4200498902834097d5846c2",
+      "pages": 3,
+      "view": {
+        "title": "Measurement enablement — Workflow reliability",
+        "styles": 1,
+        "diagrams": [
+          {
+            "width": 785.109375,
+            "height": 92.6875
+          },
+          {
+            "width": 785.125,
+            "height": 98.140625
+          }
+        ]
+      },
+      "errors": {
+        "errors": [],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 12853053025038447000
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        }
+      },
+      "consoleLog": {
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 12853053025038447000
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "messages": []
+      }
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-7eab491a-0ac6-451d-9787-3e9ecd2c5f8f",
+        "--cdp",
+        "http://127.0.0.1:55766",
+        "--json",
+        "open",
+        "file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/measurement-enablement.html"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":12853053025038446216},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"1EC401CBDE675A9CAA9CDC67A6ABB4DE\",\"title\":\"Measurement enablement — Workflow reliability\",\"url\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/measurement-enablement.html\"},\"error\":null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-7eab491a-0ac6-451d-9787-3e9ecd2c5f8f",
+        "--cdp",
+        "http://127.0.0.1:55766",
+        "--json",
+        "eval",
+        "JSON.stringify({title:document.title,styles:document.styleSheets.length,diagrams:[...document.querySelectorAll(\"figure svg\")].map(x=>({width:x.getBoundingClientRect().width,height:x.getBoundingClientRect().height}))})"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":12853053025038446216},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/measurement-enablement.html\",\"result\":\"{\\\"title\\\":\\\"Measurement enablement — Workflow reliability\\\",\\\"styles\\\":1,\\\"diagrams\\\":[{\\\"width\\\":785.109375,\\\"height\\\":92.6875},{\\\"width\\\":785.125,\\\"height\\\":98.140625}]}\"},\"error\":null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-7eab491a-0ac6-451d-9787-3e9ecd2c5f8f",
+        "--cdp",
+        "http://127.0.0.1:55766",
+        "--json",
+        "errors"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":12853053025038446216},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-7eab491a-0ac6-451d-9787-3e9ecd2c5f8f",
+        "--cdp",
+        "http://127.0.0.1:55766",
+        "--json",
+        "console"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":12853053025038446216},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-7eab491a-0ac6-451d-9787-3e9ecd2c5f8f",
+        "--cdp",
+        "http://127.0.0.1:55766",
+        "--json",
+        "pdf",
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\measurement-enablement.pdf"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":12853053025038446216},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\measurement-enablement.pdf\"},\"error\":null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "--session",
+        "reliability-docs-7eab491a-0ac6-451d-9787-3e9ecd2c5f8f",
+        "--cdp",
+        "http://127.0.0.1:55766",
+        "--json",
+        "close"
+      ],
+      "code": 0,
+      "stdout": "{\"success\":true,\"data\":{\"closed\":true,\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":false,\"engine\":\"chrome\",\"launchHash\":null},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":false,\"saveStatus\":\"not_configured\"},\"restoreStatus\":\"not_configured\",\"saveStatus\":\"not_configured\"},\"error\":null}\n",
+      "stderr": ""
+    }
+  ]
+}

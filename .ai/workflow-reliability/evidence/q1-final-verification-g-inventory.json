@@ -1,0 +1,31 @@
+{
+  "pattern": "test_measure_[gi]*.py",
+  "tests": [
+    "test_measure_graph.GraphTests.test_absolute_relative_conditional_local_and_external_imports",
+    "test_measure_graph.GraphTests.test_aliased_builtin_loader_and_importlib_calls_are_disclosed",
+    "test_measure_graph.GraphTests.test_compiled_architecture_rules_and_dynamic_disclosure",
+    "test_measure_graph.GraphTests.test_cycle_budget_is_unavailable_not_a_truncated_zero",
+    "test_measure_graph.GraphTests.test_effective_frozen_binding_respects_startup_precedence_and_consistency",
+    "test_measure_graph.GraphTests.test_elementary_cycles_include_self_loops_and_direction",
+    "test_measure_graph.GraphTests.test_graph_receipt_summary_and_artifact_corruption_rejected",
+    "test_measure_graph.GraphTests.test_invalid_python_and_mixed_languages_remain_explicit",
+    "test_measure_graph.GraphTests.test_missing_ambiguous_and_escaping_imports_are_incomplete",
+    "test_measure_graph.GraphTests.test_rehashed_graph_payload_is_not_accepted_as_authoritative",
+    "test_measure_graph.GraphTests.test_replaced_architecture_identity_fails_even_when_total_falls",
+    "test_measure_graph.GraphTests.test_replaced_cycle_fails_at_equal_count_and_line_moves_preserve_identity",
+    "test_measure_graph.GraphTests.test_runtime_nonpackage_child_is_unresolved_not_a_local_namesake",
+    "test_measure_graph.GraphTests.test_runtime_precedence_preserves_shadowable_and_relative_names",
+    "test_measure_graph.GraphTests.test_zero_import_receipts_complete_and_source_bytes_are_not_executed",
+    "test_measure_inventory.InventoryTests.test_deleted_renamed_and_untracked_inputs_change_inventory",
+    "test_measure_inventory.InventoryTests.test_fresh_cross_root_aliases_reject_different_names_and_noncode_inputs",
+    "test_measure_inventory.InventoryTests.test_independent_equal_content_copies_survive_owned_head_write",
+    "test_measure_inventory.InventoryTests.test_inventory_retains_all_code_and_deliberate_exclusions",
+    "test_measure_inventory.InventoryTests.test_omitted_entry_digest_revision_and_changed_map_are_rejected",
+    "test_measure_inventory.InventoryTests.test_one_discovery_owner_and_standalone_imports",
+    "test_measure_inventory.InventoryTests.test_owned_artifacts_cannot_alias_a_source_input",
+    "test_measure_inventory.InventoryTests.test_paths_reject_traversal_root_file_aliases_and_absolute_names",
+    "test_measure_inventory.InventoryTests.test_real_link_is_failed_not_a_shortened_success",
+    "test_measure_inventory.InventoryTests.test_real_read_and_walk_errors_are_enumerated"
+  ],
+  "count": 25
+}
