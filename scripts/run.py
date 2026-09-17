@@ -79,22 +79,61 @@ def _popen(cmd, cwd=None, merge_stderr=True, *, env=None):
     return subprocess.Popen(cmd, **kwargs)
 
 
-def run_capture(cmd, cwd=None, idle=300.0, max_total=0.0, *, env=None):
+def run_capture(cmd, cwd=None, idle=300.0, max_total=0.0, *, env=None, observe=None):
     """Run `cmd`, capturing output, under an *idle* timeout that resets on every
-    chunk of output. Kills the whole process tree on silence so no child holds a
-    lock. Never raises. Returns (rc, stdout, stderr):
+    chunk of output. Attempts owned process-tree cleanup on silence.
+    Returns (rc, stdout, stderr):
         rc = command's own code on completion,
              124 if killed for going silent longer than `idle`,
-             125 if killed for exceeding the `max_total` ceiling,
+             125 for max timeout, launch error or observer error,
              127 if the command was not found.
     Callers get an idle-hang as rc 124 exactly like GNU `timeout`.
+
+    Optional observe(event) runs synchronously: launch-failed on Popen failure,
+    spawned immediately after Popen, direct-exited after wait. Events are plain
+    ProcessObservation dictionaries, not durable receipts. Creation identity and
+    its evidence are null: this runner has no qualified platform identity probe.
+    Direct exit and best-effort cleanup never prove descendant termination.
+    Callback exceptions become [observer-error] diagnostics and rc 125, with
+    owned cleanup attempted. The callback must return promptly; it is not under
+    the monitor's timeouts. The caller owns durable intent before this call.
     """
+    proc = None
+
+    def notify(phase, *, cleanup="not-attempted", error=None):
+        if observe is None:
+            return None
+        event = {
+            "phase": phase,
+            "pid": proc.pid if proc is not None else None,
+            # _popen establishes a new Unix session before Popen returns.
+            "process_group": proc.pid if proc is not None and os.name != "nt" else None,
+            "start_identity": None,
+            "identity_evidence": None,
+            "returncode": proc.returncode if phase == "direct-exited" else None,
+            "cleanup": cleanup,
+            "error": error,
+        }
+        try:
+            observe(event)
+        except Exception as exc:  # noqa: BLE001
+            return f"[observer-error] {phase}: {type(exc).__name__}: {exc}"
+        return None
+
     try:
         proc = _popen(cmd, cwd=cwd, merge_stderr=False, env=env)
-    except FileNotFoundError:
-        return 127, "", "not found"
     except Exception as exc:  # noqa: BLE001
-        return 125, "", str(exc)
+        diagnostic = "not found" if isinstance(exc, FileNotFoundError) else str(exc)
+        observer_error = notify("launch-failed", error=str(exc))
+        if observer_error is not None:
+            return 125, "", diagnostic + "\n" + observer_error
+        return (127 if isinstance(exc, FileNotFoundError) else 125), "", diagnostic
+
+    observer_error = notify("spawned")
+    cleanup = "not-attempted"
+    if observer_error is not None:
+        cleanup = "best-effort-attempted"
+        _kill_tree(proc)
 
     out_chunks, err_chunks = [], []
     last = [time.monotonic()]
@@ -128,23 +167,35 @@ def run_capture(cmd, cwd=None, idle=300.0, max_total=0.0, *, env=None):
             idle_for = now - last[0]
         if idle > 0 and idle_for >= idle:
             reason = 124
+            cleanup = "best-effort-attempted"
             _kill_tree(proc)
             break
         if max_total > 0 and (now - started) >= max_total:
             reason = 125
+            cleanup = "best-effort-attempted"
             _kill_tree(proc)
             break
 
     proc.wait()
+    timeout_error = {124: "[idle-timeout]", 125: "[max-timeout]"}.get(reason)
+    exit_error = notify("direct-exited", cleanup=cleanup,
+                        error=observer_error or timeout_error)
+    if exit_error is not None:
+        # The direct child is already reaped. _kill_tree deliberately refuses
+        # to target its old PID; no descendant-termination claim follows.
+        _kill_tree(proc)
+        observer_error = "\n".join(value for value in (observer_error, exit_error) if value)
     for t in threads:
         t.join(timeout=2)
 
     stdout = "".join(out_chunks)
     stderr = "".join(err_chunks)
-    if reason == 124:
-        return 124, stdout, (stderr + "\n[idle-timeout]").strip()
-    if reason == 125:
-        return 125, stdout, (stderr + "\n[max-timeout]").strip()
+    if timeout_error is not None:
+        stderr = (stderr + "\n" + timeout_error).strip()
+    if observer_error is not None:
+        return 125, stdout, (stderr + "\n" + observer_error).strip()
+    if reason is not None:
+        return reason, stdout, stderr
     return proc.returncode, stdout, stderr
 
 

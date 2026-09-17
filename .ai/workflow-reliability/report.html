@@ -14,18 +14,18 @@ Current scope: guarded-workflow continuation, measurement enablement and documen
 <a href="design.html">Design</a> · <a href="continuation-plan.html">Continuation plan</a> · <a href="traceability.md">Acceptance ledger</a></div>
 
 <h2>Outcome</h2>
-<p><strong>Partial delivery:</strong> I1 reliability, docs and bundle repair are committed. C1/Q1 now have independent verification and review approval for combined local preservation; the source candidate matches tested bytes. CLI, remaining collectors and release quality are still incomplete.</p>
+<p><strong>Partial delivery:</strong> I1 reliability, docs and bundle repair are committed. C1/Q1 were independently verified/reviewed and preserved in <code>5dabb4c</code>. C2a lifecycle tracking now has independent verification and review approval for preservation. CLI, remaining collectors and release quality are incomplete.</p>
 
 <h2>Implemented and pending</h2>
 <p><strong>Delivered:</strong> source-bound atomic reports, exact argv/cwd, assertion-only kills, freshness/restoration and fail-closed completeness; redesigned README/banner, user guide and installation/contributor/architecture updates. Docs were rendered locally at desktop/mobile sizes in light/dark modes.</p>
-<p><strong>Accepted:</strong> <a href="evidence/q1-attr-code-review.md">final attribute correction and quality guide</a>. Parent rendering replacements are explicitly reconciled, not unchanged proof. <strong>Next:</strong> combined preservation, CLI/recovery, operator/canonical docs, fresh-agent resume, held-out diagnosis and complete quality proof.</p>
+<p><strong>Accepted:</strong> <a href="evidence/c2a-code-review.md">C2a review</a> and <a href="evidence/c2a-independent-report.md">51 distinct passing methods</a>. A verifier test correction/replay is disclosed; prior 121-method proof is historical after runner edits. <strong>Pending:</strong> CLI/recovery, operator/canonical docs, fresh-agent resume, held-out diagnosis and complete quality proof.</p>
 
 <h2>Acceptance and gates</h2>
 <table>
 <tr><th>AC</th><th>Current verdict</th><th>Evidence or blocker</th></tr>
 <tr><td>01 - ESM/CJS</td><td>VERIFIED-WITH-LIMITATIONS</td><td>Windows/Node24 native discovery/routing.</td></tr>
 <tr><td>02 - truthful metrics</td><td>VERIFIED-WITH-LIMITATIONS</td><td><a href="evidence/q1-attr-code-review.md">Final correction approved</a>; complete quality still due.</td></tr>
-<tr><td>03-04 - guards</td><td>Core accepted with limits; CLI pending</td><td><a href="evidence/c1-code-review-r2.md">Re-review approved</a>; shared-policy preservation before C2.</td></tr>
+<tr><td>03-04 - guards</td><td>Core preserved; lifecycle approved; CLI pending</td><td><a href="evidence/c2a-code-review.md">Bounded C2a approval</a>; no recovery/descendant-death guarantee.</td></tr>
 <tr><td>05-08 - resume/contracts/research/status</td><td>NOT-VERIFIED overall</td><td>Protocol cases exercised; actual CLI/canonical/host work remains.</td></tr>
 <tr><td>09 - delivery</td><td>BLOCKED</td><td>Continuation gates and actual measurements due.</td></tr>
 <tr><td>10 - documentation</td><td>Partial</td><td><a href="evidence/documentation-disposition.md">Existing-feature docs reviewed</a>; operator additions due.</td></tr>
@@ -66,7 +66,7 @@ Current scope: guarded-workflow continuation, measurement enablement and documen
 <p><a href="evidence/i1-code-review-r2.md">I1 re-review</a> approves limited preservation, not release. Continuation scores remain unproven.</p>
 
 <h2>How to finish</h2>
-<p>Earlier commits: <code>aaec9b9</code> (I1), <code>015d353</code> (docs), <code>0b7e1a1</code> (bundle/hero). Preserve C1/Q1 together, then complete C2/C3/C4 and Q2-Q5. <a href="evidence/c1-standalone-preservation-report.md">The C1-only candidate failed</a>; combined source composition now matches. Freeze all writers before final quality proof.</p>
+<p>Earlier commits: <code>aaec9b9</code> (I1), <code>015d353</code> (docs), <code>0b7e1a1</code> (bundle/hero), <code>5dabb4c</code> (C1/Q1). Preserve C2a, then finish remaining C2/C3/C4 and Q2-Q5. <a href="evidence/c1-standalone-preservation-report.md">The C1-only candidate failed</a>; the combined source was preserved. Freeze all writers before final quality proof.</p>
 <p>Human approval remains unconfirmed. Executed runtimes: Python 3.14.2 / Node 24.11.1 on Windows; no broader matrix proof. Hash scope is not a sandbox; producer identities are self-declared. Compaction is not fresh-agent resume. Publication remains blocked by EMU 403; no retry or bypass occurred.</p>
 </body>
 </html>

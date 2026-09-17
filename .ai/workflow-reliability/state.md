@@ -5,7 +5,7 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: C1/Q1 accepted for combined local preservation; C2 lifecycle/CLI is next.
+- Phase: C2a independently verified/reviewed; preserving before C2 CLI implementation.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
 - Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
@@ -37,8 +37,8 @@
 - No repeated uncoached model-effectiveness study claimed by deterministic tests.
 
 ## Next action
-Preserve the accepted combined C1/Q1 dependency set, then start the bounded C2
-lifecycle/CLI continuation. Do not commit a C1-only failing composition.
+Preserve the approved C2a process-lifecycle observer, then implement the remaining
+C2 CLI component. Do not treat the observer seam as the six-verb CLI.
 The local I1 preservation commit is `aaec9b9`.
 The continuation addendum replaces implementation-dispatch dependencies only; it does not
 close I1.T4 or remove any required measurement, independent role or final acceptance check.
@@ -79,6 +79,48 @@ close I1.T4 or remove any required measurement, independent role or final accept
 - Parent accepts combined C1/Q1 functional preservation with the source-composition proof.
   Actual complete quality, C2-C4, Q2-Q5, human approval and publication remain open. This
   is a partial local preservation boundary, not a green release or completed request.
+- FACT: combined source, approved documentation, contracts and owned historical/final
+  evidence are preserved in `5dabb4ca27a440ad370fbcb1be1739ed52e38ab7`. Before commit,
+  the real staged scripts/reference matched the prospective source tree exactly; afterward
+  the index was empty. Only the earlier parent-generated `evals/report.md` date delta
+  remained outside the commit. No publication attempt occurred.
+- C2 is split at its already-approved first component to avoid repeating oversized C1/Q1
+  execution: C2a owns only the backward-compatible `run_capture(..., observe=None)` seam,
+  actual lifecycle events, callback-failure behavior and focused runner tests. Existing
+  design-contracts ProcessObservation and C2 plan remain authoritative. CLI/ledger recovery,
+  paired failure evaluations and operator guide follow after this sub-slice's independent
+  verification/review. This grouping introduces no new API or weakened quality gate.
+- FACT: C2a owner returned `evidence/c2a-handoff.md`: 16 runner tests (5 existing,
+  11 added) and 3 real caller smoke methods pass locally. The two preserved pre-change
+  failures are missing-API errors, not mutation kills. Only runner/tests and owned
+  C2a evidence changed; no CLI or complete C2 claim follows.
+- The frozen runner hash is
+  `7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e`.
+  Its default tuple is retained; callback errors produce explicit observer-error/125.
+  Direct exit is not descendant-death proof; creation identity remains null.
+- Parent corrects a numerical wording error in its dispatch and the owner handoff:
+  ProcessObservation has eight named fields, not nine. The approved schema and actual
+  implementation agree; no ninth field is required or authorized. Historical raw
+  handoff remains unchanged and this correction is explicit.
+- Fresh verifier `c2977ee2-3897-421b-a643-d94152feca52` owns bounded C2a independent
+  behavior/caller replay. Source changes reopen affected runner dependency proof;
+  C1/Q1's historical 121-method result is not relabeled as new-byte verification.
+- FACT: `evidence/c2a-independent-report.md` returns VERIFIED on bounded Windows C2a.
+  There are 51 distinct passing methods: runner16, callers3, probe19, evidence10,
+  and three additional boundary tests. One initial verifier audit-payload assertion
+  failed; only that test was corrected and its three-test batch replayed. This is
+  not a single clean aggregate or a production correction; failed evidence is retained.
+- The verifier directly observed descendant survival after direct-exit callback failure,
+  then cleaned up its owned processes; no descendant-termination guarantee is claimed.
+  Callback time is outside capture monitoring and timeout/observer diagnostics compose.
+  All 22 owner pins remain unchanged; the final 35-pin bounded scope is reconciled.
+- Read-only reviewer `0cac6ce2-9ce5-4536-8a4f-448d65086b0d` owns separate C2a review.
+  No production writer is active. CLI/recovery, broader quality and later ACs remain open.
+- FACT: separate C2a review is APPROVE for partial functional preservation
+  (`evidence/c2a-code-review.md`). The reviewer independently matched all three
+  source/test hashes, 22 owner pins, 35 final-input pins and 10 artifact pins.
+  AC04 is accepted only for the observer seam; AC05 recovery/resume and overall
+  AC09 quality remain open. Parent accepts preservation before remaining C2 work.
 
 ## Continuation acceptance - 17 September 2026
 - User requested completion plus an attractive README and updated guides. When asked about
