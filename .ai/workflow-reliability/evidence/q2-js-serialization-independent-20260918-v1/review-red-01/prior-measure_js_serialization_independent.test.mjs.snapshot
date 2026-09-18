@@ -1,0 +1,142 @@
+import assert from "node:assert/strict";
+import crypto from "node:crypto";
+import fs from "node:fs";
+import path from "node:path";
+import test from "node:test";
+import { pathToFileURL } from "node:url";
+
+const input = JSON.parse(fs.readFileSync(process.env.Q2_JS_TEST_INPUT, "utf8"));
+const hash = bytes => crypto.createHash("sha256").update(bytes).digest("hex");
+assert.equal(hash(fs.readFileSync(input.controller)), input.controller_sha256);
+const { openCompiler, parseProgram, parserDigest, settingsDigest, serializeProgram } =
+  await import(pathToFileURL(input.controller).href);
+
+test("merged declarations, import-equals and namespace reexports share checker-backed identities", () => {
+  const compiler = openCompiler(input.binding, input.source);
+  const parsed = parseProgram(compiler, input.root, input.entries, input.metadata);
+  const { ts } = compiler, { checker, program } = parsed;
+  const configBytes = fs.readFileSync(path.join(input.root, input.config_input.path));
+  const binding = { ...input.semantic, parser_sha256: parserDigest(compiler),
+    settings_sha256: settingsDigest(JSON.parse(configBytes).js_entrypoints) };
+  const records = serializeProgram(parsed, binding, { input: input.config_input, bytes: configBytes });
+  // Save the actual serialized evidence even if a discriminating assertion fails.
+  fs.writeFileSync(input.result, JSON.stringify({ records }, null, 2));
+  assert.deepEqual(parsed.diagnostics, [], "Fixture must be semantically valid, not merely parseable");
+  assert.deepEqual(records.symbols.files.map(row => [row.path, row.state]),
+    [["barrel.ts", "processed"], ["consumer.ts", "processed"], ["origin.ts", "processed"]]);
+  const origin = program.getSourceFile("/subject/origin.ts");
+  const originModule = checker.getSymbolAtLocation(origin);
+  const originExports = checker.getExportsOfModule(originModule);
+  const symbols = records.symbols;
+  const byId = new Map(symbols.symbols.map(symbol => [symbol.id, symbol]));
+
+  function local(target) {
+    assert.deepEqual(Object.keys(target).sort(), ["external", "reason", "state", "symbol_ids"]);
+    assert.equal(target.state, "local");
+    assert.equal(target.external, null);
+    assert.equal(target.reason, "");
+    assert.equal(target.symbol_ids.length, 1);
+    const symbol = byId.get(target.symbol_ids[0]);
+    assert.ok(symbol, "Local resolution must reference a serialized symbol");
+    return symbol;
+  }
+
+  function unique(rows, predicate, label) {
+    const found = rows.filter(predicate);
+    assert.equal(found.length, 1, label);
+    return found[0];
+  }
+
+  function actualText(site) {
+    const bytes = fs.readFileSync(path.join(input.root, site.path));
+    assert.ok(site.span.start_byte >= 0 && site.span.end_byte > site.span.start_byte);
+    assert.ok(site.span.end_byte <= bytes.length);
+    if (site.source_sha256) assert.equal(site.source_sha256, hash(bytes));
+    return bytes.subarray(site.span.start_byte, site.span.end_byte).toString("utf8");
+  }
+
+  const merged = new Map();
+  for (const [name, kinds] of [["Parcel", ["ClassDeclaration", "ModuleDeclaration"]],
+    ["Box", ["InterfaceDeclaration", "InterfaceDeclaration"]]]) {
+    const exported = unique(symbols.exports, item => item.path === "origin.ts" && item.name === name, name);
+    const symbol = local(exported.target), actual = originExports.find(item => item.name === name);
+    assert.ok(actual);
+    assert.equal(symbol.flags, actual.flags);
+    assert.equal(symbol.name, name);
+    assert.equal(symbols.symbols.filter(item => item.name === name &&
+      item.declarations.every(declaration => declaration.path === "origin.ts")).length, 1);
+    assert.deepEqual(symbol.declarations.map(item => item.kind), kinds);
+    const declarations = actual.getDeclarations();
+    assert.equal(declarations.length, 2);
+    symbol.declarations.forEach((declaration, index) => {
+      assert.equal(declaration.path, "origin.ts");
+      assert.equal(actualText(declaration), declarations[index].getText(origin));
+      assert.deepEqual(declaration.lexical_scope, []);
+    });
+    assert.equal(exported.type_only, name === "Box");
+    merged.set(name, symbol);
+  }
+
+  const moduleAlias = unique(symbols.aliases, item => item.path === "consumer.ts" && item.name === "model", "model alias");
+  assert.equal(moduleAlias.kind, "import-equals");
+  const moduleRecord = local(moduleAlias.target);
+  assert.equal(moduleRecord.flags, originModule.flags);
+  assert.deepEqual(moduleRecord.declarations.map(item => [item.path, item.kind]), [["origin.ts", "SourceFile"]]);
+  const itemAlias = unique(symbols.aliases, item => item.path === "consumer.ts" && item.name === "Item", "Item alias");
+  assert.equal(itemAlias.kind, "import-equals");
+  assert.equal(local(itemAlias.target).id, merged.get("Parcel").id);
+  const consumer = program.getSourceFile("/subject/consumer.ts");
+  for (const declaration of consumer.statements.filter(ts.isImportEqualsDeclaration)) {
+    const resolved = checker.getAliasedSymbol(checker.getSymbolAtLocation(declaration.name));
+    assert.equal(resolved, declaration.name.text === "model" ? originModule :
+      originExports.find(item => item.name === "Parcel"));
+  }
+  const requireEdge = unique(symbols.module_references,
+    item => item.path === "consumer.ts" && item.kind === "require", "import-equals module edge");
+  assert.equal(requireEdge.specifier, "./origin.js");
+  assert.equal(requireEdge.resolution, "local");
+  assert.deepEqual(requireEdge.targets, ["origin.ts"]);
+
+  const namespace = unique(symbols.exports, item => item.path === "barrel.ts" && item.name === "bundle", "namespace export");
+  assert.equal(namespace.kind, "reexport");
+  assert.equal(namespace.type_only, false);
+  assert.equal(actualText(namespace), "* as bundle");
+  assert.equal(local(namespace.target).id, moduleRecord.id);
+  const namespaceAlias = unique(symbols.aliases, item => item.path === "barrel.ts" && item.name === "bundle", "namespace alias");
+  assert.equal(namespaceAlias.kind, "reexport");
+  assert.deepEqual(namespaceAlias.target, namespace.target);
+  const importedBundle = unique(symbols.aliases,
+    item => item.path === "consumer.ts" && item.name === "bundle", "imported bundle");
+  assert.deepEqual(importedBundle.target, namespace.target);
+  const barrel = program.getSourceFile("/subject/barrel.ts");
+  const bundle = checker.getExportsOfModule(checker.getSymbolAtLocation(barrel)).find(item => item.name === "bundle");
+  assert.equal(checker.getAliasedSymbol(bundle), originModule);
+  const reexportEdge = unique(symbols.module_references,
+    item => item.path === "barrel.ts" && item.kind === "reexport", "namespace module edge");
+  assert.equal(reexportEdge.specifier, "./origin.js");
+  assert.equal(reexportEdge.resolution, "local");
+  assert.deepEqual(reexportEdge.targets, ["origin.ts"]);
+
+  const itemUse = unique(symbols.references, item => item.path === "consumer.ts" &&
+    item.kind === "identifier" && actualText(item) === "Item", "constructor alias reference");
+  assert.equal(local(itemUse.target).id, merged.get("Parcel").id);
+  const boxUse = unique(symbols.references, item => item.path === "consumer.ts" &&
+    actualText(item) === "Box", "merged interface type reference");
+  assert.equal(local(boxUse.target).id, merged.get("Box").id);
+  const parcelUses = symbols.references.filter(item => item.path === "consumer.ts" &&
+    item.kind === "property" && actualText(item) === "Parcel");
+  assert.equal(parcelUses.length, 2, "model.Parcel and bundle.Parcel property uses");
+  assert.ok(parcelUses.every(item => local(item.target).id === merged.get("Parcel").id));
+  for (const edge of [requireEdge, reexportEdge]) {
+    const syntax = records.syntax.find(item => item.path === edge.path);
+    assert.equal(syntax.literal_imports.filter(item => item.kind === edge.kind &&
+      item.specifier === edge.specifier && JSON.stringify(item.span) === JSON.stringify(edge.span)).length, 1);
+  }
+  compiler.verify();
+  fs.writeFileSync(input.result, JSON.stringify({
+    verified: ["merged-declarations", "import-equals", "namespace-reexport"],
+    runtime: { version: process.version, architecture: process.arch },
+    qualified_controller_sha256: input.controller_sha256,
+    merged_symbols: [...merged.values()], records,
+  }, null, 2));
+});

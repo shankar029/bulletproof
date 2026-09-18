@@ -1,0 +1,23 @@
+{
+  "test": "test_measure_js_serialization_independent.NativeSerializationReviewRegressions.test_r1_namespace_destructuring_keeps_export_property_identity",
+  "argv": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\measure_js_serialization_independent.test.mjs"
+  ],
+  "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\qjr-iq77827_",
+  "idle_seconds": 30,
+  "max_seconds": 90,
+  "environment_removed": [
+    "PYTHONDONTWRITEBYTECODE",
+    "PYTHONIOENCODING"
+  ],
+  "controller_sha256": "35acb58ccd11dce9daa601e640c47b763e8625c84919158610cf33107f4b46bc",
+  "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88",
+  "request_sha256": "fb945a47ce5b9b70219cfb0b80e49fcf15c5cb129078674edca52be70987ca6e",
+  "fixture_files": {
+    "package.json": "{\"type\":\"module\"}\n",
+    "origin.mjs": "export const value = 1;\n",
+    "use.mjs": "import * as ns from './origin.mjs';\nconst { value } = ns;\nconst { \"value\": local } = ns;\nexport const answers = [value, local];\nexport const control = ns.value;\n"
+  },
+  "head_git": "cf950ad35e0133a1bbc81935b71468db015d8cc1"
+}

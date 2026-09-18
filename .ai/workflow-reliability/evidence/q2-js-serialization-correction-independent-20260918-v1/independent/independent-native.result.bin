@@ -1,0 +1,3702 @@
+{
+  "verified": [
+    "merged-declarations",
+    "import-equals",
+    "namespace-reexport"
+  ],
+  "runtime": {
+    "version": "v24.11.1",
+    "architecture": "arm64"
+  },
+  "qualified_controller_sha256": "ba0ca909699ca453515a0eaad5206c81d5afe6abcd1fb7b47723e8a71f1c0900",
+  "merged_symbols": [
+    {
+      "id": "a86234ae44d7b156b76bd7870b65b5b3b0d15062577def6953790cd4703e98e7",
+      "name": "Parcel",
+      "flags": 544,
+      "declarations": [
+        {
+          "path": "origin.ts",
+          "kind": "ClassDeclaration",
+          "lexical_scope": [],
+          "name": "Parcel",
+          "token_context": [
+            {
+              "kind": "ExportKeyword",
+              "text": "export"
+            },
+            {
+              "kind": "ClassKeyword",
+              "text": "class"
+            },
+            {
+              "kind": "Identifier",
+              "text": "Parcel"
+            },
+            {
+              "kind": "FirstPunctuation",
+              "text": "{"
+            },
+            {
+              "kind": "Identifier",
+              "text": "value"
+            },
+            {
+              "kind": "FirstAssignment",
+              "text": "="
+            },
+            {
+              "kind": "FirstLiteralToken",
+              "text": "1"
+            },
+            {
+              "kind": "SemicolonToken",
+              "text": ";"
+            },
+            {
+              "kind": "CloseBraceToken",
+              "text": "}"
+            }
+          ],
+          "occurrence": 0,
+          "source_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+          "span": {
+            "start_byte": 0,
+            "end_byte": 34,
+            "start_line": 1,
+            "end_line": 1
+          }
+        },
+        {
+          "path": "origin.ts",
+          "kind": "ModuleDeclaration",
+          "lexical_scope": [],
+          "name": "Parcel",
+          "token_context": [
+            {
+              "kind": "ExportKeyword",
+              "text": "export"
+            },
+            {
+              "kind": "NamespaceKeyword",
+              "text": "namespace"
+            },
+            {
+              "kind": "Identifier",
+              "text": "Parcel"
+            },
+            {
+              "kind": "FirstPunctuation",
+              "text": "{"
+            },
+            {
+              "kind": "ExportKeyword",
+              "text": "export"
+            },
+            {
+              "kind": "ConstKeyword",
+              "text": "const"
+            },
+            {
+              "kind": "Identifier",
+              "text": "tag"
+            },
+            {
+              "kind": "FirstAssignment",
+              "text": "="
+            },
+            {
+              "kind": "StringLiteral",
+              "text": "'parcel'"
+            },
+            {
+              "kind": "SemicolonToken",
+              "text": ";"
+            },
+            {
+              "kind": "CloseBraceToken",
+              "text": "}"
+            }
+          ],
+          "occurrence": 0,
+          "source_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+          "span": {
+            "start_byte": 36,
+            "end_byte": 92,
+            "start_line": 2,
+            "end_line": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "56bd70ac5795c70599309a5961b3a3f29cd10d64e69ee15a682d76f36d234998",
+      "name": "Box",
+      "flags": 64,
+      "declarations": [
+        {
+          "path": "origin.ts",
+          "kind": "InterfaceDeclaration",
+          "lexical_scope": [],
+          "name": "Box",
+          "token_context": [
+            {
+              "kind": "ExportKeyword",
+              "text": "export"
+            },
+            {
+              "kind": "InterfaceKeyword",
+              "text": "interface"
+            },
+            {
+              "kind": "Identifier",
+              "text": "Box"
+            },
+            {
+              "kind": "FirstPunctuation",
+              "text": "{"
+            },
+            {
+              "kind": "Identifier",
+              "text": "left"
+            },
+            {
+              "kind": "ColonToken",
+              "text": ":"
+            },
+            {
+              "kind": "StringKeyword",
+              "text": "string"
+            },
+            {
+              "kind": "SemicolonToken",
+              "text": ";"
+            },
+            {
+              "kind": "CloseBraceToken",
+              "text": "}"
+            }
+          ],
+          "occurrence": 0,
+          "source_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+          "span": {
+            "start_byte": 94,
+            "end_byte": 132,
+            "start_line": 3,
+            "end_line": 3
+          }
+        },
+        {
+          "path": "origin.ts",
+          "kind": "InterfaceDeclaration",
+          "lexical_scope": [],
+          "name": "Box",
+          "token_context": [
+            {
+              "kind": "ExportKeyword",
+              "text": "export"
+            },
+            {
+              "kind": "InterfaceKeyword",
+              "text": "interface"
+            },
+            {
+              "kind": "Identifier",
+              "text": "Box"
+            },
+            {
+              "kind": "FirstPunctuation",
+              "text": "{"
+            },
+            {
+              "kind": "Identifier",
+              "text": "right"
+            },
+            {
+              "kind": "ColonToken",
+              "text": ":"
+            },
+            {
+              "kind": "NumberKeyword",
+              "text": "number"
+            },
+            {
+              "kind": "SemicolonToken",
+              "text": ";"
+            },
+            {
+              "kind": "CloseBraceToken",
+              "text": "}"
+            }
+          ],
+          "occurrence": 0,
+          "source_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+          "span": {
+            "start_byte": 134,
+            "end_byte": 173,
+            "start_line": 4,
+            "end_line": 4
+          }
+        }
+      ]
+    }
+  ],
+  "records": {
+    "syntax": [
+      {
+        "schema_version": 1,
+        "revision": "head",
+        "inventory_sha256": "05a8faff881c2c849a99f7f210e9f80fa00b0d8ba8afc228ff78f4ab86510004",
+        "path": "barrel.ts",
+        "source_sha256": "417dbea6cbe08ef0c1150d74285da712d5f3ccd4ee9a54694a596916185770d2",
+        "parser_sha256": "544eef91adea527bb2622c175fb0e60e289fbcfbae5c82a3738636bc45c8f9a2",
+        "semantic_version": "typescript-shared-v1",
+        "nodes": [
+          {
+            "kind": "ExportDeclaration",
+            "span": {
+              "start_byte": 0,
+              "end_byte": 38,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "kind": "NamespaceExport",
+            "span": {
+              "start_byte": 7,
+              "end_byte": 18,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 12,
+              "end_byte": 18,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "kind": "StringLiteral",
+            "span": {
+              "start_byte": 24,
+              "end_byte": 37,
+              "start_line": 1,
+              "end_line": 1
+            }
+          }
+        ],
+        "literal_imports": [
+          {
+            "specifier": "./origin.js",
+            "kind": "reexport",
+            "span": {
+              "start_byte": 0,
+              "end_byte": 38,
+              "start_line": 1,
+              "end_line": 1
+            }
+          }
+        ],
+        "outside_model": [],
+        "diagnostics": []
+      },
+      {
+        "schema_version": 1,
+        "revision": "head",
+        "inventory_sha256": "05a8faff881c2c849a99f7f210e9f80fa00b0d8ba8afc228ff78f4ab86510004",
+        "path": "consumer.ts",
+        "source_sha256": "f44328bc8480094f547bf93d4040728a083a67ced7fffff1b0f1af24f7bd64bb",
+        "parser_sha256": "544eef91adea527bb2622c175fb0e60e289fbcfbae5c82a3738636bc45c8f9a2",
+        "semantic_version": "typescript-shared-v1",
+        "nodes": [
+          {
+            "kind": "ImportEqualsDeclaration",
+            "span": {
+              "start_byte": 0,
+              "end_byte": 38,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 7,
+              "end_byte": 12,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "kind": "ExternalModuleReference",
+            "span": {
+              "start_byte": 15,
+              "end_byte": 37,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "kind": "StringLiteral",
+            "span": {
+              "start_byte": 23,
+              "end_byte": 36,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "kind": "ImportEqualsDeclaration",
+            "span": {
+              "start_byte": 40,
+              "end_byte": 67,
+              "start_line": 2,
+              "end_line": 2
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 47,
+              "end_byte": 51,
+              "start_line": 2,
+              "end_line": 2
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 54,
+              "end_byte": 59,
+              "start_line": 2,
+              "end_line": 2
+            }
+          },
+          {
+            "kind": "FirstNode",
+            "span": {
+              "start_byte": 54,
+              "end_byte": 66,
+              "start_line": 2,
+              "end_line": 2
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 60,
+              "end_byte": 66,
+              "start_line": 2,
+              "end_line": 2
+            }
+          },
+          {
+            "kind": "ImportDeclaration",
+            "span": {
+              "start_byte": 69,
+              "end_byte": 106,
+              "start_line": 3,
+              "end_line": 3
+            }
+          },
+          {
+            "kind": "ImportClause",
+            "span": {
+              "start_byte": 76,
+              "end_byte": 86,
+              "start_line": 3,
+              "end_line": 3
+            }
+          },
+          {
+            "kind": "NamedImports",
+            "span": {
+              "start_byte": 76,
+              "end_byte": 86,
+              "start_line": 3,
+              "end_line": 3
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 78,
+              "end_byte": 84,
+              "start_line": 3,
+              "end_line": 3
+            }
+          },
+          {
+            "kind": "ImportSpecifier",
+            "span": {
+              "start_byte": 78,
+              "end_byte": 84,
+              "start_line": 3,
+              "end_line": 3
+            }
+          },
+          {
+            "kind": "StringLiteral",
+            "span": {
+              "start_byte": 92,
+              "end_byte": 105,
+              "start_line": 3,
+              "end_line": 3
+            }
+          },
+          {
+            "kind": "ExportKeyword",
+            "span": {
+              "start_byte": 108,
+              "end_byte": 114,
+              "start_line": 4,
+              "end_line": 4
+            }
+          },
+          {
+            "kind": "FirstStatement",
+            "span": {
+              "start_byte": 108,
+              "end_byte": 143,
+              "start_line": 4,
+              "end_line": 4
+            }
+          },
+          {
+            "kind": "VariableDeclarationList",
+            "span": {
+              "start_byte": 115,
+              "end_byte": 142,
+              "start_line": 4,
+              "end_line": 4
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 121,
+              "end_byte": 129,
+              "start_line": 4,
+              "end_line": 4
+            }
+          },
+          {
+            "kind": "VariableDeclaration",
+            "span": {
+              "start_byte": 121,
+              "end_byte": 142,
+              "start_line": 4,
+              "end_line": 4
+            }
+          },
+          {
+            "kind": "NewExpression",
+            "span": {
+              "start_byte": 132,
+              "end_byte": 142,
+              "start_line": 4,
+              "end_line": 4
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 136,
+              "end_byte": 140,
+              "start_line": 4,
+              "end_line": 4
+            }
+          },
+          {
+            "kind": "ExportKeyword",
+            "span": {
+              "start_byte": 145,
+              "end_byte": 151,
+              "start_line": 5,
+              "end_line": 5
+            }
+          },
+          {
+            "kind": "FirstStatement",
+            "span": {
+              "start_byte": 145,
+              "end_byte": 181,
+              "start_line": 5,
+              "end_line": 5
+            }
+          },
+          {
+            "kind": "VariableDeclarationList",
+            "span": {
+              "start_byte": 152,
+              "end_byte": 180,
+              "start_line": 5,
+              "end_line": 5
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 158,
+              "end_byte": 161,
+              "start_line": 5,
+              "end_line": 5
+            }
+          },
+          {
+            "kind": "VariableDeclaration",
+            "span": {
+              "start_byte": 158,
+              "end_byte": 180,
+              "start_line": 5,
+              "end_line": 5
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 164,
+              "end_byte": 169,
+              "start_line": 5,
+              "end_line": 5
+            }
+          },
+          {
+            "kind": "PropertyAccessExpression",
+            "span": {
+              "start_byte": 164,
+              "end_byte": 176,
+              "start_line": 5,
+              "end_line": 5
+            }
+          },
+          {
+            "kind": "PropertyAccessExpression",
+            "span": {
+              "start_byte": 164,
+              "end_byte": 180,
+              "start_line": 5,
+              "end_line": 5
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 170,
+              "end_byte": 176,
+              "start_line": 5,
+              "end_line": 5
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 177,
+              "end_byte": 180,
+              "start_line": 5,
+              "end_line": 5
+            }
+          },
+          {
+            "kind": "ExportKeyword",
+            "span": {
+              "start_byte": 183,
+              "end_byte": 189,
+              "start_line": 6,
+              "end_line": 6
+            }
+          },
+          {
+            "kind": "FirstStatement",
+            "span": {
+              "start_byte": 183,
+              "end_byte": 222,
+              "start_line": 6,
+              "end_line": 6
+            }
+          },
+          {
+            "kind": "VariableDeclarationList",
+            "span": {
+              "start_byte": 190,
+              "end_byte": 221,
+              "start_line": 6,
+              "end_line": 6
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 196,
+              "end_byte": 201,
+              "start_line": 6,
+              "end_line": 6
+            }
+          },
+          {
+            "kind": "VariableDeclaration",
+            "span": {
+              "start_byte": 196,
+              "end_byte": 221,
+              "start_line": 6,
+              "end_line": 6
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 204,
+              "end_byte": 210,
+              "start_line": 6,
+              "end_line": 6
+            }
+          },
+          {
+            "kind": "PropertyAccessExpression",
+            "span": {
+              "start_byte": 204,
+              "end_byte": 217,
+              "start_line": 6,
+              "end_line": 6
+            }
+          },
+          {
+            "kind": "PropertyAccessExpression",
+            "span": {
+              "start_byte": 204,
+              "end_byte": 221,
+              "start_line": 6,
+              "end_line": 6
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 211,
+              "end_byte": 217,
+              "start_line": 6,
+              "end_line": 6
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 218,
+              "end_byte": 221,
+              "start_line": 6,
+              "end_line": 6
+            }
+          },
+          {
+            "kind": "ExportKeyword",
+            "span": {
+              "start_byte": 224,
+              "end_byte": 230,
+              "start_line": 7,
+              "end_line": 7
+            }
+          },
+          {
+            "kind": "FirstStatement",
+            "span": {
+              "start_byte": 224,
+              "end_byte": 278,
+              "start_line": 7,
+              "end_line": 7
+            }
+          },
+          {
+            "kind": "VariableDeclarationList",
+            "span": {
+              "start_byte": 231,
+              "end_byte": 277,
+              "start_line": 7,
+              "end_line": 7
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 237,
+              "end_byte": 240,
+              "start_line": 7,
+              "end_line": 7
+            }
+          },
+          {
+            "kind": "VariableDeclaration",
+            "span": {
+              "start_byte": 237,
+              "end_byte": 277,
+              "start_line": 7,
+              "end_line": 7
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 242,
+              "end_byte": 247,
+              "start_line": 7,
+              "end_line": 7
+            }
+          },
+          {
+            "kind": "FirstNode",
+            "span": {
+              "start_byte": 242,
+              "end_byte": 251,
+              "start_line": 7,
+              "end_line": 7
+            }
+          },
+          {
+            "kind": "TypeReference",
+            "span": {
+              "start_byte": 242,
+              "end_byte": 251,
+              "start_line": 7,
+              "end_line": 7
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 248,
+              "end_byte": 251,
+              "start_line": 7,
+              "end_line": 7
+            }
+          },
+          {
+            "kind": "ObjectLiteralExpression",
+            "span": {
+              "start_byte": 254,
+              "end_byte": 277,
+              "start_line": 7,
+              "end_line": 7
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 256,
+              "end_byte": 260,
+              "start_line": 7,
+              "end_line": 7
+            }
+          },
+          {
+            "kind": "PropertyAssignment",
+            "span": {
+              "start_byte": 256,
+              "end_byte": 265,
+              "start_line": 7,
+              "end_line": 7
+            }
+          },
+          {
+            "kind": "StringLiteral",
+            "span": {
+              "start_byte": 262,
+              "end_byte": 265,
+              "start_line": 7,
+              "end_line": 7
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 267,
+              "end_byte": 272,
+              "start_line": 7,
+              "end_line": 7
+            }
+          },
+          {
+            "kind": "PropertyAssignment",
+            "span": {
+              "start_byte": 267,
+              "end_byte": 275,
+              "start_line": 7,
+              "end_line": 7
+            }
+          },
+          {
+            "kind": "FirstLiteralToken",
+            "span": {
+              "start_byte": 274,
+              "end_byte": 275,
+              "start_line": 7,
+              "end_line": 7
+            }
+          }
+        ],
+        "literal_imports": [
+          {
+            "specifier": "./origin.js",
+            "kind": "require",
+            "span": {
+              "start_byte": 0,
+              "end_byte": 38,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "specifier": "./barrel.js",
+            "kind": "import",
+            "span": {
+              "start_byte": 69,
+              "end_byte": 106,
+              "start_line": 3,
+              "end_line": 3
+            }
+          }
+        ],
+        "outside_model": [],
+        "diagnostics": []
+      },
+      {
+        "schema_version": 1,
+        "revision": "head",
+        "inventory_sha256": "05a8faff881c2c849a99f7f210e9f80fa00b0d8ba8afc228ff78f4ab86510004",
+        "path": "origin.ts",
+        "source_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+        "parser_sha256": "544eef91adea527bb2622c175fb0e60e289fbcfbae5c82a3738636bc45c8f9a2",
+        "semantic_version": "typescript-shared-v1",
+        "nodes": [
+          {
+            "kind": "ExportKeyword",
+            "span": {
+              "start_byte": 0,
+              "end_byte": 6,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "kind": "ClassDeclaration",
+            "span": {
+              "start_byte": 0,
+              "end_byte": 34,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 13,
+              "end_byte": 19,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 22,
+              "end_byte": 27,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "kind": "PropertyDeclaration",
+            "span": {
+              "start_byte": 22,
+              "end_byte": 32,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "kind": "FirstLiteralToken",
+            "span": {
+              "start_byte": 30,
+              "end_byte": 31,
+              "start_line": 1,
+              "end_line": 1
+            }
+          },
+          {
+            "kind": "ExportKeyword",
+            "span": {
+              "start_byte": 36,
+              "end_byte": 42,
+              "start_line": 2,
+              "end_line": 2
+            }
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "span": {
+              "start_byte": 36,
+              "end_byte": 92,
+              "start_line": 2,
+              "end_line": 2
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 53,
+              "end_byte": 59,
+              "start_line": 2,
+              "end_line": 2
+            }
+          },
+          {
+            "kind": "ModuleBlock",
+            "span": {
+              "start_byte": 60,
+              "end_byte": 92,
+              "start_line": 2,
+              "end_line": 2
+            }
+          },
+          {
+            "kind": "ExportKeyword",
+            "span": {
+              "start_byte": 62,
+              "end_byte": 68,
+              "start_line": 2,
+              "end_line": 2
+            }
+          },
+          {
+            "kind": "FirstStatement",
+            "span": {
+              "start_byte": 62,
+              "end_byte": 90,
+              "start_line": 2,
+              "end_line": 2
+            }
+          },
+          {
+            "kind": "VariableDeclarationList",
+            "span": {
+              "start_byte": 69,
+              "end_byte": 89,
+              "start_line": 2,
+              "end_line": 2
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 75,
+              "end_byte": 78,
+              "start_line": 2,
+              "end_line": 2
+            }
+          },
+          {
+            "kind": "VariableDeclaration",
+            "span": {
+              "start_byte": 75,
+              "end_byte": 89,
+              "start_line": 2,
+              "end_line": 2
+            }
+          },
+          {
+            "kind": "StringLiteral",
+            "span": {
+              "start_byte": 81,
+              "end_byte": 89,
+              "start_line": 2,
+              "end_line": 2
+            }
+          },
+          {
+            "kind": "ExportKeyword",
+            "span": {
+              "start_byte": 94,
+              "end_byte": 100,
+              "start_line": 3,
+              "end_line": 3
+            }
+          },
+          {
+            "kind": "InterfaceDeclaration",
+            "span": {
+              "start_byte": 94,
+              "end_byte": 132,
+              "start_line": 3,
+              "end_line": 3
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 111,
+              "end_byte": 114,
+              "start_line": 3,
+              "end_line": 3
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 117,
+              "end_byte": 121,
+              "start_line": 3,
+              "end_line": 3
+            }
+          },
+          {
+            "kind": "PropertySignature",
+            "span": {
+              "start_byte": 117,
+              "end_byte": 130,
+              "start_line": 3,
+              "end_line": 3
+            }
+          },
+          {
+            "kind": "StringKeyword",
+            "span": {
+              "start_byte": 123,
+              "end_byte": 129,
+              "start_line": 3,
+              "end_line": 3
+            }
+          },
+          {
+            "kind": "ExportKeyword",
+            "span": {
+              "start_byte": 134,
+              "end_byte": 140,
+              "start_line": 4,
+              "end_line": 4
+            }
+          },
+          {
+            "kind": "InterfaceDeclaration",
+            "span": {
+              "start_byte": 134,
+              "end_byte": 173,
+              "start_line": 4,
+              "end_line": 4
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 151,
+              "end_byte": 154,
+              "start_line": 4,
+              "end_line": 4
+            }
+          },
+          {
+            "kind": "Identifier",
+            "span": {
+              "start_byte": 157,
+              "end_byte": 162,
+              "start_line": 4,
+              "end_line": 4
+            }
+          },
+          {
+            "kind": "PropertySignature",
+            "span": {
+              "start_byte": 157,
+              "end_byte": 171,
+              "start_line": 4,
+              "end_line": 4
+            }
+          },
+          {
+            "kind": "NumberKeyword",
+            "span": {
+              "start_byte": 164,
+              "end_byte": 170,
+              "start_line": 4,
+              "end_line": 4
+            }
+          }
+        ],
+        "literal_imports": [],
+        "outside_model": [],
+        "diagnostics": []
+      }
+    ],
+    "symbols": {
+      "schema_version": 1,
+      "binding": {
+        "semantic_version": "typescript-shared-v1",
+        "run_id": "fixture-run",
+        "revision": "head",
+        "git_revision": "feb4e2d52dc668dafcf08ac8a37cf6d86cfb21f3",
+        "inventory_sha256": "05a8faff881c2c849a99f7f210e9f80fa00b0d8ba8afc228ff78f4ab86510004",
+        "source_sha256": "2e1cea5e233e6efd54dea7e73e293e03d514783ee951a933e08852963cce4a47",
+        "policy_sha256": "9747688deec9c712543bba65ae91a278739062c1f118851189f8659017a9024f",
+        "toolset_sha256": "91bc9ae99aae55a3a8e93edc4a3bab252763c53ca23c56a20a2e027495d9d201",
+        "parser_sha256": "544eef91adea527bb2622c175fb0e60e289fbcfbae5c82a3738636bc45c8f9a2",
+        "settings_sha256": "d84b1b4f6748f7e26787a7657115d16a4a9abcdcca07ff512d697030c17e729a"
+      },
+      "inputs": [
+        {
+          "scope": "head-contract",
+          "path": "measurement.json",
+          "sha256": "18f678bdb9bd4bcd4bc5401ed19625cd3beeea7d2fb3e55cd7e926dad5e52122",
+          "bytes": 2650
+        },
+        {
+          "scope": "subject",
+          "path": "barrel.ts",
+          "sha256": "417dbea6cbe08ef0c1150d74285da712d5f3ccd4ee9a54694a596916185770d2",
+          "bytes": 40
+        },
+        {
+          "scope": "subject",
+          "path": "consumer.ts",
+          "sha256": "f44328bc8480094f547bf93d4040728a083a67ced7fffff1b0f1af24f7bd64bb",
+          "bytes": 280
+        },
+        {
+          "scope": "subject",
+          "path": "origin.ts",
+          "sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+          "bytes": 175
+        },
+        {
+          "scope": "subject",
+          "path": "package.json",
+          "sha256": "dbf8353f77358bc12169b7bb7301e1978d5b503e002ee927229a8993672818fc",
+          "bytes": 20
+        },
+        {
+          "scope": "tool-resource",
+          "path": "LICENSE.txt",
+          "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47",
+          "bytes": 9197
+        },
+        {
+          "scope": "tool-resource",
+          "path": "README.md",
+          "sha256": "73147458477d90cd6236627cdd9b0871df12e6e8a21d2d0fda6d1ad2826bdc0e",
+          "bytes": 2842
+        },
+        {
+          "scope": "tool-resource",
+          "path": "SECURITY.md",
+          "sha256": "7b6976eec43edfa68b79a459dd089c56b7a395916dbf1a01bd11e6d86e12128f",
+          "bytes": 2656
+        },
+        {
+          "scope": "tool-resource",
+          "path": "ThirdPartyNoticeText.txt",
+          "sha256": "1af3c68039c57e539422da82a4faada506ce6d0ea6f90e0b699d02dbcdb7a90c",
+          "bytes": 37824
+        },
+        {
+          "scope": "tool-resource",
+          "path": "bin/tsc",
+          "sha256": "8d5fa5bd883fec0979fc2004f1fe1d99aef40570155d550eadc0b03b55513bf0",
+          "bytes": 45
+        },
+        {
+          "scope": "tool-resource",
+          "path": "bin/tsserver",
+          "sha256": "a088f0c3419bcb2f7b860ad42e4c9f25ead067eda70af6a10d0a7d453954aada",
+          "bytes": 50
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/_tsc.js",
+          "sha256": "e8f349eabd48486bdb2bf9dc1a00c89d58297270c54b745838879e2859194419",
+          "bytes": 6213092
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/_tsserver.js",
+          "sha256": "0efcc88cdf0593cc1dcc8b6afd605c7bed9eca6f648c70c8f0df8695114bf6d7",
+          "bytes": 27888
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/_typingsInstaller.js",
+          "sha256": "62a69c574365f1c81633b86b3214f9df860aad08843028dd5244b00aa7f1e190",
+          "bytes": 10363
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/cs/diagnosticMessages.generated.json",
+          "sha256": "5b30e58d35f877521e14c16551c86320b2ed19ddb70fe5f41841b561d27f18c2",
+          "bytes": 320453
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/de/diagnosticMessages.generated.json",
+          "sha256": "a4031a8028febc35f92ba317104878d93f02c1750e6ee16351c2270ab4dff517",
+          "bytes": 344426
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/es/diagnosticMessages.generated.json",
+          "sha256": "3c7844125e1f2a3a2227e16dd1fed75218a3454919706b34cd8a5da9d43cda22",
+          "bytes": 340054
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/fr/diagnosticMessages.generated.json",
+          "sha256": "9fc1836d7575840a8b7a63dacdedd99e90e4144c0bbe29a4b7fa78a86e0e8bf5",
+          "bytes": 346016
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/it/diagnosticMessages.generated.json",
+          "sha256": "a740fe2b2338d72a8d165fb8c7c22ac1393a18b6aa7f1ed6d45b79887867f98a",
+          "bytes": 339409
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/ja/diagnosticMessages.generated.json",
+          "sha256": "ae1a2d439bfb60b9fa32408bde0e9ec39840a33d621014fcb5b2fb4e69a606de",
+          "bytes": 381398
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/ko/diagnosticMessages.generated.json",
+          "sha256": "31b27d2d556fc037eeac1672f771bf940ec70afba342e977faa75a2fa292a8be",
+          "bytes": 346139
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.d.ts",
+          "sha256": "a7297ff837fcdf174a9524925966429eb8e5feecc2cc55cc06574e6b092c1eaa",
+          "bytes": 992
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.decorators.d.ts",
+          "sha256": "8e7f8264d0fb4c5339605a15daadb037bf238c10b654bb3eee14208f860a32ea",
+          "bytes": 13192
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.decorators.legacy.d.ts",
+          "sha256": "782dec38049b92d4e85c1585fbea5474a219c6984a35b004963b00beb1aab538",
+          "bytes": 1326
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.dom.asynciterable.d.ts",
+          "sha256": "d7a3c8b952931daebdfc7a2897c53c0a1c73624593fa070e46bd537e64dcd20a",
+          "bytes": 1887
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.dom.d.ts",
+          "sha256": "080941d9f9ff9307f7e27a83bcd888b7c8270716c39af943532438932ec1d0b9",
+          "bytes": 1874901
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.dom.iterable.d.ts",
+          "sha256": "2e80ee7a49e8ac312cc11b77f1475804bee36b3b2bc896bead8b6e1266befb43",
+          "bytes": 29802
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2015.collection.d.ts",
+          "sha256": "dc2df20b1bcdc8c2d34af4926e2c3ab15ffe1160a63e58b7e09833f616efff44",
+          "bytes": 5229
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2015.core.d.ts",
+          "sha256": "c57796738e7f83dbc4b8e65132f11a377649c00dd3eee333f672b8f0a6bea671",
+          "bytes": 22866
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2015.d.ts",
+          "sha256": "45b7ab580deca34ae9729e97c13cfd999df04416a79116c3bfb483804f85ded4",
+          "bytes": 1241
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2015.generator.d.ts",
+          "sha256": "515d0b7b9bea2e31ea4ec968e9edd2c39d3eebf4a2d5cbd04e88639819ae3b71",
+          "bytes": 2557
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2015.iterable.d.ts",
+          "sha256": "0559b1f683ac7505ae451f9a96ce4c3c92bdc71411651ca6ddb0e88baaaad6a3",
+          "bytes": 18200
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2015.promise.d.ts",
+          "sha256": "0dc1e7ceda9b8b9b455c3a2d67b0412feab00bd2f66656cd8850e8831b08b537",
+          "bytes": 3200
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2015.proxy.d.ts",
+          "sha256": "ce691fb9e5c64efb9547083e4a34091bcbe5bdb41027e310ebba8f7d96a98671",
+          "bytes": 5251
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2015.reflect.d.ts",
+          "sha256": "8d697a2a929a5fcb38b7a65594020fcef05ec1630804a33748829c5ff53640d0",
+          "bytes": 6493
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2015.symbol.d.ts",
+          "sha256": "4ff2a353abf8a80ee399af572debb8faab2d33ad38c4b4474cff7f26e7653b8d",
+          "bytes": 1649
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2015.symbol.wellknown.d.ts",
+          "sha256": "fb0f136d372979348d59b3f5020b4cdb81b5504192b1cacff5d1fbba29378aa1",
+          "bytes": 11010
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2016.array.include.d.ts",
+          "sha256": "d15bea3d62cbbdb9797079416b8ac375ae99162a7fba5de2c6c505446486ac0a",
+          "bytes": 5204
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2016.d.ts",
+          "sha256": "3facaf05f0c5fc569c5649dd359892c98a85557e3e0c847964caeb67076f4d75",
+          "bytes": 965
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2016.full.d.ts",
+          "sha256": "807e0e0bdc67605dd28efe18f20ab5fcd75d944ef95936120702335f9379094b",
+          "bytes": 1032
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2016.intl.d.ts",
+          "sha256": "68d18b664c9d32a7336a70235958b8997ebc1c3b8505f4f1ae2b7e7753b87618",
+          "bytes": 1484
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2017.arraybuffer.d.ts",
+          "sha256": "eb3d66c8327153d8fa7dd03f9c58d351107fe824c79e9b56b462935176cdf12a",
+          "bytes": 915
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2017.d.ts",
+          "sha256": "e44bb8bbac7f10ecc786703fe0a6a4b952189f908707980ba8f3c8975a760962",
+          "bytes": 1162
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2017.date.d.ts",
+          "sha256": "38f0219c9e23c915ef9790ab1d680440d95419ad264816fa15009a8851e79119",
+          "bytes": 1916
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2017.full.d.ts",
+          "sha256": "1d242d5c24cf285c88bc4fb93c5ff903de8319064e282986edeb6247ba028d5e",
+          "bytes": 1032
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2017.intl.d.ts",
+          "sha256": "4de680d5bb41c17f7f68e0419412ca23c98d5749dcaaea1896172f06435891fc",
+          "bytes": 1449
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2017.object.d.ts",
+          "sha256": "69ab18c3b76cd9b1be3d188eaf8bba06112ebbe2f47f6c322b5105a6fbc45a2e",
+          "bytes": 2473
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2017.sharedmemory.d.ts",
+          "sha256": "a680117f487a4d2f30ea46f1b4b7f58bef1480456e18ba53ee85c2746eeca012",
+          "bytes": 7209
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2017.string.d.ts",
+          "sha256": "2f11ff796926e0832f9ae148008138ad583bd181899ab7dd768a2666700b1893",
+          "bytes": 2378
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2017.typedarrays.d.ts",
+          "sha256": "954296b30da6d508a104a3a0b5d96b76495c709785c1d11610908e63481ee667",
+          "bytes": 1542
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2018.asyncgenerator.d.ts",
+          "sha256": "ac9538681b19688c8eae65811b329d3744af679e0bdfa5d842d0e32524c73e1c",
+          "bytes": 2692
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2018.asynciterable.d.ts",
+          "sha256": "0a969edff4bd52585473d24995c5ef223f6652d6ef46193309b3921d65dd4376",
+          "bytes": 2257
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2018.d.ts",
+          "sha256": "5e1c4c362065a6b95ff952c0eab010f04dcd2c3494e813b493ecfd4fcb9fc0d8",
+          "bytes": 1088
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2018.full.d.ts",
+          "sha256": "95f1023b824c2c511c48f1201e2d1188bcb0ca1138a309a870b956d2e92e44ab",
+          "bytes": 1074
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2018.intl.d.ts",
+          "sha256": "9e9fbd7030c440b33d021da145d3232984c8bb7916f277e8ffd3dc2e3eae2bdb",
+          "bytes": 3021
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2018.promise.d.ts",
+          "sha256": "811ec78f7fefcabbda4bfa93b3eb67d9ae166ef95f9bff989d964061cbf81a0c",
+          "bytes": 1353
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2018.regexp.d.ts",
+          "sha256": "717937616a17072082152a2ef351cb51f98802fb4b2fdabd32399843875974ca",
+          "bytes": 1232
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2019.array.d.ts",
+          "sha256": "d7e7d9b7b50e5f22c915b525acc5a49a7a6584cf8f62d0569e557c5cfc4b2ac2",
+          "bytes": 3163
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2019.d.ts",
+          "sha256": "68d73b4a11549f9c0b7d352d10e91e5dca8faa3322bfb77b661839c42b1ddec7",
+          "bytes": 1071
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2019.full.d.ts",
+          "sha256": "08f6861df84fba9719c14d5adc3ba40be9f0c687639e6c4df3c05b9301b8ff94",
+          "bytes": 1074
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2019.intl.d.ts",
+          "sha256": "74f7fa2d027d5b33eb0471c8e82a6c87216223181ec31247c357a3e8e2fddc5b",
+          "bytes": 958
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2019.object.d.ts",
+          "sha256": "71c37f4c9543f31dfced6c7840e068c5a5aacb7b89111a4364b1d5276b852557",
+          "bytes": 1473
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2019.string.d.ts",
+          "sha256": "576711e016cf4f1804676043e6a0a5414252560eb57de9faceee34d79798c850",
+          "bytes": 1528
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2019.symbol.d.ts",
+          "sha256": "89c1b1281ba7b8a96efc676b11b264de7a8374c5ea1e6617f11880a13fc56dc6",
+          "bytes": 1006
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2020.bigint.d.ts",
+          "sha256": "d6d7ae4d1f1f3772e2a3cde568ed08991a8ae34a080ff1151af28b7f798e22ca",
+          "bytes": 38185
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2020.d.ts",
+          "sha256": "5efce4fc3c29ea84e8928f97adec086e3dc876365e0982cc8479a07954a3efd4",
+          "bytes": 1201
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2020.date.d.ts",
+          "sha256": "063600664504610fe3e99b717a1223f8b1900087fab0b4cad1496a114744f8df",
+          "bytes": 2956
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2020.full.d.ts",
+          "sha256": "1305d1e76ca44e30fb8b2b8075fa522b83f60c0bcf5d4326a9d2cf79b53724f8",
+          "bytes": 1074
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2020.intl.d.ts",
+          "sha256": "639e512c0dfc3fad96a84caad71b8834d66329a1f28dc95e3946c9b58176c73a",
+          "bytes": 22438
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2020.number.d.ts",
+          "sha256": "368af93f74c9c932edd84c58883e736c9e3d53cec1fe24c0b0ff451f529ceab1",
+          "bytes": 1587
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2020.promise.d.ts",
+          "sha256": "934019d7e3c81950f9a8426d093458b65d5aff2c7c1511233c0fd5b941e608ab",
+          "bytes": 1803
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2020.sharedmemory.d.ts",
+          "sha256": "52ada8e0b6e0482b728070b7639ee42e83a9b1c22d205992756fe020fd9f4a47",
+          "bytes": 5128
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2020.string.d.ts",
+          "sha256": "3bdefe1bfd4d6dee0e26f928f93ccc128f1b64d5d501ff4a8cf3c6371200e5e6",
+          "bytes": 2556
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2020.symbol.wellknown.d.ts",
+          "sha256": "59fb2c069260b4ba00b5643b907ef5d5341b167e7d1dbf58dfd895658bda2867",
+          "bytes": 1606
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2021.d.ts",
+          "sha256": "feecb1be483ed332fad555aff858affd90a48ab19ba7272ee084704eb7167569",
+          "bytes": 1036
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2021.full.d.ts",
+          "sha256": "4a66df3ab5de5cfcda11538cffddd67ff6a174e003788e270914c1e0248483cf",
+          "bytes": 1074
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2021.intl.d.ts",
+          "sha256": "965f36eae237dd74e6cca203a43e9ca801ce38824ead814728a2807b1910117d",
+          "bytes": 8245
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2021.promise.d.ts",
+          "sha256": "af3dd424cf267428f30ccfc376f47a2c0114546b55c44d8c0f1d57d841e28d74",
+          "bytes": 2262
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2021.string.d.ts",
+          "sha256": "995c005ab91a498455ea8dfb63aa9f83fa2ea793c3d8aa344be4a1678d06d399",
+          "bytes": 1592
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2021.weakref.d.ts",
+          "sha256": "959d36cddf5e7d572a65045b876f2956c973a586da58e5d26cde519184fd9b8a",
+          "bytes": 3171
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2022.array.d.ts",
+          "sha256": "3925a6c820dcb1a06506c90b1577db1fdbf7705d65b62b99dce4be75c637e26b",
+          "bytes": 4676
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2022.d.ts",
+          "sha256": "ee7bad0c15b58988daa84371e0b89d313b762ab83cb5b31b8a2d1162e8eb41c2",
+          "bytes": 1108
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2022.error.d.ts",
+          "sha256": "0a3d63ef2b853447ec4f749d3f368ce642264246e02911fcb1590d8c161b8005",
+          "bytes": 2379
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2022.full.d.ts",
+          "sha256": "3cbad9a1ba4453443026ed38e4b8be018abb26565fa7c944376463ad9df07c41",
+          "bytes": 1074
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2022.intl.d.ts",
+          "sha256": "8cdf8847677ac7d20486e54dd3fcf09eda95812ac8ace44b4418da1bbbab6eb8",
+          "bytes": 7692
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2022.object.d.ts",
+          "sha256": "8444af78980e3b20b49324f4a16ba35024fef3ee069a0eb67616ea6ca821c47a",
+          "bytes": 1085
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2022.regexp.d.ts",
+          "sha256": "b4b67b1a91182421f5df999988c690f14d813b9850b40acd06ed44691f6727ad",
+          "bytes": 1331
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2022.string.d.ts",
+          "sha256": "3287d9d085fbd618c3971944b65b4be57859f5415f495b33a6adc994edd2f004",
+          "bytes": 1155
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2023.array.d.ts",
+          "sha256": "df83c2a6c73228b625b0beb6669c7ee2a09c914637e2d35170723ad49c0f5cd4",
+          "bytes": 40236
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2023.collection.d.ts",
+          "sha256": "436aaf437562f276ec2ddbee2f2cdedac7664c1e4c1d2c36839ddd582eeb3d0a",
+          "bytes": 900
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2023.d.ts",
+          "sha256": "27bdc30a0e32783366a5abeda841bc22757c1797de8681bbe81fbc735eeb1c10",
+          "bytes": 999
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2023.full.d.ts",
+          "sha256": "785921608325fa246b450f05b238f4b3ed659f1099af278ce9ebbc9416a13f1d",
+          "bytes": 1074
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2023.intl.d.ts",
+          "sha256": "8e3c06ea092138bf9fa5e874a1fdbc9d54805d074bee1de31b99a11e2fec239d",
+          "bytes": 2645
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2024.arraybuffer.d.ts",
+          "sha256": "87dc0f382502f5bbce5129bdc0aea21e19a3abbc19259e0b43ae038a9fc4e326",
+          "bytes": 2637
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2024.collection.d.ts",
+          "sha256": "b1cb28af0c891c8c96b2d6b7be76bd394fddcfdb4709a20ba05a7c1605eea0f9",
+          "bytes": 1224
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2024.d.ts",
+          "sha256": "8fd575e12870e9944c7e1d62e1f5a73fcf23dd8d3a321f2a2c74c20d022283fe",
+          "bytes": 1166
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2024.full.d.ts",
+          "sha256": "b3e9cef4eed59f8a2249ed834ba4aabe9d0d4e9037d4679487fa17dad99004a3",
+          "bytes": 1074
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2024.object.d.ts",
+          "sha256": "2fef54945a13095fdb9b84f705f2b5994597640c46afeb2ce78352fab4cb3279",
+          "bytes": 1259
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2024.promise.d.ts",
+          "sha256": "ac77cb3e8c6d3565793eb90a8373ee8033146315a3dbead3bde8db5eaf5e5ec6",
+          "bytes": 1389
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2024.regexp.d.ts",
+          "sha256": "56e4ed5aab5f5920980066a9409bfaf53e6d21d3f8d020c17e4de584d29600ad",
+          "bytes": 1073
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2024.sharedmemory.d.ts",
+          "sha256": "4ece9f17b3866cc077099c73f4983bddbcb1dc7ddb943227f1ec070f529dedd1",
+          "bytes": 3077
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es2024.string.d.ts",
+          "sha256": "0a6282c8827e4b9a95f4bf4f5c205673ada31b982f50572d27103df8ceb8013c",
+          "bytes": 1194
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es5.d.ts",
+          "sha256": "c430d44666289dae81f30fa7b2edebf186ecc91a2d4c71266ea6ae76388792e1",
+          "bytes": 218439
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.es6.d.ts",
+          "sha256": "df039a67536fe2acc3affdcbfb645892f842db36fe599e8e652e2f0c640a90d1",
+          "bytes": 1032
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.esnext.array.d.ts",
+          "sha256": "1c9319a09485199c1f7b0498f2988d6d2249793ef67edda49d1e584746be9032",
+          "bytes": 1791
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.esnext.collection.d.ts",
+          "sha256": "e3a2a0cee0f03ffdde24d89660eba2685bfbdeae955a6c67e8c4c9fd28928eeb",
+          "bytes": 3878
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.esnext.d.ts",
+          "sha256": "2ab096661c711e4a81cc464fa1e6feb929a54f5340b46b0a07ac6bbf857471f0",
+          "bytes": 1282
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.esnext.decorators.d.ts",
+          "sha256": "d4b1d2c51d058fc21ec2629fff7a76249dec2e36e12960ea056e3ef89174080f",
+          "bytes": 1070
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.esnext.disposable.d.ts",
+          "sha256": "51ad4c928303041605b4d7ae32e0c1ee387d43a24cd6f1ebf4a2699e1076d4fa",
+          "bytes": 6806
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.esnext.error.d.ts",
+          "sha256": "73f78680d4c08509933daf80947902f6ff41b6230f94dd002ae372620adb0f60",
+          "bytes": 1029
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.esnext.float16.d.ts",
+          "sha256": "196cb558a13d4533a5163286f30b0509ce0210e4b316c56c38d4c0fd2fb38405",
+          "bytes": 20528
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.esnext.full.d.ts",
+          "sha256": "bde31fd423cd93b0eff97197a3f66df7c93e8c0c335cbeb113b7ff1ac35c23f4",
+          "bytes": 1074
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.esnext.intl.d.ts",
+          "sha256": "811c71eee4aa0ac5f7adf713323a5c41b0cf6c4e17367a34fbce379e12bbf0a4",
+          "bytes": 893
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.esnext.iterator.d.ts",
+          "sha256": "22adec94ef7047a6c9d1af3cb96be87a335908bf9ef386ae9fd50eeb37f44c47",
+          "bytes": 8676
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.esnext.promise.d.ts",
+          "sha256": "60037901da1a425516449b9a20073aa03386cce92f7a1fd902d7602be3a7c2e9",
+          "bytes": 1658
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.esnext.sharedmemory.d.ts",
+          "sha256": "c5239f5c01bcfa9cd32f37c496cf19c61d69d37e48be9de612b541aac915805b",
+          "bytes": 1067
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.scripthost.d.ts",
+          "sha256": "cd034f499c6cdca722b60c04b5b1b78e058487a7085a8e0d6fb50809947ee573",
+          "bytes": 9451
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.webworker.asynciterable.d.ts",
+          "sha256": "ca417afee74054e99d5a8252b35bef26ca6e2942d67d343fce6b42fc9f432993",
+          "bytes": 1887
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.webworker.d.ts",
+          "sha256": "6d08cde2bfb6ff909efbf7cb7d6d55be412cf4b9f48fd0430185986973fa91f5",
+          "bytes": 609557
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.webworker.importscripts.d.ts",
+          "sha256": "80e18897e5884b6723488d4f5652167e7bb5024f946743134ecc4aa4ee731f89",
+          "bytes": 1041
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/lib.webworker.iterable.d.ts",
+          "sha256": "d6c6331ce67c41b2ad5bfb0c8c022403980b479a377a44da8f16b61120418f66",
+          "bytes": 22768
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/pl/diagnosticMessages.generated.json",
+          "sha256": "0645575abe920de1ee4cf3f2f70c7abc7f6691daa01cf1e9ad6b1ce53917c9ff",
+          "bytes": 342111
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/pt-br/diagnosticMessages.generated.json",
+          "sha256": "34a649eb937cd70fe7b15663c2e5479e753d42df0e5c2933636789b60c2c939d",
+          "bytes": 330482
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/ru/diagnosticMessages.generated.json",
+          "sha256": "29bb8ea9d44f55bb7acdedfac0a57865ea40552f004d0d6e3b96746ac76666cc",
+          "bytes": 443587
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/tr/diagnosticMessages.generated.json",
+          "sha256": "9466915f3e0cdb2625495bbe9c02c8b7ef9e3543fffae957ba034655563abf65",
+          "bytes": 330684
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/tsc.js",
+          "sha256": "2cffde0b8c6760dfb0b5b0382bbb7e00ba6a8b2d981b9205b256a700a481d983",
+          "bytes": 267
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/tsserver.js",
+          "sha256": "e3ccfeec65ec5c470b8ffc5611878a31182650c7e8a062c38a719f83b523edcb",
+          "bytes": 272
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/tsserverlibrary.d.ts",
+          "sha256": "73b15a0b7cf5c6df9076b9408c5ce682f11813453bf54c54cb284f075b5224cf",
+          "bytes": 865
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/tsserverlibrary.js",
+          "sha256": "7ca9b464de80a5382d9ccfed2b224323bc0274c8de61bf0464e89ee824677c76",
+          "bytes": 1012
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/typesMap.json",
+          "sha256": "4143fb8b1c5d4421dfa19a4b80ddf2da375fc0835a349c3b18519fda5955e1d9",
+          "bytes": 16788
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/typescript.d.ts",
+          "sha256": "e134052a6b1ded61693b4037f615dc72f14e2881e79c1ddbff6c514c8a516b05",
+          "bytes": 588085
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/typescript.js",
+          "sha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675",
+          "bytes": 9112572
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/typingsInstaller.js",
+          "sha256": "2d48a038523ea7c626fa2796a30fa5fdc07612ea5fab83544423009d7683a213",
+          "bytes": 280
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/watchGuard.js",
+          "sha256": "471200d4bc555ef8d8429358bdca2a68ea7c9bfff6c853b5b048d2512fe4092a",
+          "bytes": 2313
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/zh-cn/diagnosticMessages.generated.json",
+          "sha256": "6bd4ae6aea0991f6b73c46ec79ebb643b280a07e4808be363b07d01d2f6d399d",
+          "bytes": 295909
+        },
+        {
+          "scope": "tool-resource",
+          "path": "lib/zh-tw/diagnosticMessages.generated.json",
+          "sha256": "c35cf732ff01539090a3622b7a07f7bb4cadb28f6f13048b366012c458329be1",
+          "bytes": 292532
+        },
+        {
+          "scope": "tool-resource",
+          "path": "package.json",
+          "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+          "bytes": 3620
+        }
+      ],
+      "files": [
+        {
+          "path": "barrel.ts",
+          "source_sha256": "417dbea6cbe08ef0c1150d74285da712d5f3ccd4ee9a54694a596916185770d2",
+          "observed_sha256": "417dbea6cbe08ef0c1150d74285da712d5f3ccd4ee9a54694a596916185770d2",
+          "suffix": ".ts",
+          "state": "processed",
+          "reason": "",
+          "token_count": 7,
+          "function_count": 0,
+          "diagnostic_ids": []
+        },
+        {
+          "path": "consumer.ts",
+          "source_sha256": "f44328bc8480094f547bf93d4040728a083a67ced7fffff1b0f1af24f7bd64bb",
+          "observed_sha256": "f44328bc8480094f547bf93d4040728a083a67ced7fffff1b0f1af24f7bd64bb",
+          "suffix": ".ts",
+          "state": "processed",
+          "reason": "",
+          "token_count": 69,
+          "function_count": 0,
+          "diagnostic_ids": []
+        },
+        {
+          "path": "origin.ts",
+          "source_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+          "observed_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+          "suffix": ".ts",
+          "state": "processed",
+          "reason": "",
+          "token_count": 38,
+          "function_count": 0,
+          "diagnostic_ids": []
+        }
+      ],
+      "symbols": [
+        {
+          "id": "31742045b12f0fa920e855d5d43528daeb62dafc7db01d53da2b5d283ba3562f",
+          "name": "tag",
+          "flags": 2,
+          "declarations": [
+            {
+              "path": "consumer.ts",
+              "kind": "VariableDeclaration",
+              "lexical_scope": [],
+              "name": "tag",
+              "token_context": [
+                {
+                  "kind": "Identifier",
+                  "text": "tag"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "model"
+                },
+                {
+                  "kind": "DotToken",
+                  "text": "."
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Parcel"
+                },
+                {
+                  "kind": "DotToken",
+                  "text": "."
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "tag"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "f44328bc8480094f547bf93d4040728a083a67ced7fffff1b0f1af24f7bd64bb",
+              "span": {
+                "start_byte": 158,
+                "end_byte": 180,
+                "start_line": 5,
+                "end_line": 5
+              }
+            }
+          ]
+        },
+        {
+          "id": "32b785ee01166157c28293d9a904add0d69a68f4804db55752faf92959df5385",
+          "name": "box",
+          "flags": 2,
+          "declarations": [
+            {
+              "path": "consumer.ts",
+              "kind": "VariableDeclaration",
+              "lexical_scope": [],
+              "name": "box",
+              "token_context": [
+                {
+                  "kind": "Identifier",
+                  "text": "box"
+                },
+                {
+                  "kind": "ColonToken",
+                  "text": ":"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "model"
+                },
+                {
+                  "kind": "DotToken",
+                  "text": "."
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Box"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "FirstPunctuation",
+                  "text": "{"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "left"
+                },
+                {
+                  "kind": "ColonToken",
+                  "text": ":"
+                },
+                {
+                  "kind": "StringLiteral",
+                  "text": "'x'"
+                },
+                {
+                  "kind": "CommaToken",
+                  "text": ","
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "right"
+                },
+                {
+                  "kind": "ColonToken",
+                  "text": ":"
+                },
+                {
+                  "kind": "FirstLiteralToken",
+                  "text": "1"
+                },
+                {
+                  "kind": "CloseBraceToken",
+                  "text": "}"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "f44328bc8480094f547bf93d4040728a083a67ced7fffff1b0f1af24f7bd64bb",
+              "span": {
+                "start_byte": 237,
+                "end_byte": 277,
+                "start_line": 7,
+                "end_line": 7
+              }
+            }
+          ]
+        },
+        {
+          "id": "4a89a5248aad987b42cc6ccd18aa05f5231a451add7eab384fda75c4abfcf920",
+          "name": "value",
+          "flags": 4,
+          "declarations": [
+            {
+              "path": "origin.ts",
+              "kind": "PropertyDeclaration",
+              "lexical_scope": [
+                "ClassDeclaration:Parcel"
+              ],
+              "name": "value",
+              "token_context": [
+                {
+                  "kind": "Identifier",
+                  "text": "value"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "FirstLiteralToken",
+                  "text": "1"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+              "span": {
+                "start_byte": 22,
+                "end_byte": 32,
+                "start_line": 1,
+                "end_line": 1
+              }
+            }
+          ]
+        },
+        {
+          "id": "56bd70ac5795c70599309a5961b3a3f29cd10d64e69ee15a682d76f36d234998",
+          "name": "Box",
+          "flags": 64,
+          "declarations": [
+            {
+              "path": "origin.ts",
+              "kind": "InterfaceDeclaration",
+              "lexical_scope": [],
+              "name": "Box",
+              "token_context": [
+                {
+                  "kind": "ExportKeyword",
+                  "text": "export"
+                },
+                {
+                  "kind": "InterfaceKeyword",
+                  "text": "interface"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Box"
+                },
+                {
+                  "kind": "FirstPunctuation",
+                  "text": "{"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "left"
+                },
+                {
+                  "kind": "ColonToken",
+                  "text": ":"
+                },
+                {
+                  "kind": "StringKeyword",
+                  "text": "string"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                },
+                {
+                  "kind": "CloseBraceToken",
+                  "text": "}"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+              "span": {
+                "start_byte": 94,
+                "end_byte": 132,
+                "start_line": 3,
+                "end_line": 3
+              }
+            },
+            {
+              "path": "origin.ts",
+              "kind": "InterfaceDeclaration",
+              "lexical_scope": [],
+              "name": "Box",
+              "token_context": [
+                {
+                  "kind": "ExportKeyword",
+                  "text": "export"
+                },
+                {
+                  "kind": "InterfaceKeyword",
+                  "text": "interface"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Box"
+                },
+                {
+                  "kind": "FirstPunctuation",
+                  "text": "{"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "right"
+                },
+                {
+                  "kind": "ColonToken",
+                  "text": ":"
+                },
+                {
+                  "kind": "NumberKeyword",
+                  "text": "number"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                },
+                {
+                  "kind": "CloseBraceToken",
+                  "text": "}"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+              "span": {
+                "start_byte": 134,
+                "end_byte": 173,
+                "start_line": 4,
+                "end_line": 4
+              }
+            }
+          ]
+        },
+        {
+          "id": "6694846625c6d80519735cf17de8f73ae26f0669d72ce3ecaa4c3edf9af792ae",
+          "name": "left",
+          "flags": 4,
+          "declarations": [
+            {
+              "path": "origin.ts",
+              "kind": "PropertySignature",
+              "lexical_scope": [
+                "InterfaceDeclaration:Box"
+              ],
+              "name": "left",
+              "token_context": [
+                {
+                  "kind": "Identifier",
+                  "text": "left"
+                },
+                {
+                  "kind": "ColonToken",
+                  "text": ":"
+                },
+                {
+                  "kind": "StringKeyword",
+                  "text": "string"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+              "span": {
+                "start_byte": 117,
+                "end_byte": 130,
+                "start_line": 3,
+                "end_line": 3
+              }
+            }
+          ]
+        },
+        {
+          "id": "822837d936982b577cdd84479f0cff53891e18722181c1aba5ff579c16d2e626",
+          "name": "\"/subject/origin\"",
+          "flags": 512,
+          "declarations": [
+            {
+              "path": "origin.ts",
+              "kind": "SourceFile",
+              "lexical_scope": [],
+              "name": "origin.ts",
+              "token_context": [
+                {
+                  "kind": "ExportKeyword",
+                  "text": "export"
+                },
+                {
+                  "kind": "ClassKeyword",
+                  "text": "class"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Parcel"
+                },
+                {
+                  "kind": "FirstPunctuation",
+                  "text": "{"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "value"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "FirstLiteralToken",
+                  "text": "1"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                },
+                {
+                  "kind": "CloseBraceToken",
+                  "text": "}"
+                },
+                {
+                  "kind": "ExportKeyword",
+                  "text": "export"
+                },
+                {
+                  "kind": "NamespaceKeyword",
+                  "text": "namespace"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Parcel"
+                },
+                {
+                  "kind": "FirstPunctuation",
+                  "text": "{"
+                },
+                {
+                  "kind": "ExportKeyword",
+                  "text": "export"
+                },
+                {
+                  "kind": "ConstKeyword",
+                  "text": "const"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "tag"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "StringLiteral",
+                  "text": "'parcel'"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                },
+                {
+                  "kind": "CloseBraceToken",
+                  "text": "}"
+                },
+                {
+                  "kind": "ExportKeyword",
+                  "text": "export"
+                },
+                {
+                  "kind": "InterfaceKeyword",
+                  "text": "interface"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Box"
+                },
+                {
+                  "kind": "FirstPunctuation",
+                  "text": "{"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "left"
+                },
+                {
+                  "kind": "ColonToken",
+                  "text": ":"
+                },
+                {
+                  "kind": "StringKeyword",
+                  "text": "string"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                },
+                {
+                  "kind": "CloseBraceToken",
+                  "text": "}"
+                },
+                {
+                  "kind": "ExportKeyword",
+                  "text": "export"
+                },
+                {
+                  "kind": "InterfaceKeyword",
+                  "text": "interface"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Box"
+                },
+                {
+                  "kind": "FirstPunctuation",
+                  "text": "{"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "right"
+                },
+                {
+                  "kind": "ColonToken",
+                  "text": ":"
+                },
+                {
+                  "kind": "NumberKeyword",
+                  "text": "number"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                },
+                {
+                  "kind": "CloseBraceToken",
+                  "text": "}"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+              "span": {
+                "start_byte": 0,
+                "end_byte": 175,
+                "start_line": 1,
+                "end_line": 4
+              }
+            }
+          ]
+        },
+        {
+          "id": "8e6599a32295caa6d6b37c72ac0c086220205591bdc11f58e8cbfbb55dae4a02",
+          "name": "\"/subject/barrel\"",
+          "flags": 512,
+          "declarations": [
+            {
+              "path": "barrel.ts",
+              "kind": "SourceFile",
+              "lexical_scope": [],
+              "name": "barrel.ts",
+              "token_context": [
+                {
+                  "kind": "ExportKeyword",
+                  "text": "export"
+                },
+                {
+                  "kind": "AsteriskToken",
+                  "text": "*"
+                },
+                {
+                  "kind": "AsKeyword",
+                  "text": "as"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "bundle"
+                },
+                {
+                  "kind": "FromKeyword",
+                  "text": "from"
+                },
+                {
+                  "kind": "StringLiteral",
+                  "text": "'./origin.js'"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "417dbea6cbe08ef0c1150d74285da712d5f3ccd4ee9a54694a596916185770d2",
+              "span": {
+                "start_byte": 0,
+                "end_byte": 40,
+                "start_line": 1,
+                "end_line": 1
+              }
+            }
+          ]
+        },
+        {
+          "id": "a86234ae44d7b156b76bd7870b65b5b3b0d15062577def6953790cd4703e98e7",
+          "name": "Parcel",
+          "flags": 544,
+          "declarations": [
+            {
+              "path": "origin.ts",
+              "kind": "ClassDeclaration",
+              "lexical_scope": [],
+              "name": "Parcel",
+              "token_context": [
+                {
+                  "kind": "ExportKeyword",
+                  "text": "export"
+                },
+                {
+                  "kind": "ClassKeyword",
+                  "text": "class"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Parcel"
+                },
+                {
+                  "kind": "FirstPunctuation",
+                  "text": "{"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "value"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "FirstLiteralToken",
+                  "text": "1"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                },
+                {
+                  "kind": "CloseBraceToken",
+                  "text": "}"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+              "span": {
+                "start_byte": 0,
+                "end_byte": 34,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            {
+              "path": "origin.ts",
+              "kind": "ModuleDeclaration",
+              "lexical_scope": [],
+              "name": "Parcel",
+              "token_context": [
+                {
+                  "kind": "ExportKeyword",
+                  "text": "export"
+                },
+                {
+                  "kind": "NamespaceKeyword",
+                  "text": "namespace"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Parcel"
+                },
+                {
+                  "kind": "FirstPunctuation",
+                  "text": "{"
+                },
+                {
+                  "kind": "ExportKeyword",
+                  "text": "export"
+                },
+                {
+                  "kind": "ConstKeyword",
+                  "text": "const"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "tag"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "StringLiteral",
+                  "text": "'parcel'"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                },
+                {
+                  "kind": "CloseBraceToken",
+                  "text": "}"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+              "span": {
+                "start_byte": 36,
+                "end_byte": 92,
+                "start_line": 2,
+                "end_line": 2
+              }
+            }
+          ]
+        },
+        {
+          "id": "a96dcee75598ba993f3fd4e81152aabe5e1dce589b7ad85479ee5fc9f0c8ff4b",
+          "name": "right",
+          "flags": 4,
+          "declarations": [
+            {
+              "path": "origin.ts",
+              "kind": "PropertySignature",
+              "lexical_scope": [
+                "InterfaceDeclaration:Box"
+              ],
+              "name": "right",
+              "token_context": [
+                {
+                  "kind": "Identifier",
+                  "text": "right"
+                },
+                {
+                  "kind": "ColonToken",
+                  "text": ":"
+                },
+                {
+                  "kind": "NumberKeyword",
+                  "text": "number"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+              "span": {
+                "start_byte": 157,
+                "end_byte": 171,
+                "start_line": 4,
+                "end_line": 4
+              }
+            }
+          ]
+        },
+        {
+          "id": "b863762e79d55bb3c438857fdb845888e7c6eb73600b325d60437467d0686847",
+          "name": "\"/subject/consumer\"",
+          "flags": 512,
+          "declarations": [
+            {
+              "path": "consumer.ts",
+              "kind": "SourceFile",
+              "lexical_scope": [],
+              "name": "consumer.ts",
+              "token_context": [
+                {
+                  "kind": "ImportKeyword",
+                  "text": "import"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "model"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "RequireKeyword",
+                  "text": "require"
+                },
+                {
+                  "kind": "OpenParenToken",
+                  "text": "("
+                },
+                {
+                  "kind": "StringLiteral",
+                  "text": "'./origin.js'"
+                },
+                {
+                  "kind": "CloseParenToken",
+                  "text": ")"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                },
+                {
+                  "kind": "ImportKeyword",
+                  "text": "import"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Item"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "model"
+                },
+                {
+                  "kind": "DotToken",
+                  "text": "."
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Parcel"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                },
+                {
+                  "kind": "ImportKeyword",
+                  "text": "import"
+                },
+                {
+                  "kind": "FirstPunctuation",
+                  "text": "{"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "bundle"
+                },
+                {
+                  "kind": "CloseBraceToken",
+                  "text": "}"
+                },
+                {
+                  "kind": "FromKeyword",
+                  "text": "from"
+                },
+                {
+                  "kind": "StringLiteral",
+                  "text": "'./barrel.js'"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                },
+                {
+                  "kind": "ExportKeyword",
+                  "text": "export"
+                },
+                {
+                  "kind": "ConstKeyword",
+                  "text": "const"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "instance"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "NewKeyword",
+                  "text": "new"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Item"
+                },
+                {
+                  "kind": "OpenParenToken",
+                  "text": "("
+                },
+                {
+                  "kind": "CloseParenToken",
+                  "text": ")"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                },
+                {
+                  "kind": "ExportKeyword",
+                  "text": "export"
+                },
+                {
+                  "kind": "ConstKeyword",
+                  "text": "const"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "tag"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "model"
+                },
+                {
+                  "kind": "DotToken",
+                  "text": "."
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Parcel"
+                },
+                {
+                  "kind": "DotToken",
+                  "text": "."
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "tag"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                },
+                {
+                  "kind": "ExportKeyword",
+                  "text": "export"
+                },
+                {
+                  "kind": "ConstKeyword",
+                  "text": "const"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "other"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "bundle"
+                },
+                {
+                  "kind": "DotToken",
+                  "text": "."
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Parcel"
+                },
+                {
+                  "kind": "DotToken",
+                  "text": "."
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "tag"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                },
+                {
+                  "kind": "ExportKeyword",
+                  "text": "export"
+                },
+                {
+                  "kind": "ConstKeyword",
+                  "text": "const"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "box"
+                },
+                {
+                  "kind": "ColonToken",
+                  "text": ":"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "model"
+                },
+                {
+                  "kind": "DotToken",
+                  "text": "."
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Box"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "FirstPunctuation",
+                  "text": "{"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "left"
+                },
+                {
+                  "kind": "ColonToken",
+                  "text": ":"
+                },
+                {
+                  "kind": "StringLiteral",
+                  "text": "'x'"
+                },
+                {
+                  "kind": "CommaToken",
+                  "text": ","
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "right"
+                },
+                {
+                  "kind": "ColonToken",
+                  "text": ":"
+                },
+                {
+                  "kind": "FirstLiteralToken",
+                  "text": "1"
+                },
+                {
+                  "kind": "CloseBraceToken",
+                  "text": "}"
+                },
+                {
+                  "kind": "SemicolonToken",
+                  "text": ";"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "f44328bc8480094f547bf93d4040728a083a67ced7fffff1b0f1af24f7bd64bb",
+              "span": {
+                "start_byte": 0,
+                "end_byte": 280,
+                "start_line": 1,
+                "end_line": 7
+              }
+            }
+          ]
+        },
+        {
+          "id": "c1d7503310e091b53f6ddba503df5a13f45ce37d1db9c80f4e6d00fda40f9873",
+          "name": "tag",
+          "flags": 2,
+          "declarations": [
+            {
+              "path": "origin.ts",
+              "kind": "VariableDeclaration",
+              "lexical_scope": [
+                "ModuleDeclaration:Parcel"
+              ],
+              "name": "tag",
+              "token_context": [
+                {
+                  "kind": "Identifier",
+                  "text": "tag"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "StringLiteral",
+                  "text": "'parcel'"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "cdd5f0ccb7b97594a71e772123a907dbb865fbd013642823644311fb5fbfe229",
+              "span": {
+                "start_byte": 75,
+                "end_byte": 89,
+                "start_line": 2,
+                "end_line": 2
+              }
+            }
+          ]
+        },
+        {
+          "id": "c3f161bd713b8732503ba05ce9cbb0479443705f7e275873268bae85f19728d8",
+          "name": "right",
+          "flags": 4,
+          "declarations": [
+            {
+              "path": "consumer.ts",
+              "kind": "PropertyAssignment",
+              "lexical_scope": [],
+              "name": "right",
+              "token_context": [
+                {
+                  "kind": "Identifier",
+                  "text": "right"
+                },
+                {
+                  "kind": "ColonToken",
+                  "text": ":"
+                },
+                {
+                  "kind": "FirstLiteralToken",
+                  "text": "1"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "f44328bc8480094f547bf93d4040728a083a67ced7fffff1b0f1af24f7bd64bb",
+              "span": {
+                "start_byte": 267,
+                "end_byte": 275,
+                "start_line": 7,
+                "end_line": 7
+              }
+            }
+          ]
+        },
+        {
+          "id": "c5dff4095b5935e8e8ea3ff2380f2b5dbe6bb751455901bf9729e5702234c421",
+          "name": "instance",
+          "flags": 2,
+          "declarations": [
+            {
+              "path": "consumer.ts",
+              "kind": "VariableDeclaration",
+              "lexical_scope": [],
+              "name": "instance",
+              "token_context": [
+                {
+                  "kind": "Identifier",
+                  "text": "instance"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "NewKeyword",
+                  "text": "new"
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Item"
+                },
+                {
+                  "kind": "OpenParenToken",
+                  "text": "("
+                },
+                {
+                  "kind": "CloseParenToken",
+                  "text": ")"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "f44328bc8480094f547bf93d4040728a083a67ced7fffff1b0f1af24f7bd64bb",
+              "span": {
+                "start_byte": 121,
+                "end_byte": 142,
+                "start_line": 4,
+                "end_line": 4
+              }
+            }
+          ]
+        },
+        {
+          "id": "dff7452023960ffaa4a746c35af6fc66e834740d16d8a3476b9bf446d0ae9e4c",
+          "name": "other",
+          "flags": 2,
+          "declarations": [
+            {
+              "path": "consumer.ts",
+              "kind": "VariableDeclaration",
+              "lexical_scope": [],
+              "name": "other",
+              "token_context": [
+                {
+                  "kind": "Identifier",
+                  "text": "other"
+                },
+                {
+                  "kind": "FirstAssignment",
+                  "text": "="
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "bundle"
+                },
+                {
+                  "kind": "DotToken",
+                  "text": "."
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "Parcel"
+                },
+                {
+                  "kind": "DotToken",
+                  "text": "."
+                },
+                {
+                  "kind": "Identifier",
+                  "text": "tag"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "f44328bc8480094f547bf93d4040728a083a67ced7fffff1b0f1af24f7bd64bb",
+              "span": {
+                "start_byte": 196,
+                "end_byte": 221,
+                "start_line": 6,
+                "end_line": 6
+              }
+            }
+          ]
+        },
+        {
+          "id": "e7b3762c5e5a9ffd24bd0b40496a33d97a0c1905b8c7cc17fad54974b8f71dfb",
+          "name": "left",
+          "flags": 4,
+          "declarations": [
+            {
+              "path": "consumer.ts",
+              "kind": "PropertyAssignment",
+              "lexical_scope": [],
+              "name": "left",
+              "token_context": [
+                {
+                  "kind": "Identifier",
+                  "text": "left"
+                },
+                {
+                  "kind": "ColonToken",
+                  "text": ":"
+                },
+                {
+                  "kind": "StringLiteral",
+                  "text": "'x'"
+                }
+              ],
+              "occurrence": 0,
+              "source_sha256": "f44328bc8480094f547bf93d4040728a083a67ced7fffff1b0f1af24f7bd64bb",
+              "span": {
+                "start_byte": 256,
+                "end_byte": 265,
+                "start_line": 7,
+                "end_line": 7
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "path": "barrel.ts",
+          "span": {
+            "start_byte": 7,
+            "end_byte": 18,
+            "start_line": 1,
+            "end_line": 1
+          },
+          "name": "bundle",
+          "kind": "reexport",
+          "type_only": false,
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "822837d936982b577cdd84479f0cff53891e18722181c1aba5ff579c16d2e626"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 121,
+            "end_byte": 142,
+            "start_line": 4,
+            "end_line": 4
+          },
+          "name": "instance",
+          "kind": "declaration",
+          "type_only": false,
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "c5dff4095b5935e8e8ea3ff2380f2b5dbe6bb751455901bf9729e5702234c421"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 158,
+            "end_byte": 180,
+            "start_line": 5,
+            "end_line": 5
+          },
+          "name": "tag",
+          "kind": "declaration",
+          "type_only": false,
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "31742045b12f0fa920e855d5d43528daeb62dafc7db01d53da2b5d283ba3562f"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 196,
+            "end_byte": 221,
+            "start_line": 6,
+            "end_line": 6
+          },
+          "name": "other",
+          "kind": "declaration",
+          "type_only": false,
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "dff7452023960ffaa4a746c35af6fc66e834740d16d8a3476b9bf446d0ae9e4c"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 237,
+            "end_byte": 277,
+            "start_line": 7,
+            "end_line": 7
+          },
+          "name": "box",
+          "kind": "declaration",
+          "type_only": false,
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "32b785ee01166157c28293d9a904add0d69a68f4804db55752faf92959df5385"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "origin.ts",
+          "span": {
+            "start_byte": 0,
+            "end_byte": 34,
+            "start_line": 1,
+            "end_line": 1
+          },
+          "name": "Parcel",
+          "kind": "declaration",
+          "type_only": false,
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "a86234ae44d7b156b76bd7870b65b5b3b0d15062577def6953790cd4703e98e7"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "origin.ts",
+          "span": {
+            "start_byte": 94,
+            "end_byte": 132,
+            "start_line": 3,
+            "end_line": 3
+          },
+          "name": "Box",
+          "kind": "declaration",
+          "type_only": true,
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "56bd70ac5795c70599309a5961b3a3f29cd10d64e69ee15a682d76f36d234998"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        }
+      ],
+      "aliases": [
+        {
+          "path": "barrel.ts",
+          "span": {
+            "start_byte": 7,
+            "end_byte": 18,
+            "start_line": 1,
+            "end_line": 1
+          },
+          "name": "bundle",
+          "kind": "reexport",
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "822837d936982b577cdd84479f0cff53891e18722181c1aba5ff579c16d2e626"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 7,
+            "end_byte": 12,
+            "start_line": 1,
+            "end_line": 1
+          },
+          "name": "model",
+          "kind": "import-equals",
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "822837d936982b577cdd84479f0cff53891e18722181c1aba5ff579c16d2e626"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 47,
+            "end_byte": 51,
+            "start_line": 2,
+            "end_line": 2
+          },
+          "name": "Item",
+          "kind": "import-equals",
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "a86234ae44d7b156b76bd7870b65b5b3b0d15062577def6953790cd4703e98e7"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 78,
+            "end_byte": 84,
+            "start_line": 3,
+            "end_line": 3
+          },
+          "name": "bundle",
+          "kind": "import",
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "822837d936982b577cdd84479f0cff53891e18722181c1aba5ff579c16d2e626"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        }
+      ],
+      "references": [
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 54,
+            "end_byte": 59,
+            "start_line": 2,
+            "end_line": 2
+          },
+          "kind": "identifier",
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "822837d936982b577cdd84479f0cff53891e18722181c1aba5ff579c16d2e626"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 60,
+            "end_byte": 66,
+            "start_line": 2,
+            "end_line": 2
+          },
+          "kind": "identifier",
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "a86234ae44d7b156b76bd7870b65b5b3b0d15062577def6953790cd4703e98e7"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 136,
+            "end_byte": 140,
+            "start_line": 4,
+            "end_line": 4
+          },
+          "kind": "identifier",
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "a86234ae44d7b156b76bd7870b65b5b3b0d15062577def6953790cd4703e98e7"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 164,
+            "end_byte": 169,
+            "start_line": 5,
+            "end_line": 5
+          },
+          "kind": "identifier",
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "822837d936982b577cdd84479f0cff53891e18722181c1aba5ff579c16d2e626"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 170,
+            "end_byte": 176,
+            "start_line": 5,
+            "end_line": 5
+          },
+          "kind": "property",
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "a86234ae44d7b156b76bd7870b65b5b3b0d15062577def6953790cd4703e98e7"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 177,
+            "end_byte": 180,
+            "start_line": 5,
+            "end_line": 5
+          },
+          "kind": "property",
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "c1d7503310e091b53f6ddba503df5a13f45ce37d1db9c80f4e6d00fda40f9873"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 204,
+            "end_byte": 210,
+            "start_line": 6,
+            "end_line": 6
+          },
+          "kind": "identifier",
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "822837d936982b577cdd84479f0cff53891e18722181c1aba5ff579c16d2e626"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 211,
+            "end_byte": 217,
+            "start_line": 6,
+            "end_line": 6
+          },
+          "kind": "property",
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "a86234ae44d7b156b76bd7870b65b5b3b0d15062577def6953790cd4703e98e7"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 218,
+            "end_byte": 221,
+            "start_line": 6,
+            "end_line": 6
+          },
+          "kind": "property",
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "c1d7503310e091b53f6ddba503df5a13f45ce37d1db9c80f4e6d00fda40f9873"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 242,
+            "end_byte": 247,
+            "start_line": 7,
+            "end_line": 7
+          },
+          "kind": "identifier",
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "822837d936982b577cdd84479f0cff53891e18722181c1aba5ff579c16d2e626"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 248,
+            "end_byte": 251,
+            "start_line": 7,
+            "end_line": 7
+          },
+          "kind": "type",
+          "target": {
+            "state": "local",
+            "symbol_ids": [
+              "56bd70ac5795c70599309a5961b3a3f29cd10d64e69ee15a682d76f36d234998"
+            ],
+            "external": null,
+            "reason": ""
+          }
+        }
+      ],
+      "module_references": [
+        {
+          "path": "barrel.ts",
+          "span": {
+            "start_byte": 0,
+            "end_byte": 38,
+            "start_line": 1,
+            "end_line": 1
+          },
+          "specifier": "./origin.js",
+          "kind": "reexport",
+          "resolution": "local",
+          "targets": [
+            "origin.ts"
+          ],
+          "external": null,
+          "reason": ""
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 0,
+            "end_byte": 38,
+            "start_line": 1,
+            "end_line": 1
+          },
+          "specifier": "./origin.js",
+          "kind": "require",
+          "resolution": "local",
+          "targets": [
+            "origin.ts"
+          ],
+          "external": null,
+          "reason": ""
+        },
+        {
+          "path": "consumer.ts",
+          "span": {
+            "start_byte": 69,
+            "end_byte": 106,
+            "start_line": 3,
+            "end_line": 3
+          },
+          "specifier": "./barrel.js",
+          "kind": "import",
+          "resolution": "local",
+          "targets": [
+            "barrel.ts"
+          ],
+          "external": null,
+          "reason": ""
+        }
+      ],
+      "entrypoints": [],
+      "outside_model": [],
+      "directives": [],
+      "diagnostics": []
+    }
+  }
+}

@@ -1,0 +1,346 @@
+{
+  "case": "review_r2",
+  "runtime": {
+    "version": "v24.11.1",
+    "architecture": "arm64"
+  },
+  "controller_sha256": "ba0ca909699ca453515a0eaad5206c81d5afe6abcd1fb7b47723e8a71f1c0900",
+  "files": [
+    {
+      "path": "origin.mjs",
+      "source_sha256": "5d8f65d2774e206bc9f7a7a4ad39ca2dc563b5c31e46ab57ef4874961237ce29",
+      "observed_sha256": "5d8f65d2774e206bc9f7a7a4ad39ca2dc563b5c31e46ab57ef4874961237ce29",
+      "suffix": ".mjs",
+      "state": "processed",
+      "reason": "",
+      "token_count": 6,
+      "function_count": 0,
+      "diagnostic_ids": []
+    },
+    {
+      "path": "use.mjs",
+      "source_sha256": "4b4827ba8a88a4b34de448d03cfc76daaedc457ea8e7ad08badc5ad01c06570a",
+      "observed_sha256": "4b4827ba8a88a4b34de448d03cfc76daaedc457ea8e7ad08badc5ad01c06570a",
+      "suffix": ".mjs",
+      "state": "processed",
+      "reason": "",
+      "token_count": 41,
+      "function_count": 3,
+      "diagnostic_ids": []
+    }
+  ],
+  "diagnostics": [],
+  "exports": [
+    {
+      "path": "origin.mjs",
+      "span": {
+        "start_byte": 13,
+        "end_byte": 22,
+        "start_line": 1,
+        "end_line": 1
+      },
+      "name": "value",
+      "kind": "declaration",
+      "type_only": false,
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "367749885dc4e5bf2d08d70a641c5fdf5420522e3e91daa35e1df14901184134"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    },
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 13,
+        "end_byte": 49,
+        "start_line": 1,
+        "end_line": 1
+      },
+      "name": "plain",
+      "kind": "declaration",
+      "type_only": false,
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "a530cc700b8e408599b2405d94e3d4d84e6eee0fb11c0cdb2c518eeb9feb84ac"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    },
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 64,
+        "end_byte": 106,
+        "start_line": 2,
+        "end_line": 2
+      },
+      "name": "options",
+      "kind": "declaration",
+      "type_only": false,
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "bfb49de4aa16536e6bb70f0d1d6535d328f09e9784d93e20a3f2c8aaf6b36339"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    },
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 149,
+        "end_byte": 184,
+        "start_line": 4,
+        "end_line": 4
+      },
+      "name": "computed",
+      "kind": "declaration",
+      "type_only": false,
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "4386c23693728c5ea4e18bf043bc08eb45e979674691628e5def6d7fb955eef9"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    }
+  ],
+  "references": [
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 175,
+        "end_byte": 179,
+        "start_line": 4,
+        "end_line": 4
+      },
+      "kind": "identifier",
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "108f68859974c6bce1eee1131ffa41790072db2456b0a9266744989a4da0e8a1"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    }
+  ],
+  "module_references": [
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 27,
+        "end_byte": 49,
+        "start_line": 1,
+        "end_line": 1
+      },
+      "specifier": "./origin.mjs",
+      "kind": "import",
+      "resolution": "local",
+      "targets": [
+        "origin.mjs"
+      ],
+      "external": null,
+      "reason": ""
+    },
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 80,
+        "end_byte": 106,
+        "start_line": 2,
+        "end_line": 2
+      },
+      "specifier": "./origin.mjs",
+      "kind": "import",
+      "resolution": "local",
+      "targets": [
+        "origin.mjs"
+      ],
+      "external": null,
+      "reason": ""
+    },
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 168,
+        "end_byte": 184,
+        "start_line": 4,
+        "end_line": 4
+      },
+      "specifier": null,
+      "kind": "import",
+      "resolution": "dynamic",
+      "targets": [],
+      "external": null,
+      "reason": "Computed module specifier"
+    }
+  ],
+  "outside_model": [
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 168,
+        "end_byte": 184,
+        "start_line": 4,
+        "end_line": 4
+      },
+      "kind": "computed-import",
+      "reason": "Computed module specifier"
+    }
+  ],
+  "literal_imports": [
+    {
+      "specifier": "./origin.mjs",
+      "kind": "import",
+      "span": {
+        "start_byte": 27,
+        "end_byte": 49,
+        "start_line": 1,
+        "end_line": 1
+      }
+    },
+    {
+      "specifier": "./origin.mjs",
+      "kind": "import",
+      "span": {
+        "start_byte": 80,
+        "end_byte": 106,
+        "start_line": 2,
+        "end_line": 2
+      }
+    }
+  ],
+  "calls": [
+    {
+      "text": "import('./origin.mjs')",
+      "span": {
+        "start_byte": 27,
+        "end_byte": 49,
+        "start_line": 1,
+        "end_line": 1
+      },
+      "modules": [
+        {
+          "path": "use.mjs",
+          "span": {
+            "start_byte": 27,
+            "end_byte": 49,
+            "start_line": 1,
+            "end_line": 1
+          },
+          "specifier": "./origin.mjs",
+          "kind": "import",
+          "resolution": "local",
+          "targets": [
+            "origin.mjs"
+          ],
+          "external": null,
+          "reason": ""
+        }
+      ],
+      "syntax": [
+        {
+          "specifier": "./origin.mjs",
+          "kind": "import",
+          "span": {
+            "start_byte": 27,
+            "end_byte": 49,
+            "start_line": 1,
+            "end_line": 1
+          }
+        }
+      ],
+      "outside": []
+    },
+    {
+      "text": "import('./origin.mjs', {})",
+      "span": {
+        "start_byte": 80,
+        "end_byte": 106,
+        "start_line": 2,
+        "end_line": 2
+      },
+      "modules": [
+        {
+          "path": "use.mjs",
+          "span": {
+            "start_byte": 80,
+            "end_byte": 106,
+            "start_line": 2,
+            "end_line": 2
+          },
+          "specifier": "./origin.mjs",
+          "kind": "import",
+          "resolution": "local",
+          "targets": [
+            "origin.mjs"
+          ],
+          "external": null,
+          "reason": ""
+        }
+      ],
+      "syntax": [
+        {
+          "specifier": "./origin.mjs",
+          "kind": "import",
+          "span": {
+            "start_byte": 80,
+            "end_byte": 106,
+            "start_line": 2,
+            "end_line": 2
+          }
+        }
+      ],
+      "outside": []
+    },
+    {
+      "text": "import(name, {})",
+      "span": {
+        "start_byte": 168,
+        "end_byte": 184,
+        "start_line": 4,
+        "end_line": 4
+      },
+      "modules": [
+        {
+          "path": "use.mjs",
+          "span": {
+            "start_byte": 168,
+            "end_byte": 184,
+            "start_line": 4,
+            "end_line": 4
+          },
+          "specifier": null,
+          "kind": "import",
+          "resolution": "dynamic",
+          "targets": [],
+          "external": null,
+          "reason": "Computed module specifier"
+        }
+      ],
+      "syntax": [],
+      "outside": [
+        {
+          "path": "use.mjs",
+          "span": {
+            "start_byte": 168,
+            "end_byte": 184,
+            "start_line": 4,
+            "end_line": 4
+          },
+          "kind": "computed-import",
+          "reason": "Computed module specifier"
+        }
+      ]
+    }
+  ],
+  "literal_and_computed_controls": true
+}

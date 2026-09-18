@@ -1,0 +1,42 @@
+Validated existing TypeScript binding for native core tests
+test_native_candidates_from_shared_syntax (test_measure_js.SharedJSCoreTests.test_native_candidates_from_shared_syntax) ... Starting real native core case: candidate_records
+FAIL
+test_native_review_corrections_uncertainty_and_require_arity (test_measure_js.SharedJSCoreTests.test_native_review_corrections_uncertainty_and_require_arity) ... Starting real native core case: review_corrections
+Completed real native core case: review_corrections
+ok
+test_native_serialized_freshness_and_identity (test_measure_js.SharedJSCoreTests.test_native_serialized_freshness_and_identity) ... Starting real native core case: serialized_freshness
+Completed real native core case: serialized_freshness
+ok
+test_native_serialized_source_records_and_origins (test_measure_js.SharedJSCoreTests.test_native_serialized_source_records_and_origins) ... Starting real native core case: serialized_records
+Completed real native core case: serialized_records
+ok
+
+======================================================================
+FAIL: test_native_candidates_from_shared_syntax (test_measure_js.SharedJSCoreTests.test_native_candidates_from_shared_syntax)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 219, in test_native_candidates_from_shared_syntax
+    self.semantic_fixture("candidate_records")
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 188, in semantic_fixture
+    self.semantic_native(case, fixture)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 205, in semantic_native
+    self.native(case, revisions, semantic={
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "config_input": {"scope": "head-contract", **ref}, "config_root": str(root),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        "legacy_inventory": measure.inventory(fixture.context, "head", changes),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 80, in native
+    self.assertEqual(code, 0, stdout + stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 124 != 0 : [idle-timeout]
+
+----------------------------------------------------------------------
+Ran 4 tests in 213.565s
+
+FAILED (failures=1)

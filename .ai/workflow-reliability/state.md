@@ -5,7 +5,7 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: Q2 parser core preserved in `886d699`; remaining accepted JS implementation resumed. Existing planner regressions refreshed; auxiliary C4 preparation remains on hold.
+- Phase: native serialization and its R1/R2 corrections are approved for bounded preservation, with the recurring grouped-test timeout explicitly unresolved. App-driven workflow work is next.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
 - Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
@@ -37,7 +37,11 @@
 - No repeated uncoached model-effectiveness study claimed by deterministic tests.
 
 ## Next action
-Finish the accepted shared-JS serialization/lifecycle integration.
+Preserve the independently verified/reviewed native-serialization checkpoint.
+Then prioritize the actual app-driven workflow exercise rather than starting
+another internal implementation expansion. This changes execution priority,
+not acceptance criteria: command/manifests/replay, collectors and guarded
+metrics remain incomplete and are not waived.
 C3 is preserved. Recovery remains blocked;
 no recovery stub or silent completion of the original requirement.
 The updated workflow still needs a fresh agent-driven sample-app exercise.
@@ -163,6 +167,88 @@ close I1.T4 or remove any required measurement, independent role or final accept
   remained modified immediately after commit. Existing owner
   `32d88126-0b11-466a-b04a-76bebef5b9c9` resumed the remaining accepted JS work;
   no new design, qualification, scalar, recovery or C4 scope was added.
+
+## Native serialization checkpoint
+- Owner handoff: `evidence/q2-js-serialization-handoff.md`; seal SHA-256
+  `c43769d83411dd41063be59a77e87918991673f360ec8b759f1a22558bc528da`.
+  Native serialization, symbol/reference records, source-backed entrypoints and
+  byte-exact candidate APIs are implemented on the shared Program. Owner proof
+  is 15 passing methods with 13 nested native invocations, not independent
+  acceptance or configured JS measurement. Earlier failures/retry remain recorded.
+- Verifier `55631360-361d-4f39-94d7-e2f3eab1995b` owns the frozen replay and
+  minimal added real-source cases. Reviewer
+  `540bd3a6-44d8-4457-86aa-8929de70150c` returned REVISE in
+  `evidence/q2-js-serialization-code-review.md`, with all 59 listed pins matching.
+- Parent accepts both P2 findings: R1 omits exported-property reference targets
+  for namespace destructuring; R2 incorrectly treats a literal dynamic import
+  with options as computed and loses its literal dependency records.
+  These are native-record correctness defects, not requests for future layers.
+- Verifier has been asked to prioritize discriminating red cases for R1/R2.
+  Owner is explicitly held until that frozen handoff completes; no concurrent
+  production fix is authorized. Original review/seal remain historical records.
+- User was told the app-driven workflow exercise takes priority after this
+  checkpoint. No next internal component, new qualification or host preparation
+  is being launched while these checks finish.
+- FACT: independent pre-fix replay passed 15 methods in 354.598s and one added
+  merged-declaration/import-equals/namespace-reexport method in 31.425s.
+  The later `review-red-01/report.md` reopens correctness: two methods produced
+  two discriminating failures in 70.376s, exit 1, with working checker controls
+  and no compiler diagnostics. The earlier green subset does not negate them.
+- The first added red-test invocation accidentally registered no native cases.
+  Its apparent Python passes were rejected, not credited. One registration
+  correction and bounded rerun produced the genuine failures. Raw captures,
+  earlier test versions and all prior evidence remain preserved.
+- All 68 frozen paths and 34 prior verifier evidence files stayed unchanged.
+  Verifier is now idle; parent explicitly released owner correction for only
+  R1/R2 with unchanged independent assertions and focused regression coverage.
+  A fresh independent correction replay and focused same-context review remain due.
+- Parent also retained the exact pre-fix native source in
+  `evidence/q2-js-serialization-pre-fix.mjs.snapshot`, after checking SHA-256
+  `35acb58ccd11dce9daa601e640c47b763e8625c84919158610cf33107f4b46bc`.
+  This preserves the red-test source version without overwriting any seal or
+  claiming the failing increment is ready to ship.
+- Owner correction handoff: `evidence/q2-js-serialization-corrections-01/handoff.md`;
+  new seal `c138dec76b7abc47b334caf5e77e99236154583bf745573312c8b5d44a04fa5b`.
+  Only native production and the two related owner test files changed; independent
+  assertions and historical records did not. The two red regressions now pass
+  in owner execution. Four affected owner methods have passing proof, but one
+  first timed out and passed its single unchanged-byte/bounds retry. The failed
+  invocation remains a failure, not a green four-method run.
+- Same verifier now owns a fresh seven-method correction selection: all three
+  independent cases plus four affected owner methods. Same reviewer owns a
+  focused second review, retaining the first REVISE record. Source is frozen
+  again; no new pipeline component or host work is released.
+- FACT: `evidence/q2-js-serialization-code-review-r2.md` APPROVES the focused
+  source correction with no new substantive findings. It confirms unchanged
+  independent assertions and historical evidence, separate exported-property
+  and local-binding identities, honest uncertainty, and preserved require
+  semantics. Final independent seven-method execution reconciliation is still
+  pending; source approval is not substituted for that proof.
+- FACT: final correction verifier handoff is
+  `evidence/q2-js-serialization-correction-independent-20260918-v1/report.md`,
+  seal `591bbc2fafced3f5485f3c08cf2f029ad72884841082020cae79eb20ca276b31`.
+  Independent cases pass 3/3; the owner selection passes 3/4 with the candidate
+  idle timeout, followed by one successful unchanged-byte/bounds candidate retry.
+  Seven distinct methods have passing evidence over eight invocations, but the
+  combined owner selection remains failed. The recurring timeout is an unresolved
+  test-reliability limitation, not an assertion pass or a fully green suite.
+- All 223 verifier source/history pins match. Parent additionally matched 259
+  unique current source/history/evidence records across the correction catalogs
+  and both exact seals. Same reviewer now reconciles final proof and explicitly
+  judges whether the timeout permits only bounded functional preservation or
+  requires a further focused correction. No final disposition is presumed.
+- FACT: the final r2 review accepts bounded functional preservation and closes
+  R1/R2 without further correction. It explicitly retains the failed combined
+  invocation and recurring timeout as unresolved reliability limits. Individual
+  current-byte passes do not establish reliable combined execution, whole-Q2
+  completion or full quality. Parent accepts that limited disposition; no timeout
+  increase, repeated-until-green run or speculative production change is made.
+- Parent preservation matched 259 current source/history pins, actual staged
+  checkout bytes for all six source/test/doc files, and 181 exact staged evidence
+  blobs. Its owned checkout was removed. The final report renders to three pages
+  without browser/console errors. Scoped source/doc whitespace checks pass;
+  raw captured whitespace is retained. Preservation details are in
+  `evidence/q2-js-serialization-parent-preservation.json`.
 
 ## Refreshed existing planner regression
 - FACT: `evidence/planner-refresh-942fbc75/native-result.json` records 37/37

@@ -8,13 +8,21 @@ Functional verification does not complete the blocked quality gate.
 The additive `continuation-plan.html` permits bounded implementation before missing quality
 collectors are available; it does not waive quality or independent slice acceptance.
 
-Latest partial checkpoint: `evidence/q2-js-core-independent-20260917-v1/report.md`
+Earlier partial checkpoint: `evidence/q2-js-core-independent-20260917-v1/report.md`
 records 15 selected Python methods plus two separately executed boundary methods passing,
 with 3,593 unchanged inputs. Parent preservation matches seven actual staged checkout files
 and 53 evidence blobs. Parent reconciled the original independent source approval with
 the fresh execution proof and self-reviewed the two added tests; the cancelled reviewer
 did not issue a later verdict. The checkpoint is preserved in `886d699`, not complete JS
 integration or current whole-suite quality.
+
+Latest native serialization/candidate checkpoint is approved for bounded preservation by
+`evidence/q2-js-serialization-code-review-r2.md`. Both independently reproduced defects
+turn green under unchanged assertions. The correction verifier records seven distinct
+methods with passing evidence across eight invocations: the grouped selection still failed
+on a recurring candidate idle timeout, then its sole unchanged-byte retry passed.
+This unresolved reliability limitation is not a green combined suite or complete JS
+integration. Remaining pipeline expansion is paused in favor of the app-driven exercise.
 
 The existing planner was freshly replayed: `evidence/planner-refresh-942fbc75/`
 contains 37 native passes and four browser flows/126 passing checks, with unchanged

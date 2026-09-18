@@ -1,0 +1,61 @@
+Validated existing TypeScript binding for native core tests
+test_native_serialized_source_records_and_origins (test_measure_js.SharedJSCoreTests.test_native_serialized_source_records_and_origins) ... Starting real native core case: serialized_records
+FAIL
+
+======================================================================
+FAIL: test_native_serialized_source_records_and_origins (test_measure_js.SharedJSCoreTests.test_native_serialized_source_records_and_origins)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 170, in test_native_serialized_source_records_and_origins
+    self.semantic_fixture("serialized_records")
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 162, in semantic_fixture
+    self.native(case, revisions, semantic={
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "config_input": {"scope": "head-contract", **ref}, "config_root": str(root),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        "legacy_inventory": measure.inventory(fixture.context, "head", changes),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 76, in native
+    self.assertEqual(code, 0, stdout + stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : \u2716 serialized_records (3950.2384ms)
+\u2139 tests 1
+\u2139 suites 0
+\u2139 pass 0
+\u2139 fail 1
+\u2139 cancelled 0
+\u2139 skipped 0
+\u2139 todo 0
+\u2139 duration_ms 3956.1067
+
+\u2716 failing tests:
+
+test at ..\..\..\..\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\measure_js.test.mjs:406:3
+\u2716 serialized_records (3950.2384ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(symbols.module_references.some(item => item.path === "calls.cjs" && item.resolution === "dynamic"))
+  
+      at serialized_records (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/tests/measure_js.test.mjs:120:12)
+      at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/tests/measure_js.test.mjs:407:5)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+
+----------------------------------------------------------------------
+Ran 1 test in 49.631s
+
+FAILED (failures=1)

@@ -1,0 +1,109 @@
+{
+  "results": [
+    {
+      "directory": "independent",
+      "methods": 3,
+      "passed": 3,
+      "unittest_seconds": 103.513,
+      "returncode": 0,
+      "elapsed_seconds": 104.35520699998597,
+      "stdout": {
+        "path": ".ai/workflow-reliability/evidence/q2-js-serialization-correction-independent-20260918-v1/independent/stdout.bin",
+        "sha256": "27c814599ca0e3e1701bf02fe9e6cf18c2cf7d84891343da957bc20cd19be46f",
+        "bytes": 968
+      },
+      "stderr": {
+        "path": ".ai/workflow-reliability/evidence/q2-js-serialization-correction-independent-20260918-v1/independent/stderr.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    {
+      "directory": "owner",
+      "methods": 4,
+      "passed": 3,
+      "unittest_seconds": 208.24,
+      "returncode": 1,
+      "elapsed_seconds": 209.0337845000322,
+      "stdout": {
+        "path": ".ai/workflow-reliability/evidence/q2-js-serialization-correction-independent-20260918-v1/owner/stdout.bin",
+        "sha256": "f57ea0082ebe3b31172666da9e74b41a3556ac0c59c0d74060e965f508cabc09",
+        "bytes": 2879
+      },
+      "stderr": {
+        "path": ".ai/workflow-reliability/evidence/q2-js-serialization-correction-independent-20260918-v1/owner/stderr.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    {
+      "directory": "owner-candidate-retry",
+      "methods": 1,
+      "passed": 1,
+      "unittest_seconds": 65.948,
+      "returncode": 0,
+      "elapsed_seconds": 66.78757829999086,
+      "stdout": {
+        "path": ".ai/workflow-reliability/evidence/q2-js-serialization-correction-independent-20260918-v1/owner-candidate-retry/stdout.bin",
+        "sha256": "cdf5290b60725ff26cf49a82818c32ea91c6b2077500e733652d61530cb4ec24",
+        "bytes": 395
+      },
+      "stderr": {
+        "path": ".ai/workflow-reliability/evidence/q2-js-serialization-correction-independent-20260918-v1/owner-candidate-retry/stderr.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    }
+  ],
+  "native_calls": [
+    {
+      "test": "test_measure_js_serialization_independent.IndependentJSSerializationTests.test_merged_declarations_import_equals_and_namespace_reexport",
+      "returncode": 0,
+      "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88"
+    },
+    {
+      "test": "test_measure_js_serialization_independent.NativeSerializationReviewRegressions.test_r1_namespace_destructuring_keeps_export_property_identity",
+      "returncode": 0,
+      "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88"
+    },
+    {
+      "test": "test_measure_js_serialization_independent.NativeSerializationReviewRegressions.test_r2_literal_dynamic_import_with_options_keeps_local_target",
+      "returncode": 0,
+      "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88"
+    },
+    {
+      "test": "test_measure_js.SharedJSCoreTests.test_native_candidates_from_shared_syntax",
+      "returncode": 124,
+      "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88"
+    },
+    {
+      "test": "test_measure_js.SharedJSCoreTests.test_native_review_corrections_uncertainty_and_require_arity",
+      "returncode": 0,
+      "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88"
+    },
+    {
+      "test": "test_measure_js.SharedJSCoreTests.test_native_serialized_freshness_and_identity",
+      "returncode": 0,
+      "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88"
+    },
+    {
+      "test": "test_measure_js.SharedJSCoreTests.test_native_serialized_source_records_and_origins",
+      "returncode": 0,
+      "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88"
+    },
+    {
+      "test": "test_measure_js.SharedJSCoreTests.test_native_candidates_from_shared_syntax",
+      "returncode": 0,
+      "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88"
+    }
+  ],
+  "distinct_methods": 7,
+  "distinct_methods_with_pass": 7,
+  "method_invocations": 8,
+  "native_counts_not_additive": true,
+  "assertion_failures": 0,
+  "idle_timeouts": 1,
+  "bounded_retries": 1,
+  "R1": "VERIFIED_CORRECTED",
+  "R2": "VERIFIED_CORRECTED"
+}

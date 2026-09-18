@@ -69,14 +69,16 @@ comparisons and partially supported file scopes make required proof **incomplete
 Discovery includes `.mjs` and `.cjs`; that does not establish that every external analyzer
 supports those files. Numeric partial observations remain visible but are not complete proof.
 
-The shared-JS **native parser core** is a library checkpoint, not a configured collector.
-It uses the qualified TypeScript 5.9.3 program/checker for six-suffix source census,
-strict source-byte coordinates and original compiler diagnostics. Its inventory/controller
-keywords preserve default behavior; opting into pending JSX/TSX classification is not
-parsing or coverage proof. The fixed JS command, ownership-manifest lifecycle, serialized
-symbol/reference and candidate APIs, graph projection and fresh semantic replay are not
-yet integrated. `probe` therefore retains its existing unsupported-JS behavior; this
-library does not make mixed-language measurements or missing required metrics complete.
+The shared-JS **native parser library** is not yet a configured collector. It uses the
+qualified TypeScript 5.9.3 program/checker for six-suffix census, strict byte coordinates
+and original diagnostics. `serializeProgram` returns unchanged per-file SyntaxEvidence
+and separate symbol/reference records, including source-backed entrypoint origins.
+`candidatesForProgram` reuses that Program and syntax with the matching head Inventory
+to enumerate unsampled byte-exact edits; it never writes or executes mutants.
+The fixed JS command, ownership-manifest lifecycle, graph projection and fresh semantic
+replay are not integrated. Default inventory/controller behavior and `probe`'s existing
+unsupported-JS behavior remain unchanged. Pending JSX/TSX classification alone is not
+parsing or coverage proof, and these APIs do not complete missing required metrics.
 
 ## Mutation testing without project wiring
 

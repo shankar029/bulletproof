@@ -1,0 +1,104 @@
+Validated existing TypeScript binding for native core tests
+test_native_candidates_from_shared_syntax (test_measure_js.SharedJSCoreTests.test_native_candidates_from_shared_syntax) ... Starting real native core case: candidate_records
+FAIL
+test_native_candidates_on_actual_controller_sources (test_measure_js.SharedJSCoreTests.test_native_candidates_on_actual_controller_sources) ... Starting real native core case: actual_source_candidates
+FAIL
+test_native_serialized_freshness_and_identity (test_measure_js.SharedJSCoreTests.test_native_serialized_freshness_and_identity) ... Starting real native core case: serialized_freshness
+Completed real native core case: serialized_freshness
+ok
+test_native_serialized_source_records_and_origins (test_measure_js.SharedJSCoreTests.test_native_serialized_source_records_and_origins) ... Starting real native core case: serialized_records
+Completed real native core case: serialized_records
+ok
+
+======================================================================
+FAIL: test_native_candidates_from_shared_syntax (test_measure_js.SharedJSCoreTests.test_native_candidates_from_shared_syntax)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 173, in test_native_candidates_from_shared_syntax
+    self.semantic_fixture("candidate_records")
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 162, in semantic_fixture
+    self.native(case, revisions, semantic={
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "config_input": {"scope": "head-contract", **ref}, "config_root": str(root),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        "legacy_inventory": measure.inventory(fixture.context, "head", changes),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 76, in native
+    self.assertEqual(code, 0, stdout + stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : \u2716 candidate_records (4270.6247ms)
+\u2139 tests 1
+\u2139 suites 0
+\u2139 pass 0
+\u2139 fail 1
+\u2139 cancelled 0
+\u2139 skipped 0
+\u2139 todo 0
+\u2139 duration_ms 4276.0009
+
+\u2716 failing tests:
+
+test at ..\..\..\..\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\measure_js.test.mjs:406:3
+\u2716 candidate_records (4270.6247ms)
+  Error: Candidate inventory differs from shared parser inputs/mode
+      at candidatesForProgram (file:///C:/Users/shbs/AppData/Local/Temp/qj-kxpwv9xs/measure_js.mjs:849:11)
+      at candidate_records (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/tests/measure_js.test.mjs:151:24)
+      at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/tests/measure_js.test.mjs:407:5)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)
+
+
+======================================================================
+FAIL: test_native_candidates_on_actual_controller_sources (test_measure_js.SharedJSCoreTests.test_native_candidates_on_actual_controller_sources)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 179, in test_native_candidates_on_actual_controller_sources
+    self.semantic_fixture("actual_source_candidates", actual_sources=True)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 162, in semantic_fixture
+    self.native(case, revisions, semantic={
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "config_input": {"scope": "head-contract", **ref}, "config_root": str(root),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        "legacy_inventory": measure.inventory(fixture.context, "head", changes),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 76, in native
+    self.assertEqual(code, 0, stdout + stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : \u2716 actual_source_candidates (4578.7594ms)
+\u2139 tests 1
+\u2139 suites 0
+\u2139 pass 0
+\u2139 fail 1
+\u2139 cancelled 0
+\u2139 skipped 0
+\u2139 todo 0
+\u2139 duration_ms 4585.718
+
+\u2716 failing tests:
+
+test at ..\..\..\..\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\measure_js.test.mjs:406:3
+\u2716 actual_source_candidates (4578.7594ms)
+  Error: Candidate inventory differs from shared parser inputs/mode
+      at candidatesForProgram (file:///C:/Users/shbs/AppData/Local/Temp/qj-j6pmjvik/measure_js.mjs:849:11)
+      at actual_source_candidates (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/tests/measure_js.test.mjs:221:24)
+      at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/tests/measure_js.test.mjs:407:5)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 143.584s
+
+FAILED (failures=2)

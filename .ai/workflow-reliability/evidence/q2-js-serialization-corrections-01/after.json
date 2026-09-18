@@ -1,0 +1,997 @@
+[
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-code-review.md",
+    "sha256": "613b08f2f9c5fb0acfc638b7cd49d3d3b059bdf4605c5feb8bb1df01d29de433",
+    "bytes": 13283
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-development-01/test_native_byte_boundaries.json",
+    "sha256": "edb6b50068a49a83d30ea88b87f8eea616ee79ae2314eb4fc9ec563aabd687ae",
+    "bytes": 47813
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_byte_boundaries.json",
+    "sha256": "65197f7d4e0c18f027fa82b6b22ae6c0f5f204ea741c4a60a02e9c108f1a91ac",
+    "bytes": 47813
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_diagnostics_and_checker_alias.json",
+    "sha256": "75b3e950f105fd8121bb93a8d1ec6ce3d58c31076eed1b00e160385e08f3fbec",
+    "bytes": 79250
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_errors_and_empty_program.json",
+    "sha256": "f706701137add01b0561bbb84746f554651ef2f2d61e5bc68015f594a2f42988",
+    "bytes": 49424
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_six_suffix_census.json",
+    "sha256": "d70d3d33a8c311dd206a17ba6009d022aa27c50cc208743072878f625f9e9496",
+    "bytes": 48591
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_syntax_shapes.json",
+    "sha256": "5b9797b8f7c5aacee36f23a9eb3d415f516bea4114855706c093397c6eefb520",
+    "bytes": 73304
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_two_git_revision_census.json",
+    "sha256": "2028ae5768f7d819851c69e06869f279db44819cca31481013c453b942c5728a",
+    "bytes": 99351
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/unittest.log",
+    "sha256": "24ee60e18affccd52626e9e7b603fdb27b9aaad1bee411daf096f9dbf19e2ae6",
+    "bytes": 3710
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-development-03/test_native_six_suffix_census.json",
+    "sha256": "092d1f606c8e8ff0f62929351c42adc11aa8bb8f9c4337e6ac763c89df040cd8",
+    "bytes": 122841
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-development-03/unittest.log",
+    "sha256": "f0eee6878dd9efea0afa9df0dd339dbe0150767cc677e5a79e03eaeb34c2b3fe",
+    "bytes": 361
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/after.json",
+    "sha256": "36a4948c30789757b740198cf95ba23f43f1da22cbeb3f8746e429ea18269bc6",
+    "bytes": 801
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/before.json",
+    "sha256": "36a4948c30789757b740198cf95ba23f43f1da22cbeb3f8746e429ea18269bc6",
+    "bytes": 801
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/raw-f9df00e58d91.json",
+    "sha256": "d6fca68b8d47d47d90da370c6ddc57090b4560f9faa9551c7f60ef0db5e3d8b0",
+    "bytes": 5392386
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_actual_root_syntax_without_execution.json",
+    "sha256": "fce7e79f1b69dc140560e182558feefc718ddee0ec17cdd692f88352efddc7f9",
+    "bytes": 188971
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_byte_boundaries.json",
+    "sha256": "5f358186129c0617b45f21d9f68d3af849b02cb507bfcd9bce2f5b2ced1697ce",
+    "bytes": 47862
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_diagnostics_and_checker_alias.json",
+    "sha256": "b7dd0b9fcebfe1a0211f922186e1f185dd4aa5450d74e90c2f6e35d6973a889a",
+    "bytes": 79300
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_errors_and_empty_program.json",
+    "sha256": "71a7bfe6b9cdf25e3b820b74844d6d2f726728953a7ec9028167edebb38a7b49",
+    "bytes": 49475
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_six_suffix_census.json",
+    "sha256": "7da1565939649148fc54188bf0e7f7d0170170de20791e9299eb99905972940e",
+    "bytes": 122863
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_syntax_shapes.json",
+    "sha256": "1e21872bd19ffc275b1c982a02cb425c93a4ec9c5c659d6ccf5224a072e96670",
+    "bytes": 76087
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_two_git_revision_census.json",
+    "sha256": "11262223d705a7ddc6587244e6a763143dbfef57132ae13715d3708731779dc3",
+    "bytes": 99401
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/two-revisions.json",
+    "sha256": "57fee5cda094f669973f45ccef2a6de12a74fa953894dad21021a9b47188bb16",
+    "bytes": 354757
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/unittest.log",
+    "sha256": "33af3df31e86c0e7396c3b484748b7b706dc345dc6de3ba3e0aa522adc4e1be7",
+    "bytes": 9850
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/after.json",
+    "sha256": "6e2be4e685d46e92ea426d775af5c9417195f7b0bd1924f70c1343cb2f33be4a",
+    "bytes": 4086309
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/before.json",
+    "sha256": "f636aa7ba670b3cdbb53121c011e8960d6bb7c1a9824446dadce38a1b17ac818",
+    "bytes": 4084169
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/boundary-invocation.json",
+    "sha256": "44d693036524585f06863553dad1cfcbaa7c70e65fb53d317129005f947efa30",
+    "bytes": 3436
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/boundary-result.json",
+    "sha256": "42167b9d61880312f68a00e53c6d989f124921794c1a9c2935c6fb42bdf18ce7",
+    "bytes": 499
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/boundary-run.py",
+    "sha256": "c159a34c74e39cfdccce33fce908b03ba437770a0184283c23aeaa673c38e98c",
+    "bytes": 2134
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/boundary-unittest.log",
+    "sha256": "0bcd4a1addcc51df10c15a68b3b5ae459bb1ee5cfbf96e4582e452b2a5aedcb1",
+    "bytes": 533
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/final-status.json",
+    "sha256": "31b0b51da49783693f968d9397afac1de9c86ced547b1097b4224380671140db",
+    "bytes": 5059
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/invocation.json",
+    "sha256": "293676108fbd6f235060ed5cb6532b39f07febe7736f9059b362109437b0facb",
+    "bytes": 5971
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/publication-pin-recheck.json",
+    "sha256": "5ade67acfbe7d3b053f9ed272e18ebdd6a4e5018d7b5ab58137cacae47f638bd",
+    "bytes": 198
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/publication-timeout.json",
+    "sha256": "7839e35553617bcb91ebc726dd925a79936cea7f4d9d457650dee4780859f2c6",
+    "bytes": 1467
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/publish.py",
+    "sha256": "e7fb1c86bea155565fa3dec8f2ebea4c89d933a338216afe373adb4d6562099f",
+    "bytes": 19742
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/raw-f9df00e58d91.json",
+    "sha256": "03c205d6036c03c58450211f5b10bf2d1025a9b136a15cd984ce0355355e84fc",
+    "bytes": 5392800
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/reconcile.py",
+    "sha256": "d656dd48156236c6fc8be2af4d12c81312a816e15a999f46262e42ddd546f865",
+    "bytes": 4988
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/reconciliation.json",
+    "sha256": "ac40ae426e7112d9fc902ba6c975a3b8946d5c7afe86d31c90caf30d044399f6",
+    "bytes": 54279
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/replay-result.json",
+    "sha256": "822c21cfc25f7c2b7a160600f94e663ecc2782077ff66a9f638beb3a42b8dc28",
+    "bytes": 63
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/report.html",
+    "sha256": "3b41c73e45071955584663064c9a14ee024aadbbb8769a49324d219d15476759",
+    "bytes": 19825
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/report.md",
+    "sha256": "b47dc9c64487c8fbf217d6126e38e11b59d66e80c2d0af6cc7186423e3416a0a",
+    "bytes": 18660
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/seal.json",
+    "sha256": "5a6cc5bdadf71ac3ccaf8140826e62d0e626b20b698915daba897f3bc7017794",
+    "bytes": 27235
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/state.md",
+    "sha256": "9d820c4a967870462adab5942c22812ff12b59ac8eee07276a5c013c20bc2315",
+    "bytes": 3001
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_current_config_and_direct_command_reject_integration.json",
+    "sha256": "bf9f4e4060405a5926e3e953b5d8ed953ca02f77c86c20c8e387f8237a63b14d",
+    "bytes": 1223
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_missing_metadata_unadmitted_source_and_forged_handle.json",
+    "sha256": "99b087c3a4e66d77dd6b659c8a1b05df7766f50bdad50d53affead788231fef9",
+    "bytes": 47745
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_native_actual_root_syntax_without_execution.json",
+    "sha256": "57e9690f3ca5748db06e789d663612dc4dde19a5c5b3bb4b094e092945f89aa5",
+    "bytes": 189030
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_native_byte_boundaries.json",
+    "sha256": "a12fdd17adfb5cb9cd8811397f83874143bc18fdbf668be5eb4bcb4c488b2c54",
+    "bytes": 47919
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_native_diagnostics_and_checker_alias.json",
+    "sha256": "2535b3a9918567afa9f8b97aeae60067c94a332031cb6e644a0138fd3e46048f",
+    "bytes": 79357
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_native_errors_and_empty_program.json",
+    "sha256": "1a4255bbf6c63cb85cc57f41bacf41b2a75e5e3c2f0029e8c753961216bf9d36",
+    "bytes": 49532
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_native_six_suffix_census.json",
+    "sha256": "21a369141796d676799be21108228d7516ecb6c7c3aa2e456d75048d9d86c95b",
+    "bytes": 122918
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_native_syntax_shapes.json",
+    "sha256": "ea01a6e4505e0fcad809b87918efcfb1cf601a9f719446688b41d74f072e8ac2",
+    "bytes": 76144
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_native_two_git_revision_census.json",
+    "sha256": "aa426156cf7d127a3fa618ee430defca41643fa0852af369655090ae44991290",
+    "bytes": 99460
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/two-revisions.json",
+    "sha256": "33c23e6d4ca9b5201998389e2f982c465298cab311ea48e275fc887e50e762df",
+    "bytes": 355171
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/unittest.log",
+    "sha256": "85471046ce76ebe919f39b833070374a6baae45ef668a6637bfc32fe8bf1d4f5",
+    "bytes": 9850
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/verify.py",
+    "sha256": "516ad7a18bde029a6c9044ca1ea13d6a8b00a1163b5691d8698c7a456f32972f",
+    "bytes": 6157
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-core-parent-preservation.json",
+    "sha256": "405cf6b9621c00933b4aa2192efa48745735cb43e4d08c60a2c022772a1093f4",
+    "bytes": 1125
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-execution-amendment-r2.json",
+    "sha256": "cd69b23bd22c08fe6884fcd5fbb5570d4dd0e5f4551b2f161ce4d0c0da61333a",
+    "bytes": 52890
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-execution-amendment.json",
+    "sha256": "887c8a3ba5dd9f8efd32081b3c3e20fbea8a0fada67349a1555bcda34f7b4c9e",
+    "bytes": 74941
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-execution-rationale-r2.md",
+    "sha256": "d79ec098f6d332e204ed87946d7104df6bd65c2c82f58e309cefa5b504f8e130",
+    "bytes": 6098
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-execution-rationale.md",
+    "sha256": "82680496ec4466922e6273d53df5d6ef354ad1045d0fdf86b5e5be9191d1cbd9",
+    "bytes": 6434
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-execution-review-r2.md",
+    "sha256": "7ca0e688e1774e5f240d3d9933afd09ae3cba9da656f8619a13123cd4f8a4d6e",
+    "bytes": 14159
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-execution-review.md",
+    "sha256": "222c6c2f85b40e25b1321726dc5a5d6b58261828e8beed479d5d0b2e9cd808d6",
+    "bytes": 24167
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-handoff.md",
+    "sha256": "78145f368509a43db6393a85ee3d025b68919382bac66d11bb29f97425876238",
+    "bytes": 13303
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-seal.json",
+    "sha256": "7befec79cce53797b158d62f80f412b2efdf05080c1e7c28a8b2cd48f9e1f0fa",
+    "bytes": 12582
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-code-review.md",
+    "sha256": "59fdd6e44214b693d895637f455c74678308d497ac8733aadfd0ff623e612482",
+    "bytes": 12878
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-01/console.txt",
+    "sha256": "1e32388e5324030786fec73459a2002b7c0ab2f5b42b77a732c29c99df216012",
+    "bytes": 3232
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-01/test_native_serialized_source_records_and_origins.json",
+    "sha256": "ef1b6a8f0ee814cd2c9d679c3376a2b47093ae4ad910317d04cfe87d7369d845",
+    "bytes": 2145
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-02/console.txt",
+    "sha256": "e69a7262ef531e27db8c218cdaca79fb722bb230e3fe6fa104d2f98ecf448aa9",
+    "bytes": 6480
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-02/test_native_candidates_from_shared_syntax.json",
+    "sha256": "a59342b3d01a34de841f89adbb704370bfe6d66b6b8c794e17b603294f7b7b80",
+    "bytes": 1959
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-02/test_native_candidates_on_actual_controller_sources.json",
+    "sha256": "0e48856310716d5ed0dc5a918b49207a152a2430dc0dcf75fde2e8711cb02aef",
+    "bytes": 1996
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-02/test_native_serialized_freshness_and_identity.json",
+    "sha256": "42e83fcd470ac1b974f4c8c3093c7420033b48d4b285e537fd99524cba2e1d9a",
+    "bytes": 23754
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-02/test_native_serialized_source_records_and_origins.json",
+    "sha256": "bbe8fa70ea187c094010efbdcd73102bcf4f5a4fb0c7442a4f04d8c54b12454f",
+    "bytes": 18133
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-03/console.txt",
+    "sha256": "8cef6060eda0c170649610cb4833c5880af01a0878b93370cd0c3dd667056822",
+    "bytes": 662
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-03/test_native_candidates_from_shared_syntax.json",
+    "sha256": "fb6f2d3d1e16fdcc1b040fc6204f19500d1e61aceb76401b90c0a4fbf190a285",
+    "bytes": 29783
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-03/test_native_candidates_on_actual_controller_sources.json",
+    "sha256": "269403db672866efee024dea27a60cbcc6a73b91c320f0af42fbb919bf6c618e",
+    "bytes": 62860
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-04/console.txt",
+    "sha256": "61b89061c8f72ceb885dcc4985fc26293f8350f30465bc157a3a442fcfd016ed",
+    "bytes": 1377
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-04/test_native_candidates_from_shared_syntax.json",
+    "sha256": "448fd61152a6b15bd3ec0441be962e3432373ff9ee7301b9fa03351ed56e2c63",
+    "bytes": 34008
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-04/test_native_candidates_on_actual_controller_sources.json",
+    "sha256": "ea41ef10092f39e22c233e5a5fbb04be395b0bde2c8fedee1bc6c2208ddd404d",
+    "bytes": 66335
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-04/test_native_serialized_freshness_and_identity.json",
+    "sha256": "379185c4d2e1e3a229460f141f153f20ce6e89c76c309713d57e29d46fc01776",
+    "bytes": 27233
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-04/test_native_serialized_source_records_and_origins.json",
+    "sha256": "895fd442b2eb910d12c5ce433a463571423aed36a5d77da24751052d5a0239ad",
+    "bytes": 21609
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-dev-04/test_native_serialized_zero_js_inputs.json",
+    "sha256": "88b6eb093212cea01bfc2ad39faa07f7290a9194a180be475425130436a7fa3a",
+    "bytes": 2472
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/after.json",
+    "sha256": "be37148bcdd24a645ecfcc1fe5b5dc8e1760755d711b2722f146f8992f907467",
+    "bytes": 651
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/before.json",
+    "sha256": "be37148bcdd24a645ecfcc1fe5b5dc8e1760755d711b2722f146f8992f907467",
+    "bytes": 651
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/console.txt",
+    "sha256": "3975b245317d56ac7d06a51212055f597eac895414e7d8bd19073f4c9973c1f6",
+    "bytes": 4941
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/post-timeout-process-observation.json",
+    "sha256": "7c5fa1528435b3b36cbda3216335f590f95fbf2880acddc5ac78bb270bb0b851",
+    "bytes": 195
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/test_native_actual_root_syntax_without_execution.json",
+    "sha256": "002495a89aa7f97f0530bf60812ec048b733479e12cdc01bc112370539f814e6",
+    "bytes": 143732
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/test_native_byte_boundaries.json",
+    "sha256": "25dabe57338a4ad3d05a1e940b41b03b3d8c84940220c27990e66e508a5397a4",
+    "bytes": 3133
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/test_native_candidates_from_shared_syntax.json",
+    "sha256": "0b1327ce23f5376bf182eb1f8035d98ae19d746ddbdaa118e5231502d9006c74",
+    "bytes": 35951
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/test_native_candidates_on_actual_controller_sources.json",
+    "sha256": "8adf9033fa907d2a27ba8c2c8f1ac80f790f0a53fd40dfe12fdf21dc25dbcb58",
+    "bytes": 68277
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/test_native_diagnostics_and_checker_alias.json",
+    "sha256": "2c71588f3825dada3ce0735fa2387cebc888814d7228ff2c45c5c82e3cf9d678",
+    "bytes": 34571
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/test_native_errors_and_empty_program.json",
+    "sha256": "d28ce9bc2ceb87bfab4c6826947c9aa27e7e37daf30930b7494f885fd764295c",
+    "bytes": 4746
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/test_native_serialized_freshness_and_identity.json",
+    "sha256": "14f8a851d7d8bbb54926e29c5e270ee6535fef37e7f80d0c977aad7ec31a2cc7",
+    "bytes": 2784
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/test_native_serialized_source_records_and_origins.json",
+    "sha256": "1890005de41d8c9a78f2f6113143faa909e5e0b6790ff7ef735755af10859338",
+    "bytes": 23552
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/test_native_serialized_zero_js_inputs.json",
+    "sha256": "2c4843de021d7aeff047e3b2cb976a28020d6ffed8a251786a71db4010e7583b",
+    "bytes": 4414
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/test_native_six_suffix_census.json",
+    "sha256": "dd4131c87391606a5ce5da3b65f8a93acaa0bee67c6fe5fd2eb9729579508ac6",
+    "bytes": 78133
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/test_native_syntax_shapes.json",
+    "sha256": "8aeba2946d19508cf3c635be6f862df4ea2b5b90f021169e9020849b9127564b",
+    "bytes": 31358
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-01/test_native_two_git_revision_census.json",
+    "sha256": "2e51ed7fb80be31e6724bf1754036dbf80d53ab75dee7ab45cbe7f2b7f300e54",
+    "bytes": 51754
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/after.json",
+    "sha256": "52461ef1ff3b97b4fdab909f1f6479ae39b993b9e414ea155d30e99e2d7f8c1e",
+    "bytes": 651
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/before.json",
+    "sha256": "52461ef1ff3b97b4fdab909f1f6479ae39b993b9e414ea155d30e99e2d7f8c1e",
+    "bytes": 651
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/console.txt",
+    "sha256": "826acd16bd7a84627a110af3571d79ed9aec4664ae82abee090ac46cbc5e7635",
+    "bytes": 3446
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/test_native_actual_root_syntax_without_execution.json",
+    "sha256": "a0238881875b642ce3853ac6922a3c05582097fd1e5a16ad458ee10efe533f63",
+    "bytes": 143732
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/test_native_byte_boundaries.json",
+    "sha256": "24f14c13c25a572bd27b12cdb75f8c3114c1c6b881037f736767900bad2e0d2e",
+    "bytes": 3133
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/test_native_candidates_from_shared_syntax.json",
+    "sha256": "14959815f8c42719f842e212ba7eb3c089da0d06320800f227dfc9b680e2e848",
+    "bytes": 35951
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/test_native_candidates_on_actual_controller_sources.json",
+    "sha256": "f82ebdb46991ad4ed81a7e3fca73b7724bd5fb257f12c9d4caf6f83cd468dded",
+    "bytes": 68278
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/test_native_diagnostics_and_checker_alias.json",
+    "sha256": "41b30b2784683d0a89b48bb7dc7b37b4010fca96baa6bf5b5bd5bbd19ad091d8",
+    "bytes": 34571
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/test_native_errors_and_empty_program.json",
+    "sha256": "20d17c49757008377062127d88a0fe3220930e803c97880f6fd2ccb290747a74",
+    "bytes": 4746
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/test_native_parser_digest_independent_copy.json",
+    "sha256": "24f2e07b562e7fd8be307fe5903f0df30f41c27ad6d625ebb54815bf51e5f363",
+    "bytes": 3393
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/test_native_serialized_freshness_and_identity.json",
+    "sha256": "adb722d3c075d0d87333146f31f8ab439b8a8f9877b5cbf42b71e098cfc424ed",
+    "bytes": 29264
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/test_native_serialized_source_records_and_origins.json",
+    "sha256": "43ee5c42e5ac7613db8d1448c1d94f63c5a866d23e41a2e0e52e16e67138a3f0",
+    "bytes": 23551
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/test_native_serialized_zero_js_inputs.json",
+    "sha256": "3fa2875c10bfada4f6eb8ee8d179462bbfd5a17479cbafcc11a45ea66940a9a4",
+    "bytes": 4415
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/test_native_six_suffix_census.json",
+    "sha256": "71029c03c3e67b91417b6d65788c16b9680639f02e2ae3a23d2c94531a38e03b",
+    "bytes": 78134
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/test_native_syntax_shapes.json",
+    "sha256": "a711be100a947f3248971ed59f2ba3a4877463be442a4f6f185e3e7aeeaca7c9",
+    "bytes": 31358
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-final-02/test_native_two_git_revision_census.json",
+    "sha256": "751c4ba63f91a11414863cf2badba88ffd7aa185aa7cda58c1b5508f70357b42",
+    "bytes": 51754
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-handoff.md",
+    "sha256": "1bfc0cf5268a8e02ce6a676ce40d33d601e7698c916da31cdc9dff74aaf049ac",
+    "bytes": 9492
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/after.json",
+    "sha256": "8c9a2d84b559c4961c86190e1a8c221286f735a78197a5e6eb5bc14c6f6ce604",
+    "bytes": 17505
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/before.json",
+    "sha256": "8c9a2d84b559c4961c86190e1a8c221286f735a78197a5e6eb5bc14c6f6ce604",
+    "bytes": 17505
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/capture.py",
+    "sha256": "2b2029c65455428a73f60908528121421237c8c44e91f88bd13a7f9ad8d91826",
+    "bytes": 4899
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/coverage.md",
+    "sha256": "3f5021a32b27e28f184395ca05d68abb9630fee0ec4cbd7a9383898e183413d7",
+    "bytes": 2682
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/final-checks.json",
+    "sha256": "1dcb6790e65ed40da08e845087534ba3e9530d33a56c3bd9efd32be08383f15e",
+    "bytes": 1071
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/final-head.json",
+    "sha256": "10fa7a3901b96fe22868b76e38afff166e2cc824ecb3a5058a832fc0703480ff",
+    "bytes": 302
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/finalize.py",
+    "sha256": "7603f2c7393ab33d567cc4cdf72e3064383675d8a81489c1ba8a6ad46ad9eab7",
+    "bytes": 6229
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/independent-invocation.json",
+    "sha256": "43c87ac5bac1c5b59a4fca9007aac7e291b6865044ec5cf63a8b55f5c9ab1dcd",
+    "bytes": 1077
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/independent-native.capture.json",
+    "sha256": "9ad0bdf575dfc3d4a8cddd2cf41aad397f7673fad9278e0f2885152c015c7c8b",
+    "bytes": 288
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/independent-native.invocation.json",
+    "sha256": "753668d51e60167f0c0a22f372baf66bbc6de94c2362e63740f5352b102b1de5",
+    "bytes": 1642
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/independent-native.result.bin",
+    "sha256": "79744cdd4f9f83ac05ec51d2d0b6d2b518dac93c7f9f628adb3ee89b74abe96f",
+    "bytes": 108062
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/independent-result.json",
+    "sha256": "8df45b07e213ee2c6d65d2d6b49d54c133f5f985b6bc22b0fd41c5bb3e18bed4",
+    "bytes": 237
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/independent.stderr.bin",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/independent.stdout.bin",
+    "sha256": "273fb90a9c4df8d3ee10687d3c20ac25bfa1e0cfa27cd9725fc6fce536aeb5b4",
+    "bytes": 448
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/replay-invocation.json",
+    "sha256": "74b9d60a8e1172c12b6f91ea205db72e0a0d62efca96568009d951f37ab3b2eb",
+    "bytes": 1051
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/replay-result.json",
+    "sha256": "54abb786d4d85b5c55654b3e7341fb5561edad0bd1cf0e262790a82aa6391500",
+    "bytes": 236
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/replay.stderr.bin",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/replay.stdout.bin",
+    "sha256": "3fd1fcbd94fbbf75850a478c68273f8534428823f423448a4cba851a69891b9e",
+    "bytes": 3446
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/report.md",
+    "sha256": "1534f75f54967ccaf50faa6942569119d88cdcaa843c649bdc6c0c76b85d3cfb",
+    "bytes": 9091
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/after.json",
+    "sha256": "61d124e84644e59a90cd1597b1ec398648ddc62068fbfeca2ae9ea6ff1b170d4",
+    "bytes": 17687
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/before.json",
+    "sha256": "6911207641a57e99f675d53431458c47fc246515061677ba0e321dd082da53e1",
+    "bytes": 19387
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/capture_red.py",
+    "sha256": "92c388d0496b30402bedbe3de4ef1044afd38ee8ed8773de5518f0daa8afd272",
+    "bytes": 3011
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/exit.json",
+    "sha256": "efc490fd55bc6aa0b40b222f1127276026e7be10de98fc6bcb5f25e0094d053d",
+    "bytes": 565
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/invocation.json",
+    "sha256": "8e52b856fe6e7b660d9595ff6baec16ae44246e68d28a72fbec928f41183f7de",
+    "bytes": 1609
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/review_r1.capture.json",
+    "sha256": "13b582778abede60a5759dac46d688485b19156d18c39050c4c2495e739e4036",
+    "bytes": 1473
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/review_r1.invocation.json",
+    "sha256": "094dafd54e4c829b7849fe8709e8fa7fc2c147f8ffa008509c50df95dca3349d",
+    "bytes": 1236
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/review_r1.result.bin",
+    "sha256": "5d75154f29d9fbdb0cfebe312729a33e149602ebbd754321645b93e0d0646798",
+    "bytes": 6098
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/review_r2.capture.json",
+    "sha256": "893298677a3ca24e7228203d5e900beeead08292a43c363ecfb5adb275798321",
+    "bytes": 1796
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/review_r2.invocation.json",
+    "sha256": "b203e6760286a4272afc04f8d968c084f59feb6a227370dd0015c47e3b21748e",
+    "bytes": 1258
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/review_r2.result.bin",
+    "sha256": "de8c2c41f8e388f7d08fb743341b17ab65a00d5a0e293e716bb42db3fff6b7e6",
+    "bytes": 7768
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/stderr.bin",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/stdout.bin",
+    "sha256": "efb1e7ae14b9dc379c6275317a883b79902783fcfa572ba8efb4065869ed50f7",
+    "bytes": 6356
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/exit.json",
+    "sha256": "ff946605964eea9965016455ee7c07d14b884ffdc85ef76c05e28d59a29a66d2",
+    "bytes": 544
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/head.json",
+    "sha256": "10fa7a3901b96fe22868b76e38afff166e2cc824ecb3a5058a832fc0703480ff",
+    "bytes": 302
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/invocation.json",
+    "sha256": "97148158fa387a3c3680ef656e35153b2d305bf9eb75b62b341d40d6ba5f6127",
+    "bytes": 1598
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/prior-measure_js_serialization_independent.test.mjs.snapshot",
+    "sha256": "6c6d366cd85beae849eda648f5b7741f5b0bedf38a425864770ed4ed1babe1a3",
+    "bytes": 8399
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/prior-test_measure_js_serialization_independent.py.snapshot",
+    "sha256": "3afb373d32051e41cd40eb978411094de05c9302526268b5933b0bb7f23848c4",
+    "bytes": 7200
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/registration-error-measure_js_serialization_independent.test.mjs.snapshot",
+    "sha256": "5c8ed2f423d44d0e90040fd171741b537daab2bdb41daf07fd00cfb83e018286",
+    "bytes": 15317
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/registration-error-test_measure_js_serialization_independent.py.snapshot",
+    "sha256": "423b876f2558a90736d4295a1ebdec6aa1dade6d07f10cd1666b2c4bbc383b0a",
+    "bytes": 12522
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/report.md",
+    "sha256": "2ef6c94988bb333e66d641930d6c979bbab135229de47426f01dc9d82d9216dc",
+    "bytes": 7332
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/review_r1.capture.json",
+    "sha256": "bc414e1335522f1c9d1b5b2a6d5bde977f01efe1e7c9de684d98e1d39886cd44",
+    "bytes": 57
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/review_r1.invocation.json",
+    "sha256": "c35dff87f15b3231057abc62b6e19d140e63cc392bbe89ecf77e6644b740324e",
+    "bytes": 1236
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/review_r2.capture.json",
+    "sha256": "bc414e1335522f1c9d1b5b2a6d5bde977f01efe1e7c9de684d98e1d39886cd44",
+    "bytes": 57
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/review_r2.invocation.json",
+    "sha256": "361d746df638c81ac1a0314512ddeaf8072dbd4fd26b778a8a29c14494e45ad5",
+    "bytes": 1258
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/seal.json",
+    "sha256": "edd384a8f181db59b399801693c30ff024670961ed59ff79641e666ccbcc1a4d",
+    "bytes": 10888
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/state.md",
+    "sha256": "146b87aa509c117e29e4d1450f673357531dfb3196dee6222c937bd1f28acf4e",
+    "bytes": 580
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/stderr.bin",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/stdout.bin",
+    "sha256": "3c73606028de62473dd09cd118da7e32cfa3864c0c61a42eb3b2941cda3c8465",
+    "bytes": 622
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/seal.json",
+    "sha256": "ef0fb45779046ec2ee0f0c866d46d06ad6f888c39eb47aa29612c8ea164bb1a4",
+    "bytes": 14580
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/state.md",
+    "sha256": "360beff437962680c6360bb4ba472b8792092e199541e82ce37aeae87e7268a3",
+    "bytes": 665
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/test_native_actual_root_syntax_without_execution.json",
+    "sha256": "d87a20a7103432cc8dfb0865046b13baf1416f0d3c1ba801d52cb54852d6044a",
+    "bytes": 143793
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/test_native_byte_boundaries.json",
+    "sha256": "deaeb0b01e0f642e82248b9c235cb8cff74c28fde6bb1898ccd74c9ba381566a",
+    "bytes": 3193
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/test_native_candidates_from_shared_syntax.json",
+    "sha256": "d9defa3590523f87cdaad400202df606cb189282a56f61d4b7775dd2774bbd48",
+    "bytes": 36011
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/test_native_candidates_on_actual_controller_sources.json",
+    "sha256": "55fef557931d41967317aa6a3d6631b7219068d7c7bb591ec8767c5a2725b1aa",
+    "bytes": 68338
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/test_native_diagnostics_and_checker_alias.json",
+    "sha256": "13a1edce5fed9022a6a3a3bbb2051f9b4b2ed5b40866098472fafb90da553344",
+    "bytes": 34631
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/test_native_errors_and_empty_program.json",
+    "sha256": "28b920b707200ec8bba41afb34e3d3dcd790cff398f7e4d18bf859d7bfdabf56",
+    "bytes": 4804
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/test_native_parser_digest_independent_copy.json",
+    "sha256": "532b8cefe35c407837c1c6510b746b313c2adc4b03a071cec73bfbac1e10d385",
+    "bytes": 3453
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/test_native_serialized_freshness_and_identity.json",
+    "sha256": "7dfae58896341797aa604a53016095eecd7bf082ac70fbb497ae56f67359011c",
+    "bytes": 29324
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/test_native_serialized_source_records_and_origins.json",
+    "sha256": "34091685f54ec2472eefe9fe86428a2f64225e733fd3990ff0de11e19851d0c3",
+    "bytes": 23612
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/test_native_serialized_zero_js_inputs.json",
+    "sha256": "eb1099ae51bf9381911d58f52116f5ed3d52756cf1eddfc4d4b6d09ab1fddc55",
+    "bytes": 4475
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/test_native_six_suffix_census.json",
+    "sha256": "f5a4849a36a3604f27b231a7e4d07f36ce3a775c1f60a0f0cd3c0e8039338395",
+    "bytes": 78194
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/test_native_syntax_shapes.json",
+    "sha256": "8ca60accffa97109b9d013940e842de7f482124cef79ed090060b84c06fa0a96",
+    "bytes": 31418
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/test_native_two_git_revision_census.json",
+    "sha256": "6a0dbf04510a44ebb2554b9a0597c10fcf9f865fca8af49f6ec487320dff4860",
+    "bytes": 51814
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/workspace-observation.json",
+    "sha256": "9111ea3311c273025136f23fc99655719189e099bf43327eceaa55267a4512b7",
+    "bytes": 1919
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-pre-fix.mjs.snapshot",
+    "sha256": "35acb58ccd11dce9daa601e640c47b763e8625c84919158610cf33107f4b46bc",
+    "bytes": 51561
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-retry-01/console.txt",
+    "sha256": "1903dbf6e105393af43d892076d6858ae4c90d31c88d039d2174fba61cfcb000",
+    "bytes": 647
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-retry-01/test_native_parser_digest_independent_copy.json",
+    "sha256": "c5f8643666b5bf7d8b361ab290b48be6fc50292747159bb6d151fa66ebce951c",
+    "bytes": 3393
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-retry-01/test_native_serialized_freshness_and_identity.json",
+    "sha256": "52d393609ca89a4cbfe3b74af4405385e5e57fb63ec747c0ee2bc2e76999c414",
+    "bytes": 29263
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-seal.json",
+    "sha256": "c43769d83411dd41063be59a77e87918991673f360ec8b759f1a22558bc528da",
+    "bytes": 18345
+  },
+  {
+    "path": ".ai/workflow-reliability/evidence/q2-tool-input-root-amendment.json",
+    "sha256": "36514a684b8b1323c752a3559cb49f30be8db61b865435f47682dfd824cda1c1",
+    "bytes": 15392
+  },
+  {
+    "path": ".ai/workflow-reliability/measurement-enablement-contracts.json",
+    "sha256": "a9a75df36241dc2578ff627703154a2750212c385a163332fe2ccbb47af9bd12",
+    "bytes": 91245
+  },
+  {
+    "path": "references/quality-metrics.md",
+    "sha256": "f3bdb0f7d6c6089fd24989230d56a5e1b5fbe19cf65edcb772c30cccff984eb5",
+    "bytes": 16591
+  },
+  {
+    "path": "scripts/evidence.py",
+    "sha256": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "bytes": 7050
+  },
+  {
+    "path": "scripts/measure.py",
+    "sha256": "b5a824cd84a4a63bb1a6ec5cb6d2e09426614006b12f0b9ef867f040439c4db9",
+    "bytes": 71879
+  },
+  {
+    "path": "scripts/measure_graph.py",
+    "sha256": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391",
+    "bytes": 27123
+  },
+  {
+    "path": "scripts/measure_js.mjs",
+    "sha256": "ba0ca909699ca453515a0eaad5206c81d5afe6abcd1fb7b47723e8a71f1c0900",
+    "bytes": 52938
+  },
+  {
+    "path": "scripts/probe.py",
+    "sha256": "d7be5050cf70cb836e46f0b661632b2d426d6bdc4684f1b54aa9061d61948904",
+    "bytes": 40490
+  },
+  {
+    "path": "scripts/run.py",
+    "sha256": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+    "bytes": 10919
+  },
+  {
+    "path": "scripts/tests/helpers.py",
+    "sha256": "2694cd24dd07b1a6e3ceff7ac2addb7d4fc8bc40ee197f6d3c4206d281bf2068",
+    "bytes": 1813
+  },
+  {
+    "path": "scripts/tests/measure_js.test.mjs",
+    "sha256": "52eb427d1a39717a9b5cd85257eff5436725debf2d44535cd3051f7c80343882",
+    "bytes": 33509
+  },
+  {
+    "path": "scripts/tests/measure_js_serialization_independent.test.mjs",
+    "sha256": "fba787cf2e7e0806eea8f2801d87f168b9e1e3facd361b941b1534ba921942c7",
+    "bytes": 14901
+  },
+  {
+    "path": "scripts/tests/test_measure_inventory.py",
+    "sha256": "d97a98983cb2c825abd87ffec4f96981c652dece88846abd3864179a2921d227",
+    "bytes": 17940
+  },
+  {
+    "path": "scripts/tests/test_measure_js.py",
+    "sha256": "21d8488537226adcdafe93eb4308d4abd3c3b63d6afc3adab0686d0d37468b3a",
+    "bytes": 22070
+  },
+  {
+    "path": "scripts/tests/test_measure_js_serialization_independent.py",
+    "sha256": "8917a3d561ed01afc6d2dcb5abc39af1cf232d8e8741283e6818e12156aae4e5",
+    "bytes": 13002
+  },
+  {
+    "path": "scripts/tests/test_measure_q2.py",
+    "sha256": "8f0adaa478501bb4d1b81bb54ecdf45011d68787977537401fc4f24e563db7f8",
+    "bytes": 15237
+  },
+  {
+    "path": "scripts/tests/test_measure_source_bindings.py",
+    "sha256": "bcc36f23061dd5b4db2dfcb161c0202bbe95db1fb930b1c6ef79fe8c9b95d1b3",
+    "bytes": 21953
+  }
+]

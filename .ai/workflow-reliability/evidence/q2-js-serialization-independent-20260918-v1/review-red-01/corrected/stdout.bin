@@ -1,0 +1,144 @@
+test_r1_namespace_destructuring_keeps_export_property_identity (test_measure_js_serialization_independent.NativeSerializationReviewRegressions.test_r1_namespace_destructuring_keeps_export_property_identity) ... Starting real review regression: review_r1
+FAIL
+test_r2_literal_dynamic_import_with_options_keeps_local_target (test_measure_js_serialization_independent.NativeSerializationReviewRegressions.test_r2_literal_dynamic_import_with_options_keeps_local_target) ... Starting real review regression: review_r2
+FAIL
+
+======================================================================
+FAIL: test_r1_namespace_destructuring_keeps_export_property_identity (test_measure_js_serialization_independent.NativeSerializationReviewRegressions.test_r1_namespace_destructuring_keeps_export_property_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js_serialization_independent.py", line 194, in test_r1_namespace_destructuring_keeps_export_property_identity
+    self.run_review_fixture("review_r1", (
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+        "import * as ns from './origin.mjs';\n"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        "export const control = ns.value;\n"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ))
+    ^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js_serialization_independent.py", line 190, in run_review_fixture
+    self.assertEqual(code, 0, stdout + stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : ✖ review_r1 (7483.6711ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7490.2995
+
+✖ failing tests:
+
+test at ..\..\..\..\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\measure_js_serialization_independent.test.mjs:148:15
+✖ review_r1 (7483.6711ms)
+  AssertionError [ERR_ASSERTION]: R1: shorthand and literal-key namespace destructuring must reference the exported property, not just the local binding/module
+  + actual - expected
+  
+    [
+  +   [],
+  +   []
+  -   [
+  -     '367749885dc4e5bf2d08d70a641c5fdf5420522e3e91daa35e1df14901184134'
+  -   ],
+  -   [
+  -     '367749885dc4e5bf2d08d70a641c5fdf5420522e3e91daa35e1df14901184134'
+  -   ]
+    ]
+  
+      at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/tests/measure_js_serialization_independent.test.mjs:209:12)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [Array],
+    expected: [Array],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+
+======================================================================
+FAIL: test_r2_literal_dynamic_import_with_options_keeps_local_target (test_measure_js_serialization_independent.NativeSerializationReviewRegressions.test_r2_literal_dynamic_import_with_options_keeps_local_target)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js_serialization_independent.py", line 203, in test_r2_literal_dynamic_import_with_options_keeps_local_target
+    self.run_review_fixture("review_r2", (
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+        "export const plain = () => import('./origin.mjs');\n"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        "export const computed = name => import(name, {});\n"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ))
+    ^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js_serialization_independent.py", line 190, in run_review_fixture
+    self.assertEqual(code, 0, stdout + stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : ✖ review_r2 (7138.9571ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7144.9682
+
+✖ failing tests:
+
+test at ..\..\..\..\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\measure_js_serialization_independent.test.mjs:148:15
+✖ review_r2 (7138.9571ms)
+  AssertionError [ERR_ASSERTION]: R2: empty import options do not turn a literal module specifier into a computed one
+  + actual - expected
+  
+    {
+  +   computed_sites: 1,
+  -   computed_sites: 0,
+      modules: [
+        {
+          external: null,
+          kind: 'import',
+  +       reason: 'Computed module specifier',
+  +       resolution: 'dynamic',
+  +       specifier: null,
+  +       targets: []
+  -       reason: '',
+  -       resolution: 'local',
+  -       specifier: './origin.mjs',
+  -       targets: [
+  -         'origin.mjs'
+  -       ]
+        }
+      ],
+  +   syntax: []
+  -   syntax: [
+  -     {
+  -       kind: 'import',
+  -       specifier: './origin.mjs'
+  -     }
+  -   ]
+    }
+  
+      at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/tests/measure_js_serialization_independent.test.mjs:239:12)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [Object],
+    expected: [Object],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 70.376s
+
+FAILED (failures=2)

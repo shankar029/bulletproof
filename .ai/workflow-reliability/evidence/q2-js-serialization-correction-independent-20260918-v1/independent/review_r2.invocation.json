@@ -1,0 +1,23 @@
+{
+  "test": "test_measure_js_serialization_independent.NativeSerializationReviewRegressions.test_r2_literal_dynamic_import_with_options_keeps_local_target",
+  "argv": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\measure_js_serialization_independent.test.mjs"
+  ],
+  "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\qjr-q_mqmvio",
+  "idle_seconds": 30,
+  "max_seconds": 90,
+  "environment_removed": [
+    "PYTHONDONTWRITEBYTECODE",
+    "PYTHONIOENCODING"
+  ],
+  "controller_sha256": "ba0ca909699ca453515a0eaad5206c81d5afe6abcd1fb7b47723e8a71f1c0900",
+  "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88",
+  "request_sha256": "58a7305be9d1139573600dcc4e851b6eb5c8063adf93a75d9bbc11d89d5c98d1",
+  "fixture_files": {
+    "package.json": "{\"type\":\"module\"}\n",
+    "origin.mjs": "export const value = 1;\n",
+    "use.mjs": "export const plain = () => import('./origin.mjs');\nexport const options = () => import('./origin.mjs', {});\n/** @param {string} name */\nexport const computed = name => import(name, {});\n"
+  },
+  "head_git": "1eb2f6a3d5771fe1a6da94358c32c6c04a282ea6"
+}

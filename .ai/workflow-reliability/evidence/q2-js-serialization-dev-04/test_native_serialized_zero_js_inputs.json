@@ -1,0 +1,55 @@
+{
+  "test": "test_measure_js.SharedJSCoreTests.test_native_serialized_zero_js_inputs",
+  "case": "serialized_empty",
+  "argv": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\measure_js.test.mjs"
+  ],
+  "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\qj-bzej0_xu",
+  "idle_seconds": 30,
+  "max_seconds": 90,
+  "environment_removed": [],
+  "returncode": 0,
+  "stdout": "✔ serialized_empty (6106.8861ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 6116.9308\n",
+  "stderr": "",
+  "request_sha256": "7aef5d5dec6fd4ac84aa9133d9c4b5d9fc36b0412d043405d6d074e404ffe932",
+  "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88",
+  "controller_sha256": "1feae0524ed7a7b8e0046f796ee15748c47c70f1db6185a4035112bd6ebbc708",
+  "native": {
+    "case": "serialized_empty",
+    "proofs": [
+      {
+        "revision": "head",
+        "git": "9f1cc0e25fed0931142abe2dc77d219efaad5602",
+        "binding": {
+          "semantic_version": "typescript-shared-v1",
+          "run_id": "fixture-run",
+          "revision": "head",
+          "git_revision": "9f1cc0e25fed0931142abe2dc77d219efaad5602",
+          "inventory_sha256": "b8bc2907fb6019165ec6d9e5f5cebdcf22af12e3675b9c52f03c64aef212f1f4",
+          "source_sha256": "6b1bea7d92aa2e1bc318efee84df3181e3ed218993af1936d6a7495445c9f8dc",
+          "parser_sha256": "da38667a98bac644fed8de93f217df197734ab9169eec2887d8024853c6ebc0d",
+          "settings_sha256": "d84b1b4f6748f7e26787a7657115d16a4a9abcdcca07ff512d697030c17e729a",
+          "policy_sha256": "9747688deec9c712543bba65ae91a278739062c1f118851189f8659017a9024f",
+          "toolset_sha256": "91bc9ae99aae55a3a8e93edc4a3bab252763c53ca23c56a20a2e027495d9d201"
+        },
+        "records_sha256": "26462aba1fd26e12e0ea87caba7c4c20bb0e29bed67fcb09fc598e7bf3064891",
+        "census": [],
+        "symbols": [],
+        "counts": {
+          "exports": 0,
+          "aliases": 0,
+          "references": 0,
+          "module_references": 0,
+          "outside_model": 0,
+          "diagnostics": 0
+        }
+      }
+    ],
+    "runtime": {
+      "version": "v24.11.1",
+      "architecture": "arm64"
+    },
+    "controller_sha256": "1feae0524ed7a7b8e0046f796ee15748c47c70f1db6185a4035112bd6ebbc708"
+  }
+}

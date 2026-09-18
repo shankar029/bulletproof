@@ -1,0 +1,19 @@
+{
+  "test": "test_measure_js.SharedJSCoreTests.test_native_candidates_on_actual_controller_sources",
+  "case": "actual_source_candidates",
+  "argv": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\measure_js.test.mjs"
+  ],
+  "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\qj-j6pmjvik",
+  "idle_seconds": 30,
+  "max_seconds": 90,
+  "environment_removed": [],
+  "returncode": 1,
+  "stdout": "✖ actual_source_candidates (4578.7594ms)\nℹ tests 1\nℹ suites 0\nℹ pass 0\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 4585.718\n\n✖ failing tests:\n\ntest at ..\\..\\..\\..\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\measure_js.test.mjs:406:3\n✖ actual_source_candidates (4578.7594ms)\n  Error: Candidate inventory differs from shared parser inputs/mode\n      at candidatesForProgram (file:///C:/Users/shbs/AppData/Local/Temp/qj-j6pmjvik/measure_js.mjs:849:11)\n      at actual_source_candidates (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/tests/measure_js.test.mjs:221:24)\n      at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/tests/measure_js.test.mjs:407:5)\n      at Test.runInAsyncScope (node:async_hooks:214:14)\n      at Test.run (node:internal/test_runner/test:1106:25)\n      at Test.start (node:internal/test_runner/test:1003:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)\n",
+  "stderr": "",
+  "request_sha256": "faa84455392a69ef4cbfade6ff6f164b453fb189443e905fe1246d3537580fc8",
+  "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88",
+  "controller_sha256": "3781863b6ea5241db2e117b83e6331da1750b384a1c652daa857aec0c6bb4f5d",
+  "native": null
+}

@@ -1,0 +1,19 @@
+{
+  "test": "test_measure_js.SharedJSCoreTests.test_native_serialized_source_records_and_origins",
+  "case": "serialized_records",
+  "argv": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\measure_js.test.mjs"
+  ],
+  "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\qj-x3gb76qq",
+  "idle_seconds": 30,
+  "max_seconds": 90,
+  "environment_removed": [],
+  "returncode": 1,
+  "stdout": "✖ serialized_records (3950.2384ms)\nℹ tests 1\nℹ suites 0\nℹ pass 0\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 3956.1067\n\n✖ failing tests:\n\ntest at ..\\..\\..\\..\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\measure_js.test.mjs:406:3\n✖ serialized_records (3950.2384ms)\n  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n  \n    assert.ok(symbols.module_references.some(item => item.path === \"calls.cjs\" && item.resolution === \"dynamic\"))\n  \n      at serialized_records (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/tests/measure_js.test.mjs:120:12)\n      at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/tests/measure_js.test.mjs:407:5)\n      at Test.runInAsyncScope (node:async_hooks:214:14)\n      at Test.run (node:internal/test_runner/test:1106:25)\n      at Test.start (node:internal/test_runner/test:1003:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: false,\n    expected: true,\n    operator: '==',\n    diff: 'simple'\n  }\n",
+  "stderr": "",
+  "request_sha256": "6b633d5c7c37ae96f74985382e67ac5b8a84fb25adb881dea506fae31c1add69",
+  "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88",
+  "controller_sha256": "3442e3cc81f7358fc22db54006f4f876da05322a139303a49b00ea7d44eef9be",
+  "native": null
+}

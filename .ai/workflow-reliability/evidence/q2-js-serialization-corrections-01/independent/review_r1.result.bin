@@ -1,0 +1,296 @@
+{
+  "case": "review_r1",
+  "runtime": {
+    "version": "v24.11.1",
+    "architecture": "arm64"
+  },
+  "controller_sha256": "ba0ca909699ca453515a0eaad5206c81d5afe6abcd1fb7b47723e8a71f1c0900",
+  "files": [
+    {
+      "path": "origin.mjs",
+      "source_sha256": "5d8f65d2774e206bc9f7a7a4ad39ca2dc563b5c31e46ab57ef4874961237ce29",
+      "observed_sha256": "5d8f65d2774e206bc9f7a7a4ad39ca2dc563b5c31e46ab57ef4874961237ce29",
+      "suffix": ".mjs",
+      "state": "processed",
+      "reason": "",
+      "token_count": 6,
+      "function_count": 0,
+      "diagnostic_ids": []
+    },
+    {
+      "path": "use.mjs",
+      "source_sha256": "ebaeb1c013cdd6d3a77e70e5a7707e85ff841574a3fc92ca52db65348b4cfe03",
+      "observed_sha256": "ebaeb1c013cdd6d3a77e70e5a7707e85ff841574a3fc92ca52db65348b4cfe03",
+      "suffix": ".mjs",
+      "state": "processed",
+      "reason": "",
+      "token_count": 41,
+      "function_count": 0,
+      "diagnostic_ids": []
+    }
+  ],
+  "diagnostics": [],
+  "exports": [
+    {
+      "path": "origin.mjs",
+      "span": {
+        "start_byte": 13,
+        "end_byte": 22,
+        "start_line": 1,
+        "end_line": 1
+      },
+      "name": "value",
+      "kind": "declaration",
+      "type_only": false,
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "367749885dc4e5bf2d08d70a641c5fdf5420522e3e91daa35e1df14901184134"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    },
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 102,
+        "end_byte": 126,
+        "start_line": 4,
+        "end_line": 4
+      },
+      "name": "answers",
+      "kind": "declaration",
+      "type_only": false,
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "354659bba1fdb13cf363fc721ad8ad27c7d4d0ed70ae38491d04408bfb155af0"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    },
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 141,
+        "end_byte": 159,
+        "start_line": 5,
+        "end_line": 5
+      },
+      "name": "control",
+      "kind": "declaration",
+      "type_only": false,
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "b9f893da6740da5b02ceb5335984343c3fece65942525fa331d6ee630e706596"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    }
+  ],
+  "references": [
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 44,
+        "end_byte": 49,
+        "start_line": 2,
+        "end_line": 2
+      },
+      "kind": "property",
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "367749885dc4e5bf2d08d70a641c5fdf5420522e3e91daa35e1df14901184134"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    },
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 54,
+        "end_byte": 56,
+        "start_line": 2,
+        "end_line": 2
+      },
+      "kind": "identifier",
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "461a89be04040475523a56b038c1f0be0cf42e40cd0ed913c6bf5156969b4865"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    },
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 66,
+        "end_byte": 73,
+        "start_line": 3,
+        "end_line": 3
+      },
+      "kind": "property",
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "367749885dc4e5bf2d08d70a641c5fdf5420522e3e91daa35e1df14901184134"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    },
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 85,
+        "end_byte": 87,
+        "start_line": 3,
+        "end_line": 3
+      },
+      "kind": "identifier",
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "461a89be04040475523a56b038c1f0be0cf42e40cd0ed913c6bf5156969b4865"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    },
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 113,
+        "end_byte": 118,
+        "start_line": 4,
+        "end_line": 4
+      },
+      "kind": "identifier",
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "e4877c83e73684745abb21559dd251ade12f777de836b08678686a84d8524c77"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    },
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 120,
+        "end_byte": 125,
+        "start_line": 4,
+        "end_line": 4
+      },
+      "kind": "identifier",
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "34a33bb9c4c2d5df38575847f78cbf2c81d03cc35abe58ee4a29ae92ab6894e6"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    },
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 151,
+        "end_byte": 153,
+        "start_line": 5,
+        "end_line": 5
+      },
+      "kind": "identifier",
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "461a89be04040475523a56b038c1f0be0cf42e40cd0ed913c6bf5156969b4865"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    },
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 154,
+        "end_byte": 159,
+        "start_line": 5,
+        "end_line": 5
+      },
+      "kind": "property",
+      "target": {
+        "state": "local",
+        "symbol_ids": [
+          "367749885dc4e5bf2d08d70a641c5fdf5420522e3e91daa35e1df14901184134"
+        ],
+        "external": null,
+        "reason": ""
+      }
+    }
+  ],
+  "module_references": [
+    {
+      "path": "use.mjs",
+      "span": {
+        "start_byte": 0,
+        "end_byte": 35,
+        "start_line": 1,
+        "end_line": 1
+      },
+      "specifier": "./origin.mjs",
+      "kind": "import",
+      "resolution": "local",
+      "targets": [
+        "origin.mjs"
+      ],
+      "external": null,
+      "reason": ""
+    }
+  ],
+  "outside_model": [],
+  "literal_imports": [
+    {
+      "specifier": "./origin.mjs",
+      "kind": "import",
+      "span": {
+        "start_byte": 0,
+        "end_byte": 35,
+        "start_line": 1,
+        "end_line": 1
+      }
+    }
+  ],
+  "selections": [
+    {
+      "selection": "value",
+      "binding_id": "e4877c83e73684745abb21559dd251ade12f777de836b08678686a84d8524c77",
+      "export_id": "367749885dc4e5bf2d08d70a641c5fdf5420522e3e91daa35e1df14901184134",
+      "checker_property_equals_export": true,
+      "property_target_ids": [
+        "367749885dc4e5bf2d08d70a641c5fdf5420522e3e91daa35e1df14901184134"
+      ],
+      "outside_model": []
+    },
+    {
+      "selection": "\"value\": local",
+      "binding_id": "34a33bb9c4c2d5df38575847f78cbf2c81d03cc35abe58ee4a29ae92ab6894e6",
+      "export_id": "367749885dc4e5bf2d08d70a641c5fdf5420522e3e91daa35e1df14901184134",
+      "checker_property_equals_export": true,
+      "property_target_ids": [
+        "367749885dc4e5bf2d08d70a641c5fdf5420522e3e91daa35e1df14901184134"
+      ],
+      "outside_model": []
+    }
+  ],
+  "ordinary_property_control": true
+}

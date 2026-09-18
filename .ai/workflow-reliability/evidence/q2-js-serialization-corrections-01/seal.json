@@ -1,0 +1,245 @@
+{
+  "changed_source_files": [
+    {
+      "bytes": 52938,
+      "path": "scripts/measure_js.mjs",
+      "sha256": "ba0ca909699ca453515a0eaad5206c81d5afe6abcd1fb7b47723e8a71f1c0900"
+    },
+    {
+      "bytes": 33509,
+      "path": "scripts/tests/measure_js.test.mjs",
+      "sha256": "52eb427d1a39717a9b5cd85257eff5436725debf2d44535cd3051f7c80343882"
+    },
+    {
+      "bytes": 22070,
+      "path": "scripts/tests/test_measure_js.py",
+      "sha256": "21d8488537226adcdafe93eb4308d4abd3c3b63d6afc3adab0686d0d37468b3a"
+    }
+  ],
+  "complete_descendant_cleanup": "UNKNOWN",
+  "corrected_findings": {
+    "R1": "Explicit object-binding selected-property references with dynamic/unresolved uncertainty",
+    "R2": "Literal dynamic imports retain argument zero with options; require branch remains separate"
+  },
+  "created_utc": "2026-09-18T06:47:41.981891+00:00",
+  "distinct_methods_with_passing_proof": 6,
+  "executions": [
+    {
+      "directory": "independent",
+      "methods": 2,
+      "passed": 2,
+      "returncode": 0,
+      "seconds": 65.456
+    },
+    {
+      "directory": "owner",
+      "methods": 4,
+      "passed": 3,
+      "retained_failure": "candidate_records capturer 124 [idle-timeout]",
+      "returncode": 1,
+      "seconds": 213.565
+    },
+    {
+      "directory": "owner-candidate-retry",
+      "methods": 1,
+      "passed": 1,
+      "returncode": 0,
+      "same_byte_bounded_retry": true,
+      "seconds": 70.077
+    }
+  ],
+  "head": "8881a7e667695345328852ab39157988f9fd868d",
+  "historical_references": [
+    {
+      "bytes": 18345,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-seal.json",
+      "sha256": "c43769d83411dd41063be59a77e87918991673f360ec8b759f1a22558bc528da"
+    },
+    {
+      "bytes": 9492,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-handoff.md",
+      "sha256": "1bfc0cf5268a8e02ce6a676ce40d33d601e7698c916da31cdc9dff74aaf049ac"
+    },
+    {
+      "bytes": 12878,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-code-review.md",
+      "sha256": "59fdd6e44214b693d895637f455c74678308d497ac8733aadfd0ff623e612482"
+    },
+    {
+      "bytes": 10888,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/seal.json",
+      "sha256": "edd384a8f181db59b399801693c30ff024670961ed59ff79641e666ccbcc1a4d"
+    },
+    {
+      "bytes": 7332,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/report.md",
+      "sha256": "2ef6c94988bb333e66d641930d6c979bbab135229de47426f01dc9d82d9216dc"
+    }
+  ],
+  "limits": [
+    "No independent approval claimed",
+    "No full root suite/probe or fresh 15-method replay",
+    "No next-layer implementation, qualification, hosts, packages, agents, commits or pushes",
+    "Parent prioritizes app-driven workflow after preservation; it has not been exercised here"
+  ],
+  "method_invocations_including_timeout": 7,
+  "native_bounds": {
+    "idle_seconds": 30,
+    "max_seconds": 90
+  },
+  "nested_native_tests_are_not_additive": true,
+  "outer_bounds": {
+    "idle_seconds": 120,
+    "max_seconds": 900
+  },
+  "owned_evidence": [
+    {
+      "bytes": 44469,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/after.json",
+      "sha256": "430117a18ab4b60b3c114a90c9905f025f287a25daaf1d6e5e9244ab5458582a"
+    },
+    {
+      "bytes": 44469,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/before.json",
+      "sha256": "bd27405c5be18b5f88e5d5a94d284192fe282f9e62a7e7b4810712a432943c39"
+    },
+    {
+      "bytes": 5988,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/handoff.md",
+      "sha256": "7ac1b20f5bee6a7f666e718ac7476f58ae2dd39ad3ef208b99bfdcea90d06e12"
+    },
+    {
+      "bytes": 622,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/independent/console.txt",
+      "sha256": "f2eeba317114c084abf8e7bad48d26d48be5cc329b12f9e87c024050178429fb"
+    },
+    {
+      "bytes": 25,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/independent/exit.json",
+      "sha256": "915162e083f2919d02dd0256744cdfa0ded3692822e24f44bf34abe86aeb75ae"
+    },
+    {
+      "bytes": 1548,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/independent/invocation.json",
+      "sha256": "4c2288eb9d8a4147a76dc414cafe7263e5b8a82ee5a237891ed39e051e73a5e0"
+    },
+    {
+      "bytes": 208,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/independent/review_r1.capture.json",
+      "sha256": "2bb8771106890e07bed49a8424582d164a80b44d5eabbad16dd7c52eb9f42704"
+    },
+    {
+      "bytes": 1236,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/independent/review_r1.invocation.json",
+      "sha256": "2ec999efd97c4d597328fb6c3d062c371ddd7fdd5d138b18956a3fe6484a78dc"
+    },
+    {
+      "bytes": 7056,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/independent/review_r1.result.bin",
+      "sha256": "7c8a28050fb1110eb311ff9eb2ca19e6071b2878b03e6b7dd84c3bba67e0b9e1"
+    },
+    {
+      "bytes": 208,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/independent/review_r2.capture.json",
+      "sha256": "6237ab3d3e6774ee6e52b1e79beecf92272a104318b4471024a1807b6c4383c7"
+    },
+    {
+      "bytes": 1258,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/independent/review_r2.invocation.json",
+      "sha256": "82469f3b0aef55d5fb27dc806959c841970bd689de81b8bc05965e2bf4322521"
+    },
+    {
+      "bytes": 7706,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/independent/review_r2.result.bin",
+      "sha256": "33aaec30159c88664b237cdd99e97c6bd748fbd7b601cdd9d86bcb059e5b3b13"
+    },
+    {
+      "bytes": 2879,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/owner/console.txt",
+      "sha256": "24bd8dcdb14b5c044b39c5122ae938fdb3d98c806d6e9e1032c4a45c9b47b94e"
+    },
+    {
+      "bytes": 25,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/owner/exit.json",
+      "sha256": "66052eab2af82e0a2917b60ce5109fa854d6e5b73862592c59212513cab15166"
+    },
+    {
+      "bytes": 1599,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/owner/invocation.json",
+      "sha256": "c481814e0e542e2d8225b2152ae6c518063284fa0021dd289385722b3b30eb5b"
+    },
+    {
+      "bytes": 201,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/owner/post-timeout-process-observation.json",
+      "sha256": "9f64cee4fb1b7c0caca363de28fd68ecd2bb4bbfa7fef0b3af7f71d748b563db"
+    },
+    {
+      "bytes": 2837,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/owner/test_native_candidates_from_shared_syntax.json",
+      "sha256": "14f483f57fa0ccc792d0bc7b4a07f4f1eaa28e6ddd1a671d98e5c873dc15b66c"
+    },
+    {
+      "bytes": 34041,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/owner/test_native_review_corrections_uncertainty_and_require_arity.json",
+      "sha256": "16c8ded73b94c468536e0cda08fe6dc0331637e6d3f67be5bc3a256e8c7cbe1e"
+    },
+    {
+      "bytes": 29324,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/owner/test_native_serialized_freshness_and_identity.json",
+      "sha256": "cbbd5e88e80048aa7b30bb85fe725b830a86cb45629c15de66b0de7456d9bc5b"
+    },
+    {
+      "bytes": 23610,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/owner/test_native_serialized_source_records_and_origins.json",
+      "sha256": "ddb5fa15f62ca285614208cd4933f1b81c36da6410301b1d3861aa006aa10295"
+    },
+    {
+      "bytes": 395,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/owner-candidate-retry/console.txt",
+      "sha256": "9dfe7ca4f8265983dc245cde2fde7c9b1ef254627ffaf54b3baf52c01314491b"
+    },
+    {
+      "bytes": 25,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/owner-candidate-retry/exit.json",
+      "sha256": "915162e083f2919d02dd0256744cdfa0ded3692822e24f44bf34abe86aeb75ae"
+    },
+    {
+      "bytes": 1492,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/owner-candidate-retry/invocation.json",
+      "sha256": "2fbcbe9d7f34615b18435e046a0d39d2fe2fc344ef88c09546253b4dd22af80b"
+    },
+    {
+      "bytes": 36010,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/owner-candidate-retry/test_native_candidates_from_shared_syntax.json",
+      "sha256": "35ba6e5e9c640b3e58de5deab3426581752954abb35a34fd316f71a4afac7b23"
+    }
+  ],
+  "preservation": {
+    "after": {
+      "bytes": 44469,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/after.json",
+      "sha256": "430117a18ab4b60b3c114a90c9905f025f287a25daaf1d6e5e9244ab5458582a"
+    },
+    "before": {
+      "bytes": 44469,
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-corrections-01/before.json",
+      "sha256": "bd27405c5be18b5f88e5d5a94d284192fe282f9e62a7e7b4810712a432943c39"
+    },
+    "catalogued_paths": 199,
+    "permitted_changed_paths": 3,
+    "unchanged_paths": 196
+  },
+  "status": "FOCUSED_R1_R2_OWNER_CORRECTION_PENDING_INDEPENDENT_REVALIDATION",
+  "unchanged_independent_tests": [
+    {
+      "bytes": 13002,
+      "path": "scripts/tests/test_measure_js_serialization_independent.py",
+      "sha256": "8917a3d561ed01afc6d2dcb5abc39af1cf232d8e8741283e6818e12156aae4e5"
+    },
+    {
+      "bytes": 14901,
+      "path": "scripts/tests/measure_js_serialization_independent.test.mjs",
+      "sha256": "fba787cf2e7e0806eea8f2801d87f168b9e1e3facd361b941b1534ba921942c7"
+    }
+  ]
+}

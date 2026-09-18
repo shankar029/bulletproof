@@ -1,0 +1,2121 @@
+{
+  "test": "test_measure_js.SharedJSCoreTests.test_native_six_suffix_census",
+  "case": "six_suffixes",
+  "argv": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\measure_js.test.mjs"
+  ],
+  "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\qj-kkhg0_2j",
+  "idle_seconds": 30,
+  "max_seconds": 90,
+  "environment_removed": [],
+  "returncode": 0,
+  "stdout": "✔ six_suffixes (4021.8469ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 4028.763\n",
+  "stderr": "",
+  "request_sha256": "0fd55a3baf56a7228630135035e307869587264d8f0d10f1063e3dcef9287dda",
+  "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88",
+  "controller_sha256": "35acb58ccd11dce9daa601e640c47b763e8625c84919158610cf33107f4b46bc",
+  "executing_sources": [
+    {
+      "path": "measure_js.mjs",
+      "sha256": "35acb58ccd11dce9daa601e640c47b763e8625c84919158610cf33107f4b46bc",
+      "bytes": 51561
+    },
+    {
+      "path": "measure.py",
+      "sha256": "b5a824cd84a4a63bb1a6ec5cb6d2e09426614006b12f0b9ef867f040439c4db9",
+      "bytes": 71879
+    },
+    {
+      "path": "measure_graph.py",
+      "sha256": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391",
+      "bytes": 27123
+    },
+    {
+      "path": "probe.py",
+      "sha256": "d7be5050cf70cb836e46f0b661632b2d426d6bdc4684f1b54aa9061d61948904",
+      "bytes": 40490
+    },
+    {
+      "path": "evidence.py",
+      "sha256": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+      "bytes": 7050
+    },
+    {
+      "path": "run.py",
+      "sha256": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+      "bytes": 10919
+    },
+    {
+      "path": "tests/test_measure_js.py",
+      "sha256": "d83095ed32263342a41fce007dc361e63e2445e8f74533953d98bb45d8ed659b",
+      "bytes": 20413
+    },
+    {
+      "path": "tests/measure_js.test.mjs",
+      "sha256": "a9f9f339d9fac199f8f9ab4bf30db5348cae0c2b385245a0265f1d7420c22cb1",
+      "bytes": 29938
+    },
+    {
+      "path": "tests/helpers.py",
+      "sha256": "2694cd24dd07b1a6e3ceff7ac2addb7d4fc8bc40ee197f6d3c4206d281bf2068",
+      "bytes": 1813
+    },
+    {
+      "path": "tests/test_measure_inventory.py",
+      "sha256": "d97a98983cb2c825abd87ffec4f96981c652dece88846abd3864179a2921d227",
+      "bytes": 17940
+    },
+    {
+      "path": "tests/test_measure_source_bindings.py",
+      "sha256": "bcc36f23061dd5b4db2dfcb161c0202bbe95db1fb930b1c6ef79fe8c9b95d1b3",
+      "bytes": 21953
+    },
+    {
+      "path": "tests/test_measure_q2.py",
+      "sha256": "8f0adaa478501bb4d1b81bb54ecdf45011d68787977537401fc4f24e563db7f8",
+      "bytes": 15237
+    }
+  ],
+  "native": {
+    "case": "six_suffixes",
+    "proofs": [
+      {
+        "entries": [
+          {
+            "path": "package.json",
+            "sha256": "6dc1b06d6b093e9cccb20bee06a93836eee0420ae26803ca2ce4065d82f070d1",
+            "bytes": 17
+          },
+          {
+            "path": "js/empty.js",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          {
+            "path": "js/comment.js",
+            "sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "bytes": 40
+          },
+          {
+            "path": "js/functionless.js",
+            "sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "bytes": 24
+          },
+          {
+            "path": "js/broken.js",
+            "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "bytes": 13
+          },
+          {
+            "path": "js/encoding.js",
+            "sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "bytes": 1
+          },
+          {
+            "path": "mjs/empty.mjs",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          {
+            "path": "mjs/comment.mjs",
+            "sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "bytes": 40
+          },
+          {
+            "path": "mjs/functionless.mjs",
+            "sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "bytes": 24
+          },
+          {
+            "path": "mjs/broken.mjs",
+            "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "bytes": 13
+          },
+          {
+            "path": "mjs/encoding.mjs",
+            "sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "bytes": 1
+          },
+          {
+            "path": "cjs/empty.cjs",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          {
+            "path": "cjs/comment.cjs",
+            "sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "bytes": 40
+          },
+          {
+            "path": "cjs/functionless.cjs",
+            "sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "bytes": 24
+          },
+          {
+            "path": "cjs/broken.cjs",
+            "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "bytes": 13
+          },
+          {
+            "path": "cjs/encoding.cjs",
+            "sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "bytes": 1
+          },
+          {
+            "path": "jsx/empty.jsx",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          {
+            "path": "jsx/comment.jsx",
+            "sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "bytes": 40
+          },
+          {
+            "path": "jsx/functionless.jsx",
+            "sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "bytes": 24
+          },
+          {
+            "path": "jsx/broken.jsx",
+            "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "bytes": 13
+          },
+          {
+            "path": "jsx/encoding.jsx",
+            "sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "bytes": 1
+          },
+          {
+            "path": "ts/empty.ts",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          {
+            "path": "ts/comment.ts",
+            "sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "bytes": 40
+          },
+          {
+            "path": "ts/functionless.ts",
+            "sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "bytes": 24
+          },
+          {
+            "path": "ts/broken.ts",
+            "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "bytes": 13
+          },
+          {
+            "path": "ts/encoding.ts",
+            "sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "bytes": 1
+          },
+          {
+            "path": "tsx/empty.tsx",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          {
+            "path": "tsx/comment.tsx",
+            "sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "bytes": 40
+          },
+          {
+            "path": "tsx/functionless.tsx",
+            "sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "bytes": 24
+          },
+          {
+            "path": "tsx/broken.tsx",
+            "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "bytes": 13
+          },
+          {
+            "path": "tsx/encoding.tsx",
+            "sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "bytes": 1
+          }
+        ],
+        "census": [
+          {
+            "path": "cjs/broken.cjs",
+            "source_sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "observed_sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "suffix": ".cjs",
+            "state": "failed",
+            "reason": "Invalid syntax",
+            "token_count": null,
+            "function_count": null,
+            "diagnostic_ids": [
+              "55a461df7a0b3b99e176fd7739f2e9ea53c49efd9d6e5e5bcc1f2c18a4f7f0d1",
+              "8b3a1b5a1f1bddb548d90810032e2b40e2bca5bc41481fe67de88a01a3f68b81",
+              "e6c82f617c653f09275a6619f16e55d6676dceb0c54381e417cddcf696543247",
+              "f4cd33ddb8dd4df4a17c5b72bd08127d230ca06da5dc3c0357b946ef7f7acb28"
+            ]
+          },
+          {
+            "path": "cjs/comment.cjs",
+            "source_sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "observed_sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "suffix": ".cjs",
+            "state": "processed",
+            "reason": "",
+            "token_count": 0,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "cjs/empty.cjs",
+            "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "suffix": ".cjs",
+            "state": "processed",
+            "reason": "",
+            "token_count": 0,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "cjs/encoding.cjs",
+            "source_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "observed_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "suffix": ".cjs",
+            "state": "failed",
+            "reason": "Invalid UTF-8: cjs/encoding.cjs",
+            "token_count": null,
+            "function_count": null,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "cjs/functionless.cjs",
+            "source_sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "observed_sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "suffix": ".cjs",
+            "state": "processed",
+            "reason": "",
+            "token_count": 6,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "js/broken.js",
+            "source_sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "observed_sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "suffix": ".js",
+            "state": "failed",
+            "reason": "Invalid syntax",
+            "token_count": null,
+            "function_count": null,
+            "diagnostic_ids": [
+              "1023fa65c28b95a8b7d25b7f9e488ca883237a71b2f2e9c476b8c6f1ca6e44f0",
+              "15c2927314f524c8badc18c379f458b41c1875e7698b738d72ba4dc5462be196",
+              "477b66696661fbb77b22aab62f06472776e99b006f9c21666d4077eea4135856",
+              "eeb9bfbbc0440ef1f1dfd181f1e41053147a5f13fda1f5d54bb81ba314b986c5"
+            ]
+          },
+          {
+            "path": "js/comment.js",
+            "source_sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "observed_sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "suffix": ".js",
+            "state": "processed",
+            "reason": "",
+            "token_count": 0,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "js/empty.js",
+            "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "suffix": ".js",
+            "state": "processed",
+            "reason": "",
+            "token_count": 0,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "js/encoding.js",
+            "source_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "observed_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "suffix": ".js",
+            "state": "failed",
+            "reason": "Invalid UTF-8: js/encoding.js",
+            "token_count": null,
+            "function_count": null,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "js/functionless.js",
+            "source_sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "observed_sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "suffix": ".js",
+            "state": "processed",
+            "reason": "",
+            "token_count": 6,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "jsx/broken.jsx",
+            "source_sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "observed_sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "suffix": ".jsx",
+            "state": "failed",
+            "reason": "Invalid syntax",
+            "token_count": null,
+            "function_count": null,
+            "diagnostic_ids": [
+              "67d5c79207a3d41b4e6280abb52754ce3fcb3af185a9bc074553da91e374967a",
+              "8defce7e8aff993afca5e27ba56791670a2c374c3127200f08c384b61a244435",
+              "9dda53e97cf084d6793be550283889e2ded168f01e1357c976799b7623143d35",
+              "cd0544fd0d5f79bf34e9bd0777138cdada6d0bc4747bac9c3ced697a98ad53f1"
+            ]
+          },
+          {
+            "path": "jsx/comment.jsx",
+            "source_sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "observed_sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "suffix": ".jsx",
+            "state": "processed",
+            "reason": "",
+            "token_count": 0,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "jsx/empty.jsx",
+            "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "suffix": ".jsx",
+            "state": "processed",
+            "reason": "",
+            "token_count": 0,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "jsx/encoding.jsx",
+            "source_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "observed_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "suffix": ".jsx",
+            "state": "failed",
+            "reason": "Invalid UTF-8: jsx/encoding.jsx",
+            "token_count": null,
+            "function_count": null,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "jsx/functionless.jsx",
+            "source_sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "observed_sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "suffix": ".jsx",
+            "state": "processed",
+            "reason": "",
+            "token_count": 6,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "mjs/broken.mjs",
+            "source_sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "observed_sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "suffix": ".mjs",
+            "state": "failed",
+            "reason": "Invalid syntax",
+            "token_count": null,
+            "function_count": null,
+            "diagnostic_ids": [
+              "06c9a511b4ce087f4e4fb4401581e107f891b7d89071c0bc4bc9a0c474f0a551",
+              "5c642858e835c8496bb2127f210800fb1eb4bba33bf3f77c5835f5efa13eced0",
+              "abbfb101bc3da127bf7e838cf8a955eff2b4cc62c352b5916c33605ef2d1088e",
+              "bf7d816fbe4ce72dcc9bd7e46fcad956ea2cec629e2bd2e65340e50380fa0859"
+            ]
+          },
+          {
+            "path": "mjs/comment.mjs",
+            "source_sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "observed_sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "suffix": ".mjs",
+            "state": "processed",
+            "reason": "",
+            "token_count": 0,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "mjs/empty.mjs",
+            "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "suffix": ".mjs",
+            "state": "processed",
+            "reason": "",
+            "token_count": 0,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "mjs/encoding.mjs",
+            "source_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "observed_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "suffix": ".mjs",
+            "state": "failed",
+            "reason": "Invalid UTF-8: mjs/encoding.mjs",
+            "token_count": null,
+            "function_count": null,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "mjs/functionless.mjs",
+            "source_sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "observed_sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "suffix": ".mjs",
+            "state": "processed",
+            "reason": "",
+            "token_count": 6,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "ts/broken.ts",
+            "source_sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "observed_sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "suffix": ".ts",
+            "state": "failed",
+            "reason": "Invalid syntax",
+            "token_count": null,
+            "function_count": null,
+            "diagnostic_ids": [
+              "0e0c6c5f8eb04135c6411b5ad5bc9994954b98a1d06cc8174656d0a8492373e3",
+              "4bb855487b656a1d90f6af717f9dd6144ec3d15f15ad87bc99c378a2bef6e39a",
+              "77a28d12b4ed02e4d167857facb12f5004923a282f3e26009c486a7dac53e7a7"
+            ]
+          },
+          {
+            "path": "ts/comment.ts",
+            "source_sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "observed_sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "suffix": ".ts",
+            "state": "processed",
+            "reason": "",
+            "token_count": 0,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "ts/empty.ts",
+            "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "suffix": ".ts",
+            "state": "processed",
+            "reason": "",
+            "token_count": 0,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "ts/encoding.ts",
+            "source_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "observed_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "suffix": ".ts",
+            "state": "failed",
+            "reason": "Invalid UTF-8: ts/encoding.ts",
+            "token_count": null,
+            "function_count": null,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "ts/functionless.ts",
+            "source_sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "observed_sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "suffix": ".ts",
+            "state": "processed",
+            "reason": "",
+            "token_count": 6,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "tsx/broken.tsx",
+            "source_sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "observed_sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "suffix": ".tsx",
+            "state": "failed",
+            "reason": "Invalid syntax",
+            "token_count": null,
+            "function_count": null,
+            "diagnostic_ids": [
+              "2f51c032fff076c21114c8fa07466c217147fc5f3f05cfc085924b3d7d7bd387",
+              "53db17db827f4e435b11b11a687e4cbda4dac3402ace00426ef536e968df4ab7",
+              "5f1c22e873f9637793d86eb8bde6a093b19eb5930a71d3f3c7ae7db0559ae49a"
+            ]
+          },
+          {
+            "path": "tsx/comment.tsx",
+            "source_sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "observed_sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "suffix": ".tsx",
+            "state": "processed",
+            "reason": "",
+            "token_count": 0,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "tsx/empty.tsx",
+            "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "suffix": ".tsx",
+            "state": "processed",
+            "reason": "",
+            "token_count": 0,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "tsx/encoding.tsx",
+            "source_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "observed_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "suffix": ".tsx",
+            "state": "failed",
+            "reason": "Invalid UTF-8: tsx/encoding.tsx",
+            "token_count": null,
+            "function_count": null,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "tsx/functionless.tsx",
+            "source_sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "observed_sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "suffix": ".tsx",
+            "state": "processed",
+            "reason": "",
+            "token_count": 6,
+            "function_count": 0,
+            "diagnostic_ids": []
+          }
+        ],
+        "diagnostics": [
+          {
+            "id": "06c9a511b4ce087f4e4fb4401581e107f891b7d89071c0bc4bc9a0c474f0a551",
+            "code": 1005,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'}' expected.",
+              "category": 1,
+              "code": 1005,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "mjs/broken.mjs",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 13,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 13,
+                "end_byte": 13,
+                "start_line": 2,
+                "end_line": 2
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "0b234f97ad7133ae273add1ddc44ed4ca120171c5c7d3c55dc5a8e1491ed68b0",
+            "code": 6053,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "File '/subject/jsx/encoding.jsx' not found.",
+              "category": 1,
+              "code": 6053,
+              "next": [
+                {
+                  "text": "The file is in the program because:",
+                  "category": 3,
+                  "code": 1430,
+                  "next": [
+                    {
+                      "text": "Root file specified for compilation",
+                      "category": 3,
+                      "code": 1427,
+                      "next": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "location": {
+              "file": null,
+              "utf16_start": null,
+              "utf16_length": null,
+              "byte_range": null
+            },
+            "related": []
+          },
+          {
+            "id": "0e0c6c5f8eb04135c6411b5ad5bc9994954b98a1d06cc8174656d0a8492373e3",
+            "code": 1005,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'}' expected.",
+              "category": 1,
+              "code": 1005,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "ts/broken.ts",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 13,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 13,
+                "end_byte": 13,
+                "start_line": 2,
+                "end_line": 2
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "1023fa65c28b95a8b7d25b7f9e488ca883237a71b2f2e9c476b8c6f1ca6e44f0",
+            "code": 7010,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'(Missing)', which lacks return-type annotation, implicitly has an 'any' return type.",
+              "category": 1,
+              "code": 7010,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "js/broken.js",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 8,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 8,
+                "end_byte": 8,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "15c2927314f524c8badc18c379f458b41c1875e7698b738d72ba4dc5462be196",
+            "code": 1005,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'}' expected.",
+              "category": 1,
+              "code": 1005,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "js/broken.js",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 13,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 13,
+                "end_byte": 13,
+                "start_line": 2,
+                "end_line": 2
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "15e7028d87f3e1344c39eeaee2152fe3189195e8d119c31ef29797994f19ddcf",
+            "code": 6053,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "File '/subject/cjs/encoding.cjs' not found.",
+              "category": 1,
+              "code": 6053,
+              "next": [
+                {
+                  "text": "The file is in the program because:",
+                  "category": 3,
+                  "code": 1430,
+                  "next": [
+                    {
+                      "text": "Root file specified for compilation",
+                      "category": 3,
+                      "code": 1427,
+                      "next": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "location": {
+              "file": null,
+              "utf16_start": null,
+              "utf16_length": null,
+              "byte_range": null
+            },
+            "related": []
+          },
+          {
+            "id": "1fd6bdd90fddabdcf02f3fb5f0fc21a783c43f60799fd16c7ab3d2fe4899791b",
+            "code": 6053,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "File '/subject/mjs/encoding.mjs' not found.",
+              "category": 1,
+              "code": 6053,
+              "next": [
+                {
+                  "text": "The file is in the program because:",
+                  "category": 3,
+                  "code": 1430,
+                  "next": [
+                    {
+                      "text": "Root file specified for compilation",
+                      "category": 3,
+                      "code": 1427,
+                      "next": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "location": {
+              "file": null,
+              "utf16_start": null,
+              "utf16_length": null,
+              "byte_range": null
+            },
+            "related": []
+          },
+          {
+            "id": "2f51c032fff076c21114c8fa07466c217147fc5f3f05cfc085924b3d7d7bd387",
+            "code": 1005,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'}' expected.",
+              "category": 1,
+              "code": 1005,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "tsx/broken.tsx",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 13,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 13,
+                "end_byte": 13,
+                "start_line": 2,
+                "end_line": 2
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "303588da8266378853a1ec3e2a69e567ee369cc4d7afbaa8756ac836cbf7ca67",
+            "code": 6053,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "File '/subject/js/encoding.js' not found.",
+              "category": 1,
+              "code": 6053,
+              "next": [
+                {
+                  "text": "The file is in the program because:",
+                  "category": 3,
+                  "code": 1430,
+                  "next": [
+                    {
+                      "text": "Root file specified for compilation",
+                      "category": 3,
+                      "code": 1427,
+                      "next": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "location": {
+              "file": null,
+              "utf16_start": null,
+              "utf16_length": null,
+              "byte_range": null
+            },
+            "related": []
+          },
+          {
+            "id": "43a36a8e198db1ae116d8d2d07c11432ca7fb89679d2d3c5241419df8fe416bf",
+            "code": 6053,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "File '/subject/tsx/encoding.tsx' not found.",
+              "category": 1,
+              "code": 6053,
+              "next": [
+                {
+                  "text": "The file is in the program because:",
+                  "category": 3,
+                  "code": 1430,
+                  "next": [
+                    {
+                      "text": "Root file specified for compilation",
+                      "category": 3,
+                      "code": 1427,
+                      "next": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "location": {
+              "file": null,
+              "utf16_start": null,
+              "utf16_length": null,
+              "byte_range": null
+            },
+            "related": []
+          },
+          {
+            "id": "477b66696661fbb77b22aab62f06472776e99b006f9c21666d4077eea4135856",
+            "code": 8017,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Signature declarations can only be used in TypeScript files.",
+              "category": 1,
+              "code": 8017,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "js/broken.js",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 8,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 8,
+                "end_byte": 8,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "4bb855487b656a1d90f6af717f9dd6144ec3d15f15ad87bc99c378a2bef6e39a",
+            "code": 1003,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Identifier expected.",
+              "category": 1,
+              "code": 1003,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "ts/broken.ts",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 9,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 9,
+                "end_byte": 10,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "53db17db827f4e435b11b11a687e4cbda4dac3402ace00426ef536e968df4ab7",
+            "code": 7010,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'(Missing)', which lacks return-type annotation, implicitly has an 'any' return type.",
+              "category": 1,
+              "code": 7010,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "tsx/broken.tsx",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 8,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 8,
+                "end_byte": 8,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "55a461df7a0b3b99e176fd7739f2e9ea53c49efd9d6e5e5bcc1f2c18a4f7f0d1",
+            "code": 1003,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Identifier expected.",
+              "category": 1,
+              "code": 1003,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "cjs/broken.cjs",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 9,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 9,
+                "end_byte": 10,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "5c642858e835c8496bb2127f210800fb1eb4bba33bf3f77c5835f5efa13eced0",
+            "code": 7010,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'(Missing)', which lacks return-type annotation, implicitly has an 'any' return type.",
+              "category": 1,
+              "code": 7010,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "mjs/broken.mjs",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 8,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 8,
+                "end_byte": 8,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "5f1c22e873f9637793d86eb8bde6a093b19eb5930a71d3f3c7ae7db0559ae49a",
+            "code": 1003,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Identifier expected.",
+              "category": 1,
+              "code": 1003,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "tsx/broken.tsx",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 9,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 9,
+                "end_byte": 10,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "67d5c79207a3d41b4e6280abb52754ce3fcb3af185a9bc074553da91e374967a",
+            "code": 1005,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'}' expected.",
+              "category": 1,
+              "code": 1005,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "jsx/broken.jsx",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 13,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 13,
+                "end_byte": 13,
+                "start_line": 2,
+                "end_line": 2
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "77a28d12b4ed02e4d167857facb12f5004923a282f3e26009c486a7dac53e7a7",
+            "code": 7010,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'(Missing)', which lacks return-type annotation, implicitly has an 'any' return type.",
+              "category": 1,
+              "code": 7010,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "ts/broken.ts",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 8,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 8,
+                "end_byte": 8,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "8b3a1b5a1f1bddb548d90810032e2b40e2bca5bc41481fe67de88a01a3f68b81",
+            "code": 7010,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'(Missing)', which lacks return-type annotation, implicitly has an 'any' return type.",
+              "category": 1,
+              "code": 7010,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "cjs/broken.cjs",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 8,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 8,
+                "end_byte": 8,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "8defce7e8aff993afca5e27ba56791670a2c374c3127200f08c384b61a244435",
+            "code": 7010,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'(Missing)', which lacks return-type annotation, implicitly has an 'any' return type.",
+              "category": 1,
+              "code": 7010,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "jsx/broken.jsx",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 8,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 8,
+                "end_byte": 8,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "9dda53e97cf084d6793be550283889e2ded168f01e1357c976799b7623143d35",
+            "code": 1003,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Identifier expected.",
+              "category": 1,
+              "code": 1003,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "jsx/broken.jsx",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 9,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 9,
+                "end_byte": 10,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "abbfb101bc3da127bf7e838cf8a955eff2b4cc62c352b5916c33605ef2d1088e",
+            "code": 1003,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Identifier expected.",
+              "category": 1,
+              "code": 1003,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "mjs/broken.mjs",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 9,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 9,
+                "end_byte": 10,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "bf7d816fbe4ce72dcc9bd7e46fcad956ea2cec629e2bd2e65340e50380fa0859",
+            "code": 8017,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Signature declarations can only be used in TypeScript files.",
+              "category": 1,
+              "code": 8017,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "mjs/broken.mjs",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 8,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 8,
+                "end_byte": 8,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "c7719b38b2b47e2123eaf6b0c0452d32e63fcf3b541626024096d5c19baf171a",
+            "code": 6053,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "File '/subject/ts/encoding.ts' not found.",
+              "category": 1,
+              "code": 6053,
+              "next": [
+                {
+                  "text": "The file is in the program because:",
+                  "category": 3,
+                  "code": 1430,
+                  "next": [
+                    {
+                      "text": "Root file specified for compilation",
+                      "category": 3,
+                      "code": 1427,
+                      "next": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "location": {
+              "file": null,
+              "utf16_start": null,
+              "utf16_length": null,
+              "byte_range": null
+            },
+            "related": []
+          },
+          {
+            "id": "cd0544fd0d5f79bf34e9bd0777138cdada6d0bc4747bac9c3ced697a98ad53f1",
+            "code": 8017,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Signature declarations can only be used in TypeScript files.",
+              "category": 1,
+              "code": 8017,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "jsx/broken.jsx",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 8,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 8,
+                "end_byte": 8,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "e6c82f617c653f09275a6619f16e55d6676dceb0c54381e417cddcf696543247",
+            "code": 1005,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'}' expected.",
+              "category": 1,
+              "code": 1005,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "cjs/broken.cjs",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 13,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 13,
+                "end_byte": 13,
+                "start_line": 2,
+                "end_line": 2
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "eeb9bfbbc0440ef1f1dfd181f1e41053147a5f13fda1f5d54bb81ba314b986c5",
+            "code": 1003,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Identifier expected.",
+              "category": 1,
+              "code": 1003,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "js/broken.js",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 9,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 9,
+                "end_byte": 10,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "f4cd33ddb8dd4df4a17c5b72bd08127d230ca06da5dc3c0357b946ef7f7acb28",
+            "code": 8017,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Signature declarations can only be used in TypeScript files.",
+              "category": 1,
+              "code": 8017,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "cjs/broken.cjs",
+                "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+                "bytes": 13
+              },
+              "utf16_start": 8,
+              "utf16_length": 0,
+              "byte_range": {
+                "start_byte": 8,
+                "end_byte": 8,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          }
+        ],
+        "reads": [
+          {
+            "scope": "subject",
+            "path": "cjs/broken.cjs",
+            "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "bytes": 13
+          },
+          {
+            "scope": "subject",
+            "path": "cjs/comment.cjs",
+            "sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "bytes": 40
+          },
+          {
+            "scope": "subject",
+            "path": "cjs/empty.cjs",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          {
+            "scope": "subject",
+            "path": "cjs/functionless.cjs",
+            "sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "bytes": 24
+          },
+          {
+            "scope": "subject",
+            "path": "js/broken.js",
+            "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "bytes": 13
+          },
+          {
+            "scope": "subject",
+            "path": "js/comment.js",
+            "sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "bytes": 40
+          },
+          {
+            "scope": "subject",
+            "path": "js/empty.js",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          {
+            "scope": "subject",
+            "path": "js/functionless.js",
+            "sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "bytes": 24
+          },
+          {
+            "scope": "subject",
+            "path": "jsx/broken.jsx",
+            "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "bytes": 13
+          },
+          {
+            "scope": "subject",
+            "path": "jsx/comment.jsx",
+            "sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "bytes": 40
+          },
+          {
+            "scope": "subject",
+            "path": "jsx/empty.jsx",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          {
+            "scope": "subject",
+            "path": "jsx/functionless.jsx",
+            "sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "bytes": 24
+          },
+          {
+            "scope": "subject",
+            "path": "mjs/broken.mjs",
+            "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "bytes": 13
+          },
+          {
+            "scope": "subject",
+            "path": "mjs/comment.mjs",
+            "sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "bytes": 40
+          },
+          {
+            "scope": "subject",
+            "path": "mjs/empty.mjs",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          {
+            "scope": "subject",
+            "path": "mjs/functionless.mjs",
+            "sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "bytes": 24
+          },
+          {
+            "scope": "subject",
+            "path": "package.json",
+            "sha256": "6dc1b06d6b093e9cccb20bee06a93836eee0420ae26803ca2ce4065d82f070d1",
+            "bytes": 17
+          },
+          {
+            "scope": "subject",
+            "path": "ts/broken.ts",
+            "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "bytes": 13
+          },
+          {
+            "scope": "subject",
+            "path": "ts/comment.ts",
+            "sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "bytes": 40
+          },
+          {
+            "scope": "subject",
+            "path": "ts/empty.ts",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          {
+            "scope": "subject",
+            "path": "ts/functionless.ts",
+            "sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "bytes": 24
+          },
+          {
+            "scope": "subject",
+            "path": "tsx/broken.tsx",
+            "sha256": "00831c6a2285ed798db4438ff985da4293f9f06baf6cffe1936a4e05b36bfdec",
+            "bytes": 13
+          },
+          {
+            "scope": "subject",
+            "path": "tsx/comment.tsx",
+            "sha256": "1a12f7acfb72ff7be2255152cdec4dc9ac54779cdf3bd1b43ad1b1bfa8339fe0",
+            "bytes": 40
+          },
+          {
+            "scope": "subject",
+            "path": "tsx/empty.tsx",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          {
+            "scope": "subject",
+            "path": "tsx/functionless.tsx",
+            "sha256": "bc8e60da791a84cbe452e089fc9ac51bfe60f1b65212a1f3220a98de078d345d",
+            "bytes": 24
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.decorators.d.ts",
+            "sha256": "8e7f8264d0fb4c5339605a15daadb037bf238c10b654bb3eee14208f860a32ea",
+            "bytes": 13192
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.decorators.legacy.d.ts",
+            "sha256": "782dec38049b92d4e85c1585fbea5474a219c6984a35b004963b00beb1aab538",
+            "bytes": 1326
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.dom.asynciterable.d.ts",
+            "sha256": "d7a3c8b952931daebdfc7a2897c53c0a1c73624593fa070e46bd537e64dcd20a",
+            "bytes": 1887
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.dom.d.ts",
+            "sha256": "080941d9f9ff9307f7e27a83bcd888b7c8270716c39af943532438932ec1d0b9",
+            "bytes": 1874901
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.dom.iterable.d.ts",
+            "sha256": "2e80ee7a49e8ac312cc11b77f1475804bee36b3b2bc896bead8b6e1266befb43",
+            "bytes": 29802
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.collection.d.ts",
+            "sha256": "dc2df20b1bcdc8c2d34af4926e2c3ab15ffe1160a63e58b7e09833f616efff44",
+            "bytes": 5229
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.core.d.ts",
+            "sha256": "c57796738e7f83dbc4b8e65132f11a377649c00dd3eee333f672b8f0a6bea671",
+            "bytes": 22866
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.d.ts",
+            "sha256": "45b7ab580deca34ae9729e97c13cfd999df04416a79116c3bfb483804f85ded4",
+            "bytes": 1241
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.generator.d.ts",
+            "sha256": "515d0b7b9bea2e31ea4ec968e9edd2c39d3eebf4a2d5cbd04e88639819ae3b71",
+            "bytes": 2557
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.iterable.d.ts",
+            "sha256": "0559b1f683ac7505ae451f9a96ce4c3c92bdc71411651ca6ddb0e88baaaad6a3",
+            "bytes": 18200
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.promise.d.ts",
+            "sha256": "0dc1e7ceda9b8b9b455c3a2d67b0412feab00bd2f66656cd8850e8831b08b537",
+            "bytes": 3200
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.proxy.d.ts",
+            "sha256": "ce691fb9e5c64efb9547083e4a34091bcbe5bdb41027e310ebba8f7d96a98671",
+            "bytes": 5251
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.reflect.d.ts",
+            "sha256": "8d697a2a929a5fcb38b7a65594020fcef05ec1630804a33748829c5ff53640d0",
+            "bytes": 6493
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.symbol.d.ts",
+            "sha256": "4ff2a353abf8a80ee399af572debb8faab2d33ad38c4b4474cff7f26e7653b8d",
+            "bytes": 1649
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.symbol.wellknown.d.ts",
+            "sha256": "fb0f136d372979348d59b3f5020b4cdb81b5504192b1cacff5d1fbba29378aa1",
+            "bytes": 11010
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2016.array.include.d.ts",
+            "sha256": "d15bea3d62cbbdb9797079416b8ac375ae99162a7fba5de2c6c505446486ac0a",
+            "bytes": 5204
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2016.d.ts",
+            "sha256": "3facaf05f0c5fc569c5649dd359892c98a85557e3e0c847964caeb67076f4d75",
+            "bytes": 965
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2016.intl.d.ts",
+            "sha256": "68d18b664c9d32a7336a70235958b8997ebc1c3b8505f4f1ae2b7e7753b87618",
+            "bytes": 1484
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.arraybuffer.d.ts",
+            "sha256": "eb3d66c8327153d8fa7dd03f9c58d351107fe824c79e9b56b462935176cdf12a",
+            "bytes": 915
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.d.ts",
+            "sha256": "e44bb8bbac7f10ecc786703fe0a6a4b952189f908707980ba8f3c8975a760962",
+            "bytes": 1162
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.date.d.ts",
+            "sha256": "38f0219c9e23c915ef9790ab1d680440d95419ad264816fa15009a8851e79119",
+            "bytes": 1916
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.intl.d.ts",
+            "sha256": "4de680d5bb41c17f7f68e0419412ca23c98d5749dcaaea1896172f06435891fc",
+            "bytes": 1449
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.object.d.ts",
+            "sha256": "69ab18c3b76cd9b1be3d188eaf8bba06112ebbe2f47f6c322b5105a6fbc45a2e",
+            "bytes": 2473
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.sharedmemory.d.ts",
+            "sha256": "a680117f487a4d2f30ea46f1b4b7f58bef1480456e18ba53ee85c2746eeca012",
+            "bytes": 7209
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.string.d.ts",
+            "sha256": "2f11ff796926e0832f9ae148008138ad583bd181899ab7dd768a2666700b1893",
+            "bytes": 2378
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.typedarrays.d.ts",
+            "sha256": "954296b30da6d508a104a3a0b5d96b76495c709785c1d11610908e63481ee667",
+            "bytes": 1542
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.asyncgenerator.d.ts",
+            "sha256": "ac9538681b19688c8eae65811b329d3744af679e0bdfa5d842d0e32524c73e1c",
+            "bytes": 2692
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.asynciterable.d.ts",
+            "sha256": "0a969edff4bd52585473d24995c5ef223f6652d6ef46193309b3921d65dd4376",
+            "bytes": 2257
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.d.ts",
+            "sha256": "5e1c4c362065a6b95ff952c0eab010f04dcd2c3494e813b493ecfd4fcb9fc0d8",
+            "bytes": 1088
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.intl.d.ts",
+            "sha256": "9e9fbd7030c440b33d021da145d3232984c8bb7916f277e8ffd3dc2e3eae2bdb",
+            "bytes": 3021
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.promise.d.ts",
+            "sha256": "811ec78f7fefcabbda4bfa93b3eb67d9ae166ef95f9bff989d964061cbf81a0c",
+            "bytes": 1353
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.regexp.d.ts",
+            "sha256": "717937616a17072082152a2ef351cb51f98802fb4b2fdabd32399843875974ca",
+            "bytes": 1232
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.array.d.ts",
+            "sha256": "d7e7d9b7b50e5f22c915b525acc5a49a7a6584cf8f62d0569e557c5cfc4b2ac2",
+            "bytes": 3163
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.d.ts",
+            "sha256": "68d73b4a11549f9c0b7d352d10e91e5dca8faa3322bfb77b661839c42b1ddec7",
+            "bytes": 1071
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.intl.d.ts",
+            "sha256": "74f7fa2d027d5b33eb0471c8e82a6c87216223181ec31247c357a3e8e2fddc5b",
+            "bytes": 958
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.object.d.ts",
+            "sha256": "71c37f4c9543f31dfced6c7840e068c5a5aacb7b89111a4364b1d5276b852557",
+            "bytes": 1473
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.string.d.ts",
+            "sha256": "576711e016cf4f1804676043e6a0a5414252560eb57de9faceee34d79798c850",
+            "bytes": 1528
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.symbol.d.ts",
+            "sha256": "89c1b1281ba7b8a96efc676b11b264de7a8374c5ea1e6617f11880a13fc56dc6",
+            "bytes": 1006
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.bigint.d.ts",
+            "sha256": "d6d7ae4d1f1f3772e2a3cde568ed08991a8ae34a080ff1151af28b7f798e22ca",
+            "bytes": 38185
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.d.ts",
+            "sha256": "5efce4fc3c29ea84e8928f97adec086e3dc876365e0982cc8479a07954a3efd4",
+            "bytes": 1201
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.date.d.ts",
+            "sha256": "063600664504610fe3e99b717a1223f8b1900087fab0b4cad1496a114744f8df",
+            "bytes": 2956
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.intl.d.ts",
+            "sha256": "639e512c0dfc3fad96a84caad71b8834d66329a1f28dc95e3946c9b58176c73a",
+            "bytes": 22438
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.number.d.ts",
+            "sha256": "368af93f74c9c932edd84c58883e736c9e3d53cec1fe24c0b0ff451f529ceab1",
+            "bytes": 1587
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.promise.d.ts",
+            "sha256": "934019d7e3c81950f9a8426d093458b65d5aff2c7c1511233c0fd5b941e608ab",
+            "bytes": 1803
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.sharedmemory.d.ts",
+            "sha256": "52ada8e0b6e0482b728070b7639ee42e83a9b1c22d205992756fe020fd9f4a47",
+            "bytes": 5128
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.string.d.ts",
+            "sha256": "3bdefe1bfd4d6dee0e26f928f93ccc128f1b64d5d501ff4a8cf3c6371200e5e6",
+            "bytes": 2556
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.symbol.wellknown.d.ts",
+            "sha256": "59fb2c069260b4ba00b5643b907ef5d5341b167e7d1dbf58dfd895658bda2867",
+            "bytes": 1606
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2021.d.ts",
+            "sha256": "feecb1be483ed332fad555aff858affd90a48ab19ba7272ee084704eb7167569",
+            "bytes": 1036
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2021.intl.d.ts",
+            "sha256": "965f36eae237dd74e6cca203a43e9ca801ce38824ead814728a2807b1910117d",
+            "bytes": 8245
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2021.promise.d.ts",
+            "sha256": "af3dd424cf267428f30ccfc376f47a2c0114546b55c44d8c0f1d57d841e28d74",
+            "bytes": 2262
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2021.string.d.ts",
+            "sha256": "995c005ab91a498455ea8dfb63aa9f83fa2ea793c3d8aa344be4a1678d06d399",
+            "bytes": 1592
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2021.weakref.d.ts",
+            "sha256": "959d36cddf5e7d572a65045b876f2956c973a586da58e5d26cde519184fd9b8a",
+            "bytes": 3171
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.array.d.ts",
+            "sha256": "3925a6c820dcb1a06506c90b1577db1fdbf7705d65b62b99dce4be75c637e26b",
+            "bytes": 4676
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.d.ts",
+            "sha256": "ee7bad0c15b58988daa84371e0b89d313b762ab83cb5b31b8a2d1162e8eb41c2",
+            "bytes": 1108
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.error.d.ts",
+            "sha256": "0a3d63ef2b853447ec4f749d3f368ce642264246e02911fcb1590d8c161b8005",
+            "bytes": 2379
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.intl.d.ts",
+            "sha256": "8cdf8847677ac7d20486e54dd3fcf09eda95812ac8ace44b4418da1bbbab6eb8",
+            "bytes": 7692
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.object.d.ts",
+            "sha256": "8444af78980e3b20b49324f4a16ba35024fef3ee069a0eb67616ea6ca821c47a",
+            "bytes": 1085
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.regexp.d.ts",
+            "sha256": "b4b67b1a91182421f5df999988c690f14d813b9850b40acd06ed44691f6727ad",
+            "bytes": 1331
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.string.d.ts",
+            "sha256": "3287d9d085fbd618c3971944b65b4be57859f5415f495b33a6adc994edd2f004",
+            "bytes": 1155
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2023.array.d.ts",
+            "sha256": "df83c2a6c73228b625b0beb6669c7ee2a09c914637e2d35170723ad49c0f5cd4",
+            "bytes": 40236
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2023.collection.d.ts",
+            "sha256": "436aaf437562f276ec2ddbee2f2cdedac7664c1e4c1d2c36839ddd582eeb3d0a",
+            "bytes": 900
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2023.d.ts",
+            "sha256": "27bdc30a0e32783366a5abeda841bc22757c1797de8681bbe81fbc735eeb1c10",
+            "bytes": 999
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2023.intl.d.ts",
+            "sha256": "8e3c06ea092138bf9fa5e874a1fdbc9d54805d074bee1de31b99a11e2fec239d",
+            "bytes": 2645
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.arraybuffer.d.ts",
+            "sha256": "87dc0f382502f5bbce5129bdc0aea21e19a3abbc19259e0b43ae038a9fc4e326",
+            "bytes": 2637
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.collection.d.ts",
+            "sha256": "b1cb28af0c891c8c96b2d6b7be76bd394fddcfdb4709a20ba05a7c1605eea0f9",
+            "bytes": 1224
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.d.ts",
+            "sha256": "8fd575e12870e9944c7e1d62e1f5a73fcf23dd8d3a321f2a2c74c20d022283fe",
+            "bytes": 1166
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.object.d.ts",
+            "sha256": "2fef54945a13095fdb9b84f705f2b5994597640c46afeb2ce78352fab4cb3279",
+            "bytes": 1259
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.promise.d.ts",
+            "sha256": "ac77cb3e8c6d3565793eb90a8373ee8033146315a3dbead3bde8db5eaf5e5ec6",
+            "bytes": 1389
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.regexp.d.ts",
+            "sha256": "56e4ed5aab5f5920980066a9409bfaf53e6d21d3f8d020c17e4de584d29600ad",
+            "bytes": 1073
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.sharedmemory.d.ts",
+            "sha256": "4ece9f17b3866cc077099c73f4983bddbcb1dc7ddb943227f1ec070f529dedd1",
+            "bytes": 3077
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.string.d.ts",
+            "sha256": "0a6282c8827e4b9a95f4bf4f5c205673ada31b982f50572d27103df8ceb8013c",
+            "bytes": 1194
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es5.d.ts",
+            "sha256": "c430d44666289dae81f30fa7b2edebf186ecc91a2d4c71266ea6ae76388792e1",
+            "bytes": 218439
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.array.d.ts",
+            "sha256": "1c9319a09485199c1f7b0498f2988d6d2249793ef67edda49d1e584746be9032",
+            "bytes": 1791
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.collection.d.ts",
+            "sha256": "e3a2a0cee0f03ffdde24d89660eba2685bfbdeae955a6c67e8c4c9fd28928eeb",
+            "bytes": 3878
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.d.ts",
+            "sha256": "2ab096661c711e4a81cc464fa1e6feb929a54f5340b46b0a07ac6bbf857471f0",
+            "bytes": 1282
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.decorators.d.ts",
+            "sha256": "d4b1d2c51d058fc21ec2629fff7a76249dec2e36e12960ea056e3ef89174080f",
+            "bytes": 1070
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.disposable.d.ts",
+            "sha256": "51ad4c928303041605b4d7ae32e0c1ee387d43a24cd6f1ebf4a2699e1076d4fa",
+            "bytes": 6806
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.error.d.ts",
+            "sha256": "73f78680d4c08509933daf80947902f6ff41b6230f94dd002ae372620adb0f60",
+            "bytes": 1029
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.float16.d.ts",
+            "sha256": "196cb558a13d4533a5163286f30b0509ce0210e4b316c56c38d4c0fd2fb38405",
+            "bytes": 20528
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.full.d.ts",
+            "sha256": "bde31fd423cd93b0eff97197a3f66df7c93e8c0c335cbeb113b7ff1ac35c23f4",
+            "bytes": 1074
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.intl.d.ts",
+            "sha256": "811c71eee4aa0ac5f7adf713323a5c41b0cf6c4e17367a34fbce379e12bbf0a4",
+            "bytes": 893
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.iterator.d.ts",
+            "sha256": "22adec94ef7047a6c9d1af3cb96be87a335908bf9ef386ae9fd50eeb37f44c47",
+            "bytes": 8676
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.promise.d.ts",
+            "sha256": "60037901da1a425516449b9a20073aa03386cce92f7a1fd902d7602be3a7c2e9",
+            "bytes": 1658
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.sharedmemory.d.ts",
+            "sha256": "c5239f5c01bcfa9cd32f37c496cf19c61d69d37e48be9de612b541aac915805b",
+            "bytes": 1067
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.scripthost.d.ts",
+            "sha256": "cd034f499c6cdca722b60c04b5b1b78e058487a7085a8e0d6fb50809947ee573",
+            "bytes": 9451
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.webworker.importscripts.d.ts",
+            "sha256": "80e18897e5884b6723488d4f5652167e7bb5024f946743134ecc4aa4ee731f89",
+            "bytes": 1041
+          },
+          {
+            "scope": "tool-resource",
+            "path": "package.json",
+            "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+            "bytes": 3620
+          }
+        ]
+      }
+    ],
+    "runtime": {
+      "version": "v24.11.1",
+      "architecture": "arm64"
+    },
+    "controller_sha256": "35acb58ccd11dce9daa601e640c47b763e8625c84919158610cf33107f4b46bc"
+  }
+}

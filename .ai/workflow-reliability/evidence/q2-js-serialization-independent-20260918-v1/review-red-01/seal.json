@@ -1,0 +1,258 @@
+{
+  "status": "RED_HANDOFF_R1_R2_REPRODUCED_STOP",
+  "head": "8881a7e667695345328852ab39157988f9fd868d",
+  "prior_verification_seal": {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/seal.json",
+    "sha256": "ef0fb45779046ec2ee0f0c866d46d06ad6f888c39eb47aa29612c8ea164bb1a4",
+    "bytes": 14580
+  },
+  "original_frozen_seal": {
+    "path": ".ai/workflow-reliability/evidence/q2-js-serialization-seal.json",
+    "sha256": "c43769d83411dd41063be59a77e87918991673f360ec8b759f1a22558bc528da",
+    "bytes": 18345
+  },
+  "frozen_matching_paths": 68,
+  "qualification_references_unchanged": 5,
+  "prior_evidence_files_unchanged": 34,
+  "current_tests": [
+    {
+      "path": "scripts/tests/test_measure_js_serialization_independent.py",
+      "sha256": "8917a3d561ed01afc6d2dcb5abc39af1cf232d8e8741283e6818e12156aae4e5",
+      "bytes": 13002
+    },
+    {
+      "path": "scripts/tests/measure_js_serialization_independent.test.mjs",
+      "sha256": "fba787cf2e7e0806eea8f2801d87f168b9e1e3facd361b941b1534ba921942c7",
+      "bytes": 14901
+    }
+  ],
+  "invocation": {
+    "argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "-u",
+      "scripts\\run.py",
+      "--idle",
+      "120",
+      "--max",
+      "900",
+      "--",
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "-u",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts\\tests",
+      "-p",
+      "test_measure_js_serialization_independent.py",
+      "-k",
+      "ReviewRegressions",
+      "-v"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+    "outer_idle_seconds": 120,
+    "outer_max_seconds": 900,
+    "native_idle_seconds": 30,
+    "native_max_seconds": 90,
+    "environment": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONIOENCODING": "utf-8",
+      "Q2_JS_RECORDS": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-js-serialization-independent-20260918-v1\\review-red-01\\corrected"
+    },
+    "path_prefix": "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd",
+    "test_inputs": [
+      {
+        "path": "scripts/tests/test_measure_js_serialization_independent.py",
+        "sha256": "8917a3d561ed01afc6d2dcb5abc39af1cf232d8e8741283e6818e12156aae4e5",
+        "bytes": 13002
+      },
+      {
+        "path": "scripts/tests/measure_js_serialization_independent.test.mjs",
+        "sha256": "fba787cf2e7e0806eea8f2801d87f168b9e1e3facd361b941b1534ba921942c7",
+        "bytes": 14901
+      }
+    ]
+  },
+  "results": [
+    {
+      "case": "review_r1",
+      "status": "REPRODUCED_ASSERTION_FAILURE",
+      "returncode": 1,
+      "native_tests": 1,
+      "diagnostics": 0
+    },
+    {
+      "case": "review_r2",
+      "status": "REPRODUCED_ASSERTION_FAILURE",
+      "returncode": 1,
+      "native_tests": 1,
+      "diagnostics": 0
+    }
+  ],
+  "python_methods": 2,
+  "failures": 2,
+  "unittest_seconds": 70.376,
+  "nested_calls_not_extra_methods": true,
+  "corrections": [
+    {
+      "attempt": ".",
+      "status": "REJECTED_EMPTY_NATIVE_RUN",
+      "python_reported_passes_not_accepted": 2,
+      "seconds": 52.732,
+      "cause": "New registration inadvertently nested inside unselected previous test"
+    },
+    {
+      "attempt": "corrected",
+      "status": "TWO_DISCRIMINATING_FAILURES",
+      "correction": "Move registration to top level; require native result/runtime/case/controller/nonempty test count",
+      "reruns": 1
+    }
+  ],
+  "timeouts": 0,
+  "production_changes": false,
+  "owner_test_changes": false,
+  "evidence": [
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/after.json",
+      "sha256": "61d124e84644e59a90cd1597b1ec398648ddc62068fbfeca2ae9ea6ff1b170d4",
+      "bytes": 17687
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/before.json",
+      "sha256": "6911207641a57e99f675d53431458c47fc246515061677ba0e321dd082da53e1",
+      "bytes": 19387
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/capture_red.py",
+      "sha256": "92c388d0496b30402bedbe3de4ef1044afd38ee8ed8773de5518f0daa8afd272",
+      "bytes": 3011
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/exit.json",
+      "sha256": "efc490fd55bc6aa0b40b222f1127276026e7be10de98fc6bcb5f25e0094d053d",
+      "bytes": 565
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/invocation.json",
+      "sha256": "8e52b856fe6e7b660d9595ff6baec16ae44246e68d28a72fbec928f41183f7de",
+      "bytes": 1609
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/review_r1.capture.json",
+      "sha256": "13b582778abede60a5759dac46d688485b19156d18c39050c4c2495e739e4036",
+      "bytes": 1473
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/review_r1.invocation.json",
+      "sha256": "094dafd54e4c829b7849fe8709e8fa7fc2c147f8ffa008509c50df95dca3349d",
+      "bytes": 1236
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/review_r1.result.bin",
+      "sha256": "5d75154f29d9fbdb0cfebe312729a33e149602ebbd754321645b93e0d0646798",
+      "bytes": 6098
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/review_r2.capture.json",
+      "sha256": "893298677a3ca24e7228203d5e900beeead08292a43c363ecfb5adb275798321",
+      "bytes": 1796
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/review_r2.invocation.json",
+      "sha256": "b203e6760286a4272afc04f8d968c084f59feb6a227370dd0015c47e3b21748e",
+      "bytes": 1258
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/review_r2.result.bin",
+      "sha256": "de8c2c41f8e388f7d08fb743341b17ab65a00d5a0e293e716bb42db3fff6b7e6",
+      "bytes": 7768
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/stderr.bin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/corrected/stdout.bin",
+      "sha256": "efb1e7ae14b9dc379c6275317a883b79902783fcfa572ba8efb4065869ed50f7",
+      "bytes": 6356
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/exit.json",
+      "sha256": "ff946605964eea9965016455ee7c07d14b884ffdc85ef76c05e28d59a29a66d2",
+      "bytes": 544
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/head.json",
+      "sha256": "10fa7a3901b96fe22868b76e38afff166e2cc824ecb3a5058a832fc0703480ff",
+      "bytes": 302
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/invocation.json",
+      "sha256": "97148158fa387a3c3680ef656e35153b2d305bf9eb75b62b341d40d6ba5f6127",
+      "bytes": 1598
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/prior-measure_js_serialization_independent.test.mjs.snapshot",
+      "sha256": "6c6d366cd85beae849eda648f5b7741f5b0bedf38a425864770ed4ed1babe1a3",
+      "bytes": 8399
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/prior-test_measure_js_serialization_independent.py.snapshot",
+      "sha256": "3afb373d32051e41cd40eb978411094de05c9302526268b5933b0bb7f23848c4",
+      "bytes": 7200
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/registration-error-measure_js_serialization_independent.test.mjs.snapshot",
+      "sha256": "5c8ed2f423d44d0e90040fd171741b537daab2bdb41daf07fd00cfb83e018286",
+      "bytes": 15317
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/registration-error-test_measure_js_serialization_independent.py.snapshot",
+      "sha256": "423b876f2558a90736d4295a1ebdec6aa1dade6d07f10cd1666b2c4bbc383b0a",
+      "bytes": 12522
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/report.md",
+      "sha256": "2ef6c94988bb333e66d641930d6c979bbab135229de47426f01dc9d82d9216dc",
+      "bytes": 7332
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/review_r1.capture.json",
+      "sha256": "bc414e1335522f1c9d1b5b2a6d5bde977f01efe1e7c9de684d98e1d39886cd44",
+      "bytes": 57
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/review_r1.invocation.json",
+      "sha256": "c35dff87f15b3231057abc62b6e19d140e63cc392bbe89ecf77e6644b740324e",
+      "bytes": 1236
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/review_r2.capture.json",
+      "sha256": "bc414e1335522f1c9d1b5b2a6d5bde977f01efe1e7c9de684d98e1d39886cd44",
+      "bytes": 57
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/review_r2.invocation.json",
+      "sha256": "361d746df638c81ac1a0314512ddeaf8072dbd4fd26b778a8a29c14494e45ad5",
+      "bytes": 1258
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/state.md",
+      "sha256": "146b87aa509c117e29e4d1450f673357531dfb3196dee6222c937bd1f28acf4e",
+      "bytes": 580
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/stderr.bin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/review-red-01/stdout.bin",
+      "sha256": "3c73606028de62473dd09cd118da7e32cfa3864c0c61a42eb3b2941cda3c8465",
+      "bytes": 622
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+    "returncode": 0,
+    "stdout": "8881a7e667695345328852ab39157988f9fd868d\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+    "returncode": 0,
+    "stdout": " M evals/report.md\n M references/quality-metrics.md\n M scripts/measure_js.mjs\n M scripts/tests/measure_js.test.mjs\n M scripts/tests/test_measure_js.py\n?? .ai/workflow-reliability/evidence/q2-js-serialization-dev-01/\n?? .ai/workflow-reliability/evidence/q2-js-serialization-dev-02/\n?? .ai/workflow-reliability/evidence/q2-js-serialization-dev-03/\n?? .ai/workflow-reliability/evidence/q2-js-serialization-dev-04/\n?? .ai/workflow-reliability/evidence/q2-js-serialization-final-01/\n?? .ai/workflow-reliability/evidence/q2-js-serialization-final-02/\n?? .ai/workflow-reliability/evidence/q2-js-serialization-handoff.md\n?? .ai/workflow-reliability/evidence/q2-js-serialization-independent-20260918-v1/\n?? .ai/workflow-reliability/evidence/q2-js-serialization-retry-01/\n?? .ai/workflow-reliability/evidence/q2-js-serialization-seal.json\n?? scripts/tests/measure_js_serialization_independent.test.mjs\n?? scripts/tests/test_measure_js_serialization_independent.py\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check",
+      "--",
+      "scripts/tests/test_measure_js_serialization_independent.py",
+      "scripts/tests/measure_js_serialization_independent.test.mjs"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

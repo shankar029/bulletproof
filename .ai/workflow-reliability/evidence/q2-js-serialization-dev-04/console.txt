@@ -1,0 +1,21 @@
+Validated existing TypeScript binding for native core tests
+test_native_candidates_from_shared_syntax (test_measure_js.SharedJSCoreTests.test_native_candidates_from_shared_syntax) ... Starting real native core case: candidate_records
+Completed real native core case: candidate_records
+ok
+test_native_candidates_on_actual_controller_sources (test_measure_js.SharedJSCoreTests.test_native_candidates_on_actual_controller_sources) ... Starting real native core case: actual_source_candidates
+Completed real native core case: actual_source_candidates
+ok
+test_native_serialized_freshness_and_identity (test_measure_js.SharedJSCoreTests.test_native_serialized_freshness_and_identity) ... Starting real native core case: serialized_freshness
+Completed real native core case: serialized_freshness
+ok
+test_native_serialized_source_records_and_origins (test_measure_js.SharedJSCoreTests.test_native_serialized_source_records_and_origins) ... Starting real native core case: serialized_records
+Completed real native core case: serialized_records
+ok
+test_native_serialized_zero_js_inputs (test_measure_js.SharedJSCoreTests.test_native_serialized_zero_js_inputs) ... Starting real native core case: serialized_empty
+Completed real native core case: serialized_empty
+ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 241.489s
+
+OK

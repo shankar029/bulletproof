@@ -14,7 +14,7 @@ Current scope: sample-app verification and prioritized workflow reliability fixe
 <a href="design.html">Design</a> · <a href="continuation-plan.html">Continuation plan</a> · <a href="traceability.md">Acceptance ledger</a></div>
 
 <h2>Outcome</h2>
-<p><strong>Partial delivery:</strong> reliability, five-verb CLI, tool bindings and README/guides are committed. The native JS core is preserved in <code>886d699</code> after independent source/execution proof and parent reconciliation; two added tests received parent self-review, not a later independent verdict. Collectors, guarded metrics, recovery and release quality remain incomplete.</p>
+<p><strong>Partial delivery:</strong> reliability, five-verb CLI, tool bindings, README/guides and the native parser core are committed. Native serialization/candidates and two corrected reference/dependency defects now have <a href="evidence/q2-js-serialization-code-review-r2.md">bounded preservation approval</a>. A recurring grouped-test timeout remains unresolved. Collectors, guarded metrics, recovery and release quality are incomplete.</p>
 
 <h2>Implemented and pending</h2>
 <p><strong>Delivered:</strong> source-bound atomic reports, exact argv/cwd, assertion-only kills, freshness/restoration and fail-closed completeness; redesigned README/banner, user guide and installation/contributor/architecture updates. Docs were rendered locally at desktop/mobile sizes in light/dark modes.</p>
@@ -33,7 +33,7 @@ Current scope: sample-app verification and prioritized workflow reliability fixe
 </table>
 <table>
 <tr><th>G1</th><th>G2</th><th>G3</th><th>G4</th><th>G5</th><th>G6</th></tr>
-<tr><td>Pass</td><td>Autonomous acceptance; human unconfirmed</td><td>Continuation accepted</td><td>Scoped changes pass</td><td>Scoped/app regression passes; fresh-agent workflow pending</td><td>Partial preservation; quality blocked</td></tr>
+<tr><td>Pass</td><td>Autonomous acceptance; human unconfirmed</td><td>Continuation accepted</td><td>Corrected cases pass; grouped timeout</td><td>Bounded proof only; fresh-agent workflow pending</td><td>Partial preservation; quality blocked</td></tr>
 </table>
 
 <h2>Measurements, not substitutes</h2>
@@ -43,12 +43,13 @@ Current scope: sample-app verification and prioritized workflow reliability fixe
 <tr><td>Joint checkpoint before R1</td><td>262/263 Python; native13 passed</td><td><a href="evidence/joint-cli-binding-r2-report.md">One symlink case environment-unverified</a>; native includes five Python replays.</td></tr>
 <tr><td>R1 fresh affected proof</td><td>10 methods passed</td><td><a href="evidence/joint-cli-binding-r1-report.md">20 malformed manifests reject; valid control runs</a>. Earlier262 not refreshed or added.</td></tr>
 <tr><td>C3 independent proof</td><td>CLI33; native70; 12 browser views</td><td><a href="evidence/c3-independent-report.md">217 inputs unchanged</a>; five native entries replay CLI cases. Three navigation actions; 20 installed-layout links. Not added to earlier counts.</td></tr>
-<tr><td>Partial JS core independent proof</td><td>15 methods + separate two methods passed</td><td><a href="evidence/q2-js-core-independent-20260917-v1/report.md">3,593 inputs unchanged</a>; 732.040s and 14.195s, no test retries. Nested native cases are not additional methods. No complete JS pipeline proof.</td></tr>
+<tr><td>Historical parser-core proof</td><td>15 methods + separate two passed</td><td><a href="evidence/q2-js-core-independent-20260917-v1/report.md">3,593 inputs unchanged</a>; earlier bytes, not current full-suite or pipeline proof.</td></tr>
+<tr><td>Serialization correction proof</td><td>Seven distinct methods have passing evidence over eight invocations</td><td><a href="evidence/q2-js-serialization-correction-independent-20260918-v1/report.md">223 source/history pins unchanged</a>. Grouped run failed on recurring candidate idle timeout; sole unchanged-byte retry passed. Reliable combined execution remains unproven.</td></tr>
 <tr><td>Fresh existing-planner regression</td><td>37 tests; four flows/126 checks passed</td><td><a href="evidence/planner-refresh-942fbc75/native-result.json">99.33% lines / 96.92% branches / 96.63% functions</a>; <a href="evidence/planner-refresh-942fbc75/browser-result.json">browser replay</a>. Unchanged app inputs; one native capture correction/rerun, not a product fix.</td></tr>
 <tr><td>Historical evaluation checks</td><td>Native65; corpus10/79 assertions; CSV9/9 graded kills</td><td><a href="evidence/continuation-native.log">Native</a> / <a href="evidence/continuation-corpus.log">fixed corpus</a>; seven mutants ungraded, 0.9 bar unchanged. Not live-model or whole-change proof.</td></tr>
 <tr><td>Actual quality</td><td>No current complete proof</td><td><a href="metrics.json">Historical incomplete report</a>; subsequent edits invalidate current-snapshot use.</td></tr>
 </table>
-<p><a href="measurement-enablement.html">Measurement enablement</a> is in progress. Refusal tests, installed tools and dry-run evaluation cannot replace missing actual measurements.</p>
+<p>Further <a href="measurement-enablement.html">measurement implementation</a> is paused for the app-driven exercise. Refusal tests, installed tools and dry runs cannot replace actual measurements.</p>
 
 <h2>Quality scorecard</h2>
 <table>
@@ -66,7 +67,7 @@ Current scope: sample-app verification and prioritized workflow reliability fixe
 <p><a href="evidence/i1-code-review-r2.md">I1 re-review</a> approves limited preservation, not release. Continuation scores remain unproven.</p>
 
 <h2>How to finish</h2>
-<p>C3 is preserved in <code>ce7c07e</code>; the JS amendment in <code>fdc6af0</code>; the parser core in <code>886d699</code>. Remaining JS implementation has resumed. Complete collectors and guarded binding, then fresh agent-driven workflow and final quality proof. C4 remains held; recovery remains blocked. Earlier commits and Q3-Q5 work are recorded in state.</p>
+<p>Preserve this bounded serialization checkpoint, then prioritize actual app-driven workflow verification rather than another internal expansion. Earlier parser/app evidence is in <code>886d699</code> and <code>8881a7e</code>. Remaining command/manifests/replay, collectors, guarded binding and Q3-Q5 are not waived. Auxiliary C4 preparation stays held; recovery and publication remain blocked.</p>
 <p>Human approval remains unconfirmed. Executed runtimes: Python 3.14.2 / Node 24.11.1 on Windows; no broader matrix proof. Hash scope is not a sandbox; producer identities are self-declared. Compaction is not fresh-agent resume. Publication remains blocked by EMU 403; no retry or bypass occurred.</p>
 </body>
 </html>

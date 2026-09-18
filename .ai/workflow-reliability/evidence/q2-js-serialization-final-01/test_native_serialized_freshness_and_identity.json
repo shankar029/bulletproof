@@ -1,0 +1,81 @@
+{
+  "test": "test_measure_js.SharedJSCoreTests.test_native_serialized_freshness_and_identity",
+  "case": "serialized_freshness",
+  "argv": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\measure_js.test.mjs"
+  ],
+  "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\qj-4_ucvizv",
+  "idle_seconds": 30,
+  "max_seconds": 90,
+  "environment_removed": [],
+  "returncode": 124,
+  "stdout": "",
+  "stderr": "[idle-timeout]",
+  "request_sha256": "9a6219574f782005ef7bdf8051891db49a4a3a5daa9e9b2c3b6223ab98954f51",
+  "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88",
+  "controller_sha256": "35acb58ccd11dce9daa601e640c47b763e8625c84919158610cf33107f4b46bc",
+  "executing_sources": [
+    {
+      "path": "measure_js.mjs",
+      "sha256": "35acb58ccd11dce9daa601e640c47b763e8625c84919158610cf33107f4b46bc",
+      "bytes": 51561
+    },
+    {
+      "path": "measure.py",
+      "sha256": "b5a824cd84a4a63bb1a6ec5cb6d2e09426614006b12f0b9ef867f040439c4db9",
+      "bytes": 71879
+    },
+    {
+      "path": "measure_graph.py",
+      "sha256": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391",
+      "bytes": 27123
+    },
+    {
+      "path": "probe.py",
+      "sha256": "d7be5050cf70cb836e46f0b661632b2d426d6bdc4684f1b54aa9061d61948904",
+      "bytes": 40490
+    },
+    {
+      "path": "evidence.py",
+      "sha256": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+      "bytes": 7050
+    },
+    {
+      "path": "run.py",
+      "sha256": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+      "bytes": 10919
+    },
+    {
+      "path": "tests/test_measure_js.py",
+      "sha256": "d83095ed32263342a41fce007dc361e63e2445e8f74533953d98bb45d8ed659b",
+      "bytes": 20413
+    },
+    {
+      "path": "tests/measure_js.test.mjs",
+      "sha256": "a9f9f339d9fac199f8f9ab4bf30db5348cae0c2b385245a0265f1d7420c22cb1",
+      "bytes": 29938
+    },
+    {
+      "path": "tests/helpers.py",
+      "sha256": "2694cd24dd07b1a6e3ceff7ac2addb7d4fc8bc40ee197f6d3c4206d281bf2068",
+      "bytes": 1813
+    },
+    {
+      "path": "tests/test_measure_inventory.py",
+      "sha256": "d97a98983cb2c825abd87ffec4f96981c652dece88846abd3864179a2921d227",
+      "bytes": 17940
+    },
+    {
+      "path": "tests/test_measure_source_bindings.py",
+      "sha256": "bcc36f23061dd5b4db2dfcb161c0202bbe95db1fb930b1c6ef79fe8c9b95d1b3",
+      "bytes": 21953
+    },
+    {
+      "path": "tests/test_measure_q2.py",
+      "sha256": "8f0adaa478501bb4d1b81bb54ecdf45011d68787977537401fc4f24e563db7f8",
+      "bytes": 15237
+    }
+  ],
+  "native": null
+}

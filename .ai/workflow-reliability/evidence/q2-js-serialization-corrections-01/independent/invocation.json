@@ -1,0 +1,49 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-u",
+    "scripts\\run.py",
+    "--idle",
+    "120",
+    "--max",
+    "900",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-u",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts\\tests",
+    "-p",
+    "test_measure_js_serialization_independent.py",
+    "-k",
+    "ReviewRegressions",
+    "-v"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "Q2_JS_RECORDS": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-js-serialization-corrections-01\\independent",
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "sources": [
+    {
+      "path": "scripts\\measure_js.mjs",
+      "sha256": "ba0ca909699ca453515a0eaad5206c81d5afe6abcd1fb7b47723e8a71f1c0900",
+      "bytes": 52938
+    },
+    {
+      "path": "scripts\\tests\\test_measure_js_serialization_independent.py",
+      "sha256": "8917a3d561ed01afc6d2dcb5abc39af1cf232d8e8741283e6818e12156aae4e5",
+      "bytes": 13002
+    },
+    {
+      "path": "scripts\\tests\\measure_js_serialization_independent.test.mjs",
+      "sha256": "fba787cf2e7e0806eea8f2801d87f168b9e1e3facd361b941b1534ba921942c7",
+      "bytes": 14901
+    }
+  ]
+}

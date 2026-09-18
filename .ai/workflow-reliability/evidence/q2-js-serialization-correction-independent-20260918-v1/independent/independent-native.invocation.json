@@ -1,0 +1,25 @@
+{
+  "test": "test_measure_js_serialization_independent.IndependentJSSerializationTests.test_merged_declarations_import_equals_and_namespace_reexport",
+  "argv": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\measure_js_serialization_independent.test.mjs"
+  ],
+  "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\qji-f_65c8ba",
+  "idle_seconds": 30,
+  "max_seconds": 90,
+  "environment_removed": [
+    "PYTHONDONTWRITEBYTECODE",
+    "PYTHONIOENCODING"
+  ],
+  "request_sha256": "d862ed84197a1417eff937e9fe62eb17a7b666b562126c88060053d2c82f1c5e",
+  "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88",
+  "controller_sha256": "ba0ca909699ca453515a0eaad5206c81d5afe6abcd1fb7b47723e8a71f1c0900",
+  "base_git": "737fa24bdac17082129d7b771dd411f19513e1db",
+  "head_git": "feb4e2d52dc668dafcf08ac8a37cf6d86cfb21f3",
+  "fixture_files": {
+    "package.json": "{\"type\":\"commonjs\"}\n",
+    "origin.ts": "export class Parcel { value = 1; }\r\nexport namespace Parcel { export const tag = 'parcel'; }\r\nexport interface Box { left: string; }\r\nexport interface Box { right: number; }\r\n",
+    "barrel.ts": "export * as bundle from './origin.js';\r\n",
+    "consumer.ts": "import model = require('./origin.js');\r\nimport Item = model.Parcel;\r\nimport { bundle } from './barrel.js';\r\nexport const instance = new Item();\r\nexport const tag = model.Parcel.tag;\r\nexport const other = bundle.Parcel.tag;\r\nexport const box: model.Box = { left: 'x', right: 1 };\r\n"
+  }
+}

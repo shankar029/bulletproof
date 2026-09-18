@@ -1,0 +1,771 @@
+{
+  "test": "test_measure_js.SharedJSCoreTests.test_native_candidates_from_shared_syntax",
+  "case": "candidate_records",
+  "argv": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\measure_js.test.mjs"
+  ],
+  "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\qj-y9f9g54n",
+  "idle_seconds": 30,
+  "max_seconds": 90,
+  "environment_removed": [],
+  "returncode": 0,
+  "stdout": "✔ candidate_records (8139.0779ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 8148.2063\n",
+  "stderr": "",
+  "request_sha256": "ed439d5a3462f5d657cd664c20045f005588cab0f607e6b9b4c842e3089c8cbc",
+  "qualified_inputs_sha256": "635539f7f194d17ba256f6a774949a12e3191f53796a5e02db17736462b03e88",
+  "controller_sha256": "12872eeb22fec58116c3d8820fb87ebf522eec8876d76ca9758de436cf84546d",
+  "native": {
+    "case": "candidate_records",
+    "proofs": [
+      {
+        "revision": "head",
+        "git": "5e16b83f6bd3e34250bc586e481180c8cc9112d2",
+        "binding": {
+          "semantic_version": "typescript-shared-v1",
+          "run_id": "fixture-run",
+          "revision": "head",
+          "git_revision": "5e16b83f6bd3e34250bc586e481180c8cc9112d2",
+          "inventory_sha256": "d034381978f50e6ae45cdf587e026dda092866f60912a5738be156effec3bf15",
+          "source_sha256": "05041fc3fb4d9498c0ea94609ae518108e13ad4f5faad0408a75b8addf4288bd",
+          "parser_sha256": "93d4fdc2e4a0fc9d7e678aa80d6bbe31bec99004c2f142a4e740fd326126bee2",
+          "settings_sha256": "0003f508effea0e58a0af36e65bb369c91683035a452331e2d72731640034db1",
+          "policy_sha256": "9747688deec9c712543bba65ae91a278739062c1f118851189f8659017a9024f",
+          "toolset_sha256": "03ed0c95ac43f099ede3308f4c97fbbc9bfbb4478e8c1ea779f61d1d6864196e"
+        },
+        "records_sha256": "0df8cdf577b9d2d4c3cb8470a3e6dbea884e8cd4904447a0d36b361c9585325e",
+        "census": [
+          {
+            "path": "bad-utf8.js",
+            "source_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "observed_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+            "suffix": ".js",
+            "state": "failed",
+            "reason": "Invalid UTF-8: bad-utf8.js",
+            "token_count": null,
+            "function_count": null,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "barrel.ts",
+            "source_sha256": "43e1936475ebc6d3fd92b4d4690478de346553feb80fa52b7ba3c0f5187a49ee",
+            "observed_sha256": "43e1936475ebc6d3fd92b4d4690478de346553feb80fa52b7ba3c0f5187a49ee",
+            "suffix": ".ts",
+            "state": "processed",
+            "reason": "",
+            "token_count": 14,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "calls.cjs",
+            "source_sha256": "65d3bd179a8e4a12e3a0d9f31cb1471f7e3ca99f84bc4e38a9ac44f5a602e74c",
+            "observed_sha256": "65d3bd179a8e4a12e3a0d9f31cb1471f7e3ca99f84bc4e38a9ac44f5a602e74c",
+            "suffix": ".cjs",
+            "state": "processed",
+            "reason": "",
+            "token_count": 37,
+            "function_count": 1,
+            "diagnostic_ids": [
+              "08fac0fa26fced0a66b3d71e6d822fc5c3b780ae831080224465e3d67fde81be",
+              "1c0ad8b1c13b3301956c081bc4b5e841d4e204df9d3bee26cb3c3691b0515f7d",
+              "6127bd0dcd9a7faa87afe82e2480358fc070e796a9ffe81392de7112591342ab",
+              "88d33e7edb16b334a64632d688bb866fd52824596ccc1c8e52c5836948dc5812"
+            ]
+          },
+          {
+            "path": "case.test.mjs",
+            "source_sha256": "4533133e05692ab7d44a307494fcab76f711d92c935d3235f7878d4a1dd38782",
+            "observed_sha256": "4533133e05692ab7d44a307494fcab76f711d92c935d3235f7878d4a1dd38782",
+            "suffix": ".mjs",
+            "state": "processed",
+            "reason": "",
+            "token_count": 34,
+            "function_count": 1,
+            "diagnostic_ids": [
+              "0f71f19d0a32bf99c4df7f4bdd14ffce297cc073d7f79a53bbf709cd9a173712",
+              "b3f3f642ea3ec608547dee2e9eeaadd3b8771f36293f0791ec5c027a19be4e2c",
+              "b57df01bd5e95efd613c7c3c63ce4825a32177504da4bdec6fcd32517f91f476"
+            ]
+          },
+          {
+            "path": "consumer.mjs",
+            "source_sha256": "2c82b38dac3cad1759a1197f30713792313a121f488375607bb6db6af948c822",
+            "observed_sha256": "2c82b38dac3cad1759a1197f30713792313a121f488375607bb6db6af948c822",
+            "suffix": ".mjs",
+            "state": "processed",
+            "reason": "",
+            "token_count": 13,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "cycle.ts",
+            "source_sha256": "64e278cbedac4b2fe4533cb9b46e6f4d2ff937f38f4a02af270c0771f6a132b6",
+            "observed_sha256": "64e278cbedac4b2fe4533cb9b46e6f4d2ff937f38f4a02af270c0771f6a132b6",
+            "suffix": ".ts",
+            "state": "processed",
+            "reason": "",
+            "token_count": 7,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "empty.js",
+            "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "suffix": ".js",
+            "state": "processed",
+            "reason": "",
+            "token_count": 0,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "head-only.ts",
+            "source_sha256": "e60ab86aab73b93e4550ee477d18786dc7f6113e722cdf5f0830a3e34149a2f4",
+            "observed_sha256": "e60ab86aab73b93e4550ee477d18786dc7f6113e722cdf5f0830a3e34149a2f4",
+            "suffix": ".ts",
+            "state": "processed",
+            "reason": "",
+            "token_count": 6,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "invalid.ts",
+            "source_sha256": "2c164d997767033d05d3b3249014ba562117a6678dec2e376716adfcd06abb5e",
+            "observed_sha256": "2c164d997767033d05d3b3249014ba562117a6678dec2e376716adfcd06abb5e",
+            "suffix": ".ts",
+            "state": "failed",
+            "reason": "Invalid syntax",
+            "token_count": null,
+            "function_count": null,
+            "diagnostic_ids": [
+              "56c2588d4327e6c60b395205fc0eb2865230a7e5fa73e223a4ce7d28c24b9aea",
+              "662414f470c9ff190a272da69020c76f2f50ac02962a7ee7e485302cd37a547e",
+              "d05d991d1f50a84d5adeb85e88de2b418b3c554974da997539531cdd75fef104"
+            ]
+          },
+          {
+            "path": "origin.ts",
+            "source_sha256": "8b4757690dd89ec4be31f8ffc773f65a45f6ab9a74ff7a2be75e3b3db9686f9f",
+            "observed_sha256": "8b4757690dd89ec4be31f8ffc773f65a45f6ab9a74ff7a2be75e3b3db9686f9f",
+            "suffix": ".ts",
+            "state": "processed",
+            "reason": "",
+            "token_count": 25,
+            "function_count": 1,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "plain.js",
+            "source_sha256": "4d7d44b869314dd141fe85b1aa9b8c623a02c6025cd2e07ce6092baebb3565cd",
+            "observed_sha256": "4d7d44b869314dd141fe85b1aa9b8c623a02c6025cd2e07ce6092baebb3565cd",
+            "suffix": ".js",
+            "state": "processed",
+            "reason": "",
+            "token_count": 8,
+            "function_count": 0,
+            "diagnostic_ids": []
+          },
+          {
+            "path": "references.ts",
+            "source_sha256": "a426dba5cf3a7df7ab926321ce7cc7c19c466fb6e76414232efc4987300a1320",
+            "observed_sha256": "a426dba5cf3a7df7ab926321ce7cc7c19c466fb6e76414232efc4987300a1320",
+            "suffix": ".ts",
+            "state": "processed",
+            "reason": "",
+            "token_count": 91,
+            "function_count": 2,
+            "diagnostic_ids": [
+              "09e9cbd4a7de5bdf629b0dbbdf7a5aa2246878fad60b8acc2ab56e23101598da",
+              "990df3d831e7b5109fb2addb7a86d9acede72406e7d933a49e25d376db40c821",
+              "a5f2f31264fa023bc6632ecc3d111a37f4c5c4c5e6f6f90dacb8329f507791f5",
+              "a80a0cd04738e972404575de98d3c4362afef4088363a8023c739aac5cb94784"
+            ]
+          },
+          {
+            "path": "shapes.ts",
+            "source_sha256": "7980a9ec05e777c29456f41e8b0f785c743fb282196e79d5ffa47c729b9952e5",
+            "observed_sha256": "7980a9ec05e777c29456f41e8b0f785c743fb282196e79d5ffa47c729b9952e5",
+            "suffix": ".ts",
+            "state": "processed",
+            "reason": "",
+            "token_count": 118,
+            "function_count": 3,
+            "diagnostic_ids": [
+              "cbde45737dd28e02bcc8d4805991e405f817909eab31dd488f967a0138a2e81c",
+              "f913aaceec7a96a80bfa8203ef65865ad0a6559e4c392c28c4190c920728aed9"
+            ]
+          },
+          {
+            "path": "view.tsx",
+            "source_sha256": "a895c78b929413b746bf8a12f5b33ec1bbf8b77fa94c6413644e57f85d966cd4",
+            "observed_sha256": "a895c78b929413b746bf8a12f5b33ec1bbf8b77fa94c6413644e57f85d966cd4",
+            "suffix": ".tsx",
+            "state": "processed",
+            "reason": "",
+            "token_count": 23,
+            "function_count": 1,
+            "diagnostic_ids": [
+              "2badd6f94d180ac307b7d53bdfd42b439d4b075e91dcdbf311ebdef6c1b81319",
+              "2c103bb283844d2100bd7d2ab3f292958b2fb387ebd584097366ef8611abdf45"
+            ]
+          },
+          {
+            "path": "widget.jsx",
+            "source_sha256": "0e2b835ada4376264c098fa5c8118c5935d375ea853417f390245247320a9352",
+            "observed_sha256": "0e2b835ada4376264c098fa5c8118c5935d375ea853417f390245247320a9352",
+            "suffix": ".jsx",
+            "state": "processed",
+            "reason": "",
+            "token_count": 20,
+            "function_count": 1,
+            "diagnostic_ids": [
+              "ea57dff976f9685a340664a37043c94b3364f1ab93b81974aef04c7c09889a64",
+              "f59741bbe408a679aef857d7537f3367576d2a91dc60c98b71e66a134f8fd54f"
+            ]
+          }
+        ],
+        "symbols": [
+          {
+            "id": "11064c487f82b2fa3f58074e17eda83126cef2208a47a713828563e9e59d7521",
+            "name": "extra"
+          },
+          {
+            "id": "159c198fd60b71952268ad11827c67747c4fa8d894b8cc0a15650517bf6be83d",
+            "name": "require"
+          },
+          {
+            "id": "1af46f8c52dfeeccd394368c2c12f7017025476f33ccefb0f646066768fb72ae",
+            "name": "ignored2"
+          },
+          {
+            "id": "1f8ba9581c7dc6252a1bf7e37d67290f91ad504a7d41475fe2517b6da1045914",
+            "name": "ambient"
+          },
+          {
+            "id": "2a86a5c343be4f55de9ebec1dbe1799ade13300eb60d1dbd4b9382976108305a",
+            "name": "n"
+          },
+          {
+            "id": "2e000d5b0a55edee2b37bd92136f8029f2f78f70dbc122f51693ab47da3cc9d1",
+            "name": "regex"
+          },
+          {
+            "id": "37c26a4ebed29a3355bc0b054cea008a1db17254ae16085ec0902aa589a8df0c",
+            "name": "template"
+          },
+          {
+            "id": "382e8fa3c2141c7f4d87264ee79d9db663bbebf709f083dc4ed873a38751d57e",
+            "name": "\"/subject/widget\""
+          },
+          {
+            "id": "3899bbdcae588e2afe39de394d57e31daa2a9357d790ca70c8bd45a1cfb99bd8",
+            "name": "external"
+          },
+          {
+            "id": "3c8e4701199d5053cb01bb9f30c4df8b985b09502ea2aa70624fdfca0d9d6c4c",
+            "name": "\"/subject/calls\""
+          },
+          {
+            "id": "3e072e8595915989c697c332aec78ae315398d92e4651a872962123d37db7c01",
+            "name": "\"/subject/case.test\""
+          },
+          {
+            "id": "470919eaa29a464310ba1536ce816ef8fdb255c3e893677e0d591e6bd81a221d",
+            "name": "\"/subject/cycle\""
+          },
+          {
+            "id": "483acce51118d4012609dc7c4b3474545c12c7db7a6e5a1dc7e816eb807b0823",
+            "name": "inner"
+          },
+          {
+            "id": "510a58af03230799b5d7ec3b5a11d8c3be4592f8fceb060680d5357f5a4d3cea",
+            "name": "arrow"
+          },
+          {
+            "id": "5b4a5d55c5f4201d20e4f8ecbb33ea695f3cf7b3a50873d564d70798c358a6d7",
+            "name": "x"
+          },
+          {
+            "id": "64d90114483cce295463ae1233943da8293616a0c31335f83472d8c6786a6da5",
+            "name": "value"
+          },
+          {
+            "id": "67617eea72943934832184a4ccfa3cfc6f117dc0ede09e90a714c553faef95b7",
+            "name": "head"
+          },
+          {
+            "id": "6af833ee74bddbab6f26b6191542e391d557830789bbd9f59b170fd42a2571df",
+            "name": "x"
+          },
+          {
+            "id": "6f524ac01c1a9c9423d16dea96c990a9aa39a1d445b98edca0ae78f2c014c453",
+            "name": "ignored"
+          },
+          {
+            "id": "7be2214181549db05678861f828f53c91c7edb97a9a766b3212b9c02dccc1281",
+            "name": "first"
+          },
+          {
+            "id": "7d03ebeffc7ad7744b0bbd8890551704faee467b39ef43a448f461c7d7d6c3a3",
+            "name": "bool"
+          },
+          {
+            "id": "8072aed45edde9a5a81d1ebce6ff4be9f2d92731b02088593d40f08ae918a498",
+            "name": "precedence"
+          },
+          {
+            "id": "856d211fd5f5440c22e5319be3b4eec76080279ec49843c64c3ff65ab9b29c95",
+            "name": "lookup"
+          },
+          {
+            "id": "8814d6359a8c5b5806e6b7f9b1446870f89e65171bdd2a6a52dd3edc48f5be02",
+            "name": "Flags"
+          },
+          {
+            "id": "8d346cfc6edd5de3db0b4c917ea9f68a3d3c632307c935f85255435fd33958ab",
+            "name": "quotient"
+          },
+          {
+            "id": "8fa0cf53b18952baf6af6c737cc8576332dd063e12fb66f4b8a479cf2085cb95",
+            "name": "\"/subject/origin\""
+          },
+          {
+            "id": "993025a57993562a886dca43a0ea6ddcd2ad2e47080607aad786acac76d2278a",
+            "name": "view"
+          },
+          {
+            "id": "9ac88674b3a95eca1e6938cc6d5f0e5a636da78b53ba82335b12e404132288f1",
+            "name": "branch"
+          },
+          {
+            "id": "9dae666918fd5874fb08c215a458a08fbf00207a5ac86d97f7ba20e68318c9fe",
+            "name": "x"
+          },
+          {
+            "id": "b2f14fcee87a5311d714ad017d4bcf6ee2445a05e012d44e4a0a5866764bc5ab",
+            "name": "café"
+          },
+          {
+            "id": "c528352dd5501a4657c4eb3c389249f87309d750d1a69b5f81d57af41efd05c8",
+            "name": "\"/subject/head-only\""
+          },
+          {
+            "id": "c7f765c783a628b5a31460d393ba440f43a8a40ad2745f95cc495b86166aa1a2",
+            "name": "object"
+          },
+          {
+            "id": "cc5a149cfbf4a58c44c1ac42a5ed37dcb15b74e30a357d49102b188afd08ec52",
+            "name": "view"
+          },
+          {
+            "id": "cf38d4c34041ae2402b2544bb757898b719057f43be540f338c2d200d27f5346",
+            "name": "Fn"
+          },
+          {
+            "id": "d31e2fc55264f6fdac04bfeab499e40d92fb780dc39130d497da443f362d1b00",
+            "name": "identity"
+          },
+          {
+            "id": "d3597d6f5ee10c413cfda4a6cd9b20ceb8fea7be319baeb19dd5b7c239e7a72e",
+            "name": "dynamic"
+          },
+          {
+            "id": "d5a889d1d27879fc512f15f8c2370d8c5ae72c997aa16a705bb161ddbfdd8276",
+            "name": "\"/subject/plain\""
+          },
+          {
+            "id": "dbe47cce30d459a01d8a9d8754261d2ad21f6f180bc4096ab8bbbd347c789ff9",
+            "name": "\"/subject/references\""
+          },
+          {
+            "id": "dcf05cba0f488f4f0232764825e15c472eae7ad16aea1dcb954bfb335d0438a8",
+            "name": "\"/subject/barrel\""
+          },
+          {
+            "id": "dd148e0cd77dc08f9f715c56ffb2a366c8df0faa461dd7ecc3de33dd5900aa62",
+            "name": "\"/subject/shapes\""
+          },
+          {
+            "id": "dee43cc8e4c7146495c0cd5ae7c3eb866bbdec7f14d1750ae3e3b458185bbd7c",
+            "name": "n"
+          },
+          {
+            "id": "e537f26154cdcc60b1924760e81274ea1ef3683af1687ae601f29bb5d890181e",
+            "name": "key"
+          },
+          {
+            "id": "e78512679e46eccc184afee68990973ed0fd31c162e0c79bb033429695eef6e2",
+            "name": "answer"
+          },
+          {
+            "id": "ea8085ea027ec6e3ed79ddcd667717cb1a23efc083720fe015f103e3b1062547",
+            "name": "positive"
+          },
+          {
+            "id": "eb74c3bee53662991b0748d4dc750b04bcac7eaa94db61efcaa3eeebe9ba364d",
+            "name": "x"
+          },
+          {
+            "id": "fc8848560408e006b702a4c191bddc6240836ad442eb644ad0fa823712df6770",
+            "name": "computed"
+          },
+          {
+            "id": "fe2b007f5d05178cdcedd51ba3ea1800eb38df8e23affdeb1605aee7794ec806",
+            "name": "\"/subject/view\""
+          },
+          {
+            "id": "fe6ef614e479addd91e6b9c3101dbc2577ad9ef8a55f8012f21bfd10345a2861",
+            "name": "\"/subject/consumer\""
+          }
+        ],
+        "counts": {
+          "exports": 27,
+          "aliases": 10,
+          "references": 34,
+          "module_references": 13,
+          "outside_model": 4,
+          "diagnostics": 21
+        }
+      },
+      {
+        "population": {
+          "eligible": [
+            {
+              "id": "8d371730c3c3cc35fb8bc4a5ae25beae9e02ee7728bb67aa29d181c37276f78e",
+              "path": "head-only.ts",
+              "language": "typescript",
+              "line": 1,
+              "span": {
+                "start_byte": 20,
+                "end_byte": 24,
+                "start_line": 1,
+                "end_line": 1
+              },
+              "operator": "literal true -> false",
+              "before_text": "true",
+              "after_text": "false",
+              "before_sha256": "e60ab86aab73b93e4550ee477d18786dc7f6113e722cdf5f0830a3e34149a2f4",
+              "after_sha256": "4c3e35dabf3b126a31d6f9f3f65e3f267b6857d7c2fa24a5adf7e5fdc84fe9f7"
+            },
+            {
+              "id": "f1957f93962a6482208cef3b3be208b27d20fdb7d8939fe2addf260b16942652",
+              "path": "view.tsx",
+              "language": "typescript",
+              "line": 1,
+              "span": {
+                "start_byte": 44,
+                "end_byte": 46,
+                "start_line": 1,
+                "end_line": 1
+              },
+              "operator": "boundary >= -> <",
+              "before_text": ">=",
+              "after_text": "<",
+              "before_sha256": "a895c78b929413b746bf8a12f5b33ec1bbf8b77fa94c6413644e57f85d966cd4",
+              "after_sha256": "c8abfd6566ef45ad97b56376f40e80a382d7773cf5c3fbe388a6c73d26a24930"
+            },
+            {
+              "id": "d3842dc4620ff934c3cc5d512f7180d655a6450838abeb85ef7cff9ea7f434a3",
+              "path": "widget.jsx",
+              "language": "javascript",
+              "line": 1,
+              "span": {
+                "start_byte": 35,
+                "end_byte": 36,
+                "start_line": 1,
+                "end_line": 1
+              },
+              "operator": "arithmetic + -> -",
+              "before_text": "+",
+              "after_text": "-",
+              "before_sha256": "0e2b835ada4376264c098fa5c8118c5935d375ea853417f390245247320a9352",
+              "after_sha256": "01ab4c38934a3d2bbd260d6c511ab5877fe987a5a19930e2b2193de30a9227f0"
+            },
+            {
+              "id": "42a1ad5a72855d87232ac8f76f7c2aa4d7e81513f2039107e91d834686a019ec",
+              "path": "calls.cjs",
+              "language": "javascript",
+              "line": 2,
+              "span": {
+                "start_byte": 67,
+                "end_byte": 104,
+                "start_line": 2,
+                "end_line": 2
+              },
+              "operator": "statement deletion",
+              "before_text": "return require('./not-an-import.js');",
+              "after_text": ";",
+              "before_sha256": "65d3bd179a8e4a12e3a0d9f31cb1471f7e3ca99f84bc4e38a9ac44f5a602e74c",
+              "after_sha256": "17e9a030c22a7c0c788286522d906d5680106dfee475bc7c780bac419f9fff87"
+            },
+            {
+              "id": "dd1bf48d7ceafd519088d3cc303a04dacc4805da2aa49d82f9df002a5802ffd6",
+              "path": "plain.js",
+              "language": "javascript",
+              "line": 2,
+              "span": {
+                "start_byte": 42,
+                "end_byte": 43,
+                "start_line": 2,
+                "end_line": 2
+              },
+              "operator": "arithmetic + -> -",
+              "before_text": "+",
+              "after_text": "-",
+              "before_sha256": "4d7d44b869314dd141fe85b1aa9b8c623a02c6025cd2e07ce6092baebb3565cd",
+              "after_sha256": "c1f890632815f30024962b820cf5b44ba0cf764fef3df8e235d107cd3b6d64dc"
+            },
+            {
+              "id": "a73538fddc6f3726264975e0c7356dbda599ec9dcf2aafa6b17ebd6e9ed855dc",
+              "path": "calls.cjs",
+              "language": "javascript",
+              "line": 4,
+              "span": {
+                "start_byte": 145,
+                "end_byte": 167,
+                "start_line": 4,
+                "end_line": 4
+              },
+              "operator": "statement deletion",
+              "before_text": "exports.local = local;",
+              "after_text": ";",
+              "before_sha256": "65d3bd179a8e4a12e3a0d9f31cb1471f7e3ca99f84bc4e38a9ac44f5a602e74c",
+              "after_sha256": "76ae7fc13a06444caa1d051659f51fe7b08e9da9be039eda0d2db6a1ef302dc8"
+            },
+            {
+              "id": "21442e17706e0d946d8dd6277b3d049635d829f71c08028ba5ba4b58ac1d6736",
+              "path": "shapes.ts",
+              "language": "typescript",
+              "line": 5,
+              "span": {
+                "start_byte": 172,
+                "end_byte": 173,
+                "start_line": 5,
+                "end_line": 5
+              },
+              "operator": "arithmetic + -> -",
+              "before_text": "+",
+              "after_text": "-",
+              "before_sha256": "7980a9ec05e777c29456f41e8b0f785c743fb282196e79d5ffa47c729b9952e5",
+              "after_sha256": "e750a607f3198b5425d1fd187f562c1525a5a028bd9d9668b23df0e3fe97b52f"
+            },
+            {
+              "id": "4164994b29955e9856be88c497caa4d2d13a533f6fc6390b13c12f904f9f98fe",
+              "path": "shapes.ts",
+              "language": "typescript",
+              "line": 6,
+              "span": {
+                "start_byte": 218,
+                "end_byte": 220,
+                "start_line": 6,
+                "end_line": 6
+              },
+              "operator": "boundary >= -> <",
+              "before_text": ">=",
+              "after_text": "<",
+              "before_sha256": "7980a9ec05e777c29456f41e8b0f785c743fb282196e79d5ffa47c729b9952e5",
+              "after_sha256": "0494db69338f4f0526f7f888d45306af3edb1f0ff8a64f52113240169d5701dd"
+            },
+            {
+              "id": "a80ca7421bb638d525ddb99a046ab3388edcc8c80c3adc66f68cebb3299952a2",
+              "path": "shapes.ts",
+              "language": "typescript",
+              "line": 7,
+              "span": {
+                "start_byte": 257,
+                "end_byte": 260,
+                "start_line": 7,
+                "end_line": 7
+              },
+              "operator": "equality === -> !==",
+              "before_text": "===",
+              "after_text": "!==",
+              "before_sha256": "7980a9ec05e777c29456f41e8b0f785c743fb282196e79d5ffa47c729b9952e5",
+              "after_sha256": "cf8ee4125c7ff81452a54a275a3ee02b743436dc05393d6359c86b13cdebbd6f"
+            },
+            {
+              "id": "914f56338200fe52d944821c4e98ad92c8a58b31222a52d42dca3423f8f5d951",
+              "path": "shapes.ts",
+              "language": "typescript",
+              "line": 11,
+              "span": {
+                "start_byte": 355,
+                "end_byte": 364,
+                "start_line": 11,
+                "end_line": 11
+              },
+              "operator": "statement deletion",
+              "before_text": "return 7;",
+              "after_text": ";",
+              "before_sha256": "7980a9ec05e777c29456f41e8b0f785c743fb282196e79d5ffa47c729b9952e5",
+              "after_sha256": "50e6acb2123f550d3268b3d3336ec79bac6cb0bc1a65ee09475c53db8ada3526"
+            },
+            {
+              "id": "ab46a1524dd185bd586de78e80395177c7c160bf9cae9f268f6f7dc3215b5501",
+              "path": "shapes.ts",
+              "language": "typescript",
+              "line": 13,
+              "span": {
+                "start_byte": 413,
+                "end_byte": 433,
+                "start_line": 13,
+                "end_line": 13
+              },
+              "operator": "statement deletion",
+              "before_text": "console.log('😀');",
+              "after_text": ";",
+              "before_sha256": "7980a9ec05e777c29456f41e8b0f785c743fb282196e79d5ffa47c729b9952e5",
+              "after_sha256": "f8f6fd811783960bf03e6878981dbca42bc207109d0e1cd91a668b2078c4bb07"
+            },
+            {
+              "id": "43fd27fad2a8ca04dea268dff4d361855c5dfc12006b4ee6a4fc2058ad7bc077",
+              "path": "shapes.ts",
+              "language": "typescript",
+              "line": 14,
+              "span": {
+                "start_byte": 457,
+                "end_byte": 461,
+                "start_line": 14,
+                "end_line": 14
+              },
+              "operator": "literal true -> false",
+              "before_text": "true",
+              "after_text": "false",
+              "before_sha256": "7980a9ec05e777c29456f41e8b0f785c743fb282196e79d5ffa47c729b9952e5",
+              "after_sha256": "af1df0ea22283feb77b77015cbc2d34246ee305de84c5ddd2420a99abb60d818"
+            }
+          ],
+          "no_operator": [
+            {
+              "path": "calls.cjs",
+              "line": 1
+            },
+            {
+              "path": "origin.ts",
+              "line": 1
+            },
+            {
+              "path": "plain.js",
+              "line": 1
+            },
+            {
+              "path": "references.ts",
+              "line": 1
+            },
+            {
+              "path": "shapes.ts",
+              "line": 1
+            },
+            {
+              "path": "references.ts",
+              "line": 2
+            },
+            {
+              "path": "shapes.ts",
+              "line": 2
+            },
+            {
+              "path": "calls.cjs",
+              "line": 3
+            },
+            {
+              "path": "references.ts",
+              "line": 3
+            },
+            {
+              "path": "shapes.ts",
+              "line": 3
+            },
+            {
+              "path": "origin.ts",
+              "line": 4
+            },
+            {
+              "path": "references.ts",
+              "line": 4
+            },
+            {
+              "path": "shapes.ts",
+              "line": 4
+            },
+            {
+              "path": "references.ts",
+              "line": 5
+            },
+            {
+              "path": "references.ts",
+              "line": 6
+            },
+            {
+              "path": "references.ts",
+              "line": 7
+            },
+            {
+              "path": "references.ts",
+              "line": 8
+            },
+            {
+              "path": "shapes.ts",
+              "line": 8
+            },
+            {
+              "path": "references.ts",
+              "line": 9
+            },
+            {
+              "path": "shapes.ts",
+              "line": 9
+            },
+            {
+              "path": "references.ts",
+              "line": 10
+            },
+            {
+              "path": "shapes.ts",
+              "line": 10
+            },
+            {
+              "path": "references.ts",
+              "line": 11
+            },
+            {
+              "path": "references.ts",
+              "line": 12
+            },
+            {
+              "path": "shapes.ts",
+              "line": 12
+            },
+            {
+              "path": "shapes.ts",
+              "line": 15
+            },
+            {
+              "path": "shapes.ts",
+              "line": 16
+            }
+          ],
+          "unsupported_scope": [
+            {
+              "path": "bad-utf8.js",
+              "reason": "Invalid UTF-8: bad-utf8.js"
+            },
+            {
+              "path": "invalid.ts",
+              "reason": "Invalid syntax"
+            }
+          ]
+        }
+      }
+    ],
+    "runtime": {
+      "version": "v24.11.1",
+      "architecture": "arm64"
+    },
+    "controller_sha256": "12872eeb22fec58116c3d8820fb87ebf522eec8876d76ca9758de436cf84546d"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-u",
+    "scripts\\run.py",
+    "--idle",
+    "120",
+    "--max",
+    "900",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-u",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts\\tests",
+    "-p",
+    "test_measure_js_serialization_independent.py",
+    "-k",
+    "ReviewRegressions",
+    "-v"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "outer_idle_seconds": 120,
+  "outer_max_seconds": 900,
+  "native_idle_seconds": 30,
+  "native_max_seconds": 90,
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONIOENCODING": "utf-8",
+    "Q2_JS_RECORDS": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-js-serialization-independent-20260918-v1\\review-red-01"
+  },
+  "path_prefix": "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd",
+  "test_inputs": [
+    {
+      "path": "scripts/tests/test_measure_js_serialization_independent.py",
+      "sha256": "423b876f2558a90736d4295a1ebdec6aa1dade6d07f10cd1666b2c4bbc383b0a",
+      "bytes": 12522
+    },
+    {
+      "path": "scripts/tests/measure_js_serialization_independent.test.mjs",
+      "sha256": "5c8ed2f423d44d0e90040fd171741b537daab2bdb41daf07fd00cfb83e018286",
+      "bytes": 15317
+    }
+  ]
+}

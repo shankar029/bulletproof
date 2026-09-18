@@ -1,0 +1,32 @@
+{
+  "frozen_inputs_matching": 68,
+  "qualification_refs_unchanged": 5,
+  "new_test_direct_whitespace_check": "PASS",
+  "new_python_ast_parse": "PASS",
+  "new_discoverable_methods": 1,
+  "no_test_class_inheritance_duplication": true,
+  "results": [
+    {
+      "label": "replay",
+      "python_methods": 15,
+      "passed": 15,
+      "nested_native_invocations": 13,
+      "unittest_seconds": 354.598,
+      "returncode": 0,
+      "elapsed_seconds": 355.3737820000388,
+      "stdout_sha256": "3fd1fcbd94fbbf75850a478c68273f8534428823f423448a4cba851a69891b9e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "independent",
+      "python_methods": 1,
+      "passed": 1,
+      "nested_native_invocations": 1,
+      "unittest_seconds": 31.425,
+      "returncode": 0,
+      "elapsed_seconds": 32.187711300037336,
+      "stdout_sha256": "273fb90a9c4df8d3ee10687d3c20ac25bfa1e0cfa27cd9725fc6fce536aeb5b4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}
