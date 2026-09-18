@@ -8,6 +8,7 @@ import shutil
 import stat
 import sys
 import tempfile
+import uuid
 
 from evidence import _json_bytes, source_snapshot
 import measure_graph as graph
@@ -1048,8 +1049,22 @@ def validate_config(config, root):
         raise ValueError("Unsupported measurement config version/profile")
     tool_artifacts(config)
     _qualified_inputs(config, [root])
-    if config["js_entrypoints"] != []:
-        raise ValueError("JS entrypoint integration is not implemented")
+    entrypoints = config["js_entrypoints"]
+    if not isinstance(entrypoints, list):
+        raise ValueError("JS entrypoints must be a list")
+    if entrypoints and "typescript" not in config["tools"]:
+        raise ValueError("JS entrypoints require qualified TypeScript")
+    _path_partition([entry["path"] for entry in entrypoints])
+    for entry in entrypoints:
+        graph._fields(entry, "path origin_ref public_exports", "JS entrypoint")
+        if (Path(entry["path"]).suffix.lower() not in JS_EXT or
+                not isinstance(entry["origin_ref"], str) or not entry["origin_ref"].strip() or
+                not graph.input_path(root, entry["path"]).is_file()):
+            raise ValueError("JS entrypoint must bind an existing source and origin")
+        exports = entry["public_exports"]
+        if (not isinstance(exports, list) or any(not isinstance(name, str) or not name for name in exports) or
+                exports != sorted(set(exports))):
+            raise ValueError("JS entrypoint exports must be sorted unique names")
     roots = config["python_source_roots"]
     if not isinstance(roots, list) or not roots or len(set(roots)) != len(roots):
         raise ValueError("Source roots must be a nonempty unique list")
@@ -1106,9 +1121,210 @@ def validate_config(config, root):
     return config
 
 
+def _js_metadata_names(paths, config):
+    names = set()
+    for name in [*paths, *(entry["path"] for entry in config["js_entrypoints"])]:
+        graph.relative_name(name)
+        parent = Path(name).parent
+        while True:
+            names.add((parent / "package.json").as_posix())
+            if parent == Path("."):
+                break
+            parent = parent.parent
+    return sorted(names)
+
+
+def _js_description(context, inv, config):
+    qualified = _qualified_inputs(config, [context[key] for key in (
+        "base_root", "head_root", "controller_root", "run_root")])["typescript"]
+    source = qualified["source"]
+    resources = [{"path": Path(pin["path"]).relative_to(source["roots"]["typescript"]).as_posix(),
+                  "qualified_path": pin["path"], "sha256": pin["sha256"], "bytes": pin["bytes"]}
+                 for pin in source["resources"]]
+    parser = graph.digest({
+        "semantic_version": graph.JS_SEMANTICS,
+        "adapter_sha256": graph.artifact(context["controller_root"], "measure_js.mjs")["sha256"],
+        "compiler_version": "5.9.3", "module_path": qualified["binding"]["module_path"],
+        "resources": sorted(resources, key=lambda row: row["path"]),
+        "runtime": {"executable": qualified["binding"]["executable"], "sha256": qualified["binding"]["sha256"],
+                    "version": "v24.11.1", "architecture": "arm64"}, "options": source["settings"]})
+    binding = {"semantic_version": graph.JS_SEMANTICS, "run_id": context["run_id"], "revision": inv["revision"],
+               "git_revision": context["source"][inv["revision"]], "inventory_sha256": inv["digest"],
+               "source_sha256": inv["source_sha256"], "parser_sha256": parser,
+               "toolset_sha256": context["toolset_sha256"], "policy_sha256": context["policy_sha256"],
+               "settings_sha256": graph.digest({"compiler_options": source["settings"],
+                                                "semantic_version": graph.JS_SEMANTICS,
+                                                "js_entrypoints": config["js_entrypoints"]})}
+    entries = [entry for entry in inv["entries"] if entry["suffix"] in JS_EXT]
+    inputs = [{"scope": "subject", **{key: entry[key] for key in ("path", "sha256", "bytes")}}
+              for entry in entries]
+    root = context[inv["revision"] + "_root"]
+    for name in _js_metadata_names([entry["path"] for entry in entries], config):
+        path = graph.input_path(root, name)
+        if path.exists():
+            data, _ = _regular_file(path)
+            inputs.append({"scope": "subject", "path": name,
+                           "sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data)})
+    inputs += [{"scope": "head-contract", **ref} for ref in context["contract_artifacts"]]
+    inputs += [{"scope": "tool-resource", **{key: ref[key] for key in ("path", "sha256", "bytes")}}
+               for ref in resources]
+    inputs.sort(key=lambda row: (row["scope"], row["path"]))
+    if len({(row["scope"], row["path"]) for row in inputs}) != len(inputs):
+        raise ValueError("Duplicate admitted JS input")
+    for row in inputs:
+        input_root = {"subject": root, "head-contract": context["head_root"],
+                      "tool-resource": source["roots"]["typescript"]}[row["scope"]]
+        _artifact_bytes(input_root, {key: row[key] for key in ("path", "sha256", "bytes")})
+        if row["scope"] == "head-contract" and context["source"]["files"].get(row["path"], {}).get(
+                "sha256") != row["sha256"]:
+            raise ValueError("JS contract is not source-bound")
+    return binding, inputs
+
+
+def _check_js_sources(context, inventories, config):
+    validate_config(config, context["head_root"])
+    if "typescript" not in config["tools"]:
+        raise ValueError("Validated TypeScript mode required")
+    graph._same(_context_config(context), config, "Source JS configuration")
+    roots = [graph.root_path(context[key]) for key in ("base_root", "head_root", "controller_root", "run_root")]
+    if any(a.is_relative_to(b) or b.is_relative_to(a) for i, a in enumerate(roots) for b in roots[i + 1:]):
+        raise ValueError("JS Context roots must be disjoint")
+    _validate_root_independence(roots)
+    for inv in inventories:
+        graph._same(inventory(context, inv["revision"], inv["changed_production"], include_js=True),
+                    inv, "JS source inventory")
+    observed = source_snapshot(context["head_root"], context["source"]["scope"])
+    observed.update(base=context["source"]["base"], head=context["source"]["head"])
+    graph._same(observed, context["source"], "JS source Snapshot")
+    for ref in context["contract_artifacts"]:
+        _artifact_bytes(context["head_root"], ref)
+    if (toolset_digest(config, context["run_root"], roots) != context["toolset_sha256"] or
+            controller_digest(context["controller_root"], include_js=True) != context["controller_sha256"] or
+            controller_digest(Path(__file__).resolve().parent, include_js=True) != context["controller_sha256"] or
+            graph.digest(config_policy(config)) != context["policy_sha256"]):
+        raise ValueError("JS tool/controller/policy binding mismatch")
+
+
+def prepare_js_manifest(context, inventories, config):
+    _check_js_sources(context, inventories, config)
+    validate_baseline(context["base_root"], context["source"]["base"])
+    manifest = graph._js_manifest(context, config, inventories, phase="js-preflight.json")
+    ref = graph.persist(context, "js-preflight.json", manifest)
+    context["output_manifest"] = ref
+    return ref
+
+
+def _check_js_attempt(context, inv, config, purpose):
+    request, _, _, _, _, _ = graph._js_transport(context, inv, config, purpose=purpose)
+    binding, inputs = _js_description(context, inv, config)
+    graph._same(request["binding"], binding, "JS derived parser binding")
+    graph._same(request["inputs"], inputs, "JS derived input admission")
+
+
+def finish_js_manifest(context, inventories, config):
+    _check_js_sources(context, inventories, config)
+    for inv in inventories:
+        # Both attempts must share their compiled caller purpose. Accepting
+        # validation additionally requires the original/replay ordered pair.
+        purpose = graph._js_json(context, graph._js_name(inv["revision"], "request"))[1]["purpose"]
+        _check_js_attempt(context, inv, config, purpose)
+    purposes = {graph._js_json(context, graph._js_name(inv["revision"], "request"))[1]["purpose"]
+                for inv in inventories}
+    if len(purposes) != 1:
+        raise ValueError("Mixed JS execution purposes")
+    manifest = graph._js_manifest(context, config, inventories, phase="js-produced.json")
+    ref = graph.persist(context, "js-produced.json", manifest)
+    context["output_manifest"] = ref
+    return ref
+
+
+def execute_js(context, inventory, config):
+    _execute_js(context, inventory, config, purpose="produce")
+
+
+def _execute_js(context, inv, config, *, purpose):
+    if purpose not in {"produce", "validate"}:
+        raise ValueError("Invalid private JS execution purpose")
+    _check_js_sources(context, [inv], config)
+    other = "head" if inv["revision"] == "base" else "base"
+    inventories = sorted([inv, inventory(context, other, {}, include_js=True)], key=lambda item: item["revision"])
+    if context["output_manifest"]["path"] != "js-preflight.json":
+        raise ValueError("JS execution requires active preflight")
+    graph._js_manifest(context, config, inventories)
+    binding, inputs = _js_description(context, inv, config)
+    for slot in ("request", "command", "result", "symbols"):
+        if graph.input_path(context["run_root"], graph._js_name(inv["revision"], slot)).exists():
+            raise ValueError("JS execution slots must be fresh")
+    request = {"schema_version": 1, "binding": binding, "execution_id": uuid.uuid4().hex, "purpose": purpose,
+               "context": dict(context), "inventory": inv, "config": config,
+               "pre_manifest": context["output_manifest"], "inputs": inputs,
+               "outputs": {slot: graph._js_name(inv["revision"], slot) for slot in ("result", "symbols")}}
+    ref = graph.persist(context, graph._js_name(inv["revision"], "request"), request)
+    argv = [config["tools"]["typescript"]["executable"],
+            str(Path(context["controller_root"]) / "measure_js.mjs"), str(Path(context["run_root"]) / ref["path"])]
+    env = {name: value for name, value in os.environ.items() if not (
+        name.upper().startswith(("PYTHON", "NODE_", "TS_NODE_")) or name.upper() == "VSCODE_INSPECTOR_OPTIONS")}
+    removed = sorted(set(os.environ) - set(env))
+    _check_js_sources(context, [inv], config)
+    graph._js_manifest(context, config, inventories)
+    graph._same(graph.load_json(_artifact_bytes(context["run_root"], ref)[0]), request, "JS persisted request")
+    print("measure: executing JS " + purpose + " " + inv["revision"] + " " + request["execution_id"],
+          file=sys.stderr, flush=True)
+    code, stdout, stderr = run_capture(argv, cwd=context[inv["revision"] + "_root"], env=env,
+                                       idle=30, max_total=90)
+    outputs = {}
+    for slot in ("result", "symbols"):
+        path = graph.input_path(context["run_root"], request["outputs"][slot])
+        outputs[slot] = graph.artifact(context["run_root"], request["outputs"][slot]) if path.exists() else None
+        if outputs[slot] is not None:
+            _artifact_bytes(context["run_root"], outputs[slot])
+    command = {"schema_version": 1, "binding": binding, "execution_id": request["execution_id"],
+               "request": ref, "pre_manifest": context["output_manifest"], "argv": argv,
+               "cwd": context[inv["revision"] + "_root"], "idle_seconds": 30, "max_seconds": 90,
+               "environment_delta": {"removed_names": removed}, "returncode": code,
+               "stdout": stdout, "stderr": stderr,
+               "capture_semantics": "run_capture UTF-8 replacement-decoded, newline-normalized separate streams",
+               **outputs}
+    graph.persist(context, graph._js_name(inv["revision"], "command"), command)
+    print("measure: captured JS " + purpose + " " + inv["revision"] + " " + request["execution_id"] + " exit " + str(code),
+          file=sys.stderr, flush=True)
+    _check_js_sources(context, [inv], config)
+    graph._js_manifest(context, config, inventories)
+    _check_js_attempt(context, inv, config, purpose)
+
+
+def _validate_js_replay(context, base, head, config):
+    inventories = [parsed["inventory"] for parsed in (base, head)]
+    _check_js_sources(context, inventories, config)
+    for inv in inventories:
+        _check_js_attempt(context, inv, config, "produce")
+    with tempfile.TemporaryDirectory(prefix="jsv-") as temporary:
+        replay = {**context, "run_root": str(Path(temporary).resolve())}
+        stage_tool_inputs(replay, config)
+        prepare_js_manifest(replay, inventories, config)
+        for inv in inventories:
+            _execute_js(replay, inv, config, purpose="validate")
+        finish_js_manifest(replay, inventories, config)
+        parsed = [graph.parse_files(replay, inv, config) for inv in inventories]
+        manifest = make_manifest(replay, *parsed)
+        replay["output_manifest"] = graph.persist(replay, "manifest.json", manifest)
+        for original, fresh in zip((base, head), parsed):
+            graph._compare_js_replay(context, original, replay, fresh, config)
+        _check_js_sources(context, inventories, config)
+        _check_js_sources(replay, inventories, config)
+        graph._js_manifest(context, config, inventories)
+        graph._js_manifest(replay, config, inventories)
+        for inv in inventories:
+            _check_js_attempt(context, inv, config, "produce")
+            _check_js_attempt(replay, inv, config, "validate")
+
+
 def make_manifest(context, base, head):
+    config = _context_config(context)
+    if "typescript" in config["tools"]:
+        return graph._js_manifest(context, config, [base["inventory"], head["inventory"]], phase="manifest.json")
     inputs = [{"artifact": ref, "role": "qualification", "revision": None}
-              for ref in tool_artifacts(_context_config(context))]
+              for ref in tool_artifacts(config)]
     for parsed in (base, head):
         revision = parsed["inventory"]["revision"]
         inputs += [{"artifact": ref, "role": "syntax", "revision": revision}
@@ -1170,6 +1386,7 @@ def validate_observations(context, base, head, config, policy, artifacts, observ
         raise ValueError("Context roots must be distinct and disjoint")
     _validate_root_independence(roots)
     validate_config(config, context["head_root"])
+    include_js = "typescript" in config["tools"]
     refs = context["contract_artifacts"]
     if not isinstance(refs, list) or not refs or len({ref["path"] for ref in refs}) != len(refs):
         raise ValueError("Context requires unique source contract artifacts")
@@ -1189,8 +1406,8 @@ def validate_observations(context, base, head, config, policy, artifacts, observ
     if (_json_bytes(policy) != _json_bytes(config_policy(config)) or
             context["policy_sha256"] != graph.digest(policy) or
             context["toolset_sha256"] != toolset_digest(config, context["run_root"], roots) or
-            context["controller_sha256"] != controller_digest(context["controller_root"]) or
-            context["controller_sha256"] != controller_digest(Path(__file__).resolve().parent)):
+            context["controller_sha256"] != controller_digest(context["controller_root"], include_js=include_js) or
+            context["controller_sha256"] != controller_digest(Path(__file__).resolve().parent, include_js=include_js)):
         raise ValueError("Policy/tool/controller binding mismatch")
     if context["source"]["head"] != git_head(context["head_root"]) or context["source"]["base"] != git_head(context["base_root"]):
         raise ValueError("Context Git identity mismatch")
@@ -1206,13 +1423,17 @@ def validate_observations(context, base, head, config, policy, artifacts, observ
             _json_bytes(graph.load_json(graph.input_path(context["run_root"], ref["path"]).read_bytes())) != _json_bytes(artifacts)):
         raise ValueError("Manifest identity mismatch")
     derived = []
+    if include_js:
+        _validate_js_replay(context, base, head, config)
     for revision, parsed in (("base", base), ("head", head)):
         inv = parsed["inventory"]
-        if inv["revision"] != revision or _json_bytes(inventory(context, revision, inv["changed_production"])) != _json_bytes(inv):
+        if inv["revision"] != revision or _json_bytes(inventory(
+                context, revision, inv["changed_production"], include_js=include_js)) != _json_bytes(inv):
             raise ValueError("Inventory is missing, stale or bound to the wrong revision")
         raw_ref = graph.artifact(context["run_root"], graph.graph_name(revision))
         raw = graph.read_owned(context, artifacts, raw_ref, "graph", revision)
-        derived += graph.validate_evidence(context, parsed, config, raw, artifacts)
+        derived += (graph.observations(context, parsed, config) if include_js else
+                    graph.validate_evidence(context, parsed, config, raw, artifacts))
         derived += [unavailable(context, parsed, name) for name in sorted(LOWER_BETTER - {"cycles"})]
     derived.sort(key=lambda item: (item["metric"], item["revision"]))
     if _json_bytes(sorted(observations, key=lambda item: (item["metric"], item["revision"]))) != _json_bytes(derived):

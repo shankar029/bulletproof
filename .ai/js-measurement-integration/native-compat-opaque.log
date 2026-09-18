@@ -1,0 +1,31 @@
+Prepared real JS command subjects and qualified TypeScript
+test_fixed_command_produces_source_bound_and_empty_censuses (test_measure_js_command.JSCommandTests.test_fixed_command_produces_source_bound_and_empty_censuses) ... Executing fixed JS command: test_fixed_command_produces_source_bound_and_empty_censuses base
+Executing fixed JS command: test_fixed_command_produces_source_bound_and_empty_censuses head
+ok
+test_refuses_output_escape_and_existing_output (test_measure_js_command.JSCommandTests.test_refuses_output_escape_and_existing_output) ... Executing fixed JS command: test_refuses_output_escape_and_existing_output head
+Executing fixed JS command: test_refuses_output_escape_and_existing_output head
+ok
+test_rejects_incomplete_inputs_and_changed_config (test_measure_js_command.JSCommandTests.test_rejects_incomplete_inputs_and_changed_config) ... Executing fixed JS command: test_rejects_incomplete_inputs_and_changed_config head
+Executing fixed JS command: test_rejects_incomplete_inputs_and_changed_config head
+ok
+test_rejects_rehashed_manifest_and_stale_controller (test_measure_js_command.JSCommandTests.test_rejects_rehashed_manifest_and_stale_controller) ... Executing fixed JS command: test_rejects_rehashed_manifest_and_stale_controller head
+Executing fixed JS command: test_rejects_rehashed_manifest_and_stale_controller head
+ok
+test_rejects_unknown_fields_purpose_and_duplicate_json (test_measure_js_command.JSCommandTests.test_rejects_unknown_fields_purpose_and_duplicate_json) ... Executing fixed JS command: test_rejects_unknown_fields_purpose_and_duplicate_json head
+Executing fixed JS command: test_rejects_unknown_fields_purpose_and_duplicate_json head
+Executing fixed JS command: test_rejects_unknown_fields_purpose_and_duplicate_json head
+ok
+test_unqualified_config_and_missing_request_reject_integration (test_measure_js_core_independent.IndependentJSCoreBoundaryTests.test_unqualified_config_and_missing_request_reject_integration) ... ok
+Validated existing TypeScript binding for native core tests
+test_inventory_keywords_preserve_legacy_and_pending_entries (test_measure_js.SharedJSCoreTests.test_inventory_keywords_preserve_legacy_and_pending_entries) ... ok
+test_controller_digest_and_no_inventory_mode_salt (test_measure_js.SharedJSCoreTests.test_controller_digest_and_no_inventory_mode_salt) ... ok
+measure: executing JS produce base
+measure: captured JS produce base exit 0
+measure: executing JS produce head
+measure: captured JS produce head exit 0
+test_actual_nonzero_child_retains_real_produced_records_only_as_failure_bytes (test_measure_js_integration.JSOwnershipTests.test_actual_nonzero_child_retains_real_produced_records_only_as_failure_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 359.216s
+
+OK

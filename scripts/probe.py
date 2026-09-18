@@ -510,6 +510,7 @@ def _execute_configured(args, trace, repo, test_cwd):
     config = measure_graph.load_json(measure_graph.input_path(repo, config_name).read_bytes())
     config_ref = measure_graph.artifact(repo, config_name)
     measure.validate_config(config, repo)
+    include_js = "typescript" in config["tools"]
     print("probe: validated measurement configuration and original tool inputs", file=sys.stderr, flush=True)
     if args.require_metric and set(args.require_metric) - set(measure.REQUIRED):
         raise ValueError("Configured Q1 profile requires exactly the nine approved metrics")
@@ -528,10 +529,27 @@ def _execute_configured(args, trace, repo, test_cwd):
         base_root, head_root = scratch / "base", scratch / "head"
         _copy_subject(repo, base_root, merge_base)
         reserved = ["manifest.json", "base/graph.json", "head/graph.json"]
+        planned, source_inputs, metadata = [], [config_path, measure_graph.input_path(
+            repo, config["approval_artifact"]["path"])], {}
         for revision, root in (("base", base_root), ("head", repo)):
-            reserved += [measure_graph.syntax_name(revision, Path(path).relative_to(root).as_posix())
-                         for path in code_files(root) if Path(path).suffix.lower() == ".py"]
+            paths = [Path(path) for path in code_files(root)]
+            source_inputs += paths
+            names = [path.relative_to(root).as_posix() for path in paths]
+            planned.append({"revision": revision, "entries": [
+                {"path": name, "language": "python" if Path(name).suffix.lower() == ".py" else "unsupported",
+                 "suffix": Path(name).suffix.lower()} for name in names]})
+            reserved += [measure_graph.syntax_name(revision, name) for name in names
+                         if Path(name).suffix.lower() == ".py"]
+            if include_js:
+                metadata[revision] = {}
+                for name in measure._js_metadata_names(
+                        [name for name in names if Path(name).suffix.lower() in JS_EXT], config):
+                    path = measure_graph.input_path(root, name)
+                    source_inputs.append(path)
+                    metadata[revision][name] = measure_graph.artifact(root, name) if path.exists() else None
         reserved += [ref["path"] for ref in measure.tool_artifacts(config)]
+        if include_js:
+            reserved = measure_graph._js_reservations(planned, config)
         measure._path_partition(reserved)
         extra_outputs = [(run_dir / "measurement" / name).relative_to(repo).as_posix() for name in reserved]
         measure.check_tool_outputs(
@@ -539,7 +557,7 @@ def _execute_configured(args, trace, repo, test_cwd):
                 ".ai/%s/metrics.json" % args.slug,
                 (run_dir / "metrics.json").relative_to(repo).as_posix(),
                 (run_dir / "mutation.json").relative_to(repo).as_posix()],
-            [config_path, measure_graph.input_path(repo, config["approval_artifact"]["path"])])
+            source_inputs)
         for name in extra_outputs:
             if measure_graph.input_path(repo, name).exists():
                 raise ValueError("Reserved output already exists")
@@ -552,20 +570,37 @@ def _execute_configured(args, trace, repo, test_cwd):
         controller, raw_root = scratch / "controller", scratch / "raw"
         controller.mkdir()
         raw_root.mkdir()
-        for name in ("measure.py", "measure_graph.py", "probe.py", "evidence.py", "run.py"):
+        controllers = (measure_graph.JS_CONTROLLERS if include_js else
+                       ("measure.py", "measure_graph.py", "probe.py", "evidence.py", "run.py"))
+        for name in controllers:
             shutil.copy2(Path(__file__).with_name(name), controller / name)
         policy = measure.config_policy(config)
         context = {"schema_version": 1, "run_id": run_id, "source": source,
                    "base_root": str(base_root), "head_root": str(head_root),
                    "controller_root": str(controller), "run_root": str(raw_root),
-                   "controller_sha256": measure.controller_digest(controller),
+                   "controller_sha256": measure.controller_digest(controller, include_js=include_js),
                    "policy_sha256": measure_graph.digest(policy),
                    "toolset_sha256": measure.toolset_digest(config, subject_roots=[repo]),
                    "contract_artifacts": [config["approval_artifact"], config_ref]}
         measure.stage_tool_inputs(context, config)
         print("probe: staged and rechecked exact tool artifacts", file=sys.stderr, flush=True)
-        base = measure_graph.parse_files(context, measure.inventory(context, "base", {}), config)
-        head = measure_graph.parse_files(context, measure.inventory(context, "head", changes), config)
+        inventories = [measure.inventory(context, revision, change, include_js=include_js)
+                       for revision, change in (("base", {}), ("head", changes))]
+        if include_js:
+            measure_graph._same(measure_graph._js_reservations(inventories, config), reserved,
+                                "Presnapshot JS reservations")
+            for inv in inventories:
+                root = context[inv["revision"] + "_root"]
+                names = measure._js_metadata_names(
+                    [entry["path"] for entry in inv["entries"] if entry["suffix"] in JS_EXT], config)
+                actual = {name: measure_graph.artifact(root, name) if measure_graph.input_path(root, name).exists()
+                          else None for name in names}
+                measure_graph._same(actual, metadata[inv["revision"]], "Presnapshot JS metadata")
+            measure.prepare_js_manifest(context, inventories, config)
+            for inv in inventories:
+                measure.execute_js(context, inv, config)
+            measure.finish_js_manifest(context, inventories, config)
+        base, head = [measure_graph.parse_files(context, inv, config) for inv in inventories]
         pairs = measure.collect_pair(context, config, base, head)
         observations = [item for pair in pairs.values() for item in pair]
         print("probe: collected both revision observations", file=sys.stderr, flush=True)
@@ -587,10 +622,27 @@ def _execute_configured(args, trace, repo, test_cwd):
             if destination.exists() or destination.relative_to(repo).as_posix() in source["files"]:
                 raise ValueError("Measurement output overlaps source")
         run_dir.mkdir(parents=True, exist_ok=False)
-        for name in manifest["reserved_outputs"]:
+        archive_refs = ([row["artifact"] for row in manifest["inputs"]] + [context["output_manifest"]]
+                        if include_js else [measure_graph.artifact(raw_root, name)
+                                           for name in manifest["reserved_outputs"]])
+        for ref in archive_refs:
+            name = ref["path"]
             destination = archive / name
             destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(raw_root / name, destination)
+            data, identity = measure._artifact_bytes(raw_root, ref)
+            with destination.open("xb") as stream:
+                stream.write(data)
+            copied, copy_identity = measure._artifact_bytes(archive, ref)
+            if data != copied or identity == copy_identity:
+                raise ValueError("Measurement archive copy is not independent")
+        for ref in archive_refs:
+            measure._artifact_bytes(raw_root, ref)
+            measure._artifact_bytes(archive, ref)
+        if include_js:
+            measure._check_js_sources(context, inventories, config)
+            measure_graph._js_manifest(context, config, inventories)
+        if _snapshot(repo, args.slug, run_id, extra_outputs)["scope_sha256"] != source["scope_sha256"]:
+            raise ValueError("Original source changed during measurement archival")
         write_json_atomic(run_dir / "metrics.json", report)
         write_json_atomic(repo / ".ai" / args.slug / "metrics.json", report)
     print(json.dumps(report, indent=2))

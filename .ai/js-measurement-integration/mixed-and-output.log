@@ -1,0 +1,16 @@
+test_real_mixed_production_and_accepting_replay (test_measure_js_integration.JSIntegrationTests.test_real_mixed_production_and_accepting_replay) ... measure: executing JS produce base
+measure: captured JS produce base exit 0
+measure: executing JS produce head
+measure: captured JS produce head exit 0
+measure: executing JS validate base
+measure: captured JS validate base exit 0
+measure: executing JS validate head
+measure: captured JS validate head exit 0
+ok
+test_actual_bounded_timeout_is_failed_output_not_a_cleanup_claim (test_measure_js_integration.JSOutputPolicyTests.test_actual_bounded_timeout_is_failed_output_not_a_cleanup_claim) ... ok
+test_actual_failed_children_are_opaque_and_zero_invalid_children_reject (test_measure_js_integration.JSOutputPolicyTests.test_actual_failed_children_are_opaque_and_zero_invalid_children_reject) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 416.014s
+
+OK

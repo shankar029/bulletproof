@@ -1,0 +1,38 @@
+test_inventory_mode_remains_explicit_and_immutable (test_measure_js_integration.JSIntegrationTests.test_inventory_mode_remains_explicit_and_immutable) ... ok
+test_real_mixed_production_and_accepting_replay (test_measure_js_integration.JSIntegrationTests.test_real_mixed_production_and_accepting_replay) ... measure: executing JS produce base
+measure: captured JS produce base exit 0
+ERROR
+test_zero_js_still_executes_and_replays (test_measure_js_integration.JSIntegrationTests.test_zero_js_still_executes_and_replays) ... measure: executing JS produce base
+measure: captured JS produce base exit 0
+measure: executing JS produce head
+measure: captured JS produce head exit 0
+measure: executing JS validate base
+measure: captured JS validate base exit 0
+measure: executing JS validate head
+measure: captured JS validate head exit 0
+ok
+
+======================================================================
+ERROR: test_real_mixed_production_and_accepting_replay (test_measure_js_integration.JSIntegrationTests.test_real_mixed_production_and_accepting_replay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-psychic-meme\scripts\tests\test_measure_js_integration.py", line 69, in test_real_mixed_production_and_accepting_replay
+    fixture.produce()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-psychic-meme\scripts\tests\test_measure_js_integration.py", line 55, in produce
+    measure.execute_js(self.context, inv, self.config)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-psychic-meme\scripts\measure.py", line 1228, in execute_js
+    _execute_js(context, inventory, config, purpose="produce")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-psychic-meme\scripts\measure.py", line 1254, in _execute_js
+    _check_js_sources(context, [inv], config)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-psychic-meme\scripts\measure.py", line 1191, in _check_js_sources
+    raise ValueError("JS tool/controller/policy binding mismatch")
+ValueError: JS tool/controller/policy binding mismatch
+
+----------------------------------------------------------------------
+Ran 3 tests in 534.196s
+
+FAILED (errors=1)

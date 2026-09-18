@@ -1,0 +1,74 @@
+{
+  "timestamp_utc": "2026-09-18T10:06:21.135993+00:00",
+  "scope": "Tiny worktree-local file creation diagnostic only; no selected methods rerun, no OS-temp writes, no production edits",
+  "initial_failure_preserved": true,
+  "initial_evidence_sha256": {
+    ".ai\\js-measurement-integration\\evidence\\independent-verification.log": "94bbd70f7b41ad971092434f794e6873df52ef83b161de2aa162856d28519502",
+    ".ai\\js-measurement-integration\\evidence\\independent-verification.json": "d6801a16671fd9ff0864abf4abb778c1fe1f74e61319cc7a29b494b7d226e892"
+  },
+  "initial_error_path_characters": 266,
+  "initial_error_path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-psychic-meme\\bulletproof-git-b_dfz68z\\.ai\\js-public\\evidence\\runs\\f16b92a9bc3740f9ad067766cc4bcd36\\measurement\\base\\syntax\\41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json",
+  "diagnostics": [
+    {
+      "case": "short-worktree-path",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-psychic-meme\\.ai\\js-measurement-integration\\evidence\\path-diagnostic-r2\\short.bin",
+      "path_characters": 155,
+      "filename_characters": 9,
+      "outcome": "created-and-read",
+      "read_matches": true
+    },
+    {
+      "case": "overlength-worktree-path-original-diagnostic",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-psychic-meme\\.ai\\js-measurement-integration\\evidence\\path-diagnostic-r2\\xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.bin",
+      "path_characters": 283,
+      "filename_characters": 137,
+      "outcome": "os-error",
+      "error_type": "FileNotFoundError",
+      "errno": 2,
+      "winerror": null,
+      "diagnostic": "[Errno 2] No such file or directory: 'C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-psychic-meme\\\\.ai\\\\js-measurement-integration\\\\evidence\\\\path-diagnostic-r2\\\\xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.bin'"
+    },
+    {
+      "case": "equivalent-decoded-length-worktree-path",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-psychic-meme\\.ai\\js-measurement-integration\\evidence\\path-diagnostic-r2\\xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.bin",
+      "path_characters": 266,
+      "filename_characters": 120,
+      "outcome": "os-error",
+      "error_type": "FileNotFoundError",
+      "errno": 2,
+      "winerror": null,
+      "diagnostic": "[Errno 2] No such file or directory: 'C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-psychic-meme\\\\.ai\\\\js-measurement-integration\\\\evidence\\\\path-diagnostic-r2\\\\xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.bin'"
+    }
+  ],
+  "pins_before": {
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/measure.py": "f60489493436b6efc19b4a4176b531af51ab3bf0cec7209d16305da39f83a14c",
+    "scripts/measure_graph.py": "b79f1cd0749b64a23151455c649c92e3cd51dac12f968e1446bb262d4762fead",
+    "scripts/measure_js.mjs": "ef4bef16abf6c04b559baa45929f49e0f92b76df4a1d30b542dbe877c0e204d5",
+    "scripts/probe.py": "5500c70c7d7452a75580e346b51aab210e58abf810c13eec5e8ca97b3d73af83",
+    "scripts/run.py": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+    "scripts/tests/test_measure_js_integration.py": "edb72f7198939ed1715443439c9b2846a2d62af90aa0f50aa6de7ee8fba6735b",
+    "scripts/tests/test_measure_q1_integration.py": "889e5ab71f3e8d9cb16b9ded4dc9327fcf1d5f4820426e0773f17c8f1b4976a9"
+  },
+  "pins_after": {
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/measure.py": "f60489493436b6efc19b4a4176b531af51ab3bf0cec7209d16305da39f83a14c",
+    "scripts/measure_graph.py": "b79f1cd0749b64a23151455c649c92e3cd51dac12f968e1446bb262d4762fead",
+    "scripts/measure_js.mjs": "ef4bef16abf6c04b559baa45929f49e0f92b76df4a1d30b542dbe877c0e204d5",
+    "scripts/probe.py": "5500c70c7d7452a75580e346b51aab210e58abf810c13eec5e8ca97b3d73af83",
+    "scripts/run.py": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+    "scripts/tests/test_measure_js_integration.py": "edb72f7198939ed1715443439c9b2846a2d62af90aa0f50aa6de7ee8fba6735b",
+    "scripts/tests/test_measure_q1_integration.py": "889e5ab71f3e8d9cb16b9ded4dc9327fcf1d5f4820426e0773f17c8f1b4976a9"
+  },
+  "pin_count": 8,
+  "pins_unchanged": true,
+  "matches_initial_after_pins": true,
+  "selected_methods_executed": 0,
+  "verdict": "BLOCKED",
+  "blockers": [
+    "OS-temp file writes are unavailable under this environment restriction; requested short OS-temp comparison and three-case rerun were not performed"
+  ],
+  "interpretation": "A short-versus-long path result inside the same worktree is only a local path-length diagnostic, not a successful archive reproduction or complete root-cause proof. No production patch is justified by this record alone.",
+  "initial_error_path_repr_characters": 283,
+  "measurement_note": "The original error text contains Python-repr escaped backslashes; decoded its quoted string before determining actual path length. Retained the first 283-character overlength diagnostic separately."
+}
