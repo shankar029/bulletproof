@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
 import { createHash, randomUUID } from 'node:crypto';
-import { access, appendFile, cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
+import { access, appendFile, cp, mkdir, readFile, readdir, rename, writeFile } from 'node:fs/promises';
 import { homedir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -18,9 +18,10 @@ const python = process.env.E2E_PYTHON;
 if (!python) throw new Error('Set E2E_PYTHON to an installed Python 3 executable for the bounded command runner.');
 const runId = `e2e-${new Date().toISOString().replaceAll(/[:.]/g, '-')}-${randomUUID().slice(0, 8)}`;
 const output = join(root, '.work', runId);
+const downloads = join(output, 'downloads');
 await mkdir(output, { recursive: true });
 const report = { runId, started: new Date().toISOString(), command: [process.execPath, ...process.argv.slice(1)], cwd: process.cwd(),
-  output, browserTransport: 'Playwright launch only; all browser actions/assertions agent-browser 0.37.1 explicit IPv4 HTTP CDP',
+  output, browserTransport: 'agent-browser 0.37.1 owned Chromium launch, actions and assertions; Playwright resolves the installed executable only',
   processClose: 'Real main.mjs child; test-only IPC bridge emits installed SIGTERM handler (not native Windows Ctrl+C)',
   flows: [], findings: [], checks: [], lifecycle: [], sourceHashes: {} };
 report.runnerSha256 = createHash('sha256').update(await readFile(import.meta.filename)).digest('hex');
@@ -30,18 +31,18 @@ for (const directory of ['src', 'public']) {
   }
 }
 const active = new Set();
-let context, cli, cdp, currentFlow;
+let cli, currentFlow, browserStarted = false;
 const session = runId;
 let commandNumber = 0;
 
-async function command(executable, argv, { timeout = 30000, cwd = root, input, expectedFailure = false, allowFailure = false } = {}) {
+async function command(executable, argv, { timeout = 30000, cwd = root, input } = {}) {
   const entry = { number: ++commandNumber, time: new Date().toISOString(), executable, args: argv, cwd, flow: currentFlow?.name };
   const wrapperArgs = [join(repo, 'scripts', 'run.py'), '--idle', '25', '--max', String(timeout / 1000), '--', executable, ...argv];
-  Object.assign(entry, { wrapper: python, wrapperArgs, expectedFailure });
+  Object.assign(entry, { wrapper: python, wrapperArgs });
   console.log(`COMMAND ${entry.number} ${currentFlow?.name ?? 'setup'} ${argv.includes('eval') ? 'eval' : argv.slice(-3).join(' ')}`);
   const child = spawn(python, wrapperArgs, { cwd, windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'],
     env: { ...process.env, AGENT_BROWSER_DEFAULT_TIMEOUT: '12000', AGENT_BROWSER_IDLE_TIMEOUT_MS: '90000',
-      AGENT_BROWSER_DOWNLOAD_PATH: join(output, 'downloads') } });
+      AGENT_BROWSER_DOWNLOAD_PATH: downloads } });
   active.add(child);
   let stdout = '', stderr = '', timedOut = false;
   child.stdout.on('data', data => { stdout += data; });
@@ -54,8 +55,7 @@ async function command(executable, argv, { timeout = 30000, cwd = root, input, e
     await new Promise(resolve => setTimeout(resolve, 20));
     Object.assign(entry, { exitCode, signal });
     assert.equal(timedOut, false, `Command timed out: ${argv.join(' ')}`);
-    if (expectedFailure) assert.notEqual(exitCode, 0, 'Expected negative command must fail');
-    else if (!allowFailure) assert.equal(exitCode, 0, `${argv.join(' ')}\n${stderr}\n${stdout}`);
+    assert.equal(exitCode, 0, `${argv.join(' ')}\n${stderr}\n${stdout}`);
     return stdout;
   } finally {
     Object.assign(entry, { timedOut, stdout, stderr });
@@ -79,7 +79,7 @@ async function discoverCli() {
 }
 
 async function browser(...argv) {
-  const text = await command(cli, ['--session', session, '--cdp', cdp, '--json', ...argv]);
+  const text = await command(cli, ['--session', session, '--json', ...argv]);
   const result = JSON.parse(text);
   assert.equal(result.success, true, JSON.stringify(result));
   return result.data;
@@ -641,26 +641,32 @@ function parseCsv(csv) {
 async function download(label, projectId) {
   if (report.downloadBlocker) throw new Error(`Download transport BLOCKED earlier in this run: ${report.downloadBlocker}`);
   const path = join(output, `${currentFlow.name}-${label}.csv`);
+  const before = new Set(await readdir(downloads));
   await browser('scrollintoview', '#download-csv');
-  let result;
-  try { result = await browser('download', '#download-csv', path); }
-  catch (error) {
+  let result, browserPath;
+  try {
+    result = await browser('click', '#download-csv');
+    const deadline = Date.now() + 12000;
+    let created = [];
+    do {
+      created = (await readdir(downloads)).filter(name => !before.has(name));
+      if (created.length === 1 && created[0].endsWith('.csv')) {
+        browserPath = join(downloads, created[0]);
+        break;
+      }
+      await new Promise(resolve => setTimeout(resolve, 100));
+    } while (Date.now() < deadline);
+    assert.ok(browserPath, `Expected one completed browser CSV; new download entries: ${JSON.stringify(created)}`);
+    // Managed Chrome overwrites repeated filenames; retain the completed file
+    // outside its inbox so the next download cannot reuse stale bytes.
+    await rename(browserPath, path);
+  } catch (error) {
     report.downloadBlocker = error.message;
-    if (!report.downloadControl) {
-      await evaluate(`(() => { const a=document.createElement('a'); a.id='download-control';
-        a.href=${JSON.stringify(`/api/projects/${projectId}/tasks.csv`)};
-        a.textContent='Diagnostic direct HTTP download'; document.body.append(a); })()`);
-      const controlPath = join(output, 'diagnostic-direct-http.csv');
-      try {
-        report.downloadControl = JSON.parse(await command(cli, ['--session', session, '--cdp', cdp, '--json',
-          'download', '#download-control', controlPath], { allowFailure: true }));
-        report.downloadControl.fileExists = await access(controlPath).then(() => true, () => false);
-      } finally { await evaluate("document.querySelector('#download-control').remove()"); }
-    }
     throw error;
   }
-  await browser('wait', '--text', 'CSV download started.');
   const bytes = await readFile(path);
+  await check(`${label} completed download retains its success notice`, ['AC4'],
+    await visibleText('#notice'), 'CSV download started.');
   const response = await fetch(`${currentFlow.app.url}/api/projects/${projectId}/tasks.csv`, { signal: AbortSignal.timeout(5000) });
   assert.equal(response.status, 200);
   const serverBytes = Buffer.from(await response.arrayBuffer());
@@ -673,7 +679,8 @@ async function download(label, projectId) {
     bytes.toString('utf8').startsWith('"projectId"') && bytes.subarray(-2).equals(Buffer.from('\r\n')) &&
       Buffer.from(bytes.toString('utf8')).equals(bytes), true);
   report.downloads ??= [];
-  report.downloads.push({ flow: currentFlow.name, label, path, result, bytes: bytes.length,
+  report.downloads.push({ flow: currentFlow.name, label, path, downloadedFrom: browserPath,
+    retention: 'moved completed browser file', result, bytes: bytes.length,
     sha256: createHash('sha256').update(bytes).digest('hex'), headers: Object.fromEntries(response.headers) });
   return bytes;
 }
@@ -866,18 +873,14 @@ async function archive() {
 
 async function archiveFailures(projectId, taskId) {
   const csvUrl = `${currentFlow.app.url}/api/projects/${projectId}/tasks.csv`;
-  const noFile = join(output, 'failed-download.csv');
+  const filesBefore = (await readdir(downloads)).sort();
   await browser('network', 'route', csvUrl, '--abort');
   try {
     await click('#download-csv');
     await browser('wait', '#error');
     await contains('#error', 'CSV download failed:', 'Download transport failure is actionable', ['AC4']);
-    const text = await command(cli, ['--session', session, '--cdp', cdp, '--json', 'wait', '--download', noFile, '--timeout', '1500'], { expectedFailure: true });
-    const result = JSON.parse(text);
-    await check('Download wait reports failure after aborted export', ['AC4'], result.success, false);
-    assert.match(JSON.stringify(result), /[Tt]imeout|[Tt]imed out/);
     await check('Failed export leaves no file and no success announcement', ['AC4'],
-      [await access(noFile).then(() => true, () => false), await visibleText('#notice'), await evaluate('document.activeElement.id')], [false, '', 'error']);
+      [(await readdir(downloads)).sort(), await visibleText('#notice'), await evaluate('document.activeElement.id')], [filesBefore, '', 'error']);
   } finally { await browser('network', 'unroute', csvUrl); }
   const projectsUrl = `${currentFlow.app.url}/api/projects?archived=false`;
   const staleProjects = await get('/api/projects?archived=false');
@@ -919,32 +922,12 @@ try {
   cli = await discoverCli();
   report.agentBrowser = await command(cli, ['--version']);
   const { chromium } = await import(pathToFileURL(join(repo, 'benchmark', 'node_modules', 'playwright', 'index.mjs')));
-  const profile = join(output, 'owned-browser-profile');
-  await mkdir(join(output, 'downloads'), { recursive: true });
-  await mkdir(profile, { recursive: true });
-  const reserve = http.createServer();
-  await new Promise(resolve => reserve.listen(0, '127.0.0.1', resolve));
-  const port = reserve.address().port;
-  await new Promise(resolve => reserve.close(resolve));
-  const previousTemp = { TEMP: process.env.TEMP, TMP: process.env.TMP };
-  try {
-    process.env.TEMP = profile;
-    process.env.TMP = profile;
-    // A persistent Playwright context also auto-dismisses dialogs. Launch only a server;
-    // agent-browser must be the sole owner of pages, dialogs and downloads.
-    context = await chromium.launchServer({ channel: 'chromium', headless: true, host: '127.0.0.1',
-      downloadsPath: join(output, 'downloads'), artifactsDir: profile, args: [`--remote-debugging-port=${port}`], timeout: 30000 });
-  } finally {
-    for (const [key, value] of Object.entries(previousTemp)) {
-      if (value === undefined) delete process.env[key];
-      else process.env[key] = value;
-    }
-  }
-  report.launch = 'chromium.launchServer; no Playwright page/context client attached';
-  cdp = `http://127.0.0.1:${port}`;
-  const version = await fetch(cdp + '/json/version', { signal: AbortSignal.timeout(5000) });
-  assert.equal(version.status, 200);
-  report.browser = await version.json();
+  await mkdir(downloads, { recursive: true });
+  const executable = chromium.executablePath();
+  await access(executable);
+  browserStarted = true;
+  report.launch = await browser('--executable-path', executable, '--download-path', downloads, 'open', 'about:blank');
+  report.browser = { executable, userAgent: await evaluate('navigator.userAgent') };
   for (const name of args[1] === 'all' ? ['base', 'graph', 'query', 'migration', 'archive'] : [args[1]]) {
     currentFlow = { name, directory: join(output, `data-${name}`), started: new Date().toISOString(), status: 'RUNNING' };
     report.flows.push(currentFlow);
@@ -954,7 +937,7 @@ try {
       if (name === 'migration') await writeFile(join(currentFlow.directory, 'planner.json'), await readFile(join(root, 'test', 'fixtures', 'planner-v1.json')));
       await startApp(currentFlow.directory);
       if (report.flows.length === 1) {
-        const warmup = await command(cli, ['--session', session, '--cdp', cdp, '--json', 'open', currentFlow.app.url], { timeout: 60000 });
+        const warmup = await command(cli, ['--session', session, '--json', 'open', currentFlow.app.url], { timeout: 60000 });
         assert.equal(JSON.parse(warmup).success, true);
         await ready();
       }
@@ -997,16 +980,14 @@ try {
   report.blocker = error.stack;
   console.error(error.stack);
 } finally {
-  if (cli && cdp) await browser('close').catch(error => { report.browserCloseError = error.message; });
-  if (context) await context.close().catch(error => { report.contextCloseError = error.message; });
+  if (browserStarted) await browser('close').catch(error => { report.browserCloseError = error.message; });
   for (const child of active) if (child.exitCode === null) child.kill('SIGKILL');
-  await rm(join(output, 'owned-browser-profile'), { recursive: true, force: true }).catch(error => { report.profileCleanupError = error.message; });
   report.changedSources = [];
   for (const [path, hash] of Object.entries(report.sourceHashes)) {
     if (createHash('sha256').update(await readFile(join(root, ...path.split('/')))).digest('hex') !== hash) report.changedSources.push(path);
   }
   report.finished = new Date().toISOString();
-  report.status = !report.blocker && !report.changedSources.length && report.flows.length && report.flows.every(flow => flow.status === 'VERIFIED') ? 'VERIFIED_WITH_LIMITATIONS' : 'FAILED';
+  report.status = !report.blocker && !report.browserCloseError && !report.changedSources.length && report.flows.length && report.flows.every(flow => flow.status === 'VERIFIED') ? 'VERIFIED_WITH_LIMITATIONS' : 'FAILED';
   await writeFile(join(output, 'report.json'), JSON.stringify(report, null, 2));
   if (process.env.E2E_EVIDENCE_DIR) await cp(output, join(resolve(process.env.E2E_EVIDENCE_DIR), runId),
     { recursive: true, filter: path => !path.includes('owned-browser-profile') });

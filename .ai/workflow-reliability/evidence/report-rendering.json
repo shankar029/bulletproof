@@ -2,7 +2,7 @@
   "results": [
     {
       "name": "report.html",
-      "hash": "0cc3c6ea0fef7fdbec99694986b0306d88af909d5fa98ec2133fa57ca12787ef",
+      "hash": "d9f4aac9602eb7a88c0a18d32727aeb15bf07b625aeb9637bda011ac5aef7bd3",
       "pages": 3,
       "view": {
         "title": "Workflow reliability - delivery status",
@@ -15,7 +15,7 @@
           "effectiveLaunch": {
             "browserLaunched": true,
             "engine": "chrome",
-            "launchHash": 2488435124577078000
+            "launchHash": 8060903454635165000
           },
           "launched": false,
           "relaunchedBrowser": false,
@@ -30,7 +30,7 @@
           "effectiveLaunch": {
             "browserLaunched": true,
             "engine": "chrome",
-            "launchHash": 2488435124577078000
+            "launchHash": 8060903454635165000
           },
           "launched": false,
           "relaunchedBrowser": false,
@@ -45,84 +45,183 @@
   ],
   "commands": [
     {
+      "wrapperExecutable": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "wrapperArgv": [
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "30",
+        "--max",
+        "45",
+        "--",
+        "C:\\Users\\shbs\\AppData\\Local\\npm-cache\\_npx\\6de2aa2fded2970c\\node_modules\\agent-browser\\bin\\agent-browser-win32-x64.exe",
+        "--session",
+        "reliability-docs-82aaf797-6cce-4dce-99c4-f0d71f5c7f67",
+        "--cdp",
+        "http://127.0.0.1:64813",
+        "--json",
+        "open",
+        "file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/report.html"
+      ],
       "argv": [
         "--session",
-        "reliability-docs-ccbba4d4-8d10-4187-9f42-887121ac4d0f",
+        "reliability-docs-82aaf797-6cce-4dce-99c4-f0d71f5c7f67",
         "--cdp",
-        "http://127.0.0.1:57856",
+        "http://127.0.0.1:64813",
         "--json",
         "open",
         "file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/report.html"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":2488435124577077702},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"BC5AF581525FE2149FD4F1879626C9FF\",\"title\":\"Workflow reliability - delivery status\",\"url\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/report.html\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":8060903454635164462},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"9B56C8153132DE3A7E5D0750C29600EF\",\"title\":\"Workflow reliability - delivery status\",\"url\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/report.html\"},\"error\":null}\r\n",
       "stderr": ""
     },
     {
+      "wrapperExecutable": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "wrapperArgv": [
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "30",
+        "--max",
+        "45",
+        "--",
+        "C:\\Users\\shbs\\AppData\\Local\\npm-cache\\_npx\\6de2aa2fded2970c\\node_modules\\agent-browser\\bin\\agent-browser-win32-x64.exe",
+        "--session",
+        "reliability-docs-82aaf797-6cce-4dce-99c4-f0d71f5c7f67",
+        "--cdp",
+        "http://127.0.0.1:64813",
+        "--json",
+        "eval",
+        "JSON.stringify({title:document.title,styles:document.styleSheets.length,diagrams:[...document.querySelectorAll(\"figure svg\")].map(x=>({width:x.getBoundingClientRect().width,height:x.getBoundingClientRect().height}))})"
+      ],
       "argv": [
         "--session",
-        "reliability-docs-ccbba4d4-8d10-4187-9f42-887121ac4d0f",
+        "reliability-docs-82aaf797-6cce-4dce-99c4-f0d71f5c7f67",
         "--cdp",
-        "http://127.0.0.1:57856",
+        "http://127.0.0.1:64813",
         "--json",
         "eval",
         "JSON.stringify({title:document.title,styles:document.styleSheets.length,diagrams:[...document.querySelectorAll(\"figure svg\")].map(x=>({width:x.getBoundingClientRect().width,height:x.getBoundingClientRect().height}))})"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":2488435124577077702},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/report.html\",\"result\":\"{\\\"title\\\":\\\"Workflow reliability - delivery status\\\",\\\"styles\\\":1,\\\"diagrams\\\":[]}\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":8060903454635164462},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/report.html\",\"result\":\"{\\\"title\\\":\\\"Workflow reliability - delivery status\\\",\\\"styles\\\":1,\\\"diagrams\\\":[]}\"},\"error\":null}\r\n",
       "stderr": ""
     },
     {
+      "wrapperExecutable": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "wrapperArgv": [
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "30",
+        "--max",
+        "45",
+        "--",
+        "C:\\Users\\shbs\\AppData\\Local\\npm-cache\\_npx\\6de2aa2fded2970c\\node_modules\\agent-browser\\bin\\agent-browser-win32-x64.exe",
+        "--session",
+        "reliability-docs-82aaf797-6cce-4dce-99c4-f0d71f5c7f67",
+        "--cdp",
+        "http://127.0.0.1:64813",
+        "--json",
+        "errors"
+      ],
       "argv": [
         "--session",
-        "reliability-docs-ccbba4d4-8d10-4187-9f42-887121ac4d0f",
+        "reliability-docs-82aaf797-6cce-4dce-99c4-f0d71f5c7f67",
         "--cdp",
-        "http://127.0.0.1:57856",
+        "http://127.0.0.1:64813",
         "--json",
         "errors"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":2488435124577077702},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":8060903454635164462},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\r\n",
       "stderr": ""
     },
     {
+      "wrapperExecutable": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "wrapperArgv": [
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "30",
+        "--max",
+        "45",
+        "--",
+        "C:\\Users\\shbs\\AppData\\Local\\npm-cache\\_npx\\6de2aa2fded2970c\\node_modules\\agent-browser\\bin\\agent-browser-win32-x64.exe",
+        "--session",
+        "reliability-docs-82aaf797-6cce-4dce-99c4-f0d71f5c7f67",
+        "--cdp",
+        "http://127.0.0.1:64813",
+        "--json",
+        "console"
+      ],
       "argv": [
         "--session",
-        "reliability-docs-ccbba4d4-8d10-4187-9f42-887121ac4d0f",
+        "reliability-docs-82aaf797-6cce-4dce-99c4-f0d71f5c7f67",
         "--cdp",
-        "http://127.0.0.1:57856",
+        "http://127.0.0.1:64813",
         "--json",
         "console"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":2488435124577077702},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":8060903454635164462},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\r\n",
       "stderr": ""
     },
     {
+      "wrapperExecutable": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "wrapperArgv": [
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "30",
+        "--max",
+        "45",
+        "--",
+        "C:\\Users\\shbs\\AppData\\Local\\npm-cache\\_npx\\6de2aa2fded2970c\\node_modules\\agent-browser\\bin\\agent-browser-win32-x64.exe",
+        "--session",
+        "reliability-docs-82aaf797-6cce-4dce-99c4-f0d71f5c7f67",
+        "--cdp",
+        "http://127.0.0.1:64813",
+        "--json",
+        "pdf",
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\report.pdf"
+      ],
       "argv": [
         "--session",
-        "reliability-docs-ccbba4d4-8d10-4187-9f42-887121ac4d0f",
+        "reliability-docs-82aaf797-6cce-4dce-99c4-f0d71f5c7f67",
         "--cdp",
-        "http://127.0.0.1:57856",
+        "http://127.0.0.1:64813",
         "--json",
         "pdf",
         "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\report.pdf"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":2488435124577077702},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\report.pdf\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":8060903454635164462},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\report.pdf\"},\"error\":null}\r\n",
       "stderr": ""
     },
     {
+      "wrapperExecutable": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "wrapperArgv": [
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "30",
+        "--max",
+        "45",
+        "--",
+        "C:\\Users\\shbs\\AppData\\Local\\npm-cache\\_npx\\6de2aa2fded2970c\\node_modules\\agent-browser\\bin\\agent-browser-win32-x64.exe",
+        "--session",
+        "reliability-docs-82aaf797-6cce-4dce-99c4-f0d71f5c7f67",
+        "--cdp",
+        "http://127.0.0.1:64813",
+        "--json",
+        "close"
+      ],
       "argv": [
         "--session",
-        "reliability-docs-ccbba4d4-8d10-4187-9f42-887121ac4d0f",
+        "reliability-docs-82aaf797-6cce-4dce-99c4-f0d71f5c7f67",
         "--cdp",
-        "http://127.0.0.1:57856",
+        "http://127.0.0.1:64813",
         "--json",
         "close"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"closed\":true,\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":false,\"engine\":\"chrome\",\"launchHash\":null},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":false,\"saveStatus\":\"not_configured\"},\"restoreStatus\":\"not_configured\",\"saveStatus\":\"not_configured\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"closed\":true,\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":false,\"engine\":\"chrome\",\"launchHash\":null},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":false,\"saveStatus\":\"not_configured\"},\"restoreStatus\":\"not_configured\",\"saveStatus\":\"not_configured\"},\"error\":null}\r\n",
       "stderr": ""
     }
   ]

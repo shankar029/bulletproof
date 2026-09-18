@@ -1,0 +1,1149 @@
+{
+  "kind": "Parent raw-artifact reconciliation; not an independent execution or acceptance pass",
+  "generatedAt": "2026-09-18T10:22:20.449Z",
+  "harnessSha256": "9ca5288b3091e5488f28d5d3a673e2335bc213542f04e89d5d3dcf50d9f7565e",
+  "results": [
+    {
+      "id": "e2e-2026-09-18T09-30-43-220Z-5c5e6d11",
+      "status": "FAILED",
+      "passingCheckRecords": 204,
+      "cliCommandRecords": 625,
+      "downloadComparisons": [
+        {
+          "label": "legacy",
+          "bytes": 617,
+          "sha256": "79b9d8d00f9666e9e40859a6f7f7b65cbb4ec03d9a2151c2e0a5a33d9a9a6ced"
+        },
+        {
+          "label": "active",
+          "bytes": 720,
+          "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+        }
+      ],
+      "nonzeroCommands": [],
+      "harnessSha256": "040026d434c890b8046a712523c154ac356e4feeb4112a398b8d49bbc27a6045",
+      "currentProductionFilesMatchingRun": 12
+    },
+    {
+      "id": "e2e-2026-09-18T09-30-53-260Z-6dfb69cb",
+      "status": "FAILED",
+      "passingCheckRecords": 157,
+      "cliCommandRecords": 486,
+      "downloadComparisons": [
+        {
+          "label": "legacy",
+          "bytes": 617,
+          "sha256": "79b9d8d00f9666e9e40859a6f7f7b65cbb4ec03d9a2151c2e0a5a33d9a9a6ced"
+        },
+        {
+          "label": "active",
+          "bytes": 720,
+          "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+        }
+      ],
+      "nonzeroCommands": [
+        {
+          "number": 478,
+          "exitCode": 124
+        },
+        {
+          "number": 481,
+          "exitCode": 1
+        }
+      ],
+      "harnessSha256": "040026d434c890b8046a712523c154ac356e4feeb4112a398b8d49bbc27a6045",
+      "currentProductionFilesMatchingRun": 12
+    },
+    {
+      "id": "e2e-2026-09-18T09-57-31-865Z-9add99c4",
+      "status": "FAILED",
+      "passingCheckRecords": 74,
+      "cliCommandRecords": 218,
+      "downloadComparisons": [
+        {
+          "label": "active",
+          "bytes": 720,
+          "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+        },
+        {
+          "label": "archived-filtered-page2",
+          "bytes": 720,
+          "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+        },
+        {
+          "label": "stale-client-after-archive",
+          "bytes": 699,
+          "sha256": "705faf2d353aa2dd23783b62fe40f7869fe76a85735fe51260b5330bada08e85"
+        }
+      ],
+      "nonzeroCommands": [
+        {
+          "number": 211,
+          "exitCode": 124
+        }
+      ],
+      "harnessSha256": "af0db71390001f57ab85ca4ed3350081431fb467d01bbf843ac4c88047717bfc",
+      "currentProductionFilesMatchingRun": 12
+    },
+    {
+      "id": "e2e-2026-09-18T10-11-44-050Z-5284b601",
+      "status": "FAILED",
+      "passingCheckRecords": 57,
+      "cliCommandRecords": 144,
+      "downloadComparisons": [
+        {
+          "label": "active",
+          "bytes": 720,
+          "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+        },
+        {
+          "label": "archived-filtered-page2",
+          "bytes": 720,
+          "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+        }
+      ],
+      "nonzeroCommands": [
+        {
+          "number": 136,
+          "exitCode": 124
+        },
+        {
+          "number": 139,
+          "exitCode": 1
+        }
+      ],
+      "harnessSha256": "9ca5288b3091e5488f28d5d3a673e2335bc213542f04e89d5d3dcf50d9f7565e",
+      "currentProductionFilesMatchingRun": 12
+    }
+  ],
+  "featureCounts": {
+    "OBSERVED_WITH_LIMITS": 14,
+    "PARTIAL": 12,
+    "BLOCKED": 2,
+    "NOT_EXERCISED": 1
+  },
+  "report": {
+    "htmlSha256": "d9f4aac9602eb7a88c0a18d32727aeb15bf07b625aeb9637bda011ac5aef7bd3",
+    "pdfSha256": "44807d7421e87c1d180b43e1d31fb3607eae516a7b2b7a9907f165e9b1693db0",
+    "pages": 3
+  },
+  "limitations": [
+    "All four app browser executions failed overall; useful comparisons do not close empty export or all-flow acceptance.",
+    "Copied raw run artifacts match the retained original .work files byte-for-byte.",
+    "Run-produced hashes bind twelve current src/public files; separate verifier null hashes do not bind nonexistent files.",
+    "Prior harness hashes are retained, but this checkpoint only preserves the final harness file.",
+    "No final independent broad approval, qualified full metrics, guarded adoption or G6 closure."
+  ],
+  "files": [
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-active-server.csv",
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-active.csv",
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-archived-a11y.json",
+      "bytes": 554,
+      "sha256": "3fef2726f0b0ec7638ef30226fbf3f7327b55771091190c5ed9a74b12cde1156"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-archived-landmarks.json",
+      "bytes": 8489,
+      "sha256": "751a6f0c31e07126fabd2f1f43ce2a430fcabb8c624358dbdabde3a9cc504704"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-coherence-failure-snapshot.json",
+      "bytes": 8619,
+      "sha256": "4cd2433b90590c901b7db712b8ad12f80676ddb5225ac23dbf23e3a55f2ca699"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-coherence-failure.png",
+      "bytes": 84453,
+      "sha256": "b10cfe8e69147b3b8104e82eb715d85731cae87acfa2d078f5b467f87a4cd047"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-complete-snapshot.json",
+      "bytes": 5752,
+      "sha256": "6c038d47ee4cc2ceed7c75a31a55a426997920fa03bb09c5a8b2748ba6efbdee"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-complete.png",
+      "bytes": 50414,
+      "sha256": "5f2749995f05eda8c6940c7208e3cc91d61bad20ada976d99cbe83fd4809b5ad"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-dialog-447.json",
+      "bytes": 494,
+      "sha256": "b7e5325433e2fae7b68b35e2af0f80654e0f8a4c64c1d294fcd22de07516ddb3"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-dialog-466.json",
+      "bytes": 494,
+      "sha256": "b7e5325433e2fae7b68b35e2af0f80654e0f8a4c64c1d294fcd22de07516ddb3"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-dialog-539.json",
+      "bytes": 494,
+      "sha256": "b7e5325433e2fae7b68b35e2af0f80654e0f8a4c64c1d294fcd22de07516ddb3"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-dialog-613.json",
+      "bytes": 494,
+      "sha256": "b7e5325433e2fae7b68b35e2af0f80654e0f8a4c64c1d294fcd22de07516ddb3"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-failed-archived-download-snapshot.json",
+      "bytes": 6187,
+      "sha256": "02e1453a27ae5154fee4a1d531964705d3c74556eaa486639554b6cbc15ce16f"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-failed-archived-download.png",
+      "bytes": 54377,
+      "sha256": "159f17c1911af3585ad74f9ef9901cc9d9a684456b54c46fc1e112c1afbfc617"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-failed-empty-download-snapshot.json",
+      "bytes": 5752,
+      "sha256": "6c038d47ee4cc2ceed7c75a31a55a426997920fa03bb09c5a8b2748ba6efbdee"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-failed-empty-download.png",
+      "bytes": 50414,
+      "sha256": "5f2749995f05eda8c6940c7208e3cc91d61bad20ada976d99cbe83fd4809b5ad"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-failed-stale-client-download-snapshot.json",
+      "bytes": 11310,
+      "sha256": "c7752c8de09fe33a5e6fc63d5f1ad7c88b2444357b1243d1d4602c9e1a70bbdb"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-failed-stale-client-download.png",
+      "bytes": 113181,
+      "sha256": "799a6d13978723ea81aa4234fd5f0fe2603345e96558c326ddb6b251c371b2c5"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-filtered-archive-snapshot.json",
+      "bytes": 6194,
+      "sha256": "a7a30c918a89c343e1e0d0c15bbcae759fbfe62702f444d25db7b61214b4584b"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-filtered-archive.png",
+      "bytes": 54529,
+      "sha256": "f594f2739b8ad653d2e6cfa39ab704452cd4f114b7abd475666ed61a78dcbcee"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-layout-1280-snapshot.json",
+      "bytes": 8489,
+      "sha256": "751a6f0c31e07126fabd2f1f43ce2a430fcabb8c624358dbdabde3a9cc504704"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-layout-1280.json",
+      "bytes": 3169,
+      "sha256": "a266390b744f5abce0e5cf042f01db822a9e85ec65366ae9c37b814a4ea44e14"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-layout-1280.png",
+      "bytes": 86139,
+      "sha256": "25fb731ea19a7de47b7a0ec9887898980cb124cf255c1bb6d23c0087784a712e"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-layout-390-snapshot.json",
+      "bytes": 8489,
+      "sha256": "751a6f0c31e07126fabd2f1f43ce2a430fcabb8c624358dbdabde3a9cc504704"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-layout-390.json",
+      "bytes": 3133,
+      "sha256": "20c0f498b168861ad49d1d2be6d3c37cb7b4060587d1688359ce427dd2f17942"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-layout-390.png",
+      "bytes": 80132,
+      "sha256": "224a90e9c72eb6747fed682644f994970cd3070623a07cc4f585927cd06661bc"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-post-save-refresh-failure-snapshot.json",
+      "bytes": 11571,
+      "sha256": "7ca20b90851c9cee9ce01b0ace806d9d602ba7f4b4f10de3ba6e36eea6554c19"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-post-save-refresh-failure.png",
+      "bytes": 117943,
+      "sha256": "4b1dd0c02636ed41d54b545dc2449b5cad10c5a56e6944c958fce2f5439ac633"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-stale-draft-snapshot.json",
+      "bytes": 11476,
+      "sha256": "cbc9380bcfc71e8417ddeec1175fa2edabc9e01b47d425d251b5c3bcce2ed481"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-stale-draft.png",
+      "bytes": 114725,
+      "sha256": "7c52fe64ac626eb147fb0b71f57aabe1ba1be9e4399ad9e0876ad38b6b8c35ad"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\archive-tabs.json",
+      "bytes": 604,
+      "sha256": "8797b75192538f4a9511075b262daed96b0bc9fb143d5ac75ee23b575769c613"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-complete-snapshot.json",
+      "bytes": 6982,
+      "sha256": "ae3f0fd4617264d32c472fdae20d7ca0b17ee24ef214a703cb5571e5e00a5f68"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-complete.png",
+      "bytes": 61640,
+      "sha256": "4ac17ac81f5259fee0e900ec1946574d0fe75a56975c77040b473e2d632a35e3"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-conflict-snapshot.json",
+      "bytes": 8852,
+      "sha256": "8aa73b5d2d9c387368b4ae24b5027ed6ea4fe72e63d62227dbcaab6e8edb975a"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-conflict.png",
+      "bytes": 82468,
+      "sha256": "bdf43a6321caecca9b9afbe9f610ad4386ec1aa1ed837ca23a8f4468d0ee0f15"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-editor-a11y.json",
+      "bytes": 554,
+      "sha256": "f1c6da24f8070612c558413ef614adba8d397d510acd5c54229e5dab479d8dfe"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-editor-landmarks.json",
+      "bytes": 8915,
+      "sha256": "708441c447dc8232284b8e71b3b474fdfe1e7b3240b57d0cc260bc77ddb66fb2"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-empty-snapshot.json",
+      "bytes": 1995,
+      "sha256": "220be9c1cb5d7dfe418e6095a04a7529cbbe9944b5edbbd2dd7ad501059f21c4"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-empty.png",
+      "bytes": 27525,
+      "sha256": "0819ca424c3e4c785ee41134be0ee8b42232bf25bdad1ca643197479b154b0ee"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-invalid-title-snapshot.json",
+      "bytes": 8695,
+      "sha256": "27fd62615a4a973219918a69b977dcbf89345f45bddbfdcd861b4f90d9ddee58"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-invalid-title.png",
+      "bytes": 80584,
+      "sha256": "4b6ce3378c76c9a5671b6121a9f3e3009b738806fcc84041116ffc9465d66fab"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-layout-1280-snapshot.json",
+      "bytes": 8915,
+      "sha256": "708441c447dc8232284b8e71b3b474fdfe1e7b3240b57d0cc260bc77ddb66fb2"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-layout-1280.json",
+      "bytes": 3769,
+      "sha256": "8aec49a8689b28beefda1a866aecc3c88ab245366c71fcb1d114dd86e9eed155"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-layout-1280.png",
+      "bytes": 85982,
+      "sha256": "7cf3805450df3f4e80df31243c18a3f458cd278d36e6f8a77714da3426d5fcaf"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-layout-390-snapshot.json",
+      "bytes": 8915,
+      "sha256": "708441c447dc8232284b8e71b3b474fdfe1e7b3240b57d0cc260bc77ddb66fb2"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-layout-390.json",
+      "bytes": 3733,
+      "sha256": "ffd3cc4342b445db6d3e4a7184200db78c7495d72d14fc11cd44249735943584"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-layout-390.png",
+      "bytes": 81394,
+      "sha256": "3e4ffaaa937d3ae63ea74569f9bb977ebfa2cbeaed16a32fbfb502e41592cc8f"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-network-failure-snapshot.json",
+      "bytes": 7155,
+      "sha256": "b2f5ad67a72d127114f432f2b81e8ac49077b9b84b059a6732bc3832468188be"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\base-network-failure.png",
+      "bytes": 65511,
+      "sha256": "759f35e8ee9a4a72c6e3544c95b2c4dd62ccba548b5856b7460a5ac995fff301"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\commands.jsonl",
+      "bytes": 1138951,
+      "sha256": "b1a2cb2724a9216a47d19703f725eed0782eedf1ec4d50b0c437266f8d569749"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\data-archive\\planner.json",
+      "bytes": 1801,
+      "sha256": "bb58cc0de8b8f1db2c2e0215fa835c9781663e3878c5b7409934478341fa8c9f"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\data-base\\planner.json",
+      "bytes": 1113,
+      "sha256": "4252e965627b60d83d8d13b61d27655e15a1a7f893a7b69f10937f3759c87550"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\data-graph\\planner.json",
+      "bytes": 919,
+      "sha256": "678102643d50e23d29e7a6838f2838e60ecc7c3168126e530e176b90bb34a775"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\data-migration\\planner.json",
+      "bytes": 1865,
+      "sha256": "4809efdb80ae75cacdc4878e3e1198c492f40d6b8076b149ed23153a38de718d"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\data-migration\\planner.v1-backup.json",
+      "bytes": 1664,
+      "sha256": "ad7845486864bb4fef3f938eac02ef4ba213f8d3e20da4e4fa1b1c8b61df4450"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\data-query\\planner.json",
+      "bytes": 3302,
+      "sha256": "179a50e09a7e0a11a3cec48f900ae7feb184c5c4f3f8535251ed98d7b368c050"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\downloads\\project-p-1-tasks.csv",
+      "bytes": 617,
+      "sha256": "79b9d8d00f9666e9e40859a6f7f7b65cbb4ec03d9a2151c2e0a5a33d9a9a6ced"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\downloads\\project-p-2-tasks.csv",
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\graph-blocked-transition-snapshot.json",
+      "bytes": 8597,
+      "sha256": "b6915f2180913b451479b61951fda984c5a17bf68845995bae83c9f2d3f36bbd"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\graph-blocked-transition.png",
+      "bytes": 79287,
+      "sha256": "4a04ae951d4c4336fe37f7882ee822e023b604f99007e3ad68c6ddf9f2e410cd"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\graph-complete-snapshot.json",
+      "bytes": 6441,
+      "sha256": "75c9392b20904fc1f31469ca92a5f2d04fdd8f025acf0d3afb8445b3341a4f2d"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\graph-complete.png",
+      "bytes": 53231,
+      "sha256": "c7b86d25673fa973e378e6b744d8056adb2e27f95844ee6d655dc1c601e72524"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\graph-reopen-conflict-snapshot.json",
+      "bytes": 8550,
+      "sha256": "867e24ce7e9135f952b315fe0ece1bb511c360140800c08feb4b86ff3686ace8"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\graph-reopen-conflict.png",
+      "bytes": 76466,
+      "sha256": "792fe96cdd0b912266be73db3db1c953a9a90dcfc9414316ef0f10e3da811a1b"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\http.jsonl",
+      "bytes": 101729,
+      "sha256": "3d92ff52325f817b0bd82a82b5f45a94548bb7fb37653b481c211015b0aec901"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\migration-legacy-server.csv",
+      "bytes": 617,
+      "sha256": "79b9d8d00f9666e9e40859a6f7f7b65cbb4ec03d9a2151c2e0a5a33d9a9a6ced"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\migration-legacy-snapshot.json",
+      "bytes": 8763,
+      "sha256": "d599e5d5c172f34695356a931d97f4f1221631c4ce91745893b07c5afd5f4d8c"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\migration-legacy.csv",
+      "bytes": 617,
+      "sha256": "79b9d8d00f9666e9e40859a6f7f7b65cbb4ec03d9a2151c2e0a5a33d9a9a6ced"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\migration-legacy.png",
+      "bytes": 85889,
+      "sha256": "e2a2324a35165568ac0aedea95db893732d5872e533961d25acd4f7e78e50e66"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\migration-priority-restart-snapshot.json",
+      "bytes": 6115,
+      "sha256": "532b5de08f3749af7c69dfe2d0df80e46356919c594be76fda9be5dacb28351b"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\migration-priority-restart.png",
+      "bytes": 48494,
+      "sha256": "8cc009f6339d04370cc62d69474a91d720d089243a19155112cd7ec4140aaaa8"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\query-default-page2-snapshot.json",
+      "bytes": 6840,
+      "sha256": "7b3797253d9db58f89fe059b5f0d42d09f81eac0eea188b92bc42b21c5ff2eec"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\query-default-page2.png",
+      "bytes": 57956,
+      "sha256": "36739abbc527314fde539557e71e1d5439cbb3b45a88aee5476316a27c28a1a5"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\query-filtered-page2-snapshot.json",
+      "bytes": 6507,
+      "sha256": "756f64bd2c03665d5d1239d60307bfa58d11872e11d7c942af4ecad8487e88f1"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\query-filtered-page2.png",
+      "bytes": 53873,
+      "sha256": "5f56a90654f6dfa400e7ae6702a33d060139ebcebe63bae7fb24a047ae6e68d6"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\query-query-a11y.json",
+      "bytes": 561,
+      "sha256": "6fb8acec7492ea4434adfd461e78a0ebd99122a5658a81efe5c00178f4416a2a"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\query-query-landmarks.json",
+      "bytes": 6840,
+      "sha256": "b110e85ecf6f860009d214d7dd14059ecb2473974b8a6d187a599b18a5ed85a7"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\\report.json",
+      "bytes": 92142,
+      "sha256": "c7016838c53beace70c40ebd3b1fa6ee5d190fcce64c5973ad9a58301484569d"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\archive-active-server.csv",
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\archive-active.csv",
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\archive-dialog-447.json",
+      "bytes": 494,
+      "sha256": "b7e5325433e2fae7b68b35e2af0f80654e0f8a4c64c1d294fcd22de07516ddb3"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\archive-dialog-466.json",
+      "bytes": 494,
+      "sha256": "b7e5325433e2fae7b68b35e2af0f80654e0f8a4c64c1d294fcd22de07516ddb3"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\archive-failed-archived-download-snapshot.json",
+      "bytes": 408,
+      "sha256": "7e6a7effefddca8fb2a8ee530b6a7559ad4972f12d53b36c670da89c043ac3ca"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\archive-failed-archived-download.png",
+      "bytes": 3358,
+      "sha256": "a177102400714792a421a23fba7a88f50481501d0969f5b7d0b2c6e0d37ba3b5"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\archive-failure-snapshot.json",
+      "bytes": 408,
+      "sha256": "7e6a7effefddca8fb2a8ee530b6a7559ad4972f12d53b36c670da89c043ac3ca"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\archive-failure.png",
+      "bytes": 3358,
+      "sha256": "a177102400714792a421a23fba7a88f50481501d0969f5b7d0b2c6e0d37ba3b5"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-complete-snapshot.json",
+      "bytes": 6982,
+      "sha256": "06adbb4175082bb72e4317d72d6052fd700e7b2440c3adf4de09d15cf26d81de"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-complete.png",
+      "bytes": 61640,
+      "sha256": "4ac17ac81f5259fee0e900ec1946574d0fe75a56975c77040b473e2d632a35e3"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-conflict-snapshot.json",
+      "bytes": 8852,
+      "sha256": "a53f211a1f8fc4b9bf4bbb090beae2697dcd9187f7a68106338b5fee46224e4a"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-conflict.png",
+      "bytes": 82468,
+      "sha256": "bdf43a6321caecca9b9afbe9f610ad4386ec1aa1ed837ca23a8f4468d0ee0f15"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-editor-a11y.json",
+      "bytes": 554,
+      "sha256": "261815ce651657a71aa7f8a261d43a4318b82d96a0c83dd33f8ed57555a462c9"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-editor-landmarks.json",
+      "bytes": 8915,
+      "sha256": "224496806eec6f7a31e9acbc5b634064e41a082841a257a53fe0d36d0872a4a2"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-empty-snapshot.json",
+      "bytes": 1995,
+      "sha256": "c74a1a1c3a14a7531b5f58d16b5106674700411f407022d396b06e7652e50e01"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-empty.png",
+      "bytes": 27525,
+      "sha256": "0819ca424c3e4c785ee41134be0ee8b42232bf25bdad1ca643197479b154b0ee"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-invalid-title-snapshot.json",
+      "bytes": 8695,
+      "sha256": "a50edc0ec56cc7dc0289d85d135357bf96a14a85910dd35c27f02b621b07e9a7"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-invalid-title.png",
+      "bytes": 80584,
+      "sha256": "4b6ce3378c76c9a5671b6121a9f3e3009b738806fcc84041116ffc9465d66fab"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-layout-1280-snapshot.json",
+      "bytes": 8915,
+      "sha256": "224496806eec6f7a31e9acbc5b634064e41a082841a257a53fe0d36d0872a4a2"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-layout-1280.json",
+      "bytes": 3769,
+      "sha256": "8aec49a8689b28beefda1a866aecc3c88ab245366c71fcb1d114dd86e9eed155"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-layout-1280.png",
+      "bytes": 85982,
+      "sha256": "7cf3805450df3f4e80df31243c18a3f458cd278d36e6f8a77714da3426d5fcaf"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-layout-390-snapshot.json",
+      "bytes": 8915,
+      "sha256": "224496806eec6f7a31e9acbc5b634064e41a082841a257a53fe0d36d0872a4a2"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-layout-390.json",
+      "bytes": 3733,
+      "sha256": "ffd3cc4342b445db6d3e4a7184200db78c7495d72d14fc11cd44249735943584"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-layout-390.png",
+      "bytes": 81394,
+      "sha256": "3e4ffaaa937d3ae63ea74569f9bb977ebfa2cbeaed16a32fbfb502e41592cc8f"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-network-failure-snapshot.json",
+      "bytes": 7155,
+      "sha256": "afe06987e126458d0a5eda1124fcc5515b5c48951d7626220b6335478306c552"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\base-network-failure.png",
+      "bytes": 65511,
+      "sha256": "759f35e8ee9a4a72c6e3544c95b2c4dd62ccba548b5856b7460a5ac995fff301"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\commands.jsonl",
+      "bytes": 838107,
+      "sha256": "1d8271c63e05308bd9f195572dd5125981b5381ded7684c001d796543c2051d2"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\data-archive\\planner.json",
+      "bytes": 1690,
+      "sha256": "fd92a3eff921619febd5ab7c5578622a93134cc424a94042069cee780a3db52c"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\data-base\\planner.json",
+      "bytes": 1113,
+      "sha256": "4252e965627b60d83d8d13b61d27655e15a1a7f893a7b69f10937f3759c87550"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\data-graph\\planner.json",
+      "bytes": 919,
+      "sha256": "678102643d50e23d29e7a6838f2838e60ecc7c3168126e530e176b90bb34a775"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\data-migration\\planner.json",
+      "bytes": 1865,
+      "sha256": "4809efdb80ae75cacdc4878e3e1198c492f40d6b8076b149ed23153a38de718d"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\data-migration\\planner.v1-backup.json",
+      "bytes": 1664,
+      "sha256": "ad7845486864bb4fef3f938eac02ef4ba213f8d3e20da4e4fa1b1c8b61df4450"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\data-query\\planner.json",
+      "bytes": 3302,
+      "sha256": "179a50e09a7e0a11a3cec48f900ae7feb184c5c4f3f8535251ed98d7b368c050"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\downloads\\project-p-1-tasks.csv",
+      "bytes": 617,
+      "sha256": "79b9d8d00f9666e9e40859a6f7f7b65cbb4ec03d9a2151c2e0a5a33d9a9a6ced"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\downloads\\project-p-2-tasks.csv",
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\downloads\\project-p-2-tasks.csv.crdownload",
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\graph-blocked-transition-snapshot.json",
+      "bytes": 8597,
+      "sha256": "44474a6b814448c2db55c620adf2add25d87be3034592ece67a09f69ecb486ee"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\graph-blocked-transition.png",
+      "bytes": 79287,
+      "sha256": "4a04ae951d4c4336fe37f7882ee822e023b604f99007e3ad68c6ddf9f2e410cd"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\graph-complete-snapshot.json",
+      "bytes": 6441,
+      "sha256": "bf28d49cfc202ae863d1ca9644a5eb76c46bb8e15e9e27fc3c7a9b77264e375a"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\graph-complete.png",
+      "bytes": 53231,
+      "sha256": "c7b86d25673fa973e378e6b744d8056adb2e27f95844ee6d655dc1c601e72524"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\graph-reopen-conflict-snapshot.json",
+      "bytes": 8550,
+      "sha256": "34adc0e45e583624b97e8b275d4a9574855e8f48c60789731006507569176e1e"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\graph-reopen-conflict.png",
+      "bytes": 76466,
+      "sha256": "792fe96cdd0b912266be73db3db1c953a9a90dcfc9414316ef0f10e3da811a1b"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\http.jsonl",
+      "bytes": 94890,
+      "sha256": "e699f875379baa1d8b323b5ffe08903104eb0085b017814bc068c330464abe40"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\migration-legacy-server.csv",
+      "bytes": 617,
+      "sha256": "79b9d8d00f9666e9e40859a6f7f7b65cbb4ec03d9a2151c2e0a5a33d9a9a6ced"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\migration-legacy-snapshot.json",
+      "bytes": 8763,
+      "sha256": "428bbc1e12f2ee513d0d70c49ee7b4b8ca573b00e09453f8db4fb252b1a2f3e5"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\migration-legacy.csv",
+      "bytes": 617,
+      "sha256": "79b9d8d00f9666e9e40859a6f7f7b65cbb4ec03d9a2151c2e0a5a33d9a9a6ced"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\migration-legacy.png",
+      "bytes": 85889,
+      "sha256": "e2a2324a35165568ac0aedea95db893732d5872e533961d25acd4f7e78e50e66"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\migration-priority-restart-snapshot.json",
+      "bytes": 6115,
+      "sha256": "8ab7cb12f9f0197cd0119229f18cdcd174ada1aabbe4fc12fd8bc0b3921f89f1"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\migration-priority-restart.png",
+      "bytes": 48494,
+      "sha256": "8cc009f6339d04370cc62d69474a91d720d089243a19155112cd7ec4140aaaa8"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\query-default-page2-snapshot.json",
+      "bytes": 6840,
+      "sha256": "091074f7a3699578209fe40d6dacaa23b9489ca3bb6bb78c918a22d854635436"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\query-default-page2.png",
+      "bytes": 57956,
+      "sha256": "36739abbc527314fde539557e71e1d5439cbb3b45a88aee5476316a27c28a1a5"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\query-filtered-page2-snapshot.json",
+      "bytes": 6507,
+      "sha256": "bf550e79020ab5de6ee0aa532920432c2da264d6dedf0860b9d0c7a0180d9b2a"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\query-filtered-page2.png",
+      "bytes": 53873,
+      "sha256": "5f56a90654f6dfa400e7ae6702a33d060139ebcebe63bae7fb24a047ae6e68d6"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\query-query-a11y.json",
+      "bytes": 561,
+      "sha256": "64bdb8017d1ac7776fa876b93e56cd990493420ae14f4293568c6bea90623ab0"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\query-query-landmarks.json",
+      "bytes": 6840,
+      "sha256": "a95fbe972838f535f69c70939af9b3d7c57f16a2dd31c407e6da62ce877b95e5"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy\\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\\report.json",
+      "bytes": 72186,
+      "sha256": "9069af66f1b82ca9486f20d7c408caf774a3952438cc59c9e54ec763ba30ab64"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-active-server.csv",
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-active.csv",
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-archived-a11y.json",
+      "bytes": 554,
+      "sha256": "65c8ed4bc01223333088ce036761192aa0eb234771bf868ff318d9dc02fe124b"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-archived-filtered-page2-server.csv",
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-archived-filtered-page2.csv",
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-archived-landmarks.json",
+      "bytes": 8489,
+      "sha256": "b7e9a0dfc8d4517fc573d95054da0c170cd594c6ddebbc9a201b708a8d4d3d9c"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-coherence-failure-snapshot.json",
+      "bytes": 8619,
+      "sha256": "f6a7a1a33dbe4b40d0a55eb544176909617acbbdecc84a5377583de7bb0d92ab"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-coherence-failure.png",
+      "bytes": 84453,
+      "sha256": "b10cfe8e69147b3b8104e82eb715d85731cae87acfa2d078f5b467f87a4cd047"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-complete-snapshot.json",
+      "bytes": 408,
+      "sha256": "7e6a7effefddca8fb2a8ee530b6a7559ad4972f12d53b36c670da89c043ac3ca"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-complete.png",
+      "bytes": 3358,
+      "sha256": "a177102400714792a421a23fba7a88f50481501d0969f5b7d0b2c6e0d37ba3b5"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-dialog-128.json",
+      "bytes": 494,
+      "sha256": "b7e5325433e2fae7b68b35e2af0f80654e0f8a4c64c1d294fcd22de07516ddb3"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-dialog-203.json",
+      "bytes": 494,
+      "sha256": "b7e5325433e2fae7b68b35e2af0f80654e0f8a4c64c1d294fcd22de07516ddb3"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-dialog-38.json",
+      "bytes": 494,
+      "sha256": "b7e5325433e2fae7b68b35e2af0f80654e0f8a4c64c1d294fcd22de07516ddb3"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-dialog-57.json",
+      "bytes": 494,
+      "sha256": "b7e5325433e2fae7b68b35e2af0f80654e0f8a4c64c1d294fcd22de07516ddb3"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-failed-empty-download-snapshot.json",
+      "bytes": 408,
+      "sha256": "7e6a7effefddca8fb2a8ee530b6a7559ad4972f12d53b36c670da89c043ac3ca"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-failed-empty-download.png",
+      "bytes": 3358,
+      "sha256": "a177102400714792a421a23fba7a88f50481501d0969f5b7d0b2c6e0d37ba3b5"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-filtered-archive-snapshot.json",
+      "bytes": 6194,
+      "sha256": "a5b1cd23f6baae2f50361e5f98aa6cc69ba68f9a0bf448ce2a941792f1644545"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-filtered-archive.png",
+      "bytes": 54682,
+      "sha256": "59ed9f663f8d2d37d9e069d5b0f6e56401400f610afb8ddb163cfc9251437fd6"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-layout-1280-snapshot.json",
+      "bytes": 8489,
+      "sha256": "b7e9a0dfc8d4517fc573d95054da0c170cd594c6ddebbc9a201b708a8d4d3d9c"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-layout-1280.json",
+      "bytes": 3169,
+      "sha256": "a266390b744f5abce0e5cf042f01db822a9e85ec65366ae9c37b814a4ea44e14"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-layout-1280.png",
+      "bytes": 86139,
+      "sha256": "25fb731ea19a7de47b7a0ec9887898980cb124cf255c1bb6d23c0087784a712e"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-layout-390-snapshot.json",
+      "bytes": 8489,
+      "sha256": "b7e9a0dfc8d4517fc573d95054da0c170cd594c6ddebbc9a201b708a8d4d3d9c"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-layout-390.json",
+      "bytes": 3133,
+      "sha256": "20c0f498b168861ad49d1d2be6d3c37cb7b4060587d1688359ce427dd2f17942"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-layout-390.png",
+      "bytes": 80132,
+      "sha256": "224a90e9c72eb6747fed682644f994970cd3070623a07cc4f585927cd06661bc"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-post-save-refresh-failure-snapshot.json",
+      "bytes": 11571,
+      "sha256": "56ae32900639a3ec4e02c4178b7c1663293bcc1e955bae4792ef4c119454b659"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-post-save-refresh-failure.png",
+      "bytes": 117943,
+      "sha256": "4b1dd0c02636ed41d54b545dc2449b5cad10c5a56e6944c958fce2f5439ac633"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-stale-client-after-archive-server.csv",
+      "bytes": 699,
+      "sha256": "705faf2d353aa2dd23783b62fe40f7869fe76a85735fe51260b5330bada08e85"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-stale-client-after-archive.csv",
+      "bytes": 699,
+      "sha256": "705faf2d353aa2dd23783b62fe40f7869fe76a85735fe51260b5330bada08e85"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-stale-draft-snapshot.json",
+      "bytes": 11476,
+      "sha256": "5340ec66156b262960c9761032251a3d4618b93d370482a01a5b556bd031630c"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-stale-draft.png",
+      "bytes": 114725,
+      "sha256": "7c52fe64ac626eb147fb0b71f57aabe1ba1be9e4399ad9e0876ad38b6b8c35ad"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-tabs.json",
+      "bytes": 604,
+      "sha256": "20f6ff4ddbaf833cbe2e30cfe64c64fec8af82363d0b3cf89d313f332478be12"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\commands.jsonl",
+      "bytes": 390086,
+      "sha256": "9a430cdf14b26bb939c5465e828c239ec6304b84721e4118fc7e367213e69b28"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\data-archive\\planner.json",
+      "bytes": 1801,
+      "sha256": "bb58cc0de8b8f1db2c2e0215fa835c9781663e3878c5b7409934478341fa8c9f"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\http.jsonl",
+      "bytes": 11387,
+      "sha256": "5383f1fae2778889127294272c8fe2fb2be66f561ebf0ddd5a970f7104b25861"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-remedy-serial\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\report.json",
+      "bytes": 44442,
+      "sha256": "01c7a440747a95ece829b660532570e729418d7fd7b663f712f367c9791e2c9a"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-active-server.csv",
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-active.csv",
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-archived-a11y.json",
+      "bytes": 554,
+      "sha256": "1f1bfd6a7c470c170aafc0cf06c33223a151ffe99c0b4685e78b8378aadea1a9"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-archived-filtered-page2-server.csv",
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-archived-filtered-page2.csv",
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-archived-landmarks.json",
+      "bytes": 8489,
+      "sha256": "75b9b498fe6eb57e39b4872c067ce83477c134825cda8dde58541ebd665e0748"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-dialog-128.json",
+      "bytes": 494,
+      "sha256": "b7e5325433e2fae7b68b35e2af0f80654e0f8a4c64c1d294fcd22de07516ddb3"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-dialog-38.json",
+      "bytes": 494,
+      "sha256": "b7e5325433e2fae7b68b35e2af0f80654e0f8a4c64c1d294fcd22de07516ddb3"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-dialog-57.json",
+      "bytes": 494,
+      "sha256": "b7e5325433e2fae7b68b35e2af0f80654e0f8a4c64c1d294fcd22de07516ddb3"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-failed-stale-client-download-snapshot.json",
+      "bytes": 408,
+      "sha256": "7e6a7effefddca8fb2a8ee530b6a7559ad4972f12d53b36c670da89c043ac3ca"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-failed-stale-client-download.png",
+      "bytes": 3358,
+      "sha256": "a177102400714792a421a23fba7a88f50481501d0969f5b7d0b2c6e0d37ba3b5"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-failure-snapshot.json",
+      "bytes": 408,
+      "sha256": "7e6a7effefddca8fb2a8ee530b6a7559ad4972f12d53b36c670da89c043ac3ca"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-failure.png",
+      "bytes": 3358,
+      "sha256": "a177102400714792a421a23fba7a88f50481501d0969f5b7d0b2c6e0d37ba3b5"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-filtered-archive-snapshot.json",
+      "bytes": 6194,
+      "sha256": "f8888ab85a5784f6bdfe89d9931dcc5621f322ef493c94f2194b474d571feeb7"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-filtered-archive.png",
+      "bytes": 54682,
+      "sha256": "59ed9f663f8d2d37d9e069d5b0f6e56401400f610afb8ddb163cfc9251437fd6"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-layout-1280-snapshot.json",
+      "bytes": 8489,
+      "sha256": "75b9b498fe6eb57e39b4872c067ce83477c134825cda8dde58541ebd665e0748"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-layout-1280.json",
+      "bytes": 3169,
+      "sha256": "a266390b744f5abce0e5cf042f01db822a9e85ec65366ae9c37b814a4ea44e14"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-layout-1280.png",
+      "bytes": 86139,
+      "sha256": "25fb731ea19a7de47b7a0ec9887898980cb124cf255c1bb6d23c0087784a712e"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-layout-390-snapshot.json",
+      "bytes": 8489,
+      "sha256": "75b9b498fe6eb57e39b4872c067ce83477c134825cda8dde58541ebd665e0748"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-layout-390.json",
+      "bytes": 3133,
+      "sha256": "20c0f498b168861ad49d1d2be6d3c37cb7b4060587d1688359ce427dd2f17942"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-layout-390.png",
+      "bytes": 80132,
+      "sha256": "224a90e9c72eb6747fed682644f994970cd3070623a07cc4f585927cd06661bc"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-stale-client-after-archive.csv",
+      "bytes": 699,
+      "sha256": "705faf2d353aa2dd23783b62fe40f7869fe76a85735fe51260b5330bada08e85"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\archive-tabs.json",
+      "bytes": 604,
+      "sha256": "8c5de219f988427c99e70ec36c8ebf24365e2503b7c77d41fc879f99e96a2184"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\commands.jsonl",
+      "bytes": 251112,
+      "sha256": "09095c249174d75d78717a22557f52f9b3d62e80f93b57bba1e29b09d96b188c"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\data-archive\\planner.json",
+      "bytes": 1668,
+      "sha256": "daf1f17f529f99ffb12cdad5a91b2fa803f105823cd0b22d05750e2f0d98dc53"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\http.jsonl",
+      "bytes": 9333,
+      "sha256": "400736b28312c4526b24caaecc36acd349d26ba3b13e31e860635932120ff7dc"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\planner-download-file-first\\e2e-2026-09-18T10-11-44-050Z-5284b601\\report.json",
+      "bytes": 36625,
+      "sha256": "b14bff6702161708cdf4449c417c0c255fe4ad1045d4ae2663948c18fce8454a"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\download-transport-control\\control.csv",
+      "bytes": 31,
+      "sha256": "245ecdc0371f6aa6fd7c1794c9412e5a28a8d278c62bd418b854472abb70c67a"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\download-transport-control\\report.json",
+      "bytes": 7035,
+      "sha256": "e76b24274aad8fc2305f9ebbfb19c0338ec25ce74c7d08920f0f4274736a96a2"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\download-transport-control\\reproduce.mjs",
+      "bytes": 5062,
+      "sha256": "4a6e658a0fc0a1d67bcffd6d3a0e90c6dbff7281a676d35ed4b7c40e883c5873"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\repeat-download-control\\report.json",
+      "bytes": 10817,
+      "sha256": "916f98111f406c35d1886fcc942b501240c2c5f6dc3c3f86c2044621554a49c5"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\repeat-download-control\\reproduce.mjs",
+      "bytes": 7121,
+      "sha256": "237ca2f3987ab42249c052c164fff13b3fa06efdfa163258324e829a180f63c7"
+    },
+    {
+      "path": ".ai\\workflow-reliability\\evidence\\repeat-download-control\\second-response.csv",
+      "bytes": 31,
+      "sha256": "6836429bbc02ddb8009debdf4be1292138c810efcb12526c054d3d5a3766250d"
+    }
+  ]
+}

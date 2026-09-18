@@ -43,6 +43,22 @@ app inputs. This is existing-app regression proof, not a fresh agent-driven buil
 exercising all 29 updated workflow features. The first native capture-helper failure
 and its one corrected rerun are recorded separately.
 
+The later fresh Planner extension checkpoint is integrated as `c41fdf2`/`81a5921`.
+Its original independent review remains snapshot-bound; parent directly reconciled
+the exact subsequent guidance/config/deadline patch, not a fabricated independent
+approval. The original all-flow run failed downloads despite 187 passing records.
+An isolated managed-browser control subsequently saved actual CSV bytes through an
+ordinary click while the explicit download command failed in the same browser.
+`evidence/download-transport-control/` preserves both outcomes. A corrected harness
+has actual active/archive/stale-client saved-file proof in bounded executions.
+Its final file-first replay still failed at a DOM query and then showed an empty
+page. Browser trials are stopped; no final all-flow pass is claimed. The parent
+raw-run adjudication supersedes unsupported verifier statistics and causal claims.
+`evidence/planner-workflow-observations.json` covers all 29 original IDs with
+14 observed-with-limits, 12 partial, two blocked and one unexercised observation.
+These are parent artifact classifications, not 14 independent feature passes or
+a causal effectiveness study.
+
 One real frozen-version diagnosis host trial was independently graded and reviewed:
 `evidence/c4-diagnosis-public-summary.json`. Returned behavior passes 15 private and
 four public assertions, but the procedure/profile fails; canonical skill activation
@@ -68,7 +84,8 @@ The overall request remains incomplete. Prior core/state seams are preserved in
 bounded preservation in `dadce66`. C3 is preserved in `ce7c07e`, and the accepted shared-JS
 amendment in `fdc6af0`. Actual collectors, guarded metrics, C4 and I1.T4/Q still block release.
 C4 diagnosis has a reviewed, failed-profile result; resume remains held. The separate
-current-version Planner session continues procedurally before adoption because guarded
-manual edits are unsupported. This is not guarded execution or full-quality proof.
+current-version Planner checkpoint was produced procedurally before adoption because
+guarded manual edits are unsupported. Its parent transport verification remains
+blocked and separate from guarded execution and full-quality proof.
 No fixture score, self-review, or metadata checkbox waives these gates. Historical metric
 reports are not current quality proof after source changes.

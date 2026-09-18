@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 2,
+  "revision": 19,
+  "nextId": 10,
+  "projects": [
+    {
+      "id": "p-1",
+      "createdOrder": 1,
+      "name": "Still active"
+    },
+    {
+      "id": "p-2",
+      "createdOrder": 2,
+      "name": "@Team,\"Unicode 日\"",
+      "archived": false
+    },
+    {
+      "id": "p-9",
+      "createdOrder": 9,
+      "name": "Empty lifecycle",
+      "archived": true
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t-3",
+      "createdOrder": 3,
+      "projectId": "p-2",
+      "title": "=SUM(1,2)",
+      "description": "Committed before failed refresh",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-4",
+      "createdOrder": 4,
+      "projectId": "p-2",
+      "title": "Launch todo",
+      "description": "\tplain",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "low"
+    },
+    {
+      "id": "t-5",
+      "createdOrder": 5,
+      "projectId": "p-2",
+      "title": "Launch blocked",
+      "description": "​@SUM(1,2)",
+      "status": "todo",
+      "dependencyIds": [
+        "t-3"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "t-6",
+      "createdOrder": 6,
+      "projectId": "p-2",
+      "title": "Launch later",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-7",
+      "createdOrder": 7,
+      "projectId": "p-2",
+      "title": "Running",
+      "description": "safe",
+      "status": "in_progress",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-8",
+      "createdOrder": 8,
+      "projectId": "p-2",
+      "title": "Finished",
+      "description": "line\rreturn\r\npair",
+      "status": "done",
+      "dependencyIds": [],
+      "priority": "high"
+    }
+  ]
+}

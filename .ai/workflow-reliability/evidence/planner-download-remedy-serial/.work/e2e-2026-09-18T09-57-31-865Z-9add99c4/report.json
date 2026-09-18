@@ -1,0 +1,1378 @@
+{
+  "runId": "e2e-2026-09-18T09-57-31-865Z-9add99c4",
+  "started": "2026-09-18T09:57:31.870Z",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\scripts\\e2e.mjs",
+    "--flow",
+    "archive"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "output": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4",
+  "browserTransport": "agent-browser 0.37.1 owned Chromium launch, actions and assertions; Playwright resolves the installed executable only",
+  "processClose": "Real main.mjs child; test-only IPC bridge emits installed SIGTERM handler (not native Windows Ctrl+C)",
+  "flows": [
+    {
+      "name": "archive",
+      "directory": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\data-archive",
+      "started": "2026-09-18T09:57:38.883Z",
+      "status": "FAILED",
+      "secondClient": {
+        "label": "archiver",
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 12322476442320500000
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "tabId": "t2",
+        "targetId": "0FD500DEB6759FA69808682FCD934081",
+        "total": 2,
+        "url": "http://127.0.0.1:50096/?projectId=p-2"
+      },
+      "failedScenarios": [
+        {
+          "name": "empty-download",
+          "error": "AssertionError [ERR_ASSERTION]: Command timed out: --session e2e-2026-09-18T09-57-31-865Z-9add99c4 --json wait --text CSV download started.\n\ntrue !== false\n\n    at command (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:57:12)\n    at async browser (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:82:16)\n    at async download (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:649:5)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:868:78\n    at async scenario (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:688:16)\n    at async Object.archive (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:867:3)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/examples/team-planner/scripts/e2e.mjs:945:7"
+        }
+      ],
+      "console": {
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 12322476442320500000
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_configured"
+        },
+        "messages": []
+      },
+      "errors": {
+        "errors": [],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 12322476442320500000
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_configured"
+        }
+      },
+      "expectedNegativeConsole": [],
+      "unexpectedConsole": [],
+      "finished": "2026-09-18T10:01:16.459Z"
+    }
+  ],
+  "findings": [],
+  "checks": [
+    {
+      "flow": "archive",
+      "name": "Task save success announcement",
+      "ac": [
+        "AC02",
+        "AC07"
+      ],
+      "status": "VERIFIED",
+      "actual": "Task saved"
+    },
+    {
+      "flow": "archive",
+      "name": "active actual browser download equals server bytes",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": true
+    },
+    {
+      "flow": "archive",
+      "name": "active CSV download metadata",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        "text/csv; charset=utf-8",
+        "attachment; filename=\"project-p-2-tasks.csv\"",
+        "no-store"
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "active UTF8 no BOM with final CRLF",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": true
+    },
+    {
+      "flow": "archive",
+      "name": "Independent CSV fixed columns and all six task IDs",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        [
+          "projectId",
+          "projectName",
+          "id",
+          "title",
+          "description",
+          "status",
+          "priority",
+          "dependencyIds",
+          "blocked",
+          "createdOrder"
+        ],
+        [
+          "t-3",
+          "t-4",
+          "t-5",
+          "t-6",
+          "t-7",
+          "t-8"
+        ]
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "Independent CSV unsafe name/title and multiline Unicode",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        "p-2",
+        "'@Team,\"Unicode 日\"",
+        "t-3",
+        "'=SUM(1,2)",
+        "Comma, \"quotes\" 🚀\nsecond line",
+        "todo",
+        "normal",
+        "[]",
+        "false",
+        "3"
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "Independent CSV formula descriptions, dependencies and blocked data",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        "'\tplain",
+        "'​@SUM(1,2)",
+        "high",
+        "[\"t-3\"]",
+        "true",
+        "line\rreturn\r\npair"
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "Export does not modify stored data or revision",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": {
+        "schemaVersion": 2,
+        "revision": 10,
+        "nextId": 9,
+        "projects": [
+          {
+            "id": "p-1",
+            "createdOrder": 1,
+            "name": "Still active"
+          },
+          {
+            "id": "p-2",
+            "createdOrder": 2,
+            "name": "@Team,\"Unicode 日\""
+          }
+        ],
+        "tasks": [
+          {
+            "id": "t-3",
+            "createdOrder": 3,
+            "projectId": "p-2",
+            "title": "=SUM(1,2)",
+            "description": "Comma, \"quotes\" 🚀\nsecond line",
+            "status": "todo",
+            "dependencyIds": [],
+            "priority": "normal"
+          },
+          {
+            "id": "t-4",
+            "createdOrder": 4,
+            "projectId": "p-2",
+            "title": "Launch todo",
+            "description": "\tplain",
+            "status": "todo",
+            "dependencyIds": [],
+            "priority": "low"
+          },
+          {
+            "id": "t-5",
+            "createdOrder": 5,
+            "projectId": "p-2",
+            "title": "Launch blocked",
+            "description": "​@SUM(1,2)",
+            "status": "todo",
+            "dependencyIds": [
+              "t-3"
+            ],
+            "priority": "high"
+          },
+          {
+            "id": "t-6",
+            "createdOrder": 6,
+            "projectId": "p-2",
+            "title": "Launch later",
+            "description": "",
+            "status": "todo",
+            "dependencyIds": [],
+            "priority": "normal"
+          },
+          {
+            "id": "t-7",
+            "createdOrder": 7,
+            "projectId": "p-2",
+            "title": "Running",
+            "description": "safe",
+            "status": "in_progress",
+            "dependencyIds": [],
+            "priority": "normal"
+          },
+          {
+            "id": "t-8",
+            "createdOrder": 8,
+            "projectId": "p-2",
+            "title": "Finished",
+            "description": "line\rreturn\r\npair",
+            "status": "done",
+            "dependencyIds": [],
+            "priority": "high"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "archive",
+      "name": "Archive confirm dismissed updates lifecycle control",
+      "ac": [
+        "AC1",
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": "Archive project"
+    },
+    {
+      "flow": "archive",
+      "name": "Cancelled archive leaves exact model intact",
+      "ac": [
+        "AC1",
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": {
+        "schemaVersion": 2,
+        "revision": 10,
+        "nextId": 9,
+        "projects": [
+          {
+            "id": "p-1",
+            "createdOrder": 1,
+            "name": "Still active"
+          },
+          {
+            "id": "p-2",
+            "createdOrder": 2,
+            "name": "@Team,\"Unicode 日\""
+          }
+        ],
+        "tasks": [
+          {
+            "id": "t-3",
+            "createdOrder": 3,
+            "projectId": "p-2",
+            "title": "=SUM(1,2)",
+            "description": "Comma, \"quotes\" 🚀\nsecond line",
+            "status": "todo",
+            "dependencyIds": [],
+            "priority": "normal"
+          },
+          {
+            "id": "t-4",
+            "createdOrder": 4,
+            "projectId": "p-2",
+            "title": "Launch todo",
+            "description": "\tplain",
+            "status": "todo",
+            "dependencyIds": [],
+            "priority": "low"
+          },
+          {
+            "id": "t-5",
+            "createdOrder": 5,
+            "projectId": "p-2",
+            "title": "Launch blocked",
+            "description": "​@SUM(1,2)",
+            "status": "todo",
+            "dependencyIds": [
+              "t-3"
+            ],
+            "priority": "high"
+          },
+          {
+            "id": "t-6",
+            "createdOrder": 6,
+            "projectId": "p-2",
+            "title": "Launch later",
+            "description": "",
+            "status": "todo",
+            "dependencyIds": [],
+            "priority": "normal"
+          },
+          {
+            "id": "t-7",
+            "createdOrder": 7,
+            "projectId": "p-2",
+            "title": "Running",
+            "description": "safe",
+            "status": "in_progress",
+            "dependencyIds": [],
+            "priority": "normal"
+          },
+          {
+            "id": "t-8",
+            "createdOrder": 8,
+            "projectId": "p-2",
+            "title": "Finished",
+            "description": "line\rreturn\r\npair",
+            "status": "done",
+            "dependencyIds": [],
+            "priority": "high"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "archive",
+      "name": "Pre-archive filtered second page",
+      "ac": [
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        "t-6"
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "Archive control receives keyboard focus",
+      "ac": [
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": "project-lifecycle"
+    },
+    {
+      "flow": "archive",
+      "name": "Archive confirm accepted updates lifecycle control",
+      "ac": [
+        "AC1",
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": "Restore project"
+    },
+    {
+      "flow": "archive",
+      "name": "Archive focuses replacement lifecycle control",
+      "ac": [
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": "project-lifecycle"
+    },
+    {
+      "flow": "archive",
+      "name": "Archive preserves selected filter and page",
+      "ac": [
+        "AC2",
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": {
+        "archived": "true",
+        "page": "2",
+        "pageSize": "2",
+        "projectId": "p-2",
+        "q": "Launch",
+        "status": "todo"
+      }
+    },
+    {
+      "flow": "archive",
+      "name": "Archive filtered results unchanged",
+      "ac": [
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        "t-6"
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "Archive sidebar includes only archived project",
+      "ac": [
+        "AC2"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        "p-2"
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "Every visible task write control disabled; restore/download enabled",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": {
+        "disabled": true,
+        "download": false,
+        "restore": false
+      }
+    },
+    {
+      "flow": "archive",
+      "name": "Any-status lifecycle preserves all task fields, IDs and allocation",
+      "ac": [
+        "AC1"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        [
+          {
+            "id": "t-3",
+            "createdOrder": 3,
+            "projectId": "p-2",
+            "title": "=SUM(1,2)",
+            "description": "Comma, \"quotes\" 🚀\nsecond line",
+            "status": "todo",
+            "dependencyIds": [],
+            "priority": "normal"
+          },
+          {
+            "id": "t-4",
+            "createdOrder": 4,
+            "projectId": "p-2",
+            "title": "Launch todo",
+            "description": "\tplain",
+            "status": "todo",
+            "dependencyIds": [],
+            "priority": "low"
+          },
+          {
+            "id": "t-5",
+            "createdOrder": 5,
+            "projectId": "p-2",
+            "title": "Launch blocked",
+            "description": "​@SUM(1,2)",
+            "status": "todo",
+            "dependencyIds": [
+              "t-3"
+            ],
+            "priority": "high"
+          },
+          {
+            "id": "t-6",
+            "createdOrder": 6,
+            "projectId": "p-2",
+            "title": "Launch later",
+            "description": "",
+            "status": "todo",
+            "dependencyIds": [],
+            "priority": "normal"
+          },
+          {
+            "id": "t-7",
+            "createdOrder": 7,
+            "projectId": "p-2",
+            "title": "Running",
+            "description": "safe",
+            "status": "in_progress",
+            "dependencyIds": [],
+            "priority": "normal"
+          },
+          {
+            "id": "t-8",
+            "createdOrder": 8,
+            "projectId": "p-2",
+            "title": "Finished",
+            "description": "line\rreturn\r\npair",
+            "status": "done",
+            "dependencyIds": [],
+            "priority": "high"
+          }
+        ],
+        9,
+        11
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "Only target project archive flag changes",
+      "ac": [
+        "AC1"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        {
+          "id": "p-1",
+          "createdOrder": 1,
+          "name": "Still active"
+        },
+        {
+          "id": "p-2",
+          "createdOrder": 2,
+          "name": "@Team,\"Unicode 日\"",
+          "archived": true
+        }
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "archived-filtered-page2 actual browser download equals server bytes",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": true
+    },
+    {
+      "flow": "archive",
+      "name": "archived-filtered-page2 CSV download metadata",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        "text/csv; charset=utf-8",
+        "attachment; filename=\"project-p-2-tasks.csv\"",
+        "no-store"
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "archived-filtered-page2 UTF8 no BOM with final CRLF",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": true
+    },
+    {
+      "flow": "archive",
+      "name": "Archived filtered download is identical full-project snapshot",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": true
+    },
+    {
+      "flow": "archive",
+      "name": "Active sidebar excludes archive while deep detail remains readable",
+      "ac": [
+        "AC2"
+      ],
+      "status": "VERIFIED",
+      "actual": {
+        "ids": [
+          "p-1"
+        ],
+        "title": "@Team,\"Unicode 日\""
+      }
+    },
+    {
+      "flow": "archive",
+      "name": "Back restores archive selector and filtered page",
+      "ac": [
+        "AC2",
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        "true",
+        [
+          "t-6"
+        ]
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "Restart preserves exact archived model",
+      "ac": [
+        "AC1"
+      ],
+      "status": "VERIFIED",
+      "actual": {
+        "schemaVersion": 2,
+        "revision": 11,
+        "nextId": 9,
+        "projects": [
+          {
+            "id": "p-1",
+            "createdOrder": 1,
+            "name": "Still active"
+          },
+          {
+            "id": "p-2",
+            "createdOrder": 2,
+            "name": "@Team,\"Unicode 日\"",
+            "archived": true
+          }
+        ],
+        "tasks": [
+          {
+            "id": "t-3",
+            "createdOrder": 3,
+            "projectId": "p-2",
+            "title": "=SUM(1,2)",
+            "description": "Comma, \"quotes\" 🚀\nsecond line",
+            "status": "todo",
+            "dependencyIds": [],
+            "priority": "normal"
+          },
+          {
+            "id": "t-4",
+            "createdOrder": 4,
+            "projectId": "p-2",
+            "title": "Launch todo",
+            "description": "\tplain",
+            "status": "todo",
+            "dependencyIds": [],
+            "priority": "low"
+          },
+          {
+            "id": "t-5",
+            "createdOrder": 5,
+            "projectId": "p-2",
+            "title": "Launch blocked",
+            "description": "​@SUM(1,2)",
+            "status": "todo",
+            "dependencyIds": [
+              "t-3"
+            ],
+            "priority": "high"
+          },
+          {
+            "id": "t-6",
+            "createdOrder": 6,
+            "projectId": "p-2",
+            "title": "Launch later",
+            "description": "",
+            "status": "todo",
+            "dependencyIds": [],
+            "priority": "normal"
+          },
+          {
+            "id": "t-7",
+            "createdOrder": 7,
+            "projectId": "p-2",
+            "title": "Running",
+            "description": "safe",
+            "status": "in_progress",
+            "dependencyIds": [],
+            "priority": "normal"
+          },
+          {
+            "id": "t-8",
+            "createdOrder": 8,
+            "projectId": "p-2",
+            "title": "Finished",
+            "description": "line\rreturn\r\npair",
+            "status": "done",
+            "dependencyIds": [],
+            "priority": "high"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "archive",
+      "name": "Archived direct link works without archive navigation",
+      "ac": [
+        "AC2"
+      ],
+      "status": "VERIFIED",
+      "actual": "@Team,\"Unicode 日\"Archived — tasks are read-only. Restore this project to make changes.Restore projectDownload CSVExports all tasks, not just this page.Finish or cancel your draft before changing project state.Total: 6Todo: 4In progress: 1Done: 1Blocked: 1Completion %: 16Search titlesFilter statusAll statusestodoin progressdoneFilter priorityAll prioritieslownormalhighApply filtersClear filtersAdd task=SUM(1,2)todoPriority: normalComma, \"quotes\" 🚀\nsecond lineEditLaunch todotodoPriority: low\tplainEditLaunch blockedblocked (todo)Priority: high​@SUM(1,2)EditLaunch latertodoPriority: normalEditRunningin progressPriority: normalsafeEditFinisheddonePriority: highline\rreturn\r\npairEditPreviousPage 1 of 1 · 6 tasksNextTasks per page2102550"
+    },
+    {
+      "flow": "archive",
+      "name": "Deep link shows all mixed-status tasks and blocked dependency",
+      "ac": [
+        "AC1",
+        "AC2"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        "todo",
+        "todo",
+        "blocked (todo)",
+        "todo",
+        "in progress",
+        "done"
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "390px no horizontal page overflow",
+      "ac": [
+        "AC07"
+      ],
+      "status": "VERIFIED",
+      "actual": true
+    },
+    {
+      "flow": "archive",
+      "name": "390px labeled form controls",
+      "ac": [
+        "AC07"
+      ],
+      "status": "VERIFIED",
+      "actual": []
+    },
+    {
+      "flow": "archive",
+      "name": "390px interactive targets at least 44px",
+      "ac": [
+        "AC07"
+      ],
+      "status": "VERIFIED",
+      "actual": []
+    },
+    {
+      "flow": "archive",
+      "name": "1280px no horizontal page overflow",
+      "ac": [
+        "AC07"
+      ],
+      "status": "VERIFIED",
+      "actual": true
+    },
+    {
+      "flow": "archive",
+      "name": "1280px labeled form controls",
+      "ac": [
+        "AC07"
+      ],
+      "status": "VERIFIED",
+      "actual": []
+    },
+    {
+      "flow": "archive",
+      "name": "1280px interactive targets at least 44px",
+      "ac": [
+        "AC07"
+      ],
+      "status": "VERIFIED",
+      "actual": []
+    },
+    {
+      "flow": "archive",
+      "name": "archived Pagination is a named navigation landmark",
+      "ac": [
+        "AC07"
+      ],
+      "status": "VERIFIED",
+      "actual": true
+    },
+    {
+      "flow": "archive",
+      "name": "archived axe automated violations (not full WCAG or human approval)",
+      "ac": [
+        "AC07"
+      ],
+      "status": "VERIFIED",
+      "actual": []
+    },
+    {
+      "flow": "archive",
+      "name": "archived axe has no unresolved incomplete checks on tested page",
+      "ac": [
+        "AC07"
+      ],
+      "status": "VERIFIED",
+      "actual": []
+    },
+    {
+      "flow": "archive",
+      "name": "Keyboard reaches archived download",
+      "ac": [
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": "download-csv"
+    },
+    {
+      "flow": "archive",
+      "name": "Archived download has visible focus outline",
+      "ac": [
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": true
+    },
+    {
+      "flow": "archive",
+      "name": "Archived API rejects {\"title\":\"no\"}",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": "PROJECT_ARCHIVED"
+    },
+    {
+      "flow": "archive",
+      "name": "Archived API rejects {\"description\":\"no\"}",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": "PROJECT_ARCHIVED"
+    },
+    {
+      "flow": "archive",
+      "name": "Archived API rejects {\"status\":\"done\"}",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": "PROJECT_ARCHIVED"
+    },
+    {
+      "flow": "archive",
+      "name": "Archived API rejects {\"priority\":\"high\"}",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": "PROJECT_ARCHIVED"
+    },
+    {
+      "flow": "archive",
+      "name": "Archived API rejects {\"dependencyIds\":[]}",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": "PROJECT_ARCHIVED"
+    },
+    {
+      "flow": "archive",
+      "name": "Archived API rejects {\"title\":\"=SUM(1,2)\"}",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": "PROJECT_ARCHIVED"
+    },
+    {
+      "flow": "archive",
+      "name": "Archived API rejects {\"title\":\"no\",\"description\":\"no\",\"priority\":\"low\"}",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": "PROJECT_ARCHIVED"
+    },
+    {
+      "flow": "archive",
+      "name": "Archived API rejects creation",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": "PROJECT_ARCHIVED"
+    },
+    {
+      "flow": "archive",
+      "name": "Rejected archived writes preserve exact disk bytes",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": "{\n  \"schemaVersion\": 2,\n  \"revision\": 11,\n  \"nextId\": 9,\n  \"projects\": [\n    {\n      \"id\": \"p-1\",\n      \"createdOrder\": 1,\n      \"name\": \"Still active\"\n    },\n    {\n      \"id\": \"p-2\",\n      \"createdOrder\": 2,\n      \"name\": \"@Team,\\\"Unicode 日\\\"\",\n      \"archived\": true\n    }\n  ],\n  \"tasks\": [\n    {\n      \"id\": \"t-3\",\n      \"createdOrder\": 3,\n      \"projectId\": \"p-2\",\n      \"title\": \"=SUM(1,2)\",\n      \"description\": \"Comma, \\\"quotes\\\" 🚀\\nsecond line\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    },\n    {\n      \"id\": \"t-4\",\n      \"createdOrder\": 4,\n      \"projectId\": \"p-2\",\n      \"title\": \"Launch todo\",\n      \"description\": \"\\tplain\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"low\"\n    },\n    {\n      \"id\": \"t-5\",\n      \"createdOrder\": 5,\n      \"projectId\": \"p-2\",\n      \"title\": \"Launch blocked\",\n      \"description\": \"​@SUM(1,2)\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [\n        \"t-3\"\n      ],\n      \"priority\": \"high\"\n    },\n    {\n      \"id\": \"t-6\",\n      \"createdOrder\": 6,\n      \"projectId\": \"p-2\",\n      \"title\": \"Launch later\",\n      \"description\": \"\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    },\n    {\n      \"id\": \"t-7\",\n      \"createdOrder\": 7,\n      \"projectId\": \"p-2\",\n      \"title\": \"Running\",\n      \"description\": \"safe\",\n      \"status\": \"in_progress\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    },\n    {\n      \"id\": \"t-8\",\n      \"createdOrder\": 8,\n      \"projectId\": \"p-2\",\n      \"title\": \"Finished\",\n      \"description\": \"line\\rreturn\\r\\npair\",\n      \"status\": \"done\",\n      \"dependencyIds\": [],\n      \"priority\": \"high\"\n    }\n  ]\n}\n"
+    },
+    {
+      "flow": "archive",
+      "name": "Restore enables Add/Edit and focuses lifecycle",
+      "ac": [
+        "AC3",
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        false,
+        false,
+        "project-lifecycle"
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "Task save success announcement",
+      "ac": [
+        "AC02",
+        "AC07"
+      ],
+      "status": "VERIFIED",
+      "actual": "Task saved"
+    },
+    {
+      "flow": "archive",
+      "name": "Restored real UI edit persisted",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": "Restored edit"
+    },
+    {
+      "flow": "archive",
+      "name": "Restore retains dependency transition rules",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": "dependencyIds: Complete dependencies before starting or completing this task"
+    },
+    {
+      "flow": "archive",
+      "name": "Lifecycle disabled while draft open",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": true
+    },
+    {
+      "flow": "archive",
+      "name": "Archive confirm accepted updates lifecycle control",
+      "ac": [
+        "AC1",
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": "Restore project"
+    },
+    {
+      "flow": "archive",
+      "name": "stale-client-after-archive actual browser download equals server bytes",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": true
+    },
+    {
+      "flow": "archive",
+      "name": "stale-client-after-archive CSV download metadata",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        "text/csv; charset=utf-8",
+        "attachment; filename=\"project-p-2-tasks.csv\"",
+        "no-store"
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "stale-client-after-archive UTF8 no BOM with final CRLF",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": true
+    },
+    {
+      "flow": "archive",
+      "name": "Two real browser clients retain stale draft and fence retry",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        "Draft from client one",
+        true,
+        "error"
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "Stale draft recovery announced",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": "Draft retained. Reload latest discards it and loads committed data."
+    },
+    {
+      "flow": "archive",
+      "name": "Rejected stale write leaves disk unchanged",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": "{\n  \"schemaVersion\": 2,\n  \"revision\": 14,\n  \"nextId\": 9,\n  \"projects\": [\n    {\n      \"id\": \"p-1\",\n      \"createdOrder\": 1,\n      \"name\": \"Still active\"\n    },\n    {\n      \"id\": \"p-2\",\n      \"createdOrder\": 2,\n      \"name\": \"@Team,\\\"Unicode 日\\\"\",\n      \"archived\": true\n    }\n  ],\n  \"tasks\": [\n    {\n      \"id\": \"t-3\",\n      \"createdOrder\": 3,\n      \"projectId\": \"p-2\",\n      \"title\": \"=SUM(1,2)\",\n      \"description\": \"Restored edit\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    },\n    {\n      \"id\": \"t-4\",\n      \"createdOrder\": 4,\n      \"projectId\": \"p-2\",\n      \"title\": \"Launch todo\",\n      \"description\": \"\\tplain\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"low\"\n    },\n    {\n      \"id\": \"t-5\",\n      \"createdOrder\": 5,\n      \"projectId\": \"p-2\",\n      \"title\": \"Launch blocked\",\n      \"description\": \"​@SUM(1,2)\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [\n        \"t-3\"\n      ],\n      \"priority\": \"high\"\n    },\n    {\n      \"id\": \"t-6\",\n      \"createdOrder\": 6,\n      \"projectId\": \"p-2\",\n      \"title\": \"Launch later\",\n      \"description\": \"\",\n      \"status\": \"todo\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    },\n    {\n      \"id\": \"t-7\",\n      \"createdOrder\": 7,\n      \"projectId\": \"p-2\",\n      \"title\": \"Running\",\n      \"description\": \"safe\",\n      \"status\": \"in_progress\",\n      \"dependencyIds\": [],\n      \"priority\": \"normal\"\n    },\n    {\n      \"id\": \"t-8\",\n      \"createdOrder\": 8,\n      \"projectId\": \"p-2\",\n      \"title\": \"Finished\",\n      \"description\": \"line\\rreturn\\r\\npair\",\n      \"status\": \"done\",\n      \"dependencyIds\": [],\n      \"priority\": \"high\"\n    }\n  ]\n}\n"
+    },
+    {
+      "flow": "archive",
+      "name": "Fenced draft Cancel focuses project heading",
+      "ac": [
+        "AC3",
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": "project-title"
+    },
+    {
+      "flow": "archive",
+      "name": "Explicit reload discards draft and adopts archived state",
+      "ac": [
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": true
+    },
+    {
+      "flow": "archive",
+      "name": "Download transport failure is actionable",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": "CSV download failed: Failed to fetch"
+    },
+    {
+      "flow": "archive",
+      "name": "Failed export leaves no file and no success announcement",
+      "ac": [
+        "AC4"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        [],
+        "",
+        "error"
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "Mismatched real snapshot response prevents publication",
+      "ac": [
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": "Data changed while loading. Use Reload latest."
+    },
+    {
+      "flow": "archive",
+      "name": "Revision mismatch fences writes and retains prior rendered data",
+      "ac": [
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": true
+    },
+    {
+      "flow": "archive",
+      "name": "Post-save refresh failure retains draft, fences save, focuses alert",
+      "ac": [
+        "AC3",
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": [
+        "Committed before failed refresh",
+        true,
+        "error"
+      ]
+    },
+    {
+      "flow": "archive",
+      "name": "Post-save failure does not announce successful save",
+      "ac": [
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": "Draft retained. Reload latest discards it and loads committed data."
+    },
+    {
+      "flow": "archive",
+      "name": "Actual save committed despite refresh fault",
+      "ac": [
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": "Committed before failed refresh"
+    },
+    {
+      "flow": "archive",
+      "name": "Explicit reload after uncertain save restores writable committed state",
+      "ac": [
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": true
+    },
+    {
+      "flow": "archive",
+      "name": "Restore and edited text survive second restart",
+      "ac": [
+        "AC1",
+        "AC3"
+      ],
+      "status": "VERIFIED",
+      "actual": "=SUM(1,2)todoPriority: normalCommitted before failed refreshEdit"
+    },
+    {
+      "flow": "archive",
+      "name": "Archive confirm accepted updates lifecycle control",
+      "ac": [
+        "AC1",
+        "AC5"
+      ],
+      "status": "VERIFIED",
+      "actual": "Restore project"
+    },
+    {
+      "flow": "archive",
+      "name": "Empty archive is readable",
+      "ac": [
+        "AC1",
+        "AC2"
+      ],
+      "status": "VERIFIED",
+      "actual": "Empty lifecycleArchived — tasks are read-only. Restore this project to make changes.Restore projectDownload CSVExports all tasks, not just this page.Finish or cancel your draft before changing project state.Total: 0Todo: 0In progress: 0Done: 0Blocked: 0Completion %: 0Search titlesFilter statusAll statusestodoin progressdoneFilter priorityAll prioritieslownormalhighApply filtersClear filtersAdd taskNo tasks in this archived project.PreviousPage 1 of 0 · 0 tasksNextTasks per page2102550"
+    }
+  ],
+  "lifecycle": [
+    {
+      "flow": "archive",
+      "pid": 56756,
+      "directory": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\data-archive",
+      "start": "2026-09-18T09:57:38.920Z",
+      "stdout": "{\"url\":\"http://127.0.0.1:53646\",\"directory\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\examples\\\\team-planner\\\\.work\\\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\\\data-archive\",\"pid\":56756}\n",
+      "stderr": "",
+      "url": "http://127.0.0.1:53646",
+      "exitCode": 0,
+      "stopped": "2026-09-18T09:58:41.641Z"
+    },
+    {
+      "flow": "archive",
+      "pid": 33080,
+      "directory": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\data-archive",
+      "start": "2026-09-18T09:58:41.653Z",
+      "stdout": "{\"url\":\"http://127.0.0.1:50096\",\"directory\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\examples\\\\team-planner\\\\.work\\\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\\\data-archive\",\"pid\":33080}\n",
+      "stderr": "",
+      "url": "http://127.0.0.1:50096",
+      "exitCode": 0,
+      "stopped": "2026-09-18T10:00:14.107Z"
+    },
+    {
+      "flow": "archive",
+      "pid": 53792,
+      "directory": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\data-archive",
+      "start": "2026-09-18T10:00:14.119Z",
+      "stdout": "{\"url\":\"http://127.0.0.1:58289\",\"directory\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\examples\\\\team-planner\\\\.work\\\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\\\data-archive\",\"pid\":53792}\n",
+      "stderr": "",
+      "url": "http://127.0.0.1:58289",
+      "exitCode": 0,
+      "stopped": "2026-09-18T10:01:16.457Z"
+    }
+  ],
+  "sourceHashes": {
+    "src/csv.mjs": "4b873fd1f296172532dd8c45085683ab529eddedf1d2bdaa96493c4d77c994f9",
+    "src/errors.mjs": "241e92aa4d6634e11cf4b718226f8402367275e1e352eb90b03e60d844a1943f",
+    "src/main.mjs": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+    "src/migrate.mjs": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+    "src/planner.mjs": "f91a9c0e3ad5af944f938917d31f54e3c7b8fcfe267c3acdd8a778fee5dfc221",
+    "src/rules.mjs": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+    "src/schema.mjs": "288f4b9009aca3237852bd472d8d20d328251a8818d0eca4f9c14c0c7bb42a53",
+    "src/server.mjs": "ca78205e4b1a2c38d31208a6f154b5a8a91703cdc3c16a56b681e1d1e2885bee",
+    "src/store.mjs": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+    "public/app.mjs": "009d62ecb85fe0dfa789d4e5bb58e2a6127f5fb20578b39758b74b6331f67677",
+    "public/index.html": "cf2b5536b996f6fea0a28c37b7e1519afe82c920ad400536c7532813aea929ba",
+    "public/styles.css": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92"
+  },
+  "runnerSha256": "af0db71390001f57ab85ca4ed3350081431fb467d01bbf843ac4c88047717bfc",
+  "agentBrowser": "agent-browser 0.37.1\r\n",
+  "launch": {
+    "lifecycle": {
+      "effectiveLaunch": {
+        "browserLaunched": true,
+        "engine": "chrome",
+        "launchHash": 12322476442320500000
+      },
+      "launched": false,
+      "relaunchedBrowser": false,
+      "restartedBackground": false,
+      "restoreStatus": "not_configured",
+      "reused": true,
+      "saveStatus": "not_attempted"
+    },
+    "targetId": "B8A10F834100AD005DE03C8D6B62821C",
+    "title": "",
+    "url": "about:blank"
+  },
+  "browser": {
+    "executable": "C:\\Users\\shbs\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36"
+  },
+  "downloads": [
+    {
+      "flow": "archive",
+      "label": "active",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-active.csv",
+      "downloadedFrom": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\downloads\\project-p-2-tasks.csv",
+      "retention": "moved completed browser file",
+      "result": {
+        "clicked": "#download-csv",
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 12322476442320500000
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        }
+      },
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724",
+      "headers": {
+        "cache-control": "no-store",
+        "connection": "keep-alive",
+        "content-disposition": "attachment; filename=\"project-p-2-tasks.csv\"",
+        "content-security-policy": "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'",
+        "content-type": "text/csv; charset=utf-8",
+        "date": "Fri, 18 Sep 2026 09:58:05 GMT",
+        "etag": "\"10\"",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "flow": "archive",
+      "label": "archived-filtered-page2",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-archived-filtered-page2.csv",
+      "downloadedFrom": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\downloads\\project-p-2-tasks.csv",
+      "retention": "moved completed browser file",
+      "result": {
+        "clicked": "#download-csv",
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 12322476442320500000
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        }
+      },
+      "bytes": 720,
+      "sha256": "e7f98004204ede4f2866e04eeeb11ccf6dbe87a696a8f252487fefe13809b724",
+      "headers": {
+        "cache-control": "no-store",
+        "connection": "keep-alive",
+        "content-disposition": "attachment; filename=\"project-p-2-tasks.csv\"",
+        "content-security-policy": "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'",
+        "content-type": "text/csv; charset=utf-8",
+        "date": "Fri, 18 Sep 2026 09:58:33 GMT",
+        "etag": "\"11\"",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "flow": "archive",
+      "label": "stale-client-after-archive",
+      "path": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\archive-stale-client-after-archive.csv",
+      "downloadedFrom": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\examples\\team-planner\\.work\\e2e-2026-09-18T09-57-31-865Z-9add99c4\\downloads\\project-p-2-tasks.csv",
+      "retention": "moved completed browser file",
+      "result": {
+        "clicked": "#download-csv",
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 12322476442320500000
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        }
+      },
+      "bytes": 699,
+      "sha256": "705faf2d353aa2dd23783b62fe40f7869fe76a85735fe51260b5330bada08e85",
+      "headers": {
+        "cache-control": "no-store",
+        "connection": "keep-alive",
+        "content-disposition": "attachment; filename=\"project-p-2-tasks.csv\"",
+        "content-security-policy": "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'",
+        "content-type": "text/csv; charset=utf-8",
+        "date": "Fri, 18 Sep 2026 09:59:29 GMT",
+        "etag": "\"14\"",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "x-content-type-options": "nosniff"
+      }
+    }
+  ],
+  "downloadBlocker": "Command timed out: --session e2e-2026-09-18T09-57-31-865Z-9add99c4 --json wait --text CSV download started.\n\ntrue !== false\n",
+  "changedSources": [],
+  "finished": "2026-09-18T10:01:17.765Z",
+  "status": "FAILED"
+}

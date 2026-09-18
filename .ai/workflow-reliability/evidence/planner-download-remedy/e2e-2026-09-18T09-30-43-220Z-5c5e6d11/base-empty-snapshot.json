@@ -1,0 +1,59 @@
+{
+  "lifecycle": {
+    "effectiveLaunch": {
+      "browserLaunched": true,
+      "engine": "chrome",
+      "launchHash": 12322476442320500000
+    },
+    "launched": false,
+    "relaunchedBrowser": false,
+    "restartedBackground": false,
+    "restoreStatus": "not_configured",
+    "reused": true,
+    "saveStatus": "not_attempted"
+  },
+  "origin": "http://127.0.0.1:52390/",
+  "refs": {
+    "e1": {
+      "name": "Reload latest",
+      "role": "button"
+    },
+    "e10": {
+      "name": "Create project",
+      "role": "button"
+    },
+    "e2": {
+      "name": "Team planner",
+      "role": "heading"
+    },
+    "e3": {
+      "name": "Main",
+      "role": "navigation"
+    },
+    "e4": {
+      "name": "Projects",
+      "role": "heading"
+    },
+    "e5": {
+      "name": "Choose a project",
+      "role": "heading"
+    },
+    "e6": {
+      "name": "Projects",
+      "role": "link"
+    },
+    "e7": {
+      "name": "Archived projects",
+      "role": "link"
+    },
+    "e8": {
+      "name": "Dashboard",
+      "role": "link"
+    },
+    "e9": {
+      "name": "Project name",
+      "role": "textbox"
+    }
+  },
+  "snapshot": "- banner\n  - heading \"Team planner\" [level=1, ref=e2]\n  - navigation \"Main\" [ref=e3]\n    - link \"Projects\" [ref=e6]\n    - link \"Archived projects\" [ref=e7]\n    - link \"Dashboard\" [ref=e8]\n- status\n  - StaticText \"No active projects. Create a project or view Archived projects.\"\n- button \"Reload latest\" [ref=e1]\n- complementary \"Projects\"\n  - heading \"Projects\" [level=2, ref=e4]\n  - form\n    - LabelText\n      - StaticText \"Project name\"\n    - textbox \"Project name\" [required, ref=e9]\n    - button \"Create project\" [ref=e10]\n  - list\n    - listitem [level=1]\n      - ListMarker \"• \"\n      - StaticText \"No active projects. Create a project or view Archived projects.\"\n- main\n  - heading \"Choose a project\" [level=2, ref=e5]\n  - paragraph\n    - StaticText \"Create or select a project to plan your team’s work.\""
+}

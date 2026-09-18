@@ -5,7 +5,7 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: bounded native JS producer preserved in `3f7a77a`; Python integration runs in a dependent isolated session. Fresh app implementation is reported complete with final verification still running.
+- Phase: bounded native JS producer preserved in `3f7a77a`; Python integration is fixing an independently found CRLF defect. App checkpoint integrated as `c41fdf2`/`81a5921`; bounded harness corrections have real download proof but final browser acceptance is blocked.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
 - Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
@@ -37,9 +37,10 @@
 - No repeated uncoached model-effectiveness study claimed by deterministic tests.
 
 ## Next action
-Continue the fresh app-driven workflow exercise in its isolated session while
-the dependent Python integration session completes the accepted orchestration,
-manifest, graph and replay boundary. The former JS
+Preserve the integrated app checkpoint, bounded download proof and unresolved
+browser blocker while the dependent Python integration session completes the
+accepted orchestration, manifest, graph and replay boundary and CRLF correction.
+Do not repeat the stopped browser experiments. The former JS
 owner is cancelled; its accepted resume message did not establish execution.
 Candidate-test observability is corrected in `eae52fe`; README
 and guides clarify the manual-work boundary in `8577642`. This is resumption
@@ -47,13 +48,80 @@ of accepted unfinished work, not a new framework, host trial or scope expansion.
 Collectors and guarded metrics remain incomplete and are not waived.
 C3 is preserved. Recovery remains blocked;
 no recovery stub or silent completion of the original requirement.
-The updated workflow still needs a fresh agent-driven sample-app exercise.
-The refreshed existing-app regressions below do not establish that result.
+The fresh agent-driven app extension now has a limited observation ledger.
+Neither that exercise nor the earlier refreshed regressions establishes full
+29-feature acceptance or causal skill effectiveness.
 The local I1 preservation commit is `aaec9b9`.
 The continuation addendum replaces implementation-dispatch dependencies only; it does not
 close I1.T4 or remove any required measurement, independent role or final acceptance check.
 
 ## Native command continuation
+- Fresh-worktree setup correction: `13e1d309` preserves six required qualification
+  logs that ignore rules had excluded. Exactly 22 selected inputs were reconciled:
+  16 existing child copies were byte-identical and six were copied exclusively.
+  No requalification, installation or frozen-manifest modification.
+  Evidence: `evidence/qualification-handoff-js-integration.json`.
+- Planner checkpoint: original `e2e4835`/`2c7e3f8` integrated as `c41fdf2`/`81a5921`.
+  Parent verified the exact post-review patch hash and all three final delta
+  hashes, then reviewed the guidance/config/deadline ownership changes directly.
+  This is not a replacement independent full review. The child's full review
+  remains historical, and normal exits do not prove forced-deadline cleanup.
+- Browser transport: one isolated owned HTTP fixture with the installed
+  agent-browser 0.37.1 saved exact CSV bytes using managed launch, configured
+  download directory and ordinary click. Explicit `download` canceled in the
+  same browser/page/fixture. `evidence/download-transport-control/` preserves
+  the original report, actual saved CSV and replay script. Upstream Windows
+  canonicalization is a source-grounded hypothesis, not an exclusively proved cause.
+- Parent changed only the app E2E launch/download helper and its README:
+  agent-browser owns the fresh browser; Playwright locates its executable only;
+  actual new browser files are compared byte-for-byte and independently parsed.
+  Aborted-export checks inspect the real download directory, not an unused
+  destination filename or uncorroborated event timeout. Production CSV is unchanged.
+  Independent verifier `b8964d17-7254-4c49-b7ee-785f10bfdb74` was assigned one
+  all-flow run and native coverage. Actual artifacts contain two overlapping
+  browser runs, not one; accounting correction was requested. Both failed overall.
+  The first has 204 passing records and a same-name file-discovery failure;
+  the second has 157 passing records, a wait timeout and subsequent empty-page
+  snapshot. Neither establishes an app notification defect. Native 46/46 passed
+  with 99.40/97.56/97.03 backend line/branch/function coverage.
+- A second isolated control reproduced two blob downloads with different
+  response bytes at the SAME completed filename, with a visible success notice
+  and live original tab. This disproves the harness assumption that every
+  successful download introduces a new directory entry. The helper now moves
+  each completed browser file to its unique evidence path, leaving the inbox
+  free for the next generation. This fixes the observed first-run harness bug;
+  the separate timeout's cause remains unknown. No production app edit.
+  Evidence: `evidence/repeat-download-control/`. Fresh serial verification is due;
+  the verifier must first correct its execution accounting and causal overclaim.
+- The serial archive replay saved and compared three actual CSVs (active,
+  archived and stale-client) but still exited 1: the empty-export notice wait
+  hit the inner 25-second idle bound. Raw output has 74 passing records and
+  218 CLI commands, not the verifier's 217/120-second interpretation.
+  `evidence/planner-download-remedy-adjudication.json` supersedes its unsupported
+  narrative claims. The repeated wait primitive is now blocked, not retried.
+  The next harness route observes the completed file first under the unchanged
+  12-second bound, then asserts exact notice text through ordinary DOM inspection.
+  No assertion removal, timeout increase, speculative app edit or known-cause claim.
+  One serial archive verification of source `9ca5288b` is authorized separately.
+- That file-first run also failed: 57 passing records, 144 commands and two
+  completed CSV comparisons; ordinary DOM eval hit25s idle at command136 after
+  retaining the stale-client file, followed by about:blank and a missing editor.
+  Owned CLI close succeeded. The issue is not confined to the wait primitive.
+  Browser trials are now stopped after bounded alternatives; no guessed app fix.
+  Independent pre/post manifests also contain null hashes for invented paths and
+  a wrong README path. Only actual nonnull pins and the harness's12-file source
+  reconciliation are evidence. Parent adjudication preserves these limits.
+- `evidence/planner-workflow-observations.json` reconciles every original feature
+  ID against this fresh extension exercise. It separates partial, blocked and
+  unexercised branches; it is not a 29-feature pass or a live causal evaluation.
+- Parent report and app README now state the current browser limit. The updated
+  report rendered to three PDF pages without browser errors or console messages.
+  This was document-only rendering, not another app browser trial. Selected raw
+  artifacts are preserved separately from unsupported verifier prose.
+  Staged-byte validation detected automatic newline normalization of the tested
+  harness. Its path now uses the app's existing `-text` preservation convention
+  so the committed file keeps the exact tested SHA-256; documentation retains
+  ordinary Git text normalization.
 - Parent took over the cancelled owner's native command boundary under the
   existing accepted revision-3 design. Controller/manifests/graph/replay and
   collectors remain unfinished; no configured-JS acceptance is claimed.

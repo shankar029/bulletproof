@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "assessment": "Parent artifact reconciliation of the fresh Planner extension workflow, not an independent effectiveness study or a 29-feature pass.",
+  "inventory": ".ai/workflow-app-verification/feature-inventory.json",
+  "applicationBaseline": "c6095e7a8242cb1794fe78ca8fb8ea97e1fb9478",
+  "frozenApplicationCheckpoint": "e2e4835731c260f45205c85edc7930ba23bf676b",
+  "integratedCheckpoint": "81a5921",
+  "evidenceRoot": ".ai/planner-live-workflow",
+  "classification": {
+    "OBSERVED_WITH_LIMITS": "The named behavior has concrete artifact or execution support; this is not exhaustive branch coverage or authenticated role independence.",
+    "PARTIAL": "Useful behavior is supported, but part of the inventoried observation contract remains unproved.",
+    "BLOCKED": "An applicable workflow capability or required completion gate could not run successfully.",
+    "NOT_EXERCISED": "This increment did not exercise the relevant conditional workflow branch."
+  },
+  "limits": [
+    "The exercise extended an existing medium-complexity app; it was not a fresh-from-empty build.",
+    "Research, design and review roles are reported by retained artifacts; no authenticated identity or hidden-context audit is claimed.",
+    "Human design/UX approval remains unconfirmed under the explicit unattended authorization.",
+    "Guarded mode was never adopted. Direct commands and apply_patch edits are procedural evidence, not admitted work or receipts.",
+    "The original full browser run failed downloads despite 187 passing records. Later bounded runs saved real CSVs and exposed a corrected filename-overwrite assumption, but both notice-wait and ordinary DOM-query failures prevented final browser acceptance. Trials are stopped; no full pass is claimed.",
+    "Nine qualified metrics, positive recovery and final full-workflow quality remain unavailable or incomplete.",
+    "The separate diagnosis participant passed functional assertions but failed the execution profile; skill activation and causal effectiveness remain unverified."
+  ],
+  "features": [
+    {
+      "id": "PR6-F1",
+      "status": "OBSERVED_WITH_LIMITS",
+      "evidence": ["research.md", "state.md"],
+      "observed": "A separately assigned read-only researcher recorded scope, baseline, exclusions and no implementation; parent recorded three source spot checks.",
+      "remaining": "Retained artifact evidence is not an exhaustive permissions/transcript audit."
+    },
+    {
+      "id": "PR6-F2",
+      "status": "OBSERVED_WITH_LIMITS",
+      "evidence": ["research.md", "contracts/r1.json", "review.md"],
+      "observed": "All five app ACs trace schema, serialized transactions, HTTP, UI and existing tests; implementation reuses store, rules and view helpers.",
+      "remaining": "Research anchors identify the baseline, not current line numbers."
+    },
+    {
+      "id": "PR6-F3",
+      "status": "OBSERVED_WITH_LIMITS",
+      "evidence": ["research.md", "evidence/post-review-binding.json", "evidence/final-source-hashes.json"],
+      "observed": "Typed facts, bounded absence findings and exact reviewed/final source bindings preserve snapshot differences.",
+      "remaining": "A changed harness needs new execution evidence; historical hashes are not silently reused."
+    },
+    {
+      "id": "PR6-F4",
+      "status": "PARTIAL",
+      "evidence": ["research.md", "tasks.md", "state.md"],
+      "observed": "Fresh design/planning consumers used linked research, contracts and ACs; parent acceptance and the first blocked execution boundary are recorded.",
+      "remaining": "Artifact-only fresh implementation/resume without coordinator context was not independently demonstrated."
+    },
+    {
+      "id": "PR7-F1",
+      "status": "OBSERVED_WITH_LIMITS",
+      "evidence": ["plan.html", "tasks.md", "design-history/r1.preparation.json"],
+      "observed": "Planning names its research/design lineage, owners and baseline; pending preparation is explicitly distinguished from runtime authority.",
+      "remaining": "Unconfirmed autonomous authorization is not human approval or candidate-bound guarded approval."
+    },
+    {
+      "id": "PR7-F2",
+      "status": "PARTIAL",
+      "evidence": ["tasks.md", "state.md"],
+      "observed": "One cohesive lifecycle/export slice has ordered schema, domain, transport, UI and verification ownership.",
+      "remaining": "The slice exceeded one comfortable context window and did not reach a green reviewed ship gate; checkpointing is not increment closure."
+    },
+    {
+      "id": "PR7-F3",
+      "status": "BLOCKED",
+      "evidence": ["tasks.md", "evidence/gate3-blocker.json"],
+      "observed": "Stable task/check IDs and explicit failure boundaries exposed a real schema rejection: work requires an executable command.",
+      "remaining": "Ordinary guarded apply_patch/tool-agent work handoff is unsupported; procedural continuation did not fix or bypass that capability."
+    },
+    {
+      "id": "PR7-F4",
+      "status": "PARTIAL",
+      "evidence": ["plan.html", "tasks.md", "state.md", "evidence/doc-render-verification.md"],
+      "observed": "Linked task detail and explicit BLOCKED then procedural READY decisions exist; design and UX PDFs were actually measured at three pages.",
+      "remaining": "Design/UX page counts do not prove the plan's printed-page count, and procedural readiness is not guarded readiness."
+    },
+    {
+      "id": "PR7-F5",
+      "status": "BLOCKED",
+      "evidence": ["review.md", "traceability.md", "evidence/measurement-status.json"],
+      "observed": "Independent app verification/review retained failed download and unavailable-metric verdicts instead of promoting partial counts to a pass.",
+      "remaining": "All nine qualified metrics and final overall closure remain missing; the full reviewer did not approve subsequent changed bytes."
+    },
+    {
+      "id": "PR7-F6",
+      "status": "PARTIAL",
+      "evidence": ["tasks.md", "state.md", "evidence/post-review.patch"],
+      "observed": "The unsupported route stopped adoption, changed execution mode was explicit, and stale/final source evidence was separated across resume.",
+      "remaining": "A fresh guarded artifact-only resume and positive recovery were not exercised. Compaction is not such a test."
+    },
+    {
+      "id": "PR8-F1",
+      "status": "PARTIAL",
+      "evidence": ["state.md", "report.html"],
+      "observed": "Gate, blocker and handoff records identify concrete results and responsible next actions.",
+      "remaining": "This artifact reconciliation is not an exhaustive actual-conversation communication audit."
+    },
+    {
+      "id": "PR8-F2",
+      "status": "PARTIAL",
+      "evidence": ["report.html", "traceability.md", "review.md"],
+      "observed": "The compact outcome links detailed proof and retains material failures, mutation limitations and missing metrics.",
+      "remaining": "Long-running coordination and oversized increments remain usability costs; no concise-communication score is inferred."
+    },
+    {
+      "id": "PR8-F3",
+      "status": "OBSERVED_WITH_LIMITS",
+      "evidence": ["clarifications.md", "evidence/download-attempts.md", "state.md"],
+      "observed": "Observed cancellation stayed separate from proposed causes, human approval stayed unconfirmed, and frozen work stopped without inventing approval.",
+      "remaining": "The overall requested work is unfinished; a truthful blocked checkpoint is not successful completion."
+    },
+    {
+      "id": "PR9-F1",
+      "status": "OBSERVED_WITH_LIMITS",
+      "evidence": ["contracts/r1.json", "review.md"],
+      "observed": "The source-reading review traced schema ownership, transaction-time guards, pure CSV formatting, HTTP transport and UI state.",
+      "remaining": "Required complexity, cycles and architecture measurements are not available."
+    },
+    {
+      "id": "PR9-F2",
+      "status": "OBSERVED_WITH_LIMITS",
+      "evidence": ["review.md", "evidence/final-native.txt"],
+      "observed": "Existing helpers and explicit errors were retained without a framework; native compatibility and queue/failure assertions support behavior preservation.",
+      "remaining": "These observations do not replace exhaustive regression or complete static metrics."
+    },
+    {
+      "id": "PR9-F3",
+      "status": "PARTIAL",
+      "evidence": ["review.md", "evidence/post-review.patch"],
+      "observed": "Review corrections included actionable lifecycle guidance and a truthful negative-download assertion label.",
+      "remaining": "The app increment did not change canonical runtime prompts/tool schemas or establish their preservation."
+    },
+    {
+      "id": "PR9-F4",
+      "status": "OBSERVED_WITH_LIMITS",
+      "evidence": ["review.md", "evidence/review-fixes-verification.md"],
+      "observed": "Concrete portability, UX and evidence findings led to bounded fixes and targeted execution, not size/comment quotas.",
+      "remaining": "Final independent approval and metric completeness are still separate requirements."
+    },
+    {
+      "id": "PR10-F1",
+      "status": "OBSERVED_WITH_LIMITS",
+      "evidence": ["evidence/download-attempts.md"],
+      "observed": "Actual UI and direct-HTTP download failures retained argv, browser transport, expected saved file and cancellation/no-file outcomes.",
+      "remaining": "This is a tool-transport symptom, not evidence of a production CSV defect or an unknown-defect skill-effectiveness trial."
+    },
+    {
+      "id": "PR10-F2",
+      "status": "PARTIAL",
+      "evidence": ["evidence/download-attempts.md"],
+      "parentEvidence": ["download-transport-control/report.json", "repeat-download-control/report.json", "planner-download-remedy-adjudication.json"],
+      "observed": "Minimal controls isolated explicit-command cancellation and demonstrated same-filename overwrites with distinct saved response bytes. The latter exposed a real harness discovery assumption.",
+      "remaining": "Windows canonicalization and the later intermittent command/page failures do not have exclusively established causes."
+    },
+    {
+      "id": "PR10-F3",
+      "status": "PARTIAL",
+      "evidence": ["review.md"],
+      "parentEvidence": ["download-transport-control/report.json"],
+      "observed": "Production download behavior was not patched speculatively; the test harness uses a demonstrated supported transport and retains actual-file assertions.",
+      "remaining": "Original app replays retain useful saved-file proof but fail overall at later command/page boundaries. No final all-flow pass or general transport fix is established."
+    },
+    {
+      "id": "PR10-F4",
+      "status": "PARTIAL",
+      "evidence": ["evidence/red.txt", "evidence/backend-green.txt", "tasks.md"],
+      "observed": "Three genuine HTTP assertion failures preceded production lifecycle/export implementation, followed by native green.",
+      "remaining": "This proves the recorded API red/green slice, not a separate pre-change red for every UI branch or every new unit."
+    },
+    {
+      "id": "PR10-F5",
+      "status": "OBSERVED_WITH_LIMITS",
+      "evidence": ["review.md", "evidence/final-native.txt", "evidence/verification.md"],
+      "observed": "Real files, HTTP, queued writes, restarts, injected persistence failure and independently parsed CSV use substantive public boundaries.",
+      "remaining": "Later bounded runs do prove active/archived/stale-client saved files, but empty export and full final browser acceptance remain blocked. Native coverage is not frontend or changed-line coverage."
+    },
+    {
+      "id": "PR10-F6",
+      "status": "OBSERVED_WITH_LIMITS",
+      "evidence": ["clarifications.md", "tasks.md", "evidence/gate3-blocker.json"],
+      "observed": "Product decisions, missing executable editing route, red bootstrap and future metric prerequisites were explicitly distinguished before adoption.",
+      "remaining": "The guarded prerequisites remain unresolved, rather than becoming complete through procedural authorization."
+    },
+    {
+      "id": "PR10-F7",
+      "status": "NOT_EXERCISED",
+      "evidence": ["contracts/r1.json", "clarifications.md", "review.md"],
+      "observed": "Optional v2 state preserves old snapshots and the existing explicit v1 migration was regression-tested.",
+      "remaining": "This increment did not perform a new expand/migrate/contract retirement sequence; compatibility regression is not retirement proof."
+    },
+    {
+      "id": "PR10-F8",
+      "status": "OBSERVED_WITH_LIMITS",
+      "evidence": ["research.md", "contracts/r1.json", "design-review.md"],
+      "observed": "Archive is distinct from backup; blocked is derived, not a status. List/detail separation, global revision precedence and whole-project export are explicit caller contracts.",
+      "remaining": "No claim of exhaustive future-caller or performance validation."
+    },
+    {
+      "id": "PR10-F9",
+      "status": "OBSERVED_WITH_LIMITS",
+      "evidence": ["design.html", "design-review.md", "clarifications.md"],
+      "observed": "Consequential lifecycle/schema/list/export choices received an independent substantive design assessment.",
+      "remaining": "Human approval was unconfirmed and document findings were parent-dispositioned; the original review remains REVISE."
+    },
+    {
+      "id": "PR10-F10",
+      "status": "OBSERVED_WITH_LIMITS",
+      "parentEvidence": ["download-transport-control/report.json", "download-transport-control/reproduce.mjs"],
+      "observed": "One isolated local HTTP/browser control tested a concrete transport question with a 12-second file deadline and owned-session/server cleanup.",
+      "remaining": "The retained diagnostic is not production proof; explicit download still fails and the exact internal cause is not fully isolated."
+    },
+    {
+      "id": "PR10-F11",
+      "status": "PARTIAL",
+      "evidence": ["review.md", "evidence/post-review-binding.json", "evidence/post-review.patch", "traceability.md"],
+      "observed": "The full review includes dirty/new files, source hashes, categorized findings and per-AC verdicts. Later deltas were reconstructed only after matching original hashes.",
+      "remaining": "The original reviewer is unavailable for follow-up. Parent delta review and new targeted execution are not a fabricated final independent approval."
+    },
+    {
+      "id": "PR10-F12",
+      "status": "PARTIAL",
+      "evidence": ["tasks.md", "evidence/gate3-blocker.json"],
+      "observed": "The fresh exercise consumed current guidance and exposed an actual unsupported guarded branch; parent README/guides now disclose that boundary.",
+      "remaining": "It does not verify every updated canonical workflow branch, the required metric bridge, or successful guarded completion."
+    }
+  ]
+}

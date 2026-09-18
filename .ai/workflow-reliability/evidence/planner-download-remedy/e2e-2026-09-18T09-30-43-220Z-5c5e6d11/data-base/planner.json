@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 2,
+  "revision": 7,
+  "nextId": 6,
+  "projects": [
+    {
+      "id": "p-1",
+      "createdOrder": 1,
+      "name": "Launch"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t-2",
+      "createdOrder": 2,
+      "projectId": "p-1",
+      "title": "Draft revised",
+      "description": "Edited description",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-3",
+      "createdOrder": 3,
+      "projectId": "p-1",
+      "title": "Review",
+      "description": "Concurrent owner write",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-4",
+      "createdOrder": 4,
+      "projectId": "p-1",
+      "title": "<script>window.__plannerInjected = true</script>",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-5",
+      "createdOrder": 5,
+      "projectId": "p-1",
+      "title": "Concurrent A",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    }
+  ]
+}

@@ -1,0 +1,823 @@
+COMMAND 1 setup --version
+COMMAND 2 setup C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\downloads open about:blank
+COMMAND 3 setup eval
+START base C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\data-base
+COMMAND 4 base --json open http://127.0.0.1:58663
+COMMAND 5 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 6 base --json console --clear
+COMMAND 7 base --json errors --clear
+PASS base: Fresh HTTP health
+COMMAND 8 base --json open http://127.0.0.1:58663/
+COMMAND 9 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 10 base eval
+COMMAND 11 base eval
+PASS base: Initial empty Projects live announcement
+COMMAND 12 base eval
+PASS base: Loading completion uses the polite status region
+COMMAND 13 base screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\base-empty.png --full
+COMMAND 14 base e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 15 base eval
+COMMAND 16 base --json press Tab
+COMMAND 17 base eval
+COMMAND 18 base --json press Tab
+COMMAND 19 base eval
+COMMAND 20 base --json press Tab
+COMMAND 21 base eval
+COMMAND 22 base --json press Tab
+COMMAND 23 base eval
+COMMAND 24 base --json press Tab
+COMMAND 25 base eval
+COMMAND 26 base keyboard type Launch
+COMMAND 27 base --json press Enter
+COMMAND 28 base wait --text Project created
+COMMAND 29 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 30 base eval
+PASS base: Project save success overrides loaded empty status
+COMMAND 31 base eval
+COMMAND 32 base e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json reload
+COMMAND 33 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 34 base eval
+PASS base: Selected empty project announces no tasks after reload
+COMMAND 35 base eval
+PASS base: Lifecycle guidance initially hidden; lifecycle enabled
+COMMAND 36 base eval
+COMMAND 37 base --json press Tab
+COMMAND 38 base eval
+COMMAND 39 base --json press Tab
+COMMAND 40 base eval
+COMMAND 41 base --json press Tab
+COMMAND 42 base eval
+COMMAND 43 base --json press Tab
+COMMAND 44 base eval
+COMMAND 45 base --json press Tab
+COMMAND 46 base eval
+COMMAND 47 base --json press Tab
+COMMAND 48 base eval
+COMMAND 49 base --json press Tab
+COMMAND 50 base eval
+COMMAND 51 base --json press Tab
+COMMAND 52 base eval
+COMMAND 53 base --json press Tab
+COMMAND 54 base eval
+COMMAND 55 base --json press Tab
+COMMAND 56 base eval
+COMMAND 57 base --json press Tab
+COMMAND 58 base eval
+COMMAND 59 base --json press Tab
+COMMAND 60 base eval
+COMMAND 61 base --json press Tab
+COMMAND 62 base eval
+COMMAND 63 base --json press Tab
+COMMAND 64 base eval
+COMMAND 65 base --json press Tab
+COMMAND 66 base eval
+COMMAND 67 base --json press Enter
+COMMAND 68 base eval
+PASS base: Keyboard-only project creation and Add task navigation
+COMMAND 69 base keyboard type Draft
+COMMAND 70 base --json press Tab
+COMMAND 71 base keyboard type Original description
+COMMAND 72 base eval
+COMMAND 73 base --json press Tab
+COMMAND 74 base eval
+COMMAND 75 base --json press Tab
+COMMAND 76 base eval
+COMMAND 77 base --json press Enter
+COMMAND 78 base wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 79 base eval
+PASS base: Task save success announcement
+COMMAND 80 base --json scrollintoview #add-task
+COMMAND 81 base --json click #add-task
+COMMAND 82 base fill #editor-title Review
+COMMAND 83 base fill #editor-description Review description
+COMMAND 84 base --json scrollintoview #editor button[type=submit]
+COMMAND 85 base --json click #editor button[type=submit]
+COMMAND 86 base wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 87 base eval
+PASS base: Task save success announcement
+COMMAND 88 base --json scrollintoview article[data-task-id="t-2"] button
+COMMAND 89 base --json click article[data-task-id="t-2"] button
+COMMAND 90 base eval
+PASS base: Editing reveals associated guidance and disables lifecycle
+COMMAND 91 base fill #editor-title Uncommitted guidance draft
+COMMAND 92 base --json scrollintoview #editor button[type=button]
+COMMAND 93 base --json click #editor button[type=button]
+COMMAND 94 base eval
+PASS base: Cancel hides guidance and re-enables lifecycle
+COMMAND 95 base --json scrollintoview article[data-task-id="t-2"] button
+COMMAND 96 base --json click article[data-task-id="t-2"] button
+COMMAND 97 base eval
+PASS base: Cancel discards guidance-test draft
+COMMAND 98 base eval
+PASS base: Reopening editor restores guidance and lifecycle fence
+COMMAND 99 base fill #editor-title 
+COMMAND 100 base --json scrollintoview #editor button[type=submit]
+COMMAND 101 base --json click #editor button[type=submit]
+COMMAND 102 base --json wait #error
+COMMAND 103 base eval
+PASS base: Invalid title retains editor and blank input
+COMMAND 104 base eval
+PASS base: Validation focuses announced alert
+COMMAND 105 base screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\base-invalid-title.png --full
+COMMAND 106 base e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 107 base fill #editor-title Draft revised
+COMMAND 108 base fill #editor-description Edited description
+COMMAND 109 base --json scrollintoview #editor button[type=submit]
+COMMAND 110 base --json click #editor button[type=submit]
+COMMAND 111 base wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 112 base eval
+PASS base: Task save success announcement
+COMMAND 113 base eval
+PASS base: Save hides guidance and re-enables lifecycle
+COMMAND 114 base e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json reload
+COMMAND 115 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 116 base eval
+COMMAND 117 base --json open http://127.0.0.1:51960/?projectId=p-1
+COMMAND 118 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 119 base eval
+PASS base: HTTP full restart title/description
+COMMAND 120 base --json scrollintoview article[data-task-id="t-2"] button
+COMMAND 121 base --json click article[data-task-id="t-2"] button
+COMMAND 122 base fill #editor-title Retained conflict draft
+COMMAND 123 base --json scrollintoview #editor button[type=submit]
+COMMAND 124 base --json click #editor button[type=submit]
+COMMAND 125 base --json wait #error
+COMMAND 126 base eval
+COMMAND 127 base eval
+PASS base: Conflict retains draft
+PASS base: Rejected conflict preserves bytes
+COMMAND 128 base screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\base-conflict.png --full
+COMMAND 129 base e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 130 base --json scrollintoview #reload
+COMMAND 131 base --json click #reload
+COMMAND 132 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 133 base eval
+PASS base: Explicit reload discards draft
+COMMAND 134 base eval
+COMMAND 135 base --json scrollintoview #add-task
+COMMAND 136 base --json click #add-task
+COMMAND 137 base fill #editor-title <script>window.__plannerInjected = true</script>
+COMMAND 138 base fill #editor-description 
+COMMAND 139 base --json scrollintoview #editor button[type=submit]
+COMMAND 140 base --json click #editor button[type=submit]
+COMMAND 141 base wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 142 base eval
+PASS base: Task save success announcement
+COMMAND 143 base eval
+PASS base: Script-like title is text, never executable
+COMMAND 144 base --json scrollintoview #add-task
+COMMAND 145 base --json click #add-task
+COMMAND 146 base eval
+PASS base: Editor receives keyboard focus
+COMMAND 147 base keyboard type Keyboard cancelled draft
+COMMAND 148 base --json press Tab
+COMMAND 149 base eval
+PASS base: Tab reaches labeled description
+COMMAND 150 base eval
+COMMAND 151 base eval
+COMMAND 152 base --json press Tab
+COMMAND 153 base eval
+COMMAND 154 base --json press Tab
+COMMAND 155 base eval
+COMMAND 156 base --json press Tab
+COMMAND 157 base eval
+COMMAND 158 base --json press Tab
+COMMAND 159 base eval
+COMMAND 160 base --json press Tab
+COMMAND 161 base eval
+COMMAND 162 base --json press Tab
+COMMAND 163 base eval
+PASS base: Keyboard reaches Cancel
+COMMAND 164 base --json press Enter
+COMMAND 165 base eval
+PASS base: Keyboard cancel restores Add task focus
+PASS base: Cancelled draft never persisted
+COMMAND 166 base --json scrollintoview #add-task
+COMMAND 167 base --json click #add-task
+COMMAND 168 base viewport 390 900
+COMMAND 169 base eval
+PASS base: 390px no horizontal page overflow
+PASS base: 390px labeled form controls
+PASS base: 390px interactive targets at least 44px
+COMMAND 170 base screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\base-layout-390.png --full
+COMMAND 171 base e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 172 base viewport 1280 900
+COMMAND 173 base eval
+PASS base: 1280px no horizontal page overflow
+PASS base: 1280px labeled form controls
+PASS base: 1280px interactive targets at least 44px
+COMMAND 174 base screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\base-layout-1280.png --full
+COMMAND 175 base e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 176 base e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+PASS base: editor Pagination is a named navigation landmark
+COMMAND 177 base e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json a11y
+PASS base: editor axe automated violations (not full WCAG or human approval)
+PASS base: editor axe has no unresolved incomplete checks on tested page
+COMMAND 178 base --json scrollintoview #editor button[type=button]
+COMMAND 179 base --json click #editor button[type=button]
+PASS base: HTTP missing revision
+PASS base: HTTP malformed revision
+PASS base: HTTP malformed JSON
+PASS base: HTTP wrong media type
+PASS base: HTTP oversized body
+PASS base: HTTP duplicate project
+PASS base: HTTP blank name
+PASS base: HTTP oversize title
+PASS base: HTTP wrong title type
+PASS base: HTTP unknown field
+PASS base: HTTP unknown task
+PASS base: HTTP unknown route
+PASS base: HTTP wrong method
+PASS base: HTTP foreign Origin
+PASS base: HTTP non-allowlisted data path
+PASS base: HTTP encoded traversal
+PASS base: Foreign Host is rejected
+PASS base: All invalid HTTP writes leave exact bytes unchanged
+PASS base: Same-revision concurrent writes yield one success and one conflict
+PASS base: Concurrent write conflict is explicit
+COMMAND 180 base screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\base-complete.png --full
+COMMAND 181 base e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 182 base e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json console
+COMMAND 183 base e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json errors
+PASS base: Successful base journey has no uncaught browser exceptions
+PASS base: Successful base journey CLI console is clean
+COMMAND 184 base set offline on
+COMMAND 185 base --json scrollintoview #reload
+COMMAND 186 base --json click #reload
+COMMAND 187 base --json wait #error
+COMMAND 188 base eval
+COMMAND 189 base eval
+PASS base: Network failure is not success-shaped
+COMMAND 190 base screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\base-network-failure.png --full
+COMMAND 191 base e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 192 base set offline off
+COMMAND 193 base --json scrollintoview #reload
+COMMAND 194 base --json click #reload
+COMMAND 195 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 196 base eval
+COMMAND 197 base e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json console
+COMMAND 198 base e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json errors
+END base VERIFIED
+START graph C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\data-graph
+COMMAND 199 graph --json console --clear
+COMMAND 200 graph --json errors --clear
+COMMAND 201 graph --json open http://127.0.0.1:52545/
+COMMAND 202 graph wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 203 graph fill #project-name Launch
+COMMAND 204 graph --json scrollintoview #project-form button
+COMMAND 205 graph --json click #project-form button
+COMMAND 206 graph wait --text Project created
+COMMAND 207 graph wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 208 graph eval
+COMMAND 209 graph --json scrollintoview #add-task
+COMMAND 210 graph --json click #add-task
+COMMAND 211 graph fill #editor-title Draft
+COMMAND 212 graph fill #editor-description 
+COMMAND 213 graph --json scrollintoview #editor button[type=submit]
+COMMAND 214 graph --json click #editor button[type=submit]
+COMMAND 215 graph wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 216 graph eval
+PASS graph: Task save success announcement
+COMMAND 217 graph --json scrollintoview #add-task
+COMMAND 218 graph --json click #add-task
+COMMAND 219 graph fill #editor-title Review
+COMMAND 220 graph fill #editor-description 
+COMMAND 221 graph --json scrollintoview #editor button[type=submit]
+COMMAND 222 graph --json click #editor button[type=submit]
+COMMAND 223 graph wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 224 graph eval
+PASS graph: Task save success announcement
+COMMAND 225 graph --json scrollintoview article[data-task-id="t-3"] button
+COMMAND 226 graph --json click article[data-task-id="t-3"] button
+COMMAND 227 graph --json check #editor input[value="t-2"]
+COMMAND 228 graph --json scrollintoview #editor button[type=submit]
+COMMAND 229 graph --json click #editor button[type=submit]
+COMMAND 230 graph wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 231 graph eval
+PASS graph: Task save success announcement
+COMMAND 232 graph eval
+COMMAND 233 graph --json scrollintoview article[data-task-id="t-3"] button
+COMMAND 234 graph --json click article[data-task-id="t-3"] button
+COMMAND 235 graph select #editor-status in_progress
+COMMAND 236 graph --json scrollintoview #editor button[type=submit]
+COMMAND 237 graph --json click #editor button[type=submit]
+COMMAND 238 graph --json wait #error
+COMMAND 239 graph eval
+COMMAND 240 graph eval
+PASS graph: Rejected transition retains status draft
+COMMAND 241 graph screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\graph-blocked-transition.png --full
+COMMAND 242 graph e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 243 graph --json scrollintoview #editor button[type=button]
+COMMAND 244 graph --json click #editor button[type=button]
+COMMAND 245 graph --json scrollintoview article[data-task-id="t-2"] button
+COMMAND 246 graph --json click article[data-task-id="t-2"] button
+COMMAND 247 graph select #editor-status done
+COMMAND 248 graph --json scrollintoview #editor button[type=submit]
+COMMAND 249 graph --json click #editor button[type=submit]
+COMMAND 250 graph wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 251 graph eval
+PASS graph: Task save success announcement
+COMMAND 252 graph --json scrollintoview article[data-task-id="t-3"] button
+COMMAND 253 graph --json click article[data-task-id="t-3"] button
+COMMAND 254 graph select #editor-status in_progress
+COMMAND 255 graph --json scrollintoview #editor button[type=submit]
+COMMAND 256 graph --json click #editor button[type=submit]
+COMMAND 257 graph wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 258 graph eval
+PASS graph: Task save success announcement
+COMMAND 259 graph --json scrollintoview article[data-task-id="t-3"] button
+COMMAND 260 graph --json click article[data-task-id="t-3"] button
+COMMAND 261 graph select #editor-status done
+COMMAND 262 graph --json scrollintoview #editor button[type=submit]
+COMMAND 263 graph --json click #editor button[type=submit]
+COMMAND 264 graph wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 265 graph eval
+PASS graph: Task save success announcement
+COMMAND 266 graph eval
+COMMAND 267 graph --json scrollintoview article[data-task-id="t-2"] button
+COMMAND 268 graph --json click article[data-task-id="t-2"] button
+COMMAND 269 graph select #editor-status todo
+COMMAND 270 graph --json scrollintoview #editor button[type=submit]
+COMMAND 271 graph --json click #editor button[type=submit]
+COMMAND 272 graph --json wait #error
+COMMAND 273 graph eval
+COMMAND 274 graph screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\graph-reopen-conflict.png --full
+COMMAND 275 graph e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 276 graph --json scrollintoview #editor button[type=button]
+COMMAND 277 graph --json click #editor button[type=button]
+COMMAND 278 graph --json scrollintoview article[data-task-id="t-3"] button
+COMMAND 279 graph --json click article[data-task-id="t-3"] button
+COMMAND 280 graph select #editor-status todo
+COMMAND 281 graph --json scrollintoview #editor button[type=submit]
+COMMAND 282 graph --json click #editor button[type=submit]
+COMMAND 283 graph wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 284 graph eval
+PASS graph: Task save success announcement
+COMMAND 285 graph --json scrollintoview article[data-task-id="t-2"] button
+COMMAND 286 graph --json click article[data-task-id="t-2"] button
+COMMAND 287 graph select #editor-status todo
+COMMAND 288 graph --json scrollintoview #editor button[type=submit]
+COMMAND 289 graph --json click #editor button[type=submit]
+COMMAND 290 graph wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 291 graph eval
+PASS graph: Task save success announcement
+PASS graph: Rejected dependency ["t-2"]
+PASS graph: Rejected dependency ["t-999"]
+PASS graph: Rejected dependency ["t-3","t-3"]
+PASS graph: Rejected dependency ["t-5"]
+PASS graph: Rejected dependency ["t-3"]
+COMMAND 292 graph --json open http://127.0.0.1:60484/?projectId=p-1
+COMMAND 293 graph wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 294 graph eval
+PASS graph: Graph no illegal transition committed
+COMMAND 295 graph screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\graph-complete.png --full
+COMMAND 296 graph e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 297 graph e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json console
+COMMAND 298 graph e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json errors
+END graph VERIFIED
+START query C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\data-query
+COMMAND 299 query --json console --clear
+COMMAND 300 query --json errors --clear
+PASS query: Empty project dashboard is independently all zero
+PASS query: Independent F-query Alpha dashboard
+PASS query: Independent HTTP query status=todo&page=1&pageSize=2
+PASS query: Independent HTTP query status=todo&page=2&pageSize=2
+PASS query: Independent HTTP query status=todo&q=%20LAUNCH%20&page=1&pageSize=2
+PASS query: Independent HTTP query status=todo&q=launch&page=2&pageSize=2
+PASS query: Independent HTTP query status=todo&page=3&pageSize=2
+PASS query: Independent HTTP query q=unmatched
+COMMAND 301 query --json open http://127.0.0.1:56359/?projectId=p-1
+COMMAND 302 query wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 303 query select #filter-pageSize 2
+COMMAND 304 query wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 305 query select #filter-status todo
+COMMAND 306 query --json scrollintoview .filters button[type=submit]
+COMMAND 307 query --json click .filters button[type=submit]
+COMMAND 308 query wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 309 query eval
+PASS query: Browser filtered first page B,D
+COMMAND 310 query eval
+COMMAND 311 query --json scrollintoview html > body:nth-child(2) > div:nth-child(5) > main:nth-child(2) > nav:nth-child(9) > button:nth-child(3)
+COMMAND 312 query --name Next --exact
+COMMAND 313 query wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 314 query eval
+PASS query: Browser filtered second page E,F
+COMMAND 315 query eval
+COMMAND 316 query eval
+COMMAND 317 query screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\query-filtered-page2.png --full
+COMMAND 318 query e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 319 query fill #filter-q launch
+COMMAND 320 query --json scrollintoview .filters button[type=submit]
+COMMAND 321 query --json click .filters button[type=submit]
+COMMAND 322 query wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 323 query eval
+PASS query: Applying filters resets page to 1
+COMMAND 324 query eval
+PASS query: Browser AND-filter first page D,E
+COMMAND 325 query e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json back
+COMMAND 326 query wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 327 query eval
+PASS query: Browser Back restores filtered second page
+COMMAND 328 query e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json reload
+COMMAND 329 query wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 330 query eval
+PASS query: Reload preserves actual deep link state
+COMMAND 331 query --json scrollintoview #nav-dashboard
+COMMAND 332 query --json click #nav-dashboard
+COMMAND 333 query wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 334 query eval
+PASS query: Dashboard project summary ignores filters/pages
+COMMAND 335 query eval
+PASS query: Dashboard loaded status is announced
+COMMAND 336 query eval
+COMMAND 337 query --json scrollintoview html > body:nth-child(2) > div:nth-child(5) > main:nth-child(2) > button:nth-child(2)
+COMMAND 338 query --name All projects --exact
+COMMAND 339 query wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 340 query eval
+COMMAND 341 query --json open http://127.0.0.1:56359/?projectId=p-1&pageSize=2&status=todo&page=2
+COMMAND 342 query wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 343 query fill #filter-q nothing matches
+COMMAND 344 query --json scrollintoview .filters button[type=submit]
+COMMAND 345 query --json click .filters button[type=submit]
+COMMAND 346 query wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 347 query eval
+COMMAND 348 query eval
+PASS query: Unmatched filter announces no results with recovery action
+COMMAND 349 query eval
+COMMAND 350 query --json scrollintoview html > body:nth-child(2) > div:nth-child(5) > main:nth-child(2) > form:nth-child(5) > button:nth-child(8)
+COMMAND 351 query --name Clear filters --exact
+COMMAND 352 query wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 353 query eval
+PASS query: Clear filters restores first two records
+COMMAND 354 query eval
+PASS query: Clear filters announces loaded count and current page
+COMMAND 355 query --json open http://127.0.0.1:56359/?projectId=p-1
+COMMAND 356 query wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 357 query eval
+PASS query: Default pageSize=10 really paginates thirteen tasks
+COMMAND 358 query eval
+COMMAND 359 query --json scrollintoview html > body:nth-child(2) > div:nth-child(5) > main:nth-child(2) > nav:nth-child(17) > button:nth-child(3)
+COMMAND 360 query --name Next --exact
+COMMAND 361 query wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 362 query eval
+PASS query: Next page contains remaining three tasks
+PASS query: No duplicates or omissions across default-size pages
+COMMAND 363 query screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\query-default-page2.png --full
+COMMAND 364 query e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 365 query --json open http://127.0.0.1:57958/?projectId=p-1&page=2
+COMMAND 366 query wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 367 query eval
+PASS query: Deep linked second page survives process restart
+COMMAND 368 query eval
+COMMAND 369 query e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+PASS query: query Pagination is a named navigation landmark
+COMMAND 370 query e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json a11y
+PASS query: query axe automated violations (not full WCAG or human approval)
+PASS query: query axe has no unresolved incomplete checks on tested page
+COMMAND 371 query e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json console
+COMMAND 372 query e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json errors
+END query VERIFIED
+START migration C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\data-migration
+COMMAND 373 migration --json console --clear
+COMMAND 374 migration --json errors --clear
+COMMAND 375 migration --json open http://127.0.0.1:54879/?projectId=p-1
+COMMAND 376 migration wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 377 migration eval
+COMMAND 378 migration eval
+PASS migration: Legacy browser disables edits
+PASS migration: Genuine I3 fixture SHA-256
+PASS migration: Legacy API refuses writes
+COMMAND 379 migration --json scrollintoview #download-csv
+COMMAND 380 migration --json click #download-csv
+COMMAND 381 migration wait --text CSV download started.
+PASS migration: legacy actual browser download equals server bytes
+PASS migration: legacy CSV download metadata
+PASS migration: legacy UTF8 no BOM with final CRLF
+PASS migration: Legacy CSV contains all six original task IDs
+PASS migration: Legacy download leaves original bytes unchanged
+COMMAND 382 migration screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\migration-legacy.png --full
+COMMAND 383 migration e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 384 migration C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\src\migrate.mjs --data-dir C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\data-migration
+PASS migration: Offline migration increments revision exactly once
+PASS migration: Migration preserves exact IDs/text/edges/order/nextId/status
+PASS migration: Migration exact-byte original backup
+COMMAND 385 migration C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\src\migrate.mjs --data-dir C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\data-migration
+PASS migration: Repeated offline migration no-op
+PASS migration: Repeated migration preserves exact bytes
+COMMAND 386 migration --json open http://127.0.0.1:54549/?projectId=p-1
+COMMAND 387 migration wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 388 migration --json scrollintoview article[data-task-id="t-7"] button
+COMMAND 389 migration --json click article[data-task-id="t-7"] button
+COMMAND 390 migration select #editor-priority high
+COMMAND 391 migration --json scrollintoview #editor button[type=submit]
+COMMAND 392 migration --json click #editor button[type=submit]
+COMMAND 393 migration wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 394 migration eval
+PASS migration: Task save success announcement
+COMMAND 395 migration select #filter-priority high
+COMMAND 396 migration --json scrollintoview .filters button[type=submit]
+COMMAND 397 migration --json click .filters button[type=submit]
+COMMAND 398 migration wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 399 migration eval
+PASS migration: Browser high priority filter after real edit
+COMMAND 400 migration fill #filter-q  LAUNCH 
+COMMAND 401 migration select #filter-status todo
+COMMAND 402 migration --json scrollintoview .filters button[type=submit]
+COMMAND 403 migration --json click .filters button[type=submit]
+COMMAND 404 migration wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 405 migration eval
+PASS migration: Browser project/status/normalized title/priority all combine with AND
+COMMAND 406 migration --json open http://127.0.0.1:52167/?projectId=p-1&priority=high
+COMMAND 407 migration wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 408 migration eval
+PASS migration: High priority filter survives full process restart
+COMMAND 409 migration eval
+COMMAND 410 migration eval
+COMMAND 411 migration screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\migration-priority-restart.png --full
+COMMAND 412 migration e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 413 migration e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json console
+COMMAND 414 migration e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json errors
+END migration VERIFIED
+START archive C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\data-archive
+COMMAND 415 archive --json console --clear
+COMMAND 416 archive --json errors --clear
+COMMAND 417 archive --json open http://127.0.0.1:62948/
+COMMAND 418 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 419 archive fill #project-name Still active
+COMMAND 420 archive --json scrollintoview #project-form button
+COMMAND 421 archive --json click #project-form button
+COMMAND 422 archive wait --text Project created
+COMMAND 423 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 424 archive eval
+COMMAND 425 archive fill #project-name @Team,"Unicode 日"
+COMMAND 426 archive --json scrollintoview #project-form button
+COMMAND 427 archive --json click #project-form button
+COMMAND 428 archive wait --text Project created
+COMMAND 429 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 430 archive eval
+COMMAND 431 archive --json scrollintoview #add-task
+COMMAND 432 archive --json click #add-task
+COMMAND 433 archive fill #editor-title =SUM(1,2)
+COMMAND 434 archive fill #editor-description Comma, "quotes" 🚀
+second line
+COMMAND 435 archive --json scrollintoview #editor button[type=submit]
+COMMAND 436 archive --json click #editor button[type=submit]
+COMMAND 437 archive wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 438 archive eval
+PASS archive: Task save success announcement
+COMMAND 439 archive --json scrollintoview #reload
+COMMAND 440 archive --json click #reload
+COMMAND 441 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 442 archive --json scrollintoview #download-csv
+COMMAND 443 archive --json click #download-csv
+COMMAND 444 archive wait --text CSV download started.
+PASS archive: active actual browser download equals server bytes
+PASS archive: active CSV download metadata
+PASS archive: active UTF8 no BOM with final CRLF
+PASS archive: Independent CSV fixed columns and all six task IDs
+PASS archive: Independent CSV unsafe name/title and multiline Unicode
+PASS archive: Independent CSV formula descriptions, dependencies and blocked data
+PASS archive: Export does not modify stored data or revision
+COMMAND 445 archive --json scrollintoview #project-lifecycle
+COMMAND 446 archive --json click #project-lifecycle
+COMMAND 447 archive --json dialog status
+COMMAND 448 archive --json dialog dismiss
+COMMAND 449 archive eval
+PASS archive: Archive confirm dismissed updates lifecycle control
+PASS archive: Cancelled archive leaves exact model intact
+COMMAND 450 archive select #filter-pageSize 2
+COMMAND 451 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 452 archive fill #filter-q Launch
+COMMAND 453 archive select #filter-status todo
+COMMAND 454 archive --json scrollintoview .filters button[type=submit]
+COMMAND 455 archive --json click .filters button[type=submit]
+COMMAND 456 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 457 archive eval
+COMMAND 458 archive --json scrollintoview html > body:nth-child(2) > div:nth-child(5) > main:nth-child(2) > nav:nth-child(9) > button:nth-child(3)
+COMMAND 459 archive --name Next --exact
+COMMAND 460 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 461 archive eval
+PASS archive: Pre-archive filtered second page
+COMMAND 462 archive --json focus #project-lifecycle
+COMMAND 463 archive eval
+PASS archive: Archive control receives keyboard focus
+COMMAND 464 archive --json scrollintoview #project-lifecycle
+COMMAND 465 archive --json click #project-lifecycle
+COMMAND 466 archive --json dialog status
+COMMAND 467 archive --json dialog accept
+COMMAND 468 archive wait --text Project archived. Tasks are read-only.
+COMMAND 469 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 470 archive eval
+PASS archive: Archive confirm accepted updates lifecycle control
+COMMAND 471 archive eval
+PASS archive: Archive focuses replacement lifecycle control
+COMMAND 472 archive eval
+PASS archive: Archive preserves selected filter and page
+COMMAND 473 archive eval
+PASS archive: Archive filtered results unchanged
+COMMAND 474 archive eval
+PASS archive: Archive sidebar includes only archived project
+COMMAND 475 archive eval
+PASS archive: Every visible task write control disabled; restore/download enabled
+PASS archive: Any-status lifecycle preserves all task fields, IDs and allocation
+PASS archive: Only target project archive flag changes
+COMMAND 476 archive --json scrollintoview #download-csv
+COMMAND 477 archive --json click #download-csv
+COMMAND 478 archive wait --text CSV download started.
+FAILED SCENARIO archived-download: Command timed out: --session e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json wait --text CSV download started.
+
+true !== false
+
+COMMAND 479 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\archive-failed-archived-download.png --full
+COMMAND 480 archive e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 481 archive --json scrollintoview #nav-projects
+FAIL archive: --session e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json scrollintoview #nav-projects
+
+{"success":false,"data":null,"error":"Element not found: #nav-projects. Verify the selector, role, or name is correct and the element exists in the DOM."}
+
+
+1 !== 0
+
+COMMAND 482 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\archive-failure.png --full
+COMMAND 483 archive e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json snapshot
+COMMAND 484 archive e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json console
+COMMAND 485 archive e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json errors
+END archive FAILED
+COMMAND 486 archive e2e-2026-09-18T09-30-53-260Z-6dfb69cb --json close
+Evidence: C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-53-260Z-6dfb69cb\report.json
+ archive --json open http://127.0.0.1:63535/?projectId=p-2
+COMMAND 492 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 493 archive eval
+COMMAND 494 archive eval
+PASS archive: Deep link shows all mixed-status tasks and blocked dependency
+COMMAND 495 archive viewport 390 900
+COMMAND 496 archive eval
+PASS archive: 390px no horizontal page overflow
+PASS archive: 390px labeled form controls
+PASS archive: 390px interactive targets at least 44px
+COMMAND 497 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\archive-layout-390.png --full
+COMMAND 498 archive e2e-2026-09-18T09-30-43-220Z-5c5e6d11 --json snapshot
+COMMAND 499 archive viewport 1280 900
+COMMAND 500 archive eval
+PASS archive: 1280px no horizontal page overflow
+PASS archive: 1280px labeled form controls
+PASS archive: 1280px interactive targets at least 44px
+COMMAND 501 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\archive-layout-1280.png --full
+COMMAND 502 archive e2e-2026-09-18T09-30-43-220Z-5c5e6d11 --json snapshot
+COMMAND 503 archive e2e-2026-09-18T09-30-43-220Z-5c5e6d11 --json snapshot
+PASS archive: archived Pagination is a named navigation landmark
+COMMAND 504 archive e2e-2026-09-18T09-30-43-220Z-5c5e6d11 --json a11y
+PASS archive: archived axe automated violations (not full WCAG or human approval)
+PASS archive: archived axe has no unresolved incomplete checks on tested page
+COMMAND 505 archive --json focus #project-lifecycle
+COMMAND 506 archive --json press Tab
+COMMAND 507 archive eval
+PASS archive: Keyboard reaches archived download
+COMMAND 508 archive eval
+PASS archive: Archived download has visible focus outline
+PASS archive: Archived API rejects {"title":"no"}
+PASS archive: Archived API rejects {"description":"no"}
+PASS archive: Archived API rejects {"status":"done"}
+PASS archive: Archived API rejects {"priority":"high"}
+PASS archive: Archived API rejects {"dependencyIds":[]}
+PASS archive: Archived API rejects {"title":"=SUM(1,2)"}
+PASS archive: Archived API rejects {"title":"no","description":"no","priority":"low"}
+PASS archive: Archived API rejects creation
+PASS archive: Rejected archived writes preserve exact disk bytes
+COMMAND 509 archive --json focus #project-lifecycle
+COMMAND 510 archive --json press Enter
+COMMAND 511 archive wait --text Project restored. Editing is available.
+COMMAND 512 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 513 archive eval
+PASS archive: Restore enables Add/Edit and focuses lifecycle
+COMMAND 514 archive --json scrollintoview article[data-task-id="t-3"] button
+COMMAND 515 archive --json click article[data-task-id="t-3"] button
+COMMAND 516 archive fill #editor-description Restored edit
+COMMAND 517 archive --json scrollintoview #editor button[type=submit]
+COMMAND 518 archive --json click #editor button[type=submit]
+COMMAND 519 archive wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 520 archive eval
+PASS archive: Task save success announcement
+PASS archive: Restored real UI edit persisted
+COMMAND 521 archive --json scrollintoview article[data-task-id="t-5"] button
+COMMAND 522 archive --json click article[data-task-id="t-5"] button
+COMMAND 523 archive select #editor-status in_progress
+COMMAND 524 archive --json scrollintoview #editor button[type=submit]
+COMMAND 525 archive --json click #editor button[type=submit]
+COMMAND 526 archive --json wait #error
+COMMAND 527 archive eval
+COMMAND 528 archive --json scrollintoview #editor button[type=button]
+COMMAND 529 archive --json click #editor button[type=button]
+COMMAND 530 archive --json scrollintoview article[data-task-id="t-3"] button
+COMMAND 531 archive --json click article[data-task-id="t-3"] button
+COMMAND 532 archive fill #editor-title Draft from client one
+COMMAND 533 archive eval
+PASS archive: Lifecycle disabled while draft open
+COMMAND 534 archive --json tab list
+COMMAND 535 archive --label archiver http://127.0.0.1:63535/?projectId=p-2
+COMMAND 536 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 537 archive --json scrollintoview #project-lifecycle
+COMMAND 538 archive --json click #project-lifecycle
+COMMAND 539 archive --json dialog status
+COMMAND 540 archive --json dialog accept
+COMMAND 541 archive wait --text Project archived. Tasks are read-only.
+COMMAND 542 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 543 archive eval
+PASS archive: Archive confirm accepted updates lifecycle control
+COMMAND 544 archive --json tab 474A152765B98596FDDA56DE794A4089
+FAILED SCENARIO stale-client-download: Download transport BLOCKED earlier in this run: Expected one completed browser CSV; new download entries: []
+COMMAND 545 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\archive-failed-stale-client-download.png --full
+COMMAND 546 archive e2e-2026-09-18T09-30-43-220Z-5c5e6d11 --json snapshot
+COMMAND 547 archive --json scrollintoview #editor button[type=submit]
+COMMAND 548 archive --json click #editor button[type=submit]
+COMMAND 549 archive --json wait #error
+COMMAND 550 archive eval
+PASS archive: Two real browser clients retain stale draft and fence retry
+COMMAND 551 archive eval
+PASS archive: Rejected stale write leaves disk unchanged
+COMMAND 552 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\archive-stale-draft.png --full
+COMMAND 553 archive e2e-2026-09-18T09-30-43-220Z-5c5e6d11 --json snapshot
+COMMAND 554 archive --json scrollintoview #editor button[type=button]
+COMMAND 555 archive --json click #editor button[type=button]
+COMMAND 556 archive eval
+PASS archive: Fenced draft Cancel focuses project heading
+COMMAND 557 archive --json scrollintoview #reload
+COMMAND 558 archive --json click #reload
+COMMAND 559 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 560 archive eval
+PASS archive: Explicit reload discards draft and adopts archived state
+COMMAND 561 archive --json tab 474A152765B98596FDDA56DE794A4089
+COMMAND 562 archive --json scrollintoview #project-lifecycle
+COMMAND 563 archive --json click #project-lifecycle
+COMMAND 564 archive wait --text Project restored. Editing is available.
+COMMAND 565 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 566 archive route http://127.0.0.1:63535/api/projects/p-2/tasks.csv --abort
+COMMAND 567 archive --json scrollintoview #download-csv
+COMMAND 568 archive --json click #download-csv
+COMMAND 569 archive --json wait #error
+COMMAND 570 archive eval
+COMMAND 571 archive eval
+COMMAND 572 archive eval
+PASS archive: Failed export leaves no file and no success announcement
+COMMAND 573 archive network unroute http://127.0.0.1:63535/api/projects/p-2/tasks.csv
+COMMAND 574 archive http://127.0.0.1:63535/api/projects?archived=false --body {"items":[{"id":"p-1","createdOrder":1,"name":"Still active","archived":false},{"id":"p-2","createdOrder":2,"name":"@Team,\"Unicode 日\"","archived":false}],"revision":15}
+COMMAND 575 archive --json scrollintoview #reload
+COMMAND 576 archive --json click #reload
+COMMAND 577 archive --json wait #error
+COMMAND 578 archive eval
+COMMAND 579 archive eval
+PASS archive: Revision mismatch fences writes and retains prior rendered data
+COMMAND 580 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\archive-coherence-failure.png --full
+COMMAND 581 archive e2e-2026-09-18T09-30-43-220Z-5c5e6d11 --json snapshot
+COMMAND 582 archive network unroute http://127.0.0.1:63535/api/projects?archived=false
+COMMAND 583 archive --json scrollintoview #reload
+COMMAND 584 archive --json click #reload
+COMMAND 585 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 586 archive --json scrollintoview article[data-task-id="t-3"] button
+COMMAND 587 archive --json click article[data-task-id="t-3"] button
+COMMAND 588 archive fill #editor-description Committed before failed refresh
+COMMAND 589 archive route http://127.0.0.1:63535/api/health --abort
+COMMAND 590 archive --json scrollintoview #editor button[type=submit]
+COMMAND 591 archive --json click #editor button[type=submit]
+COMMAND 592 archive --json wait #error
+COMMAND 593 archive eval
+PASS archive: Post-save refresh failure retains draft, fences save, focuses alert
+COMMAND 594 archive eval
+PASS archive: Post-save failure does not announce successful save
+PASS archive: Actual save committed despite refresh fault
+COMMAND 595 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\archive-post-save-refresh-failure.png --full
+COMMAND 596 archive e2e-2026-09-18T09-30-43-220Z-5c5e6d11 --json snapshot
+COMMAND 597 archive network unroute http://127.0.0.1:63535/api/health
+COMMAND 598 archive --json scrollintoview #reload
+COMMAND 599 archive --json click #reload
+COMMAND 600 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 601 archive eval
+PASS archive: Explicit reload after uncertain save restores writable committed state
+COMMAND 602 archive --json open http://127.0.0.1:59541/?projectId=p-2
+COMMAND 603 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 604 archive eval
+COMMAND 605 archive fill #project-name Empty lifecycle
+COMMAND 606 archive --json scrollintoview #project-form button
+COMMAND 607 archive --json click #project-form button
+COMMAND 608 archive wait --text Project created
+COMMAND 609 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 610 archive eval
+COMMAND 611 archive --json scrollintoview #project-lifecycle
+COMMAND 612 archive --json click #project-lifecycle
+COMMAND 613 archive --json dialog status
+COMMAND 614 archive --json dialog accept
+COMMAND 615 archive wait --text Project archived. Tasks are read-only.
+COMMAND 616 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 617 archive eval
+PASS archive: Archive confirm accepted updates lifecycle control
+COMMAND 618 archive eval
+FAILED SCENARIO empty-download: Download transport BLOCKED earlier in this run: Expected one completed browser CSV; new download entries: []
+COMMAND 619 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\archive-failed-empty-download.png --full
+COMMAND 620 archive e2e-2026-09-18T09-30-43-220Z-5c5e6d11 --json snapshot
+COMMAND 621 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\archive-complete.png --full
+COMMAND 622 archive e2e-2026-09-18T09-30-43-220Z-5c5e6d11 --json snapshot
+COMMAND 623 archive e2e-2026-09-18T09-30-43-220Z-5c5e6d11 --json console
+COMMAND 624 archive e2e-2026-09-18T09-30-43-220Z-5c5e6d11 --json errors
+END archive FAILED
+COMMAND 625 archive e2e-2026-09-18T09-30-43-220Z-5c5e6d11 --json close
+Evidence: C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-30-43-220Z-5c5e6d11\report.json

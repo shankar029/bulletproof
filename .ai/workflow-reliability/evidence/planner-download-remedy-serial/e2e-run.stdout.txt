@@ -1,0 +1,293 @@
+COMMAND 1 setup --version
+COMMAND 2 setup C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-57-31-865Z-9add99c4\downloads open about:blank
+COMMAND 3 setup eval
+START archive C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-57-31-865Z-9add99c4\data-archive
+COMMAND 4 archive --json open http://127.0.0.1:53646
+COMMAND 5 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 6 archive --json console --clear
+COMMAND 7 archive --json errors --clear
+COMMAND 8 archive --json open http://127.0.0.1:53646/
+COMMAND 9 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 10 archive fill #project-name Still active
+COMMAND 11 archive --json scrollintoview #project-form button
+COMMAND 12 archive --json click #project-form button
+COMMAND 13 archive wait --text Project created
+COMMAND 14 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 15 archive eval
+COMMAND 16 archive fill #project-name @Team,"Unicode 日"
+COMMAND 17 archive --json scrollintoview #project-form button
+COMMAND 18 archive --json click #project-form button
+COMMAND 19 archive wait --text Project created
+COMMAND 20 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 21 archive eval
+COMMAND 22 archive --json scrollintoview #add-task
+COMMAND 23 archive --json click #add-task
+COMMAND 24 archive fill #editor-title =SUM(1,2)
+COMMAND 25 archive fill #editor-description Comma, "quotes" 🚀
+second line
+COMMAND 26 archive --json scrollintoview #editor button[type=submit]
+COMMAND 27 archive --json click #editor button[type=submit]
+COMMAND 28 archive wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 29 archive eval
+PASS archive: Task save success announcement
+COMMAND 30 archive --json scrollintoview #reload
+COMMAND 31 archive --json click #reload
+COMMAND 32 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 33 archive --json scrollintoview #download-csv
+COMMAND 34 archive --json click #download-csv
+COMMAND 35 archive wait --text CSV download started.
+PASS archive: active actual browser download equals server bytes
+PASS archive: active CSV download metadata
+PASS archive: active UTF8 no BOM with final CRLF
+PASS archive: Independent CSV fixed columns and all six task IDs
+PASS archive: Independent CSV unsafe name/title and multiline Unicode
+PASS archive: Independent CSV formula descriptions, dependencies and blocked data
+PASS archive: Export does not modify stored data or revision
+COMMAND 36 archive --json scrollintoview #project-lifecycle
+COMMAND 37 archive --json click #project-lifecycle
+COMMAND 38 archive --json dialog status
+COMMAND 39 archive --json dialog dismiss
+COMMAND 40 archive eval
+PASS archive: Archive confirm dismissed updates lifecycle control
+PASS archive: Cancelled archive leaves exact model intact
+COMMAND 41 archive select #filter-pageSize 2
+COMMAND 42 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 43 archive fill #filter-q Launch
+COMMAND 44 archive select #filter-status todo
+COMMAND 45 archive --json scrollintoview .filters button[type=submit]
+COMMAND 46 archive --json click .filters button[type=submit]
+COMMAND 47 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 48 archive eval
+COMMAND 49 archive --json scrollintoview html > body:nth-child(2) > div:nth-child(5) > main:nth-child(2) > nav:nth-child(9) > button:nth-child(3)
+COMMAND 50 archive --name Next --exact
+COMMAND 51 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 52 archive eval
+PASS archive: Pre-archive filtered second page
+COMMAND 53 archive --json focus #project-lifecycle
+COMMAND 54 archive eval
+PASS archive: Archive control receives keyboard focus
+COMMAND 55 archive --json scrollintoview #project-lifecycle
+COMMAND 56 archive --json click #project-lifecycle
+COMMAND 57 archive --json dialog status
+COMMAND 58 archive --json dialog accept
+COMMAND 59 archive wait --text Project archived. Tasks are read-only.
+COMMAND 60 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 61 archive eval
+PASS archive: Archive confirm accepted updates lifecycle control
+COMMAND 62 archive eval
+PASS archive: Archive focuses replacement lifecycle control
+COMMAND 63 archive eval
+PASS archive: Archive preserves selected filter and page
+COMMAND 64 archive eval
+PASS archive: Archive filtered results unchanged
+COMMAND 65 archive eval
+PASS archive: Archive sidebar includes only archived project
+COMMAND 66 archive eval
+PASS archive: Every visible task write control disabled; restore/download enabled
+PASS archive: Any-status lifecycle preserves all task fields, IDs and allocation
+PASS archive: Only target project archive flag changes
+COMMAND 67 archive --json scrollintoview #download-csv
+COMMAND 68 archive --json click #download-csv
+COMMAND 69 archive wait --text CSV download started.
+PASS archive: archived-filtered-page2 actual browser download equals server bytes
+PASS archive: archived-filtered-page2 CSV download metadata
+PASS archive: archived-filtered-page2 UTF8 no BOM with final CRLF
+PASS archive: Archived filtered download is identical full-project snapshot
+COMMAND 70 archive --json scrollintoview #nav-projects
+COMMAND 71 archive --json click #nav-projects
+COMMAND 72 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 73 archive eval
+PASS archive: Active sidebar excludes archive while deep detail remains readable
+COMMAND 74 archive e2e-2026-09-18T09-57-31-865Z-9add99c4 --json back
+COMMAND 75 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 76 archive eval
+COMMAND 77 archive eval
+PASS archive: Back restores archive selector and filtered page
+COMMAND 78 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-57-31-865Z-9add99c4\archive-filtered-archive.png --full
+COMMAND 79 archive e2e-2026-09-18T09-57-31-865Z-9add99c4 --json snapshot
+PASS archive: Restart preserves exact archived model
+COMMAND 80 archive --json open http://127.0.0.1:50096/?projectId=p-2
+COMMAND 81 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 82 archive eval
+COMMAND 83 archive eval
+PASS archive: Deep link shows all mixed-status tasks and blocked dependency
+COMMAND 84 archive viewport 390 900
+COMMAND 85 archive eval
+PASS archive: 390px no horizontal page overflow
+PASS archive: 390px labeled form controls
+PASS archive: 390px interactive targets at least 44px
+COMMAND 86 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-57-31-865Z-9add99c4\archive-layout-390.png --full
+COMMAND 87 archive e2e-2026-09-18T09-57-31-865Z-9add99c4 --json snapshot
+COMMAND 88 archive viewport 1280 900
+COMMAND 89 archive eval
+PASS archive: 1280px no horizontal page overflow
+PASS archive: 1280px labeled form controls
+PASS archive: 1280px interactive targets at least 44px
+COMMAND 90 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-57-31-865Z-9add99c4\archive-layout-1280.png --full
+COMMAND 91 archive e2e-2026-09-18T09-57-31-865Z-9add99c4 --json snapshot
+COMMAND 92 archive e2e-2026-09-18T09-57-31-865Z-9add99c4 --json snapshot
+PASS archive: archived Pagination is a named navigation landmark
+COMMAND 93 archive e2e-2026-09-18T09-57-31-865Z-9add99c4 --json a11y
+PASS archive: archived axe automated violations (not full WCAG or human approval)
+PASS archive: archived axe has no unresolved incomplete checks on tested page
+COMMAND 94 archive --json focus #project-lifecycle
+COMMAND 95 archive --json press Tab
+COMMAND 96 archive eval
+PASS archive: Keyboard reaches archived download
+COMMAND 97 archive eval
+PASS archive: Archived download has visible focus outline
+PASS archive: Archived API rejects {"title":"no"}
+PASS archive: Archived API rejects {"description":"no"}
+PASS archive: Archived API rejects {"status":"done"}
+PASS archive: Archived API rejects {"priority":"high"}
+PASS archive: Archived API rejects {"dependencyIds":[]}
+PASS archive: Archived API rejects {"title":"=SUM(1,2)"}
+PASS archive: Archived API rejects {"title":"no","description":"no","priority":"low"}
+PASS archive: Archived API rejects creation
+PASS archive: Rejected archived writes preserve exact disk bytes
+COMMAND 98 archive --json focus #project-lifecycle
+COMMAND 99 archive --json press Enter
+COMMAND 100 archive wait --text Project restored. Editing is available.
+COMMAND 101 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 102 archive eval
+PASS archive: Restore enables Add/Edit and focuses lifecycle
+COMMAND 103 archive --json scrollintoview article[data-task-id="t-3"] button
+COMMAND 104 archive --json click article[data-task-id="t-3"] button
+COMMAND 105 archive fill #editor-description Restored edit
+COMMAND 106 archive --json scrollintoview #editor button[type=submit]
+COMMAND 107 archive --json click #editor button[type=submit]
+COMMAND 108 archive wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 109 archive eval
+PASS archive: Task save success announcement
+PASS archive: Restored real UI edit persisted
+COMMAND 110 archive --json scrollintoview article[data-task-id="t-5"] button
+COMMAND 111 archive --json click article[data-task-id="t-5"] button
+COMMAND 112 archive select #editor-status in_progress
+COMMAND 113 archive --json scrollintoview #editor button[type=submit]
+COMMAND 114 archive --json click #editor button[type=submit]
+COMMAND 115 archive --json wait #error
+COMMAND 116 archive eval
+COMMAND 117 archive --json scrollintoview #editor button[type=button]
+COMMAND 118 archive --json click #editor button[type=button]
+COMMAND 119 archive --json scrollintoview article[data-task-id="t-3"] button
+COMMAND 120 archive --json click article[data-task-id="t-3"] button
+COMMAND 121 archive fill #editor-title Draft from client one
+COMMAND 122 archive eval
+PASS archive: Lifecycle disabled while draft open
+COMMAND 123 archive --json tab list
+COMMAND 124 archive --label archiver http://127.0.0.1:50096/?projectId=p-2
+COMMAND 125 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 126 archive --json scrollintoview #project-lifecycle
+COMMAND 127 archive --json click #project-lifecycle
+COMMAND 128 archive --json dialog status
+COMMAND 129 archive --json dialog accept
+COMMAND 130 archive wait --text Project archived. Tasks are read-only.
+COMMAND 131 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 132 archive eval
+PASS archive: Archive confirm accepted updates lifecycle control
+COMMAND 133 archive --json tab B8A10F834100AD005DE03C8D6B62821C
+COMMAND 134 archive --json scrollintoview #download-csv
+COMMAND 135 archive --json click #download-csv
+COMMAND 136 archive wait --text CSV download started.
+PASS archive: stale-client-after-archive actual browser download equals server bytes
+PASS archive: stale-client-after-archive CSV download metadata
+PASS archive: stale-client-after-archive UTF8 no BOM with final CRLF
+COMMAND 137 archive --json scrollintoview #editor button[type=submit]
+COMMAND 138 archive --json click #editor button[type=submit]
+COMMAND 139 archive --json wait #error
+COMMAND 140 archive eval
+PASS archive: Two real browser clients retain stale draft and fence retry
+COMMAND 141 archive eval
+PASS archive: Rejected stale write leaves disk unchanged
+COMMAND 142 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-57-31-865Z-9add99c4\archive-stale-draft.png --full
+COMMAND 143 archive e2e-2026-09-18T09-57-31-865Z-9add99c4 --json snapshot
+COMMAND 144 archive --json scrollintoview #editor button[type=button]
+COMMAND 145 archive --json click #editor button[type=button]
+COMMAND 146 archive eval
+PASS archive: Fenced draft Cancel focuses project heading
+COMMAND 147 archive --json scrollintoview #reload
+COMMAND 148 archive --json click #reload
+COMMAND 149 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 150 archive eval
+PASS archive: Explicit reload discards draft and adopts archived state
+COMMAND 151 archive --json tab B8A10F834100AD005DE03C8D6B62821C
+COMMAND 152 archive --json scrollintoview #project-lifecycle
+COMMAND 153 archive --json click #project-lifecycle
+COMMAND 154 archive wait --text Project restored. Editing is available.
+COMMAND 155 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 156 archive route http://127.0.0.1:50096/api/projects/p-2/tasks.csv --abort
+COMMAND 157 archive --json scrollintoview #download-csv
+COMMAND 158 archive --json click #download-csv
+COMMAND 159 archive --json wait #error
+COMMAND 160 archive eval
+COMMAND 161 archive eval
+COMMAND 162 archive eval
+PASS archive: Failed export leaves no file and no success announcement
+COMMAND 163 archive network unroute http://127.0.0.1:50096/api/projects/p-2/tasks.csv
+COMMAND 164 archive http://127.0.0.1:50096/api/projects?archived=false --body {"items":[{"id":"p-1","createdOrder":1,"name":"Still active","archived":false},{"id":"p-2","createdOrder":2,"name":"@Team,\"Unicode 日\"","archived":false}],"revision":15}
+COMMAND 165 archive --json scrollintoview #reload
+COMMAND 166 archive --json click #reload
+COMMAND 167 archive --json wait #error
+COMMAND 168 archive eval
+COMMAND 169 archive eval
+PASS archive: Revision mismatch fences writes and retains prior rendered data
+COMMAND 170 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-57-31-865Z-9add99c4\archive-coherence-failure.png --full
+COMMAND 171 archive e2e-2026-09-18T09-57-31-865Z-9add99c4 --json snapshot
+COMMAND 172 archive network unroute http://127.0.0.1:50096/api/projects?archived=false
+COMMAND 173 archive --json scrollintoview #reload
+COMMAND 174 archive --json click #reload
+COMMAND 175 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 176 archive --json scrollintoview article[data-task-id="t-3"] button
+COMMAND 177 archive --json click article[data-task-id="t-3"] button
+COMMAND 178 archive fill #editor-description Committed before failed refresh
+COMMAND 179 archive route http://127.0.0.1:50096/api/health --abort
+COMMAND 180 archive --json scrollintoview #editor button[type=submit]
+COMMAND 181 archive --json click #editor button[type=submit]
+COMMAND 182 archive --json wait #error
+COMMAND 183 archive eval
+PASS archive: Post-save refresh failure retains draft, fences save, focuses alert
+COMMAND 184 archive eval
+PASS archive: Post-save failure does not announce successful save
+PASS archive: Actual save committed despite refresh fault
+COMMAND 185 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-57-31-865Z-9add99c4\archive-post-save-refresh-failure.png --full
+COMMAND 186 archive e2e-2026-09-18T09-57-31-865Z-9add99c4 --json snapshot
+COMMAND 187 archive network unroute http://127.0.0.1:50096/api/health
+COMMAND 188 archive --json scrollintoview #reload
+COMMAND 189 archive --json click #reload
+COMMAND 190 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 191 archive eval
+PASS archive: Explicit reload after uncertain save restores writable committed state
+COMMAND 192 archive --json open http://127.0.0.1:58289/?projectId=p-2
+COMMAND 193 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 194 archive eval
+COMMAND 195 archive fill #project-name Empty lifecycle
+COMMAND 196 archive --json scrollintoview #project-form button
+COMMAND 197 archive --json click #project-form button
+COMMAND 198 archive wait --text Project created
+COMMAND 199 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 200 archive eval
+COMMAND 201 archive --json scrollintoview #project-lifecycle
+COMMAND 202 archive --json click #project-lifecycle
+COMMAND 203 archive --json dialog status
+COMMAND 204 archive --json dialog accept
+COMMAND 205 archive wait --text Project archived. Tasks are read-only.
+COMMAND 206 archive wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 207 archive eval
+PASS archive: Archive confirm accepted updates lifecycle control
+COMMAND 208 archive eval
+COMMAND 209 archive --json scrollintoview #download-csv
+COMMAND 210 archive --json click #download-csv
+COMMAND 211 archive wait --text CSV download started.
+FAILED SCENARIO empty-download: Command timed out: --session e2e-2026-09-18T09-57-31-865Z-9add99c4 --json wait --text CSV download started.
+
+true !== false
+
+COMMAND 212 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-57-31-865Z-9add99c4\archive-failed-empty-download.png --full
+COMMAND 213 archive e2e-2026-09-18T09-57-31-865Z-9add99c4 --json snapshot
+COMMAND 214 archive screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-57-31-865Z-9add99c4\archive-complete.png --full
+COMMAND 215 archive e2e-2026-09-18T09-57-31-865Z-9add99c4 --json snapshot
+COMMAND 216 archive e2e-2026-09-18T09-57-31-865Z-9add99c4 --json console
+COMMAND 217 archive e2e-2026-09-18T09-57-31-865Z-9add99c4 --json errors
+END archive FAILED
+COMMAND 218 archive e2e-2026-09-18T09-57-31-865Z-9add99c4 --json close
+Evidence: C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\examples\team-planner\.work\e2e-2026-09-18T09-57-31-865Z-9add99c4\report.json

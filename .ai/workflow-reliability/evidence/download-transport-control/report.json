@@ -1,0 +1,163 @@
+{
+  "session": "download-control-376c2258",
+  "output": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\download-control-aasvMt",
+  "commands": [
+    {
+      "executable": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "argv": [
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "35",
+        "--max",
+        "60",
+        "--",
+        "C:\\Users\\shbs\\AppData\\Local\\npm-cache\\_npx\\6de2aa2fded2970c\\node_modules\\agent-browser\\bin\\agent-browser-win32-x64.exe",
+        "--session",
+        "download-control-376c2258",
+        "--json",
+        "--executable-path",
+        "C:\\Users\\shbs\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+        "--download-path",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\download-control-aasvMt\\downloads",
+        "open",
+        "http://127.0.0.1:57936/"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":12322476442320500484},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"F2454E2F418CE382D28C5D03CCF86649\",\"title\":\"Download transport control\",\"url\":\"http://127.0.0.1:57936/\"},\"error\":null}\r\n",
+      "stderr": ""
+    },
+    {
+      "executable": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "argv": [
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "35",
+        "--max",
+        "60",
+        "--",
+        "C:\\Users\\shbs\\AppData\\Local\\npm-cache\\_npx\\6de2aa2fded2970c\\node_modules\\agent-browser\\bin\\agent-browser-win32-x64.exe",
+        "--session",
+        "download-control-376c2258",
+        "--json",
+        "eval",
+        "navigator.userAgent"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":12322476442320500484},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"http://127.0.0.1:57936/\",\"result\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36\"},\"error\":null}\r\n",
+      "stderr": ""
+    },
+    {
+      "executable": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "argv": [
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "35",
+        "--max",
+        "60",
+        "--",
+        "C:\\Users\\shbs\\AppData\\Local\\npm-cache\\_npx\\6de2aa2fded2970c\\node_modules\\agent-browser\\bin\\agent-browser-win32-x64.exe",
+        "--session",
+        "download-control-376c2258",
+        "--json",
+        "click",
+        "#download"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "{\"success\":true,\"data\":{\"clicked\":\"#download\",\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":12322476442320500484},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\r\n",
+      "stderr": ""
+    },
+    {
+      "executable": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "argv": [
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "35",
+        "--max",
+        "60",
+        "--",
+        "C:\\Users\\shbs\\AppData\\Local\\npm-cache\\_npx\\6de2aa2fded2970c\\node_modules\\agent-browser\\bin\\agent-browser-win32-x64.exe",
+        "--session",
+        "download-control-376c2258",
+        "--json",
+        "download",
+        "#download",
+        "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\download-control-aasvMt\\downloads\\explicit.csv"
+      ],
+      "exitCode": 1,
+      "signal": null,
+      "stdout": "{\"success\":false,\"data\":null,\"error\":\"Download was canceled\"}\r\n",
+      "stderr": ""
+    },
+    {
+      "executable": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "argv": [
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+        "--idle",
+        "35",
+        "--max",
+        "60",
+        "--",
+        "C:\\Users\\shbs\\AppData\\Local\\npm-cache\\_npx\\6de2aa2fded2970c\\node_modules\\agent-browser\\bin\\agent-browser-win32-x64.exe",
+        "--session",
+        "download-control-376c2258",
+        "--json",
+        "close"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "{\"success\":true,\"data\":{\"closed\":true,\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":false,\"engine\":\"chrome\",\"launchHash\":null},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":false,\"saveStatus\":\"not_configured\"},\"restoreStatus\":\"not_configured\",\"saveStatus\":\"not_configured\"},\"error\":null}\r\n",
+      "stderr": ""
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "url": "/",
+      "time": "2026-09-18T09:24:42.121Z"
+    },
+    {
+      "method": "GET",
+      "url": "/favicon.ico",
+      "time": "2026-09-18T09:24:42.191Z"
+    },
+    {
+      "method": "GET",
+      "url": "/control.csv",
+      "time": "2026-09-18T09:24:46.037Z"
+    },
+    {
+      "method": "GET",
+      "url": "/control.csv",
+      "time": "2026-09-18T09:24:46.861Z"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Managed-launch ordinary click saves exact CSV bytes",
+      "status": "passed",
+      "bytes": 31,
+      "sha256": "245ecdc0371f6aa6fd7c1794c9412e5a28a8d278c62bd418b854472abb70c67a"
+    },
+    {
+      "name": "Explicit download command saves exact bytes",
+      "status": "failed",
+      "error": "Download was canceled"
+    }
+  ],
+  "failure": null,
+  "browserExecutable": "C:\\Users\\shbs\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+  "filesAfterClick": [
+    "control.csv"
+  ],
+  "explicitDownloadResult": {
+    "success": false,
+    "data": null,
+    "error": "Download was canceled"
+  },
+  "filesAfterExplicitDownload": [
+    "control.csv"
+  ]
+}

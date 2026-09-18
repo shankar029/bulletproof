@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 2,
+  "revision": 18,
+  "nextId": 17,
+  "projects": [
+    {
+      "id": "p-1",
+      "createdOrder": 1,
+      "name": "Alpha"
+    },
+    {
+      "id": "p-2",
+      "createdOrder": 2,
+      "name": "Beta"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t-3",
+      "createdOrder": 3,
+      "projectId": "p-1",
+      "title": "Archive brief",
+      "description": "",
+      "status": "done",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-4",
+      "createdOrder": 4,
+      "projectId": "p-1",
+      "title": "Build outline",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-5",
+      "createdOrder": 5,
+      "projectId": "p-1",
+      "title": "Check links",
+      "description": "",
+      "status": "in_progress",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-6",
+      "createdOrder": 6,
+      "projectId": "p-1",
+      "title": "Draft launch",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-7",
+      "createdOrder": 7,
+      "projectId": "p-1",
+      "title": "Edit launch",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [
+        "t-4"
+      ],
+      "priority": "normal"
+    },
+    {
+      "id": "t-8",
+      "createdOrder": 8,
+      "projectId": "p-1",
+      "title": "Finalize launch",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-9",
+      "createdOrder": 9,
+      "projectId": "p-2",
+      "title": "Gather launch",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-10",
+      "createdOrder": 10,
+      "projectId": "p-1",
+      "title": "Extra 1",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-11",
+      "createdOrder": 11,
+      "projectId": "p-1",
+      "title": "Extra 2",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-12",
+      "createdOrder": 12,
+      "projectId": "p-1",
+      "title": "Extra 3",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-13",
+      "createdOrder": 13,
+      "projectId": "p-1",
+      "title": "Extra 4",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-14",
+      "createdOrder": 14,
+      "projectId": "p-1",
+      "title": "Extra 5",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-15",
+      "createdOrder": 15,
+      "projectId": "p-1",
+      "title": "Extra 6",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    },
+    {
+      "id": "t-16",
+      "createdOrder": 16,
+      "projectId": "p-1",
+      "title": "Extra 7",
+      "description": "",
+      "status": "todo",
+      "dependencyIds": [],
+      "priority": "normal"
+    }
+  ]
+}

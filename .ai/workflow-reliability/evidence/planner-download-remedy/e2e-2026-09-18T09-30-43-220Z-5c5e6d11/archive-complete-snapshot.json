@@ -1,0 +1,163 @@
+{
+  "lifecycle": {
+    "effectiveLaunch": {
+      "browserLaunched": true,
+      "engine": "chrome",
+      "launchHash": 12322476442320500000
+    },
+    "launched": false,
+    "relaunchedBrowser": false,
+    "restartedBackground": false,
+    "restoreStatus": "not_configured",
+    "reused": true,
+    "saveStatus": "not_attempted"
+  },
+  "origin": "http://127.0.0.1:59541/?projectId=p-9&archived=true",
+  "refs": {
+    "e1": {
+      "name": "Reload latest",
+      "role": "button"
+    },
+    "e10": {
+      "name": "Pagination",
+      "role": "navigation"
+    },
+    "e11": {
+      "name": "Projects",
+      "role": "link"
+    },
+    "e12": {
+      "name": "Archived projects",
+      "role": "link"
+    },
+    "e13": {
+      "name": "Dashboard",
+      "role": "link"
+    },
+    "e14": {
+      "name": "Project name",
+      "role": "textbox"
+    },
+    "e15": {
+      "name": "Create project",
+      "role": "button"
+    },
+    "e16": {
+      "name": "Search titles",
+      "role": "textbox"
+    },
+    "e17": {
+      "name": "Filter status",
+      "role": "combobox"
+    },
+    "e18": {
+      "name": "Filter priority",
+      "role": "combobox"
+    },
+    "e19": {
+      "name": "Apply filters",
+      "role": "button"
+    },
+    "e2": {
+      "name": "Team planner",
+      "role": "heading"
+    },
+    "e20": {
+      "name": "Clear filters",
+      "role": "button"
+    },
+    "e21": {
+      "name": "Previous",
+      "role": "button"
+    },
+    "e22": {
+      "name": "Next",
+      "role": "button"
+    },
+    "e23": {
+      "name": "Tasks per page",
+      "role": "combobox"
+    },
+    "e24": {
+      "name": "Empty lifecycle",
+      "role": "link"
+    },
+    "e25": {
+      "name": "All statuses",
+      "role": "option"
+    },
+    "e26": {
+      "name": "todo",
+      "role": "option"
+    },
+    "e27": {
+      "name": "in progress",
+      "role": "option"
+    },
+    "e28": {
+      "name": "done",
+      "role": "option"
+    },
+    "e29": {
+      "name": "All priorities",
+      "role": "option"
+    },
+    "e3": {
+      "name": "Main",
+      "role": "navigation"
+    },
+    "e30": {
+      "name": "low",
+      "role": "option"
+    },
+    "e31": {
+      "name": "normal",
+      "role": "option"
+    },
+    "e32": {
+      "name": "high",
+      "role": "option"
+    },
+    "e33": {
+      "name": "2",
+      "role": "option"
+    },
+    "e34": {
+      "name": "10",
+      "role": "option"
+    },
+    "e35": {
+      "name": "25",
+      "role": "option"
+    },
+    "e36": {
+      "name": "50",
+      "role": "option"
+    },
+    "e4": {
+      "name": "Archived projects",
+      "role": "heading"
+    },
+    "e5": {
+      "name": "Empty lifecycle",
+      "role": "heading"
+    },
+    "e6": {
+      "name": "Restore project",
+      "role": "button"
+    },
+    "e7": {
+      "name": "Download CSV",
+      "role": "button"
+    },
+    "e8": {
+      "name": "Project totals",
+      "role": "region"
+    },
+    "e9": {
+      "name": "Add task",
+      "role": "button"
+    }
+  },
+  "snapshot": "- banner\n  - heading \"Team planner\" [level=1, ref=e2]\n  - navigation \"Main\" [ref=e3]\n    - link \"Projects\" [ref=e11]\n    - link \"Archived projects\" [ref=e12]\n    - link \"Dashboard\" [ref=e13]\n- status\n  - StaticText \"Project archived. Tasks are read-only.\"\n- button \"Reload latest\" [ref=e1]\n- complementary \"Projects\"\n  - heading \"Archived projects\" [level=2, ref=e4]\n  - form\n    - LabelText\n      - StaticText \"Project name\"\n    - textbox \"Project name\" [required, ref=e14]\n    - button \"Create project\" [ref=e15]\n  - list\n    - listitem [level=1]\n      - ListMarker \"• \"\n      - link \"Empty lifecycle\" [ref=e24]\n- main\n  - heading \"Empty lifecycle\" [level=2, ref=e5]\n  - status\n    - StaticText \"Archived — tasks are read-only. Restore this project to make changes.\"\n  - button \"Restore project\" [ref=e6]\n  - button \"Download CSV\" [ref=e7]\n  - StaticText \"Exports all tasks, not just this page.\"\n  - region \"Project totals\" [ref=e8]\n    - paragraph\n      - StaticText \"Total: 0\"\n    - paragraph\n      - StaticText \"Todo: 0\"\n    - paragraph\n      - StaticText \"In progress: 0\"\n    - paragraph\n      - StaticText \"Done: 0\"\n    - paragraph\n      - StaticText \"Blocked: 0\"\n    - paragraph\n      - StaticText \"Completion %: 0\"\n  - form \"Task filters\"\n    - LabelText\n      - StaticText \"Search titles\"\n    - textbox \"Search titles\" [ref=e16]\n    - LabelText\n      - StaticText \"Filter status\"\n    - combobox \"Filter status\" [expanded=false, ref=e17]: All statuses\n      - MenuListPopup\n        - option \"All statuses\" [selected, ref=e25]\n        - option \"todo\" [ref=e26]\n        - option \"in progress\" [ref=e27]\n        - option \"done\" [ref=e28]\n    - LabelText\n      - StaticText \"Filter priority\"\n    - combobox \"Filter priority\" [expanded=false, ref=e18]: All priorities\n      - MenuListPopup\n        - option \"All priorities\" [selected, ref=e29]\n        - option \"low\" [ref=e30]\n        - option \"normal\" [ref=e31]\n        - option \"high\" [ref=e32]\n    - button \"Apply filters\" [ref=e19]\n    - button \"Clear filters\" [ref=e20]\n  - button \"Add task\" [disabled, ref=e9]\n  - paragraph\n    - StaticText \"No tasks in this archived project.\"\n  - navigation \"Pagination\" [ref=e10]\n    - button \"Previous\" [disabled, ref=e21]\n    - StaticText \"Page 1 of 0 · 0 tasks\"\n    - button \"Next\" [disabled, ref=e22]\n    - LabelText\n      - StaticText \"Tasks per page\"\n    - combobox \"Tasks per page\" [expanded=false, ref=e23]: 10\n      - MenuListPopup\n        - option \"2\" [ref=e33]\n        - option \"10\" [selected, ref=e34]\n        - option \"25\" [ref=e35]\n        - option \"50\" [ref=e36]"
+}

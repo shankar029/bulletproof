@@ -169,17 +169,23 @@ machine-specific interpreter. The runner owns command deadlines and child cleanu
 
 The runner discovers the pinned CLI in the npm cache. For another installation,
 set `AGENT_BROWSER_BIN` to its native executable (the adjacent package must be
-version 0.37.1). It uses benchmark Playwright **only to launch and close** an
-owned headless Chromium browser. All browser actions, DOM assertions, screenshots
-and axe audits use agent-browser over an explicit `http://127.0.0.1:<port>` CDP
-connection. No external app server or existing browser session is accepted.
+version 0.37.1). Benchmark Playwright **only locates the installed Chromium
+executable**; agent-browser launches and owns a fresh headless browser session.
+All browser actions, DOM assertions, screenshots and axe audits use agent-browser.
+No external app server or existing browser session is accepted. CSV checks click
+the actual UI button, wait for a new completed file in the configured download
+directory, and compare its bytes and parsed rows. Completed files move to unique
+evidence names before the next export because managed Chrome can overwrite the
+same download filename. The harness does not use the `download` command, which
+canceled transfers in the tested Windows environment, or treat HTTP responses
+as saved files.
 
 Every invocation creates a unique ignored `.work\e2e-*` directory. Each flow has
 its own real app process, port 0 and fresh data; restarts use that same flow's data
 in a different process. The migration flow starts with the captured v1 fixture.
 The Windows test-only IPC bridge exercises the CLI's installed graceful signal
 handler; it does not claim native Ctrl+C key delivery. Cleanup closes only owned
-PIDs/browser session and removes only the owned browser profile. Data, HTTP and
+PIDs/browser session; the CLI owns browser/profile cleanup. Data, HTTP and
 command transcripts, source hashes, screenshots, snapshots, axe findings and
 `report.json` remain in that run directory, including on failure.
 
@@ -190,5 +196,11 @@ navigation and 390/1280px layout targets. Native unit tests are not UI proof.
 The archive journey adds lossless lifecycle/restart, archived server/UI write
 rejection, two-client stale drafts, coherent-load failures and CSV download checks.
 Download failures are recorded as failures, not converted into successful HTTP-only proof.
+The current Windows verification remains partial: active, archived and stale-client
+saved CSVs have passed bounded checks, but intermittent CLI waits/DOM queries followed
+by an empty browser page have prevented a clean final all-flow run. Empty-project
+browser export remains unverified. Its cause is not established; native tests alone
+do not close this browser gap. See the
+[raw-run reconciliation](../../.ai/workflow-reliability/evidence/planner-download-remedy-adjudication.json).
 Review the report's findings as well as its flow results: axe is not full WCAG
 certification or human design approval, and incomplete checks remain explicit.

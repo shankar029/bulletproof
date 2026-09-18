@@ -1,0 +1,239 @@
+{
+  "lifecycle": {
+    "effectiveLaunch": {
+      "browserLaunched": true,
+      "engine": "chrome",
+      "launchHash": 12322476442320500000
+    },
+    "launched": false,
+    "relaunchedBrowser": false,
+    "restartedBackground": false,
+    "restoreStatus": "not_configured",
+    "reused": true,
+    "saveStatus": "not_attempted"
+  },
+  "origin": "http://127.0.0.1:50096/?projectId=p-2&archived=false",
+  "refs": {
+    "e1": {
+      "name": "Reload latest",
+      "role": "button"
+    },
+    "e10": {
+      "name": "=SUM(1,2)",
+      "role": "article"
+    },
+    "e11": {
+      "name": "Launch todo",
+      "role": "article"
+    },
+    "e12": {
+      "name": "Launch blocked",
+      "role": "article"
+    },
+    "e13": {
+      "name": "Launch later",
+      "role": "article"
+    },
+    "e14": {
+      "name": "Running",
+      "role": "article"
+    },
+    "e15": {
+      "name": "Finished",
+      "role": "article"
+    },
+    "e16": {
+      "name": "Pagination",
+      "role": "navigation"
+    },
+    "e17": {
+      "name": "Projects",
+      "role": "link"
+    },
+    "e18": {
+      "name": "Archived projects",
+      "role": "link"
+    },
+    "e19": {
+      "name": "Dashboard",
+      "role": "link"
+    },
+    "e2": {
+      "name": "Team planner",
+      "role": "heading"
+    },
+    "e20": {
+      "name": "Project name",
+      "role": "textbox"
+    },
+    "e21": {
+      "name": "Create project",
+      "role": "button"
+    },
+    "e22": {
+      "name": "Search titles",
+      "role": "textbox"
+    },
+    "e23": {
+      "name": "Filter status",
+      "role": "combobox"
+    },
+    "e24": {
+      "name": "Filter priority",
+      "role": "combobox"
+    },
+    "e25": {
+      "name": "Apply filters",
+      "role": "button"
+    },
+    "e26": {
+      "name": "Clear filters",
+      "role": "button"
+    },
+    "e27": {
+      "name": "=SUM(1,2)",
+      "role": "heading"
+    },
+    "e28": {
+      "name": "Edit",
+      "role": "button"
+    },
+    "e29": {
+      "name": "Launch todo",
+      "role": "heading"
+    },
+    "e3": {
+      "name": "Main",
+      "role": "navigation"
+    },
+    "e30": {
+      "name": "Edit",
+      "role": "button"
+    },
+    "e31": {
+      "name": "Launch blocked",
+      "role": "heading"
+    },
+    "e32": {
+      "name": "Edit",
+      "role": "button"
+    },
+    "e33": {
+      "name": "Launch later",
+      "role": "heading"
+    },
+    "e34": {
+      "name": "Edit",
+      "role": "button"
+    },
+    "e35": {
+      "name": "Running",
+      "role": "heading"
+    },
+    "e36": {
+      "name": "Edit",
+      "role": "button"
+    },
+    "e37": {
+      "name": "Finished",
+      "role": "heading"
+    },
+    "e38": {
+      "name": "Edit",
+      "role": "button"
+    },
+    "e39": {
+      "name": "Previous",
+      "role": "button"
+    },
+    "e4": {
+      "name": "Projects",
+      "role": "heading"
+    },
+    "e40": {
+      "name": "Next",
+      "role": "button"
+    },
+    "e41": {
+      "name": "Tasks per page",
+      "role": "combobox"
+    },
+    "e42": {
+      "name": "Still active",
+      "role": "link"
+    },
+    "e43": {
+      "name": "@Team,\"Unicode 日\"",
+      "role": "link"
+    },
+    "e44": {
+      "name": "All statuses",
+      "role": "option"
+    },
+    "e45": {
+      "name": "todo",
+      "role": "option"
+    },
+    "e46": {
+      "name": "in progress",
+      "role": "option"
+    },
+    "e47": {
+      "name": "done",
+      "role": "option"
+    },
+    "e48": {
+      "name": "All priorities",
+      "role": "option"
+    },
+    "e49": {
+      "name": "low",
+      "role": "option"
+    },
+    "e5": {
+      "name": "@Team,\"Unicode 日\"",
+      "role": "heading"
+    },
+    "e50": {
+      "name": "normal",
+      "role": "option"
+    },
+    "e51": {
+      "name": "high",
+      "role": "option"
+    },
+    "e52": {
+      "name": "2",
+      "role": "option"
+    },
+    "e53": {
+      "name": "10",
+      "role": "option"
+    },
+    "e54": {
+      "name": "25",
+      "role": "option"
+    },
+    "e55": {
+      "name": "50",
+      "role": "option"
+    },
+    "e6": {
+      "name": "Archive project",
+      "role": "button"
+    },
+    "e7": {
+      "name": "Download CSV",
+      "role": "button"
+    },
+    "e8": {
+      "name": "Project totals",
+      "role": "region"
+    },
+    "e9": {
+      "name": "Add task",
+      "role": "button"
+    }
+  },
+  "snapshot": "- banner\n  - heading \"Team planner\" [level=1, ref=e2]\n  - navigation \"Main\" [ref=e3]\n    - link \"Projects\" [ref=e17]\n    - link \"Archived projects\" [ref=e18]\n    - link \"Dashboard\" [ref=e19]\n- status\n- alert\n  - StaticText \"Data changed while loading. Use Reload latest.\"\n- button \"Reload latest\" [ref=e1]\n- complementary \"Projects\"\n  - heading \"Projects\" [level=2, ref=e4]\n  - form\n    - LabelText\n      - StaticText \"Project name\"\n    - textbox \"Project name\" [disabled, required, ref=e20]\n    - button \"Create project\" [disabled, ref=e21]\n  - list\n    - listitem [level=1]\n      - ListMarker \"• \"\n      - link \"Still active\" [ref=e42]\n    - listitem [level=1]\n      - ListMarker \"• \"\n      - link \"@Team,\\\"Unicode 日\\\"\" [ref=e43]\n- main\n  - heading \"@Team,\\\"Unicode 日\\\"\" [level=2, ref=e5]\n  - button \"Archive project\" [disabled, ref=e6]\n  - button \"Download CSV\" [ref=e7]\n  - StaticText \"Exports all tasks, not just this page.\"\n  - region \"Project totals\" [ref=e8]\n    - paragraph\n      - StaticText \"Total: 6\"\n    - paragraph\n      - StaticText \"Todo: 4\"\n    - paragraph\n      - StaticText \"In progress: 1\"\n    - paragraph\n      - StaticText \"Done: 1\"\n    - paragraph\n      - StaticText \"Blocked: 1\"\n    - paragraph\n      - StaticText \"Completion %: 16\"\n  - form \"Task filters\"\n    - LabelText\n      - StaticText \"Search titles\"\n    - textbox \"Search titles\" [ref=e22]\n    - LabelText\n      - StaticText \"Filter status\"\n    - combobox \"Filter status\" [expanded=false, ref=e23]: All statuses\n      - MenuListPopup\n        - option \"All statuses\" [selected, ref=e44]\n        - option \"todo\" [ref=e45]\n        - option \"in progress\" [ref=e46]\n        - option \"done\" [ref=e47]\n    - LabelText\n      - StaticText \"Filter priority\"\n    - combobox \"Filter priority\" [expanded=false, ref=e24]: All priorities\n      - MenuListPopup\n        - option \"All priorities\" [selected, ref=e48]\n        - option \"low\" [ref=e49]\n        - option \"normal\" [ref=e50]\n        - option \"high\" [ref=e51]\n    - button \"Apply filters\" [ref=e25]\n    - button \"Clear filters\" [ref=e26]\n  - button \"Add task\" [disabled, ref=e9]\n  - article \"=SUM(1,2)\" [ref=e10]\n    - heading \"=SUM(1,2)\" [level=3, ref=e27]\n    - StaticText \"todo\"\n    - paragraph\n      - StaticText \"Priority: normal\"\n    - paragraph\n      - StaticText \"Restored edit\"\n    - button \"Edit\" [disabled, ref=e28]\n  - article \"Launch todo\" [ref=e11]\n    - heading \"Launch todo\" [level=3, ref=e29]\n    - StaticText \"todo\"\n    - paragraph\n      - StaticText \"Priority: low\"\n    - paragraph\n      - StaticText \"plain\"\n    - button \"Edit\" [disabled, ref=e30]\n  - article \"Launch blocked\" [ref=e12]\n    - heading \"Launch blocked\" [level=3, ref=e31]\n    - StaticText \"blocked (todo)\"\n    - paragraph\n      - StaticText \"Priority: high\"\n    - paragraph\n      - StaticText \"@SUM(1,2)\"\n    - button \"Edit\" [disabled, ref=e32]\n  - article \"Launch later\" [ref=e13]\n    - heading \"Launch later\" [level=3, ref=e33]\n    - StaticText \"todo\"\n    - paragraph\n      - StaticText \"Priority: normal\"\n    - button \"Edit\" [disabled, ref=e34]\n  - article \"Running\" [ref=e14]\n    - heading \"Running\" [level=3, ref=e35]\n    - StaticText \"in progress\"\n    - paragraph\n      - StaticText \"Priority: normal\"\n    - paragraph\n      - StaticText \"safe\"\n    - button \"Edit\" [disabled, ref=e36]\n  - article \"Finished\" [ref=e15]\n    - heading \"Finished\" [level=3, ref=e37]\n    - StaticText \"done\"\n    - paragraph\n      - StaticText \"Priority: high\"\n    - paragraph\n      - StaticText \"line return pair\"\n    - button \"Edit\" [disabled, ref=e38]\n  - navigation \"Pagination\" [ref=e16]\n    - button \"Previous\" [disabled, ref=e39]\n    - StaticText \"Page 1 of 1 · 6 tasks\"\n    - button \"Next\" [disabled, ref=e40]\n    - LabelText\n      - StaticText \"Tasks per page\"\n    - combobox \"Tasks per page\" [expanded=false, ref=e41]: 10\n      - MenuListPopup\n        - option \"2\" [ref=e52]\n        - option \"10\" [selected, ref=e53]\n        - option \"25\" [ref=e54]\n        - option \"50\" [ref=e55]"
+}

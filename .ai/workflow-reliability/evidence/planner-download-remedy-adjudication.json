@@ -1,0 +1,102 @@
+{
+  "kind": "Parent reconciliation of raw verification artifacts; supersedes unsupported verifier prose, not the raw records.",
+  "evidenceRoot": "planner-download-remedy",
+  "originalHarnessSha256": "040026d434c890b8046a712523c154ac356e4feeb4112a398b8d49bbc27a6045",
+  "correctedHarnessSha256": "af0db71390001f57ab85ca4ed3350081431fb467d01bbf843ac4c88047717bfc",
+  "runs": [
+    {
+      "id": "e2e-2026-09-18T09-30-43-220Z-5c5e6d11",
+      "started": "2026-09-18T09:30:43.228Z",
+      "finished": "2026-09-18T09:39:46.825Z",
+      "status": "FAILED",
+      "passingCheckRecords": 204,
+      "cliCommands": 625,
+      "nonzeroCliCommands": 0,
+      "completedDownloadComparisons": 2,
+      "failure": "Archived download completed its CLI steps but the harness found no NEW directory entry; stale-client and empty download cases were then blocked."
+    },
+    {
+      "id": "e2e-2026-09-18T09-30-53-260Z-6dfb69cb",
+      "started": "2026-09-18T09:30:53.265Z",
+      "finished": "2026-09-18T09:38:28.693Z",
+      "status": "FAILED",
+      "passingCheckRecords": 157,
+      "cliCommands": 486,
+      "nonzeroCliCommands": [
+        {"number": 478, "exitCode": 124},
+        {"number": 481, "exitCode": 1}
+      ],
+      "completedDownloadComparisons": 2,
+      "failure": "Wait-for-text command timed out; the subsequent snapshot was about:blank and a navigation selector was missing.",
+      "cause": "UNKNOWN. The filename-discovery code runs AFTER this wait, so its failure does not establish why this earlier command timed out."
+    }
+  ],
+  "executionAccounting": {
+    "observed": "Two run intervals overlap by several minutes. They are not sequential before/after tests.",
+    "unresolved": "The verifier calls the first directory prior work, but has not established its initiating owner/tool call. Neither a single-run claim nor an attribution of both launches to one owner is established here.",
+    "policy": "Do not combine counts or describe the pair as a clean single invocation."
+  },
+  "sourceBinding": {
+    "preRunFile": "planner-download-remedy/pre-run-source-hashes.json",
+    "actualPreRunEntries": 13,
+    "actualScope": "Nine src files, three public files and the E2E harness.",
+    "harnessProducedChecks": "Both run reports bind 12 src/public files and finish with changedSources=[].",
+    "missing": "README and test-source pre/post pins were not retained; an independent final harness hash was not retained.",
+    "correction": "The verifier's statements of 12 total captured files and no possible source-change detection are both too broad. The actual partial binding above is what is supported."
+  },
+  "causalEvidence": {
+    "firstControl": "download-transport-control/report.json",
+    "repeatControl": "repeat-download-control/report.json",
+    "established": "Two blob downloads with distinct response bytes save at the same completed filename. The page remains live and the success notice exists. New-name-only discovery therefore misses valid repeated downloads.",
+    "notEstablished": "This does not prove the production archived page emitted a notice during the timed-out run, nor identify that timeout's cause.",
+    "fix": "Move each completed actual browser file to its unique retained evidence path so a later same-name download must create a fresh inbox file. Production app code is unchanged.",
+    "verification": "The subsequent serial replay verified three saved CSV comparisons, but failed overall at the empty-export notice wait. The final file-first replay below also failed. No clean all-flow pass."
+  },
+  "nativeResult": {
+    "tests": 46,
+    "passed": 46,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "coveragePercent": {"line": 99.40, "branch": 97.56, "function": 97.03},
+    "scope": "Backend native suite, not frontend or qualified changed-line coverage."
+  },
+  "unsupportedVerifierClaims": [
+    "The second timeout was caused by filename overwriting or file discovery starving the wait.",
+    "The first run's downloads directory was empty: its failure only says there were no new entries.",
+    "All archived exports or production notifications were proved by the independent minimal control.",
+    "Four of five attempted downloads succeeded: each retained full-run report records two completed comparisons.",
+    "A claim of corrected interpretation automatically validates the verifier's subsequent summary."
+  ],
+  "serialReplay": {
+    "id": "e2e-2026-09-18T09-57-31-865Z-9add99c4",
+    "report": "planner-download-remedy-serial/.work/e2e-2026-09-18T09-57-31-865Z-9add99c4/report.json",
+    "exitCode": 1,
+    "status": "FAILED",
+    "passingCheckRecords": 74,
+    "cliCommandRecords": 218,
+    "completedDownloadComparisons": ["active", "archived-filtered-page2", "stale-client-after-archive"],
+    "failedScenario": "empty-download",
+    "failure": "Command211 wait-for-text exited124 after25 seconds of silence. Commands212-218 did execute, including empty-page snapshots and successful CLI close.",
+    "cause": "UNKNOWN. No assertion that an empty-project production defect or the previous filename bug caused this timeout.",
+    "correctionsToVerifierProse": "The raw records contain218 commands, not217, and the inner deadline was25 seconds, not120. A failed flow is not a100% pass rate.",
+    "nextObservationPath": "The repeated wait-for-text primitive is blocked after two idle kills. The harness now waits for the actual completed file first, with the unchanged12-second file bound, then asserts the exact notice text through ordinary DOM inspection. Both file and notice assertions remain required.",
+    "nextHarnessSha256": "9ca5288b3091e5488f28d5d3a673e2335bc213542f04e89d5d3dcf50d9f7565e",
+    "nextVerification": "Completed as the failed fileFirstReplay below, not a retry of the blocked wait command. No further browser trials authorized."
+  },
+  "fileFirstReplay": {
+    "id": "e2e-2026-09-18T10-11-44-050Z-5284b601",
+    "report": "planner-download-file-first/e2e-2026-09-18T10-11-44-050Z-5284b601/report.json",
+    "harnessSha256": "9ca5288b3091e5488f28d5d3a673e2335bc213542f04e89d5d3dcf50d9f7565e",
+    "exitCode": 1,
+    "status": "FAILED",
+    "passingCheckRecords": 57,
+    "cliCommandRecords": 144,
+    "completedDownloadComparisons": ["active", "archived-filtered-page2"],
+    "failure": "Command136 ordinary DOM eval hit25s idle during stale-client notice assertion, after the physical file was retained. Command138 showed about:blank; command139 failed its editor selector. Command144 closed the owned browser successfully.",
+    "sourceBinding": "Harness report binds12 app src/public files and changedSources=[]. Separate pre/post manifests contain both valid hashes and invented/missing paths with null hashes; null equality is not evidence. README was again checked at the wrong path and is unbound.",
+    "cause": "UNKNOWN. Failure is not limited to the wait-for-text primitive. No app production patch is justified by this observation.",
+    "disposition": "Stop browser trials after these bounded alternatives. Preserve actual working download scenarios and every failed overall result; do not claim a completed browser suite."
+  },
+  "overall": "Incomplete verification; no full browser pass, final independent approval, qualified metrics or G6 closure."
+}
