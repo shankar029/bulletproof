@@ -49,6 +49,18 @@ digest. Even empty-tool Q1 binds these two new modules: the old empty toolset
 formula changes explicitly, not via a silent compatibility fallback. Config,
 Context and report field shapes remain unchanged.
 
+Native coexistence is source-verified, not inferred from controller count:
+`measure_js.mjs:449-460` checks hash syntax, parser identity and settings identity;
+`1070-1078` requires binding.toolset_sha256 equal Context.toolset_sha256.
+`commandCompiler` at `1012-1050` independently validates the pinned TypeScript
+qualification, runtime/resources and settings. There is no native reconstruction
+of Python's canonical toolset_digest object/formula (all `toolset` occurrences
+are those field/check sites). The new opaque digest therefore passes unchanged
+JSRequestV1 when identically bound in request/context; native compiler checks
+remain independent and unchanged. Python owners remain responsible for
+recomputing the augmented digest from source before/after execution and acceptance.
+This is not a claim that native validates the extra Python producers itself.
+
 Add `measure_tools.producer_binding(root)` returning the fixed two-file map,
 with independent regular-file, canonical-path and hash checks. Executing and
 accepting owners compare the live map with the copied controller map before
