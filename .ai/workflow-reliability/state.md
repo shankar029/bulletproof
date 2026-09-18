@@ -5,7 +5,7 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: bounded native JS producer preserved in `3f7a77a`; Python integration is fixing an independently found CRLF defect. App checkpoint integrated as `c41fdf2`/`81a5921`; bounded harness corrections have real download proof but final browser acceptance is blocked.
+- Phase: reviewed Python/JS integration is completing its frozen handoff; remaining scalar adapters are being implemented on a disjoint branch. Planner checkpoint `1d12f5c` preserves bounded real-download proof and explicit final browser blockers.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
 - Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
@@ -56,6 +56,25 @@ The continuation addendum replaces implementation-dispatch dependencies only; it
 close I1.T4 or remove any required measurement, independent role or final acceptance check.
 
 ## Native command continuation
+- Current parent guard regression: 133 tests passed in 620.198 seconds, exit 0,
+  with all 46 tracked script-input hashes unchanged and owned temporary fixtures
+  removed. Exact command, raw output and CLI transcript are retained under
+  `evidence/guard-regression-20260918T103241-87ab79/`. This is owner-run existing
+  workflow regression on the pre-integration parent tree, not independent
+  acceptance, a successful real metric receipt or qualified recovery.
+- Scalar session `72aba2d4-0cc0-4bdd-8b7a-8336485fe0a1` owns only the new scalar
+  module, scalar-specific tests and its task artifacts until the JS controller
+  freeze is released. The owner reports real jscpd/lizard cases passing while
+  broader scalar tests continue. Composition remains unimplemented: the current
+  qualified-tool binding helpers are measure-owned, and no lower-layer accessor
+  exists. A narrow reviewed extraction/ownership amendment must preserve all
+  producer pins and the exact six-file JS request boundary before wiring.
+- JS integration owner reports final nine-method selection passing in 1280.761
+  seconds, public/Python three-method selection passing in 500.634 seconds and
+  explicit-mode/config two-method selection passing in 39.367 seconds. CRLF
+  correction has same-reviewer code approval. These await the reviewed commit,
+  raw-evidence reconciliation and parent integration. Owner execution is not
+  relabeled independent execution; the earlier selector error remains separate.
 - Fresh-worktree setup correction: `13e1d309` preserves six required qualification
   logs that ignore rules had excluded. Exactly 22 selected inputs were reconciled:
   16 existing child copies were byte-identical and six were copied exclusively.
