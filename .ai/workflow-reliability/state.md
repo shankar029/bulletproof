@@ -5,7 +5,7 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: bounded native JS producer independently reviewed and tested; preservation pending. Fresh app implementation is reported complete with final verification still running. Remaining JS integration is unfinished.
+- Phase: bounded native JS producer preserved in `3f7a77a`; Python integration runs in a dependent isolated session. Fresh app implementation is reported complete with final verification still running.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
 - Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
@@ -38,7 +38,8 @@
 
 ## Next action
 Continue the fresh app-driven workflow exercise in its isolated session while
-the parent preserves the accepted native command boundary. The former JS
+the dependent Python integration session completes the accepted orchestration,
+manifest, graph and replay boundary. The former JS
 owner is cancelled; its accepted resume message did not establish execution.
 Candidate-test observability is corrected in `eae52fe`; README
 and guides clarify the manual-work boundary in `8577642`. This is resumption
@@ -79,6 +80,22 @@ close I1.T4 or remove any required measurement, independent role or final accept
   side-effect sentinel. Those final changes are covered by the independent run.
   The earlier 12-method run and two separately passing Python compatibility
   methods (70.298s) predate this final delta; counts are not added as fresh tests.
+- FACT: checkpoint `3f7a77a19334fea1f4941fb186bcd88b0a121631` preserves the
+  producer, documentation, test/evidence and three-page report. Parent verified
+  current source pins, archived output hashes and actual staged checkout bytes.
+- Successor session `ca7cdaa3-43a2-45c2-8147-b571fa975c46`, branch
+  `shbs-microsoft-js-measurement-integration`, starts from that newly completed
+  dependency and owns Python orchestration/manifests/graph/accepting replay.
+  Live activity reports busy. This is the next integration increment, not another
+  native producer implementation. Its new task artifacts are isolated under
+  `.ai/js-measurement-integration`; it may not rewrite this parent's history.
+  Scalars, coverage, guarded metrics, recovery and publication remain excluded
+  from that bounded assignment and remain unfinished overall.
+- Reviewer subsequently returned the exact invocation and all eight before/after
+  hashes from the existing transcript, without another run. Parent matched each
+  to the final source pins and recorded the invocation in
+  `evidence/js-command-native-independent.json`. This does not create a raw
+  evidence file or a second verification result.
 
 ## Candidate-test progress correction
 - Scope: trivial test-harness observability correction, not production parser or

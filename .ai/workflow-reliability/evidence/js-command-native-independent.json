@@ -16,7 +16,29 @@
     "native_idle_seconds": 30,
     "native_max_seconds": 90,
     "original_evidence": "Reviewer agent transcript, tool execution js-producer-independent-final",
-    "raw_evidence_file": null
+    "raw_evidence_file": null,
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+    "argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "scripts/run.py",
+      "--idle",
+      "120",
+      "--max",
+      "600",
+      "--",
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts/tests",
+      "-p",
+      "test_measure_js_command.py",
+      "-v"
+    ],
+    "pin_reconciliation": "Reviewer returned all eight exact before/after hashes; each matches parent_observed_final_sha256 below. Parent reconciled current bytes without rerunning tests."
   },
   "parent_observed_final_sha256": {
     "scripts/measure_js.mjs": "ef4bef16abf6c04b559baa45929f49e0f92b76df4a1d30b542dbe877c0e204d5",
