@@ -134,6 +134,25 @@ validation is not a substitute for native accepting replay:** aggregate
 before accepting mixed scalar observations. Structural native decoding alone
 cannot establish acceptance. This remains the producer-owned compound boundary.
 
+### Static diagnostic location projection (parent-approved clarification)
+
+The parent explicitly approved this narrow policy on 2026-09-18; the original
+design reviewer was synchronous and cannot receive a follow-up. A narrow
+independent disposition remains pending, and is not claimed as same-reviewer.
+
+For static Finding only, `path` and `span` may both be null if the raw diagnostic
+has no representable nonempty SUBJECT span. The distinct projection reason must
+be bound in `identity_parts`: `source-less`, `non-subject`, or
+`zero-width-subject`. Where present, bind the real input scope, path, source
+SHA-256, UTF-16 start/length and exact byte range, as well as the qualified
+diagnostic code/message arguments. Retain the exact raw record and count every
+diagnostic. Null does not erase known location identity.
+
+Do not fabricate an adjacent byte for a point diagnostic or drop a tool-resource
+diagnostic. Subject diagnostics with nonempty spans retain their real path/span.
+SyntaxEvidence, mutation candidates and all other nonempty Span rules remain
+unchanged. This explicitly extends only the prior Finding null-pair restriction.
+
 Fresh JS replay finishes at the explicit graph-produced.json phase without
 requiring scalar collection a second time. Its expected scalar slots remain
 reserved but absent and any populated scalar slot at that terminal phase

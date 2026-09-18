@@ -1,0 +1,12 @@
+Command execution record
+========================
+Timestamp: 2026-09-18 16:15:08.083
+Working directory: C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-glowing-journey
+Python executable: C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\python.exe
+PYTHONDONTWRITEBYTECODE: 1
+PYTHONUTF8: 1
+SCALAR_EVIDENCE: C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-glowing-journey\.ai\scalar-measurement\evidence\independent-worker-1
+PATH prepended with: C:\Users\shbs\AppData\Local\github-copilot-git-2.53.0-4\cmd
+
+Full command line:
+C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\python.exe -B scripts\run.py --idle 120 --max 900 -- same-python -B -m unittest discover -s scripts\tests -p test_measure_scalars.py -v

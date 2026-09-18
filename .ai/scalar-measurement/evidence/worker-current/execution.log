@@ -1,0 +1,23 @@
+test_duplicate_locations_are_unioned_not_averaged (test_measure_scalars.ScalarArithmeticTests.test_duplicate_locations_are_unioned_not_averaged) ... ok
+test_empty_function_population_is_unavailable (test_measure_scalars.ScalarArithmeticTests.test_empty_function_population_is_unavailable) ... ok
+test_physical_lines_do_not_split_unicode_separators (test_measure_scalars.ScalarArithmeticTests.test_physical_lines_do_not_split_unicode_separators) ... ok
+test_ruff_unicode_columns_preserve_crlf_bytes (test_measure_scalars.ScalarArithmeticTests.test_ruff_unicode_columns_preserve_crlf_bytes) ... ok
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+test_jscpd_actual_clone_union_short_empty_and_comment_census (test_measure_scalars.ScalarToolTests.test_jscpd_actual_clone_union_short_empty_and_comment_census) ... ok
+test_lizard_actual_suppression_rejects_not_string_literals (test_measure_scalars.ScalarToolTests.test_lizard_actual_suppression_rejects_not_string_literals) ... ok
+test_lizard_actual_utf8_crlf_nested_and_zero_functions (test_measure_scalars.ScalarToolTests.test_lizard_actual_utf8_crlf_nested_and_zero_functions) ... ok
+test_lizard_strict_decode_failure_retains_other_file_receipts (test_measure_scalars.ScalarToolTests.test_lizard_strict_decode_failure_retains_other_file_receipts) ... ok
+test_ruff_actual_explicit_files_rules_unicode_and_noqa (test_measure_scalars.ScalarToolTests.test_ruff_actual_explicit_files_rules_unicode_and_noqa) ... ok
+test_ruff_actual_unicode_separator_and_formfeed_coordinates (test_measure_scalars.ScalarToolTests.test_ruff_actual_unicode_separator_and_formfeed_coordinates) ... ok
+test_vulture_actual_complete_batch_confidence_directives_and_resources (test_measure_scalars.ScalarToolTests.test_vulture_actual_complete_batch_confidence_directives_and_resources) ... ok
+test_vulture_type_comment_error_preserves_failed_batch_evidence (test_measure_scalars.ScalarToolTests.test_vulture_type_comment_error_preserves_failed_batch_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 103.230s
+
+OK
