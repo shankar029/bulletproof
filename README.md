@@ -169,6 +169,9 @@ before comparing scores.
   collection. Installing an analyzer or qualifying its launch does not collect its metrics.
 - Required unavailable measurements produce **incomplete/fail**. Passing the functional suites
   does not turn that into a release-quality pass.
+- Guarded `work` and `retire` actions require executable commands. Null-command handoffs
+  support **checks only**, not manual edits or tool-agent implementation. Confirm this fit
+  before adoption; never substitute a no-op command or label implementation as a check.
 - All nine metrics remain required. Registered metric commands run unchanged, but successful
   guarded attachment still needs producer-owned run ID, registered argv, source projection
   and raw-validation integration. No accepted metric receipt or positive quality closure is

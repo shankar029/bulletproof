@@ -106,8 +106,11 @@ decision or blocker changes rather than a stream of tool narration.
 
 After adoption, expect updates derived from actual `status` for the intended target.
 `next` runs only a registered action; `record` accepts an admitted return without changing
-its producer. Null-command handoffs do not launch an agent—the host must supply the actual
-fresh role. Ready action, executed command, accepted check and closed increment are different.
+its producer. Null-command **check** handoffs do not launch an agent—the host must supply the
+actual fresh role. Guarded work/retirement requires executable commands; manual editing or
+tool-agent implementation has no supported guarded handoff. Check this before adoption.
+Do not clear existing authority, substitute a no-op command or relabel work as a check to
+get past that limitation. Ready action, executed command, accepted check and closed increment are different.
 Required red and compatibility receipts must precede the action consuming them.
 Corrected research retains superseded claims and source/search scope instead of silently
 rewriting history. Direct test commands remain development/diagnostic evidence, not guarded

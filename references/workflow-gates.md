@@ -6,6 +6,12 @@ It is not yet the complete six-verb workflow: recovery is unavailable, and
 successful metric attachment awaits a qualified producer bridge. Required
 quality closure cannot succeed in this slice.
 
+**Manual-work boundary:** `work` and `retire` actions require a non-null executable
+command; only `check` actions support null-command handoffs. The CLI cannot currently
+admit ordinary manual edits or tool-agent implementation as guarded work. Assess this
+before adoption. An unsupported action is a blocker for guarded execution, not permission
+to erase live authority, run a no-op substitute or relabel implementation as a check.
+
 [Canonical skill](../SKILL.md) ·
 [Workspace/resume](workspace.md) · [Planning](planning.md) · [Measurement support](quality-metrics.md)
 
