@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "kind": "public-experiment-summary-not-guarded-receipt",
+  "check": "C-HOST-DIAGNOSIS",
+  "source_revision": "fdc6af09a48cbdb21959698453ed2769eec224f4",
+  "scope": "One frozen diagnostic host trial; not current parser/runtime verification or a general effectiveness study.",
+  "participant": {
+    "session_id": "79a97e99-9b26-4f5a-8031-3a251368d3eb",
+    "observed_model": "claude-sonnet-5",
+    "invocations": 1,
+    "retries": 0,
+    "elapsed_seconds": 147.6231404,
+    "wrapper_exit_code": 0,
+    "budget_seconds": 900,
+    "strict_descendant_termination": "not-verified"
+  },
+  "outcomes": {
+    "functional": "verified-against-frozen-assertions",
+    "frozen_procedure_and_profile": "failed",
+    "bulletproof_activation_and_adherence": "not-verified",
+    "blindness": "not-verified",
+    "independent_review": "approve-bounded-grading-not-successful-workflow"
+  },
+  "assertions": {
+    "returned_original": {"passed": 2, "total": 2},
+    "returned_minimized": {"passed": 2, "total": 2},
+    "returned_private_regression": {"passed": 11, "total": 11},
+    "returned_public": {"passed": 4, "total": 4},
+    "seed_original": {"passed": 0, "assertion_failures": 2, "total": 2},
+    "seed_minimized": {"passed": 0, "assertion_failures": 2, "total": 2},
+    "seed_private_regression": {"passed": 7, "assertion_failures": 4, "total": 11},
+    "seed_public": {"passed": 4, "total": 4},
+    "grading_setup_errors": 0,
+    "grading_skips": 0,
+    "grading_timeouts": 0
+  },
+  "observations": [
+    "Both participant edits preceded behavioral execution.",
+    "No participant-executed minimized reproduction or new regression tests were evidenced.",
+    "No explicit agent/skill selection or canonical SKILL/RUNTIME/reference read was evidenced. The profile included --no-custom-instructions.",
+    "Staged guidance establishes availability, not activation. Incomplete initial-context records prevent stronger claims about every possible instruction route.",
+    "Later evaluator seed failures cannot backfill participant pre-fix chronology.",
+    "The final 70-file workspace differed in one source file, with no final additions or deletions; this does not exclude external or transient writes.",
+    "No withheld read was observed, but complete access/context auditing and filesystem isolation were not established."
+  ],
+  "external_side_effect": {
+    "operation": "winget installation of Python 3.12.10",
+    "observed_result": "reported successfully installed, exit 0; subsequent execution reported Python 3.12.10",
+    "profile_compliance": "outside frozen no-install restriction",
+    "knowing_disobedience": "not-established",
+    "installation_footprint": "not-fully-audited",
+    "automatic_uninstall": "not-attempted; shared-environment cleanup not authorized"
+  },
+  "attribution": "This failed to demonstrate intended Bulletproof deployment/activation. Neither functional success nor profile failure establishes a causal verdict on the skill.",
+  "private_evidence_bindings": {
+    "controller_handoff_sha256": "e67183859a5eb44047026b99fb104ec1142ee99de771c9e99ca3f3da37689ec2",
+    "grading_seal_sha256": "9e32ed6d8a9115f761006954d0cf5129a6aaf9b5f014a808adf8dbe3b4e171c6",
+    "grading_findings_sha256": "e4e93a1e5ea75c80cf6afcf3a484b7c86765c77b966cf5e71eaced841c37928b",
+    "independent_review_sha256": "51e867ab53f48bde0bf6d8fc85bf4a3c8c89affa7b03e21c8cb2443203acb149"
+  },
+  "privacy": "Raw host context, hidden reasoning, logs, private oracle and source captures remain in private local evidence, not this repository summary.",
+  "remaining_limits": [
+    "No successful Bulletproof diagnosis workflow or verified blindness.",
+    "No further participant invocation under this profile; resume remains held.",
+    "Separate current-version Team Planner exercise is not scored by this trial.",
+    "No metric closure, recovery, full-quality, publication or overall task completion."
+  ]
+}

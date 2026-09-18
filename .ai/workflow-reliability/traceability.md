@@ -30,6 +30,13 @@ app inputs. This is existing-app regression proof, not a fresh agent-driven buil
 exercising all 29 updated workflow features. The first native capture-helper failure
 and its one corrected rerun are recorded separately.
 
+One real frozen-version diagnosis host trial was independently graded and reviewed:
+`evidence/c4-diagnosis-public-summary.json`. Returned behavior passes 15 private and
+four public assertions, but the procedure/profile fails; canonical skill activation
+and blindness are NOT-VERIFIED. The trial does not establish a Bulletproof
+effectiveness verdict. Its observed out-of-profile Python installation is disclosed;
+raw private evidence is not copied here. No repeat/resume launch is authorized.
+
 | AC | Priority | Contract | Status | Evidence |
 |---|---|---|---|---|
 | AC01 | P0 | ESM/CJS discovery, mutation routing and behavioral classification | VERIFIED-WITH-LIMITATIONS | Canonical discovery/routing/classification independently verified and reviewed; Windows/Node24 only. |
@@ -37,7 +44,7 @@ and its one corrected rerun are recorded separately.
 | AC03 | P0 | Source/contract/check/producer-bound increment readiness | VERIFIED-WITH-LIMITATIONS for ordinary routed work | Core proof plus independently exercised ordinary CLI admission and exact receipt consumption; `evidence/joint-cli-binding-code-review.md`. Metric attachment remains unavailable. |
 | AC04 | P0 | Real guarded command admission with explicit trust limits | Ordinary five-verb CLI VERIFIED-WITH-LIMITATIONS | `evidence/joint-cli-binding-r2-report.md` and separate review; `evidence/joint-cli-binding-code-review-r2.md` closes the binding correction. No positive metric/quality closure or recovery. |
 | AC05 | P1 | Artifact-only fresh-context resume and scoped invalidation | Ordinary fresh-process resume verified; host experiment pending | Independent selective resume, unaffected receipt preservation and finite adoption retry pass; not a fresh-agent host experiment or recovery proof. |
-| AC06 | P1 | Behavioral failure evaluations and held-out diagnosis | CLI failure pairs verified; held-out diagnosis pending | Native five entry points replay actual Python CLI scenarios; not five extra independent features or a live diagnosis study. |
+| AC06 | P1 | Behavioral failure evaluations and held-out diagnosis | CLI failures verified; live trial failed profile, activation/blindness NOT-VERIFIED | `evidence/c4-diagnosis-public-summary.json`: independent functional green cannot substitute for absent skill activation or pre-fix chronology. |
 | AC07 | P1 | Historical/current contract distinction and pre-retirement proof | C3 VERIFIED-WITH-LIMITATIONS; preservation approved | `evidence/c3-independent-report.md` and final `evidence/c3-code-review.md`: canonical authority/history and earlier exact compatibility consumption match source and CLI behavior. No actual host/migration qualification. |
 | AC08 | P2 | Scoped corrected research and authoritative status communication | C3 VERIFIED-WITH-LIMITATIONS; preservation approved | Independent source alignment and fresh status behavior; scoped correction/supersession and readiness guidance integrated. No new successful guarded research-production lifecycle is claimed. |
 | AC09 | All | Independent per-increment verification/review and preserved regressions | Joint bounded checkpoint approved; final quality BLOCKED | Earlier joint262/263 Python and native13; fresh R1 ten-method proof is separate. One symlink case environment-unverified; runtime/cleanup limits retained. No complete-Q2/quality proof. |
@@ -47,6 +54,8 @@ The overall request remains incomplete. Prior core/state seams are preserved in
 `5dabb4c`, `d971634` and `ee6e0e3`; ordinary CLI/tool bindings are now approved for
 bounded preservation in `dadce66`. C3 is preserved in `ce7c07e`, and the accepted shared-JS
 amendment in `fdc6af0`. Actual collectors, guarded metrics, C4 and I1.T4/Q still block release.
-C4 auxiliary preparation is on hold; no live participant result exists.
+C4 diagnosis has a reviewed, failed-profile result; resume remains held. The separate
+current-version Planner session continues procedurally before adoption because guarded
+manual edits are unsupported. This is not guarded execution or full-quality proof.
 No fixture score, self-review, or metadata checkbox waives these gates. Historical metric
 reports are not current quality proof after source changes.

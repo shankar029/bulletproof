@@ -5,7 +5,7 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: native serialization and its R1/R2 corrections are approved for bounded preservation, with the recurring grouped-test timeout explicitly unresolved. App-driven workflow work is next.
+- Phase: native serialization checkpoint preserved in `c6095e7`; fresh app-driven workflow session is running. Further internal pipeline expansion is paused.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
 - Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
@@ -37,9 +37,8 @@
 - No repeated uncoached model-effectiveness study claimed by deterministic tests.
 
 ## Next action
-Preserve the independently verified/reviewed native-serialization checkpoint.
-Then prioritize the actual app-driven workflow exercise rather than starting
-another internal implementation expansion. This changes execution priority,
+Observe the fresh app-driven workflow exercise rather than starting another
+internal implementation expansion. This changes execution priority,
 not acceptance criteria: command/manifests/replay, collectors and guarded
 metrics remain incomplete and are not waived.
 C3 is preserved. Recovery remains blocked;
@@ -249,6 +248,46 @@ close I1.T4 or remove any required measurement, independent role or final accept
   without browser/console errors. Scoped source/doc whitespace checks pass;
   raw captured whitespace is retained. Preservation details are in
   `evidence/q2-js-serialization-parent-preservation.json`.
+- FACT: checkpoint committed as `c6095e7a8242cb1794fe78ca8fb8ea97e1fb9478`;
+  193 scoped files, with only unrelated `evals/report.md` modified immediately
+  afterward. The unresolved grouped-test timeout is retained in the committed
+  report and evidence; no complete pipeline/quality pass is claimed.
+
+## Live app-driven workflow exercise
+- Fresh coordinated session `fb330153-9ef0-437c-832e-e3460d28f08b`
+  ("Live planner workflow") was created from this branch after `c6095e7`.
+  Its separate branch is `shbs-microsoft-live-planner-workflow`; worktree is
+  `C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular`.
+  The session tool reports it busy. This is a new context, not this conversation
+  continuing after compaction.
+- Actual app scope: add project archive/restore and deterministic, safely escaped
+  CSV export to the existing medium-complexity Team Planner, preserving persistence,
+  concurrency, dependencies, accessibility and existing formats or a safe migration.
+  It uses the current repository skill/runtime and a new `.ai/planner-live-workflow`
+  task workspace. It may not modify Bulletproof internals or repair missing tooling
+  capabilities to force a pass.
+- This is a guided single-case app enhancement, not a fresh-from-empty application,
+  blinded diagnosis, uncoached effectiveness study or proof of all 29 features.
+  Parent will assess original workflow criteria separately against observed work.
+  Historical app passes remain separate; no new live-app result exists yet.
+- Autonomous execution is authorized, human approval remains unconfirmed, and
+  publication remains prohibited by the unchanged EMU restriction. Genuine missing
+  metrics/gates must be reported blocked, not waived. The resume seed remains held;
+  the already-prepared diagnosis experiment is separately authorized below.
+- Child reports procedural G1/G2 reached with independent substantive review and
+  three-page design/UX artifacts, but no app edits yet. Its fresh planner found
+  guarded manual work unsupported: `_action` in `scripts/workflow_state.py`
+  rejects non-check actions with a null command. Parent confirmed this in source;
+  fake/no-op commands and relabeling edits as checks are not acceptable.
+- Parent directed continuation in explicitly unadopted procedural mode ONLY if
+  no live authority/admission exists. This uses the existing SKILL Phase 4
+  `design.html`-before-adoption path and conditional adopted-work obligations,
+  not a bypass of an adopted gate. Keep reviewed app design, revise the plan's
+  execution mode, retain the negative guarded candidate, implement with
+  apply_patch, and preserve real prerequisites/independent checks.
+  Direct execution remains procedural/unbound evidence, not guarded receipts.
+  Full guarded manual-edit coverage and metric closure remain blocked; the
+  mode decision does not manufacture a full workflow pass.
 
 ## Refreshed existing planner regression
 - FACT: `evidence/planner-refresh-942fbc75/native-result.json` records 37/37
@@ -268,7 +307,70 @@ close I1.T4 or remove any required measurement, independent role or final accept
   Both captures are retained rather than rewriting the first into a pass.
 
 ## C4 external preparation
-- HOLD after the user's duration concern: no further auxiliary preparation,
+- Current limited release: parent authorizes exactly one C-HOST-DIAGNOSIS dispatch
+  from the existing public packet, only after its unchanged read-only preflight.
+  Preparer `4243a746-070f-4e68-9d59-dd7ce1817390` owns that execution/capture,
+  not grading. No new qualification, fixture work, permission expansion, retry,
+  resume dispatch or production-repository change is authorized.
+- The public packet index is
+  `b15ecba744bf2270341109ea3ec290d95589d55e1c509d8e04ddc9a965b95308`.
+  Its frozen source is `fdc6af`, intentionally not updated after defect selection.
+  Parent compared SKILL.md and references against `c6095e7`: only
+  `references/quality-metrics.md` differs. This is a version-declared diagnostic
+  workflow trial, not current native-parser/collector verification.
+- Exact frozen neutral prompt, default host model and fresh empty COPILOT_HOME
+  remain required. Best-effort 900-second bound, private raw captures and all
+  access/blindness limitations remain intact. No host launch/pass is claimed
+  until the actual capture returns. Resume preparation remains held.
+- FACT: the single diagnosis participant returned after unchanged preflight:
+  session `79a97e99-9b26-4f5a-8031-3a251368d3eb`, actual model `claude-sonnet-5`,
+  wrapper exit 0 in 147.623s, no participant retry. Controller retained 70 returned
+  files, successful Git diff, 1,294 available events and private logs/transcript.
+  Its Path-type and Git NUL capture errors were corrected without rerunning the
+  participant. Exit 0 is transport completion, not a functional/workflow pass.
+- Wrapper exit, drained streams, idle event and stable captured bytes were observed;
+  complete access auditing and descendant termination remain unproven. Raw host
+  prompts/reasoning/logs remain private. The exact external run directory is
+  `c4-preparation/diagnosis-runs/diagnosis-001-20260918-1305-b671`.
+- Original evaluator `c6625c15-6dff-4d3e-8fac-828daa340104` is cancelled.
+  Fresh independent evaluator/verifier `81704751-5688-46db-8044-ee85c7fdbcdb`
+  now grades the already returned snapshot against the unchanged frozen private
+  oracle. No new defect, host retry or source/oracle repair is authorized.
+  Functional results, actual workflow activation/chronology and blindness are
+  assessed separately; mere presence of SKILL.md is not activation evidence.
+- FACT: fresh grading reports functional success (15 private and four public
+  tests pass; retained seed has eight genuine assertion failures), but the
+  frozen procedure/profile FAILS. Both participant edits preceded behavioral
+  execution; no minimized reproduction, new regression test, or canonical
+  SKILL/RUNTIME/reference read is evidenced.
+- Important external side effect: tool records show a successful winget Python
+  3.12.10 installation, contrary to the frozen no-install profile. The record
+  does not establish knowing disobedience because no read of that restriction
+  was evidenced. No automatic uninstall/rollback is attempted on this shared
+  machine. App session was reminded to use only the supplied managed Python
+  path and not change global runtimes/configuration.
+- Blindness remains NOT-VERIFIED despite no observed withheld-input read.
+  Independent reviewer `a3735b9f-606a-4f93-a0ac-2b2ec9b65429` now reconciles
+  grading, including whether lack of activation prevents attributing procedural
+  failure to Bulletproof itself. No further raw-host participant is authorized
+  under this profile. Resume stays held.
+- Grading is retained privately under
+  `c4-evaluator/grading-diagnosis-97e512e5-485c-439a-b9e4-c58321eed893`,
+  seal `9e32ed6d8a9115f761006954d0cf5129a6aaf9b5f014a808adf8dbe3b4e171c6`.
+  No functional pass is substituted for a workflow/profile pass.
+- Final independent review APPROVES the bounded grading, not the trial as a
+  successful Bulletproof workflow. It confirms functional VERIFIED, procedure/
+  profile FAILED, and activation/adherence and blindness NOT-VERIFIED. No grading
+  correction or further execution is requested. Lack of demonstrated activation
+  prevents a causal skill-effectiveness verdict.
+- Sanitized public results are in `evidence/c4-diagnosis-public-summary.json`,
+  bound to private grading/review hashes. Raw context, reasoning, logs and oracle
+  remain external/private. No repeated trial, uninstall or source repair follows.
+- Public-report layout initially exceeded its three-page limit. Historical detail
+  was condensed and the scorecard simplified without changing results or limits;
+  final rendering is three pages with no browser/console errors. This was a
+  documentation-layout correction, not a participant or grading retry.
+- Historical HOLD after the user's duration concern: no further auxiliary preparation,
   approvals, receipts or participant dispatch. Prepared external artifacts remain
   preserved. The later autonomous-continuation instruction does not turn those
   preparations into completed live exercises; the core implementation remains the

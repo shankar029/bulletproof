@@ -2,7 +2,7 @@
   "results": [
     {
       "name": "report.html",
-      "hash": "af278cb5e9297e16215093bc52202ec270bf63eac67dbd5aec714805219e68a1",
+      "hash": "66f5bafe0c2b44a2f2823c600d8648712f723a315e98b7fbd924fd8951048e53",
       "pages": 3,
       "view": {
         "title": "Workflow reliability - delivery status",
@@ -15,7 +15,7 @@
           "effectiveLaunch": {
             "browserLaunched": true,
             "engine": "chrome",
-            "launchHash": 17735850382538832000
+            "launchHash": 2807194920068801000
           },
           "launched": false,
           "relaunchedBrowser": false,
@@ -30,7 +30,7 @@
           "effectiveLaunch": {
             "browserLaunched": true,
             "engine": "chrome",
-            "launchHash": 17735850382538832000
+            "launchHash": 2807194920068801000
           },
           "launched": false,
           "relaunchedBrowser": false,
@@ -47,77 +47,77 @@
     {
       "argv": [
         "--session",
-        "reliability-docs-84bf652a-f181-4d9c-aa0b-91e9ca903883",
+        "reliability-docs-b7e5271c-3375-4858-8761-d51e40a758f6",
         "--cdp",
-        "http://127.0.0.1:59588",
+        "http://127.0.0.1:54959",
         "--json",
         "open",
         "file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/report.html"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":17735850382538831058},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"E7B20C3D826A13DD8E57DCE1A3069393\",\"title\":\"Workflow reliability - delivery status\",\"url\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/report.html\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":2807194920068800909},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"targetId\":\"99EF3CFBEBF0782859E0588406CEFAB0\",\"title\":\"Workflow reliability - delivery status\",\"url\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/report.html\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "reliability-docs-84bf652a-f181-4d9c-aa0b-91e9ca903883",
+        "reliability-docs-b7e5271c-3375-4858-8761-d51e40a758f6",
         "--cdp",
-        "http://127.0.0.1:59588",
+        "http://127.0.0.1:54959",
         "--json",
         "eval",
         "JSON.stringify({title:document.title,styles:document.styleSheets.length,diagrams:[...document.querySelectorAll(\"figure svg\")].map(x=>({width:x.getBoundingClientRect().width,height:x.getBoundingClientRect().height}))})"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":17735850382538831058},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/report.html\",\"result\":\"{\\\"title\\\":\\\"Workflow reliability - delivery status\\\",\\\"styles\\\":1,\\\"diagrams\\\":[]}\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":2807194920068800909},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"origin\":\"file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/.ai/workflow-reliability/report.html\",\"result\":\"{\\\"title\\\":\\\"Workflow reliability - delivery status\\\",\\\"styles\\\":1,\\\"diagrams\\\":[]}\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "reliability-docs-84bf652a-f181-4d9c-aa0b-91e9ca903883",
+        "reliability-docs-b7e5271c-3375-4858-8761-d51e40a758f6",
         "--cdp",
-        "http://127.0.0.1:59588",
+        "http://127.0.0.1:54959",
         "--json",
         "errors"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":17735850382538831058},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"errors\":[],\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":2807194920068800909},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"}},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "reliability-docs-84bf652a-f181-4d9c-aa0b-91e9ca903883",
+        "reliability-docs-b7e5271c-3375-4858-8761-d51e40a758f6",
         "--cdp",
-        "http://127.0.0.1:59588",
+        "http://127.0.0.1:54959",
         "--json",
         "console"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":17735850382538831058},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":2807194920068800909},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"messages\":[]},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "reliability-docs-84bf652a-f181-4d9c-aa0b-91e9ca903883",
+        "reliability-docs-b7e5271c-3375-4858-8761-d51e40a758f6",
         "--cdp",
-        "http://127.0.0.1:59588",
+        "http://127.0.0.1:54959",
         "--json",
         "pdf",
         "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\report.pdf"
       ],
       "code": 0,
-      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":17735850382538831058},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\report.pdf\"},\"error\":null}\n",
+      "stdout": "{\"success\":true,\"data\":{\"lifecycle\":{\"effectiveLaunch\":{\"browserLaunched\":true,\"engine\":\"chrome\",\"launchHash\":2807194920068800909},\"launched\":false,\"relaunchedBrowser\":false,\"restartedBackground\":false,\"restoreStatus\":\"not_configured\",\"reused\":true,\"saveStatus\":\"not_attempted\"},\"path\":\"C:\\\\Users\\\\shbs\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\bulletproof\\\\shbs-microsoft-crispy-system\\\\.ai\\\\workflow-reliability\\\\evidence\\\\report.pdf\"},\"error\":null}\n",
       "stderr": ""
     },
     {
       "argv": [
         "--session",
-        "reliability-docs-84bf652a-f181-4d9c-aa0b-91e9ca903883",
+        "reliability-docs-b7e5271c-3375-4858-8761-d51e40a758f6",
         "--cdp",
-        "http://127.0.0.1:59588",
+        "http://127.0.0.1:54959",
         "--json",
         "close"
       ],
