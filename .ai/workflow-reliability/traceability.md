@@ -21,8 +21,13 @@ Latest native serialization/candidate checkpoint is approved for bounded preserv
 turn green under unchanged assertions. The correction verifier records seven distinct
 methods with passing evidence across eight invocations: the grouped selection still failed
 on a recurring candidate idle timeout, then its sole unchanged-byte retry passed.
-This unresolved reliability limitation is not a green combined suite or complete JS
-integration. Remaining pipeline expansion is paused in favor of the app-driven exercise.
+That historical selection was not green. A subsequent test-only correction in
+`evidence/candidate-progress/` reproduces the idle failure, then emits progress only
+after real completed stages. The same four-method combined selection now passes
+with unchanged idle30/max90 bounds; the candidate itself runs 37.445s with progress.
+All 16 runner tests pass. This parent-verified correction is not independent review,
+complete JS integration, or a universal reliability claim. Remaining pipeline
+expansion is paused in favor of the app-driven exercise.
 
 The existing planner was freshly replayed: `evidence/planner-refresh-942fbc75/`
 contains 37 native passes and four browser flows/126 passing checks, with unchanged

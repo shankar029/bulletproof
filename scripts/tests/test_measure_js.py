@@ -79,6 +79,17 @@ class SharedJSCoreTests(unittest.TestCase):
                     json.dump(record, stream, ensure_ascii=False, indent=2)
             self.assertEqual(code, 0, stdout + stderr)
             self.assertEqual(stderr, "")
+            if case == "candidate_records":
+                milestones = [
+                    "Completed candidate source serialization",
+                    "Completed candidate population generation",
+                    "Completed candidate byte and syntax assertions",
+                    "Completed candidate forged-syntax rejection",
+                    "Completed candidate legacy-inventory rejection",
+                    "Completed candidate unknown-source rejection",
+                ]
+                observed = [line for line in stdout.splitlines() if line in milestones]
+                self.assertEqual(observed, milestones)
             self.assertEqual(record["native"]["runtime"], {"version": "v24.11.1", "architecture": "arm64"})
             self.assertEqual(record["native"]["case"], case)
             for proof in record["native"]["proofs"]:

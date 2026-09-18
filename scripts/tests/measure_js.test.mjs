@@ -203,7 +203,9 @@ const cases = {
   },
   candidate_records() {
     const revision = input.revisions[1], records = serialize(revision);
+    console.log("Completed candidate source serialization");
     const population = candidatesForProgram(records.result, revision.inventory, records.syntax);
+    console.log("Completed candidate population generation");
     const shape = population.eligible.filter(item => item.path === "shapes.ts");
     assert.ok(shape.some(item => item.line === 5 && item.before_text === "+" && item.after_text === "-"));
     assert.ok(shape.some(item => item.line === 6 && item.before_text === ">="));
@@ -236,22 +238,27 @@ const cases = {
         const copy = fixture({ "shapes.ts": edited });
         const parsed = parseProgram(compiler, copy.root, copy.entries);
         assert.equal(parsed.census[0].state, "processed");
+        console.log(`Completed candidate syntax assertion: ${candidate.path}:${candidate.line} ${candidate.operator}`);
       }
     }
+    console.log("Completed candidate byte and syntax assertions");
     proofs.push({ population });
     const forged = structuredClone(records.syntax);
     forged[0].nodes.push({ kind: "Fake", span: { start_byte: 0, end_byte: 1, start_line: 1, end_line: 1 } });
     assert.throws(() => candidatesForProgram(records.result, revision.inventory, forged), /Mismatched/);
+    console.log("Completed candidate forged-syntax rejection");
     const legacy = input.semantic.legacy_inventory;
     const wrong = { ...records.binding, inventory_sha256: legacy.digest };
     const wrongMode = serializeProgram(records.result, wrong, records.config);
     assert.throws(() => candidatesForProgram(records.result, legacy, wrongMode.syntax), /inputs\/mode/);
+    console.log("Completed candidate legacy-inventory rejection");
     const unknown = structuredClone(revision.inventory);
     unknown.changed_production["ghost.js"] = [1];
     delete unknown.digest;
     unknown.digest = digest(unknown);
     const unknownSyntax = serializeProgram(records.result, { ...records.binding, inventory_sha256: unknown.digest }, records.config);
     assert.throws(() => candidatesForProgram(records.result, unknown, unknownSyntax.syntax), /not an inventoried/);
+    console.log("Completed candidate unknown-source rejection");
   },
   serialized_freshness() {
     const base = serialize(input.revisions[0]);

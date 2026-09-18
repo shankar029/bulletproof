@@ -1,0 +1,26 @@
+test_cli_forwards_unicode_with_cp1252_parent_encoding (test_run.CaptureTests.test_cli_forwards_unicode_with_cp1252_parent_encoding) ... ok
+test_direct_exit_observer_failure_never_returns_success (test_run.CaptureTests.test_direct_exit_observer_failure_never_returns_success) ... exit-error-owned-pid-already-dead: [{"phase": "spawned", "pid": 54792, "process_group": null, "start_identity": null, "identity_evidence": null, "returncode": null, "cleanup": "not-attempted", "error": null}, {"phase": "direct-exited", "pid": 54792, "process_group": null, "start_identity": null, "identity_evidence": null, "returncode": 0, "cleanup": "not-attempted", "error": null}]
+ok
+test_explicit_none_retains_env_and_positional_compatibility (test_run.CaptureTests.test_explicit_none_retains_env_and_positional_compatibility) ... ok
+test_idle_and_total_timeouts (test_run.CaptureTests.test_idle_and_total_timeouts) ... ok
+test_launch_failure_has_no_fabricated_pid_or_exit (test_run.CaptureTests.test_launch_failure_has_no_fabricated_pid_or_exit) ... ok
+test_launch_failure_observer_error_is_explicit (test_run.CaptureTests.test_launch_failure_observer_error_is_explicit) ... ok
+test_legacy_signature_and_missing_program (test_run.CaptureTests.test_legacy_signature_and_missing_program) ... ok
+test_nonzero_exit_is_a_direct_child_fact (test_run.CaptureTests.test_nonzero_exit_is_a_direct_child_fact) ... ok
+test_observer_success_preserves_exact_result (test_run.CaptureTests.test_observer_success_preserves_exact_result) ... ok
+test_other_launch_error_is_observed (test_run.CaptureTests.test_other_launch_error_is_observed) ... ok
+test_partial_lines_count_as_progress (test_run.CaptureTests.test_partial_lines_count_as_progress) ... ok
+test_spawn_is_synchronous_while_owned_pid_alive (test_run.CaptureTests.test_spawn_is_synchronous_while_owned_pid_alive) ... live-rendezvous: [{"phase": "spawned", "pid": 40300, "process_group": null, "start_identity": null, "identity_evidence": null, "returncode": null, "cleanup": "not-attempted", "error": null}, {"phase": "direct-exited", "pid": 40300, "process_group": null, "start_identity": null, "identity_evidence": null, "returncode": 0, "cleanup": "not-attempted", "error": null}]
+ok
+test_spawn_observer_error_is_not_success (test_run.CaptureTests.test_spawn_observer_error_is_not_success) ... ok
+test_spawn_observer_failure_cleans_up_specific_live_pid (test_run.CaptureTests.test_spawn_observer_failure_cleans_up_specific_live_pid) ... spawn-error-owned-cleanup: [{"phase": "spawned", "pid": 50512, "process_group": null, "start_identity": null, "identity_evidence": null, "returncode": null, "cleanup": "not-attempted", "error": null}, {"phase": "direct-exited", "pid": 50512, "process_group": null, "start_identity": null, "identity_evidence": null, "returncode": 1, "cleanup": "best-effort-attempted", "error": "[observer-error] spawned: OSError: spawn journal unavailable"}]
+ok
+test_timeout_observations_report_actual_exit_and_cleanup_attempt (test_run.CaptureTests.test_timeout_observations_report_actual_exit_and_cleanup_attempt) ... timeout-owned-cleanup: [{"phase": "spawned", "pid": 26528, "process_group": null, "start_identity": null, "identity_evidence": null, "returncode": null, "cleanup": "not-attempted", "error": null}, {"phase": "direct-exited", "pid": 26528, "process_group": null, "start_identity": null, "identity_evidence": null, "returncode": 1, "cleanup": "best-effort-attempted", "error": "[idle-timeout]"}]
+timeout-owned-cleanup: [{"phase": "spawned", "pid": 26172, "process_group": null, "start_identity": null, "identity_evidence": null, "returncode": null, "cleanup": "not-attempted", "error": null}, {"phase": "direct-exited", "pid": 26172, "process_group": null, "start_identity": null, "identity_evidence": null, "returncode": 1, "cleanup": "best-effort-attempted", "error": "[max-timeout]"}]
+ok
+test_utf8_env_and_stream_cleanup (test_run.CaptureTests.test_utf8_env_and_stream_cleanup) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 11.274s
+
+OK

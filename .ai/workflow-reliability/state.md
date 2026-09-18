@@ -49,6 +49,27 @@ The local I1 preservation commit is `aaec9b9`.
 The continuation addendum replaces implementation-dispatch dependencies only; it does not
 close I1.T4 or remove any required measurement, independent role or final acceptance check.
 
+## Candidate-test progress correction
+- Scope: trivial test-harness observability correction, not production parser or
+  pipeline expansion. Existing candidate assertions and idle30/max90 bounds stay
+  unchanged; only completed work may emit progress, never a timer heartbeat.
+- FACT: retained isolated success took 24.946s inside the native test without
+  intermediate output. A fresh pre-fix execution reproduced exit 124 with no
+  native output/result (`evidence/candidate-progress/red/`).
+- FACT: candidate generation, three syntax checks and three rejection checks ran
+  silently in one case. Added completed-stage messages and an ordered-progress
+  assertion in the Python harness. No assertion was removed or timeout increased.
+- FACT: the same four-method combined selection now passes in 239.381s.
+  The native candidate case itself takes 37.445s, exceeds the idle window in total,
+  and completes with actual progress under unchanged idle30/max90 bounds.
+  This establishes the missing-progress cause for the reproduced idle failure,
+  not a performance optimization or universal reliability guarantee.
+- FACT: all 16 runner regressions pass in 11.274s, including genuine idle/maximum
+  termination and partial-line progress. Evidence is in
+  `evidence/candidate-progress/`; historical failed runs remain unchanged.
+- Parent self-reviewed the small test-only diff. No new independent review,
+  full-root suite or full-quality acceptance is claimed by this correction.
+
 ## Q2 shared-JS amendment review
 - FACT: C3 is preserved in `ce7c07eb4bec9239db4d45cdf9bc83c88a43a16c`.
   After commit, only the earlier `evals/report.md` delta and three Q2 proposal/handoff

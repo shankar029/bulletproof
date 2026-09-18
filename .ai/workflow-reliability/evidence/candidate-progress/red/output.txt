@@ -1,0 +1,33 @@
+Validated existing TypeScript binding for native core tests
+test_native_candidates_from_shared_syntax (test_measure_js.SharedJSCoreTests.test_native_candidates_from_shared_syntax) ... Starting real native core case: candidate_records
+FAIL
+
+======================================================================
+FAIL: test_native_candidates_from_shared_syntax (test_measure_js.SharedJSCoreTests.test_native_candidates_from_shared_syntax)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 230, in test_native_candidates_from_shared_syntax
+    self.semantic_fixture("candidate_records")
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 199, in semantic_fixture
+    self.semantic_native(case, fixture)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 216, in semantic_native
+    self.native(case, revisions, semantic={
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "config_input": {"scope": "head-contract", **ref}, "config_root": str(root),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        "legacy_inventory": measure.inventory(fixture.context, "head", changes),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 80, in native
+    self.assertEqual(code, 0, stdout + stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 124 != 0 : [idle-timeout]
+
+----------------------------------------------------------------------
+Ran 1 test in 73.337s
+
+FAILED (failures=1)
