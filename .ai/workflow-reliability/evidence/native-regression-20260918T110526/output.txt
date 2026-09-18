@@ -1,0 +1,418 @@
+TAP version 13
+# Subtest: baseline args disable skills and do not load the skill
+ok 1 - baseline args disable skills and do not load the skill
+  ---
+  duration_ms: 1.1076
+  type: 'test'
+  ...
+# Subtest: bulletproof args load exactly the given skill on top of an isolated base
+ok 2 - bulletproof args load exactly the given skill on top of an isolated base
+  ---
+  duration_ms: 0.1243
+  type: 'test'
+  ...
+# Subtest: bulletproof without a skill path throws
+ok 3 - bulletproof without a skill path throws
+  ---
+  duration_ms: 0.8374
+  type: 'test'
+  ...
+# Subtest: unknown arm throws
+ok 4 - unknown arm throws
+  ---
+  duration_ms: 0.1341
+  type: 'test'
+  ...
+# Subtest: both prompts point at the deliverable, SPEC, and .ts imports
+ok 5 - both prompts point at the deliverable, SPEC, and .ts imports
+  ---
+  duration_ms: 0.5335
+  type: 'test'
+  ...
+# Subtest: prompts stay neutral: no reuse/dependency/tool-choice hints that would leak trap guardrails
+ok 6 - prompts stay neutral: no reuse/dependency/tool-choice hints that would leak trap guardrails
+  ---
+  duration_ms: 0.9883
+  type: 'test'
+  ...
+# Subtest: only the bulletproof prompt invokes the workflow
+ok 7 - only the bulletproof prompt invokes the workflow
+  ---
+  duration_ms: 0.1098
+  type: 'test'
+  ...
+# Subtest: both arms allow task records without relaxing deliverable or seed boundaries
+ok 8 - both arms allow task records without relaxing deliverable or seed boundaries
+  ---
+  duration_ms: 0.184
+  type: 'test'
+  ...
+# Subtest: skill bundle includes executable sibling imports, references and assets
+ok 9 - skill bundle includes executable sibling imports, references and assets
+  ---
+  duration_ms: 41.6613
+  type: 'test'
+  ...
+# Subtest: missing bundle payload fails and cleans only the owned partial directory
+ok 10 - missing bundle payload fails and cleans only the owned partial directory
+  ---
+  duration_ms: 18.5263
+  type: 'test'
+  ...
+# Subtest: prepWorkspace seeds shared + SPEC and never copies the held-out oracle
+ok 11 - prepWorkspace seeds shared + SPEC and never copies the held-out oracle
+  ---
+  duration_ms: 5.8313
+  type: 'test'
+  ...
+# Subtest: summarize handles empty and computes mean/stddev/min/max
+ok 12 - summarize handles empty and computes mean/stddev/min/max
+  ---
+  duration_ms: 0.6194
+  type: 'test'
+  ...
+# Subtest: passRate is the fraction of runs at/above the bar
+ok 13 - passRate is the fraction of runs at/above the bar
+  ---
+  duration_ms: 0.1182
+  type: 'test'
+  ...
+# Subtest: isConventionalCommit accepts type(scope)!: subject, rejects freeform
+ok 14 - isConventionalCommit accepts type(scope)!: subject, rejects freeform
+  ---
+  duration_ms: 0.2565
+  type: 'test'
+  ...
+# Subtest: scoreProcess: feature branch + conventional commit scores 1.0
+ok 15 - scoreProcess: feature branch + conventional commit scores 1.0
+  ---
+  duration_ms: 0.1141
+  type: 'test'
+  ...
+# Subtest: scoreProcess: committing to main is a hard zero regardless of message
+ok 16 - scoreProcess: committing to main is a hard zero regardless of message
+  ---
+  duration_ms: 0.05
+  type: 'test'
+  ...
+# Subtest: scoreProcess: no commits at all scores 0 (no process followed)
+ok 17 - scoreProcess: no commits at all scores 0 (no process followed)
+  ---
+  duration_ms: 0.0435
+  type: 'test'
+  ...
+# Subtest: scoreProcess: branched but non-conventional message scores partial
+ok 18 - scoreProcess: branched but non-conventional message scores partial
+  ---
+  duration_ms: 0.057
+  type: 'test'
+  ...
+# Subtest: cappedComposite: committing to main zeroes an otherwise-perfect composite
+ok 19 - cappedComposite: committing to main zeroes an otherwise-perfect composite
+  ---
+  duration_ms: 0.0525
+  type: 'test'
+  ...
+# Subtest: cappedComposite: leaves the composite untouched when main was not committed to
+ok 20 - cappedComposite: leaves the composite untouched when main was not committed to
+  ---
+  duration_ms: 0.0384
+  type: 'test'
+  ...
+# Subtest: cappedComposite: no process observation (dry-run) never caps
+ok 21 - cappedComposite: no process observation (dry-run) never caps
+  ---
+  duration_ms: 0.0439
+  type: 'test'
+  ...
+# Subtest: generates a distinct mutant per operator site
+ok 22 - generates a distinct mutant per operator site
+  ---
+  duration_ms: 1.3314
+  type: 'test'
+  ...
+# Subtest: flips relational and boundary operators
+ok 23 - flips relational and boundary operators
+  ---
+  duration_ms: 0.1615
+  type: 'test'
+  ...
+# Subtest: flips boolean literals
+ok 24 - flips boolean literals
+  ---
+  duration_ms: 0.0907
+  type: 'test'
+  ...
+# Subtest: dedupes identical mutants and excludes no-ops
+ok 25 - dedupes identical mutants and excludes no-ops
+  ---
+  duration_ms: 0.1154
+  type: 'test'
+  ...
+# Subtest: respects the max bound
+ok 26 - respects the max bound
+  ---
+  duration_ms: 0.0983
+  type: 'test'
+  ...
+# Subtest: does not touch ++, +=, or comment terminators
+ok 27 - does not touch ++, +=, or comment terminators
+  ---
+  duration_ms: 0.0717
+  type: 'test'
+  ...
+# (node:48884) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: native reporter counts only real leaves and explicitly serializes assertion causes
+ok 28 - native reporter counts only real leaves and explicitly serializes assertion causes
+  ---
+  duration_ms: 265.6867
+  type: 'test'
+  ...
+# Subtest: test parents with nested subtests are containers, not duplicate leaves
+ok 29 - test parents with nested subtests are containers, not duplicate leaves
+  ---
+  duration_ms: 263.9761
+  type: 'test'
+  ...
+# Subtest: stdout spoofing is quoted data, never assertion proof
+ok 30 - stdout spoofing is quoted data, never assertion proof
+  ---
+  duration_ms: 482.3516
+  type: 'test'
+  ...
+# Subtest: zero tests, syntax errors and import failures cannot be kills
+ok 31 - zero tests, syntax errors and import failures cannot be kills
+  ---
+  duration_ms: 932.0377
+  type: 'test'
+  ...
+# Subtest: setup and hooks take precedence over mixed genuine assertion failures
+ok 32 - setup and hooks take precedence over mixed genuine assertion failures
+  ---
+  duration_ms: 1035.0813
+  type: 'test'
+  ...
+# Subtest: skip/todo/cancellation and missing required baseline inventory are ungraded
+ok 33 - skip/todo/cancellation and missing required baseline inventory are ungraded
+  ---
+  duration_ms: 1478.2028
+  type: 'test'
+  ...
+# Subtest: timeout and malformed/truncated reports fail closed
+ok 34 - timeout and malformed/truncated reports fail closed
+  ---
+  duration_ms: 556.4454
+  type: 'test'
+  ...
+# Subtest: syntax preflight uses the native TS parser without executing product code
+ok 35 - syntax preflight uses the native TS parser without executing product code
+  ---
+  duration_ms: 377.3126
+  type: 'test'
+  ...
+# (node:52824) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: parseTap reads counts from a green TAP summary
+ok 36 - parseTap reads counts from a green TAP summary
+  ---
+  duration_ms: 2.8675
+  type: 'test'
+  ...
+# Subtest: parseTap reads a failing summary
+ok 37 - parseTap reads a failing summary
+  ---
+  duration_ms: 1.2534
+  type: 'test'
+  ...
+# Subtest: parseTap returns zeros when the runner crashed (no summary)
+ok 38 - parseTap returns zeros when the runner crashed (no summary)
+  ---
+  duration_ms: 0.1636
+  type: 'test'
+  ...
+# Subtest: toDimensions maps a fully-probed arm to all-1s
+ok 39 - toDimensions maps a fully-probed arm to all-1s
+  ---
+  duration_ms: 0.1632
+  type: 'test'
+  ...
+# Subtest: toDimensions returns null for unprobed dimensions
+ok 40 - toDimensions returns null for unprobed dimensions
+  ---
+  duration_ms: 0.1205
+  type: 'test'
+  ...
+# Subtest: toDimensions scores accuracy 0 when no tests ran
+ok 41 - toDimensions scores accuracy 0 when no tests ran
+  ---
+  duration_ms: 0.0627
+  type: 'test'
+  ...
+# Subtest: toDimensions flips duplication/scope/extensibility to 0 on a hit/failure
+ok 42 - toDimensions flips duplication/scope/extensibility to 0 on a hit/failure
+  ---
+  duration_ms: 0.0693
+  type: 'test'
+  ...
+# Subtest: toDimensions scores partial reuse as a fraction
+ok 43 - toDimensions scores partial reuse as a fraction
+  ---
+  duration_ms: 0.0981
+  type: 'test'
+  ...
+# Subtest: composite of a single dimension equals that dimension
+ok 44 - composite of a single dimension equals that dimension
+  ---
+  duration_ms: 0.1602
+  type: 'test'
+  ...
+# Subtest: composite renormalizes over non-null dimensions — n/a never drags the score
+ok 45 - composite renormalizes over non-null dimensions — n/a never drags the score
+  ---
+  duration_ms: 0.159
+  type: 'test'
+  ...
+# Subtest: composite blends present dimensions by renormalized weight
+ok 46 - composite blends present dimensions by renormalized weight
+  ---
+  duration_ms: 0.2344
+  type: 'test'
+  ...
+# Subtest: composite handles weights that do not sum to 1
+ok 47 - composite handles weights that do not sum to 1
+  ---
+  duration_ms: 0.0733
+  type: 'test'
+  ...
+# Subtest: composite is 0 when every dimension is n/a
+ok 48 - composite is 0 when every dimension is n/a
+  ---
+  duration_ms: 0.0606
+  type: 'test'
+  ...
+# Subtest: composite ignores a present dimension absent from weights (pins a config footgun)
+ok 49 - composite ignores a present dimension absent from weights (pins a config footgun)
+  ---
+  duration_ms: 0.0684
+  type: 'test'
+  ...
+# Subtest: hasForbiddenDep flags a forbidden name in dependencies or devDependencies
+ok 50 - hasForbiddenDep flags a forbidden name in dependencies or devDependencies
+  ---
+  duration_ms: 0.0936
+  type: 'test'
+  ...
+# Subtest: hasForbiddenDep is false when no forbidden dep is declared directly
+ok 51 - hasForbiddenDep is false when no forbidden dep is declared directly
+  ---
+  duration_ms: 0.0782
+  type: 'test'
+  ...
+# Subtest: hasForbiddenDep ignores absent manifest / empty name list
+ok 52 - hasForbiddenDep ignores absent manifest / empty name list
+  ---
+  duration_ms: 0.1339
+  type: 'test'
+  ...
+# Subtest: hasE2E detects real CLI spawn / HTTP / browser driving
+ok 53 - hasE2E detects real CLI spawn / HTTP / browser driving
+  ---
+  duration_ms: 0.1085
+  type: 'test'
+  ...
+# Subtest: hasE2E is false for unit-only tests, empty sources, or no patterns
+ok 54 - hasE2E is false for unit-only tests, empty sources, or no patterns
+  ---
+  duration_ms: 0.0522
+  type: 'test'
+  ...
+# Subtest: toDimensions surfaces e2e (1 when a matching test ships, 0 when checked but absent)
+ok 55 - toDimensions surfaces e2e (1 when a matching test ships, 0 when checked but absent)
+  ---
+  duration_ms: 0.0707
+  type: 'test'
+  ...
+# Subtest: testQualityScore: absent or broken arm tests are a real 0, not null
+ok 56 - testQualityScore: absent or broken arm tests are a real 0, not null
+  ---
+  duration_ms: 0.0519
+  type: 'test'
+  ...
+# Subtest: testQualityScore: tests present but not runnable by the runner → 0 (distinct from no-tests)
+ok 57 - testQualityScore: tests present but not runnable by the runner → 0 (distinct from no-tests)
+  ---
+  duration_ms: 0.0598
+  type: 'test'
+  ...
+# Subtest: testQualityScore: kill-rate over graded mutants; skipped excluded
+ok 58 - testQualityScore: kill-rate over graded mutants; skipped excluded
+  ---
+  duration_ms: 0.0525
+  type: 'test'
+  ...
+# Subtest: testQualityScore: not applicable, or no valid mutants, is null
+ok 59 - testQualityScore: not applicable, or no valid mutants, is null
+  ---
+  duration_ms: 0.0494
+  type: 'test'
+  ...
+# Subtest: toDimensions surfaces testQuality from the probe
+ok 60 - toDimensions surfaces testQuality from the probe
+  ---
+  duration_ms: 0.044
+  type: 'test'
+  ...
+# Subtest: runTestQuality: bulletproof paginator kills every mutant; baseline ships no tests
+ok 61 - runTestQuality: bulletproof paginator kills every mutant; baseline ships no tests
+  ---
+  duration_ms: 5973.8547
+  type: 'test'
+  ...
+# Subtest: runTestQuality: not applicable when the task does not opt in via quality.mutate
+ok 62 - runTestQuality: not applicable when the task does not opt in via quality.mutate
+  ---
+  duration_ms: 0.2032
+  type: 'test'
+  ...
+# Subtest: runTestQuality: native assertions kill, shallow tests survive, logs do not kill
+ok 63 - runTestQuality: native assertions kill, shallow tests survive, logs do not kill
+  ---
+  duration_ms: 1213.1045
+  type: 'test'
+  ...
+# Subtest: runTestQuality: setup, spoofed error, zero/missing inventory and skip are not fake kills
+ok 64 - runTestQuality: setup, spoofed error, zero/missing inventory and skip are not fake kills
+  ---
+  duration_ms: 3380.3498
+  type: 'test'
+  ...
+# Subtest: runTestQuality: file wrappers and broken/skipped baselines retain eval zero semantics
+ok 65 - runTestQuality: file wrappers and broken/skipped baselines retain eval zero semantics
+  ---
+  duration_ms: 1177.5848
+  type: 'test'
+  ...
+# test_missing_review_pair_blocks_then_actual_handoff_record_unblocks (test_workflow_cli.WorkflowCliTests.test_missing_review_pair_blocks_then_actual_handoff_record_unblocks) ... ok
+# ----------------------------------------------------------------------
+# Ran 1 test in 12.358s
+# OK
+# Subtest: missing review blocks; admitted attributed review permits dependent work
+ok 66 - missing review blocks; admitted attributed review permits dependent work
+  ---
+  duration_ms: 13208.9448
+  type: 'test'
+  ...
+# test_setup_vs_red_pair_uses_real_native_assertion (test_workflow_cli.WorkflowCliTests.test_setup_vs_red_pair_uses_real_native_assertion) ... ok
+# ----------------------------------------------------------------------
+# Ran 1 test in 13.162s
+# OK
+# Subtest: setup failure is not behavioral red; actual matching assertion failure is
+ok 67 - setup failure is not behavioral red; actual matching assertion failure is
+  ---
+  duration_ms: 13719.5398
+  type: 'test'
+  ...
+# test_stale_pair_fresh_process_reopens_only_affected_receipt (test_workflow_cli.WorkflowCliTests.test_stale_pair_fresh_process_reopens_only_affected_receipt) ... FAIL
+
+[run] idle-timeout after 120s of silence — killed "C:\Program Files\nodejs\node.exe --test --test-reporter=tap C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\evals\lib\mutate.test.mjs C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\evals\lib\native_result.test.mjs C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\evals\lib\score.test.mjs C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\evals\agent\agent.test.mjs C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\evals\workflow\failures.test.mjs" (exit 124)

@@ -6,7 +6,29 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Planned
+- Complete scalar collector composition, coverage/mutation integration and the guarded
+  metric bridge; resolve the outstanding native-suite and browser acceptance gaps.
+- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+
+## [0.8.0-rc.1] - 2026-09-18
+
+This prerelease preserves the existing workflow improvements and Team Planner case study.
+It is a partial-delivery checkpoint, not full acceptance of all 29 workflow features.
+
 ### Added
+- **Guarded workflow execution and evidence freshness.** Durable workflow state, CLI gates,
+  source-bound evidence and qualified tool bindings fail closed when required proof is
+  missing or stale. These guards govern commands routed through the CLI, not arbitrary host actions.
+- **Native JavaScript measurement.** Nonexecuting graph production, immutable manifests,
+  Python orchestration, fresh accepting replay and materialized-only archival.
+- **Standalone scalar measurement workers.** Arithmetic/Unicode spans, lizard/Vulture
+  extraction and jscpd/Ruff command normalization are preserved, but are not wired into
+  collector validation or native composition.
+- **Team Planner case study.** Persistent projects/tasks, dependency-safe lifecycle,
+  filtering/dashboard, schema migration and recovery, archive/restore and CSV exports.
+- **User and operator documentation.** Refreshed README, practical guides and a scoped
+  29-feature observation ledger, including explicit delivery and verification limits.
 - **Focused engineering techniques.** A new diagnosis procedure captures symptom-specific
   reproduction, causal experiments and original-scenario verification. Existing references
   gain small test-first cycles, caller-burden checks, domain vocabulary, bounded design
@@ -46,17 +68,25 @@ All notable changes to this project are documented here. The format is based on
   Integrated with v0.7.0's six phases, mandatory research delegation and `.ai/<slug>/` workspace.
 
 ### Fixed
+- **Mutation and measurement verdicts.** ESM/CJS handling, assertion-only classification
+  and required-measurement completeness no longer imply success from unsupported proof.
+- **JavaScript source coordinates.** CRLF span handling is corrected in the integrated
+  graph projection and accepting replay.
 - **Planning lifecycle gate conflicts.** Intermediate gates verify due scenarios and affected
   regressions without falsely completing future ACs; final ship still reconciles the whole
   requirement. Production readiness distinguishes planned work from completed proof. Restricted
   reviewers can return complete findings for parent persistence without gaining source-write access.
 
-### Planned
-- Move gate invariants from prose to a deterministic `scripts/check.py` (citations resolve,
-  absence-proofs re-run, artifact schema, traceability completeness, diff hygiene, Gate-4 runs the
-  tests) and ship **read-only agent definitions** so delegation isolation is enforced by config,
-  not by instructions.
-- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+### Known limitations
+- No clean final browser acceptance run; empty-project export remains unverified.
+- The latest registered native suite printed a failure and timed out (exit 124). A later
+  isolated stale-evidence check passed, but the full-suite outcome remains unresolved.
+- Scalar composition, coverage/root mutation integration, guarded metrics, qualified
+  recovery and fresh-host effectiveness proof remain incomplete.
+- The 29-feature ledger records 14 observed with limitations, 12 partial, 2 blocked and
+  1 not exercised; these are not 29 passing features or a causal effectiveness study.
+- Scalar worker proof includes an owner 12-test selection; the earlier independent
+  selection predates fixes and final independent approval was not completed.
 
 ## [0.7.0] — 2026-09-08
 
@@ -401,7 +431,8 @@ Initial release: a portable `/bulletproof` skill plus an objective benchmark pro
   and **extensibility** (open/closed) beyond functional correctness, across all three projects.
 - **Docs**: `README.md`, `EVAL-PLAN.md`, `docs/architecture.md`, `CONTRIBUTING.md`, `LICENSE` (MIT).
 
-[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.8.0-rc.1...HEAD
+[0.8.0-rc.1]: https://github.com/shankar029/bulletproof/compare/v0.7.0...v0.8.0-rc.1
 [0.7.0]: https://github.com/shankar029/bulletproof/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/shankar029/bulletproof/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/shankar029/bulletproof/compare/v0.4.0...v0.5.0

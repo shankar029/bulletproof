@@ -1,0 +1,23 @@
+{
+  "kind": "Single diagnostic isolation of prior native-suite failure; not a full native pass",
+  "runId": "native-stale-isolation-20260918T161059",
+  "command": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-u",
+    "-B",
+    "-m",
+    "unittest",
+    "test_workflow_cli.WorkflowCliTests.test_stale_pair_fresh_process_reopens_only_affected_receipt",
+    "-v"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests",
+  "idleSeconds": 120,
+  "maxSeconds": 180,
+  "started": "2026-09-18T16:10:59.3185467Z",
+  "finished": "2026-09-18T16:11:21.1543717Z",
+  "exitCode": 0,
+  "changedSources": [],
+  "ownedTemp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bp-s-d9c4295d",
+  "remainingTempEntries": [],
+  "originalFailure": "native-regression-20260918T110526"
+}

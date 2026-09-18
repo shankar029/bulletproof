@@ -5,9 +5,11 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: reviewed Python/JS integration is preserved as `1899c30` and its parent combined-tree regression passed. Remaining scalar adapters/composition are in progress on a disjoint branch. Planner checkpoint `1d12f5c` preserves bounded real-download proof and explicit final browser blockers.
+- Phase: implementation stopped at the user's request. Reviewed Python/JS integration is preserved as `1899c30`; the standalone scalar worker is preserved as `b1dbae0`, without collect/validation/controller composition. The new authorization is to commit, consolidate and publish existing work, not resume development or long-running testing.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
-- Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
+- Publication: the user explicitly requested committing, merging, pushing and releasing, then switching to `shankar029`. That existing GitHub login was verified with push permission; the previous `shbs_microsoft` login remains read-only. Prepare `v0.8.0-rc.1` as a prerelease, not a fully validated production release.
+- Latest native regression: `evidence/native-regression-20260918T110526/result.json` records exit 124 after the stale-evidence case printed FAIL; no complete passing suite summary exists.
+- Subsequent isolated check: retained `evidence/native-stale-isolation-20260918T161059/result.json` and output show the one stale-evidence method passed in 20.805 seconds with unchanged selected sources. This completed before the stop; it does not explain the earlier failure or establish a full native-suite pass.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
 
 ## Acceptance criteria
@@ -37,11 +39,12 @@
 - No repeated uncoached model-effectiveness study claimed by deterministic tests.
 
 ## Next action
-Complete the remaining scalar adapters and reviewed composition against the
-integrated JS orchestration/manifest/replay boundary. Preserve the app checkpoint,
-bounded download proof and unresolved browser blocker.
-Do not repeat the stopped browser experiments. The former JS
-owner is cancelled; its accepted resume message did not establish execution.
+Consolidate the existing task branches and publish the explicitly limited prerelease.
+Do not resume scalar composition, browser experiments or other unfinished development.
+The existing report HTML/PDF and passing regression artifacts are historical,
+scope-bound checkpoints; this current state and the prerelease notes retain the later
+failed native-suite result and isolated passing check.
+The former JS owner is cancelled; its accepted resume message did not establish execution.
 Candidate-test observability is corrected in `eae52fe`; README
 and guides clarify the manual-work boundary in `8577642`. This is resumption
 of accepted unfinished work, not a new framework, host trial or scope expansion.
