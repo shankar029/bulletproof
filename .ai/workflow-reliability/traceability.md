@@ -26,8 +26,16 @@ That historical selection was not green. A subsequent test-only correction in
 after real completed stages. The same four-method combined selection now passes
 with unchanged idle30/max90 bounds; the candidate itself runs 37.445s with progress.
 All 16 runner tests pass. This parent-verified correction is not independent review,
-complete JS integration, or a universal reliability claim. Remaining pipeline
-expansion is paused in favor of the app-driven exercise.
+complete JS integration, or a universal reliability claim.
+
+After the former adapter owner was found cancelled, the parent implemented the
+accepted fixed native producer directly. The final source received bounded
+independent approval and five passing command methods (11 native invocations)
+in 108.389s. Earlier parent runs cover 12 selected methods and two default/Python
+compatibility methods before the final narrow delta, not an additive full suite.
+Python orchestration, manifest lifecycle, graph projection and accepting replay
+remain unfinished. The native command cannot by itself establish configured
+measurement support, guarded metrics or full-Q2 acceptance.
 
 The existing planner was freshly replayed: `evidence/planner-refresh-942fbc75/`
 contains 37 native passes and four browser flows/126 passing checks, with unchanged

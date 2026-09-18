@@ -1,6 +1,6 @@
 /**
- * Native shared-parser core. This module does not publish measurement artifacts
- * or implement the JSRequestV1 command; accepting execution belongs to measure.
+ * Shared-parser core and fixed JSRequestV1 producer. Measurement admission,
+ * manifest publication and accepting replay belong to the Python controller.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -35,6 +35,25 @@ function canonical(value) {
 
 function digest(value) {
   return hash(Buffer.from(JSON.stringify(canonical(value)) + "\n"));
+}
+
+function exactKeys(value, keys, label) {
+  if (!value || typeof value !== "object" || Array.isArray(value) ||
+      Object.keys(value).sort().join() !== [...keys].sort().join()) {
+    throw new Error("Invalid " + label + " fields");
+  }
+}
+
+function pinnedBytes(root, ref) {
+  exactKeys(ref, ["path", "sha256", "bytes"], "Artifact");
+  relative(ref.path);
+  if (typeof ref.sha256 !== "string" || !/^[0-9a-f]{64}$/u.test(ref.sha256) ||
+      !Number.isSafeInteger(ref.bytes) || ref.bytes < 0) throw new Error("Invalid artifact pin");
+  const bytes = readRegular(path.join(root, ...ref.path.split("/")));
+  if (bytes.length !== ref.bytes || hash(bytes) !== ref.sha256) {
+    throw new Error("Artifact changed: " + ref.path);
+  }
+  return bytes;
 }
 
 function relative(name) {
@@ -972,6 +991,266 @@ export function candidatesForProgram(result, inventory, syntaxEvidence) {
     unsupported_scope: unsupported.sort((a, b) => compare(a.path, b.path)) };
 }
 
+function selectedQualifications(config) {
+  const refs = new Map();
+  for (const binding of Object.values(config.tools)) {
+    exactKeys(binding, ["executable", "module_path", "observed_version", "sha256",
+      "qualified_api", "help", "configuration", "qualification"], "ToolBinding");
+    if (!Array.isArray(binding.qualification) || !binding.qualification.length) {
+      throw new Error("Missing tool qualification");
+    }
+    for (const ref of [binding.help, binding.configuration, ...binding.qualification]) {
+      if (refs.has(ref.path) && digest(refs.get(ref.path)) !== digest(ref)) {
+        throw new Error("Conflicting qualification artifact");
+      }
+      refs.set(ref.path, ref);
+    }
+  }
+  return [...refs.values()].sort((a, b) => compare(a.path, b.path));
+}
+
+function commandCompiler(config, runRoot, refs, contextRoots) {
+  const binding = config.tools.typescript;
+  if (!binding) throw new Error("Qualified TypeScript binding required");
+  const documents = new Map(refs.map(ref => [ref.sha256, pinnedBytes(runRoot, ref)]));
+  function qualified(sha) {
+    if (!binding.qualification.some(ref => ref.sha256 === sha) || !documents.has(sha)) {
+      throw new Error("Missing original compiler qualification: " + sha);
+    }
+    return JSON.parse(decoder.decode(documents.get(sha)));
+  }
+  const originalRoots = qualified("7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde");
+  const files = qualified("23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af");
+  const result = qualified("c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86");
+  const runtime = qualified("1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b");
+  if (binding.help.sha256 !== "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256" ||
+      binding.sha256 !== runtime.executors.node.sha256 || digest(result.options) !== digest(SETTINGS)) {
+    throw new Error("Compiler qualification mismatch");
+  }
+  const rootsBytes = pinnedBytes(runRoot, binding.configuration);
+  const roots = JSON.parse(decoder.decode(rootsBytes));
+  exactKeys(roots, ["typescript", "lizard", "vulture", "pygments", "pathspec"], "qualified roots");
+  absolute(roots.typescript);
+  for (const root of contextRoots) {
+    const name = path.relative(root, roots.typescript);
+    const reverse = path.relative(roots.typescript, root);
+    if ((!path.isAbsolute(name) && name.split(path.sep)[0] !== "..") ||
+        (!path.isAbsolute(reverse) && reverse.split(path.sep)[0] !== "..")) {
+      throw new Error("Compiler resources overlap Context");
+    }
+  }
+  const resources = files.filter(ref => {
+    const name = path.relative(originalRoots.typescript, ref.path);
+    return name && !path.isAbsolute(name) && name.split(path.sep)[0] !== "..";
+  }).map(ref => ({ ...ref, path: path.join(roots.typescript, path.relative(originalRoots.typescript, ref.path)) }));
+  const source = { roots: { typescript: roots.typescript }, resources, runtime_imports: [], settings: SETTINGS };
+  const compiler = openCompiler(binding, source);
+  checkedJSON(compiler.ts, binding.configuration.path, decoder.decode(rootsBytes));
+  return { compiler, source };
+}
+
+function produceRequest(requestPath) {
+  absolute(requestPath);
+  const requestBytes = readRegular(requestPath);
+  const request = JSON.parse(decoder.decode(requestBytes));
+  exactKeys(request, ["schema_version", "binding", "execution_id", "purpose", "context",
+    "inventory", "config", "pre_manifest", "inputs", "outputs"], "JSRequestV1");
+  if (request.schema_version !== 1 || !["produce", "validate"].includes(request.purpose) ||
+      typeof request.execution_id !== "string" || !/^[0-9a-f]{32}$/u.test(request.execution_id)) {
+    throw new Error("Invalid JS request version, purpose or execution ID");
+  }
+  const { context, inventory, config, binding } = request;
+  exactKeys(config, ["schema_version", "semantic_profile", "tools", "python_source_roots",
+    "js_entrypoints", "suites", "coverage_policy", "architecture_rules", "mutation_cap",
+    "mutation_max_seconds", "approval_artifact", "tool_artifact_root"], "MeasurementConfig");
+  exactKeys(context, ["schema_version", "run_id", "source", "base_root", "head_root",
+    "controller_root", "run_root", "controller_sha256", "policy_sha256", "toolset_sha256",
+    "contract_artifacts", "output_manifest"], "Context");
+  exactKeys(inventory, ["schema_version", "revision", "source_sha256", "entries",
+    "changed_production", "scope_exclusions", "enumeration_state", "enumeration_errors", "digest"], "Inventory");
+  const { digest: inventoryDigest, ...inventoryBody } = inventory;
+  if (context.schema_version !== 1 || inventory.schema_version !== 1 ||
+      !["base", "head"].includes(inventory.revision) || digest(inventoryBody) !== inventoryDigest ||
+      binding.run_id !== context.run_id || binding.revision !== inventory.revision ||
+      binding.git_revision !== context.source[inventory.revision] ||
+      binding.inventory_sha256 !== inventoryDigest || binding.source_sha256 !== inventory.source_sha256 ||
+      binding.toolset_sha256 !== context.toolset_sha256 || binding.policy_sha256 !== context.policy_sha256) {
+    throw new Error("Mismatched request/context/inventory binding");
+  }
+  const roots = ["base_root", "head_root", "controller_root", "run_root"].map(key => absolute(context[key]));
+  for (const left of roots) {
+    if (!fs.statSync(left).isDirectory()) throw new Error("Context root is not a directory");
+    for (const right of roots) {
+      if (left === right) continue;
+      const name = path.relative(left, right);
+      if (!path.isAbsolute(name) && name.split(path.sep)[0] !== "..") {
+        throw new Error("Overlapping Context roots");
+      }
+    }
+  }
+  if (new Set(roots).size !== roots.length) throw new Error("Duplicate Context roots");
+  const subjectRoot = context[inventory.revision + "_root"];
+  const prefix = inventory.revision + "/js/";
+  if (requestPath !== path.join(context.run_root, prefix, "request.json") ||
+      fileURLToPath(import.meta.url) !== path.join(context.controller_root, "measure_js.mjs")) {
+    throw new Error("Request/controller must use fixed locators");
+  }
+  exactKeys(request.outputs, ["result", "symbols"], "JS output");
+  for (const name of ["result", "symbols"]) {
+    if (request.outputs[name] !== prefix + name + ".json") throw new Error("Invalid fixed JS output path");
+    try {
+      fs.lstatSync(path.join(context.run_root, request.outputs[name]));
+      throw new Error("Refusing to overwrite JS output: " + name);
+    } catch (error) {
+      if (error.code !== "ENOENT") throw error;
+    }
+  }
+  if (request.pre_manifest.path !== "js-preflight.json" ||
+      digest(request.pre_manifest) !== digest(context.output_manifest)) {
+    throw new Error("Expected active JS preflight manifest");
+  }
+  const manifestBytes = pinnedBytes(context.run_root, request.pre_manifest);
+  const manifest = JSON.parse(decoder.decode(manifestBytes));
+  exactKeys(manifest, ["run_id", "root", "inputs", "reserved_outputs"], "preflight manifest");
+  const qualifications = selectedQualifications(config);
+  const expectedRows = qualifications.map(artifact => ({ artifact, role: "qualification", revision: null }));
+  if (manifest.run_id !== context.run_id || manifest.root !== context.run_root ||
+      digest(manifest.inputs) !== digest(expectedRows) || !Array.isArray(manifest.reserved_outputs)) {
+    throw new Error("Invalid preflight ownership");
+  }
+  const reservations = manifest.reserved_outputs.map(relative);
+  if (digest(reservations) !== digest([...reservations].sort(compare)) ||
+      new Set(reservations.map(name => name.toLowerCase())).size !== reservations.length) {
+    throw new Error("Noncanonical preflight reservations");
+  }
+  for (const name of reservations) {
+    if (reservations.some(other => other !== name && other.toLowerCase().startsWith(name.toLowerCase() + "/"))) {
+      throw new Error("Overlapping preflight reservations");
+    }
+  }
+  for (const name of [...qualifications.map(ref => ref.path), "js-preflight.json", "js-produced.json",
+    "manifest.json", ...["base", "head"].flatMap(side =>
+      ["request", "command", "result", "symbols"].map(slot => `${side}/js/${slot}.json`))]) {
+    if (!reservations.includes(name)) throw new Error("Unreserved JS artifact: " + name);
+  }
+  if (qualifications.some(ref => ["base", "head", "manifest.json", "js-preflight.json", "js-produced.json"]
+    .includes(ref.path.split("/")[0].toLowerCase()))) throw new Error("Qualification overlaps generated output");
+
+  const controllerNames = ["measure.py", "measure_graph.py", "probe.py", "evidence.py", "run.py", "measure_js.mjs"];
+  const controllerFiles = controllerNames.map(name => {
+    const bytes = readRegular(path.join(context.controller_root, name));
+    return { path: name, sha256: hash(bytes), bytes: bytes.length };
+  }).sort((a, b) => compare(a.path, b.path));
+  if (digest(Object.fromEntries(controllerFiles.map(ref => [ref.path, ref.sha256]))) !== context.controller_sha256) {
+    throw new Error("Controller bytes changed");
+  }
+  const { compiler, source } = commandCompiler(config, context.run_root, qualifications, roots);
+  checkedJSON(compiler.ts, "request.json", decoder.decode(requestBytes));
+  checkedJSON(compiler.ts, request.pre_manifest.path, decoder.decode(manifestBytes));
+  const contracts = context.contract_artifacts.map(ref => ({
+    input: { scope: "head-contract", ...ref }, bytes: pinnedBytes(context.head_root, ref),
+  }));
+  const configurations = contracts.filter(item => {
+    try { return JSON.parse(decoder.decode(item.bytes))?.semantic_profile === "workflow-reliability-q-v1"; }
+    catch (error) {
+      if (!(error instanceof SyntaxError) && error.code !== "ERR_ENCODING_INVALID_ENCODED_DATA") throw error;
+      return false; // Other bound contracts can be opaque approval documents.
+    }
+  });
+  if (configurations.length !== 1 || digest(JSON.parse(decoder.decode(configurations[0].bytes))) !== digest(config)) {
+    throw new Error("Request configuration differs from source contract");
+  }
+  const jsSuffixes = new Set([".js", ".mjs", ".cjs", ".jsx", ".ts", ".tsx"]);
+  const entries = inventory.entries.filter(entry => jsSuffixes.has(path.posix.extname(entry.path).toLowerCase()));
+  for (const entry of entries) {
+    const suffix = path.posix.extname(entry.path).toLowerCase();
+    if (entry.suffix !== suffix || entry.parse_state !== "pending" ||
+        entry.language !== ([".ts", ".tsx"].includes(suffix) ? "typescript" : "javascript")) {
+      throw new Error("JS inventory classification mismatch");
+    }
+  }
+  const metadataNames = new Set();
+  for (const name of [...entries.map(entry => entry.path), ...config.js_entrypoints.map(entry => entry.path)]) {
+    relative(name);
+    for (let directory = path.posix.dirname(name); ; directory = path.posix.dirname(directory)) {
+      metadataNames.add(directory === "." ? "package.json" : directory + "/package.json");
+      if (directory === ".") break;
+    }
+  }
+  const metadata = [], absentMetadata = [];
+  for (const name of [...metadataNames].sort(compare)) {
+    try {
+      const bytes = readRegular(path.join(subjectRoot, name));
+      metadata.push({ path: name, sha256: hash(bytes), bytes: bytes.length });
+    } catch (error) {
+      if (error.code !== "ENOENT") throw error;
+      absentMetadata.push(name);
+    }
+  }
+  const resources = source.resources.map(ref => ({ ...ref,
+    path: path.relative(source.roots.typescript, ref.path).split(path.sep).join("/") }));
+  const expectedInputs = [
+    ...[...entries, ...metadata].map(({ path, sha256, bytes }) => ({ scope: "subject", path, sha256, bytes })),
+    ...contracts.map(item => item.input),
+    ...resources.map(ref => ({ scope: "tool-resource", ...ref })),
+  ].sort((a, b) => compare(a.scope + "/" + a.path, b.scope + "/" + b.path));
+  if (new Set(expectedInputs.map(ref => ref.scope + "/" + ref.path)).size !== expectedInputs.length ||
+      digest(request.inputs) !== digest(expectedInputs)) throw new Error("Incomplete or unexpected admitted JS inputs");
+  const inputRoots = { subject: subjectRoot, "head-contract": context.head_root, "tool-resource": source.roots.typescript };
+  function verify() {
+    if (!readRegular(requestPath).equals(requestBytes)) throw new Error("Request changed during production");
+    pinnedBytes(context.run_root, request.pre_manifest);
+    for (const ref of qualifications) pinnedBytes(context.run_root, ref);
+    for (const ref of controllerFiles) pinnedBytes(context.controller_root, ref);
+    for (const { scope, ...ref } of expectedInputs) pinnedBytes(inputRoots[scope], ref);
+    for (const name of absentMetadata) {
+      try {
+        fs.lstatSync(path.join(subjectRoot, name));
+        throw new Error("Metadata appeared during production: " + name);
+      } catch (error) {
+        if (error.code !== "ENOENT") throw error;
+      }
+    }
+    compiler.verify();
+  }
+  verify();
+  const parsed = parseProgram(compiler, subjectRoot, entries, metadata);
+  console.log("Completed JS source census: " + parsed.census.length);
+  const records = serializeProgram(parsed, binding, configurations[0]);
+  console.log("Completed JS syntax and symbol serialization");
+  const provenance = {
+    runtime: { executable: fs.realpathSync.native(process.execPath), version: process.version,
+      architecture: process.arch, typescript_version: compiler.ts.version, exec_argv: [...process.execArgv] },
+    adapter_sha256: hash(readRegular(fileURLToPath(import.meta.url))), controller_files: controllerFiles,
+    loaded_modules: Object.keys(require.cache).map(name => {
+      const ref = resources.find(item => path.join(source.roots.typescript, item.path) === name);
+      if (!ref) throw new Error("Unqualified loaded module: " + name);
+      return { scope: "tool-resource", ...ref };
+    }).sort((a, b) => compare(a.path, b.path)),
+    reads: expectedInputs,
+  };
+  verify();
+  const symbolsBytes = Buffer.from(JSON.stringify(canonical(records.symbols)) + "\n");
+  const symbols = { path: request.outputs.symbols, sha256: hash(symbolsBytes), bytes: symbolsBytes.length };
+  const result = { schema_version: 1, binding, execution_id: request.execution_id,
+    request: { path: prefix + "request.json", sha256: hash(requestBytes), bytes: requestBytes.length },
+    state: "produced", symbols, provenance, syntax: records.syntax, reasons: [] };
+  absolute(path.join(context.run_root, inventory.revision, "js"));
+  fs.writeFileSync(path.join(context.run_root, symbols.path), symbolsBytes, { flag: "wx" });
+  verify();
+  const resultBytes = Buffer.from(JSON.stringify(canonical(result)) + "\n");
+  fs.writeFileSync(path.join(context.run_root, request.outputs.result), resultBytes, { flag: "wx" });
+  pinnedBytes(context.run_root, symbols);
+  pinnedBytes(context.run_root, { path: request.outputs.result, sha256: hash(resultBytes), bytes: resultBytes.length });
+  verify();
+}
+
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  throw new Error("measure_js is a native parser library; no measurement command is exposed");
+  try {
+    if (process.argv.length !== 3) throw new Error("Expected one absolute JSRequestV1 path");
+    produceRequest(process.argv[2]);
+  } catch (error) {
+    console.error(error.message);
+    process.exitCode = 2;
+  }
 }

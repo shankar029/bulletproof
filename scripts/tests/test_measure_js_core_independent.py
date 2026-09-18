@@ -61,7 +61,7 @@ class IndependentJSCoreBoundaryTests(unittest.TestCase):
             self.assertIn("independent regular file", observed["hardlinked_source"])
             self.assertEqual(controller.read_bytes(), (SCRIPTS / controller.name).read_bytes())
 
-    def test_current_config_and_direct_command_reject_integration(self):
+    def test_current_config_and_missing_request_reject_integration(self):
         fixture = Q1Fixture()
         self.addCleanup(fixture.close)
         measure.validate_config(fixture.config, fixture.git.root)
@@ -74,9 +74,9 @@ class IndependentJSCoreBoundaryTests(unittest.TestCase):
             controller = root / "measure_js.mjs"
             shutil.copyfile(SCRIPTS / controller.name, controller)
             result = self.invoke(root, [node, str(controller)], config_error=str(error.exception))
-            self.assertEqual(result["returncode"], 1, result)
+            self.assertEqual(result["returncode"], 2, result)
             self.assertEqual(result["stdout"], "")
-            self.assertIn("native parser library; no measurement command is exposed", result["stderr"])
+            self.assertIn("Expected one absolute JSRequestV1 path", result["stderr"])
             self.assertEqual(sorted(item.name for item in root.iterdir()), ["measure_js.mjs"])
             self.assertEqual(controller.read_bytes(), (SCRIPTS / controller.name).read_bytes())
 

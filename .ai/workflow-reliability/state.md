@@ -5,7 +5,7 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: native serialization checkpoint preserved in `c6095e7`; fresh app-driven workflow session is running. Further internal pipeline expansion is paused.
+- Phase: bounded native JS producer independently reviewed and tested; preservation pending. Fresh app implementation is reported complete with final verification still running. Remaining JS integration is unfinished.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
 - Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
@@ -37,10 +37,13 @@
 - No repeated uncoached model-effectiveness study claimed by deterministic tests.
 
 ## Next action
-Observe the fresh app-driven workflow exercise rather than starting another
-internal implementation expansion. This changes execution priority,
-not acceptance criteria: command/manifests/replay, collectors and guarded
-metrics remain incomplete and are not waived.
+Continue the fresh app-driven workflow exercise in its isolated session while
+the parent preserves the accepted native command boundary. The former JS
+owner is cancelled; its accepted resume message did not establish execution.
+Candidate-test observability is corrected in `eae52fe`; README
+and guides clarify the manual-work boundary in `8577642`. This is resumption
+of accepted unfinished work, not a new framework, host trial or scope expansion.
+Collectors and guarded metrics remain incomplete and are not waived.
 C3 is preserved. Recovery remains blocked;
 no recovery stub or silent completion of the original requirement.
 The updated workflow still needs a fresh agent-driven sample-app exercise.
@@ -48,6 +51,34 @@ The refreshed existing-app regressions below do not establish that result.
 The local I1 preservation commit is `aaec9b9`.
 The continuation addendum replaces implementation-dispatch dependencies only; it does not
 close I1.T4 or remove any required measurement, independent role or final acceptance check.
+
+## Native command continuation
+- Parent took over the cancelled owner's native command boundary under the
+  existing accepted revision-3 design. Controller/manifests/graph/replay and
+  collectors remain unfinished; no configured-JS acceptance is claimed.
+- FACT: the new real-command positive test first failed for both base and head
+  because direct execution explicitly rejected the unimplemented command
+  (one method, two failing subtests, 27.209s).
+- Implemented fixed JSRequestV1 input, qualification/preflight/source/controller
+  checks, one Program/checker, actual provenance and exclusive symbols/result
+  publication. No subject execution, graph publication or metric totals.
+- FACT: five command methods plus selected native/regression methods pass:
+  12 methods in 336.279s, captured in `evidence/js-command-native/`.
+  Source-bound output bytes are retained, not reconstructed from summaries.
+  This is parent-run verification; independent review is still pending.
+- Reviewer `08450ded-04c7-462c-8a16-a6fd20c33c23` approved the bounded native
+  producer and final delta. Independent final execution passed five methods
+  (11 native calls: two successful productions, nine expected rejections) in
+  108.389s, exit 0. All eight requested before/after source hashes matched.
+  Evidence was retained in the agent tool transcript, not separate raw files.
+  The missing-request CLI error intentionally changes from library-only
+  rejection (exit 1) to request validation (exit 2); configured probe still rejects
+  unsupported nonempty JS entrypoints. Historical frozen evidence is untouched.
+- Final self-review moved tool-root disjointness checks before compiler loading,
+  rechecked output bytes before successful exit, and added a real subject
+  side-effect sentinel. Those final changes are covered by the independent run.
+  The earlier 12-method run and two separately passing Python compatibility
+  methods (70.298s) predate this final delta; counts are not added as fresh tests.
 
 ## Candidate-test progress correction
 - Scope: trivial test-harness observability correction, not production parser or

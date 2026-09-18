@@ -1,0 +1,41 @@
+Validated existing TypeScript binding for native core tests
+test_native_candidates_from_shared_syntax (test_measure_js.SharedJSCoreTests.test_native_candidates_from_shared_syntax) ... Starting real native core case: candidate_records
+Completed real native core case: candidate_records
+ok
+test_native_review_corrections_uncertainty_and_require_arity (test_measure_js.SharedJSCoreTests.test_native_review_corrections_uncertainty_and_require_arity) ... Starting real native core case: review_corrections
+Completed real native core case: review_corrections
+ok
+test_native_serialized_freshness_and_identity (test_measure_js.SharedJSCoreTests.test_native_serialized_freshness_and_identity) ... Starting real native core case: serialized_freshness
+Completed real native core case: serialized_freshness
+ok
+test_native_serialized_source_records_and_origins (test_measure_js.SharedJSCoreTests.test_native_serialized_source_records_and_origins) ... Starting real native core case: serialized_records
+Completed real native core case: serialized_records
+ok
+Prepared real JS command subjects and qualified TypeScript
+test_fixed_command_produces_source_bound_and_empty_censuses (test_measure_js_command.JSCommandTests.test_fixed_command_produces_source_bound_and_empty_censuses) ... Executing fixed JS command: test_fixed_command_produces_source_bound_and_empty_censuses base
+Executing fixed JS command: test_fixed_command_produces_source_bound_and_empty_censuses head
+ok
+test_refuses_output_escape_and_existing_output (test_measure_js_command.JSCommandTests.test_refuses_output_escape_and_existing_output) ... Executing fixed JS command: test_refuses_output_escape_and_existing_output head
+Executing fixed JS command: test_refuses_output_escape_and_existing_output head
+ok
+test_rejects_incomplete_inputs_and_changed_config (test_measure_js_command.JSCommandTests.test_rejects_incomplete_inputs_and_changed_config) ... Executing fixed JS command: test_rejects_incomplete_inputs_and_changed_config head
+Executing fixed JS command: test_rejects_incomplete_inputs_and_changed_config head
+ok
+test_rejects_rehashed_manifest_and_stale_controller (test_measure_js_command.JSCommandTests.test_rejects_rehashed_manifest_and_stale_controller) ... Executing fixed JS command: test_rejects_rehashed_manifest_and_stale_controller head
+Executing fixed JS command: test_rejects_rehashed_manifest_and_stale_controller head
+ok
+test_rejects_unknown_fields_purpose_and_duplicate_json (test_measure_js_command.JSCommandTests.test_rejects_unknown_fields_purpose_and_duplicate_json) ... Executing fixed JS command: test_rejects_unknown_fields_purpose_and_duplicate_json head
+Executing fixed JS command: test_rejects_unknown_fields_purpose_and_duplicate_json head
+Executing fixed JS command: test_rejects_unknown_fields_purpose_and_duplicate_json head
+ok
+test_current_config_and_missing_request_reject_integration (test_measure_js_core_independent.IndependentJSCoreBoundaryTests.test_current_config_and_missing_request_reject_integration) ... ok
+test_missing_metadata_unadmitted_source_and_forged_handle (test_measure_js_core_independent.IndependentJSCoreBoundaryTests.test_missing_metadata_unadmitted_source_and_forged_handle) ... Starting independent native boundary invocation
+ok
+test_merged_declarations_import_equals_and_namespace_reexport (test_measure_js_serialization_independent.IndependentJSSerializationTests.test_merged_declarations_import_equals_and_namespace_reexport) ... Starting real native merged/import-equals/namespace-reexport proof
+Completed real native merged/import-equals/namespace-reexport proof
+ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 336.279s
+
+OK

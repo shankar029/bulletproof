@@ -1,0 +1,46 @@
+{
+  "scope": "Fixed native JSRequestV1 producer; not full Q2 or configured measurement acceptance",
+  "reviewer_context": "08450ded-04c7-462c-8a16-a6fd20c33c23",
+  "review_verdict": "APPROVE_BOUNDED",
+  "independent_execution": {
+    "methods_passed": 5,
+    "native_invocations": 11,
+    "successful_productions": 2,
+    "expected_rejections": 9,
+    "seconds": 108.389,
+    "exit_code": 0,
+    "subject_side_effect_sentinel": "passed",
+    "source_stability_reported": "All eight requested before/after SHA-256 hashes matched",
+    "outer_idle_seconds": 120,
+    "outer_max_seconds": 600,
+    "native_idle_seconds": 30,
+    "native_max_seconds": 90,
+    "original_evidence": "Reviewer agent transcript, tool execution js-producer-independent-final",
+    "raw_evidence_file": null
+  },
+  "parent_observed_final_sha256": {
+    "scripts/measure_js.mjs": "ef4bef16abf6c04b559baa45929f49e0f92b76df4a1d30b542dbe877c0e204d5",
+    "scripts/tests/test_measure_js_command.py": "82c15374db0fde17500b45e68cb89211ed3424be75b156095379e2fadb2267e7",
+    "scripts/tests/test_measure_js_core_independent.py": "524c6b9c53baa7bbf9280bef1b18b7f71038ae44349b658cffea761bb0ef39ec",
+    "scripts/measure.py": "b5a824cd84a4a63bb1a6ec5cb6d2e09426614006b12f0b9ef867f040439c4db9",
+    "scripts/measure_graph.py": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391",
+    "scripts/probe.py": "d7be5050cf70cb836e46f0b661632b2d426d6bdc4684f1b54aa9061d61948904",
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/run.py": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e"
+  },
+  "earlier_parent_runs": {
+    "selected_methods": 12,
+    "selected_seconds": 336.279,
+    "compatibility_methods": 2,
+    "compatibility_seconds": 70.298,
+    "scope_note": "Predate the final narrow delta; not added to independent counts or presented as a full suite",
+    "evidence_directory": "js-command-native"
+  },
+  "remaining": [
+    "Python command orchestration",
+    "Produced/final ownership-manifest lifecycle",
+    "Mixed graph projection and fresh accepting replay",
+    "Scalar and coverage collectors",
+    "Guarded metric bridge and full quality acceptance"
+  ]
+}

@@ -75,8 +75,12 @@ and original diagnostics. `serializeProgram` returns unchanged per-file SyntaxEv
 and separate symbol/reference records, including source-backed entrypoint origins.
 `candidatesForProgram` reuses that Program and syntax with the matching head Inventory
 to enumerate unsampled byte-exact edits; it never writes or executes mutants.
-The fixed JS command, ownership-manifest lifecycle, graph projection and fresh semantic
-replay are not integrated. Default inventory/controller behavior and `probe`'s existing
+The native module also accepts one absolute `JSRequestV1` path when executed with the
+qualified Node runtime. It checks request/config/input/qualification/controller bindings
+and preflight ownership, then exclusively writes source-bound result and symbol records.
+It does not execute subject code or publish graph artifacts or metric scores.
+The Python command orchestration, ownership-manifest lifecycle, graph projection and
+fresh accepting semantic replay are not integrated. Default inventory/controller behavior and `probe`'s existing
 unsupported-JS behavior remain unchanged. Pending JSX/TSX classification alone is not
 parsing or coverage proof, and these APIs do not complete missing required metrics.
 
