@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UX — Planner archive and CSV</title>
+<link rel="stylesheet" href="../assets/artifact.css">
+<script src="../assets/artifact.js" defer data-doc="ux.html" data-slug="planner-live-workflow"></script>
+<h1>Planner lifecycle — UX proposal</h1>
+<div class="meta">I1 · AC1–AC5 · <a href="design.html">Program design</a> · <a href="contracts/r1.json">Normative C5 contract</a></div>
+<p class="assumption">No human approval received. Proceeding only under explicit no-wait authorization; this is a proposed specification, not a rendered product or completed accessibility proof.</p>
+<h2>Users, routes and layout</h2>
+<p>The local planner user retires a project without deleting work, reads or exports it, and restores it when work resumes. Archive describes project lifecycle, never snapshot backup.</p>
+<pre>Team planner     [Projects] [Archived projects] [Dashboard]
+Status / actionable error                     [Reload latest]
+Projects or Archived projects     Selected project name [Archived]
+[Create project]                  Totals
+Project links                     [Archive project / Restore project]
+                                  [Download CSV] All tasks, not just this page
+                                  Search / status / priority / Apply / Clear
+                                  Task cards / Add task / Pagination
+</pre>
+<p>Keep the existing sidebar/content grid. <code>/?archived=true</code> selects archive navigation; omitted or <code>archived=false</code> selects active navigation. <code>projectId</code> selects independent detail, even when absent from the sidebar. <code>view=dashboard</code> retains its existing meaning; <code>archived</code> filters navigation only, not global counts. Native link hrefs include navigation/filter state for new tabs and deep links.</p>
+<h2>Primary flows</h2>
+<ol>
+<li><strong>Archive:</strong> select active project → Archive project → confirm “Archive this project? Tasks will become read-only. You can restore it later.” → saving feedback → coherent refresh. Keep the project selected and its filters/page; move navigation to Archived projects. Announce “Project archived. Tasks are read-only.” Archive is available regardless of task statuses.</li>
+<li><strong>Read:</strong> Archived projects → select project or open a direct project link. Display “Archived — tasks are read-only. Restore this project to make changes.” Preserve descriptions, status, blocked badges, priority, summaries, filters and pagination. Add/Edit remain visible but disabled with the explanation adjacent.</li>
+<li><strong>Restore:</strong> Restore project → saving feedback → coherent refresh in active navigation, same project/filter/page → “Project restored. Editing is available.” No deletion confirmation is needed. An existing draft must be canceled or finished before either lifecycle action.</li>
+<li><strong>Export:</strong> Download CSV → “Preparing CSV…” → one full-project snapshot download → “CSV download started.” Available in active, archived and legacy read-only detail. Button disables only during its request/loading. Do not claim the user saved the file. Failure keeps the page and focuses the error.</li>
+</ol>
+<h2>State and recovery matrix</h2>
+<table>
+<tr><th>State</th><th>Presentation / next action</th></tr>
+<tr><td>Loading / revision mismatch</td><td>aria-busy main; announce Loading; disable writes until a complete coherent batch publishes. On mismatch keep prior content read-only and offer Reload latest. Never show partially refreshed archive state with old task revision.</td></tr>
+<tr><td>Empty navigation / detail</td><td>Active: “No active projects. Create a project or view Archived projects.” Archive: “No archived projects.” Archived empty detail: “No tasks in this archived project.” CSV still exports its header. No selected project: Choose a project.</td></tr>
+<tr><td>No matches / out-of-range page</td><td>Keep existing “No results. Clear filters or return to the previous page.” Preserve explicit out-of-range behavior; do not silently clamp or broaden filters.</td></tr>
+<tr><td>Unknown project / HTTP failure</td><td>Focused alert with Reload latest and navigation still available. Never relabel an unknown selected project as Global dashboard. Do not clear a previously loaded detail into a success state.</td></tr>
+<tr><td>Concurrent archive / stale draft</td><td>Keep entered draft text on rejected save. Show “Project is archived; restore it before editing” or existing revision-conflict error, plus “Draft retained. Reload latest discards it and loads committed data.” Disable draft writes; Cancel remains usable. Only explicit Reload latest/navigation discards the draft; it is never retried or rebound to a newer revision.</td></tr>
+<tr><td>Uncertain save / refresh failure after commit</td><td>No automatic retry; keep draft, disable writes, announce uncertain state and focus actionable error. Do not announce success until refresh completes. Reload latest determines committed data.</td></tr>
+<tr><td>Legacy v1</td><td>Retain migration banner and disabled create/task/lifecycle controls. Reads, dashboard and CSV work. No eager rewrite or implied automatic migration.</td></tr>
+</table>
+<h2>Navigation and accessibility contract</h2>
+<p>Projects/Archived projects change the sidebar without discarding selected detail or task filters. Selecting another project resets page only. Filter and page-size changes retain existing reset rules. Dashboard clears task filters as today. Lifecycle success changes only the archive selector; browser Back/Forward reloads its URL without automatic writes. Explicit navigation/reload is the recovery/discard action; status text warns before using it after an error.</p>
+<p>Reuse observed <code>public/styles.css</code>: 16px body, 28/22/18px headings, 16/24px spacing, 44px primary controls, existing semantic status/error surfaces and focus outline. No new visual tokens, icons, animation or CSS framework. Existing 719px breakpoint stacks sidebar above content; buttons wrap and long names/text wrap at 390px. Reduced motion remains respected by adding no motion.</p>
+<p>Use real links, labeled buttons/forms and visible “Archived” text rather than color alone. Keep polite status, focused alert and keyboard ordering. After lifecycle refresh focus the replacement lifecycle button; after draft cancel focus Add task when enabled, otherwise the project heading with programmatic focus. Filters, pagination, download and Restore remain keyboard-accessible on archives. Test WCAG 2.2 AA contrast, target size, focus and labels rather than assuming reuse proves compliance.</p>
+<h2>Acceptance evidence to collect</h2>
+<p>Independent browser verification: active→archive→restart→deep link→download→restore→edit; mixed-status/dependency project; two-client archive while editing with preserved draft; delayed mismatched/obsolete responses; download HTTP failure; filtered paginated views and Back; legacy reads; narrow/wide keyboard and accessibility audits. Assert downloaded bytes against server CSV and unchanged persisted data. Design rendering/page count remains unverified because agent-browser was not found on PATH.</p>
+</html>

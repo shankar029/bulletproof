@@ -1,0 +1,11 @@
+# Raw document captures remain local; the concise verification report is committed.
+evidence/doc-render-*/
+evidence/e2e-*/
+evidence/cli-*-help.txt
+evidence/cli-help.txt
+# Detailed failed attempts and experimental harness copies remain available locally.
+evidence/archive-*.txt
+evidence/download-remedy-all.txt
+evidence/download-remedy-cli-help.txt
+evidence/download-remedy-harness-baseline.diff
+evidence/download-remedy-attempted-e2e.mjs

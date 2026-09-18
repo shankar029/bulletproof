@@ -1,0 +1,74 @@
+--- a/examples/team-planner/public/app.mjs
++++ b/examples/team-planner/public/app.mjs
+@@ -52,0 +53,2 @@
++  const guidance = $('#lifecycle-guidance');
++  if (guidance) guidance.hidden = !$('#editor');
+@@ -228,0 +231 @@
++  lifecycle.setAttribute('aria-describedby', 'lifecycle-guidance');
+@@ -232 +235,3 @@
+-  main.append(actions);
++  const guidance = element('p', 'Finish or cancel your draft before changing project state.', { id: 'lifecycle-guidance' });
++  guidance.hidden = true;
++  main.append(actions, guidance);
+--- a/examples/team-planner/README.md
++++ b/examples/team-planner/README.md
+@@ -156,0 +157 @@
++$env:E2E_PYTHON = 'C:\path\to\your\verified\python.exe'
+@@ -163,0 +165,4 @@
++
++Set `E2E_PYTHON` to your installed Python 3 executable; the harness requires it
++explicitly for the repository's bounded command runner and never selects a
++machine-specific interpreter. The runner owns command deadlines and child cleanup.
+--- a/examples/team-planner/scripts/e2e.mjs
++++ b/examples/team-planner/scripts/e2e.mjs
+@@ -17 +17,2 @@
+-const python = process.env.E2E_PYTHON ?? String.raw`C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\python.exe`;
++const python = process.env.E2E_PYTHON;
++if (!python) throw new Error('Set E2E_PYTHON to an installed Python 3 executable for the bounded command runner.');
+@@ -49 +49,0 @@
+-  const timer = setTimeout(() => { timedOut = true; child.kill('SIGKILL'); }, timeout);
+@@ -51,2 +51,3 @@
+-    // The CLI daemon inherits Windows pipes; wait for our CLI PID, not daemon-held EOF.
+-    const [exitCode, signal] = await once(child, 'exit', { signal: AbortSignal.timeout(timeout + 5000) });
++    // The bounded runner owns the deadline and child-tree cleanup; do not race it.
++    const [exitCode, signal] = await once(child, 'exit');
++    timedOut = exitCode === 124 || exitCode === 125;
+@@ -62 +62,0 @@
+-    clearTimeout(timer);
+@@ -65 +65 @@
+-    active.delete(child);
++    if (child.exitCode !== null || child.signalCode !== null) active.delete(child);
+@@ -262,0 +263,18 @@
++  async function lifecycleGuidance(name, editing) {
++    await check(name, ['AC5', 'R4'], await evaluate(`(() => {
++      const guidance = document.querySelector('#lifecycle-guidance');
++      const lifecycle = document.querySelector('#project-lifecycle');
++      return {
++        editorExists: !!document.querySelector('#editor'),
++        visible: !!guidance?.getClientRects().length && getComputedStyle(guidance).visibility === 'visible',
++        hidden: guidance?.hidden,
++        text: guidance?.textContent,
++        describedBy: lifecycle?.getAttribute('aria-describedby'),
++        disabled: lifecycle?.disabled
++      };
++    })()`), {
++      editorExists: editing, visible: editing, hidden: !editing,
++      text: 'Finish or cancel your draft before changing project state.',
++      describedBy: 'lifecycle-guidance', disabled: editing,
++    });
++  }
+@@ -280,0 +299 @@
++  await lifecycleGuidance('Lifecycle guidance initially hidden; lifecycle enabled', false);
+@@ -295,0 +315,7 @@
++  await lifecycleGuidance('Editing reveals associated guidance and disables lifecycle', true);
++  await fill('#editor-title', 'Uncommitted guidance draft');
++  await click('#editor button[type=button]');
++  await lifecycleGuidance('Cancel hides guidance and re-enables lifecycle', false);
++  await editTask(draft.id);
++  await check('Cancel discards guidance-test draft', ['AC5', 'R4'], await evaluate("document.querySelector('#editor-title').value"), 'Draft');
++  await lifecycleGuidance('Reopening editor restores guidance and lifecycle fence', true);
+@@ -305,0 +332 @@
++  await lifecycleGuidance('Save hides guidance and re-enables lifecycle', false);
+@@ -850 +877 @@
+-    await check('Failed export emits no browser download event', ['AC4'], result.success, false);
++    await check('Download wait reports failure after aborted export', ['AC4'], result.success, false);

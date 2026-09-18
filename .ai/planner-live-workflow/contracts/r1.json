@@ -1,0 +1,177 @@
+{
+  "C1-schema": {
+    "acceptance_criteria": ["AC1", "AC5"],
+    "increment": "I1",
+    "responsibility": "Validate persisted project lifecycle state without changing the supported schema versions or rewriting reads.",
+    "files": ["examples/team-planner/src/schema.mjs"],
+    "grounding": ["research.md#e1--domain-entry-points-and-persisted-data-contracts", "research.md#e5--format-compatibility-and-recovery"],
+    "interfaces": [
+      {"signature": "validate(model)", "status": "changed", "as_is": "Project allows and requires exactly id, name, createdOrder.", "to_be": "For schemaVersion 2 only, additionally allow optional archived; if present it must be a boolean. Keep required fields unchanged. SchemaVersion 1 still rejects archived as unknown."},
+      {"signature": "decode(bytes)", "status": "preserved", "contract": "Validate optional v2 state through validate; do not add default fields to decoded records. Genuine v1 normalization and rejection behavior remain unchanged."},
+      {"signature": "encode(model)", "status": "preserved", "contract": "Validate and encode v2 with existing formatting and terminal LF; legacy still fails MIGRATION_REQUIRED."},
+      {"signature": "upgradeV1(bytes)", "status": "preserved", "contract": "Existing explicit migration, exact backup and revision behavior remain; absence of archived stays absent."}
+    ],
+    "invariants": [
+      "Missing archived means active; consumers use archived === true rather than truthiness.",
+      "Null, strings, numbers, arrays and objects are invalid archived values. Unknown fields remain invalid.",
+      "No schemaVersion 3, eager storage rewrite, automatic migration or new backup mechanism.",
+      "Updated app reads old snapshots. Old binaries reading newly archived snapshots are explicitly not supported.",
+      "Archive/restore preserves IDs, createdOrder, nextId, project name, every task field and dependency order; only target archived and envelope revision may change."
+    ],
+    "tests": [
+      "Schema tests accept v2 absent/false/true, reject nonbooleans and any archived field in v1, and retain unknown-field rejection.",
+      "Open/read/list/detail/CSV/close old v2 snapshots and compare exact disk bytes and revision.",
+      "Run genuine v1 fixture read-only and explicit migration/backup/retry/rollback regression suites."
+    ]
+  },
+  "C2-planner": {
+    "acceptance_criteria": ["AC1", "AC2", "AC3", "AC4", "AC5"],
+    "increment": "I1",
+    "responsibility": "Own lifecycle decisions, list/detail reads, one-snapshot export and authoritative task-write guards.",
+    "files": ["examples/team-planner/src/planner.mjs"],
+    "collaborators": ["JsonStore.read()", "JsonStore.transact(expectedRevision, change)", "C1-schema", "C3-csv", "existing task dependency and transition rules"],
+    "grounding": ["research.md#e1--domain-entry-points-and-persisted-data-contracts", "research.md#e3--transaction-storage-failure-and-concurrency-trace", "research.md#e6--querydependency-rules-and-export-relevant-boundaries"],
+    "interfaces": [
+      {"signature": "projectView(project)", "status": "new private helper", "returns": "Detached project-shaped response with archived: project.archived === true; no mutation of source."},
+      {"signature": "assertProjectWritable(model, projectId)", "status": "new private helper", "returns": "Existing project when active; uses findProject; throws AppError('PROJECT_ARCHIVED', 'Project is archived; restore it before editing tasks', 409) when archived."},
+      {"signature": "Planner.listProjects(query = {})", "status": "changed", "as_is": "All raw projects and revision.", "to_be": "Validate object with only optional archived string 'true' or 'false'; omission selects false. Return {items: matching projectView records, revision}. Preserve existing project order. Invalid/unknown query yields INVALID_QUERY 400 with field."},
+      {"signature": "Planner.getProject(id)", "status": "new", "returns": "{project: projectView(findProject(snapshot, id)), revision: snapshot.revision} from one read; 404 NOT_FOUND when absent, independent of archive state."},
+      {"signature": "Planner.setProjectArchived(id, input, revision)", "status": "new async", "returns": "{project, revision}", "contract": "Inside transact validate exactly required archived boolean, find project, compare effective current state to requested state; change only when different. Return projectView. No task-status prerequisite, deletion, allocation or dependency changes. A restore of missing archived does not add false. A true-to-false transition writes false. Repeated current-revision operations perform no persistence or revision increment."},
+      {"signature": "Planner.createProject(input, revision)", "status": "changed response only", "as_is": "Creates {id,name,createdOrder}; returns raw project.", "to_be": "Keep creation and uniqueness across all active/archived projects, capacity, record shape and transaction behavior; return projectView so archived is explicitly false to readers."},
+      {"signature": "Planner.createTask(input, revision)", "status": "changed", "as_is": "Finds project then validates/allocates task.", "to_be": "After input shape/projectId validation, replace findProject check with assertProjectWritable inside transaction, before allocation or mutation. Preserve final graph validation."},
+      {"signature": "Planner.updateTask(id, input, revision)", "status": "changed", "as_is": "Validates shape, finds task then applies changes.", "to_be": "After existing shape/nonempty checks and findTask, assertProjectWritable(model, task.projectId) inside transaction before applying any field. Applies to title, description, priority, dependencyIds, status, combined patches and nonempty no-op patches."},
+      {"signature": "Planner.exportProjectCsv(id)", "status": "new", "returns": "{csv, revision}", "contract": "Read once, find project even when archived/legacy, serialize entire project through projectCsv, return same snapshot revision. No query/pagination or storage effects."},
+      {"signature": "Planner.listTasks(query) and Planner.dashboard(projectId)", "status": "preserved", "contract": "Project-specific archived reads remain valid; global queries remain inclusive of archived tasks. Existing task filters/sorting/pagination/counts unchanged."}
+    ],
+    "failure_contract": [
+      "Preserve store precedence: schema1 MIGRATION_REQUIRED then REVISION_CONFLICT before synchronous callback. Route-level header/body errors still happen before the transaction.",
+      "Valid current-revision task writes on archived projects fail PROJECT_ARCHIVED 409 even when task patch would be a no-op. Invalid request shapes retain current boundary-validation behavior.",
+      "Wrong/missing entity yields existing NOT_FOUND behavior. No failed command consumes IDs or revision, edits memory or changes disk.",
+      "Reuse store persistence-before-publication, no-op detection, queue recovery, exclusive lock and injected I/O-failure seam unchanged; no store implementation edits needed.",
+      "Archive-versus-task race with same revision permits exactly one changed transaction; loser is REVISION_CONFLICT. A fresh-revision write after archive is PROJECT_ARCHIVED. Restore with stale revision also conflicts."
+    ],
+    "tests": [
+      "Mixed todo/in_progress/done/blocked and empty projects archive and restore; assert full task/dependency equality and identifiers before/after/reopen.",
+      "Repeat archive/restore and restore absent false at current revision: exact unchanged bytes and revision; stale repeats still conflict.",
+      "Active/archive partition; detail both states; global tasks/dashboard unchanged; project duplicate names/capacity include archives.",
+      "All task fields, create, no-op and combined patches rejected on archived data; no allocations; restore reenables valid writes while graph/transition errors persist.",
+      "Queued competing writers in both orders plus injected persistence failures leave correct committed memory/disk and healthy queue."
+    ]
+  },
+  "C3-csv": {
+    "acceptance_criteria": ["AC4"],
+    "increment": "I1",
+    "responsibility": "Pure deterministic full-project CSV formatting and spreadsheet formula neutralization.",
+    "files": ["examples/team-planner/src/csv.mjs"],
+    "collaborators": ["existing taskView(model, task)", "C2-planner"],
+    "grounding": ["research.md#e6--querydependency-rules-and-export-relevant-boundaries", "clarifications.md"],
+    "interfaces": [
+      {"signature": "csvCell(value)", "status": "new export", "returns": "CSV-quoted string; accepts text, boolean or finite integer produced by projectCsv. String guard happens before quote doubling. Numeric/boolean values stringify without text formula processing."},
+      {"signature": "projectCsv(model, project)", "status": "new export", "returns": "Complete CSV string", "contract": "Pure function on a validated snapshot and its existing project; select all tasks with matching projectId, sort a new array by numeric createdOrder ascending, derive blocked using existing taskView semantics, map fixed fields and csvCell, join CRLF plus final CRLF. Do not mutate records/arrays or read storage."}
+    ],
+    "columns": ["projectId", "projectName", "id", "title", "description", "status", "priority", "dependencyIds", "blocked", "createdOrder"],
+    "format": {
+      "encoding": "UTF-8 without BOM, produced by HTTP UTF-8 encoding of the returned string",
+      "records": "CRLF separator and final CRLF, including header-only export",
+      "cells": "Quote every header and value with double quotes; double every embedded double quote; preserve commas and embedded CR, LF, CRLF and Unicode exactly within cells.",
+      "dependencies": "JSON.stringify(task.dependencyIds), keeping stored dependency order; then apply text protection and CSV escaping.",
+      "status": "Stored status todo/in_progress/done, not human-spaced label; blocked is a separate lowercase boolean field.",
+      "ordering": "Ascending createdOrder, independent of physical task-array order and UI filters/page. No timestamp, locale formatting or variable metadata.",
+      "formula_guard": "For every string cell, prefix one ASCII apostrophe before the original untrimmed text if original begins U+0009, U+000D or U+000A, OR the first character after a prefix consisting only of ECMAScript \\s whitespace and Unicode control/format categories Cc/Cf is =, +, - or @. Equivalent predicate: /^[\\t\\r\\n]/u.test(value) || /^[\\s\\p{Cc}\\p{Cf}]*[=+\\-@]/u.test(value). This includes C0/C1 controls and invisible format controls. Do not trim/remove original whitespace/control characters. Apostrophe-leading strings remain unchanged unless the starts-with-tab/CR/LF rule applies.",
+      "empty": "Header-only CSV with final CRLF, not an error."
+    },
+    "invariants": [
+      "Export never updates snapshot, disk or revision.",
+      "Export includes every project task, not selectTasks default page and not client-filtered results.",
+      "Existing app limits of 100 projects/2000 total tasks bound snapshot export. No added streaming dependency or arbitrary export truncation.",
+      "Formula neutralization changes only downloaded text, so CSV may intentionally not equal the original cell text before removal of its protective apostrophe."
+    ],
+    "tests": [
+      "Exact bytes for fixed headers/order/CRLF/no-BOM and header-only export; repeated exports equal.",
+      "Independent test CSV parser round-trips commas, doubled quotes, emoji, non-Latin Unicode, embedded LF/CR/CRLF, empty descriptions and JSON dependency arrays.",
+      "Table-driven formula attacks for each = + - @, with leading space, NBSP, BOM, tabs, CR/LF, C0/C1 controls, Unicode format controls such as U+200B/U+2060, and non-formula tab/CR/LF starts; assert apostrophe precedes original bytes and benign/already-apostrophe text is unchanged.",
+      "Project name/title/description and all string serializer values use same guard; booleans/numbers render predictably.",
+      "More than 50 tasks across statuses/priorities, reversed legal storage ordering, archived and active and decoded v1 data; compare disk before/after and include IDs/blocked/dependency data."
+    ]
+  },
+  "C4-http": {
+    "acceptance_criteria": ["AC1", "AC2", "AC3", "AC4", "AC5"],
+    "increment": "I1",
+    "responsibility": "Strict routes, revision headers, response/download metadata and existing error/security boundary.",
+    "files": ["examples/team-planner/src/server.mjs"],
+    "collaborators": ["C2-planner", "existing parseQuery(params, allowed = [])", "existing expectedRevision(req)", "existing body(req)", "existing json(res, status, body, headers = {})", "existing send(res, status, body, headers = {})"],
+    "grounding": ["research.md#e2--http-entry-read-contracts-and-failure-propagation"],
+    "interfaces": [
+      {"signature": "createServer({ planner, onError = error => console.error(error) })", "status": "changed", "as_is": "No project detail/lifecycle/export routes; projects GET has no queries.", "to_be": "Add exact canonical project-ID detail and CSV matches; disjoint route dispatch. Preserve existing methods, error handling, timeouts, host/origin and security checks."}
+    ],
+    "routes": [
+      {"method": "GET", "path": "/api/projects", "query": "optional archived='true'|'false', default false; only this query allowed", "result": "200 {items, revision} with normalized boolean archived"},
+      {"method": "GET", "path": "/api/projects/:id", "query": "none", "result": "200 {project, revision} for active/archived/v1; 404 NOT_FOUND if missing"},
+      {"method": "PATCH", "path": "/api/projects/:id", "query": "none", "body": "Exactly required {archived:boolean}; unknown/missing/nonboolean fields rejected", "result": "200 {project, revision}; existing JSON content-type/body-limit and required quoted If-Match contract"},
+      {"method": "GET", "path": "/api/projects/:id/tasks.csv", "query": "none", "result": "200 raw CSV; no If-Match required, active/archived/v1 allowed"},
+      {"method": "GET", "path": "/", "query": "Existing allowlist plus archived. If supplied archived must be exactly 'true' or 'false'.", "result": "Existing app HTML"}
+    ],
+    "http_contract": [
+      "Use existing canonical p-[1-9][0-9]* project-ID spelling, rejecting unsafe numeric IDs before lookup; malformed routes fail NOT_FOUND. No filename uses project name or request-provided path fragments.",
+      "Unknown or duplicate query keys yield INVALID_QUERY 400; detail/PATCH/CSV reject all queries. POST /api/projects still accepts name only and no queries.",
+      "Project detail methods Allow: GET, PATCH; CSV Allow: GET. Unsupported methods return existing METHOD_NOT_ALLOWED 405 and correct Allow.",
+      "CSV headers: Content-Type text/csv; charset=utf-8; Content-Disposition attachment; filename=\"project-p-N-tasks.csv\" with validated actual ID; Cache-Control no-store; ETag quoted snapshot revision; existing CSP and X-Content-Type-Options nosniff.",
+      "JSON response/error handling remains unchanged, including generic unexpected 500, no path/stack leakage, and host/origin checks before any read/write.",
+      "CSV errors are normal JSON error responses, not downloadable successful CSV."
+    ],
+    "tests": [
+      "Real HTTP list default/true/false, malformed/duplicate/unknown query, detail active/archive/v1, unknown IDs, unsafe IDs, 405 Allow, no unsupported route fallthrough.",
+      "Lifecycle PATCH missing/malformed If-Match, stale revision, media type/body size, JSON shape, origin/host, no-op, legacy and injected storage errors.",
+      "CSV exact headers/bytes, no-store, ETag from same export snapshot, header-only project, full >50-task project, JSON missing-project response and disk unchanged.",
+      "All existing API/query/storage/dependency/migration regressions remain required."
+    ]
+  },
+  "C5-browser": {
+    "acceptance_criteria": ["AC2", "AC3", "AC4", "AC5"],
+    "increment": "I1",
+    "responsibility": "Coherent list/detail UI, lifecycle navigation, stale-draft safety and observable CSV download.",
+    "files": ["examples/team-planner/public/app.mjs", "examples/team-planner/public/index.html"],
+    "collaborators": ["C4-http", "existing element/field/select/button/announce/showError helpers", "existing public/styles.css without a new design system"],
+    "grounding": ["research.md#e4--browser-state-read-flow-write-flow-and-accessibility", "ux.html"],
+    "interfaces": [
+      {"signature": "reload()", "status": "changed", "as_is": "Loads unfiltered project list then tasks/summary/health/all-task batches, checks revision and publishes; selection later comes from list.", "to_be": "Capture URL parameters and increment loadSequence before requests. Load archived-filtered project list plus getProject detail whenever projectId exists. Fetch existing task/summary/health/all-task batches. Verify ALL response revisions including detail equal task revision, then publish all state including selected project and revision together only for latest sequence. Ignore obsolete successes AND failures. During loading or failed coherent refresh, fence all writes. No partial state publication."},
+      {"signature": "render()", "status": "changed", "as_is": "Finds project in sidebar list and disables tasks only for legacy.", "to_be": "Use independent state.project. Render active/archive navigation, lifecycle controls and Download CSV. Archived banner and disabled Add/Edit, but retain all reading/filter/paging surfaces. Unknown selected project is error, never silent global dashboard fallback."},
+      {"signature": "navigate(changes)", "status": "changed consumers", "as_is": "Pushes merged URL and reloads when not busy.", "to_be": "Preserve merging semantics. Wire archived selector and real href state; keep project selection and task filters when toggling navigation. Selecting project resets page; existing filter/page-size resets and dashboard clearing remain. Lifecycle success changes archived only and keeps project/filter/page. Existing explicit navigation remains draft-discard boundary."},
+      {"signature": "edit(task)", "status": "changed", "as_is": "Builds task form whose save uses latest global state revision.", "to_be": "Refuse opening unless current selected project is editable. Capture draftRevision from coherent state at creation and pass it to save; never update/rebase it. Guard submit again. Keep editable fields on rejected save; Cancel stays available even when writes are fenced."},
+      {"signature": "request(path, method = 'GET', input, revision = state.revision)", "status": "changed signature", "as_is": "Writes always use state.revision.", "to_be": "Use explicit revision for If-Match while preserving JSON/errors/timeout handling. No automatic retries."},
+      {"signature": "save(form, path, method, input, success, revision = state.revision)", "status": "changed signature", "as_is": "Publishes mutation revision early, resets URL on any project response, reenables all controls unconditionally.", "to_be": "Pass captured revision to request. Do not publish result.revision into committed UI state ahead of coherent reload. Treat project creation separately from lifecycle so lifecycle preserves filters/page. On success reload then announce; on failure retain draft. Conflict, PROJECT_ARCHIVED, uncertainty or reload failure fences subsequent writes until explicit coherent reload. finally invokes policy-aware control sync, never unconditional reenabling."},
+      {"signature": "syncWriteControls()", "status": "new private helper", "returns": "Synchronizes mutation controls from coherent-load state, busy, legacy, selected project's archived state and stale/uncertain write fence; Cancel/reload/read controls stay independently available."},
+      {"signature": "downloadCsv(projectId)", "status": "new async private helper", "returns": "No value", "contract": "Fetch fixed same-origin project CSV URL with 10-second timeout; check response.ok before consuming blob; parse failed JSON into normal focused error; create object URL and temporary anchor with safe ID-derived download filename; trigger once and revoke URL after browser handoff, removing anchor. Restore button/announce status in finally. Never use JSON request helper for success, never update state.revision and never download an error response."}
+    ],
+    "state_contract": [
+      "state.projects owns navigation results; new state.project owns selected detail independently. Existing state.tasks contains complete selected-project dependency choices. One coherent publication owns state.revision.",
+      "Explicit loading/write-fenced state prevents stale UI actions during a refresh or after uncertain/stale rejection. It is cleared only by a successful full reload, never by a mutation response alone.",
+      "Each editor owns captured draftRevision. Any later lifecycle state must not convert a rejected draft to an automatically retried or silently current draft.",
+      "Lifecycle buttons disabled while editor exists, with 'Finish or cancel your draft before changing project state.' Archive uses a reversible-action confirmation; restore does not require confirmation.",
+      "Keep draft text on any failed save. Show actionable retained-draft/discard-on-reload guidance. Reload latest or explicit navigation discards; canceled archive confirmation changes nothing.",
+      "Do not await downloads by disabling unrelated readers; downloadBusy is separate from mutation busy. No false claim that user saved the file.",
+      "Legacy read-only policy continues for project/task/lifecycle mutation; export and reading remain available.",
+      "Native Back/Forward triggers latest-load semantics; no automatic write or retry. Programmatic navigation during busy operations cannot publish mixed-state data."
+    ],
+    "ux_contract": [
+      "Use ?archived=true for archived sidebar, omit or false for active; projectId detail remains readable regardless. Global dashboard prominently remains inclusive.",
+      "Keep current grid, type/spacing, 719px responsive breakpoint, 44px primary controls, text-safe DOM, status/alert and visible focus. No new animations/framework or color-only state.",
+      "Archived Add/Edit controls disabled with nearby reason; filters/pagination/download/Restore remain usable.",
+      "After lifecycle refresh focus replacement lifecycle button; Cancel returns to enabled Add task or programmatically focusable project heading when read-only.",
+      "Active/archive empty messages and archived empty task message differ; header-only download remains available. Preserve no-results/out-of-range paging behavior."
+    ],
+    "tests": [
+      "Extend existing e2e harness, including its accepted flow enumeration, with lifecycle/export journey; run existing base/graph/query/migration/all regression behavior.",
+      "Real two-client concurrent archive while editor open: rejected save retains typed text, controls remain fenced, explicit reload discards and shows archived banner; restore then fresh editor saves.",
+      "Delayed competing reloads and deliberate mismatched list/detail/task/summary/health/batch revisions never publish mixed state; older failure cannot overwrite newer success.",
+      "Save succeeds but subsequent read fails: no early revision publication/replay/success announcement; explicit reload recovers actual committed data.",
+      "Active/archive deep links including direct ID without archived selector, global inclusive dashboard, browser Back, filters/pages >50 dependency choices and selected project preservation.",
+      "Actual active and archived downloads parsed independently; unfiltered full snapshot despite UI filters/paging; error response creates no download; object URL/anchor cleanup.",
+      "Keyboard archive-confirm cancel, lifecycle focus, archived cancel fallback, 390/1280 widths, text escaping, labels/target sizes, contrast and axe checks; legacy read-only/export/migration regression."
+    ],
+    "documentation": [
+      "Update examples/team-planner/README.md for lifecycle routes/query, optional v2 field/read compatibility and old-binary limitation, inclusive global counts, CSV columns/escaping/protection/full-project snapshot, stale draft recovery and test flow command.",
+      "Preserve process-crash versus power-loss guarantee, owned-lock policy and offline migration/rollback documentation; archive is not backup."
+    ]
+  }
+}

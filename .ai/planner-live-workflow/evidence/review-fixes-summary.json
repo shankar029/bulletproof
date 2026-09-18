@@ -1,0 +1,217 @@
+{
+  "mode": "UNADOPTED PROCEDURAL / unbound evidence, never receipts",
+  "runId": "e2e-2026-09-18T09-11-13-615Z-51071082",
+  "started": "2026-09-18T09:11:13.618Z",
+  "finished": "2026-09-18T09:13:55.513Z",
+  "status": "VERIFIED_WITH_LIMITATIONS",
+  "baseStatus": "VERIFIED",
+  "exitCode": 0,
+  "checkCount": 67,
+  "guidanceChecks": [
+    {
+      "flow": "base",
+      "name": "Lifecycle guidance initially hidden; lifecycle enabled",
+      "ac": [
+        "AC5",
+        "R4"
+      ],
+      "status": "VERIFIED",
+      "actual": {
+        "describedBy": "lifecycle-guidance",
+        "disabled": false,
+        "editorExists": false,
+        "hidden": true,
+        "text": "Finish or cancel your draft before changing project state.",
+        "visible": false
+      }
+    },
+    {
+      "flow": "base",
+      "name": "Editing reveals associated guidance and disables lifecycle",
+      "ac": [
+        "AC5",
+        "R4"
+      ],
+      "status": "VERIFIED",
+      "actual": {
+        "describedBy": "lifecycle-guidance",
+        "disabled": true,
+        "editorExists": true,
+        "hidden": false,
+        "text": "Finish or cancel your draft before changing project state.",
+        "visible": true
+      }
+    },
+    {
+      "flow": "base",
+      "name": "Cancel hides guidance and re-enables lifecycle",
+      "ac": [
+        "AC5",
+        "R4"
+      ],
+      "status": "VERIFIED",
+      "actual": {
+        "describedBy": "lifecycle-guidance",
+        "disabled": false,
+        "editorExists": false,
+        "hidden": true,
+        "text": "Finish or cancel your draft before changing project state.",
+        "visible": false
+      }
+    },
+    {
+      "flow": "base",
+      "name": "Cancel discards guidance-test draft",
+      "ac": [
+        "AC5",
+        "R4"
+      ],
+      "status": "VERIFIED",
+      "actual": "Draft"
+    },
+    {
+      "flow": "base",
+      "name": "Reopening editor restores guidance and lifecycle fence",
+      "ac": [
+        "AC5",
+        "R4"
+      ],
+      "status": "VERIFIED",
+      "actual": {
+        "describedBy": "lifecycle-guidance",
+        "disabled": true,
+        "editorExists": true,
+        "hidden": false,
+        "text": "Finish or cancel your draft before changing project state.",
+        "visible": true
+      }
+    },
+    {
+      "flow": "base",
+      "name": "Save hides guidance and re-enables lifecycle",
+      "ac": [
+        "AC5",
+        "R4"
+      ],
+      "status": "VERIFIED",
+      "actual": {
+        "describedBy": "lifecycle-guidance",
+        "disabled": false,
+        "editorExists": false,
+        "hidden": true,
+        "text": "Finish or cancel your draft before changing project state.",
+        "visible": false
+      }
+    }
+  ],
+  "commandCount": 197,
+  "allCommandsUseExplicitPython": true,
+  "allCommandsExitedZero": true,
+  "downloadCommandCount": 0,
+  "configMissingExitCode": 1,
+  "configNewFixtures": [],
+  "runnerSha256": "06a8af2a2c8d48ecec9df151fd46842452d35a5c1a990919851aba7f64fb7532",
+  "configAndBrowserHarnessMatch": true,
+  "sourceHashes": [
+    {
+      "path": "src/csv.mjs",
+      "sha256": "4b873fd1f296172532dd8c45085683ab529eddedf1d2bdaa96493c4d77c994f9",
+      "matchesRun": true
+    },
+    {
+      "path": "src/errors.mjs",
+      "sha256": "241e92aa4d6634e11cf4b718226f8402367275e1e352eb90b03e60d844a1943f",
+      "matchesRun": true
+    },
+    {
+      "path": "src/main.mjs",
+      "sha256": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+      "matchesRun": true
+    },
+    {
+      "path": "src/migrate.mjs",
+      "sha256": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+      "matchesRun": true
+    },
+    {
+      "path": "src/planner.mjs",
+      "sha256": "f91a9c0e3ad5af944f938917d31f54e3c7b8fcfe267c3acdd8a778fee5dfc221",
+      "matchesRun": true
+    },
+    {
+      "path": "src/rules.mjs",
+      "sha256": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+      "matchesRun": true
+    },
+    {
+      "path": "src/schema.mjs",
+      "sha256": "288f4b9009aca3237852bd472d8d20d328251a8818d0eca4f9c14c0c7bb42a53",
+      "matchesRun": true
+    },
+    {
+      "path": "src/server.mjs",
+      "sha256": "ca78205e4b1a2c38d31208a6f154b5a8a91703cdc3c16a56b681e1d1e2885bee",
+      "matchesRun": true
+    },
+    {
+      "path": "src/store.mjs",
+      "sha256": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+      "matchesRun": true
+    },
+    {
+      "path": "public/app.mjs",
+      "sha256": "009d62ecb85fe0dfa789d4e5bb58e2a6127f5fb20578b39758b74b6331f67677",
+      "matchesRun": true
+    },
+    {
+      "path": "public/index.html",
+      "sha256": "cf2b5536b996f6fea0a28c37b7e1519afe82c920ad400536c7532813aea929ba",
+      "matchesRun": true
+    },
+    {
+      "path": "public/styles.css",
+      "sha256": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92",
+      "matchesRun": true
+    }
+  ],
+  "additionalHashes": [
+    {
+      "path": "examples\\team-planner\\scripts\\e2e.mjs",
+      "sha256": "06a8af2a2c8d48ecec9df151fd46842452d35a5c1a990919851aba7f64fb7532"
+    },
+    {
+      "path": "examples\\team-planner\\README.md",
+      "sha256": "f63f58ff4611dc074e61374d9fa53e79c4a56a1bbfc132250958202b02e3c454"
+    },
+    {
+      "path": "scripts\\run.py",
+      "sha256": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e"
+    },
+    {
+      "path": ".ai\\planner-live-workflow\\evidence\\review-fixes-config-check.mjs",
+      "sha256": "db5ebe55939dd5ef76a62917c40b85077fcd7c6c220f783be387b829a3bda166"
+    }
+  ],
+  "changedSources": [],
+  "console": [],
+  "errors": [],
+  "ownedProcesses": [
+    {
+      "pid": 44640,
+      "exitCode": 0,
+      "stopped": "2026-09-18T09:12:48.794Z",
+      "pidRunning": false,
+      "writerLockExists": false
+    },
+    {
+      "pid": 50388,
+      "exitCode": 0,
+      "stopped": "2026-09-18T09:13:54.129Z",
+      "pidRunning": false,
+      "writerLockExists": false
+    }
+  ],
+  "profileExists": false,
+  "cleanupErrors": [],
+  "limitations": "No forced timeout/descendant kill probe. No downloads. AC4/G6 remain blocked; previous review judgments unchanged."
+}

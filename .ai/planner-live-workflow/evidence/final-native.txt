@@ -1,0 +1,304 @@
+TAP version 13
+# Subtest: real HTTP commits metadata with exact revision headers
+ok 1 - real HTTP commits metadata with exact revision headers
+  ---
+  duration_ms: 397.9662
+  type: 'test'
+  ...
+# Subtest: HTTP rejects malformed revision JSON media type and local origin
+ok 2 - HTTP rejects malformed revision JSON media type and local origin
+  ---
+  duration_ms: 104.3451
+  type: 'test'
+  ...
+# Subtest: static allowlist and method boundary expose no data
+ok 3 - static allowlist and method boundary expose no data
+  ---
+  duration_ms: 36.0161
+  type: 'test'
+  ...
+# Subtest: HTTP graph commands are atomic and no-op preserves revision and disk
+ok 4 - HTTP graph commands are atomic and no-op preserves revision and disk
+  ---
+  duration_ms: 66.359
+  type: 'test'
+  ...
+# Subtest: v2 create edit priority and combined filter persist through reopen
+ok 5 - v2 create edit priority and combined filter persist through reopen
+  ---
+  duration_ms: 69.8529
+  type: 'test'
+  ...
+# Subtest: streaming oversized body gets an actionable 413 not a reset socket
+ok 6 - streaming oversized body gets an actionable 413 not a reset socket
+  ---
+  duration_ms: 24.45
+  type: 'test'
+  ...
+# Subtest: storage failure is 503 and unexpected error is 500 without path or stack disclosure
+ok 7 - storage failure is 503 and unexpected error is 500 without path or stack disclosure
+  ---
+  duration_ms: 29.5757
+  type: 'test'
+  ...
+# Subtest: archive lifecycle PATCH succeeds for mixed-status project
+ok 8 - archive lifecycle PATCH succeeds for mixed-status project
+  ---
+  duration_ms: 350.1074
+  type: 'test'
+  ...
+# Subtest: archive HTTP boundaries reject malformed writes and queries without data changes
+ok 9 - archive HTTP boundaries reject malformed writes and queries without data changes
+  ---
+  duration_ms: 72.5933
+  type: 'test'
+  ...
+# Subtest: CSV HTTP exports all rows with safe download headers before and after archive
+ok 10 - CSV HTTP exports all rows with safe download headers before and after archive
+  ---
+  duration_ms: 379.4208
+  type: 'test'
+  ...
+# Subtest: archive and restore preserve mixed task graph through restarts and reject every task write
+ok 11 - archive and restore preserve mixed task graph through restarts and reject every task write
+  ---
+  duration_ms: 434.4029
+  type: 'test'
+  ...
+# Subtest: lifecycle queues preserve revision races in either order and persistence failures are atomic
+ok 12 - lifecycle queues preserve revision races in either order and persistence failures are atomic
+  ---
+  duration_ms: 77.0185
+  type: 'test'
+  ...
+# Subtest: optional archived storage is strict, old snapshots remain usable without rewriting and legacy stays read-only
+ok 13 - optional archived storage is strict, old snapshots remain usable without rewriting and legacy stays read-only
+  ---
+  duration_ms: 19.9151
+  type: 'test'
+  ...
+# Subtest: empty projects, detached views, strict list queries and archive name uniqueness
+ok 14 - empty projects, detached views, strict list queries and archive name uniqueness
+  ---
+  duration_ms: 28.8036
+  type: 'test'
+  ...
+# Subtest: CLI parsing preserves useful usage errors and valid port boundaries
+ok 15 - CLI parsing preserves useful usage errors and valid port boundaries
+  ---
+  duration_ms: 4.3001
+  type: 'test'
+  ...
+# Subtest: offline migration refuses missing data and unsupported flags without creating or converting data
+ok 16 - offline migration refuses missing data and unsupported flags without creating or converting data
+  ---
+  duration_ms: 851.0867
+  type: 'test'
+  ...
+# Subtest: bounded command execution preserves failures and stops its owned child
+ok 17 - bounded command execution preserves failures and stops its owned child
+  ---
+  duration_ms: 2073.6722
+  type: 'test'
+  ...
+# Subtest: CSV cells neutralize formula prefixes without changing harmless values or embedded text
+ok 18 - CSV cells neutralize formula prefixes without changing harmless values or embedded text
+  ---
+  duration_ms: 8.3455
+  type: 'test'
+  ...
+# Subtest: project CSV is deterministic complete UTF8 with stable order and independently parsed fields
+ok 19 - project CSV is deterministic complete UTF8 with stable order and independently parsed fields
+  ---
+  duration_ms: 34.2675
+  type: 'test'
+  ...
+# Subtest: an excluded first task cannot consume the first filtered page
+ok 20 - an excluded first task cannot consume the first filtered page
+  ---
+  duration_ms: 339.6611
+  type: 'test'
+  ...
+# Subtest: process termination before and after commit retains complete snapshot
+ok 21 - process termination before and after commit retains complete snapshot
+  ---
+  duration_ms: 773.801
+  type: 'test'
+  ...
+# Subtest: real CLI logs address checks health and refuses occupied lock or port
+ok 22 - real CLI logs address checks health and refuses occupied lock or port
+  ---
+  duration_ms: 1484.4956
+  type: 'test'
+  ...
+# Subtest: real CLI starts healthy and its graceful signal handler releases the lock
+ok 23 - real CLI starts healthy and its graceful signal handler releases the lock
+  ---
+  duration_ms: 420.0926
+  type: 'test'
+  ...
+# Subtest: expand decodes real v1 and strict v2 without changing API spelling
+ok 24 - expand decodes real v1 and strict v2 without changing API spelling
+  ---
+  duration_ms: 6.8708
+  type: 'test'
+  ...
+# Subtest: contract retains v1 reading but rejects all old writes without touching bytes
+ok 25 - contract retains v1 reading but rejects all old writes without touching bytes
+  ---
+  duration_ms: 94.2739
+  type: 'test'
+  ...
+# Subtest: offline CLI converts genuine fixture with byte-exact backup and repeat no-op
+ok 26 - offline CLI converts genuine fixture with byte-exact backup and repeat no-op
+  ---
+  duration_ms: 750.8018
+  type: 'test'
+  ...
+# Subtest: migration after precommit failure accepts matching backup but rejects mismatch
+ok 27 - migration after precommit failure accepts matching backup but rejects mismatch
+  ---
+  duration_ms: 400.1275
+  type: 'test'
+  ...
+# Subtest: offline rollback explicitly loses post-migration writes while archiving v2
+ok 28 - offline rollback explicitly loses post-migration writes while archiving v2
+  ---
+  duration_ms: 404.6492
+  type: 'test'
+  ...
+# Subtest: migration refuses locked corrupt unknown and mixed data without mutation
+ok 29 - migration refuses locked corrupt unknown and mixed data without mutation
+  ---
+  duration_ms: 1303.2486
+  type: 'test'
+  ...
+# Subtest: captured legacy HTTP reads then migration priority AND filtering and restart
+ok 30 - captured legacy HTTP reads then migration priority AND filtering and restart
+  ---
+  duration_ms: 486.8122
+  type: 'test'
+  ...
+# Subtest: worked F-query filters before paging and dashboard ignores page filters
+ok 31 - worked F-query filters before paging and dashboard ignores page filters
+  ---
+  duration_ms: 320.8984
+  type: 'test'
+  ...
+# Subtest: strict query rejects duplicate keys invalid enums and unsafe pagination
+ok 32 - strict query rejects duplicate keys invalid enums and unsafe pagination
+  ---
+  duration_ms: 43.9249
+  type: 'test'
+  ...
+# Subtest: valid persisted records need not be stored in display order
+ok 33 - valid persisted records need not be stored in display order
+  ---
+  duration_ms: 17.4412
+  type: 'test'
+  ...
+# Subtest: dependent task lifecycle validates final candidate and reopens in reverse order
+ok 34 - dependent task lifecycle validates final candidate and reopens in reverse order
+  ---
+  duration_ms: 318.5241
+  type: 'test'
+  ...
+# Subtest: graph rejects missing self duplicate cross-project and long cycles atomically
+ok 35 - graph rejects missing self duplicate cross-project and long cycles atomically
+  ---
+  duration_ms: 69.6793
+  type: 'test'
+  ...
+# Subtest: combined status edges PATCH is property-order independent
+ok 36 - combined status edges PATCH is property-order independent
+  ---
+  duration_ms: 108.0683
+  type: 'test'
+  ...
+# Subtest: strict disk shape graph counters and Unicode limits reject corrupt snapshots
+ok 37 - strict disk shape graph counters and Unicode limits reject corrupt snapshots
+  ---
+  duration_ms: 10.3768
+  type: 'test'
+  ...
+# Subtest: capacity and counter exhaustion reject commands without consuming allocations
+ok 38 - capacity and counter exhaustion reject commands without consuming allocations
+  ---
+  duration_ms: 2028.059
+  type: 'test'
+  ...
+# Subtest: command wrong types and explicit null do not become defaults or missing IDs
+ok 39 - command wrong types and explicit null do not become defaults or missing IDs
+  ---
+  duration_ms: 18.0858
+  type: 'test'
+  ...
+# Subtest: create edit restart and isolated snapshots
+ok 40 - create edit restart and isolated snapshots
+  ---
+  duration_ms: 107.8356
+  type: 'test'
+  ...
+# Subtest: Unicode code points not UTF16 units define title limits
+ok 41 - Unicode code points not UTF16 units define title limits
+  ---
+  duration_ms: 33.3532
+  type: 'test'
+  ...
+# Subtest: concurrent writers conflict and failed IO preserves bytes and queue recovers
+ok 42 - concurrent writers conflict and failed IO preserves bytes and queue recovers
+  ---
+  duration_ms: 29.7337
+  type: 'test'
+  ...
+# Subtest: strict inputs preserve exact committed bytes
+ok 43 - strict inputs preserve exact committed bytes
+  ---
+  duration_ms: 47.3412
+  type: 'test'
+  ...
+# Subtest: lock ownership corruption and unknown schema never overwrite files
+ok 44 - lock ownership corruption and unknown schema never overwrite files
+  ---
+  duration_ms: 46.8272
+  type: 'test'
+  ...
+# Subtest: real incompatible rename destination preserves previous bytes and transaction queue
+ok 45 - real incompatible rename destination preserves previous bytes and transaction queue
+  ---
+  duration_ms: 24.8891
+  type: 'test'
+  ...
+# Subtest: closed store refuses callers and pending writes drain before lock release
+ok 46 - closed store refuses callers and pending writes drain before lock release
+  ---
+  duration_ms: 18.3521
+  type: 'test'
+  ...
+1..46
+# tests 46
+# suites 0
+# pass 46
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4358.3201
+# start of coverage report
+# -------------------------------------------------------------
+# file         | line % | branch % | funcs % | uncovered lines
+# -------------------------------------------------------------
+# src          |        |          |         | 
+#  csv.mjs     | 100.00 |   100.00 |  100.00 | 
+#  errors.mjs  | 100.00 |   100.00 |  100.00 | 
+#  main.mjs    | 100.00 |    91.30 |   80.00 | 
+#  migrate.mjs | 100.00 |   100.00 |  100.00 | 
+#  planner.mjs | 100.00 |   100.00 |  100.00 | 
+#  rules.mjs   | 100.00 |    98.96 |  100.00 | 
+#  schema.mjs  | 100.00 |    98.72 |  100.00 | 
+#  server.mjs  | 100.00 |    99.02 |   88.89 | 
+#  store.mjs   |  97.20 |    90.16 |  100.00 | 117-120
+# -------------------------------------------------------------
+# all files    |  99.40 |    97.56 |   97.03 | 
+# -------------------------------------------------------------
+# end of coverage report

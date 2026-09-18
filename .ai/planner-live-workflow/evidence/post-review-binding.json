@@ -1,0 +1,23 @@
+{
+  "kind": "parent-generated exact post-review delta, not independent approval",
+  "reviewedBase": "c6095e7a8242cb1794fe78ca8fb8ea97e1fb9478",
+  "patchSha256": "38934d9bd5bdbbac67a2776b40b7795e1a7dcc10231606f2c3499f4d0e8b0d44",
+  "files": [
+    {
+      "path": "examples/team-planner/public/app.mjs",
+      "reviewedSha256": "f5aca3b58f70e75053210792288a8d15516f7cd2abfee7d6781aa07612967408",
+      "finalSha256": "009d62ecb85fe0dfa789d4e5bb58e2a6127f5fb20578b39758b74b6331f67677"
+    },
+    {
+      "path": "examples/team-planner/README.md",
+      "reviewedSha256": "ae55906d3dd9ac86f17a28226fe35ff10edf755b27a32ec276e373dcb064107b",
+      "finalSha256": "f63f58ff4611dc074e61374d9fa53e79c4a56a1bbfc132250958202b02e3c454"
+    },
+    {
+      "path": "examples/team-planner/scripts/e2e.mjs",
+      "reviewedSha256": "c9073559d53d4ed5dd1f9bd5150db9de6f56632c24206d33206080c2dd773671",
+      "finalSha256": "fd1eb61bbb79de90d0fad8be2842b12485938a0cb350746a0b5ede84bcb24d10"
+    }
+  ],
+  "patchContextLines": 0
+}

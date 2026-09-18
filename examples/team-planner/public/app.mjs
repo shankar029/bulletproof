@@ -1,5 +1,5 @@
 const $ = selector => document.querySelector(selector);
-const state = { projects: [], tasks: [], revision: 0, projectId: null, busy: false, result: null, summary: null, schemaVersion: null };
+const state = { projects: [], project: null, tasks: [], revision: 0, projectId: null, busy: false, loading: true, fenced: false, result: null, summary: null, schemaVersion: null };
 let loadSequence = 0;
 function route() { return new URL(location.href).searchParams; }
 
@@ -38,12 +38,29 @@ function showError(error) {
   $('#error').hidden = false;
   $('#error').focus();
 }
-async function request(path, method = 'GET', input) {
+function writesDisabled() {
+  return state.busy || state.loading || state.fenced || state.schemaVersion !== 2;
+}
+function taskWritesDisabled() {
+  return writesDisabled() || !state.project || state.project.archived;
+}
+function syncWriteControls() {
+  $('#project-form').querySelectorAll('input, button').forEach(control => { control.disabled = writesDisabled(); });
+  document.querySelectorAll('[data-write]').forEach(control => {
+    control.disabled = control.dataset.write === 'task' ? taskWritesDisabled() : writesDisabled() || Boolean($('#editor'));
+  });
+  $('#editor')?.querySelectorAll('input, textarea, select').forEach(control => { control.disabled = state.busy; });
+  const guidance = $('#lifecycle-guidance');
+  if (guidance) guidance.hidden = !$('#editor');
+  const download = $('#download-csv');
+  if (download) download.disabled = state.loading || download.dataset.downloading === 'true';
+}
+async function request(path, method = 'GET', input, revision = state.revision) {
   let response;
   try {
     response = await fetch(path, {
       method, signal: AbortSignal.timeout(10000),
-      headers: method === 'GET' ? {} : { 'Content-Type': 'application/json', 'If-Match': `"${state.revision}"` },
+      headers: method === 'GET' ? {} : { 'Content-Type': 'application/json', 'If-Match': `"${revision}"` },
       body: input === undefined ? undefined : JSON.stringify(input),
     });
   } catch {
@@ -61,31 +78,40 @@ async function request(path, method = 'GET', input) {
   }
   return payload;
 }
-async function save(form, path, method, input, success) {
-  if (state.busy) return;
+async function save(form, path, method, input, success, revision = state.revision) {
+  if (writesDisabled() || (form.id === 'editor' && taskWritesDisabled())) return;
   state.busy = true;
   clearError();
   announce('Saving…');
-  const controls = [...form.querySelectorAll('button, input, textarea, select')];
-  controls.forEach(control => { control.disabled = true; });
+  syncWriteControls();
+  let focusLifecycle = false;
   try {
-    const result = await request(path, method, input);
-    state.revision = result.revision;
+    const result = await request(path, method, input, revision);
     if (result.project) {
       const url = new URL(location.href);
-      url.search = new URLSearchParams({ projectId: result.project.id }).toString();
+      if (method === 'POST') url.search = new URLSearchParams({ projectId: result.project.id }).toString();
+      else url.searchParams.set('archived', String(result.project.archived));
       history.pushState(null, '', url);
     }
     if (form.id === 'project-form') form.reset();
-    await reload();
-    announce(success);
-  } catch (error) { announce(''); showError(error); }
+    if (await reload()) {
+      announce(success);
+      focusLifecycle = Boolean(result.project && method === 'PATCH');
+    }
+  } catch (error) {
+    if (!['INVALID_INPUT', 'DUPLICATE_PROJECT', 'DEPENDENCY_CYCLE', 'DEPENDENCIES_INCOMPLETE', 'INVALID_TRANSITION', 'ACTIVE_DEPENDENTS'].includes(error.code)) state.fenced = true;
+    announce(form.id === 'editor' ? 'Draft retained. Reload latest discards it and loads committed data.' : '');
+    showError(error);
+  }
   finally {
     state.busy = false;
-    controls.forEach(control => { control.disabled = false; });
+    syncWriteControls();
+    if (focusLifecycle) $('#project-lifecycle')?.focus();
   }
 }
 function edit(task) {
+  if (taskWritesDisabled()) return;
+  const draftRevision = state.revision;
   $('#editor')?.remove();
   const form = element('form', undefined, { id: 'editor', 'aria-label': task ? 'Edit task' : 'Add task' });
   form.append(element('h3', task ? 'Edit task' : 'Add task'));
@@ -104,8 +130,9 @@ function edit(task) {
   }
   form.append(dependencies);
   const actions = element('div', undefined, { class: 'actions' });
-  actions.append(element('button', 'Save task', { type: 'submit' }), button('Cancel', () => {
-    form.remove(); clearError(); $('#add-task').focus();
+  actions.append(element('button', 'Save task', { type: 'submit', 'data-write': 'task' }), button('Cancel', () => {
+    form.remove(); clearError(); syncWriteControls();
+    ($('#add-task')?.disabled ? $('#project-title') : $('#add-task'))?.focus();
   }));
   form.append(actions);
   form.addEventListener('submit', event => {
@@ -114,10 +141,38 @@ function edit(task) {
     const input = { title: values.get('title'), description: values.get('description'), dependencyIds: values.getAll('dependencyIds'), priority: values.get('priority') };
     if (task) input.status = values.get('status');
     if (!task) input.projectId = state.projectId;
-    void save(form, task ? `/api/tasks/${task.id}` : '/api/tasks', task ? 'PATCH' : 'POST', input, 'Task saved');
+    void save(form, task ? `/api/tasks/${task.id}` : '/api/tasks', task ? 'PATCH' : 'POST', input, 'Task saved', draftRevision);
   });
   $('#main').append(form);
+  syncWriteControls();
   title.focus();
+}
+async function downloadCsv(projectId, control) {
+  control.dataset.downloading = 'true';
+  control.disabled = true;
+  clearError();
+  announce('Preparing CSV…');
+  let href;
+  try {
+    const response = await fetch(`/api/projects/${projectId}/tasks.csv`, { signal: AbortSignal.timeout(10000) });
+    if (!response.ok) {
+      const payload = await response.json();
+      throw new Error(payload.error?.message ?? 'CSV download failed.');
+    }
+    href = URL.createObjectURL(await response.blob());
+    const link = element('a', undefined, { href, download: `project-${projectId}-tasks.csv` });
+    document.body.append(link);
+    link.click();
+    link.remove();
+    announce('CSV download started.');
+  } catch (error) {
+    announce('');
+    showError(new Error(`CSV download failed: ${error.message}`));
+  } finally {
+    if (href) setTimeout(() => URL.revokeObjectURL(href), 1000);
+    delete control.dataset.downloading;
+    control.disabled = false;
+  }
 }
 function navigate(changes) {
   if (state.busy) return;
@@ -132,11 +187,16 @@ function navigate(changes) {
 function render() {
   const projects = $('#projects');
   projects.replaceChildren();
-  const noProjects = 'No projects yet. Create your first project.';
+  const archivedView = route().get('archived') === 'true';
+  $('#projects-title').textContent = archivedView ? 'Archived projects' : 'Projects';
+  const noProjects = archivedView ? 'No archived projects.' : 'No active projects. Create a project or view Archived projects.';
   if (!state.projects.length) projects.append(element('li', noProjects));
   for (const project of state.projects) {
     const item = element('li');
-    const link = element('a', project.name, { href: `/?projectId=${encodeURIComponent(project.id)}` });
+    const url = new URL(location.href);
+    url.searchParams.set('projectId', project.id);
+    url.searchParams.delete('page');
+    const link = element('a', project.name, { href: url.pathname + url.search });
     link.addEventListener('click', event => { event.preventDefault(); navigate({ projectId: project.id, page: null }); });
     item.append(link); projects.append(item);
   }
@@ -146,7 +206,7 @@ function render() {
   const legacy = state.schemaVersion === 1;
   $('#project-form').querySelectorAll('input, button').forEach(control => { control.disabled = legacy; });
   if (legacy) main.append(element('p', 'Legacy data is read-only. Stop the server and run node src\\migrate.mjs --data-dir <your directory>, then restart and Reload latest.', { role: 'status' }));
-  const project = state.projects.find(project => project.id === state.projectId);
+  const project = state.project;
   if (route().get('view') === 'dashboard') {
     main.append(element('h2', project ? `${project.name} dashboard` : 'Global dashboard'));
     main.append(button('All projects', () => navigate({ projectId: null })));
@@ -157,7 +217,24 @@ function render() {
     main.append(element('h2', 'Choose a project'), element('p', 'Create or select a project to plan your team’s work.'));
     return state.projects.length ? 'Projects loaded. Choose a project.' : noProjects;
   }
-  main.append(element('h2', project.name));
+  main.append(element('h2', project.name, { id: 'project-title', tabindex: '-1' }));
+  if (project.archived) main.append(element('p', 'Archived — tasks are read-only. Restore this project to make changes.', { role: 'status' }));
+  const actions = element('div', undefined, { class: 'actions' });
+  const lifecycle = button(project.archived ? 'Restore project' : 'Archive project', () => {
+    if (writesDisabled() || $('#editor')) return;
+    if (!project.archived && !confirm('Archive this project? Tasks will become read-only. You can restore it later.')) return;
+    void save(actions, `/api/projects/${project.id}`, 'PATCH', { archived: !project.archived },
+      project.archived ? 'Project restored. Editing is available.' : 'Project archived. Tasks are read-only.');
+  });
+  lifecycle.id = 'project-lifecycle';
+  lifecycle.dataset.write = 'project';
+  lifecycle.setAttribute('aria-describedby', 'lifecycle-guidance');
+  const download = button('Download CSV', () => { void downloadCsv(project.id, download); });
+  download.id = 'download-csv';
+  actions.append(lifecycle, download, element('span', 'Exports all tasks, not just this page.'));
+  const guidance = element('p', 'Finish or cancel your draft before changing project state.', { id: 'lifecycle-guidance' });
+  guidance.hidden = true;
+  main.append(actions, guidance);
   renderSummary(main);
   const filters = element('form', undefined, { class: 'filters', 'aria-label': 'Task filters' });
   field(filters, 'q', 'Search titles', route().get('q') ?? '');
@@ -174,15 +251,16 @@ function render() {
   main.append(filters);
   const add = button('Add task', () => edit());
   add.id = 'add-task';
-  add.disabled = legacy;
+  add.dataset.write = 'task';
   main.append(add);
   const tasks = state.result.items;
-  const emptyMessage = state.tasks.length ? 'No results. Clear filters or return to the previous page.' : 'No tasks yet. Add your first task.';
+  const emptyMessage = state.tasks.length ? 'No results. Clear filters or return to the previous page.' :
+    project.archived ? 'No tasks in this archived project.' : 'No tasks yet. Add your first task.';
   if (!tasks.length) main.append(element('p', emptyMessage));
   for (const task of tasks) {
     const card = element('article', undefined, { 'aria-label': task.title, 'data-task-id': task.id });
     const editButton = button('Edit', () => edit(task));
-    editButton.disabled = legacy;
+    editButton.dataset.write = 'task';
     card.append(element('h3', task.title), element('span', task.blocked ? 'blocked (todo)' : task.status.replaceAll('_', ' '), { class: 'badge' }), element('p', `Priority: ${task.priority}`), element('p', task.description), editButton);
     main.append(card);
   }
@@ -207,13 +285,16 @@ function renderSummary(main) {
 }
 async function reload() {
   const sequence = ++loadSequence;
+  const params = route();
+  state.loading = true;
+  syncWriteControls();
   clearError();
   $('#main').setAttribute('aria-busy', 'true');
   announce('Loading…');
   try {
-    const projects = await request('/api/projects');
-    const params = route();
+    const projects = await request(`/api/projects?archived=${params.get('archived') ?? 'false'}`);
     const projectId = params.get('projectId');
+    const detail = projectId ? await request(`/api/projects/${encodeURIComponent(projectId)}`) : null;
     const query = new URLSearchParams();
     for (const key of ['projectId', 'q', 'status', 'priority', 'page', 'pageSize']) if (params.has(key)) query.set(key, params.get(key));
     const tasks = await request(`/api/tasks?${query}`);
@@ -230,18 +311,27 @@ async function reload() {
         page++;
       } while (page <= totalPages);
     }
-    if ([projects, summary, health].some(result => result.revision !== tasks.revision)) throw new Error('Data changed while loading. Use Reload latest.');
-    if (sequence !== loadSequence) return;
+    if ([projects, summary, health, ...(detail ? [detail] : [])].some(result => result.revision !== tasks.revision)) throw new Error('Data changed while loading. Use Reload latest.');
+    if (sequence !== loadSequence) return false;
     state.projects = projects.items;
+    state.project = detail?.project ?? null;
     state.projectId = projectId;
     state.tasks = allTasks;
     state.result = tasks;
     state.summary = summary;
     state.schemaVersion = health.schemaVersion;
     state.revision = tasks.revision;
+    state.loading = false;
+    state.fenced = false;
     announce(render());
+    syncWriteControls();
+    return true;
   } catch (error) {
-    if (sequence === loadSequence) { $('#main').setAttribute('aria-busy', 'false'); announce(''); }
+    if (sequence !== loadSequence) return false;
+    state.loading = false;
+    state.fenced = true;
+    syncWriteControls();
+    $('#main').setAttribute('aria-busy', 'false'); announce('');
     throw error;
   }
 }
@@ -250,7 +340,8 @@ $('#project-form').addEventListener('submit', event => {
   void save(event.currentTarget, '/api/projects', 'POST', { name: $('#project-name').value }, 'Project created');
 });
 $('#reload').addEventListener('click', () => { if (!state.busy) void reload().catch(showError); });
-$('#nav-projects').addEventListener('click', event => { event.preventDefault(); navigate({ view: null }); });
+$('#nav-projects').addEventListener('click', event => { event.preventDefault(); navigate({ view: null, archived: null }); });
+$('#nav-archive').addEventListener('click', event => { event.preventDefault(); navigate({ view: null, archived: 'true' }); });
 $('#nav-dashboard').addEventListener('click', event => { event.preventDefault(); navigate({ view: 'dashboard', q: null, status: null, priority: null, page: null }); });
 window.addEventListener('popstate', () => { void reload().catch(showError); });
 void reload().catch(showError);

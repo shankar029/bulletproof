@@ -1,0 +1,255 @@
+{
+  "artifact_kind": "existing-planner-bounded-sample-not-workflow-metrics",
+  "report_path": "examples/team-planner/.work/mutation-lHNL8b/report.json",
+  "scope": "Bounded backend ESM sample: up to four existing textual-engine mutants per src/*.mjs module. Browser/public code is separately browser-verified, not included in this native-suite mutation score.",
+  "engine": "evals/lib/mutate.mjs generateMutants; no changes to shared engine or production files",
+  "summary": {
+    "killed": 28,
+    "survived": 2,
+    "ungraded": 0,
+    "score": 0.9333333333333333,
+    "limitation": "Timeouts/load failures require review and are not silently counted as assertion kills."
+  },
+  "results": [
+    {
+      "file": "csv.mjs",
+      "sourceSha256": "4b873fd1f296172532dd8c45085683ab529eddedf1d2bdaa96493c4d77c994f9",
+      "id": "+→-@197",
+      "operator": "+→-",
+      "line": 4,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "csv.mjs",
+      "sourceSha256": "4b873fd1f296172532dd8c45085683ab529eddedf1d2bdaa96493c4d77c994f9",
+      "id": "+→-@890",
+      "operator": "+→-",
+      "line": 15,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "csv.mjs",
+      "sourceSha256": "4b873fd1f296172532dd8c45085683ab529eddedf1d2bdaa96493c4d77c994f9",
+      "id": "-→+@567",
+      "operator": "-→+",
+      "line": 10,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "csv.mjs",
+      "sourceSha256": "4b873fd1f296172532dd8c45085683ab529eddedf1d2bdaa96493c4d77c994f9",
+      "id": "===→!==@105",
+      "operator": "===→!==",
+      "line": 4,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "main.mjs",
+      "sourceSha256": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+      "id": "+→-@395",
+      "operator": "+→-",
+      "line": 10,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "main.mjs",
+      "sourceSha256": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+      "id": "+→-@550",
+      "operator": "+→-",
+      "line": 11,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "main.mjs",
+      "sourceSha256": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+      "id": "<→>@329",
+      "operator": "<→>",
+      "line": 9,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "main.mjs",
+      "sourceSha256": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+      "id": ">→<@753",
+      "operator": ">→<",
+      "line": 15,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "migrate.mjs",
+      "sourceSha256": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+      "id": "false→true@150",
+      "operator": "false→true",
+      "line": 6,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "migrate.mjs",
+      "sourceSha256": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+      "id": "false→true@220",
+      "operator": "false→true",
+      "line": 7,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "planner.mjs",
+      "sourceSha256": "f91a9c0e3ad5af944f938917d31f54e3c7b8fcfe267c3acdd8a778fee5dfc221",
+      "id": ">=→>@3454",
+      "operator": ">=→>",
+      "line": 72,
+      "result": "SURVIVED"
+    },
+    {
+      "file": "planner.mjs",
+      "sourceSha256": "f91a9c0e3ad5af944f938917d31f54e3c7b8fcfe267c3acdd8a778fee5dfc221",
+      "id": ">=→>@4322",
+      "operator": ">=→>",
+      "line": 86,
+      "result": "SURVIVED"
+    },
+    {
+      "file": "planner.mjs",
+      "sourceSha256": "f91a9c0e3ad5af944f938917d31f54e3c7b8fcfe267c3acdd8a778fee5dfc221",
+      "id": "===→!==@339",
+      "operator": "===→!==",
+      "line": 6,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "planner.mjs",
+      "sourceSha256": "f91a9c0e3ad5af944f938917d31f54e3c7b8fcfe267c3acdd8a778fee5dfc221",
+      "id": "===→!==@542",
+      "operator": "===→!==",
+      "line": 12,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "rules.mjs",
+      "sourceSha256": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+      "id": "-→+@4322",
+      "operator": "-→+",
+      "line": 72,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "rules.mjs",
+      "sourceSha256": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+      "id": "-→+@4415",
+      "operator": "-→+",
+      "line": 74,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "rules.mjs",
+      "sourceSha256": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+      "id": "*→/@4420",
+      "operator": "*→/",
+      "line": 74,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "rules.mjs",
+      "sourceSha256": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+      "id": "*→/@4437",
+      "operator": "*→/",
+      "line": 74,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "schema.mjs",
+      "sourceSha256": "288f4b9009aca3237852bd472d8d20d328251a8818d0eca4f9c14c0c7bb42a53",
+      "id": ">=→>@2182",
+      "operator": ">=→>",
+      "line": 43,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "schema.mjs",
+      "sourceSha256": "288f4b9009aca3237852bd472d8d20d328251a8818d0eca4f9c14c0c7bb42a53",
+      "id": "<→>@1158",
+      "operator": "<→>",
+      "line": 25,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "schema.mjs",
+      "sourceSha256": "288f4b9009aca3237852bd472d8d20d328251a8818d0eca4f9c14c0c7bb42a53",
+      "id": ">→<@810",
+      "operator": ">→<",
+      "line": 15,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "schema.mjs",
+      "sourceSha256": "288f4b9009aca3237852bd472d8d20d328251a8818d0eca4f9c14c0c7bb42a53",
+      "id": ">→<@1830",
+      "operator": ">→<",
+      "line": 38,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "server.mjs",
+      "sourceSha256": "ca78205e4b1a2c38d31208a6f154b5a8a91703cdc3c16a56b681e1d1e2885bee",
+      "id": ">→<@1747",
+      "operator": ">→<",
+      "line": 39,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "server.mjs",
+      "sourceSha256": "ca78205e4b1a2c38d31208a6f154b5a8a91703cdc3c16a56b681e1d1e2885bee",
+      "id": "===→!==@1110",
+      "operator": "===→!==",
+      "line": 29,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "server.mjs",
+      "sourceSha256": "ca78205e4b1a2c38d31208a6f154b5a8a91703cdc3c16a56b681e1d1e2885bee",
+      "id": "===→!==@3399",
+      "operator": "===→!==",
+      "line": 66,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "server.mjs",
+      "sourceSha256": "ca78205e4b1a2c38d31208a6f154b5a8a91703cdc3c16a56b681e1d1e2885bee",
+      "id": "===→!==@3435",
+      "operator": "===→!==",
+      "line": 66,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "store.mjs",
+      "sourceSha256": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+      "id": "===→!==@1060",
+      "operator": "===→!==",
+      "line": 29,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "store.mjs",
+      "sourceSha256": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+      "id": "===→!==@1552",
+      "operator": "===→!==",
+      "line": 40,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "store.mjs",
+      "sourceSha256": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+      "id": "===→!==@2744",
+      "operator": "===→!==",
+      "line": 76,
+      "result": "KILLED_ASSERTION"
+    },
+    {
+      "file": "store.mjs",
+      "sourceSha256": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+      "id": "===→!==@3208",
+      "operator": "===→!==",
+      "line": 81,
+      "result": "KILLED_ASSERTION"
+    }
+  ]
+}

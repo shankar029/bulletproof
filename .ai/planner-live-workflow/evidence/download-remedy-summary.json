@@ -1,0 +1,278 @@
+{
+  "mode": "UNADOPTED PROCEDURAL / unbound evidence, never receipts",
+  "baseline": "c6095e7a8242cb1794fe78ca8fb8ea97e1fb9478",
+  "generated": "2026-09-18T08:53:58.5646935Z",
+  "runId": "e2e-2026-09-18T08-44-16-260Z-61878553",
+  "started": "2026-09-18T08:44:16.263Z",
+  "finished": "2026-09-18T08:52:14.783Z",
+  "status": "FAILED",
+  "exitCode": 1,
+  "checks": 187,
+  "screenshots": 26,
+  "flows": [
+    {
+      "name": "base",
+      "status": "VERIFIED",
+      "checks": 61,
+      "failedScenarios": [],
+      "unexpectedConsole": [],
+      "errors": [],
+      "cleanupError": null
+    },
+    {
+      "name": "graph",
+      "status": "VERIFIED",
+      "checks": 20,
+      "failedScenarios": [],
+      "unexpectedConsole": [],
+      "errors": [],
+      "cleanupError": null
+    },
+    {
+      "name": "query",
+      "status": "VERIFIED",
+      "checks": 30,
+      "failedScenarios": [],
+      "unexpectedConsole": [],
+      "errors": [],
+      "cleanupError": null
+    },
+    {
+      "name": "migration",
+      "status": "FAILED",
+      "checks": 15,
+      "failedScenarios": [
+        {
+          "name": "legacy-download",
+          "error": "AssertionError [ERR_ASSERTION]: No completed browser-saved CSV within 12000ms; observed []\n    at download (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:642:12)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:551:23\n    at async scenario (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:670:16)\n    at async Object.migration (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:550:3)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:954:7"
+        }
+      ],
+      "unexpectedConsole": [],
+      "errors": [],
+      "cleanupError": null
+    },
+    {
+      "name": "archive",
+      "status": "FAILED",
+      "checks": 61,
+      "failedScenarios": [
+        {
+          "name": "active-download",
+          "error": "Error: Download transport BLOCKED earlier in this run: No completed browser-saved CSV within 12000ms; observed []\n    at download (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:615:37)\n    at file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:716:23\n    at scenario (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:670:22)\n    at Object.archive (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:715:9)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:954:7"
+        },
+        {
+          "name": "archived-download",
+          "error": "Error: Download transport BLOCKED earlier in this run: No completed browser-saved CSV within 12000ms; observed []\n    at download (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:615:37)\n    at file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:759:31\n    at scenario (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:670:22)\n    at Object.archive (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:758:9)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:954:7"
+        },
+        {
+          "name": "stale-client-download",
+          "error": "Error: Download transport BLOCKED earlier in this run: No completed browser-saved CSV within 12000ms; observed []\n    at download (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:615:37)\n    at file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:823:49\n    at scenario (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:670:22)\n    at Object.archive (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:823:9)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:954:7"
+        },
+        {
+          "name": "empty-download",
+          "error": "Error: Download transport BLOCKED earlier in this run: No completed browser-saved CSV within 12000ms; observed []\n    at download (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:615:37)\n    at file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:850:84\n    at scenario (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:670:22)\n    at Object.archive (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:849:9)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:954:7"
+        }
+      ],
+      "unexpectedConsole": [],
+      "errors": [],
+      "cleanupError": null
+    }
+  ],
+  "downloadAttempts": [
+    {
+      "flow": "migration",
+      "label": "legacy",
+      "directory": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-stunning-funicular\\examples\\team-planner\\.work\\e2e-2026-09-18T08-44-16-260Z-61878553\\downloads",
+      "before": [],
+      "started": "2026-09-18T08:48:52.667Z",
+      "transport": "Global download path at attach; ordinary agent-browser click; bounded filesystem observation",
+      "observed": [],
+      "error": "AssertionError [ERR_ASSERTION]: No completed browser-saved CSV within 12000ms; observed []\n    at download (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:642:12)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:551:23\n    at async scenario (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:670:16)\n    at async Object.migration (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:550:3)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:954:7",
+      "finished": "2026-09-18T08:49:06.191Z"
+    }
+  ],
+  "downloadDirectoryEntries": [],
+  "successfulDownloads": [],
+  "cliDownloadOrWaitCommands": 0,
+  "commandCount": 609,
+  "sourceReview": [
+    {
+      "path": "src/csv.mjs",
+      "runHash": "4b873fd1f296172532dd8c45085683ab529eddedf1d2bdaa96493c4d77c994f9",
+      "currentHash": "4b873fd1f296172532dd8c45085683ab529eddedf1d2bdaa96493c4d77c994f9",
+      "matchesRun": true,
+      "matchesPriorVerifier": true
+    },
+    {
+      "path": "src/errors.mjs",
+      "runHash": "241e92aa4d6634e11cf4b718226f8402367275e1e352eb90b03e60d844a1943f",
+      "currentHash": "241e92aa4d6634e11cf4b718226f8402367275e1e352eb90b03e60d844a1943f",
+      "matchesRun": true,
+      "matchesPriorVerifier": true
+    },
+    {
+      "path": "src/main.mjs",
+      "runHash": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+      "currentHash": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+      "matchesRun": true,
+      "matchesPriorVerifier": true
+    },
+    {
+      "path": "src/migrate.mjs",
+      "runHash": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+      "currentHash": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+      "matchesRun": true,
+      "matchesPriorVerifier": true
+    },
+    {
+      "path": "src/planner.mjs",
+      "runHash": "f91a9c0e3ad5af944f938917d31f54e3c7b8fcfe267c3acdd8a778fee5dfc221",
+      "currentHash": "f91a9c0e3ad5af944f938917d31f54e3c7b8fcfe267c3acdd8a778fee5dfc221",
+      "matchesRun": true,
+      "matchesPriorVerifier": true
+    },
+    {
+      "path": "src/rules.mjs",
+      "runHash": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+      "currentHash": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+      "matchesRun": true,
+      "matchesPriorVerifier": true
+    },
+    {
+      "path": "src/schema.mjs",
+      "runHash": "288f4b9009aca3237852bd472d8d20d328251a8818d0eca4f9c14c0c7bb42a53",
+      "currentHash": "288f4b9009aca3237852bd472d8d20d328251a8818d0eca4f9c14c0c7bb42a53",
+      "matchesRun": true,
+      "matchesPriorVerifier": true
+    },
+    {
+      "path": "src/server.mjs",
+      "runHash": "ca78205e4b1a2c38d31208a6f154b5a8a91703cdc3c16a56b681e1d1e2885bee",
+      "currentHash": "ca78205e4b1a2c38d31208a6f154b5a8a91703cdc3c16a56b681e1d1e2885bee",
+      "matchesRun": true,
+      "matchesPriorVerifier": true
+    },
+    {
+      "path": "src/store.mjs",
+      "runHash": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+      "currentHash": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+      "matchesRun": true,
+      "matchesPriorVerifier": true
+    },
+    {
+      "path": "public/app.mjs",
+      "runHash": "f5aca3b58f70e75053210792288a8d15516f7cd2abfee7d6781aa07612967408",
+      "currentHash": "f5aca3b58f70e75053210792288a8d15516f7cd2abfee7d6781aa07612967408",
+      "matchesRun": true,
+      "matchesPriorVerifier": true
+    },
+    {
+      "path": "public/index.html",
+      "runHash": "cf2b5536b996f6fea0a28c37b7e1519afe82c920ad400536c7532813aea929ba",
+      "currentHash": "cf2b5536b996f6fea0a28c37b7e1519afe82c920ad400536c7532813aea929ba",
+      "matchesRun": true,
+      "matchesPriorVerifier": true
+    },
+    {
+      "path": "public/styles.css",
+      "runHash": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92",
+      "currentHash": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92",
+      "matchesRun": true,
+      "matchesPriorVerifier": true
+    }
+  ],
+  "attemptedHarnessSha256": "b54723ab1a87ba40c8f79e8b6a9bc42a276816af9550a965fa4ac1d4065d1926",
+  "restoredHarnessSha256": "c9073559d53d4ed5dd1f9bd5150db9de6f56632c24206d33206080c2dd773671",
+  "restoredHarnessMatchesOriginal": true,
+  "processes": [
+    {
+      "pid": 51740,
+      "exitCode": 0,
+      "stopped": "2026-09-18T08:45:36.41Z",
+      "pidCurrentlyRunning": false,
+      "writerLockExists": false
+    },
+    {
+      "pid": 14624,
+      "exitCode": 0,
+      "stopped": "2026-09-18T08:46:39.85Z",
+      "pidCurrentlyRunning": false,
+      "writerLockExists": false
+    },
+    {
+      "pid": 54604,
+      "exitCode": 0,
+      "stopped": "2026-09-18T08:47:47.042Z",
+      "pidCurrentlyRunning": false,
+      "writerLockExists": false
+    },
+    {
+      "pid": 33456,
+      "exitCode": 0,
+      "stopped": "2026-09-18T08:47:52.259Z",
+      "pidCurrentlyRunning": false,
+      "writerLockExists": false
+    },
+    {
+      "pid": 54188,
+      "exitCode": 0,
+      "stopped": "2026-09-18T08:48:41.694Z",
+      "pidCurrentlyRunning": false,
+      "writerLockExists": false
+    },
+    {
+      "pid": 28416,
+      "exitCode": 0,
+      "stopped": "2026-09-18T08:48:48.138Z",
+      "pidCurrentlyRunning": false,
+      "writerLockExists": false
+    },
+    {
+      "pid": 15872,
+      "exitCode": 0,
+      "stopped": "2026-09-18T08:49:09.383Z",
+      "pidCurrentlyRunning": false,
+      "writerLockExists": false
+    },
+    {
+      "pid": 42316,
+      "exitCode": 0,
+      "stopped": "2026-09-18T08:49:26.341Z",
+      "pidCurrentlyRunning": false,
+      "writerLockExists": false
+    },
+    {
+      "pid": 40424,
+      "exitCode": 0,
+      "stopped": "2026-09-18T08:49:33.58Z",
+      "pidCurrentlyRunning": false,
+      "writerLockExists": false
+    },
+    {
+      "pid": 47976,
+      "exitCode": 0,
+      "stopped": "2026-09-18T08:50:29.893Z",
+      "pidCurrentlyRunning": false,
+      "writerLockExists": false
+    },
+    {
+      "pid": 51404,
+      "exitCode": 0,
+      "stopped": "2026-09-18T08:51:55.879Z",
+      "pidCurrentlyRunning": false,
+      "writerLockExists": false
+    },
+    {
+      "pid": 55948,
+      "exitCode": 0,
+      "stopped": "2026-09-18T08:52:13.685Z",
+      "pidCurrentlyRunning": false,
+      "writerLockExists": false
+    }
+  ],
+  "browserCloseError": null,
+  "contextCloseError": null,
+  "profileCleanupError": null,
+  "ownedProfileExists": false,
+  "finalReview": "No saved bytes: AC4 remains blocked. HTTP comparison not reached; no success proxy. Experimental helper not retained. Four regressions ran, including migration continuation; archive ran with explicit blocked scenarios. No production/tool/infra change justified."
+}
