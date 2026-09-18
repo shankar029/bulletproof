@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design — Planner archive and CSV</title>
+<link rel="stylesheet" href="../assets/artifact.css">
+<script src="../assets/artifact.js" defer data-doc="design.html" data-slug="planner-live-workflow"></script>
+<h1>Planner archive and CSV</h1>
+<div class="meta">Proposed r1 · 18 September 2026 · One integrated increment I1 · <a href="contracts/r1.json">Normative component contracts</a> · <a href="ux.html">UX</a></div>
+
+<h2>1. Scope and basis</h2>
+<p>AC1 durable archive/restore; AC2 readable archives; AC3 read-only tasks; AC4 safe CSV; AC5 compatibility and UI preservation. Only <code>examples/team-planner</code> changes. No framework, runtime infrastructure, deployment or publication.</p>
+<p class="assumption">Human design/UX approval is unconfirmed. Explicit no-wait authorization permits this proposal, not approval. Independent review and guarded adoption remain pending.</p>
+<p>FACT: <a href="research.md">research E1–E6</a> and inspected source establish strict project records, transactional writes and list/detail coupling. All “to-be” behavior below is PROPOSED; full signatures, errors and proof obligations live in the linked normative contracts.</p>
+
+<h2>2. Program design: as-is → to-be</h2>
+<figure>
+<svg viewBox="0 0 700 94" role="img" aria-label="Module dependencies: browser to HTTP to Planner, with schema, store and CSV collaborators">
+<defs><marker id="m-arrow" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker></defs>
+<rect class="b" x="4" y="28" width="110" height="38"/><text class="t" x="59" y="51">C5 Browser</text>
+<rect class="b" x="149" y="28" width="100" height="38"/><text class="t" x="199" y="51">C4 HTTP</text>
+<rect class="b" x="284" y="28" width="110" height="38"/><text class="t" x="339" y="51">C2 Planner</text>
+<rect class="b" x="435" y="3" width="120" height="38"/><text class="t" x="495" y="26">Store + C1 schema</text>
+<rect class="b" x="435" y="53" width="120" height="38"/><text class="t" x="495" y="76">C3 CSV</text>
+<line class="a" x1="114" y1="47" x2="149" y2="47" marker-end="url(#m-arrow)"/>
+<line class="a" x1="249" y1="47" x2="284" y2="47" marker-end="url(#m-arrow)"/>
+<line class="a" x1="394" y1="42" x2="435" y2="22" marker-end="url(#m-arrow)"/>
+<line class="a" x1="394" y1="52" x2="435" y2="72" marker-end="url(#m-arrow)"/>
+<text class="s" x="131" y="20">HTTP</text><text class="s" x="267" y="20">call</text>
+<text class="s" x="414" y="13">read/write</text><text class="s" x="414" y="89">serialize</text>
+<text class="s" x="626" y="32">One store owns state.</text><text class="s" x="626" y="65">CSV owns formatting.</text>
+</svg>
+<figcaption>Existing module boundaries; only the pure CSV module is new.</figcaption>
+</figure>
+<table>
+<tr><th>Component / why</th><th>Observed → proposed interface and responsibility</th><th>Collaborators / principle</th></tr>
+<tr><td>C1 Schema<br>AC1, AC5</td><td><code>validate(model)</code>: strict records → optional boolean <code>archived</code> only in v2. Missing means false; no read rewrite. E1/E5.</td><td>Store; compatibility at one boundary.</td></tr>
+<tr><td>C2 Planner<br>AC1–AC5</td><td><code>listProjects(query = {})</code>: all → active/archive query. New <code>getProject(id)</code>, <code>setProjectArchived(id, input, revision)</code>, <code>exportProjectCsv(id)</code>. <code>createProject(input, revision)</code> normalizes response only; <code>createTask(input, revision)</code> / <code>updateTask(id, input, revision)</code> gain transactional guards. E1/E3.</td><td>Store, schema, rules, CSV; domain decisions stay inside Planner.</td></tr>
+<tr><td>C3 CSV<br>AC4</td><td>Absent → new <code>projectCsv(model, project): string</code>, <code>csvCell(value): string</code> in <code>src/csv.mjs</code>.</td><td>Task views; pure serialization, no HTTP or storage effects.</td></tr>
+<tr><td>C4 HTTP<br>AC1–AC5</td><td><code>createServer({planner, onError})</code>: existing routes → project detail/PATCH/export and strict list query. E2.</td><td>Planner, existing response/error helpers; transport only.</td></tr>
+<tr><td>C5 Browser<br>AC2–AC5</td><td><code>reload()</code>, <code>render()</code>, <code>navigate(changes)</code>, <code>edit(task)</code>, <code>save(…)</code>, <code>request(…)</code>: list-bound detail → independent coherent detail, archive navigation, draft-bound revision. New <code>downloadCsv(projectId)</code>, <code>syncWriteControls()</code>. E4.</td><td>HTTP, existing DOM/CSS; explicit state ownership, no client-only authorization.</td></tr>
+</table>
+
+<h2>3. Key interaction</h2>
+<figure>
+<svg viewBox="0 0 700 174" role="img" aria-label="Archive sequence including stale write failure and coherent refresh">
+<defs><marker id="s-arrow" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker></defs>
+<rect class="b" x="5" y="3" width="130" height="28"/><text class="t" x="70" y="22">Browser</text>
+<rect class="b" x="270" y="3" width="140" height="28"/><text class="t" x="340" y="22">HTTP / Planner</text>
+<rect class="b" x="555" y="3" width="140" height="28"/><text class="t" x="625" y="22">Store queue</text>
+<line class="a" x1="70" y1="55" x2="340" y2="55" marker-end="url(#s-arrow)"/><text class="s" x="205" y="48">PATCH archived=true, If-Match R</text>
+<line class="a" x1="340" y1="82" x2="625" y2="82" marker-end="url(#s-arrow)"/><text class="s" x="480" y="75">check R → change → persist → publish</text>
+<line class="a" x1="625" y1="111" x2="70" y2="111" marker-end="url(#s-arrow)"/><text class="s" x="348" y="103">200 R+1; coherent reload, then read-only detail</text>
+<line class="a" x1="70" y1="140" x2="625" y2="140" marker-end="url(#s-arrow)"/><text class="s" x="348" y="133">Competing task write: stale R → 409; fresh R+1 → archived guard</text>
+<text class="s" x="348" y="163">Failure: no mutation, no replay; retain draft and require explicit reload.</text>
+</svg>
+<figcaption>Export separately reads one committed snapshot → all project tasks → CSV bytes; it never changes UI revision.</figcaption>
+</figure>
+
+<h2>4. Data and HTTP contracts</h2>
+<p><code>GET /api/projects?archived=false|true</code> defaults false; unknown/duplicate/invalid queries fail. New <code>GET/PATCH /api/projects/:id</code> uses <code>{project, revision}</code>; PATCH accepts exactly <code>{archived:boolean}</code>. New <code>GET /api/projects/:id/tasks.csv</code> returns UTF-8 CSV, no-store, revision ETag and attachment <code>project-p-N-tasks.csv</code>. Detail/export take no queries. Global tasks/dashboard remain inclusive.</p>
+<p>CSV: ascending createdOrder, every task regardless of filters/page. Headers: <code>projectId,projectName,id,title,description,status,priority,dependencyIds,blocked,createdOrder</code>. Dependencies are JSON array text. No BOM; CRLF records including final record; quote every cell, double quotes, preserve embedded newlines/Unicode. Prefix text with apostrophe if first non-whitespace/control character is = + - @, or it starts with tab/CR/LF. Stored data stays unchanged; empty projects export headers.</p>
+
+<h2>5. Decisions and failures</h2>
+<table>
+<tr><th>Choice / alternative</th><th>Consequence and failure contract</th></tr>
+<tr><td><code>setProjectArchived('p-1',{archived:true},R)</code>, not client task edits</td><td>One atomic flag; any task status; current-revision repeats are byte-preserving no-ops. Legacy then stale-revision checks precede domain guards. Archived task writes, including no-ops, fail 409 <code>PROJECT_ARCHIVED</code> before allocation/mutation.</td></tr>
+<tr><td>Optional v2 field, not schema3 migration</td><td>Old snapshots still read; v1 remains read-only and rejects the field. Older binaries need not read new archived snapshots. Existing persistence/backup/recovery mechanics remain unchanged.</td></tr>
+<tr><td>Detail endpoint, not searching the filtered sidebar</td><td>Deep links work in either list. All load responses/batches must share revision before publication; stale completions ignored. Failed/uncertain saves retain draft, disable writes, never silently rebase/replay. Restore requires fresh reload.</td></tr>
+<tr><td>Server snapshot export, not browser page concatenation</td><td>Caller downloads once; serializer owns escaping. JSON errors never become CSV downloads. Disk failure returns existing 503 without publishing state.</td></tr>
+</table>
+
+<h2>6. Proof contract for I1</h2>
+<table>
+<tr><th>AC</th><th>Unit / integration / browser obligations (not results)</th></tr>
+<tr><td>AC1</td><td>Mixed-status/empty/repeat archive; restart exact data preservation; archive→restore journey.</td></tr>
+<tr><td>AC2</td><td>List partition and detail; strict HTTP queries/404; archived deep link and Back.</td></tr>
+<tr><td>AC3</td><td>Every mutable field/create/no-op rejected; queued races and unchanged bytes; two-client stale draft, restored editing and graph checks.</td></tr>
+<tr><td>AC4</td><td>Independent CSV parsing, hostile prefixes, Unicode/quotes/newlines, reversed storage, &gt;50 tasks, empty export; HTTP headers and actual active/archive downloads.</td></tr>
+<tr><td>AC5</td><td>v1/v2/no-rewrite/migration/failure regressions; coherent reload; filter/page/Back, keyboard/focus, narrow layout and accessibility audits.</td></tr>
+</table>
+<p>Extend existing app suites and browser harness; run full app regression before final verification. Rendering/printed page count requires browser verification: local <code>agent-browser --help</code> probe failed (executable unavailable). No gate or test pass is claimed.</p>
+</html>

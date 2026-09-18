@@ -44,7 +44,8 @@ export function validate(model) {
     allocated.add(record.createdOrder);
   }
   for (const project of model.projects) {
-    object(project, ['id', 'name', 'createdOrder'], ['id', 'name', 'createdOrder']);
+    object(project, model.schemaVersion === 2 ? ['id', 'name', 'createdOrder', 'archived'] : ['id', 'name', 'createdOrder'], ['id', 'name', 'createdOrder']);
+    if (Object.hasOwn(project, 'archived') && typeof project.archived !== 'boolean') invalid('Archived must be a boolean', 'archived');
     allocation(project, 'p');
     if (text(project.name, 'name', 80) !== project.name || names.has(project.name.toLowerCase())) invalid('Invalid or duplicate project name', 'name');
     names.add(project.name.toLowerCase());

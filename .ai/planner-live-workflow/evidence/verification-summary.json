@@ -1,0 +1,820 @@
+{
+  "mode": "UNADOPTED PROCEDURAL / unbound evidence, never receipts",
+  "generated": "2026-09-18T08:38:10.008Z",
+  "sourceHashes": {
+    "src/csv.mjs": "4b873fd1f296172532dd8c45085683ab529eddedf1d2bdaa96493c4d77c994f9",
+    "src/errors.mjs": "241e92aa4d6634e11cf4b718226f8402367275e1e352eb90b03e60d844a1943f",
+    "src/main.mjs": "13e1fa9a67f4ea09c2268e6f24fc1c4504796857728489804eee9487f3085328",
+    "src/migrate.mjs": "f2da0b8be6354c363e9a6c965ab830be914a7bcc9ee080f40cbddaecc7fce898",
+    "src/planner.mjs": "f91a9c0e3ad5af944f938917d31f54e3c7b8fcfe267c3acdd8a778fee5dfc221",
+    "src/rules.mjs": "0cf8710fc8f4a0e7b7db1ac39e6ca8652eb88e00f1db1f393217ead48a121aaf",
+    "src/schema.mjs": "288f4b9009aca3237852bd472d8d20d328251a8818d0eca4f9c14c0c7bb42a53",
+    "src/server.mjs": "ca78205e4b1a2c38d31208a6f154b5a8a91703cdc3c16a56b681e1d1e2885bee",
+    "src/store.mjs": "fdfa9959c270aa3ee2ec8ac8f77ac08a5306023c9d4ed8247e8fe0fe611f7c88",
+    "public/app.mjs": "f5aca3b58f70e75053210792288a8d15516f7cd2abfee7d6781aa07612967408",
+    "public/index.html": "cf2b5536b996f6fea0a28c37b7e1519afe82c920ad400536c7532813aea929ba",
+    "public/styles.css": "4de10c95665d143e5a1956bc34d284e0c776a988a96371d5c9b1179ce0801f92"
+  },
+  "inputHashes": {
+    "state.md": "504b8788581f2b4f087ee958291d770f2910136165928700b879f1e6ac258860",
+    "clarifications.md": "97631b5f2edeabdf5844c2661f2de0ac2f34edac07bcd136ee54ca201b1878e0",
+    "design.html": "b352cb846bda5c1543637ec877302663d94ab7903bb55e4cbab559ab117d39b9",
+    "ux.html": "ab798a43e4c324b8128ee2a992244eae2931ffce1b605af87f867bad5576b3d2",
+    "contracts/r1.json": "499c147d7f40033334efb6e88eb6bf61a05063fbf0f4b4181898eaf79cece780",
+    "plan.html": "f0c9657751e648e067b449a0c76e90e59797210e840fff007712bcae4f953454",
+    "tasks.md": "e23af61e7fcc064178d210109b5b4b03640845cdc721e7198ff4fd09a68f0593"
+  },
+  "runs": [
+    {
+      "runId": "e2e-2026-09-18T08-33-33-762Z-b1570d0c",
+      "status": "FAILED",
+      "started": "2026-09-18T08:33:33.766Z",
+      "finished": "2026-09-18T08:36:26.049Z",
+      "checks": [
+        {
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Export does not modify stored data or revision",
+          "ac": [
+            "AC4"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archive confirm dismissed updates lifecycle control",
+          "ac": [
+            "AC1",
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Cancelled archive leaves exact model intact",
+          "ac": [
+            "AC1",
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Pre-archive filtered second page",
+          "ac": [
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archive control receives keyboard focus",
+          "ac": [
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archive confirm accepted updates lifecycle control",
+          "ac": [
+            "AC1",
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archive focuses replacement lifecycle control",
+          "ac": [
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archive preserves selected filter and page",
+          "ac": [
+            "AC2",
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archive filtered results unchanged",
+          "ac": [
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archive sidebar includes only archived project",
+          "ac": [
+            "AC2"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Every visible task write control disabled; restore/download enabled",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Any-status lifecycle preserves all task fields, IDs and allocation",
+          "ac": [
+            "AC1"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Only target project archive flag changes",
+          "ac": [
+            "AC1"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Active sidebar excludes archive while deep detail remains readable",
+          "ac": [
+            "AC2"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Back restores archive selector and filtered page",
+          "ac": [
+            "AC2",
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Restart preserves exact archived model",
+          "ac": [
+            "AC1"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archived direct link works without archive navigation",
+          "ac": [
+            "AC2"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Deep link shows all mixed-status tasks and blocked dependency",
+          "ac": [
+            "AC1",
+            "AC2"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "390px no horizontal page overflow",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "390px labeled form controls",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "390px interactive targets at least 44px",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "1280px no horizontal page overflow",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "1280px labeled form controls",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "1280px interactive targets at least 44px",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "archived Pagination is a named navigation landmark",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "archived axe automated violations (not full WCAG or human approval)",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "archived axe has no unresolved incomplete checks on tested page",
+          "ac": [
+            "AC07"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Keyboard reaches archived download",
+          "ac": [
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archived download has visible focus outline",
+          "ac": [
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archived API rejects {\"title\":\"no\"}",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archived API rejects {\"description\":\"no\"}",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archived API rejects {\"status\":\"done\"}",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archived API rejects {\"priority\":\"high\"}",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archived API rejects {\"dependencyIds\":[]}",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archived API rejects {\"title\":\"=SUM(1,2)\"}",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archived API rejects {\"title\":\"no\",\"description\":\"no\",\"priority\":\"low\"}",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archived API rejects creation",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Rejected archived writes preserve exact disk bytes",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Restore enables Add/Edit and focuses lifecycle",
+          "ac": [
+            "AC3",
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Restored real UI edit persisted",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Restore retains dependency transition rules",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Lifecycle disabled while draft open",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archive confirm accepted updates lifecycle control",
+          "ac": [
+            "AC1",
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Two real browser clients retain stale draft and fence retry",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Stale draft recovery announced",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Rejected stale write leaves disk unchanged",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Fenced draft Cancel focuses project heading",
+          "ac": [
+            "AC3",
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Explicit reload discards draft and adopts archived state",
+          "ac": [
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Download transport failure is actionable",
+          "ac": [
+            "AC4"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Failed export emits no browser download event",
+          "ac": [
+            "AC4"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Failed export leaves no file and no success announcement",
+          "ac": [
+            "AC4"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Mismatched real snapshot response prevents publication",
+          "ac": [
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Revision mismatch fences writes and retains prior rendered data",
+          "ac": [
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Post-save refresh failure retains draft, fences save, focuses alert",
+          "ac": [
+            "AC3",
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Post-save failure does not announce successful save",
+          "ac": [
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Actual save committed despite refresh fault",
+          "ac": [
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Explicit reload after uncertain save restores writable committed state",
+          "ac": [
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Restore and edited text survive second restart",
+          "ac": [
+            "AC1",
+            "AC3"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Archive confirm accepted updates lifecycle control",
+          "ac": [
+            "AC1",
+            "AC5"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Empty archive is readable",
+          "ac": [
+            "AC1",
+            "AC2"
+          ],
+          "status": "VERIFIED"
+        }
+      ],
+      "failedScenarios": [
+        {
+          "name": "active-download",
+          "error": "AssertionError [ERR_ASSERTION]: --session e2e-2026-09-18T08-33-33-762Z-b1570d0c --cdp http://127.0.0.1:61043 --json download #download-csv C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-stunning-funicular\\examples\\team-planner\\.work\\e2e-2026-09-18T08-33-33-762Z-b1570d0c\\archive-active.csv\n\n{\"success\":false,\"data\":null,\"error\":\"Download was canceled\"}\r\n\n\n1 !== 0\n\n    at command (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:57:36)\n    at async browser (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:82:16)\n    at async download (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:619:18)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:701:17\n    at async scenario (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:655:16)\n    at async Object.archive (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:700:3)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:936:7"
+        },
+        {
+          "name": "archived-download",
+          "error": "Error: Download transport BLOCKED earlier in this run: --session e2e-2026-09-18T08-33-33-762Z-b1570d0c --cdp http://127.0.0.1:61043 --json download #download-csv C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-stunning-funicular\\examples\\team-planner\\.work\\e2e-2026-09-18T08-33-33-762Z-b1570d0c\\archive-active.csv\n\n{\"success\":false,\"data\":null,\"error\":\"Download was canceled\"}\r\n\n\n1 !== 0\n\n    at download (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:615:37)\n    at file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:744:31\n    at scenario (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:655:22)\n    at Object.archive (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:743:9)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:936:7"
+        },
+        {
+          "name": "stale-client-download",
+          "error": "Error: Download transport BLOCKED earlier in this run: --session e2e-2026-09-18T08-33-33-762Z-b1570d0c --cdp http://127.0.0.1:61043 --json download #download-csv C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-stunning-funicular\\examples\\team-planner\\.work\\e2e-2026-09-18T08-33-33-762Z-b1570d0c\\archive-active.csv\n\n{\"success\":false,\"data\":null,\"error\":\"Download was canceled\"}\r\n\n\n1 !== 0\n\n    at download (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:615:37)\n    at file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:808:49\n    at scenario (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:655:22)\n    at Object.archive (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:808:9)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:936:7"
+        },
+        {
+          "name": "empty-download",
+          "error": "Error: Download transport BLOCKED earlier in this run: --session e2e-2026-09-18T08-33-33-762Z-b1570d0c --cdp http://127.0.0.1:61043 --json download #download-csv C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-stunning-funicular\\examples\\team-planner\\.work\\e2e-2026-09-18T08-33-33-762Z-b1570d0c\\archive-active.csv\n\n{\"success\":false,\"data\":null,\"error\":\"Download was canceled\"}\r\n\n\n1 !== 0\n\n    at download (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:615:37)\n    at file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:835:84\n    at scenario (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:655:22)\n    at Object.archive (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:834:9)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:936:7"
+        }
+      ],
+      "screenshots": [
+        "archive-coherence-failure.png",
+        "archive-complete.png",
+        "archive-failed-active-download.png",
+        "archive-failed-archived-download.png",
+        "archive-failed-empty-download.png",
+        "archive-failed-stale-client-download.png",
+        "archive-filtered-archive.png",
+        "archive-layout-1280.png",
+        "archive-layout-390.png",
+        "archive-post-save-refresh-failure.png",
+        "archive-stale-draft.png"
+      ],
+      "processes": [
+        {
+          "pid": 39196,
+          "exitCode": 0,
+          "stopped": "2026-09-18T08:34:39.809Z",
+          "url": "http://127.0.0.1:61886"
+        },
+        {
+          "pid": 50308,
+          "exitCode": 0,
+          "stopped": "2026-09-18T08:36:07.083Z",
+          "url": "http://127.0.0.1:49703"
+        },
+        {
+          "pid": 9668,
+          "exitCode": 0,
+          "stopped": "2026-09-18T08:36:25.046Z",
+          "url": "http://127.0.0.1:59905"
+        }
+      ],
+      "runnerSha256": "c9073559d53d4ed5dd1f9bd5150db9de6f56632c24206d33206080c2dd773671",
+      "reportSha256": "da691ff44f6a2f9f02693e552c4322c208d5bb3d9b5248574e8bfa01461e2017",
+      "unexpectedConsole": [
+        []
+      ],
+      "uncaughtErrors": [
+        []
+      ]
+    },
+    {
+      "runId": "e2e-2026-09-18T08-29-15-530Z-7e5f273a",
+      "status": "FAILED",
+      "started": "2026-09-18T08:29:15.533Z",
+      "finished": "2026-09-18T08:30:17.126Z",
+      "checks": [
+        {
+          "name": "Actual v1 fixture loads in browser read-only",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Legacy browser disables edits",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Genuine I3 fixture SHA-256",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Legacy API refuses writes",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Offline migration increments revision exactly once",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Migration preserves exact IDs/text/edges/order/nextId/status",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Migration exact-byte original backup",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Repeated offline migration no-op",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Repeated migration preserves exact bytes",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Task save success announcement",
+          "ac": [
+            "AC02",
+            "AC07"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Browser high priority filter after real edit",
+          "ac": [
+            "AC09",
+            "AC05"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Browser project/status/normalized title/priority all combine with AND",
+          "ac": [
+            "AC05",
+            "AC09"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "High priority filter survives full process restart",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Migrated browser priority survives restart",
+          "ac": [
+            "AC09"
+          ],
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Migrated dashboard preserves independent counts",
+          "ac": [
+            "AC06",
+            "AC09"
+          ],
+          "status": "VERIFIED"
+        }
+      ],
+      "failedScenarios": [
+        {
+          "name": "legacy-download",
+          "error": "AssertionError [ERR_ASSERTION]: --session e2e-2026-09-18T08-29-15-530Z-7e5f273a --cdp http://127.0.0.1:59862 --json download #download-csv C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-stunning-funicular\\examples\\team-planner\\.work\\e2e-2026-09-18T08-29-15-530Z-7e5f273a\\migration-legacy.csv\n\n{\"success\":false,\"data\":null,\"error\":\"Download was canceled\"}\r\n\n\n1 !== 0\n\n    at command (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:57:36)\n    at async browser (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:82:16)\n    at async download (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:619:18)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:551:23\n    at async scenario (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:655:16)\n    at async Object.migration (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:550:3)\n    at async file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/examples/team-planner/scripts/e2e.mjs:935:7"
+        }
+      ],
+      "screenshots": [
+        "migration-failed-legacy-download.png",
+        "migration-legacy.png",
+        "migration-priority-restart.png"
+      ],
+      "processes": [
+        {
+          "pid": 17256,
+          "exitCode": 0,
+          "stopped": "2026-09-18T08:29:44.946Z",
+          "url": "http://127.0.0.1:52072"
+        },
+        {
+          "pid": 9912,
+          "exitCode": 0,
+          "stopped": "2026-09-18T08:30:01.947Z",
+          "url": "http://127.0.0.1:54481"
+        },
+        {
+          "pid": 35828,
+          "exitCode": 0,
+          "stopped": "2026-09-18T08:30:14.625Z",
+          "url": "http://127.0.0.1:61163"
+        }
+      ],
+      "runnerSha256": "b843107998052018976e74d82a26944d6e538d3f1fd0993a48ac544370604146",
+      "reportSha256": "4e4b1309dec572517c38f6bb8ae4ada5457baefa90ba61088f2307d33f33e3b2",
+      "unexpectedConsole": [
+        []
+      ],
+      "uncaughtErrors": [
+        []
+      ]
+    }
+  ],
+  "attempts": [
+    {
+      "runId": "e2e-2026-09-18T08-01-46-622Z-623788e6",
+      "status": "FAILED",
+      "checks": 1,
+      "runnerSha256": "68670b631e68eca534f176894902bcc03d6012ed99aea32635c3463d1910f935"
+    },
+    {
+      "runId": "e2e-2026-09-18T08-03-12-640Z-07b232a3",
+      "status": "FAILED",
+      "checks": 1,
+      "runnerSha256": "f0c38c45ea706bd20dc465588dcd77c80e1d5cc9b876af307f6efdf78779d9b9"
+    },
+    {
+      "runId": "e2e-2026-09-18T08-04-51-911Z-3e7b17e0",
+      "status": "FAILED",
+      "checks": 1,
+      "runnerSha256": "f3d65e2c4bc4ebcd94a127d12183d8b03e4033ab1673f0e3a27dd924612cfb90"
+    },
+    {
+      "runId": "e2e-2026-09-18T08-06-50-458Z-c2119239",
+      "status": "FAILED",
+      "checks": 1,
+      "runnerSha256": "a48407a4cafe9b409b8ac660390a6c2c27d48a990d8e0fa2107d4041fcdff7b2"
+    },
+    {
+      "runId": "e2e-2026-09-18T08-08-46-693Z-29254ed5",
+      "status": "FAILED",
+      "checks": 2,
+      "runnerSha256": "74f210000f6833fe5779e0d422cfba6ea5d949281beb31ce290ec6b1f41f4c39"
+    },
+    {
+      "runId": "e2e-2026-09-18T08-10-30-038Z-8c13af54",
+      "status": "FAILED",
+      "checks": 2,
+      "runnerSha256": "2b0221641c8fe69e1b627f17452a8b913ea68ac8f04db52f886e9ac331f77e6c"
+    },
+    {
+      "runId": "e2e-2026-09-18T08-12-41-459Z-2a60d452",
+      "status": "FAILED",
+      "checks": 5,
+      "runnerSha256": "3a0a7618d55947f30c4062d17af0aab75a8a7db3b54588291633e5a3175f4e62"
+    },
+    {
+      "runId": "e2e-2026-09-18T08-15-30-525Z-95537800",
+      "status": "FAILED",
+      "checks": 50,
+      "runnerSha256": "e7ff3baabfc78364596536c106eaeeb9cb35aadfc9a794982af9f5026048ff79"
+    },
+    {
+      "runId": "e2e-2026-09-18T08-18-38-277Z-61c43199",
+      "status": "FAILED",
+      "checks": 0,
+      "runnerSha256": "a24b47c2f8d047f71a3cbd2419c845e9d0455361f16e8e568406010a6f7f98f5"
+    },
+    {
+      "runId": "e2e-2026-09-18T08-19-44-090Z-620c3f54",
+      "status": "FAILED",
+      "checks": 45,
+      "runnerSha256": "a3052f1b694243b4aa6d8872eef1329d55c055ef0648ed60ef77d3642a2010f9"
+    },
+    {
+      "runId": "e2e-2026-09-18T08-26-16-621Z-eca64623",
+      "status": "FAILED",
+      "checks": 50,
+      "runnerSha256": "ad8bf55be18dd18e5bd88f374efe2d0bbca34d748e9cbef6bf16f80443c67afe"
+    },
+    {
+      "runId": "e2e-2026-09-18T08-29-15-465Z-f720c0e7",
+      "status": "FAILED",
+      "checks": 62,
+      "runnerSha256": "b843107998052018976e74d82a26944d6e538d3f1fd0993a48ac544370604146"
+    },
+    {
+      "runId": "e2e-2026-09-18T08-29-15-530Z-7e5f273a",
+      "status": "FAILED",
+      "checks": 15,
+      "runnerSha256": "b843107998052018976e74d82a26944d6e538d3f1fd0993a48ac544370604146"
+    },
+    {
+      "runId": "e2e-2026-09-18T08-33-33-762Z-b1570d0c",
+      "status": "FAILED",
+      "checks": 62,
+      "runnerSha256": "c9073559d53d4ed5dd1f9bd5150db9de6f56632c24206d33206080c2dd773671"
+    }
+  ],
+  "native": {
+    "tests": 46,
+    "passed": 46,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "backendLineCoverage": 99.4,
+    "backendBranchCoverage": 97.56,
+    "backendFunctionCoverage": 97.03,
+    "outputSha256": "c9d5baaebfed7c047aee255f717a1697b2ffec77d44ad20d38609f8c7d3cb6c6"
+  },
+  "unknown": [
+    "actual successful browser download bytes",
+    "full all-flow browser regression",
+    "keyboard activation of archive confirmation",
+    "obsolete response completion race",
+    "duplication_pct",
+    "complexity_max",
+    "complexity_avg",
+    "cycles",
+    "dead_exports",
+    "static_findings",
+    "mutation_score_pct",
+    "diff_coverage_pct",
+    "architecture_rules"
+  ],
+  "runnerSha256": "c9073559d53d4ed5dd1f9bd5150db9de6f56632c24206d33206080c2dd773671",
+  "liveAuthorityAbsent": {
+    "workflow.json": true,
+    "current-design.json": true,
+    "ledger.json": true,
+    "workflow.lock": true
+  }
+}

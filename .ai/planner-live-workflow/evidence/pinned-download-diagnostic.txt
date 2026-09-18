@@ -1,0 +1,115 @@
+
+  
+  /// Compute a hash of the [`LaunchOptions`] fields that require a browser
+  /// relaunch when changed (baked into the Chrome process at startup).
+  ///
+  /// Fields NOT hashed:
+> /// ignore_https_errors, color_scheme, download_path
+  ///
+  /// `storage_state` is handled separately in `handle_launch()`: explicit
+  /// `storageState` launches always require a clean local browser so the loaded
+  /// state replaces the prior session instead of merging into it.
+  #[allow(clippy::too_many_arguments)]
+  fn launch_hash(
+      opts: &LaunchOptions,
+      allowed_domains: &[String],
+      plugin_init_scripts: &[String],
+      enable_features: &[String],
+              "engine": env::var("AGENT_BROWSER_ENGINE").unwrap_or_else(|_| "chrome".to_string()),
+              "args": options.args.clone(),
+              "extensions": options.extensions.clone(),
+              "userAgent": options.user_agent.clone(),
+              "colorScheme": options.color_scheme.clone(),
+>             "downloadPath": options.download_path.clone(),
+              "hideScrollbars": options.hide_scrollbars,
+              "allowFileAccess": options.allow_file_access,
+              "webgpu": options.webgpu,
+              "noXvfb": options.no_xvfb,
+          }
+      });
+  
+      for mutation in crate::plugins::launch_mutations_from_plugins(&plugins, request).await? {
+          options.args.extend(mutation.args);
+          if !mutation.extensions.is_empty() {
+          ca_cert: None,
+          ca_bundle: None,
+          ca_cert_digest: None,
+          prepared_nss_home: None,
+          color_scheme: env::var("AGENT_BROWSER_COLOR_SCHEME").ok(),
+>         download_path: env::var("AGENT_BROWSER_DOWNLOAD_PATH").ok(),
+          hide_scrollbars: hide_scrollbars_from_env(),
+          viewport_size: None,
+          use_real_keychain: false,
+          webgpu: webgpu_from_env(),
+          webmcp: !matches!(
+              env::var("AGENT_BROWSER_NO_WEBMCP").as_deref(),
+              Ok("1" | "true" | "yes")
+          ),
+          no_xvfb: no_xvfb_from_env(),
+          restrict_webrtc: env::var("AGENT_BROWSER_ALLOWED_DOMAINS")
+          prepared_nss_home: None,
+          color_scheme: cmd
+              .get("colorScheme")
+              .and_then(|v| v.as_str())
+              .map(String::from),
+>         download_path: cmd
+              .get("downloadPath")
+              .and_then(|v| v.as_str())
+              .map(String::from),
+          hide_scrollbars: hide_scrollbars_from_launch_cmd(cmd),
+          viewport_size: None,
+          use_real_keychain: false,
+          webgpu: webgpu_from_launch_cmd(cmd),
+          webmcp: cmd
+              .get("webmcp")
+              .and_then(Value::as_bool)
+          features: feat_list,
+      });
+      Ok(json!({ "set": true }))
+  }
+  
+> async fn handle_download(cmd: &Value, state: &mut DaemonState) -> Result<Value, String> {
+      let selector = cmd
+          .get("selector")
+          .and_then(|v| v.as_str())
+          .ok_or("Missing 'selector' parameter")?;
+      let path_str = cmd
+          .get("path")
+          .and_then(|v| v.as_str())
+          .ok_or("Missing 'path' parameter")?;
+  
+      // Resolve to absolute path and canonicalize to prevent path traversal
+                      "Page.downloadProgress",
+                  ) {
+                      match event.params.get("state").and_then(|v| v.as_str()) {
+                          Some("completed") => break,
+                          Some("canceled") => {
+>                             return Err("Download was canceled".to_string());
+                          }
+                          _ => {}
+                      }
+                  }
+              }
+              Ok(Err(tokio::sync::broadcast::error::RecvError::Lagged(_))) => continue,
+              Ok(Err(_)) => return Err("Event stream closed".to_string()),
+              Err(_) => return Err("Timeout waiting for download to complete".to_string()),
+          }
+      }
+              }
+          }
+      }
+  }
+  
+> async fn handle_waitfordownload(cmd: &Value, state: &DaemonState) -> Result<Value, String> {
+      let mgr = state.browser.as_ref().ok_or("Browser not launched")?;
+      let session_id = mgr.active_session_id()?.to_string();
+      let timeout_ms = state.timeout_ms(cmd);
+  
+      let mut rx = mgr.client.subscribe();
+      let deadline = tokio::time::Instant::now() + tokio::time::Duration::from_millis(timeout_ms);
+  
+      loop {
+          let remaining = deadline.saturating_duration_since(tokio::time::Instant::now());
+          if remaining.is_zero() {
+
+

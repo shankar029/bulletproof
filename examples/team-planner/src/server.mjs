@@ -59,34 +59,49 @@ export function createServer({ planner, onError = error => console.error(error) 
       if (!hosts.includes(req.headers.host) || (req.headers.origin !== undefined && !hosts.map(host => `http://${host}`).includes(req.headers.origin))) throw new AppError('FORBIDDEN_ORIGIN', 'Only same-site local requests are allowed', 403);
       const url = new URL(req.url, `http://${req.headers.host}`);
       const taskMatch = /^\/api\/tasks\/(t-[1-9][0-9]*)$/.exec(url.pathname);
+      const projectMatch = /^\/api\/projects\/(p-[1-9][0-9]*)(\/tasks\.csv)?$/.exec(url.pathname);
+      if (projectMatch && !Number.isSafeInteger(Number(projectMatch[1].slice(2)))) throw new AppError('NOT_FOUND', 'Project not found', 404);
       let methods;
       if (assets.has(url.pathname) || ['/api/health', '/api/dashboard'].includes(url.pathname)) methods = ['GET'];
       if (url.pathname === '/api/projects' || url.pathname === '/api/tasks') methods = ['GET', 'POST'];
       if (taskMatch) methods = ['PATCH'];
+      if (projectMatch) methods = projectMatch[2] ? ['GET'] : ['GET', 'PATCH'];
       if (!methods) throw new AppError('NOT_FOUND', 'Route not found', 404);
       if (!methods.includes(req.method)) {
         json(res, 405, { error: { code: 'METHOD_NOT_ALLOWED', message: 'Method not allowed' } }, { Allow: methods.join(', ') });
         return;
       }
       if (assets.has(url.pathname)) {
-        parseQuery(url.searchParams, url.pathname === '/' ? ['view', 'projectId', 'status', 'priority', 'q', 'page', 'pageSize'] : []);
+        const query = parseQuery(url.searchParams, url.pathname === '/' ? ['view', 'projectId', 'status', 'priority', 'q', 'page', 'pageSize', 'archived'] : []);
+        if (Object.hasOwn(query, 'archived') && !['true', 'false'].includes(query.archived)) throw new AppError('INVALID_QUERY', 'Invalid archived query', 400, 'archived');
         const [name, type] = assets.get(url.pathname);
         send(res, 200, await readFile(new URL(`../public/${name}`, import.meta.url)), { 'Content-Type': type });
         return;
       }
       const allowedQuery = req.method === 'GET' && url.pathname === '/api/tasks' ? ['projectId', 'status', 'priority', 'q', 'page', 'pageSize'] :
-        req.method === 'GET' && url.pathname === '/api/dashboard' ? ['projectId'] : [];
+        req.method === 'GET' && url.pathname === '/api/dashboard' ? ['projectId'] :
+        req.method === 'GET' && url.pathname === '/api/projects' ? ['archived'] : [];
       const query = parseQuery(url.searchParams, allowedQuery);
       if (req.method === 'GET') {
-        if (url.pathname === '/api/health') json(res, 200, planner.health());
-        else if (url.pathname === '/api/projects') json(res, 200, planner.listProjects());
+        if (projectMatch?.[2]) {
+          const result = planner.exportProjectCsv(projectMatch[1]);
+          send(res, 200, result.csv, {
+            'Content-Type': 'text/csv; charset=utf-8',
+            'Content-Disposition': `attachment; filename="project-${projectMatch[1]}-tasks.csv"`,
+            'Cache-Control': 'no-store', ETag: `"${result.revision}"`,
+          });
+        }
+        else if (projectMatch) json(res, 200, planner.getProject(projectMatch[1]));
+        else if (url.pathname === '/api/health') json(res, 200, planner.health());
+        else if (url.pathname === '/api/projects') json(res, 200, planner.listProjects(query));
         else if (url.pathname === '/api/tasks') json(res, 200, planner.listTasks(query));
         else json(res, 200, planner.dashboard(query.projectId));
         return;
       }
       const revision = expectedRevision(req);
       const input = await body(req);
-      if (taskMatch) json(res, 200, await planner.updateTask(taskMatch[1], input, revision));
+      if (projectMatch) json(res, 200, await planner.setProjectArchived(projectMatch[1], input, revision));
+      else if (taskMatch) json(res, 200, await planner.updateTask(taskMatch[1], input, revision));
       else if (url.pathname === '/api/projects') json(res, 201, await planner.createProject(input, revision));
       else json(res, 201, await planner.createTask(input, revision));
     } catch (error) {

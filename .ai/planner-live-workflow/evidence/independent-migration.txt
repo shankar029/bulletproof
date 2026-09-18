@@ -1,0 +1,72 @@
+COMMAND 1 setup --version
+START migration C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T08-29-15-530Z-7e5f273a\data-migration
+COMMAND 2 migration --json open http://127.0.0.1:52072
+COMMAND 3 migration wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 4 migration --json console --clear
+COMMAND 5 migration --json errors --clear
+COMMAND 6 migration --json open http://127.0.0.1:52072/?projectId=p-1
+COMMAND 7 migration wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 8 migration eval
+COMMAND 9 migration eval
+PASS migration: Legacy browser disables edits
+PASS migration: Genuine I3 fixture SHA-256
+PASS migration: Legacy API refuses writes
+COMMAND 10 migration --json scrollintoview #download-csv
+COMMAND 11 migration download #download-csv C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T08-29-15-530Z-7e5f273a\migration-legacy.csv
+COMMAND 12 migration eval
+COMMAND 13 migration download #download-control C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T08-29-15-530Z-7e5f273a\diagnostic-direct-http.csv
+COMMAND 14 migration eval
+FAILED SCENARIO legacy-download: --session e2e-2026-09-18T08-29-15-530Z-7e5f273a --cdp http://127.0.0.1:59862 --json download #download-csv C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T08-29-15-530Z-7e5f273a\migration-legacy.csv
+
+{"success":false,"data":null,"error":"Download was canceled"}
+
+
+1 !== 0
+
+COMMAND 15 migration screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T08-29-15-530Z-7e5f273a\migration-failed-legacy-download.png --full
+COMMAND 16 migration http://127.0.0.1:59862 --json snapshot
+COMMAND 17 migration screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T08-29-15-530Z-7e5f273a\migration-legacy.png --full
+COMMAND 18 migration http://127.0.0.1:59862 --json snapshot
+COMMAND 19 migration C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\src\migrate.mjs --data-dir C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T08-29-15-530Z-7e5f273a\data-migration
+PASS migration: Offline migration increments revision exactly once
+PASS migration: Migration preserves exact IDs/text/edges/order/nextId/status
+PASS migration: Migration exact-byte original backup
+COMMAND 20 migration C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\src\migrate.mjs --data-dir C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T08-29-15-530Z-7e5f273a\data-migration
+PASS migration: Repeated offline migration no-op
+PASS migration: Repeated migration preserves exact bytes
+COMMAND 21 migration --json open http://127.0.0.1:54481/?projectId=p-1
+COMMAND 22 migration wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 23 migration --json scrollintoview article[data-task-id="t-7"] button
+COMMAND 24 migration --json click article[data-task-id="t-7"] button
+COMMAND 25 migration select #editor-priority high
+COMMAND 26 migration --json scrollintoview #editor button[type=submit]
+COMMAND 27 migration --json click #editor button[type=submit]
+COMMAND 28 migration wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 29 migration eval
+PASS migration: Task save success announcement
+COMMAND 30 migration select #filter-priority high
+COMMAND 31 migration --json scrollintoview .filters button[type=submit]
+COMMAND 32 migration --json click .filters button[type=submit]
+COMMAND 33 migration wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 34 migration eval
+PASS migration: Browser high priority filter after real edit
+COMMAND 35 migration fill #filter-q  LAUNCH 
+COMMAND 36 migration select #filter-status todo
+COMMAND 37 migration --json scrollintoview .filters button[type=submit]
+COMMAND 38 migration --json click .filters button[type=submit]
+COMMAND 39 migration wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 40 migration eval
+PASS migration: Browser project/status/normalized title/priority all combine with AND
+COMMAND 41 migration --json open http://127.0.0.1:61163/?projectId=p-1&priority=high
+COMMAND 42 migration wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 43 migration eval
+PASS migration: High priority filter survives full process restart
+COMMAND 44 migration eval
+COMMAND 45 migration eval
+COMMAND 46 migration screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T08-29-15-530Z-7e5f273a\migration-priority-restart.png --full
+COMMAND 47 migration http://127.0.0.1:59862 --json snapshot
+COMMAND 48 migration http://127.0.0.1:59862 --json console
+COMMAND 49 migration http://127.0.0.1:59862 --json errors
+END migration FAILED
+COMMAND 50 migration http://127.0.0.1:59862 --json close
+Evidence: C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T08-29-15-530Z-7e5f273a\report.json

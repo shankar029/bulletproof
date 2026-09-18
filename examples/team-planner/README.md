@@ -47,6 +47,40 @@ results. Omit projectId for global totals. Blocked is a subset of todo. Completi
 integer floor of 100 × done / total, or zero for empty projects.
 Browser filters and page are URL state; Back restores them. Apply filters resets page 1.
 
+## Project lifecycle and CSV
+
+Archive project preserves all tasks and dependencies, regardless of their statuses.
+Projects navigation lists only active projects; **Archived projects** lists archives.
+Direct project links remain readable even when the project is absent from the sidebar.
+Restore project reenables editing. Archived Add/Edit controls are disabled; the server
+also rejects every task create/update, including a no-op, with `409 PROJECT_ARCHIVED`.
+Revision conflicts retain precedence. Lifecycle controls require finishing or canceling
+an open draft. Rejected or uncertain writes retain the draft and require explicit reload
+before another write; no draft is silently rebased or replayed.
+
+`GET /api/projects?archived=true` lists archives (`false` is the default).
+`GET /api/projects/p-1` reads either lifecycle state.
+`PATCH /api/projects/p-1` accepts only `{"archived":true}` or `{"archived":false}` with
+the normal If-Match revision. Repeating the current state at the current revision is
+a no-op. Project names remain unique across active and archived projects.
+Global task queries/dashboard totals include archived tasks; archive navigation filters
+only the project list, not global aggregates.
+
+**Download CSV** works for active, archived and legacy read-only projects.
+`GET /api/projects/p-1/tasks.csv` exports all tasks, ignoring UI filters and pagination,
+ordered by creation order. Fixed columns are projectId, projectName, id, title,
+description, status, priority, dependencyIds (JSON array), blocked and createdOrder.
+Bytes are UTF-8 without BOM, with CRLF record separators, quoted fields and doubled
+quotes; embedded newlines and Unicode are preserved. Formula-like text (including
+whitespace/control-prefixed `=`, `+`, `-`, `@`, or initial tab/CR/LF) gains a leading
+apostrophe in the download only. Stored text never changes. Empty projects export headers.
+Errors remain JSON, not successful downloads.
+
+V2 projects may now contain an optional strictly boolean `archived` field; absence means
+active. Old snapshots need no migration or read-time rewrite. V1 remains read-only until
+the existing explicit migration below. Older binaries do not support extended v2 snapshots;
+use the updated app rather than removing lifecycle fields or downgrading user data.
+
 ## Offline migration
 
 Stop the server, then run from the example directory:
@@ -120,17 +154,23 @@ npm exec --yes --package=agent-browser@0.37.1 -- agent-browser --version
 Then from `examples\team-planner`:
 
 ```powershell
+$env:E2E_PYTHON = 'C:\path\to\your\verified\python.exe'
 node scripts\e2e.mjs --flow base
 node scripts\e2e.mjs --flow graph
 node scripts\e2e.mjs --flow query
 node scripts\e2e.mjs --flow migration
+node scripts\e2e.mjs --flow archive
 npm run test:e2e
 ```
+
+Set `E2E_PYTHON` to your installed Python 3 executable; the harness requires it
+explicitly for the repository's bounded command runner and never selects a
+machine-specific interpreter. The runner owns command deadlines and child cleanup.
 
 The runner discovers the pinned CLI in the npm cache. For another installation,
 set `AGENT_BROWSER_BIN` to its native executable (the adjacent package must be
 version 0.37.1). It uses benchmark Playwright **only to launch and close** an
-owned headless Chromium context. All browser actions, DOM assertions, screenshots
+owned headless Chromium browser. All browser actions, DOM assertions, screenshots
 and axe audits use agent-browser over an explicit `http://127.0.0.1:<port>` CDP
 connection. No external app server or existing browser session is accepted.
 
@@ -147,5 +187,8 @@ The journeys cover create/edit/refresh/restart, dependency rejection/reopen,
 filtered pagination/Back/deep links/dashboard, migration/priority/restart,
 conflicts, invalid input, safe script-like text, network recovery, keyboard
 navigation and 390/1280px layout targets. Native unit tests are not UI proof.
+The archive journey adds lossless lifecycle/restart, archived server/UI write
+rejection, two-client stale drafts, coherent-load failures and CSV download checks.
+Download failures are recorded as failures, not converted into successful HTTP-only proof.
 Review the report's findings as well as its flow results: axe is not full WCAG
 certification or human design approval, and incomplete checks remain explicit.

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
 import { createHash, randomUUID } from 'node:crypto';
-import { access, appendFile, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
+import { access, appendFile, cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { homedir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -11,9 +11,11 @@ import http from 'node:http';
 const root = resolve(import.meta.dirname, '..');
 const repo = resolve(root, '..', '..');
 const args = process.argv.slice(2);
-if (args.length !== 2 || args[0] !== '--flow' || !['base', 'graph', 'query', 'migration', 'all'].includes(args[1])) {
-  throw new Error('Usage: node scripts\\e2e.mjs --flow base|graph|query|migration|all');
+if (args.length !== 2 || args[0] !== '--flow' || !['base', 'graph', 'query', 'migration', 'archive', 'all'].includes(args[1])) {
+  throw new Error('Usage: node scripts\\e2e.mjs --flow base|graph|query|migration|archive|all');
 }
+const python = process.env.E2E_PYTHON;
+if (!python) throw new Error('Set E2E_PYTHON to an installed Python 3 executable for the bounded command runner.');
 const runId = `e2e-${new Date().toISOString().replaceAll(/[:.]/g, '-')}-${randomUUID().slice(0, 8)}`;
 const output = join(root, '.work', runId);
 await mkdir(output, { recursive: true });
@@ -32,31 +34,35 @@ let context, cli, cdp, currentFlow;
 const session = runId;
 let commandNumber = 0;
 
-async function command(executable, argv, { timeout = 30000, cwd = root, input } = {}) {
+async function command(executable, argv, { timeout = 30000, cwd = root, input, expectedFailure = false, allowFailure = false } = {}) {
   const entry = { number: ++commandNumber, time: new Date().toISOString(), executable, args: argv, cwd, flow: currentFlow?.name };
-  const child = spawn(executable, argv, { cwd, windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'],
-    env: { ...process.env, AGENT_BROWSER_DEFAULT_TIMEOUT: '12000', AGENT_BROWSER_IDLE_TIMEOUT_MS: '90000' } });
+  const wrapperArgs = [join(repo, 'scripts', 'run.py'), '--idle', '25', '--max', String(timeout / 1000), '--', executable, ...argv];
+  Object.assign(entry, { wrapper: python, wrapperArgs, expectedFailure });
+  console.log(`COMMAND ${entry.number} ${currentFlow?.name ?? 'setup'} ${argv.includes('eval') ? 'eval' : argv.slice(-3).join(' ')}`);
+  const child = spawn(python, wrapperArgs, { cwd, windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'],
+    env: { ...process.env, AGENT_BROWSER_DEFAULT_TIMEOUT: '12000', AGENT_BROWSER_IDLE_TIMEOUT_MS: '90000',
+      AGENT_BROWSER_DOWNLOAD_PATH: join(output, 'downloads') } });
   active.add(child);
   let stdout = '', stderr = '', timedOut = false;
   child.stdout.on('data', data => { stdout += data; });
   child.stderr.on('data', data => { stderr += data; });
   child.stdin.end(input);
-  const timer = setTimeout(() => { timedOut = true; child.kill('SIGKILL'); }, timeout);
   try {
-    // The CLI daemon inherits Windows pipes; wait for our CLI PID, not daemon-held EOF.
-    const [exitCode, signal] = await once(child, 'exit', { signal: AbortSignal.timeout(timeout + 5000) });
+    // The bounded runner owns the deadline and child-tree cleanup; do not race it.
+    const [exitCode, signal] = await once(child, 'exit');
+    timedOut = exitCode === 124 || exitCode === 125;
     await new Promise(resolve => setTimeout(resolve, 20));
     Object.assign(entry, { exitCode, signal });
     assert.equal(timedOut, false, `Command timed out: ${argv.join(' ')}`);
-    assert.equal(exitCode, 0, `${argv.join(' ')}\n${stderr}\n${stdout}`);
+    if (expectedFailure) assert.notEqual(exitCode, 0, 'Expected negative command must fail');
+    else if (!allowFailure) assert.equal(exitCode, 0, `${argv.join(' ')}\n${stderr}\n${stdout}`);
     return stdout;
   } finally {
     Object.assign(entry, { timedOut, stdout, stderr });
     await appendFile(join(output, 'commands.jsonl'), JSON.stringify(entry) + '\n');
-    clearTimeout(timer);
     child.stdout.destroy();
     child.stderr.destroy();
-    active.delete(child);
+    if (child.exitCode !== null || child.signalCode !== null) active.delete(child);
   }
 }
 
@@ -112,6 +118,7 @@ async function select(selector, value) { await browser('select', selector, value
 async function check(name, ac, actual, expected) {
   assert.deepEqual(actual, expected, name);
   report.checks.push({ flow: currentFlow.name, name, ac, status: 'VERIFIED', actual });
+  console.log(`PASS ${currentFlow.name}: ${name}`);
 }
 async function visibleText(selector) { return evaluate(`document.querySelector(${JSON.stringify(selector)})?.textContent`); }
 async function contains(selector, expected, name, ac) {
@@ -253,10 +260,28 @@ async function layout(width) {
   await capture(`layout-${width}`);
 }
 async function base() {
+  async function lifecycleGuidance(name, editing) {
+    await check(name, ['AC5', 'R4'], await evaluate(`(() => {
+      const guidance = document.querySelector('#lifecycle-guidance');
+      const lifecycle = document.querySelector('#project-lifecycle');
+      return {
+        editorExists: !!document.querySelector('#editor'),
+        visible: !!guidance?.getClientRects().length && getComputedStyle(guidance).visibility === 'visible',
+        hidden: guidance?.hidden,
+        text: guidance?.textContent,
+        describedBy: lifecycle?.getAttribute('aria-describedby'),
+        disabled: lifecycle?.disabled
+      };
+    })()`), {
+      editorExists: editing, visible: editing, hidden: !editing,
+      text: 'Finish or cancel your draft before changing project state.',
+      describedBy: 'lifecycle-guidance', disabled: editing,
+    });
+  }
   await check('Fresh HTTP health', ['AC01'], await get('/api/health'), { status: 'ok', schemaVersion: 2, revision: 0 });
   await open();
-  await contains('#projects', 'No projects yet.', 'Fresh browser empty state', ['AC01', 'AC07']);
-  await check('Initial empty Projects live announcement', ['AC07'], await visibleText('#notice'), 'No projects yet. Create your first project.');
+  await contains('#projects', 'No active projects.', 'Fresh browser empty state', ['AC01', 'AC07']);
+  await check('Initial empty Projects live announcement', ['AC07'], await visibleText('#notice'), 'No active projects. Create a project or view Archived projects.');
   await check('Loading completion uses the polite status region', ['AC07'],
     await evaluate("({role:document.querySelector('#notice').getAttribute('role'),live:document.querySelector('#notice').getAttribute('aria-live')})"),
     { role: 'status', live: 'polite' });
@@ -271,6 +296,7 @@ async function base() {
   await browser('reload');
   await ready();
   await check('Selected empty project announces no tasks after reload', ['AC07'], await visibleText('#notice'), 'No tasks yet. Add your first task.');
+  await lifecycleGuidance('Lifecycle guidance initially hidden; lifecycle enabled', false);
   await keyboardUntil("document.activeElement.id === 'add-task'", 'Add task');
   await browser('press', 'Enter');
   await check('Keyboard-only project creation and Add task navigation', ['AC07'], await evaluate('document.activeElement.id'), 'editor-title');
@@ -286,6 +312,13 @@ async function base() {
   const review = tasks.find(task => task.title === 'Review');
   assert.ok(draft && review);
   await editTask(draft.id);
+  await lifecycleGuidance('Editing reveals associated guidance and disables lifecycle', true);
+  await fill('#editor-title', 'Uncommitted guidance draft');
+  await click('#editor button[type=button]');
+  await lifecycleGuidance('Cancel hides guidance and re-enables lifecycle', false);
+  await editTask(draft.id);
+  await check('Cancel discards guidance-test draft', ['AC5', 'R4'], await evaluate("document.querySelector('#editor-title').value"), 'Draft');
+  await lifecycleGuidance('Reopening editor restores guidance and lifecycle fence', true);
   await fill('#editor-title', '');
   await click('#editor button[type=submit]');
   await browser('wait', '#error');
@@ -296,6 +329,7 @@ async function base() {
   await fill('#editor-description', 'Edited description');
   await click('#editor button[type=submit]');
   await saved();
+  await lifecycleGuidance('Save hides guidance and re-enables lifecycle', false);
   await browser('reload');
   await ready();
   await contains(`article[data-task-id="${draft.id}"]`, 'Draft revised', 'Title survives browser refresh', ['AC02', 'AC07']);
@@ -540,6 +574,13 @@ async function migration() {
   await check('Genuine I3 fixture SHA-256', ['AC09'], createHash('sha256').update(original).digest('hex'), 'ad7845486864bb4fef3f938eac02ef4ba213f8d3e20da4e4fa1b1c8b61df4450');
   const rejected = await write('/api/tasks/t-7', { priority: 'high' }, 'PATCH', 409);
   await check('Legacy API refuses writes', ['AC09'], rejected.error.code, 'MIGRATION_REQUIRED');
+  await scenario('legacy-download', async () => {
+    const legacyCsv = await download('legacy', 'p-1');
+    await check('Legacy CSV contains all six original task IDs', ['AC4', 'AC5'],
+      parseCsv(legacyCsv.toString('utf8')).slice(1).map(row => row[2]), JSON.parse(original).tasks.filter(task => task.projectId === 'p-1').map(task => task.id));
+    await check('Legacy download leaves original bytes unchanged', ['AC4', 'AC5'],
+      (await readFile(join(currentFlow.directory, 'planner.json'))).equals(original), true);
+  });
   await capture('legacy');
   await stopApp();
   const migrationArgs = [join(root, 'src', 'migrate.mjs'), '--data-dir', currentFlow.directory];
@@ -576,18 +617,335 @@ async function migration() {
   await capture('priority-restart');
 }
 
+function parseCsv(csv) {
+  const rows = [];
+  let row = [], cell = '', quoted = false;
+  for (let i = 0; i < csv.length; i++) {
+    const c = csv[i];
+    if (quoted) {
+      if (c === '"' && csv[i + 1] === '"') { cell += '"'; i++; }
+      else if (c === '"') quoted = false;
+      else cell += c;
+    } else if (c === '"') quoted = true;
+    else if (c === ',') { row.push(cell); cell = ''; }
+    else if (c === '\r' && csv[i + 1] === '\n') {
+      row.push(cell); rows.push(row); row = []; cell = ''; i++;
+    } else assert.fail(`Invalid unquoted CSV character at ${i}`);
+  }
+  assert.equal(quoted, false);
+  assert.equal(cell, '');
+  assert.deepEqual(row, []);
+  return rows;
+}
+
+async function download(label, projectId) {
+  if (report.downloadBlocker) throw new Error(`Download transport BLOCKED earlier in this run: ${report.downloadBlocker}`);
+  const path = join(output, `${currentFlow.name}-${label}.csv`);
+  await browser('scrollintoview', '#download-csv');
+  let result;
+  try { result = await browser('download', '#download-csv', path); }
+  catch (error) {
+    report.downloadBlocker = error.message;
+    if (!report.downloadControl) {
+      await evaluate(`(() => { const a=document.createElement('a'); a.id='download-control';
+        a.href=${JSON.stringify(`/api/projects/${projectId}/tasks.csv`)};
+        a.textContent='Diagnostic direct HTTP download'; document.body.append(a); })()`);
+      const controlPath = join(output, 'diagnostic-direct-http.csv');
+      try {
+        report.downloadControl = JSON.parse(await command(cli, ['--session', session, '--cdp', cdp, '--json',
+          'download', '#download-control', controlPath], { allowFailure: true }));
+        report.downloadControl.fileExists = await access(controlPath).then(() => true, () => false);
+      } finally { await evaluate("document.querySelector('#download-control').remove()"); }
+    }
+    throw error;
+  }
+  await browser('wait', '--text', 'CSV download started.');
+  const bytes = await readFile(path);
+  const response = await fetch(`${currentFlow.app.url}/api/projects/${projectId}/tasks.csv`, { signal: AbortSignal.timeout(5000) });
+  assert.equal(response.status, 200);
+  const serverBytes = Buffer.from(await response.arrayBuffer());
+  await writeFile(join(output, `${currentFlow.name}-${label}-server.csv`), serverBytes);
+  await check(`${label} actual browser download equals server bytes`, ['AC4'], bytes.equals(serverBytes), true);
+  await check(`${label} CSV download metadata`, ['AC4'],
+    [response.headers.get('content-type'), response.headers.get('content-disposition'), response.headers.get('cache-control')],
+    ['text/csv; charset=utf-8', `attachment; filename="project-${projectId}-tasks.csv"`, 'no-store']);
+  await check(`${label} UTF8 no BOM with final CRLF`, ['AC4'],
+    bytes.toString('utf8').startsWith('"projectId"') && bytes.subarray(-2).equals(Buffer.from('\r\n')) &&
+      Buffer.from(bytes.toString('utf8')).equals(bytes), true);
+  report.downloads ??= [];
+  report.downloads.push({ flow: currentFlow.name, label, path, result, bytes: bytes.length,
+    sha256: createHash('sha256').update(bytes).digest('hex'), headers: Object.fromEntries(response.headers) });
+  return bytes;
+}
+
+async function scenario(name, action) {
+  try { return await action(); }
+  catch (error) {
+    currentFlow.failedScenarios ??= [];
+    currentFlow.failedScenarios.push({ name, error: error.stack });
+    console.error(`FAILED SCENARIO ${name}: ${error.message}`);
+    await capture(`failed-${name}`);
+  }
+}
+
+async function archiveDialog(accept) {
+  await click('#project-lifecycle');
+  const dialog = await browser('dialog', 'status');
+  await writeFile(join(output, `archive-dialog-${commandNumber}.json`), JSON.stringify(dialog, null, 2));
+  assert.ok(JSON.stringify(dialog).includes('Archive this project? Tasks will become read-only. You can restore it later.'), 'Actual native confirm text');
+  await browser('dialog', accept ? 'accept' : 'dismiss');
+  if (accept) {
+    await browser('wait', '--text', 'Project archived. Tasks are read-only.');
+    await ready();
+  }
+  await check(`Archive confirm ${accept ? 'accepted' : 'dismissed'} updates lifecycle control`, ['AC1', 'AC5'],
+    await visibleText('#project-lifecycle'), accept ? 'Restore project' : 'Archive project');
+}
+
+async function archive() {
+  await open();
+  const neighbor = await createProject('Still active');
+  const projectId = await createProject('@Team,"Unicode \u65e5"');
+  await addTask('=SUM(1,2)', 'Comma, "quotes" \ud83d\ude80\nsecond line');
+  const first = (await get(`/api/tasks?projectId=${projectId}`)).items[0];
+  const tasks = [first];
+  for (const [title, status, dependencyIds, priority, description] of [
+    ['Launch todo', 'todo', [], 'low', '\tplain'],
+    ['Launch blocked', 'todo', [first.id], 'high', '\u200b@SUM(1,2)'],
+    ['Launch later', 'todo', [], 'normal', ''],
+    ['Running', 'in_progress', [], 'normal', 'safe'],
+    ['Finished', 'done', [], 'high', 'line\rreturn\r\npair'],
+  ]) {
+    const task = (await write('/api/tasks', { projectId, title, dependencyIds, priority, description })).task;
+    tasks.push(status === 'todo' ? task : (await write(`/api/tasks/${task.id}`, { status }, 'PATCH')).task);
+  }
+  await click('#reload');
+  await ready();
+  const disk = () => readFile(join(currentFlow.directory, 'planner.json'), 'utf8');
+  const before = JSON.parse(await disk());
+  let activeCsv;
+  await scenario('active-download', async () => {
+    activeCsv = await download('active', projectId);
+    const rows = parseCsv(activeCsv.toString('utf8'));
+  await check('Independent CSV fixed columns and all six task IDs', ['AC4'],
+    [rows[0], rows.slice(1).map(row => row[2])],
+    [['projectId', 'projectName', 'id', 'title', 'description', 'status', 'priority', 'dependencyIds', 'blocked', 'createdOrder'], tasks.map(task => task.id)]);
+  await check('Independent CSV unsafe name/title and multiline Unicode', ['AC4'], rows[1],
+    [projectId, "'@Team,\"Unicode \u65e5\"", first.id, "'=SUM(1,2)", 'Comma, "quotes" \ud83d\ude80\nsecond line', 'todo', 'normal', '[]', 'false', String(first.createdOrder)]);
+  await check('Independent CSV formula descriptions, dependencies and blocked data', ['AC4'],
+    [rows[2][4], rows[3][4], rows[3][6], rows[3][7], rows[3][8], rows[6][4]],
+    ["'\tplain", "'\u200b@SUM(1,2)", 'high', JSON.stringify([first.id]), 'true', 'line\rreturn\r\npair']);
+  });
+  await check('Export does not modify stored data or revision', ['AC4'], JSON.parse(await disk()), before);
+  await archiveDialog(false);
+  await check('Cancelled archive leaves exact model intact', ['AC1', 'AC5'], JSON.parse(await disk()), before);
+  await select('#filter-pageSize', '2');
+  await ready();
+  await fill('#filter-q', 'Launch');
+  await select('#filter-status', 'todo');
+  await click('.filters button[type=submit]');
+  await ready();
+  await buttonNamed('Next');
+  await ready();
+  const ids = () => evaluate("[...document.querySelectorAll('article')].map(el=>el.dataset.taskId)");
+  await check('Pre-archive filtered second page', ['AC5'], await ids(), [tasks[3].id]);
+  await browser('focus', '#project-lifecycle');
+  await check('Archive control receives keyboard focus', ['AC5'], await evaluate('document.activeElement.id'), 'project-lifecycle');
+  await archiveDialog(true);
+  await check('Archive focuses replacement lifecycle control', ['AC5'], await evaluate('document.activeElement.id'), 'project-lifecycle');
+  await check('Archive preserves selected filter and page', ['AC2', 'AC5'],
+    await evaluate("Object.fromEntries(new URL(location.href).searchParams)"),
+    { projectId, pageSize: '2', q: 'Launch', status: 'todo', page: '2', archived: 'true' });
+  await check('Archive filtered results unchanged', ['AC5'], await ids(), [tasks[3].id]);
+  await check('Archive sidebar includes only archived project', ['AC2'],
+    await evaluate("[...document.querySelectorAll('#projects a')].map(a=>new URL(a.href).searchParams.get('projectId'))"), [projectId]);
+  await check('Every visible task write control disabled; restore/download enabled', ['AC3'],
+    await evaluate("({disabled:[...document.querySelectorAll('[data-write=task]')].every(el=>el.disabled),restore:document.querySelector('#project-lifecycle').disabled,download:document.querySelector('#download-csv').disabled})"),
+    { disabled: true, restore: false, download: false });
+  const archivedModel = JSON.parse(await disk());
+  await check('Any-status lifecycle preserves all task fields, IDs and allocation', ['AC1'],
+    [archivedModel.tasks, archivedModel.nextId, archivedModel.revision], [before.tasks, before.nextId, before.revision + 1]);
+  await check('Only target project archive flag changes', ['AC1'], archivedModel.projects,
+    before.projects.map(project => project.id === projectId ? { ...project, archived: true } : project));
+  await scenario('archived-download', async () => {
+    const archivedCsv = await download('archived-filtered-page2', projectId);
+    assert.ok(activeCsv, 'Active browser download must exist for active/archive equality');
+    await check('Archived filtered download is identical full-project snapshot', ['AC4'], archivedCsv.equals(activeCsv), true);
+  });
+  await click('#nav-projects');
+  await ready();
+  await check('Active sidebar excludes archive while deep detail remains readable', ['AC2'],
+    await evaluate("({ids:[...document.querySelectorAll('#projects a')].map(a=>new URL(a.href).searchParams.get('projectId')),title:document.querySelector('#project-title').textContent})"),
+    { ids: [neighbor], title: '@Team,"Unicode \u65e5"' });
+  await browser('back');
+  await ready();
+  await check('Back restores archive selector and filtered page', ['AC2', 'AC5'],
+    [await evaluate("new URL(location.href).searchParams.get('archived')"), await ids()], ['true', [tasks[3].id]]);
+  await capture('filtered-archive');
+  await restart();
+  await check('Restart preserves exact archived model', ['AC1'], JSON.parse(await disk()), archivedModel);
+  await open(`/?projectId=${projectId}`);
+  await contains('#main', 'Archived — tasks are read-only.', 'Archived direct link works without archive navigation', ['AC2']);
+  await check('Deep link shows all mixed-status tasks and blocked dependency', ['AC1', 'AC2'],
+    await evaluate("[...document.querySelectorAll('article .badge')].map(el=>el.textContent)"),
+    ['todo', 'todo', 'blocked (todo)', 'todo', 'in progress', 'done']);
+  await layout(390);
+  await layout(1280);
+  await audit('archived');
+  await browser('focus', '#project-lifecycle');
+  await browser('press', 'Tab');
+  await check('Keyboard reaches archived download', ['AC5'], await evaluate('document.activeElement.id'), 'download-csv');
+  const focus = await evaluate("({style:getComputedStyle(document.activeElement).outlineStyle,width:getComputedStyle(document.activeElement).outlineWidth})");
+  await check('Archived download has visible focus outline', ['AC5'], focus.style !== 'none' && parseFloat(focus.width) >= 2, true);
+  const guardBytes = await disk();
+  for (const input of [{ title: 'no' }, { description: 'no' }, { status: 'done' }, { priority: 'high' },
+    { dependencyIds: [] }, { title: first.title }, { title: 'no', description: 'no', priority: 'low' }]) {
+    const response = await write(`/api/tasks/${first.id}`, input, 'PATCH', 409);
+    await check(`Archived API rejects ${JSON.stringify(input)}`, ['AC3'], response.error.code, 'PROJECT_ARCHIVED');
+  }
+  const rejectedCreate = await write('/api/tasks', { projectId, title: 'Forbidden creation' }, 'POST', 409);
+  await check('Archived API rejects creation', ['AC3'], rejectedCreate.error.code, 'PROJECT_ARCHIVED');
+  await check('Rejected archived writes preserve exact disk bytes', ['AC3'], await disk(), guardBytes);
+  await browser('focus', '#project-lifecycle');
+  await browser('press', 'Enter');
+  await browser('wait', '--text', 'Project restored. Editing is available.');
+  await ready();
+  await check('Restore enables Add/Edit and focuses lifecycle', ['AC3', 'AC5'],
+    await evaluate("[document.querySelector('#add-task').disabled,document.querySelector('article button').disabled,document.activeElement.id]"), [false, false, 'project-lifecycle']);
+  await editTask(first.id);
+  await fill('#editor-description', 'Restored edit');
+  await click('#editor button[type=submit]');
+  await saved();
+  await check('Restored real UI edit persisted', ['AC3'], (await get(`/api/tasks?projectId=${projectId}`)).items[0].description, 'Restored edit');
+  await setStatus(tasks[2].id, 'in_progress', false);
+  await contains('#error', 'Complete dependencies', 'Restore retains dependency transition rules', ['AC3']);
+  await click('#editor button[type=button]');
+  await editTask(first.id);
+  await fill('#editor-title', 'Draft from client one');
+  await check('Lifecycle disabled while draft open', ['AC3'], await evaluate("document.querySelector('#project-lifecycle').disabled"), true);
+  const tabs = await browser('tab', 'list');
+  await writeFile(join(output, 'archive-tabs.json'), JSON.stringify(tabs, null, 2));
+  const originalTab = tabs.tabs.find(tab => tab.active).targetId;
+  const secondTab = await browser('tab', 'new', '--label', 'archiver', `${currentFlow.app.url}/?projectId=${projectId}`);
+  currentFlow.secondClient = secondTab;
+  await ready();
+  await archiveDialog(true);
+  await browser('tab', String(originalTab));
+  const staleBytes = await disk();
+  await scenario('stale-client-download', () => download('stale-client-after-archive', projectId));
+  await click('#editor button[type=submit]');
+  await browser('wait', '#error');
+  await check('Two real browser clients retain stale draft and fence retry', ['AC3'],
+    await evaluate("[document.querySelector('#editor-title').value,document.querySelector('#editor button[type=submit]').disabled,document.activeElement.id]"),
+    ['Draft from client one', true, 'error']);
+  await contains('#notice', 'Draft retained', 'Stale draft recovery announced', ['AC3']);
+  await check('Rejected stale write leaves disk unchanged', ['AC3'], await disk(), staleBytes);
+  await capture('stale-draft');
+  await click('#editor button[type=button]');
+  await check('Fenced draft Cancel focuses project heading', ['AC3', 'AC5'], await evaluate('document.activeElement.id'), 'project-title');
+  await click('#reload');
+  await ready();
+  await check('Explicit reload discards draft and adopts archived state', ['AC3'],
+    await evaluate("document.querySelector('#editor') === null && document.querySelector('#add-task').disabled"), true);
+  await browser('tab', String(originalTab));
+  await click('#project-lifecycle');
+  await browser('wait', '--text', 'Project restored. Editing is available.');
+  await ready();
+  await archiveFailures(projectId, first.id);
+  await restart();
+  await open(`/?projectId=${projectId}`);
+  await contains(`article[data-task-id="${first.id}"]`, 'Committed before failed refresh', 'Restore and edited text survive second restart', ['AC1', 'AC3']);
+  const empty = await createProject('Empty lifecycle');
+  await archiveDialog(true);
+  await contains('#main', 'No tasks in this archived project.', 'Empty archive is readable', ['AC1', 'AC2']);
+  await scenario('empty-download', async () => {
+    await check('Empty archived download is header only', ['AC4'], parseCsv((await download('empty', empty)).toString('utf8')).length, 1);
+  });
+  await capture('complete');
+}
+
+async function archiveFailures(projectId, taskId) {
+  const csvUrl = `${currentFlow.app.url}/api/projects/${projectId}/tasks.csv`;
+  const noFile = join(output, 'failed-download.csv');
+  await browser('network', 'route', csvUrl, '--abort');
+  try {
+    await click('#download-csv');
+    await browser('wait', '#error');
+    await contains('#error', 'CSV download failed:', 'Download transport failure is actionable', ['AC4']);
+    const text = await command(cli, ['--session', session, '--cdp', cdp, '--json', 'wait', '--download', noFile, '--timeout', '1500'], { expectedFailure: true });
+    const result = JSON.parse(text);
+    await check('Download wait reports failure after aborted export', ['AC4'], result.success, false);
+    assert.match(JSON.stringify(result), /[Tt]imeout|[Tt]imed out/);
+    await check('Failed export leaves no file and no success announcement', ['AC4'],
+      [await access(noFile).then(() => true, () => false), await visibleText('#notice'), await evaluate('document.activeElement.id')], [false, '', 'error']);
+  } finally { await browser('network', 'unroute', csvUrl); }
+  const projectsUrl = `${currentFlow.app.url}/api/projects?archived=false`;
+  const staleProjects = await get('/api/projects?archived=false');
+  await write(`/api/tasks/${taskId}`, { description: 'Changed between read batches' }, 'PATCH');
+  await browser('network', 'route', projectsUrl, '--body', JSON.stringify(staleProjects));
+  try {
+    await click('#reload');
+    await browser('wait', '#error');
+    await contains('#error', 'Data changed while loading.', 'Mismatched real snapshot response prevents publication', ['AC5']);
+    await check('Revision mismatch fences writes and retains prior rendered data', ['AC5'],
+      await evaluate("document.querySelector('#add-task').disabled && document.querySelector('article p:nth-of-type(2)').textContent === 'Restored edit'"), true);
+    await capture('coherence-failure');
+  } finally { await browser('network', 'unroute', projectsUrl); }
+  await click('#reload');
+  await ready();
+  await editTask(taskId);
+  await fill('#editor-description', 'Committed before failed refresh');
+  const healthUrl = `${currentFlow.app.url}/api/health`;
+  await browser('network', 'route', healthUrl, '--abort');
+  try {
+    await click('#editor button[type=submit]');
+    await browser('wait', '#error');
+    await check('Post-save refresh failure retains draft, fences save, focuses alert', ['AC3', 'AC5'],
+      await evaluate("[document.querySelector('#editor-description').value,document.querySelector('#editor button[type=submit]').disabled,document.activeElement.id]"),
+      ['Committed before failed refresh', true, 'error']);
+    await check('Post-save failure does not announce successful save', ['AC5'],
+      await visibleText('#notice'), 'Draft retained. Reload latest discards it and loads committed data.');
+    await check('Actual save committed despite refresh fault', ['AC5'],
+      (await get(`/api/tasks?projectId=${projectId}`)).items.find(task => task.id === taskId).description, 'Committed before failed refresh');
+    await capture('post-save-refresh-failure');
+  } finally { await browser('network', 'unroute', healthUrl); }
+  await click('#reload');
+  await ready();
+  await check('Explicit reload after uncertain save restores writable committed state', ['AC5'],
+    await evaluate("!document.querySelector('#editor') && !document.querySelector('#add-task').disabled"), true);
+}
+
 try {
   cli = await discoverCli();
   report.agentBrowser = await command(cli, ['--version']);
   const { chromium } = await import(pathToFileURL(join(repo, 'benchmark', 'node_modules', 'playwright', 'index.mjs')));
   const profile = join(output, 'owned-browser-profile');
-  context = await chromium.launchPersistentContext(profile, { headless: true, args: ['--remote-debugging-port=0'], timeout: 30000 });
-  const port = Number((await readFile(join(profile, 'DevToolsActivePort'), 'utf8')).split('\n')[0]);
+  await mkdir(join(output, 'downloads'), { recursive: true });
+  await mkdir(profile, { recursive: true });
+  const reserve = http.createServer();
+  await new Promise(resolve => reserve.listen(0, '127.0.0.1', resolve));
+  const port = reserve.address().port;
+  await new Promise(resolve => reserve.close(resolve));
+  const previousTemp = { TEMP: process.env.TEMP, TMP: process.env.TMP };
+  try {
+    process.env.TEMP = profile;
+    process.env.TMP = profile;
+    // A persistent Playwright context also auto-dismisses dialogs. Launch only a server;
+    // agent-browser must be the sole owner of pages, dialogs and downloads.
+    context = await chromium.launchServer({ channel: 'chromium', headless: true, host: '127.0.0.1',
+      downloadsPath: join(output, 'downloads'), artifactsDir: profile, args: [`--remote-debugging-port=${port}`], timeout: 30000 });
+  } finally {
+    for (const [key, value] of Object.entries(previousTemp)) {
+      if (value === undefined) delete process.env[key];
+      else process.env[key] = value;
+    }
+  }
+  report.launch = 'chromium.launchServer; no Playwright page/context client attached';
   cdp = `http://127.0.0.1:${port}`;
   const version = await fetch(cdp + '/json/version', { signal: AbortSignal.timeout(5000) });
   assert.equal(version.status, 200);
   report.browser = await version.json();
-  for (const name of args[1] === 'all' ? ['base', 'graph', 'query', 'migration'] : [args[1]]) {
+  for (const name of args[1] === 'all' ? ['base', 'graph', 'query', 'migration', 'archive'] : [args[1]]) {
     currentFlow = { name, directory: join(output, `data-${name}`), started: new Date().toISOString(), status: 'RUNNING' };
     report.flows.push(currentFlow);
     console.log(`START ${name} ${currentFlow.directory}`);
@@ -602,8 +960,8 @@ try {
       }
       await browser('console', '--clear');
       await browser('errors', '--clear');
-      await ({ base, graph, query, migration })[name]();
-      currentFlow.status = 'VERIFIED';
+      await ({ base, graph, query, migration, archive })[name]();
+      currentFlow.status = currentFlow.failedScenarios?.length ? 'FAILED' : 'VERIFIED';
     } catch (error) {
       currentFlow.status = 'FAILED';
       currentFlow.error = error.stack;
@@ -619,9 +977,9 @@ try {
       if (!Array.isArray(currentFlow.console.messages) || currentFlow.console.messages.length) {
         report.findings.push({ id: 'BROWSER-CONSOLE', flow: name, ac: ['AC07'], detail: currentFlow.console });
       }
-      const expectedNegative = message => ['base', 'graph'].includes(name) &&
+      const expectedNegative = message => ['base', 'graph', 'archive'].includes(name) &&
         (/Failed to load resource: the server responded with a status of (400|409)\b/.test(JSON.stringify(message)) ||
-          (name === 'base' && /Failed to load resource: net::ERR_(INTERNET_DISCONNECTED|FAILED)\b/.test(JSON.stringify(message))));
+          (['base', 'archive'].includes(name) && /Failed to load resource: net::ERR_(INTERNET_DISCONNECTED|FAILED)\b/.test(JSON.stringify(message))));
       currentFlow.expectedNegativeConsole = Array.isArray(currentFlow.console.messages) ? currentFlow.console.messages.filter(expectedNegative) : null;
       currentFlow.unexpectedConsole = Array.isArray(currentFlow.console.messages) ? currentFlow.console.messages.filter(message => !expectedNegative(message)) : null;
       if (!Array.isArray(currentFlow.unexpectedConsole) || currentFlow.unexpectedConsole.length) {
@@ -650,6 +1008,8 @@ try {
   report.finished = new Date().toISOString();
   report.status = !report.blocker && !report.changedSources.length && report.flows.length && report.flows.every(flow => flow.status === 'VERIFIED') ? 'VERIFIED_WITH_LIMITATIONS' : 'FAILED';
   await writeFile(join(output, 'report.json'), JSON.stringify(report, null, 2));
+  if (process.env.E2E_EVIDENCE_DIR) await cp(output, join(resolve(process.env.E2E_EVIDENCE_DIR), runId),
+    { recursive: true, filter: path => !path.includes('owned-browser-profile') });
   console.log(`Evidence: ${join(output, 'report.json')}`);
   process.exitCode = report.status === 'FAILED' ? 1 : 0;
 }

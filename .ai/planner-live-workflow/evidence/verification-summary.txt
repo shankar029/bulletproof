@@ -1,0 +1,32 @@
+{
+  "mode": "UNADOPTED PROCEDURAL / unbound evidence, never receipts",
+  "sourceFilesFrozen": 12,
+  "runs": [
+    {
+      "runId": "e2e-2026-09-18T08-33-33-762Z-b1570d0c",
+      "status": "FAILED",
+      "checks": 62,
+      "failedOrBlockedScenarios": 4,
+      "screenshots": 11
+    },
+    {
+      "runId": "e2e-2026-09-18T08-29-15-530Z-7e5f273a",
+      "status": "FAILED",
+      "checks": 15,
+      "failedOrBlockedScenarios": 1,
+      "screenshots": 3
+    }
+  ],
+  "native": {
+    "tests": 46,
+    "passed": 46,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "backendLineCoverage": 99.4,
+    "backendBranchCoverage": 97.56,
+    "backendFunctionCoverage": 97.03,
+    "outputSha256": "c9d5baaebfed7c047aee255f717a1697b2ffec77d44ad20d38609f8c7d3cb6c6"
+  },
+  "allFlowRegression": "NOT RUN: archive prerequisite remains blocked"
+}

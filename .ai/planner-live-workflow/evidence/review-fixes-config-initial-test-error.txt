@@ -1,0 +1,18 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Set E2E_PYTHON to an installed Python 3 executable/. Input:
+
+''
+
+    at file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-stunning-funicular/.ai/planner-live-workflow/evidence/review-fixes-config-check.mjs:32:8 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '',
+  expected: /Set E2E_PYTHON to an installed Python 3 executable/,
+  operator: 'match',
+  diff: 'simple'
+}
+
+Node.js v24.11.1

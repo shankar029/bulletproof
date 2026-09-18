@@ -1,0 +1,24 @@
+{
+  "artifact_kind": "agent-authored-availability-note-not-probe-output",
+  "execution_mode": "unadopted-procedural",
+  "base": "c6095e7a8242cb1794fe78ca8fb8ea97e1fb9478",
+  "probe_executed": false,
+  "help_executed": true,
+  "reason": "probe.py::_execute resolves --repo to the Git root and collect scans the whole repository. --test-cwd is not a measurement source-scope restriction. Root-wide collection/materialization conflicts with this exercise's app-only scope and exclusion boundary. No app-only probe mode is exposed; no adapter or runtime change was built.",
+  "source_references": ["scripts/probe.py:630-660", "scripts/probe.py:507-552", "references/quality-metrics.md", "references/workflow-gates.md"],
+  "required_metrics": {
+    "duplication_pct": "unavailable",
+    "complexity_max": "unavailable",
+    "complexity_avg": "unavailable",
+    "cycles": "unavailable",
+    "dead_exports": "unavailable",
+    "static_findings": "unavailable",
+    "mutation_score_pct": "unavailable",
+    "diff_coverage_pct": "unavailable",
+    "architecture_rules": "unavailable"
+  },
+  "guarded_attachment": "unavailable: no qualified producer-owned bridge on fixed baseline",
+  "quality_closure": "blocked",
+  "native_coverage": "separate diagnostic evidence, not a substitute for required diff coverage",
+  "finishing_requirement": "A qualified app-scoped measurement path and guarded producer bridge; outside this app exercise. Do not treat this note as metrics.json or a passing producer receipt."
+}

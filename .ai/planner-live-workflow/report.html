@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planner lifecycle - implementation with verification blockers</title>
+<link rel="stylesheet" href="../assets/artifact.css">
+<script src="../assets/artifact.js" defer data-doc="report.html" data-slug="planner-live-workflow"></script>
+<h1>Planner lifecycle: implemented, not fully verified</h1>
+<p>18 September 2026 | Branch <code>shbs-microsoft-live-planner-workflow</code> |
+Base <code>c6095e7a8242cb1794fe78ca8fb8ea97e1fb9478</code>.
+Local preservation only; no push/PR attempted. Evidence is <strong>unadopted procedural,
+unbound</strong>, never guarded receipts or completed G6.</p>
+
+<h2>Delivered and not delivered</h2>
+<p>Implemented durable project archive/restore without task-status restrictions, active/archive
+navigation and deep links, transaction-time archived-task write rejection, restored editing,
+and deterministic full-project CSV with UTF-8, escaping and formula neutralization. Added
+the UI download action, compatibility/atomicity/concurrency tests and independent browser flows.
+Existing v1 read-only migration and v2 snapshots remain supported without eager rewriting.</p>
+<p><strong>Not established: actual browser-saved CSV files.</strong> Pinned agent-browser downloads
+canceled for active and legacy attempts, including direct-HTTP diagnostics; subsequent archive scenarios were blocked.
+One alternative using documented download configuration and ordinary click saved no file.
+This is an observed automation/transport failure, not a proven environment-only cause or production defect.
+The CSV API/serialization is tested; successful end-user download is not claimed.</p>
+
+<h2>Acceptance and gates</h2>
+<table>
+<tr><th>AC</th><th>Independent verdict</th><th>Proof and limits</th></tr>
+<tr><td>AC1 lossless archive/restore</td><td>VERIFIED</td><td>Mixed-status/graph byte and model comparisons, real process restart, restore and edit.</td></tr>
+<tr><td>AC2 archive navigation/deep links</td><td>VERIFIED</td><td>Partition, independent detail, Back, restart and empty archive UI.</td></tr>
+<tr><td>AC3 read-only and restore</td><td>VERIFIED-WITH-LIMITATIONS</td><td>All write fields/create/no-op rejected, queued races, UI restrictions/stale drafts. Successful export during stale editing remains unverified.</td></tr>
+<tr><td>AC4 safe downloadable CSV</td><td>BLOCKED</td><td>Native parser/formula/Unicode/multiline/&gt;50-row/HTTP proof passes; browser saved-file positive control absent.</td></tr>
+<tr><td>AC5 preservation</td><td>VERIFIED-WITH-LIMITATIONS</td><td>Legacy/migration/recovery, filters/paging, keyboard Restore/Cancel, 390/1280 layout and axe. Full WCAG, keyboard native Archive dialog, separate obsolete-completion orderings unverified.</td></tr>
+</table>
+<table>
+<tr><th>G1</th><th>G2</th><th>G3</th><th>G4</th><th>G5</th><th>G6</th></tr>
+<tr><td>PASS procedural</td><td>PASS procedural; human unconfirmed</td><td>PASS procedural; guarded handoff BLOCKED</td><td>Native/syntax PASS; qualified diff coverage unavailable</td><td>BLOCKED by saved-download proof</td><td>BLOCKED by G5 and missing qualified metrics</td></tr>
+</table>
+
+<h2>Executed commands and results</h2>
+<p>PowerShell, repository root. <code>$py</code> is the supplied managed Python 3.14.2 executable,
+<code>$node</code> is <code>C:\Program Files\nodejs\node.exe</code>. External commands below
+ran under repository <code>scripts\run.py</code> with the shown bounds (native final run uses
+<code>&amp; $py -B</code>; browser runs use <code>&amp; $py</code>). Browser CLI argv,
+source hashes, screenshots and failures remain in local per-run reports linked from
+<a href="evidence/verification.md">verification.md</a>.</p>
+<table>
+<tr><th>Arguments after run.py</th><th>Observed result</th></tr>
+<tr><td>Historical <a href="evidence/baseline.txt">baseline</a> and <a href="evidence/red.txt">test-first red</a> transcripts</td><td>Initial 37/37 pass, exit 0. Before implementation: 3 assertion failures, HTTP 404 vs 200/400, exit 1.</td></tr>
+<tr><td><code>--idle 60 --max 180 -- $node examples\team-planner\scripts\check.mjs coverage</code></td><td>Final 46/46 pass, no skips/cancellations, exit 0. Backend line/branch/function 99.40/97.56/97.03%; CSV and Planner 100% each.</td></tr>
+<tr><td><code>--idle 120 --max 1500 -- $node examples\team-planner\scripts\e2e.mjs --flow archive</code></td><td>62 passing named records; four failed/blocked downloads, exit 1.</td></tr>
+<tr><td><code>--idle 120 --max 2400 -- $node examples\team-planner\scripts\e2e.mjs --flow all</code></td><td>Bounded download-remedy run: 187 passing records, 26 screenshots, five failed/blocked downloads, exit 1. Base/graph/query passed; migration/archive non-download paths completed.</td></tr>
+<tr><td><code>--idle 120 --max 600 -- $node examples\team-planner\scripts\e2e.mjs --flow base</code>, explicit E2E_PYTHON</td><td>One targeted final-fix rerun: 67 passing checks, six new guidance assertions, exit0; zero download interactions.</td></tr>
+<tr><td><code>--idle 120 --max 600 -- $node examples\team-planner\scripts\mutation.mjs</code></td><td>Existing bounded backend sample: 30 selected, 28 assertion kills, 2 survivors, 0 ungraded, 93.33%, exit 0. Not changed-line/full/UI mutation.</td></tr>
+<tr><td><code>--idle 30 --max 60 -- $node --check examples\team-planner\public\app.mjs</code></td><td>Pass; harness and changed JS also syntax checked. No configured lint/type/build script.</td></tr>
+</table>
+<p><a href="evidence/download-attempts.md">Exact download attempts</a> records commands,
+API routes, CDP attachment, configured destinations and file/event observations without another trial.</p>
+<p>The all-flow experiment restored its unsuccessful download helper afterward. Non-download
+assertions and production hashes were reconciled independently; there is no all-green final-harness
+all-flow run. <a href="evidence/review-fixes-verification.md">Subsequent review fixes</a> have
+targeted proof recorded separately, not added to the 187 count. Missing E2E_PYTHON correctly
+fails before fixture creation. The later assertion-label-only change is separately hash-bound.
+Raw captures remain local and ignored to avoid committing duplicate archives.</p>
+
+<h2>Review, measurement and scorecard</h2>
+<p><a href="review.md">Independent review</a> found no demonstrated data-integrity, archive-authorization
+or CSV-formatting defect. Its concrete fixes were an explicit documented E2E_PYTHON prerequisite,
+visible draft/lifecycle guidance, and removal of the harness timer that raced bounded-runner cleanup.
+Download evidence and quality gaps remain open. See parent dispositions and targeted verification.</p>
+<p><strong>Final-byte review limitation:</strong> the same reviewer was asked for a narrow delta
+review, but the runtime cannot resume its synchronous agent. No replacement broad review was
+spawned. The full independent review predates these fixes; targeted independent execution is
+separate, not final-code approval. Timeout ownership correction is source-level evidence, not
+a forced-deadline cleanup stress result. Parent reconciliation of the preserved delta remains pending.</p>
+<p><a href="evidence/post-review.patch">Exact post-review patch</a> and
+<a href="evidence/post-review-binding.json">reviewed/final hashes</a> identify the boundary;
+recovered prior bytes matched all original reviewer hashes before the delta was generated.</p>
+<p><a href="evidence/final-source-hashes.json">Final 17-file inventory</a> binds physical
+worktree bytes; Git may normalize line endings on integration. Raw transcript whitespace
+is preserved; source/authored-artifact whitespace is checked separately from captured logs.</p>
+<p>All nine required workflow metrics remain <strong>unavailable</strong>. Root probe help/source
+inspection showed collection expands to the Git root; the coordinator prohibited treating this as
+app-scoped or traversing excluded material. No root probe/metrics.json or fake producer output.
+<a href="evidence/measurement-status.json">Availability note</a> is explicitly agent-authored.
+The mutation sample's two survivors weaken pre-existing capacity checks; schema validation still
+rejects oversized candidates, but error-message/precedence equivalence is not proven. They are
+not hidden, new-feature defects, or a passed full mutation gate.</p>
+<table>
+<tr><th>Dimension</th><th>Outcome without invented scores</th></tr>
+<tr><td>Correctness</td><td>Native and non-download browser support; AC4 blocked.</td></tr>
+<tr><td>Grounding</td><td>Source, real red/green output and independent source hashes inspected.</td></tr>
+<tr><td>Design fidelity/depth</td><td>Five components implemented; review guidance fix applied.</td></tr>
+<tr><td>Scope fidelity</td><td>App and task artifacts only; no runtime repair/publication.</td></tr>
+<tr><td>Reuse/DRY</td><td>Existing store/rules/DOM reused; duplication metric unavailable.</td></tr>
+<tr><td>Design/modularity</td><td>Pure CSV boundary and existing layers retained; metrics unavailable.</td></tr>
+<tr><td>Maintainability</td><td>Reviewed interfaces and harness configuration; no metric-backed score.</td></tr>
+<tr><td>Robustness</td><td>Atomicity/concurrency/error tests; static metrics unavailable.</td></tr>
+<tr><td>Test quality/evidence</td><td>46 native tests; browser positive download and full quality proof missing.</td></tr>
+</table>
+<p>One implementation/review-fix cycle. Design and UX each measured at three printed pages.
+Neither document rendering nor test counts imply all 29 workflow features, human approval,
+or a blinded effectiveness study.</p>
+
+<h2>Mode decision, assumptions and remaining work</h2>
+<p>Initial guarded preparation rejected null-command work with
+<code>Work requires an executable command</code>. No authority/admission existed.
+The coordinator then explicitly authorized unadopted procedural continuation under the same
+reviewed design. Candidates remain parked; no edits were relabeled as checks and no no-op command
+or runtime bridge was built. Positive guarded quality closure is separately unavailable on this
+fixed baseline. Publication remains policy-blocked and was not retried.</p>
+<p>Human design/UX approval remains unconfirmed. Recorded defaults: optional boolean archived on v2,
+inclusive global totals, full-project CSV independent of filters, fixed columns and formula-prefix
+policy. Deployment is not in scope. Current blocking follow-up is a supported browser transport
+that genuinely saves active/archive CSV bytes; do not infer success from navigation or a notice.
+Qualified app-scoped metrics/guarded attachment require separate authorized infrastructure work,
+not more changes to this app.</p>
+<pre><code>$py = 'C:\Users\shbs\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\python.exe'
+$node = 'C:\Program Files\nodejs\node.exe'
+$env:E2E_PYTHON = $py
+$env:E2E_EVIDENCE_DIR = Join-Path (Get-Location) '.ai\planner-live-workflow\evidence'
+# After the browser download environment is resolved:
+&amp; $py -B scripts\run.py --idle 120 --max 1500 -- $node examples\team-planner\scripts\e2e.mjs --flow archive
+&amp; $py -B scripts\run.py --idle 120 --max 2400 -- $node examples\team-planner\scripts\e2e.mjs --flow all</code></pre>
+<p>Local checkpoint identity is supplied in the handoff. It preserves useful implementation and
+failed proof, not a closed increment. Artifacts: <a href="state.md">state</a>,
+<a href="design.html">design</a>, <a href="plan.html">plan</a>,
+<a href="traceability.md">AC matrix</a>, <a href="review.md">review</a>.</p>
+</html>

@@ -1,0 +1,260 @@
+COMMAND 1 setup --version
+START base C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T09-11-13-615Z-51071082\data-base
+COMMAND 2 base --json open http://127.0.0.1:60961
+COMMAND 3 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 4 base --json console --clear
+COMMAND 5 base --json errors --clear
+PASS base: Fresh HTTP health
+COMMAND 6 base --json open http://127.0.0.1:60961/
+COMMAND 7 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 8 base eval
+COMMAND 9 base eval
+PASS base: Initial empty Projects live announcement
+COMMAND 10 base eval
+PASS base: Loading completion uses the polite status region
+COMMAND 11 base screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T09-11-13-615Z-51071082\base-empty.png --full
+COMMAND 12 base http://127.0.0.1:53544 --json snapshot
+COMMAND 13 base eval
+COMMAND 14 base --json press Tab
+COMMAND 15 base eval
+COMMAND 16 base --json press Tab
+COMMAND 17 base eval
+COMMAND 18 base --json press Tab
+COMMAND 19 base eval
+COMMAND 20 base --json press Tab
+COMMAND 21 base eval
+COMMAND 22 base --json press Tab
+COMMAND 23 base eval
+COMMAND 24 base keyboard type Launch
+COMMAND 25 base --json press Enter
+COMMAND 26 base wait --text Project created
+COMMAND 27 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 28 base eval
+PASS base: Project save success overrides loaded empty status
+COMMAND 29 base eval
+COMMAND 30 base http://127.0.0.1:53544 --json reload
+COMMAND 31 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 32 base eval
+PASS base: Selected empty project announces no tasks after reload
+COMMAND 33 base eval
+PASS base: Lifecycle guidance initially hidden; lifecycle enabled
+COMMAND 34 base eval
+COMMAND 35 base --json press Tab
+COMMAND 36 base eval
+COMMAND 37 base --json press Tab
+COMMAND 38 base eval
+COMMAND 39 base --json press Tab
+COMMAND 40 base eval
+COMMAND 41 base --json press Tab
+COMMAND 42 base eval
+COMMAND 43 base --json press Tab
+COMMAND 44 base eval
+COMMAND 45 base --json press Tab
+COMMAND 46 base eval
+COMMAND 47 base --json press Tab
+COMMAND 48 base eval
+COMMAND 49 base --json press Tab
+COMMAND 50 base eval
+COMMAND 51 base --json press Tab
+COMMAND 52 base eval
+COMMAND 53 base --json press Tab
+COMMAND 54 base eval
+COMMAND 55 base --json press Tab
+COMMAND 56 base eval
+COMMAND 57 base --json press Tab
+COMMAND 58 base eval
+COMMAND 59 base --json press Tab
+COMMAND 60 base eval
+COMMAND 61 base --json press Tab
+COMMAND 62 base eval
+COMMAND 63 base --json press Tab
+COMMAND 64 base eval
+COMMAND 65 base --json press Enter
+COMMAND 66 base eval
+PASS base: Keyboard-only project creation and Add task navigation
+COMMAND 67 base keyboard type Draft
+COMMAND 68 base --json press Tab
+COMMAND 69 base keyboard type Original description
+COMMAND 70 base eval
+COMMAND 71 base --json press Tab
+COMMAND 72 base eval
+COMMAND 73 base --json press Tab
+COMMAND 74 base eval
+COMMAND 75 base --json press Enter
+COMMAND 76 base wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 77 base eval
+PASS base: Task save success announcement
+COMMAND 78 base --json scrollintoview #add-task
+COMMAND 79 base --json click #add-task
+COMMAND 80 base fill #editor-title Review
+COMMAND 81 base fill #editor-description Review description
+COMMAND 82 base --json scrollintoview #editor button[type=submit]
+COMMAND 83 base --json click #editor button[type=submit]
+COMMAND 84 base wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 85 base eval
+PASS base: Task save success announcement
+COMMAND 86 base --json scrollintoview article[data-task-id="t-2"] button
+COMMAND 87 base --json click article[data-task-id="t-2"] button
+COMMAND 88 base eval
+PASS base: Editing reveals associated guidance and disables lifecycle
+COMMAND 89 base fill #editor-title Uncommitted guidance draft
+COMMAND 90 base --json scrollintoview #editor button[type=button]
+COMMAND 91 base --json click #editor button[type=button]
+COMMAND 92 base eval
+PASS base: Cancel hides guidance and re-enables lifecycle
+COMMAND 93 base --json scrollintoview article[data-task-id="t-2"] button
+COMMAND 94 base --json click article[data-task-id="t-2"] button
+COMMAND 95 base eval
+PASS base: Cancel discards guidance-test draft
+COMMAND 96 base eval
+PASS base: Reopening editor restores guidance and lifecycle fence
+COMMAND 97 base fill #editor-title 
+COMMAND 98 base --json scrollintoview #editor button[type=submit]
+COMMAND 99 base --json click #editor button[type=submit]
+COMMAND 100 base --json wait #error
+COMMAND 101 base eval
+PASS base: Invalid title retains editor and blank input
+COMMAND 102 base eval
+PASS base: Validation focuses announced alert
+COMMAND 103 base screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T09-11-13-615Z-51071082\base-invalid-title.png --full
+COMMAND 104 base http://127.0.0.1:53544 --json snapshot
+COMMAND 105 base fill #editor-title Draft revised
+COMMAND 106 base fill #editor-description Edited description
+COMMAND 107 base --json scrollintoview #editor button[type=submit]
+COMMAND 108 base --json click #editor button[type=submit]
+COMMAND 109 base wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 110 base eval
+PASS base: Task save success announcement
+COMMAND 111 base eval
+PASS base: Save hides guidance and re-enables lifecycle
+COMMAND 112 base http://127.0.0.1:53544 --json reload
+COMMAND 113 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 114 base eval
+COMMAND 115 base --json open http://127.0.0.1:51943/?projectId=p-1
+COMMAND 116 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 117 base eval
+PASS base: HTTP full restart title/description
+COMMAND 118 base --json scrollintoview article[data-task-id="t-2"] button
+COMMAND 119 base --json click article[data-task-id="t-2"] button
+COMMAND 120 base fill #editor-title Retained conflict draft
+COMMAND 121 base --json scrollintoview #editor button[type=submit]
+COMMAND 122 base --json click #editor button[type=submit]
+COMMAND 123 base --json wait #error
+COMMAND 124 base eval
+COMMAND 125 base eval
+PASS base: Conflict retains draft
+PASS base: Rejected conflict preserves bytes
+COMMAND 126 base screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T09-11-13-615Z-51071082\base-conflict.png --full
+COMMAND 127 base http://127.0.0.1:53544 --json snapshot
+COMMAND 128 base --json scrollintoview #reload
+COMMAND 129 base --json click #reload
+COMMAND 130 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 131 base eval
+PASS base: Explicit reload discards draft
+COMMAND 132 base eval
+COMMAND 133 base --json scrollintoview #add-task
+COMMAND 134 base --json click #add-task
+COMMAND 135 base fill #editor-title <script>window.__plannerInjected = true</script>
+COMMAND 136 base fill #editor-description 
+COMMAND 137 base --json scrollintoview #editor button[type=submit]
+COMMAND 138 base --json click #editor button[type=submit]
+COMMAND 139 base wait --fn document.querySelector('#notice').textContent === 'Task saved' || !document.querySelector('#error').hidden
+COMMAND 140 base eval
+PASS base: Task save success announcement
+COMMAND 141 base eval
+PASS base: Script-like title is text, never executable
+COMMAND 142 base --json scrollintoview #add-task
+COMMAND 143 base --json click #add-task
+COMMAND 144 base eval
+PASS base: Editor receives keyboard focus
+COMMAND 145 base keyboard type Keyboard cancelled draft
+COMMAND 146 base --json press Tab
+COMMAND 147 base eval
+PASS base: Tab reaches labeled description
+COMMAND 148 base eval
+COMMAND 149 base eval
+COMMAND 150 base --json press Tab
+COMMAND 151 base eval
+COMMAND 152 base --json press Tab
+COMMAND 153 base eval
+COMMAND 154 base --json press Tab
+COMMAND 155 base eval
+COMMAND 156 base --json press Tab
+COMMAND 157 base eval
+COMMAND 158 base --json press Tab
+COMMAND 159 base eval
+COMMAND 160 base --json press Tab
+COMMAND 161 base eval
+PASS base: Keyboard reaches Cancel
+COMMAND 162 base --json press Enter
+COMMAND 163 base eval
+PASS base: Keyboard cancel restores Add task focus
+PASS base: Cancelled draft never persisted
+COMMAND 164 base --json scrollintoview #add-task
+COMMAND 165 base --json click #add-task
+COMMAND 166 base viewport 390 900
+COMMAND 167 base eval
+PASS base: 390px no horizontal page overflow
+PASS base: 390px labeled form controls
+PASS base: 390px interactive targets at least 44px
+COMMAND 168 base screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T09-11-13-615Z-51071082\base-layout-390.png --full
+COMMAND 169 base http://127.0.0.1:53544 --json snapshot
+COMMAND 170 base viewport 1280 900
+COMMAND 171 base eval
+PASS base: 1280px no horizontal page overflow
+PASS base: 1280px labeled form controls
+PASS base: 1280px interactive targets at least 44px
+COMMAND 172 base screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T09-11-13-615Z-51071082\base-layout-1280.png --full
+COMMAND 173 base http://127.0.0.1:53544 --json snapshot
+COMMAND 174 base http://127.0.0.1:53544 --json snapshot
+PASS base: editor Pagination is a named navigation landmark
+COMMAND 175 base http://127.0.0.1:53544 --json a11y
+PASS base: editor axe automated violations (not full WCAG or human approval)
+PASS base: editor axe has no unresolved incomplete checks on tested page
+COMMAND 176 base --json scrollintoview #editor button[type=button]
+COMMAND 177 base --json click #editor button[type=button]
+PASS base: HTTP missing revision
+PASS base: HTTP malformed revision
+PASS base: HTTP malformed JSON
+PASS base: HTTP wrong media type
+PASS base: HTTP oversized body
+PASS base: HTTP duplicate project
+PASS base: HTTP blank name
+PASS base: HTTP oversize title
+PASS base: HTTP wrong title type
+PASS base: HTTP unknown field
+PASS base: HTTP unknown task
+PASS base: HTTP unknown route
+PASS base: HTTP wrong method
+PASS base: HTTP foreign Origin
+PASS base: HTTP non-allowlisted data path
+PASS base: HTTP encoded traversal
+PASS base: Foreign Host is rejected
+PASS base: All invalid HTTP writes leave exact bytes unchanged
+PASS base: Same-revision concurrent writes yield one success and one conflict
+PASS base: Concurrent write conflict is explicit
+COMMAND 178 base screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T09-11-13-615Z-51071082\base-complete.png --full
+COMMAND 179 base http://127.0.0.1:53544 --json snapshot
+COMMAND 180 base http://127.0.0.1:53544 --json console
+COMMAND 181 base http://127.0.0.1:53544 --json errors
+PASS base: Successful base journey has no uncaught browser exceptions
+PASS base: Successful base journey CLI console is clean
+COMMAND 182 base set offline on
+COMMAND 183 base --json scrollintoview #reload
+COMMAND 184 base --json click #reload
+COMMAND 185 base --json wait #error
+COMMAND 186 base eval
+COMMAND 187 base eval
+PASS base: Network failure is not success-shaped
+COMMAND 188 base screenshot C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T09-11-13-615Z-51071082\base-network-failure.png --full
+COMMAND 189 base http://127.0.0.1:53544 --json snapshot
+COMMAND 190 base set offline off
+COMMAND 191 base --json scrollintoview #reload
+COMMAND 192 base --json click #reload
+COMMAND 193 base wait --fn document.querySelector('#main')?.getAttribute('aria-busy') === 'false' && document.querySelector('#notice')?.textContent !== 'Loading…'
+COMMAND 194 base eval
+COMMAND 195 base http://127.0.0.1:53544 --json console
+COMMAND 196 base http://127.0.0.1:53544 --json errors
+END base VERIFIED
+COMMAND 197 base http://127.0.0.1:53544 --json close
+Evidence: C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-stunning-funicular\examples\team-planner\.work\e2e-2026-09-18T09-11-13-615Z-51071082\report.json
