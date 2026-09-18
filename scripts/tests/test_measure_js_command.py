@@ -29,7 +29,7 @@ class JSCommandTests(unittest.TestCase):
                           "writeFileSync('executed-subject.txt', 'unexpected');\n"
                           "export const flag = true;\n")
         fixture.save_config()
-        fixture.build()
+        fixture.build(collect=False)
         shutil.copyfile(SCRIPTS / "measure_js.mjs",
                         Path(fixture.context["controller_root"]) / "measure_js.mjs")
         fixture.context["controller_sha256"] = measure.controller_digest(

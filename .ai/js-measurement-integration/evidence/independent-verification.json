@@ -1,0 +1,118 @@
+{
+  "scope": "Exactly three selected integration methods; no full-suite, full-Q, authenticated independence, or process cleanup claim",
+  "subsequent_disclosure_reconciliation": {
+    "disclosure": "Owner added only unselected JSOwnershipTests.test_actual_nonzero_child_retains_real_produced_records_only_as_failure_bytes during the run",
+    "verification": "Removing current file lines 330-352 in memory, comprising one blank line plus the new method, reproduces the exact before-run SHA256",
+    "reconstructed_before_sha256": "7e54754f647c4027271a992082af6103be84a0f20207f158bf6f9084441ea0e2",
+    "selected_method_bodies_unchanged": true,
+    "all_six_controllers_unchanged": true,
+    "q1_test_file_unchanged": true,
+    "current_pins_match_after_run_pins": true,
+    "whole_test_file_pin_changed": true,
+    "effect": "Exact unselected-addition delta established; actual archival failure remains. No further tests or retries executed."
+  },
+  "actual_failure": {
+    "assertion": "Public probe returned 2, expected 1",
+    "public_probe_returncode": 2,
+    "native_produce_base_returncode": 0,
+    "native_produce_head_returncode": 2,
+    "native_validate_base_returncode": 0,
+    "native_validate_head_returncode": 2,
+    "observed_progress": "Probe reconciled source, owned raw evidence and report, then failed during archival",
+    "diagnostic": "[Errno 2] No such file or directory at measurement\\base\\syntax\\41b929fb87f45181ed39a30d66b92620d5ea08022f5998ffc300be5fd21222df.json; full absolute path is retained in log",
+    "acceptance": "Materialized-only archive assertions were not reached; successful unavailable exit-1 publication is not proven",
+    "compatibility": "Both selected Python compatibility scenarios were NOT RUN under stop-on-first-failure instruction",
+    "root_cause": "Not determined; no retry or implementation change"
+  },
+  "pin_reconciliation": {
+    "unchanged_count": 7,
+    "controller_unchanged_count": 6,
+    "changed_path": "scripts/tests/test_measure_js_integration.py",
+    "changed_before_sha256": "7e54754f647c4027271a992082af6103be84a0f20207f158bf6f9084441ea0e2",
+    "changed_after_sha256": "edb72f7198939ed1715443439c9b2846a2d62af90aa0f50aa6de7ee8fba6735b",
+    "note": "Verifier made no controller or test edits; whole-target frozen-pin condition did not hold"
+  },
+  "started_utc": "2026-09-18T09:47:49.697631+00:00",
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-psychic-meme\\scripts\\tests",
+  "python": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONIOENCODING": "utf-8",
+    "TMP": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-psychic-meme",
+    "TEMP": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-psychic-meme"
+  },
+  "git_path_prefix": "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd",
+  "bounds": {
+    "outer_idle_seconds": 1000,
+    "outer_max_seconds": 1500,
+    "public_js_max_seconds": 900,
+    "native_idle_seconds": 30,
+    "native_max_seconds": 90,
+    "python_public_max_seconds": 180
+  },
+  "pins_before": {
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/measure.py": "f60489493436b6efc19b4a4176b531af51ab3bf0cec7209d16305da39f83a14c",
+    "scripts/measure_graph.py": "b79f1cd0749b64a23151455c649c92e3cd51dac12f968e1446bb262d4762fead",
+    "scripts/measure_js.mjs": "ef4bef16abf6c04b559baa45929f49e0f92b76df4a1d30b542dbe877c0e204d5",
+    "scripts/probe.py": "5500c70c7d7452a75580e346b51aab210e58abf810c13eec5e8ca97b3d73af83",
+    "scripts/run.py": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+    "scripts/tests/test_measure_js_integration.py": "7e54754f647c4027271a992082af6103be84a0f20207f158bf6f9084441ea0e2",
+    "scripts/tests/test_measure_q1_integration.py": "889e5ab71f3e8d9cb16b9ded4dc9327fcf1d5f4820426e0773f17c8f1b4976a9"
+  },
+  "scenarios": [
+    {
+      "method": "test_measure_js_integration.JSIntegrationTests.test_public_probe_archives_only_materialized_owned_records",
+      "argv": [
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-B",
+        "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-psychic-meme\\scripts\\run.py",
+        "--idle",
+        "1000",
+        "--max",
+        "1500",
+        "--label",
+        "test_measure_js_integration.JSIntegrationTests.test_public_probe_archives_only_materialized_owned_records",
+        "--",
+        "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_measure_js_integration.JSIntegrationTests.test_public_probe_archives_only_materialized_owned_records"
+      ],
+      "returncode": 1,
+      "wall_seconds": 375.808,
+      "tests_run": 1,
+      "unittest_seconds": 374.706,
+      "verdict": "FAIL"
+    }
+  ],
+  "blockers": [
+    "Selected scenario failed; stopped without retries or implementation changes",
+    "At least one controller/test pin changed during verification"
+  ],
+  "log": ".ai\\js-measurement-integration\\evidence\\independent-verification.log",
+  "pins_after": {
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/measure.py": "f60489493436b6efc19b4a4176b531af51ab3bf0cec7209d16305da39f83a14c",
+    "scripts/measure_graph.py": "b79f1cd0749b64a23151455c649c92e3cd51dac12f968e1446bb262d4762fead",
+    "scripts/measure_js.mjs": "ef4bef16abf6c04b559baa45929f49e0f92b76df4a1d30b542dbe877c0e204d5",
+    "scripts/probe.py": "5500c70c7d7452a75580e346b51aab210e58abf810c13eec5e8ca97b3d73af83",
+    "scripts/run.py": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+    "scripts/tests/test_measure_js_integration.py": "edb72f7198939ed1715443439c9b2846a2d62af90aa0f50aa6de7ee8fba6735b",
+    "scripts/tests/test_measure_q1_integration.py": "889e5ab71f3e8d9cb16b9ded4dc9327fcf1d5f4820426e0773f17c8f1b4976a9"
+  },
+  "pins_unchanged": false,
+  "pin_count": 8,
+  "not_run": [
+    "test_measure_q1_integration.Q1IntegrationTests.test_public_python_cli_from_nested_cwd_keeps_all_nine_and_archives_raw",
+    "test_measure_q1_integration.Q1IntegrationTests.test_public_mixed_root_marks_every_unsupported_input"
+  ],
+  "finished_utc": "2026-09-18T09:54:05.519509+00:00",
+  "selected_count": 3,
+  "executed_count": 1,
+  "passed_count": 0,
+  "wall_seconds_total": 375.808,
+  "verdict": "FAIL"
+}

@@ -61,12 +61,12 @@ class IndependentJSCoreBoundaryTests(unittest.TestCase):
             self.assertIn("independent regular file", observed["hardlinked_source"])
             self.assertEqual(controller.read_bytes(), (SCRIPTS / controller.name).read_bytes())
 
-    def test_current_config_and_missing_request_reject_integration(self):
+    def test_unqualified_config_and_missing_request_reject_integration(self):
         fixture = Q1Fixture()
         self.addCleanup(fixture.close)
         measure.validate_config(fixture.config, fixture.git.root)
         fixture.config["js_entrypoints"] = ["a.js"]
-        with self.assertRaisesRegex(ValueError, "JS entrypoint integration is not implemented") as error:
+        with self.assertRaisesRegex(ValueError, "JS entrypoints require qualified TypeScript") as error:
             measure.validate_config(fixture.config, fixture.git.root)
         node = source_tools(("typescript",))["typescript"]["executable"]
         with tempfile.TemporaryDirectory(prefix="ji-") as directory:

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "scope": "Exact changed-file staged Git bytes versus final tested Windows worktree bytes",
+  "reconciliation": "All eight text files differ solely by standard CRLF-to-LF Git storage normalization; source worktree bytes were not edited. All task evidence staged blobs are byte-identical to retained files under task-local -text attributes.",
+  "files": {
+    "references/quality-metrics.md": {
+      "git_blob_sha256": "db94ab7e45e66a0f3774a7f2badf579397d4720c67e7393daf3b43677a016e5a",
+      "tested_worktree_sha256": "a4e2d130f399bff733932f0b2d7cde8c631b425b22720657c9f7f9227e80ba50"
+    },
+    "scripts/measure.py": {
+      "git_blob_sha256": "9c391bf8fc0e9dbb9e2a7ffbebad18f447f7e180ff40d9bd57e86550b4a32d71",
+      "tested_worktree_sha256": "5814997fc556f012cf3c10c8b1b0357a17c09ccbe738e0bd354a02611c47f8f0"
+    },
+    "scripts/measure_graph.py": {
+      "git_blob_sha256": "0502a0719175c6d261f6266b529b21339bb9ddfe7bdc789df51fcc4770bb29e1",
+      "tested_worktree_sha256": "25d2950e815d0ff7035ad08458ab045bce618a1b5c58f340ccb7cea25f7fe7e5"
+    },
+    "scripts/probe.py": {
+      "git_blob_sha256": "09df16da6671b9fe043688628004cad94253acecbd9596bb14e206a2c54f3833",
+      "tested_worktree_sha256": "5500c70c7d7452a75580e346b51aab210e58abf810c13eec5e8ca97b3d73af83"
+    },
+    "scripts/tests/test_measure_inventory.py": {
+      "git_blob_sha256": "a111a8d2a734e05ecb80c814ef83fa0115a9e4927f2fb1d4e4f0248f35a30f2d",
+      "tested_worktree_sha256": "254eb91ce36c076f37881675a2154d0fa909dafbdebe6e6c5c55e40e683bb334"
+    },
+    "scripts/tests/test_measure_js_command.py": {
+      "git_blob_sha256": "cd3b22d62326a3ad8bbe10494836b2f6c7f022c534ede03dde9d0e8f832e89f2",
+      "tested_worktree_sha256": "a9b1d4ced5ee481a2af32ce0f3d7e018f71be38974830c5504af06904c179f33"
+    },
+    "scripts/tests/test_measure_js_core_independent.py": {
+      "git_blob_sha256": "555c2381e54ffa770ea2e7c20b5f9affe855f8b0aea77ab134c3b458d6f66fcd",
+      "tested_worktree_sha256": "8c11b515478500f0732403c252fc930119e7eb30ccfe9b5e4569a11edb5f4d2b"
+    },
+    "scripts/tests/test_measure_js_integration.py": {
+      "git_blob_sha256": "27a788ad04afd4d21a817aa30c782e8b313c91293023c18f052847a52710cc85",
+      "tested_worktree_sha256": "24144c0d953ac90596befc8ffaf3f3e7cad733436329c1318acd6953f4b737b9"
+    }
+  }
+}

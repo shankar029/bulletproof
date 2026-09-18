@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "kind": "procedural-source-bound-test-summary-not-admission",
+  "starting_head": "3f7a77a19334fea1f4941fb186bcd88b0a121631",
+  "branch": "shbs-microsoft-js-measurement-integration",
+  "authority_sha256": "887c8a3ba5dd9f8efd32081b3c3e20fbea8a0fada67349a1555bcda34f7b4c9e",
+  "human_approval": "unconfirmed; explicit autonomous authorization",
+  "source_pin_semantics": "Measured Windows worktree bytes (CRLF), not canonical Git text blobs. git-source-pins.json records exact LF Git blob hashes and verified normalization-only differences. Retained task evidence is byte-preserved.",
+  "controller_sha256": {
+    "scripts/measure.py": "5814997fc556f012cf3c10c8b1b0357a17c09ccbe738e0bd354a02611c47f8f0",
+    "scripts/measure_graph.py": "25d2950e815d0ff7035ad08458ab045bce618a1b5c58f340ccb7cea25f7fe7e5",
+    "scripts/probe.py": "5500c70c7d7452a75580e346b51aab210e58abf810c13eec5e8ca97b3d73af83",
+    "scripts/measure_js.mjs": "ef4bef16abf6c04b559baa45929f49e0f92b76df4a1d30b542dbe877c0e204d5",
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/run.py": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e"
+  },
+  "test_sha256": {
+    "scripts/tests/test_measure_js_integration.py": "24144c0d953ac90596befc8ffaf3f3e7cad733436329c1318acd6953f4b737b9",
+    "scripts/tests/test_measure_inventory.py": "254eb91ce36c076f37881675a2154d0fa909dafbdebe6e6c5c55e40e683bb334",
+    "scripts/tests/test_measure_js_command.py": "a9b1d4ced5ee481a2af32ce0f3d7e018f71be38974830c5504af06904c179f33",
+    "scripts/tests/test_measure_js_core_independent.py": "8c11b515478500f0732403c252fc930119e7eb30ccfe9b5e4569a11edb5f4d2b"
+  },
+  "execution_environment": {
+    "python": "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "node": "C:\\Program Files\\nodejs\\node.exe",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONIOENCODING": "utf-8",
+    "TEMP": "C:\\Users\\shbs\\AppData\\Local\\Temp",
+    "TMP": "C:\\Users\\shbs\\AppData\\Local\\Temp",
+    "git_path_prefix": "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd",
+    "cwd": "scripts/tests",
+    "runner": "scripts/run.py",
+    "native_idle_seconds": 30,
+    "native_max_seconds": 90
+  },
+  "final_runs": [
+    {
+      "log": "../final-integration.log",
+      "sha256": "1de1396372f2225f23cfebdd2711697dc45b00b8f57ae29b4a04b0c733e8d539",
+      "executor": "owner",
+      "exit_status": 0,
+      "tests": 9,
+      "seconds": 1280.761,
+      "outer_idle_seconds": 180,
+      "outer_max_seconds": 2100,
+      "unittest_selectors": [
+        "test_measure_js_integration.JSIntegrationTests.test_real_mixed_production_and_accepting_replay",
+        "test_measure_js_integration.JSIntegrationTests.test_zero_js_still_executes_and_replays",
+        "test_measure_js_integration.JSOwnershipTests",
+        "test_measure_js_integration.JSOutputPolicyTests"
+      ],
+      "native_execution_ids": [
+        "a6f6fb75ab15402990217d1adfc93946",
+        "1cd1ca05954a4c77a816936a2217016f",
+        "8324512b7b44443cada2c0bef78bacdb",
+        "13965af2b7ba4a70b1f5b60416ee1ad5",
+        "dffba3aae5a04b27a798f9b3f8129af5",
+        "76f3d3290d764b69966289c3db8d9471",
+        "9e85d4461ef340cb8232b272997497ec",
+        "d977b79a13a34a25a3bf5e153a930160",
+        "dd93f0f2e13a4170bac82d3d8a7d0e53",
+        "855fb384e4d546c4a363ad967d81ed01",
+        "9302c1de16214bcb85f2b8ba8f0dfcd9",
+        "9484d5da50a8409d98cac49e4f33b90b"
+      ]
+    },
+    {
+      "log": "../final-public-owner.log",
+      "sha256": "70b68fb6edf1a1c0d00bc6081a230ae0b33d8b2898e3620b39644ee45d9a38c3",
+      "executor": "owner; not independent execution",
+      "exit_status": 0,
+      "tests": 3,
+      "seconds": 500.634,
+      "outer_idle_seconds": 1000,
+      "outer_max_seconds": 1500,
+      "unittest_selectors": [
+        "test_measure_js_integration.JSIntegrationTests.test_public_probe_archives_only_materialized_owned_records",
+        "test_measure_q1_integration.Q1IntegrationTests.test_public_python_cli_from_nested_cwd_keeps_all_nine_and_archives_raw",
+        "test_measure_q1_integration.Q1IntegrationTests.test_public_mixed_root_marks_every_unsupported_input"
+      ],
+      "nested_native_output": "Buffered by test; test assertions passed. No retrospective raw command capture or independent execution receipt is manufactured."
+    },
+    {
+      "log": "../final-mode-config-corrected.log",
+      "sha256": "32d48c5982e8da03c69dbea189e78c307e8b08c2763a88b4cb251e57570fe66d",
+      "executor": "owner",
+      "exit_status": 0,
+      "tests": 2,
+      "seconds": 39.367,
+      "outer_idle_seconds": 180,
+      "outer_max_seconds": 420,
+      "unittest_selectors": [
+        "test_measure_js_integration.JSIntegrationTests.test_inventory_mode_remains_explicit_and_immutable",
+        "test_measure_js_core_independent.IndependentJSCoreBoundaryTests.test_unqualified_config_and_missing_request_reject_integration"
+      ]
+    }
+  ],
+  "retained_failed_selector_run": {
+    "log": "../final-mode-config.log",
+    "sha256": "9629e82523931822fd877efdc48bfa5ba3fb54774ffaea0bd1a0f821bd81182c",
+    "exit_status": 1,
+    "seconds": 42.095,
+    "outcome": "Explicit inventory method passed; misspelled JSCoreIndependentTests class caused unittest loader error. Corrected existing selector without source edits; not a two-method pass."
+  },
+  "limits": [
+    "Not a full test suite, root quality measurement or Q2/G6 closure.",
+    "Final public success is owner execution; independent read-only reconciliation is separate.",
+    "Earlier independent deep-TEMP archive failure is retained, not relabeled success or an OS-temp denial.",
+    "Actual alias semantic edit rejected by fresh replay; no exhaustive rehashed symbol/span/import or failed-replay mismatch matrix claim.",
+    "Scalar, coverage, root mutation and guarded metric admission remain unavailable.",
+    "No process cleanup proof, positive recovery, host requalification, installer or global configuration change.",
+    "Publication remains blocked by EMU403; no push or PR attempt."
+  ]
+}

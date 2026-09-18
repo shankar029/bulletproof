@@ -62,14 +62,16 @@ assertions — which is exactly why it is worth the runtime.
 
 This table is the required proof policy, **not a list of universally supported collectors**.
 The configured measurement path supports Python literal-import graphs and their declared
-architecture rules. Dynamic imports, reflection and mixed-language graph coverage are not
-established by that model. Diff coverage and the remaining measurement adapters are still
+architecture rules. A source-bound, validated TypeScript binding additionally selects the
+qualified six-suffix JS/TS graph path described below. Dynamic imports and reflection remain
+disclosed outside the literal-import model, not resolved by executing the source.
+Diff coverage and the remaining measurement adapters are still
 incomplete; installing their tools alone does not close those gaps. Missing collectors, unknown baseline
 comparisons and partially supported file scopes make required proof **incomplete**.
 Discovery includes `.mjs` and `.cjs`; that does not establish that every external analyzer
 supports those files. Numeric partial observations remain visible but are not complete proof.
 
-The shared-JS **native parser library** is not yet a configured collector. It uses the
+The shared-JS parser uses the
 qualified TypeScript 5.9.3 program/checker for six-suffix census, strict byte coordinates
 and original diagnostics. `serializeProgram` returns unchanged per-file SyntaxEvidence
 and separate symbol/reference records, including source-backed entrypoint origins.
@@ -79,10 +81,41 @@ The native module also accepts one absolute `JSRequestV1` path when executed wit
 qualified Node runtime. It checks request/config/input/qualification/controller bindings
 and preflight ownership, then exclusively writes source-bound result and symbol records.
 It does not execute subject code or publish graph artifacts or metric scores.
-The Python command orchestration, ownership-manifest lifecycle, graph projection and
-fresh accepting semantic replay are not integrated. Default inventory/controller behavior and `probe`'s existing
-unsupported-JS behavior remain unchanged. Pending JSX/TSX classification alone is not
-parsing or coverage proof, and these APIs do not complete missing required metrics.
+`measure.execute_js` invokes that fixed command with a production purpose. Before
+graph consumption, immutable `js-preflight.json` and `js-produced.json` bind the
+qualifications, actual request/capture and generated records. The final manifest owns
+both predecessors and only materialized syntax/graph evidence. Reservations are
+planned from the actual immutable base and current head before the head snapshot;
+deleted/base-only inputs and ancestor package metadata participate.
+
+Full accepting validation belongs to `measure.validate_observations`: each call
+allocates fresh independent validation storage, stages the selected qualifications,
+executes both revisions with the private validation purpose, and compares all semantic
+symbol, syntax, provenance, receipt and graph records. Graph readers never spawn the
+compiler and graph-only `validate_evidence` rejects this mode instead of claiming
+semantic acceptance from rehashed JSON. Report publication archives only owned,
+materialized records after replay and source/tool/controller rechecks.
+
+Nonzero command outputs are diagnostic-only: optional result/symbol files remain
+opaque bytes, never successful parser evidence. A matching fresh failed replay can
+establish only an unavailable observation, including when there are zero JS files.
+Zero exit with any stderr, missing/malformed output or inconsistent provenance is
+invalid proof and produces no measurement report. Both native production and replay
+retain idle 30-second / maximum 90-second bounds; subjects are never executed.
+
+The mode requires the existing explicit TypeScript 5.9.3 / Node 24.11.1 ARM64
+qualification and accessible, source-bound original resources. It does not discover
+or install an ambient compiler. Explicit `js_entrypoints` bind named public exports
+and an origin reference; package and registered native-suite roots retain their
+actual source origins. A head-only declared root is absent at base, not fabricated
+as a parsed file. Empty/default configs keep Python-only manifests, the five-file
+controller digest and unsupported-JS receipts; JS mode requires all six fixed
+controller files and classifies JSX/TSX before inventory hashing.
+
+This is graph integration, not complete JS quality support. Pending classification,
+symbol/function/token records and replay are not scalar collection or coverage proof.
+Scalar collectors, coverage, mixed mutation and the guarded metric-admission bridge
+remain unavailable; no required metric is waived.
 
 ## Mutation testing without project wiring
 

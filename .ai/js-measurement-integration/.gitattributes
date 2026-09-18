@@ -1,0 +1,4 @@
+# Preserve recorded evidence hashes across checkout platforms.
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Raw transcripts retain intentional whitespace; reconcile their recorded hashes.
+*.log -diff

@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "scope": "Read-only reconciliation of retained owner output, current selected assertions, six controller hashes, two test-file hashes, and original failed-run/path-diagnostic evidence. Only this new report is written.",
+  "verdict": "OWNER_OUTPUT_RECONCILED_WITH_LIMITATIONS",
+  "independently_executed": false,
+  "tests_executed_by_this_reconciliation": 0,
+  "owner_output": {
+    "path": ".ai/js-measurement-integration/final-public-owner.log",
+    "sha256": "70b68fb6edf1a1c0d00bc6081a230ae0b33d8b2898e3620b39644ee45d9a38c3",
+    "bytes": 642,
+    "observed_test_count": 3,
+    "observed_ok_count": 3,
+    "observed_total_unittest_seconds": 500.634,
+    "observed_summary": "OK",
+    "process_returncode_recorded_in_log": null,
+    "owner_reported_process_returncode": 0,
+    "owner_reported_temp": "C:\\Users\\shbs\\AppData\\Local\\Temp",
+    "environment_recorded_in_log": false,
+    "command_line_recorded_in_log": false,
+    "run_time_source_pins_recorded_in_log": false,
+    "raw_native_call_records_recorded_in_log": false
+  },
+  "selected_scenarios": [
+    {
+      "method": "test_measure_js_integration.JSIntegrationTests.test_public_probe_archives_only_materialized_owned_records",
+      "observed_log_status": "ok",
+      "assertion_reconciliation": [
+        "Creates a real package.json export targeting missing.mjs, commits it, and invokes the public probe.",
+        "Requires public probe returncode 1 before parsing stdout, report verdict fail, cycles unavailable and diff_coverage_pct unavailable.",
+        "Requires archived file names to equal exactly all manifest input paths plus manifest.json, and rehashes every archived input through graph.artifact.",
+        "Requires reservations for base-only deleted JS and Python syntax slots.",
+        "Reads archived head/js/command.json and requires native returncode 2 with null result and symbols.",
+        "For every JS head receipt, requires failed state, null unit_count, reason js-command-nonzero 2, and no corresponding head syntax file in the archive."
+      ],
+      "replay_reconciliation": "Current public configured probe validates its report before publication; measure._validate_js_replay allocates fresh replay storage, executes purpose=validate for both inventories and calls graph._compare_js_replay. This is source-path reconciliation, not an independently observed final-run native transcript.",
+      "acceptance_scope": "The retained owner pass is consistent with unavailable exit-1 publication and materialized-only archive assertions, including actual archived nonzero head command evidence."
+    },
+    {
+      "method": "test_measure_q1_integration.Q1IntegrationTests.test_public_python_cli_from_nested_cwd_keeps_all_nine_and_archives_raw",
+      "observed_log_status": "ok",
+      "assertion_reconciliation": [
+        "Invokes the public Python CLI from a nested cwd with expected exit 1.",
+        "Shared invoke requires fail verdict, incomplete completeness and all nine required metric keys.",
+        "Requires one head cycle with fail comparison, architecture_rules measured with head 0, seven missing required metrics and compared baseline.",
+        "Requires every head receipt processed and rehashes every archived manifest input.",
+        "Requires publication not to stale the source snapshot, unrelated evidence to change that snapshot, and no workflow.json."
+      ]
+    },
+    {
+      "method": "test_measure_q1_integration.Q1IntegrationTests.test_public_mixed_root_marks_every_unsupported_input",
+      "observed_log_status": "ok",
+      "assertion_reconciliation": [
+        "Adds module.mjs and module.cjs to the default Python fixture and invokes the public CLI with expected exit 1.",
+        "Shared invoke requires fail verdict, incomplete completeness and all nine required metric keys.",
+        "Requires cycles unavailable, architecture_rules comparison unavailable, both JS receipts unsupported, and nine missing required metrics."
+      ]
+    }
+  ],
+  "current_pins_sha256": {
+    "scripts/evidence.py": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4",
+    "scripts/measure.py": "5814997fc556f012cf3c10c8b1b0357a17c09ccbe738e0bd354a02611c47f8f0",
+    "scripts/measure_graph.py": "25d2950e815d0ff7035ad08458ab045bce618a1b5c58f340ccb7cea25f7fe7e5",
+    "scripts/measure_js.mjs": "ef4bef16abf6c04b559baa45929f49e0f92b76df4a1d30b542dbe877c0e204d5",
+    "scripts/probe.py": "5500c70c7d7452a75580e346b51aab210e58abf810c13eec5e8ca97b3d73af83",
+    "scripts/run.py": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e",
+    "scripts/tests/test_measure_js_integration.py": "24144c0d953ac90596befc8ffaf3f3e7cad733436329c1318acd6953f4b737b9",
+    "scripts/tests/test_measure_q1_integration.py": "889e5ab71f3e8d9cb16b9ded4dc9327fcf1d5f4820426e0773f17c8f1b4976a9"
+  },
+  "pin_reconciliation": {
+    "corrected_handoff_measure_graph_probe_match": true,
+    "native_evidence_runner_match_original_pins": true,
+    "current_controller_count": 6,
+    "current_total_pin_count": 8,
+    "controller_changes_from_initial_failed_run": [
+      "scripts/measure.py",
+      "scripts/measure_graph.py"
+    ],
+    "test_file_changes_from_initial_failed_run": [
+      "scripts/tests/test_measure_js_integration.py"
+    ],
+    "selected_js_method": "Current body matches the previously read public method; later added test methods do not alter its assertions.",
+    "q1_test_file": "Whole-file hash unchanged from original failed-run pins."
+  },
+  "bounds_read_from_current_source": {
+    "native_idle_seconds": 30,
+    "native_max_seconds": 90,
+    "public_js_idle_seconds": 120,
+    "public_js_max_seconds": 900,
+    "python_public_max_seconds": 180,
+    "outer_idle_seconds_owner_reported": 1000,
+    "outer_max_seconds_owner_reported": 1500,
+    "note": "Owner log does not independently record outer argv or environment; native bounds were read in measure._execute_js."
+  },
+  "original_evidence_sha256": {
+    ".ai/js-measurement-integration/evidence/independent-verification.log": "94bbd70f7b41ad971092434f794e6873df52ef83b161de2aa162856d28519502",
+    ".ai/js-measurement-integration/evidence/independent-verification.json": "d6801a16671fd9ff0864abf4abb778c1fe1f74e61319cc7a29b494b7d226e892",
+    ".ai/js-measurement-integration/evidence/independent-verification-r2.log": "e23fb83d89ba8d2af266f256618a5050b4712d1f4087d8db08e91ea4dd3a9238",
+    ".ai/js-measurement-integration/evidence/independent-verification-r2.json": "e23fb83d89ba8d2af266f256618a5050b4712d1f4087d8db08e91ea4dd3a9238"
+  },
+  "original_failure_reconciliation": {
+    "retained_outcome": "Initial verifier ran one selected JS method: runner exit 1, public probe exit 2 rather than expected 1, 374.706 seconds unittest duration, 375.808 seconds wall duration. Both Python methods were not run.",
+    "retained_native_progress": "Original failure log shows produce base 0/head 2 and validate base 0/head 2, followed by successful report reconciliation and archival ENOENT.",
+    "fixture_setup": "Initial verifier explicitly used deep-worktree TEMP/TMP. The decoded failing destination was 266 characters.",
+    "path_diagnostic": "Retained worktree-local tiny creation succeeded at 155 characters and failed with ENOENT at 266 characters; this supports a path-length explanation but is not a complete archive root-cause reproduction.",
+    "original_test_pin_delta": "The initial whole JS test-file pin changed during execution. Prior in-memory removal of the newly added unselected method exactly reproduced the initial SHA256; that disclosure remains preserved.",
+    "withdrawn_claim": "OS-temp writes unavailable is explicitly withdrawn as an observed tool/environment claim. No OS-temp attempt or denial was recorded by this verifier. Earlier artifacts remain unmodified historical records.",
+    "effect_of_owner_pass": "Later owner output demonstrates retained passing assertions under the owner-reported corrected setup; it does not erase the earlier failure or convert it into a pass."
+  },
+  "limitations": [
+    "This is an independent read-only reconciliation of owner evidence, not independently executed corrected-source public verification or authenticated independence.",
+    "The retained owner log records method statuses and total unittest duration only. Exit 0, actual TEMP/TMP, outer bounds and run-time frozen source identity are owner-reported, not directly recorded in that log.",
+    "Fresh current hashes match the corrected handoff but are not retroactive before/after pins for the owner's run.",
+    "No archived fixture files or final-run native request/command/replay records were inspected; corresponding conclusions are bounded by actual test assertions and current source paths.",
+    "No per-scenario durations appear in the owner log.",
+    "No full-suite, full-Q, process cleanup, publication or unrelated acceptance claim."
+  ]
+}

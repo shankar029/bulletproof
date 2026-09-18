@@ -1,0 +1,26 @@
+test_real_mixed_production_and_accepting_replay (test_measure_js_integration.JSIntegrationTests.test_real_mixed_production_and_accepting_replay) ... measure: executing JS produce base
+measure: captured JS produce base exit 0
+measure: executing JS produce head
+measure: captured JS produce head exit 0
+measure: executing JS validate base
+measure: captured JS validate base exit 0
+measure: executing JS validate head
+measure: captured JS validate head exit 0
+ok
+measure: executing JS produce base
+measure: captured JS produce base exit 0
+measure: executing JS produce head
+measure: captured JS produce head exit 0
+test_rehashed_alias_edit_rejected_by_fresh_accepting_replay (test_measure_js_integration.JSOwnershipTests.test_rehashed_alias_edit_rejected_by_fresh_accepting_replay) ... measure: executing JS validate base
+measure: captured JS validate base exit 0
+measure: executing JS validate head
+measure: captured JS validate head exit 0
+ok
+test_rehashed_predecessor_ownership_and_reservations_reject (test_measure_js_integration.JSOwnershipTests.test_rehashed_predecessor_ownership_and_reservations_reject) ... ok
+test_rehashed_production_purpose_swap_rejects_before_replay (test_measure_js_integration.JSOwnershipTests.test_rehashed_production_purpose_swap_rejects_before_replay) ... ok
+test_source_controller_and_request_input_changes_reject (test_measure_js_integration.JSOwnershipTests.test_source_controller_and_request_input_changes_reject) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 840.570s
+
+OK
