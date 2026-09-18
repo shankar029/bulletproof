@@ -10,15 +10,16 @@
 <body>
 <h1>Workflow reliability - incomplete delivery</h1>
 <div class="meta">Branch: shbs-microsoft-workflow-app-verification<br>
-Current scope: guarded-workflow continuation, measurement enablement and documentation.<br>
+Current scope: sample-app verification and prioritized workflow reliability fixes.<br>
 <a href="design.html">Design</a> · <a href="continuation-plan.html">Continuation plan</a> · <a href="traceability.md">Acceptance ledger</a></div>
 
 <h2>Outcome</h2>
-<p><strong>Partial delivery:</strong> reliability, core/state seams, five-verb CLI and tool-input bindings are committed. Canonical workflow and README/guide integration now have independent proof and final approval for local preservation. Actual collectors, guarded metric attachment, process recovery and release quality remain incomplete.</p>
+<p><strong>Partial delivery:</strong> reliability, five-verb CLI, tool bindings and canonical README/guide integration are committed. Parent reconciled the native JS core's independent source review and execution proof for bounded preservation; two added tests received parent self-review, not a later independent verdict. Actual collectors, guarded metrics, recovery and release quality remain incomplete.</p>
 
 <h2>Implemented and pending</h2>
 <p><strong>Delivered:</strong> source-bound atomic reports, exact argv/cwd, assertion-only kills, freshness/restoration and fail-closed completeness; redesigned README/banner, user guide and installation/contributor/architecture updates. Docs were rendered locally at desktop/mobile sizes in light/dark modes.</p>
-<p><strong>New C3 integration:</strong> current-design/adoption, earlier compatibility, research supersession and authoritative status guidance; README feature navigation; three historical CLI cases in ordinary discovery. <a href="evidence/c3-independent-report.md">Independent proof</a> and <a href="evidence/c3-code-review.md">review</a> retain explicit runtime limits. Host exercises and complete quality remain pending.</p>
+<p><strong>C3 integration:</strong> current-design/adoption, earlier compatibility, research supersession and authoritative status guidance; README navigation; three CLI regressions in ordinary discovery. <a href="evidence/c3-independent-report.md">Proof</a> and <a href="evidence/c3-code-review.md">review</a> retain runtime limits.</p>
+<p><strong>Live-app gap:</strong> the earlier planner run is historical. The latest changes have not had a fresh complete sample-app run. Parser tests are not that proof. Auxiliary C4 preparation is on hold; no live participant has run.</p>
 
 <h2>Acceptance and gates</h2>
 <table>
@@ -32,21 +33,18 @@ Current scope: guarded-workflow continuation, measurement enablement and documen
 </table>
 <table>
 <tr><th>G1</th><th>G2</th><th>G3</th><th>G4</th><th>G5</th><th>G6</th></tr>
-<tr><td>Pass</td><td>Autonomous acceptance; human unconfirmed</td><td>Continuation accepted</td><td>Bounded correction passes</td><td>Integrated replay passes</td><td>Partial preservation; quality blocked</td></tr>
+<tr><td>Pass</td><td>Autonomous acceptance; human unconfirmed</td><td>Continuation accepted</td><td>Scoped changes pass</td><td>Scoped proof only; fresh app run pending</td><td>Partial preservation; quality blocked</td></tr>
 </table>
 
 <h2>Measurements, not substitutes</h2>
 <table>
 <tr><th>Observation</th><th>Result</th><th>Scope</th></tr>
-<tr><td>I1 Python tests (historical)</td><td>54 passed</td><td><a href="evidence/i1-independent-review-fixes-verification.md">I1 full replay</a>; 97/98 inputs unchanged plus reviewed packaging delta.</td></tr>
-<tr><td>C1/Q1 historical final replay</td><td>28 focused +83 workflow +10 evidence passed</td><td><a href="evidence/q1-attr-independent-report.md">121 distinct methods</a>; earlier correction history remains preserved.</td></tr>
-<tr><td>C2b-S state seams</td><td>100 workflow +10 evidence passed</td><td><a href="evidence/c2b-state-independent-r2-report.md">110 distinct methods</a>; separate review approved. Earlier timeouts/path errors retained, not added to passing counts.</td></tr>
+<tr><td>Historical foundation tests</td><td>I1: 54; C1/Q1: 121; C2b-S: 110 passed</td><td>Separate <a href="evidence/i1-independent-review-fixes-verification.md">I1</a>, <a href="evidence/q1-attr-independent-report.md">C1/Q1</a> and <a href="evidence/c2b-state-independent-r2-report.md">state-seam</a> runs; not additive or current-tree proof.</td></tr>
 <tr><td>Joint checkpoint before R1</td><td>262/263 Python; native13 passed</td><td><a href="evidence/joint-cli-binding-r2-report.md">One symlink case environment-unverified</a>; native includes five Python replays.</td></tr>
 <tr><td>R1 fresh affected proof</td><td>10 methods passed</td><td><a href="evidence/joint-cli-binding-r1-report.md">20 malformed manifests reject; valid control runs</a>. Earlier262 not refreshed or added.</td></tr>
 <tr><td>C3 independent proof</td><td>CLI33; native70; 12 browser views</td><td><a href="evidence/c3-independent-report.md">217 inputs unchanged</a>; five native entries replay CLI cases. Three navigation actions; 20 installed-layout links. Not added to earlier counts.</td></tr>
-<tr><td>Continuation native tests</td><td>65 passed; none skipped</td><td><a href="evidence/continuation-native.log">Scorer/reporter/harness regression</a>; bundle correction reviewed and committed.</td></tr>
-<tr><td>Fixed corpus</td><td>10 tasks pass; 79 functional assertions</td><td><a href="evidence/continuation-corpus.log">Fixed artifacts, not live model evaluation</a></td></tr>
-<tr><td>CSV mutation</td><td>9/9 graded kills; seven ungraded</td><td>0.9 evaluation bar unchanged; not whole-change mutation proof</td></tr>
+<tr><td>Partial JS core independent proof</td><td>15 methods + separate two methods passed</td><td><a href="evidence/q2-js-core-independent-20260917-v1/report.md">3,593 inputs unchanged</a>; 732.040s and 14.195s, no test retries. Nested native cases are not additional methods. No complete JS pipeline proof.</td></tr>
+<tr><td>Historical evaluation checks</td><td>Native65; corpus10/79 assertions; CSV9/9 graded kills</td><td><a href="evidence/continuation-native.log">Native</a> / <a href="evidence/continuation-corpus.log">fixed corpus</a>; seven mutants ungraded, 0.9 bar unchanged. Not live-model or whole-change proof.</td></tr>
 <tr><td>Actual quality</td><td>No current complete proof</td><td><a href="metrics.json">Historical incomplete report</a>; subsequent edits invalidate current-snapshot use.</td></tr>
 </table>
 <p><a href="measurement-enablement.html">Measurement enablement</a> is in progress. Refusal tests, installed tools and dry-run evaluation cannot replace missing actual measurements.</p>
@@ -67,7 +65,7 @@ Current scope: guarded-workflow continuation, measurement enablement and documen
 <p><a href="evidence/i1-code-review-r2.md">I1 re-review</a> approves limited preservation, not release. Continuation scores remain unproven.</p>
 
 <h2>How to finish</h2>
-<p>Prior commits: <code>aaec9b9</code>, <code>015d353</code>, <code>0b7e1a1</code>, <code>5dabb4c</code>, <code>d971634</code>, <code>ee6e0e3</code>, <code>dadce66</code>. Current preservation scope is approved C3. Remaining work: parser amendment and collectors, guarded producer binding, C4 and Q3-Q5. Keep recovery explicitly blocked. Freeze final writers before quality proof.</p>
+<p>C3 is preserved in <code>ce7c07e</code>; the accepted JS amendment in <code>fdc6af0</code>. Next: preserve the verified parser core, complete JS serialization/lifecycle, collectors and guarded binding, then fresh end-to-end sample-app and final quality proof. C4 remains held; recovery remains blocked. Earlier commits and remaining Q3-Q5 work are recorded in state.</p>
 <p>Human approval remains unconfirmed. Executed runtimes: Python 3.14.2 / Node 24.11.1 on Windows; no broader matrix proof. Hash scope is not a sandbox; producer identities are self-declared. Compaction is not fresh-agent resume. Publication remains blocked by EMU 403; no retry or bypass occurred.</p>
 </body>
 </html>

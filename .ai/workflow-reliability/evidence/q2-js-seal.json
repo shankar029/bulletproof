@@ -1,0 +1,289 @@
+{
+  "accepted_checks": {
+    "JS-COMPAT-01": {
+      "covered_methods": [
+        "test_measure_js.SharedJSCoreTests.test_inventory_keywords_preserve_legacy_and_pending_entries",
+        "test_measure_js.SharedJSCoreTests.test_controller_digest_and_no_inventory_mode_salt",
+        "test_measure_js.SharedJSCoreTests.test_native_actual_root_syntax_without_execution"
+      ],
+      "remaining": "See q2-js-handoff.md exact disposition table",
+      "status": "PARTIAL_ONLY"
+    },
+    "JS-DIAG-01": {
+      "covered_methods": [
+        "test_measure_js.SharedJSCoreTests.test_native_diagnostics_and_checker_alias",
+        "test_measure_js.SharedJSCoreTests.test_native_errors_and_empty_program"
+      ],
+      "remaining": "See q2-js-handoff.md exact disposition table",
+      "status": "PARTIAL_ONLY"
+    },
+    "JS-LIFE-01": {
+      "covered_methods": [
+        "test_measure_js.SharedJSCoreTests.test_native_two_git_revision_census"
+      ],
+      "remaining": "See q2-js-handoff.md exact disposition table",
+      "status": "PARTIAL_ONLY"
+    },
+    "JS-LIFE-02": {
+      "covered_methods": [],
+      "remaining": "See q2-js-handoff.md exact disposition table",
+      "status": "NOT_IMPLEMENTED"
+    },
+    "JS-OWN-01": {
+      "covered_methods": [
+        "test_measure_js.SharedJSCoreTests.test_native_errors_and_empty_program",
+        "test_measure_js.SharedJSCoreTests.test_controller_digest_and_no_inventory_mode_salt"
+      ],
+      "remaining": "See q2-js-handoff.md exact disposition table",
+      "status": "PARTIAL_ONLY"
+    },
+    "JS-PARSE-01": {
+      "covered_methods": [
+        "test_measure_js.SharedJSCoreTests.test_native_byte_boundaries",
+        "test_measure_js.SharedJSCoreTests.test_native_six_suffix_census",
+        "test_measure_js.SharedJSCoreTests.test_native_syntax_shapes"
+      ],
+      "remaining": "See q2-js-handoff.md exact disposition table",
+      "status": "PARTIAL_ONLY"
+    },
+    "JS-SYMBOL-01": {
+      "covered_methods": [
+        "test_measure_js.SharedJSCoreTests.test_native_diagnostics_and_checker_alias"
+      ],
+      "remaining": "See q2-js-handoff.md exact disposition table",
+      "status": "PARTIAL_ONLY"
+    }
+  },
+  "created_utc": "2026-09-17T16:35:27.698995+00:00",
+  "git_status_observed": " M evals/report.md\n M references/quality-metrics.md\n M scripts/measure.py\n?? .ai/workflow-reliability/evidence/q2-js-core-development-01/\n?? .ai/workflow-reliability/evidence/q2-js-core-development-02/\n?? .ai/workflow-reliability/evidence/q2-js-core-development-03/\n?? .ai/workflow-reliability/evidence/q2-js-core-final-01/\n?? .ai/workflow-reliability/evidence/q2-js-handoff.md\n?? scripts/measure_js.mjs\n?? scripts/tests/measure_js.test.mjs\n?? scripts/tests/test_measure_js.py\n",
+  "head": "fdc6af09a48cbdb21959698453ed2769eec224f4",
+  "owned_files": [
+    {
+      "bytes": 47813,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-01/test_native_byte_boundaries.json",
+      "sha256": "edb6b50068a49a83d30ea88b87f8eea616ee79ae2314eb4fc9ec563aabd687ae"
+    },
+    {
+      "bytes": 47813,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_byte_boundaries.json",
+      "sha256": "65197f7d4e0c18f027fa82b6b22ae6c0f5f204ea741c4a60a02e9c108f1a91ac"
+    },
+    {
+      "bytes": 79250,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_diagnostics_and_checker_alias.json",
+      "sha256": "75b3e950f105fd8121bb93a8d1ec6ce3d58c31076eed1b00e160385e08f3fbec"
+    },
+    {
+      "bytes": 49424,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_errors_and_empty_program.json",
+      "sha256": "f706701137add01b0561bbb84746f554651ef2f2d61e5bc68015f594a2f42988"
+    },
+    {
+      "bytes": 48591,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_six_suffix_census.json",
+      "sha256": "d70d3d33a8c311dd206a17ba6009d022aa27c50cc208743072878f625f9e9496"
+    },
+    {
+      "bytes": 73304,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_syntax_shapes.json",
+      "sha256": "5b9797b8f7c5aacee36f23a9eb3d415f516bea4114855706c093397c6eefb520"
+    },
+    {
+      "bytes": 99351,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_two_git_revision_census.json",
+      "sha256": "2028ae5768f7d819851c69e06869f279db44819cca31481013c453b942c5728a"
+    },
+    {
+      "bytes": 3710,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/unittest.log",
+      "sha256": "24ee60e18affccd52626e9e7b603fdb27b9aaad1bee411daf096f9dbf19e2ae6"
+    },
+    {
+      "bytes": 122841,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-03/test_native_six_suffix_census.json",
+      "sha256": "092d1f606c8e8ff0f62929351c42adc11aa8bb8f9c4337e6ac763c89df040cd8"
+    },
+    {
+      "bytes": 361,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-03/unittest.log",
+      "sha256": "f0eee6878dd9efea0afa9df0dd339dbe0150767cc677e5a79e03eaeb34c2b3fe"
+    },
+    {
+      "bytes": 801,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/after.json",
+      "sha256": "36a4948c30789757b740198cf95ba23f43f1da22cbeb3f8746e429ea18269bc6"
+    },
+    {
+      "bytes": 801,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/before.json",
+      "sha256": "36a4948c30789757b740198cf95ba23f43f1da22cbeb3f8746e429ea18269bc6"
+    },
+    {
+      "bytes": 5392386,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/raw-f9df00e58d91.json",
+      "sha256": "d6fca68b8d47d47d90da370c6ddc57090b4560f9faa9551c7f60ef0db5e3d8b0"
+    },
+    {
+      "bytes": 188971,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_actual_root_syntax_without_execution.json",
+      "sha256": "fce7e79f1b69dc140560e182558feefc718ddee0ec17cdd692f88352efddc7f9"
+    },
+    {
+      "bytes": 47862,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_byte_boundaries.json",
+      "sha256": "5f358186129c0617b45f21d9f68d3af849b02cb507bfcd9bce2f5b2ced1697ce"
+    },
+    {
+      "bytes": 79300,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_diagnostics_and_checker_alias.json",
+      "sha256": "b7dd0b9fcebfe1a0211f922186e1f185dd4aa5450d74e90c2f6e35d6973a889a"
+    },
+    {
+      "bytes": 49475,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_errors_and_empty_program.json",
+      "sha256": "71a7bfe6b9cdf25e3b820b74844d6d2f726728953a7ec9028167edebb38a7b49"
+    },
+    {
+      "bytes": 122863,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_six_suffix_census.json",
+      "sha256": "7da1565939649148fc54188bf0e7f7d0170170de20791e9299eb99905972940e"
+    },
+    {
+      "bytes": 76087,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_syntax_shapes.json",
+      "sha256": "1e21872bd19ffc275b1c982a02cb425c93a4ec9c5c659d6ccf5224a072e96670"
+    },
+    {
+      "bytes": 99401,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_two_git_revision_census.json",
+      "sha256": "11262223d705a7ddc6587244e6a763143dbfef57132ae13715d3708731779dc3"
+    },
+    {
+      "bytes": 354757,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/two-revisions.json",
+      "sha256": "57fee5cda094f669973f45ccef2a6de12a74fa953894dad21021a9b47188bb16"
+    },
+    {
+      "bytes": 9850,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/unittest.log",
+      "sha256": "33af3df31e86c0e7396c3b484748b7b706dc345dc6de3ba3e0aa522adc4e1be7"
+    },
+    {
+      "bytes": 13303,
+      "path": ".ai/workflow-reliability/evidence/q2-js-handoff.md",
+      "sha256": "78145f368509a43db6393a85ee3d025b68919382bac66d11bb29f97425876238"
+    },
+    {
+      "bytes": 16434,
+      "path": "references/quality-metrics.md",
+      "sha256": "4706eee4c2ba142eec951bbc3a26cb1df846ba7595d5414d813814ebdd8a37a5"
+    },
+    {
+      "bytes": 71879,
+      "path": "scripts/measure.py",
+      "sha256": "b5a824cd84a4a63bb1a6ec5cb6d2e09426614006b12f0b9ef867f040439c4db9"
+    },
+    {
+      "bytes": 16210,
+      "path": "scripts/measure_js.mjs",
+      "sha256": "bc1467eaf8666dcb162525cb78d25feb3672f28eac10af45745feec731522b23"
+    },
+    {
+      "bytes": 12718,
+      "path": "scripts/tests/measure_js.test.mjs",
+      "sha256": "aa15edc62252fd86043e9e759196d8a86f5560ffdc9314ad86f1f14281f48e3f"
+    },
+    {
+      "bytes": 10895,
+      "path": "scripts/tests/test_measure_js.py",
+      "sha256": "ed0463f8ee6b0c3de382369a6b1762793467b755d4f0ac68d19e2be44cae8ebc"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Native parser core and inventory/controller keyword primitives only",
+  "self_binding": "This seal does not hash itself; its SHA-256 is returned in the handoff response.",
+  "status": "PARTIAL_DEVELOPMENT_ONLY_NOT_SHARED_JS_OR_Q2_ACCEPTANCE",
+  "unchanged_inputs": [
+    {
+      "bytes": 27123,
+      "path": "scripts/measure_graph.py",
+      "sha256": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391"
+    },
+    {
+      "bytes": 40490,
+      "path": "scripts/probe.py",
+      "sha256": "d7be5050cf70cb836e46f0b661632b2d426d6bdc4684f1b54aa9061d61948904"
+    },
+    {
+      "bytes": 7050,
+      "path": "scripts/evidence.py",
+      "sha256": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4"
+    },
+    {
+      "bytes": 10919,
+      "path": "scripts/run.py",
+      "sha256": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e"
+    },
+    {
+      "bytes": 21953,
+      "path": "scripts/tests/test_measure_source_bindings.py",
+      "sha256": "bcc36f23061dd5b4db2dfcb161c0202bbe95db1fb930b1c6ef79fe8c9b95d1b3"
+    },
+    {
+      "bytes": 91245,
+      "path": ".ai/workflow-reliability/measurement-enablement-contracts.json",
+      "sha256": "a9a75df36241dc2578ff627703154a2750212c385a163332fe2ccbb47af9bd12"
+    },
+    {
+      "bytes": 15392,
+      "path": ".ai/workflow-reliability/evidence/q2-tool-input-root-amendment.json",
+      "sha256": "36514a684b8b1323c752a3559cb49f30be8db61b865435f47682dfd824cda1c1"
+    },
+    {
+      "bytes": 74941,
+      "path": ".ai/workflow-reliability/evidence/q2-js-execution-amendment.json",
+      "sha256": "887c8a3ba5dd9f8efd32081b3c3e20fbea8a0fada67349a1555bcda34f7b4c9e"
+    },
+    {
+      "bytes": 24167,
+      "path": ".ai/workflow-reliability/evidence/q2-js-execution-review.md",
+      "sha256": "222c6c2f85b40e25b1321726dc5a5d6b58261828e8beed479d5d0b2e9cd808d6"
+    },
+    {
+      "bytes": 14159,
+      "path": ".ai/workflow-reliability/evidence/q2-js-execution-review-r2.md",
+      "sha256": "7ca0e688e1774e5f240d3d9933afd09ae3cba9da656f8619a13123cd4f8a4d6e"
+    }
+  ],
+  "unrelated_excluded": [
+    "evals/report.md"
+  ],
+  "validation": {
+    "before_after_current_pins_equal": true,
+    "counts_are_not_additive": true,
+    "existing_binding_invocations": 6,
+    "exit": 0,
+    "native_child_idle_seconds": 30,
+    "native_child_max_seconds": 90,
+    "nested_native_cases": 7,
+    "passed": 15,
+    "seconds": 879.393,
+    "unittest_methods": [
+      "test_measure_js.SharedJSCoreTests.test_controller_digest_and_no_inventory_mode_salt",
+      "test_measure_js.SharedJSCoreTests.test_inventory_keywords_preserve_legacy_and_pending_entries",
+      "test_measure_js.SharedJSCoreTests.test_native_actual_root_syntax_without_execution",
+      "test_measure_js.SharedJSCoreTests.test_native_byte_boundaries",
+      "test_measure_js.SharedJSCoreTests.test_native_diagnostics_and_checker_alias",
+      "test_measure_js.SharedJSCoreTests.test_native_errors_and_empty_program",
+      "test_measure_js.SharedJSCoreTests.test_native_six_suffix_census",
+      "test_measure_js.SharedJSCoreTests.test_native_syntax_shapes",
+      "test_measure_js.SharedJSCoreTests.test_native_two_git_revision_census",
+      "test_measure_inventory.InventoryTests.test_one_discovery_owner_and_standalone_imports",
+      "test_measure_inventory.InventoryTests.test_inventory_retains_all_code_and_deliberate_exclusions",
+      "test_measure_graph.GraphTests.test_zero_import_receipts_complete_and_source_bytes_are_not_executed",
+      "test_measure_graph.GraphTests.test_invalid_python_and_mixed_languages_remain_explicit",
+      "test_measure_graph.GraphTests.test_rehashed_graph_payload_is_not_accepted_as_authoritative",
+      "test_measure_source_bindings.SourceBindingTests.test_actual_three_tools_at_two_git_revisions_with_import_provenance"
+    ]
+  }
+}

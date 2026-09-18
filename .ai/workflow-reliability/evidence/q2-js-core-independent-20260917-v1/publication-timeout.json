@@ -1,0 +1,27 @@
+{
+  "phase": "post-test independent evidence publication",
+  "attempt": 1,
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-u",
+    "scripts\\run.py",
+    "--idle",
+    "30",
+    "--max",
+    "90",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-u",
+    ".ai\\workflow-reliability\\evidence\\q2-js-core-independent-20260917-v1\\publish.py"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "tool_shell_id": "527",
+  "returncode": 124,
+  "output": "[run] idle-timeout after 30s of silence — killed \"C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe -B -u .ai\\workflow-reliability\\evidence\\q2-js-core-independent-20260917-v1\\publish.py\" (exit 124)",
+  "observation": "A subsequent directory listing showed no report.md, report.html, seal.json or final-status.json. Interruption occurred in the pre-publication pin loop.",
+  "cleanup": "Runner PID-tree cleanup attempted; descendant termination UNKNOWN. No old trees touched, privilege retry or process-name kill.",
+  "correction": "Emit real completed-pin recheck counts every 500 files; one retry only; same idle30/max90. No test/production/child-limit change and no test rerun.",
+  "test_results_affected": false
+}

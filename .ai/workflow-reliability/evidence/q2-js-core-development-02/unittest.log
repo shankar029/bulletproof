@@ -1,0 +1,68 @@
+Validated existing TypeScript binding for native core tests
+test_controller_digest_and_no_inventory_mode_salt (test_measure_js.SharedJSCoreTests.test_controller_digest_and_no_inventory_mode_salt) ... ok
+test_inventory_keywords_preserve_legacy_and_pending_entries (test_measure_js.SharedJSCoreTests.test_inventory_keywords_preserve_legacy_and_pending_entries) ... ok
+test_native_byte_boundaries (test_measure_js.SharedJSCoreTests.test_native_byte_boundaries) ... Starting real native core case: byte_boundaries
+Completed real native core case: byte_boundaries
+ok
+test_native_diagnostics_and_checker_alias (test_measure_js.SharedJSCoreTests.test_native_diagnostics_and_checker_alias) ... Starting real native core case: diagnostics_and_symbols
+Completed real native core case: diagnostics_and_symbols
+ok
+test_native_errors_and_empty_program (test_measure_js.SharedJSCoreTests.test_native_errors_and_empty_program) ... Starting real native core case: errors_and_empty_program
+Completed real native core case: errors_and_empty_program
+ok
+test_native_six_suffix_census (test_measure_js.SharedJSCoreTests.test_native_six_suffix_census) ... Starting real native core case: six_suffixes
+FAIL
+test_native_syntax_shapes (test_measure_js.SharedJSCoreTests.test_native_syntax_shapes) ... Starting real native core case: syntax_shapes
+Completed real native core case: syntax_shapes
+ok
+test_native_two_git_revision_census (test_measure_js.SharedJSCoreTests.test_native_two_git_revision_census) ... Starting real native core case: two_revisions
+Completed real native core case: two_revisions
+ok
+
+======================================================================
+FAIL: test_native_six_suffix_census (test_measure_js.SharedJSCoreTests.test_native_six_suffix_census)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 84, in test_native_six_suffix_census
+    self.native("six_suffixes")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\test_measure_js.py", line 71, in native
+    self.assertEqual(code, 0, stdout + stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : \u2716 six_suffixes (2492.4551ms)
+\u2139 tests 1
+\u2139 suites 0
+\u2139 pass 0
+\u2139 fail 1
+\u2139 cancelled 0
+\u2139 skipped 0
+\u2139 todo 0
+\u2139 duration_ms 2498.0785
+
+\u2716 failing tests:
+
+test at ..\..\..\..\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-crispy-system\scripts\tests\measure_js.test.mjs:191:3
+\u2716 six_suffixes (2492.4551ms)
+  AssertionError [ERR_ASSERTION]: cjs/comment.cjs
+  
+  1 !== 0
+  
+      at six_suffixes (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/tests/measure_js.test.mjs:87:56)
+      at TestContext.<anonymous> (file:///C:/Users/shbs/.copilot/repos/copilot-worktrees/bulletproof/shbs-microsoft-crispy-system/scripts/tests/measure_js.test.mjs:192:5)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+
+----------------------------------------------------------------------
+Ran 8 tests in 142.727s
+
+FAILED (failures=1)

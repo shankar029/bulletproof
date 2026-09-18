@@ -1,0 +1,70 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-u",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+    "--idle",
+    "120",
+    "--max",
+    "1800",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-u",
+    "-m",
+    "unittest",
+    "-v",
+    "test_measure_js.SharedJSCoreTests.test_controller_digest_and_no_inventory_mode_salt",
+    "test_measure_js.SharedJSCoreTests.test_inventory_keywords_preserve_legacy_and_pending_entries",
+    "test_measure_js.SharedJSCoreTests.test_native_actual_root_syntax_without_execution",
+    "test_measure_js.SharedJSCoreTests.test_native_byte_boundaries",
+    "test_measure_js.SharedJSCoreTests.test_native_diagnostics_and_checker_alias",
+    "test_measure_js.SharedJSCoreTests.test_native_errors_and_empty_program",
+    "test_measure_js.SharedJSCoreTests.test_native_six_suffix_census",
+    "test_measure_js.SharedJSCoreTests.test_native_syntax_shapes",
+    "test_measure_js.SharedJSCoreTests.test_native_two_git_revision_census",
+    "test_measure_inventory.InventoryTests.test_one_discovery_owner_and_standalone_imports",
+    "test_measure_inventory.InventoryTests.test_inventory_retains_all_code_and_deliberate_exclusions",
+    "test_measure_graph.GraphTests.test_zero_import_receipts_complete_and_source_bytes_are_not_executed",
+    "test_measure_graph.GraphTests.test_invalid_python_and_mixed_languages_remain_explicit",
+    "test_measure_graph.GraphTests.test_rehashed_graph_payload_is_not_accepted_as_authoritative",
+    "test_measure_source_bindings.SourceBindingTests.test_actual_three_tools_at_two_git_revisions_with_import_provenance"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "methods": [
+    "test_measure_js.SharedJSCoreTests.test_controller_digest_and_no_inventory_mode_salt",
+    "test_measure_js.SharedJSCoreTests.test_inventory_keywords_preserve_legacy_and_pending_entries",
+    "test_measure_js.SharedJSCoreTests.test_native_actual_root_syntax_without_execution",
+    "test_measure_js.SharedJSCoreTests.test_native_byte_boundaries",
+    "test_measure_js.SharedJSCoreTests.test_native_diagnostics_and_checker_alias",
+    "test_measure_js.SharedJSCoreTests.test_native_errors_and_empty_program",
+    "test_measure_js.SharedJSCoreTests.test_native_six_suffix_census",
+    "test_measure_js.SharedJSCoreTests.test_native_syntax_shapes",
+    "test_measure_js.SharedJSCoreTests.test_native_two_git_revision_census",
+    "test_measure_inventory.InventoryTests.test_one_discovery_owner_and_standalone_imports",
+    "test_measure_inventory.InventoryTests.test_inventory_retains_all_code_and_deliberate_exclusions",
+    "test_measure_graph.GraphTests.test_zero_import_receipts_complete_and_source_bytes_are_not_executed",
+    "test_measure_graph.GraphTests.test_invalid_python_and_mixed_languages_remain_explicit",
+    "test_measure_graph.GraphTests.test_rehashed_graph_payload_is_not_accepted_as_authoritative",
+    "test_measure_source_bindings.SourceBindingTests.test_actual_three_tools_at_two_git_revisions_with_import_provenance"
+  ],
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONPATH": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests;C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts",
+    "PATH": "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd;C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.6.0_arm64__8wekyb3d8bbwe;C:\\Users\\shbs\\AppData\\Local\\Programs\\GitHub Copilot;C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd;C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin;C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\usr\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Users\\shbs\\AppData\\Local\\copilot-desktop-gh-2.98.0;C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Pandoc\\;C:\\Program Files\\GitHub CLI\\;C:\\Program Files\\WezTerm;C:\\Users\\shbs\\AppData\\Local\\Programs\\Herdr\\bin;C:\\Users\\shbs\\AppData\\Roaming\\agency\\CurrentVersion;C:\\Users\\shbs\\.local\\bin;C:\\Users\\shbs\\AppData\\Local\\pnpm;C:\\Users\\shbs\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\shbs\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\shbs\\AppData\\Roaming\\npm;C:\\Users\\shbs\\AppData\\Local\\Microsoft\\WinGet\\Packages\\GitHub.Copilot_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\\Users\\shbs\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\shbs\\AppData\\Local\\Programs\\Obsidian;C:\\Users\\shbs\\AppData\\Local\\Microsoft\\WinGet\\Packages\\marlocarlo.psmux_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\\Users\\shbs\\Tools;C:\\Users\\shbs\\.dotnet\\tools",
+    "TEMP": "C:\\Users\\shbs\\AppData\\Local\\Temp",
+    "TMP": "C:\\Users\\shbs\\AppData\\Local\\Temp",
+    "Q2_JS_RECORDS": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-js-core-independent-20260917-v1",
+    "Q2_SOURCE_RECORDS": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-js-core-independent-20260917-v1"
+  },
+  "child_limits": {
+    "idle": 30,
+    "max": 90
+  },
+  "outer_limits": {
+    "idle": 120,
+    "max": 1800
+  }
+}

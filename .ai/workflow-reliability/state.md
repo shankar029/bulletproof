@@ -5,7 +5,7 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: C3 preserved; Q2 shared-JS design accepted for implementation.
+- Phase: Q2 parser-core source review and independent execution reconciled for bounded local preservation. Auxiliary C4 preparation is on hold.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
 - Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
@@ -37,10 +37,12 @@
 - No repeated uncoached model-effectiveness study claimed by deterministic tests.
 
 ## Next action
-Implement the accepted Q2 shared-JS slice against frozen amendment revision 3,
-then independently verify and review its actual parser/lifecycle behavior.
+Preserve the frozen partial Q2 parser core,
+then finish the accepted shared-JS serialization/lifecycle integration.
 C3 is preserved. Recovery remains blocked;
 no recovery stub or silent completion of the original requirement.
+The latest changes still need fresh end-to-end sample-app verification. Historical
+planner results and the current parser tests do not establish that result.
 The local I1 preservation commit is `aaec9b9`.
 The continuation addendum replaces implementation-dispatch dependencies only; it does not
 close I1.T4 or remove any required measurement, independent role or final acceptance check.
@@ -103,6 +105,81 @@ close I1.T4 or remove any required measurement, independent role or final accept
   specified proof groups, not scalars, root mutants, coverage, metric attachment
   or recovery. Independent verification/review and a green local preservation
   boundary remain mandatory before this component is called delivered.
+- FACT: owner returned `evidence/q2-js-handoff.md` and `evidence/q2-js-seal.json`
+  (seal `7befec79cce53797b158d62f80f412b2efdf05080c1e7c28a8b2cd48f9e1f0fa`).
+  This is a genuine native parser-core library plus inventory/controller keywords,
+  not the complete JS component. Five implementation/doc/test paths and 28 owned
+  files are frozen. Owner reports 15 selected Python methods passed in 879.393s;
+  seven native cases and six binding smokes are nested, not additional methods.
+- Symbol/candidate serialization, fixed command, manifests, accepting replay,
+  graph/probe wiring and finite output archival remain unimplemented. No complete
+  accepted JS test ID or configured JS measurement support is claimed.
+- Fresh verifier `8b39ef04-f116-4d2d-bc1b-ad3f46bb7a86` owns independent core replay
+  and pins; separate reviewer `a7dfd5cf-e714-46b8-9763-f2f88ec691f2` owns the bounded
+  implementation/doc review and later proof reconciliation. Parent status is outside
+  their implementation pins; C4 preparation remains external to this worktree.
+- FACT: `evidence/q2-js-core-code-review.md` gives preliminary bounded APPROVE
+  with no substantive findings. It reconciles all 28 owned and 10 unchanged-input
+  pins and reviews the actual native core, controlled host, diagnostics, byte
+  handling, tests and default compatibility. Independent execution acceptance
+  remains pending; no complete JS check ID or preservation commit is claimed.
+- FACT: `evidence/q2-js-core-independent-20260917-v1/report.md` now records the
+  exact 15-method replay passing in 732.040s and two new ordinary-discoverable
+  boundary methods passing separately in 14.195s. No test failures, skips or
+  retries occurred. Seven native cases and six binding smokes remain nested,
+  not additional Python methods. All 3,593 recorded input pins matched.
+- The verifier's post-test publication helper hit idle30 while silently checking
+  those pins. One bounded retry reported actual completed-pin progress and
+  succeeded without rerunning tests, modifying production or increasing limits.
+  The failed capture is retained; descendant termination remains UNKNOWN.
+- Final reconciliation by the same reviewer includes the two new test files and
+  independent proof. Its completion is still awaited; preliminary approval is not
+  substituted for that disposition.
+- FACT: `evidence/q2-js-core-parent-preservation.json` records 60 matched sealed
+  file records, actual staged checkout byte equality for all seven source/test/doc
+  files, and exact staged blob preservation for 53 evidence files. Its temporary
+  checkout was removed. This is preservation checking, not additional test proof.
+  The first staging command stopped on two whitespace warnings in the immutable
+  development `unittest.log` (lines 47 and 49). Those original bytes are retained;
+  the seven source/test/doc files pass the scoped whitespace check.
+- User clarification: the original goal was a medium-complexity app exercising the
+  workflow. The earlier planner run is historical. The latest 15 + 2 parser checks
+  are not a fresh complete live-app run, and the latest changes have not yet been
+  verified that way. No complete component, full suite or release gate is claimed.
+- FACT: the attempted preservation update to the original reviewer returned
+  `cancelled`; no final reviewer response exists. Its retained source review
+  explicitly approves the five-path checkpoint conditional on parent reconciliation
+  of the separate fresh-verifier evidence. It did not review the two later tests.
+- Parent disposition: that source-review condition is now satisfied by the fresh
+  15-method replay, separately passing two-method discovery, unchanged source pins
+  and staged-byte checks above. Parent also read both added test files: actual
+  ENOENT, unadmitted-file resolution, forged-handle callback exclusion, hardlink
+  rejection, unsupported config and direct-command rejection are asserted without
+  mocking the behavior. No substantive finding was identified. This is parent
+  reconciliation/self-review of the additions, not a fabricated final independent
+  reviewer verdict. Accept bounded local preservation, not the full component or
+  ship gate; retain the original preliminary review and its precise scope.
+
+## C4 external preparation
+- HOLD after the user's duration concern: no further auxiliary preparation,
+  approvals, receipts or participant dispatch. Prepared external artifacts remain
+  preserved. The later autonomous-continuation instruction does not turn those
+  preparations into completed live exercises; the core implementation remains the
+  active priority.
+- External preparer `4243a746-070f-4e68-9d59-dd7ce1817390` established one actual
+  no-tool literal Copilot CLI control: exact response, exit 0, 9.519s, one observed
+  model call and zero observed tool requests/executions. Earlier no-tool documentation
+  stops remain preserved. This is not a C4 exercise, isolation, full access/context
+  audit or 900s termination proof.
+- Parent froze neutral templates/profile in session-owned `c4-preparation/parent-freeze.json`
+  before defect selection. Fresh evaluator `c6625c15-6dff-4d3e-8fac-828daa340104`
+  verified that freeze and exported 63 byte-exact runtime files from `fdc6af`.
+  Its first handoff stopped rather than use synthetic seed approval.
+- Parent authorized actual neutral resume candidate bytes for a genuine separate
+  review before adoption/receipt creation. Diagnosis private preparation may proceed
+  independently after the freeze. No participant dispatch is authorized yet.
+  C4 files/oracles remain under external session-owned directories; none is copied
+  into this worktree during Q2 verification.
 
 ## C3 bounded acceptance
 - FACT: C3 owner `52883f96-3559-4d94-af39-c8e3625a9c99` returned

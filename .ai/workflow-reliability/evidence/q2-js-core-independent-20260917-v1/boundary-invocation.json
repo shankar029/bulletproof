@@ -1,0 +1,46 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-u",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+    "--idle",
+    "120",
+    "--max",
+    "300",
+    "--",
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-B",
+    "-u",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts/tests",
+    "-p",
+    "test_measure_js_core_independent.py",
+    "-v"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+  "test_pins": [
+    {
+      "path": "scripts\\tests\\test_measure_js_core_independent.py",
+      "bytes": 4901,
+      "sha256": "97417cc1e0d4195c0c1aa1ba21e0c2f733211f6f3e2965addb887999f8655e23"
+    },
+    {
+      "path": "scripts\\tests\\measure_js_core_independent.test.mjs",
+      "bytes": 2586,
+      "sha256": "4c5105665d669b668ee3279e232d9862fb3da881c7d4ac33397f5d2bfcfd0781"
+    }
+  ],
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONPATH": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests;C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts",
+    "PATH": "C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd;C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.6.0_arm64__8wekyb3d8bbwe;C:\\Users\\shbs\\AppData\\Local\\Programs\\GitHub Copilot;C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\cmd;C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\bin;C:\\Users\\shbs\\AppData\\Local\\github-copilot-git-2.53.0-4\\clangarm64\\usr\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Users\\shbs\\AppData\\Local\\copilot-desktop-gh-2.98.0;C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Pandoc\\;C:\\Program Files\\GitHub CLI\\;C:\\Program Files\\WezTerm;C:\\Users\\shbs\\AppData\\Local\\Programs\\Herdr\\bin;C:\\Users\\shbs\\AppData\\Roaming\\agency\\CurrentVersion;C:\\Users\\shbs\\.local\\bin;C:\\Users\\shbs\\AppData\\Local\\pnpm;C:\\Users\\shbs\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\shbs\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\shbs\\AppData\\Roaming\\npm;C:\\Users\\shbs\\AppData\\Local\\Microsoft\\WinGet\\Packages\\GitHub.Copilot_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\\Users\\shbs\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\shbs\\AppData\\Local\\Programs\\Obsidian;C:\\Users\\shbs\\AppData\\Local\\Microsoft\\WinGet\\Packages\\marlocarlo.psmux_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\\Users\\shbs\\Tools;C:\\Users\\shbs\\.dotnet\\tools",
+    "TEMP": "C:\\Users\\shbs\\AppData\\Local\\Temp",
+    "TMP": "C:\\Users\\shbs\\AppData\\Local\\Temp",
+    "Q2_JS_INDEPENDENT_RECORDS": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\.ai\\workflow-reliability\\evidence\\q2-js-core-independent-20260917-v1"
+  }
+}

@@ -1,0 +1,4554 @@
+{
+  "test": "test_measure_js.SharedJSCoreTests.test_native_actual_root_syntax_without_execution",
+  "case": "actual_root_syntax",
+  "argv": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests\\measure_js.test.mjs"
+  ],
+  "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\qj-0kzfig2h",
+  "idle_seconds": 30,
+  "max_seconds": 90,
+  "environment_removed": [
+    "PYTHONDONTWRITEBYTECODE",
+    "PYTHONIOENCODING",
+    "PYTHONPATH"
+  ],
+  "returncode": 0,
+  "stdout": "✔ actual_root_syntax (10241.5557ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 10250.0822\n",
+  "stderr": "",
+  "request": {
+    "binding": {
+      "executable": "C:\\Program Files\\nodejs\\node.exe",
+      "sha256": "8f3e33fa1f67843a320d2200ed1a5d40cc59766715a7a02728b8213c2167a084",
+      "module_path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\typescript.js",
+      "observed_version": "5.9.3",
+      "qualified_api": "typescript-compiler-5-9-3-v1",
+      "configuration": {
+        "path": "q2-tools-source-roots.json",
+        "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde",
+        "bytes": 892
+      },
+      "help": {
+        "path": "q2-tools-source-typescript-help.stdout.log",
+        "sha256": "f2e3e3a9ad5608d2818b0356c935a3c45458958d2d70ec3ed715eefc3af5f256",
+        "bytes": 19850
+      },
+      "qualification": [
+        {
+          "path": "q2-tools-runtime-bindings.json",
+          "sha256": "1f38647736643a54273217524f452724f4daf5437c7fa8cb8c6a78c4479ce91b",
+          "bytes": 11068
+        },
+        {
+          "path": "q2-tools-source-roots.json",
+          "sha256": "7b096834fba95bef4984701376be69f72f37b2549777b5b2eb03715d1f141bde",
+          "bytes": 892
+        },
+        {
+          "path": "q2-tools-source-extracted-pins.json",
+          "sha256": "23c3bfa261c02c797d847c134c0131ccebae9ff704cb419d3b0d07c861b4a5af",
+          "bytes": 1119098
+        },
+        {
+          "path": "q2-tools-source-typescript-results.json",
+          "sha256": "c162d0ce8e34c343442fdb646f40db4674c1fa51098e5af5302222986b5d2b86",
+          "bytes": 77921
+        }
+      ]
+    },
+    "source": {
+      "roots": {
+        "typescript": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package"
+      },
+      "resources": [
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\bin\\tsc",
+          "sha256": "8d5fa5bd883fec0979fc2004f1fe1d99aef40570155d550eadc0b03b55513bf0",
+          "bytes": 45
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\bin\\tsserver",
+          "sha256": "a088f0c3419bcb2f7b860ad42e4c9f25ead067eda70af6a10d0a7d453954aada",
+          "bytes": 50
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\_tsc.js",
+          "sha256": "e8f349eabd48486bdb2bf9dc1a00c89d58297270c54b745838879e2859194419",
+          "bytes": 6213092
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\_tsserver.js",
+          "sha256": "0efcc88cdf0593cc1dcc8b6afd605c7bed9eca6f648c70c8f0df8695114bf6d7",
+          "bytes": 27888
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\_typingsInstaller.js",
+          "sha256": "62a69c574365f1c81633b86b3214f9df860aad08843028dd5244b00aa7f1e190",
+          "bytes": 10363
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\cs\\diagnosticMessages.generated.json",
+          "sha256": "5b30e58d35f877521e14c16551c86320b2ed19ddb70fe5f41841b561d27f18c2",
+          "bytes": 320453
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\de\\diagnosticMessages.generated.json",
+          "sha256": "a4031a8028febc35f92ba317104878d93f02c1750e6ee16351c2270ab4dff517",
+          "bytes": 344426
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\es\\diagnosticMessages.generated.json",
+          "sha256": "3c7844125e1f2a3a2227e16dd1fed75218a3454919706b34cd8a5da9d43cda22",
+          "bytes": 340054
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\fr\\diagnosticMessages.generated.json",
+          "sha256": "9fc1836d7575840a8b7a63dacdedd99e90e4144c0bbe29a4b7fa78a86e0e8bf5",
+          "bytes": 346016
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\it\\diagnosticMessages.generated.json",
+          "sha256": "a740fe2b2338d72a8d165fb8c7c22ac1393a18b6aa7f1ed6d45b79887867f98a",
+          "bytes": 339409
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\ja\\diagnosticMessages.generated.json",
+          "sha256": "ae1a2d439bfb60b9fa32408bde0e9ec39840a33d621014fcb5b2fb4e69a606de",
+          "bytes": 381398
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\ko\\diagnosticMessages.generated.json",
+          "sha256": "31b27d2d556fc037eeac1672f771bf940ec70afba342e977faa75a2fa292a8be",
+          "bytes": 346139
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.d.ts",
+          "sha256": "a7297ff837fcdf174a9524925966429eb8e5feecc2cc55cc06574e6b092c1eaa",
+          "bytes": 992
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.decorators.d.ts",
+          "sha256": "8e7f8264d0fb4c5339605a15daadb037bf238c10b654bb3eee14208f860a32ea",
+          "bytes": 13192
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.decorators.legacy.d.ts",
+          "sha256": "782dec38049b92d4e85c1585fbea5474a219c6984a35b004963b00beb1aab538",
+          "bytes": 1326
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.dom.asynciterable.d.ts",
+          "sha256": "d7a3c8b952931daebdfc7a2897c53c0a1c73624593fa070e46bd537e64dcd20a",
+          "bytes": 1887
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.dom.d.ts",
+          "sha256": "080941d9f9ff9307f7e27a83bcd888b7c8270716c39af943532438932ec1d0b9",
+          "bytes": 1874901
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.dom.iterable.d.ts",
+          "sha256": "2e80ee7a49e8ac312cc11b77f1475804bee36b3b2bc896bead8b6e1266befb43",
+          "bytes": 29802
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.collection.d.ts",
+          "sha256": "dc2df20b1bcdc8c2d34af4926e2c3ab15ffe1160a63e58b7e09833f616efff44",
+          "bytes": 5229
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.core.d.ts",
+          "sha256": "c57796738e7f83dbc4b8e65132f11a377649c00dd3eee333f672b8f0a6bea671",
+          "bytes": 22866
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.d.ts",
+          "sha256": "45b7ab580deca34ae9729e97c13cfd999df04416a79116c3bfb483804f85ded4",
+          "bytes": 1241
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.generator.d.ts",
+          "sha256": "515d0b7b9bea2e31ea4ec968e9edd2c39d3eebf4a2d5cbd04e88639819ae3b71",
+          "bytes": 2557
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.iterable.d.ts",
+          "sha256": "0559b1f683ac7505ae451f9a96ce4c3c92bdc71411651ca6ddb0e88baaaad6a3",
+          "bytes": 18200
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.promise.d.ts",
+          "sha256": "0dc1e7ceda9b8b9b455c3a2d67b0412feab00bd2f66656cd8850e8831b08b537",
+          "bytes": 3200
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.proxy.d.ts",
+          "sha256": "ce691fb9e5c64efb9547083e4a34091bcbe5bdb41027e310ebba8f7d96a98671",
+          "bytes": 5251
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.reflect.d.ts",
+          "sha256": "8d697a2a929a5fcb38b7a65594020fcef05ec1630804a33748829c5ff53640d0",
+          "bytes": 6493
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.symbol.d.ts",
+          "sha256": "4ff2a353abf8a80ee399af572debb8faab2d33ad38c4b4474cff7f26e7653b8d",
+          "bytes": 1649
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2015.symbol.wellknown.d.ts",
+          "sha256": "fb0f136d372979348d59b3f5020b4cdb81b5504192b1cacff5d1fbba29378aa1",
+          "bytes": 11010
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2016.array.include.d.ts",
+          "sha256": "d15bea3d62cbbdb9797079416b8ac375ae99162a7fba5de2c6c505446486ac0a",
+          "bytes": 5204
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2016.d.ts",
+          "sha256": "3facaf05f0c5fc569c5649dd359892c98a85557e3e0c847964caeb67076f4d75",
+          "bytes": 965
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2016.full.d.ts",
+          "sha256": "807e0e0bdc67605dd28efe18f20ab5fcd75d944ef95936120702335f9379094b",
+          "bytes": 1032
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2016.intl.d.ts",
+          "sha256": "68d18b664c9d32a7336a70235958b8997ebc1c3b8505f4f1ae2b7e7753b87618",
+          "bytes": 1484
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.arraybuffer.d.ts",
+          "sha256": "eb3d66c8327153d8fa7dd03f9c58d351107fe824c79e9b56b462935176cdf12a",
+          "bytes": 915
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.d.ts",
+          "sha256": "e44bb8bbac7f10ecc786703fe0a6a4b952189f908707980ba8f3c8975a760962",
+          "bytes": 1162
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.date.d.ts",
+          "sha256": "38f0219c9e23c915ef9790ab1d680440d95419ad264816fa15009a8851e79119",
+          "bytes": 1916
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.full.d.ts",
+          "sha256": "1d242d5c24cf285c88bc4fb93c5ff903de8319064e282986edeb6247ba028d5e",
+          "bytes": 1032
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.intl.d.ts",
+          "sha256": "4de680d5bb41c17f7f68e0419412ca23c98d5749dcaaea1896172f06435891fc",
+          "bytes": 1449
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.object.d.ts",
+          "sha256": "69ab18c3b76cd9b1be3d188eaf8bba06112ebbe2f47f6c322b5105a6fbc45a2e",
+          "bytes": 2473
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.sharedmemory.d.ts",
+          "sha256": "a680117f487a4d2f30ea46f1b4b7f58bef1480456e18ba53ee85c2746eeca012",
+          "bytes": 7209
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.string.d.ts",
+          "sha256": "2f11ff796926e0832f9ae148008138ad583bd181899ab7dd768a2666700b1893",
+          "bytes": 2378
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2017.typedarrays.d.ts",
+          "sha256": "954296b30da6d508a104a3a0b5d96b76495c709785c1d11610908e63481ee667",
+          "bytes": 1542
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2018.asyncgenerator.d.ts",
+          "sha256": "ac9538681b19688c8eae65811b329d3744af679e0bdfa5d842d0e32524c73e1c",
+          "bytes": 2692
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2018.asynciterable.d.ts",
+          "sha256": "0a969edff4bd52585473d24995c5ef223f6652d6ef46193309b3921d65dd4376",
+          "bytes": 2257
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2018.d.ts",
+          "sha256": "5e1c4c362065a6b95ff952c0eab010f04dcd2c3494e813b493ecfd4fcb9fc0d8",
+          "bytes": 1088
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2018.full.d.ts",
+          "sha256": "95f1023b824c2c511c48f1201e2d1188bcb0ca1138a309a870b956d2e92e44ab",
+          "bytes": 1074
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2018.intl.d.ts",
+          "sha256": "9e9fbd7030c440b33d021da145d3232984c8bb7916f277e8ffd3dc2e3eae2bdb",
+          "bytes": 3021
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2018.promise.d.ts",
+          "sha256": "811ec78f7fefcabbda4bfa93b3eb67d9ae166ef95f9bff989d964061cbf81a0c",
+          "bytes": 1353
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2018.regexp.d.ts",
+          "sha256": "717937616a17072082152a2ef351cb51f98802fb4b2fdabd32399843875974ca",
+          "bytes": 1232
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2019.array.d.ts",
+          "sha256": "d7e7d9b7b50e5f22c915b525acc5a49a7a6584cf8f62d0569e557c5cfc4b2ac2",
+          "bytes": 3163
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2019.d.ts",
+          "sha256": "68d73b4a11549f9c0b7d352d10e91e5dca8faa3322bfb77b661839c42b1ddec7",
+          "bytes": 1071
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2019.full.d.ts",
+          "sha256": "08f6861df84fba9719c14d5adc3ba40be9f0c687639e6c4df3c05b9301b8ff94",
+          "bytes": 1074
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2019.intl.d.ts",
+          "sha256": "74f7fa2d027d5b33eb0471c8e82a6c87216223181ec31247c357a3e8e2fddc5b",
+          "bytes": 958
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2019.object.d.ts",
+          "sha256": "71c37f4c9543f31dfced6c7840e068c5a5aacb7b89111a4364b1d5276b852557",
+          "bytes": 1473
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2019.string.d.ts",
+          "sha256": "576711e016cf4f1804676043e6a0a5414252560eb57de9faceee34d79798c850",
+          "bytes": 1528
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2019.symbol.d.ts",
+          "sha256": "89c1b1281ba7b8a96efc676b11b264de7a8374c5ea1e6617f11880a13fc56dc6",
+          "bytes": 1006
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.bigint.d.ts",
+          "sha256": "d6d7ae4d1f1f3772e2a3cde568ed08991a8ae34a080ff1151af28b7f798e22ca",
+          "bytes": 38185
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.d.ts",
+          "sha256": "5efce4fc3c29ea84e8928f97adec086e3dc876365e0982cc8479a07954a3efd4",
+          "bytes": 1201
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.date.d.ts",
+          "sha256": "063600664504610fe3e99b717a1223f8b1900087fab0b4cad1496a114744f8df",
+          "bytes": 2956
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.full.d.ts",
+          "sha256": "1305d1e76ca44e30fb8b2b8075fa522b83f60c0bcf5d4326a9d2cf79b53724f8",
+          "bytes": 1074
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.intl.d.ts",
+          "sha256": "639e512c0dfc3fad96a84caad71b8834d66329a1f28dc95e3946c9b58176c73a",
+          "bytes": 22438
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.number.d.ts",
+          "sha256": "368af93f74c9c932edd84c58883e736c9e3d53cec1fe24c0b0ff451f529ceab1",
+          "bytes": 1587
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.promise.d.ts",
+          "sha256": "934019d7e3c81950f9a8426d093458b65d5aff2c7c1511233c0fd5b941e608ab",
+          "bytes": 1803
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.sharedmemory.d.ts",
+          "sha256": "52ada8e0b6e0482b728070b7639ee42e83a9b1c22d205992756fe020fd9f4a47",
+          "bytes": 5128
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.string.d.ts",
+          "sha256": "3bdefe1bfd4d6dee0e26f928f93ccc128f1b64d5d501ff4a8cf3c6371200e5e6",
+          "bytes": 2556
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2020.symbol.wellknown.d.ts",
+          "sha256": "59fb2c069260b4ba00b5643b907ef5d5341b167e7d1dbf58dfd895658bda2867",
+          "bytes": 1606
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2021.d.ts",
+          "sha256": "feecb1be483ed332fad555aff858affd90a48ab19ba7272ee084704eb7167569",
+          "bytes": 1036
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2021.full.d.ts",
+          "sha256": "4a66df3ab5de5cfcda11538cffddd67ff6a174e003788e270914c1e0248483cf",
+          "bytes": 1074
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2021.intl.d.ts",
+          "sha256": "965f36eae237dd74e6cca203a43e9ca801ce38824ead814728a2807b1910117d",
+          "bytes": 8245
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2021.promise.d.ts",
+          "sha256": "af3dd424cf267428f30ccfc376f47a2c0114546b55c44d8c0f1d57d841e28d74",
+          "bytes": 2262
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2021.string.d.ts",
+          "sha256": "995c005ab91a498455ea8dfb63aa9f83fa2ea793c3d8aa344be4a1678d06d399",
+          "bytes": 1592
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2021.weakref.d.ts",
+          "sha256": "959d36cddf5e7d572a65045b876f2956c973a586da58e5d26cde519184fd9b8a",
+          "bytes": 3171
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2022.array.d.ts",
+          "sha256": "3925a6c820dcb1a06506c90b1577db1fdbf7705d65b62b99dce4be75c637e26b",
+          "bytes": 4676
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2022.d.ts",
+          "sha256": "ee7bad0c15b58988daa84371e0b89d313b762ab83cb5b31b8a2d1162e8eb41c2",
+          "bytes": 1108
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2022.error.d.ts",
+          "sha256": "0a3d63ef2b853447ec4f749d3f368ce642264246e02911fcb1590d8c161b8005",
+          "bytes": 2379
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2022.full.d.ts",
+          "sha256": "3cbad9a1ba4453443026ed38e4b8be018abb26565fa7c944376463ad9df07c41",
+          "bytes": 1074
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2022.intl.d.ts",
+          "sha256": "8cdf8847677ac7d20486e54dd3fcf09eda95812ac8ace44b4418da1bbbab6eb8",
+          "bytes": 7692
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2022.object.d.ts",
+          "sha256": "8444af78980e3b20b49324f4a16ba35024fef3ee069a0eb67616ea6ca821c47a",
+          "bytes": 1085
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2022.regexp.d.ts",
+          "sha256": "b4b67b1a91182421f5df999988c690f14d813b9850b40acd06ed44691f6727ad",
+          "bytes": 1331
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2022.string.d.ts",
+          "sha256": "3287d9d085fbd618c3971944b65b4be57859f5415f495b33a6adc994edd2f004",
+          "bytes": 1155
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2023.array.d.ts",
+          "sha256": "df83c2a6c73228b625b0beb6669c7ee2a09c914637e2d35170723ad49c0f5cd4",
+          "bytes": 40236
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2023.collection.d.ts",
+          "sha256": "436aaf437562f276ec2ddbee2f2cdedac7664c1e4c1d2c36839ddd582eeb3d0a",
+          "bytes": 900
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2023.d.ts",
+          "sha256": "27bdc30a0e32783366a5abeda841bc22757c1797de8681bbe81fbc735eeb1c10",
+          "bytes": 999
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2023.full.d.ts",
+          "sha256": "785921608325fa246b450f05b238f4b3ed659f1099af278ce9ebbc9416a13f1d",
+          "bytes": 1074
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2023.intl.d.ts",
+          "sha256": "8e3c06ea092138bf9fa5e874a1fdbc9d54805d074bee1de31b99a11e2fec239d",
+          "bytes": 2645
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.arraybuffer.d.ts",
+          "sha256": "87dc0f382502f5bbce5129bdc0aea21e19a3abbc19259e0b43ae038a9fc4e326",
+          "bytes": 2637
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.collection.d.ts",
+          "sha256": "b1cb28af0c891c8c96b2d6b7be76bd394fddcfdb4709a20ba05a7c1605eea0f9",
+          "bytes": 1224
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.d.ts",
+          "sha256": "8fd575e12870e9944c7e1d62e1f5a73fcf23dd8d3a321f2a2c74c20d022283fe",
+          "bytes": 1166
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.full.d.ts",
+          "sha256": "b3e9cef4eed59f8a2249ed834ba4aabe9d0d4e9037d4679487fa17dad99004a3",
+          "bytes": 1074
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.object.d.ts",
+          "sha256": "2fef54945a13095fdb9b84f705f2b5994597640c46afeb2ce78352fab4cb3279",
+          "bytes": 1259
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.promise.d.ts",
+          "sha256": "ac77cb3e8c6d3565793eb90a8373ee8033146315a3dbead3bde8db5eaf5e5ec6",
+          "bytes": 1389
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.regexp.d.ts",
+          "sha256": "56e4ed5aab5f5920980066a9409bfaf53e6d21d3f8d020c17e4de584d29600ad",
+          "bytes": 1073
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.sharedmemory.d.ts",
+          "sha256": "4ece9f17b3866cc077099c73f4983bddbcb1dc7ddb943227f1ec070f529dedd1",
+          "bytes": 3077
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es2024.string.d.ts",
+          "sha256": "0a6282c8827e4b9a95f4bf4f5c205673ada31b982f50572d27103df8ceb8013c",
+          "bytes": 1194
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es5.d.ts",
+          "sha256": "c430d44666289dae81f30fa7b2edebf186ecc91a2d4c71266ea6ae76388792e1",
+          "bytes": 218439
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.es6.d.ts",
+          "sha256": "df039a67536fe2acc3affdcbfb645892f842db36fe599e8e652e2f0c640a90d1",
+          "bytes": 1032
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.array.d.ts",
+          "sha256": "1c9319a09485199c1f7b0498f2988d6d2249793ef67edda49d1e584746be9032",
+          "bytes": 1791
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.collection.d.ts",
+          "sha256": "e3a2a0cee0f03ffdde24d89660eba2685bfbdeae955a6c67e8c4c9fd28928eeb",
+          "bytes": 3878
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.d.ts",
+          "sha256": "2ab096661c711e4a81cc464fa1e6feb929a54f5340b46b0a07ac6bbf857471f0",
+          "bytes": 1282
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.decorators.d.ts",
+          "sha256": "d4b1d2c51d058fc21ec2629fff7a76249dec2e36e12960ea056e3ef89174080f",
+          "bytes": 1070
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.disposable.d.ts",
+          "sha256": "51ad4c928303041605b4d7ae32e0c1ee387d43a24cd6f1ebf4a2699e1076d4fa",
+          "bytes": 6806
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.error.d.ts",
+          "sha256": "73f78680d4c08509933daf80947902f6ff41b6230f94dd002ae372620adb0f60",
+          "bytes": 1029
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.float16.d.ts",
+          "sha256": "196cb558a13d4533a5163286f30b0509ce0210e4b316c56c38d4c0fd2fb38405",
+          "bytes": 20528
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.full.d.ts",
+          "sha256": "bde31fd423cd93b0eff97197a3f66df7c93e8c0c335cbeb113b7ff1ac35c23f4",
+          "bytes": 1074
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.intl.d.ts",
+          "sha256": "811c71eee4aa0ac5f7adf713323a5c41b0cf6c4e17367a34fbce379e12bbf0a4",
+          "bytes": 893
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.iterator.d.ts",
+          "sha256": "22adec94ef7047a6c9d1af3cb96be87a335908bf9ef386ae9fd50eeb37f44c47",
+          "bytes": 8676
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.promise.d.ts",
+          "sha256": "60037901da1a425516449b9a20073aa03386cce92f7a1fd902d7602be3a7c2e9",
+          "bytes": 1658
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.esnext.sharedmemory.d.ts",
+          "sha256": "c5239f5c01bcfa9cd32f37c496cf19c61d69d37e48be9de612b541aac915805b",
+          "bytes": 1067
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.scripthost.d.ts",
+          "sha256": "cd034f499c6cdca722b60c04b5b1b78e058487a7085a8e0d6fb50809947ee573",
+          "bytes": 9451
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.webworker.asynciterable.d.ts",
+          "sha256": "ca417afee74054e99d5a8252b35bef26ca6e2942d67d343fce6b42fc9f432993",
+          "bytes": 1887
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.webworker.d.ts",
+          "sha256": "6d08cde2bfb6ff909efbf7cb7d6d55be412cf4b9f48fd0430185986973fa91f5",
+          "bytes": 609557
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.webworker.importscripts.d.ts",
+          "sha256": "80e18897e5884b6723488d4f5652167e7bb5024f946743134ecc4aa4ee731f89",
+          "bytes": 1041
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\lib.webworker.iterable.d.ts",
+          "sha256": "d6c6331ce67c41b2ad5bfb0c8c022403980b479a377a44da8f16b61120418f66",
+          "bytes": 22768
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\pl\\diagnosticMessages.generated.json",
+          "sha256": "0645575abe920de1ee4cf3f2f70c7abc7f6691daa01cf1e9ad6b1ce53917c9ff",
+          "bytes": 342111
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\pt-br\\diagnosticMessages.generated.json",
+          "sha256": "34a649eb937cd70fe7b15663c2e5479e753d42df0e5c2933636789b60c2c939d",
+          "bytes": 330482
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\ru\\diagnosticMessages.generated.json",
+          "sha256": "29bb8ea9d44f55bb7acdedfac0a57865ea40552f004d0d6e3b96746ac76666cc",
+          "bytes": 443587
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\tr\\diagnosticMessages.generated.json",
+          "sha256": "9466915f3e0cdb2625495bbe9c02c8b7ef9e3543fffae957ba034655563abf65",
+          "bytes": 330684
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\tsc.js",
+          "sha256": "2cffde0b8c6760dfb0b5b0382bbb7e00ba6a8b2d981b9205b256a700a481d983",
+          "bytes": 267
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\tsserver.js",
+          "sha256": "e3ccfeec65ec5c470b8ffc5611878a31182650c7e8a062c38a719f83b523edcb",
+          "bytes": 272
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\tsserverlibrary.d.ts",
+          "sha256": "73b15a0b7cf5c6df9076b9408c5ce682f11813453bf54c54cb284f075b5224cf",
+          "bytes": 865
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\tsserverlibrary.js",
+          "sha256": "7ca9b464de80a5382d9ccfed2b224323bc0274c8de61bf0464e89ee824677c76",
+          "bytes": 1012
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\typescript.d.ts",
+          "sha256": "e134052a6b1ded61693b4037f615dc72f14e2881e79c1ddbff6c514c8a516b05",
+          "bytes": 588085
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\typescript.js",
+          "sha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675",
+          "bytes": 9112572
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\typesMap.json",
+          "sha256": "4143fb8b1c5d4421dfa19a4b80ddf2da375fc0835a349c3b18519fda5955e1d9",
+          "bytes": 16788
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\typingsInstaller.js",
+          "sha256": "2d48a038523ea7c626fa2796a30fa5fdc07612ea5fab83544423009d7683a213",
+          "bytes": 280
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\watchGuard.js",
+          "sha256": "471200d4bc555ef8d8429358bdca2a68ea7c9bfff6c853b5b048d2512fe4092a",
+          "bytes": 2313
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\zh-cn\\diagnosticMessages.generated.json",
+          "sha256": "6bd4ae6aea0991f6b73c46ec79ebb643b280a07e4808be363b07d01d2f6d399d",
+          "bytes": 295909
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\lib\\zh-tw\\diagnosticMessages.generated.json",
+          "sha256": "c35cf732ff01539090a3622b7a07f7bb4cadb28f6f13048b366012c458329be1",
+          "bytes": 292532
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\LICENSE.txt",
+          "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47",
+          "bytes": 9197
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\package.json",
+          "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+          "bytes": 3620
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\README.md",
+          "sha256": "73147458477d90cd6236627cdd9b0871df12e6e8a21d2d0fda6d1ad2826bdc0e",
+          "bytes": 2842
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\SECURITY.md",
+          "sha256": "7b6976eec43edfa68b79a459dd089c56b7a395916dbf1a01bd11e6d86e12128f",
+          "bytes": 2656
+        },
+        {
+          "path": "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\source-qualified-1\\typescript\\package\\ThirdPartyNoticeText.txt",
+          "sha256": "1af3c68039c57e539422da82a4faada506ce6d0ea6f90e0b699d02dbcdb7a90c",
+          "bytes": 37824
+        }
+      ],
+      "runtime_imports": [],
+      "settings": {
+        "noEmit": true,
+        "allowJs": true,
+        "checkJs": true,
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "allowUnreachableCode": false,
+        "target": 99,
+        "module": 199,
+        "moduleResolution": 99,
+        "jsx": 1,
+        "types": [],
+        "typeRoots": []
+      }
+    },
+    "scratch": "C:\\Users\\shbs\\AppData\\Local\\Temp\\qj-0kzfig2h",
+    "controller": "C:\\Users\\shbs\\AppData\\Local\\Temp\\qj-0kzfig2h\\measure_js.mjs",
+    "controller_sha256": "bc1467eaf8666dcb162525cb78d25feb3672f28eac10af45745feec731522b23",
+    "result": "C:\\Users\\shbs\\AppData\\Local\\Temp\\qj-0kzfig2h\\result.json",
+    "revisions": null,
+    "root_sources": {
+      "root": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+      "entries": [
+        {
+          "path": "evals/lib/score.mjs",
+          "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+          "bytes": 9747
+        },
+        {
+          "path": "scripts/native_result.mjs",
+          "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+          "bytes": 7049
+        }
+      ]
+    }
+  },
+  "request_sha256": "c80e954a4797b86041826d0369de3388c74013e831bfc30e99dade2b39526eee",
+  "native": {
+    "case": "actual_root_syntax",
+    "proofs": [
+      {
+        "entries": [
+          {
+            "path": "evals/lib/score.mjs",
+            "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+            "bytes": 9747
+          },
+          {
+            "path": "scripts/native_result.mjs",
+            "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+            "bytes": 7049
+          }
+        ],
+        "census": [
+          {
+            "path": "evals/lib/score.mjs",
+            "source_sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+            "observed_sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+            "suffix": ".mjs",
+            "state": "processed",
+            "reason": "",
+            "token_count": 1730,
+            "function_count": 27,
+            "diagnostic_ids": [
+              "00ee09e6d3ab7be16f17bea5b9b432fa9d035d241170a70a547db4ef9cb0695f",
+              "044269e22202534a5f4fc697bb34e689463b9bbe31f905c635b3f2662f8f905f",
+              "052adeb8e724ec1236b679fee088c1cdf669d0885a2298bd5624e62603792a8f",
+              "06564ecc493a8bd0aa7e82daf705fe1e4a70670e75c64459e94d284c41f5f55b",
+              "0a1a95ddece8a5c4659200a9fa9cbad3818898084521ab4482935d4f47c86f90",
+              "0bda2767023b7c9dd7596f2f788e55565dc3e142f849219cadc22ea3e8260e2f",
+              "115a489a2ed7f8f89946df070e0a682a33a16fe1ea94038edebd8dc359114f7d",
+              "16d2ee44bd29f59ee0b594422e4d04843f458fe5cf2ed4f6a09ba954709feff2",
+              "1af7c8a7a41526bbeeafe2caa7d98e5f857237cd844a212a2f48918510deca24",
+              "1b9d2b2565bd0331043451bd2ac1e80efe6d058b6784385869c549cc4c5dea9a",
+              "2b0c0b35c04f40d16027cf0def4254d6b32dcd75450091a789bda499bed16725",
+              "336e07661228369f65470228a0935d3fe818ce8c26ed6a469470cd268867cee8",
+              "39ab15595548ce560c636078b19d5dce4066548ff9f8dae94c2b30340a10bcef",
+              "4466016ab584f2914ccf4c93f04d68b7fca66fc1b96b66b894254b6bbbae178e",
+              "48212889df3d672d4feaf3d0d78c1c7f4fb21666b1c46a621dd88a2ff7eda5e1",
+              "50f3e0143cfdaaa3a24b73d66eb45a94a82dbca739bf5dd9c17187a06d2fb8b3",
+              "562789a6dae0f6dd79a066bef3751e3c39c55fbccdd4ffdb4d67cf0f84bed26d",
+              "564f3918eb508d44f46b99cdc096b5ec11ba825be0da23bee96c22834736b681",
+              "59607b5e399c9d9abc13fd442369a0795f5ba4cefa9b5ff0e0f6d32999fbb716",
+              "596ffa156fe6b9177a995c48af658aa9d0519fc568899cf8c8a7509b684ab5eb",
+              "5cd5443181b36e60bbfa99055c44f7d589b6fe10c1ffe160349d3c692287935e",
+              "66047d1e91d38bc065b57bc5a4f130985a1c66b356c44dcaa24b617010386ac0",
+              "712bbb49302de20bfc7facd1c062d4b2888173743beacbc0818b35287933017a",
+              "723ff789998dfd4d58cbba8a4c4b6e2c04e346af053ae61dfe5bf5dd2e4800a0",
+              "77f35abc68cd187287dfc359cdcad94a4d57e12e742aeb28f59c5c87b1dc605f",
+              "818dd9ae6a146e750735548b79a4f4e7fec43c622eef581f31326506e68b0843",
+              "86f7385056638f847f1fe0e01f1173299cf2a50f0126041848382f1b4fd1d897",
+              "8befedf33ec3f7835cb401b9c8f95d3fff590e7d29d4bd04946182b2b535d9e1",
+              "8d1e1ed1eea2dfbcb115da459b03c39262dc52c74e51f3046f7d0f1238e49608",
+              "99253e6b5cb8515adba1802fb5661dacc3c9bffa7b6047e5dbbb42eebd52e461",
+              "999f437a9466da340fa2e066db086544259348f8e9c693c8250bd392985940fd",
+              "9d72af5c5717f3a37823198f37b9db9184983d709ee7aedbd8d5daf4b82ac575",
+              "ad8837b1e4432afa77529c001d1de72957babe411e8b9d527d376fadc04fc5dd",
+              "b8e7dee990b62ab80739518a514cd4e54b3f9e4fc047c3cc21dcafc258cacb25",
+              "bc332b112c2f1778e9c85eb92b1a50ea309dec2d8427a5b794cb76873f973220",
+              "c342b83d8fa347712ddf31c5ffedac0f7ffc68c477de7de5f249b5efef6b271b",
+              "c816d54e1060033f04cb3844fea2f88ac585defc261f5aee0bc8ad21bbf915cd",
+              "cbab38434b00e9aae43f12ec7345bd4a8185f670bccf0085e02a5ebc7ee97132",
+              "d1c11e8d0915cab67959350a14fe551c6fdf2e799691bafcaa1af0328048aac6",
+              "dad6ce4ce52e667c9da15c9b943764e80b3be7616d937e55f892f5bfa61315f1",
+              "e516772bc6ecfeea3a61d78719ddb3264aa85107d1d3c4db71afe1735803696c",
+              "f0575288f5eafe6548200182d22f6f84c8730750e4d283c55a332aaf6cbfa443",
+              "f236b4438afd160b70883bc1c69c8f42b3fcf7456745e7e6661479a158efe1a7",
+              "f53042cdd21e7c85c36322b0ff1500f7ffe3c1c41bf60e3776f34586680f7529",
+              "fa36c0787df9da16a2b429b6f202bd20c320c25e203c677a16dce5c7a4002185",
+              "fb0f8b5da11af4bfebc33a51cc2b60cea40e623bbb6967595b11c355f3009f3c"
+            ]
+          },
+          {
+            "path": "scripts/native_result.mjs",
+            "source_sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+            "observed_sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+            "suffix": ".mjs",
+            "state": "processed",
+            "reason": "",
+            "token_count": 1479,
+            "function_count": 16,
+            "diagnostic_ids": [
+              "038dbcbb490f45e46ebe17f57408144ae265bf6c652c26d0846d747fbd888017",
+              "10f4bff2bc6550818ff384bf8d64a2f23e9b121d79b03a98e11b0fe80444e16f",
+              "115aa79b18f61d9c9f31017884e9edaaa45323af62e3abd9811ede7b78137cf3",
+              "302ee52cbf4d0e196463e44f687e330036914393359e04aab1188d66ed1bf959",
+              "3779f0485446b4b46023a5050ddd6ef34b049470589fc4831a3dbaa439ec2315",
+              "3b48005210fa27fc63dbc44be0172d4efa774cc53741a74bd097bc62dbc66e14",
+              "44e3d08f8f5db97157176632c07509559fdc68f74b429906e84ec9871a8eaec0",
+              "4d4e7ee228968ac2239bff6e5a278a72b731261710354a31848d4d34d7da8a7c",
+              "531af11afc97be6121d0006ec7839840a7f01a5cd3d3fc31b665b7190cb22688",
+              "5afb2c9e6f8eaaff004412db148e116f8a796d5a1dfaeefad2dfd02c572e7e50",
+              "613f7637338722cb2f84be34794c8c065872b329af77cf9b78b6bb4f358bc057",
+              "65947984e6d643537c231058c030a32c46c20f9dc4267eedfa1cf53948ce2c1a",
+              "65a771e0dc9767e5b6efa3ff6f71df9fc973f8a13eaf4658309941d7a813bd2d",
+              "729275064b7c46c101138527af2619fd4634e0680616d65236c17bd41b5e7f97",
+              "7a88eac7b0042cdb6d7cc3ffad9e52f31be998fb64aff1ae37cc72b17ea18bb4",
+              "7b0afb9afbada5516ef80486c5a68b9a315ba471a063176035f87d55d49cfd91",
+              "7eba3791a10024ac392be354edd37203083d3e946d0d7fe6471c98defa640b71",
+              "895b335e06f18ded5e3565372c879b22603ab7734fe98d2c2581283ed437bb47",
+              "918f1acfff1ff485fa21b2ddc0c395c7988fb65b472ea1cf1e11a31f12c578bd",
+              "925126a2162d9fc57f66b5788a8e50e652c41f2cf74a5b52e840f1870e7dd014",
+              "9679015045d752ff7b5db786db9f45f3b3c7233585c2f2e9829befdefd6a1670",
+              "98409776ede34a9c1945e1bcb1359c5212eb66b2d53c702e96bd02b01e75a03c",
+              "9a6327e23d4e2d153bd7f54610ae466012e9e3d852e79dba1f31037cdda4c615",
+              "a22d1f3af028edd40b5403f9075d488597dbf906aad8ea2aff3934f5e92d0739",
+              "a4e2644c5a5dcc0842293273791d05fe7bb456c7318e757b2e8c828c79cb798b",
+              "a59aedb1cc1f2fbe1429a58fc0279d3ab5646649cd1d29d6b5eef681435b1d11",
+              "a94ba4799db117882deef06d23ef46bf38544ac36a9a035dfdabbf3c137e1767",
+              "a9cb750a2217f42fad221280945044bba1be268ada37ed777c496b1bbc6269be",
+              "ab32c8a99c6b2e8ce3a13fb2ab03dc121c7dc56162ef3552e7afca810e6e479e",
+              "ab766937a3ce5c42b669c63640b79d20807c60e7275a9b4437b1780298a33baa",
+              "aca1a276c58bbe679438fcf3bb3308bc14b96ccdd12359860db8ed02681b7944",
+              "ba6b6bc5ed2c8e37da0b5bf185049b62475e31c3f40f8b903228ab6063f95540",
+              "bed64edbe4d81872347aa7aa001f3601719a70b246e9821ff9382e6bded47a59",
+              "da86aaaef9d4390f5ec2f372047331aa246157cdc0739517c0a867e080a149c3",
+              "e18056874b427c07ab7a076853457bca088be03d2b9c0bc74cbc738deba688af",
+              "ed2349998e396fa10b32b970130177682b09818caa5f210d996a61a1d32eb867",
+              "f283a600a63804c0fb7806791297d5895b0f3fec86c17b91384b237560424be7",
+              "f629d00104e989a5483aaf160a27da79a6141af9c175f12cefebb29485b017fa",
+              "f8bef6cb5185a3b1e2ab65d669fd924415c5a09580f2b4a0cd88d5423bce6b49",
+              "fa9b55ef37e1cf95139bde147f57958baa8d697795f81eef438a3b2c29a20ef4",
+              "ff5322a4c8d027b5532c54d7d21ca59be20fb7bf4c40396f67d9e90778ac7ee0"
+            ]
+          }
+        ],
+        "diagnostics": [
+          {
+            "id": "00ee09e6d3ab7be16f17bea5b9b432fa9d035d241170a70a547db4ef9cb0695f",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'oracleAbs' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 1989,
+              "utf16_length": 9,
+              "byte_range": {
+                "start_byte": 1989,
+                "end_byte": 1998,
+                "start_line": 37,
+                "end_line": 37
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "038dbcbb490f45e46ebe17f57408144ae265bf6c652c26d0846d747fbd888017",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 't' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 748,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 748,
+                "end_byte": 749,
+                "start_line": 14,
+                "end_line": 14
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "044269e22202534a5f4fc697bb34e689463b9bbe31f905c635b3f2662f8f905f",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'task' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 3204,
+              "utf16_length": 4,
+              "byte_range": {
+                "start_byte": 3204,
+                "end_byte": 3208,
+                "start_line": 64,
+                "end_line": 64
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "052adeb8e724ec1236b679fee088c1cdf669d0885a2298bd5624e62603792a8f",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'sources' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 2934,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 2934,
+                "end_byte": 2941,
+                "start_line": 58,
+                "end_line": 58
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "06564ecc493a8bd0aa7e82daf705fe1e4a70670e75c64459e94d284c41f5f55b",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'armDirAbs' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 2328,
+              "utf16_length": 9,
+              "byte_range": {
+                "start_byte": 2328,
+                "end_byte": 2337,
+                "start_line": 45,
+                "end_line": 45
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "0a1a95ddece8a5c4659200a9fa9cbad3818898084521ab4482935d4f47c86f90",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'p' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 3044,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 3044,
+                "end_byte": 3045,
+                "start_line": 60,
+                "end_line": 60
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "0bda2767023b7c9dd7596f2f788e55565dc3e142f849219cadc22ea3e8260e2f",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'output' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 768,
+              "utf16_length": 6,
+              "byte_range": {
+                "start_byte": 768,
+                "end_byte": 774,
+                "start_line": 13,
+                "end_line": 13
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "10f4bff2bc6550818ff384bf8d64a2f23e9b121d79b03a98e11b0fe80444e16f",
+            "code": 2307,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find module 'node:util' or its corresponding type declarations.",
+              "category": 1,
+              "code": 2307,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 305,
+              "utf16_length": 11,
+              "byte_range": {
+                "start_byte": 305,
+                "end_byte": 316,
+                "start_line": 5,
+                "end_line": 5
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "115a489a2ed7f8f89946df070e0a682a33a16fe1ea94038edebd8dc359114f7d",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'patterns' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 2943,
+              "utf16_length": 8,
+              "byte_range": {
+                "start_byte": 2943,
+                "end_byte": 2951,
+                "start_line": 58,
+                "end_line": 58
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "115aa79b18f61d9c9f31017884e9edaaa45323af62e3abd9811ede7b78137cf3",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 't' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 5096,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 5096,
+                "end_byte": 5097,
+                "start_line": 100,
+                "end_line": 100
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "16d2ee44bd29f59ee0b594422e4d04843f458fe5cf2ed4f6a09ba954709feff2",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'f' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 4548,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 4550,
+                "end_byte": 4551,
+                "start_line": 92,
+                "end_line": 92
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "1af7c8a7a41526bbeeafe2caa7d98e5f857237cd844a212a2f48918510deca24",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 's' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 6102,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 6106,
+                "end_byte": 6107,
+                "start_line": 122,
+                "end_line": 122
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "1b9d2b2565bd0331043451bd2ac1e80efe6d058b6784385869c549cc4c5dea9a",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'cwd' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 2005,
+              "utf16_length": 3,
+              "byte_range": {
+                "start_byte": 2005,
+                "end_byte": 2008,
+                "start_line": 37,
+                "end_line": 37
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "2b0c0b35c04f40d16027cf0def4254d6b32dcd75450091a789bda499bed16725",
+            "code": 2591,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+              "category": 1,
+              "code": 2591,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 6467,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 6471,
+                "end_byte": 6478,
+                "start_line": 129,
+                "end_line": 129
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "302ee52cbf4d0e196463e44f687e330036914393359e04aab1188d66ed1bf959",
+            "code": 18048,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'cause' is possibly 'undefined'.",
+              "category": 1,
+              "code": 18048,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 1729,
+              "utf16_length": 5,
+              "byte_range": {
+                "start_byte": 1729,
+                "end_byte": 1734,
+                "start_line": 36,
+                "end_line": 36
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "336e07661228369f65470228a0935d3fe818ce8c26ed6a469470cd268867cee8",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'tq' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 8249,
+              "utf16_length": 2,
+              "byte_range": {
+                "start_byte": 8255,
+                "end_byte": 8257,
+                "start_line": 167,
+                "end_line": 167
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "3779f0485446b4b46023a5050ddd6ef34b049470589fc4831a3dbaa439ec2315",
+            "code": 2591,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+              "category": 1,
+              "code": 2591,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 6273,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 6273,
+                "end_byte": 6280,
+                "start_line": 123,
+                "end_line": 123
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "39ab15595548ce560c636078b19d5dce4066548ff9f8dae94c2b30340a10bcef",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'f' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 5736,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 5740,
+                "end_byte": 5741,
+                "start_line": 115,
+                "end_line": 115
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "3b48005210fa27fc63dbc44be0172d4efa774cc53741a74bd097bc62dbc66e14",
+            "code": 2307,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find module 'node:url' or its corresponding type declarations.",
+              "category": 1,
+              "code": 2307,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 514,
+              "utf16_length": 10,
+              "byte_range": {
+                "start_byte": 514,
+                "end_byte": 524,
+                "start_line": 10,
+                "end_line": 10
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "4466016ab584f2914ccf4c93f04d68b7fca66fc1b96b66b894254b6bbbae178e",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'tq' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 8879,
+              "utf16_length": 2,
+              "byte_range": {
+                "start_byte": 8885,
+                "end_byte": 8887,
+                "start_line": 181,
+                "end_line": 181
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "44e3d08f8f5db97157176632c07509559fdc68f74b429906e84ec9871a8eaec0",
+            "code": 2591,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+              "category": 1,
+              "code": 2591,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 6230,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 6230,
+                "end_byte": 6237,
+                "start_line": 122,
+                "end_line": 122
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "48212889df3d672d4feaf3d0d78c1c7f4fb21666b1c46a621dd88a2ff7eda5e1",
+            "code": 2307,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find module 'node:path' or its corresponding type declarations.",
+              "category": 1,
+              "code": 2307,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 400,
+              "utf16_length": 11,
+              "byte_range": {
+                "start_byte": 400,
+                "end_byte": 411,
+                "start_line": 6,
+                "end_line": 6
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "4d4e7ee228968ac2239bff6e5a278a72b731261710354a31848d4d34d7da8a7c",
+            "code": 2591,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+              "category": 1,
+              "code": 2591,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 6899,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 6899,
+                "end_byte": 6906,
+                "start_line": 137,
+                "end_line": 137
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "50f3e0143cfdaaa3a24b73d66eb45a94a82dbca739bf5dd9c17187a06d2fb8b3",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'extra' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 1799,
+              "utf16_length": 5,
+              "byte_range": {
+                "start_byte": 1799,
+                "end_byte": 1804,
+                "start_line": 31,
+                "end_line": 31
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "531af11afc97be6121d0006ec7839840a7f01a5cd3d3fc31b665b7190cb22688",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'l' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 3993,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 3993,
+                "end_byte": 3994,
+                "start_line": 81,
+                "end_line": 81
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "562789a6dae0f6dd79a066bef3751e3c39c55fbccdd4ffdb4d67cf0f84bed26d",
+            "code": 2591,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+              "category": 1,
+              "code": 2591,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 1850,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 1850,
+                "end_byte": 1857,
+                "start_line": 32,
+                "end_line": 32
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "564f3918eb508d44f46b99cdc096b5ec11ba825be0da23bee96c22834736b681",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'dims' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 9488,
+              "utf16_length": 4,
+              "byte_range": {
+                "start_byte": 9496,
+                "end_byte": 9500,
+                "start_line": 192,
+                "end_line": 192
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "59607b5e399c9d9abc13fd442369a0795f5ba4cefa9b5ff0e0f6d32999fbb716",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'q' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 8246,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 8252,
+                "end_byte": 8253,
+                "start_line": 167,
+                "end_line": 167
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "596ffa156fe6b9177a995c48af658aa9d0519fc568899cf8c8a7509b684ab5eb",
+            "code": 2307,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find module './mutate.mjs' or its corresponding type declarations.",
+              "category": 1,
+              "code": 2307,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 446,
+              "utf16_length": 14,
+              "byte_range": {
+                "start_byte": 446,
+                "end_byte": 460,
+                "start_line": 7,
+                "end_line": 7
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "5afb2c9e6f8eaaff004412db148e116f8a796d5a1dfaeefad2dfd02c572e7e50",
+            "code": 2591,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+              "category": 1,
+              "code": 2591,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 6922,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 6922,
+                "end_byte": 6929,
+                "start_line": 138,
+                "end_line": 138
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "5cd5443181b36e60bbfa99055c44f7d589b6fe10c1ffe160349d3c692287935e",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'projectAbs' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 3210,
+              "utf16_length": 10,
+              "byte_range": {
+                "start_byte": 3210,
+                "end_byte": 3220,
+                "start_line": 64,
+                "end_line": 64
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "613f7637338722cb2f84be34794c8c065872b329af77cf9b78b6bb4f358bc057",
+            "code": 2339,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Property 'tests' does not exist on type 'never'.",
+              "category": 1,
+              "code": 2339,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 5217,
+              "utf16_length": 5,
+              "byte_range": {
+                "start_byte": 5217,
+                "end_byte": 5222,
+                "start_line": 102,
+                "end_line": 102
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "65947984e6d643537c231058c030a32c46c20f9dc4267eedfa1cf53948ce2c1a",
+            "code": 2591,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+              "category": 1,
+              "code": 2591,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 6637,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 6637,
+                "end_byte": 6644,
+                "start_line": 132,
+                "end_line": 132
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "65a771e0dc9767e5b6efa3ff6f71df9fc973f8a13eaf4658309941d7a813bd2d",
+            "code": 2307,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find module 'node:fs' or its corresponding type declarations.",
+              "category": 1,
+              "code": 2307,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 379,
+              "utf16_length": 9,
+              "byte_range": {
+                "start_byte": 379,
+                "end_byte": 388,
+                "start_line": 7,
+                "end_line": 7
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "66047d1e91d38bc065b57bc5a4f130985a1c66b356c44dcaa24b617010386ac0",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'weights' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 9494,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 9502,
+                "end_byte": 9509,
+                "start_line": 192,
+                "end_line": 192
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "712bbb49302de20bfc7facd1c062d4b2888173743beacbc0818b35287933017a",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'armDirAbs' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 3222,
+              "utf16_length": 9,
+              "byte_range": {
+                "start_byte": 3222,
+                "end_byte": 3231,
+                "start_line": 64,
+                "end_line": 64
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "723ff789998dfd4d58cbba8a4c4b6e2c04e346af053ae61dfe5bf5dd2e4800a0",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'pat' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 3665,
+              "utf16_length": 3,
+              "byte_range": {
+                "start_byte": 3665,
+                "end_byte": 3668,
+                "start_line": 72,
+                "end_line": 72
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "729275064b7c46c101138527af2619fd4634e0680616d65236c17bd41b5e7f97",
+            "code": 7022,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'previous' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.",
+              "category": 1,
+              "code": 7022,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 2696,
+              "utf16_length": 8,
+              "byte_range": {
+                "start_byte": 2696,
+                "end_byte": 2704,
+                "start_line": 57,
+                "end_line": 57
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "77f35abc68cd187287dfc359cdcad94a4d57e12e742aeb28f59c5c87b1dc605f",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'pat' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 3549,
+              "utf16_length": 3,
+              "byte_range": {
+                "start_byte": 3549,
+                "end_byte": 3552,
+                "start_line": 70,
+                "end_line": 70
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "7a88eac7b0042cdb6d7cc3ffad9e52f31be998fb64aff1ae37cc72b17ea18bb4",
+            "code": 7022,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'container' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.",
+              "category": 1,
+              "code": 7022,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 2738,
+              "utf16_length": 9,
+              "byte_range": {
+                "start_byte": 2738,
+                "end_byte": 2747,
+                "start_line": 58,
+                "end_line": 58
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "7b0afb9afbada5516ef80486c5a68b9a315ba471a063176035f87d55d49cfd91",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'file' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 5876,
+              "utf16_length": 4,
+              "byte_range": {
+                "start_byte": 5876,
+                "end_byte": 5880,
+                "start_line": 114,
+                "end_line": 114
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "7eba3791a10024ac392be354edd37203083d3e946d0d7fe6471c98defa640b71",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'text' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 3719,
+              "utf16_length": 4,
+              "byte_range": {
+                "start_byte": 3719,
+                "end_byte": 3723,
+                "start_line": 76,
+                "end_line": 76
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "818dd9ae6a146e750735548b79a4f4e7fec43c622eef581f31326506e68b0843",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'env' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 2000,
+              "utf16_length": 3,
+              "byte_range": {
+                "start_byte": 2000,
+                "end_byte": 2003,
+                "start_line": 37,
+                "end_line": 37
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "86f7385056638f847f1fe0e01f1173299cf2a50f0126041848382f1b4fd1d897",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'repoRoot' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 2339,
+              "utf16_length": 8,
+              "byte_range": {
+                "start_byte": 2339,
+                "end_byte": 2347,
+                "start_line": 45,
+                "end_line": 45
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "895b335e06f18ded5e3565372c879b22603ab7734fe98d2c2581283ed437bb47",
+            "code": 2591,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+              "category": 1,
+              "code": 2591,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 6605,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 6605,
+                "end_byte": 6612,
+                "start_line": 132,
+                "end_line": 132
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "8befedf33ec3f7835cb401b9c8f95d3fff590e7d29d4bd04946182b2b535d9e1",
+            "code": 7031,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Binding element 'pat' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7031,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 3428,
+              "utf16_length": 3,
+              "byte_range": {
+                "start_byte": 3428,
+                "end_byte": 3431,
+                "start_line": 68,
+                "end_line": 68
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "8d1e1ed1eea2dfbcb115da459b03c39262dc52c74e51f3046f7d0f1238e49608",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'task' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 5503,
+              "utf16_length": 4,
+              "byte_range": {
+                "start_byte": 5507,
+                "end_byte": 5511,
+                "start_line": 111,
+                "end_line": 111
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "918f1acfff1ff485fa21b2ddc0c395c7988fb65b472ea1cf1e11a31f12c578bd",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 't' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 4113,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 4113,
+                "end_byte": 4114,
+                "start_line": 83,
+                "end_line": 83
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "925126a2162d9fc57f66b5788a8e50e652c41f2cf74a5b52e840f1870e7dd014",
+            "code": 18048,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'cause' is possibly 'undefined'.",
+              "category": 1,
+              "code": 18048,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 1769,
+              "utf16_length": 5,
+              "byte_range": {
+                "start_byte": 1769,
+                "end_byte": 1774,
+                "start_line": 36,
+                "end_line": 36
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "9679015045d752ff7b5db786db9f45f3b3c7233585c2f2e9829befdefd6a1670",
+            "code": 2591,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+              "category": 1,
+              "code": 2591,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 6732,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 6732,
+                "end_byte": 6739,
+                "start_line": 133,
+                "end_line": 133
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "98409776ede34a9c1945e1bcb1359c5212eb66b2d53c702e96bd02b01e75a03c",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'error' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 831,
+              "utf16_length": 5,
+              "byte_range": {
+                "start_byte": 831,
+                "end_byte": 836,
+                "start_line": 16,
+                "end_line": 16
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "99253e6b5cb8515adba1802fb5661dacc3c9bffa7b6047e5dbbb42eebd52e461",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'projectAbs' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 5509,
+              "utf16_length": 10,
+              "byte_range": {
+                "start_byte": 5513,
+                "end_byte": 5523,
+                "start_line": 111,
+                "end_line": 111
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "999f437a9466da340fa2e066db086544259348f8e9c693c8250bd392985940fd",
+            "code": 2307,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find module 'node:os' or its corresponding type declarations.",
+              "category": 1,
+              "code": 2307,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 371,
+              "utf16_length": 9,
+              "byte_range": {
+                "start_byte": 371,
+                "end_byte": 380,
+                "start_line": 5,
+                "end_line": 5
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "9a6327e23d4e2d153bd7f54610ae466012e9e3d852e79dba1f31037cdda4c615",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 't' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 4991,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 4991,
+                "end_byte": 4992,
+                "start_line": 99,
+                "end_line": 99
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "9d72af5c5717f3a37823198f37b9db9184983d709ee7aedbd8d5daf4b82ac575",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'fn' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 8242,
+              "utf16_length": 2,
+              "byte_range": {
+                "start_byte": 8248,
+                "end_byte": 8250,
+                "start_line": 167,
+                "end_line": 167
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "a22d1f3af028edd40b5403f9075d488597dbf906aad8ea2aff3934f5e92d0739",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'source' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 1904,
+              "utf16_length": 6,
+              "byte_range": {
+                "start_byte": 1904,
+                "end_byte": 1910,
+                "start_line": 40,
+                "end_line": 40
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "a4e2644c5a5dcc0842293273791d05fe7bb456c7318e757b2e8c828c79cb798b",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'result' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 4798,
+              "utf16_length": 6,
+              "byte_range": {
+                "start_byte": 4798,
+                "end_byte": 4804,
+                "start_line": 96,
+                "end_line": 96
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "a59aedb1cc1f2fbe1429a58fc0279d3ab5646649cd1d29d6b5eef681435b1d11",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 't' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 5533,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 5533,
+                "end_byte": 5534,
+                "start_line": 107,
+                "end_line": 107
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "a94ba4799db117882deef06d23ef46bf38544ac36a9a035dfdabbf3c137e1767",
+            "code": 18048,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'cause' is possibly 'undefined'.",
+              "category": 1,
+              "code": 18048,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 1787,
+              "utf16_length": 5,
+              "byte_range": {
+                "start_byte": 1787,
+                "end_byte": 1792,
+                "start_line": 36,
+                "end_line": 36
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "a9cb750a2217f42fad221280945044bba1be268ada37ed777c496b1bbc6269be",
+            "code": 2591,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+              "category": 1,
+              "code": 2591,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 6766,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 6766,
+                "end_byte": 6773,
+                "start_line": 134,
+                "end_line": 134
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "ab32c8a99c6b2e8ce3a13fb2ab03dc121c7dc56162ef3552e7afca810e6e479e",
+            "code": 2591,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+              "category": 1,
+              "code": 2591,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 6833,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 6833,
+                "end_byte": 6840,
+                "start_line": 135,
+                "end_line": 135
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "ab766937a3ce5c42b669c63640b79d20807c60e7275a9b4437b1780298a33baa",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'data' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 1339,
+              "utf16_length": 4,
+              "byte_range": {
+                "start_byte": 1339,
+                "end_byte": 1343,
+                "start_line": 28,
+                "end_line": 28
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "aca1a276c58bbe679438fcf3bb3308bc14b96ccdd12359860db8ed02681b7944",
+            "code": 2345,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Argument of type '{ stream: any; text: string; }' is not assignable to parameter of type 'never'.",
+              "category": 1,
+              "code": 2345,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 2144,
+              "utf16_length": 53,
+              "byte_range": {
+                "start_byte": 2144,
+                "end_byte": 2197,
+                "start_line": 47,
+                "end_line": 47
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "ad8837b1e4432afa77529c001d1de72957babe411e8b9d527d376fadc04fc5dd",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'pkg' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 1301,
+              "utf16_length": 3,
+              "byte_range": {
+                "start_byte": 1301,
+                "end_byte": 1304,
+                "start_line": 21,
+                "end_line": 21
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "b8e7dee990b62ab80739518a514cd4e54b3f9e4fc047c3cc21dcafc258cacb25",
+            "code": 2307,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find module 'node:fs' or its corresponding type declarations.",
+              "category": 1,
+              "code": 2307,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 336,
+              "utf16_length": 9,
+              "byte_range": {
+                "start_byte": 336,
+                "end_byte": 345,
+                "start_line": 4,
+                "end_line": 4
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "ba6b6bc5ed2c8e37da0b5bf185049b62475e31c3f40f8b903228ab6063f95540",
+            "code": 2307,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find module 'node:child_process' or its corresponding type declarations.",
+              "category": 1,
+              "code": 2307,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 417,
+              "utf16_length": 20,
+              "byte_range": {
+                "start_byte": 417,
+                "end_byte": 437,
+                "start_line": 8,
+                "end_line": 8
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "bc332b112c2f1778e9c85eb92b1a50ea309dec2d8427a5b794cb76873f973220",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'n' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 1519,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 1519,
+                "end_byte": 1520,
+                "start_line": 26,
+                "end_line": 26
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "bed64edbe4d81872347aa7aa001f3601719a70b246e9821ff9382e6bded47a59",
+            "code": 2307,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find module 'node:path' or its corresponding type declarations.",
+              "category": 1,
+              "code": 2307,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 336,
+              "utf16_length": 11,
+              "byte_range": {
+                "start_byte": 336,
+                "end_byte": 347,
+                "start_line": 6,
+                "end_line": 6
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "c342b83d8fa347712ddf31c5ffedac0f7ffc68c477de7de5f249b5efef6b271b",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'armDirAbs' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 5521,
+              "utf16_length": 9,
+              "byte_range": {
+                "start_byte": 5525,
+                "end_byte": 5534,
+                "start_line": 111,
+                "end_line": 111
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "c816d54e1060033f04cb3844fea2f88ac585defc261f5aee0bc8ad21bbf915cd",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'task' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 2310,
+              "utf16_length": 4,
+              "byte_range": {
+                "start_byte": 2310,
+                "end_byte": 2314,
+                "start_line": 45,
+                "end_line": 45
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "cbab38434b00e9aae43f12ec7345bd4a8185f670bccf0085e02a5ebc7ee97132",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 're' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 794,
+              "utf16_length": 2,
+              "byte_range": {
+                "start_byte": 794,
+                "end_byte": 796,
+                "start_line": 14,
+                "end_line": 14
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "d1c11e8d0915cab67959350a14fe551c6fdf2e799691bafcaa1af0328048aac6",
+            "code": 2591,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+              "category": 1,
+              "code": 2591,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 2035,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 2035,
+                "end_byte": 2042,
+                "start_line": 38,
+                "end_line": 38
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "da86aaaef9d4390f5ec2f372047331aa246157cdc0739517c0a867e080a149c3",
+            "code": 2591,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+              "category": 1,
+              "code": 2591,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 6964,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 6964,
+                "end_byte": 6971,
+                "start_line": 139,
+                "end_line": 139
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "dad6ce4ce52e667c9da15c9b943764e80b3be7616d937e55f892f5bfa61315f1",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'f' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 4589,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 4591,
+                "end_byte": 4592,
+                "start_line": 93,
+                "end_line": 93
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "e18056874b427c07ab7a076853457bca088be03d2b9c0bc74cbc738deba688af",
+            "code": 2322,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Type '{ error?: { name: any; code: any; cause_code: any; message: string; assertion_stack: string; operator: any; expected: any; actual: any; } | undefined; file: any; line: any; name: any; nesting: any; outcome: string; }[]' is not assignable to type 'never[]'.",
+              "category": 1,
+              "code": 2322,
+              "next": [
+                {
+                  "text": "Type '{ error?: { name: any; code: any; cause_code: any; message: string; assertion_stack: string; operator: any; expected: any; actual: any; } | undefined; file: any; line: any; name: any; nesting: any; outcome: string; }' is not assignable to type 'never'.",
+                  "category": 1,
+                  "code": 2322,
+                  "next": []
+                }
+              ]
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 3393,
+              "utf16_length": 12,
+              "byte_range": {
+                "start_byte": 3393,
+                "end_byte": 3405,
+                "start_line": 69,
+                "end_line": 69
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "e516772bc6ecfeea3a61d78719ddb3264aa85107d1d3c4db71afe1735803696c",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 's' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 6281,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 6285,
+                "end_byte": 6286,
+                "start_line": 124,
+                "end_line": 124
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "ed2349998e396fa10b32b970130177682b09818caa5f210d996a61a1d32eb867",
+            "code": 2307,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find module 'node:module' or its corresponding type declarations.",
+              "category": 1,
+              "code": 2307,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 468,
+              "utf16_length": 13,
+              "byte_range": {
+                "start_byte": 468,
+                "end_byte": 481,
+                "start_line": 9,
+                "end_line": 9
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "f0575288f5eafe6548200182d22f6f84c8730750e4d283c55a332aaf6cbfa443",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'src' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 5974,
+              "utf16_length": 3,
+              "byte_range": {
+                "start_byte": 5978,
+                "end_byte": 5981,
+                "start_line": 121,
+                "end_line": 121
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "f236b4438afd160b70883bc1c69c8f42b3fcf7456745e7e6661479a158efe1a7",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'names' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 1306,
+              "utf16_length": 5,
+              "byte_range": {
+                "start_byte": 1306,
+                "end_byte": 1311,
+                "start_line": 21,
+                "end_line": 21
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "f283a600a63804c0fb7806791297d5895b0f3fec86c17b91384b237560424be7",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 't' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 5428,
+              "utf16_length": 1,
+              "byte_range": {
+                "start_byte": 5428,
+                "end_byte": 5429,
+                "start_line": 106,
+                "end_line": 106
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "f53042cdd21e7c85c36322b0ff1500f7ffe3c1c41bf60e3776f34586680f7529",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'repoRoot' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 3233,
+              "utf16_length": 8,
+              "byte_range": {
+                "start_byte": 3233,
+                "end_byte": 3241,
+                "start_line": 64,
+                "end_line": 64
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "f629d00104e989a5483aaf160a27da79a6141af9c175f12cefebb29485b017fa",
+            "code": 2591,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+              "category": 1,
+              "code": 2591,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 6699,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 6699,
+                "end_byte": 6706,
+                "start_line": 133,
+                "end_line": 133
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "f8bef6cb5185a3b1e2ab65d669fd924415c5a09580f2b4a0cd88d5423bce6b49",
+            "code": 18048,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "'cause' is possibly 'undefined'.",
+              "category": 1,
+              "code": 18048,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 1687,
+              "utf16_length": 5,
+              "byte_range": {
+                "start_byte": 1687,
+                "end_byte": 1692,
+                "start_line": 35,
+                "end_line": 35
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "fa36c0787df9da16a2b429b6f202bd20c320c25e203c677a16dce5c7a4002185",
+            "code": 2307,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find module 'node:child_process' or its corresponding type declarations.",
+              "category": 1,
+              "code": 2307,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 215,
+              "utf16_length": 20,
+              "byte_range": {
+                "start_byte": 215,
+                "end_byte": 235,
+                "start_line": 3,
+                "end_line": 3
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "fa9b55ef37e1cf95139bde147f57958baa8d697795f81eef438a3b2c29a20ef4",
+            "code": 2591,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+              "category": 1,
+              "code": 2591,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 7006,
+              "utf16_length": 7,
+              "byte_range": {
+                "start_byte": 7006,
+                "end_byte": 7013,
+                "start_line": 140,
+                "end_line": 140
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "fb0f8b5da11af4bfebc33a51cc2b60cea40e623bbb6967595b11c355f3009f3c",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'projectAbs' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "evals/lib/score.mjs",
+                "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+                "bytes": 9747
+              },
+              "utf16_start": 2316,
+              "utf16_length": 10,
+              "byte_range": {
+                "start_byte": 2316,
+                "end_byte": 2326,
+                "start_line": 45,
+                "end_line": 45
+              }
+            },
+            "related": []
+          },
+          {
+            "id": "ff5322a4c8d027b5532c54d7d21ca59be20fb7bf4c40396f67d9e90778ac7ee0",
+            "code": 7006,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Parameter 'rc' implicitly has an 'any' type.",
+              "category": 1,
+              "code": 7006,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "scripts/native_result.mjs",
+                "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+                "bytes": 7049
+              },
+              "utf16_start": 4806,
+              "utf16_length": 2,
+              "byte_range": {
+                "start_byte": 4806,
+                "end_byte": 4808,
+                "start_line": 96,
+                "end_line": 96
+              }
+            },
+            "related": []
+          }
+        ],
+        "reads": [
+          {
+            "scope": "subject",
+            "path": "evals/lib/score.mjs",
+            "sha256": "f157afed1976fd39bc9c2c44728f3993dc01a0cc3152e3f3eaf4a41779cf3fdd",
+            "bytes": 9747
+          },
+          {
+            "scope": "subject",
+            "path": "scripts/native_result.mjs",
+            "sha256": "528aeec659fde03cab9edd3167a8b2bc184b7194a3f534dd13a4e0a0c38163e0",
+            "bytes": 7049
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.decorators.d.ts",
+            "sha256": "8e7f8264d0fb4c5339605a15daadb037bf238c10b654bb3eee14208f860a32ea",
+            "bytes": 13192
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.decorators.legacy.d.ts",
+            "sha256": "782dec38049b92d4e85c1585fbea5474a219c6984a35b004963b00beb1aab538",
+            "bytes": 1326
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.dom.asynciterable.d.ts",
+            "sha256": "d7a3c8b952931daebdfc7a2897c53c0a1c73624593fa070e46bd537e64dcd20a",
+            "bytes": 1887
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.dom.d.ts",
+            "sha256": "080941d9f9ff9307f7e27a83bcd888b7c8270716c39af943532438932ec1d0b9",
+            "bytes": 1874901
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.dom.iterable.d.ts",
+            "sha256": "2e80ee7a49e8ac312cc11b77f1475804bee36b3b2bc896bead8b6e1266befb43",
+            "bytes": 29802
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.collection.d.ts",
+            "sha256": "dc2df20b1bcdc8c2d34af4926e2c3ab15ffe1160a63e58b7e09833f616efff44",
+            "bytes": 5229
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.core.d.ts",
+            "sha256": "c57796738e7f83dbc4b8e65132f11a377649c00dd3eee333f672b8f0a6bea671",
+            "bytes": 22866
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.d.ts",
+            "sha256": "45b7ab580deca34ae9729e97c13cfd999df04416a79116c3bfb483804f85ded4",
+            "bytes": 1241
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.generator.d.ts",
+            "sha256": "515d0b7b9bea2e31ea4ec968e9edd2c39d3eebf4a2d5cbd04e88639819ae3b71",
+            "bytes": 2557
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.iterable.d.ts",
+            "sha256": "0559b1f683ac7505ae451f9a96ce4c3c92bdc71411651ca6ddb0e88baaaad6a3",
+            "bytes": 18200
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.promise.d.ts",
+            "sha256": "0dc1e7ceda9b8b9b455c3a2d67b0412feab00bd2f66656cd8850e8831b08b537",
+            "bytes": 3200
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.proxy.d.ts",
+            "sha256": "ce691fb9e5c64efb9547083e4a34091bcbe5bdb41027e310ebba8f7d96a98671",
+            "bytes": 5251
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.reflect.d.ts",
+            "sha256": "8d697a2a929a5fcb38b7a65594020fcef05ec1630804a33748829c5ff53640d0",
+            "bytes": 6493
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.symbol.d.ts",
+            "sha256": "4ff2a353abf8a80ee399af572debb8faab2d33ad38c4b4474cff7f26e7653b8d",
+            "bytes": 1649
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.symbol.wellknown.d.ts",
+            "sha256": "fb0f136d372979348d59b3f5020b4cdb81b5504192b1cacff5d1fbba29378aa1",
+            "bytes": 11010
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2016.array.include.d.ts",
+            "sha256": "d15bea3d62cbbdb9797079416b8ac375ae99162a7fba5de2c6c505446486ac0a",
+            "bytes": 5204
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2016.d.ts",
+            "sha256": "3facaf05f0c5fc569c5649dd359892c98a85557e3e0c847964caeb67076f4d75",
+            "bytes": 965
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2016.intl.d.ts",
+            "sha256": "68d18b664c9d32a7336a70235958b8997ebc1c3b8505f4f1ae2b7e7753b87618",
+            "bytes": 1484
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.arraybuffer.d.ts",
+            "sha256": "eb3d66c8327153d8fa7dd03f9c58d351107fe824c79e9b56b462935176cdf12a",
+            "bytes": 915
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.d.ts",
+            "sha256": "e44bb8bbac7f10ecc786703fe0a6a4b952189f908707980ba8f3c8975a760962",
+            "bytes": 1162
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.date.d.ts",
+            "sha256": "38f0219c9e23c915ef9790ab1d680440d95419ad264816fa15009a8851e79119",
+            "bytes": 1916
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.intl.d.ts",
+            "sha256": "4de680d5bb41c17f7f68e0419412ca23c98d5749dcaaea1896172f06435891fc",
+            "bytes": 1449
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.object.d.ts",
+            "sha256": "69ab18c3b76cd9b1be3d188eaf8bba06112ebbe2f47f6c322b5105a6fbc45a2e",
+            "bytes": 2473
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.sharedmemory.d.ts",
+            "sha256": "a680117f487a4d2f30ea46f1b4b7f58bef1480456e18ba53ee85c2746eeca012",
+            "bytes": 7209
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.string.d.ts",
+            "sha256": "2f11ff796926e0832f9ae148008138ad583bd181899ab7dd768a2666700b1893",
+            "bytes": 2378
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.typedarrays.d.ts",
+            "sha256": "954296b30da6d508a104a3a0b5d96b76495c709785c1d11610908e63481ee667",
+            "bytes": 1542
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.asyncgenerator.d.ts",
+            "sha256": "ac9538681b19688c8eae65811b329d3744af679e0bdfa5d842d0e32524c73e1c",
+            "bytes": 2692
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.asynciterable.d.ts",
+            "sha256": "0a969edff4bd52585473d24995c5ef223f6652d6ef46193309b3921d65dd4376",
+            "bytes": 2257
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.d.ts",
+            "sha256": "5e1c4c362065a6b95ff952c0eab010f04dcd2c3494e813b493ecfd4fcb9fc0d8",
+            "bytes": 1088
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.intl.d.ts",
+            "sha256": "9e9fbd7030c440b33d021da145d3232984c8bb7916f277e8ffd3dc2e3eae2bdb",
+            "bytes": 3021
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.promise.d.ts",
+            "sha256": "811ec78f7fefcabbda4bfa93b3eb67d9ae166ef95f9bff989d964061cbf81a0c",
+            "bytes": 1353
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.regexp.d.ts",
+            "sha256": "717937616a17072082152a2ef351cb51f98802fb4b2fdabd32399843875974ca",
+            "bytes": 1232
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.array.d.ts",
+            "sha256": "d7e7d9b7b50e5f22c915b525acc5a49a7a6584cf8f62d0569e557c5cfc4b2ac2",
+            "bytes": 3163
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.d.ts",
+            "sha256": "68d73b4a11549f9c0b7d352d10e91e5dca8faa3322bfb77b661839c42b1ddec7",
+            "bytes": 1071
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.intl.d.ts",
+            "sha256": "74f7fa2d027d5b33eb0471c8e82a6c87216223181ec31247c357a3e8e2fddc5b",
+            "bytes": 958
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.object.d.ts",
+            "sha256": "71c37f4c9543f31dfced6c7840e068c5a5aacb7b89111a4364b1d5276b852557",
+            "bytes": 1473
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.string.d.ts",
+            "sha256": "576711e016cf4f1804676043e6a0a5414252560eb57de9faceee34d79798c850",
+            "bytes": 1528
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.symbol.d.ts",
+            "sha256": "89c1b1281ba7b8a96efc676b11b264de7a8374c5ea1e6617f11880a13fc56dc6",
+            "bytes": 1006
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.bigint.d.ts",
+            "sha256": "d6d7ae4d1f1f3772e2a3cde568ed08991a8ae34a080ff1151af28b7f798e22ca",
+            "bytes": 38185
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.d.ts",
+            "sha256": "5efce4fc3c29ea84e8928f97adec086e3dc876365e0982cc8479a07954a3efd4",
+            "bytes": 1201
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.date.d.ts",
+            "sha256": "063600664504610fe3e99b717a1223f8b1900087fab0b4cad1496a114744f8df",
+            "bytes": 2956
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.intl.d.ts",
+            "sha256": "639e512c0dfc3fad96a84caad71b8834d66329a1f28dc95e3946c9b58176c73a",
+            "bytes": 22438
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.number.d.ts",
+            "sha256": "368af93f74c9c932edd84c58883e736c9e3d53cec1fe24c0b0ff451f529ceab1",
+            "bytes": 1587
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.promise.d.ts",
+            "sha256": "934019d7e3c81950f9a8426d093458b65d5aff2c7c1511233c0fd5b941e608ab",
+            "bytes": 1803
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.sharedmemory.d.ts",
+            "sha256": "52ada8e0b6e0482b728070b7639ee42e83a9b1c22d205992756fe020fd9f4a47",
+            "bytes": 5128
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.string.d.ts",
+            "sha256": "3bdefe1bfd4d6dee0e26f928f93ccc128f1b64d5d501ff4a8cf3c6371200e5e6",
+            "bytes": 2556
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.symbol.wellknown.d.ts",
+            "sha256": "59fb2c069260b4ba00b5643b907ef5d5341b167e7d1dbf58dfd895658bda2867",
+            "bytes": 1606
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2021.d.ts",
+            "sha256": "feecb1be483ed332fad555aff858affd90a48ab19ba7272ee084704eb7167569",
+            "bytes": 1036
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2021.intl.d.ts",
+            "sha256": "965f36eae237dd74e6cca203a43e9ca801ce38824ead814728a2807b1910117d",
+            "bytes": 8245
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2021.promise.d.ts",
+            "sha256": "af3dd424cf267428f30ccfc376f47a2c0114546b55c44d8c0f1d57d841e28d74",
+            "bytes": 2262
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2021.string.d.ts",
+            "sha256": "995c005ab91a498455ea8dfb63aa9f83fa2ea793c3d8aa344be4a1678d06d399",
+            "bytes": 1592
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2021.weakref.d.ts",
+            "sha256": "959d36cddf5e7d572a65045b876f2956c973a586da58e5d26cde519184fd9b8a",
+            "bytes": 3171
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.array.d.ts",
+            "sha256": "3925a6c820dcb1a06506c90b1577db1fdbf7705d65b62b99dce4be75c637e26b",
+            "bytes": 4676
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.d.ts",
+            "sha256": "ee7bad0c15b58988daa84371e0b89d313b762ab83cb5b31b8a2d1162e8eb41c2",
+            "bytes": 1108
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.error.d.ts",
+            "sha256": "0a3d63ef2b853447ec4f749d3f368ce642264246e02911fcb1590d8c161b8005",
+            "bytes": 2379
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.intl.d.ts",
+            "sha256": "8cdf8847677ac7d20486e54dd3fcf09eda95812ac8ace44b4418da1bbbab6eb8",
+            "bytes": 7692
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.object.d.ts",
+            "sha256": "8444af78980e3b20b49324f4a16ba35024fef3ee069a0eb67616ea6ca821c47a",
+            "bytes": 1085
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.regexp.d.ts",
+            "sha256": "b4b67b1a91182421f5df999988c690f14d813b9850b40acd06ed44691f6727ad",
+            "bytes": 1331
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.string.d.ts",
+            "sha256": "3287d9d085fbd618c3971944b65b4be57859f5415f495b33a6adc994edd2f004",
+            "bytes": 1155
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2023.array.d.ts",
+            "sha256": "df83c2a6c73228b625b0beb6669c7ee2a09c914637e2d35170723ad49c0f5cd4",
+            "bytes": 40236
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2023.collection.d.ts",
+            "sha256": "436aaf437562f276ec2ddbee2f2cdedac7664c1e4c1d2c36839ddd582eeb3d0a",
+            "bytes": 900
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2023.d.ts",
+            "sha256": "27bdc30a0e32783366a5abeda841bc22757c1797de8681bbe81fbc735eeb1c10",
+            "bytes": 999
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2023.intl.d.ts",
+            "sha256": "8e3c06ea092138bf9fa5e874a1fdbc9d54805d074bee1de31b99a11e2fec239d",
+            "bytes": 2645
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.arraybuffer.d.ts",
+            "sha256": "87dc0f382502f5bbce5129bdc0aea21e19a3abbc19259e0b43ae038a9fc4e326",
+            "bytes": 2637
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.collection.d.ts",
+            "sha256": "b1cb28af0c891c8c96b2d6b7be76bd394fddcfdb4709a20ba05a7c1605eea0f9",
+            "bytes": 1224
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.d.ts",
+            "sha256": "8fd575e12870e9944c7e1d62e1f5a73fcf23dd8d3a321f2a2c74c20d022283fe",
+            "bytes": 1166
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.object.d.ts",
+            "sha256": "2fef54945a13095fdb9b84f705f2b5994597640c46afeb2ce78352fab4cb3279",
+            "bytes": 1259
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.promise.d.ts",
+            "sha256": "ac77cb3e8c6d3565793eb90a8373ee8033146315a3dbead3bde8db5eaf5e5ec6",
+            "bytes": 1389
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.regexp.d.ts",
+            "sha256": "56e4ed5aab5f5920980066a9409bfaf53e6d21d3f8d020c17e4de584d29600ad",
+            "bytes": 1073
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.sharedmemory.d.ts",
+            "sha256": "4ece9f17b3866cc077099c73f4983bddbcb1dc7ddb943227f1ec070f529dedd1",
+            "bytes": 3077
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.string.d.ts",
+            "sha256": "0a6282c8827e4b9a95f4bf4f5c205673ada31b982f50572d27103df8ceb8013c",
+            "bytes": 1194
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es5.d.ts",
+            "sha256": "c430d44666289dae81f30fa7b2edebf186ecc91a2d4c71266ea6ae76388792e1",
+            "bytes": 218439
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.array.d.ts",
+            "sha256": "1c9319a09485199c1f7b0498f2988d6d2249793ef67edda49d1e584746be9032",
+            "bytes": 1791
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.collection.d.ts",
+            "sha256": "e3a2a0cee0f03ffdde24d89660eba2685bfbdeae955a6c67e8c4c9fd28928eeb",
+            "bytes": 3878
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.d.ts",
+            "sha256": "2ab096661c711e4a81cc464fa1e6feb929a54f5340b46b0a07ac6bbf857471f0",
+            "bytes": 1282
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.decorators.d.ts",
+            "sha256": "d4b1d2c51d058fc21ec2629fff7a76249dec2e36e12960ea056e3ef89174080f",
+            "bytes": 1070
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.disposable.d.ts",
+            "sha256": "51ad4c928303041605b4d7ae32e0c1ee387d43a24cd6f1ebf4a2699e1076d4fa",
+            "bytes": 6806
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.error.d.ts",
+            "sha256": "73f78680d4c08509933daf80947902f6ff41b6230f94dd002ae372620adb0f60",
+            "bytes": 1029
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.float16.d.ts",
+            "sha256": "196cb558a13d4533a5163286f30b0509ce0210e4b316c56c38d4c0fd2fb38405",
+            "bytes": 20528
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.full.d.ts",
+            "sha256": "bde31fd423cd93b0eff97197a3f66df7c93e8c0c335cbeb113b7ff1ac35c23f4",
+            "bytes": 1074
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.intl.d.ts",
+            "sha256": "811c71eee4aa0ac5f7adf713323a5c41b0cf6c4e17367a34fbce379e12bbf0a4",
+            "bytes": 893
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.iterator.d.ts",
+            "sha256": "22adec94ef7047a6c9d1af3cb96be87a335908bf9ef386ae9fd50eeb37f44c47",
+            "bytes": 8676
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.promise.d.ts",
+            "sha256": "60037901da1a425516449b9a20073aa03386cce92f7a1fd902d7602be3a7c2e9",
+            "bytes": 1658
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.sharedmemory.d.ts",
+            "sha256": "c5239f5c01bcfa9cd32f37c496cf19c61d69d37e48be9de612b541aac915805b",
+            "bytes": 1067
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.scripthost.d.ts",
+            "sha256": "cd034f499c6cdca722b60c04b5b1b78e058487a7085a8e0d6fb50809947ee573",
+            "bytes": 9451
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.webworker.importscripts.d.ts",
+            "sha256": "80e18897e5884b6723488d4f5652167e7bb5024f946743134ecc4aa4ee731f89",
+            "bytes": 1041
+          },
+          {
+            "scope": "tool-resource",
+            "path": "package.json",
+            "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+            "bytes": 3620
+          }
+        ]
+      },
+      {
+        "entries": [
+          {
+            "path": "side-effect.cjs",
+            "sha256": "79700dbe49e56032556e2987b073ac994c914acd19000638c1e0de77591f5c63",
+            "bytes": 114
+          }
+        ],
+        "census": [
+          {
+            "path": "side-effect.cjs",
+            "source_sha256": "79700dbe49e56032556e2987b073ac994c914acd19000638c1e0de77591f5c63",
+            "observed_sha256": "79700dbe49e56032556e2987b073ac994c914acd19000638c1e0de77591f5c63",
+            "suffix": ".cjs",
+            "state": "processed",
+            "reason": "",
+            "token_count": 12,
+            "function_count": 0,
+            "diagnostic_ids": [
+              "b9ec874591a7b5bcb2cff8245667ccff032a71614a60285ebb5ab49112ee0a95"
+            ]
+          }
+        ],
+        "diagnostics": [
+          {
+            "id": "b9ec874591a7b5bcb2cff8245667ccff032a71614a60285ebb5ab49112ee0a95",
+            "code": 2307,
+            "category": 1,
+            "source": null,
+            "message": {
+              "text": "Cannot find module 'node:fs' or its corresponding type declarations.",
+              "category": 1,
+              "code": 2307,
+              "next": []
+            },
+            "location": {
+              "file": {
+                "scope": "subject",
+                "path": "side-effect.cjs",
+                "sha256": "79700dbe49e56032556e2987b073ac994c914acd19000638c1e0de77591f5c63",
+                "bytes": 114
+              },
+              "utf16_start": 8,
+              "utf16_length": 9,
+              "byte_range": {
+                "start_byte": 8,
+                "end_byte": 17,
+                "start_line": 1,
+                "end_line": 1
+              }
+            },
+            "related": []
+          }
+        ],
+        "reads": [
+          {
+            "scope": "subject",
+            "path": "side-effect.cjs",
+            "sha256": "79700dbe49e56032556e2987b073ac994c914acd19000638c1e0de77591f5c63",
+            "bytes": 114
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.decorators.d.ts",
+            "sha256": "8e7f8264d0fb4c5339605a15daadb037bf238c10b654bb3eee14208f860a32ea",
+            "bytes": 13192
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.decorators.legacy.d.ts",
+            "sha256": "782dec38049b92d4e85c1585fbea5474a219c6984a35b004963b00beb1aab538",
+            "bytes": 1326
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.dom.asynciterable.d.ts",
+            "sha256": "d7a3c8b952931daebdfc7a2897c53c0a1c73624593fa070e46bd537e64dcd20a",
+            "bytes": 1887
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.dom.d.ts",
+            "sha256": "080941d9f9ff9307f7e27a83bcd888b7c8270716c39af943532438932ec1d0b9",
+            "bytes": 1874901
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.dom.iterable.d.ts",
+            "sha256": "2e80ee7a49e8ac312cc11b77f1475804bee36b3b2bc896bead8b6e1266befb43",
+            "bytes": 29802
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.collection.d.ts",
+            "sha256": "dc2df20b1bcdc8c2d34af4926e2c3ab15ffe1160a63e58b7e09833f616efff44",
+            "bytes": 5229
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.core.d.ts",
+            "sha256": "c57796738e7f83dbc4b8e65132f11a377649c00dd3eee333f672b8f0a6bea671",
+            "bytes": 22866
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.d.ts",
+            "sha256": "45b7ab580deca34ae9729e97c13cfd999df04416a79116c3bfb483804f85ded4",
+            "bytes": 1241
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.generator.d.ts",
+            "sha256": "515d0b7b9bea2e31ea4ec968e9edd2c39d3eebf4a2d5cbd04e88639819ae3b71",
+            "bytes": 2557
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.iterable.d.ts",
+            "sha256": "0559b1f683ac7505ae451f9a96ce4c3c92bdc71411651ca6ddb0e88baaaad6a3",
+            "bytes": 18200
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.promise.d.ts",
+            "sha256": "0dc1e7ceda9b8b9b455c3a2d67b0412feab00bd2f66656cd8850e8831b08b537",
+            "bytes": 3200
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.proxy.d.ts",
+            "sha256": "ce691fb9e5c64efb9547083e4a34091bcbe5bdb41027e310ebba8f7d96a98671",
+            "bytes": 5251
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.reflect.d.ts",
+            "sha256": "8d697a2a929a5fcb38b7a65594020fcef05ec1630804a33748829c5ff53640d0",
+            "bytes": 6493
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.symbol.d.ts",
+            "sha256": "4ff2a353abf8a80ee399af572debb8faab2d33ad38c4b4474cff7f26e7653b8d",
+            "bytes": 1649
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2015.symbol.wellknown.d.ts",
+            "sha256": "fb0f136d372979348d59b3f5020b4cdb81b5504192b1cacff5d1fbba29378aa1",
+            "bytes": 11010
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2016.array.include.d.ts",
+            "sha256": "d15bea3d62cbbdb9797079416b8ac375ae99162a7fba5de2c6c505446486ac0a",
+            "bytes": 5204
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2016.d.ts",
+            "sha256": "3facaf05f0c5fc569c5649dd359892c98a85557e3e0c847964caeb67076f4d75",
+            "bytes": 965
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2016.intl.d.ts",
+            "sha256": "68d18b664c9d32a7336a70235958b8997ebc1c3b8505f4f1ae2b7e7753b87618",
+            "bytes": 1484
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.arraybuffer.d.ts",
+            "sha256": "eb3d66c8327153d8fa7dd03f9c58d351107fe824c79e9b56b462935176cdf12a",
+            "bytes": 915
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.d.ts",
+            "sha256": "e44bb8bbac7f10ecc786703fe0a6a4b952189f908707980ba8f3c8975a760962",
+            "bytes": 1162
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.date.d.ts",
+            "sha256": "38f0219c9e23c915ef9790ab1d680440d95419ad264816fa15009a8851e79119",
+            "bytes": 1916
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.intl.d.ts",
+            "sha256": "4de680d5bb41c17f7f68e0419412ca23c98d5749dcaaea1896172f06435891fc",
+            "bytes": 1449
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.object.d.ts",
+            "sha256": "69ab18c3b76cd9b1be3d188eaf8bba06112ebbe2f47f6c322b5105a6fbc45a2e",
+            "bytes": 2473
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.sharedmemory.d.ts",
+            "sha256": "a680117f487a4d2f30ea46f1b4b7f58bef1480456e18ba53ee85c2746eeca012",
+            "bytes": 7209
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.string.d.ts",
+            "sha256": "2f11ff796926e0832f9ae148008138ad583bd181899ab7dd768a2666700b1893",
+            "bytes": 2378
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2017.typedarrays.d.ts",
+            "sha256": "954296b30da6d508a104a3a0b5d96b76495c709785c1d11610908e63481ee667",
+            "bytes": 1542
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.asyncgenerator.d.ts",
+            "sha256": "ac9538681b19688c8eae65811b329d3744af679e0bdfa5d842d0e32524c73e1c",
+            "bytes": 2692
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.asynciterable.d.ts",
+            "sha256": "0a969edff4bd52585473d24995c5ef223f6652d6ef46193309b3921d65dd4376",
+            "bytes": 2257
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.d.ts",
+            "sha256": "5e1c4c362065a6b95ff952c0eab010f04dcd2c3494e813b493ecfd4fcb9fc0d8",
+            "bytes": 1088
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.intl.d.ts",
+            "sha256": "9e9fbd7030c440b33d021da145d3232984c8bb7916f277e8ffd3dc2e3eae2bdb",
+            "bytes": 3021
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.promise.d.ts",
+            "sha256": "811ec78f7fefcabbda4bfa93b3eb67d9ae166ef95f9bff989d964061cbf81a0c",
+            "bytes": 1353
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2018.regexp.d.ts",
+            "sha256": "717937616a17072082152a2ef351cb51f98802fb4b2fdabd32399843875974ca",
+            "bytes": 1232
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.array.d.ts",
+            "sha256": "d7e7d9b7b50e5f22c915b525acc5a49a7a6584cf8f62d0569e557c5cfc4b2ac2",
+            "bytes": 3163
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.d.ts",
+            "sha256": "68d73b4a11549f9c0b7d352d10e91e5dca8faa3322bfb77b661839c42b1ddec7",
+            "bytes": 1071
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.intl.d.ts",
+            "sha256": "74f7fa2d027d5b33eb0471c8e82a6c87216223181ec31247c357a3e8e2fddc5b",
+            "bytes": 958
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.object.d.ts",
+            "sha256": "71c37f4c9543f31dfced6c7840e068c5a5aacb7b89111a4364b1d5276b852557",
+            "bytes": 1473
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.string.d.ts",
+            "sha256": "576711e016cf4f1804676043e6a0a5414252560eb57de9faceee34d79798c850",
+            "bytes": 1528
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2019.symbol.d.ts",
+            "sha256": "89c1b1281ba7b8a96efc676b11b264de7a8374c5ea1e6617f11880a13fc56dc6",
+            "bytes": 1006
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.bigint.d.ts",
+            "sha256": "d6d7ae4d1f1f3772e2a3cde568ed08991a8ae34a080ff1151af28b7f798e22ca",
+            "bytes": 38185
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.d.ts",
+            "sha256": "5efce4fc3c29ea84e8928f97adec086e3dc876365e0982cc8479a07954a3efd4",
+            "bytes": 1201
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.date.d.ts",
+            "sha256": "063600664504610fe3e99b717a1223f8b1900087fab0b4cad1496a114744f8df",
+            "bytes": 2956
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.intl.d.ts",
+            "sha256": "639e512c0dfc3fad96a84caad71b8834d66329a1f28dc95e3946c9b58176c73a",
+            "bytes": 22438
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.number.d.ts",
+            "sha256": "368af93f74c9c932edd84c58883e736c9e3d53cec1fe24c0b0ff451f529ceab1",
+            "bytes": 1587
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.promise.d.ts",
+            "sha256": "934019d7e3c81950f9a8426d093458b65d5aff2c7c1511233c0fd5b941e608ab",
+            "bytes": 1803
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.sharedmemory.d.ts",
+            "sha256": "52ada8e0b6e0482b728070b7639ee42e83a9b1c22d205992756fe020fd9f4a47",
+            "bytes": 5128
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.string.d.ts",
+            "sha256": "3bdefe1bfd4d6dee0e26f928f93ccc128f1b64d5d501ff4a8cf3c6371200e5e6",
+            "bytes": 2556
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2020.symbol.wellknown.d.ts",
+            "sha256": "59fb2c069260b4ba00b5643b907ef5d5341b167e7d1dbf58dfd895658bda2867",
+            "bytes": 1606
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2021.d.ts",
+            "sha256": "feecb1be483ed332fad555aff858affd90a48ab19ba7272ee084704eb7167569",
+            "bytes": 1036
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2021.intl.d.ts",
+            "sha256": "965f36eae237dd74e6cca203a43e9ca801ce38824ead814728a2807b1910117d",
+            "bytes": 8245
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2021.promise.d.ts",
+            "sha256": "af3dd424cf267428f30ccfc376f47a2c0114546b55c44d8c0f1d57d841e28d74",
+            "bytes": 2262
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2021.string.d.ts",
+            "sha256": "995c005ab91a498455ea8dfb63aa9f83fa2ea793c3d8aa344be4a1678d06d399",
+            "bytes": 1592
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2021.weakref.d.ts",
+            "sha256": "959d36cddf5e7d572a65045b876f2956c973a586da58e5d26cde519184fd9b8a",
+            "bytes": 3171
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.array.d.ts",
+            "sha256": "3925a6c820dcb1a06506c90b1577db1fdbf7705d65b62b99dce4be75c637e26b",
+            "bytes": 4676
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.d.ts",
+            "sha256": "ee7bad0c15b58988daa84371e0b89d313b762ab83cb5b31b8a2d1162e8eb41c2",
+            "bytes": 1108
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.error.d.ts",
+            "sha256": "0a3d63ef2b853447ec4f749d3f368ce642264246e02911fcb1590d8c161b8005",
+            "bytes": 2379
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.intl.d.ts",
+            "sha256": "8cdf8847677ac7d20486e54dd3fcf09eda95812ac8ace44b4418da1bbbab6eb8",
+            "bytes": 7692
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.object.d.ts",
+            "sha256": "8444af78980e3b20b49324f4a16ba35024fef3ee069a0eb67616ea6ca821c47a",
+            "bytes": 1085
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.regexp.d.ts",
+            "sha256": "b4b67b1a91182421f5df999988c690f14d813b9850b40acd06ed44691f6727ad",
+            "bytes": 1331
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2022.string.d.ts",
+            "sha256": "3287d9d085fbd618c3971944b65b4be57859f5415f495b33a6adc994edd2f004",
+            "bytes": 1155
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2023.array.d.ts",
+            "sha256": "df83c2a6c73228b625b0beb6669c7ee2a09c914637e2d35170723ad49c0f5cd4",
+            "bytes": 40236
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2023.collection.d.ts",
+            "sha256": "436aaf437562f276ec2ddbee2f2cdedac7664c1e4c1d2c36839ddd582eeb3d0a",
+            "bytes": 900
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2023.d.ts",
+            "sha256": "27bdc30a0e32783366a5abeda841bc22757c1797de8681bbe81fbc735eeb1c10",
+            "bytes": 999
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2023.intl.d.ts",
+            "sha256": "8e3c06ea092138bf9fa5e874a1fdbc9d54805d074bee1de31b99a11e2fec239d",
+            "bytes": 2645
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.arraybuffer.d.ts",
+            "sha256": "87dc0f382502f5bbce5129bdc0aea21e19a3abbc19259e0b43ae038a9fc4e326",
+            "bytes": 2637
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.collection.d.ts",
+            "sha256": "b1cb28af0c891c8c96b2d6b7be76bd394fddcfdb4709a20ba05a7c1605eea0f9",
+            "bytes": 1224
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.d.ts",
+            "sha256": "8fd575e12870e9944c7e1d62e1f5a73fcf23dd8d3a321f2a2c74c20d022283fe",
+            "bytes": 1166
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.object.d.ts",
+            "sha256": "2fef54945a13095fdb9b84f705f2b5994597640c46afeb2ce78352fab4cb3279",
+            "bytes": 1259
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.promise.d.ts",
+            "sha256": "ac77cb3e8c6d3565793eb90a8373ee8033146315a3dbead3bde8db5eaf5e5ec6",
+            "bytes": 1389
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.regexp.d.ts",
+            "sha256": "56e4ed5aab5f5920980066a9409bfaf53e6d21d3f8d020c17e4de584d29600ad",
+            "bytes": 1073
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.sharedmemory.d.ts",
+            "sha256": "4ece9f17b3866cc077099c73f4983bddbcb1dc7ddb943227f1ec070f529dedd1",
+            "bytes": 3077
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es2024.string.d.ts",
+            "sha256": "0a6282c8827e4b9a95f4bf4f5c205673ada31b982f50572d27103df8ceb8013c",
+            "bytes": 1194
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.es5.d.ts",
+            "sha256": "c430d44666289dae81f30fa7b2edebf186ecc91a2d4c71266ea6ae76388792e1",
+            "bytes": 218439
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.array.d.ts",
+            "sha256": "1c9319a09485199c1f7b0498f2988d6d2249793ef67edda49d1e584746be9032",
+            "bytes": 1791
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.collection.d.ts",
+            "sha256": "e3a2a0cee0f03ffdde24d89660eba2685bfbdeae955a6c67e8c4c9fd28928eeb",
+            "bytes": 3878
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.d.ts",
+            "sha256": "2ab096661c711e4a81cc464fa1e6feb929a54f5340b46b0a07ac6bbf857471f0",
+            "bytes": 1282
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.decorators.d.ts",
+            "sha256": "d4b1d2c51d058fc21ec2629fff7a76249dec2e36e12960ea056e3ef89174080f",
+            "bytes": 1070
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.disposable.d.ts",
+            "sha256": "51ad4c928303041605b4d7ae32e0c1ee387d43a24cd6f1ebf4a2699e1076d4fa",
+            "bytes": 6806
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.error.d.ts",
+            "sha256": "73f78680d4c08509933daf80947902f6ff41b6230f94dd002ae372620adb0f60",
+            "bytes": 1029
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.float16.d.ts",
+            "sha256": "196cb558a13d4533a5163286f30b0509ce0210e4b316c56c38d4c0fd2fb38405",
+            "bytes": 20528
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.full.d.ts",
+            "sha256": "bde31fd423cd93b0eff97197a3f66df7c93e8c0c335cbeb113b7ff1ac35c23f4",
+            "bytes": 1074
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.intl.d.ts",
+            "sha256": "811c71eee4aa0ac5f7adf713323a5c41b0cf6c4e17367a34fbce379e12bbf0a4",
+            "bytes": 893
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.iterator.d.ts",
+            "sha256": "22adec94ef7047a6c9d1af3cb96be87a335908bf9ef386ae9fd50eeb37f44c47",
+            "bytes": 8676
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.promise.d.ts",
+            "sha256": "60037901da1a425516449b9a20073aa03386cce92f7a1fd902d7602be3a7c2e9",
+            "bytes": 1658
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.esnext.sharedmemory.d.ts",
+            "sha256": "c5239f5c01bcfa9cd32f37c496cf19c61d69d37e48be9de612b541aac915805b",
+            "bytes": 1067
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.scripthost.d.ts",
+            "sha256": "cd034f499c6cdca722b60c04b5b1b78e058487a7085a8e0d6fb50809947ee573",
+            "bytes": 9451
+          },
+          {
+            "scope": "tool-resource",
+            "path": "lib/lib.webworker.importscripts.d.ts",
+            "sha256": "80e18897e5884b6723488d4f5652167e7bb5024f946743134ecc4aa4ee731f89",
+            "bytes": 1041
+          },
+          {
+            "scope": "tool-resource",
+            "path": "package.json",
+            "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+            "bytes": 3620
+          }
+        ]
+      }
+    ],
+    "runtime": {
+      "version": "v24.11.1",
+      "architecture": "arm64"
+    },
+    "controller_sha256": "bc1467eaf8666dcb162525cb78d25feb3672f28eac10af45745feec731522b23"
+  }
+}

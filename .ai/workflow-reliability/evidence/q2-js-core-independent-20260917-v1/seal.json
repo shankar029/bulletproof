@@ -1,0 +1,640 @@
+{
+  "schema_version": 1,
+  "status": "INDEPENDENT_PARTIAL_CORE_VERIFIED_WITH_LIMITATIONS",
+  "created_utc": "2026-09-18T04:54:40.778057+00:00",
+  "head": "fdc6af09a48cbdb21959698453ed2769eec224f4",
+  "owner_seal_sha256": "7befec79cce53797b158d62f80f412b2efdf05080c1e7c28a8b2cd48f9e1f0fa",
+  "scope": "Frozen native parser core and defaulted inventory/controller primitives only",
+  "frozen_method_results": {
+    "methods": [
+      {
+        "method": "test_measure_js.SharedJSCoreTests.test_controller_digest_and_no_inventory_mode_salt",
+        "outcome": "pass"
+      },
+      {
+        "method": "test_measure_js.SharedJSCoreTests.test_inventory_keywords_preserve_legacy_and_pending_entries",
+        "outcome": "pass"
+      },
+      {
+        "method": "test_measure_js.SharedJSCoreTests.test_native_actual_root_syntax_without_execution",
+        "outcome": "pass"
+      },
+      {
+        "method": "test_measure_js.SharedJSCoreTests.test_native_byte_boundaries",
+        "outcome": "pass"
+      },
+      {
+        "method": "test_measure_js.SharedJSCoreTests.test_native_diagnostics_and_checker_alias",
+        "outcome": "pass"
+      },
+      {
+        "method": "test_measure_js.SharedJSCoreTests.test_native_errors_and_empty_program",
+        "outcome": "pass"
+      },
+      {
+        "method": "test_measure_js.SharedJSCoreTests.test_native_six_suffix_census",
+        "outcome": "pass"
+      },
+      {
+        "method": "test_measure_js.SharedJSCoreTests.test_native_syntax_shapes",
+        "outcome": "pass"
+      },
+      {
+        "method": "test_measure_js.SharedJSCoreTests.test_native_two_git_revision_census",
+        "outcome": "pass"
+      },
+      {
+        "method": "test_measure_inventory.InventoryTests.test_one_discovery_owner_and_standalone_imports",
+        "outcome": "pass"
+      },
+      {
+        "method": "test_measure_inventory.InventoryTests.test_inventory_retains_all_code_and_deliberate_exclusions",
+        "outcome": "pass"
+      },
+      {
+        "method": "test_measure_graph.GraphTests.test_zero_import_receipts_complete_and_source_bytes_are_not_executed",
+        "outcome": "pass"
+      },
+      {
+        "method": "test_measure_graph.GraphTests.test_invalid_python_and_mixed_languages_remain_explicit",
+        "outcome": "pass"
+      },
+      {
+        "method": "test_measure_graph.GraphTests.test_rehashed_graph_payload_is_not_accepted_as_authoritative",
+        "outcome": "pass"
+      },
+      {
+        "method": "test_measure_source_bindings.SourceBindingTests.test_actual_three_tools_at_two_git_revisions_with_import_provenance",
+        "outcome": "pass"
+      }
+    ],
+    "count": 15,
+    "unittest_seconds": 732.04
+  },
+  "additional_method_results": {
+    "methods": [
+      {
+        "method": "test_measure_js_core_independent.IndependentJSCoreBoundaryTests.test_current_config_and_direct_command_reject_integration",
+        "outcome": "pass"
+      },
+      {
+        "method": "test_measure_js_core_independent.IndependentJSCoreBoundaryTests.test_missing_metadata_unadmitted_source_and_forged_handle",
+        "outcome": "pass"
+      }
+    ],
+    "count": 2,
+    "unittest_seconds": 14.195
+  },
+  "exact_argv": {
+    "frozen": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "-u",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+      "--idle",
+      "120",
+      "--max",
+      "1800",
+      "--",
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "-u",
+      "-m",
+      "unittest",
+      "-v",
+      "test_measure_js.SharedJSCoreTests.test_controller_digest_and_no_inventory_mode_salt",
+      "test_measure_js.SharedJSCoreTests.test_inventory_keywords_preserve_legacy_and_pending_entries",
+      "test_measure_js.SharedJSCoreTests.test_native_actual_root_syntax_without_execution",
+      "test_measure_js.SharedJSCoreTests.test_native_byte_boundaries",
+      "test_measure_js.SharedJSCoreTests.test_native_diagnostics_and_checker_alias",
+      "test_measure_js.SharedJSCoreTests.test_native_errors_and_empty_program",
+      "test_measure_js.SharedJSCoreTests.test_native_six_suffix_census",
+      "test_measure_js.SharedJSCoreTests.test_native_syntax_shapes",
+      "test_measure_js.SharedJSCoreTests.test_native_two_git_revision_census",
+      "test_measure_inventory.InventoryTests.test_one_discovery_owner_and_standalone_imports",
+      "test_measure_inventory.InventoryTests.test_inventory_retains_all_code_and_deliberate_exclusions",
+      "test_measure_graph.GraphTests.test_zero_import_receipts_complete_and_source_bytes_are_not_executed",
+      "test_measure_graph.GraphTests.test_invalid_python_and_mixed_languages_remain_explicit",
+      "test_measure_graph.GraphTests.test_rehashed_graph_payload_is_not_accepted_as_authoritative",
+      "test_measure_source_bindings.SourceBindingTests.test_actual_three_tools_at_two_git_revisions_with_import_provenance"
+    ],
+    "additional": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "-u",
+      "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\run.py",
+      "--idle",
+      "120",
+      "--max",
+      "300",
+      "--",
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "-u",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts/tests",
+      "-p",
+      "test_measure_js_core_independent.py",
+      "-v"
+    ]
+  },
+  "nested_not_additive": {
+    "owner_native_cases": 7,
+    "binding_smokes": 6,
+    "additional_native_invocations": 2
+  },
+  "source_doc_test_pins": [
+    {
+      "bytes": 16434,
+      "path": "references/quality-metrics.md",
+      "sha256": "4706eee4c2ba142eec951bbc3a26cb1df846ba7595d5414d813814ebdd8a37a5"
+    },
+    {
+      "bytes": 71879,
+      "path": "scripts/measure.py",
+      "sha256": "b5a824cd84a4a63bb1a6ec5cb6d2e09426614006b12f0b9ef867f040439c4db9"
+    },
+    {
+      "bytes": 16210,
+      "path": "scripts/measure_js.mjs",
+      "sha256": "bc1467eaf8666dcb162525cb78d25feb3672f28eac10af45745feec731522b23"
+    },
+    {
+      "bytes": 12718,
+      "path": "scripts/tests/measure_js.test.mjs",
+      "sha256": "aa15edc62252fd86043e9e759196d8a86f5560ffdc9314ad86f1f14281f48e3f"
+    },
+    {
+      "bytes": 10895,
+      "path": "scripts/tests/test_measure_js.py",
+      "sha256": "ed0463f8ee6b0c3de382369a6b1762793467b755d4f0ac68d19e2be44cae8ebc"
+    }
+  ],
+  "owner_owned_artifacts": [
+    {
+      "bytes": 47813,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-01/test_native_byte_boundaries.json",
+      "sha256": "edb6b50068a49a83d30ea88b87f8eea616ee79ae2314eb4fc9ec563aabd687ae"
+    },
+    {
+      "bytes": 47813,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_byte_boundaries.json",
+      "sha256": "65197f7d4e0c18f027fa82b6b22ae6c0f5f204ea741c4a60a02e9c108f1a91ac"
+    },
+    {
+      "bytes": 79250,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_diagnostics_and_checker_alias.json",
+      "sha256": "75b3e950f105fd8121bb93a8d1ec6ce3d58c31076eed1b00e160385e08f3fbec"
+    },
+    {
+      "bytes": 49424,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_errors_and_empty_program.json",
+      "sha256": "f706701137add01b0561bbb84746f554651ef2f2d61e5bc68015f594a2f42988"
+    },
+    {
+      "bytes": 48591,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_six_suffix_census.json",
+      "sha256": "d70d3d33a8c311dd206a17ba6009d022aa27c50cc208743072878f625f9e9496"
+    },
+    {
+      "bytes": 73304,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_syntax_shapes.json",
+      "sha256": "5b9797b8f7c5aacee36f23a9eb3d415f516bea4114855706c093397c6eefb520"
+    },
+    {
+      "bytes": 99351,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/test_native_two_git_revision_census.json",
+      "sha256": "2028ae5768f7d819851c69e06869f279db44819cca31481013c453b942c5728a"
+    },
+    {
+      "bytes": 3710,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-02/unittest.log",
+      "sha256": "24ee60e18affccd52626e9e7b603fdb27b9aaad1bee411daf096f9dbf19e2ae6"
+    },
+    {
+      "bytes": 122841,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-03/test_native_six_suffix_census.json",
+      "sha256": "092d1f606c8e8ff0f62929351c42adc11aa8bb8f9c4337e6ac763c89df040cd8"
+    },
+    {
+      "bytes": 361,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-development-03/unittest.log",
+      "sha256": "f0eee6878dd9efea0afa9df0dd339dbe0150767cc677e5a79e03eaeb34c2b3fe"
+    },
+    {
+      "bytes": 801,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/after.json",
+      "sha256": "36a4948c30789757b740198cf95ba23f43f1da22cbeb3f8746e429ea18269bc6"
+    },
+    {
+      "bytes": 801,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/before.json",
+      "sha256": "36a4948c30789757b740198cf95ba23f43f1da22cbeb3f8746e429ea18269bc6"
+    },
+    {
+      "bytes": 5392386,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/raw-f9df00e58d91.json",
+      "sha256": "d6fca68b8d47d47d90da370c6ddc57090b4560f9faa9551c7f60ef0db5e3d8b0"
+    },
+    {
+      "bytes": 188971,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_actual_root_syntax_without_execution.json",
+      "sha256": "fce7e79f1b69dc140560e182558feefc718ddee0ec17cdd692f88352efddc7f9"
+    },
+    {
+      "bytes": 47862,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_byte_boundaries.json",
+      "sha256": "5f358186129c0617b45f21d9f68d3af849b02cb507bfcd9bce2f5b2ced1697ce"
+    },
+    {
+      "bytes": 79300,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_diagnostics_and_checker_alias.json",
+      "sha256": "b7dd0b9fcebfe1a0211f922186e1f185dd4aa5450d74e90c2f6e35d6973a889a"
+    },
+    {
+      "bytes": 49475,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_errors_and_empty_program.json",
+      "sha256": "71a7bfe6b9cdf25e3b820b74844d6d2f726728953a7ec9028167edebb38a7b49"
+    },
+    {
+      "bytes": 122863,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_six_suffix_census.json",
+      "sha256": "7da1565939649148fc54188bf0e7f7d0170170de20791e9299eb99905972940e"
+    },
+    {
+      "bytes": 76087,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_syntax_shapes.json",
+      "sha256": "1e21872bd19ffc275b1c982a02cb425c93a4ec9c5c659d6ccf5224a072e96670"
+    },
+    {
+      "bytes": 99401,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/test_native_two_git_revision_census.json",
+      "sha256": "11262223d705a7ddc6587244e6a763143dbfef57132ae13715d3708731779dc3"
+    },
+    {
+      "bytes": 354757,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/two-revisions.json",
+      "sha256": "57fee5cda094f669973f45ccef2a6de12a74fa953894dad21021a9b47188bb16"
+    },
+    {
+      "bytes": 9850,
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-final-01/unittest.log",
+      "sha256": "33af3df31e86c0e7396c3b484748b7b706dc345dc6de3ba3e0aa522adc4e1be7"
+    },
+    {
+      "bytes": 13303,
+      "path": ".ai/workflow-reliability/evidence/q2-js-handoff.md",
+      "sha256": "78145f368509a43db6393a85ee3d025b68919382bac66d11bb29f97425876238"
+    },
+    {
+      "bytes": 16434,
+      "path": "references/quality-metrics.md",
+      "sha256": "4706eee4c2ba142eec951bbc3a26cb1df846ba7595d5414d813814ebdd8a37a5"
+    },
+    {
+      "bytes": 71879,
+      "path": "scripts/measure.py",
+      "sha256": "b5a824cd84a4a63bb1a6ec5cb6d2e09426614006b12f0b9ef867f040439c4db9"
+    },
+    {
+      "bytes": 16210,
+      "path": "scripts/measure_js.mjs",
+      "sha256": "bc1467eaf8666dcb162525cb78d25feb3672f28eac10af45745feec731522b23"
+    },
+    {
+      "bytes": 12718,
+      "path": "scripts/tests/measure_js.test.mjs",
+      "sha256": "aa15edc62252fd86043e9e759196d8a86f5560ffdc9314ad86f1f14281f48e3f"
+    },
+    {
+      "bytes": 10895,
+      "path": "scripts/tests/test_measure_js.py",
+      "sha256": "ed0463f8ee6b0c3de382369a6b1762793467b755d4f0ac68d19e2be44cae8ebc"
+    }
+  ],
+  "owner_unchanged_inputs": [
+    {
+      "bytes": 27123,
+      "path": "scripts/measure_graph.py",
+      "sha256": "6433ce7fc09f3e6ea60fb274890970bfe3dd48b338367431ce35a849bfc01391"
+    },
+    {
+      "bytes": 40490,
+      "path": "scripts/probe.py",
+      "sha256": "d7be5050cf70cb836e46f0b661632b2d426d6bdc4684f1b54aa9061d61948904"
+    },
+    {
+      "bytes": 7050,
+      "path": "scripts/evidence.py",
+      "sha256": "da55b3ef252c69e9027413e5efe2f35ed9e50a112ad4312c1f3233d141c5f3c4"
+    },
+    {
+      "bytes": 10919,
+      "path": "scripts/run.py",
+      "sha256": "7a262b84b6e4b29f45f2708a6e30c33cd7c2c61e1977da20e2527a3fb46ed89e"
+    },
+    {
+      "bytes": 21953,
+      "path": "scripts/tests/test_measure_source_bindings.py",
+      "sha256": "bcc36f23061dd5b4db2dfcb161c0202bbe95db1fb930b1c6ef79fe8c9b95d1b3"
+    },
+    {
+      "bytes": 91245,
+      "path": ".ai/workflow-reliability/measurement-enablement-contracts.json",
+      "sha256": "a9a75df36241dc2578ff627703154a2750212c385a163332fe2ccbb47af9bd12"
+    },
+    {
+      "bytes": 15392,
+      "path": ".ai/workflow-reliability/evidence/q2-tool-input-root-amendment.json",
+      "sha256": "36514a684b8b1323c752a3559cb49f30be8db61b865435f47682dfd824cda1c1"
+    },
+    {
+      "bytes": 74941,
+      "path": ".ai/workflow-reliability/evidence/q2-js-execution-amendment.json",
+      "sha256": "887c8a3ba5dd9f8efd32081b3c3e20fbea8a0fada67349a1555bcda34f7b4c9e"
+    },
+    {
+      "bytes": 24167,
+      "path": ".ai/workflow-reliability/evidence/q2-js-execution-review.md",
+      "sha256": "222c6c2f85b40e25b1321726dc5a5d6b58261828e8beed479d5d0b2e9cd808d6"
+    },
+    {
+      "bytes": 14159,
+      "path": ".ai/workflow-reliability/evidence/q2-js-execution-review-r2.md",
+      "sha256": "7ca0e688e1774e5f240d3d9933afd09ae3cba9da656f8619a13123cd4f8a4d6e"
+    }
+  ],
+  "before_after_pin_count": 3593,
+  "before_after_pins_equal": true,
+  "preseal_pin_recheck_equal": true,
+  "input_pin_manifests": [
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/before.json",
+      "bytes": 4084169,
+      "sha256": "f636aa7ba670b3cdbb53121c011e8960d6bb7c1a9824446dadce38a1b17ac818"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/after.json",
+      "bytes": 4086309,
+      "sha256": "6e2be4e685d46e92ea426d775af5c9417195f7b0bd1924f70c1343cb2f33be4a"
+    }
+  ],
+  "owned_files": [
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/after.json",
+      "bytes": 4086309,
+      "sha256": "6e2be4e685d46e92ea426d775af5c9417195f7b0bd1924f70c1343cb2f33be4a"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/before.json",
+      "bytes": 4084169,
+      "sha256": "f636aa7ba670b3cdbb53121c011e8960d6bb7c1a9824446dadce38a1b17ac818"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/boundary-invocation.json",
+      "bytes": 3436,
+      "sha256": "44d693036524585f06863553dad1cfcbaa7c70e65fb53d317129005f947efa30"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/boundary-result.json",
+      "bytes": 499,
+      "sha256": "42167b9d61880312f68a00e53c6d989f124921794c1a9c2935c6fb42bdf18ce7"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/boundary-run.py",
+      "bytes": 2134,
+      "sha256": "c159a34c74e39cfdccce33fce908b03ba437770a0184283c23aeaa673c38e98c"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/boundary-unittest.log",
+      "bytes": 533,
+      "sha256": "0bcd4a1addcc51df10c15a68b3b5ae459bb1ee5cfbf96e4582e452b2a5aedcb1"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/final-status.json",
+      "bytes": 5059,
+      "sha256": "31b0b51da49783693f968d9397afac1de9c86ced547b1097b4224380671140db"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/invocation.json",
+      "bytes": 5971,
+      "sha256": "293676108fbd6f235060ed5cb6532b39f07febe7736f9059b362109437b0facb"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/publication-pin-recheck.json",
+      "bytes": 198,
+      "sha256": "5ade67acfbe7d3b053f9ed272e18ebdd6a4e5018d7b5ab58137cacae47f638bd"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/publication-timeout.json",
+      "bytes": 1467,
+      "sha256": "7839e35553617bcb91ebc726dd925a79936cea7f4d9d457650dee4780859f2c6"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/publish.py",
+      "bytes": 19742,
+      "sha256": "e7fb1c86bea155565fa3dec8f2ebea4c89d933a338216afe373adb4d6562099f"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/raw-f9df00e58d91.json",
+      "bytes": 5392800,
+      "sha256": "03c205d6036c03c58450211f5b10bf2d1025a9b136a15cd984ce0355355e84fc"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/reconcile.py",
+      "bytes": 4988,
+      "sha256": "d656dd48156236c6fc8be2af4d12c81312a816e15a999f46262e42ddd546f865"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/reconciliation.json",
+      "bytes": 54279,
+      "sha256": "ac40ae426e7112d9fc902ba6c975a3b8946d5c7afe86d31c90caf30d044399f6"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/replay-result.json",
+      "bytes": 63,
+      "sha256": "822c21cfc25f7c2b7a160600f94e663ecc2782077ff66a9f638beb3a42b8dc28"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/report.html",
+      "bytes": 19825,
+      "sha256": "3b41c73e45071955584663064c9a14ee024aadbbb8769a49324d219d15476759"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/report.md",
+      "bytes": 18660,
+      "sha256": "b47dc9c64487c8fbf217d6126e38e11b59d66e80c2d0af6cc7186423e3416a0a"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/state.md",
+      "bytes": 3001,
+      "sha256": "9d820c4a967870462adab5942c22812ff12b59ac8eee07276a5c013c20bc2315"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_current_config_and_direct_command_reject_integration.json",
+      "bytes": 1223,
+      "sha256": "bf9f4e4060405a5926e3e953b5d8ed953ca02f77c86c20c8e387f8237a63b14d"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_missing_metadata_unadmitted_source_and_forged_handle.json",
+      "bytes": 47745,
+      "sha256": "99b087c3a4e66d77dd6b659c8a1b05df7766f50bdad50d53affead788231fef9"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_native_actual_root_syntax_without_execution.json",
+      "bytes": 189030,
+      "sha256": "57e9690f3ca5748db06e789d663612dc4dde19a5c5b3bb4b094e092945f89aa5"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_native_byte_boundaries.json",
+      "bytes": 47919,
+      "sha256": "a12fdd17adfb5cb9cd8811397f83874143bc18fdbf668be5eb4bcb4c488b2c54"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_native_diagnostics_and_checker_alias.json",
+      "bytes": 79357,
+      "sha256": "2535b3a9918567afa9f8b97aeae60067c94a332031cb6e644a0138fd3e46048f"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_native_errors_and_empty_program.json",
+      "bytes": 49532,
+      "sha256": "1a4255bbf6c63cb85cc57f41bacf41b2a75e5e3c2f0029e8c753961216bf9d36"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_native_six_suffix_census.json",
+      "bytes": 122918,
+      "sha256": "21a369141796d676799be21108228d7516ecb6c7c3aa2e456d75048d9d86c95b"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_native_syntax_shapes.json",
+      "bytes": 76144,
+      "sha256": "ea01a6e4505e0fcad809b87918efcfb1cf601a9f719446688b41d74f072e8ac2"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/test_native_two_git_revision_census.json",
+      "bytes": 99460,
+      "sha256": "aa426156cf7d127a3fa618ee430defca41643fa0852af369655090ae44991290"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/two-revisions.json",
+      "bytes": 355171,
+      "sha256": "33c23e6d4ca9b5201998389e2f982c465298cab311ea48e275fc887e50e762df"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/unittest.log",
+      "bytes": 9850,
+      "sha256": "85471046ce76ebe919f39b833070374a6baae45ef668a6637bfc32fe8bf1d4f5"
+    },
+    {
+      "path": ".ai/workflow-reliability/evidence/q2-js-core-independent-20260917-v1/verify.py",
+      "bytes": 6157,
+      "sha256": "516ad7a18bde029a6c9044ca1ea13d6a8b00a1163b5691d8698c7a456f32972f"
+    },
+    {
+      "path": "scripts/tests/test_measure_js_core_independent.py",
+      "bytes": 4901,
+      "sha256": "97417cc1e0d4195c0c1aa1ba21e0c2f733211f6f3e2965addb887999f8655e23"
+    },
+    {
+      "path": "scripts/tests/measure_js_core_independent.test.mjs",
+      "bytes": 2586,
+      "sha256": "4c5105665d669b668ee3279e232d9862fb3da881c7d4ac33397f5d2bfcfd0781"
+    }
+  ],
+  "accepted_checks": {
+    "JS-COMPAT-01": {
+      "covered_methods": [
+        "test_measure_js.SharedJSCoreTests.test_inventory_keywords_preserve_legacy_and_pending_entries",
+        "test_measure_js.SharedJSCoreTests.test_controller_digest_and_no_inventory_mode_salt",
+        "test_measure_js.SharedJSCoreTests.test_native_actual_root_syntax_without_execution"
+      ],
+      "remaining": "See q2-js-handoff.md exact disposition table",
+      "status": "PARTIAL_ONLY"
+    },
+    "JS-DIAG-01": {
+      "covered_methods": [
+        "test_measure_js.SharedJSCoreTests.test_native_diagnostics_and_checker_alias",
+        "test_measure_js.SharedJSCoreTests.test_native_errors_and_empty_program"
+      ],
+      "remaining": "See q2-js-handoff.md exact disposition table",
+      "status": "PARTIAL_ONLY"
+    },
+    "JS-LIFE-01": {
+      "covered_methods": [
+        "test_measure_js.SharedJSCoreTests.test_native_two_git_revision_census"
+      ],
+      "remaining": "See q2-js-handoff.md exact disposition table",
+      "status": "PARTIAL_ONLY"
+    },
+    "JS-LIFE-02": {
+      "covered_methods": [],
+      "remaining": "See q2-js-handoff.md exact disposition table",
+      "status": "NOT_IMPLEMENTED"
+    },
+    "JS-OWN-01": {
+      "covered_methods": [
+        "test_measure_js.SharedJSCoreTests.test_native_errors_and_empty_program",
+        "test_measure_js.SharedJSCoreTests.test_controller_digest_and_no_inventory_mode_salt"
+      ],
+      "remaining": "See q2-js-handoff.md exact disposition table",
+      "status": "PARTIAL_ONLY"
+    },
+    "JS-PARSE-01": {
+      "covered_methods": [
+        "test_measure_js.SharedJSCoreTests.test_native_byte_boundaries",
+        "test_measure_js.SharedJSCoreTests.test_native_six_suffix_census",
+        "test_measure_js.SharedJSCoreTests.test_native_syntax_shapes"
+      ],
+      "remaining": "See q2-js-handoff.md exact disposition table",
+      "status": "PARTIAL_ONLY"
+    },
+    "JS-SYMBOL-01": {
+      "covered_methods": [
+        "test_measure_js.SharedJSCoreTests.test_native_diagnostics_and_checker_alias"
+      ],
+      "remaining": "See q2-js-handoff.md exact disposition table",
+      "status": "PARTIAL_ONLY"
+    }
+  },
+  "test_corrections": [],
+  "test_retries": 0,
+  "publication_correction": {
+    "phase": "post-test independent evidence publication",
+    "attempt": 1,
+    "argv": [
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "-u",
+      "scripts\\run.py",
+      "--idle",
+      "30",
+      "--max",
+      "90",
+      "--",
+      "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+      "-B",
+      "-u",
+      ".ai\\workflow-reliability\\evidence\\q2-js-core-independent-20260917-v1\\publish.py"
+    ],
+    "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system",
+    "tool_shell_id": "527",
+    "returncode": 124,
+    "output": "[run] idle-timeout after 30s of silence — killed \"C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe -B -u .ai\\workflow-reliability\\evidence\\q2-js-core-independent-20260917-v1\\publish.py\" (exit 124)",
+    "observation": "A subsequent directory listing showed no report.md, report.html, seal.json or final-status.json. Interruption occurred in the pre-publication pin loop.",
+    "cleanup": "Runner PID-tree cleanup attempted; descendant termination UNKNOWN. No old trees touched, privilege retry or process-name kill.",
+    "correction": "Emit real completed-pin recheck counts every 500 files; one retry only; same idle30/max90. No test/production/child-limit change and no test rerun.",
+    "test_results_affected": false
+  },
+  "publication_retries": 1,
+  "limitations": [
+    "No complete accepted JS test ID, full Q2, metrics or release verified.",
+    "Native core consistency is not producer admission, authenticated provenance or semantic replay.",
+    "Root symlink WinError1314 remains environment-unverified; old cleanup remains UNKNOWN.",
+    "PE dependency pins retain original qualification limits; no new loaded-module attestation.",
+    "No full suite, coverage, mutation, installation, requalification, commit or push."
+  ],
+  "self_binding": "Does not hash itself; SHA-256 is returned separately to caller."
+}

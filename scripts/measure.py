@@ -212,7 +212,9 @@ def validate_baseline(root, revision):
         raise ValueError("Baseline cannot be established: " + str(error)) from error
 
 
-def _walk(root):
+def _walk(root, *, include_js=False):
+    if type(include_js) is not bool:
+        raise ValueError("include_js must be a bool")
     root = graph.root_path(Path(root).absolute())
     entries, exclusions, errors, folded = [], [], [], {}
 
@@ -261,6 +263,8 @@ def _walk(root):
                 continue
             language = ("python" if suffix == ".py" else "javascript" if suffix in {".js", ".mjs", ".cjs"}
                         else "typescript" if suffix == ".ts" else "unsupported")
+            if include_js and suffix in {".jsx", ".tsx"}:
+                language = "javascript" if suffix == ".jsx" else "typescript"
             entries.append({"path": relative, "sha256": hashlib.sha256(content).hexdigest(),
                             "bytes": len(content), "language": language, "suffix": suffix,
                             "role": "test" if graph._test_path(relative) else "production",
@@ -288,7 +292,9 @@ def git_head(root):
     return out.strip()
 
 
-def inventory(context, revision, changed_production):
+def inventory(context, revision, changed_production, *, include_js=False):
+    if type(include_js) is not bool:
+        raise ValueError("include_js must be a bool")
     if revision not in {"base", "head"}:
         raise ValueError("Explicit base/head revision required")
     root = graph.root_path(context[revision + "_root"])
@@ -296,7 +302,7 @@ def inventory(context, revision, changed_production):
         raise ValueError("Git revision/root mismatch")
     if not isinstance(changed_production, dict) or (revision == "base" and changed_production):
         raise ValueError("Only head may have changed production lines")
-    entries, exclusions, errors = _walk(root)
+    entries, exclusions, errors = _walk(root, include_js=include_js)
     by_path = {entry["path"]: entry for entry in entries}
     for name, lines in changed_production.items():
         graph.relative_name(name)
@@ -1217,9 +1223,18 @@ def validate_observations(context, base, head, config, policy, artifacts, observ
     return derived
 
 
-def controller_digest(root):
-    return graph.digest({name: hashlib.sha256(graph.input_path(root, name).read_bytes()).hexdigest()
-                         for name in ("measure.py", "measure_graph.py", "probe.py", "evidence.py", "run.py")})
+def controller_digest(root, *, include_js=False):
+    if type(include_js) is not bool:
+        raise ValueError("include_js must be a bool")
+    names = ("measure.py", "measure_graph.py", "probe.py", "evidence.py", "run.py")
+    if include_js:
+        names += ("measure_js.mjs",)
+    pins = {}
+    for name in names:
+        path = graph.input_path(root, name)
+        content = _regular_file(path)[0] if include_js else path.read_bytes()
+        pins[name] = hashlib.sha256(content).hexdigest()
+    return graph.digest(pins)
 
 
 def assess_observations(observations, mutation, policy, base_inventory):

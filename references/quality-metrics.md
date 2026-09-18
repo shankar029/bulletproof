@@ -69,6 +69,15 @@ comparisons and partially supported file scopes make required proof **incomplete
 Discovery includes `.mjs` and `.cjs`; that does not establish that every external analyzer
 supports those files. Numeric partial observations remain visible but are not complete proof.
 
+The shared-JS **native parser core** is a library checkpoint, not a configured collector.
+It uses the qualified TypeScript 5.9.3 program/checker for six-suffix source census,
+strict source-byte coordinates and original compiler diagnostics. Its inventory/controller
+keywords preserve default behavior; opting into pending JSX/TSX classification is not
+parsing or coverage proof. The fixed JS command, ownership-manifest lifecycle, serialized
+symbol/reference and candidate APIs, graph projection and fresh semantic replay are not
+yet integrated. `probe` therefore retains its existing unsupported-JS behavior; this
+library does not make mixed-language measurements or missing required metrics complete.
+
 ## Mutation testing without project wiring
 
 Most mutation runners demand project-level configuration. `scripts/mutate.py` does not: it

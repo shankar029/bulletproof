@@ -1,0 +1,173 @@
+Validated existing TypeScript binding for native core tests
+test_controller_digest_and_no_inventory_mode_salt (test_measure_js.SharedJSCoreTests.test_controller_digest_and_no_inventory_mode_salt) ... ok
+test_inventory_keywords_preserve_legacy_and_pending_entries (test_measure_js.SharedJSCoreTests.test_inventory_keywords_preserve_legacy_and_pending_entries) ... ok
+test_native_actual_root_syntax_without_execution (test_measure_js.SharedJSCoreTests.test_native_actual_root_syntax_without_execution) ... Starting real native core case: actual_root_syntax
+Completed real native core case: actual_root_syntax
+ok
+test_native_byte_boundaries (test_measure_js.SharedJSCoreTests.test_native_byte_boundaries) ... Starting real native core case: byte_boundaries
+Completed real native core case: byte_boundaries
+ok
+test_native_diagnostics_and_checker_alias (test_measure_js.SharedJSCoreTests.test_native_diagnostics_and_checker_alias) ... Starting real native core case: diagnostics_and_symbols
+Completed real native core case: diagnostics_and_symbols
+ok
+test_native_errors_and_empty_program (test_measure_js.SharedJSCoreTests.test_native_errors_and_empty_program) ... Starting real native core case: errors_and_empty_program
+Completed real native core case: errors_and_empty_program
+ok
+test_native_six_suffix_census (test_measure_js.SharedJSCoreTests.test_native_six_suffix_census) ... Starting real native core case: six_suffixes
+Completed real native core case: six_suffixes
+ok
+test_native_syntax_shapes (test_measure_js.SharedJSCoreTests.test_native_syntax_shapes) ... Starting real native core case: syntax_shapes
+Completed real native core case: syntax_shapes
+ok
+test_native_two_git_revision_census (test_measure_js.SharedJSCoreTests.test_native_two_git_revision_census) ... Starting real native core case: two_revisions
+Completed real native core case: two_revisions
+ok
+test_one_discovery_owner_and_standalone_imports (test_measure_inventory.InventoryTests.test_one_discovery_owner_and_standalone_imports) ... ok
+test_inventory_retains_all_code_and_deliberate_exclusions (test_measure_inventory.InventoryTests.test_inventory_retains_all_code_and_deliberate_exclusions) ... ok
+test_zero_import_receipts_complete_and_source_bytes_are_not_executed (test_measure_graph.GraphTests.test_zero_import_receipts_complete_and_source_bytes_are_not_executed) ... ok
+test_invalid_python_and_mixed_languages_remain_explicit (test_measure_graph.GraphTests.test_invalid_python_and_mixed_languages_remain_explicit) ... ok
+test_rehashed_graph_payload_is_not_accepted_as_authoritative (test_measure_graph.GraphTests.test_rehashed_graph_payload_is_not_accepted_as_authoritative) ... ok
+test_actual_three_tools_at_two_git_revisions_with_import_provenance (test_measure_source_bindings.SourceBindingTests.test_actual_three_tools_at_two_git_revisions_with_import_provenance) ... measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+Completed actual binding smoke: base typescript
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+Completed actual binding smoke: base lizard
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+Completed actual binding smoke: base vulture
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+Completed actual binding smoke: head typescript
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+Completed actual binding smoke: head lizard
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+Completed actual binding smoke: head vulture
+measure: rehashed qualified resource files: 500
+measure: rehashed qualified resource files: 1000
+measure: rehashed qualified resource files: 1500
+measure: rehashed qualified resource files: 2000
+measure: rehashed qualified resource files: 2500
+measure: rehashed qualified resource files: 3000
+ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 732.040s
+
+OK

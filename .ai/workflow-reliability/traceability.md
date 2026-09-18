@@ -8,6 +8,14 @@ Functional verification does not complete the blocked quality gate.
 The additive `continuation-plan.html` permits bounded implementation before missing quality
 collectors are available; it does not waive quality or independent slice acceptance.
 
+Latest partial checkpoint: `evidence/q2-js-core-independent-20260917-v1/report.md`
+records 15 selected Python methods plus two separately executed boundary methods passing,
+with 3,593 unchanged inputs. Parent preservation matches seven actual staged checkout files
+and 53 evidence blobs. Parent reconciled the original independent source approval with
+the fresh execution proof and self-reviewed the two added tests; the cancelled reviewer
+did not issue a later verdict. Bounded preservation is accepted, not complete JS
+integration, current whole-suite quality or fresh sample-app proof.
+
 | AC | Priority | Contract | Status | Evidence |
 |---|---|---|---|---|
 | AC01 | P0 | ESM/CJS discovery, mutation routing and behavioral classification | VERIFIED-WITH-LIMITATIONS | Canonical discovery/routing/classification independently verified and reviewed; Windows/Node24 only. |
@@ -23,7 +31,8 @@ collectors are available; it does not waive quality or independent slice accepta
 
 The overall request remains incomplete. Prior core/state seams are preserved in
 `5dabb4c`, `d971634` and `ee6e0e3`; ordinary CLI/tool bindings are now approved for
-bounded preservation in `dadce66`. C3 independent proof and final review are accepted for
-local preservation. Actual collectors, guarded metrics, C4 and I1.T4/Q still block release.
+bounded preservation in `dadce66`. C3 is preserved in `ce7c07e`, and the accepted shared-JS
+amendment in `fdc6af0`. Actual collectors, guarded metrics, C4 and I1.T4/Q still block release.
+C4 auxiliary preparation is on hold; no live participant result exists.
 No fixture score, self-review, or metadata checkbox waives these gates. Historical metric
 reports are not current quality proof after source changes.
