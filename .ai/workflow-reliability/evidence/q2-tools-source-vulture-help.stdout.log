@@ -1,0 +1,33 @@
+usage: vulture [options] [PATH ...]
+
+positional arguments:
+  PATH                  Paths may be Python files or directories. For each
+                        directory Vulture analyzes all contained *.py files.
+
+options:
+  -h, --help            show this help message and exit
+  --exclude PATTERNS    Comma-separated list of path patterns to ignore (e.g.,
+                        "*settings.py,docs,*/test_*.py,venv"). Patterns may
+                        contain glob wildcards (*, ?, [abc], [!abc]). A
+                        PATTERN without glob wildcards is treated as
+                        *PATTERN*. Patterns are matched against absolute
+                        paths.
+  --ignore-decorators PATTERNS
+                        Comma-separated list of decorators. Functions and
+                        classes using these decorators are ignored (e.g.,
+                        "@app.route,@require_*"). Patterns may contain glob
+                        wildcards (*, ?, [abc], [!abc]).
+  --ignore-names PATTERNS
+                        Comma-separated list of names to ignore (e.g.,
+                        "visit_*,do_*"). Patterns may contain glob wildcards
+                        (*, ?, [abc], [!abc]).
+  --make-whitelist      Report unused code in a format that can be added to a
+                        whitelist module.
+  --min-confidence MIN_CONFIDENCE
+                        Minimum confidence (between 0 and 100) for code to be
+                        reported as unused.
+  --sort-by-size        Sort unused functions and classes by their lines of
+                        code.
+  --config CONFIG       Path to pyproject.toml config file.
+  -v, --verbose
+  --version             show program's version number and exit
