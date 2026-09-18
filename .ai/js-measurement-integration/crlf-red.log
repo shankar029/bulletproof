@@ -1,0 +1,45 @@
+test_real_mixed_production_and_accepting_replay (test_measure_js_integration.JSIntegrationTests.test_real_mixed_production_and_accepting_replay) ... measure: executing JS produce base
+measure: captured JS produce base exit 0
+measure: executing JS produce head
+measure: captured JS produce head exit 0
+ERROR
+
+======================================================================
+ERROR: test_real_mixed_production_and_accepting_replay (test_measure_js_integration.JSIntegrationTests.test_real_mixed_production_and_accepting_replay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-psychic-meme\scripts\tests\test_measure_js_integration.py", line 82, in test_real_mixed_production_and_accepting_replay
+    fixture.produce()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-psychic-meme\scripts\tests\test_measure_js_integration.py", line 68, in produce
+    measure.execute_js(self.context, inv, self.config)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-psychic-meme\scripts\measure.py", line 1242, in execute_js
+    _execute_js(context, inventory, config, purpose="produce")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-psychic-meme\scripts\measure.py", line 1292, in _execute_js
+    _check_js_attempt(context, inv, config, purpose)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-psychic-meme\scripts\measure.py", line 1218, in _check_js_attempt
+    request, _, _, _, _, _ = graph._js_transport(context, inv, config, purpose=purpose)
+                             ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-psychic-meme\scripts\measure_graph.py", line 183, in _js_transport
+    result, symbols = _js_output_records(context, inv, request, command)
+                      ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-psychic-meme\scripts\measure_graph.py", line 205, in _js_output_records
+    _js_produced(context, inv, request, command, result, symbols)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-psychic-meme\scripts\measure_graph.py", line 289, in _js_produced
+    _js_symbol_shapes(symbols, by_path, context, inv["revision"], result["syntax"])
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-psychic-meme\scripts\measure_graph.py", line 367, in _js_symbol_shapes
+    span(declaration["path"], declaration["span"])
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shbs\.copilot\repos\copilot-worktrees\bulletproof\shbs-microsoft-psychic-meme\scripts\measure_graph.py", line 343, in span
+    raise ValueError("Invalid JS span line coordinates")
+ValueError: Invalid JS span line coordinates
+
+----------------------------------------------------------------------
+Ran 1 test in 137.659s
+
+FAILED (errors=1)

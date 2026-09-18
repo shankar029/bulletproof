@@ -45,11 +45,11 @@ class Q1Fixture:
     def save_config(self):
         self.git.write("measurement.json", json.dumps(self.config))
 
-    def build(self):
+    def build(self, *, collect=True):
         self.git.commit("fixture: head")
-        return self.materialize()
+        return self.materialize(collect=collect)
 
-    def materialize(self):
+    def materialize(self, *, collect=True):
         base, head = self.root / "base", self.root / "head"
         source = source_snapshot(self.git.root, {"directories": ["."],
                                  "excluded_outputs": [{"path": ".git", "reason": "Git metadata"}]})
@@ -70,6 +70,8 @@ class Q1Fixture:
             "toolset_sha256": graph.digest({"python_parser": graph.parser_digest()}),
             "contract_artifacts": [self.config["approval_artifact"],
                                    graph.artifact(self.git.root, "measurement.json")]}
+        if not collect:
+            return self
         changes = {name: sorted(lines) for name, lines in probe.changed_lines(self.git.root, self.base_sha).items()}
         self.base = graph.parse_files(self.context, measure.inventory(self.context, "base", {}), self.config)
         self.head = graph.parse_files(self.context, measure.inventory(self.context, "head", changes), self.config)

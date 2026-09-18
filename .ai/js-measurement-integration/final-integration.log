@@ -1,0 +1,38 @@
+test_real_mixed_production_and_accepting_replay (test_measure_js_integration.JSIntegrationTests.test_real_mixed_production_and_accepting_replay) ... measure: executing JS produce base a6f6fb75ab15402990217d1adfc93946
+measure: captured JS produce base a6f6fb75ab15402990217d1adfc93946 exit 0
+measure: executing JS produce head 1cd1ca05954a4c77a816936a2217016f
+measure: captured JS produce head 1cd1ca05954a4c77a816936a2217016f exit 0
+measure: executing JS validate base 8324512b7b44443cada2c0bef78bacdb
+measure: captured JS validate base 8324512b7b44443cada2c0bef78bacdb exit 0
+measure: executing JS validate head 13965af2b7ba4a70b1f5b60416ee1ad5
+measure: captured JS validate head 13965af2b7ba4a70b1f5b60416ee1ad5 exit 0
+ok
+test_zero_js_still_executes_and_replays (test_measure_js_integration.JSIntegrationTests.test_zero_js_still_executes_and_replays) ... measure: executing JS produce base dffba3aae5a04b27a798f9b3f8129af5
+measure: captured JS produce base dffba3aae5a04b27a798f9b3f8129af5 exit 0
+measure: executing JS produce head 76f3d3290d764b69966289c3db8d9471
+measure: captured JS produce head 76f3d3290d764b69966289c3db8d9471 exit 0
+measure: executing JS validate base 9e85d4461ef340cb8232b272997497ec
+measure: captured JS validate base 9e85d4461ef340cb8232b272997497ec exit 0
+measure: executing JS validate head d977b79a13a34a25a3bf5e153a930160
+measure: captured JS validate head d977b79a13a34a25a3bf5e153a930160 exit 0
+ok
+measure: executing JS produce base dd93f0f2e13a4170bac82d3d8a7d0e53
+measure: captured JS produce base dd93f0f2e13a4170bac82d3d8a7d0e53 exit 0
+measure: executing JS produce head 855fb384e4d546c4a363ad967d81ed01
+measure: captured JS produce head 855fb384e4d546c4a363ad967d81ed01 exit 0
+test_actual_nonzero_child_retains_real_produced_records_only_as_failure_bytes (test_measure_js_integration.JSOwnershipTests.test_actual_nonzero_child_retains_real_produced_records_only_as_failure_bytes) ... ok
+test_rehashed_alias_edit_rejected_by_fresh_accepting_replay (test_measure_js_integration.JSOwnershipTests.test_rehashed_alias_edit_rejected_by_fresh_accepting_replay) ... measure: executing JS validate base 9302c1de16214bcb85f2b8ba8f0dfcd9
+measure: captured JS validate base 9302c1de16214bcb85f2b8ba8f0dfcd9 exit 0
+measure: executing JS validate head 9484d5da50a8409d98cac49e4f33b90b
+measure: captured JS validate head 9484d5da50a8409d98cac49e4f33b90b exit 0
+ok
+test_rehashed_predecessor_ownership_and_reservations_reject (test_measure_js_integration.JSOwnershipTests.test_rehashed_predecessor_ownership_and_reservations_reject) ... ok
+test_rehashed_production_purpose_swap_rejects_before_replay (test_measure_js_integration.JSOwnershipTests.test_rehashed_production_purpose_swap_rejects_before_replay) ... ok
+test_source_controller_and_request_input_changes_reject (test_measure_js_integration.JSOwnershipTests.test_source_controller_and_request_input_changes_reject) ... ok
+test_actual_bounded_timeout_is_failed_output_not_a_cleanup_claim (test_measure_js_integration.JSOutputPolicyTests.test_actual_bounded_timeout_is_failed_output_not_a_cleanup_claim) ... ok
+test_actual_failed_children_are_opaque_and_zero_invalid_children_reject (test_measure_js_integration.JSOutputPolicyTests.test_actual_failed_children_are_opaque_and_zero_invalid_children_reject) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1280.761s
+
+OK

@@ -1,0 +1,12 @@
+test_inventory_mode_remains_explicit_and_immutable (test_measure_js_integration.JSIntegrationTests.test_inventory_mode_remains_explicit_and_immutable) ... ok
+JSCoreIndependentTests (unittest.loader._FailedTest.JSCoreIndependentTests) ... ERROR
+
+======================================================================
+ERROR: JSCoreIndependentTests (unittest.loader._FailedTest.JSCoreIndependentTests)
+----------------------------------------------------------------------
+AttributeError: module 'test_measure_js_core_independent' has no attribute 'JSCoreIndependentTests'
+
+----------------------------------------------------------------------
+Ran 2 tests in 42.095s
+
+FAILED (errors=1)
