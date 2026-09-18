@@ -8,6 +8,7 @@
 <h1>Planner lifecycle: implemented, not fully verified</h1>
 <p>18 September 2026 | Branch <code>shbs-microsoft-live-planner-workflow</code> |
 Base <code>c6095e7a8242cb1794fe78ca8fb8ea97e1fb9478</code>.
+Implementation checkpoint <code>e2e4835731c260f45205c85edc7930ba23bf676b</code>.
 Local preservation only; no push/PR attempted. Evidence is <strong>unadopted procedural,
 unbound</strong>, never guarded receipts or completed G6.</p>
 
@@ -122,8 +123,10 @@ $env:E2E_EVIDENCE_DIR = Join-Path (Get-Location) '.ai\planner-live-workflow\evid
 # After the browser download environment is resolved:
 &amp; $py -B scripts\run.py --idle 120 --max 1500 -- $node examples\team-planner\scripts\e2e.mjs --flow archive
 &amp; $py -B scripts\run.py --idle 120 --max 2400 -- $node examples\team-planner\scripts\e2e.mjs --flow all</code></pre>
-<p>Local checkpoint identity is supplied in the handoff. It preserves useful implementation and
-failed proof, not a closed increment. Artifacts: <a href="state.md">state</a>,
+<p>Implementation checkpoint <code>e2e4835731c260f45205c85edc7930ba23bf676b</code>
+preserves useful implementation and failed proof, not a closed increment.
+The following documentation-only commit records that identity; it changes no app bytes.
+Artifacts: <a href="state.md">state</a>,
 <a href="design.html">design</a>, <a href="plan.html">plan</a>,
 <a href="traceability.md">AC matrix</a>, <a href="review.md">review</a>.</p>
 </html>
