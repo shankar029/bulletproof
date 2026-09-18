@@ -1,0 +1,157 @@
+{
+  "argv": [
+    "C:\\Users\\shbs\\.copilot\\session-state\\c154cbfc-3b1d-4163-b8dd-5f0b43af3095\\files\\q2-tools-20260917\\jscpd\\jscpd.exe",
+    "--config",
+    "C:\\Users\\shbs\\AppData\\Local\\Temp\\scalar-upqfs5fz\\jscpd.json",
+    "--min-tokens",
+    "40",
+    "--min-lines",
+    "5",
+    "--mode",
+    "mild",
+    "--reporters",
+    "json",
+    "--summary",
+    "--summary-top",
+    "5",
+    "--no-gitignore",
+    "--no-colors",
+    "--no-tips",
+    "--workers",
+    "1",
+    "--absolute",
+    "--max-size",
+    "18446744073709551615",
+    "--formats-exts",
+    "javascript:js,mjs,cjs;typescript:ts;tsx:tsx;jsx:jsx",
+    "--output",
+    "C:\\Users\\shbs\\AppData\\Local\\Temp\\scalar-upqfs5fz\\report",
+    "C:\\Users\\shbs\\AppData\\Local\\Temp\\scalar-upqfs5fz\\inputs\\a.py",
+    "C:\\Users\\shbs\\AppData\\Local\\Temp\\scalar-upqfs5fz\\inputs\\b.py",
+    "C:\\Users\\shbs\\AppData\\Local\\Temp\\scalar-upqfs5fz\\inputs\\comment.py",
+    "C:\\Users\\shbs\\AppData\\Local\\Temp\\scalar-upqfs5fz\\inputs\\empty.py",
+    "C:\\Users\\shbs\\AppData\\Local\\Temp\\scalar-upqfs5fz\\inputs\\short.py"
+  ],
+  "cwd": "C:\\Users\\shbs\\AppData\\Local\\Temp\\scalar-upqfs5fz",
+  "idle_seconds": 120,
+  "max_seconds": 900,
+  "environment_delta": {
+    "removed_names": [
+      "PYTHONDONTWRITEBYTECODE",
+      "PYTHONUTF8"
+    ]
+  },
+  "returncode": 0,
+  "stdout": "JSON report saved to C:\\Users\\shbs\\AppData\\Local\\Temp\\scalar-upqfs5fz\\report\\jscpd-report.json\ntime: 71.277ms\n",
+  "stderr": "Using config from C:\\Users\\shbs\\AppData\\Local\\Temp\\scalar-upqfs5fz\\jscpd.json\n",
+  "result": {
+    "duplicates": [
+      {
+        "firstFile": {
+          "end": 9,
+          "endLoc": {
+            "column": 21,
+            "line": 9,
+            "position": 205
+          },
+          "name": "\\\\?\\C:\\Users\\shbs\\AppData\\Local\\Temp\\scalar-upqfs5fz\\inputs\\a.py",
+          "start": 1,
+          "startLoc": {
+            "column": 0,
+            "line": 1,
+            "position": 0
+          }
+        },
+        "format": "python",
+        "fragment": "# caf\u00e9\ndef calculate(value):\n    doubled = value * 2\n    offset = doubled + 10\n    divisor = offset / 4\n    remainder = divisor % 3\n    if remainder > 2:\n        return remainder - 3\n    return offset + 7",
+        "isNew": false,
+        "kind": "exact",
+        "lines": 9,
+        "secondFile": {
+          "end": 9,
+          "endLoc": {
+            "column": 21,
+            "line": 9,
+            "position": 205
+          },
+          "name": "\\\\?\\C:\\Users\\shbs\\AppData\\Local\\Temp\\scalar-upqfs5fz\\inputs\\b.py",
+          "start": 1,
+          "startLoc": {
+            "column": 0,
+            "line": 1,
+            "position": 0
+          }
+        },
+        "tokens": 40
+      }
+    ],
+    "statistics": {
+      "detectionDate": "2026-09-18T10:59:07.127Z",
+      "formats": {
+        "python": {
+          "clones": 1,
+          "duplicatedLines": 8,
+          "duplicatedTokens": 40,
+          "lines": 18,
+          "newClones": 0,
+          "newDuplicatedLines": 0,
+          "percentage": 44.44444444444444,
+          "percentageTokens": 50.0,
+          "sources": 2,
+          "tokens": 80
+        }
+      },
+      "total": {
+        "clones": 1,
+        "duplicatedLines": 8,
+        "duplicatedTokens": 40,
+        "lines": 18,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 44.44444444444444,
+        "percentageTokens": 50.0,
+        "sources": 2,
+        "tokens": 80
+      }
+    },
+    "summary": {
+      "by": "tokens",
+      "files": [
+        {
+          "bytes": 215,
+          "complexity": 2,
+          "duplicatedLines": 8,
+          "duplicatedTokens": 40,
+          "format": "python",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\AppData\\Local\\Temp\\scalar-upqfs5fz\\inputs\\a.py",
+          "tokens": 40
+        },
+        {
+          "bytes": 215,
+          "complexity": 2,
+          "duplicatedLines": 8,
+          "duplicatedTokens": 40,
+          "format": "python",
+          "lines": 9,
+          "path": "\\\\?\\C:\\Users\\shbs\\AppData\\Local\\Temp\\scalar-upqfs5fz\\inputs\\b.py",
+          "tokens": 40
+        }
+      ],
+      "folders": [
+        {
+          "bytes": 430,
+          "complexity": 4,
+          "duplicatedLines": 16,
+          "files": 2,
+          "lines": 18,
+          "path": "//?/C:/Users/shbs/AppData/Local/Temp/scalar-upqfs5fz/inputs",
+          "tokens": 80
+        }
+      ],
+      "totalFiles": 2,
+      "totalFolders": 1
+    }
+  },
+  "decode_error": null
+}
