@@ -1,0 +1,32 @@
+{
+  "kind": "Parent integrated regression; not full suite or independent feature acceptance",
+  "commit": "1899c301d5e84c3a6374b037c6d562d25c23873b",
+  "sourceCommit": "2bc8af72aa3cfa486554e8544f1e0ff0f1a133a8",
+  "command": [
+    "C:\\Users\\shbs\\AppData\\Roaming\\uv\\python\\cpython-3.14.2-windows-x86_64-none\\python.exe",
+    "-u",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_measure_js_integration.JSIntegrationTests.test_real_mixed_production_and_accepting_replay",
+    "test_measure_js_integration.JSIntegrationTests.test_inventory_mode_remains_explicit_and_immutable",
+    "test_measure_q1_integration.Q1IntegrationTests.test_public_python_cli_from_nested_cwd_keeps_all_nine_and_archives_raw",
+    "test_workflow_cli_boundaries"
+  ],
+  "cwd": "C:\\Users\\shbs\\.copilot\\repos\\copilot-worktrees\\bulletproof\\shbs-microsoft-crispy-system\\scripts\\tests",
+  "idleSeconds": 180,
+  "maxSeconds": 900,
+  "nativeIdleSeconds": 30,
+  "nativeMaxSeconds": 90,
+  "started": "2026-09-18T10:49:30.4747827Z",
+  "finished": "2026-09-18T10:57:33.3855751Z",
+  "exitCode": 0,
+  "sourceFiles": 47,
+  "changedSources": [],
+  "ownedTemp": "C:\\Users\\shbs\\AppData\\Local\\Temp\\bp-j-35385e59",
+  "remainingTempEntries": [],
+  "handoffControllerAndTestPinsMatched": 10,
+  "finalLogHashesMatched": 3,
+  "changedFilePinsMatched": 8
+}

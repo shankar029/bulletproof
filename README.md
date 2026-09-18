@@ -164,9 +164,10 @@ before comparing scores.
   is supported, but unsupported syntax, languages and runners remain explicitly ungraded.
   Syntax/import/setup failures and timeouts do not count as assertion kills.
 - Quality collection depends on installed tools **and complete supported input inventories**.
-  At the accepted CLI/tool-binding boundary, configured collection covers the Python graph
-  plus qualified tool-binding smoke checks—not complete shared-JS/scalar/coverage/mutation
-  collection. Installing an analyzer or qualifying its launch does not collect its metrics.
+  Configured collection covers Python literal-import graphs and, with a qualified TypeScript
+  binding, JS/TS graphs with fresh accepting replay of the native evidence. Complete scalar,
+  coverage and mixed-language mutation collection remain unfinished. Installing an analyzer
+  or qualifying its launch does not collect its metrics.
 - Required unavailable measurements produce **incomplete/fail**. Passing the functional suites
   does not turn that into a release-quality pass.
 - Guarded `work` and `retire` actions require executable commands. Null-command handoffs

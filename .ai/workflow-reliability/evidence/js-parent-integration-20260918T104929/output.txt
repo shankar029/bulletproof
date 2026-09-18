@@ -1,0 +1,19 @@
+test_real_mixed_production_and_accepting_replay (test_measure_js_integration.JSIntegrationTests.test_real_mixed_production_and_accepting_replay) ... measure: executing JS produce base 77834f9a82e94777a46a08cc5999b6a1
+measure: captured JS produce base 77834f9a82e94777a46a08cc5999b6a1 exit 0
+measure: executing JS produce head 71d46b50daf44d7a8b04d65af04c08e2
+measure: captured JS produce head 71d46b50daf44d7a8b04d65af04c08e2 exit 0
+measure: executing JS validate base c7c148791dd34b179fcbb8be1cd7a2aa
+measure: captured JS validate base c7c148791dd34b179fcbb8be1cd7a2aa exit 0
+measure: executing JS validate head 0f5331191e3f408d83cedec6090569a1
+measure: captured JS validate head 0f5331191e3f408d83cedec6090569a1 exit 0
+ok
+test_inventory_mode_remains_explicit_and_immutable (test_measure_js_integration.JSIntegrationTests.test_inventory_mode_remains_explicit_and_immutable) ... ok
+test_public_python_cli_from_nested_cwd_keeps_all_nine_and_archives_raw (test_measure_q1_integration.Q1IntegrationTests.test_public_python_cli_from_nested_cwd_keeps_all_nine_and_archives_raw) ... ok
+test_adoption_cannot_reclassify_an_actual_pending_handoff_as_executable (test_workflow_cli_boundaries.WorkflowCliBoundaryTests.test_adoption_cannot_reclassify_an_actual_pending_handoff_as_executable) ... ok
+test_close_rejects_real_scoped_membership_and_git_mode_mismatch (test_workflow_cli_boundaries.WorkflowCliBoundaryTests.test_close_rejects_real_scoped_membership_and_git_mode_mismatch) ... ok
+test_registered_environment_sets_removes_and_preserves_exact_values (test_workflow_cli_boundaries.WorkflowCliBoundaryTests.test_registered_environment_sets_removes_and_preserves_exact_values) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 481.778s
+
+OK

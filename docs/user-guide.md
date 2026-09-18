@@ -164,8 +164,10 @@ Currently all nine quality metrics remain mandatory, and registered metric comma
 unchanged but produce no accepted guarded metric receipt. Successful attachment needs the
 later producer-owned ID/registered-argv/source-projection/raw-validation bridge. `close`
 checks Git then mandatory gates, but positive quality closure is unavailable.
-Configured collectors currently cover the Python graph and qualified tool-binding smoke,
-not complete shared-JS/scalar/coverage/mutation collection. A symlink-creation test remains
+Configured collection covers Python literal-import graphs and, with a qualified TypeScript
+binding, JS/TS graphs whose native evidence is checked through fresh accepting replay.
+That does not complete scalar, coverage or mixed-language mutation collection, or supply
+the missing guarded metric bridge. A symlink-creation test remains
 Windows-environment-unverified (`WinError 1314`), and earlier timeout cleanup remains UNKNOWN.
 Do not read a selected passing suite as full-quality or cross-platform proof.
 Historical planner 37-test/coverage and 29-feature evaluation statistics retain their original

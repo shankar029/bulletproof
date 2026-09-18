@@ -33,9 +33,29 @@ accepted fixed native producer directly. The final source received bounded
 independent approval and five passing command methods (11 native invocations)
 in 108.389s. Earlier parent runs cover 12 selected methods and two default/Python
 compatibility methods before the final narrow delta, not an additive full suite.
-Python orchestration, manifest lifecycle, graph projection and accepting replay
-remain unfinished. The native command cannot by itself establish configured
-measurement support, guarded metrics or full-Q2 acceptance.
+That native command alone did not establish configured measurement support.
+Python orchestration, immutable manifests, nonexecuting graph projection and
+fresh accepting replay are now integrated as `1899c30` from reviewed `2bc8af7`.
+The actual handoff is `../js-measurement-integration/interfaces.md`. Fourteen
+distinct selected owner-run methods passed; the same reviewer reconciled all
+five scoped ACs WITH-LIMITATIONS and closed the CRLF defect. Separate public
+read-only reconciliation is not independent execution. Parent matched all six
+controller/four test pins, three final log hashes and eight changed-file pins.
+The combined-tree parent regression passed six selected methods in 481.778
+seconds with 47 tracked script inputs unchanged: mixed CRLF production/replay,
+inventory mode, Python public compatibility and three guard boundaries.
+`evidence/js-parent-integration-20260918T104929/` preserves the exact scope.
+This overlaps prior selections and is not added to their counts.
+Scalar/coverage/mutation, guarded metrics and full-Q2 acceptance remain incomplete.
+README, user/operator guides and architecture wording now distinguish this
+delivered JS graph path from the unfinished collectors/guard bridge. These are
+parent source-reconciled wording updates, not a new independent documentation
+or browser-render approval of the changed files.
+
+Before that integration, the current parent guard suite passed 133 tests in
+620.198 seconds with 46 tracked script inputs unchanged. Raw owner-run evidence
+is in `evidence/guard-regression-20260918T103241-87ab79/`; these counts are not
+added to earlier independent selections or claimed against later source edits.
 
 The existing planner was freshly replayed: `evidence/planner-refresh-942fbc75/`
 contains 37 native passes and four browser flows/126 passing checks, with unchanged

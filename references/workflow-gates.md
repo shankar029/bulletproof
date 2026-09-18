@@ -162,10 +162,11 @@ Do not inject flags, rewrite producer UUIDs or backfill an admission.
 
 ## Closure and errors
 
-All nine quality metrics remain required. At the accepted CLI/tool-binding boundary,
-configured collectors cover the Python graph plus qualified tool-binding **smoke**
-execution, not complete shared-JS/scalar/coverage/mutation collection. Qualification
-of a tool is not collection of a metric. Consult [quality-metrics.md](quality-metrics.md)
+All nine quality metrics remain required. Standalone configured collection covers
+Python literal-import graphs and qualified JS/TS graphs with fresh accepting replay.
+Scalar, coverage and mixed-language mutation collection remain incomplete; graph
+validation does not provide the missing guarded metric bridge. Qualification of a
+tool is not collection of a metric. Consult [quality-metrics.md](quality-metrics.md)
 and source-bound run evidence; do not treat work in progress as supported positive closure.
 
 ```powershell

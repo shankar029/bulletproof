@@ -68,10 +68,11 @@ Goodhart effects, with greenfield and front‑end projects detected and judged a
 Standalone `evidence.py` supplies scoped hashes, atomic reports and an exclusive local lock.
 The shared `native_result.mjs` classifies actual Node test events; process errors are not
 assertion kills. Probe version 2 separates measured status from completeness and rejects stale
-mutation aliases. Required unavailable measurements block the gate. Configured collection at
-the accepted CLI/tool-binding boundary covers the Python graph and qualified tool-binding smoke,
-not complete shared-JS/scalar/coverage/mutation collection. These mechanisms neither initialize
-a workflow ledger nor authenticate actors.
+mutation aliases. Required unavailable measurements block the gate. Configured collection
+covers Python literal-import graphs and qualified JS/TS graphs. The latter bind immutable
+native request/output manifests and require fresh accepting replay, without executing subject
+code. Scalar, coverage and mixed-language mutation collection remain incomplete. These
+mechanisms neither initialize a workflow ledger nor authenticate actors.
 
 ### 3d. Guarded routing has an explicit boundary
 
