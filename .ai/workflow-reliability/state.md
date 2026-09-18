@@ -5,7 +5,7 @@
 - Tier: full workflow; executable tooling and workflow contracts change.
 - Base: `bcc971d3b64559127dfc43eb0bfd4348c42803ca`.
 - Branch: `shbs-microsoft-workflow-app-verification` (existing task branch).
-- Phase: Q2 parser-core source review and independent execution reconciled for bounded local preservation. Auxiliary C4 preparation is on hold.
+- Phase: Q2 parser core preserved in `886d699`; remaining accepted JS implementation resumed. Existing planner regressions refreshed; auxiliary C4 preparation remains on hold.
 - Human design approval: unconfirmed; proceeding under the session's explicit autopilot policy.
 - Publication: previously blocked by GitHub 403 / Enterprise Managed User policy. Do not retry or bypass without authorized access changing.
 - Scope: repository `scripts`, relevant workflow references/canonical skill entry point, and native regression/evaluation tests. Preserve the completed planner case study as historical evidence.
@@ -37,12 +37,11 @@
 - No repeated uncoached model-effectiveness study claimed by deterministic tests.
 
 ## Next action
-Preserve the frozen partial Q2 parser core,
-then finish the accepted shared-JS serialization/lifecycle integration.
+Finish the accepted shared-JS serialization/lifecycle integration.
 C3 is preserved. Recovery remains blocked;
 no recovery stub or silent completion of the original requirement.
-The latest changes still need fresh end-to-end sample-app verification. Historical
-planner results and the current parser tests do not establish that result.
+The updated workflow still needs a fresh agent-driven sample-app exercise.
+The refreshed existing-app regressions below do not establish that result.
 The local I1 preservation commit is `aaec9b9`.
 The continuation addendum replaces implementation-dispatch dependencies only; it does not
 close I1.T4 or remove any required measurement, independent role or final acceptance check.
@@ -159,6 +158,28 @@ close I1.T4 or remove any required measurement, independent role or final accept
   reconciliation/self-review of the additions, not a fabricated final independent
   reviewer verdict. Accept bounded local preservation, not the full component or
   ship gate; retain the original preliminary review and its precise scope.
+- FACT: the 69-file bounded parser-core checkpoint is committed as
+  `886d699a9b8523f2846c65b21fcfd56fc5b3e0dc`. Only the unrelated `evals/report.md`
+  remained modified immediately after commit. Existing owner
+  `32d88126-0b11-466a-b04a-76bebef5b9c9` resumed the remaining accepted JS work;
+  no new design, qualification, scalar, recovery or C4 scope was added.
+
+## Refreshed existing planner regression
+- FACT: `evidence/planner-refresh-942fbc75/native-result.json` records 37/37
+  native tests passing, no failures/cancellations/skips/todos, exit 0, with
+  99.33% lines, 96.92% branches and 96.63% functions. App/test/runner input
+  hashes agree before and after.
+- FACT: the same directory's `browser-result.json` records all four real browser
+  flows passing all 126 checks in 57.801s, exit 0, unchanged app inputs.
+  The 42 browser artifacts were copied byte-for-byte under its `browser/`
+  directory. This reuses the actual existing app and its agent-browser harness,
+  not a new app build or a fresh agent exercising all 29 workflow features.
+- Capture correction: the first native result helper in
+  `planner-refresh-2e859e84` incorrectly used LF-only regex anchors on raw CRLF
+  output and failed after preserving stdout/stderr. Its subprocess exit code
+  was not persisted and remains unknown. One complete bounded rerun corrected
+  capture parsing; no product change or failing product test is asserted.
+  Both captures are retained rather than rewriting the first into a pass.
 
 ## C4 external preparation
 - HOLD after the user's duration concern: no further auxiliary preparation,

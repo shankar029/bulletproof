@@ -13,8 +13,14 @@ records 15 selected Python methods plus two separately executed boundary methods
 with 3,593 unchanged inputs. Parent preservation matches seven actual staged checkout files
 and 53 evidence blobs. Parent reconciled the original independent source approval with
 the fresh execution proof and self-reviewed the two added tests; the cancelled reviewer
-did not issue a later verdict. Bounded preservation is accepted, not complete JS
-integration, current whole-suite quality or fresh sample-app proof.
+did not issue a later verdict. The checkpoint is preserved in `886d699`, not complete JS
+integration or current whole-suite quality.
+
+The existing planner was freshly replayed: `evidence/planner-refresh-942fbc75/`
+contains 37 native passes and four browser flows/126 passing checks, with unchanged
+app inputs. This is existing-app regression proof, not a fresh agent-driven build
+exercising all 29 updated workflow features. The first native capture-helper failure
+and its one corrected rerun are recorded separately.
 
 | AC | Priority | Contract | Status | Evidence |
 |---|---|---|---|---|

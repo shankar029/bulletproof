@@ -1,0 +1,191 @@
+{
+  "lifecycle": {
+    "effectiveLaunch": {
+      "browserLaunched": true,
+      "engine": "chrome",
+      "launchHash": 10543666551248288000
+    },
+    "launched": false,
+    "relaunchedBrowser": false,
+    "restartedBackground": false,
+    "restoreStatus": "not_configured",
+    "reused": true,
+    "saveStatus": "not_attempted"
+  },
+  "origin": "http://127.0.0.1:61730/?projectId=p-1&page=2",
+  "refs": {
+    "e1": {
+      "name": "Reload latest",
+      "role": "button"
+    },
+    "e10": {
+      "name": "Extra 7",
+      "role": "article"
+    },
+    "e11": {
+      "name": "Pagination",
+      "role": "navigation"
+    },
+    "e12": {
+      "name": "Projects",
+      "role": "link"
+    },
+    "e13": {
+      "name": "Dashboard",
+      "role": "link"
+    },
+    "e14": {
+      "name": "Project name",
+      "role": "textbox"
+    },
+    "e15": {
+      "name": "Create project",
+      "role": "button"
+    },
+    "e16": {
+      "name": "Search titles",
+      "role": "textbox"
+    },
+    "e17": {
+      "name": "Filter status",
+      "role": "combobox"
+    },
+    "e18": {
+      "name": "Filter priority",
+      "role": "combobox"
+    },
+    "e19": {
+      "name": "Apply filters",
+      "role": "button"
+    },
+    "e2": {
+      "name": "Team planner",
+      "role": "heading"
+    },
+    "e20": {
+      "name": "Clear filters",
+      "role": "button"
+    },
+    "e21": {
+      "name": "Extra 5",
+      "role": "heading"
+    },
+    "e22": {
+      "name": "Edit",
+      "role": "button"
+    },
+    "e23": {
+      "name": "Extra 6",
+      "role": "heading"
+    },
+    "e24": {
+      "name": "Edit",
+      "role": "button"
+    },
+    "e25": {
+      "name": "Extra 7",
+      "role": "heading"
+    },
+    "e26": {
+      "name": "Edit",
+      "role": "button"
+    },
+    "e27": {
+      "name": "Previous",
+      "role": "button"
+    },
+    "e28": {
+      "name": "Next",
+      "role": "button"
+    },
+    "e29": {
+      "name": "Tasks per page",
+      "role": "combobox"
+    },
+    "e3": {
+      "name": "Main",
+      "role": "navigation"
+    },
+    "e30": {
+      "name": "Alpha",
+      "role": "link"
+    },
+    "e31": {
+      "name": "Beta",
+      "role": "link"
+    },
+    "e32": {
+      "name": "All statuses",
+      "role": "option"
+    },
+    "e33": {
+      "name": "todo",
+      "role": "option"
+    },
+    "e34": {
+      "name": "in progress",
+      "role": "option"
+    },
+    "e35": {
+      "name": "done",
+      "role": "option"
+    },
+    "e36": {
+      "name": "All priorities",
+      "role": "option"
+    },
+    "e37": {
+      "name": "low",
+      "role": "option"
+    },
+    "e38": {
+      "name": "normal",
+      "role": "option"
+    },
+    "e39": {
+      "name": "high",
+      "role": "option"
+    },
+    "e4": {
+      "name": "Projects",
+      "role": "heading"
+    },
+    "e40": {
+      "name": "2",
+      "role": "option"
+    },
+    "e41": {
+      "name": "10",
+      "role": "option"
+    },
+    "e42": {
+      "name": "25",
+      "role": "option"
+    },
+    "e43": {
+      "name": "50",
+      "role": "option"
+    },
+    "e5": {
+      "name": "Alpha",
+      "role": "heading"
+    },
+    "e6": {
+      "name": "Project totals",
+      "role": "region"
+    },
+    "e7": {
+      "name": "Add task",
+      "role": "button"
+    },
+    "e8": {
+      "name": "Extra 5",
+      "role": "article"
+    },
+    "e9": {
+      "name": "Extra 6",
+      "role": "article"
+    }
+  },
+  "snapshot": "- banner\n  - heading \"Team planner\" [level=1, ref=e2]\n  - navigation \"Main\" [ref=e3]\n    - link \"Projects\" [ref=e12]\n    - link \"Dashboard\" [ref=e13]\n- status\n  - StaticText \"13 tasks loaded. Page 2 of 2.\"\n- button \"Reload latest\" [ref=e1]\n- complementary \"Projects\"\n  - heading \"Projects\" [level=2, ref=e4]\n  - form\n    - LabelText\n      - StaticText \"Project name\"\n    - textbox \"Project name\" [required, ref=e14]\n    - button \"Create project\" [ref=e15]\n  - list\n    - listitem [level=1]\n      - ListMarker \"• \"\n      - link \"Alpha\" [ref=e30]\n    - listitem [level=1]\n      - ListMarker \"• \"\n      - link \"Beta\" [ref=e31]\n- main\n  - heading \"Alpha\" [level=2, ref=e5]\n  - region \"Project totals\" [ref=e6]\n    - paragraph\n      - StaticText \"Total: 13\"\n    - paragraph\n      - StaticText \"Todo: 11\"\n    - paragraph\n      - StaticText \"In progress: 1\"\n    - paragraph\n      - StaticText \"Done: 1\"\n    - paragraph\n      - StaticText \"Blocked: 1\"\n    - paragraph\n      - StaticText \"Completion %: 7\"\n  - form \"Task filters\"\n    - LabelText\n      - StaticText \"Search titles\"\n    - textbox \"Search titles\" [ref=e16]\n    - LabelText\n      - StaticText \"Filter status\"\n    - combobox \"Filter status\" [expanded=false, ref=e17]: All statuses\n      - MenuListPopup\n        - option \"All statuses\" [selected, ref=e32]\n        - option \"todo\" [ref=e33]\n        - option \"in progress\" [ref=e34]\n        - option \"done\" [ref=e35]\n    - LabelText\n      - StaticText \"Filter priority\"\n    - combobox \"Filter priority\" [expanded=false, ref=e18]: All priorities\n      - MenuListPopup\n        - option \"All priorities\" [selected, ref=e36]\n        - option \"low\" [ref=e37]\n        - option \"normal\" [ref=e38]\n        - option \"high\" [ref=e39]\n    - button \"Apply filters\" [ref=e19]\n    - button \"Clear filters\" [ref=e20]\n  - button \"Add task\" [ref=e7]\n  - article \"Extra 5\" [ref=e8]\n    - heading \"Extra 5\" [level=3, ref=e21]\n    - StaticText \"todo\"\n    - paragraph\n      - StaticText \"Priority: normal\"\n    - button \"Edit\" [ref=e22]\n  - article \"Extra 6\" [ref=e9]\n    - heading \"Extra 6\" [level=3, ref=e23]\n    - StaticText \"todo\"\n    - paragraph\n      - StaticText \"Priority: normal\"\n    - button \"Edit\" [ref=e24]\n  - article \"Extra 7\" [ref=e10]\n    - heading \"Extra 7\" [level=3, ref=e25]\n    - StaticText \"todo\"\n    - paragraph\n      - StaticText \"Priority: normal\"\n    - button \"Edit\" [ref=e26]\n  - navigation \"Pagination\" [ref=e11]\n    - button \"Previous\" [ref=e27]\n    - StaticText \"Page 2 of 2 · 13 tasks\"\n    - button \"Next\" [disabled, ref=e28]\n    - LabelText\n      - StaticText \"Tasks per page\"\n    - combobox \"Tasks per page\" [expanded=false, ref=e29]: 10\n      - MenuListPopup\n        - option \"2\" [ref=e40]\n        - option \"10\" [selected, ref=e41]\n        - option \"25\" [ref=e42]\n        - option \"50\" [ref=e43]"
+}

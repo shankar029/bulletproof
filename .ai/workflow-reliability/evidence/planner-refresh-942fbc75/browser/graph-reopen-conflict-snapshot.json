@@ -1,0 +1,231 @@
+{
+  "lifecycle": {
+    "effectiveLaunch": {
+      "browserLaunched": true,
+      "engine": "chrome",
+      "launchHash": 10543666551248288000
+    },
+    "launched": false,
+    "relaunchedBrowser": false,
+    "restartedBackground": false,
+    "restoreStatus": "not_configured",
+    "reused": true,
+    "saveStatus": "not_attempted"
+  },
+  "origin": "http://127.0.0.1:65109/?projectId=p-1",
+  "refs": {
+    "e1": {
+      "name": "Reload latest",
+      "role": "button"
+    },
+    "e10": {
+      "name": "Pagination",
+      "role": "navigation"
+    },
+    "e11": {
+      "name": "Projects",
+      "role": "link"
+    },
+    "e12": {
+      "name": "Dashboard",
+      "role": "link"
+    },
+    "e13": {
+      "name": "Project name",
+      "role": "textbox"
+    },
+    "e14": {
+      "name": "Create project",
+      "role": "button"
+    },
+    "e15": {
+      "name": "Search titles",
+      "role": "textbox"
+    },
+    "e16": {
+      "name": "Filter status",
+      "role": "combobox"
+    },
+    "e17": {
+      "name": "Filter priority",
+      "role": "combobox"
+    },
+    "e18": {
+      "name": "Apply filters",
+      "role": "button"
+    },
+    "e19": {
+      "name": "Clear filters",
+      "role": "button"
+    },
+    "e2": {
+      "name": "Team planner",
+      "role": "heading"
+    },
+    "e20": {
+      "name": "Draft",
+      "role": "heading"
+    },
+    "e21": {
+      "name": "Edit",
+      "role": "button"
+    },
+    "e22": {
+      "name": "Review",
+      "role": "heading"
+    },
+    "e23": {
+      "name": "Edit",
+      "role": "button"
+    },
+    "e24": {
+      "name": "Previous",
+      "role": "button"
+    },
+    "e25": {
+      "name": "Next",
+      "role": "button"
+    },
+    "e26": {
+      "name": "Tasks per page",
+      "role": "combobox"
+    },
+    "e27": {
+      "name": "Edit task",
+      "role": "heading"
+    },
+    "e28": {
+      "name": "Title",
+      "role": "textbox"
+    },
+    "e29": {
+      "name": "Description",
+      "role": "textbox"
+    },
+    "e3": {
+      "name": "Main",
+      "role": "navigation"
+    },
+    "e30": {
+      "name": "Status",
+      "role": "combobox"
+    },
+    "e31": {
+      "name": "Priority",
+      "role": "combobox"
+    },
+    "e32": {
+      "name": "Save task",
+      "role": "button"
+    },
+    "e33": {
+      "name": "Cancel",
+      "role": "button"
+    },
+    "e34": {
+      "name": "Launch",
+      "role": "link"
+    },
+    "e35": {
+      "name": "Review",
+      "role": "checkbox"
+    },
+    "e36": {
+      "name": "All statuses",
+      "role": "option"
+    },
+    "e37": {
+      "name": "todo",
+      "role": "option"
+    },
+    "e38": {
+      "name": "in progress",
+      "role": "option"
+    },
+    "e39": {
+      "name": "done",
+      "role": "option"
+    },
+    "e4": {
+      "name": "Projects",
+      "role": "heading"
+    },
+    "e40": {
+      "name": "All priorities",
+      "role": "option"
+    },
+    "e41": {
+      "name": "low",
+      "role": "option"
+    },
+    "e42": {
+      "name": "normal",
+      "role": "option"
+    },
+    "e43": {
+      "name": "high",
+      "role": "option"
+    },
+    "e44": {
+      "name": "2",
+      "role": "option"
+    },
+    "e45": {
+      "name": "10",
+      "role": "option"
+    },
+    "e46": {
+      "name": "25",
+      "role": "option"
+    },
+    "e47": {
+      "name": "50",
+      "role": "option"
+    },
+    "e48": {
+      "name": "todo",
+      "role": "option"
+    },
+    "e49": {
+      "name": "in progress",
+      "role": "option"
+    },
+    "e5": {
+      "name": "Launch",
+      "role": "heading"
+    },
+    "e50": {
+      "name": "done",
+      "role": "option"
+    },
+    "e51": {
+      "name": "low",
+      "role": "option"
+    },
+    "e52": {
+      "name": "normal",
+      "role": "option"
+    },
+    "e53": {
+      "name": "high",
+      "role": "option"
+    },
+    "e6": {
+      "name": "Project totals",
+      "role": "region"
+    },
+    "e7": {
+      "name": "Add task",
+      "role": "button"
+    },
+    "e8": {
+      "name": "Draft",
+      "role": "article"
+    },
+    "e9": {
+      "name": "Review",
+      "role": "article"
+    }
+  },
+  "snapshot": "- banner\n  - heading \"Team planner\" [level=1, ref=e2]\n  - navigation \"Main\" [ref=e3]\n    - link \"Projects\" [ref=e11]\n    - link \"Dashboard\" [ref=e12]\n- status\n- alert\n  - StaticText \"status: Reopen active dependent tasks first\"\n- button \"Reload latest\" [ref=e1]\n- complementary \"Projects\"\n  - heading \"Projects\" [level=2, ref=e4]\n  - form\n    - LabelText\n      - StaticText \"Project name\"\n    - textbox \"Project name\" [required, ref=e13]\n    - button \"Create project\" [ref=e14]\n  - list\n    - listitem [level=1]\n      - ListMarker \"• \"\n      - link \"Launch\" [ref=e34]\n- main\n  - heading \"Launch\" [level=2, ref=e5]\n  - region \"Project totals\" [ref=e6]\n    - paragraph\n      - StaticText \"Total: 2\"\n    - paragraph\n      - StaticText \"Todo: 0\"\n    - paragraph\n      - StaticText \"In progress: 0\"\n    - paragraph\n      - StaticText \"Done: 2\"\n    - paragraph\n      - StaticText \"Blocked: 0\"\n    - paragraph\n      - StaticText \"Completion %: 100\"\n  - form \"Task filters\"\n    - LabelText\n      - StaticText \"Search titles\"\n    - textbox \"Search titles\" [ref=e15]\n    - LabelText\n      - StaticText \"Filter status\"\n    - combobox \"Filter status\" [expanded=false, ref=e16]: All statuses\n      - MenuListPopup\n        - option \"All statuses\" [selected, ref=e36]\n        - option \"todo\" [ref=e37]\n        - option \"in progress\" [ref=e38]\n        - option \"done\" [ref=e39]\n    - LabelText\n      - StaticText \"Filter priority\"\n    - combobox \"Filter priority\" [expanded=false, ref=e17]: All priorities\n      - MenuListPopup\n        - option \"All priorities\" [selected, ref=e40]\n        - option \"low\" [ref=e41]\n        - option \"normal\" [ref=e42]\n        - option \"high\" [ref=e43]\n    - button \"Apply filters\" [ref=e18]\n    - button \"Clear filters\" [ref=e19]\n  - button \"Add task\" [ref=e7]\n  - article \"Draft\" [ref=e8]\n    - heading \"Draft\" [level=3, ref=e20]\n    - StaticText \"done\"\n    - paragraph\n      - StaticText \"Priority: normal\"\n    - button \"Edit\" [ref=e21]\n  - article \"Review\" [ref=e9]\n    - heading \"Review\" [level=3, ref=e22]\n    - StaticText \"done\"\n    - paragraph\n      - StaticText \"Priority: normal\"\n    - button \"Edit\" [ref=e23]\n  - navigation \"Pagination\" [ref=e10]\n    - button \"Previous\" [disabled, ref=e24]\n    - StaticText \"Page 1 of 1 · 2 tasks\"\n    - button \"Next\" [disabled, ref=e25]\n    - LabelText\n      - StaticText \"Tasks per page\"\n    - combobox \"Tasks per page\" [expanded=false, ref=e26]: 10\n      - MenuListPopup\n        - option \"2\" [ref=e44]\n        - option \"10\" [selected, ref=e45]\n        - option \"25\" [ref=e46]\n        - option \"50\" [ref=e47]\n  - form \"Edit task\"\n    - heading \"Edit task\" [level=3, ref=e27]\n    - LabelText\n      - StaticText \"Title\"\n    - textbox \"Title\" [ref=e28]: Draft\n      - StaticText \"Draft\"\n    - LabelText\n      - StaticText \"Description\"\n    - textbox \"Description\" [ref=e29]\n    - LabelText\n      - StaticText \"Status\"\n    - combobox \"Status\" [expanded=false, ref=e30]: todo\n      - MenuListPopup\n        - option \"todo\" [selected, ref=e48]\n        - option \"in progress\" [ref=e49]\n        - option \"done\" [ref=e50]\n    - LabelText\n      - StaticText \"Priority\"\n    - combobox \"Priority\" [expanded=false, ref=e31]: normal\n      - MenuListPopup\n        - option \"low\" [ref=e51]\n        - option \"normal\" [selected, ref=e52]\n        - option \"high\" [ref=e53]\n    - group \"Dependencies\"\n      - Legend\n        - StaticText \"Dependencies\"\n      - paragraph\n        - StaticText \"Complete dependencies before starting.\"\n      - checkbox \"Review\" [checked=false, ref=e35]\n    - button \"Save task\" [ref=e32]\n    - button \"Cancel\" [ref=e33]"
+}
