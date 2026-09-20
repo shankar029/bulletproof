@@ -6,6 +6,16 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+- **pi agent mode.** A drift-proof `bulletproof` agent whose system prompt is the workflow,
+  plus four scoped role subagents (`bulletproof-researcher`, `-design-reviewer`, `-verifier`,
+  `-reviewer`) that the full loop delegates to. The pi installer drops them into
+  `~/.pi/agent/agents/`, substituting the real skill path at install time.
+- **Explicit mode flags.** `mode: full` forces the complete six-phase loop with delegation even
+  for a trivial change; `mode: fast` forces the inline short path with no subagents even for a
+  larger one. Omitting the flag keeps automatic tiering. Fast mode still runs the real tests and
+  stops the line if the change turns out to need full rigour.
+
 ### Planned
 - Complete scalar collector composition, coverage/mutation integration and the guarded
   metric bridge; resolve the outstanding native-suite and browser acceptance gaps.
