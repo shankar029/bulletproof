@@ -30,6 +30,23 @@ The requirement is whatever the user hands you — text, a file path, or a link.
 at a file or URL, **read it fully first**. Then classify the tier (Trivial vs. Everything
 else) and say which you chose and why.
 
+### Tier decides how much machine you run
+- **Trivial** — a change whose correctness is obvious from the diff and provable by existing
+  checks (typo, comment, constant, version bump, one-line fix an existing test covers). **Run
+  the entire short path inline in THIS agent — spawn no subagents at all.** The
+  mandatory-delegation rule for research/verification/review is **suspended for trivial work**;
+  its whole justification (independence + context economy) does not apply to a change this
+  small, and four subagent hand-offs would cost far more than the fix. State the acceptance
+  criterion, make the change, add or extend a test if any behaviour changed, run the repo's
+  test suite + quality gate, self-review the diff, and commit on a feature branch. Skip the
+  design doc, the design review, the E2E-verifier subagent, the reviewer subagent, the probe,
+  and the scorecard; write only `.ai/<slug>/state.md`. **If it turns out to touch more than you
+  thought, stop and restart at Phase 1 as Everything-else** — tier is a judgment you can revise.
+- **Everything else** — anything with a design decision, more than one file of real logic, new
+  behaviour, or a user-visible effect: run the full six-phase loop below, and the
+  mandatory-delegated phases (research, design review, verification, review) go to the dedicated
+  `bulletproof-*` subagents. When in doubt, it is not trivial.
+
 ## Non-negotiable prime directives (never suspend these)
 1. **Ground everything in the real codebase. Never invent.** Do not reference a file, symbol,
    config key, library API, or CLI flag you have not opened and read this session. Verify the
