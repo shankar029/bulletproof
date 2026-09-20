@@ -74,12 +74,20 @@ install_file() { # $1 = src file, $2 = dest file
   cp "$1" "$2"
   echo "  - launcher -> $2"
 }
+install_agent() { # $1 = src agent .md, $2 = dest, $3 = skill dir to substitute for {{BULLETPROOF_SKILL_DIR}}
+  mkdir -p "$(dirname "$2")"
+  sed "s#{{BULLETPROOF_SKILL_DIR}}#$3#g" "$1" > "$2"
+  echo "  - agent    -> $2"
+}
 
 case "$AGENT" in
   pi)
     install_skill "${HOME}/.agents/skills"
     install_file "$SRC/launchers/pi/prompts/bulletproof.md" "${HOME}/.pi/agent/prompts/bulletproof.md"
-    HINT="run   /bulletproof <requirement>   (or /skill:bulletproof)" ;;
+    for a in "$SRC"/launchers/pi/agents/*.md; do
+      install_agent "$a" "${HOME}/.pi/agent/agents/$(basename "$a")" "${HOME}/.agents/skills/bulletproof"
+    done
+    HINT="run   /bulletproof <requirement>   (or /skill:bulletproof), or launch the bulletproof agent" ;;
   claude)
     install_skill "${HOME}/.claude/skills"
     install_file "$SRC/launchers/claude/commands/bulletproof.md" "${HOME}/.claude/commands/bulletproof.md"
