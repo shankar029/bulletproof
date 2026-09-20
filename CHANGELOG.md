@@ -11,6 +11,26 @@ All notable changes to this project are documented here. The format is based on
   metric bridge; resolve the outstanding native-suite and browser acceptance gaps.
 - Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 
+## [0.8.0-rc.2] - 2026-09-20
+
+A prerelease adding a drift-proof pi agent mode on top of rc.1. Like rc.1 it is a
+partial-delivery checkpoint, not full acceptance of all planned workflow features.
+
+### Added
+- **pi agent mode.** A drift-proof `bulletproof` agent whose system prompt is the workflow,
+  plus four scoped role subagents (`bulletproof-researcher`, `-design-reviewer`, `-verifier`,
+  `-reviewer`) that the full loop delegates to. The pi installer drops them into
+  `~/.pi/agent/agents/`, substituting the real skill path at install time.
+- **Explicit mode flags.** `mode: full` forces the complete six-phase loop with delegation even
+  for a trivial change; `mode: fast` forces the inline short path with no subagents even for a
+  larger one. Omitting the flag keeps automatic tiering. Fast mode still runs the real tests and
+  stops the line if the change turns out to need full rigour.
+
+### Documentation
+- Restructured the README pi section and rewrote `install/pi.md` to cover the skill, agent and
+  prompt-template install paths, the five agents and their scopes, the model-pinning note, the
+  `bpi` alias recipe, and the mode flags with their two guardrails.
+
 ## [0.8.0-rc.1] - 2026-09-18
 
 This prerelease preserves the existing workflow improvements and Team Planner case study.

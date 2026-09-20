@@ -50,12 +50,38 @@ feature branch; `BULLETPROOF_REF` selects another existing ref.
 
 | Host | Start the workflow | Installation details |
 |---|---|---|
-| pi | `/bulletproof <requirement>` | [Skill and prompt template](install/pi.md) |
+| pi | `/bulletproof <requirement>` (skill) or run it as a drift-proof **agent** (see below) | [Skill, agent and mode flags](install/pi.md) |
 | Claude Code | `/bulletproof <requirement>` | [Skill and command launcher](install/claude-code.md) |
 | Copilot CLI | `copilot --agent bulletproof`, then enter the requirement | [Custom-agent launcher](install/copilot-cli.md) |
 
 The shipped Copilot integration is a custom agent. Check your CLI version's help for available
 agent selection; do not assume slash-command behavior is identical across hosts.
+
+### Run it as an agent (pi)
+
+A skill has to be *loaded* each session and can drift; an **agent's system prompt _is_ the
+workflow**, so it cannot. The pi installer also drops a `bulletproof` agent plus four scoped
+role subagents (`bulletproof-researcher`, `-design-reviewer`, `-verifier`, `-reviewer`) that the
+full loop delegates to. Three ways to run, same workflow:
+
+| Invocation | Runs as | Use when |
+|---|---|---|
+| `/skill:bulletproof <req>` | skill in your current agent | quick, occasional use |
+| `pi --append-system-prompt ~/.pi/agent/prompts/bulletproof.system.md "<req>"` | **main agent** | you want it drift-proof for the whole session |
+| `Agent` tool → `subagent_type: bulletproof` | delegated subagent | orchestrating from another agent |
+
+**Mode flags — override the automatic tier.** By default the agent right-sizes the ceremony
+(trivial → short path, everything else → full loop). Force it by putting a token in the request:
+
+| Flag | Effect |
+|---|---|
+| `mode: full` | complete six-phase loop **with delegation**, even for a tiny change |
+| `mode: fast` | inline short path, **no subagents**, even for a larger change |
+| *(omitted)* | auto-classify by tier |
+
+Fast mode still runs the real test suite and **stops the line** if the change turns out to need
+full rigour — it skips delegation and heavy artifacts, never the proof. Details and a shell-alias
+recipe are in the [pi install guide](install/pi.md).
 
 ```text
 /bulletproof add cursor pagination to the audit API without changing existing clients
@@ -102,7 +128,7 @@ See the [user guide](docs/user-guide.md) for approvals, unattended work, resumin
 | Feature | What it adds |
 |---|---|
 | **Surface-appropriate E2E** | Real browser flows with agent-browser, HTTP requests for services, and actual CLI/library invocation. [E2E](references/testing-and-e2e.md) |
-| **Independent roles** | Fresh-context research, verification and review; a self-review is not a substitute for independent acceptance. [Delegation](references/delegation.md) |
+| **Independent roles** | Fresh-context research, verification and review through dedicated `bulletproof-*` role subagents; a self-review is not a substitute for independent acceptance. [Delegation](references/delegation.md) |
 | **Guarded command routing** | `status`, `next`, `record`, `close`, `adopt`: registered commands, immutable receipts and current prerequisites. Recovery and positive quality closure remain unavailable. [Operator guide](references/workflow-gates.md) |
 | **Deterministic quality reports** | Base/head observations with separate measured status and required-proof completeness. Missing required proof fails closed. [Metrics](references/quality-metrics.md) |
 | **Native ESM/CJS mutation evidence** | Diff-scoped mutation, exact test arguments and working directory, native assertion classification, restoration and stale-report rejection. [Mutation](references/quality-metrics.md) |

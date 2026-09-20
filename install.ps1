@@ -61,12 +61,21 @@ try {
     Copy-Item $from $to -Force
     Write-Host "  - launcher -> $to"
   }
+  function Install-Agent($from, $to, $skillDir) {
+    New-Item -ItemType Directory -Force -Path (Split-Path $to) | Out-Null
+    (Get-Content $from -Raw).Replace('{{BULLETPROOF_SKILL_DIR}}', $skillDir) | Set-Content $to -NoNewline
+    Write-Host "  - agent    -> $to"
+  }
 
   switch ($Agent) {
     'pi' {
       Install-Skill (Join-Path $HOME '.agents/skills')
       Install-File (Join-Path $src 'launchers/pi/prompts/bulletproof.md') (Join-Path $HOME '.pi/agent/prompts/bulletproof.md')
-      $hint = 'run   /bulletproof <requirement>   (or /skill:bulletproof)'
+      $skillDir = (Join-Path $HOME '.agents/skills/bulletproof') -replace '\\','/'
+      Get-ChildItem (Join-Path $src 'launchers/pi/agents') -Filter *.md | ForEach-Object {
+        Install-Agent $_.FullName (Join-Path $HOME (".pi/agent/agents/" + $_.Name)) $skillDir
+      }
+      $hint = 'run   /bulletproof <requirement>   (or /skill:bulletproof), or launch the bulletproof agent'
     }
     'claude' {
       Install-Skill (Join-Path $HOME '.claude/skills')
