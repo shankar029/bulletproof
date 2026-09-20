@@ -6,6 +6,16 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Planned
+- Complete scalar collector composition, coverage/mutation integration and the guarded
+  metric bridge; resolve the outstanding native-suite and browser acceptance gaps.
+- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+
+## [0.8.0-rc.2] - 2026-09-20
+
+A prerelease adding a drift-proof pi agent mode on top of rc.1. Like rc.1 it is a
+partial-delivery checkpoint, not full acceptance of all planned workflow features.
+
 ### Added
 - **pi agent mode.** A drift-proof `bulletproof` agent whose system prompt is the workflow,
   plus four scoped role subagents (`bulletproof-researcher`, `-design-reviewer`, `-verifier`,
@@ -16,10 +26,10 @@ All notable changes to this project are documented here. The format is based on
   larger one. Omitting the flag keeps automatic tiering. Fast mode still runs the real tests and
   stops the line if the change turns out to need full rigour.
 
-### Planned
-- Complete scalar collector composition, coverage/mutation integration and the guarded
-  metric bridge; resolve the outstanding native-suite and browser acceptance gaps.
-- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+### Documentation
+- Restructured the README pi section and rewrote `install/pi.md` to cover the skill, agent and
+  prompt-template install paths, the five agents and their scopes, the model-pinning note, the
+  `bpi` alias recipe, and the mode flags with their two guardrails.
 
 ## [0.8.0-rc.1] - 2026-09-18
 
