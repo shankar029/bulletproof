@@ -50,12 +50,22 @@ feature branch; `BULLETPROOF_REF` selects another existing ref.
 
 | Host | Start the workflow | Installation details |
 |---|---|---|
-| pi | `/bulletproof <requirement>` | [Skill and prompt template](install/pi.md) |
+| pi | `/bulletproof <requirement>` — or run it as an **agent** (drift-proof): the `bulletproof` main agent plus `bulletproof-*` role subagents | [Skill and prompt template](install/pi.md) |
 | Claude Code | `/bulletproof <requirement>` | [Skill and command launcher](install/claude-code.md) |
 | Copilot CLI | `copilot --agent bulletproof`, then enter the requirement | [Custom-agent launcher](install/copilot-cli.md) |
 
 The shipped Copilot integration is a custom agent. Check your CLI version's help for available
 agent selection; do not assume slash-command behavior is identical across hosts.
+
+**pi agent mode (optional).** The pi installer also drops a `bulletproof` agent whose system
+prompt *is* the workflow (it cannot drift from the skill) and four scoped role subagents
+(`bulletproof-researcher`, `-design-reviewer`, `-verifier`, `-reviewer`). Run it as the main
+agent with `pi --append-system-prompt ~/.pi/agent/prompts/bulletproof.system.md "<requirement>"`,
+or wrap that in a shell alias. Force the ceremony level with a **mode flag** in the requirement:
+`mode: full` runs the complete six-phase loop with delegation even for a tiny change; `mode: fast`
+runs the inline short path with no subagents even for a larger one. Omit it to let the agent
+auto-classify the tier. Fast mode still runs the real tests and stops the line if the change
+turns out to need full rigour.
 
 ```text
 /bulletproof add cursor pagination to the audit API without changing existing clients

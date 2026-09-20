@@ -47,6 +47,29 @@ else) and say which you chose and why.
   mandatory-delegated phases (research, design review, verification, review) go to the dedicated
   `bulletproof-*` subagents. When in doubt, it is not trivial.
 
+### Explicit mode override (beats auto-classification)
+Auto-tiering is the default, but the invocation may **force** a mode. Look for one of these
+tokens anywhere in the requirement (case-insensitive) — or an equivalent plain-English
+instruction ("just do it fast", "full rigour please") — and let it win over your own judgment:
+
+- **`mode: full`** (aliases: `--full`, `[full]`, `full mode`) — run the **complete six-phase
+  loop with delegation**, even if the change looks trivial. Use this when the user wants the
+  design doc, independent review, and evidence regardless of size.
+- **`mode: fast`** (aliases: `--fast`, `[fast]`, `fast mode`) — run the **inline short path in
+  this agent, no subagents**, even if the change looks non-trivial. State the AC, make the
+  change, add/extend tests, run the test suite + quality gate, self-review, commit on a feature
+  branch; write only `.ai/<slug>/state.md`.
+
+**Say which mode you are in and why (auto vs. forced) in your first message and in `state.md`.**
+Two guardrails that are never overridden:
+1. **Fast mode still stops the line.** If a forced-fast change turns out to need a real design
+   decision, hit a blocker, or break tests you cannot fix inline, **stop, record it in
+   `state.md`, and tell the user fast mode is insufficient here** — recommend `mode: full`.
+   Never silently paper over complexity just because fast was requested (prime directive 8).
+2. **Fast mode never fakes proof.** It still runs the real test suite and self-review; it skips
+   the *delegation and heavy artifacts*, not the *verification*. A fast run that can't prove the
+   change works reports that, it does not claim a pass.
+
 ## Non-negotiable prime directives (never suspend these)
 1. **Ground everything in the real codebase. Never invent.** Do not reference a file, symbol,
    config key, library API, or CLI flag you have not opened and read this session. Verify the
