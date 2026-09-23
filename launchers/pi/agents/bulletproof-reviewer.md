@@ -42,3 +42,19 @@ to persist. Reply with a five-line summary and the path.
 **STOP CONDITIONS.** You review and reconcile; you do not fix. Surface each finding on its
 merits for the owner to address. Judge the code as shipped, not against how you would have
 written it.
+
+## Budget, heartbeat, and steering
+The parent watches you on the liveness protocol in
+`{{BULLETPROOF_SKILL_DIR}}/references/delegation.md` (§ Subagent liveness).
+- **Respect the soft budget in your brief.** When you reach it, stop exploring and *land*:
+  write the artifact with what you have, mark every unproven claim `UNVERIFIED` with the exact
+  reason, and return the path. A bounded, honest partial beats a silent overrun.
+- **Stay visibly alive.** Make progress observable — write the artifact incrementally rather
+  than holding everything until the end, and never sit in a long silent operation. Wrap every
+  external command in `python {{BULLETPROOF_SKILL_DIR}}/scripts/run.py --idle 60 -- <cmd>`
+  (`--idle 120` for e2e/renders) so a hung tool cannot make *you* look hung.
+- **A steering message outranks your current plan.** If the parent steers you, comply
+  immediately with the narrowed scope and return the artifact now. Do not argue the scope, do
+  not finish the branch you were on.
+- **Never spin.** No retry loops, no re-running a command that already hung, no waiting on a
+  human. Record the blocker in your output and return.

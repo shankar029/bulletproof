@@ -91,10 +91,20 @@ Blocked on: none | <what, and who/what unblocks it>
 ## Assumptions
 - <assumption> (unconfirmed — see clarifications.md)
 
+## Subagents
+| handle | phase | model | launched | budget | checks | status |
+|---|---|---|---|---|---|---|
+| research | 1 | sonnet | 13:40 | 12m | 1 | done (research.md) |
+| verify | 5 | sonnet | 14:02 | 25m | 2 | steered 14:29 — running |
+
 ## Log
 - <date> G2 passed, design signed off by user
 - <date> I1 complete: 12 unit / 3 integration green, reviewed, committed
 ```
+
+The `## Subagents` table is the watch list for `delegation.md` § Subagent liveness: one row per
+spawn, updated at every checkpoint and closed to `done` / `killed` / `blocked`. A row left
+`running` when the turn ends must be called out in the chat summary.
 
 ## Protocol
 
@@ -108,7 +118,8 @@ requirement.
 
 **Write state at boundaries, not continuously:** on each gate pass, on each increment
 completion, when an assumption or question is recorded, **when you hand a document to the user
-and stop for sign-off**, and whenever you are interrupted. Updating state is cheap; losing a
+and stop for sign-off**, on every subagent launch, liveness checkpoint, steer, kill or relaunch,
+and whenever you are interrupted. Updating state is cheap; losing a
 day of design is not.
 
 **Waiting for a human is a stop, not a loop.** When a document is out for review, record

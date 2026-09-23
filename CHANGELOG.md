@@ -6,6 +6,35 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+- **Subagent liveness monitoring.** Delegated phases are now watched, not just launched. Each
+  spawn gets a stable handle, a `date`-stamped row in a `## Subagents` table in `state.md`, and
+  a soft budget (research/design 12m, design review 10m, plan 10m, verify 25m, review 15m,
+  impl worker 30m; hard ceiling 2×). The parent checks liveness at the soft budget and every
+  half-budget after (max three checks), where **stuck** means tool count, artifact size and
+  mtime all unchanged across two consecutive checks. Escalation is bounded: `steer_subagent`
+  with a narrowing instruction → half-budget grace → kill and relaunch **once** on a narrowed
+  scope → a second hang is a blocker, never a third launch, and never a licence to fold a
+  mandatory phase inline. A steered partial still faces path resolution and three random
+  citation spot-checks; uncovered ground is recorded `UNVERIFIED`.
+  See `references/delegation.md` § Subagent liveness.
+- **Role agents cooperate with the watch.** Each `bulletproof-*` agent carries a *Budget,
+  heartbeat and steering* section: land at budget with `UNVERIFIED` markers rather than
+  overrunning silently, write artifacts incrementally so progress is observable, wrap external
+  commands in `run.py --idle` so a hung tool cannot make the agent look hung, and treat a
+  steering message as outranking the current plan.
+
+### Changed
+- **Search hygiene for read-only roles.** The researcher is told to search with the `grep`/`find`
+  tools and, when it must shell out, to use `rg -t <type>` or a subtree and `fd -g '<glob>'` —
+  never `grep -r`, `find .` or `--include=*` from the repo root. Measured on a ~7.5k-file repo:
+  `grep -r` did not return in 300s and killed the run, `rg` default took 32.2s, `rg -t` 1.0s.
+- **`bulletproof-design-reviewer` no longer gets a shell** (`tools: read, grep, find, ls`). It
+  grades documents against source and never needed `bash`. The researcher keeps it for
+  `git log`/`git show`, which are load-bearing for history evidence.
+- Parallel implementation workers are budgeted and watched independently, so one stuck worker
+  neither postpones the other checkpoints nor blocks integrating slices that already went green.
+
 ### Planned
 - Complete scalar collector composition, coverage/mutation integration and the guarded
   metric bridge; resolve the outstanding native-suite and browser acceptance gaps.

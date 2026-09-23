@@ -33,6 +33,11 @@ build on them. Record the split in the plan.
   Workers implement the design; they do not redesign. A shared component can recur in sequential
   increments, but shared-file changes are never concurrently owned.
 - Keep concurrency modest (about 2–4) so failures stay debuggable.
+- **Budget and watch each worker independently** per `delegation.md` § Subagent liveness: its
+  own `state.md` row, its own soft budget (30 min default for an implementation slice), its own
+  checkpoints. One stuck worker never postpones the others' checks, and never blocks the
+  integration of slices that finished — steer it, then kill-and-relaunch-once on its own
+  narrowed slice, then raise it as a blocker while the green slices proceed.
 
 ## Integrate
 Isolated green is not proof. Merge the work back, resolve conflicts in the main context, then

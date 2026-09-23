@@ -41,3 +41,19 @@ screenshots, console/errors, one pass/fail line per criterion) and fill the `Tes
 credentials, or runnable host), do **not** weaken the gate or fake a pass: verify at the deepest
 level the environment allows, name the blocker, list the criteria left environment-unverified,
 and give the exact command a human can run to finish the proof.
+
+## Budget, heartbeat, and steering
+The parent watches you on the liveness protocol in
+`{{BULLETPROOF_SKILL_DIR}}/references/delegation.md` (§ Subagent liveness).
+- **Respect the soft budget in your brief.** When you reach it, stop exploring and *land*:
+  write the artifact with what you have, mark every unproven claim `UNVERIFIED` with the exact
+  reason, and return the path. A bounded, honest partial beats a silent overrun.
+- **Stay visibly alive.** Make progress observable — write the artifact incrementally rather
+  than holding everything until the end, and never sit in a long silent operation. Wrap every
+  external command in `python {{BULLETPROOF_SKILL_DIR}}/scripts/run.py --idle 60 -- <cmd>`
+  (`--idle 120` for e2e/renders) so a hung tool cannot make *you* look hung.
+- **A steering message outranks your current plan.** If the parent steers you, comply
+  immediately with the narrowed scope and return the artifact now. Do not argue the scope, do
+  not finish the branch you were on.
+- **Never spin.** No retry loops, no re-running a command that already hung, no waiting on a
+  human. Record the blocker in your output and return.

@@ -105,6 +105,21 @@ Two guardrails that are never overridden:
   exit 124/125, record the hung command in `state.md`, apply one concrete remedy, relaunch
   **once**; a second hang is a blocker, not a loop.
 - **Test runners must be non-interactive** (`vitest run`, `--watch=false`, `--ci`).
+- **Watch every subagent you launch — a silent agent is a hung command.** Spawn delegated
+  phases with `run_in_background: true` and a stable `name`, stamp the launch (`date`) into a
+  `## Subagents` row in `state.md`, and give each a soft budget (research/design 12m, design
+  review 10m, plan 10m, verify 25m, review 15m, impl worker 30m; hard ceiling = 2×). Do your
+  own work meanwhile — never poll in a loop. At the soft budget, then every half-budget (max 3
+  checks), run one non-blocking `get_subagent_result` + `ls -l` of the expected artifact.
+  **Stuck = no advance in tool count, artifact size, or mtime across two consecutive checks**,
+  or anything past its hard ceiling.
+- **Correct a stuck subagent once, then stop the line.** `steer_subagent` with a concrete
+  narrowing instruction ("you are past budget — write `<artifact>` now for AC1–AC3, mark
+  unproven claims `UNVERIFIED`, return the path"), grace = half a budget, re-check; still stuck
+  → `bg_kill`, record the hang in `state.md`, relaunch **once** with narrowed scope (prefer a
+  different model for review/verify). A second hang is a blocker, not a third launch — and
+  never a licence to fold a mandatory phase inline. Full protocol:
+  `references/delegation.md` § Subagent liveness.
 - **Bound every retry.** Record the blocker and move on rather than repeating a hanging command.
 - **Commit each increment as it goes green** on a feature branch — never on a protected/default
   branch. Uncommitted work is lost work.
@@ -164,7 +179,9 @@ subagent for these phases, use these `subagent_type`s — not a generic one:
 Research, verification, and review are **mandatory-delegated — there is no in-session fallback**;
 if no subagent can be spawned, stop and record the blocker (prime directive 8). Design (Phase 2)
 and planning (Phase 3) delegate by default but may run inline to the same standard when a
-subagent is unavailable (record the fallback in `state.md`). On receiving any delegated artifact:
+subagent is unavailable (record the fallback in `state.md`). Every spawn is **watched on the
+liveness protocol** (budget → checkpoint → steer → one relaunch → blocker) in
+`references/delegation.md`. On receiving any delegated artifact:
 `ls` the exact path, read it, spot-check three citations at random, and only then pass the gate.
 
 ## Convergence

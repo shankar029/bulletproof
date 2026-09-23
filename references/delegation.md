@@ -53,6 +53,92 @@ gracefully:
 - **Bound it.** Give the subagent a timeout and a scope; if it fails or hangs, record the
   blocker rather than re-running it a third time. Inline fallback applies only to optional
   delegation; mandatory research, verification and review remain blocked.
+- **Watch it while it runs.** A launched subagent is not a finished subagent. Follow the
+  liveness protocol below — a silent agent is the delegation equivalent of a hung command, and
+  it fails the same way: nothing tells you it happened.
+
+## Subagent liveness: watch, steer, then stop the line
+
+A hung subagent is invisible by default. The completion notification never arrives, the parent
+has no evidence anything is wrong, and the run dies quietly with a gate half-open. Treat a
+delegated phase exactly like an external command: **bound it, watch progress not wall-clock,
+and recover once.**
+
+### 1. Launch it watchable
+- Spawn mandatory-delegated phases with `run_in_background: true` and a short, stable `name`
+  (`research`, `design-review`, `verify`, `review`, `impl-<slice>`), so it can be addressed by
+  handle for status, steering, and kill.
+- Stamp the launch: `date` in the shell (the model has no clock), and record a row in
+  `state.md` under `## Subagents`:
+
+  | handle | phase | model | launched | budget | checks | status |
+  |---|---|---|---|---|---|---|
+  | verify | 5 — E2E | sonnet | 14:02 | 25m | 0 | running |
+
+- Tell the subagent its own budget in the brief, and what to do when it runs out: *stop
+  exploring, write the artifact with what you have, mark every unproven claim `UNVERIFIED`,
+  return the path.* An agent that knows its budget usually lands inside it.
+
+### 2. Soft budgets (per attempt)
+
+| Phase | handle | soft budget | hard ceiling |
+|---|---|---|---|
+| 1 — Research | `research` | 12 min | 25 min |
+| 2 — Design | `design` | 12 min | 25 min |
+| 2b — Design review | `design-review` | 10 min | 20 min |
+| 3 — Planning | `plan` | 10 min | 20 min |
+| 5 — E2E verification | `verify` | 25 min | 45 min |
+| 6 — Review + reconcile | `review` | 15 min | 30 min |
+| 4 — Parallel impl worker | `impl-<slice>` | 30 min | 60 min |
+
+Scale budgets with the size of the change and record any deviation in `state.md`. The hard
+ceiling is absolute: past it the attempt is dead regardless of what status reports.
+
+### 3. Checkpoints — regular, bounded, evidence-driven
+- Do the parent's own non-conflicting work while a subagent runs. **Never** sit in a
+  poll/sleep loop; the completion notification wakes you and supersedes every check below.
+- Run a **liveness check at the soft budget, then every half-budget after it**, to a maximum
+  of **three checks per attempt**. Exceeding a declared budget *is* the concrete evidence that
+  justifies inspecting a running task — this is not idle polling.
+- A check is one non-blocking `get_subagent_result` (or `bg_status` for background commands)
+  plus a look at the expected artifact path (`ls -l`, byte size, mtime).
+- If the parent genuinely has no owned work left, anchor the next checkpoint with **one**
+  bounded wait — `python <skill>/scripts/run.py --max <half-budget-seconds> -- sleep <same>` —
+  never more than one wait per checkpoint, never unbounded.
+
+### 4. What counts as stuck
+Compare the current check to the previous one. It is **stuck** when, across two consecutive
+checks, *none* of these advanced:
+- tool-call count / turn count,
+- the artifact file's existence, size, or mtime,
+- any log or evidence file it owns.
+
+Slow ≠ stuck. An agent still making tool calls past budget gets steered, not killed. An agent
+past its **hard ceiling** is treated as stuck regardless of apparent activity — it is looping.
+
+### 5. Escalation ladder — one correction, then the line stops
+1. **Steer** (`steer_subagent`): a concrete, narrowing instruction, never "are you still
+   there?". Name the budget overrun, cut the scope explicitly, and demand the artifact now:
+   *"You are 6 min past your 12-min budget. Stop exploring. Write `.ai/<slug>/research.md`
+   now covering AC1–AC3 only, mark anything unproven `UNVERIFIED`, and return the path."*
+2. **Grace = half the soft budget.** Re-check once.
+3. **Kill and relaunch once.** Still stuck → `bg_kill` / abandon the handle, record in
+   `state.md` the last observed activity, the checks performed, and the steer that failed.
+   Relaunch **exactly once** with a narrowed scope and a smaller budget; for review and
+   verification roles, prefer a different model on the retry.
+4. **Second hang is a blocker.** No third launch. Record it under prime directive 8 with a
+   recommended default and stop the line. Mandatory research/verification/review stay blocked —
+   a hung subagent is never a licence to fold the phase into the parent's context.
+
+### 6. Partial output is still evidence, not a pass
+A steered agent that returns early is held to the same gate: resolve the exact path, read it,
+spot-check three citations at random. Everything it did not cover is recorded as `UNVERIFIED`
+in `traceability.md` and owned by the parent — never assumed green because the file exists.
+
+### 7. Close the row
+On completion, kill, or blocker, update the `state.md` row to `done` / `killed` / `blocked`
+with the outcome. An open `running` row at the end of a turn is itself a reportable state:
+say so in the chat summary rather than ending silently.
 
 ## Which phases
 

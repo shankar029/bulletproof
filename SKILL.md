@@ -128,6 +128,18 @@ After reading the requirement, classify it — and say which tier you chose and 
   `references/workflow-gates.md`; no recovery/reset/lock-steal API is available.
 - **Test runners must be non-interactive.** Use the single-run form (`vitest run`, `--watch=false`,
   `--ci`), never a watch mode.
+- **Monitor delegated subagents the way you monitor commands — on progress, not wall-clock.**
+  A subagent that stalls never sends a completion notification, so nothing tells you the phase
+  died. Launch each delegated phase in the background with a stable handle, stamp the launch
+  time (`date`) and a soft budget into a `## Subagents` table in `state.md`, then do owned work
+  — never a poll/sleep loop. At the soft budget, and every half-budget after (max **three**
+  checks per attempt), take one non-blocking `get_subagent_result` reading plus `ls -l` of the
+  expected artifact. **Stuck** = tool count, artifact size and mtime all unchanged across two
+  consecutive checks, or anything past its hard ceiling (2× budget). Then: `steer_subagent`
+  with a concrete narrowing instruction → half-budget grace → re-check → `bg_kill` and **one**
+  narrowed relaunch (different model for review/verify) → a second hang is a blocker, never a
+  third launch and never an excuse to fold a mandatory phase inline. Budgets, the stuck test,
+  and the full ladder live in `references/delegation.md` § Subagent liveness.
 - **Bound every retry.** If a command hangs or a tool is missing, record the blocker in
   `state.md` and move on. Repeating a hanging command is how a run dies silently. A hang gets **one**
   recover-and-relaunch under `run.py` (per the rule above); a second idle kill is a blocker, never a
