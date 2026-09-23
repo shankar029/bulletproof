@@ -44,7 +44,10 @@ EOF
 esac
 
 TMP=""
-cleanup() { [ -n "$TMP" ] && rm -rf "$TMP"; }
+cleanup() {
+  [ -n "$TMP" ] && rm -rf "$TMP"
+  return 0
+}
 trap cleanup EXIT INT TERM
 
 if [ -n "${BULLETPROOF_SRC:-}" ]; then
@@ -120,18 +123,26 @@ install_pi_workflow() {
   fi
   if command -v pi >/dev/null 2>&1 && [ -f "$SRC/agent/packages.txt" ]; then
     echo "  - installing pi plugins from packages.txt ..."
+    WORKFLOW_PLUGIN_FAILURES=""
     while IFS= read -r line; do
       spec="${line%%#*}" # strip inline comment
       spec="$(printf '%s' "$spec" | tr -d '[:space:]')"
       [ -z "$spec" ] && continue
       echo "    + $spec"
-      pi install "$spec" || echo "    ! failed: $spec (install manually with: pi install $spec)"
+      if ! pi install "$spec"; then
+        echo "    ! failed: $spec"
+        WORKFLOW_PLUGIN_FAILURES="$WORKFLOW_PLUGIN_FAILURES $spec"
+      fi
     done <"$SRC/agent/packages.txt"
     # pi-browser-debug drives Chrome through Playwright - fetch its Chromium binary.
     if grep -q 'pi-browser-debug' "$SRC/agent/packages.txt"; then
       echo "  - installing Playwright Chromium for pi-browser-debug ..."
       (cd "$PI_DIR/npm" 2>/dev/null && npx --yes playwright install chromium) ||
         echo "    ! Playwright Chromium install failed; run 'npx playwright install chromium' manually"
+    fi
+    if [ -n "$WORKFLOW_PLUGIN_FAILURES" ]; then
+      echo "  ! some plugins did NOT install:$WORKFLOW_PLUGIN_FAILURES"
+      echo "    retry each with: pi install <spec>"
     fi
   else
     echo "  ! skipped plugin install (pi unavailable); run 'pi install <spec>' per agent/packages.txt"
@@ -182,7 +193,7 @@ BPI
     echo "  - bpi func -> $(basename "$prof")"
   }
   add_bpi_to_profile "${HOME}/.bashrc"
-  [ -f "${HOME}/.zshrc" ] && add_bpi_to_profile "${HOME}/.zshrc"
+  if [ -f "${HOME}/.zshrc" ]; then add_bpi_to_profile "${HOME}/.zshrc"; fi
 }
 
 case "$AGENT" in
@@ -216,6 +227,10 @@ esac
 
 echo "OK: bulletproof installed for $AGENT"
 echo "    next: $HINT"
+if [ "$AGENT" = pi ] && [ -z "${BULLETPROOF_SKILL_ONLY:-}" ]; then
+  echo "    auth: run 'pi' then '/login' to authenticate your provider (secrets are never stored)"
+  echo "    check: 'pi list' shows the installed plugins"
+fi
 if [ "$AGENT" = pi ]; then
   echo "    tip:  reload your shell (. ~/.bashrc) once, then:  bpi \"<requirement>\"  (or bpi --fast / --full)"
 fi

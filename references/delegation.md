@@ -14,6 +14,11 @@ mandatory three:
 
 **Spend the context where the work is.**
 
+On pi, the delegated phases run on `@tintinweb/pi-subagents`, which provides the `Agent`,
+`get_subagent_result` and `steer_subagent` tools this reference assumes; it is installed by the
+workflow layer (`references/pi-workflow.md`). On another host, use its equivalent subagent
+facility — the roles and gates below are the same.
+
 ## Capability ladder
 
 **Research, verification (Phase 5) and review (Phase 6) are always run in a subagent — no
@@ -65,6 +70,7 @@ delegated phase exactly like an external command: **bound it, watch progress not
 and recover once.**
 
 ### 1. Launch it watchable
+
 - Spawn mandatory-delegated phases with `run_in_background: true` and a short, stable `name`
   (`research`, `design-review`, `verify`, `review`, `impl-<slice>`), so it can be addressed by
   handle for status, steering, and kill.
@@ -82,7 +88,7 @@ and recover once.**
 ### 2. Soft budgets (per attempt)
 
 | Phase | handle | soft budget | hard ceiling |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 — Research | `research` | 12 min | 25 min |
 | 2 — Design | `design` | 12 min | 25 min |
 | 2b — Design review | `design-review` | 10 min | 20 min |
@@ -95,6 +101,7 @@ Scale budgets with the size of the change and record any deviation in `state.md`
 ceiling is absolute: past it the attempt is dead regardless of what status reports.
 
 ### 3. Checkpoints — regular, bounded, evidence-driven
+
 - Do the parent's own non-conflicting work while a subagent runs. **Never** sit in a
   poll/sleep loop; the completion notification wakes you and supersedes every check below.
 - Run a **liveness check at the soft budget, then every half-budget after it**, to a maximum
@@ -107,8 +114,10 @@ ceiling is absolute: past it the attempt is dead regardless of what status repor
   never more than one wait per checkpoint, never unbounded.
 
 ### 4. What counts as stuck
+
 Compare the current check to the previous one. It is **stuck** when, across two consecutive
 checks, *none* of these advanced:
+
 - tool-call count / turn count,
 - the artifact file's existence, size, or mtime,
 - any log or evidence file it owns.
@@ -117,6 +126,7 @@ Slow ≠ stuck. An agent still making tool calls past budget gets steered, not k
 past its **hard ceiling** is treated as stuck regardless of apparent activity — it is looping.
 
 ### 5. Escalation ladder — one correction, then the line stops
+
 1. **Steer** (`steer_subagent`): a concrete, narrowing instruction, never "are you still
    there?". Name the budget overrun, cut the scope explicitly, and demand the artifact now:
    *"You are 6 min past your 12-min budget. Stop exploring. Write `.ai/<slug>/research.md`
@@ -131,11 +141,13 @@ past its **hard ceiling** is treated as stuck regardless of apparent activity �
    a hung subagent is never a licence to fold the phase into the parent's context.
 
 ### 6. Partial output is still evidence, not a pass
+
 A steered agent that returns early is held to the same gate: resolve the exact path, read it,
 spot-check three citations at random. Everything it did not cover is recorded as `UNVERIFIED`
 in `traceability.md` and owned by the parent — never assumed green because the file exists.
 
 ### 7. Close the row
+
 On completion, kill, or blocker, update the `state.md` row to `done` / `killed` / `blocked`
 with the outcome. An open `running` row at the end of a turn is itself a reportable state:
 say so in the chat summary rather than ending silently.
@@ -159,7 +171,7 @@ context strings are not authentication or evidence of host isolation. If the hos
 provide the required fresh role, report the blocker rather than rename self-review.
 
 | Phase | Delegate | Why |
-|---|---|---|
+| --- | --- | --- |
 | **1 — Research** | **Required — always a subagent** | Independence + biggest context win; read-heavy, output small. Read-only. |
 | **2 — Design** | **Yes, by default** (inline fallback allowed) | Quality-critical artifact; benefits from fresh eyes and a single job. |
 | **2b — Design review** | **Yes** (prefer a different model; read-only) | Cheapest defect-catch; grades the design before the human sees it. See below. |

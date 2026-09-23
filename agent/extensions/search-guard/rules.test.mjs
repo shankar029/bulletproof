@@ -43,7 +43,11 @@ for (const [cmd, expect, note] of cases) {
   const r = evaluate(cmd);
   const blocked = r !== undefined;
   const ok = blocked === expect;
-  ok ? pass++ : fail++;
+  if (ok) {
+    pass++;
+  } else {
+    fail++;
+  }
   console.log(
     `${ok ? "PASS" : "FAIL"}  blocked=${String(blocked).padEnd(5)} want=${String(expect).padEnd(5)} ${(r?.id ?? "-").padEnd(22)} ${note}`,
   );
@@ -67,6 +71,16 @@ const timeoutCases = [
     "idle runner",
   ],
   ["docker build .", LONG_TIMEOUT_S, "docker build"],
+  ["composer install", LONG_TIMEOUT_S, "php composer"],
+  ["bundle install", LONG_TIMEOUT_S, "ruby bundler"],
+  ["go mod download", LONG_TIMEOUT_S, "go modules"],
+  ["go build ./...", LONG_TIMEOUT_S, "go build"],
+  ["mix deps.get", LONG_TIMEOUT_S, "elixir mix"],
+  ["./gradlew test", LONG_TIMEOUT_S, "gradle wrapper"],
+  ["rspec", LONG_TIMEOUT_S, "ruby rspec"],
+  ["sbt compile", LONG_TIMEOUT_S, "scala sbt"],
+  ["swift test", LONG_TIMEOUT_S, "swift test"],
+  ["rake", LONG_TIMEOUT_S, "rake task runner"],
   [
     "agent-browser install",
     LONG_TIMEOUT_S,
@@ -99,7 +113,11 @@ const timeoutCases = [
 for (const [cmd, want, note] of timeoutCases) {
   const got = defaultTimeoutSeconds(cmd);
   const ok = got === want;
-  ok ? pass++ : fail++;
+  if (ok) {
+    pass++;
+  } else {
+    fail++;
+  }
   console.log(
     `${ok ? "PASS" : "FAIL"}  timeout=${String(got).padEnd(6)} want=${String(want).padEnd(6)} ${"".padEnd(17)} ${note}`,
   );

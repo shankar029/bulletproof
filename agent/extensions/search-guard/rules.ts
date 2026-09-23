@@ -113,17 +113,35 @@ export const LONG_TIMEOUT_S = 1800;
  * Commands that routinely exceed the ordinary bound. Matching one raises the ceiling rather
  * than removing it - an 1800s failure is still recoverable, an unbounded hang is not.
  */
+/**
+ * Commands that routinely exceed the ordinary bound. Matching one raises the ceiling rather
+ * than removing it - an 1800s failure is still recoverable, an unbounded hang is not.
+ *
+ * This is a LIVING ALLOWLIST. It leans toward the JS/.NET/Python stacks these agents see most,
+ * but a slow build/install/test on any stack deserves the long bound. When a project uses a
+ * toolchain not listed here, add its package-manager / build / test binary - matching only
+ * raises the ceiling, it never blocks or removes anything.
+ */
 const LONG_RUNNING = new RegExp(
 	[
 		// package managers
 		`${B}(?:npm|pnpm|yarn|bun)\\s+(?:ci|install|i|add|update|run\\s+\\S+)\\b`,
 		`${B}(?:pip|pip3|poetry|uv)\\s+(?:install|sync|add)\\b`,
 		`${B}(?:nuget|dotnet)\\s+restore\\b`,
+		`${B}composer\\s+(?:install|update|require)\\b`,
+		`${B}bundle\\s+(?:install|update)\\b`,
+		`${B}gem\\s+install\\b`,
+		`${B}go\\s+(?:mod\\s+(?:download|tidy)|get)\\b`,
+		`${B}mix\\s+(?:deps\\.get|compile)\\b`,
 		// builds
 		`${B}dotnet\\s+(?:build|publish|test|pack)\\b`,
-		`${B}(?:msbuild|cargo|gradle|gradlew|mvn|make|cmake|ninja|bazel|tsc|webpack|vite)\\b`,
+		`${B}(?:msbuild|cargo|gradle|gradlew|mvn|make|cmake|ninja|bazel|tsc|webpack|vite|sbt)\\b`,
+		`${B}\\./(?:gradlew|mvnw)\\b`,
+		`${B}(?:go|swift)\\s+build\\b`,
 		// test runners
-		`${B}(?:pytest|vitest|jest|mocha|playwright|cypress|ctest|go\\s+test)\\b`,
+		`${B}(?:pytest|vitest|jest|mocha|playwright|cypress|ctest|rspec)\\b`,
+		`${B}(?:go|swift)\\s+test\\b`,
+		`${B}(?:rake|tox|nox)\\b`,
 		// containers / browsers
 		`${B}docker\\s+(?:build|compose)\\b`,
 		`${B}npx\\s+playwright\\s+install\\b`,

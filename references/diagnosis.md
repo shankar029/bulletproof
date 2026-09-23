@@ -15,7 +15,10 @@ Temporary experiments do not authorize production changes or bypass design appro
 Read enough source and existing tests to find the entry point and construct the reproduction.
 Choose the smallest appropriate interface that still reaches the real failure: an existing test,
 CLI invocation, API request, browser flow, or authorized replay/harness. Keep the original input
-and scenario so a smaller reproduction cannot become the only thing the fix proves.
+and scenario so a smaller reproduction cannot become the only thing the fix proves. For a
+**browser or front-end defect**, reproduce and inspect it interactively with a live debugger
+(on pi, `pi-browser-debug` — console, network, DOM, JS via CDP; see `e2e-agent-browser.md`),
+capturing the console/network evidence — then prove the eventual fix with agent-browser.
 
 Record the exact command/steps, working directory, prerequisites, source/configuration snapshot,
 expected outcome, observed outcome, and evidence location. The assertion must distinguish this

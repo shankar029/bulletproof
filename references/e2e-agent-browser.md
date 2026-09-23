@@ -1,8 +1,19 @@
 # Reference: Browser & Front-End Verification with agent-browser
 
-All browser-based end-to-end verification and all front-end testing in this workflow use
+All browser-based end-to-end **verification** and all front-end testing in this workflow use
 **agent-browser** — a native CLI for driving Chrome from an agent.
 Repo: <https://github.com/vercel-labs/agent-browser>
+
+**Verification vs. debugging — two tools, two jobs.** agent-browser is the *verification*
+surface: it proves a scenario passes and captures the evidence a reviewer reads. When you are
+**debugging** a browser or app defect — chasing *why* something breaks, not proving it works —
+use an interactive debugger. On pi that is **`pi-browser-debug`** (installed by the workflow
+layer, `references/pi-workflow.md`): it drives Chrome through Playwright/CDP and exposes live
+console, network, DOM and in-page JS evaluation (`browser_open`, `browser_navigate`,
+`browser_observe`, `browser_act`, `browser_run`, `browser_events`) against a **loopback-only**
+browser — surfacing errors a CLI assertion does not. Reproduce and root-cause with it, then
+**prove the fix with agent-browser** and capture *that* as the evidence; a debugger session is
+not the durable verification record.
 
 **Ground yourself before you drive it.** Run `agent-browser skills get --all` (or read the
 repo README) to get instructions that match the installed version, and `agent-browser --help`
@@ -55,7 +66,7 @@ a ref isn't practical. Use `--json` everywhere you need to parse a result.
 ## Asserting like a user
 
 | Goal | Command |
-|---|---|
+| --- | --- |
 | Rendered text / value / attribute | `get text\|value\|attr <sel>` |
 | Element state | `is visible\|enabled\|checked <sel>` |
 | Element count | `get count <sel>` |

@@ -6,7 +6,51 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+
+- **pi workflow layer** — on the `pi` install target, bulletproof now provisions the whole
+  environment the workflow assumes, not just the skill. `install.sh pi` / `install.ps1 pi`
+  install nine pinned plugins (`pi-web-access`, `@tintinweb/pi-subagents`, `pi-lens`,
+  `pi-mcp-adapter`, `pi-memory`, `pi-background-tasks`, `@ff-labs/pi-fff`,
+  `@juicesharp/rpiv-todo`, `pi-browser-debug`) via `pi install`, so an existing
+  `settings.json` provider/model/theme is left untouched. Config and hooks land in
+  `~/.pi/agent/`. Opt out with `BULLETPROOF_SKILL_ONLY=1`. Portable config lives in
+  [`agent/`](agent/); see [`references/pi-workflow.md`](references/pi-workflow.md).
+- **`search-guard` extension** ([`agent/extensions/search-guard/`](agent/extensions/search-guard/))
+  — a `tool_call` hook that blocks pathological repo-wide shell scans (`grep -r`, `--include=*`,
+  `find .`/`find /`, `ls -R`, `dir /s`) before they run, and bounds every unbounded bash call
+  with a default wall-clock timeout (300s ordinary, 1800s builds/installs/tests) since pi's
+  `bash` tool has no default and an unbounded hang wedges an agent forever. Escape hatch:
+  `#allow-slow-search`. Dependency-free rules with a 49-case suite (`npx tsx rules.test.mjs`).
+- **fff `override` mode** ([`agent/pi-fff.json`](agent/pi-fff.json)) — the built-in tool names
+  `grep`/`find`/`multi_grep` resolve to the fast, git-aware fff implementations for every agent
+  (subagents included) with no allowlist change.
+- **`bpi` launcher** — the `pi` installer generates `bulletproof.system.md` from the agent file
+  and wires an idempotent `bpi` shell function into the profile (`~/.bashrc`/`~/.zshrc` or
+  `$PROFILE`), with `--fast`/`--full` (`-Fast`/`-Full`) tier flags.
+- **CI** — a GitHub Actions workflow runs the `search-guard` suite and parses both installers on
+  push/PR.
+- Skill guidance for the fast-search tools, durable background jobs, and `pi-browser-debug`
+  (debugging counterpart to agent-browser's verification role), scoped so it holds on pi and
+  degrades cleanly on other hosts.
+
+### Changed
+
+- README and [`install/pi.md`](install/pi.md) reframe bulletproof on pi as a workflow **setup**,
+  not just a skill; the host table and per-host guides state that the workflow layer is
+  pi-specific and Claude Code / Copilot get the skill (and custom agent) only.
+- Installers print a post-install summary: any failed plugin installs are aggregated, with a
+  `/login` + `pi list` verification hint on the pi target.
+
+### Fixed
+
+- `.gitignore` had CRLF line endings that corrupted git's pattern matching (it was silently
+  ignoring `agent/`). Normalized to LF and added `.gitattributes` enforcing LF on
+  `*.sh`/`*.mjs`/`*.ts`/`agent/packages.txt`; `install.sh` normalized to LF. Added a `.pi/`
+  ignore for session scratch.
+
 ### Planned
+
 - Complete scalar collector composition, coverage/mutation integration and the guarded
   metric bridge; resolve the outstanding native-suite and browser acceptance gaps.
 - Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
@@ -21,6 +65,7 @@ The items under **Unreleased › Planned** remain open — stable here means the
 workflow is ready for general use, not that every planned feature has landed.
 
 ### Added
+
 - **Subagent liveness monitoring.** Delegated phases are now watched, not just launched. Each
   spawn gets a stable handle, a `date`-stamped row in a `## Subagents` table in `state.md`, and
   a soft budget (research/design 12m, design review 10m, plan 10m, verify 25m, review 15m,
@@ -39,6 +84,7 @@ workflow is ready for general use, not that every planned feature has landed.
   steering message as outranking the current plan.
 
 ### Changed
+
 - **Search hygiene for read-only roles.** The researcher is told to search with the `grep`/`find`
   tools and, when it must shell out, to use `rg -t <type>` or a subtree and `fd -g '<glob>'` —
   never `grep -r`, `find .` or `--include=*` from the repo root. Measured on a ~7.5k-file repo:
@@ -55,6 +101,7 @@ A prerelease adding a drift-proof pi agent mode on top of rc.1. Like rc.1 it is 
 partial-delivery checkpoint, not full acceptance of all planned workflow features.
 
 ### Added
+
 - **pi agent mode.** A drift-proof `bulletproof` agent whose system prompt is the workflow,
   plus four scoped role subagents (`bulletproof-researcher`, `-design-reviewer`, `-verifier`,
   `-reviewer`) that the full loop delegates to. The pi installer drops them into
@@ -65,6 +112,7 @@ partial-delivery checkpoint, not full acceptance of all planned workflow feature
   stops the line if the change turns out to need full rigour.
 
 ### Documentation
+
 - Restructured the README pi section and rewrote `install/pi.md` to cover the skill, agent and
   prompt-template install paths, the five agents and their scopes, the model-pinning note, the
   `bpi` alias recipe, and the mode flags with their two guardrails.
@@ -75,6 +123,7 @@ This prerelease preserves the existing workflow improvements and Team Planner ca
 It is a partial-delivery checkpoint, not full acceptance of all 29 workflow features.
 
 ### Added
+
 - **Guarded workflow execution and evidence freshness.** Durable workflow state, CLI gates,
   source-bound evidence and qualified tool bindings fail closed when required proof is
   missing or stale. These guards govern commands routed through the CLI, not arbitrary host actions.
@@ -126,6 +175,7 @@ It is a partial-delivery checkpoint, not full acceptance of all 29 workflow feat
   Integrated with v0.7.0's six phases, mandatory research delegation and `.ai/<slug>/` workspace.
 
 ### Fixed
+
 - **Mutation and measurement verdicts.** ESM/CJS handling, assertion-only classification
   and required-measurement completeness no longer imply success from unsupported proof.
 - **JavaScript source coordinates.** CRLF span handling is corrected in the integrated
@@ -136,6 +186,7 @@ It is a partial-delivery checkpoint, not full acceptance of all 29 workflow feat
   reviewers can return complete findings for parent persistence without gaining source-write access.
 
 ### Known limitations
+
 - No clean final browser acceptance run; empty-project export remains unverified.
 - The latest registered native suite printed a failure and timed out (exit 124). A later
   isolated stale-evidence check passed, but the full-suite outcome remains unresolved.
@@ -156,6 +207,7 @@ hangs instead of stalling a run for hours; and a batch of prompt- and context-en
 lands across the loop.
 
 ### Added
+
 - **`research.md` — a cited ground-truth document, and Gate 1 now has teeth.** Phase 1 previously
   produced nothing durable: grounding was a claim from memory ("name the files you read") that
   nobody could check, and every long run had to re-derive its understanding after losing context.
@@ -188,6 +240,7 @@ lands across the loop.
   [`references/project-profile.md`](references/project-profile.md).
 
 ### Changed
+
 - **Design records the delta, not just the destination.** `design.html` gains an **as-is → to-be**
   section: for every symbol changed, its current behaviour *citing research* and what it becomes.
 - **The plan cites and adds nothing.** Research says what is, design says what will be, the plan
@@ -213,6 +266,7 @@ lands across the loop.
   part of the Gate 2b rubric.
 
 ### Planned
+
 - Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 
 ## [0.6.0] — 2026-09-06
@@ -222,6 +276,7 @@ from five phases to six by making **program design a gated phase of its own**, a
 becomes evidence-bound rather than self-asserted.
 
 ### Added
+
 - **Phase 2 — Program design.** Classes, interfaces, public method signatures, collaborators and
   critical-flow sequence diagrams are designed **before** implementation, as a 3-page HTML document
   ([`references/design-doc.md`](references/design-doc.md)). Gate 2 asks for user sign-off on
@@ -264,6 +319,7 @@ becomes evidence-bound rather than self-asserted.
   See `references/final-report.md`.
 
 ### Changed
+
 - **Quality bar is now 9 dimensions** and evidence-bound: **grounding** and **design fidelity**
   join the rubric, and *where a metric exists for a dimension, a score of ≥4 must cite it*.
   Correctness, grounding and test-quality/evidence are hard gates.
@@ -298,6 +354,7 @@ becomes evidence-bound rather than self-asserted.
   **not** authorisation — never infer that nobody is there.
 
 ### Retained
+
 - [`references/ux-design.md`](references/ux-design.md) (UX design-first approval gate),
   [`references/production-readiness.md`](references/production-readiness.md) and
   [`references/app-scale-delivery.md`](references/app-scale-delivery.md) are unchanged and now hook
@@ -306,6 +363,7 @@ becomes evidence-bound rather than self-asserted.
 ## [0.5.0] — 2026-08-26
 
 ### Added
+
 - **Build-to-production checklist + plan requirement.** New `references/production-readiness.md`
   packs the full path to production — build/release, config & secrets, environments,
   data/migrations/backups, CI/CD, observability, security hardening, performance & scaling,
@@ -338,6 +396,7 @@ becomes evidence-bound rather than self-asserted.
 ## [0.4.0] — 2026-07-27
 
 ### Added
+
 - **Committing to a protected branch hard-zeroes the composite** (v2 agent harness,
   `cappedComposite`). A correct-but-on-`main`/`master` delivery is not a valid delivery — it would be
   reverted in a real team — so it scores `0.00` regardless of code quality, surfaced as
@@ -397,6 +456,7 @@ becomes evidence-bound rather than self-asserted.
   clean), at a 4–6× latency cost. Recorded in [`evals/agent/README.md`](evals/agent/README.md).
 
 ### Changed
+
 - **Docs refreshed around "complete + proven delivery."** Rewrote `README.md` to lead with the
   thesis (finish the job: deliver exactly what was asked, completely, and prove it), reframed the
   eval as a self-critical **instrument** measuring completion/proof across dimensions (accuracy,
@@ -430,11 +490,13 @@ becomes evidence-bound rather than self-asserted.
 ## [0.3.0] — 2026-07-27
 
 ### Added
+
 - **Unit tests for the eval scoring library** (`evals/lib/score.test.mjs`, 14 tests) covering
   `composite()` renormalization, `toDimensions()` mappings, and TAP parsing; extracted a pure
   `parseTap()` seam from the spawn-bound `tap()` with zero behavior change.
 
 ### Changed
+
 - **Skill fidelity audit** (all five phases reviewed for "delivers exactly what was asked"): Phase 1
   now requires acceptance criteria (each with a stable id) whose union covers the *whole* request —
   every sub-deliverable of a multi-part ask plus implied non-functional needs — with a Gate 1
@@ -452,6 +514,7 @@ becomes evidence-bound rather than self-asserted.
 ## [0.2.0] — 2026-07-27
 
 ### Added
+
 - **One-command installers** (`install.sh` for macOS/Linux/Git-Bash, `install.ps1` for Windows
   PowerShell): `curl -fsSL .../install.sh | sh -s -- <pi|claude|copilot>` downloads the repo and
   drops the skill + launcher into the right per-agent directories. `BULLETPROOF_REF` pins a
@@ -474,6 +537,7 @@ becomes evidence-bound rather than self-asserted.
 Initial release: a portable `/bulletproof` skill plus an objective benchmark proving its value.
 
 ### Added
+
 - **Skill** (`SKILL.md`): a five‑phase gated delivery loop (Understand → Plan → Implement+Test →
   E2E Verify → Review+Ship) framed as a **convergence loop** that self‑scores against a top‑1%
   quality bar and iterates on root causes until every dimension is met.

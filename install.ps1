@@ -105,11 +105,13 @@ try {
     $pkgFile = Join-Path $src 'agent/packages.txt'
     if ((Get-Command pi -ErrorAction SilentlyContinue) -and (Test-Path $pkgFile)) {
       Write-Host '  - installing pi plugins from packages.txt ...'
+      $pluginFailures = @()
       foreach ($raw in Get-Content $pkgFile) {
         $spec = ($raw -replace '#.*$', '').Trim()
         if (-not $spec) { continue }
         Write-Host "    + $spec"
-        try { pi install $spec } catch { Write-Host "    ! failed: $spec (install manually with: pi install $spec)" }
+        pi install $spec
+        if ($LASTEXITCODE -ne 0) { Write-Host "    ! failed: $spec"; $pluginFailures += $spec }
       }
       # pi-browser-debug drives Chrome through Playwright - fetch its Chromium binary.
       if (Select-String -Path $pkgFile -Pattern 'pi-browser-debug' -Quiet) {
@@ -117,6 +119,10 @@ try {
         $npmDir = Join-Path $piDir 'npm'
         try { Push-Location $npmDir; npx --yes playwright install chromium; Pop-Location }
         catch { Write-Host "    ! Playwright Chromium install failed; run 'npx playwright install chromium' manually" }
+      }
+      if ($pluginFailures.Count -gt 0) {
+        Write-Host "  ! some plugins did NOT install: $($pluginFailures -join ' ')"
+        Write-Host '    retry each with: pi install <spec>'
       }
     }
     else {
@@ -204,6 +210,10 @@ function bpi {
   }
   Write-Host "OK: bulletproof installed for $Agent"
   Write-Host "    next: $hint"
+  if ($Agent -eq 'pi' -and -not $env:BULLETPROOF_SKILL_ONLY) {
+    Write-Host "    auth: run 'pi' then '/login' to authenticate your provider (secrets are never stored)"
+    Write-Host "    check: 'pi list' shows the installed plugins"
+  }
   if ($Agent -eq 'pi') {
     Write-Host '    tip:  reload your shell (. $PROFILE) once, then:  bpi "<requirement>"  (or bpi -Fast / -Full)'
   }

@@ -4,20 +4,33 @@ The shipped Copilot CLI integration is a **custom agent** that loads the Bulletp
 workflow. Host capabilities evolve: use the agent-selection mechanism supported by your
 installed CLI rather than assuming the pi/Claude slash-command launcher works here.
 
+> **Custom agent only — no workflow layer.** The `copilot` target installs the custom agent and
+> nothing else. The pi *workflow layer* (installed plugins for subagents, fast search, background
+> jobs, memory, browser debugging, plus the `search-guard` hook and fast-search override — see
+> [`../references/pi-workflow.md`](../references/pi-workflow.md)) is **pi-specific and does not
+> install here**. The six-phase method is portable, but supply the equivalent capabilities
+> (delegation, background jobs, fast search, a browser debugger) through the Copilot CLI's own
+> tooling.
+
 ## Quick install (one command)
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/shankar029/bulletproof/main/install.sh | sh -s -- copilot
 ```
+
 Windows PowerShell:
+
 ```powershell
 & ([scriptblock]::Create((irm https://raw.githubusercontent.com/shankar029/bulletproof/main/install.ps1))) copilot
 ```
+
 That drops the playbook in `~/.copilot/bulletproof/` and the agent in `~/.copilot/agents/`.
 Prefer to do it manually? Steps below.
 
 ## Manual install
 
 ### 1. Install the playbook + custom agent
+
 ```bash
 # playbook the agent references
 mkdir -p ~/.copilot/bulletproof
@@ -33,6 +46,7 @@ in repo-root `bulletproof/`, matching the shipped launcher's `bulletproof/SKILL.
 If you choose another location, update that reference in the copied launcher.)
 
 ## Use
+
 Start Copilot CLI with the custom agent, then give it the requirement:
 
 ```bash
@@ -49,5 +63,6 @@ Installing the agent does not grant repository permissions or create independent
 when the host does not expose them.
 
 ## Optional: make it the default behavior
+
 Add the prime directives to `AGENTS.md` or `.github/copilot-instructions.md` at the repo root so
 every Copilot CLI session works this way without selecting the agent.

@@ -1,0 +1,70 @@
+---
+name: CI
+
+"on":
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  search-guard:
+    name: search-guard rule suite
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run the rule suite
+        working-directory: agent/extensions/search-guard
+        run: npx --yes tsx rules.test.mjs
+
+  installers:
+    name: Installer parse + dry-run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Shell syntax (install.sh)
+        run: sh -n install.sh
+
+      - name: Shell lint (shellcheck, advisory)
+        run: shellcheck -S warning install.sh || true
+
+      - name: PowerShell parse (install.ps1)
+        shell: pwsh
+        run: |
+          $e = $null
+          $p = (Resolve-Path ./install.ps1).Path
+          $parser = [System.Management.Automation.Language.Parser]
+          [void]$parser::ParseFile($p, [ref]$null, [ref]$e)
+          if ($e -and $e.Count) {
+            $e | ForEach-Object { Write-Host $_.Message }
+            exit 1
+          }
+          Write-Host 'install.ps1 parses clean'
+
+      - name: Dry-run install.sh (full workflow layer)
+        run: sh .github/scripts/dry-run.sh full
+
+      - name: Dry-run install.sh (skill-only)
+        run: sh .github/scripts/dry-run.sh skill-only
+
+  line-endings:
+    name: Shell scripts are LF
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: No CR bytes in shell / mjs / ts / packages.txt
+        run: |
+          set -eu
+          bad=0
+          files="install.sh agent/packages.txt"
+          files="$files $(git ls-files '*.sh' '*.mjs' '*.ts')"
+          for f in $files; do
+            if [ "$(tr -dc '\r' < "$f" | wc -c)" -ne 0 ]; then
+              echo "CRLF found: $f"
+              bad=1
+            fi
+          done
+          [ "$bad" -eq 0 ] && echo "all LF-clean" || exit 1

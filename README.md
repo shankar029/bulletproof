@@ -17,12 +17,13 @@ Bulletproof gives an agent a repeatable way to turn a requirement, document or i
 reviewed change: investigate the real code, design before editing, build in small increments,
 exercise the actual interface, and preserve evidence alongside the work.
 
-It is **a skill plus supporting tools**, not a replacement model or a guarantee of success.
-When a required check cannot be proved, the right result is a named blocker, not an invented pass.
-
-On **pi**, the installer goes further than the skill: it provisions the whole workflow
-environment the skill assumes — the plugins, search/timeout hooks, and fast-search config — so a
-fresh machine is ready to deliver. See [The pi workflow layer](#the-pi-workflow-layer-pi).
+It is **a skill plus the tooling to execute it**, not a replacement model or a guarantee of
+success. On **pi** that tooling is installed for you: the same command that drops the skill also
+provisions the whole workflow environment it assumes — the plugins it delegates to, plus
+search/timeout hooks and fast-search config — so a fresh machine is ready to deliver. On Claude
+Code and the Copilot CLI you get the skill (and custom agent) and supply the equivalent
+capabilities through your host. See [The pi workflow layer](#the-pi-workflow-layer-pi). When a
+required check cannot be proved, the right result is a named blocker, not an invented pass.
 
 ```text
 Understand  -->  Design  -->  Plan  -->  Build  -->  Verify  -->  Review & ship
@@ -146,7 +147,7 @@ so your existing provider/model/theme are untouched):
   filters, and `find -maxdepth ≤3`; and (2) **bounds every unbounded bash call** with a default
   wall-clock timeout (300s ordinarily, 1800s for builds/installs/test suites), because pi's
   `bash` tool has no default and an unbounded hang wedges an agent forever. Escape hatch:
-  append `#allow-slow-search`. Dependency-free rules with a 39-case suite
+  append `#allow-slow-search`. Dependency-free rules with a 49-case suite
   (`npx tsx rules.test.mjs`).
 
 The **bulletproof** skill + drift-proof agent (and four role subagents) install on top of this

@@ -18,6 +18,7 @@ The requirement is `$ARGUMENTS` — text, a file path, or a link. If it points a
 URL, read it fully first.
 
 ## Communicate clearly
+
 Follow `references/communication.md` for human-facing updates: lead with the outcome, blocker,
 or decision needed; make progress visible at meaningful transitions; keep uncertainty and
 material limitations explicit. Link complete artifacts instead of repeating them, but never
@@ -26,6 +27,7 @@ Keep agent-owned actions with the agent workflow; request human action only when
 and stop when finished. Existing delegation requirements remain unchanged.
 
 ## Workspace first: check for existing work
+
 **Before anything else**, look under `.ai/` at the repository root for a slug matching this
 requirement. If `.ai/<slug>/state.md` exists, **read it and resume where it left off** — do not
 restart and do not redesign. If it doesn't, you will create it in Phase 1. All artifacts for
@@ -42,6 +44,7 @@ Never overwrite live authority or backfill approval. Guarded operations enforce 
 commands; host permissions and genuinely fresh contexts remain external responsibilities.
 
 ## Right-size the ceremony first
+
 After reading the requirement, classify it — and say which tier you chose and why.
 
 - **Trivial** — a change whose correctness is fully obvious from the diff and provable by
@@ -56,6 +59,7 @@ After reading the requirement, classify it — and say which tier you chose and 
   behavior, or user-visible effect: run the full loop. When in doubt, it is not trivial.
 
 ## Prime directives
+
 1. **Ground everything in the real codebase. Never invent.** Do not reference a file, class,
    function, field, config key, library API, or CLI flag you have not **opened and read** in
    this session. Before you use an existing symbol, read its definition and confirm its real
@@ -102,6 +106,7 @@ After reading the requirement, classify it — and say which tier you chose and 
    guess that keeps going is the failure this skill exists to prevent.
 
 ## Working rules (they cost whole runs when broken)
+
 - **Never block your own shell.** Anything that does not return on its own — a dev server, a
   watcher, a REPL — is started **detached** with its output redirected to a log, then polled
   once (`start`/`nohup ... &` then a short `curl`/`sleep` check). A foreground `npm run dev`
@@ -128,6 +133,21 @@ After reading the requirement, classify it — and say which tier you chose and 
   `references/workflow-gates.md`; no recovery/reset/lock-steal API is available.
 - **Test runners must be non-interactive.** Use the single-run form (`vitest run`, `--watch=false`,
   `--ci`), never a watch mode.
+- **Search code with the fast tools, not raw recursive shell.** For finding files and grepping
+  content, prefer indexed, git-aware search over shelling out to `grep -r`/`rg`/`find .`/`ls -R`:
+  on pi these are the built-in `grep`/`find` tools (fff-backed — see `references/pi-workflow.md`),
+  elsewhere use your host's equivalent. A repo-wide `grep -rn … --include=*` walks every file
+  including committed binaries, does not return on a large tree, and burns the phase on the idle
+  timeout — restrict by type or subtree (`rg -t ts "x"`, `rg "x" src/`) or use `git grep`. On pi
+  the installed `search-guard` hook blocks the pathological forms outright; do not fight it — use
+  the fast path it names, and append `#allow-slow-search` only when a full scan is genuinely
+  required.
+- **Prefer durable background jobs over a blocked shell.** When the host provides a background-task
+  facility (on pi, `pi-background-tasks`: `bg_run` with a name, `bg_status`/`bg_logs`, `bg_kill`),
+  run dev servers, builds, watchers and long suites through it rather than hand-rolled detaching
+  — it gives a durable lifecycle, captured output, and a completion notification that wakes a
+  follow-up turn, so you neither block the turn nor poll. Fall back to detached `start`/`nohup
+  … &` with redirected output only when no such facility exists.
 - **Monitor delegated subagents the way you monitor commands — on progress, not wall-clock.**
   A subagent that stalls never sends a completion notification, so nothing tells you the phase
   died. Launch each delegated phase in the background with a stable handle, stamp the launch
@@ -163,11 +183,13 @@ After reading the requirement, classify it — and say which tier you chose and 
 ## The Loop
 
 ### Phase 1 — Understand & research
+
 **Always run this phase in a fresh-context subagent** (research is mandatory-delegated, read-only)
 — it is the most token-expensive phase in the run, its output is a concise evidence handoff, and its independence
 is the point. If the harness cannot spawn a subagent, that is a blocker (prime directive 8), not
 a licence to research inline. See `references/delegation.md` for the brief, the tool scoping, and
 the spot-check.
+
 - **Before investigation, load `references/project-profile.md`** to read applicable repository
   instructions, establish conventions/domain language, and surface conflicts.
 - **Supply and follow `references/research.md`** for the complete read-only procedure and
@@ -196,6 +218,7 @@ the spot-check.
   and scoped not-found claims where present, and confirm downstream access to the report.
 
 ### Phase 2 — Program design (before any implementation)
+
 Consume the Phase 1 research handoff first. Revalidate affected facts when the tree has changed;
 return missing design-critical facts to research rather than inventing them.
 
@@ -271,6 +294,7 @@ code — see `references/ux-design.md`. Skip it entirely for library / CLI / API
   then use ordinary `adopt`. An HTML verdict alone is not an adopted runtime contract.
 
 ### Phase 3 — Plan the execution of the design
+
 **Delegate non-trivial planning to a fresh-context subagent by default.** Supply accepted
 research, the approved design, ACs/decisions and current workspace records. If delegation is
 unavailable, plan inline to the same standard and record the fallback in `state.md`; trivial
@@ -281,6 +305,7 @@ with linked `tasks.md` detail only when needed: the **executable projection of t
 It cites `research.md` and `design.html` and **introduces no new facts of its own** —
 research says what is, design says what will be, the plan says **how it gets built: in what
 grouping, what order, and proven by what tests.**
+
 - **Apply `references/planning.md`'s increment, task and check contracts** in full. Derive
   dependencies from the approved design; each change has one owner and each AC has work and
   proof in `traceability.md`. Preserve exact targets, commands, pass conditions and evidence.
@@ -320,6 +345,7 @@ grouping, what order, and proven by what tests.**
   decision. The parent reconciles full coverage; sampling is not proof of every task.
 
 ### Phase 4 — Implement + test
+
 **Increment gate scope (Phases 4–6):** before the final increment, verify the current slice's
 AC scenarios and affected previously delivered regressions. Future work stays explicitly
 planned/not-yet-verified and does not block an earlier slice. An AC spanning increments is not
@@ -357,6 +383,7 @@ At final ship, reconcile the **whole request** with no future work silently left
   `state.md`.
 
 ### Phase 5 — End-to-end verification
+
 **Always run this phase in a fresh-context verification subagent** — the agent that proves the
 feature is never the one that built it (`references/delegation.md`). It may author tests and
 capture evidence but not touch production code. Prove the feature the way a real user or client
@@ -364,6 +391,7 @@ would exercise it, and commit those tests. **All browser and front-end verificat
 `agent-browser`** — see
 `references/e2e-agent-browser.md`. Non-browser surfaces (service, CLI, library) are covered in
 `references/testing-and-e2e.md`.
+
 - Map each acceptance-criterion scenario to existing coverage first; add tests only for the
   uncovered ones, extending the existing suite rather than duplicating it.
 - Consume the plan's check records as well as the design/ACs. Independently confirm expected
@@ -381,6 +409,7 @@ would exercise it, and commit those tests. **All browser and front-end verificat
   evidence — or is listed as environment-blocked with the blocker and the finishing command stated.
 
 ### Phase 6 — Review, prove, ship
+
 - **Review your own diff as a demanding staff reviewer** — correctness, bugs and edge cases,
   maintainability, design principles and patterns, fidelity to the design document, security,
   performance, error handling, test quality, leftovers. Fix everything you would flag in
@@ -444,6 +473,7 @@ would exercise it, and commit those tests. **All browser and front-end verificat
   requirement is complete.
 
 ### Convergence
+
 Passing tests is the floor, not the bar. Score the work against the 9-dimension rubric in
 `references/quality-bar.md`, return to the **earliest phase that owns each gap**, fix the
 root cause, and re-score. **Done = ship gate green and every required dimension at or above
@@ -453,6 +483,7 @@ ship what is green and record the remaining gap, its root cause, and the propose
 explicit follow-up. Never close the gap by lowering the bar.
 
 ## References (load on demand)
+
 - `references/workflow-gates.md` — before adoption, guarded dispatch/handoff, resume or closure: current authority, five ordinary CLI verbs, temporal proof and explicit metric/recovery limits.
 - `references/diagnosis.md` — for defects/performance regressions: symptom-specific reproduction, causal probes, and original-scenario verification.
 - `references/code-clarity.md` — human-readable code, responsibility boundaries, comment discipline, and concrete review acceptance.
@@ -474,8 +505,10 @@ explicit follow-up. Never close the gap by lowering the bar.
 - `references/production-readiness.md` — the checklist that takes an app from building to live.
 - `references/app-scale-delivery.md` — outer loop for delivering an entire app in vertical slices.
 - `references/parallel-execution.md` — when and how to split work across subagents.
+- `references/pi-workflow.md` — the pi-only workflow layer: installed plugins, the fast-search override, the `search-guard` hook, pinning, and the `bpi` launcher.
 
 ## Final report
+
 Every run ends with a report — **written to `.ai/<slug>/report.html`** using the shared theme,
 and summarised in the chat. It is the one artifact a person reads to know what happened, so it
 states what is true, not what was hoped. Structure and template: `references/final-report.md`.
