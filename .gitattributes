@@ -1,0 +1,11 @@
+# Shell scripts must use LF endings or they break on Linux/macOS (a literal CR
+# after the shebang or in a command is a syntax/interpretation error).
+*.sh   text eol=lf
+*.mjs  text eol=lf
+*.ts   text eol=lf
+
+# Parsed line-by-line by the shell installer — keep it LF so no CR leaks into a package spec.
+agent/packages.txt text eol=lf
+
+# PowerShell is fine with either; keep it stable as CRLF on Windows.
+*.ps1  text eol=crlf

@@ -6,8 +6,10 @@
 #   ./install.ps1 <pi|claude|copilot>
 #
 # Env:
-#   BULLETPROOF_REF   git ref (branch/tag) to install         (default: main)
-#   BULLETPROOF_SRC   use a local checkout instead of download (for testing/offline)
+#   BULLETPROOF_REF        git ref (branch/tag) to install         (default: main)
+#   BULLETPROOF_SRC        use a local checkout instead of download (for testing/offline)
+#   BULLETPROOF_SKILL_ONLY when set (pi only), install just the skill + agents and skip
+#                          the pi workflow layer (packages, config, extensions)
 param(
   [Parameter(Position = 0)]
   [ValidateSet('pi', 'claude', 'copilot')]
@@ -67,6 +69,109 @@ try {
     Write-Host "  - agent    -> $to"
   }
 
+  # The pi workflow layer: the plugins, config, and hooks the bulletproof skill/agent
+  # assumes. Augments ~/.pi/agent without clobbering the user's provider/model/theme.
+  function Install-PiWorkflow {
+    $piDir = Join-Path $HOME '.pi/agent'
+    New-Item -ItemType Directory -Force -Path $piDir | Out-Null
+
+    # fff "override" mode: the built-in tool NAMES grep/find/multi_grep resolve to the fast,
+    # git-aware fff implementations - every allowlist that already says "grep, find" gets them.
+    $fff = Join-Path $src 'agent/pi-fff.json'
+    if (Test-Path $fff) {
+      Copy-Item $fff (Join-Path $piDir 'pi-fff.json') -Force
+      Write-Host "  - config   -> $(Join-Path $piDir 'pi-fff.json')"
+    }
+
+    # search-guard extension: blocks repo-wide grep -r / find . before they run and bounds
+    # every unbounded bash call with a default wall-clock timeout.
+    $ext = Join-Path $src 'agent/extensions'
+    if (Test-Path $ext) {
+      $extDest = Join-Path $piDir 'extensions'
+      New-Item -ItemType Directory -Force -Path $extDest | Out-Null
+      Copy-Item (Join-Path $ext '*') $extDest -Recurse -Force
+      Write-Host "  - hooks    -> $extDest"
+    }
+
+    # Plugins. Install pi if it is missing, then install each pinned package.
+    if (-not (Get-Command pi -ErrorAction SilentlyContinue)) {
+      Write-Host '  - pi not found; installing @earendil-works/pi-coding-agent globally ...'
+      if (Get-Command npm -ErrorAction SilentlyContinue) {
+        try { npm install -g --ignore-scripts '@earendil-works/pi-coding-agent@latest' }
+        catch { Write-Host '  ! pi install failed; install it manually, then re-run this installer' }
+      }
+      else { Write-Host '  ! npm not found - install Node.js >= 18 + npm, then re-run this installer' }
+    }
+    $pkgFile = Join-Path $src 'agent/packages.txt'
+    if ((Get-Command pi -ErrorAction SilentlyContinue) -and (Test-Path $pkgFile)) {
+      Write-Host '  - installing pi plugins from packages.txt ...'
+      foreach ($raw in Get-Content $pkgFile) {
+        $spec = ($raw -replace '#.*$', '').Trim()
+        if (-not $spec) { continue }
+        Write-Host "    + $spec"
+        try { pi install $spec } catch { Write-Host "    ! failed: $spec (install manually with: pi install $spec)" }
+      }
+      # pi-browser-debug drives Chrome through Playwright - fetch its Chromium binary.
+      if (Select-String -Path $pkgFile -Pattern 'pi-browser-debug' -Quiet) {
+        Write-Host '  - installing Playwright Chromium for pi-browser-debug ...'
+        $npmDir = Join-Path $piDir 'npm'
+        try { Push-Location $npmDir; npx --yes playwright install chromium; Pop-Location }
+        catch { Write-Host "    ! Playwright Chromium install failed; run 'npx playwright install chromium' manually" }
+      }
+    }
+    else {
+      Write-Host '  ! skipped plugin install (pi unavailable); run pi install <spec> per agent/packages.txt'
+    }
+  }
+
+  # Generate the system prompt used by --append-system-prompt (the installer ships the agent
+  # file + slash launcher, but not the system-prompt form), then install a `bpi` function into
+  # $PROFILE so the drift-proof agent can be launched without typing the full flag.
+  function Install-Bpi {
+    $bpAgent = Join-Path $HOME '.pi/agent/agents/bulletproof.md'
+    $bpSys = Join-Path $HOME '.pi/agent/prompts/bulletproof.system.md'
+    if (Test-Path $bpAgent) {
+      # Strip the YAML frontmatter (everything up to and including the second '---').
+      $lines = Get-Content $bpAgent
+      $fm = 0; $body = New-Object System.Collections.Generic.List[string]
+      foreach ($l in $lines) {
+        if ($fm -lt 2) { if ($l -eq '---') { $fm++ }; continue }
+        $body.Add($l)
+      }
+      Set-Content -Path $bpSys -Value $body
+      Write-Host "  - sysprompt-> $bpSys"
+    }
+    else {
+      Write-Host '  ! agents/bulletproof.md not found; skipped bulletproof.system.md generation'
+      return
+    }
+
+    # Idempotently add the `bpi` function to the PowerShell profile.
+    $prof = $PROFILE.CurrentUserAllHosts
+    New-Item -ItemType Directory -Force -Path (Split-Path $prof) | Out-Null
+    if ((Test-Path $prof) -and (Select-String -Path $prof -Pattern '>>> bulletproof bpi >>>' -Quiet)) {
+      Write-Host '  - bpi already present in $PROFILE'
+      return
+    }
+    $block = @'
+
+# >>> bulletproof bpi >>>
+# Run the drift-proof bulletproof agent: bpi "<req>" | bpi -Fast "..." | bpi -Full "..."
+function bpi {
+  param([switch]$Fast, [switch]$Full)
+  $sys = Join-Path $HOME '.pi/agent/prompts/bulletproof.system.md'
+  $text = ($args -join ' ')
+  if ($Fast) { $text = "mode: fast`n$text" }
+  elseif ($Full) { $text = "mode: full`n$text" }
+  if ([string]::IsNullOrWhiteSpace($text)) { pi --append-system-prompt $sys }
+  else { pi --append-system-prompt $sys $text }
+}
+# <<< bulletproof bpi <<<
+'@
+    Add-Content -Path $prof -Value $block
+    Write-Host '  - bpi func -> $PROFILE'
+  }
+
   switch ($Agent) {
     'pi' {
       Install-Skill (Join-Path $HOME '.agents/skills')
@@ -75,7 +180,16 @@ try {
       Get-ChildItem (Join-Path $src 'launchers/pi/agents') -Filter *.md | ForEach-Object {
         Install-Agent $_.FullName (Join-Path $HOME (".pi/agent/agents/" + $_.Name)) $skillDir
       }
-      $hint = 'run   /bulletproof <requirement>   (or /skill:bulletproof), or launch the bulletproof agent'
+      if (-not $env:BULLETPROOF_SKILL_ONLY) {
+        Write-Host '-> installing pi workflow layer (plugins, config, hooks) ...'
+        Install-PiWorkflow
+      }
+      else {
+        Write-Host '-> BULLETPROOF_SKILL_ONLY set: skipping the pi workflow layer'
+      }
+      Write-Host '-> wiring the bpi launcher (system prompt + shell function) ...'
+      Install-Bpi
+      $hint = 'run   /bulletproof <requirement>   (or /skill:bulletproof), the bpi command, or launch the bulletproof agent'
     }
     'claude' {
       Install-Skill (Join-Path $HOME '.claude/skills')
@@ -90,6 +204,9 @@ try {
   }
   Write-Host "OK: bulletproof installed for $Agent"
   Write-Host "    next: $hint"
+  if ($Agent -eq 'pi') {
+    Write-Host '    tip:  reload your shell (. $PROFILE) once, then:  bpi "<requirement>"  (or bpi -Fast / -Full)'
+  }
 }
 finally {
   if ($tmp) { Remove-Item $tmp -Recurse -Force -ErrorAction SilentlyContinue }

@@ -1,0 +1,16 @@
+# Pi packages installed by the bulletproof workflow setup.
+# One `pi install` spec per line. Blank lines and lines starting with '#' are ignored.
+# Versions are pinned for reproducible installs; bump a line to upgrade a package.
+#
+# The installer runs `pi install <spec>` for each entry, so it augments the user's
+# existing ~/.pi/agent/settings.json without overwriting their provider/model/theme.
+
+npm:pi-web-access@0.29.0            # Web search, URL/PDF/repo/video fetching
+npm:@tintinweb/pi-subagents@0.19.0  # Subagent delegation & workflow orchestration
+npm:pi-lens@4.1.6                   # Real-time LSP, linters, formatters, type-checking
+npm:pi-mcp-adapter@2.33.0           # Connect any MCP (Model Context Protocol) server
+npm:pi-memory@0.4.2                 # Persistent long-term semantic memory across sessions
+npm:pi-background-tasks@2.5.0       # Durable background shell tasks & delegated agents
+npm:@ff-labs/pi-fff@0.10.6          # Fast fuzzy file & content search (grep/find override)
+npm:@juicesharp/rpiv-todo@2.10.0    # Live persistent todo overlay
+npm:pi-browser-debug@2.0.0          # Playwright browser automation — debug apps, console, network, JS

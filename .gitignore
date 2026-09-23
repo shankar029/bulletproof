@@ -11,6 +11,9 @@ evals/report.json
 # subagent run artifacts (local only)
 .pi-subagents/
 
+# pi session / background-task scratch (local only)
+.pi/
+
 # Python
 __pycache__/
 *.pyc
