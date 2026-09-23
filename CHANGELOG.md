@@ -6,6 +6,20 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Planned
+- Complete scalar collector composition, coverage/mutation integration and the guarded
+  metric bridge; resolve the outstanding native-suite and browser acceptance gaps.
+- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+
+## [0.8.0] - 2026-09-23
+
+Promotes the 0.8.0 release candidates to stable and adds subagent liveness monitoring.
+Cumulative over `rc.1` and `rc.2`: the drift-proof pi agent mode, explicit mode flags, and
+the workflow-reliability work those prereleases introduced.
+
+The items under **Unreleased › Planned** remain open — stable here means the delivered
+workflow is ready for general use, not that every planned feature has landed.
+
 ### Added
 - **Subagent liveness monitoring.** Delegated phases are now watched, not just launched. Each
   spawn gets a stable handle, a `date`-stamped row in a `## Subagents` table in `state.md`, and
@@ -34,11 +48,6 @@ All notable changes to this project are documented here. The format is based on
   `git log`/`git show`, which are load-bearing for history evidence.
 - Parallel implementation workers are budgeted and watched independently, so one stuck worker
   neither postpones the other checkpoints nor blocks integrating slices that already went green.
-
-### Planned
-- Complete scalar collector composition, coverage/mutation integration and the guarded
-  metric bridge; resolve the outstanding native-suite and browser acceptance gaps.
-- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 
 ## [0.8.0-rc.2] - 2026-09-20
 
@@ -480,7 +489,9 @@ Initial release: a portable `/bulletproof` skill plus an objective benchmark pro
   and **extensibility** (open/closed) beyond functional correctness, across all three projects.
 - **Docs**: `README.md`, `EVAL-PLAN.md`, `docs/architecture.md`, `CONTRIBUTING.md`, `LICENSE` (MIT).
 
-[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.8.0-rc.1...HEAD
+[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/shankar029/bulletproof/compare/v0.8.0-rc.2...v0.8.0
+[0.8.0-rc.2]: https://github.com/shankar029/bulletproof/compare/v0.8.0-rc.1...v0.8.0-rc.2
 [0.8.0-rc.1]: https://github.com/shankar029/bulletproof/compare/v0.7.0...v0.8.0-rc.1
 [0.7.0]: https://github.com/shankar029/bulletproof/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/shankar029/bulletproof/compare/v0.5.0...v0.6.0
