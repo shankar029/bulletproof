@@ -1,16 +1,51 @@
 # Pi packages installed by the bulletproof workflow setup.
-# One `pi install` spec per line. Blank lines and lines starting with '#' are ignored.
-# Versions are pinned for reproducible installs; bump a line to upgrade a package.
+# One `pi install` spec per line. Blank lines and lines starting with '#' are ignored,
+# and everything from a '#' to end-of-line is stripped — so the provenance lines below
+# are comments, not parsed fields. Versions are pinned for reproducible installs;
+# bump a line to upgrade a package.
 #
 # The installer runs `pi install <spec>` for each entry, so it augments the user's
 # existing ~/.pi/agent/settings.json without overwriting their provider/model/theme.
+#
+# ---------------------------------------------------------------------------
+# Provenance
+# ---------------------------------------------------------------------------
+# Each package carries what was verified, when, against which pi version, and how.
+# A pin without provenance is an untested claim — say "unverified", never guess.
+#
+#   resolved   the pinned spec installs and loads at the stated pi version
+#   exercised  the specific tool this workflow depends on was actually invoked
+#              and returned a correct result (names the tool)
+#   unverified neither has been done at the stated pi version
+#
+# `resolved` is cheap and says nothing about correctness. Only `exercised` is
+# evidence the workflow's dependency on the package actually holds.
+# Re-verify on every version bump and record the new date; do not carry an old
+# date forward across a bump. Procedure: references/pi-workflow.md § Verifying pins.
 
 npm:pi-web-access@0.29.0            # Web search, URL/PDF/repo/video fetching
+# exercised 2026-09-25 · pi 0.85.1 · fetch_content on a GitHub repo + raw URL, content returned
+
 npm:@tintinweb/pi-subagents@0.19.0  # Subagent delegation & workflow orchestration
+# exercised 2026-09-25 · pi 0.85.1 · Agent spawn (background), get_subagent_result, steer_subagent
+
 npm:pi-lens@4.1.6                   # Real-time LSP, linters, formatters, type-checking
+# resolved 2026-09-25 · pi 0.85.1 · tools registered; no diagnostic run recorded
+
 npm:pi-mcp-adapter@2.33.0           # Connect any MCP (Model Context Protocol) server
+# resolved 2026-09-25 · pi 0.85.1 · tools registered; no server connected
+
 npm:pi-memory@0.4.2                 # Persistent long-term semantic memory across sessions
+# resolved 2026-09-25 · pi 0.85.1 · tools registered; no read/write recorded
+
 npm:pi-background-tasks@2.5.0       # Durable background shell tasks & delegated agents
+# resolved 2026-09-25 · pi 0.85.1 · tools registered; no bg_run recorded
+
 npm:@ff-labs/pi-fff@0.10.6          # Fast fuzzy file & content search (grep/find override)
+# exercised 2026-09-25 · pi 0.85.1 · grep tool returned ranked hits under fff override mode
+
 npm:@juicesharp/rpiv-todo@2.10.0    # Live persistent todo overlay
+# resolved 2026-09-25 · pi 0.85.1 · tools registered; no todo written
+
 npm:pi-browser-debug@2.0.0          # Playwright browser automation — debug apps, console, network, JS
+# resolved 2026-09-25 · pi 0.85.1 · tools registered; Playwright Chromium fetch not re-checked

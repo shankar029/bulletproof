@@ -71,6 +71,43 @@ identical set and nothing drifts silently under `pi update`. To upgrade one, edi
 deliberately *not* pinned here — the installer resolves it from its own repo — so pinning lives
 with whoever cuts the release, not with this layer.
 
+## Verifying pins
+
+A pin makes the install *reproducible*; it does not make it *correct*. Both are needed, so every
+line in `packages.txt` carries a provenance comment recording what was checked, when, against
+which pi version, and how. The installers strip `#` to end-of-line, so these are comments — no
+parser change, and `install.sh`/`install.ps1` still emit the same specs.
+
+Three states, in increasing strength:
+
+| State | Means | Cost |
+| --- | --- | --- |
+| `unverified` | Neither check has been run at the stated pi version. | — |
+| `resolved` | The pinned spec installs and loads. Says nothing about behaviour. | seconds |
+| `exercised` | The specific tool this workflow depends on was invoked and returned a correct result. **Names the tool.** | a real call |
+
+Only `exercised` is evidence the workflow's dependency actually holds — a package can resolve
+perfectly and still have moved the tool out from under us. Prefer it for anything a phase gate
+relies on (subagents for Phases 1/5/6, fff for research search, web access for docs).
+
+**On every version bump, re-verify and stamp the new date.** Never carry an old date forward
+across a bump: the date must describe the version on the line above it, or it is a false claim of
+the exact kind Prime Directive 1 forbids. If you bump without re-checking, write `unverified` —
+that is an honest state, not a failure.
+
+Cheap `resolved` sweep for the whole set:
+
+```bash
+cd ~/.pi/agent/npm/node_modules && pi --version
+for p in pi-web-access @tintinweb/pi-subagents pi-lens pi-mcp-adapter pi-memory \
+         pi-background-tasks @ff-labs/pi-fff @juicesharp/rpiv-todo pi-browser-debug; do
+  echo "$p $(node -p "require('./$p/package.json').version" 2>/dev/null || echo NOT-INSTALLED)"
+done
+```
+
+Compare that output against the pinned specs; any mismatch means the machine is not running the
+layer this repo describes. `exercised` has no script — it means calling the tool.
+
 ## The `bpi` launcher
 
 The `pi` installer also generates `~/.pi/agent/prompts/bulletproof.system.md` from the agent file
