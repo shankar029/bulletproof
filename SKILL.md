@@ -348,6 +348,12 @@ grouping, what order, and proven by what tests.**
 - **Keep the testing plan complete:** per-increment unit/integration/E2E scenarios, coverage,
   regression scope, verification ownership, full E2E timing and final regression. Planned
   checks are not results; human-owned acceptance and independent verification keep their owners.
+- **Enumerate the end-to-end scenarios now, so Phase 5 executes rather than decides.** Write
+  `.ai/<slug>/scenarios.md` per `references/planning.md` §4b: stable `S`-ids from the four sources
+  × seven classes, each with preconditions, steps, a **specific expected observable** ("HTTP 201
+  and body contains `orderId`", not "works correctly"), a **declared evidence artifact type and
+  path**, and an owner. Declaring the pass condition *before* the run is what makes missing or
+  failing proof detectable instead of arguable.
 - **Every increment runs Phases 4–6 at production quality** and ends at a green, reviewed
   commit on the feature branch — never a half-finished state for the next session to reconstruct.
 - If this agent can run parallel subagents, identify the **safe parallelization boundaries**
@@ -368,6 +374,8 @@ grouping, what order, and proven by what tests.**
 - **GATE 3:** every planned change has an owner and ordered prerequisites; every AC maps to
   an increment, tasks and proof; checks have grounded commands, pass conditions, owners and
   evidence destinations; and increments are session-sized, independently verifiable slices.
+  **`scenarios.md` exists and is complete** — every AC × applicable class has a scenario or a
+  recorded N/A, and every scenario declares a specific expected observable and an evidence path.
   The parent's bounded consumer-readiness check in `references/planning.md` is READY: a fresh implementer
   can execute from the plan and linked artifacts without an unresolved product/architecture
   decision. The parent reconciles full coverage; sampling is not proof of every task.
@@ -423,7 +431,11 @@ would exercise it, and commit those tests. **All browser and front-end verificat
 
 - Map each acceptance-criterion scenario to existing coverage first; add tests only for the
   uncovered ones, extending the existing suite rather than duplicating it.
-- **Enumerate scenarios from four sources, not just the ACs** — each AC, every row of the
+- **`scenarios.md` is a floor, not a ceiling.** Execute every row; **append** what implementation
+  revealed; **never remove, renumber or weaken** one. A row you cannot run becomes **BLOCKED with
+  a named blocker**, never deleted — and a wrong expected observable is a finding you report, not
+  a pass condition you edit. Record **observed vs expected**, never just "captured".
+- **Re-derive scenarios from four sources, not just the ACs** — each AC, every row of the
   design's risks/edge-cases/failure-modes table, every preserved-behaviour claim in the
   as-is → to-be table, and the **original requirement text** (a scenario it implies but no AC
   states is a finding you report, not something you quietly test or drop). Then cover the
@@ -436,18 +448,22 @@ would exercise it, and commit those tests. **All browser and front-end verificat
   that human responds. A planned check or passing command with no relevant assertions is not proof.
 - Supply the current-design binding and admitted check identity in the fresh-context brief
   per `references/delegation.md`; a null-command handoff does not itself launch an agent.
-- Capture the evidence into `.ai/<slug>/evidence/`: commands run, output, screenshots,
-  console/error output, artifacts, one pass/fail line per criterion, and the **scenario matrix**
-  — per AC, which classes were exercised and which were N/A with their reason. A reader must be
-  able to see what was *not* tested without reading the test code.
+- Capture the evidence into `.ai/<slug>/evidence/` **at the path each scenario declared**:
+  commands run, output, screenshots, console/error output, artifacts, one pass/fail line per
+  criterion, and the **scenario matrix** — per AC, which classes were exercised and which were
+  N/A with their reason. A reader must be able to see what was *not* tested without reading the
+  test code. Each artifact must **show its expected observable**; a zero-byte or truncated
+  artifact is missing evidence, and an artifact older than the code it claims to prove is stale.
 - **If the environment makes real end-to-end proof impossible** (no network, no credentials,
   no runnable host), do not weaken the gate and do not pretend. Verify at the deepest level
   the environment allows, **name the blocker**, list which criteria remain
   environment-unverified, and give the exact command a human can run to finish the proof.
 - **GATE 5:** every scenario in the increment gate scope is demonstrated met with captured
   evidence — or is listed as environment-blocked with the blocker and the finishing command
-  stated. **Every AC carries a complete scenario matrix**: each class exercised, or N/A with its
-  reason recorded. An AC proved only on its happy path does not pass this gate.
+  stated. **`python <skill>/scripts/scenarios.py --slug <slug> --ac <due ACs> --strict` exits 0**
+  — no row MISSING, EMPTY, STALE, DROPPED or UNPROVEN. **Every AC carries a complete
+  scenario matrix**: each class exercised, or N/A with its reason recorded. An AC proved only on
+  its happy path does not pass this gate.
 
 ### Phase 6 — Review, prove, ship
 
@@ -504,7 +520,10 @@ would exercise it, and commit those tests. **All browser and front-end verificat
 - **GATE 6 (ship gate):** conventions honored · design executed · unit + integration +
   end-to-end green · coverage met · **probe green (no metric regression, no new cycle, no
   unjustified surviving mutant)** · review clean · **the increment's due scenarios and affected
-  regressions independently verified, with task/check evidence in `traceability.md`; at final
+  regressions independently verified, with task/check evidence in `traceability.md`;
+  `scripts/scenarios.py --strict` green at the final commit and every row reconciled against an
+  **inspected** artifact — opened, not cited — or a
+  named blocker; at final
   ship every AC VERIFIED (or VERIFIED-WITH-LIMITATIONS with the limitation named)** · quality gate
   green · evidence attached · committed on a feature branch · `state.md` current ·
   **`report.html` written** · **production-readiness items closed before the increment that
@@ -529,9 +548,9 @@ explicit follow-up. Never close the gap by lowering the bar.
 - `references/diagnosis.md` — for defects/performance regressions: symptom-specific reproduction, causal probes, and original-scenario verification.
 - `references/code-clarity.md` — human-readable code, responsibility boundaries, comment discipline, and concrete review acceptance.
 - `references/communication.md` — focused progress, approval, blocker and completion messages; concise presentation without lost evidence.
-- `references/workspace.md` — the `.ai/<slug>/` workspace, `state.md`, `traceability.md`, resume protocol, increment sizing.
+- `references/workspace.md` — the `.ai/<slug>/` workspace, `state.md`, `traceability.md`, `scenarios.md`, resume protocol, increment sizing.
 - `references/research.md` — reusable research procedure; AC coverage, source evidence, freshness, and task-specific handoff.
-- `references/planning.md` — executable task/check contracts, vertical increments, consumer readiness, and controlled revision/resume.
+- `references/planning.md` — executable task/check contracts, end-to-end scenario enumeration, vertical increments, consumer readiness, and controlled revision/resume.
 - `references/delegation.md` — running research, design and review in subagents; briefs and spot-check.
 - `references/project-profile.md` — profile the project; anti-debt rules; design verification checklist.
 - `references/design-doc.md` — the 3-page documents: structure, simple diagrams, skeleton.

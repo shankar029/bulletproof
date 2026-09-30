@@ -21,6 +21,8 @@ The slug is short kebab-case derived from the requirement (`checkout-discount-co
     design.html         # program design: classes, interfaces, interactions (Phase 2)
     design-review.md    # independent design-review findings + verdict (Gate 2b)
     plan.html           # increments, tasks, test strategy (Phase 3)
+    scenarios.md        # enumerated end-to-end scenarios: S-ids, expected observable,
+                        #   declared evidence path (Phase 3; Phase 5 may append, never remove)
     tasks.md            # optional detailed task/check records linked from plan.html
     review.json         # reader's comments + verdict, exported from the document
     review.md           # independent-reviewer findings and their dispositions
@@ -41,7 +43,7 @@ immutable candidates and invoke ordinary `adopt`. No bootstrap generator or hist
 execution import is provided. In an adopted workspace:
 
 | Record | Authority |
-|---|---|
+| --- | --- |
 | `current-design.json` | Current revision, retained document/contract hashes, review and history |
 | `design-history/<revision>.html`, `contracts/<revision>.json` | Immutable design and normative component definitions |
 | `workflow.json` | Registered commands, owners, forward dependencies and check contracts |
@@ -110,6 +112,7 @@ spawn, updated at every checkpoint and closed to `done` / `killed` / `blocked`. 
 
 **On every invocation, before anything else:** look for `.ai/<slug>/state.md` matching this
 requirement.
+
 - **Found** → read `state.md`, then resolve the current design as above and read the plan, then **resume at the
   recorded phase and increment**. Do not restart, do not redesign, and do not re-derive intent
   from the diff. If the recorded state and the working tree disagree, reconcile explicitly and
@@ -182,6 +185,7 @@ Split the work so **each increment fits comfortably in one session's context win
 end, with room to spare for tests and review.
 
 An increment is right-sized when:
+
 - It is a **vertical slice** that delivers observable behavior — not a horizontal layer
   ("all the models", "all the tests") that can't be verified on its own.
 - Implementing it requires reading and holding **well under half the context window**;

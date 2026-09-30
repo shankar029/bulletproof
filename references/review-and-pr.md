@@ -18,6 +18,7 @@ unstaged and untracked changes in a work-in-progress review; a committed three-d
 cannot establish coverage of a dirty worktree. Reconcile the final tree again before shipping.
 
 **Correctness & bugs**
+
 - [ ] Satisfies the current increment's due AC scenarios and affected prior regressions;
       final ship satisfies every AC, and nothing extra.
 - [ ] **Every referenced symbol, API, config key, and flag actually exists** — verified by
@@ -27,6 +28,7 @@ cannot establish coverage of a dirty worktree. Reconcile the final tree again be
 - [ ] Resources released; no leaked handles, connections, or listeners.
 
 **Design, patterns & maintainability**
+
 - [ ] **Matches the approved design document** — same types, same responsibilities, same
       interactions; any divergence was folded back into the document.
 - [ ] Plan/task completion matches the actual changes and check evidence; deviations follow
@@ -48,10 +50,12 @@ cannot establish coverage of a dirty worktree. Reconcile the final tree again be
       or superseded rules. Required documentation and runtime prompt/tool contracts preserved.
 
 **Security & performance**
+
 - [ ] Input validated, authorization enforced, no secrets in code or logs, no injection.
 - [ ] No repeated-query or quadratic blowups, no blocking work on hot paths, sane payloads.
 
 **Tests & hygiene**
+
 - [ ] Unit + integration + end-to-end present, meaningful, and green.
 - [ ] Coverage meets target; new branches covered; no skipped or empty tests.
 - [ ] **Every surviving mutant is killed or justified** — a green suite that lets mutants live
@@ -87,10 +91,12 @@ Use this brief:
 > the final repository state and executable evidence.
 >
 > **INPUTS.** The original requirement and acceptance criteria, `design.html`, `traceability.md`,
-> `plan.html` and linked task/check records, `metrics.json`, `references/code-clarity.md`,
+> `plan.html` and linked task/check records, **`scenarios.md` and the `evidence/` directory**,
+> `metrics.json`, `references/code-clarity.md`,
 > and the final diff.
 >
 > **PROCESS.**
+>
 > 1. **Review the diff** — correctness and edge cases, fidelity to the design, maintainability,
 >    test quality; flag band-aids, dead code, and unverified/invented APIs; check whether any
 >    metric gain was *gamed* (arbitrary function splitting, narrowed tool scope, weakened
@@ -108,6 +114,21 @@ Use this brief:
 >    evidence, inspect the final `git diff`/`status`, and confirm the cited tests exist and
 >    pass. Distinguish PASS / FAIL / NOT-RUN / INCONCLUSIVE; never accept "passed" without an
 >    observed result.
+>    **Open every artifact you rely on — do not grade the filename.** Read the transcript; *view*
+>    the screenshot (your `read` tool renders images). Four rules, each of which overrides a
+>    VERIFIED verdict: an artifact that **shows a failure** is a FAIL, not a pass — present is not
+>    passing; a **zero-byte or truncated** artifact is **missing** evidence; an artifact whose
+>    mtime **predates the final implementation commit** for its increment is **stale** — the code
+>    changed under it, so it proves nothing and the AC is NOT-VERIFIED; and an artifact that does
+>    not contain its scenario's **declared expected observable** does not support the claim it is
+>    cited for. Reconcile `scenarios.md` row by row: every `S`-id has evidence at its declared
+>    path or an explicit BLOCKED entry with a named blocker. A row that vanished between Phase 3
+>    and Phase 5 is a finding, not an omission.
+>    Start by running `python <skill>/scripts/scenarios.py --slug <slug> --strict --json` at the
+>    final commit — it mechanically catches MISSING / EMPTY / STALE / DROPPED / DUPLICATE /
+>    UNPROVEN rows. **A green exit is the floor, not the verdict:** it proves files exist, are
+>    non-empty and are current; only you can judge whether a screenshot actually shows the
+>    asserted state.
 >    At intermediate reviews, judge due scenarios and affected previously delivered regressions;
 >    record future ACs as NOT-VERIFIED (planned), not failures of earlier slices. For spanning
 >    ACs, record task/check proof without a premature VERIFIED verdict. Final review covers all ACs.

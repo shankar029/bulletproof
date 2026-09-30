@@ -102,7 +102,7 @@ Use the fields below for each task, compactly. Share common setup/check definiti
 them rather than repeating them. Mark genuinely inapplicable fields N/A with a reason.
 
 | Field | Required content |
-|---|---|
+| --- | --- |
 | **Identity & purpose** | Stable task ID, parent increment, ACs and approved design section/component; the observable outcome this task contributes to. |
 | **Depends on & entry conditions** | Task IDs, contracts/artifacts that must exist, relevant source state and required access/tooling. Name any blocked prerequisite. |
 | **Changes** | Exact existing files/symbols and intended behavior delta; explicitly label new files/symbols from the design. Include wiring, configuration, migration or documentation edits where applicable. Do not use a broad glob as the only instruction. |
@@ -123,7 +123,7 @@ environment, verification, and approved recovery. Planning does not authorize de
 Each check has a stable ID and records:
 
 | Field | Required content |
-|---|---|
+| --- | --- |
 | **Purpose** | AC/scenario and expected observable behavior, including relevant negative, boundary, compatibility and regression cases. |
 | **Execution** | Exact command plus working directory and shell/platform, or reproducible manual steps. Cite the project script/CI/docs or researched command definition; label derived invocations. |
 | **Prerequisites** | Runtime/tool versions where relevant, configuration names, services/fixtures, authorized environment and setup/cleanup. Never include secrets. |
@@ -147,6 +147,71 @@ Retain per-increment unit, integration and end-to-end coverage, regression scope
 expectation, full E2E timing, and final regression pass. State only relevant, agreed performance
 thresholds; "acceptable performance" is not a pass condition. Research or clarify missing material
 thresholds rather than inventing numerical targets.
+
+## 4b. Enumerate the end-to-end scenarios before anyone executes them
+
+A verifier that enumerates and executes in the same breath is self-graded, and under a budget it
+will enumerate less. Phase 3 therefore commits the list; Phase 5 executes it. Write
+`.ai/<slug>/scenarios.md`.
+
+Derive scenarios from the **four sources** and cover the **seven classes** in
+`testing-and-e2e.md`: each AC, the design's risks/edge-cases/failure-modes rows, the as-is →
+to-be preserved-behaviour invariants, and the original requirement text; across positive,
+negative/rejection, boundary, failure/fault, authorization, idempotency/repeat and regression.
+Every AC × applicable class yields a scenario or a recorded **N/A with a reason**.
+
+One row per scenario, with a stable id (`S1`, `S2`, …). Write it as a markdown table with these
+column headers — `scripts/scenarios.py` parses them **by name, not position**, so you may reorder
+or add columns, but `Id` and `Evidence` must be present:
+
+```markdown
+| Id | AC | Class | Preconditions | Steps | Expected observable | Evidence | Owner | Status |
+|----|----|-------|---------------|-------|---------------------|----------|-------|--------|
+| S1 | AC1 | positive | seeded cart | POST /orders | `HTTP 201` and `orderId` | `evidence/S1-api.json` | verifier | |
+| S2 | AC1 | negative | empty cart | POST /orders | `HTTP 422`, no row written | `evidence/S2-api.json` | verifier | |
+| S5 | AC3 | failure | DB down | POST /orders | `HTTP 503` | — | verifier | BLOCKED: no staging DB |
+```
+
+The fields:
+
+| Field | Required content |
+| --- | --- |
+| **Id / AC / Class** | `S7` · AC3 · negative. Ids are stable and never reused. |
+| **Preconditions** | Fixture, seeded state, auth context, environment. |
+| **Steps** | What a real user or client does — through the public surface, not an internal call. |
+| **Expected observable** | The **specific** string, status, field, file or UI state that must appear. "HTTP 201 and body contains `orderId`"; "the banner reads `Order placed`". "Works correctly" is not an expected observable. |
+| **Evidence artifact** | Declared **type and path**: `evidence/S7-api.json`, `evidence/S4-checkout.png`, `evidence/S9-cli.txt`. Declared here so a missing proof is detectable, not arguable. |
+| **Owner** | Independent verifier (Phase 5) by default; human for judgment/approval items. |
+
+**Declare the expected observable before the run, never after.** A pass condition written once
+the output is known is a description, not a test. This is the same rule as "observe the failure
+first" in Phase 4, applied to end-to-end proof.
+
+The list is a **floor, not a ceiling**. Phase 5 re-derives from the same four sources and
+**appends** what implementation made visible; it may never remove a row. A scenario that cannot
+be executed becomes **BLOCKED with a named blocker**, never deleted.
+
+### The checker
+
+```bash
+python <skill>/scripts/scenarios.py --slug <slug> [--ac AC1,AC2] [--since <ref>] [--strict]
+```
+
+It reconciles the table against the artifacts on disk and exits non-zero on any of:
+**MISSING** (no artifact at the declared path) · **EMPTY** (zero bytes) · **STALE** (mtime predates
+`--since`, default `HEAD` — the code changed under the proof) · **DROPPED** (no evidence path and
+no blocker, or `BLOCKED` with no reason) · **DUPLICATE** (id reused) · and with `--strict`,
+**UNPROVEN** (no backticked literal from `Expected observable` appears in a text artifact).
+
+Use `--ac` at an increment gate so it checks the due scope rather than the whole plan.
+
+**Put the specific values in backticks** — `` `HTTP 201` ``, `` `orderId` `` — because that is what
+`--strict` samples. Prose in that column still reads fine for a human; it simply gives the checker
+nothing to match.
+
+**What it cannot do:** it cannot read a screenshot. For a non-text artifact `--strict` reports
+UNPROVEN with the literals a human or the Phase 6 reviewer must confirm by eye. The script raises
+the floor; it does not replace the reviewer opening the file.
 
 ## 5. Keep the overview short without losing execution detail
 

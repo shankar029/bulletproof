@@ -320,7 +320,15 @@ requirements are unchanged.
 > finding, not a fix.
 >
 > **INPUTS.** The requirement and acceptance criteria, `design.html`, `plan.html` and its linked
-> task/check records, `traceability.md`, and the current working tree (implementation complete).
+> task/check records, **`scenarios.md`**, `traceability.md`, and the current working tree
+> (implementation complete).
+>
+> **SCENARIOS ARE A FLOOR.** `scenarios.md` was enumerated in Phase 3 so that the agent doing the
+> work is not the one deciding how much work there is. **Execute every row.** You may **append**
+> scenarios implementation revealed; you may **never remove, renumber or weaken** one. A row you
+> cannot run becomes **BLOCKED with a named blocker**, never deleted. If an expected observable is
+> wrong, report it as a **finding** and leave the row — editing a pass condition to match the
+> output you got is not verification.
 >
 > **PROCESS.** Enumerate scenarios from **four sources**, not just the ACs: (1) each acceptance
 > criterion; (2) every row of the design's risks/edge-cases/failure-modes table; (3) every
@@ -342,11 +350,23 @@ requirements are unchanged.
 > At an intermediate increment, verify its due scenarios and affected prior regressions, leaving
 > future tasks explicitly planned. At final ship, reconcile every AC, including spanning ACs.
 >
-> **OUTPUT CONTRACT.** Capture evidence into `.ai/<slug>/evidence/` (commands, output,
-> screenshots, console/errors, one pass/fail line per criterion) and fill the `Test` and
+> **OUTPUT CONTRACT.** Capture evidence into `.ai/<slug>/evidence/` **at the path each scenario
+> declared** — commands, output, screenshots, console/errors, one pass/fail line per criterion.
+> Each artifact must **show the expected observable**: the asserted UI state visible in frame, the
+> status and body, the decisive output line. A 500 transcript is a recorded failure, not proof; a
+> **zero-byte or truncated artifact is missing evidence**, not weak evidence. Record **observed vs
+> expected** per scenario, never just "captured". Re-capture after any change to the code under
+> test — an artifact older than what it claims to prove is stale and Phase 6 will reject it.
+> Fill the `Test` and
 > `Evidence` columns of `traceability.md`. Include the **scenario matrix**: per AC, which classes
 > were exercised and which were N/A with their reason — a reader must see what was *not* tested
 > without reading test code. Reply with a five-line summary and the paths.
+>
+> **BEFORE REPORTING DONE.** Run `python <skill>/scripts/scenarios.py --slug <slug> --ac <due ACs>
+> --strict`. A non-zero exit means a scenario has no proof — MISSING, EMPTY, STALE, DROPPED,
+> DUPLICATE or UNPROVEN. Fix the proof or mark the row BLOCKED with a named blocker; **never edit
+> an expected observable to match the output you got.** Screenshots come back UNPROVEN because the
+> checker cannot read them — report that, do not treat it as passed.
 >
 > **STOP CONDITIONS.** If the environment makes real end-to-end proof impossible (no network,
 > credentials or runnable host), do **not** weaken the gate or fake a pass: verify at the deepest

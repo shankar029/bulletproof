@@ -133,6 +133,50 @@ file left behind. A test that accepts any non-success is close to no test at all
 and which were N/A with their reason. A reader must be able to see what was *not* tested without
 reading the test code.
 
+### Execute `scenarios.md` — append-only
+
+Phase 3 committed the enumeration (`planning.md` §4b) precisely so the agent doing the work is not
+the one deciding how much work there is. Treat it as a **floor**:
+
+- **Execute every row.** A scenario you cannot run becomes **BLOCKED with a named blocker** —
+  never deleted, never silently dropped, never rewritten to something easier.
+- **Append what implementation revealed.** Your four-source re-derivation will surface scenarios
+  the planner could not see. Add them as new ids; do not renumber.
+- **Never remove or weaken a row.** If an expected observable is wrong, say so as a **finding**
+  and leave the row — changing the pass condition to match the output is not verification.
+- **Record observed vs expected**, not "captured". Write the value you actually saw next to the
+  value the scenario demanded. They must match for a pass.
+
+### Capture evidence that proves the outcome
+
+Write each artifact to the **path the scenario declared**, so missing proof is detectable rather
+than arguable. An artifact must show the expected observable, not merely that something ran:
+
+- **Screenshot** — the asserted UI state visible in frame, not a page that happens to be open.
+- **API transcript** — request, status, headers where relevant, and body; a 500 transcript is a
+  recorded failure, not proof.
+- **CLI/log** — command, exit code, and the decisive output line.
+- **Side effects** — the persisted record, emitted event, or created file, queried after the fact.
+
+**A zero-byte or truncated artifact is missing evidence, not weak evidence.** If a command
+legitimately prints nothing, the proof is the exit code plus a queried side effect, not an empty
+file.
+
+**Capture at the state you are certifying.** Re-capture after any change to the code under test;
+an artifact older than the implementation it claims to prove is stale, and Phase 6 will reject it.
+
+**Then run the checker before you report done:**
+
+```bash
+python <skill>/scripts/scenarios.py --slug <slug> --ac <due ACs> --strict
+```
+
+It exits non-zero on a row that is MISSING, EMPTY, STALE, DROPPED, DUPLICATE or UNPROVEN. A
+non-zero exit is not a formatting complaint — it means a scenario has no proof. Fix the proof or
+mark the row BLOCKED with a named blocker; never edit the expected observable to match what you
+got. The checker cannot read a screenshot, so it reports those UNPROVEN for a human or the Phase 6
+reviewer to confirm by eye.
+
 These tests are committed to the repo.
 
 ## Evidence to capture
