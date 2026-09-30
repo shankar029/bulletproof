@@ -4,6 +4,7 @@ Passing tests is the floor. The bar is work that fits the project, reuses what e
 well-designed and modular, and is easy to change next month.
 
 ## The loop
+
 After Phase 6, score the work below. If every required dimension is at or above the bar, all
 gates are green, and every acceptance criterion is objectively met — ship. Otherwise list the
 specific gaps (dimension, what's wrong, **root cause**), return to the earliest phase that
@@ -27,14 +28,14 @@ scores when they disagree, and reconcile only with evidence.
 ## The scorecard (0–5 each; required bar = 4)
 
 | # | Dimension | What "5" looks like |
-|---|---|---|
+| --- | --- | --- |
 | 1 | **Correctness** | All acceptance criteria and edge cases hold; unit + integration + end-to-end green; no known defect. |
 | 2 | **Grounding** | Every symbol, API, config key, and flag used was read and verified in source or docs; nothing invented; assumptions labelled as assumptions. |
 | 3 | **Design fidelity & depth** | The design document defines classes, interfaces, and interactions before coding; the implementation matches it; divergences updated the document. Root causes fixed, not symptoms — no band-aids, no ad-hoc patches. |
-| 4 | **Scope fidelity** | Exactly what was asked — no gold-plating, no creep, no unrelated edits; larger refactors noted as follow-ups. |
+| 4 | **Scope fidelity** | Exactly what was asked — no gold-plating, no creep, no unrelated edits; larger refactors noted as follow-ups. Adjacent capability may be **proposed** in Phase 1 and built only after an explicit yes (`research.md` § Adjacent scope); an accepted proposal is an AC like any other, and an unaccepted one in the diff is creep. |
 | 5 | **Reuse & DRY** | Searched before writing; shared rules and integration mechanics reuse existing utilities; no duplicated implementation of the same responsibility or abstraction based only on similar syntax. |
 | 6 | **Design & modularity** | Single responsibility, high cohesion, low coupling, clear boundaries; the fitting pattern, not the cleverest; matches the codebase's architecture. |
-| 7 | **Extensibility & maintainability** | The next likely change stays within clear responsibilities; main and failure flows, state ownership and contracts are understandable; names and necessary comments describe current behavior (`code-clarity.md`). |
+| 7 | **Extensibility & maintainability** | The next likely change stays within clear responsibilities; main and failure flows, state ownership and contracts are understandable; names and necessary comments describe current behavior (`code-clarity.md`). The **grounded** next changes were named and checked additive-or-surgery, and every one-way structural choice was decided by the human at Gate 2 rather than defaulted by the agent — without speculative seams built for changes nobody has evidence for. |
 | 8 | **Robustness** | Input validation, error paths, concurrency, security, and performance considered and handled. |
 | 9 | **Test quality & evidence** | Meaningful unit + integration + end-to-end; covers branches and failure modes; no skipped, empty, or tautological tests; coverage met; evidence bundle assembled and environment-blocked proof named explicitly. |
 
@@ -55,6 +56,7 @@ flow, stale comment, or unnecessary abstraction. This adds no size/comment quota
 relax existing configured gates.
 
 ## Judging the deeper dimensions
+
 - **Grounding:** for every non-obvious claim in the design, the code, or the report, can you
   name the file you read that supports it? An API used but never opened is a ≤2 — go read it.
 - **Design fidelity:** compare the diff against the design document type by type. Code that
@@ -72,6 +74,7 @@ relax existing configured gates.
   by itself a reason to introduce a framework or extension point.
 
 ## Anti-gaming rules
+
 - Never lower a threshold, delete or skip a test, or weaken an assertion to pass.
 - Never score a dimension at the bar without evidence; when unsure, score lower and fix.
 - Never state as fact anything you have not verified in the source or the tool's own docs.

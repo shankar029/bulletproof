@@ -128,6 +128,48 @@ next investigative action**. Do not keep exploring unrelated areas to make the r
 A research assignment can finish with unknowns; **Gate 1 cannot pass with unresolved design-changing
 unknowns** under `SKILL.md`'s clarification rules.
 
+## Adjacent scope: name the next likely requirement
+
+Research sees the codebase more completely than the requirement's author did. That view is worth
+reporting — not as work to do, but as a **decision for the human** and as input to the design.
+
+The rule this does not break: **proposing is not creep; building unasked is.** Nothing in this
+section becomes an acceptance criterion without an explicit human yes.
+
+Report **up to five** adjacent capabilities, each grounded:
+
+| Field | Required |
+| --- | --- |
+| **Proposal** | One line: the capability, in the project's own domain language. |
+| **Trigger** | The evidence that suggests it — an existing caller that will need it, a pattern this codebase already applies elsewhere, a gap the requirement's own wording implies, or a failure mode with no owner. **Cite it.** |
+| **Scenario** | The concrete situation where a user hits it. |
+| **Cost** | S / M / L relative to the stated work, with the reason. |
+| **Recommendation** | **Include now** (cheap now, expensive to retrofit) · **Defer** (real, but separable) · **Decline** (named for completeness; do not build). |
+
+Grounding rules — the same epistemics as every other claim:
+
+- A proposal needs a **cited trigger**. "Might be nice", "users often want", and "industry
+  standard" are not triggers; they are HYPOTHESIS and go unreported.
+- **Never propose in order to justify an abstraction you want to build.** A proposal recommended
+  *Include now* that happens to require a new framework is a smell — state the cost honestly.
+- If nothing is grounded, **report none.** An empty section is a valid and common result. Never
+  pad toward five.
+- Proposals are **not** research gaps. A thing you could not verify goes in Risks & questions.
+
+What happens to them:
+
+- The parent surfaces the list in the **Phase 1 clarification batch** with its recommendation
+  (prime directive 7). **Waiting is the default; silence is not consent** — unanswered means not
+  in scope.
+- An accepted proposal becomes a **new AC** with its own traceability row, and goes through
+  design, plan, tests and verification like any other. It is never slipped in as a quiet extra.
+- A **declined or deferred** proposal still shapes Phase 2: the design should leave it *additive
+  rather than surgery on the core* — rubric dimension 7, and it costs nothing at design time.
+  Deferred items go to the final report's follow-ups so they are not lost.
+
+The payoff is real even when every proposal is declined: a design that knows its next likely
+change is a better design. The cost of discovering adjacent scope *after* Phase 2 is a redesign.
+
 ## Evidence and freshness rules
 
 - Label material findings **FACT** (directly observed), **INFERENCE** (derived from cited facts),
@@ -155,7 +197,7 @@ evidence**. Use the following sections, marking inapplicable ones N/A with a rea
 inventing content. Shared evidence IDs can avoid repeating long citations in every row.
 
 | Section | Required contents |
-|---|---|
+| --- | --- |
 | **Snapshot & scope** | Metadata above; full requirement or durable accessible copy; ACs, exclusions, clarified decisions/assumptions, and the assigned subset if delegated. |
 | **Summary** | What exists, the main constraints, what remains unknown, and whether the report is complete, partial, or blocked. |
 | **Requirement coverage** | One row per AC/sub-deliverable: current behavior, evidence, relevant contracts/consumers, reuse candidates, existing tests, uncovered scenarios, and research status. No silently omitted rows. |
@@ -165,6 +207,7 @@ inventing content. Shared evidence IDs can avoid repeating long citations in eve
 | **History & external sources** | Relevant decisions, rationale, versions/dates, implementation status, direct citations, and conflicts with current code. |
 | **Gaps & search evidence** | Scoped not-found results, queries/filters/exclusions, inaccessible sources, incomplete traces, and what was not inspected. |
 | **Risks & questions** | Typed uncertainties, their impact and affected ACs, which block planning, and the next verification/clarification action. No implicit defaults disguised as facts. |
+| **Adjacent scope** | Up to five **grounded** proposals for capability the requirement will plausibly need next — each with cited trigger, scenario, cost and recommendation (see § Adjacent scope). Proposals only, never work performed. "None grounded" is a valid entry. |
 | **Handoff** | Recommended reading order of existing sources, report location, freshness caveats, and remaining parent actions. No proposed implementation plan. |
 
 The trivial tier follows `SKILL.md`'s short path and skips this report. Otherwise, **persist

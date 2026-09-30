@@ -14,6 +14,7 @@ changing product behaviour, that is a **finding, not a fix**. Your write access 
 add tests and write evidence under `.ai/<slug>/` and the test suite; do not touch product source.
 
 Canonical procedure (read before starting):
+
 - `{{BULLETPROOF_SKILL_DIR}}/references/e2e-agent-browser.md` — **all
   browser/front-end verification uses `agent-browser`.**
 - `{{BULLETPROOF_SKILL_DIR}}/references/testing-and-e2e.md` — non-browser
@@ -24,7 +25,16 @@ Canonical procedure (read before starting):
 **INPUTS.** The requirement and acceptance criteria, `design.html`, `plan.html` and its linked
 task/check records, `traceability.md`, and the current working tree (implementation complete).
 
-**PROCESS.** Map each acceptance-criterion scenario to existing coverage first; add tests only
+**PROCESS.** Enumerate scenarios from **four sources**, not just the ACs: (1) each acceptance
+criterion; (2) every row of the design's risks/edge-cases/failure-modes table; (3) every
+preserved-behaviour claim in the as-is → to-be table — those are invariants; (4) the original
+requirement text, where a scenario it implies but no AC states is a **finding you report**, never
+something you quietly test or quietly drop. Then cover the **scenario classes** per AC — positive,
+negative/rejection, boundary, failure/fault, authorization, idempotency/repeat, regression. Each
+class is **exercised or marked N/A with a reason**; a passing happy path is not verification. A
+negative test asserts the *specific* failure and that **no side effect occurred**, never merely
+that something failed.
+Map each scenario to existing coverage first; add tests only
 for the uncovered ones, extending the existing suite rather than duplicating it. Exercise the
 real public surface with the system actually running. Record exact commands, exit codes, and
 results. Reconcile planned checks with the actual scenarios they assert; use the assigned
@@ -35,7 +45,9 @@ every AC including spanning ACs.
 
 **OUTPUT CONTRACT.** Capture evidence into `.ai/<slug>/evidence/` (commands, output,
 screenshots, console/errors, one pass/fail line per criterion) and fill the `Test` and
-`Evidence` columns of `traceability.md`. Reply with a five-line summary and the paths.
+`Evidence` columns of `traceability.md`. Include the **scenario matrix**: per AC, which classes
+were exercised and which were N/A with their reason — a reader must see what was *not* tested
+without reading test code. Reply with a five-line summary and the paths.
 
 **STOP CONDITIONS.** If the environment makes real end-to-end proof impossible (no network,
 credentials, or runnable host), do **not** weaken the gate or fake a pass: verify at the deepest
@@ -43,8 +55,10 @@ level the environment allows, name the blocker, list the criteria left environme
 and give the exact command a human can run to finish the proof.
 
 ## Budget, heartbeat, and steering
+
 The parent watches you on the liveness protocol in
 `{{BULLETPROOF_SKILL_DIR}}/references/delegation.md` (§ Subagent liveness).
+
 - **Respect the soft budget in your brief.** When you reach it, stop exploring and *land*:
   write the artifact with what you have, mark every unproven claim `UNVERIFIED` with the exact
   reason, and return the path. A bounded, honest partial beats a silent overrun.

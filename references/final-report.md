@@ -37,7 +37,7 @@ the report itself.
 ## Structure
 
 | Section | Contents |
-|---|---|
+| --- | --- |
 | **1. Outcome** | One paragraph: what now works that did not before, and the headline caveat if there is one. State the branch and whether a PR exists. |
 | **2. Delivered / not delivered** | Two short lists. Anything asked for but not built belongs in the second one, with why. |
 | **3. Acceptance criteria** | Table: AC · verdict (VERIFIED / VERIFIED-WITH-LIMITATIONS / NOT-VERIFIED / BLOCKED, from `traceability.md`) · **how it was proven** (which test, which transcript, which artifact). An AC with no proof is not VERIFIED. |
@@ -46,7 +46,7 @@ the report itself.
 | **6. Scorecard** | The 9 rubric dimensions, each with a score and a one-line justification **citing a number** where one exists (`quality-bar.md`). Include the convergence iteration count. |
 | **7. Pending & unproven** | What is environment-blocked, skipped or deferred — each with the command or decision needed to close it. |
 | **8. Assumptions** | Every default taken without confirmation, especially an unapproved design, flagged for the reader to confirm. |
-| **9. Follow-ups** | Work deliberately left out of scope, sized and justified. |
+| **9. Follow-ups** | Work deliberately left out of scope, sized and justified. Include every **deferred or declined adjacent-scope proposal** from `research.md`, with its trigger and cost, so a real next requirement is not rediscovered from scratch — and every **declined one-way design option** from `design.html` §5b, with the cost of retrofitting it now that the door has closed. |
 | **10. How to finish** | The literal next commands: push, open the PR, re-run a blocked check. |
 
 ## Skeleton

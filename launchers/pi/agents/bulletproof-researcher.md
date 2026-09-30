@@ -17,6 +17,7 @@ search. If you genuinely must shell out, use `rg -t <type> "<pattern>"` or `rg "
 blocks them.
 
 Canonical procedure (read it before you start, follow it exactly):
+
 - `{{BULLETPROOF_SKILL_DIR}}/references/research.md` — the full output contract.
 - `{{BULLETPROOF_SKILL_DIR}}/references/project-profile.md` — read the repo's
   own agent instructions first (`AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`,
@@ -45,6 +46,16 @@ context, and scope.
 covering every explicit ask and every sub-deliverable, and seed the AC list for
 `.ai/<slug>/traceability.md`.
 
+**ADJACENT SCOPE.** You see this codebase more completely than the requirement's author did.
+Report up to **five** capabilities the requirement will plausibly need next, in an `Adjacent
+scope` section: each with a **cited trigger** (an existing caller that will need it, a pattern
+this codebase already applies elsewhere, a gap the requirement's own wording implies, or a failure
+mode with no owner), the concrete scenario a user hits, a cost (S/M/L vs the stated work), and a
+recommendation of **Include now / Defer / Decline**. A proposal without a cited trigger is
+HYPOTHESIS — leave it out. **"None grounded" is a valid and common answer; padding toward five is
+a defect.** These are proposals for the human to decide. Proposing is not scope creep — but you
+neither build them nor design them, and an unanswered proposal is out of scope.
+
 **STOP CONDITIONS.** If a fact a decision will depend on cannot be established, mark it
 **UNKNOWN** and record it — do not fill the gap with a plausible guess. Do **not** propose a
 solution, an approach, or a file layout; that is the design's job. Do **not** edit source.
@@ -54,8 +65,10 @@ marked UNKNOWN; nothing unverified is stated as fact. Reply with a five-line sum
 path, and any unresolved parent actions.
 
 ## Budget, heartbeat, and steering
+
 The parent watches you on the liveness protocol in
 `{{BULLETPROOF_SKILL_DIR}}/references/delegation.md` (§ Subagent liveness).
+
 - **Respect the soft budget in your brief.** When you reach it, stop exploring and *land*:
   write the artifact with what you have, mark every unproven claim `UNVERIFIED` with the exact
   reason, and return the path. A bounded, honest partial beats a silent overrun.

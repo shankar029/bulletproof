@@ -9,6 +9,45 @@ coupled problems. Follow repository conventions and required documentation. Do n
 unrelated cleanup, add a new phase, or generate a separate readability report. Use the existing
 design, tests, and review records. Human-facing messages follow `communication.md`.
 
+## Language standards
+
+Repository convention wins wherever it exists: a committed formatter/linter config that CI runs
+**is** the standard, and you match it even where you would have chosen otherwise. Grade the axis
+first (`project-profile.md` § Grade the guidance before you inherit it).
+
+Where the language axis grades **Absent** — greenfield, or no discoverable formatter, linter, or
+style rule — **say so**, then write to the ecosystem's least-surprising default instead of
+inventing a house style:
+
+| Ecosystem | Default standard | Formatter / linter |
+| --- | --- | --- |
+| Go | Effective Go + Go Code Review Comments | `gofmt`/`gofumpt`, `go vet`, `staticcheck` |
+| Python | PEP 8, PEP 257 docstrings, type hints on public functions | `ruff` (or `black` + `flake8`), `mypy`/`pyright` |
+| TypeScript / JavaScript | TS `strict`, no implicit `any`, ES modules | `prettier`, `eslint` + `typescript-eslint` |
+| Rust | Rust API Guidelines | `rustfmt`, `clippy` |
+| Java / Kotlin | Google Java Style / Kotlin coding conventions | `google-java-format`/`spotless`, `ktlint` |
+| C# | .NET coding style + Framework Design Guidelines | `dotnet format`, built-in analyzers |
+| Ruby | Ruby Style Guide | `rubocop` |
+| Shell | Google Shell Style Guide; `set -euo pipefail` | `shellcheck`, `shfmt` |
+| SQL | the dialect's own conventions; explicit column lists | `sqlfluff` |
+
+For an ecosystem not listed, use the standard its official documentation endorses, read enough of
+it to apply it, and cite what you read — prime directive 1 forbids citing a guide you have not
+opened.
+
+The import rules in `project-profile.md` § Importing a standard apply in full. In particular:
+
+- **Scope it to your diff.** A default is a floor for new and changed code, never a licence to
+  reformat or rename untouched files.
+- **Do not add the tool in order to satisfy the standard.** Follow it by hand; add a config only
+  when the task genuinely requires enforcement, and declare that in the design.
+- **On a Partial axis, do not import at all** — name the conflicting variants, follow the dominant
+  neighbor pattern in the subtree you are changing, and surface the conflict.
+
+Idiomatic is not the same as clever. Where an ecosystem's idiom and this reference's readability
+rules disagree, prefer the idiom a maintainer of that language expects, and note the tension if it
+costs real clarity.
+
 ## Design for understanding
 
 - **Keep the main flow visible.** A reader should be able to trace the normal path, important
@@ -85,7 +124,7 @@ Changing them requires the same contract review and relevant checks as other beh
 Read the changed code without relying on the author's narrative. Check:
 
 | Question | Reject when |
-|---|---|
+| --- | --- |
 | Can I explain the normal path, failure paths, and state changes? | Unrelated responsibilities or hidden side effects make the flow difficult to trace. |
 | Do names and comments match the implementation? | Names misrepresent behavior, comments contradict code, or source contains inline change journals. |
 | Does each abstraction reduce understanding effort? | Helpers only move lines, indirection hides a simple operation, or speculative generality adds unnecessary modes. |

@@ -191,7 +191,11 @@ a licence to research inline. See `references/delegation.md` for the brief, the 
 the spot-check.
 
 - **Before investigation, load `references/project-profile.md`** to read applicable repository
-  instructions, establish conventions/domain language, and surface conflicts.
+  instructions, establish conventions/domain language, and surface conflicts. **Grade every
+  profile axis** — language style, test conventions, architecture/layering, documentation — as
+  Established / Partial / Absent, and **call out each Absent or Partial axis with the standard
+  proposed to close it** rather than silently inheriting the gap. An imported standard is recorded
+  as an import, never as observed fact.
 - **Supply and follow `references/research.md`** for the complete read-only procedure and
   output contract. Write `.ai/<slug>/research.md` with requirement-scoped behavior, contracts,
   callers, reuse, tests, blast radius, typed source evidence, scoped absence, and freshness.
@@ -207,15 +211,26 @@ the spot-check.
   Research remains read-only; needed harness/instrumentation writes go to the parent.
 - **Clarify** the material unknowns per prime directive 7. Record every question, answer, and
   assumption in `.ai/<slug>/clarifications.md`.
+- **Propose the adjacent scope — do not build it.** Research reports up to five *grounded*
+  capabilities the requirement will plausibly need next, each with a cited trigger, the scenario
+  a user hits, a cost, and a recommendation (`references/research.md` § Adjacent scope). Surface
+  them **in the same clarification batch**, with your recommendation. **Silence is not consent:**
+  an unanswered proposal is out of scope. An accepted one becomes a new AC with its own
+  traceability row; a declined one still informs Phase 2, which should leave it *additive rather
+  than surgery on the core*, and is recorded as a follow-up. Proposing is not scope creep;
+  building unasked is.
 - **Create the workspace:** `.ai/<slug>/` with `state.md` (requirement, tier, acceptance
   criteria, next action) per `references/workspace.md`.
-- **GATE 1:** the profile is stated, the repository's own agent instructions are read and
+- **GATE 1:** the profile is stated **with every axis graded and each Absent/Partial axis called
+  out**, the repository's own agent instructions are read and
   honored, the criteria cover the whole request, **`research.md` exists and every claim in it is
   cited and typed**, `traceability.md` is seeded, the workspace exists, and no open unknown could
   still change the design. **Spot-check three citations at random and resolve them against the
   source** — any miss, or any HYPOTHESIS/UNKNOWN presented as a fact, and the document is
   rejected and rewritten. Reconcile every AC against the original request; check cross-component
   and scoped not-found claims where present, and confirm downstream access to the report.
+  **Adjacent scope has been considered and surfaced** — proposals with their recommendations, or
+  an explicit "none grounded"; nothing proposed has been built.
 
 ### Phase 2 — Program design (before any implementation)
 
@@ -252,6 +267,13 @@ code — see `references/ux-design.md`. Skip it entirely for library / CLI / API
   the reader sees the delta, not just the destination.
 - **Data & contracts** — schemas, payloads, persisted shapes, migrations, compatibility.
 - **Design decisions** — each with the alternatives rejected and why, in a table.
+- **Design options for sign-off** — the structural choices that are the *human's* to make, not
+  yours: what each buys, its cost, and above all its **reversibility**. A **two-way** option can
+  safely wait for evidence; a **one-way** one (a persisted shape, a public contract, a module
+  boundary others will depend on) closes when Phase 4 starts, so it is decided at Gate 2 by the
+  person who owns the consequences. At most three, each grounded in a change it makes cheap —
+  **missing structure is a finding, not an option**, and "none" is the common, valid answer
+  (`references/design-doc.md`). Proposing is not creep; building unasked is.
 - **Failure modes & edge cases** — what can go wrong and what the design does about it.
 - Design for **modularity and change**: single responsibility, high cohesion, low coupling,
   clear boundaries, DRY/YAGNI/KISS, and the pattern that fits *this* codebase. The next likely
@@ -262,7 +284,12 @@ code — see `references/ux-design.md`. Skip it entirely for library / CLI / API
   `research.md` or be one you have opened and read yourself.
 - **GATE 2a — self-check.** The design document exists (≤3 pages, simple diagrams), every
   acceptance criterion maps to a named component/method, every component carries its
-  why/what/how rationale, every referenced existing symbol has been verified in the source, and
+  why/what/how rationale, **every changed existing symbol has an as-is → to-be row citing
+  `research.md`,** **the test-strategy table has no blank end-to-end cell — each AC names a
+  scenario or carries a closed-list `N/A — reason`,** every referenced existing symbol has been
+  verified in the source,
+  **dependency direction is stated and obeyed, every standard imported to close an Absent profile
+  axis is declared in the Design decisions table,** and
   the design passes the checklist in `references/project-profile.md`.
 - **GATE 2b — independent design review, before the human sees it.** Hand `design.html`,
   `research.md`, and the acceptance criteria to a **fresh-context design-review subagent**
@@ -280,7 +307,8 @@ code — see `references/ux-design.md`. Skip it entirely for library / CLI / API
   **Then hand it over and wait — GATE 2 (human sign-off).** Self-check that it renders, open it in
   the user's default
   browser, print the `file://` path, say what you need back (approve / approve with comments /
-  request changes), record `Blocked on: design sign-off` in `state.md`, and **stop — end the
+  request changes) **and a decision on each open design option — an unanswered option is
+  declined**, record `Blocked on: design sign-off` in `state.md`, and **stop — end the
   turn.** Do not poll, and do not start Phase 3.
 
   **Waiting is the default for any non-trivial change.** Skip the wait only when the invocation
@@ -378,9 +406,10 @@ At final ship, reconcile the **whole request** with no future work silently left
   necessary invariants, required documentation, and runtime prompt/tool contracts.
 - Dispatch and then reintegrate parallel work if planned. Isolated workers being green is
   not proof — the gate runs on the integrated result.
-- **GATE 4:** unit + integration tests pass on the integrated result, coverage meets the
-  target, the build/type-check is clean, and the code matches the design document. Update
-  `state.md`.
+- **GATE 4:** unit + integration tests pass on the integrated result, **the repo's existing
+  end-to-end suite still passes** (run it as regression — authoring new end-to-end tests belongs
+  to Phase 5), coverage meets the target, the build/type-check is clean, and the code matches the
+  design document. Update `state.md`.
 
 ### Phase 5 — End-to-end verification
 
@@ -394,19 +423,31 @@ would exercise it, and commit those tests. **All browser and front-end verificat
 
 - Map each acceptance-criterion scenario to existing coverage first; add tests only for the
   uncovered ones, extending the existing suite rather than duplicating it.
+- **Enumerate scenarios from four sources, not just the ACs** — each AC, every row of the
+  design's risks/edge-cases/failure-modes table, every preserved-behaviour claim in the
+  as-is → to-be table, and the **original requirement text** (a scenario it implies but no AC
+  states is a finding you report, not something you quietly test or drop). Then cover the
+  **scenario classes** per AC — positive, negative/rejection, boundary, failure/fault,
+  authorization, idempotency/repeat, regression. Each class is **exercised or marked N/A with a
+  reason**; a passing happy path is not verification, and a negative test asserts the *specific*
+  failure **and that no side effect occurred**. Matrix in `references/testing-and-e2e.md`.
 - Consume the plan's check records as well as the design/ACs. Independently confirm expected
   outcomes, capture the assigned evidence, and leave human-owned acceptance unconfirmed until
   that human responds. A planned check or passing command with no relevant assertions is not proof.
 - Supply the current-design binding and admitted check identity in the fresh-context brief
   per `references/delegation.md`; a null-command handoff does not itself launch an agent.
 - Capture the evidence into `.ai/<slug>/evidence/`: commands run, output, screenshots,
-  console/error output, artifacts, and one pass/fail line per criterion.
+  console/error output, artifacts, one pass/fail line per criterion, and the **scenario matrix**
+  — per AC, which classes were exercised and which were N/A with their reason. A reader must be
+  able to see what was *not* tested without reading the test code.
 - **If the environment makes real end-to-end proof impossible** (no network, no credentials,
   no runnable host), do not weaken the gate and do not pretend. Verify at the deepest level
   the environment allows, **name the blocker**, list which criteria remain
   environment-unverified, and give the exact command a human can run to finish the proof.
 - **GATE 5:** every scenario in the increment gate scope is demonstrated met with captured
-  evidence — or is listed as environment-blocked with the blocker and the finishing command stated.
+  evidence — or is listed as environment-blocked with the blocker and the finishing command
+  stated. **Every AC carries a complete scenario matrix**: each class exercised, or N/A with its
+  reason recorded. An AC proved only on its happy path does not pass this gate.
 
 ### Phase 6 — Review, prove, ship
 

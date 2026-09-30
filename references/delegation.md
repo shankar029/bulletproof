@@ -212,6 +212,11 @@ provide the required fresh role, report the blocker rather than rename self-revi
 > **OUTPUT CONTRACT.** Write `.ai/<slug>/research.md` using the full output contract in
 > `references/research.md`: AC coverage, behavior/failure traces, contracts/consumers, reuse
 > examples and actual tests, historical/version context, scoped gaps, and typed unknowns.
+> Include the **Adjacent scope** section: up to five *grounded* capabilities the requirement will
+> plausibly need next, each with a **cited trigger**, the scenario a user hits, a cost and a
+> recommendation (Include now / Defer / Decline). A proposal without a cited trigger is HYPOTHESIS
+> — omit it; "none grounded" is a valid and common answer, and padding to five is a defect. These
+> are proposals for the human to decide, never work you perform and never a solution design.
 > Keep the summary concise without dropping requirement-relevant evidence. If artifact writes
 > are withheld, return the full report for the parent to persist and verify before the gate.
 > Reply with a five-line summary, the output location, and unresolved parent actions.
@@ -234,6 +239,17 @@ provide the required fresh role, report the blocker rather than rename self-revi
 > modes. **Include the as-is → to-be table** — for every symbol you change, its current behaviour
 > *citing research* and what it becomes. Prefer existing patterns; introduce a named pattern only
 > where it solves a real problem; keep the design proportional.
+>
+> **EXTENSION PRESSURE → OPTIONS.** Run the extension-pressure check in `references/design-doc.md`:
+> take every adjacent-scope proposal in research (accepted, deferred **and** declined) plus any
+> change this codebase visibly keeps making, and ask whether it would be *additive* to your design
+> or *surgery on its core*. Apply the decision rule — **high grounded likelihood + cheap seam now +
+> expensive retrofit = adopt now**; cheap-to-retrofit = defer; low likelihood = decline and name
+> it. Where the call is a genuine cost/benefit judgement, put it in the **§5b Design options for
+> sign-off** table with what it buys, its cost, and its **reversibility** (one-way choices close
+> when Phase 4 starts, so the human decides them at Gate 2). At most three options; **missing
+> structure is a finding you fix, not an option you offer**; "none — additive already" is the
+> common and correct answer. Never justify an abstraction with "requirements usually grow".
 >
 > **EVIDENCE POLICY.** Every existing symbol you name must appear in the research document or be
 > one you have opened and read yourself — mark anything unverified as such, never as an existing
@@ -266,7 +282,12 @@ provide the required fresh role, report the blocker rather than rename self-revi
 >
 > **OUTPUT CONTRACT.** Write `.ai/<slug>/design-review.md`: a findings table (finding · severity
 > · which principle/AC · suggested direction) and a one-word verdict — **APPROVE / REVISE /
-> REJECT**. REJECT if a requirement is uncovered or a named symbol does not exist. Reply with a
+> REJECT**. REJECT if a requirement is uncovered or a named symbol does not exist. You may also
+> add **up to three design options** the design did not consider, under the same contract as §5b
+> (what it buys · cost · reversibility · recommendation) — you are fresh-context and often a
+> different model, so you may see a seam the author missed. Keep them **separate from findings**:
+> an option is a proposal for the human, never a required change, and a design that is *wrong*
+> without the structure is a REVISE finding, not an option. Reply with a
 > five-line summary and the path.
 >
 > **STOP CONDITIONS.** Do not propose a full redesign or write code; surface the gap and let the
@@ -301,9 +322,19 @@ requirements are unchanged.
 > **INPUTS.** The requirement and acceptance criteria, `design.html`, `plan.html` and its linked
 > task/check records, `traceability.md`, and the current working tree (implementation complete).
 >
-> **PROCESS.** Map each acceptance-criterion scenario to existing coverage first; add tests only
-> for the uncovered ones, extending the existing suite. Exercise the real public surface with the
-> system actually running — **all browser/front-end verification uses `agent-browser`** (see
+> **PROCESS.** Enumerate scenarios from **four sources**, not just the ACs: (1) each acceptance
+> criterion; (2) every row of the design's risks/edge-cases/failure-modes table; (3) every
+> preserved-behaviour claim in the as-is → to-be table — those are invariants; (4) the original
+> requirement text, where a scenario it implies but no AC states is a **finding you report**, never
+> something you quietly test or quietly drop. Then cover the **scenario classes** per AC — positive,
+> negative/rejection, boundary, failure/fault, authorization, idempotency/repeat, regression
+> (`references/testing-and-e2e.md`). Each class is **exercised or marked N/A with a reason**; a
+> passing happy path is not verification. A negative test asserts the *specific* failure and that
+> **no side effect occurred**, never merely that something failed.
+> Map each scenario to existing coverage first; add tests only
+> for the uncovered ones, extending the existing suite rather than duplicating it. Exercise the
+> real public surface with the system actually running — **all browser/front-end verification uses
+> `agent-browser`** (see
 > `references/e2e-agent-browser.md`); non-browser surfaces per `references/testing-and-e2e.md`.
 > Record exact commands, exit codes and results. Reconcile planned checks with the actual
 > scenarios they assert; use the assigned evidence paths. Do not confirm human-owned acceptance
@@ -313,7 +344,9 @@ requirements are unchanged.
 >
 > **OUTPUT CONTRACT.** Capture evidence into `.ai/<slug>/evidence/` (commands, output,
 > screenshots, console/errors, one pass/fail line per criterion) and fill the `Test` and
-> `Evidence` columns of `traceability.md`. Reply with a five-line summary and the paths.
+> `Evidence` columns of `traceability.md`. Include the **scenario matrix**: per AC, which classes
+> were exercised and which were N/A with their reason — a reader must see what was *not* tested
+> without reading test code. Reply with a five-line summary and the paths.
 >
 > **STOP CONDITIONS.** If the environment makes real end-to-end proof impossible (no network,
 > credentials or runnable host), do **not** weaken the gate or fake a pass: verify at the deepest
