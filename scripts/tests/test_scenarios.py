@@ -14,7 +14,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from scenarios import check, main, parse_scenarios
+from scenarios import check, coverage, main, parse_scenarios
 
 HEADER = (
     "| Id | AC | Class | Expected observable | Evidence | Status |\n"
@@ -26,8 +26,14 @@ def table(*rows: str) -> str:
     return "# Scenarios\n\n" + HEADER + "".join(rows)
 
 
-def row(ident, ac="AC1", cls="positive", expected="`HTTP 201`",
-        evidence="`evidence/{id}.json`", status=""):
+def row(
+    ident,
+    ac="AC1",
+    cls="positive",
+    expected="`HTTP 201`",
+    evidence="`evidence/{id}.json`",
+    status="",
+):
     evidence = evidence.format(id=ident)
     return f"| {ident} | {ac} | {cls} | {expected} | {evidence} | {status} |\n"
 
@@ -54,14 +60,22 @@ class Workspace:
             os.utime(path, (when, when))
         return path
 
+    def traceability(self, *acs):
+        rows = "".join(f"| {ac} | does a thing | | | | | |\n" for ac in acs)
+        (self.slug_dir / "traceability.md").write_text(
+            "| AC | Requirement | Design | Task | Test | Evidence | Verdict |\n"
+            "|----|----|----|----|----|----|----|\n" + rows,
+            encoding="utf-8")
+
     def close(self):
         self.dir.cleanup()
 
 
 class ParseTest(unittest.TestCase):
     def test_reads_rows_by_header_name_not_position(self):
-        text = ("| Evidence | Id | Status |\n|---|---|---|\n"
-                "| `evidence/S1.json` | S1 | |\n")
+        text = (
+            "| Evidence | Id | Status |\n|---|---|---|\n| `evidence/S1.json` | S1 | |\n"
+        )
         rows = parse_scenarios(text)
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0].ident, "S1")
@@ -109,8 +123,9 @@ class CheckTest(unittest.TestCase):
         self.assertEqual([f.kind for f in report.failures], ["DROPPED"])
 
     def test_blocked_with_a_reason_is_an_honest_outcome(self):
-        self.ws.scenarios(table(row("S1", evidence="—",
-                                    status="BLOCKED: no staging credentials")))
+        self.ws.scenarios(
+            table(row("S1", evidence="—", status="BLOCKED: no staging credentials"))
+        )
         report = self.run_check()
         self.assertTrue(report.ok)
         self.assertEqual(report.blocked[0]["reason"], "no staging credentials")
@@ -136,7 +151,9 @@ class CheckTest(unittest.TestCase):
     def test_directory_artifact_needs_a_non_empty_file(self):
         self.ws.scenarios(table(row("S1", evidence="`evidence/run/`")))
         (self.ws.slug_dir / "evidence" / "run").mkdir()
-        (self.ws.slug_dir / "evidence" / "run" / "out.txt").write_text("", encoding="utf-8")
+        (self.ws.slug_dir / "evidence" / "run" / "out.txt").write_text(
+            "", encoding="utf-8"
+        )
         self.assertEqual([f.kind for f in self.run_check().failures], ["EMPTY"])
 
     def test_path_escaping_the_workspace_is_refused(self):
@@ -163,8 +180,9 @@ class CheckTest(unittest.TestCase):
         self.assertTrue(self.run_check(strict=True).ok)
 
     def test_strict_refuses_to_vouch_for_a_screenshot(self):
-        self.ws.scenarios(table(row("S1", expected="`Order placed`",
-                                    evidence="`evidence/S1.png`")))
+        self.ws.scenarios(
+            table(row("S1", expected="`Order placed`", evidence="`evidence/S1.png`"))
+        )
         self.ws.artifact("S1.png", body="not really a png")
         report = self.run_check(strict=True)
         self.assertEqual([f.kind for f in report.failures], ["UNPROVEN"])
@@ -186,12 +204,24 @@ class StalenessTest(unittest.TestCase):
     def setUp(self):
         self.ws = Workspace()
         self.addCleanup(self.ws.close)
-        env = {**os.environ, "GIT_AUTHOR_NAME": "t", "GIT_AUTHOR_EMAIL": "t@t",
-               "GIT_COMMITTER_NAME": "t", "GIT_COMMITTER_EMAIL": "t@t"}
-        for args in (["init", "-q"], ["add", "-A"],
-                     ["commit", "-qm", "base", "--allow-empty"]):
-            subprocess.run(["git", "-C", str(self.ws.root), *args],
-                           check=True, env=env, capture_output=True)
+        env = {
+            **os.environ,
+            "GIT_AUTHOR_NAME": "t",
+            "GIT_AUTHOR_EMAIL": "t@t",
+            "GIT_COMMITTER_NAME": "t",
+            "GIT_COMMITTER_EMAIL": "t@t",
+        }
+        for args in (
+            ["init", "-q"],
+            ["add", "-A"],
+            ["commit", "-qm", "base", "--allow-empty"],
+        ):
+            subprocess.run(
+                ["git", "-C", str(self.ws.root), *args],
+                check=True,
+                env=env,
+                capture_output=True,
+            )
 
     def test_artifact_older_than_the_commit_is_stale(self):
         self.ws.scenarios(table(row("S1")))
@@ -210,14 +240,124 @@ class StalenessTest(unittest.TestCase):
         self.assertTrue(check(self.ws.root, self.ws.slug, None, None, False).ok)
 
 
+class CoverageTest(unittest.TestCase):
+    """Gate 3: the enumeration, checked before anything has been executed."""
+
+    CLASSES = ("positive", "negative", "boundary", "failure",
+               "authorization", "idempotency", "regression")
+
+    def setUp(self):
+        self.ws = Workspace()
+        self.addCleanup(self.ws.close)
+
+    def full_table(self, ac="AC1", **overrides):
+        rows = []
+        for index, cls in enumerate(self.CLASSES, start=1):
+            rows.append(row(f"S{index}", ac=ac, cls=cls, **overrides))
+        return table(*rows)
+
+    def kinds(self, acs=None):
+        return [f.kind for f in coverage(self.ws.root, self.ws.slug, acs).failures]
+
+    def test_a_complete_enumeration_passes(self):
+        self.ws.traceability("AC1")
+        self.ws.scenarios(self.full_table())
+        self.assertEqual(self.kinds(), [])
+
+    def test_a_missing_class_is_uncovered(self):
+        self.ws.traceability("AC1")
+        self.ws.scenarios(table(row("S1", cls="positive")))
+        failures = coverage(self.ws.root, self.ws.slug, None).failures
+        self.assertEqual([f.kind for f in failures], ["UNCOVERED"])
+        self.assertIn("authorization", failures[0].detail)
+        self.assertNotIn("positive", failures[0].detail)
+
+    def test_an_ac_with_no_scenario_at_all_is_uncovered(self):
+        self.ws.traceability("AC1", "AC2")
+        self.ws.scenarios(self.full_table(ac="AC1"))
+        failures = coverage(self.ws.root, self.ws.slug, None).failures
+        self.assertEqual([f.ident for f in failures], ["AC2"])
+
+    def test_na_row_with_a_reason_covers_the_class(self):
+        self.ws.traceability("AC1")
+        rows = [row(f"S{i}", cls=c) for i, c in enumerate(self.CLASSES[:-1], start=1)]
+        rows.append(row("S7", cls="regression", expected="—", evidence="—",
+                        status="N/A: nothing pre-existing to regress"))
+        self.ws.scenarios(table(*rows))
+        self.assertEqual(self.kinds(), [])
+
+    def test_na_without_a_reason_fails(self):
+        self.ws.traceability("AC1")
+        rows = [row(f"S{i}", cls=c) for i, c in enumerate(self.CLASSES[:-1], start=1)]
+        rows.append(row("S7", cls="regression", expected="—", evidence="—", status="N/A"))
+        self.ws.scenarios(table(*rows))
+        self.assertIn("UNREASONED-NA", self.kinds())
+
+    def test_a_vague_expected_observable_fails(self):
+        self.ws.traceability("AC1")
+        self.ws.scenarios(self.full_table(expected="works correctly"))
+        self.assertEqual(set(self.kinds()), {"VAGUE"})
+
+    def test_a_number_counts_as_specific(self):
+        self.ws.traceability("AC1")
+        self.ws.scenarios(self.full_table(expected="returns 201 and one row"))
+        self.assertEqual(self.kinds(), [])
+
+    def test_a_row_without_an_evidence_destination_fails(self):
+        self.ws.traceability("AC1")
+        self.ws.scenarios(self.full_table(evidence="—"))
+        self.assertIn("NO-DESTINATION", self.kinds())
+
+    def test_a_row_naming_no_ac_fails(self):
+        self.ws.traceability("AC1")
+        self.ws.scenarios(self.full_table(ac="—"))
+        self.assertIn("NO-AC", self.kinds())
+
+    def test_an_unrecognised_class_fails(self):
+        self.ws.traceability("AC1")
+        self.ws.scenarios(table(row("S1", cls="vibes")))
+        self.assertIn("NO-CLASS", self.kinds())
+
+    def test_class_aliases_are_accepted(self):
+        self.ws.traceability("AC1")
+        aliases = ("primary", "rejection", "edge", "fault", "authz", "retry", "invariant")
+        self.ws.scenarios(table(*[row(f"S{i}", cls=c)
+                                  for i, c in enumerate(aliases, start=1)]))
+        self.assertEqual(self.kinds(), [])
+
+    def test_ac_numbering_is_normalised(self):
+        """traceability may write AC01 while scenarios write AC1."""
+        self.ws.traceability("AC01")
+        self.ws.scenarios(self.full_table(ac="AC1"))
+        self.assertEqual(self.kinds(), [])
+
+    def test_explicit_acs_override_traceability(self):
+        self.ws.traceability("AC1", "AC2", "AC3")
+        self.ws.scenarios(self.full_table(ac="AC1"))
+        self.assertEqual(self.kinds(acs={"AC1"}), [])
+
+    def test_no_acs_anywhere_raises(self):
+        self.ws.scenarios(table(row("S1")))
+        with self.assertRaises(ValueError):
+            coverage(self.ws.root, self.ws.slug, None)
+
+    def test_coverage_ignores_evidence_on_disk(self):
+        """Gate 3 runs before anything is executed; absent artifacts are fine."""
+        self.ws.traceability("AC1")
+        self.ws.scenarios(self.full_table())
+        self.assertEqual(self.kinds(), [])
+        self.assertFalse((self.ws.slug_dir / "evidence" / "S1.json").exists())
+
+
 class ExitCodeTest(unittest.TestCase):
     def setUp(self):
         self.ws = Workspace()
         self.addCleanup(self.ws.close)
 
     def cli(self, *extra):
-        return main(["--slug", self.ws.slug, "--root", str(self.ws.root),
-                     "--since", "", *extra])
+        return main(
+            ["--slug", self.ws.slug, "--root", str(self.ws.root), "--since", "", *extra]
+        )
 
     def test_zero_when_proven(self):
         self.ws.scenarios(table(row("S1")))
@@ -230,6 +370,11 @@ class ExitCodeTest(unittest.TestCase):
 
     def test_two_when_the_file_is_absent(self):
         self.assertEqual(self.cli(), 2)
+
+    def test_coverage_mode_exit_codes(self):
+        self.ws.traceability("AC1")
+        self.ws.scenarios(table(row("S1", cls="positive")))
+        self.assertEqual(self.cli("--coverage"), 1)
 
 
 if __name__ == "__main__":

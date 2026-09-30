@@ -193,6 +193,24 @@ be executed becomes **BLOCKED with a named blocker**, never deleted.
 
 ### The checker
 
+Two modes, one tool. **Gate 3 — is the enumeration complete?**
+
+```bash
+python <skill>/scripts/scenarios.py --slug <slug> --coverage
+```
+
+It reads the ACs from `traceability.md` (or `--ac`) and exits non-zero on:
+**UNCOVERED** (an AC with no scenario and no N/A row for some class) · **VAGUE** (an expected
+observable with no literal or number to assert) · **NO-DESTINATION** (no evidence path, and not
+N/A or BLOCKED) · **NO-AC** · **NO-CLASS** (a class matching none of the seven) · **UNREASONED-NA**.
+
+Mark a class that genuinely does not apply as `N/A: <reason>` in the Status column — that covers
+the cell. **`N/A` and `BLOCKED` are different claims:** N/A means *never owed* (a read-only
+endpoint has no idempotency concern); BLOCKED means *owed but not runnable yet* (no staging DB).
+Both need a reason; neither may be an empty cell.
+
+**Gate 5 and 6 — is it proven?**
+
 ```bash
 python <skill>/scripts/scenarios.py --slug <slug> [--ac AC1,AC2] [--since <ref>] [--strict]
 ```
@@ -206,12 +224,13 @@ no blocker, or `BLOCKED` with no reason) · **DUPLICATE** (id reused) · and wit
 Use `--ac` at an increment gate so it checks the due scope rather than the whole plan.
 
 **Put the specific values in backticks** — `` `HTTP 201` ``, `` `orderId` `` — because that is what
-`--strict` samples. Prose in that column still reads fine for a human; it simply gives the checker
-nothing to match.
+`--coverage` counts as specific and `--strict` samples. Prose in that column still reads fine for a
+human; it simply gives the checker nothing to match.
 
-**What it cannot do:** it cannot read a screenshot. For a non-text artifact `--strict` reports
-UNPROVEN with the literals a human or the Phase 6 reviewer must confirm by eye. The script raises
-the floor; it does not replace the reviewer opening the file.
+**What it cannot do:** it cannot read a screenshot, and it cannot tell whether a scenario is worth
+running — a row reading "expect `ok`" satisfies every check. For a non-text artifact `--strict`
+reports UNPROVEN with the literals a human or the Phase 6 reviewer must confirm by eye. The script
+raises the floor on **shape**; you and the reviewer remain the only judges of **substance**.
 
 ## 5. Keep the overview short without losing execution detail
 
@@ -267,6 +286,12 @@ Gate 3 passes only when the plan is executable from its artifacts, every planned
 owner, prerequisites are ordered, every AC has work and proof, and no unresolved execution-critical
 question is hidden. This checks plan readiness, not implementation correctness or test success.
 
+**Run `scripts/scenarios.py --slug <slug> --coverage` as part of this gate.** It settles the
+mechanical half — enumeration completeness, specificity, declared destinations — so the bounded
+review spends its attention on the half no script reaches: whether the increments are genuinely
+session-sized and independently deliverable, and whether each scenario is worth running. A green
+exit is a floor, never the readiness verdict.
+
 ## 7. Revise and resume without silently drifting
 
 When feedback or source changes invalidate a plan:
@@ -303,7 +328,13 @@ Supply this procedure or an accessible path with:
 > research; approved design and review; current state/traceability/plan; assigned scope].
 >
 > **Output:** Apply the planning contract above. Produce ordered vertical increments, precise
-> task/check records, artifact links, and named blockers. Return locations, a short readiness
+> task/check records, artifact links, and named blockers. **Also write `.ai/<slug>/scenarios.md`**
+> per §4b — stable `S`-ids covering every AC × the seven classes, each with a specific expected
+> observable (a backticked literal or a number, never "works correctly") and a declared evidence
+> path; mark a class that genuinely does not apply as `N/A: <reason>`. **Then run
+> `python <skill>/scripts/scenarios.py --slug <slug> --coverage` and fix what it reports before
+> returning** — a non-zero exit means the enumeration is incomplete, not that the format is wrong.
+> Return locations, a short readiness
 > summary and unresolved parent actions; never claim planned verification already passed.
 
 ## Inspiration

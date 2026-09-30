@@ -374,8 +374,11 @@ grouping, what order, and proven by what tests.**
 - **GATE 3:** every planned change has an owner and ordered prerequisites; every AC maps to
   an increment, tasks and proof; checks have grounded commands, pass conditions, owners and
   evidence destinations; and increments are session-sized, independently verifiable slices.
-  **`scenarios.md` exists and is complete** — every AC × applicable class has a scenario or a
-  recorded N/A, and every scenario declares a specific expected observable and an evidence path.
+  **`python <skill>/scripts/scenarios.py --slug <slug> --coverage` exits 0** — every AC × class
+  has a scenario or a reasoned N/A, every expected observable carries a literal or number to
+  assert, and every row declares an evidence destination. **A green exit is shape, not
+  substance:** a scenario reading "expect `ok`" passes it, so you still judge whether each one is
+  worth running.
   The parent's bounded consumer-readiness check in `references/planning.md` is READY: a fresh implementer
   can execute from the plan and linked artifacts without an unresolved product/architecture
   decision. The parent reconciles full coverage; sampling is not proof of every task.
