@@ -9,7 +9,6 @@ import json
 import os
 from pathlib import Path
 import re
-import sys
 import uuid
 
 from evidence import exclusive_lock, source_snapshot, write_json_atomic
@@ -351,9 +350,14 @@ def _committed(root, source, commit):
     for name in expected:
         mode, kind, oid = entries[name]
         content = state.safe_path(root, name).read_bytes()
+        # SHA-1 here reconstructs Git's own object id for comparison with
+        # `oid` from `git ls-tree`; the algorithm is fixed by Git's object
+        # format, not chosen, and carries no security claim -- integrity is
+        # the SHA-256 comparison below. Non-security use is explicit.
         if (kind != "blob" or mode not in ("100644", "100755") or
                 ("executable" if mode == "100755" else "file") != source["files"][name]["mode"] or
-                hashlib.sha1(b"blob " + str(len(content)).encode("ascii") + b"\0" + content).hexdigest() != oid or
+                hashlib.sha1(b"blob " + str(len(content)).encode("ascii") + b"\0" + content,
+                             usedforsecurity=False).hexdigest() != oid or
                 hashlib.sha256(content).hexdigest() != source["files"][name]["sha256"]):
             raise Refusal(1, "Committed bytes/mode differ from proven source: " + name)
 

@@ -240,7 +240,7 @@ def m_dead(root):
     if vult:
         rc, out, _ = run(vult + [root, "--min-confidence", "80"], cwd=root)
         if rc in (0, 3):
-            return len([l for l in out.splitlines() if l.strip()])
+            return len([line for line in out.splitlines() if line.strip()])
     return None
 
 

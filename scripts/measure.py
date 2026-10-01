@@ -1476,7 +1476,12 @@ def assess_observations(observations, mutation, policy, base_inventory):
                          "comparison": status if complete else "unavailable",
                          "status": status if complete else "unavailable", "reason": reason}
         if name in {"cycles", "architecture_rules"}:
-            def identities(item):
+            # `name` is bound as a default so the closure captures this
+            # iteration's metric rather than the loop variable. Both calls
+            # below run inside this iteration, so behaviour is unchanged
+            # today -- but a late-bound `name` would silently misclassify
+            # if the call were ever deferred.
+            def identities(item, name=name):
                 if name == "architecture_rules":
                     return {finding["id"] for finding in item["findings"]}
                 raw = item.get("cycle_ids")

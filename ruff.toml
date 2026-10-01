@@ -1,0 +1,45 @@
+# Ruff configuration for the Python under `scripts/`.
+#
+# Why this file exists: the repository had no adopted Python standard, so every
+# contributor's editor linted it against whatever rule set their tooling shipped
+# — one local run reported 242 findings from a 415-rule selection nothing here
+# ever chose. An unadopted standard produces noise, not quality: the first two
+# categories audited were majority false positives (a closure called immediately
+# within its loop, and re-exports a test asserts on).
+#
+# So: adopt Ruff's own default selection (E4, E7, E9, F). It is the
+# least-surprising choice for Python, it catches real defects — undefined names,
+# unused imports, broken f-strings — and this codebase very nearly meets it
+# already. A standard the repo passes is enforceable; an aspirational one gets
+# ignored.
+#
+# Tighten deliberately, not by accident. Adding a rule family here is a change
+# with a diff and a reason, the same as any other.
+
+line-length = 110  # matches the prevailing width of the existing sources
+
+[lint]
+# Ruff's default. Explicit rather than implicit, so a tooling upgrade that
+# changes the default cannot silently change this repository's standard.
+select = ["E4", "E7", "E9", "F"]
+
+[lint.per-file-ignores]
+# `probe.py` deliberately re-exports measure's constants so that callers have a
+# single discovery owner. This is not dead code and must not be "cleaned up":
+# `tests/test_measure_inventory.py::test_one_discovery_owner_and_standalone_imports`
+# asserts `probe.CODE_EXT is measure.CODE_EXT`.
+"scripts/probe.py" = ["F401"]
+
+# Test helpers insert the scripts directory on `sys.path` before importing the
+# modules under test. The import must follow that insertion, so it cannot be at
+# the top of the file.
+"scripts/tests/helpers.py" = ["E402"]
+"scripts/tests/*.py" = ["E402"]
+
+# This suite imports `measure`, `measure_graph` and `probe` as one block of
+# modules-under-test, mirroring the standalone-import contract asserted in
+# `test_measure_inventory.py`. `probe` is unreferenced as a name but removing it
+# would break that block's symmetry, and the suite cannot currently be run to
+# prove the removal safe (it needs the global analysis toolchain). Left in place
+# deliberately rather than guessed at.
+"scripts/tests/test_measure_q1_verification.py" = ["F401"]

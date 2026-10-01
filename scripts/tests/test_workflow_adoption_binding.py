@@ -144,23 +144,23 @@ class AdoptionBindingTests(unittest.TestCase):
 
     def test_explicit_schema_slug_and_guarded_binding_rejections(self):
         cases = [
-            ("contract-version", lambda c, d, l: c.update(schema_version=2), "schema version"),
-            ("contract-fields", lambda c, d, l: c.update(unapproved=True), "record fields"),
-            ("ledger-version", lambda c, d, l: l.update(schema_version=2), "schema version"),
-            ("ledger-fields", lambda c, d, l: l.update(unapproved=True), "record fields"),
-            ("slug", lambda c, d, l: l.update(slug="other"), "slug mismatch"),
-            ("design-version", lambda c, d, l: d.update(schema_version=2), "schema version"),
-            ("sequence", lambda c, d, l: l["events"][0].update(seq=2), "contiguous"),
-            ("guarded-mode", lambda c, d, l: l["events"][0]["inputs"]["contract"].pop("binding_mode"),
+            ("contract-version", lambda c, d, ledger: c.update(schema_version=2), "schema version"),
+            ("contract-fields", lambda c, d, ledger: c.update(unapproved=True), "record fields"),
+            ("ledger-version", lambda c, d, ledger: ledger.update(schema_version=2), "schema version"),
+            ("ledger-fields", lambda c, d, ledger: ledger.update(unapproved=True), "record fields"),
+            ("slug", lambda c, d, ledger: ledger.update(slug="other"), "slug mismatch"),
+            ("design-version", lambda c, d, ledger: d.update(schema_version=2), "schema version"),
+            ("sequence", lambda c, d, ledger: ledger["events"][0].update(seq=2), "contiguous"),
+            ("guarded-mode", lambda c, d, ledger: ledger["events"][0]["inputs"]["contract"].pop("binding_mode"),
              "record fields"),
-            ("source-hash", lambda c, d, l: l["events"][0]["inputs"]["source"].update(scope_sha256="0" * 64),
+            ("source-hash", lambda c, d, ledger: ledger["events"][0]["inputs"]["source"].update(scope_sha256="0" * 64),
              "snapshot hash mismatch"),
         ]
         for name, mutate, message in cases:
-            c, d, l = deepcopy((self.contract, self.design, self.ledger))
-            mutate(c, d, l)
+            c, d, ledger = deepcopy((self.contract, self.design, self.ledger))
+            mutate(c, d, ledger)
             with self.subTest(name=name):
-                self.assert_invalid(c, d, l, message)
+                self.assert_invalid(c, d, ledger, message)
         for value in ({}, [], False):
             with self.subTest(malformed=value):
                 self.assert_invalid(self.contract, value, self.ledger, "record fields")
@@ -242,28 +242,28 @@ class AdoptionBindingTests(unittest.TestCase):
                 path.write_bytes(original)
 
     def test_normative_component_and_adoption_bindings_cannot_be_substituted(self):
-        c, d, l = deepcopy((self.contract, self.design, self.ledger))
+        c, d, ledger = deepcopy((self.contract, self.design, self.ledger))
         d["components"]["a"] = "0" * 64
         d["review"]["candidate_hashes"]["components"] = deepcopy(d["components"])
-        self.assert_invalid(c, d, l, "Normative component hashes")
-        c, d, l = deepcopy((self.contract, self.design, self.ledger))
+        self.assert_invalid(c, d, ledger, "Normative component hashes")
+        c, d, ledger = deepcopy((self.contract, self.design, self.ledger))
         c["increments"]["A"]["components"].append("missing-component")
         d["review"]["candidate_hashes"]["workflow_contract"] = state.canonical_hash(c)
-        self.assert_invalid(c, d, l, "Missing normative component")
-        c, d, l = deepcopy((self.contract, self.design, self.ledger))
-        l["events"] = []
-        self.assert_invalid(c, d, l, "history/adoption mismatch")
-        c, d, l = deepcopy((self.contract, self.design, self.ledger))
-        l["events"][0]["inputs"]["contract"]["adopted_contract_sha256"] = "0" * 64
-        self.assert_invalid(c, d, l, "adopted contract mismatch")
-        c, d, l = deepcopy((self.contract, self.design, self.ledger))
-        l["events"][0]["inputs"]["contract"]["components"]["a"] = "0" * 64
-        self.assert_invalid(c, d, l, "adopted contract mismatch")
-        c, d, l = deepcopy((self.contract, self.design, self.ledger))
-        source = l["events"][0]["inputs"]["source"]
+        self.assert_invalid(c, d, ledger, "Missing normative component")
+        c, d, ledger = deepcopy((self.contract, self.design, self.ledger))
+        ledger["events"] = []
+        self.assert_invalid(c, d, ledger, "history/adoption mismatch")
+        c, d, ledger = deepcopy((self.contract, self.design, self.ledger))
+        ledger["events"][0]["inputs"]["contract"]["adopted_contract_sha256"] = "0" * 64
+        self.assert_invalid(c, d, ledger, "adopted contract mismatch")
+        c, d, ledger = deepcopy((self.contract, self.design, self.ledger))
+        ledger["events"][0]["inputs"]["contract"]["components"]["a"] = "0" * 64
+        self.assert_invalid(c, d, ledger, "adopted contract mismatch")
+        c, d, ledger = deepcopy((self.contract, self.design, self.ledger))
+        source = ledger["events"][0]["inputs"]["source"]
         source["files"][d["document"]["path"]]["sha256"] = "0" * 64
         source["scope_sha256"] = state.canonical_hash({"scope": source["scope"], "files": source["files"]})
-        self.assert_invalid(c, d, l, "Adoption does not bind retained design bytes")
+        self.assert_invalid(c, d, ledger, "Adoption does not bind retained design bytes")
 
     def test_retained_history_stays_hash_checked_in_explicit_mode(self):
         self.protocol.adopt()
@@ -334,9 +334,9 @@ root = Path(sys.argv[2])
 workspace = root / '.ai/demo'
 c = read_json(workspace / 'workflow.json')
 d = read_json(workspace / 'current-design.json')
-l = read_json(workspace / 'evidence/ledger.json')
-validate_design_binding(root, c, d, l)
-print(json.dumps(bind_inputs(root, c, target('action', 'A-work'), design=d, ledger=l).target))
+ledger = read_json(workspace / 'evidence/ledger.json')
+validate_design_binding(root, c, d, ledger)
+print(json.dumps(bind_inputs(root, c, target('action', 'A-work'), design=d, ledger=ledger).target))
 """
         rc, stdout, stderr = self.git.run(sys.executable, "-B", "-c", code, str(scripts), str(self.root))
         self.assertEqual(rc, 0, stderr)

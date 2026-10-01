@@ -7,6 +7,21 @@ name: CI
   pull_request:
 
 jobs:
+  python-lint:
+    name: Ruff (scripts/)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # Rule selection lives in ruff.toml, so this job enforces the standard the
+      # repository adopted rather than whatever the runner's ruff defaults to.
+      - name: Install ruff
+        run: pip install --quiet ruff
+      - name: Lint
+        run: ruff check scripts/
+
   search-guard:
     name: search-guard rule suite
     runs-on: ubuntu-latest
