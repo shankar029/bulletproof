@@ -6,7 +6,49 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Planned
+
+- Complete scalar collector composition, coverage/mutation integration and the guarded
+  metric bridge; resolve the outstanding native-suite and browser acceptance gaps.
+- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
+
+## [0.9.0] - 2026-10-01
+
 ### Added
+
+- **Proposing, not just executing** — the workflow now surfaces capability it is *not* building,
+  under one rule: proposing is not creep; building unasked is. Phase 1 research reports up to five
+  grounded **adjacent scope** proposals (cited trigger, scenario, cost, Include-now/Defer/Decline)
+  in the clarification batch, where silence is not consent. Phase 2 adds **§5b design options for
+  sign-off**, keyed on *reversibility* — a one-way choice (persisted shape, public contract, module
+  boundary) closes when Phase 4 starts, so the human decides it at Gate 2 — fed by an **extension
+  pressure** check that asks whether each likely next change is additive or surgery. Caps, cited
+  triggers and "missing structure is a finding, not an option" keep it from becoming gold-plating.
+- **`scenarios.md`** ([`references/planning.md`](references/planning.md) §4b) — Phase 3 now
+  enumerates the end-to-end scenarios *before* Phase 5 executes them, so the agent doing the work
+  is not the one deciding how much work there is. Stable `S`-ids across four sources × seven
+  classes, each declaring a **specific expected observable** and the **evidence artifact path**
+  that will prove it.
+- **[`scripts/scenarios.py`](scripts/scenarios.py)** — makes the mechanical half an exit code
+  rather than a judgement call. `--coverage` (Gate 3) checks enumeration completeness: UNCOVERED,
+  VAGUE, NO-DESTINATION, NO-AC, NO-CLASS, UNREASONED-NA. Default mode (Gates 5–6) reconciles the
+  table against artifacts on disk: MISSING, EMPTY, STALE, DROPPED, DUPLICATE, and UNPROVEN under
+  `--strict`. Parses the table *by header name, not position*, so it stays human-writable. 42 tests.
+- **Language standards** ([`references/code-clarity.md`](references/code-clarity.md)) — default
+  standards for nine ecosystems, applied **only** where the project's own axis grades Absent,
+  scoped to the diff and never retroactive.
+- **Architecture doctrine** ([`references/project-profile.md`](references/project-profile.md)) —
+  a dependency-direction rule (inward, toward what changes least; the inner layer owns the
+  interface) for repositories that have no fitness rules of their own, which previously made the
+  architecture metric vacuous. Applied to the change, not the repository.
+- **Profile axis grading** — language style, tests, architecture and docs are each graded
+  Established / Partial / Absent, with an explicit callout and import protocol for the gaps.
+- **[`ruff.toml`](ruff.toml)** and a `python-lint` CI job — the repository had no adopted Python
+  standard and no Python linting in CI. Adopts ruff's default selection explicitly, with three
+  documented per-file-ignores.
+- **Plugin provenance** ([`agent/packages.txt`](agent/packages.txt)) — every pinned plugin records
+  what was verified, when, against which pi version, and how (`resolved` / `exercised` /
+  `unverified`). A pin makes an install reproducible, not correct.
 
 - **pi workflow layer** — on the `pi` install target, bulletproof now provisions the whole
   environment the workflow assumes, not just the skill. `install.sh pi` / `install.ps1 pi`
@@ -36,6 +78,28 @@ All notable changes to this project are documented here. The format is based on
 
 ### Changed
 
+- **Phase 5 verification is no longer self-scoped.** Scenarios are re-derived from **four
+  sources** — each AC, the design's failure-modes table, the as-is → to-be invariants, and the
+  **original requirement text** (a scenario it implies but no AC states is a finding to report,
+  not something to quietly drop) — and must cover **seven classes** per AC: positive, negative,
+  boundary, failure, authorization, idempotency, regression. Each is exercised or N/A with a
+  reason. `scenarios.md` is append-only: a row that cannot run becomes BLOCKED with a named
+  blocker, never deleted, and a wrong expected observable is a finding, not a pass condition to edit.
+- **Phase 6 stops grading filenames.** The reviewer must open each artifact — read the transcript,
+  *view* the screenshot. Four rules override VERIFIED: an artifact showing a failure is a FAIL;
+  zero-byte or truncated is missing evidence; an mtime predating the final implementation commit
+  is stale; and an artifact lacking its declared expected observable does not support the claim.
+- **Gates tightened** — Gate 1 requires graded profile axes and surfaced adjacent scope; Gate 2a
+  requires as-is → to-be rows, stated dependency direction, declared imported standards and no
+  blank end-to-end cell; Gate 3 runs `scenarios.py --coverage`; Gate 4 now runs the existing
+  end-to-end suite as regression (run, not author — authoring stays in Phase 5, so prover ≠ builder
+  survives); Gates 5–6 run `scenarios.py --strict`.
+- **`design.html` structure** ([`references/design-doc.md`](references/design-doc.md)) — the
+  mandated as-is → to-be table now exists in the spec and skeleton (it was required by `SKILL.md`
+  but absent from both, and missing from one of three shipped artifacts); section numbering
+  unified to 1–7 with `architecture.html` separate; test strategy renamed *"proposed, not run"*
+  with per-column owners.
+
 - README and [`install/pi.md`](install/pi.md) reframe bulletproof on pi as a workflow **setup**,
   not just a skill; the host table and per-host guides state that the workflow layer is
   pi-specific and Claude Code / Copilot get the skill (and custom agent) only.
@@ -44,16 +108,19 @@ All notable changes to this project are documented here. The format is based on
 
 ### Fixed
 
+- **`measure.py`** — a closure defined inside a loop referenced the loop variable late. Correct
+  today because both calls run inside the iteration; a deferred call would have silently
+  misclassified cycles vs architecture rules. Now bound as a default argument.
+- Two genuinely dead imports removed, and the ambiguous `l` identifier renamed in `probe.py` and
+  the adoption-binding test.
+- `workflow.py` declares its SHA-1 as `usedforsecurity=False`: it reconstructs Git's blob object
+  id for comparison with `git ls-tree`, so the algorithm is fixed by Git's object format, not
+  chosen; integrity is the SHA-256 check alongside it.
+
 - `.gitignore` had CRLF line endings that corrupted git's pattern matching (it was silently
   ignoring `agent/`). Normalized to LF and added `.gitattributes` enforcing LF on
   `*.sh`/`*.mjs`/`*.ts`/`agent/packages.txt`; `install.sh` normalized to LF. Added a `.pi/`
   ignore for session scratch.
-
-### Planned
-
-- Complete scalar collector composition, coverage/mutation integration and the guarded
-  metric bridge; resolve the outstanding native-suite and browser acceptance gaps.
-- Grow the eval corpus toward 12 tasks; larger `k` + proper CIs — see [`EVAL-PLAN.md`](EVAL-PLAN.md).
 
 ## [0.8.0] - 2026-09-23
 
@@ -553,7 +620,8 @@ Initial release: a portable `/bulletproof` skill plus an objective benchmark pro
   and **extensibility** (open/closed) beyond functional correctness, across all three projects.
 - **Docs**: `README.md`, `EVAL-PLAN.md`, `docs/architecture.md`, `CONTRIBUTING.md`, `LICENSE` (MIT).
 
-[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.8.0...HEAD
+[Unreleased]: https://github.com/shankar029/bulletproof/compare/v0.9.0...HEAD
+[0.9.0]: https://github.com/shankar029/bulletproof/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/shankar029/bulletproof/compare/v0.8.0-rc.2...v0.8.0
 [0.8.0-rc.2]: https://github.com/shankar029/bulletproof/compare/v0.8.0-rc.1...v0.8.0-rc.2
 [0.8.0-rc.1]: https://github.com/shankar029/bulletproof/compare/v0.7.0...v0.8.0-rc.1

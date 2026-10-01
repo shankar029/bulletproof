@@ -77,6 +77,13 @@ jobs:
           files="install.sh agent/packages.txt"
           files="$files $(git ls-files '*.sh' '*.mjs' '*.ts')"
           for f in $files; do
+            # Honour .gitattributes: a path marked `-text` is deliberately kept
+            # byte-stable across platforms (recorded evidence hashes depend on
+            # it), so normalising it would invalidate what it proves.
+            if git check-attr text -- "$f" | grep -q ': text: unset$'; then
+              echo "skipped (-text, byte-stable by policy): $f"
+              continue
+            fi
             if [ "$(tr -dc '\r' < "$f" | wc -c)" -ne 0 ]; then
               echo "CRLF found: $f"
               bad=1
